@@ -1,0 +1,30 @@
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
+
+namespace System
+{
+
+    using System;
+    [Serializable()]
+    public class NotSupportedException : SystemException
+    {
+        public NotSupportedException()
+            : base()
+        {
+        }
+
+        public NotSupportedException(String message)
+            : base(message)
+        {
+        }
+
+        public NotSupportedException(String message, Exception innerException)
+            : base(message, innerException)
+        {
+        }
+
+    }
+}
