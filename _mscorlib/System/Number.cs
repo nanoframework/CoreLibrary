@@ -286,6 +286,8 @@ namespace System
             ValidateFormat(format, out formatCh, out precision);
 
             String result = FormatNative(value, formatCh, precision);
+			// TODO: fix the FormatNative() method then remove the following line. See https://github.com/nanoframework/nf-interpreter/issues/285
+			if (result.Length == 0) return string.Empty;
 
             if (isInteger)
             {
@@ -389,8 +391,8 @@ namespace System
                     break;
                 
                 case 'N':
-                    // InsertGroupSeperators, AppendTrailingZeros, ReplaceNegativeSign
-                    result = InsertGroupSeperators(result, info);
+                    // InsertGroupSeparators, AppendTrailingZeros, ReplaceNegativeSign
+                    result = InsertGroupSeparators(result, info);
                     goto case 'F'; // falls through
                 case 'F':
                     // AppendTrailingZeros, ReplaceNegativeSign
@@ -410,7 +412,7 @@ namespace System
 
             if (format == 'N')
             {
-                result = InsertGroupSeperators(result, info);
+                result = InsertGroupSeparators(result, info);
             }
 
             result = ReplaceDecimalSeperator(result, info);
@@ -457,7 +459,7 @@ namespace System
             }
         }
 
-        private static String InsertGroupSeperators(String original, NumberFormatInfo info)
+        private static String InsertGroupSeparators(String original, NumberFormatInfo info)
         {
             int digitsStartPos = (original[0] == '-') ? 1 : 0;
 
