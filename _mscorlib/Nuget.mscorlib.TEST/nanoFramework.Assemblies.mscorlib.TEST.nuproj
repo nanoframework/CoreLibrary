@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\bin\Release\mscorlib.dll">
+      <Link>content\mscorlib.dll</Link>
+    </Content>
+    <Content Include="..\bin\Release\mscorlib.pdb">
+      <Link>content\mscorlib.pdb</Link>
+    </Content>
+    <Content Include="..\bin\Release\mscorlib.pdbx">
+      <Link>content\mscorlib.pdbx</Link>
+    </Content>
+    <Content Include="..\bin\Release\mscorlib.pe">
+      <Link>content\mscorlib.pe</Link>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>8FD36AD6-387C-48F0-A695-52D9149216FB</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>nanoFramework.Assemblies.mscorlib.TEST</Id>
+    <Version>1.0.0-preview005</Version>
+    <Title>TEST version of the base class library (mscorlib) for nanoFramework C# projects</Title>
+    <Authors>nanoFramework project contributors</Authors>
+    <Owners>nanoFramework project contributors</Owners>
+    <Summary>** DON'T USE ** THIS IS THE TEST version of the base class library (mscorlib) for nanoFramework C# projects</Summary>
+    <Description>** DON'T USE ** THIS IS THE TEST VERSION \r\n look for the package name without TEST</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>https://github.com/nanoframework/nf-class-libraries</ProjectUrl>
+    <LicenseUrl>
+    </LicenseUrl>
+    <Copyright>Copyright (c) 2017 The nanoFramework project contributors</Copyright>
+    <Tags>
+    </Tags>
+    <IconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</IconUrl>
+    <GenerateSymbolPackage>false</GenerateSymbolPackage>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>
