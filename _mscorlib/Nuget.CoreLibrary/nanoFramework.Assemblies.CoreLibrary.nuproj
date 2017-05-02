@@ -11,16 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\bin\Release\mscorlib.dll">
+    <Content Include="..\obj\Release\mscorlib.dll">
       <Link>build\mscorlib.dll</Link>
     </Content>
-    <Content Include="..\bin\Release\mscorlib.pdb">
+    <Content Include="..\obj\Release\mscorlib.pdb">
       <Link>build\mscorlib.pdb</Link>
     </Content>
-    <Content Include="..\bin\Release\mscorlib.pdbx">
+    <Content Include="..\obj\Release\mscorlib.pdbx">
       <Link>build\mscorlib.pdbx</Link>
     </Content>
-    <Content Include="..\bin\Release\mscorlib.pe">
+    <Content Include="..\obj\Release\mscorlib.pe">
       <Link>build\mscorlib.pe</Link>
     </Content>
     <Content Include="build\nanoFramework.Assemblies.mscorlib.targets" />
@@ -34,7 +34,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Assemblies.mscorlib</Id>
-    <Version>1.0.0-preview006</Version>
+    <Version>1.0.0-preview007</Version>
     <Title>Base class library (mscorlib) for nanoFramework C# projects</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
