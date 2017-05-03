@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLibrary", "CoreLibrary.csproj", "{5228FA24-C912-44F0-96E4-F8CAB9307265}"
 EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "nanoFramework.Assemblies.CoreLibrary", "Nuget.CoreLibrary\nanoFramework.Assemblies.CoreLibrary.nuproj", "{96EABA11-6A33-454D-A7B2-B96CA5617E8C}"
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "nanoFramework.CoreLibrary", "Nuget.CoreLibrary\nanoFramework.CoreLibrary.nuproj", "{96EABA11-6A33-454D-A7B2-B96CA5617E8C}"
 EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "nanoFramework.Assemblies.CoreLibrary.DELIVERABLES", "Nuget.CoreLibrary.DELIVERABLES\nanoFramework.Assemblies.CoreLibrary.DELIVERABLES.nuproj", "{8FD36AD6-387C-48F0-A695-52D9149216FB}"
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "nanoFramework.CoreLibrary.DELIVERABLES", "Nuget.CoreLibrary.DELIVERABLES\nanoFramework.CoreLibrary.DELIVERABLES.nuproj", "{8FD36AD6-387C-48F0-A695-52D9149216FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

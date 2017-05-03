@@ -11,63 +11,42 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="content\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="..\obj\Release\mscorlib.dll">
-      <Link>content\mscorlib.dll</Link>
+      <Link>build\mscorlib.dll</Link>
     </Content>
     <Content Include="..\obj\Release\mscorlib.pdb">
-      <Link>content\mscorlib.pdb</Link>
+      <Link>build\mscorlib.pdb</Link>
     </Content>
     <Content Include="..\obj\Release\mscorlib.pdbx">
-      <Link>content\mscorlib.pdbx</Link>
+      <Link>build\mscorlib.pdbx</Link>
     </Content>
     <Content Include="..\obj\Release\mscorlib.pe">
-      <Link>content\mscorlib.pe</Link>
+      <Link>build\mscorlib.pe</Link>
     </Content>
-    <Content Include="..\obj\Release\Stubs\*.*">
-      <Link>content\Stubs\%(RecursiveDir)%(Filename)%(Extension)</Link>
-    </Content>
-    <Content Include="..\obj\Release\*.txt">
-      <Link>content\txt\%(RecursiveDir)%(Filename)%(Extension)</Link>
-    </Content>
-    <Content Include="..\obj\Release\*.dump">
-      <Link>content\dump\%(RecursiveDir)%(Filename)%(Extension)</Link>
-    </Content>
-    <Content Include="..\obj\Release\*.strings">
-      <Link>content\dump\%(RecursiveDir)%(Filename)%(Extension)</Link>
-    </Content>
-    <Content Include="..\obj\Release\*.resources">
-      <Link>content\resources\%(RecursiveDir)%(Filename)%(Extension)</Link>
-    </Content>
-    <Content Include="..\obj\Release\*.il">
-      <Link>content\disasm\%(RecursiveDir)%(Filename)%(Extension)</Link>
-    </Content>
+    <Content Include="build\nanoFramework.Assemblies.mscorlib.targets" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>8FD36AD6-387C-48F0-A695-52D9149216FB</ProjectGuid>
+    <ProjectGuid>96eaba11-6a33-454d-a7b2-b96ca5617e8c</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>nanoFramework.Assemblies.mscorlib.DELIVERABLES</Id>
+    <Id>nanoFramework.mscorlib</Id>
     <Version>1.0.0-preview007</Version>
-    <Title>Deliverable artifacts of nanoFramework base class library (mscorlib)</Title>
+    <Title>Base class library for nanoFramework C# projects</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
-    <Summary>** DON'T REFERENCE THIS PACKAGE ** &amp;#10; Not meant for development.</Summary>
-    <Description>** DON'T REFERENCE THIS PACKAGE ** &amp;#10; Not meant for development. This package includes the deliverable artifacts of the base class library (mscorlib) of nanoFramework. These are for testing purposes and for updating the native code base of the core library.</Description>
+    <Summary>Base class library (mscorlib) for nanoFramework C# projects</Summary>
+    <Description>This package includes the base class library (mscorlib) for nanoFramework C# projects</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>https://github.com/nanoframework/nf-class-libraries</ProjectUrl>
     <LicenseUrl>
     </LicenseUrl>
     <Copyright>Copyright (c) 2017 The nanoFramework project contributors</Copyright>
-    <Tags>
-    </Tags>
+    <Tags>nanoFramework C# csharp netmf netnf mscorlib</Tags>
     <IconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</IconUrl>
     <GenerateSymbolPackage>false</GenerateSymbolPackage>
   </PropertyGroup>
