@@ -272,9 +272,9 @@
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggableAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
-    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableAttribute">
+    <!--<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableAttribute">
       <InProject>false</InProject>
-    </NFMDP_PE_ExcludeClassByName>
+    </NFMDP_PE_ExcludeClassByName>-->
     <!--<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableState">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>-->
