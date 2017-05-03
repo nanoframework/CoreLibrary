@@ -54,8 +54,8 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Assemblies.mscorlib.DELIVERABLES</Id>
-    <Version>1.0.0-preview007</Version>
-    <Title>Deliverable artifacts of nanoFramework Core Library</Title>
+    <Version>1.0.0-preview008</Version>
+    <Title>Deliverable artifacts of nanoFramework base class library (mscorlib)</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
     <Summary>** DON'T REFERENCE THIS PACKAGE ** &amp;#10; Not meant for development.</Summary>

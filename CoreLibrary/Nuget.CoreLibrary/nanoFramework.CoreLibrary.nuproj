@@ -33,9 +33,9 @@
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>nanoFramework.mscorlib</Id>
-    <Version>1.0.0-preview007</Version>
-    <Title>Base class library for nanoFramework C# projects</Title>
+    <Id>nanoFramework.Assemblies.mscorlib</Id>
+    <Version>1.0.0-preview008</Version>
+    <Title>Base class library (mscorlib) for nanoFramework C# projects</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
     <Summary>Base class library (mscorlib) for nanoFramework C# projects</Summary>

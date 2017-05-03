@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0027\build\nanoFramework.Tools.MSBuildSystem.props" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0027\build\nanoFramework.Tools.MSBuildSystem.props')" />
+  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0028\build\nanoFramework.Tools.MSBuildSystem.props" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0028\build\nanoFramework.Tools.MSBuildSystem.props')" />
   <PropertyGroup>
     <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
   </PropertyGroup>
@@ -275,9 +275,9 @@
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
-    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableState">
+    <!--<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableState">
       <InProject>false</InProject>
-    </NFMDP_PE_ExcludeClassByName>
+    </NFMDP_PE_ExcludeClassByName>-->
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerDisplayAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
@@ -429,8 +429,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0027\build\nanoFramework.Tools.MSBuildSystem.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0027\build\nanoFramework.Tools.MSBuildSystem.props'))" />
-    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0027\build\nanoFramework.Tools.MSBuildSystem.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0027\build\nanoFramework.Tools.MSBuildSystem.targets'))" />
+    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0028\build\nanoFramework.Tools.MSBuildSystem.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0028\build\nanoFramework.Tools.MSBuildSystem.props'))" />
+    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0028\build\nanoFramework.Tools.MSBuildSystem.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0028\build\nanoFramework.Tools.MSBuildSystem.targets'))" />
   </Target>
-  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0027\build\nanoFramework.Tools.MSBuildSystem.targets" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0027\build\nanoFramework.Tools.MSBuildSystem.targets')" />
+  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0028\build\nanoFramework.Tools.MSBuildSystem.targets" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0028\build\nanoFramework.Tools.MSBuildSystem.targets')" />
 </Project>
