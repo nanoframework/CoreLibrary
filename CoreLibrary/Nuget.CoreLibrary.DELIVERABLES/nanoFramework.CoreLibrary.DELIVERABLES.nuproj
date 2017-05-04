@@ -53,12 +53,12 @@
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>nanoFramework.Assemblies.mscorlib.DELIVERABLES</Id>
-    <Version>1.0.0-preview009</Version>
-    <Title>Deliverable artifacts of nanoFramework base class library (mscorlib)</Title>
+    <Id>nanoFramework.CoreLibrary.DELIVERABLES</Id>
+    <Version>1.0.0-preview010</Version>
+    <Title>nanoFramework.CoreLibrary.DELIVERABLES</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
-    <Summary>nanoFramework.Assemblies.mscorlib.DELIVERABLES is not meant for development</Summary>
+    <Summary>nanoFramework.CoreLibrary.DELIVERABLES is not meant for development</Summary>
     <Description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the base class library (mscorlib) of nanoFramework. These are for testing purposes and for updating the native code base of the core library.</Description>
     <ReleaseNotes>
     </ReleaseNotes>
