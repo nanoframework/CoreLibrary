@@ -68,7 +68,7 @@
     <!-- we like verbose -->
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
     <NFMDP_STUB_VerboseMinimize>true</NFMDP_STUB_VerboseMinimize>
-    <NFMDP_STUB_GenerateSkeletonFile>Stubs\Windows_Devices_Gpio_Native</NFMDP_STUB_GenerateSkeletonFile>
+    <NFMDP_STUB_GenerateSkeletonFile>Stubs\windows_devices_gpio_native</NFMDP_STUB_GenerateSkeletonFile>
     <NFMDP_STUB_GenerateSkeletonProject>Windows_Devices_Gpio</NFMDP_STUB_GenerateSkeletonProject>
     <NFMDP_STUB_LegacySkeletonInterop>true</NFMDP_STUB_LegacySkeletonInterop>
   </PropertyGroup>
