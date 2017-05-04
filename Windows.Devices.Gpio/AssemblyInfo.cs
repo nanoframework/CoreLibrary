@@ -4,7 +4,7 @@
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Windows.Devices.Gpio")]
-[assembly: AssemblyCompany("nanoFrameowrk Contributors")]
+[assembly: AssemblyCompany("nanoFramework Contributors")]
 [assembly: AssemblyProduct("Windows.Devices.Gpio")]
 [assembly: AssemblyCopyright("Copyright © nanoFrameowrk Contributors 2017")]
 
