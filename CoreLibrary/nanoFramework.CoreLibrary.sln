@@ -9,6 +9,11 @@ Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "nanoFramework.CoreLibrary",
 EndProject
 Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "nanoFramework.CoreLibrary.DELIVERABLES", "Nuget.CoreLibrary.DELIVERABLES\nanoFramework.CoreLibrary.DELIVERABLES.nuproj", "{8FD36AD6-387C-48F0-A695-52D9149216FB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FB18B7BF-534A-4539-8D12-8379BED2A358}"
+	ProjectSection(SolutionItems) = preProject
+		packages.config = packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

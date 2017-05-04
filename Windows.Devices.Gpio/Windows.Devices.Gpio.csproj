@@ -106,7 +106,9 @@
     <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0029\build\nanoFramework.Tools.MSBuildSystem.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0029\build\nanoFramework.Tools.MSBuildSystem.props'))" />
     <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0029\build\nanoFramework.Tools.MSBuildSystem.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0029\build\nanoFramework.Tools.MSBuildSystem.targets'))" />
     <Error Condition="!Exists('packages\nanoFramework.CoreLibrary.1.0.0-preview011\build\nanoFramework.CoreLibrary.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.CoreLibrary.1.0.0-preview011\build\nanoFramework.CoreLibrary.targets'))" />
+    <Error Condition="!Exists('packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets'))" />
   </Target>
   <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0029\build\nanoFramework.Tools.MSBuildSystem.targets" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0029\build\nanoFramework.Tools.MSBuildSystem.targets')" />
   <Import Project="packages\nanoFramework.CoreLibrary.1.0.0-preview011\build\nanoFramework.CoreLibrary.targets" Condition="Exists('packages\nanoFramework.CoreLibrary.1.0.0-preview011\build\nanoFramework.CoreLibrary.targets')" />
+  <Import Project="packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets" Condition="Exists('packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets')" />
 </Project>
