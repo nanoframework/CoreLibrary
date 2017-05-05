@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLibrary", "CoreLibrary.csproj", "{5228FA24-C912-44F0-96E4-F8CAB9307265}"
 EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "nanoFramework.CoreLibrary", "Nuget.CoreLibrary\nanoFramework.CoreLibrary.nuproj", "{96EABA11-6A33-454D-A7B2-B96CA5617E8C}"
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "nanoFramework.CoreLibrary", "Nuget.CoreLibrary\nanoFramework.CoreLibrary.nuproj", "{96EABA11-6A33-454D-A7B2-B96CA5617E8C}"
 EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "nanoFramework.CoreLibrary.DELIVERABLES", "Nuget.CoreLibrary.DELIVERABLES\nanoFramework.CoreLibrary.DELIVERABLES.nuproj", "{8FD36AD6-387C-48F0-A695-52D9149216FB}"
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "nanoFramework.CoreLibrary.DELIVERABLES", "Nuget.CoreLibrary.DELIVERABLES\nanoFramework.CoreLibrary.DELIVERABLES.nuproj", "{8FD36AD6-387C-48F0-A695-52D9149216FB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FB18B7BF-534A-4539-8D12-8379BED2A358}"
 	ProjectSection(SolutionItems) = preProject

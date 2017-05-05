@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows.Devices.Gpio", "Windows.Devices.Gpio.csproj", "{D160797C-52FF-4136-93E1-DA1106B8AE4A}"
 EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Nuget.Windows.Devices.Gpio", "Nuget.Windows.Devices.Gpio\Nuget.Windows.Devices.Gpio.nuproj", "{96EABA11-6A33-454D-A7B2-B96CA5617E8C}"
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Nuget.Windows.Devices.Gpio", "Nuget.Windows.Devices.Gpio\Nuget.Windows.Devices.Gpio.nuproj", "{96EABA11-6A33-454D-A7B2-B96CA5617E8C}"
 EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Nuget.Windows.Devices.Gpio.DELIVERABLES", "Nuget.Windows.Devices.Gpio.DELIVERABLES\Nuget.Windows.Devices.Gpio.DELIVERABLES.nuproj", "{8FD36AD6-387C-48F0-A695-52D9149216FB}"
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Nuget.Windows.Devices.Gpio.DELIVERABLES", "Nuget.Windows.Devices.Gpio.DELIVERABLES\Nuget.Windows.Devices.Gpio.DELIVERABLES.nuproj", "{8FD36AD6-387C-48F0-A695-52D9149216FB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E5DC0609-D746-4BBC-A4EB-01D2284D35F9}"
 	ProjectSection(SolutionItems) = preProject
