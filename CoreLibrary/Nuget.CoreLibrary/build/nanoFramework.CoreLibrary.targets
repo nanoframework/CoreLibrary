@@ -13,13 +13,14 @@
     <Delete Condition="Exists('$(ProjectDir)$(OutDir)mscorlib.dll')" Files="$(ProjectDir)$(OutDir)mscorlib.dll" />
     <Delete Condition="Exists('$(ProjectDir)$(OutDir)mscorlib.pe')" Files="$(ProjectDir)$(OutDir)mscorlib.pe" />
     <Delete Condition="Exists('$(ProjectDir)$(OutDir)mscorlib.pdbx')" Files="$(ProjectDir)$(OutDir)mscorlib.pdbx" />
+    <Delete Condition="Exists('$(ProjectDir)$(OutDir)mscorlib.pdb')" Files="$(ProjectDir)$(OutDir)mscorlib.pdb" />
   </Target>
 
   <ItemGroup >
     <NFMDP_PE_LoadHints Include="$(MSBuildThisFileDirectory)mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
-  
+
     <!--<NFMDP_STUB_Load Include="$(MSBuildThisFileDirectory)mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_STUB_Load>-->
