@@ -9,11 +9,11 @@ namespace System
     using System;
     using System.Runtime.CompilerServices;
 
-    /**
-     * A place holder class for boolean.
-     * @author Jay Roxe (jroxe)
-     * @version
-     */
+    //
+    // A place holder class for boolean.
+    // @author Jay Roxe (jroxe)
+    // @version
+   ///
     [Serializable]
     public struct Boolean
     {

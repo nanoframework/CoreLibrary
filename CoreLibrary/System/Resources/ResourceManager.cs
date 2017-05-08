@@ -53,7 +53,7 @@ namespace System.Resources
 
         internal ResourceManager(string baseName, string cultureName, int iResourceFileId, Assembly assemblyBase, Assembly assemblyResource)
         {
-            //found resource
+          //found resource
             this.m_baseAssembly = assemblyBase;
             this.m_assembly = assemblyResource;
             this.m_baseName = baseName;
@@ -103,7 +103,7 @@ namespace System.Resources
                     assemblyName = assemblyName + s_resourcesExtension;
                 }
 
-                // append version
+              // append version
                 if (splitName.Length >= 1 && splitName[1] != null)
                 {
                     assemblyName += ", " + splitName[1].Trim();
@@ -152,7 +152,7 @@ namespace System.Resources
 
                 if (iResourceFileId >= 0)
                 {
-                    //found resource
+                  //found resource
                     this.m_baseAssembly = assemblyBase;
                     this.m_assembly = assemblyResource;
                     this.m_baseName = baseName;

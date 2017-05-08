@@ -173,15 +173,15 @@ namespace System
         //     The string representation of the value of this instance.        
         public override String ToString()
         {
-            if(IsPositiveInfinity(this))
+            if (IsPositiveInfinity(this))
             {
                 return "Infinity";
             }
-            else if(IsNegativeInfinity(this))
+            else if (IsNegativeInfinity(this))
             {
                 return "-Infinity";
             }
-            else if(IsNaN(this))
+            else if (IsNaN(this))
             {
                 return "NaN";
             }
@@ -294,6 +294,6 @@ namespace System
         //   System.ArgumentException:
         //     style is not a System.Globalization.NumberStyles value. -or-style includes
         //     the System.Globalization.NumberStyles.AllowHexSpecifier value.
-//        public static bool TryParse(string s, NumberStyles style, IFormatProvider provider, out double result);
+        //        public static bool TryParse(string s, NumberStyles style, IFormatProvider provider, out double result);
     }
 }

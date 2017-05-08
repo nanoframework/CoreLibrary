@@ -10,9 +10,9 @@ namespace System
     using System.Runtime.CompilerServices;
     using System.Globalization;
 
-    /**
-     * Wrapper for unsigned 64 bit integers.
-     */
+    //
+    // Wrapper for unsigned 64 bit integers.
+    //
     [Serializable, CLSCompliant(false)]
     public struct UInt64
     {

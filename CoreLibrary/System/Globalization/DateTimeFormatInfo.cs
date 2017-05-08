@@ -149,10 +149,10 @@ namespace System.Globalization
         }
 
         /*=================================GeneralLongTimePattern=====================
-        **Property: Return the pattern for 'g' general format: shortDate + Long time
-        **Note: This is used by DateTimeFormat.cs to get the pattern for 'g'
-        **      We put this internal property here so that we can avoid doing the
-        **      concatation every time somebody asks for the general format.
+      //*Property: Return the pattern for 'g' general format: shortDate + Long time
+      //*Note: This is used by DateTimeFormat.cs to get the pattern for 'g'
+      //*      We put this internal property here so that we can avoid doing the
+      //*      concatation every time somebody asks for the general format.
         ==============================================================================*/
         internal String GeneralLongTimePattern
         {

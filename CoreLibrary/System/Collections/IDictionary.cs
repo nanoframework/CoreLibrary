@@ -20,7 +20,7 @@ namespace System.Collections
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        object this[object key]{ get; set; }
+        object this[object key] { get; set; }
 
         /// <summary>
         /// Adds a key/value pair to the dictionary.  The exact position in the dictionary is
@@ -28,6 +28,7 @@ namespace System.Collections
         /// This position may be different if a different hash function is used.
         /// </summary>
         /// <param name="key"></param>
+        /// <param name="value"></param>
         void Add(object key, object value);
 
         /// <summary>

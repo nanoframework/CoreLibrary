@@ -185,7 +185,7 @@ namespace System
 
         public static int IndexOf(Array array, Object value, int startIndex, int count)
         {
-            // Try calling a quick native method to handle primitive types.
+          // Try calling a quick native method to handle primitive types.
             int retVal;
 
             if (TrySZIndexOf(array, startIndex, count, value, out retVal))
@@ -208,9 +208,9 @@ namespace System
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         private static extern bool TrySZIndexOf(Array sourceArray, int sourceIndex, int count, Object value, out int retVal);
 
-        // This is the underlying Enumerator for all of our array-based data structures (Array, ArrayList, Stack, and Queue)
-        // It supports enumerating over an array, a part of an array, and also will wrap around when the endIndex
-        // specified is larger than the size of the array (to support Queue's internal circular array)
+      // This is the underlying Enumerator for all of our array-based data structures (Array, ArrayList, Stack, and Queue)
+      // It supports enumerating over an array, a part of an array, and also will wrap around when the endIndex
+      // specified is larger than the size of the array (to support Queue's internal circular array)
         internal class SZArrayEnumerator : IEnumerator
         {
             private Array _array;
@@ -228,17 +228,17 @@ namespace System
                 _index = -1;
             }
 
-            // By specifying the startIndex and endIndex, the enumerator will enumerate
-            // only a subset of the array. Note that startIndex is inclusive, while
-            // endIndex is NOT inclusive.
-            // For example, if array is of size 5,
-            // new SZArrayEnumerator(array, 0, 3) will enumerate through
-            // array[0], array[1], array[2]
-            //
-            // This also supports an array acting as a circular data structure.
-            // For example, if array is of size 5,
-            // new SZArrayEnumerator(array, 4, 7) will enumerate through
-            // array[4], array[0], array[1]
+          // By specifying the startIndex and endIndex, the enumerator will enumerate
+          // only a subset of the array. Note that startIndex is inclusive, while
+          // endIndex is NOT inclusive.
+          // For example, if array is of size 5,
+          // new SZArrayEnumerator(array, 0, 3) will enumerate through
+          // array[0], array[1], array[2]
+          //
+          // This also supports an array acting as a circular data structure.
+          // For example, if array is of size 5,
+          // new SZArrayEnumerator(array, 4, 7) will enumerate through
+          // array[4], array[0], array[1]
             internal SZArrayEnumerator(Array array, int startIndex, int endIndex)
             {
                 _array = array;

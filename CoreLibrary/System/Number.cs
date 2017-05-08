@@ -286,8 +286,8 @@ namespace System
             ValidateFormat(format, out formatCh, out precision);
 
             String result = FormatNative(value, formatCh, precision);
-			// TODO: fix the FormatNative() method then remove the following line. See https://github.com/nanoframework/nf-interpreter/issues/285
-			if (result.Length == 0) return string.Empty;
+            // TODO: fix the FormatNative() method then remove the following line. See https://github.com/nanoframework/nf-interpreter/issues/285
+            if (result.Length == 0) return string.Empty;
 
             if (isInteger)
             {
@@ -373,7 +373,7 @@ namespace System
                     {
                         int len = result.Length;
 
-                        if(value is sbyte || value is byte)
+                        if (value is sbyte || value is byte)
                         {
                             if (len > 2)
                             {
@@ -389,7 +389,7 @@ namespace System
                         }
                     }
                     break;
-                
+
                 case 'N':
                     // InsertGroupSeparators, AppendTrailingZeros, ReplaceNegativeSign
                     result = InsertGroupSeparators(result, info);

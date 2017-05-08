@@ -10,9 +10,9 @@ namespace System
     using System.Runtime.CompilerServices;
     using System.Globalization;
 
-    /**
-     * * Wrapper for unsigned 32 bit integers.
-     */
+    //
+    // Wrapper for unsigned 32 bit integers.
+    //
     [Serializable, CLSCompliant(false)]
     public struct UInt32
     {

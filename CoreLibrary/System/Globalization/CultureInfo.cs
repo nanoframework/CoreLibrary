@@ -60,7 +60,7 @@ namespace System.Globalization
         {
             get
             {
-                //only one system-wide culture.  We do not currently support per-thread cultures
+              //only one system-wide culture.  We do not currently support per-thread cultures
                 CultureInfo culture = CurrentUICultureInternal;
                 if (culture == null)
                 {
@@ -114,14 +114,14 @@ namespace System.Globalization
         public static CultureInfo[] GetCultures(CultureTypes types)
         {
             ArrayList listCultures = new ArrayList();
-            //Look for all assemblies/satellite assemblies
+          //Look for all assemblies/satellite assemblies
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             for (int iAssembly = 0; iAssembly < assemblies.Length; iAssembly++)
             {
                 Assembly assembly = assemblies[iAssembly];
                 string mscorlib = "mscorlib";
                 string fullName = assembly.FullName;
-                // consider adding startswith ?
+              // consider adding startswith ?
                 if ((mscorlib.Length <= fullName.Length) && (fullName.Substring(0, mscorlib.Length) == mscorlib))
                 {
                     string[] resources = assembly.GetManifestResourceNames();
@@ -131,15 +131,15 @@ namespace System.Globalization
                         string ciResource = c_ResourceBase;
                         if (ciResource.Length < resource.Length && resource.Substring(0, ciResource.Length) == ciResource)
                         {
-                            //System.Globalization.Resources.CultureInfo.<culture>.tinyresources
+                          //System.Globalization.Resources.CultureInfo.<culture>.tinyresources
                             string cultureName = resource.Substring(ciResource.Length, resource.Length - ciResource.Length - System.Resources.ResourceManager.s_fileExtension.Length);
-                            // remove the leading "."
+                          // remove the leading "."
                             if (cultureName != "")
                             {
                                 cultureName = cultureName.Substring(1, cultureName.Length - 1);
                             }
 
-                            // if GetManifestResourceNames() changes, we need to change this code to ensure the index is the same.
+                          // if GetManifestResourceNames() changes, we need to change this code to ensure the index is the same.
                             listCultures.Add(new CultureInfo(new ResourceManager(c_ResourceBase, cultureName, iResource, typeof(CultureInfo).Assembly, assembly)));
                         }
                     }
@@ -197,7 +197,7 @@ namespace System.Globalization
 //                    types |= CultureTypes.WindowsOnlyCultures | CultureTypes.InstalledWin32Cultures; // Synthetic is installed culture too.
 //                else
 //                {
-//                    // Not Synthetic
+//                  // Not Synthetic
 //                    if (CultureTable.IsInstalledLCID(cultureID)) 
 //                        types |= CultureTypes.InstalledWin32Cultures;
                         

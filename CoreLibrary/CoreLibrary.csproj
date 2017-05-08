@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0031\build\nanoFramework.Tools.MSBuildSystem.props" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0031\build\nanoFramework.Tools.MSBuildSystem.props')" />
+  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0034\build\nanoFramework.Tools.MSBuildSystem.props" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0034\build\nanoFramework.Tools.MSBuildSystem.props')" />
   <PropertyGroup>
     <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
   </PropertyGroup>
@@ -43,6 +43,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\mscorlib.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,6 +53,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\mscorlib.xml</DocumentationFile>
+    <NoWarn>,0169,0649,0659,0660,0661,3001,1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -73,7 +76,6 @@
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
     <NFMDP_STUB_GenerateSkeletonFile>Stubs\corlib_native</NFMDP_STUB_GenerateSkeletonFile>
     <NFMDP_STUB_GenerateSkeletonProject>CorLib</NFMDP_STUB_GenerateSkeletonProject>
-    <NFMDP_STUB_LegacySkeletonInterop>true</NFMDP_STUB_LegacySkeletonInterop>
     <NFMDP_CMD_LINE_OUTPUT>false</NFMDP_CMD_LINE_OUTPUT>
   </PropertyGroup>
   <ItemGroup>
@@ -431,9 +433,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets'))" />
-    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0031\build\nanoFramework.Tools.MSBuildSystem.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0031\build\nanoFramework.Tools.MSBuildSystem.props'))" />
-    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0031\build\nanoFramework.Tools.MSBuildSystem.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0031\build\nanoFramework.Tools.MSBuildSystem.targets'))" />
+    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0034\build\nanoFramework.Tools.MSBuildSystem.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0034\build\nanoFramework.Tools.MSBuildSystem.props'))" />
+    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0034\build\nanoFramework.Tools.MSBuildSystem.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0034\build\nanoFramework.Tools.MSBuildSystem.targets'))" />
   </Target>
   <Import Project="packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets" Condition="Exists('packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets')" />
-  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0031\build\nanoFramework.Tools.MSBuildSystem.targets" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0031\build\nanoFramework.Tools.MSBuildSystem.targets')" />
+  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0034\build\nanoFramework.Tools.MSBuildSystem.targets" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0034\build\nanoFramework.Tools.MSBuildSystem.targets')" />
 </Project>

@@ -15,7 +15,7 @@ namespace System.Reflection
     {
         private Assembly _assembly;
 
-        //--//
+      //--//
 
         internal AssemblyName(Assembly assm)
         {
@@ -115,7 +115,7 @@ namespace System.Reflection
             if (assm == null)
             {
                 throw new ArgumentException();
-                // FIXME -- throw new FileNotFoundException();
+              // FIXME -- throw new FileNotFoundException();
             }
 
             return assm;
@@ -133,37 +133,37 @@ namespace System.Reflection
 
         internal static string ParseAssemblyName(String assemblyString, ref bool fVersion, ref int[] ver)
         {
-            // valid names are in the forms:
-            // 1) "Microsoft.SPOT.Native" or
-            // 2) "Microsoft.SPOT.Native, Version=1.2.3.4" or
-            // 3) "Microsoft.SPOT.Native.resources, Version=1.2.3.4" or
-            // 4) "Microsoft.SPOT.Native.tinyresources, Version=1.2.3.4"
-            // 5) (FROM THE DEBUGGER) "Microsoft.SPOT.Native, Version=1.2.3.4, Culture=neutral, PublicKeyToken=null[, ...]
+          // valid names are in the forms:
+          // 1) "Microsoft.SPOT.Native" or
+          // 2) "Microsoft.SPOT.Native, Version=1.2.3.4" or
+          // 3) "Microsoft.SPOT.Native.resources, Version=1.2.3.4" or
+          // 4) "Microsoft.SPOT.Native.tinyresources, Version=1.2.3.4"
+          // 5) (FROM THE DEBUGGER) "Microsoft.SPOT.Native, Version=1.2.3.4, Culture=neutral, PublicKeyToken=null[, ...]
 
             int versionIdx, commaIdx;
             string name;
 
             fVersion = false;
 
-            // if there is no comma then we have an assembly name in the form with no version
+          // if there is no comma then we have an assembly name in the form with no version
             if ((commaIdx = assemblyString.IndexOf(',')) != -1)
             {
                 name = assemblyString.Substring(0, commaIdx);
 
                 const string c_versionTag = "version=";
 
-                // verify that the format with the version is correct and skip the ", Version=" part of the string
+              // verify that the format with the version is correct and skip the ", Version=" part of the string
                 if ((versionIdx = assemblyString.ToLower().IndexOf(c_versionTag)) != 0)
                 {
                     fVersion = true;
 
-                    // the "version=" string must come right after the ' ,'
+                  // the "version=" string must come right after the ' ,'
                     if (versionIdx == commaIdx + 2)
                     {
                         int startIdx = versionIdx + c_versionTag.Length;
                         int endIdx;
                         
-                        // trim off the Culture, PublicKeyToken, etc for now
+                      // trim off the Culture, PublicKeyToken, etc for now
                         if(-1 != (endIdx = assemblyString.IndexOf(',', startIdx)))
                         {
                             assemblyString = assemblyString.Substring(startIdx, endIdx - startIdx);
@@ -173,12 +173,12 @@ namespace System.Reflection
                             assemblyString = assemblyString.Substring(startIdx);
                         }
 
-                        // at this point we have assemblyString = "1.2.3.4"
+                      // at this point we have assemblyString = "1.2.3.4"
                         string[] version = assemblyString.Split('.');
 
                         if (version.Length > 0) ver[0] = UInt16.Parse(version[0]);
                         if (version.Length > 1) ver[1] = UInt16.Parse(version[1]);
-                        // build and revision versions may be -1 (which means "don't care")
+                      // build and revision versions may be -1 (which means "don't care")
                         if (version.Length > 2) ver[2] = int.Parse(version[2]);
                         if (version.Length > 3) ver[3] = int.Parse(version[3]);
                     }
@@ -213,7 +213,7 @@ namespace System.Reflection
             {
                 if (fThrowOnError)
                 {
-                    // FIXME -- should be FileNotFoundException, per spec.
+                  // FIXME -- should be FileNotFoundException, per spec.
                     throw new ArgumentException();
                 }
             }

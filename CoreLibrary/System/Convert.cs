@@ -37,7 +37,7 @@ namespace System
         [CLSCompliant(false)]
         public static ushort ToUInt16(string value)
         {
-            return (ushort)ToInt64(value, false, UInt16.MinValue, UInt16.MaxValue);;
+            return (ushort)ToInt64(value, false, UInt16.MinValue, UInt16.MaxValue); ;
         }
 
         public static int ToInt32(string value)
@@ -79,7 +79,7 @@ namespace System
 
             // Trim hex sentinal if present 
             int len = hexDigit.Length;
-            int i   = (len >= 2 && hexDigit[0] == '0' && hexDigit[1] == 'X') ? 2 : 0;
+            int i = (len >= 2 && hexDigit[0] == '0' && hexDigit[1] == 'X') ? 2 : 0;
 
             // 8 hex chars == 4 bytes == sizeof(Int32)
             if ((len - i) > 8) throw new ArgumentException();
@@ -157,22 +157,22 @@ namespace System
 
             s = s.Trim(' ').ToLower();
 
-            if(s.Length == 0) return 0;
+            if (s.Length == 0) return 0;
 
             int decimalpoint = s.IndexOf('.');
-            int exp          = s.IndexOf('e');
-            
+            int exp = s.IndexOf('e');
+
             if (exp != -1 && decimalpoint > exp)
                 throw new Exception();
 
-            char [] chars           = s.ToCharArray();
-            int     len             = chars.Length;
-            double  power           = 0;
-            double  rightDecimal    = 0;
-            int     decLeadingZeros = 0;
-            double  leftDecimal     = 0;
-            int     leftDecLen      = 0;
-            bool    isNeg           = chars[0] == '-';
+            char[] chars = s.ToCharArray();
+            int len = chars.Length;
+            double power = 0;
+            double rightDecimal = 0;
+            int decLeadingZeros = 0;
+            double leftDecimal = 0;
+            int leftDecLen = 0;
+            bool isNeg = chars[0] == '-';
 
             // convert the exponential portion to a number            
             if (exp != -1 && exp + 1 < len - 1)
@@ -205,10 +205,10 @@ namespace System
             if (decimalpoint != 0)
             {
                 int leadingZeros;
-                
-                     if (decimalpoint == -1 && exp == -1) leftDecLen = len;
-                else if (decimalpoint != -1)              leftDecLen = decimalpoint;
-                else                                      leftDecLen = exp;
+
+                if (decimalpoint == -1 && exp == -1) leftDecLen = len;
+                else if (decimalpoint != -1) leftDecLen = decimalpoint;
+                else leftDecLen = exp;
 
                 leftDecimal = GetDoubleNumber(chars, 0, leftDecLen, out leadingZeros);
                 // subtract leading zeros from integer length
@@ -229,28 +229,28 @@ namespace System
             }
 
             // lets normalize the integer portion first
-            while(leftDecLen > 1)
+            while (leftDecLen > 1)
             {
-                switch(leftDecLen)
+                switch (leftDecLen)
                 {
                     case 2:
-                        value      /= 10.0;
-                        power      += 1;
+                        value /= 10.0;
+                        power += 1;
                         leftDecLen -= 1;
                         break;
                     case 3:
-                        value      /= 100.0;
-                        power      += 2;
+                        value /= 100.0;
+                        power += 2;
                         leftDecLen -= 2;
-                        break;                    
+                        break;
                     case 4:
-                        value      /= 1000.0;
-                        power      += 3;
+                        value /= 1000.0;
+                        power += 3;
                         leftDecLen -= 3;
                         break;
                     default:
-                        value      /= 10000.0;
-                        power      += 4;
+                        value /= 10000.0;
+                        power += 4;
                         leftDecLen -= 4;
                         break;
                 }
@@ -262,28 +262,28 @@ namespace System
                 // for normalization we want x.xxx instead of 0.xxx
                 decLeadingZeros++;
 
-                while(decLeadingZeros > 0)
+                while (decLeadingZeros > 0)
                 {
                     switch (decLeadingZeros)
                     {
                         case 1:
-                            value           *= 10.0;
-                            power           -= 1;
+                            value *= 10.0;
+                            power -= 1;
                             decLeadingZeros -= 1;
                             break;
                         case 2:
-                            value           *= 100.0;
-                            power           -= 2;
+                            value *= 100.0;
+                            power -= 2;
                             decLeadingZeros -= 2;
                             break;
                         case 3:
-                            value           *= 1000.0;
-                            power           -= 3;
+                            value *= 1000.0;
+                            power -= 3;
                             decLeadingZeros -= 3;
                             break;
                         default:
-                            value           *= 10000.0;
-                            power           -= 4;
+                            value *= 10000.0;
+                            power -= 4;
                             decLeadingZeros -= 4;
                             break;
                     }
@@ -306,7 +306,7 @@ namespace System
                 throw new Exception();
             }
 
-            if(isNeg && value > 0)
+            if (isNeg && value > 0)
             {
                 value = -value;
 
@@ -324,11 +324,11 @@ namespace System
 
             value = value.Trim(' ');
 
-            char[] num    = value.ToCharArray();
-            int    len    = num.Length;
-            ulong  result = 0;
-            int    index  = 0;
-            bool   isNeg  = false;
+            char[] num = value.ToCharArray();
+            int len = num.Length;
+            ulong result = 0;
+            int index = 0;
+            bool isNeg = false;
 
             // check the sign
             if (num[0] == '-')
@@ -340,14 +340,14 @@ namespace System
             {
                 index = 1;
             }
-            
+
             for (int i = index; i < len; i++)
             {
                 ulong digit;
                 char c = num[i];
 
                 // switch statement is faster than subtracting '0'
-                switch(c)
+                switch (c)
                 {
                     case '0':
                         digit = 0;
@@ -385,7 +385,7 @@ namespace System
 
                 // check for overflow - any number greater than this number will cause an overflow
                 // when multiplied by 10
-                if(( signed && result > 0x0CCCCCCCCCCCCCCC) || 
+                if ((signed && result > 0x0CCCCCCCCCCCCCCC) ||
                    (!signed && result > 0x1999999999999999))
                 {
                     throw new Exception();
@@ -404,7 +404,7 @@ namespace System
                 res = -(long)result;
 
                 // if the result is not negative, we had an overflow
-                if(res > 0) throw new Exception();
+                if (res > 0) throw new Exception();
             }
             else
             {
@@ -412,7 +412,7 @@ namespace System
 
                 // if the result is negative and we are not converting a
                 // UInt64, we had an overflow
-                if(max != 0 && res < 0) throw new Exception();
+                if (max != 0 && res < 0) throw new Exception();
             }
 
             // final check for max/min
@@ -424,32 +424,32 @@ namespace System
         private static double GetDoubleNumber(char[] chars, int start, int length, out int numLeadingZeros)
         {
             double number = 0;
-            bool   isNeg  = false;
-            int    end    = start + length;
+            bool isNeg = false;
+            int end = start + length;
 
             numLeadingZeros = 0;
 
-            if(chars[start] == '-')
+            if (chars[start] == '-')
             {
-                isNeg      = true;
+                isNeg = true;
                 start++;
             }
-            else if(chars[start] == '+')
+            else if (chars[start] == '+')
             {
                 start++;
             }
 
             for (int i = start; i < end; i++)
             {
-                int  digit;
+                int digit;
                 char c = chars[i];
 
                 // switch statement is faster than subtracting '0'                
-                switch(c)
+                switch (c)
                 {
                     case '0':
                         // update the number of leading zeros (used for normalizing)
-                        if((numLeadingZeros + start) == i)
+                        if ((numLeadingZeros + start) == i)
                         {
                             numLeadingZeros++;
                         }
@@ -520,8 +520,8 @@ namespace System
 
         static byte[] s_rgbBase64Decode = new byte[]
         {
-            // Note we also accept ! and + interchangably.
-            // Note we also accept * and / interchangably.
+          // Note we also accept ! and + interchangably.
+          // Note we also accept * and / interchangably.
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, /*   0 -   7 */
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, /*   8 -  15 */
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, /*  16 -  23 */
@@ -572,21 +572,22 @@ namespace System
                 throw new ArgumentNullException();
             }
 
-            if(length == 0) return "";
+            if (length == 0) return "";
 
-            if(offset + length > inArray.Length) throw new ArgumentOutOfRangeException();
+            if (offset + length > inArray.Length) throw new ArgumentOutOfRangeException();
 
             // Create array of characters with appropriate length.
             int inArrayLen = length;
             int outArrayLen = GetBase64EncodedLength(inArrayLen);
             char[] outArray = new char[outArrayLen];
 
-            /* encoding starts from end of string */
+            // encoding starts from end of string
 
-            /*
-            ** Convert the input buffer bytes through the encoding table and
-            ** out into the output buffer.
-            */
+
+            //
+            // Convert the input buffer bytes through the encoding table and
+            // out into the output buffer.
+            //
             int iInputEnd = offset + (outArrayLen / CCH_B64_IN_QUARTET - 1) * CB_B64_OUT_TRIO;
             int iInput = offset, iOutput = 0;
             byte uc0 = 0, uc1 = 0, uc2 = 0;
@@ -616,15 +617,15 @@ namespace System
 
             switch (inArrayLen % CB_B64_OUT_TRIO)
             {
-                /*
-                ** One byte out of three, add padding and fall through
-                */
+                //
+                // One byte out of three, add padding and fall through
+                //
                 case 1:
                     outArray[outArrayLen - 2] = '=';
                     goto case 2;
-                /*
-                ** Two bytes out of three, add padding.
-                */
+                //
+                // Two bytes out of three, add padding.
+                //
                 case 2:
                     outArray[outArrayLen - 1] = '=';
                     break;
@@ -652,14 +653,14 @@ namespace System
                 throw new ArgumentNullException();
             }
 
-            char []chArray = inString.ToCharArray();
-            
+            char[] chArray = inString.ToCharArray();
+
             return FromBase64CharArray(chArray, 0, chArray.Length);
         }
 
         public static byte[] FromBase64CharArray(char[] inString, int offset, int length)
         {
-            if(length == 0) return new byte[0];
+            if (length == 0) return new byte[0];
 
             // Checks that length of string is multiple of 4
             int inLength = length;

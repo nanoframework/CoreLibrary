@@ -13,21 +13,21 @@ namespace System
     [Serializable]
     public struct Char
     {
-        //
-        // Member Variables
-        //
+      //
+      // Member Variables
+      //
         internal char m_value;
 
-        //
-        // Public Constants
-        //
-        /**
-         * The maximum character value.
-         */
+      //
+      // Public Constants
+      //
+      //
+      // The maximum character value.
+       ///
         public const char MaxValue = (char)0xFFFF;
-        /**
-         * The minimum character value.
-         */
+      //
+      // The minimum character value.
+       ///
         public const char MinValue = (char)0x00;
 
         public override String ToString()

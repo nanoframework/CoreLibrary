@@ -33,18 +33,18 @@ namespace System.Text
     // switch the byte orderings.
     public class UTF8Encoding : Encoding
     {
-        /*
-            bytes   bits    UTF-8 representation
-            -----   ----    -----------------------------------
-            1        7      0vvvvvvv
-            2       11      110vvvvv 10vvvvvv
-            3       16      1110vvvv 10vvvvvv 10vvvvvv
-            4       21      11110vvv 10vvvvvv 10vvvvvv 10vvvvvv
-            -----   ----    -----------------------------------
+        
+        //bytes   bits    UTF-8 representation
+        //-----   ----    -----------------------------------
+        //1        7      0vvvvvvv
+        //2       11      110vvvvv 10vvvvvv
+        //3       16      1110vvvv 10vvvvvv 10vvvvvv
+        //4       21      11110vvv 10vvvvvv 10vvvvvv 10vvvvvv
+        //-----   ----    -----------------------------------
 
-            Surrogate:
-            Real Unicode value = (HighSurrogate - 0xD800) * 0x400 + (LowSurrogate - 0xDC00) + 0x10000
-         */
+        //Surrogate:
+        //Real Unicode value = (HighSurrogate - 0xD800) * 0x400 + (LowSurrogate - 0xDC00) + 0x10000
+
         public UTF8Encoding()
         {
         }

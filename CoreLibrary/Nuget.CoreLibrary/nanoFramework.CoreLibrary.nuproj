@@ -23,6 +23,9 @@
     <Content Include="..\obj\Release\mscorlib.pe">
       <Link>build\mscorlib.pe</Link>
     </Content>
+    <Content Include="..\bin\$(Configuration)\mscorlib.xml">
+      <Link>build\mscorlib.xml</Link>
+    </Content>
     <Content Include="build\nanoFramework.CoreLibrary.targets" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -34,7 +37,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.CoreLibrary</Id>
-    <Version>1.0.0-preview012</Version>
+    <Version>1.0.0-preview013</Version>
     <Title>nanoFramework.CoreLibrary</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>

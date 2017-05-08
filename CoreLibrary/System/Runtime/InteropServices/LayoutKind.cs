@@ -4,8 +4,8 @@
 namespace System.Runtime.InteropServices
 {
     using System;
-    /** Used in the StructLayoutAttribute class
-     **/
+    // Used in the StructLayoutAttribute class
+   //*/
     [Serializable()]
     public enum LayoutKind
     {

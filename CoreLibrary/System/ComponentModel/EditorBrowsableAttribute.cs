@@ -13,9 +13,9 @@ namespace System.ComponentModel
         Advanced
     }
 
-    /** Custom attribute to indicate that a specified object
-     * should be hidden from the editor. (i.e Intellisence filtering)
-     */
+    // Custom attribute to indicate that a specified object
+    // should be hidden from the editor. (i.e Intellisence filtering)
+   ///
     [AttributeUsageAttribute(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Interface | AttributeTargets.Delegate)]
     public sealed class EditorBrowsableAttribute : Attribute
     {

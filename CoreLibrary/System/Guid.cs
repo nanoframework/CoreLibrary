@@ -6,7 +6,7 @@ namespace System
     {
         internal int[] m_data;
 
-        
+
         private static Random m_rand = new Random();
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace System
         public static Guid NewGuid()
         {
             Guid newGuid = new Guid();
-            
+
             newGuid.m_data = new int[4];
 
             newGuid.m_data[0] = m_rand.Next();

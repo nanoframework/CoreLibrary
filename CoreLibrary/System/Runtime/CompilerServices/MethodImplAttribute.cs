@@ -6,9 +6,9 @@ namespace System.Runtime.CompilerServices
 
     using System;
 
-    /** This Enum matchs the miImpl flags defined in corhdr.h. It is used to specify
-     *  certain method properties.
-     */
+    // This Enum matchs the miImpl flags defined in corhdr.h. It is used to specify
+    //  certain method properties.
+   ///
 
     [Serializable]
     public enum MethodImplOptions
@@ -26,13 +26,13 @@ namespace System.Runtime.CompilerServices
     {
         IL = System.Reflection.MethodImplAttributes.IL,
         Native = System.Reflection.MethodImplAttributes.Native,
-        /// <internalonly/>
+      /// <internalonly/>
         OPTIL = System.Reflection.MethodImplAttributes.OPTIL,
         Runtime = System.Reflection.MethodImplAttributes.Runtime
     }
 
-    /** Custom attribute to specify additional method properties.
-     */
+    // Custom attribute to specify additional method properties.
+   ///
     [Serializable, AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor, Inherited = false)]
     sealed public class MethodImplAttribute : Attribute
     {

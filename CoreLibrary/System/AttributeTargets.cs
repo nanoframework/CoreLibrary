@@ -5,9 +5,9 @@ namespace System
 {
 
     using System;
-    /** Enum used to indicate all the elements of the
-     * VOS it is valid to attach this element to.
-     */
+    // Enum used to indicate all the elements of the
+    // VOS it is valid to attach this element to.
+   ///
     [Flags, Serializable]
     public enum AttributeTargets
     {

@@ -10,22 +10,22 @@ namespace System
     using System.Threading;
     using System.Collections;
     using System.Runtime.CompilerServices;
-    /**
-     * <p>The <code>String</code> class represents a static string of characters.  Many of
-     * the <code>String</code> methods perform some type of transformation on the current
-     * instance and return the result as a new <code>String</code>. All comparison methods are
-     * implemented as a part of <code>String</code>.</p>  As with arrays, character positions
-     * (indices) are zero-based.
-     *
-     * <p>When passing a null string into a constructor in VJ and VC, the null should be
-     * explicitly type cast to a <code>String</code>.</p>
-     * <p>For Example:<br>
-     * <pre>String s = new String((String)null);
-     * Text.Out.WriteLine(s);</pre></p>
-     *
-     * @author Jay Roxe (jroxe)
-     * @version
-     */
+    //
+    // <p>The <code>String</code> class represents a static string of characters.  Many of
+    // the <code>String</code> methods perform some type of transformation on the current
+    // instance and return the result as a new <code>String</code>. All comparison methods are
+    // implemented as a part of <code>String</code>.</p>  As with arrays, character positions
+    // (indices) are zero-based.
+    //
+    // <p>When passing a null string into a constructor in VJ and VC, the null should be
+    // explicitly type cast to a <code>String</code>.</p>
+    // <p>For Example:<br>
+    // <pre>String s = new String((String)null);
+    // Text.Out.WriteLine(s);</pre></p>
+    //
+    // @author Jay Roxe (jroxe)
+    // @version
+    ///
     [Serializable]
     public sealed class String : IComparable
     {

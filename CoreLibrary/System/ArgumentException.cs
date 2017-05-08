@@ -17,16 +17,16 @@ namespace System
     {
         private String m_paramName;
 
-        // Creates a new ArgumentException with its message
-        // string set to the empty string.
+      // Creates a new ArgumentException with its message
+      // string set to the empty string.
         public ArgumentException()
             : base()
         {
         }
 
-        // Creates a new ArgumentException with its message
-        // string set to message.
-        //
+      // Creates a new ArgumentException with its message
+      // string set to message.
+      //
         public ArgumentException(String message)
             : base(message)
         {

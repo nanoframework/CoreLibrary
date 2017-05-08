@@ -10,9 +10,9 @@ namespace System.Reflection
     abstract public class FieldInfo : MemberInfo
     {
 
-        /**
-         * The Member type Field.
-         */
+      //
+      // The Member type Field.
+       ///
         public override MemberTypes MemberType
         {
             get

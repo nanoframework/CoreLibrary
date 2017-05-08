@@ -18,13 +18,13 @@ namespace System
 
         internal static AttributeUsageAttribute Default = new AttributeUsageAttribute(AttributeTargets.All);
 
-        //Constructors
+      //Constructors
         public AttributeUsageAttribute(AttributeTargets validOn)
         {
             m_attributeTarget = validOn;
         }
 
-        //Properties
+      //Properties
         public AttributeTargets ValidOn
         {
             get { return m_attributeTarget; }

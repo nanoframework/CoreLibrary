@@ -31,28 +31,28 @@ namespace System
         Local = 2,
     }
 
-    /**
-     * This value type represents a date and time.  Every DateTime
-     * object has a private field (Ticks) of type Int64 that stores the
-     * date and time as the number of 100 nanosecond intervals since
-     * 12:00 AM January 1, year 1601 A.D. in the proleptic Gregorian Calendar.
-     *
-     * <p>For a description of various calendar issues, look at
-     * <a href="http://serendipity.nofadz.com/hermetic/cal_stud.htm">
-     * Calendar Studies web site</a>, at
-     * http://serendipity.nofadz.com/hermetic/cal_stud.htm.
-     *
-     * <p>
-     * <h2>Warning about 2 digit years</h2>
-     * <p>As a temporary hack until we get new DateTime &lt;-&gt; String code,
-     * some systems won't be able to round trip dates less than 1930.  This
-     * is because we're using OleAut's string parsing routines, which look
-     * at your computer's default short date string format, which uses 2 digit
-     * years on most computers.  To fix this, go to Control Panel -&gt; Regional
-     * Settings -&gt; Date and change the short date style to something like
-     * "M/d/yyyy" (specifying four digits for the year).
-     *
-     */
+    //
+    // This value type represents a date and time.  Every DateTime
+    // object has a private field (Ticks) of type Int64 that stores the
+    // date and time as the number of 100 nanosecond intervals since
+    // 12:00 AM January 1, year 1601 A.D. in the proleptic Gregorian Calendar.
+     //
+    // <p>For a description of various calendar issues, look at
+    // <a href="http://serendipity.nofadz.com/hermetic/cal_stud.htm">
+    // Calendar Studies web site</a>, at
+    // http://serendipity.nofadz.com/hermetic/cal_stud.htm.
+     //
+    // <p>
+    // <h2>Warning about 2 digit years</h2>
+    // <p>As a temporary hack until we get new DateTime &lt;-&gt; String code,
+    // some systems won't be able to round trip dates less than 1930.  This
+    // is because we're using OleAut's string parsing routines, which look
+    // at your computer's default short date string format, which uses 2 digit
+    // years on most computers.  To fix this, go to Control Panel -&gt; Regional
+    // Settings -&gt; Date and change the short date style to something like
+    // "M/d/yyyy" (specifying four digits for the year).
+     //
+     ///
     [Serializable()]
     public struct DateTime
     {

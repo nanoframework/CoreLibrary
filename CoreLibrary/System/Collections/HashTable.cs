@@ -24,36 +24,36 @@ namespace System.Collections
         const int _defaultCapacity = 4;
         const int _defaultLoadFactor = 2;
 
-        /// <summary>
-        /// Initializes a new, empty instance of the Hashtable class using the default initial capacity and load factor.
-        /// </summary>
+      /// <summary>
+      /// Initializes a new, empty instance of the Hashtable class using the default initial capacity and load factor.
+      /// </summary>
         public Hashtable()
         {
             InitializeHashTable(_defaultCapacity, _defaultLoadFactor);
         }
 
-        /// <summary>
-        /// Initializes a new, empty instance of the Hashtable class using the specified initial capacity, 
-        /// and the default load factor.
-        /// </summary>
-        /// <param name="capacity">The initial capacity of the HashTable</param>
+      /// <summary>
+      /// Initializes a new, empty instance of the Hashtable class using the specified initial capacity, 
+      /// and the default load factor.
+      /// </summary>
+      /// <param name="capacity">The initial capacity of the HashTable</param>
         public Hashtable(int capacity)
         {
             InitializeHashTable(capacity, _defaultLoadFactor);
         }
 
-        /// <summary>
-        /// Initializes a new, empty instance of the Hashtable class using the specified initial capacity, 
-        /// load factor.
-        /// </summary>
-        /// <param name="capacity">The initial capacity of the HashTable</param>
-        /// <param name="maxLoadFactor">The load factor to cause a rehash</param>
+      /// <summary>
+      /// Initializes a new, empty instance of the Hashtable class using the specified initial capacity, 
+      /// load factor.
+      /// </summary>
+      /// <param name="capacity">The initial capacity of the HashTable</param>
+      /// <param name="maxLoadFactor">The load factor to cause a rehash</param>
         public Hashtable(int capacity, int maxLoadFactor)
         {
             InitializeHashTable(capacity, maxLoadFactor);
         }
 
-        //initialize attributes
+      //initialize attributes
         private void InitializeHashTable(int capacity, int maxLoadFactor)
         {
             _buckets = new Entry[capacity];
@@ -62,29 +62,29 @@ namespace System.Collections
             _growthFactor = 2;
         }
 
-        /// <summary>
-        /// MaxLoadFactor Property is the value used to trigger a rehash.
-        /// Default value is 2.
-        /// A higher number can decrease lookup performance for large collections.
-        /// While a value of 1 maintains a constant time complexity at the cost of increased memory requirements.   
-        /// </summary>
+      /// <summary>
+      /// MaxLoadFactor Property is the value used to trigger a rehash.
+      /// Default value is 2.
+      /// A higher number can decrease lookup performance for large collections.
+      /// While a value of 1 maintains a constant time complexity at the cost of increased memory requirements.   
+      /// </summary>
         public int MaxLoadFactor
         {
             get { return _maxLoadFactor; }
             set { _maxLoadFactor = value; }
         }
 
-        /// <summary>
-        /// GrowthFactor Property is a multiplier to increase the HashTable size by during a rehash.
-        /// Default value is 2.
-        /// </summary>
+      /// <summary>
+      /// GrowthFactor Property is a multiplier to increase the HashTable size by during a rehash.
+      /// Default value is 2.
+      /// </summary>
         public double GrowthFactor
         {
             get { return _growthFactor; }
             set { _growthFactor = value; }
         }
 
-        //adding for internal purposes
+      //adding for internal purposes
         private void Add(ref Entry[] buckets, object key, object value, bool overwrite)
         {
             int whichBucket = Hash(key, _numberOfBuckets);
@@ -100,7 +100,7 @@ namespace System.Collections
                 throw new ArgumentException("key exists");
             }
             else
-            {            // insert at front
+            {          // insert at front
                 Entry newOne = new Entry(key, value, ref buckets[whichBucket]);
                 buckets[whichBucket] = newOne;
                 _count++;
@@ -109,7 +109,7 @@ namespace System.Collections
             _loadFactor = _count / _numberOfBuckets;
         }
 
-        // Hash function.
+      // Hash function.
         private int Hash(object key, int numOfBuckets)
         {
             int hashcode = key.GetHashCode();
@@ -120,7 +120,7 @@ namespace System.Collections
             return hashcode % numOfBuckets;
         }
 
-        //looks up value in bucket
+      //looks up value in bucket
         private Entry EntryForKey(object key, Entry head)
         {
             for (Entry cur = head; cur != null; cur = cur.next)
@@ -128,7 +128,7 @@ namespace System.Collections
             return null;
         }
 
-        //Rehashes the table to reduce the load factor
+      //Rehashes the table to reduce the load factor
         private void Rehash(int newSize)
         {
             Entry[] newTable = new Entry[newSize];
@@ -145,7 +145,7 @@ namespace System.Collections
             _buckets = newTable;
         }
 
-        //implementation for KeyCollection and ValueCollection copyTo method
+      //implementation for KeyCollection and ValueCollection copyTo method
         private void CopyToCollection(Array array, int index, EnumeratorType type)
         {
             if (index < 0 && index > _numberOfBuckets)
@@ -169,7 +169,7 @@ namespace System.Collections
         }
 
         #region ICloneable Members
-        //shallow copy
+      //shallow copy
         public object Clone()
         {
             Hashtable ht = new Hashtable();
@@ -310,11 +310,11 @@ namespace System.Collections
             int whichBucket = Hash(key, _numberOfBuckets);
             Entry match = EntryForKey(key, _buckets[whichBucket]);
 
-            //does entry exist?
+          //does entry exist?
             if (match == null)
                 return;
 
-            //is entry at front?
+          //is entry at front?
             if (_buckets[whichBucket] == match)
             {
                 _buckets[whichBucket] = match.next;
@@ -322,7 +322,7 @@ namespace System.Collections
                 return;
             }
 
-            //handle entry in middle and at the end
+          //handle entry in middle and at the end
             for (Entry cur = _buckets[whichBucket]; cur != null; cur = cur.next)
             {
                 if (cur.next == match)
@@ -363,7 +363,7 @@ namespace System.Collections
                 returnType = type;
             }
 
-            // Return the current item.
+          // Return the current item.
             public Object Current
             {
                 get 
@@ -386,11 +386,11 @@ namespace System.Collections
                 }
             }
 
-            // Advance to the next item.
+          // Advance to the next item.
             public Boolean MoveNext()
             {
                 startLoop:
-                //iterate index or list
+              //iterate index or list
                 if (temp == null)
                 {
                     index++;
@@ -402,30 +402,30 @@ namespace System.Collections
                 else
                     temp = temp.next;                    
 
-                //null check
+              //null check
                 if (temp == null)
                     goto startLoop;
                     
                 return true;
             }
 
-            // Reset the index to restart the enumeration.
+          // Reset the index to restart the enumeration.
             public void Reset()
             {
                 index = -1;
             }
         }
 
-        // EnumeratorType - Enum that describes which object the Enumerator's Current property will return.
+      // EnumeratorType - Enum that describes which object the Enumerator's Current property will return.
         private enum EnumeratorType
         {
-            // DictionaryEntry object. 
+          // DictionaryEntry object. 
             DE,
 
-            // Key object.
+          // Key object.
             KEY,
 
-            // Value object.
+          // Value object.
             VALUE
         }
 

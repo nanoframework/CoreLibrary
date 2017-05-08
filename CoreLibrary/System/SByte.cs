@@ -10,24 +10,24 @@ namespace System
     using System.Runtime.CompilerServices;
     using System.Globalization;
 
-    /**
-     * A place holder class for signed bytes.
-     * @author Jay Roxe (jroxe)
-     * @version
-     */
+    //
+    // A place holder class for signed bytes.
+    // @author Jay Roxe (jroxe)
+    // @version
+    ///
     [Serializable, CLSCompliant(false)]
     public struct SByte
     {
         private sbyte m_value;
 
-        /**
-         * The maximum value that a <code>Byte</code> may represent: 127.
-         */
+        //
+        // The maximum value that a <code>Byte</code> may represent: 127.
+        ///
         public const sbyte MaxValue = (sbyte)0x7F;
 
-        /**
-         * The minimum value that a <code>Byte</code> may represent: -128.
-         */
+        //
+        // The minimum value that a <code>Byte</code> may represent: -128.
+        ///
         public const sbyte MinValue = unchecked((sbyte)0x80);
 
         public override String ToString()

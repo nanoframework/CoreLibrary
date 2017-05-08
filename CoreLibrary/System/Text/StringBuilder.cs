@@ -1,5 +1,5 @@
 namespace System.Text
-{   
+{
     /// <summary>
     /// A Micro Framework port of the Full Framework StringBuilder. Contributed by Julius Friedman.
     /// </summary>
@@ -81,7 +81,7 @@ namespace System.Text
                 }
             }
         }
- 
+
         /// <summary>
         /// Gets or sets the maximum number of characters that can be contained in the memory allocated by the current instance. 
         /// </summary>
@@ -213,7 +213,7 @@ namespace System.Text
             //Set the length of the chunk
             this.m_ChunkLength = length;
             //Copy the value to the chunkChars
-            {                
+            {
                 value.ToCharArray().CopyTo(this.m_ChunkChars, 0);
             }
         }
@@ -345,13 +345,12 @@ namespace System.Text
             return this;
         }
 
-        /*
-         * netMF is missing the Decimal Type
-        public void Append(decimal value)
-        {
-            this.Append(value.ToString());
-        }
-        */
+        // netNF is missing the Decimal Type
+        //public void Append(decimal value)
+        //{
+        //    this.Append(value.ToString());
+        //}
+        //
 
         /// <summary>
         /// Appends the string representation of a specified double-precision floating-point number to this instance. 
@@ -434,9 +433,9 @@ namespace System.Text
                         if (length > 1) chunkChars[chunkLength + 1] = value[1];
                     }
                     else
-                    {                        
+                    {
                         char[] tmp = value.ToCharArray();
-                        System.Array.Copy(tmp, 0, chunkChars, chunkLength, length);                       
+                        System.Array.Copy(tmp, 0, chunkChars, chunkLength, length);
                     }
                     this.m_ChunkLength = num3;
                 }
@@ -565,14 +564,14 @@ namespace System.Text
             }
             if (charCount != 0)
             {
-                for(int i = startIndex; i < startIndex + charCount; ++i)
+                for (int i = startIndex; i < startIndex + charCount; ++i)
                 {
                     this.Append(value[i], 1);
                 }
             }
             return this;
         }
-        
+
         /// <summary>
         /// Appends a specified number of copies of the string representation of a Unicode character to this instance. 
         /// </summary>
@@ -717,7 +716,7 @@ namespace System.Text
                         if ((((charCount + num3)) > length) || ((charCount + index) > chunkChars.Length))
                         {
                             throw new ArgumentOutOfRangeException("chunkCount");
-                        }                       
+                        }
                         System.Array.Copy(chunkChars, index, result, 0, charCount);
                     }
                 }
@@ -757,7 +756,7 @@ namespace System.Text
                 char[] chars = value.ToCharArray();
                 int charLength = chars.Length;
                 while (count > 0)
-                {                    
+                {
                     int cindex = 0;
                     this.ReplaceInPlaceAtChunk(ref builder, ref num3, chars, ref cindex, charLength);
                     --count;
@@ -802,7 +801,7 @@ namespace System.Text
                 throw new ArgumentOutOfRangeException("startIndex");
             }
             if (charCount > 0)
-            {                
+            {
                 this.Insert(index, new string(value, startIndex, charCount), 1);
             }
             return this;
@@ -830,7 +829,7 @@ namespace System.Text
             }
             int num2 = startIndex + count;
             StringBuilder chunkPrevious = this;
-        Label_0048:
+            Label_0048:
             num3 = num2 - chunkPrevious.m_ChunkOffset;
             int num4 = startIndex - chunkPrevious.m_ChunkOffset;
             if (num3 >= 0)
@@ -904,7 +903,7 @@ namespace System.Text
             int indexInChunk = startIndex - chunk.m_ChunkOffset;
             //While there is a replacement remaining
             while (count > 0)
-            {                
+            {
                 //If the old value if found in the chunk at the index
                 if (this.StartsWith(chunk, indexInChunk, count, oldValue))
                 {
@@ -1047,7 +1046,7 @@ namespace System.Text
                 int index = 0;
                 int replacementIndex = 0;
                 char[] chars = value.ToCharArray();
-            ReplaceValue:
+                ReplaceValue:
                 //Replace the value                 
                 this.ReplaceInPlaceAtChunk(ref chunk, ref indexInChunk, chars, ref replacementIndex, value.Length);
                 if (replacementIndex == value.Length)
@@ -1168,7 +1167,7 @@ namespace System.Text
         }
 
         internal void AppendHelper(ref string value)
-        {            
+        {
             if (value == null || value == string.Empty) return;
             this.Append(value.ToCharArray(), value.Length);
         }
@@ -1182,7 +1181,7 @@ namespace System.Text
             this.m_ChunkLength = 0;
             //If Allocated does not match required storage
             if ((this.m_ChunkOffset + num) < num)
-            {                
+            {
                 this.m_ChunkChars = null;
                 throw new OutOfMemoryException();
             }

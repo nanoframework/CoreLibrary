@@ -146,30 +146,30 @@ namespace System
         //     negative, ? = p.  If y is positive and x is 0, ? = p/2.  If y is negative
         //     and x is 0, ? = -p/2.
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public static extern double Atan2(double y, double x);        //
-        // Summary:
-        //     Returns the smallest integer greater than or equal to the specified double-precision
-        //     floating-point number.
-        //
-        // Parameters:
-        //   a:
-        //     A double-precision floating-point number.
-        //
-        // Returns:
-        //     The smallest integer greater than or equal to a. If a is equal to System.Double.NaN,
-        //     System.Double.NegativeInfinity, or System.Double.PositiveInfinity, that value
-        //     is returned.
+        public static extern double Atan2(double y, double x);      //
+                                                                    // Summary:
+                                                                    //     Returns the smallest integer greater than or equal to the specified double-precision
+                                                                    //     floating-point number.
+                                                                    //
+                                                                    // Parameters:
+                                                                    //   a:
+                                                                    //     A double-precision floating-point number.
+                                                                    //
+                                                                    // Returns:
+                                                                    //     The smallest integer greater than or equal to a. If a is equal to System.Double.NaN,
+                                                                    //     System.Double.NegativeInfinity, or System.Double.PositiveInfinity, that value
+                                                                    //     is returned.
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public static extern double Ceiling(double d);        //
-        // Summary:
-        //     Returns the cosine of the specified angle.
-        //
-        // Parameters:
-        //   d:
-        //     An angle, measured in radians.
-        //
-        // Returns:
-        //     The cosine of d.
+        public static extern double Ceiling(double d);      //
+                                                            // Summary:
+                                                            //     Returns the cosine of the specified angle.
+                                                            //
+                                                            // Parameters:
+                                                            //   d:
+                                                            //     An angle, measured in radians.
+                                                            //
+                                                            // Returns:
+                                                            //     The cosine of d.
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern double Cos(double a);
         //
@@ -206,7 +206,7 @@ namespace System
         //     is returned.
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern double IEEERemainder(double x, double y);
-         //
+        //
         // Summary:
         //     Returns e raised to the specified power.
         //
@@ -235,7 +235,7 @@ namespace System
         //     is returned.
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern double Floor(double d);
-        
+
         //
         // Summary:
         //     Returns the natural (base e) logarithm of a specified number.
@@ -316,37 +316,37 @@ namespace System
         // Returns:
         //     The number x raised to the power y.
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public static extern double Pow(double x, double y);        //
-        // Summary:
-        //     Rounds a double-precision floating-point value to the nearest integer.
-        //
-        // Parameters:
-        //   a:
-        //     A double-precision floating-point number to be rounded.
-        //
-        // Returns:
-        //     The integer nearest a. If the fractional component of a is halfway between
-        //     two integers, one of which is even and the other odd, then the even number
-        //     is returned.
+        public static extern double Pow(double x, double y);      //
+                                                                  // Summary:
+                                                                  //     Rounds a double-precision floating-point value to the nearest integer.
+                                                                  //
+                                                                  // Parameters:
+                                                                  //   a:
+                                                                  //     A double-precision floating-point number to be rounded.
+                                                                  //
+                                                                  // Returns:
+                                                                  //     The integer nearest a. If the fractional component of a is halfway between
+                                                                  //     two integers, one of which is even and the other odd, then the even number
+                                                                  //     is returned.
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public static extern double Round(double d);        //
-        //
-        // Summary:
-        //     Returns a value indicating the sign of a double-precision floating-point
-        //     number.
-        //
-        // Parameters:
-        //   value:
-        //     A signed number.
-        //
-        // Returns:
-        //     A number indicating the sign of value.  Number Description -1 value is less
-        //     than zero. 0 value is equal to zero. 1 value is greater than zero.
-        //
-        // Exceptions:
-        //   System.ArithmeticException:
-        //     value is equal to System.Double.NaN.
-        //     is returned.
+        public static extern double Round(double d);      //
+                                                          //
+                                                          // Summary:
+                                                          //     Returns a value indicating the sign of a double-precision floating-point
+                                                          //     number.
+                                                          //
+                                                          // Parameters:
+                                                          //   value:
+                                                          //     A signed number.
+                                                          //
+                                                          // Returns:
+                                                          //     A number indicating the sign of value.  Number Description -1 value is less
+                                                          //     than zero. 0 value is equal to zero. 1 value is greater than zero.
+                                                          //
+                                                          // Exceptions:
+                                                          //   System.ArithmeticException:
+                                                          //     value is equal to System.Double.NaN.
+                                                          //     is returned.
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern int Sign(double value);
         // Summary:

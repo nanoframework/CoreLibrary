@@ -5,9 +5,9 @@ namespace System.Globalization
 {
 
     using System;
-    /**
-     * This class represents a starting/ending time for a period of daylight saving time.
-     */
+    //
+    // This class represents a starting/ending time for a period of daylight saving time.
+   ///
     [Serializable]
     public class DaylightTime
     {
@@ -26,9 +26,9 @@ namespace System.Globalization
             m_delta = delta;
         }
 
-        /**
-         * The start date of a daylight saving period.
-         */
+      //
+      // The start date of a daylight saving period.
+       ///
         public DateTime Start
         {
             get
@@ -37,9 +37,9 @@ namespace System.Globalization
             }
         }
 
-        /**
-         * The end date of a daylight saving period.
-         */
+      //
+      // The end date of a daylight saving period.
+       ///
         public DateTime End
         {
             get
@@ -48,9 +48,9 @@ namespace System.Globalization
             }
         }
 
-        /**
-         * Delta to stardard offset in ticks.
-         */
+      //
+      // Delta to stardard offset in ticks.
+       ///
         public TimeSpan Delta
         {
             get

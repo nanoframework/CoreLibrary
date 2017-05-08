@@ -16,7 +16,7 @@ namespace System.Collections
         private Object[] _items;
         private int _size;
 
-        // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_ArrayList in TinyCLR_Runtime__HeapBlock.h
+      // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_ArrayList in TinyCLR_Runtime__HeapBlock.h
         private const int _defaultCapacity = 4;
 
         public ArrayList()
@@ -87,8 +87,8 @@ namespace System.Collections
 
             if (_size > _defaultCapacity)
             {
-                // only re-allocate a new array if the size isn't what we need.
-                // otherwise, the one allocated in the constructor will be just fine
+              // only re-allocate a new array if the size isn't what we need.
+              // otherwise, the one allocated in the constructor will be just fine
                 la._items = new Object[_size];
             }
 

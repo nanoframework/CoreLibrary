@@ -5,13 +5,13 @@ namespace System.Reflection
 {
 
     using System;
-    /**
-     * This Enum matchs the CorTypeAttr defined in CorHdr.h
-     */
+    //
+    // This Enum matchs the CorTypeAttr defined in CorHdr.h
+   ///
     [Serializable()]
     public enum MemberTypes
     {
-        // The following are the known classes which extend MemberInfo
+      // The following are the known classes which extend MemberInfo
         Constructor = 0x01,
         Event = 0x02,
         Field = 0x04,

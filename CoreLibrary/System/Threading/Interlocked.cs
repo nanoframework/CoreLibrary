@@ -12,45 +12,45 @@ namespace System.Threading
     // code.
     public static class Interlocked
     {
-        /******************************
-         * Increment
-         *   Implemented: int
-         *                        long
-         *****************************/
+        ////////////////////////////////
+        // Increment
+        //   Implemented: int
+        //                long
+        ////////////////////////////////
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern int Increment(ref int location);
-        /******************************
-         * Decrement
-         *   Implemented: int
-         *                        long
-         *****************************/
+        ////////////////////////////////
+        // Decrement
+        //   Implemented: int
+        //                long
+        ////////////////////////////////
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern int Decrement(ref int location);
-        //public static extern long Decrement(ref long location);
+        ////////////////////////////////
 
-        /******************************
-         * Exchange
-         *   Implemented: int
-         *                        long
-         *                        float
-         *                        double
-         *                        Object
-         *                        IntPtr
-         *****************************/
+        ////////////////////////////////
+        // Exchange
+        //   Implemented: int
+        //                long
+        //                float
+        //                double
+        //                Object
+        //                IntPtr
+        ////////////////////////////////
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern int Exchange(ref int location1, int value);
-        /******************************
-         * CompareExchange
-         *    Implemented: int
-         *                         long
-         *                         float
-         *                         double
-         *                         Object
-         *                         IntPtr
-         *****************************/
+        ////////////////////////////////
+        // CompareExchange
+        //   Implemented: int
+        //                long
+        //                float
+        //                double
+        //                Object
+        //                IntPtr
+        ////////////////////////////////
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern int CompareExchange(ref int location1, int value, int comparand);
