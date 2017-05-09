@@ -13,6 +13,9 @@ namespace Windows.Devices.Gpio
     /// <remarks>To get a <see cref="GpioController"/> object, use the <see cref="GpioController.GetDefault"/> method.</remarks>
     public sealed class Gpio​Controller
     {
+        // property backing fields
+        private int _PinCount;
+
         /// <summary>
         /// Gets the number of pins on the general-purpose I/O (GPIO) controller.
         /// </summary>
@@ -20,7 +23,14 @@ namespace Windows.Devices.Gpio
         /// The number of pins on the GPIO controller. Some pins may not be available in user mode.
         /// For information about how the pin numbers correspond to physical pins, see the documentation for your circuit board.
         /// </value>
-        public int PinCount { get; }
+        public int PinCount
+        {
+            get
+            {
+                // TODO this has to "link" to a target variable that holds this information about pin count
+                return _PinCount;
+            }
+        }
 
         /// <summary>
         /// Gets all the controllers that are connected to the system asynchronously.

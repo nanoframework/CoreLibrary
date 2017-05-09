@@ -54,7 +54,14 @@ namespace Windows.Devices.Gpio
         /// <value>
         /// The sharing mode in which the GPIO pin is open.
         /// </value>
-        public GpioSharingMode SharingMode { get; }
+        public GpioSharingMode SharingMode
+        {
+            get
+            {
+                // at this time pins can't be shared, use is exclusive exclusive (pun intended!) 
+                return GpioSharingMode.Exclusive;
+            }
+        }
 
         /// <summary>
         /// Gets the current drive mode for the general-purpose I/O (GPIO) pin. The drive mode specifies whether the pin is configured as an input or an output, and determines how values are driven onto the pin.

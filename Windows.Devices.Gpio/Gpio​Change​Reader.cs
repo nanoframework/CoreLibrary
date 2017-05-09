@@ -16,6 +16,13 @@ namespace Windows.Devices.Gpio
     /// </summary>
     public sealed class Gpio​Change​Reader
     {
+        // property backing fields
+        private int _Capacity;
+        private bool _IsOverflowed;
+        private bool _IsStarted;
+        private int _Length;
+        private GpioChangePolarity _Polarity = GpioChangePolarity.Falling;
+
         /// <summary>
         /// Creates a new GpioChangeReader associated with the specified pin. Only a single GpioChangeReader may be associated with a pin at any given time.
         /// </summary>
@@ -29,7 +36,7 @@ namespace Windows.Devices.Gpio
         /// </remarks>
         public Gpio​Change​Reader(Gpio​Pin pin)
         {
-            
+
         }
 
         /// <summary>
@@ -46,7 +53,7 @@ namespace Windows.Devices.Gpio
         /// </remarks>
         public Gpio​Change​Reader(Gpio​Pin pin, Int32 minCapacity)
         {
-            
+
         }
 
         /// <summary>
@@ -56,7 +63,13 @@ namespace Windows.Devices.Gpio
         /// The maximum number of change records.
         /// </value>
         /// <remarks>When this maximum number of records is met, further changes will not be recorded and the IsOverflowed property will return true.</remarks>
-        public int Capacity { get; }
+        public int Capacity
+        {
+            get
+            {
+                return _Capacity;
+            }
+        }
 
         /// <summary>
         /// Gets whether there are currently zero change records in the reader.
@@ -64,7 +77,13 @@ namespace Windows.Devices.Gpio
         /// <value>
         ///   Returns true if there are zero change items in the reader, and false otherwise
         /// </value>
-        public bool IsEmpty { get; }
+        public bool IsEmpty
+        {
+            get
+            {
+                return (Length == 0);
+            }
+        }
 
         /// <summary>
         /// Gets whether an attempt to place a change record into the reader's buffer has failed due to the buffer being full.
@@ -73,7 +92,13 @@ namespace Windows.Devices.Gpio
         ///   Returns true if an attempt at placement has been unsuccessful, and false otherwise.
         /// </value>
         /// <remarks>Removing an item from the buffer will cause IsOverflowed to reset to false.</remarks>
-        public bool IsOverflowed { get; }
+        public bool IsOverflowed
+        {
+            get
+            {
+                return _IsOverflowed;
+            }
+        }
 
         /// <summary>
         /// Gets whether pin change recording is currently active.
@@ -81,7 +106,13 @@ namespace Windows.Devices.Gpio
         /// <value>
         ///   Returns true if pin changes are currently being recorded, and false otherwise.
         /// </value>
-        public bool IsStarted { get; }
+        public bool IsStarted
+        {
+            get
+            {
+                return _IsStarted;
+            }
+        }
 
         /// <summary>
         /// Gets the number of records currently in the change reader.
@@ -89,7 +120,13 @@ namespace Windows.Devices.Gpio
         /// <value>
         /// The current number of change records.
         /// </value>
-        public int Length { get; }
+        public int Length
+        {
+            get
+            {
+                return _Length;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the polarity of transitions that will be recorded. The polarity may only be changed when pin change recording is not started.
@@ -106,7 +143,19 @@ namespace Windows.Devices.Gpio
         /// </list>
         /// </para>
         /// </remarks>
-        public GpioChangePolarity Polarity { get; set; }
+        public GpioChangePolarity Polarity
+        {
+            get
+            {
+                return _Polarity;
+            }
+
+            set
+            {
+                // TODO implement validation logic as described in the documentation
+                _Polarity = value;
+            }
+        }
 
         /// <summary>
         /// Discards all change records from the reader's buffer.
@@ -114,7 +163,7 @@ namespace Windows.Devices.Gpio
         /// <remarks>This will also reset an active overflow condition, causing the IsOverflowed property to return false.</remarks>
         public void Clear()
         {
-            
+
         }
 
         /// <summary>
@@ -169,7 +218,7 @@ namespace Windows.Devices.Gpio
         /// </remarks>
         public void Start()
         {
-            
+
         }
 
         /// <summary>
@@ -184,7 +233,7 @@ namespace Windows.Devices.Gpio
         /// </remarks>
         public void Stop()
         {
-            
+
         }
 
         /// <summary>
@@ -200,7 +249,7 @@ namespace Windows.Devices.Gpio
         /// </remarks>
         public void WaitForItems(Int32 count)
         {
-            
+
         }
     }
 }

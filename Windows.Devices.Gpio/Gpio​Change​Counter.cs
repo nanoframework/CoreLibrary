@@ -13,6 +13,10 @@ namespace Windows.Devices.Gpio
     /// <para>When the pin is an output, the count will increment whenever the specified transition occurs on the pin.For example, if the pin is configured as an output and counting is enabled for rising edges, writing a 0 and then a 1 will cause the count to be incremented.</para></remarks>
     public sealed class Gpio​Change​Counter
     {
+        // property backing fields
+        private GpioChangePolarity _Polarity = GpioChangePolarity.Falling;
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Gpio​Change​Counter"/> class associated with the specified pin.
         /// Only a single <see cref="Gpio​Change​Counter"/> may be associated with a pin at any given time.
@@ -33,7 +37,14 @@ namespace Windows.Devices.Gpio
         /// Gets whether pin change counting is currently active.
         /// </summary>
         /// <returns><c>TRUE</c> if this pin change counting is active and <c>FALSE</c> otherwise.</returns>
-        public bool IsStarted { get; }
+        public bool IsStarted
+        {
+            get
+            {
+                // pin counting is not currently implemented
+                return false;
+            }
+        }
 
 
         /// <summary>
@@ -44,7 +55,19 @@ namespace Windows.Devices.Gpio
         /// <para>E_INVALIDARG - value is not a valid GpioChangePolarity value.</para>
         /// <para>HRESULT_FROM_WIN32(ERROR_BAD_COMMAND) - change counting is currently active.Polarity can only be set before calling Start() or after calling Stop().</para>
         /// </remarks>
-        public GpioChangePolarity Polarity { get; set; }
+        public GpioChangePolarity Polarity
+        {
+            get
+            {
+                return _Polarity;
+            }
+
+            set
+            {
+                // TODO implement validation logic as described in the documentation
+                _Polarity = value;
+            }
+        }
 
         /// <summary>
         /// Reads the current count of polarity changes. Before counting has been started, this will return 0.
