@@ -28,7 +28,7 @@
     </Content>
     <Content Include="..\bin\$(Configuration)\mscorlib.xml">
       <Link>content\mscorlib.xml</Link>
-    </Content>    
+    </Content>
     <Content Include="..\obj\Release\Stubs\*.*">
       <Link>content\Stubs\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
@@ -57,7 +57,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.CoreLibrary.DELIVERABLES</Id>
-    <Version>1.0.0-preview014</Version>
+    <Version>1.0.0-preview015</Version>
     <Title>nanoFramework.CoreLibrary.DELIVERABLES</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
