@@ -16,7 +16,7 @@ namespace System.Collections
         private Object[] _items;
         private int _size;
 
-      // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_ArrayList in TinyCLR_Runtime__HeapBlock.h
+      // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_ArrayList in NANOCLR_Runtime__HeapBlock.h
         private const int _defaultCapacity = 4;
 
         public ArrayList()

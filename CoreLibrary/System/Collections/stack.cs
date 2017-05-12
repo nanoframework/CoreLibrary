@@ -19,7 +19,7 @@ namespace System.Collections
         private Object[] _array;   // Storage for stack elements
         private int _size;         // Number of items in the stack.
 
-      // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_Stack in TinyCLR_Runtime__HeapBlock.h
+      // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_Stack in NANOCLR_Runtime__HeapBlock.h
         private const int _defaultCapacity = 4;
 
       /// <summary>

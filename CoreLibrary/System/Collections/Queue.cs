@@ -22,7 +22,7 @@ namespace System.Collections
         private int _tail;     // Last valid element in the queue
         private int _size;     // Number of elements.
 
-      // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_Queue in TinyCLR_Runtime__HeapBlock.h
+      // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_Queue in NANOCLR_Runtime__HeapBlock.h
         private const int _defaultCapacity = 4;
 
       /// <summary>
