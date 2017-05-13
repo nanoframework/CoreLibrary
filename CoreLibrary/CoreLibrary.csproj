@@ -79,7 +79,7 @@
     <NFMDP_STUB_GenerateSkeletonProject>CorLib</NFMDP_STUB_GenerateSkeletonProject>
     <!-- this is one is absolutly mandatory for the base class library -->
     <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>
-    <NFMDP_CMD_LINE_OUTPUT>true</NFMDP_CMD_LINE_OUTPUT>
+    <NFMDP_CMD_LINE_OUTPUT>false</NFMDP_CMD_LINE_OUTPUT>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="System\BitConverter.cs" />

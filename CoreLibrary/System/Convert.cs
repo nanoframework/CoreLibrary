@@ -519,7 +519,7 @@ namespace System
         /// Converts an array of 8-bit unsigned integers to its equivalent string representation that is encoded with base-64 digits. A parameter specifies whether to insert line breaks in the return value.
         /// </summary>
         /// <param name="inArray">An array of 8-bit unsigned integers.</param>
-        /// <param name="options">cref="System.InsertLineBreaks" to insert a line break every 76 characters, or None to not insert line breaks.</param>
+        /// <param name="options"><see cref="Base64FormattingOptions.InsertLineBreaks"/> to insert a line break every 76 characters, or None to not insert line breaks.</param>
         /// <returns>The string representation in base 64 of the elements in <paramref name="inArray"/>.</returns>
         public static String ToBase64String(byte[] inArray, Base64FormattingOptions options)
         {
