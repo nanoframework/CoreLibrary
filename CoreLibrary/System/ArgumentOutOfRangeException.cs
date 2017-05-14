@@ -6,28 +6,34 @@
 
 namespace System
 {
-
-    using System;
-    // The ArgumentOutOfRangeException is thrown when an argument
-    // is outside the legal range for that argument.  This may often be caused
-    // by
-    //
-    [Serializable()]
+    /// <summary>
+    /// The exception that is thrown when the value of an argument is outside the allowable range of values as defined by the invoked method.
+    /// </summary>
+    [Serializable]
     public class ArgumentOutOfRangeException : ArgumentException
     {
-
-      // Creates a new ArgumentOutOfRangeException with its message
-      // string set to a default message explaining an argument was out of range.
+        /// <summary>
+        /// Initializes a new instance of the ArgumentOutOfRangeException class.
+        /// </summary>
         public ArgumentOutOfRangeException()
             : this(null)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the ArgumentOutOfRangeException class with the name of the parameter that causes this exception.
+        /// </summary>
+        /// <param name="paramName">The name of the parameter that causes this exception.</param>
         public ArgumentOutOfRangeException(String paramName)
             : base(null, paramName)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the ArgumentOutOfRangeException class with the name of the parameter that causes this exception and a specified error message.
+        /// </summary>
+        /// <param name="paramName">The name of the parameter that caused the exception. </param>
+        /// <param name="message">The message that describes the error. </param>
         public ArgumentOutOfRangeException(String paramName, String message)
             : base(message, paramName)
         {
