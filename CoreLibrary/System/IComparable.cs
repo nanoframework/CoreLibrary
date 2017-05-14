@@ -1,37 +1,24 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////namespace System
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
 namespace System
 {
-
-    using System;
-    //
-    // The <i>IComparable</i> interface is implemented by classes that support an
-    // <i>ordering</i> of instances of the class. The ordering represented by
-    // <i>IComparable</i> can be used to sort arrays and collections of objects
-    // that implement the interface.
-    //
-    // @see System.Array#Sort
-    // @see System.Array#BinarySearch
-    // @see System.List#Sort
-    // @see System.List#BinarySearch
-    // @see System.SortedList
-    ///
+    /// <summary>
+    /// Defines a generalized type-specific comparison method that a value type or class implements to order or sort its instances.
+    /// </summary>
     public interface IComparable
     {
-        // Interface does not need to be marked with the serializable attribute
-        //
-        // Compares this object to another object, returning an integer that
-        // indicates the relationship. An implementation of this method must return
-        // a value less than zero if <i>this</i> is less than <i>object</i>, zero
-        // if <i>this</i> is equal to <i>object</i>, or a value greater than zero
-        // if <i>this</i> is greater than <i>object</i>.
-        //
-        // @param object The object to compare with this object.
-        // @return A value less than zero if <i>this</i> < <i>object</i>, zero if
-        // <i>this</i> = <i>object</i>, or a value greater than zero if <i>this</i>
-        // > <i>object</i>.
-        ///
+        /// <summary>
+        /// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance. </param>
+        /// <returns>A value that indicates the relative order of the objects being compared.
+        /// <para>Less than zero : This instance precedes obj in the sort order.</para>
+        /// <para>Zero : This instance occurs in the same position in the sort order as obj.</para>
+        /// <para>Greater than zero : This instance follows obj in the sort order.</para>
+        /// </returns>
         int CompareTo(Object obj);
     }
 

@@ -6,9 +6,9 @@
 
 namespace System
 {
-
-    using System;
-    using System.Threading;
+    /// <summary>
+    /// Represents the status of an asynchronous operation.
+    /// </summary>
     public interface IAsyncResult
     {
     }

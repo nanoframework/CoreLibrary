@@ -1,20 +1,15 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////namespace System
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
 namespace System
 {
-
-    using System;
-    // Custom attribute to indicate that the enum
-    // should be treated as a bitfield (or set of flags).
-    // An IDE may use this information to provide a richer
-    // development experince.
-    ///
-    [AttributeUsage(AttributeTargets.Enum, Inherited = false), Serializable]
+    /// <summary>
+    /// Indicates that an enumeration can be treated as a bit field; that is, a set of flags.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Enum), Serializable]
     public class FlagsAttribute : Attribute
     {
-        public FlagsAttribute()
-        {
-        }
     }
 }

@@ -6,25 +6,35 @@
 
 namespace System
 {
-    //This class only static members and doesn't require the serializable keyword.
+    using Runtime.CompilerServices;
 
-    using System;
-    using System.Runtime.CompilerServices;
-
+    /// <summary>
+    /// Controls the system garbage collector, a service that automatically reclaims unused memory.
+    /// </summary>
     public static class GC
     {
-
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         private static extern bool AnyPendingFinalizers();
 
+        /// <summary>
+        /// Suspends the current thread until the thread that is processing the queue of finalizers has emptied that queue.
+        /// </summary>
         public static void WaitForPendingFinalizers()
         {
-            while (AnyPendingFinalizers()) System.Threading.Thread.Sleep(10);
+            while (AnyPendingFinalizers()) Threading.Thread.Sleep(10);
         }
 
+        /// <summary>
+        /// Requests that the system not call the finalizer for the specified object.
+        /// </summary>
+        /// <param name="obj">The object that a finalizer must not be called for. </param>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern void SuppressFinalize(Object obj);
 
+        /// <summary>
+        /// Requests that the system call the finalizer for the specified object for which SuppressFinalize has previously been called.
+        /// </summary>
+        /// <param name="obj">The object that a finalizer must be called for. </param>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         public static extern void ReRegisterForFinalize(Object obj);
 
