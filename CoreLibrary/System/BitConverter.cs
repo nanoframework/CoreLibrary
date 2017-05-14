@@ -4,17 +4,19 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System;
 using System.Runtime.CompilerServices;
 
 namespace System
 {
-	public static class BitConverter
+    /// <summary>
+    /// Converts base data types to an array of bytes, and an array of bytes to base data types.
+    /// </summary>
+    public static class BitConverter
 	{
 		/// <summary>
 		/// Indicates the byte order ("endianess") in which data is stored in this computer architecture.
 		/// </summary>
-		extern public static bool IsLittleEndian
+		public static extern bool IsLittleEndian
 		{
 			[MethodImplAttribute(MethodImplOptions.InternalCall)]
 			get;
@@ -26,7 +28,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns></returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static long DoubleToInt64Bits(double value);
+		public static extern long DoubleToInt64Bits(double value);
 
 		/// <summary>
 		/// Returns the specified Boolean value as an array of bytes.
@@ -34,7 +36,7 @@ namespace System
 		/// <param name="value">A Boolean value.</param>
 		/// <returns>An array of bytes with length 1.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(bool value);
+		public static extern byte[] GetBytes(bool value);
 
 		/// <summary>
 		/// Returns the specified Unicode character value as an array of bytes.
@@ -42,7 +44,7 @@ namespace System
 		/// <param name="value">A character to convert.</param>
 		/// <returns>An array of bytes with length 2.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(char value);
+		public static extern byte[] GetBytes(char value);
 
 		/// <summary>
 		/// Returns the specified double-precision floating point value as an array of bytes.
@@ -50,7 +52,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns>An array of bytes with length 8.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(double value);
+		public static extern byte[] GetBytes(double value);
 
 		/// <summary>
 		/// Returns the specified single-precision floating point value as an array of bytes.
@@ -58,7 +60,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns>An array of bytes with length 4.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(float value);
+		public static extern byte[] GetBytes(float value);
 
 		/// <summary>
 		/// Returns the specified 32-bit signed integer value as an array of bytes.
@@ -66,7 +68,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns>An array of bytes with length 4.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(int value);
+		public static extern byte[] GetBytes(int value);
 
 		/// <summary>
 		/// Returns the specified 64-bit signed integer value as an array of bytes.
@@ -74,7 +76,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns>An array of bytes with length 8.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(long value);
+		public static extern byte[] GetBytes(long value);
 
 		/// <summary>
 		/// Returns the specified 16-bit signed integer value as an array of bytes.
@@ -82,7 +84,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns>An array of bytes with length 2.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(short value);
+		public static extern byte[] GetBytes(short value);
 
 		/// <summary>
 		/// Returns the specified 32-bit unsigned integer value as an array of bytes.
@@ -90,7 +92,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns>An array of bytes with length 4.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(uint value);
+		public static extern byte[] GetBytes(uint value);
 
 		/// <summary>
 		/// Returns the specified 64-bit unsigned integer value as an array of bytes.
@@ -98,7 +100,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns>An array of bytes with length 8.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(ulong value);
+		public static extern byte[] GetBytes(ulong value);
 
 		/// <summary>
 		/// Returns the specified 16-bit unsigned integer value as an array of bytes.
@@ -106,7 +108,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns>An array of bytes with length 2.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static byte[] GetBytes(ushort value);
+		public static extern byte[] GetBytes(ushort value);
 
 		/// <summary>
 		/// Converts the specified 64-bit signed integer to a double-precision floating point number.
@@ -114,7 +116,7 @@ namespace System
 		/// <param name="value">The number to convert.</param>
 		/// <returns>A double-precision floating point number whose value is equivalent to value.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static double Int64BitsToDouble(long value);
+		public static extern double Int64BitsToDouble(long value);
 
 		/// <summary>
 		/// Returns a Boolean value converted from one byte at a specified position in a byte array.
@@ -123,7 +125,7 @@ namespace System
 		/// <param name="startIndex">The starting position within value.</param>
 		/// <returns>true if the byte at startIndex in value is nonzero; otherwise, false.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static bool ToBoolean(byte[] value, int startIndex);
+		public static extern bool ToBoolean(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Returns a Unicode character converted from two bytes at a specified position in a byte array.
@@ -132,7 +134,7 @@ namespace System
 		/// <param name="startIndex">The starting position within value.</param>
 		/// <returns>A character formed by two bytes beginning at startIndex.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static char ToChar(byte[] value, int startIndex);
+		public static extern char ToChar(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Returns a double-precision floating point number converted from eight bytes at a specified position in a byte array.
@@ -141,7 +143,7 @@ namespace System
 		/// <param name="startIndex">The starting position within value.</param>
 		/// <returns>A double precision floating point number formed by eight bytes beginning at startIndex.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static double ToDouble(byte[] value, int startIndex);
+		public static extern double ToDouble(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Returns a 16-bit signed integer converted from two bytes at a specified position in a byte array.
@@ -150,7 +152,7 @@ namespace System
 		/// <param name="startIndex">The starting position within value.</param>
 		/// <returns>A 16-bit signed integer formed by two bytes beginning at startIndex.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static short ToInt16(byte[] value, int startIndex);
+		public static extern short ToInt16(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Returns a 32-bit signed integer converted from four bytes at a specified position in a byte array.
@@ -159,7 +161,7 @@ namespace System
 		/// <param name="startIndex">The starting position within value.</param>
 		/// <returns>A 32-bit signed integer formed by four bytes beginning at startIndex.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static int ToInt32(byte[] value, int startIndex);
+		public static extern int ToInt32(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Returns a 64-bit signed integer converted from eight bytes at a specified position in a byte array.
@@ -168,7 +170,7 @@ namespace System
 		/// <param name="startIndex">The starting position within value.</param>
 		/// <returns>A 64-bit signed integer formed by eight bytes beginning at startIndex.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static long ToInt64(byte[] value, int startIndex);
+		public static extern long ToInt64(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Returns a single-precision floating point number converted from four bytes at a specified position in a byte array.
@@ -177,7 +179,7 @@ namespace System
 		/// <param name="startIndex">The starting position within value.</param>
 		/// <returns>A single-precision floating point number formed by four bytes beginning at startIndex.</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static float ToSingle(byte[] value, int startIndex);
+		public static extern float ToSingle(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Converts the numeric value of each element of a specified array of bytes to its equivalent hexadecimal string representation.
@@ -185,7 +187,7 @@ namespace System
 		/// <param name="value">An array of bytes.</param>
 		/// <returns>A String of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A".</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static string ToString(byte[] value);
+		public static extern string ToString(byte[] value);
 
 		/// <summary>
 		/// Converts the numeric value of each element of a specified subarray of bytes to its equivalent hexadecimal string representation.
@@ -194,7 +196,7 @@ namespace System
 		/// <param name="startIndex">The starting position within value.</param>
 		/// <returns>A String of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in a subarray of value; for example, "7F-2C-4A".</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static string ToString(byte[] value, int startIndex);
+		public static extern string ToString(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Converts the numeric value of each element of a specified subarray of bytes to its equivalent hexadecimal string representation.
@@ -204,7 +206,7 @@ namespace System
 		/// <param name="length">The number of array elements in value to convert.</param>
 		/// <returns>A String of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in a subarray of value; for example, "7F-2C-4A".</returns>
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static string ToString(byte[] value, int startIndex, int length);
+		public static extern string ToString(byte[] value, int startIndex, int length);
 
 		/// <summary>
 		/// Returns a 16-bit unsigned integer converted from two bytes at a specified position in a byte array.
@@ -214,7 +216,7 @@ namespace System
 		/// <returns>A 16-bit unsigned integer formed by two bytes beginning at startIndex.</returns>
 		[CLSCompliant(false)]
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static ushort ToUInt16(byte[] value, int startIndex);
+		public static extern ushort ToUInt16(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Returns a 32-bit unsigned integer converted from two bytes at a specified position in a byte array.
@@ -224,7 +226,7 @@ namespace System
 		/// <returns>A 32-bit unsigned integer formed by two bytes beginning at startIndex.</returns>
 		[CLSCompliant(false)]
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static uint ToUInt32(byte[] value, int startIndex);
+		public static extern uint ToUInt32(byte[] value, int startIndex);
 
 		/// <summary>
 		/// Returns a 64-bit unsigned integer converted from two bytes at a specified position in a byte array.
@@ -234,6 +236,6 @@ namespace System
 		/// <returns>A 64-bit unsigned integer formed by two bytes beginning at startIndex.</returns>
 		[CLSCompliant(false)]
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern public static ulong ToUInt64(byte[] value, int startIndex);
+		public static extern ulong ToUInt64(byte[] value, int startIndex);
 	}
 }
