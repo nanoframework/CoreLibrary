@@ -26,7 +26,10 @@ The general rule we follow is "use Visual Studio defaults".
 13. We use ```nameof(...)``` instead of ```"..."``` whenever possible and relevant.
 14. Fields should be specified at the top within type declarations.
 
-We have provided a Visual Studio 2013 vssettings file (`nfcore.vssettings`) at the root of the repository, enabling C# auto-formatting conforming to the above guidelines. Note that rules 7 and 8 are not covered by the vssettings, since these are not rules currently supported by VS formatting.
+We have provided a Visual Studio 2017 _vssettings_ file (`template.vssettings`) at the root of the repository, enabling C# auto-formatting conforming to the above guidelines. Note that rules 7 and 8 are not covered by the vssettings, since these are not rules currently supported by VS formatting.
+
+_Tip:_ when adding a Solution for a new class library copy the [`template.vssettings`](../../template.vssettings) file into the same folder as the Solution file _and_ rename it to match the solution name. If you have installed an extension such as [Visual Studio Settings Switcher ](https://marketplace.visualstudio.com/items?itemName=DaveSexton.VSSettingsSwitcherbyDaveSexton) it will automatically pickup the setting file and will apply it to the Solution.
+
 
 ### Example File:
 
