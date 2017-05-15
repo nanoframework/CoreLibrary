@@ -22,7 +22,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Windows.Devices.Gpio</Id>
-    <Version>1.0.0-preview003</Version>
+    <Version>1.0.0-preview004</Version>
     <Title>nanoFramework.Windows.Devices.Gpio</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>

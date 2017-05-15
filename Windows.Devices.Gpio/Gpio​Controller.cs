@@ -3,18 +3,18 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System;
+using System.Runtime.CompilerServices;
 
 namespace Windows.Devices.Gpio
 {
     /// <summary>
     /// Represents the default general-purpose I/O (GPIO) controller for the system.
     /// </summary>
-    /// <remarks>To get a <see cref="GpioController"/> object, use the <see cref="GpioController.GetDefault"/> method.</remarks>
+    /// <remarks>To get a <see cref="Gpio​Controller"/> object, use the <see cref="GetDefault"/> method.</remarks>
     public sealed class Gpio​Controller
     {
-        // property backing fields
-        private int _PinCount;
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern bool NativeOpenpin(int pinNumber);
 
         /// <summary>
         /// Gets the number of pins on the general-purpose I/O (GPIO) controller.
@@ -23,15 +23,14 @@ namespace Windows.Devices.Gpio
         /// The number of pins on the GPIO controller. Some pins may not be available in user mode.
         /// For information about how the pin numbers correspond to physical pins, see the documentation for your circuit board.
         /// </value>
-        public int PinCount
+        public extern int PinCount
         {
-            get
-            {
-                // TODO this has to "link" to a target variable that holds this information about pin count
-                return _PinCount;
-            }
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
         }
 
+        /*
+         * We do not have any Provider on our boards, so this method is not implemented
         /// <summary>
         /// Gets all the controllers that are connected to the system asynchronously.
         /// </summary>
@@ -41,6 +40,8 @@ namespace Windows.Devices.Gpio
         {
             return null;
         }
+        */
+
 
         /// <summary>
         /// Gets the default general-purpose I/O (GPIO) controller for the system.
@@ -67,7 +68,7 @@ namespace Windows.Devices.Gpio
         /// <list type="bullet">
         /// <item><term>E_INVALIDARG (0x80070057)</term>
         /// <description>An invalid parameter was specified. This error will be returned if the pin number is out of range. 
-        /// Pin numbers start at 0 and increase to the maximum pin number, which is one less than the value returned by <see cref="GpioController.PinCount"/>.</description></item>
+        /// Pin numbers start at 0 and increase to the maximum pin number, which is one less than the value returned by <see cref="PinCount"/>.</description></item>
         /// <item><term>HRESULT_FROM_WIN32(ERROR_NOT_FOUND) (0x80070490)</term>
         /// <description>The pin is not available to usermode applications; it is reserved by the system. See the documentation for your circuit board to find out which pins are available to usermode applications.</description></item>
         /// <item><term>HRESULT_FROM_WIN32(ERROR_SHARING_VIOLATION) (0x80070020)</term>
@@ -82,9 +83,9 @@ namespace Windows.Devices.Gpio
         /// <description>The GPIO driver returned an error. Ensure that the GPIO driver is running and configured correctly.</description></item>
         /// </list>
         /// </remarks>
-        public Gpio​Pin OpenPin(Int32 pinNumber)
+        public Gpio​Pin OpenPin(int pinNumber)
         {
-            return new Gpio​Pin();
+            return OpenPin(pinNumber, GpioSharingMode.Exclusive);
         }
 
         /// <summary>
@@ -104,7 +105,7 @@ namespace Windows.Devices.Gpio
         /// <list type="bullet">
         /// <item><term>E_INVALIDARG (0x80070057)</term>
         /// <description>An invalid parameter was specified. This error will be returned if the pin number is out of range. 
-        /// Pin numbers start at 0 and increase to the maximum pin number, which is one less than the value returned by <see cref="GpioController.PinCount"/>.</description></item>
+        /// Pin numbers start at 0 and increase to the maximum pin number, which is one less than the value returned by <see cref="PinCount"/>.</description></item>
         /// <item><term>HRESULT_FROM_WIN32(ERROR_NOT_FOUND) (0x80070490)</term>
         /// <description>The pin is not available to usermode applications; it is reserved by the system. See the documentation for your circuit board to find out which pins are available to usermode applications.</description></item>
         /// <item><term>HRESULT_FROM_WIN32(ERROR_SHARING_VIOLATION) (0x80070020)</term>
@@ -119,9 +120,15 @@ namespace Windows.Devices.Gpio
         /// <description>The GPIO driver returned an error. Ensure that the GPIO driver is running and configured correctly.</description></item>
         /// </list>
         /// </remarks>
-        public Gpio​Pin OpenPin(Int32 pinNumber, GpioSharingMode sharingMode)
+        public Gpio​Pin OpenPin(int pinNumber, GpioSharingMode sharingMode)
         {
-            return new Gpio​Pin();
+            //Note : sharingMode ignored at the moment because we do not handle shared accessed pins
+            if (NativeOpenpin(pinNumber))
+            {
+                var pin = new Gpio​Pin(pinNumber);
+                return pin;
+            }
+            return null;
         }
 
         /// <summary>
@@ -133,9 +140,19 @@ namespace Windows.Devices.Gpio
         /// <param name="openStatus">An enumeration value that indicates either that the attempt to open the GPIO pin succeeded, or the reason that the attempt to open the GPIO pin failed.</param>
         /// <returns>True if the method successfully opened the pin; otherwise false.
         /// <para>If the method returns true, the pin parameter receives an instance of a GpioPin, and the openStatus parameter receives GpioOpenStatus.PinOpened.If the method returns false, the pin parameter is null and the openStatus parameter receives the reason that the operation failed.</para></returns>
-        public bool TryOpenPin(Int32 pinNumber, GpioSharingMode sharingMode, Gpio​Pin pin, GpioOpenStatus openStatus)
+        public bool TryOpenPin(int pinNumber, GpioSharingMode sharingMode, out Gpio​Pin pin, out GpioOpenStatus openStatus)
         {
-            return true;
+            //Note : sharingMode ignored at the moment because we do not handle shared accessed pins
+            pin = null;
+            openStatus = GpioOpenStatus.PinUnavailable;
+
+            if (NativeOpenpin(pinNumber))
+            {
+                pin = new Gpio​Pin(pinNumber);
+                openStatus = GpioOpenStatus.PinOpened;
+                return true;
+            }
+            return false;
         }
 
     }

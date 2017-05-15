@@ -13,6 +13,26 @@ namespace Windows.Devices.Gpio
     /// </summary>
     public sealed class Gpio​Pin : IDisposable
     {
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern bool NativeIsDriveModeSupported(byte driveMode);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern GpioPinValue NativeRead(int pinNumber);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void NativeWrite(int pinNumber, byte value);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void NativeSetDriveMode(int pinNumber, byte driveMode);
+
+        private readonly int _pinNumber;
+        private GpioPinDriveMode _driveMode = GpioPinDriveMode.Input;
+
+        internal Gpio​Pin(int pinNumber)
+        {
+            _pinNumber = pinNumber;
+        }
+
         /// <summary>
         /// Gets or sets the debounce timeout for the general-purpose I/O (GPIO) pin, which is an interval during which changes to the value of the pin are filtered out and do not generate ValueChanged events.
         /// </summary>
@@ -20,15 +40,15 @@ namespace Windows.Devices.Gpio
         /// The debounce timeout for the GPIO pin, which is an interval during which changes to the value of the pin are filtered out and do not generate ValueChanged events.
         /// If the length of this interval is 0, all changes to the value of the pin generate ValueChanged events.
         /// </value>
-        extern public TimeSpan DebounceTimeout {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        public extern TimeSpan DebounceTimeout
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
-
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             set;
         }
 
-        private int _pinNumber = 1;
+        
         /// <summary>
         /// Gets the pin number of the general-purpose I/O (GPIO) pin.
         /// </summary>
@@ -39,10 +59,7 @@ namespace Windows.Devices.Gpio
             get
             {
                 // check if pin has been disposed
-                if (!disposedValue)
-                {
-                    return _pinNumber;
-                }
+                if (!_disposedValue) { return _pinNumber; }
 
                 throw new ObjectDisposedException();
             }
@@ -70,7 +87,7 @@ namespace Windows.Devices.Gpio
         /// The drive mode specifies whether the pin is configured as an input or an output, and determines how values are driven onto the pin.</returns>
         public GpioPinDriveMode GetDriveMode()
         {
-            return new GpioPinDriveMode();
+            return _driveMode;
         }
 
         /// <summary>
@@ -81,9 +98,10 @@ namespace Windows.Devices.Gpio
         ///   True if the GPIO pin supports the drive mode that driveMode specifies; otherwise false. 
         /// If you specify a drive mode for which this method returns false when you call <see cref="SetDriveMode"/>, <see cref="SetDriveMode"/> generates an exception.
         /// </returns>
+        
         public bool IsDriveModeSupported(GpioPinDriveMode driveMode)
         {
-            return true;
+            return NativeIsDriveModeSupported ((byte) driveMode);
         }
 
         /// <summary>
@@ -92,7 +110,7 @@ namespace Windows.Devices.Gpio
         /// <returns>The current value of the GPIO pin. If the pin is configured as an output, this value is the last value written to the pin.</returns>
         public GpioPinValue Read()
         {
-            return new GpioPinValue();
+            return NativeRead(_pinNumber);
         }
 
         /// <summary>
@@ -109,7 +127,12 @@ namespace Windows.Devices.Gpio
         /// </remarks>
         public void SetDriveMode(GpioPinDriveMode value)
         {
-            
+            if (_driveMode == value) return;
+            if (IsDriveModeSupported(value))
+            {
+                NativeSetDriveMode(_pinNumber, (byte) value);
+                _driveMode = value;
+            }
         }
 
         /// <summary>
@@ -127,16 +150,16 @@ namespace Windows.Devices.Gpio
         /// </remarks>
         public void Write(GpioPinValue value)
         {
-            
+            NativeWrite(_pinNumber, (byte)value);
         }
 
         #region IDisposable Support
 
-        private bool disposedValue = false; // To detect redundant calls
+        private bool _disposedValue; // To detect redundant calls
 
-        void Dispose(bool disposing)
+        private void Dispose(bool disposing)
         {
-            if (!disposedValue)
+            if (!_disposedValue)
             {
                 if (disposing)
                 {
@@ -146,14 +169,17 @@ namespace Windows.Devices.Gpio
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
                 // TODO: set large fields to null.
 
-                disposedValue = true;
+                _disposedValue = true;
             }
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        extern private void DisposeNative();
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void DisposeNative();
 
-        ~GpioPin()
+        /// <summary>
+        /// Finalizes the instance of the <see cref="Gpio​Pin"/> class.
+        /// </summary>
+        ~Gpio​Pin()
         {
             // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
             Dispose(false);

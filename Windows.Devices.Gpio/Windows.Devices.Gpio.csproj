@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0038\build\nanoFramework.Tools.MSBuildSystem.props" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0038\build\nanoFramework.Tools.MSBuildSystem.props')" />
+  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0039\build\nanoFramework.Tools.MSBuildSystem.props" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0039\build\nanoFramework.Tools.MSBuildSystem.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -92,13 +92,6 @@
     <Compile Include="Gpio​Change​Record.cs" />
     <Compile Include="Gpio​Controller.cs" />
     <Compile Include="Gpio​Pin.cs" />
-    <Compile Include="Provider\IGpioPinProvider.cs" />
-    <Compile Include="Provider\IGpioControllerProvider.cs" />
-    <Compile Include="Provider\IGpioProvider.cs" />
-    <Compile Include="Provider\ProviderGpioSharingMode.cs" />
-    <Compile Include="Provider\ProviderGpioPinValue.cs" />
-    <Compile Include="Provider\ProviderGpioPinEdge.cs" />
-    <Compile Include="Provider\ProviderGpioPinDriveMode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -106,11 +99,11 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets'))" />
-    <Error Condition="!Exists('packages\nanoFramework.CoreLibrary.1.0.0-preview014\build\nanoFramework.CoreLibrary.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.CoreLibrary.1.0.0-preview014\build\nanoFramework.CoreLibrary.targets'))" />
-    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0038\build\nanoFramework.Tools.MSBuildSystem.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0038\build\nanoFramework.Tools.MSBuildSystem.props'))" />
-    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0038\build\nanoFramework.Tools.MSBuildSystem.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0038\build\nanoFramework.Tools.MSBuildSystem.targets'))" />
+    <Error Condition="!Exists('packages\nanoFramework.CoreLibrary.1.0.0-preview016\build\nanoFramework.CoreLibrary.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.CoreLibrary.1.0.0-preview016\build\nanoFramework.CoreLibrary.targets'))" />
+    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0039\build\nanoFramework.Tools.MSBuildSystem.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0039\build\nanoFramework.Tools.MSBuildSystem.props'))" />
+    <Error Condition="!Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0039\build\nanoFramework.Tools.MSBuildSystem.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0039\build\nanoFramework.Tools.MSBuildSystem.targets'))" />
   </Target>
   <Import Project="packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets" Condition="Exists('packages\NuProj.Common.0.11.14-beta\build\dotnet\NuProj.Common.targets')" />
-  <Import Project="packages\nanoFramework.CoreLibrary.1.0.0-preview014\build\nanoFramework.CoreLibrary.targets" Condition="Exists('packages\nanoFramework.CoreLibrary.1.0.0-preview014\build\nanoFramework.CoreLibrary.targets')" />
-  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0038\build\nanoFramework.Tools.MSBuildSystem.targets" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0038\build\nanoFramework.Tools.MSBuildSystem.targets')" />
+  <Import Project="packages\nanoFramework.CoreLibrary.1.0.0-preview016\build\nanoFramework.CoreLibrary.targets" Condition="Exists('packages\nanoFramework.CoreLibrary.1.0.0-preview016\build\nanoFramework.CoreLibrary.targets')" />
+  <Import Project="packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0039\build\nanoFramework.Tools.MSBuildSystem.targets" Condition="Exists('packages\nanoFramework.Tools.MSBuildSystem.1.0.0-preview0039\build\nanoFramework.Tools.MSBuildSystem.targets')" />
 </Project>

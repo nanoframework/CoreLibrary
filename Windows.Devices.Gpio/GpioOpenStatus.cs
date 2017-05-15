@@ -6,7 +6,7 @@
 namespace Windows.Devices.Gpio
 {
     /// <summary>
-    /// Describes the possible results of opening a pin with the <see cref="GpioPin.TryOpenPin"/> method.
+    /// Describes the possible results of opening a pin with the <see><cref>GpioPin.TryOpenPin</cref></see> method.
     /// </summary>
     public enum GpioOpenStatus
     {
