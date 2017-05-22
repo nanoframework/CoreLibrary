@@ -4,99 +4,156 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System;
 using System.Runtime.CompilerServices;
 
 namespace System
 {
+    /// <summary>
+    /// Specifies whether relevant Convert.ToBase64CharArray and Convert.ToBase64String methods insert line breaks in their output.
+    /// </summary>
     [Flags]
     public enum Base64FormattingOptions
     {
+        /// <summary>
+        /// Does not insert line breaks after every 76 characters in the string representation.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Inserts line breaks after every 76 characters in the string representation.
+        /// </summary>
         InsertLineBreaks = 1
     }
 
     //We don't want to implement this whole class, but VB needs an external function to convert any integer type to a Char.
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+    /// <summary>
+    /// Converts a base data type to another base data type.
+    /// </summary>
+    [ComponentModel.EditorBrowsableAttribute(ComponentModel.EditorBrowsableState.Never)]
     public static class Convert
     {
+        /// <summary>
+        /// Converts the value of the specified 16-bit unsigned integer to its equivalent Unicode character.
+        /// </summary>
+        /// <param name="value">The 16-bit unsigned integer to convert.</param>
+        /// <returns>A Unicode character that is equivalent to value.</returns>
         [CLSCompliant(false)]
         public static char ToChar(ushort value)
         {
             return (char)value;
         }
 
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent 8-bit signed integer.
+        /// </summary>
+        /// <param name="value">A string that contains the number to convert.</param>
+        /// <returns>An 8-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
         [CLSCompliant(false)]
         public static sbyte ToSByte(string value)
         {
             return (sbyte)ToInt64(value, true, SByte.MinValue, SByte.MaxValue);
         }
 
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent 8-bit unsigned integer.
+        /// </summary>
+        /// <param name="value">A string that contains the number to convert.</param>
+        /// <returns>An 8-bit unsigned integer that is equivalent to value, or zero if value is null.</returns>
         public static byte ToByte(string value)
         {
             return (byte)ToInt64(value, false, Byte.MinValue, Byte.MaxValue);
         }
 
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent 16-bit signed integer.
+        /// </summary>
+        /// <param name="value">A string that contains the number to convert.</param>
+        /// <returns>A 16-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
         public static short ToInt16(string value)
         {
             return (short)ToInt64(value, true, Int16.MinValue, Int16.MaxValue);
         }
 
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent 16-bit unsigned integer.
+        /// </summary>
+        /// <param name="value">A string that contains the number to convert.</param>
+        /// <returns>A 16-bit unsigned integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
         [CLSCompliant(false)]
         public static ushort ToUInt16(string value)
         {
-            return (ushort)ToInt64(value, false, UInt16.MinValue, UInt16.MaxValue); ;
+            return (ushort)ToInt64(value, false, UInt16.MinValue, UInt16.MaxValue);
         }
 
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent 32-bit signed integer.
+        /// </summary>
+        /// <param name="value">A string that contains the number to convert.</param>
+        /// <returns>A 32-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
         public static int ToInt32(string value)
         {
             return (int)ToInt64(value, true, Int32.MinValue, Int32.MaxValue);
         }
 
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent 32-bit unsigned integer.
+        /// </summary>
+        /// <param name="value">A string that contains the number to convert.</param>
+        /// <returns>A 32-bit unsigned integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
         [CLSCompliant(false)]
         public static uint ToUInt32(string value)
         {
             return (uint)ToInt64(value, false, UInt32.MinValue, UInt32.MaxValue);
         }
 
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent 64-bit signed integer.
+        /// </summary>
+        /// <param name="value">A string that contains a number to convert.</param>
+        /// <returns>A 64-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
         public static long ToInt64(string value)
         {
             return ToInt64(value, true, Int64.MinValue, Int64.MaxValue);
         }
 
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent 64-bit unsigned integer.
+        /// </summary>
+        /// <param name="value">A string that contains the number to convert.</param>
+        /// <returns>A 64-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
         [CLSCompliant(false)]
         public static ulong ToUInt64(string value)
         {
             return (ulong)ToInt64(value, false, 0, 0);
         }
 
-        //--//
-
+        /// <summary>
+        /// Converts the string representation of a number in a specified base to an equivalent 32-bit signed integer.
+        /// </summary>
+        /// <param name="hexNumber">A string that contains the number to convert.</param>
+        /// <param name="fromBase">The base of the number in value, which must be 2, 8, 10, or 16.</param>
+        /// <returns>A 32-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
+        /// <exception cref="ArgumentException"></exception>
         public static int ToInt32(string hexNumber, int fromBase)
         {
-            if (hexNumber == null)
-                return 0;
+            if (hexNumber == null) return 0;
+            if (fromBase != 16) throw new ArgumentException();
 
-            if (fromBase != 16)
-                throw new ArgumentException();
-
-            int result = 0;
-            int digit;
-
-            char[] hexDigit = hexNumber.Trim(' ').ToUpper().ToCharArray();
+            var result = 0;
+            var hexDigit = hexNumber.Trim(' ').ToUpper().ToCharArray();
 
             // Trim hex sentinal if present 
-            int len = hexDigit.Length;
-            int i = (len >= 2 && hexDigit[0] == '0' && hexDigit[1] == 'X') ? 2 : 0;
+            var len = hexDigit.Length;
+            var i = len >= 2 && hexDigit[0] == '0' && hexDigit[1] == 'X' ? 2 : 0;
 
             // 8 hex chars == 4 bytes == sizeof(Int32)
-            if ((len - i) > 8) throw new ArgumentException();
+            if (len - i > 8) throw new ArgumentException();
 
             // Convert hex to integer
             for (; i < len; i++)
             {
-                char c = hexDigit[i];
+                var c = hexDigit[i];
 
+                int digit;
                 switch (c)
                 {
                     case '0':
@@ -158,29 +215,32 @@ namespace System
             return result;
         }
 
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent double-precision floating-point number.
+        /// </summary>
+        /// <param name="s">A string that contains the number to convert.</param>
+        /// <returns>A double-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
         public static double ToDouble(string s)
         {
-            if (s == null)
-                return 0;
+            if (s == null) return 0;
 
             s = s.Trim(' ').ToLower();
 
             if (s.Length == 0) return 0;
 
-            int decimalpoint = s.IndexOf('.');
-            int exp = s.IndexOf('e');
+            var decimalpoint = s.IndexOf('.');
+            var exp = s.IndexOf('e');
 
-            if (exp != -1 && decimalpoint > exp)
-                throw new Exception();
+            if (exp != -1 && decimalpoint > exp) throw new Exception();
 
-            char[] chars = s.ToCharArray();
-            int len = chars.Length;
+            var chars = s.ToCharArray();
+            var len = chars.Length;
             double power = 0;
             double rightDecimal = 0;
-            int decLeadingZeros = 0;
+            var decLeadingZeros = 0;
             double leftDecimal = 0;
-            int leftDecLen = 0;
-            bool isNeg = chars[0] == '-';
+            var leftDecLen = 0;
+            var isNeg = chars[0] == '-';
 
             // convert the exponential portion to a number            
             if (exp != -1 && exp + 1 < len - 1)
@@ -192,21 +252,14 @@ namespace System
             // convert the decimal portion to a number
             if (decimalpoint != -1)
             {
-                double number;
                 int decLen;
 
-                if (exp == -1)
-                {
-                    decLen = len - (decimalpoint + 1);
-                }
-                else
-                {
-                    decLen = (exp - (decimalpoint + 1));
-                }
+                if (exp == -1) decLen = len - (decimalpoint + 1);
+                else decLen = exp - (decimalpoint + 1);
 
-                number = GetDoubleNumber(chars, decimalpoint + 1, decLen, out decLeadingZeros);
+                var number = GetDoubleNumber(chars, decimalpoint + 1, decLen, out decLeadingZeros);
 
-                rightDecimal = number * System.Math.Pow(10, -decLen);
+                rightDecimal = number * Math.Pow(10, -decLen);
             }
 
             // convert the integer portion to a number
@@ -225,16 +278,13 @@ namespace System
                 if (chars[0] == '-' || chars[0] == '+') leftDecLen--;
             }
 
-            double value = 0;
+            double value;
             if (leftDecimal < 0)
             {
                 value = -leftDecimal + rightDecimal;
                 value = -value;
             }
-            else
-            {
-                value = leftDecimal + rightDecimal;
-            }
+            else value = leftDecimal + rightDecimal;
 
             // lets normalize the integer portion first
             while (leftDecLen > 1)
@@ -301,42 +351,29 @@ namespace System
             // special case for epsilon (the System.Math.Pow native method will return zero for -324)
             if (power == -324)
             {
-                value = value * System.Math.Pow(10, power + 1);
+                value = value * Math.Pow(10, power + 1);
                 value /= 10.0;
             }
-            else
-            {
-                value = value * System.Math.Pow(10, power);
-            }
+            else value = value * Math.Pow(10, power);
 
-            if (value == double.PositiveInfinity || value == double.NegativeInfinity)
-            {
-                throw new Exception();
-            }
+            if (double.IsPositiveInfinity(value) || double.IsNegativeInfinity(value)) throw new Exception();
 
-            if (isNeg && value > 0)
-            {
-                value = -value;
-
-            }
+            if (isNeg && value > 0) value = -value;
 
             return value;
         }
 
-        //--//
-
         private static long ToInt64(string value, bool signed, long min, long max)
         {
-            if (value == null)
-                return 0;
+            if (value == null) return 0;
 
             value = value.Trim(' ');
 
-            char[] num = value.ToCharArray();
-            int len = num.Length;
+            var num = value.ToCharArray();
+            var len = num.Length;
             ulong result = 0;
-            int index = 0;
-            bool isNeg = false;
+            var index = 0;
+            var isNeg = false;
 
             // check the sign
             if (num[0] == '-')
@@ -349,10 +386,10 @@ namespace System
                 index = 1;
             }
 
-            for (int i = index; i < len; i++)
+            for (var i = index; i < len; i++)
             {
                 ulong digit;
-                char c = num[i];
+                var c = num[i];
 
                 // switch statement is faster than subtracting '0'
                 switch (c)
@@ -393,11 +430,7 @@ namespace System
 
                 // check for overflow - any number greater than this number will cause an overflow
                 // when multiplied by 10
-                if ((signed && result > 0x0CCCCCCCCCCCCCCC) ||
-                   (!signed && result > 0x1999999999999999))
-                {
-                    throw new Exception();
-                }
+                if (signed && result > 0x0CCCCCCCCCCCCCCC || !signed && result > 0x1999999999999999) throw new Exception();
 
                 result *= 10;
                 result += digit;
@@ -432,8 +465,8 @@ namespace System
         private static double GetDoubleNumber(char[] chars, int start, int length, out int numLeadingZeros)
         {
             double number = 0;
-            bool isNeg = false;
-            int end = start + length;
+            var isNeg = false;
+            var end = start + length;
 
             numLeadingZeros = 0;
 
@@ -447,17 +480,17 @@ namespace System
                 start++;
             }
 
-            for (int i = start; i < end; i++)
+            for (var i = start; i < end; i++)
             {
                 int digit;
-                char c = chars[i];
+                var c = chars[i];
 
                 // switch statement is faster than subtracting '0'                
                 switch (c)
                 {
                     case '0':
                         // update the number of leading zeros (used for normalizing)
-                        if ((numLeadingZeros + start) == i)
+                        if (numLeadingZeros + start == i)
                         {
                             numLeadingZeros++;
                         }
@@ -508,10 +541,8 @@ namespace System
         /// <returns>The String representation, in base 64, of the contents of <paramref name="inArray"/>.</returns>
         public static string ToBase64String(byte[] inArray)
         {
-            if (inArray == null)
-            {
-                throw new ArgumentNullException();
-            }
+            if (inArray == null) throw new ArgumentNullException();
+
             return ToBase64String(inArray, 0, inArray.Length, Base64FormattingOptions.None);
         }
 
@@ -523,10 +554,8 @@ namespace System
         /// <returns>The string representation in base 64 of the elements in <paramref name="inArray"/>.</returns>
         public static String ToBase64String(byte[] inArray, Base64FormattingOptions options)
         {
-            if (inArray == null)
-            {
-                throw new ArgumentNullException();
-            }
+            if (inArray == null) throw new ArgumentNullException();
+
             return ToBase64String(inArray, 0, inArray.Length, options);
         }
 
@@ -553,16 +582,12 @@ namespace System
         public static string ToBase64String(byte[] inArray, int offset, int length, Base64FormattingOptions options)
         {
             //Do data verfication
-            if (inArray == null)
-                throw new ArgumentNullException();
-            if (length < 0)
-                throw new ArgumentOutOfRangeException();
-            if (offset < 0)
-                throw new ArgumentOutOfRangeException();
-            if (options < Base64FormattingOptions.None || options > Base64FormattingOptions.InsertLineBreaks)
-                throw new ArgumentException();
+            if (inArray == null) throw new ArgumentNullException();
+            if (length < 0) throw new ArgumentOutOfRangeException();
+            if (offset < 0) throw new ArgumentOutOfRangeException();
+            if (options < Base64FormattingOptions.None || options > Base64FormattingOptions.InsertLineBreaks) throw new ArgumentException();
 
-            return ToBase64String(inArray, offset, length, options == Base64FormattingOptions.InsertLineBreaks ? true : false);
+            return ToBase64String(inArray, offset, length, options == Base64FormattingOptions.InsertLineBreaks);
         }
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -579,12 +604,9 @@ namespace System
         /// </remarks>
         public static byte[] FromBase64String(string inString)
         {
-            if (inString == null)
-            {
-                throw new ArgumentNullException();
-            }
+            if (inString == null) throw new ArgumentNullException();
 
-            char[] chArray = inString.ToCharArray();
+            var chArray = inString.ToCharArray();
 
             return FromBase64CharArray(chArray, 0, chArray.Length);
         }
@@ -598,21 +620,13 @@ namespace System
         /// <returns>An array of 8-bit unsigned integers equivalent to <paramref name="length"/> elements at position <paramref name="offset"/> in <paramref name="inArray"/>.</returns>
         public static byte[] FromBase64CharArray(char[] inArray, int offset, int length)
         {
-
-            if (inArray == null)
-                throw new ArgumentNullException();
-
-            if (length < 0)
-                throw new ArgumentOutOfRangeException();
-
-            if (offset < 0)
-                throw new ArgumentOutOfRangeException();
-
-            if (offset > inArray.Length - length)
-                throw new ArgumentOutOfRangeException();
+            if (inArray == null) throw new ArgumentNullException();
+            if (length < 0) throw new ArgumentOutOfRangeException();
+            if (offset < 0) throw new ArgumentOutOfRangeException();
+            if (offset > inArray.Length - length) throw new ArgumentOutOfRangeException();
 
             // copy to new array
-            char[] destinationArray = new char[length];
+            var destinationArray = new char[length];
             Array.Copy(inArray, offset, destinationArray, 0, length);
 
             return FromBase64CharArray(inArray, length);
