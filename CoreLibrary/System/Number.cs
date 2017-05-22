@@ -1,12 +1,13 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////namespace System
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
+
 namespace System
 {
-
-    using System;
-    using System.Globalization;
-    using System.Runtime.CompilerServices;
+    using Globalization;
+    using Runtime.CompilerServices;
     // The Number class implements methods for formatting and parsing
     // numeric values. To format and parse numeric values, applications should
     // use the Format and Parse methods provided by the numeric
@@ -293,10 +294,7 @@ namespace System
             {
                 return PostProcessInteger(value, result, formatCh, precision, info);
             }
-            else
-            {
-                return PostProcessFloat(result, formatCh, info);
-            }
+            return PostProcessFloat(result, formatCh, info);
         }
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -324,8 +322,6 @@ namespace System
 
             if (formatLen > 1)
             {
-                ushort digit;
-
                 if (formatLen > 4)
                 {
                     // Invalid Format
@@ -334,7 +330,7 @@ namespace System
 
                 for (int i = 1; i < formatLen; i++)
                 {
-                    digit = (ushort)(format[i] - '0');
+                    var digit = (ushort)(format[i] - '0');
 
                     if (digit > 9)
                     {
@@ -427,10 +423,7 @@ namespace System
             {
                 return original + info.NumberDecimalSeparator + new String('0', count);
             }
-            else
-            {
-                return original;
-            }
+            return original;
         }
 
         private static String ReplaceNegativeSign(String original, NumberFormatInfo info)
@@ -439,10 +432,7 @@ namespace System
             {
                 return info.NegativeSign + original.Substring(1);
             }
-            else
-            {
-                return original;
-            }
+            return original;
         }
 
         private static String ReplaceDecimalSeperator(String original, NumberFormatInfo info)
@@ -453,10 +443,7 @@ namespace System
             {
                 return original.Substring(0, pos) + info.NumberDecimalSeparator + original.Substring(pos + 1);
             }
-            else
-            {
-                return original;
-            }
+            return original;
         }
 
         private static String InsertGroupSeparators(String original, NumberFormatInfo info)
