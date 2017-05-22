@@ -83,7 +83,7 @@ namespace System
         /// <remarks>The value of this constant is equivalent to 23:59:59.9999999, December 31, 9999, exactly one tick (100 nanoseconds) before 00:00:00, January 1, 10000.</remarks>
         public static readonly DateTime MaxValue = new DateTime(MaxTicks);
 
-        private ulong _mTicks;
+        private ulong _ticks;
 
         /// <summary>
         /// Initializes a new instance of the DateTime structure to a specified number of ticks.
@@ -97,7 +97,7 @@ namespace System
                 throw new ArgumentOutOfRangeException();
             }
 
-            _mTicks = (ulong)ticks;
+            _ticks = (ulong)ticks;
         }
 
         /// <summary>
@@ -110,11 +110,11 @@ namespace System
         {
             if (kind == DateTimeKind.Local)
             {
-                _mTicks &= ~UtcMask;
+                _ticks &= ~UtcMask;
             }
             else
             {
-                _mTicks |= UtcMask;
+                _ticks |= UtcMask;
             }
         }
 
@@ -163,12 +163,12 @@ namespace System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the time interval represented by val.</returns>
         public DateTime Add(TimeSpan val)
         {
-            return new DateTime((long)_mTicks + val.Ticks);
+            return new DateTime((long)_ticks + val.Ticks);
         }
 
         private DateTime Add(double val, int scale)
         {
-            return new DateTime((long)_mTicks + (long)(val * scale * TicksPerMillisecond + (val >= 0 ? 0.5 : -0.5)));
+            return new DateTime((long)_ticks + (long)(val * scale * TicksPerMillisecond + (val >= 0 ? 0.5 : -0.5)));
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the time represented by val.</returns>
         public DateTime AddTicks(long val)
         {
-            return new DateTime((long)_mTicks + val);
+            return new DateTime((long)_ticks + val);
         }
 
         /// <summary>
@@ -240,8 +240,8 @@ namespace System
         public static int Compare(DateTime t1, DateTime t2)
         {
             // Get ticks, clear UTC mask
-            var t1Ticks = t1._mTicks & TickMask;
-            var t2Ticks = t2._mTicks & TickMask;
+            var t1Ticks = t1._ticks & TickMask;
+            var t2Ticks = t2._ticks & TickMask;
 
             // Compare ticks, ignore the Kind property.
             if (t1Ticks > t2Ticks)
@@ -321,7 +321,7 @@ namespace System
             get
             {
                 // Need to remove UTC mask before arithmetic operations. Then set it back.
-                return (_mTicks & UtcMask) != 0 ? new DateTime((long)(((_mTicks & TickMask) - (_mTicks & TickMask) % TicksPerDay) | UtcMask)) : new DateTime((long)(_mTicks - _mTicks % TicksPerDay));
+                return (_ticks & UtcMask) != 0 ? new DateTime((long)(((_ticks & TickMask) - (_ticks & TickMask) % TicksPerDay) | UtcMask)) : new DateTime((long)(_ticks - _ticks % TicksPerDay));
             }
         }
 
@@ -396,7 +396,7 @@ namespace System
             get
             {
                 // If mask for UTC time is set - return UTC. If no maskk - return local.
-                return (_mTicks & UtcMask) != 0 ? DateTimeKind.Utc : DateTimeKind.Local;
+                return (_ticks & UtcMask) != 0 ? DateTimeKind.Utc : DateTimeKind.Local;
             }
 
         }
@@ -409,9 +409,9 @@ namespace System
         /// <returns>A new object that has the same number of ticks as the object represented by the value parameter and the DateTimeKind value specified by the kind parameter.</returns>
         public static DateTime SpecifyKind(DateTime value, DateTimeKind kind)
         {
-            var retVal = new DateTime((long) value._mTicks)
+            var retVal = new DateTime((long) value._ticks)
             {
-                _mTicks = kind == DateTimeKind.Utc ? value._mTicks | UtcMask : value._mTicks & ~UtcMask
+                _ticks = kind == DateTimeKind.Utc ? value._ticks | UtcMask : value._ticks & ~UtcMask
             };
 
 
@@ -526,7 +526,7 @@ namespace System
         {
             get
             {
-                return (long)(_mTicks & TickMask) + TicksAtOrigin;
+                return (long)(_ticks & TickMask) + TicksAtOrigin;
             }
         }
 
@@ -540,7 +540,7 @@ namespace System
         {
             get
             {
-                return new TimeSpan((long)((_mTicks & TickMask) % TicksPerDay));
+                return new TimeSpan((long)((_ticks & TickMask) % TicksPerDay));
             }
         }
 
@@ -581,7 +581,7 @@ namespace System
         /// <returns>A time interval that is equal to the date and time represented by this instance minus the date and time represented by val.</returns>
         public TimeSpan Subtract(DateTime val)
         {
-            return new TimeSpan((long)(_mTicks & TickMask) - (long)(val._mTicks & TickMask));
+            return new TimeSpan((long)(_ticks & TickMask) - (long)(val._ticks & TickMask));
         }
 
         /// <summary>
@@ -591,7 +591,7 @@ namespace System
         /// <returns>An object that is equal to the date and time represented by this instance minus the time interval represented by val.</returns>
         public DateTime Subtract(TimeSpan val)
         {
-            return new DateTime((long)(_mTicks - (ulong)val.m_ticks));
+            return new DateTime((long)(_ticks - (ulong)val.NumberOfTicks));
         }
 
         /// <summary>
@@ -637,7 +637,7 @@ namespace System
         /// </returns>
         public static DateTime operator +(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._mTicks + (ulong)t.m_ticks));
+            return new DateTime((long)(d._ticks + (ulong)t.NumberOfTicks));
         }
 
 
@@ -651,7 +651,7 @@ namespace System
         /// </returns>
         public static DateTime operator -(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._mTicks - (ulong)t.m_ticks));
+            return new DateTime((long)(d._ticks - (ulong)t.NumberOfTicks));
         }
 
         /// <summary>
