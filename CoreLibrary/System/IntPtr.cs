@@ -6,9 +6,9 @@
 
 namespace System
 {
-
-    using System;
-
+    /// <summary>
+    ///  A platform-specific type that is used to represent a pointer or a handle.
+    /// </summary>
     [Serializable]
     public struct IntPtr
     {

@@ -6,35 +6,55 @@
 
 namespace System
 {
+    using Globalization;
 
-    using System;
-    using System.Runtime.CompilerServices;
-    using System.Globalization;
-
+    /// <summary>
+    /// Represents a 64-bit signed integer.
+    /// </summary>
     [Serializable]
     public struct Int64
     {
-        internal long m_value;
+        internal long Value;
 
+        /// <summary>
+        /// Represents the largest possible value of an Int64. This field is constant.
+        /// </summary>
+        /// <remarks>The value of this constant is 9,223,372,036,854,775,807; that is, hexadecimal 0x7FFFFFFFFFFFFFFF.</remarks>
         public const long MaxValue = 0x7fffffffffffffffL;
+        /// <summary>
+        /// Represents the smallest possible value of an Int64. This field is constant.
+        /// </summary>
+        /// <remarks>The value of this constant is negative 9,223,372,036,854,775,808; that is, hexadecimal 0x8000000000000000.</remarks>
         public const long MinValue = unchecked((long)0x8000000000000000L);
 
+        /// <summary>
+        /// Converts the numeric value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <returns>The string representation of the value of this instance, consisting of a minus sign if the value is negative, and a sequence of digits ranging from 0 to 9 with no leading zeroes.</returns>
         public override String ToString()
         {
-            return Number.Format(m_value, true, "G", NumberFormatInfo.CurrentInfo);
+            return Number.Format(Value, true, "G", NumberFormatInfo.CurrentInfo);
         }
 
+        /// <summary>
+        /// Converts the numeric value of this instance to its equivalent string representation, using the specified format.
+        /// </summary>
+        /// <param name="format">A numeric format string.</param>
+        /// <returns>The string representation of the value of this instance as specified by format.</returns>
         public String ToString(String format)
         {
-            return Number.Format(m_value, true, format, NumberFormatInfo.CurrentInfo);
+            return Number.Format(Value, true, format, NumberFormatInfo.CurrentInfo);
         }
 
+        /// <summary>
+        /// Converts the string representation of a number to its 64-bit signed integer equivalent.
+        /// </summary>
+        /// <param name="s">A string containing a number to convert. </param>
+        /// <returns>A 64-bit signed integer equivalent to the number contained in s.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static long Parse(String s)
         {
-            if (s == null)
-            {
-                throw new ArgumentNullException();
-            }
+            if (s == null) throw new ArgumentNullException();
 
             return Convert.ToInt64(s);
         }

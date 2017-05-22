@@ -6,11 +6,18 @@
 
 namespace System
 {
-
-    using System;
+    /// <summary>
+    /// Defines a method that supports custom formatting of the value of an object.
+    /// </summary>
     public interface ICustomFormatter
     {
-        // Interface does not need to be marked with the serializable attribute
+        /// <summary>
+        /// Converts the value of a specified object to an equivalent string representation using specified format and culture-specific formatting information.
+        /// </summary>
+        /// <param name="format">A format string containing formatting specifications. </param>
+        /// <param name="arg">An object to format. </param>
+        /// <param name="formatProvider">An object that supplies format information about the current instance. </param>
+        /// <returns>The string representation of the value of arg, formatted as specified by format and formatProvider.</returns>
         String Format(String format, Object arg, IFormatProvider formatProvider);
 
     }

@@ -45,8 +45,14 @@ namespace System
     // data buffered by the StreamWriter cannot be written to the Stream.  In this
     // case, it doesn't make much sense to provide a finalizer on the StreamWriter
     // since you cannot solve this problem correctly.
+    /// <summary>
+    /// Defines a method to release allocated resources.
+    /// </summary>
     public interface IDisposable
     {
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
         void Dispose();
     }
 }
