@@ -1,19 +1,14 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////namespace System
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
 namespace System
 {
-
-    using System;
-    //
-    //  This value type is used for making Type.GetTypeFromHandle() type safe.
-    //
-    //  SECURITY : m_ptr cannot be set to anything other than null by untrusted
-    //  code.
-    //
-    //  This corresponds to EE TypeHandle.
-    ///
-    [Serializable()]
+    /// <summary>
+    /// Represents a type using an internal metadata token.
+    /// </summary>
+    [Serializable]
     public struct RuntimeTypeHandle
     {
     }

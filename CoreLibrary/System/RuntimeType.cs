@@ -1,14 +1,14 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////namespace System
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
 namespace System
 {
+    using Reflection;
+    using Runtime.CompilerServices;
 
-    using System;
-    using System.Reflection;
-    using System.Runtime.CompilerServices;
-
-    [Serializable()]
+    [Serializable]
     internal sealed class RuntimeType : Type
     {
 
@@ -16,23 +16,23 @@ namespace System
         {
             get
             {
-                return (this.DeclaringType != null) ? MemberTypes.NestedType : MemberTypes.TypeInfo;
+                return (DeclaringType != null) ? MemberTypes.NestedType : MemberTypes.TypeInfo;
             }
         }
 
-        public extern override Assembly Assembly
+        public override extern Assembly Assembly
         {
             [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get;
         }
 
-        public extern override String Name
+        public override extern String Name
         {
             [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get;
         }
 
-        public extern override String FullName
+        public override extern String FullName
         {
             [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get;
@@ -42,30 +42,30 @@ namespace System
         {
             get
             {
-                return FullName + ", " + this.Assembly.FullName;
+                return FullName + ", " + Assembly.FullName;
             }
         }
 
-        public extern override Type BaseType
+        public override extern Type BaseType
         {
             [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get;
         }
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern override MethodInfo[] GetMethods(BindingFlags bindingAttr);
+        public override extern MethodInfo[] GetMethods(BindingFlags bindingAttr);
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern override FieldInfo GetField(String name, BindingFlags bindingAttr);
+        public override extern FieldInfo GetField(String name, BindingFlags bindingAttr);
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern override FieldInfo[] GetFields(BindingFlags bindingAttr);
+        public override extern FieldInfo[] GetFields(BindingFlags bindingAttr);
 
-        // GetInterfaces
-        // This method will return all of the interfaces implemented by a
-        //  class
+        /// <summary>
+        /// This method will return all of the interfaces implemented by a class
+        /// </summary>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern override Type[] GetInterfaces();
+        public override extern Type[] GetInterfaces();
         ////////////////////////////////////////////////////////////////////////////////////
         //////
         ////// Attributes
@@ -78,7 +78,7 @@ namespace System
         //////
         ////////////////////////////////////////////////////////////////////////////////////
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        extern public override Type GetElementType();
+        public override extern Type GetElementType();
 
     }
 }

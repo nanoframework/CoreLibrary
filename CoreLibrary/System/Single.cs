@@ -6,29 +6,38 @@
 
 namespace System
 {
+    using Globalization;
 
-    using System.Globalization;
-    using System;
-    using System.Runtime.CompilerServices;
-
-    [Serializable()]
+    /// <summary>
+    /// Represents a single-precision floating-point number.
+    /// </summary>
+    [Serializable]
     public struct Single
     {
-        internal float m_value;
+        internal float Value;
 
-        //
-        // Public constants
-        //
+        /// <summary>
+        /// Represents the smallest possible value of Single. This field is constant.
+        /// </summary>
+        /// <remarks>The value of this constant is negative 3.402823e38.</remarks>
         public const float MinValue = (float)-3.40282346638528859e+38;
+        /// <summary>
+        /// Represents the smallest positive Single value that is greater than zero. This field is constant.
+        /// </summary>
         public const float Epsilon = (float)1.4e-45;
+        /// <summary>
+        /// Represents the largest possible value of Single. This field is constant.
+        /// </summary>
+        /// <remarks>The value of this constant is positive 3.40282347E+38.</remarks>
         public const float MaxValue = (float)3.40282346638528859e+38;
 
+        /// <summary>
+        /// Converts the numeric value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <returns>The string representation of the value of this instance.</returns>
         public override String ToString()
         {
-            // Number.Format method is responsible for returning the correct string representation of the value; however, it does not work properly for special values.
-            // Fixing the issue in Number.Format requires a significant amount of modification in both native and managed code.
-            // In order to avoid that (at lease for now), we use the help of Double class to identify special values and use Number.Format for the others.
-            string str = ((Double)m_value).ToString();
+            var str = ((Double)Value).ToString();
             switch (str)
             {
                 case "Infinity":
@@ -36,13 +45,18 @@ namespace System
                 case "NaN":
                     return str;
                 default:
-                    return Number.Format(m_value, false, "G", NumberFormatInfo.CurrentInfo);
+                    return Number.Format(Value, false, "G", NumberFormatInfo.CurrentInfo);
             }
         }
 
+        /// <summary>
+        /// Converts the numeric value of this instance to its equivalent string representation, using the specified format.
+        /// </summary>
+        /// <param name="format">A numeric format string.</param>
+        /// <returns>The string representation of the value of this instance as specified by format.</returns>
         public String ToString(String format)
         {
-            string str = ((Double)m_value).ToString();
+            var str = ((Double)Value).ToString();
             switch (str)
             {
                 case "Infinity":
@@ -50,7 +64,7 @@ namespace System
                 case "NaN":
                     return str;
                 default:
-                    return Number.Format(m_value, false, format, NumberFormatInfo.CurrentInfo);
+                    return Number.Format(Value, false, format, NumberFormatInfo.CurrentInfo);
             }
         }
     }
