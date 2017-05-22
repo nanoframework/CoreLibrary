@@ -6,8 +6,9 @@
 
 namespace System
 {
-
-    using System;
+    /// <summary>
+    /// Specifies a return value type for a method that does not return a value.
+    /// </summary>
     [Serializable]
     public struct Void
     {

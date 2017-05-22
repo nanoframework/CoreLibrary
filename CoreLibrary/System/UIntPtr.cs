@@ -6,9 +6,11 @@
 
 namespace System
 {
-
+    /// <summary>
+    /// A platform-specific type that is used to represent a pointer or a handle.
+    /// </summary>
     [Serializable]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+    [ComponentModel.EditorBrowsableAttribute(ComponentModel.EditorBrowsableState.Never)]
     public struct UIntPtr
     {
     }

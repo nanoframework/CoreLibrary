@@ -6,99 +6,119 @@
 
 namespace System
 {
-    using System.Globalization;
-
-    // A Version object contains four hierarchical numeric components: major, minor,
-    // revision and build.  Revision and build may be unspecified, which is represented
-    // internally as a -1.  By definition, an unspecified component matches anything
-    // (both unspecified and specified), and an unspecified component is "less than" any
-    // specified component.
-
+    /// <summary>
+    /// Represents the version number of an assembly, operating system, or the common language runtime. This class cannot be inherited.
+    /// </summary>
     public sealed class Version // : ICloneable, IComparable, IComparable<Version>, IEquatable<Version>
     {
         // AssemblyName depends on the order staying the same
-        private int _Major;
-        private int _Minor;
-        private int _Build;// = -1;
-        private int _Revision;// = -1;
+        private readonly int _major;
+        private readonly int _minor;
+        private readonly int _build;// = -1;
+        private readonly int _revision;// = -1;
 
+        /// <summary>
+        /// Initializes a new instance of the Version class with the specified major, minor, build, and revision numbers.
+        /// </summary>
+        /// <param name="major">The major version number.</param>
+        /// <param name="minor">The minor version number.</param>
+        /// <param name="build">The build number.</param>
+        /// <param name="revision">The revision number.</param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public Version(int major, int minor, int build, int revision)
         {
-            if (major < 0 || minor < 0 || revision < 0 || build < 0)
-                throw new ArgumentOutOfRangeException();
+            if (major < 0 || minor < 0 || revision < 0 || build < 0) throw new ArgumentOutOfRangeException();
 
-            _Major = major;
-            _Minor = minor;
-            _Revision = revision;
-            _Build = build;
+            _major = major;
+            _minor = minor;
+            _revision = revision;
+            _build = build;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the Version class using the specified major and minor values.
+        /// </summary>
+        /// <param name="major">The major version number.</param>
+        /// <param name="minor">The minor version number.</param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public Version(int major, int minor)
         {
-            if (major < 0)
-                throw new ArgumentOutOfRangeException();
+            if (major < 0) throw new ArgumentOutOfRangeException();
+            if (minor < 0) throw new ArgumentOutOfRangeException();
 
-            if (minor < 0)
-                throw new ArgumentOutOfRangeException();
-
-            _Major = major;
-            _Minor = minor;
+            _major = major;
+            _minor = minor;
 
             // Other 2 initialize to -1 as it done on desktop and CE
-            _Build = -1;
-            _Revision = -1;
+            _build = -1;
+            _revision = -1;
         }
 
-        // Properties for setting and getting version numbers
+        /// <summary>
+        /// Gets the value of the major component of the version number for the current Version object.
+        /// </summary>
+        /// <value>The major version number.</value>
         public int Major
         {
-            get { return _Major; }
+            get { return _major; }
         }
 
+        /// <summary>
+        /// Gets the value of the minor component of the version number for the current Version object.
+        /// </summary>
+        /// <value>The minor version number.</value>
         public int Minor
         {
-            get { return _Minor; }
+            get { return _minor; }
         }
 
+        /// <summary>
+        /// Gets the value of the revision component of the version number for the current Version object.
+        /// </summary>
+        /// <value>The revision version number.</value>
         public int Revision
         {
-            get { return _Revision; }
+            get { return _revision; }
         }
 
+        /// <summary>
+        /// Gets the value of the build component of the version number for the current Version object.
+        /// </summary>
+        /// <value>The build version number.</value>
         public int Build
         {
-            get { return _Build; }
+            get { return _build; }
         }
 
+        /// <summary>
+        /// Returns a value indicating whether the current Version object is equal to a specified object.
+        /// </summary>
+        /// <param name="obj">An object to compare with the current Version object, or null.</param>
+        /// <returns>true if the current Version object and obj are both Version objects, and every component of the current Version object matches the corresponding component of obj; otherwise, false.</returns>
         public override bool Equals(Object obj)
         {
-            if (((Object)obj == null) ||
-                (!(obj is Version)))
-                return false;
+            if (!(obj is Version)) return false;
 
-            Version v = (Version)obj;
+            var v = (Version)obj;
             // check that major, minor, build & revision numbers match
-            if ((this._Major != v._Major) ||
-                (this._Minor != v._Minor) ||
-                (this._Build != v._Build) ||
-                (this._Revision != v._Revision))
-                return false;
-
-            return true;
+            return _major == v._major && _minor == v._minor && _build == v._build && _revision == v._revision;
         }
 
+        /// <summary>
+        /// Converts the value of the current Version object to its equivalent String representation.
+        /// </summary>
+        /// <returns>The String representation of the values of the major, minor, build, and revision components of the current Version object, as depicted in the following format.
+        /// Each component is separated by a period character ('.'). Square brackets ('[' and ']') indicate a component that will not appear in the return value if the component is not defined:
+        /// major.minor[.build[.revision]]</returns>
         public override String ToString()
         {
-            string retStr = _Major + "." + _Minor;
+            var retStr = _major + "." + _minor;
 
             // Adds _Build and then _Revision if they are positive. They could be -1 in this case not added.
-            if (_Build >= 0)
+            if (_build >= 0)
             {
-                retStr += "." + _Build;
-                if (_Revision >= 0)
-                {
-                    retStr += "." + _Revision;
-                }
+                retStr += "." + _build;
+                if (_revision >= 0) retStr += "." + _revision;
             }
 
             return retStr;
