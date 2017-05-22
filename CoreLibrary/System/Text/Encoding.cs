@@ -1,6 +1,8 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////namespace System.Text
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
 namespace System.Text
 {
     // This abstract base class represents a character encoding. The class provides
@@ -66,30 +68,70 @@ namespace System.Text
     // generally executes faster.
     //
 
-    [Serializable()]
+    /// <summary>
+    /// Represents a character encoding.
+    /// </summary>
+    [Serializable]
     public abstract class Encoding
     {
+        /// <summary>
+        /// When overridden in a derived class, encodes all the characters in the specified string into a sequence of bytes.
+        /// </summary>
+        /// <param name="s">The string containing the characters to encode.</param>
+        /// <returns>A byte array containing the results of encoding the specified set of characters.</returns>
         public virtual byte[] GetBytes(String s)
         {
             return null;
         }
 
+        /// <summary>
+        /// When overridden in a derived class, encodes a set of characters from the specified string into the specified byte array.
+        /// </summary>
+        /// <param name="s">The string containing the set of characters to encode.</param>
+        /// <param name="charIndex">The index of the first character to encode.</param>
+        /// <param name="charCount">The number of characters to encode.</param>
+        /// <param name="bytes">The byte array to contain the resulting sequence of bytes.</param>
+        /// <param name="byteIndex">The index at which to start writing the resulting sequence of bytes.</param>
+        /// <returns>The actual number of bytes written into bytes.</returns>
+        /// <exception cref="NotImplementedException"></exception>
         public virtual int GetBytes(string s, int charIndex, int charCount, byte[] bytes, int byteIndex)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// When overridden in a derived class, decodes all the bytes in the specified byte array into a set of characters.
+        /// </summary>
+        /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
+        /// <returns>A character array containing the results of decoding the specified sequence of bytes.</returns>
+        /// <exception cref="NotImplementedException"></exception>
         public virtual char[] GetChars(byte[] bytes)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// When overridden in a derived class, decodes a sequence of bytes from the specified byte array into a set of characters.
+        /// </summary>
+        /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
+        /// <param name="byteIndex">The index of the first byte to decode.</param>
+        /// <param name="byteCount">The number of bytes to decode.</param>
+        /// <returns>A character array containing the results of decoding the specified sequence of bytes.</returns>
+        /// <exception cref="NotImplementedException"></exception>
         public virtual char[] GetChars(byte[] bytes, int byteIndex, int byteCount)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// When overridden in a derived class, obtains a decoder that converts an encoded sequence of bytes into a sequence of characters.
+        /// </summary>
+        /// <returns>A Decoder that converts an encoded sequence of bytes into a sequence of characters.</returns>
         public abstract Decoder GetDecoder();
+        /// <summary>
+        /// Gets an encoding for the UTF-8 format.
+        /// </summary>
+        /// <value> An encoding for the UTF-8 format. </value>
         public static Encoding UTF8
         {
             get

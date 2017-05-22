@@ -19,7 +19,7 @@
 namespace System.Text
 {
     using System;
-    using System.Runtime.CompilerServices;
+    using Runtime.CompilerServices;
     // Encodes text into and out of UTF-8.  UTF-8 is a way of writing
     // Unicode characters with variable numbers of bytes per character,
     // optimized for the lower 127 ASCII characters.  It's an efficient way
@@ -33,7 +33,7 @@ namespace System.Text
     // switch the byte orderings.
     public class UTF8Encoding : Encoding
     {
-        
+
         //bytes   bits    UTF-8 representation
         //-----   ----    -----------------------------------
         //1        7      0vvvvvvv
@@ -45,22 +45,25 @@ namespace System.Text
         //Surrogate:
         //Real Unicode value = (HighSurrogate - 0xD800) * 0x400 + (LowSurrogate - 0xDC00) + 0x10000
 
+        /// <summary>
+        /// Represents a UTF-8 encoding of Unicode characters.
+        /// </summary>
         public UTF8Encoding()
         {
         }
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern override byte[] GetBytes(String s);
+        public override extern byte[] GetBytes(String s);
 
         
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern override int GetBytes(string s, int charIndex, int charCount, byte[] bytes, int byteIndex);
+        public override extern int GetBytes(string s, int charIndex, int charCount, byte[] bytes, int byteIndex);
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern override char[] GetChars(byte[] bytes);
+        public override extern char[] GetChars(byte[] bytes);
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern override char[] GetChars(byte[] bytes, int byteIndex, int byteCount);
+        public override extern char[] GetChars(byte[] bytes, int byteIndex, int byteCount);
 
         public override Decoder GetDecoder()
         {
