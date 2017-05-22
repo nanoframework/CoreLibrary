@@ -6,53 +6,58 @@
 
 namespace System
 {
-
-    using System;
-    using System.Runtime.CompilerServices;
-
+    /// <summary>
+    /// Represents a character as a UTF-16 code unit.
+    /// </summary>
     [Serializable]
     public struct Char
     {
-      //
-      // Member Variables
-      //
-        internal char m_value;
+        private char _value;
 
-      //
-      // Public Constants
-      //
-      //
-      // The maximum character value.
-       ///
+        /// <summary>
+        /// Represents the largest possible value of a Char. This field is constant.
+        /// </summary>
         public const char MaxValue = (char)0xFFFF;
-      //
-      // The minimum character value.
-       ///
+        /// <summary>
+        /// Represents the smallest possible value of a Char. This field is constant.
+        /// </summary>
         public const char MinValue = (char)0x00;
 
+        /// <summary>
+        /// Converts the value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <returns>The string representation of the value of this instance.</returns>
         public override String ToString()
         {
-            return new String(m_value, 1);
+            return new String(_value, 1);
         }
 
+        /// <summary>
+        /// Returns the lower case character.
+        /// </summary>
+        /// <returns>The lower case character.</returns>
         public char ToLower()
         {
-            if('A' <= m_value && m_value <= 'Z')
+            if('A' <= _value && _value <= 'Z')
             {
-                return (char)(m_value - ('A' - 'a'));
+                return (char)(_value - ('A' - 'a'));
             }
 
-            return m_value;
+            return _value;
         }
 
+        /// <summary>
+        /// Returns the upper case character.
+        /// </summary>
+        /// <returns>The upper case character.</returns>
         public char ToUpper()
         {
-            if('a' <= m_value && m_value <= 'z')
+            if('a' <= _value && _value <= 'z')
             {
-                return (char)(m_value + ('A' - 'a'));
+                return (char)(_value + ('A' - 'a'));
             }
 
-            return m_value;
+            return _value;
         }
     }
 }
