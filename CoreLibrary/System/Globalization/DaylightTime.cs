@@ -1,61 +1,73 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////namespace System.Globalization
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
+
 namespace System.Globalization
 {
-
     using System;
-    //
-    // This class represents a starting/ending time for a period of daylight saving time.
-   ///
+
+    /// <summary>
+    /// Defines the period of daylight saving time.
+    /// </summary>
     [Serializable]
     public class DaylightTime
     {
-        internal DateTime m_start;
-        internal DateTime m_end;
-        internal TimeSpan m_delta;
+        internal DateTime DaylightTimeStart;
+        internal DateTime DaylightTimeEnd;
+        internal TimeSpan DaylightTimeDelta;
 
         private DaylightTime()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the DaylightTime class with the specified start, end, and time difference information.
+        /// </summary>
+        /// <param name="start">The object that represents the date and time when daylight saving time begins. The value must be in local time.</param>
+        /// <param name="end">The object that represents the date and time when daylight saving time ends. The value must be in local time.</param>
+        /// <param name="delta">The object that represents the difference between standard time and daylight saving time, in ticks.</param>
         public DaylightTime(DateTime start, DateTime end, TimeSpan delta)
         {
-            m_start = start;
-            m_end = end;
-            m_delta = delta;
+            DaylightTimeStart = start;
+            DaylightTimeEnd = end;
+            DaylightTimeDelta = delta;
         }
 
-      //
-      // The start date of a daylight saving period.
-       ///
+        /// <summary>
+        /// Gets the object that represents the date and time when the daylight saving period begins.
+        /// </summary>
+        /// <value>The object that represents the date and time when the daylight saving period begins. The value is in local time.</value>
         public DateTime Start
         {
             get
             {
-                return m_start;
+                return DaylightTimeStart;
             }
         }
 
-      //
-      // The end date of a daylight saving period.
-       ///
+        /// <summary>
+        /// Gets the object that represents the date and time when the daylight saving period ends.
+        /// </summary>
+        /// <value>The object that represents the date and time when the daylight saving period ends. The value is in local time.</value>
         public DateTime End
         {
             get
             {
-                return m_end;
+                return DaylightTimeEnd;
             }
         }
 
-      //
-      // Delta to stardard offset in ticks.
-       ///
+        /// <summary>
+        /// Gets the time interval that represents the difference between standard time and daylight saving time.
+        /// </summary>
+        /// <value>The time interval that represents the difference between standard time and daylight saving time.</value>
         public TimeSpan Delta
         {
             get
             {
-                return m_delta;
+                return DaylightTimeDelta;
             }
         }
     }
