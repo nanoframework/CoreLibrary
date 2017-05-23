@@ -12,21 +12,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\obj\Release\mscorlib.dll">
-      <Link>build\mscorlib.dll</Link>
+      <Link>lib\mscorlib.dll</Link>
     </Content>
     <Content Include="..\obj\Release\mscorlib.pdb">
-      <Link>build\mscorlib.pdb</Link>
+      <Link>lib\mscorlib.pdb</Link>
     </Content>
     <Content Include="..\obj\Release\mscorlib.pdbx">
-      <Link>build\mscorlib.pdbx</Link>
+      <Link>lib\mscorlib.pdbx</Link>
     </Content>
     <Content Include="..\obj\Release\mscorlib.pe">
-      <Link>build\mscorlib.pe</Link>
+      <Link>lib\mscorlib.pe</Link>
     </Content>
     <Content Include="..\bin\$(Configuration)\mscorlib.xml">
-      <Link>build\mscorlib.xml</Link>
+      <Link>lib\mscorlib.xml</Link>
     </Content>
     <Content Include="build\nanoFramework.CoreLibrary.targets" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>96eaba11-6a33-454d-a7b2-b96ca5617e8c</ProjectGuid>
@@ -37,7 +40,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.CoreLibrary</Id>
-    <Version>1.0.0-preview016</Version>
+    <Version>1.0.0-preview017</Version>
     <Title>nanoFramework.CoreLibrary</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
