@@ -8,33 +8,50 @@ namespace System.Collections
 {
     using System;
 
-    //
-    // Base interface for all collections, defining enumerators, size, and
-    // synchronization methods.
-   ///
+    /// <summary>
+    /// Defines size, enumerators, and synchronization methods for all nongeneric collections.
+    /// </summary>
     public interface ICollection : IEnumerable
     {
-      // Interfaces are not serialable
-      //
-      // CopyTo copies a collection into an Array, starting at a particular
-      // index into the array.
-       //
-      // @param array array to copy collection into
-      // @param index Index into <var>array</var>.
-      // @exception ArgumentNullException if <var>array</var> is null.
-       ///
+        /// <summary>
+        /// Copies the elements of the ICollection to an Array, starting at a particular Array index.
+        /// </summary>
+        /// <param name="array">The one-dimensional Array that is the destination of the elements copied from ICollection. The Array must have zero-based indexing.</param>
+        /// <param name="index">The zero-based index in array at which copying begins.</param>
         void CopyTo(Array array, int index);
 
-      //
-      // Number of items in the collections.
-       ///
+        /// <summary>
+        /// Gets the number of elements contained in the ICollection.
+        /// </summary>
+        /// <value>
+        /// The number of elements contained in the ICollection.
+        /// </value>
         int Count
-        { get; }
+        {
+            get;
+        }
 
+        /// <summary>
+        /// Gets an object that can be used to synchronize access to the ICollection.
+        /// </summary>
+        /// <value>
+        /// An object that can be used to synchronize access to the ICollection.
+        /// </value>
         Object SyncRoot
-        { get; }
+        {
+            get;
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether access to the ICollection is synchronized (thread safe).
+        /// </summary>
+        /// <value>
+        /// true if access to the ICollection is synchronized (thread safe); otherwise, false.
+        /// </value>
         bool IsSynchronized
-        { get; }
+        {
+            get;
+        }
     }
 }
 

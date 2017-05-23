@@ -6,73 +6,92 @@
 
 namespace System.Collections
 {
-
     using System;
-    //
-    // An IList is an ordered collection of objects.  The exact ordering
-    // is up to the implementation of the list, ranging from a sorted
-    // order to insertion order.
-   ///
+
+    /// <summary>
+    /// Represents a non-generic collection of objects that can be individually accessed by index.
+    /// </summary>
     public interface IList : ICollection
     {
-      // Interfaces are not serializable
-      //
-      // The Item property provides methods to read and edit entries in the List.
-       ///
+        /// <summary>
+        /// Gets or sets the element at the specified index.
+        /// </summary>
+        /// <value>
+        /// The element at the specified index.
+        /// </value>
+        /// <param name="index">The zero-based index of the element to get or set.</param>
+        /// <returns>The element at the specified index.</returns>
         Object this[int index]
         {
             get;
             set;
         }
 
-      //
-      // Adds an item to the list.  The exact position in the list is
-      // implementation-dependent, so while ArrayList may always insert
-      // in the last available location, a SortedList most likely would not.
-      // The return value is the position the new element was inserted in.
-       ///
+        /// <summary>
+        /// Adds an item to the IList.
+        /// </summary>
+        /// <param name="value">The object to add to the IList.</param>
+        /// <returns>The position into which the new element was inserted, or -1 to indicate that the item was not inserted into the collection.</returns>
         int Add(Object value);
 
-      //
-      // Returns whether the list contains a particular item.
-       ///
+        /// <summary>
+        /// Determines whether the IList contains a specific value.
+        /// </summary>
+        /// <param name="value">The object to locate in the IList.</param>
+        /// <returns>true if the Object is found in the IList; otherwise, false.</returns>
         bool Contains(Object value);
 
-      //
-      // Removes all items from the list.
-       ///
+        /// <summary>
+        /// Removes all items from the IList.
+        /// </summary>
         void Clear();
 
+        /// <summary>
+        /// Gets a value indicating whether the IList is read-only.
+        /// </summary>
+        /// <value>
+        /// true if the IList is read-only; otherwise, false.
+        /// </value>
         bool IsReadOnly
-        { get; }
+        {
+            get;
+        }
 
+        /// <summary>
+        /// Gets a value indicating whether the IList has a fixed size.
+        /// </summary>
+        /// <value>
+        /// true if the IList has a fixed size; otherwise, false.
+        /// </value>
         bool IsFixedSize
         {
             get;
         }
 
-      //
-      // Returns the index of a particular item, if it is in the list.
-      // Returns -1 if the item isn't in the list.
-       ///
+        /// <summary>
+        /// Determines the index of a specific item in the IList.
+        /// </summary>
+        /// <param name="value">The object to locate in the IList.</param>
+        /// <returns>The index of value if found in the list; otherwise, -1.</returns>
         int IndexOf(Object value);
 
-      //
-      // Inserts <var>value</var> into the list at position <var>index</var>.
-      // <var>index</var> must be non-negative and less than or equal to the
-      // number of elements in the list.  If <var>index</var> equals the number
-      // of items in the list, then <var>value</var> is appended to the end.
-       ///
+        /// <summary>
+        /// Inserts an item to the IList at the specified index.
+        /// </summary>
+        /// <param name="index">The zero-based index at which value should be inserted.</param>
+        /// <param name="value">The object to insert into the IList.</param>
         void Insert(int index, Object value);
 
-      //
-      // Removes an item from the list.
-       ///
+        /// <summary>
+        /// Removes the first occurrence of a specific object from the IList.
+        /// </summary>
+        /// <param name="value">The object to remove from the IList.</param>
         void Remove(Object value);
 
-      //
-      // Removes the item at position <var>index</var>.
-       ///
+        /// <summary>
+        /// Removes the IList item at the specified index.
+        /// </summary>
+        /// <param name="index">The zero-based index of the item to remove.</param>
         void RemoveAt(int index);
     }
 }

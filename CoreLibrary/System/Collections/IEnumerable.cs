@@ -6,18 +6,15 @@
 
 namespace System.Collections
 {
-    using System;
-    //
-    // Implement this interface if you need to support VB's foreach semantics.
-    // Also, COM classes that support an enumerator will also implement this interface.
-   ///
+    /// <summary>
+    /// Exposes an enumerator, which supports a simple iteration over a non-generic collection.
+    /// </summary>
     public interface IEnumerable
     {
-      // Interfaces are not serializable
-      //
-      // Returns an IEnumerator for this enumerable Object.  The enumerator provides
-      // a simple way to access all the contents of a collection.
-       ///
+        /// <summary>
+        /// Returns an enumerator that iterates through a collection.
+        /// </summary>
+        /// <returns>An IEnumerator object that can be used to iterate through the collection.</returns>
         IEnumerator GetEnumerator();
     }
 }

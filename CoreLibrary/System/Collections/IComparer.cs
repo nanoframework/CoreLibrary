@@ -6,32 +6,23 @@
 
 namespace System.Collections
 {
-
     using System;
-    //
-    // The IComparer interface implements a method that compares two objects. It is
-    // used in conjunction with the <i>Sort</i> and <i>BinarySearch</i> methods on
-    // the <i>Array</i> and <i>List</i> classes.
-   //
-    // @see System.Array
-    // @see System.Collections.List
-   //
-    // @author Anders Hejlsberg
-    // @version 1.00 8/13/98
-   ///
-    // Interfaces are not serializable
+
+    /// <summary>
+    /// Exposes a method that compares two objects.
+    /// </summary>
     public interface IComparer
     {
-      //
-      // Compares two objects. An implementation of this method must return a
-      // value less than zero if x is less than y, zero if x is equal to y, or a
-      // value greater than zero if x is greater than y.
-       //
-      // @param x The first object to compare.
-      // @param y The second object to compare.
-      // @return A value less than zero if x < y, zero if x = y, or a value
-      // greater than zero if x > y.
-       ///
+        /// <summary>
+        /// Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+        /// </summary>
+        /// <param name="x">The first object to compare.</param>
+        /// <param name="y">The second object to compare.</param>
+        /// <returns>A signed integer that indicates the relative values of x and y, as shown in the following table.
+        /// <para>Less than zero : x is less than y.</para>
+        /// <para>Zero : x equals y.</para>
+        /// <para>Greater than zero : x is greater than y.</para>
+        /// </returns>
         int Compare(Object x, Object y);
     }
 }
