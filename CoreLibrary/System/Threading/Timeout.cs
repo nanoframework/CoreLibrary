@@ -6,17 +6,15 @@
 
 namespace System.Threading
 {
-    using System.Threading;
-    using System;
-    //
-    // A constant used by methods that take a timeout (Object.Wait, Thread.Sleep
-    // etc) to indicate that no timeout should occur.
-    //
-    // this should become an enum.
-    //
-    // This class has only static members and does not require serialization.
+    /// <summary>
+    /// Contains constants that specify infinite time-out intervals. This class cannot be inherited.
+    /// </summary>
     public static class Timeout
     {
+        /// <summary>
+        /// A constant used to specify an infinite waiting period, for threading methods that accept an Int32 parameter.
+        /// </summary>
+        /// <remarks>The value of this field is -1 (0xFFFFFFFF).</remarks>
         public const int Infinite = -1;
     }
 
