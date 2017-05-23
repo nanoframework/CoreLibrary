@@ -4,18 +4,26 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System;
-
 namespace System.IO
 {
-    // Provides seek reference points.  To seek to the end of a stream,
-    // call stream.Seek(0, SeekOrigin.End).
-    [Serializable()]
+    /// <summary>
+    /// Specifies the position in a stream to use for seeking.
+    /// </summary>
+    /// <remarks>These constants match Win32's FILE_BEGIN, FILE_CURRENT, and FILE_END</remarks>
+    [Serializable]
     public enum SeekOrigin
     {
-      // These constants match Win32's FILE_BEGIN, FILE_CURRENT, and FILE_END
+        /// <summary>
+        /// Specifies the beginning of a stream.
+        /// </summary>
         Begin = 0,
+        /// <summary>
+        /// Specifies the current position within a stream.
+        /// </summary>
         Current = 1,
+        /// <summary>
+        /// Specifies the end of a stream.
+        /// </summary>
         End = 2,
     }
 }
