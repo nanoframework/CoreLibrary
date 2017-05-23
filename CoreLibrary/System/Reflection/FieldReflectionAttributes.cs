@@ -6,8 +6,7 @@
 
 namespace System.Reflection
 {
-
-    [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Field)]
     internal sealed class FieldNoReflectionAttribute : Attribute
     {
     }
