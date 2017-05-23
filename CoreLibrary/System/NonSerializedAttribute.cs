@@ -7,10 +7,16 @@
 namespace System
 {
 
-    [AttributeUsage(AttributeTargets.Field, Inherited = false)]
+    /// <summary>
+    /// Indicates that a field of a serializable class should not be serialized. This class cannot be inherited.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field)]
     public sealed class NonSerializedAttribute : Attribute
     {
 
+        /// <summary>
+        /// Initializes a new instance of the NonSerializedAttribute class.
+        /// </summary>
         public NonSerializedAttribute()
         {
         }
