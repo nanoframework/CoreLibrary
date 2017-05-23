@@ -1,40 +1,36 @@
-﻿//-----------------------------------------------------------------------------
-//
+﻿//
 // Copyright (c) 2017 The nanoFramework project contributors
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
 //
 
-using System;
-using System.Collections;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Diagnostics;
 using System.Globalization;
 
 namespace System.Resources
 {
+    /// <summary>
+    /// Represents a resource manager that provides convenient access to culture-specific resources at run time.
+    /// </summary>
     public class ResourceManager
     {
-        internal const string s_fileExtension = ".tinyresources";
-        internal const string s_resourcesExtension = ".resources";
+        internal const string FileExtension = ".tinyresources";
+        internal const string ResourcesExtension = ".resources";
 
-        private int m_resourceFileId;
-        private Assembly m_assembly;
-        private Assembly m_baseAssembly;
-        private string m_baseName;
-        internal string m_cultureName;
-        private ResourceManager m_rmFallback;
+        private int _resourceFileId;
+        internal string CultureName;
+        private ResourceManager _rmFallback;
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        extern static private int FindResource(string baseName, Assembly assembly);
+        private static extern int FindResource(string baseName, Assembly assembly);
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        extern private object GetObjectInternal(short id);
-        
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        extern private object GetObjectInternal(short id, int offset, int length);
-
+        /// <summary>
+        /// Initializes a new instance of the ResourceManager class that looks up resources contained in files with the specified root name in the given assembly.
+        /// </summary>
+        /// <param name="baseName">The root name of the resource file without its extension but including any fully qualified namespace name. 
+        /// For example, the root name for the resource file named MyApplication.MyResource.en-US.resources is MyApplication.MyResource.</param>
+        /// <param name="assembly">The main assembly for the resources.</param>
         public ResourceManager(string baseName, Assembly assembly)
             : this(baseName, assembly, CultureInfo.CurrentUICulture.Name, true)
         {
@@ -44,55 +40,43 @@ namespace System.Resources
         {
             if (!Initialize(baseName, assembly, cultureName))
             {
-                if (fThrowOnFailure)
-                {
-                    throw new ArgumentException();
-                }
+                if (fThrowOnFailure) throw new ArgumentException();
             }
         }
 
         internal ResourceManager(string baseName, string cultureName, int iResourceFileId, Assembly assemblyBase, Assembly assemblyResource)
         {
-          //found resource
-            this.m_baseAssembly = assemblyBase;
-            this.m_assembly = assemblyResource;
-            this.m_baseName = baseName;
-            this.m_cultureName = cultureName;
-            this.m_resourceFileId = iResourceFileId;
+            CultureName = cultureName;
+            _resourceFileId = iResourceFileId;
         }
 
         private bool IsValid
         {
-            get { return m_resourceFileId >= 0; }
+            get { return _resourceFileId >= 0; }
         }
 
         private string GetParentCultureName(string cultureName)
         {
-            int iDash = cultureName.LastIndexOf('-');
-            if (iDash < 0)
-                cultureName = "";
-            else
-                cultureName = cultureName.Substring(0, iDash);
+            var iDash = cultureName.LastIndexOf('-');
+            cultureName = iDash < 0 ? "" : cultureName.Substring(0, iDash);
 
             return cultureName;
         }
 
         internal bool Initialize(string baseName, Assembly assembly, string cultureName)
         {
-            string cultureNameSav = cultureName;
-            Assembly assemblySav = assembly;
+            var cultureNameSav = cultureName;
+            var assemblySav = assembly;
 
-            m_resourceFileId = -1;  //set to invalid state
+            _resourceFileId = -1;  //set to invalid state
 
-            bool fTryBaseAssembly = false;
+            var fTryBaseAssembly = false;
 
             while (true)
             {
-                bool fInvariantCulture = (cultureName == "");
-
-                string[] splitName = assemblySav.FullName.Split(',');
-
-                string assemblyName = splitName[0];
+                var fInvariantCulture = (cultureName == "");
+                var splitName = assemblySav.FullName.Split(',');
+                var assemblyName = splitName[0];
  
                 if(!fInvariantCulture)
                 {
@@ -100,21 +84,17 @@ namespace System.Resources
                 }
                 else if (!fTryBaseAssembly)
                 {
-                    assemblyName = assemblyName + s_resourcesExtension;
+                    assemblyName = assemblyName + ResourcesExtension;
                 }
 
-              // append version
-                if (splitName.Length >= 1 && splitName[1] != null)
-                {
-                    assemblyName += ", " + splitName[1].Trim();
-                }
+                // append version
+                if (splitName.Length >= 1 && splitName[1] != null) assemblyName += ", " + splitName[1].Trim();
 
                 assembly = Assembly.Load( assemblyName, false );
 
                 if (assembly != null)
                 {
-                    if (Initialize(baseName, assemblySav, cultureNameSav, assembly))
-                        return true;
+                    if (Initialize(baseName, assemblySav, cultureNameSav, assembly)) return true;
                 }
 
                 if (!fInvariantCulture)
@@ -138,100 +118,32 @@ namespace System.Resources
         {
             while (true)
             {
-                string resourceName = baseName;
-                bool fInvariantCulture = (cultureName == "");
+                var resourceName = baseName;
+                var fInvariantCulture = (cultureName == "");
 
-                if (!fInvariantCulture)
-                {
-                    resourceName = baseName + "." + cultureName;
-                }
+                if (!fInvariantCulture) resourceName = baseName + "." + cultureName;
 
-                resourceName = resourceName + s_fileExtension;
+                resourceName = resourceName + FileExtension;
 
-                int iResourceFileId = FindResource(resourceName, assemblyResource);
+                var iResourceFileId = FindResource(resourceName, assemblyResource);
 
                 if (iResourceFileId >= 0)
                 {
-                  //found resource
-                    this.m_baseAssembly = assemblyBase;
-                    this.m_assembly = assemblyResource;
-                    this.m_baseName = baseName;
-                    this.m_cultureName = cultureName;
-                    this.m_resourceFileId = iResourceFileId;
+                    CultureName = cultureName;
+                    _resourceFileId = iResourceFileId;
 
                     break;
                 }
-                else if (fInvariantCulture)
-                {
-                    break;
-                }
+                if (fInvariantCulture) break;
 
                 cultureName = GetParentCultureName(cultureName);
             }
 
-            return this.IsValid;
-        }
-
-        private object GetObjectFromId(short id)
-        {
-            ResourceManager rm = this;
-
-            while (rm != null)
-            {
-                object obj = rm.GetObjectInternal(id);
-
-                if (obj != null)
-                    return obj;
-
-                if (rm.m_rmFallback == null)
-                {
-                    if (rm.m_cultureName != "")
-                    {
-                        string cultureNameParent = GetParentCultureName(rm.m_cultureName);
-                        ResourceManager rmFallback = new ResourceManager(m_baseName, m_baseAssembly, cultureNameParent, false);
-
-                        if (rmFallback.IsValid)
-                            rm.m_rmFallback = rmFallback;
-                    }
-                }
-
-                rm = rm.m_rmFallback;
-            }
-
-            throw new ArgumentException();
-        }
-
-        private object GetObjectChunkFromId(short id, int offset, int length)
-        {
-            ResourceManager rm = this;
-
-            while (rm != null)
-            {
-                object obj = rm.GetObjectInternal(id, offset, length);
-
-                if (obj != null)
-                    return obj;
-
-                if (rm.m_rmFallback == null)
-                {
-                    if (rm.m_cultureName != "")
-                    {
-                        string cultureNameParent = GetParentCultureName(rm.m_cultureName);
-                        ResourceManager rmFallback = new ResourceManager(m_baseName, m_baseAssembly, cultureNameParent, false);
-
-                        if (rmFallback.IsValid)
-                            rm.m_rmFallback = rmFallback;
-                    }
-                }
-
-                rm = rm.m_rmFallback;
-            }
-
-            throw new ArgumentException();
+            return IsValid;
         }
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        internal extern static object GetObject(System.Resources.ResourceManager rm, Enum id);
+        internal static extern object GetObject(ResourceManager rm, Enum id);
     }
 }
 

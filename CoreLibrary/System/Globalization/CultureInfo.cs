@@ -54,13 +54,13 @@ namespace System.Globalization
             if (name == null) throw new ArgumentNullException("name");
 
             CultureInfoResourceManager = new ResourceManager(ResourceBase, typeof(CultureInfo).Assembly, name, true);
-            CultureInfoName = CultureInfoResourceManager.m_cultureName;
+            CultureInfoName = CultureInfoResourceManager.CultureName;
         }
 
         internal CultureInfo(ResourceManager resourceManager)
         {
             CultureInfoResourceManager = resourceManager;
-            CultureInfoName = resourceManager.m_cultureName;
+            CultureInfoName = resourceManager.CultureName;
         }
 
         /// <summary>
@@ -141,11 +141,10 @@ namespace System.Globalization
                     for (var iResource = 0; iResource < resources.Length; iResource++)
                     {
                         var resource = resources[iResource];
-                        var ciResource = ResourceBase;
-                        if (ciResource.Length < resource.Length && resource.Substring(0, ciResource.Length) == ciResource)
+                        if (ResourceBase.Length < resource.Length && resource.Substring(0, ResourceBase.Length) == ResourceBase)
                         {
                           //System.Globalization.Resources.CultureInfo.<culture>.tinyresources
-                            var cultureName = resource.Substring(ciResource.Length, resource.Length - ciResource.Length - ResourceManager.s_fileExtension.Length);
+                            var cultureName = resource.Substring(ResourceBase.Length, resource.Length - ResourceBase.Length - ResourceManager.FileExtension.Length);
                           // remove the leading "."
                             if (cultureName != "") cultureName = cultureName.Substring(1, cultureName.Length - 1);
 

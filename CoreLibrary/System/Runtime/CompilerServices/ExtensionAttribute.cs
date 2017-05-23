@@ -6,8 +6,9 @@
 
 namespace System.Runtime.CompilerServices
 {
-using System;
- 
-[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Method)]
-public sealed class ExtensionAttribute : Attribute { }
+    /// <summary>
+    /// Indicates that a method is an extension method, or that a class or assembly contains extension methods.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Method)]
+    public sealed class ExtensionAttribute : Attribute { }
 }
