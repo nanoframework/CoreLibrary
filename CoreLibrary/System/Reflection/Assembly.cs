@@ -6,22 +6,26 @@
 
 namespace System.Reflection
 {
-
     using System;
-    using CultureInfo = System.Globalization.CultureInfo;
-    using System.Runtime.CompilerServices;
+    using CultureInfo = Globalization.CultureInfo;
+    using Runtime.CompilerServices;
 
+    /// <summary>
+    /// Describes an assembly's unique identity in full.
+    /// </summary>
     public sealed class AssemblyName
     {
-        private Assembly _assembly;
-
-      //--//
+        private readonly Assembly _assembly;
 
         internal AssemblyName(Assembly assm)
         {
             _assembly = assm;
         }
 
+        /// <summary>
+        /// Gets the simple name of the assembly. This is usually, but not necessarily, the file name of the manifest file of the assembly, minus its extension.
+        /// </summary>
+        /// <value>The simple name of the assembly.</value>
         public String Name
         {
             get
@@ -30,6 +34,10 @@ namespace System.Reflection
             }
         }
 
+        /// <summary>
+        /// Gets the full name of the assembly, also known as the display name.
+        /// </summary>
+        /// <value>A string that is the full name of the assembly, also known as the display name.</value>
         public String FullName
         {
             get
@@ -38,6 +46,10 @@ namespace System.Reflection
             }
         }
 
+        /// <summary>
+        /// Gets or sets the major, minor, build, and revision numbers of the assembly.
+        /// </summary>
+        /// <value>An object that represents the major, minor, build, and revision numbers of the assembly.</value>
         public Version Version
         {
             get
@@ -51,63 +63,102 @@ namespace System.Reflection
         }
     }
 
-    [Serializable()]
+    /// <summary>
+    /// Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.
+    /// </summary>
+    [Serializable]
     public class Assembly
     {
-        public extern virtual String FullName
+        /// <summary>
+        /// Gets the display name of the assembly.
+        /// </summary>
+        /// <value>The display name of the assembly.</value>
+        public virtual extern String FullName
         {
             [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get;
         }
 
+        /// <summary>
+        /// Gets the assembly that contains the code that is currently executing.
+        /// </summary>
+        /// <returns>The assembly that contains the code that is currently executing.</returns>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern static Assembly GetExecutingAssembly();
+        public static extern Assembly GetExecutingAssembly();
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         internal extern void GetVersion(ref int major, ref int minor, ref int build, ref int revision);
 
+        /// <summary>
+        /// Gets an AssemblyName for this assembly.
+        /// </summary>
+        /// <returns>An object that contains the fully parsed display name for this assembly.</returns>
         public AssemblyName GetName()
         {
             return new AssemblyName(this);
         }
 
+        /// <summary>
+        /// Gets the currently loaded assembly in which the specified type is defined.
+        /// </summary>
+        /// <param name="type">An object representing a type in the assembly that will be returned.</param>
+        /// <returns>The assembly in which the specified type is defined.</returns>
         public static Assembly GetAssembly(Type type)
         {
             return type.Assembly;
         }
 
+        /// <summary>
+        /// Gets the Type object with the specified name in the assembly instance.
+        /// </summary>
+        /// <param name="name">The full name of the type.</param>
+        /// <returns>An object that represents the specified class, or null if the class is not found.</returns>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern virtual Type GetType(String name);
+        public virtual extern Type GetType(String name);
+
+        /// <summary>
+        /// Gets the Type object with the specified name in the assembly instance and optionally throws an exception if the type is not found.
+        /// </summary>
+        /// <param name="name">The full name of the type.</param>
+        /// <param name="throwOnError">true to throw an exception if the type is not found; false to return null.</param>
+        /// <returns>An object that represents the specified class.</returns>
+        /// <exception cref="ArgumentException"></exception>
         public virtual Type GetType(String name, bool throwOnError)
         {
-            Type type = GetType(name);
+            var type = GetType(name);
 
-            if (type == null)
-            {
-                throw new ArgumentException();
-            }
+            if (type == null) throw new ArgumentException();
 
             return type;
         }
 
+        /// <summary>
+        /// Gets the types defined in this assembly.
+        /// </summary>
+        /// <returns>An array that contains all the types that are defined in this assembly.</returns>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern virtual Type[] GetTypes();
+        public virtual extern Type[] GetTypes();
+
+        /// <summary>
+        /// Gets the satellite assembly for the specified culture.
+        /// </summary>
+        /// <param name="culture">The specified culture.</param>
+        /// <returns>The specified satellite assembly.</returns>
+        /// <exception cref="ArgumentNullException">culture is null.</exception>
+        /// <exception cref="ArgumentException"></exception>
         public Assembly GetSatelliteAssembly(CultureInfo culture)
         {
-            if (culture == null)
-            {
-                throw new ArgumentNullException("culture");
-            }
+            if (culture == null) throw new ArgumentNullException("culture");
 
             Assembly assm = null;
-            string baseName = this.FullName;
+            var baseName = FullName;
             string cultureName;
 
             while (assm == null && (cultureName = culture.Name) != "")
             {
-                string assmName = baseName + "." + cultureName;
+                var assmName = baseName + "." + cultureName;
 
-                assm = Assembly.Load(assmName, false);
+                assm = Load(assmName, false);
 
                 culture = culture.Parent;
             }
@@ -121,26 +172,29 @@ namespace System.Reflection
             return assm;
         }
 
+        /// <summary>
+        /// Loads an assembly given the long form of its name.
+        /// </summary>
+        /// <param name="assemblyString">The long form of the assembly name.</param>
+        /// <returns>The loaded assembly.</returns>
+        /// <exception cref="ArgumentNullException">assemblyString is null.</exception>
         public static Assembly Load(String assemblyString)
         {
-            if (assemblyString == null)
-            {
-                throw new ArgumentNullException("assemblyString");
-            }
+            if (assemblyString == null) throw new ArgumentNullException("assemblyString");
 
             return Load(assemblyString, true);
         }
 
         internal static string ParseAssemblyName(String assemblyString, ref bool fVersion, ref int[] ver)
         {
-          // valid names are in the forms:
-          // 1) "Microsoft.SPOT.Native" or
-          // 2) "Microsoft.SPOT.Native, Version=1.2.3.4" or
-          // 3) "Microsoft.SPOT.Native.resources, Version=1.2.3.4" or
-          // 4) "Microsoft.SPOT.Native.tinyresources, Version=1.2.3.4"
-          // 5) (FROM THE DEBUGGER) "Microsoft.SPOT.Native, Version=1.2.3.4, Culture=neutral, PublicKeyToken=null[, ...]
+            // valid names are in the forms:
+            // 1) "nanoFramework.Native" or
+            // 2) "nanoFramework.Native, Version=1.2.3.4" or
+            // 3) "nanoFramework.Native.resources, Version=1.2.3.4" or
+            // 4) "nanoFramework.Native.tinyresources, Version=1.2.3.4"
+            // 5) (FROM THE DEBUGGER) "nanoFramework.Native, Version=1.2.3.4, Culture=neutral, PublicKeyToken=null[, ...]
 
-            int versionIdx, commaIdx;
+            int commaIdx;
             string name;
 
             fVersion = false;
@@ -150,31 +204,25 @@ namespace System.Reflection
             {
                 name = assemblyString.Substring(0, commaIdx);
 
-                const string c_versionTag = "version=";
+                const string versionTag = "version=";
 
               // verify that the format with the version is correct and skip the ", Version=" part of the string
-                if ((versionIdx = assemblyString.ToLower().IndexOf(c_versionTag)) != 0)
+                int versionIdx;
+                if ((versionIdx = assemblyString.ToLower().IndexOf(versionTag)) != 0)
                 {
                     fVersion = true;
 
                   // the "version=" string must come right after the ' ,'
                     if (versionIdx == commaIdx + 2)
                     {
-                        int startIdx = versionIdx + c_versionTag.Length;
+                        var startIdx = versionIdx + versionTag.Length;
                         int endIdx;
                         
                       // trim off the Culture, PublicKeyToken, etc for now
-                        if(-1 != (endIdx = assemblyString.IndexOf(',', startIdx)))
-                        {
-                            assemblyString = assemblyString.Substring(startIdx, endIdx - startIdx);
-                        }
-                        else
-                        {
-                            assemblyString = assemblyString.Substring(startIdx);
-                        }
+                        assemblyString = -1 != (endIdx = assemblyString.IndexOf(',', startIdx)) ? assemblyString.Substring(startIdx, endIdx - startIdx) : assemblyString.Substring(startIdx);
 
                       // at this point we have assemblyString = "1.2.3.4"
-                        string[] version = assemblyString.Split('.');
+                        var version = assemblyString.Split('.');
 
                         if (version.Length > 0) ver[0] = UInt16.Parse(version[0]);
                         if (version.Length > 1) ver[1] = UInt16.Parse(version[1]);
@@ -202,12 +250,10 @@ namespace System.Reflection
 
         internal static Assembly Load(String assemblyString, bool fThrowOnError)
         {
-            bool fVersion = false;
-            int[] ver = new int[4];
-
-            string name = ParseAssemblyName(assemblyString, ref fVersion, ref ver);
-
-            Assembly assm = LoadInternal(name, fVersion, ver[0], ver[1], ver[2], ver[3]);
+            var fVersion = false;
+            var ver = new int[4];
+            var name = ParseAssemblyName(assemblyString, ref fVersion, ref ver);
+            var assm = LoadInternal(name, fVersion, ver[0], ver[1], ver[2], ver[3]);
 
             if (assm == null)
             {
@@ -222,9 +268,16 @@ namespace System.Reflection
         }
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        internal extern static Assembly LoadInternal(String assemblyString, bool fVersion, int maj, int min, int build, int rev);
+        internal static extern Assembly LoadInternal(String assemblyString, bool fVersion, int maj, int min, int build, int rev);
+
+        /// <summary>
+        /// Loads the assembly with a common object file format (COFF)-based image containing an emitted assembly. The assembly is loaded into the application domain of the caller.
+        /// </summary>
+        /// <param name="rawAssembly">A byte array that is a COFF-based image containing an emitted assembly.</param>
+        /// <returns>The loaded assembly.</returns>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        static extern public Assembly Load(byte[] rawAssembly);
+        public static extern Assembly Load(byte[] rawAssembly);
+
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         internal extern String[] GetManifestResourceNames();
     }
