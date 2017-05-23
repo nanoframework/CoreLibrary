@@ -1,24 +1,35 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////namespace System.Runtime.InteropServices
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
+
 namespace System.Runtime.InteropServices
 {
-    using System;
-    //
-    // Use this in P/Direct function prototypes to specify
-    // which character set to use when marshalling Strings.
-    // Using Ansi will marshal the strings as 1 byte char*'s.
-    // Using Unicode will marshal the strings as 2 byte wchar*'s.
-    // Generally you probably want to use Auto, which does the
-    // right thing 99% of the time.
-   ///
+    /// <summary>
+    /// Dictates which character set marshaled strings should use.
+    /// </summary>
     [Serializable]
     public enum CharSet
     {
-        None = 1,     // User didn't specify how to marshal strings.
-        Ansi = 2,     // Strings should be marshalled as ANSI 1 byte chars.
-        Unicode = 3,    // Strings should be marshalled as Unicode 2 byte chars.
-        Auto = 4,     // Marshal Strings in the right way for the target system.
+        /// <summary>
+        /// This value is obsolete and has the same behavior as CharSet.Ansi.
+        /// </summary>
+        None = 1,
+        /// <summary>
+        /// Marshal strings as multiple-byte character strings.
+        /// </summary>
+        Ansi = 2,
+        /// <summary>
+        /// Marshal strings as Unicode 2-byte characters.
+        /// </summary>
+        Unicode = 3,
+        /// <summary>
+        /// Automatically marshal strings appropriately for the target operating system. The default is Unicode on Windows NT, Windows 2000, Windows XP, and the Windows Server 2003 family;
+        /// the default is Ansi on Windows 98 and Windows Me. Although the common language runtime default is Auto, languages may override this default. 
+        /// For example, by default C# marks all methods and types as Ansi.
+        /// </summary>
+        Auto = 4
     }
 }
 
