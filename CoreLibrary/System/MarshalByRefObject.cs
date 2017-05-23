@@ -6,13 +6,11 @@
 
 namespace System
 {
-
-    using System;
-    using System.Threading;
-    using System.Runtime.CompilerServices;
-
-    [Serializable()]
+    /// <summary>
+    /// Enables access to objects across application domain boundaries in applications that support remoting.
+    /// </summary>
+    [Serializable]
     public abstract class MarshalByRefObject
     {
     }
-} // namespace
+}
