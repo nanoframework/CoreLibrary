@@ -17,11 +17,6 @@ namespace System
         internal int Id;
 
         /// <summary>
-        /// Initializes a new instance of the TimeZone class.
-        /// </summary>
-        protected TimeZone() { }
-
-        /// <summary>
         /// Gets the time zone of the current computer.
         /// </summary>
         /// <value>

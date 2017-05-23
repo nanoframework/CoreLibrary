@@ -72,6 +72,17 @@ namespace System
         private const ulong TickMask = 0x7FFFFFFFFFFFFFFFL;
         private const ulong UtcMask = 0x8000000000000000L;
 
+        private static readonly int[] DaysToMonth365 = { 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365 };
+        private static readonly int[] DaysToMonth366 = { 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366 };
+        private const int DatePartYear = 0;
+        private const int DatePartDayOfYear = 1;
+        private const int DatePartMonth = 2;
+        private const int DatePartDay = 3;
+        private const int DaysPerYear = 365;
+        private const int DaysPer4Years = DaysPerYear * 4 + 1;
+        private const int DaysPer100Years = DaysPer4Years * 25 - 1;
+        private const int DaysPer400Years = DaysPer100Years * 4 + 1;
+
         /// <summary>
         /// Represents the smallest possible value of DateTime. This field is read-only.
         /// </summary>
@@ -92,10 +103,7 @@ namespace System
         /// <exception cref="System.ArgumentOutOfRangeException">ticks - Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.</exception>
         public DateTime(long ticks)
         {
-            if ((ticks & (long)TickMask) < MinTicks || (ticks & (long)TickMask) > MaxTicks)
-            {
-                throw new ArgumentOutOfRangeException();
-            }
+            if ((ticks & (long)TickMask) < MinTicks || (ticks & (long)TickMask) > MaxTicks) throw new ArgumentOutOfRangeException();
 
             _ticks = (ulong)ticks;
         }
@@ -108,14 +116,8 @@ namespace System
         public DateTime(long ticks, DateTimeKind kind)
             : this(ticks)
         {
-            if (kind == DateTimeKind.Local)
-            {
-                _ticks &= ~UtcMask;
-            }
-            else
-            {
-                _ticks |= UtcMask;
-            }
+            if (kind == DateTimeKind.Local) _ticks &= ~UtcMask;
+            else _ticks |= UtcMask;
         }
 
         /// <summary>
@@ -244,15 +246,8 @@ namespace System
             var t2Ticks = t2._ticks & TickMask;
 
             // Compare ticks, ignore the Kind property.
-            if (t1Ticks > t2Ticks)
-            {
-                return 1;
-            }
-
-            if (t1Ticks < t2Ticks)
-            {
-                return -1;
-            }
+            if (t1Ticks > t2Ticks) return 1;
+            if (t1Ticks < t2Ticks) return -1;
 
             // Values are equal
             return 0;
@@ -275,8 +270,27 @@ namespace System
         /// <param name="month">The month (a number ranging from 1 to 12). </param>
         /// <returns>The number of days in month for the specified year.
         /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public static extern int DaysInMonth(int year, int month);
+        public static int DaysInMonth(int year, int month)
+        {
+            if (month < 1 || month > 12) throw new ArgumentOutOfRangeException();
+            
+            var days = IsLeapYear(year) ? DaysToMonth366 : DaysToMonth365;
+
+            return days[month] - days[month - 1];
+        }
+
+        /// <summary>
+        /// Returns an indication whether the specified year is a leap year.
+        /// </summary>
+        /// <param name="year">A 4-digit year.</param>
+        /// <returns>true if year is a leap year; otherwise, false.</returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public static bool IsLeapYear(int year)
+        {
+            if (year < 1 || year > 9999) throw new ArgumentOutOfRangeException();
+
+            return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+        }
 
         /// <summary>
         /// Returns a value indicating whether this instance is equal to a specified object.
@@ -293,6 +307,7 @@ namespace System
                 // Convertion to object and back is a workaround.
                 object o = this;
                 var thisTime = (DateTime)o;
+
                 return Compare(thisTime, (DateTime)val) == 0;
             }
 
@@ -333,10 +348,9 @@ namespace System
         /// </value>
         public int Day
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get
             {
-                return 0;
+                return GetDatePart(DatePartDay);
             }
         }
 
@@ -348,10 +362,9 @@ namespace System
         /// </value>
         public DayOfWeek DayOfWeek
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get
             {
-                return DayOfWeek.Monday;
+                return (DayOfWeek)((Ticks / TicksPerDay + 1) % 7);
             }
         }
 
@@ -363,10 +376,9 @@ namespace System
         /// </value>
         public int DayOfYear
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get
             {
-                return 0;
+                return GetDatePart(DatePartDayOfYear);
             }
         }
 
@@ -378,10 +390,9 @@ namespace System
         /// </value>
         public int Hour
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get
             {
-                return 0;
+                return (int)(Ticks / TicksPerHour % 24);
             }
         }
 
@@ -414,7 +425,6 @@ namespace System
                 _ticks = kind == DateTimeKind.Utc ? value._ticks | UtcMask : value._ticks & ~UtcMask
             };
 
-
             return retVal;
         }
 
@@ -426,10 +436,9 @@ namespace System
         /// </value>
         public int Millisecond
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get
             {
-                return 0;
+                return (int)(Ticks / TicksPerMillisecond % 1000);
             }
         }
 
@@ -441,10 +450,9 @@ namespace System
         /// </value>
         public int Minute
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get
             {
-                return 0;
+                return (int)(Ticks / TicksPerMinute % 60);
             }
         }
 
@@ -456,10 +464,9 @@ namespace System
         /// </value>
         public int Month
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get
             {
-                return 0;
+                return GetDatePart(DatePartMonth);
             }
         }
 
@@ -501,10 +508,9 @@ namespace System
         /// </value>
         public int Second
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get
             {
-                return 0;
+                return (int)(Ticks / TicksPerSecond % 60);
             }
         }
 
@@ -513,7 +519,7 @@ namespace System
         /// There are 504911232000000000 ticks between them which we are subtracting.
         /// See DeviceCode\PAL\time_decl.h for explanation of why we are taking
         /// year 1601 as origin for our HAL, PAL, and CLR.
-// static Int64 ticksAtOrigin = 504911232000000000;
+        // static Int64 ticksAtOrigin = 504911232000000000;
         private const Int64 TicksAtOrigin = 0;
 
         /// <summary>
@@ -567,10 +573,9 @@ namespace System
         /// </value>
         public int Year
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
             get
             {
-                return 0;
+                return GetDatePart(DatePartYear);
             }
         }
 
@@ -743,6 +748,30 @@ namespace System
         public static bool operator >=(DateTime t1, DateTime t2)
         {
             return Compare(t1, t2) >= 0;
+        }
+
+        private int GetDatePart(int part)
+        {
+            var n = (int)(Ticks / TicksPerDay);
+            var y400 = n / DaysPer400Years;
+            n -= y400 * DaysPer400Years;
+            var y100 = n / DaysPer100Years;
+            if (y100 == 4) y100 = 3;
+            n -= y100 * DaysPer100Years;
+            var y4 = n / DaysPer4Years;
+            n -= y4 * DaysPer4Years;
+            var y1 = n / DaysPerYear;
+            if (y1 == 4) y1 = 3;
+            if (part == DatePartYear) return y400 * 400 + y100 * 100 + y4 * 4 + y1 + 1;
+            n -= y1 * DaysPerYear;
+            if (part == DatePartDayOfYear) return n + 1;
+            var leapYear = y1 == 3 && (y4 != 24 || y100 == 3);
+            var days = leapYear ? DaysToMonth366 : DaysToMonth365;
+            var m = n >> 5 + 1;
+            while (n >= days[m]) m++;
+            if (part == DatePartMonth) return m;
+
+            return n - days[m - 1] + 1;
         }
     }
 }
