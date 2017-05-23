@@ -6,14 +6,15 @@
 
 namespace System
 {
-
-    using System;
-    using System.Reflection;
-    using System.Collections;
-
-    [Serializable, AttributeUsageAttribute(AttributeTargets.All, Inherited = true, AllowMultiple = false)] // Base class for all attributes
+    /// <summary>
+    /// Represents the base class for custom attributes.
+    /// </summary>
+    [Serializable, AttributeUsageAttribute(AttributeTargets.All)] // Base class for all attributes
     public abstract class Attribute
     {
+        /// <summary>
+        /// Initializes a new instance of the Attribute class.
+        /// </summary>
         protected Attribute() { }
     }
 }

@@ -6,40 +6,54 @@
 
 namespace System
 {
-
-    using System.Reflection;
-    /* By default, attributes are inherited and multiple attributes are not allowed */
-    [AttributeUsage(AttributeTargets.Class, Inherited = true), Serializable()]
+    /// <summary>
+    /// Specifies the usage of another attribute class. This class cannot be inherited.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class), Serializable]
     public sealed class AttributeUsageAttribute : Attribute
     {
-        internal AttributeTargets m_attributeTarget = AttributeTargets.All; // Defaults to all
-        internal bool m_allowMultiple = false; // Defaults to false
-        internal bool m_inherited = true; // Defaults to true
+        internal AttributeTargets AttributeTarget;
+        internal bool AllowMultipleAttributes;
+        internal bool InheritedAttribute = true;
 
         internal static AttributeUsageAttribute Default = new AttributeUsageAttribute(AttributeTargets.All);
 
-      //Constructors
+        /// <summary>
+        /// Initializes a new instance of the AttributeUsageAttribute class with the specified list of AttributeTargets, the AllowMultiple value, and the Inherited value.
+        /// </summary>
+        /// <param name="validOn">The set of values combined using a bitwise OR operation to indicate which program elements are valid.</param>
         public AttributeUsageAttribute(AttributeTargets validOn)
         {
-            m_attributeTarget = validOn;
+            AttributeTarget = validOn;
         }
 
-      //Properties
+        /// <summary>
+        /// Gets a set of values identifying which program elements that the indicated attribute can be applied to.
+        /// </summary>
+        /// <value>One or several AttributeTargets values. The default is All.</value>
         public AttributeTargets ValidOn
         {
-            get { return m_attributeTarget; }
+            get { return AttributeTarget; }
         }
 
+        /// <summary>
+        /// Gets or sets a Boolean value indicating whether more than one instance of the indicated attribute can be specified for a single program element.
+        /// </summary>
+        /// <value>true if more than one instance is allowed to be specified; otherwise, false. The default is false.</value>
         public bool AllowMultiple
         {
-            get { return m_allowMultiple; }
-            set { m_allowMultiple = value; }
+            get { return AllowMultipleAttributes; }
+            set { AllowMultipleAttributes = value; }
         }
 
+        /// <summary>
+        /// Gets or sets a Boolean value that determines whether the indicated attribute is inherited by derived classes and overriding members.
+        /// </summary>
+        /// <value>true if the attribute can be inherited by derived classes and overriding members; otherwise, false. The default is true.</value>
         public bool Inherited
         {
-            get { return m_inherited; }
-            set { m_inherited = value; }
+            get { return InheritedAttribute; }
+            set { InheritedAttribute = value; }
         }
     }
 }
