@@ -4,7 +4,6 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System;
 using System.Runtime.CompilerServices;
 
 namespace System
@@ -40,7 +39,7 @@ namespace System
         /// <returns>A 32-bit signed integer greater than or equal to zero and
         /// less than MaxValue.</returns>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern virtual int Next();
+        public virtual extern int Next();
 
         /// <summary>
         /// Returns a nonnegative random number less than the specified maximum.
@@ -50,7 +49,7 @@ namespace System
         /// <returns>A 32-bit signed integer greater than or equal to zero, and
         /// less than maxValue.</returns>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern virtual int Next(int maxValue);
+        public virtual extern int Next(int maxValue);
 
         /// <summary>
         /// Returns a random number between 0.0 and 1.0.
@@ -58,13 +57,13 @@ namespace System
         /// <returns>A double-precision floating point number greater than or equal
         /// to 0.0, and less than 1.0.</returns>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern virtual double NextDouble();
+        public virtual extern double NextDouble();
 
         /// <summary>
         /// Fills the elements of a specified array of bytes with random numbers.
         /// </summary>
         /// <param name="buffer">An array of bytes to contain random numbers.</param>
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern virtual void NextBytes(byte[] buffer);
+        public virtual extern void NextBytes(byte[] buffer);
     }
 }

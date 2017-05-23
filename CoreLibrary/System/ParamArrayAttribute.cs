@@ -6,10 +6,15 @@
 
 namespace System
 {
-    //This class contains only static members and does not need to be serializable
-    [AttributeUsage(AttributeTargets.Parameter, Inherited = true, AllowMultiple = false)]
+    /// <summary>
+    /// Indicates that a method will allow a variable number of arguments in its invocation. This class cannot be inherited.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Parameter)]
     public sealed class ParamArrayAttribute : Attribute
     {
+        /// <summary>
+        /// Initializes a new instance of the ParamArrayAttribute class with default properties.
+        /// </summary>
         public ParamArrayAttribute() { }
     }
 }
