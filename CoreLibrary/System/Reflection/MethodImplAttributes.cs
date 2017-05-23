@@ -1,41 +1,87 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////namespace System.Reflection
+//
+// Copyright (c) 2017 The nanoFramework project contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
+
 namespace System.Reflection
 {
-
     using System;
-    //
-    // This Enum matchs the CorMethodImpl defined in CorHdr.h
-   ///
-    [Serializable()]
+
+    /// <summary>
+    /// Specifies flags for the attributes of a method implementation.
+    /// </summary>
+    [Serializable]
     public enum MethodImplAttributes
     {
-      // code impl mask
-        CodeTypeMask = 0x0003,   // Flags about code type.
-        IL = 0x0000,   // Method impl is IL.
-        Native = 0x0001,   // Method impl is native.
-      /// <internalonly/>
-        OPTIL = 0x0002,   // Method impl is OPTIL
-        Runtime = 0x0003,   // Method impl is provided by the runtime.
-      // end code impl mask
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies flags about code type.
+        /// </summary>
+        CodeTypeMask = 0x0003,
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method implementation is in Microsoft intermediate language (MSIL).
+        /// </summary>
+        IL = 0x0000,
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method implementation is native.
+        /// </summary>
+        Native = 0x0001,
 
-      // managed mask
-        ManagedMask = 0x0004,   // Flags specifying whether the code is managed or unmanaged.
-        Unmanaged = 0x0004,   // Method impl is unmanaged, otherwise managed.
-        Managed = 0x0000,   // Method impl is managed.
-      // end managed mask
+        // <internalonly/>
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method implementation is in Optimized Intermediate Language (OPTIL).
+        /// </summary>
+        OPTIL = 0x0002,
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method implementation is provided by the runtime.
+        /// </summary>
+        Runtime = 0x0003,
 
-      // implementation info and interop
-        ForwardRef = 0x0010,   // Indicates method is not defined; used primarily in merge scenarios.
-        PreserveSig = 0x0080,   // Indicates method sig is exported exactly as declared.
+        // managed mask
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies whether the method is implemented in managed or unmanaged code.
+        /// </summary>
+        ManagedMask = 0x0004,
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method is implemented in unmanaged code.
+        /// </summary>
+        Unmanaged = 0x0004,
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method is implemented in managed code.
+        /// </summary>
+        Managed = 0x0000,
+        // end managed mask
 
-        InternalCall = 0x1000,   // Internal Call...
+        // implementation info and interop
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method is not defined.
+        /// </summary>
+        ForwardRef = 0x0010,
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method signature is exported exactly as declared.
+        /// </summary>
+        PreserveSig = 0x0080,
 
-        Synchronized = 0x0020,   // Method is single threaded through the body.
-        NoInlining = 0x0008,   // Method may not be inlined.
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies an internal call.
+        /// </summary>
+        InternalCall = 0x1000,
 
-        MaxMethodImplVal = 0xFFFF,   // Range check value
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method is single-threaded through the body. 
+        /// Static methods (Shared in Visual Basic) lock on the type, whereas instance methods lock on the instance. You can also use the C# lock statement or the Visual Basic 
+        /// SyncLock statement for this purpose.
+        /// </summary>
+        Synchronized = 0x0020,
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies that the method cannot be inlined.
+        /// </summary>
+        NoInlining = 0x0008,
+
+        /// <summary>
+        /// This API supports the product infrastructure and is not intended to be used directly from your code. Specifies a range check value.
+        /// </summary>
+        MaxMethodImplVal = 0xFFFF
     }
 }
 
