@@ -144,7 +144,7 @@ namespace System.Globalization
                         if (ResourceBase.Length < resource.Length && resource.Substring(0, ResourceBase.Length) == ResourceBase)
                         {
                             //System.Globalization.Resources.CultureInfo.<culture>.tinyresources
-                            var cultureName = resource.Substring(ResourceBase.Length, resource.Length - ResourceBase.Length - ResourceManager.FileExtension.Length);
+                            var cultureName = resource.Substring(ResourceBase.Length, resource.Length - ResourceBase.Length - ResourceManager._fileExtension.Length);
                             // remove the leading "."
                             if (cultureName != "") cultureName = cultureName.Substring(1, cultureName.Length - 1);
 
