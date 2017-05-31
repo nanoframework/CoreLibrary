@@ -13,6 +13,7 @@ namespace System
     /// <summary>
     /// Specifies whether a DateTime object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
     /// </summary>
+    /// <remarks>nanoFramework doesn't suport local time, only  UTC, so it's not possible to specify DateTimeKind.Local.</remarks>
     [Serializable]
     public enum DateTimeKind
     {
@@ -23,6 +24,7 @@ namespace System
         /// <summary>
         /// The time represented is local time.
         /// </summary>
+        [Obsolete("nanoFrameowrk doesn't support local time, so DateTimeKind.Local can't be used for consistency", true)]
         Local = 2,
     }
 
@@ -109,15 +111,15 @@ namespace System
         }
 
         /// <summary>
-        /// Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.
+        /// Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC).
         /// </summary>
         /// <param name="ticks">A date and time expressed in the number of 100-nanosecond intervals. </param>
         /// <param name="kind">One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.</param>
+        /// <remarks>nanoFramework doesn't suport local time, only  UTC, so it's not possible to specify DateTimeKind.Local.</remarks>
         public DateTime(long ticks, DateTimeKind kind)
             : this(ticks)
         {
-            if (kind == DateTimeKind.Local) _ticks &= ~UtcMask;
-            else _ticks |= UtcMask;
+            _ticks |= UtcMask;
         }
 
         /// <summary>
@@ -400,32 +402,16 @@ namespace System
         /// Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.
         /// </summary>
         /// <value>
-        /// One of the enumeration values that indicates what the current time represents. The default is Local.
+        /// One of the enumeration values that indicates what the current time represents. Despite the default in the full .NET Framework is DateTimeKind.Local this won't never happen becuase nanoFramework only suports UTC time.
         /// </value>
         public DateTimeKind Kind
         {
             get
             {
                 // If mask for UTC time is set - return UTC. If no maskk - return local.
-                return (_ticks & UtcMask) != 0 ? DateTimeKind.Utc : DateTimeKind.Local;
+                return DateTimeKind.Utc;
             }
 
-        }
-
-        /// <summary>
-        /// Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value.
-        /// </summary>
-        /// <param name="value">A date and time. </param>
-        /// <param name="kind">One of the enumeration values that indicates whether the new object represents local time, UTC, or neither.</param>
-        /// <returns>A new object that has the same number of ticks as the object represented by the value parameter and the DateTimeKind value specified by the kind parameter.</returns>
-        public static DateTime SpecifyKind(DateTime value, DateTimeKind kind)
-        {
-            var retVal = new DateTime((long) value._ticks)
-            {
-                _ticks = kind == DateTimeKind.Utc ? value._ticks | UtcMask : value._ticks & ~UtcMask
-            };
-
-            return retVal;
         }
 
         /// <summary>
@@ -467,21 +453,6 @@ namespace System
             get
             {
                 return GetDatePart(DatePartMonth);
-            }
-        }
-
-        /// <summary>
-        /// Gets a DateTime object that is set to the current date and time on this computer, expressed as the local time.
-        /// </summary>
-        /// <value>
-        /// An object whose value is the current local date and time.
-        /// </value>
-        public static DateTime Now
-        {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
-            get
-            {
-                return new DateTime();
             }
         }
 
@@ -600,13 +571,6 @@ namespace System
         }
 
         /// <summary>
-        /// Converts the value of the current DateTime object to local time.
-        /// </summary>
-        /// <returns>An object whose Kind property is Local, and whose value is the local time equivalent to the value of the current DateTime object, or MaxValue if the converted value is too large to be represented by a DateTime object, or MinValue if the converted value is too small to be represented as a DateTime object.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern DateTime ToLocalTime();
-
-        /// <summary>
         /// Converts the value of the current DateTime object to its equivalent string representation.
         /// </summary>
         /// <returns>A string representation of the value of the current DateTime object.</returns>
@@ -624,13 +588,6 @@ namespace System
         {
             return DateTimeFormat.Format(this, format, DateTimeFormatInfo.CurrentInfo);
         }
-
-        /// <summary>
-        /// Converts the value of the current DateTime object to Coordinated Universal Time (UTC).
-        /// </summary>
-        /// <returns>An object whose Kind property is Utc, and whose value is the UTC equivalent to the value of the current DateTime object, or MaxValue if the converted value is too large to be represented by a DateTime object, or MinValue if the converted value is too small to be represented by a DateTime object.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern DateTime ToUniversalTime();
 
         /// <summary>
         /// Adds a specified time interval to a specified date and time, yielding a new date and time.
