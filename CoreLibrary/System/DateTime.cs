@@ -74,17 +74,6 @@ namespace System
         private const ulong TickMask = 0x7FFFFFFFFFFFFFFFL;
         private const ulong UtcMask = 0x8000000000000000L;
 
-        private static readonly int[] DaysToMonth365 = { 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365 };
-        private static readonly int[] DaysToMonth366 = { 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366 };
-        private const int DatePartYear = 0;
-        private const int DatePartDayOfYear = 1;
-        private const int DatePartMonth = 2;
-        private const int DatePartDay = 3;
-        private const int DaysPerYear = 365;
-        private const int DaysPer4Years = DaysPerYear * 4 + 1;
-        private const int DaysPer100Years = DaysPer4Years * 25 - 1;
-        private const int DaysPer400Years = DaysPer100Years * 4 + 1;
-
         /// <summary>
         /// Represents the smallest possible value of DateTime. This field is read-only.
         /// </summary>
@@ -272,27 +261,8 @@ namespace System
         /// <param name="month">The month (a number ranging from 1 to 12). </param>
         /// <returns>The number of days in month for the specified year.
         /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.</returns>
-        public static int DaysInMonth(int year, int month)
-        {
-            if (month < 1 || month > 12) throw new ArgumentOutOfRangeException();
-
-            var days = IsLeapYear(year) ? DaysToMonth366 : DaysToMonth365;
-
-            return days[month] - days[month - 1];
-        }
-
-        /// <summary>
-        /// Returns an indication whether the specified year is a leap year.
-        /// </summary>
-        /// <param name="year">A 4-digit year.</param>
-        /// <returns>true if year is a leap year; otherwise, false.</returns>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public static bool IsLeapYear(int year)
-        {
-            if (year < 1 || year > 9999) throw new ArgumentOutOfRangeException();
-
-            return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
-        }
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern int DaysInMonth(int year, int month);
 
         /// <summary>
         /// Returns a value indicating whether this instance is equal to a specified object.
@@ -348,12 +318,10 @@ namespace System
         /// <value>
         /// The day component, expressed as a value between 1 and 31.
         /// </value>
-        public int Day
+        public extern int Day
         {
-            get
-            {
-                return GetDatePart(DatePartDay);
-            }
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
         }
 
         /// <summary>
@@ -362,12 +330,10 @@ namespace System
         /// <value>
         /// An enumerated constant that indicates the day of the week of this DateTime value.
         /// </value>
-        public DayOfWeek DayOfWeek
+        public extern DayOfWeek DayOfWeek
         {
-            get
-            {
-                return (DayOfWeek)((Ticks / TicksPerDay + 1) % 7);
-            }
+            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            get;
         }
 
         /// <summary>
@@ -376,12 +342,10 @@ namespace System
         /// <value>
         /// The day of the year, expressed as a value between 1 and 366.
         /// </value>
-        public int DayOfYear
+        public extern int DayOfYear
         {
-            get
-            {
-                return GetDatePart(DatePartDayOfYear);
-            }
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
         }
 
         /// <summary>
@@ -390,12 +354,10 @@ namespace System
         /// <value>
         /// The hour component, expressed as a value between 0 and 23.
         /// </value>
-        public int Hour
+        public extern int Hour
         {
-            get
-            {
-                return (int)(Ticks / TicksPerHour % 24);
-            }
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
         }
 
         /// <summary>
@@ -420,12 +382,10 @@ namespace System
         /// <value>
         /// The milliseconds component, expressed as a value between 0 and 999.
         /// </value>
-        public int Millisecond
+        public extern int Millisecond
         {
-            get
-            {
-                return (int)(Ticks / TicksPerMillisecond % 1000);
-            }
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
         }
 
         /// <summary>
@@ -434,12 +394,10 @@ namespace System
         /// <value>
         /// The minute component, expressed as a value between 0 and 59.
         /// </value>
-        public int Minute
+        public extern int Minute
         {
-            get
-            {
-                return (int)(Ticks / TicksPerMinute % 60);
-            }
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
         }
 
         /// <summary>
@@ -448,12 +406,10 @@ namespace System
         /// <value>
         /// The month component, expressed as a value between 1 and 12.
         /// </value>
-        public int Month
+        public extern int Month
         {
-            get
-            {
-                return GetDatePart(DatePartMonth);
-            }
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
         }
 
         /// <summary>
@@ -462,13 +418,10 @@ namespace System
         /// <value>
         /// An object whose value is the current UTC date and time.
         /// </value>
-        public static DateTime UtcNow
+        public static extern DateTime UtcNow
         {
             [MethodImpl(MethodImplOptions.InternalCall)]
-            get
-            {
-                return new DateTime();
-            }
+            get;
         }
 
         /// <summary>
@@ -477,12 +430,10 @@ namespace System
         /// <value>
         /// The seconds component, expressed as a value between 0 and 59.
         /// </value>
-        public int Second
+        public extern int Second
         {
-            get
-            {
-                return (int)(Ticks / TicksPerSecond % 60);
-            }
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
         }
 
         /// Our origin is at 1601/01/01:00:00:00.000
@@ -527,13 +478,10 @@ namespace System
         /// <value>
         /// An object that is set to today's date, with the time component set to 00:00:00.
         /// </value>
-        public static DateTime Today
+        public static extern DateTime Today
         {
             [MethodImpl(MethodImplOptions.InternalCall)]
-            get
-            {
-                return new DateTime();
-            }
+            get;
         }
 
         /// <summary>
@@ -542,12 +490,10 @@ namespace System
         /// <value>
         /// The year, between 1 and 9999.
         /// </value>
-        public int Year
+        public extern int Year
         {
-            get
-            {
-                return GetDatePart(DatePartYear);
-            }
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
         }
 
         /// <summary>
@@ -705,30 +651,6 @@ namespace System
         public static bool operator >=(DateTime t1, DateTime t2)
         {
             return Compare(t1, t2) >= 0;
-        }
-
-        private int GetDatePart(int part)
-        {
-            var n = (int)(Ticks / TicksPerDay);
-            var y400 = n / DaysPer400Years;
-            n -= y400 * DaysPer400Years;
-            var y100 = n / DaysPer100Years;
-            if (y100 == 4) y100 = 3;
-            n -= y100 * DaysPer100Years;
-            var y4 = n / DaysPer4Years;
-            n -= y4 * DaysPer4Years;
-            var y1 = n / DaysPerYear;
-            if (y1 == 4) y1 = 3;
-            if (part == DatePartYear) return y400 * 400 + y100 * 100 + y4 * 4 + y1 + 1;
-            n -= y1 * DaysPerYear;
-            if (part == DatePartDayOfYear) return n + 1;
-            var leapYear = y1 == 3 && (y4 != 24 || y100 == 3);
-            var days = leapYear ? DaysToMonth366 : DaysToMonth365;
-            var m = n >> 5 + 1;
-            while (n >= days[m]) m++;
-            if (part == DatePartMonth) return m;
-
-            return n - days[m - 1] + 1;
         }
     }
 }
