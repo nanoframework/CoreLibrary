@@ -22,6 +22,12 @@ namespace System.Resources
         internal string _cultureName;
         private ResourceManager _rmFallback;
 
+        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        extern private object GetObjectInternal(short id);
+
+        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        extern private object GetObjectInternal(short id, int offset, int length);
+
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern int FindResource(string baseName, Assembly assembly);
 
