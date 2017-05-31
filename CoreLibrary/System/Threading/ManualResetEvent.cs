@@ -16,23 +16,21 @@ namespace System.Threading
         /// Initializes a new instance of the ManualResetEvent class with a Boolean value indicating whether to set the initial state to signaled.
         /// </summary>
         /// <param name="initialState">true to set the initial state signaled; false to set the initial state to nonsignaled.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern ManualResetEvent(bool initialState);
 
         /// <summary>
         /// Sets the state of the event to nonsignaled, causing threads to block.
         /// </summary>
         /// <returns>true if the operation succeeds; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern bool Reset();
 
         /// <summary>
         /// Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
         /// </summary>
         /// <returns>true if the operation succeeds; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern bool Set();
     }
 }
-
-

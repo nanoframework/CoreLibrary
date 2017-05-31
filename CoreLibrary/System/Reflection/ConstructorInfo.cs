@@ -36,9 +36,7 @@ namespace System.Reflection
         /// <returns>An instance of the class associated with the constructor.</returns>
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Object Invoke(Object[] parameters);
     }
 }
-
-

@@ -297,7 +297,7 @@ namespace System
             return PostProcessFloat(result, formatCh, info);
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern String FormatNative(Object value, char format, int precision);
 
         private static void ValidateFormat(String format, out char formatCh, out int precision)
@@ -345,15 +345,15 @@ namespace System
             switch (formatCh)
             {
                 case 'G':
-                    break;
+                break;
                 case 'X':
                 case 'F':
                 case 'N':
                 case 'D':
-                    if (formatLen == 1) precision = 2; // if no precision is specified, use the default
-                    break;
+                if (formatLen == 1) precision = 2; // if no precision is specified, use the default
+                break;
                 default:
-                    throw new ArgumentException();
+                throw new ArgumentException();
             }
         }
 
@@ -364,39 +364,39 @@ namespace System
             switch (format)
             {
                 case 'X':
-                    // truncate negative numbers to 
-                    if (result.Length > precision && (result[0] == 'F' || result[0] == 'f'))
-                    {
-                        int len = result.Length;
+                // truncate negative numbers to 
+                if (result.Length > precision && (result[0] == 'F' || result[0] == 'f'))
+                {
+                    int len = result.Length;
 
-                        if (value is sbyte || value is byte)
+                    if (value is sbyte || value is byte)
+                    {
+                        if (len > 2)
                         {
-                            if (len > 2)
-                            {
-                                result = result.Substring(len - 2, 2);
-                            }
-                        }
-                        else if (value is short)
-                        {
-                            if (len > 4)
-                            {
-                                result = result.Substring(len - 4, 4);
-                            }
+                            result = result.Substring(len - 2, 2);
                         }
                     }
-                    break;
+                    else if (value is short)
+                    {
+                        if (len > 4)
+                        {
+                            result = result.Substring(len - 4, 4);
+                        }
+                    }
+                }
+                break;
 
                 case 'N':
-                    // InsertGroupSeparators, AppendTrailingZeros, ReplaceNegativeSign
-                    result = InsertGroupSeparators(result, info);
-                    goto case 'F'; // falls through
+                // InsertGroupSeparators, AppendTrailingZeros, ReplaceNegativeSign
+                result = InsertGroupSeparators(result, info);
+                goto case 'F'; // falls through
                 case 'F':
-                    // AppendTrailingZeros, ReplaceNegativeSign
-                    result = AppendTrailingZeros(result, precision, info);
-                    goto case 'G'; // falls through
+                // AppendTrailingZeros, ReplaceNegativeSign
+                result = AppendTrailingZeros(result, precision, info);
+                goto case 'G'; // falls through
                 case 'G':
-                    result = ReplaceNegativeSign(result, info);
-                    break;
+                result = ReplaceNegativeSign(result, info);
+                break;
             }
 
             return result;

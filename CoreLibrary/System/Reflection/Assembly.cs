@@ -75,7 +75,7 @@ namespace System.Reflection
         /// <value>The display name of the assembly.</value>
         public virtual extern String FullName
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -83,10 +83,10 @@ namespace System.Reflection
         /// Gets the assembly that contains the code that is currently executing.
         /// </summary>
         /// <returns>The assembly that contains the code that is currently executing.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern Assembly GetExecutingAssembly();
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         internal extern void GetVersion(ref int major, ref int minor, ref int build, ref int revision);
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace System.Reflection
         /// </summary>
         /// <param name="name">The full name of the type.</param>
         /// <returns>An object that represents the specified class, or null if the class is not found.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern Type GetType(String name);
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace System.Reflection
         /// Gets the types defined in this assembly.
         /// </summary>
         /// <returns>An array that contains all the types that are defined in this assembly.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern Type[] GetTypes();
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace System.Reflection
             if (assm == null)
             {
                 throw new ArgumentException();
-              // FIXME -- throw new FileNotFoundException();
+                // FIXME -- throw new FileNotFoundException();
             }
 
             return assm;
@@ -199,34 +199,34 @@ namespace System.Reflection
 
             fVersion = false;
 
-          // if there is no comma then we have an assembly name in the form with no version
+            // if there is no comma then we have an assembly name in the form with no version
             if ((commaIdx = assemblyString.IndexOf(',')) != -1)
             {
                 name = assemblyString.Substring(0, commaIdx);
 
                 const string versionTag = "version=";
 
-              // verify that the format with the version is correct and skip the ", Version=" part of the string
+                // verify that the format with the version is correct and skip the ", Version=" part of the string
                 int versionIdx;
                 if ((versionIdx = assemblyString.ToLower().IndexOf(versionTag)) != 0)
                 {
                     fVersion = true;
 
-                  // the "version=" string must come right after the ' ,'
+                    // the "version=" string must come right after the ' ,'
                     if (versionIdx == commaIdx + 2)
                     {
                         var startIdx = versionIdx + versionTag.Length;
                         int endIdx;
-                        
-                      // trim off the Culture, PublicKeyToken, etc for now
+
+                        // trim off the Culture, PublicKeyToken, etc for now
                         assemblyString = -1 != (endIdx = assemblyString.IndexOf(',', startIdx)) ? assemblyString.Substring(startIdx, endIdx - startIdx) : assemblyString.Substring(startIdx);
 
-                      // at this point we have assemblyString = "1.2.3.4"
+                        // at this point we have assemblyString = "1.2.3.4"
                         var version = assemblyString.Split('.');
 
                         if (version.Length > 0) ver[0] = UInt16.Parse(version[0]);
                         if (version.Length > 1) ver[1] = UInt16.Parse(version[1]);
-                      // build and revision versions may be -1 (which means "don't care")
+                        // build and revision versions may be -1 (which means "don't care")
                         if (version.Length > 2) ver[2] = int.Parse(version[2]);
                         if (version.Length > 3) ver[3] = int.Parse(version[3]);
                     }
@@ -259,7 +259,7 @@ namespace System.Reflection
             {
                 if (fThrowOnError)
                 {
-                  // FIXME -- should be FileNotFoundException, per spec.
+                    // FIXME -- should be FileNotFoundException, per spec.
                     throw new ArgumentException();
                 }
             }
@@ -267,7 +267,7 @@ namespace System.Reflection
             return assm;
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         internal static extern Assembly LoadInternal(String assemblyString, bool fVersion, int maj, int min, int build, int rev);
 
         /// <summary>
@@ -275,12 +275,10 @@ namespace System.Reflection
         /// </summary>
         /// <param name="rawAssembly">A byte array that is a COFF-based image containing an emitted assembly.</param>
         /// <returns>The loaded assembly.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern Assembly Load(byte[] rawAssembly);
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         internal extern String[] GetManifestResourceNames();
     }
 }
-
-

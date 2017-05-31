@@ -12,9 +12,9 @@ namespace System
     [AttributeUsage(AttributeTargets.Class), Serializable]
     public sealed class AttributeUsageAttribute : Attribute
     {
-        internal AttributeTargets AttributeTarget;
-        internal bool AllowMultipleAttributes;
-        internal bool InheritedAttribute = true;
+        internal AttributeTargets _attributeTarget;
+        internal bool _allowMultipleAttributes;
+        internal bool _iInheritedAttribute = true;
 
         internal static AttributeUsageAttribute Default = new AttributeUsageAttribute(AttributeTargets.All);
 
@@ -24,7 +24,7 @@ namespace System
         /// <param name="validOn">The set of values combined using a bitwise OR operation to indicate which program elements are valid.</param>
         public AttributeUsageAttribute(AttributeTargets validOn)
         {
-            AttributeTarget = validOn;
+            _attributeTarget = validOn;
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace System
         /// <value>One or several AttributeTargets values. The default is All.</value>
         public AttributeTargets ValidOn
         {
-            get { return AttributeTarget; }
+            get { return _attributeTarget; }
         }
 
         /// <summary>
@@ -42,8 +42,8 @@ namespace System
         /// <value>true if more than one instance is allowed to be specified; otherwise, false. The default is false.</value>
         public bool AllowMultiple
         {
-            get { return AllowMultipleAttributes; }
-            set { AllowMultipleAttributes = value; }
+            get { return _allowMultipleAttributes; }
+            set { _allowMultipleAttributes = value; }
         }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace System
         /// <value>true if the attribute can be inherited by derived classes and overriding members; otherwise, false. The default is true.</value>
         public bool Inherited
         {
-            get { return InheritedAttribute; }
-            set { InheritedAttribute = value; }
+            get { return _iInheritedAttribute; }
+            set { _iInheritedAttribute = value; }
         }
     }
 }

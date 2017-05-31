@@ -15,7 +15,7 @@ namespace System
         /// <summary>
         /// Initializes a new instance of the SystemException class.
         /// </summary>
-        public SystemException() {}
+        public SystemException() { }
 
         /// <summary>
         /// Initializes a new instance of the SystemException class with a specified error message.

@@ -67,7 +67,7 @@ namespace System.Text
             set
             {
                 var chunkPrevious = this;
-            Label_0002:
+Label_0002:
                 var num = index - chunkPrevious._chunkOffset;
                 if (num >= 0)
                 {
@@ -220,7 +220,7 @@ namespace System.Text
         public StringBuilder(int capacity, int maxCapacity)
         {
             if (capacity > maxCapacity) throw new ArgumentOutOfRangeException("capacity");
-            if (maxCapacity < 1) throw new ArgumentOutOfRangeException("maxCapacity"); 
+            if (maxCapacity < 1) throw new ArgumentOutOfRangeException("maxCapacity");
             if (capacity < 0) throw new ArgumentOutOfRangeException("capacity");
             if (capacity == 0) capacity = Math.Min(0x10, maxCapacity);
             _maxCapacity = maxCapacity;
@@ -706,7 +706,7 @@ namespace System.Text
 
             var num2 = startIndex + count;
             var chunkPrevious = this;
-            Label_0048:
+Label_0048:
             var num3 = num2 - chunkPrevious._chunkOffset;
             var num4 = startIndex - chunkPrevious._chunkOffset;
             if (num3 >= 0)
@@ -896,8 +896,8 @@ namespace System.Text
                 var index = 0;
                 var replacementIndex = 0;
                 var chars = value.ToCharArray();
-                ReplaceValue:
-                //Replace the value                 
+ReplaceValue:
+//Replace the value                 
                 ReplaceInPlaceAtChunk(ref chunk, ref indexInChunk, chars, ref replacementIndex, value.Length);
                 if (replacementIndex == value.Length) replacementIndex = 0;
 
@@ -1104,4 +1104,3 @@ namespace System.Text
         #endregion        
     }
 }
-

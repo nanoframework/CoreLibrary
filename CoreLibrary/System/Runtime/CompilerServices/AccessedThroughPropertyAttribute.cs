@@ -40,5 +40,3 @@ namespace System.Runtime.CompilerServices
         }
     }
 }
-
-

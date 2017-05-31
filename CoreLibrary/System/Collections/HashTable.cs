@@ -51,7 +51,7 @@ namespace System.Collections
             InitializeHashTable(capacity, maxLoadFactor);
         }
 
-      //initialize attributes
+        //initialize attributes
         private void InitializeHashTable(int capacity, int maxLoadFactor)
         {
             _buckets = new Entry[capacity];
@@ -60,29 +60,29 @@ namespace System.Collections
             _growthFactor = 2;
         }
 
-      /// <summary>
-      /// MaxLoadFactor Property is the value used to trigger a rehash.
-      /// Default value is 2.
-      /// A higher number can decrease lookup performance for large collections.
-      /// While a value of 1 maintains a constant time complexity at the cost of increased memory requirements.   
-      /// </summary>
+        /// <summary>
+        /// MaxLoadFactor Property is the value used to trigger a rehash.
+        /// Default value is 2.
+        /// A higher number can decrease lookup performance for large collections.
+        /// While a value of 1 maintains a constant time complexity at the cost of increased memory requirements.   
+        /// </summary>
         public int MaxLoadFactor
         {
             get { return _maxLoadFactor; }
             set { _maxLoadFactor = value; }
         }
 
-      /// <summary>
-      /// GrowthFactor Property is a multiplier to increase the HashTable size by during a rehash.
-      /// Default value is 2.
-      /// </summary>
+        /// <summary>
+        /// GrowthFactor Property is a multiplier to increase the HashTable size by during a rehash.
+        /// Default value is 2.
+        /// </summary>
         public double GrowthFactor
         {
             get { return _growthFactor; }
             set { _growthFactor = value; }
         }
 
-      //adding for internal purposes
+        //adding for internal purposes
         private void Add(ref Entry[] buckets, object key, object value, bool overwrite)
         {
             var whichBucket = Hash(key, _numberOfBuckets);
@@ -112,15 +112,15 @@ namespace System.Collections
             return hashcode % numOfBuckets;
         }
 
-      //looks up value in bucket
+        //looks up value in bucket
         private Entry EntryForKey(object key, Entry head)
         {
-            for (var cur = head; cur != null; cur = cur.next) 
+            for (var cur = head; cur != null; cur = cur.next)
                 if (cur.key.Equals(key)) return cur;
             return null;
         }
 
-      //Rehashes the table to reduce the load factor
+        //Rehashes the table to reduce the load factor
         private void Rehash(int newSize)
         {
             var newTable = new Entry[newSize];
@@ -137,14 +137,14 @@ namespace System.Collections
             _buckets = newTable;
         }
 
-      //implementation for KeyCollection and ValueCollection copyTo method
+        //implementation for KeyCollection and ValueCollection copyTo method
         private void CopyToCollection(Array array, int index, EnumeratorType type)
         {
             if (index < 0 && index > _numberOfBuckets) throw new IndexOutOfRangeException("index");
 
             var j = 0;
             var len = array.Length;
-            
+
             for (var i = index; i < _numberOfBuckets; i++)
             {
                 for (var cur = _buckets[i]; cur != null && j < len; cur = cur.next)
@@ -235,7 +235,7 @@ namespace System.Collections
             var len = array.Length;
             for (var i = index; i < _buckets.Length; i++)
             {
-                for (var cur = _buckets[i]; cur != null && j<len; cur = cur.next)
+                for (var cur = _buckets[i]; cur != null && j < len; cur = cur.next)
                 {
                     ((IList)array)[j] = new DictionaryEntry(cur.key, cur.value);
                     j++;
@@ -316,7 +316,7 @@ namespace System.Collections
             {
                 if (key == null) throw new ArgumentNullException("key is null");
 
-                Add(ref _buckets ,key,value,true);
+                Add(ref _buckets, key, value, true);
                 if (_loadFactor >= _maxLoadFactor) Rehash((int)(_numberOfBuckets * _growthFactor));
             }
         }
@@ -365,7 +365,7 @@ namespace System.Collections
         /// <param name="key">The key of the element to remove.</param>
         public void Remove(object key)
         {
-            if (key == null) throw new ArgumentNullException("key is null"); 
+            if (key == null) throw new ArgumentNullException("key is null");
             var whichBucket = Hash(key, _numberOfBuckets);
             var match = EntryForKey(key, _buckets[whichBucket]);
 
@@ -421,42 +421,42 @@ namespace System.Collections
                 _returnType = type;
             }
 
-          // Return the current item.
+            // Return the current item.
             public Object Current
             {
-                get 
+                get
                 {
                     switch (_returnType)
                     {
                         case EnumeratorType.DE:
-                            return new DictionaryEntry(_temp.key, _temp.value);
+                        return new DictionaryEntry(_temp.key, _temp.value);
 
                         case EnumeratorType.KEY:
-                            return _temp.key;
+                        return _temp.key;
 
                         case EnumeratorType.VALUE:
-                            return _temp.value;
+                        return _temp.value;
                     }
-                    return new DictionaryEntry(_temp.key, _temp.value); 
+                    return new DictionaryEntry(_temp.key, _temp.value);
                 }
             }
 
             // Advance to the next item.
             public Boolean MoveNext()
             {
-                startLoop:
-                //iterate index or list
+startLoop:
+//iterate index or list
                 if (_temp == null)
                 {
                     _index++;
                     if (_index < _ht._numberOfBuckets) _temp = _ht._buckets[_index];
                     else return false;
                 }
-                else _temp = _temp.next;                    
+                else _temp = _temp.next;
 
                 //null check
                 if (_temp == null) goto startLoop;
-                    
+
                 return true;
             }
 
@@ -482,7 +482,7 @@ namespace System.Collections
         {
             private readonly Hashtable _ht;
 
-            public KeyCollection(Hashtable hashtable) 
+            public KeyCollection(Hashtable hashtable)
             {
                 _ht = hashtable;
             }

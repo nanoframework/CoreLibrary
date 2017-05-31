@@ -52,5 +52,3 @@ namespace System.Reflection
         All = Constructor | Event | Field | Method | Property | TypeInfo | NestedType,
     }
 }
-
-

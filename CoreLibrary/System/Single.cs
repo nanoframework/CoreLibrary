@@ -14,7 +14,7 @@ namespace System
     [Serializable]
     public struct Single
     {
-        internal float Value;
+        internal float _value;
 
         /// <summary>
         /// Represents the smallest possible value of Single. This field is constant.
@@ -37,15 +37,15 @@ namespace System
         /// <returns>The string representation of the value of this instance.</returns>
         public override String ToString()
         {
-            var str = ((Double)Value).ToString();
+            var str = ((Double)_value).ToString();
             switch (str)
             {
                 case "Infinity":
                 case "-Infinity":
                 case "NaN":
-                    return str;
+                return str;
                 default:
-                    return Number.Format(Value, false, "G", NumberFormatInfo.CurrentInfo);
+                return Number.Format(_value, false, "G", NumberFormatInfo.CurrentInfo);
             }
         }
 
@@ -56,15 +56,15 @@ namespace System
         /// <returns>The string representation of the value of this instance as specified by format.</returns>
         public String ToString(String format)
         {
-            var str = ((Double)Value).ToString();
+            var str = ((Double)_value).ToString();
             switch (str)
             {
                 case "Infinity":
                 case "-Infinity":
                 case "NaN":
-                    return str;
+                return str;
                 default:
-                    return Number.Format(Value, false, format, NumberFormatInfo.CurrentInfo);
+                return Number.Format(_value, false, format, NumberFormatInfo.CurrentInfo);
             }
         }
     }

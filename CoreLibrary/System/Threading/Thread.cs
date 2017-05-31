@@ -26,31 +26,31 @@ namespace System.Threading
         /// Initializes a new instance of the Thread class.
         /// </summary>
         /// <param name="start">A ThreadStart delegate that represents the methods to be invoked when this thread begins executing.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Thread(ThreadStart start);
 
         /// <summary>
         /// Causes the operating system to change the state of the current instance to ThreadState.Running.
         /// </summary>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern void Start();
 
         /// <summary>
         /// Raises a ThreadAbortException in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.
         /// </summary>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern void Abort();
 
         /// <summary>
         /// Either suspends the thread, or if the thread is already suspended, has no effect.
         /// </summary>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern void Suspend();
 
         /// <summary>
         /// Obsolete : Resumes a thread that has been suspended.
         /// </summary>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern void Resume();
 
         /// <summary>
@@ -59,10 +59,10 @@ namespace System.Threading
         /// <value>One of the ThreadPriority values. The default value is ThreadPriority.Normal.</value>
         public extern ThreadPriority Priority
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
 
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             set;
         }
 
@@ -72,7 +72,7 @@ namespace System.Threading
         /// <value>An integer that represents a unique identifier for this managed thread.</value>
         public extern int ManagedThreadId
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -82,14 +82,14 @@ namespace System.Threading
         /// <value>true if this thread has been started and has not terminated normally or aborted; otherwise, false.</value>
         public extern bool IsAlive
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
         /// <summary>
         /// Blocks the calling thread until the thread represented by this instance terminates, while continuing to perform standard COM and SendMessage pumping.
         /// </summary>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern void Join();
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace System.Threading
         /// </summary>
         /// <param name="millisecondsTimeout">The number of milliseconds to wait for the thread to terminate.</param>
         /// <returns>true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the millisecondsTimeout parameter has elapsed.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern bool Join(int millisecondsTimeout);
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace System.Threading
         /// </summary>
         /// <param name="timeout">A TimeSpan set to the amount of time to wait for the thread to terminate.</param>
         /// <returns>true if the thread terminated; false if the thread has not terminated after the amount of time specified by the timeout parameter has elapsed.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern bool Join(TimeSpan timeout);
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace System.Threading
         /// If the value of the millisecondsTimeout argument is zero, the thread relinquishes the remainder 
         /// of its time slice to any thread of equal priority that is ready to run. If there are no other threads 
         /// of equal priority that are ready to run, execution of the current thread is not suspended.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void Sleep(int millisecondsTimeout);
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace System.Threading
         /// <value>A Thread that is the representation of the currently running thread.</value>
         public static extern Thread CurrentThread
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -134,7 +134,7 @@ namespace System.Threading
         /// <value>One of the ThreadState values indicating the state of the current thread. The initial value is Unstarted.</value>
         public extern ThreadState ThreadState
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -142,9 +142,7 @@ namespace System.Threading
         /// Returns the current domain in which the current thread is running.
         /// </summary>
         /// <returns>An AppDomain representing the current application domain of the running thread.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern AppDomain GetDomain();
     }
 }
-
-

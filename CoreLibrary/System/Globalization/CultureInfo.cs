@@ -18,17 +18,17 @@ namespace System.Globalization
     /// </summary>
     public class CultureInfo /*: ICloneable , IFormatProvider*/
     {
-        internal NumberFormatInfo NumInfo;
-        internal DateTimeFormatInfo DateTimeInfo;
-        internal string CultureInfoName;
-        internal ResourceManager CultureInfoResourceManager;
+        internal NumberFormatInfo _numInfo;
+        internal DateTimeFormatInfo _dateTimeInfo;
+        internal string _cultureInfoName;
+        internal ResourceManager _cultureInfoResourceManager;
         [NonSerialized]
         private CultureInfo _parent;
         const string ResourceBase = "System.Globalization.Resources.CultureInfo";
 
         internal string EnsureStringResource(ref string str, Resources.CultureInfo.StringResources id)
         {
-            if (str == null) str = (string)ResourceManager.GetObject(CultureInfoResourceManager, id);
+            if (str == null) str = (string)ResourceManager.GetObject(_cultureInfoResourceManager, id);
 
             return str;
         }
@@ -37,7 +37,7 @@ namespace System.Globalization
         {
             if (strArray == null)
             {
-                var str = (string)ResourceManager.GetObject(CultureInfoResourceManager, id);
+                var str = (string)ResourceManager.GetObject(_cultureInfoResourceManager, id);
                 strArray = str.Split('|');
             }
 
@@ -53,14 +53,14 @@ namespace System.Globalization
         {
             if (name == null) throw new ArgumentNullException("name");
 
-            CultureInfoResourceManager = new ResourceManager(ResourceBase, typeof(CultureInfo).Assembly, name, true);
-            CultureInfoName = CultureInfoResourceManager.CultureName;
+            _cultureInfoResourceManager = new ResourceManager(ResourceBase, typeof(CultureInfo).Assembly, name, true);
+            _cultureInfoName = _cultureInfoResourceManager._cultureName;
         }
 
         internal CultureInfo(ResourceManager resourceManager)
         {
-            CultureInfoResourceManager = resourceManager;
-            CultureInfoName = resourceManager.CultureName;
+            _cultureInfoResourceManager = resourceManager;
+            _cultureInfoName = resourceManager._cultureName;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace System.Globalization
         {
             get
             {
-              //only one system-wide culture.  We do not currently support per-thread cultures
+                //only one system-wide culture.  We do not currently support per-thread cultures
                 var culture = CurrentUICultureInternal;
                 if (culture == null)
                 {
@@ -85,9 +85,9 @@ namespace System.Globalization
 
         private static extern CultureInfo CurrentUICultureInternal
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             set;
         }
 
@@ -101,14 +101,14 @@ namespace System.Globalization
             {
                 if (_parent == null)
                 {
-                    if (CultureInfoName == "") //Invariant culture
+                    if (_cultureInfoName == "") //Invariant culture
                     {
                         _parent = this;
                     }
                     else
                     {
-                        var parentName = CultureInfoName;
-                        var iDash = CultureInfoName.LastIndexOf('-');
+                        var parentName = _cultureInfoName;
+                        var iDash = _cultureInfoName.LastIndexOf('-');
                         parentName = iDash >= 0 ? parentName.Substring(0, iDash) : "";
 
                         _parent = new CultureInfo(parentName);
@@ -127,14 +127,14 @@ namespace System.Globalization
         public static CultureInfo[] GetCultures(CultureTypes types)
         {
             var listCultures = new ArrayList();
-          //Look for all assemblies/satellite assemblies
+            //Look for all assemblies/satellite assemblies
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             for (var iAssembly = 0; iAssembly < assemblies.Length; iAssembly++)
             {
                 var assembly = assemblies[iAssembly];
                 var mscorlib = "mscorlib";
                 var fullName = assembly.FullName;
-              // consider adding startswith ?
+                // consider adding startswith ?
                 if (mscorlib.Length <= fullName.Length && fullName.Substring(0, mscorlib.Length) == mscorlib)
                 {
                     var resources = assembly.GetManifestResourceNames();
@@ -143,12 +143,12 @@ namespace System.Globalization
                         var resource = resources[iResource];
                         if (ResourceBase.Length < resource.Length && resource.Substring(0, ResourceBase.Length) == ResourceBase)
                         {
-                          //System.Globalization.Resources.CultureInfo.<culture>.tinyresources
+                            //System.Globalization.Resources.CultureInfo.<culture>.tinyresources
                             var cultureName = resource.Substring(ResourceBase.Length, resource.Length - ResourceBase.Length - ResourceManager.FileExtension.Length);
-                          // remove the leading "."
+                            // remove the leading "."
                             if (cultureName != "") cultureName = cultureName.Substring(1, cultureName.Length - 1);
 
-                          // if GetManifestResourceNames() changes, we need to change this code to ensure the index is the same.
+                            // if GetManifestResourceNames() changes, we need to change this code to ensure the index is the same.
                             listCultures.Add(new CultureInfo(new ResourceManager(ResourceBase, cultureName, iResource, typeof(CultureInfo).Assembly, assembly)));
                         }
                     }
@@ -167,7 +167,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfoName;
+                return _cultureInfoName;
             }
         }
 
@@ -177,7 +177,7 @@ namespace System.Globalization
         /// <returns>A string containing the name of the current CultureInfo.</returns>
         public override String ToString()
         {
-            return CultureInfoName;
+            return _cultureInfoName;
         }
 
         //        public virtual Object GetFormat(Type formatType) {
@@ -241,11 +241,12 @@ namespace System.Globalization
         /// <value>A NumberFormatInfo that defines the culturally appropriate format of displaying numbers, currency, and percentage.</value>
         public virtual NumberFormatInfo NumberFormat
         {
-            get {
+            get
+            {
 
-                if(NumInfo == null) NumInfo = new NumberFormatInfo(this);
+                if (_numInfo == null) _numInfo = new NumberFormatInfo(this);
 
-                return NumInfo;
+                return _numInfo;
             }
         }
 
@@ -257,12 +258,10 @@ namespace System.Globalization
         {
             get
             {
-                if (DateTimeInfo == null) DateTimeInfo = new DateTimeFormatInfo(this);
+                if (_dateTimeInfo == null) _dateTimeInfo = new DateTimeFormatInfo(this);
 
-                return DateTimeInfo;
+                return _dateTimeInfo;
             }
         }
     }
 }
-
-

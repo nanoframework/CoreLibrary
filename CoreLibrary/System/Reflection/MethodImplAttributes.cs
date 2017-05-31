@@ -84,5 +84,3 @@ namespace System.Reflection
         MaxMethodImplVal = 0xFFFF
     }
 }
-
-

@@ -21,7 +21,7 @@ namespace System
         /// Initializes a new instance of the Random class, using a time-
         /// dependent default seed value.
         /// </summary>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Random();
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace System
         /// </summary>
         /// <param name="seed">A number used to calculate a starting value for
         /// the pseudo-random number sequence.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Random(int seed);
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace System
         /// </summary>
         /// <returns>A 32-bit signed integer greater than or equal to zero and
         /// less than MaxValue.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern int Next();
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace System
         /// to be generated. maxValue must be greater than or equal to zero.</param>
         /// <returns>A 32-bit signed integer greater than or equal to zero, and
         /// less than maxValue.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern int Next(int maxValue);
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace System
         /// </summary>
         /// <returns>A double-precision floating point number greater than or equal
         /// to 0.0, and less than 1.0.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern double NextDouble();
 
         /// <summary>
         /// Fills the elements of a specified array of bytes with random numbers.
         /// </summary>
         /// <param name="buffer">An array of bytes to contain random numbers.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern void NextBytes(byte[] buffer);
     }
 }

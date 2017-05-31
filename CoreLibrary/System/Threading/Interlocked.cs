@@ -22,7 +22,7 @@ namespace System.Threading
         /// </summary>
         /// <param name="location">The variable whose value is to be incremented.</param>
         /// <returns>The incremented value.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern int Increment(ref int location);
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace System.Threading
         /// </summary>
         /// <param name="location">The variable whose value is to be decremented.</param>
         /// <returns>The decremented value.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern int Decrement(ref int location);
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace System.Threading
         /// <param name="location1">The variable to set to the specified value.</param>
         /// <param name="value">The value to which the location1 parameter is set.</param>
         /// <returns>The original value of location1.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern int Exchange(ref int location1, int value);
 
         /// <summary>
@@ -49,9 +49,7 @@ namespace System.Threading
         /// <param name="value">The value that replaces the destination value if the comparison results in equality.</param>
         /// <param name="comparand">The value that is compared to the value at location1.</param>
         /// <returns>The original value in location1.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern int CompareExchange(ref int location1, int value, int comparand);
     }
 }
-
-

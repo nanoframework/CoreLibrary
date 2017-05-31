@@ -34,7 +34,7 @@ namespace System.Reflection
         /// <returns>The property value of the specified object.</returns>
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern Object GetValue(Object obj, Object[] index);
 
         /// <summary>
@@ -45,9 +45,7 @@ namespace System.Reflection
         /// <param name="index">Optional index values for indexed properties. This value should be null for non-indexed properties.</param>
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern void SetValue(Object obj, Object value, Object[] index);
     }
 }
-
-

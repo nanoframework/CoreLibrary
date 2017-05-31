@@ -38,7 +38,7 @@ namespace System
         /// <returns>The lower case character.</returns>
         public char ToLower()
         {
-            if('A' <= _value && _value <= 'Z')
+            if ('A' <= _value && _value <= 'Z')
             {
                 return (char)(_value - ('A' - 'a'));
             }
@@ -52,7 +52,7 @@ namespace System
         /// <returns>The upper case character.</returns>
         public char ToUpper()
         {
-            if('a' <= _value && _value <= 'z')
+            if ('a' <= _value && _value <= 'z')
             {
                 return (char)(_value + ('A' - 'a'));
             }

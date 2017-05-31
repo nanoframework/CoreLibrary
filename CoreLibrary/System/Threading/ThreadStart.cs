@@ -14,5 +14,3 @@ namespace System.Threading
     /// </summary>
     public delegate void ThreadStart();
 }
-
-

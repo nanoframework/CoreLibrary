@@ -32,7 +32,7 @@ namespace System.Threading
         /// <param name="state">An object containing information to be used by the callback method, or null.</param>
         /// <param name="dueTime">The amount of time to delay before callback is invoked, in milliseconds. Specify Timeout.Infinite to prevent the timer from starting. Specify zero (0) to start the timer immediately.</param>
         /// <param name="period">The time interval between invocations of callback, in milliseconds. Specify Timeout.Infinite to disable periodic signaling.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Timer(TimerCallback callback, Object state, int dueTime, int period);
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace System.Threading
         /// <param name="state">An object containing information to be used by the callback method, or null.</param>
         /// <param name="dueTime">The amount of time to delay before the callback parameter invokes its methods. Specify negative one (-1) milliseconds to prevent the timer from starting. Specify zero (0) to start the timer immediately.</param>
         /// <param name="period">The time interval between invocations of the methods referenced by callback. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Timer(TimerCallback callback, Object state, TimeSpan dueTime, TimeSpan period);
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace System.Threading
         /// <param name="period">The time interval between invocations of the callback method specified when the Timer was constructed, in milliseconds. 
         /// Specify Timeout.Infinite to disable periodic signaling.</param>
         /// <returns>true if the timer was successfully updated; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern bool Change(int dueTime, int period);
 
         /// <summary>
@@ -63,13 +63,13 @@ namespace System.Threading
         /// Specify negative one (-1) milliseconds to prevent the timer from restarting. Specify zero (0) to restart the timer immediately.</param>
         /// <param name="period">The time interval between invocations of the callback method specified when the Timer was constructed. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
         /// <returns>true if the timer was successfully updated; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern bool Change(TimeSpan dueTime, TimeSpan period);
 
         /// <summary>
         /// Releases all resources used by the current instance of Timer.
         /// </summary>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern void Dispose();
     }
 }

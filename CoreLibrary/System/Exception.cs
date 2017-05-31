@@ -81,7 +81,7 @@ namespace System
         /// </value>
         public virtual extern String StackTrace
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 

@@ -19,16 +19,14 @@ namespace System.Diagnostics
         /// <value>true if a debugger is attached; otherwise, false.</value>
         public static extern bool IsAttached
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
         /// <summary>
         /// Signals a breakpoint to an attached debugger.
         /// </summary>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void Break();
     }
 }
-
-

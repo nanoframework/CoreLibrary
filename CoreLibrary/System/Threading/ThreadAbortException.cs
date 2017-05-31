@@ -17,5 +17,3 @@ namespace System.Threading
         private ThreadAbortException() { }
     }
 }
-
-

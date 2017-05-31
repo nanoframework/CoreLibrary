@@ -12,9 +12,7 @@ namespace System.Runtime.Remoting
         /// </summary>
         /// <param name="proxy">The reference to the object to check.</param>
         /// <returns>A Boolean value that indicates whether the object specified in the proxy parameter is a transparent proxy or a real object.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool IsTransparentProxy(Object proxy);
     }
 }
-
-

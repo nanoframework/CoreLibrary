@@ -29,7 +29,7 @@ namespace System
         /// </summary>
         /// <param name="friendlyName">The friendly name of the domain.</param>
         /// <returns>The newly created application domain.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern AppDomain CreateDomain(String friendlyName);
 
         /// <summary>
@@ -95,17 +95,17 @@ namespace System
         /// Gets the assemblies that have been loaded into the execution context of this application domain.
         /// </summary>
         /// <returns>An array of assemblies in this application domain.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Assembly[] GetAssemblies();
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private extern Assembly LoadInternal(String assemblyString, bool fVersion, int maj, int min, int build, int rev);
 
         /// <summary>
         /// Unloads the specified application domain.
         /// </summary>
         /// <param name="domain">An application domain to unload.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void Unload(AppDomain domain);
     }
 }

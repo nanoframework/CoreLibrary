@@ -25,7 +25,7 @@ namespace System.Threading
         /// <param name="millisecondsTimeout">The number of milliseconds to wait, or Timeout.Infinite (-1) to wait indefinitely.</param>
         /// <param name="exitContext">true to exit the synchronization domain for the context before the wait (if in a synchronized context), and reacquire it afterward; otherwise, false.</param>
         /// <returns>true if the current instance receives a signal; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern bool WaitOne(int millisecondsTimeout, bool exitContext);
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace System.Threading
             return WaitOne(Timeout.Infinite, false);
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern int WaitMultiple(WaitHandle[] waitHandles, int millisecondsTimeout, bool exitContext, bool waitAll);
 
         /// <summary>
@@ -85,5 +85,3 @@ namespace System.Threading
         }
     }
 }
-
-

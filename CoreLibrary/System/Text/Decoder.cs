@@ -29,5 +29,3 @@ namespace System.Text
             out int bytesUsed, out int charsUsed, out bool completed);
     }
 }
-
-

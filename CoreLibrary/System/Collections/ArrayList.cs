@@ -19,7 +19,7 @@ namespace System.Collections
         private Object[] _items;
         private int _size;
 
-      // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_ArrayList in NANOCLR_Runtime__HeapBlock.h
+        // Keep in-sync with c_DefaultCapacity in CLR_RT_HeapBlock_ArrayList in NANOCLR_Runtime__HeapBlock.h
         private const int DefaultCapacity = 4;
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace System.Collections
             }
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void SetCapacity(int capacity);
 
         /// <summary>
@@ -105,14 +105,14 @@ namespace System.Collections
 
         public virtual extern Object this[int index]
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
 
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             set;
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern int Add(Object value);
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace System.Collections
             return Array.BinarySearch(_items, 0, _size, value, comparer);
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern void Clear();
 
         public virtual Object Clone()
@@ -137,8 +137,8 @@ namespace System.Collections
 
             if (_size > DefaultCapacity)
             {
-              // only re-allocate a new array if the size isn't what we need.
-              // otherwise, the one allocated in the constructor will be just fine
+                // only re-allocate a new array if the size isn't what we need.
+                // otherwise, the one allocated in the constructor will be just fine
                 arrayList._items = new Object[_size];
             }
 
@@ -213,7 +213,7 @@ namespace System.Collections
             return Array.IndexOf(_items, value, startIndex, count);
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern void Insert(int index, Object value);
 
         public virtual void Remove(Object obj)
@@ -225,7 +225,7 @@ namespace System.Collections
             }
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern void RemoveAt(int index);
 
         /// <summary>
@@ -252,5 +252,3 @@ namespace System.Collections
         }
     }
 }
-
-

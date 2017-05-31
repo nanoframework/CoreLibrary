@@ -17,7 +17,7 @@ namespace System.Runtime.CompilerServices
         /// </summary>
         /// <param name="array">The array to be initialized.</param>
         /// <param name="fldHandle">A field handle that specifies the location of the data used to initialize the array.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void InitializeArray(Array array, RuntimeFieldHandle fldHandle);
 
         /// <summary>
@@ -25,14 +25,14 @@ namespace System.Runtime.CompilerServices
         /// </summary>
         /// <param name="obj">The value type to be boxed.</param>
         /// <returns>A boxed copy of obj if it is a value class; otherwise, obj itself.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern Object GetObjectValue(Object obj);
 
         /// <summary>
         /// Runs a specified class constructor method.
         /// </summary>
         /// <param name="type">A type handle that specifies the class constructor method to run.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void RunClassConstructor(RuntimeTypeHandle type);
 
         /// <summary>
@@ -43,10 +43,8 @@ namespace System.Runtime.CompilerServices
         /// </value>
         public static extern int OffsetToStringData
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
     }
 }
-
-

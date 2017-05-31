@@ -36,7 +36,7 @@ namespace System
         /// </summary>
         /// <param name="obj">he object to compare with the current object.</param>
         /// <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern bool Equals(Object obj);
 
         /// <summary>
@@ -66,28 +66,28 @@ namespace System
         /// <param name="objA">The first object to compare.</param>
         /// <param name="objB">The second object to compare.</param>
         /// <returns>true if objA is the same instance as objB or if both are null; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool ReferenceEquals(Object objA, Object objB);
 
         /// <summary>
         /// Serves as the default hash function.
         /// </summary>
         /// <returns>A hash code for the current object.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern int GetHashCode();
 
         /// <summary>
         /// Gets the Type of the current instance.
         /// </summary>
         /// <returns>The exact runtime type of the current instance.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Type GetType();
 
         /// <summary>
         /// Creates a shallow copy of the current Object.
         /// </summary>
         /// <returns>A shallow copy of the current Object.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         protected extern Object MemberwiseClone();
 
     }

@@ -48,5 +48,3 @@ namespace System.Globalization
         WindowsOnlyCultures
     }
 }
-
-

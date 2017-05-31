@@ -69,28 +69,28 @@ namespace System.Runtime.CompilerServices
     [Serializable, AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor, Inherited = false)]
     public sealed class MethodImplAttribute : Attribute
     {
-        internal MethodImplOptions Val;
+        internal MethodImplOptions _val;
         /// <summary>
-        /// A MethodCodeType value indicating what kind of implementation is provided for this method.
+        /// A MethodCodeType _value indicating what kind of implementation is provided for this method.
         /// </summary>
         public MethodCodeType MethodCodeType;
 
         /// <summary>
-        /// Initializes a new instance of the MethodImplAttribute class with the specified MethodImplOptions value.
+        /// Initializes a new instance of the MethodImplAttribute class with the specified MethodImplOptions _value.
         /// </summary>
-        /// <param name="methodImplOptions">A MethodImplOptions value specifying properties of the attributed method.</param>
+        /// <param name="methodImplOptions">A MethodImplOptions _value specifying properties of the attributed method.</param>
         public MethodImplAttribute(MethodImplOptions methodImplOptions)
         {
-            Val = methodImplOptions;
+            _val = methodImplOptions;
         }
 
         /// <summary>
-        /// Initializes a new instance of the MethodImplAttribute class with the specified MethodImplOptions value.
+        /// Initializes a new instance of the MethodImplAttribute class with the specified MethodImplOptions _value.
         /// </summary>
-        /// <param name="value">A bitmask representing the desired MethodImplOptions value which specifies properties of the attributed method.</param>
-        public MethodImplAttribute(short value)
+        /// <param name="_value">A bitmask representing the desired MethodImplOptions _value which specifies properties of the attributed method.</param>
+        public MethodImplAttribute(short _value)
         {
-            Val = (MethodImplOptions)value;
+            _val = (MethodImplOptions)_value;
         }
 
         /// <summary>
@@ -101,14 +101,12 @@ namespace System.Runtime.CompilerServices
         }
 
         /// <summary>
-        /// Gets the MethodImplOptions value describing the attributed method.
+        /// Gets the MethodImplOptions _value describing the attributed method.
         /// </summary>
-        /// <value>
-        /// The MethodImplOptions value describing the attributed method.
-        /// </value>
-        public MethodImplOptions Value { get { return Val; } }
+        /// <_value>
+        /// The MethodImplOptions _value describing the attributed method.
+        /// </_value>
+        public MethodImplOptions Value { get { return _val; } }
     }
 
 }
-
-

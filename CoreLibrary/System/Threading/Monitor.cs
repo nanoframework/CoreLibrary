@@ -18,16 +18,14 @@ namespace System.Threading
         /// Acquires an exclusive lock on the specified object.
         /// </summary>
         /// <param name="obj">The object on which to acquire the monitor lock.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void Enter(Object obj);
 
         /// <summary>
         /// Releases an exclusive lock on the specified object.
         /// </summary>
         /// <param name="obj">The object on which to release the lock.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void Exit(Object obj);
     }
 }
-
-

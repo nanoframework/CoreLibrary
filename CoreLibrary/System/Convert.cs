@@ -157,55 +157,55 @@ namespace System
                 switch (c)
                 {
                     case '0':
-                        digit = 0;
-                        break;
+                    digit = 0;
+                    break;
                     case '1':
-                        digit = 1;
-                        break;
+                    digit = 1;
+                    break;
                     case '2':
-                        digit = 2;
-                        break;
+                    digit = 2;
+                    break;
                     case '3':
-                        digit = 3;
-                        break;
+                    digit = 3;
+                    break;
                     case '4':
-                        digit = 4;
-                        break;
+                    digit = 4;
+                    break;
                     case '5':
-                        digit = 5;
-                        break;
+                    digit = 5;
+                    break;
                     case '6':
-                        digit = 6;
-                        break;
+                    digit = 6;
+                    break;
                     case '7':
-                        digit = 7;
-                        break;
+                    digit = 7;
+                    break;
                     case '8':
-                        digit = 8;
-                        break;
+                    digit = 8;
+                    break;
                     case '9':
-                        digit = 9;
-                        break;
+                    digit = 9;
+                    break;
                     case 'A':
-                        digit = 10;
-                        break;
+                    digit = 10;
+                    break;
                     case 'B':
-                        digit = 11;
-                        break;
+                    digit = 11;
+                    break;
                     case 'C':
-                        digit = 12;
-                        break;
+                    digit = 12;
+                    break;
                     case 'D':
-                        digit = 13;
-                        break;
+                    digit = 13;
+                    break;
                     case 'E':
-                        digit = 14;
-                        break;
+                    digit = 14;
+                    break;
                     case 'F':
-                        digit = 15;
-                        break;
+                    digit = 15;
+                    break;
                     default:
-                        throw new ArgumentException();
+                    throw new ArgumentException();
                 }
 
                 result <<= 4;
@@ -292,25 +292,25 @@ namespace System
                 switch (leftDecLen)
                 {
                     case 2:
-                        value /= 10.0;
-                        power += 1;
-                        leftDecLen -= 1;
-                        break;
+                    value /= 10.0;
+                    power += 1;
+                    leftDecLen -= 1;
+                    break;
                     case 3:
-                        value /= 100.0;
-                        power += 2;
-                        leftDecLen -= 2;
-                        break;
+                    value /= 100.0;
+                    power += 2;
+                    leftDecLen -= 2;
+                    break;
                     case 4:
-                        value /= 1000.0;
-                        power += 3;
-                        leftDecLen -= 3;
-                        break;
+                    value /= 1000.0;
+                    power += 3;
+                    leftDecLen -= 3;
+                    break;
                     default:
-                        value /= 10000.0;
-                        power += 4;
-                        leftDecLen -= 4;
-                        break;
+                    value /= 10000.0;
+                    power += 4;
+                    leftDecLen -= 4;
+                    break;
                 }
             }
 
@@ -325,25 +325,25 @@ namespace System
                     switch (decLeadingZeros)
                     {
                         case 1:
-                            value *= 10.0;
-                            power -= 1;
-                            decLeadingZeros -= 1;
-                            break;
+                        value *= 10.0;
+                        power -= 1;
+                        decLeadingZeros -= 1;
+                        break;
                         case 2:
-                            value *= 100.0;
-                            power -= 2;
-                            decLeadingZeros -= 2;
-                            break;
+                        value *= 100.0;
+                        power -= 2;
+                        decLeadingZeros -= 2;
+                        break;
                         case 3:
-                            value *= 1000.0;
-                            power -= 3;
-                            decLeadingZeros -= 3;
-                            break;
+                        value *= 1000.0;
+                        power -= 3;
+                        decLeadingZeros -= 3;
+                        break;
                         default:
-                            value *= 10000.0;
-                            power -= 4;
-                            decLeadingZeros -= 4;
-                            break;
+                        value *= 10000.0;
+                        power -= 4;
+                        decLeadingZeros -= 4;
+                        break;
                     }
                 }
             }
@@ -395,37 +395,37 @@ namespace System
                 switch (c)
                 {
                     case '0':
-                        digit = 0;
-                        break;
+                    digit = 0;
+                    break;
                     case '1':
-                        digit = 1;
-                        break;
+                    digit = 1;
+                    break;
                     case '2':
-                        digit = 2;
-                        break;
+                    digit = 2;
+                    break;
                     case '3':
-                        digit = 3;
-                        break;
+                    digit = 3;
+                    break;
                     case '4':
-                        digit = 4;
-                        break;
+                    digit = 4;
+                    break;
                     case '5':
-                        digit = 5;
-                        break;
+                    digit = 5;
+                    break;
                     case '6':
-                        digit = 6;
-                        break;
+                    digit = 6;
+                    break;
                     case '7':
-                        digit = 7;
-                        break;
+                    digit = 7;
+                    break;
                     case '8':
-                        digit = 8;
-                        break;
+                    digit = 8;
+                    break;
                     case '9':
-                        digit = 9;
-                        break;
+                    digit = 9;
+                    break;
                     default:
-                        throw new Exception();
+                    throw new Exception();
                 }
 
                 // check for overflow - any number greater than this number will cause an overflow
@@ -489,42 +489,42 @@ namespace System
                 switch (c)
                 {
                     case '0':
-                        // update the number of leading zeros (used for normalizing)
-                        if (numLeadingZeros + start == i)
-                        {
-                            numLeadingZeros++;
-                        }
-                        digit = 0;
-                        break;
+                    // update the number of leading zeros (used for normalizing)
+                    if (numLeadingZeros + start == i)
+                    {
+                        numLeadingZeros++;
+                    }
+                    digit = 0;
+                    break;
                     case '1':
-                        digit = 1;
-                        break;
+                    digit = 1;
+                    break;
                     case '2':
-                        digit = 2;
-                        break;
+                    digit = 2;
+                    break;
                     case '3':
-                        digit = 3;
-                        break;
+                    digit = 3;
+                    break;
                     case '4':
-                        digit = 4;
-                        break;
+                    digit = 4;
+                    break;
                     case '5':
-                        digit = 5;
-                        break;
+                    digit = 5;
+                    break;
                     case '6':
-                        digit = 6;
-                        break;
+                    digit = 6;
+                    break;
                     case '7':
-                        digit = 7;
-                        break;
+                    digit = 7;
+                    break;
                     case '8':
-                        digit = 8;
-                        break;
+                    digit = 8;
+                    break;
                     case '9':
-                        digit = 9;
-                        break;
+                    digit = 9;
+                    break;
                     default:
-                        throw new Exception();
+                    throw new Exception();
                 }
 
                 number *= 10;
@@ -590,7 +590,7 @@ namespace System
             return ToBase64String(inArray, offset, length, options == Base64FormattingOptions.InsertLineBreaks);
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern string ToBase64String(byte[] inArray, int offset, int length, bool insertLineBreaks);
 
         /// <summary>
@@ -632,7 +632,7 @@ namespace System
             return FromBase64CharArray(inArray, length);
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern byte[] FromBase64CharArray(char[] inArray, int length);
     }
 }

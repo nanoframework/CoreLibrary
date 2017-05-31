@@ -12,7 +12,7 @@ namespace System
     [Serializable]
     public class ArgumentException : SystemException
     {
-        private String m_paramName;
+        private String _paramName;
 
         /// <summary>
         /// Initializes a new instance of the ArgumentException class.
@@ -49,7 +49,7 @@ namespace System
         public ArgumentException(String message, String paramName, Exception innerException)
             : base(message, innerException)
         {
-            m_paramName = paramName;
+            _paramName = paramName;
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace System
 
             : base(message)
         {
-            m_paramName = paramName;
+            _paramName = paramName;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace System
             get
             {
                 var s = base.Message;
-                if (!(m_paramName == null || m_paramName.Length == 0))
-                    return s + "\n" + "Invalid argument " + "'" + m_paramName + "'";
+                if (!(_paramName == null || _paramName.Length == 0))
+                    return s + "\n" + "Invalid argument " + "'" + _paramName + "'";
                 return s;
             }
         }
@@ -89,7 +89,7 @@ namespace System
         /// </value>
         public virtual String ParamName
         {
-            get { return m_paramName; }
+            get { return _paramName; }
         }
 
     }

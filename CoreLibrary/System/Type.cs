@@ -25,7 +25,7 @@ namespace System
         /// </value>
         public override extern Type DeclaringType
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -43,12 +43,12 @@ namespace System
             var assemblyName = "";
             var name = ParseTypeName(typeName, ref assemblyString);
 
-            if (assemblyString.Length > 0) assemblyName = Assembly.ParseAssemblyName( assemblyString, ref fVersion, ref ver );
+            if (assemblyString.Length > 0) assemblyName = Assembly.ParseAssemblyName(assemblyString, ref fVersion, ref ver);
 
             return GetTypeInternal(name, assemblyName, fVersion, ver);
         }
-        
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern Type GetTypeInternal(String typeName, string assemblyName, bool fVersion, int[] ver);
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace System
         /// <returns>An object representing the return value of the invoked member.</returns>
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Object InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args);
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace System
         /// </summary>
         /// <param name="handle">The object that refers to the type.</param>
         /// <returns>The type referenced by the specified RuntimeTypeHandle, or null if the Value property of handle is null.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern Type GetTypeFromHandle(RuntimeTypeHandle handle);
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace System
         /// <para>An empty array of Type objects, to get a constructor that takes no parameters.Such an empty array is provided by the static field Type.EmptyTypes.</para>
         /// </param>
         /// <returns>An object representing the public instance constructor whose parameters match the types in the parameter type array, if found; otherwise, null.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern ConstructorInfo GetConstructor(Type[] types);
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace System
         /// <para>An empty array of Type objects, to get a constructor that takes no parameters.Such an empty array is provided by the static field Type.EmptyTypes.</para>
         /// </param>
         /// <returns>An object representing the public method whose parameters match the specified argument types, if found; otherwise, null.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern MethodInfo GetMethod(String name, Type[] types);
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace System
         /// <param name="name">The string containing the name of the method to get.</param>
         /// <param name="bindingAttr">A bitmask comprised of one or more BindingFlags that specify how the search is conducted or Zero, to return null.</param>
         /// <returns>An object representing the method that matches the specified requirements, if found; otherwise, null.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern MethodInfo GetMethod(String name, BindingFlags bindingAttr);
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace System
         /// </summary>
         /// <param name="name">The string containing the name of the public method to get.</param>
         /// <returns>An object that represents the public method with the specified name, if found; otherwise, null.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern MethodInfo GetMethod(String name);
 
         // GetMethods
@@ -260,7 +260,7 @@ namespace System
         /// <value>true if the Type is not declared public and is not a nested type; otherwise, false.</value>
         public extern bool IsNotPublic
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -270,7 +270,7 @@ namespace System
         /// <value>true if the Type is declared public and is not a nested type; otherwise, false.</value>
         public extern bool IsPublic
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -280,7 +280,7 @@ namespace System
         /// <value>true if the Type is a class; otherwise, false.</value>
         public extern bool IsClass
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -290,7 +290,7 @@ namespace System
         /// <value>true if the Type is an interface; otherwise, false.</value>
         public extern bool IsInterface
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -300,7 +300,7 @@ namespace System
         /// <value>true if the Type is a value type; otherwise, false.</value>
         public extern bool IsValueType
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -310,7 +310,7 @@ namespace System
         /// <value>true if the Type is abstract; otherwise, false.</value>
         public extern bool IsAbstract
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -320,7 +320,7 @@ namespace System
         /// <value>true if the current Type represents an enumeration; otherwise, false.</value>
         public extern bool IsEnum
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -330,7 +330,7 @@ namespace System
         /// <value>true if the Type is serializable; otherwise, false.</value>
         public extern bool IsSerializable
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -340,7 +340,7 @@ namespace System
         /// <value>true if the current type is an array; otherwise, false.</value>
         public extern bool IsArray
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -377,7 +377,7 @@ namespace System
         /// <returns>true if the current Type is in the inheritance hierarchy of the object represented by o, or if the current Type is an interface that o implements. 
         /// false if neither of these conditions is the case, if o is null, or if the current Type is an open generic type (that is, ContainsGenericParameters returns true).
         /// </returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern bool IsInstanceOfType(Object o);
 
         /// <summary>
@@ -410,7 +410,7 @@ namespace System
                 name = typeName.Substring(0, commaIdx);
 
                 // after the comma we need ONE (1) space only and then the assembly name
-                if(typeName.Length <= commaIdx + 2) throw new ArgumentException();
+                if (typeName.Length <= commaIdx + 2) throw new ArgumentException();
 
                 // now we can grab the assemblyName 
                 // at this point there could be also the Version appended to it

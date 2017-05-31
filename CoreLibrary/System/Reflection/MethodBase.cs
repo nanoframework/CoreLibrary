@@ -23,7 +23,7 @@ namespace System.Reflection
         /// </value>
         public extern bool IsPublic
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -35,7 +35,7 @@ namespace System.Reflection
         /// </value>
         public extern bool IsStatic
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -47,7 +47,7 @@ namespace System.Reflection
         /// </value>
         public extern bool IsFinal
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -59,7 +59,7 @@ namespace System.Reflection
         /// </value>
         public extern bool IsVirtual
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -71,7 +71,7 @@ namespace System.Reflection
         /// </value>
         public extern bool IsAbstract
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -85,7 +85,7 @@ namespace System.Reflection
         /// <returns>An object containing the return value of the invoked method, or null in the case of a constructor.</returns>
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Object Invoke(Object obj, Object[] parameters);
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace System.Reflection
         /// </value>
         public override extern String Name
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -108,10 +108,8 @@ namespace System.Reflection
         /// </value>
         public override extern Type DeclaringType
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
     }
 }
-
-

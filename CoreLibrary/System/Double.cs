@@ -15,7 +15,7 @@ namespace System
     [Serializable]
     public struct Double
     {
-        internal double MValue;
+        internal double _value;
 
         /// <summary>
         /// Represents the smallest possible value of a Double. This field is constant.
@@ -51,7 +51,7 @@ namespace System
         /// <param name="d">Documentation missing</param>
         /// <param name="value">Documentation missing</param>
         /// <returns>Documentation missing</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern int CompareTo(double d, double value);
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace System
         /// <returns>
         /// true if d evaluates to PositiveInfinity or NegativeInfinity; otherwise, false.
         /// </returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool IsInfinity(double d);
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace System
         /// <returns>
         /// true if d evaluates to NaN; otherwise, false.
         /// </returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool IsNaN(double d);
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace System
         /// <returns>
         /// true if d evaluates to NegativeInfinity; otherwise, false.
         /// </returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool IsNegativeInfinity(double d);
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace System
         /// <returns>
         /// true if d evaluates to PositiveInfinity; otherwise, false.
         /// </returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool IsPositiveInfinity(double d);
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace System
             if (IsPositiveInfinity(this)) return "Infinity";
             if (IsNegativeInfinity(this)) return "-Infinity";
 
-            return IsNaN(this) ? "NaN" : Number.Format(MValue, false, "G", NumberFormatInfo.CurrentInfo);
+            return IsNaN(this) ? "NaN" : Number.Format(_value, false, "G", NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace System
             if (IsPositiveInfinity(this)) return "Infinity";
             if (IsNegativeInfinity(this)) return "-Infinity";
 
-            return IsNaN(this) ? "NaN" : Number.Format(MValue, false, format, NumberFormatInfo.CurrentInfo);
+            return IsNaN(this) ? "NaN" : Number.Format(_value, false, format, NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>

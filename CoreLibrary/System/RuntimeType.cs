@@ -22,19 +22,19 @@ namespace System
 
         public override extern Assembly Assembly
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
         public override extern String Name
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
         public override extern String FullName
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -48,23 +48,23 @@ namespace System
 
         public override extern Type BaseType
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern MethodInfo[] GetMethods(BindingFlags bindingAttr);
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern FieldInfo GetField(String name, BindingFlags bindingAttr);
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern FieldInfo[] GetFields(BindingFlags bindingAttr);
 
         /// <summary>
         /// This method will return all of the interfaces implemented by a class
         /// </summary>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern Type[] GetInterfaces();
         ////////////////////////////////////////////////////////////////////////////////////
         //////
@@ -77,7 +77,7 @@ namespace System
         //////  class inside the runtime.
         //////
         ////////////////////////////////////////////////////////////////////////////////////
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern Type GetElementType();
 
     }

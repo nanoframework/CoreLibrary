@@ -18,7 +18,7 @@ namespace System.Collections
         /// <param name="x">The first object to compare.</param>
         /// <param name="y">The second object to compare.</param>
         /// <returns>true if the specified objects are equal; otherwise, false.</returns>
-        bool Equals(Object x,Object y);
+        bool Equals(Object x, Object y);
 
         /// <summary>
         /// Returns a hash code for the specified object.

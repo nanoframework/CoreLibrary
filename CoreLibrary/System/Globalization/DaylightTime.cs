@@ -14,9 +14,9 @@ namespace System.Globalization
     [Serializable]
     public class DaylightTime
     {
-        internal DateTime DaylightTimeStart;
-        internal DateTime DaylightTimeEnd;
-        internal TimeSpan DaylightTimeDelta;
+        internal DateTime _daylightTimeStart;
+        internal DateTime _daylightTimeEnd;
+        internal TimeSpan _daylightTimeDelta;
 
         private DaylightTime()
         {
@@ -30,9 +30,9 @@ namespace System.Globalization
         /// <param name="delta">The object that represents the difference between standard time and daylight saving time, in ticks.</param>
         public DaylightTime(DateTime start, DateTime end, TimeSpan delta)
         {
-            DaylightTimeStart = start;
-            DaylightTimeEnd = end;
-            DaylightTimeDelta = delta;
+            _daylightTimeStart = start;
+            _daylightTimeEnd = end;
+            _daylightTimeDelta = delta;
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace System.Globalization
         {
             get
             {
-                return DaylightTimeStart;
+                return _daylightTimeStart;
             }
         }
 
@@ -55,7 +55,7 @@ namespace System.Globalization
         {
             get
             {
-                return DaylightTimeEnd;
+                return _daylightTimeEnd;
             }
         }
 
@@ -67,10 +67,8 @@ namespace System.Globalization
         {
             get
             {
-                return DaylightTimeDelta;
+                return _daylightTimeDelta;
             }
         }
     }
 }
-
-

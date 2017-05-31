@@ -15,14 +15,14 @@ namespace System.Resources
     /// </summary>
     public class ResourceManager
     {
-        internal const string FileExtension = ".tinyresources";
+        internal const string FileExtension = ".nanoresources";
         internal const string ResourcesExtension = ".resources";
 
         private int _resourceFileId;
-        internal string CultureName;
+        internal string _cultureName;
         private ResourceManager _rmFallback;
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern int FindResource(string baseName, Assembly assembly);
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace System.Resources
 
         internal ResourceManager(string baseName, string cultureName, int iResourceFileId, Assembly assemblyBase, Assembly assemblyResource)
         {
-            CultureName = cultureName;
+            _cultureName = cultureName;
             _resourceFileId = iResourceFileId;
         }
 
@@ -77,8 +77,8 @@ namespace System.Resources
                 var fInvariantCulture = (cultureName == "");
                 var splitName = assemblySav.FullName.Split(',');
                 var assemblyName = splitName[0];
- 
-                if(!fInvariantCulture)
+
+                if (!fInvariantCulture)
                 {
                     assemblyName = assemblyName + "." + cultureName;
                 }
@@ -90,7 +90,7 @@ namespace System.Resources
                 // append version
                 if (splitName.Length >= 1 && splitName[1] != null) assemblyName += ", " + splitName[1].Trim();
 
-                assembly = Assembly.Load( assemblyName, false );
+                assembly = Assembly.Load(assemblyName, false);
 
                 if (assembly != null)
                 {
@@ -129,7 +129,7 @@ namespace System.Resources
 
                 if (iResourceFileId >= 0)
                 {
-                    CultureName = cultureName;
+                    _cultureName = cultureName;
                     _resourceFileId = iResourceFileId;
 
                     break;
@@ -142,9 +142,7 @@ namespace System.Resources
             return IsValid;
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         internal static extern object GetObject(ResourceManager rm, Enum id);
     }
 }
-
-

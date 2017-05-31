@@ -13,7 +13,7 @@ namespace System
     [Serializable]
     public struct TimeSpan
     {
-        internal long NumberOfTicks;
+        internal long _numberOfTicks;
 
         /// <summary>
         /// Represents the number of ticks in 1 millisecond. This field is constant.
@@ -56,7 +56,7 @@ namespace System
         /// <param name="ticks">A time period expressed in 100-nanosecond units.</param>
         public TimeSpan(long ticks)
         {
-            NumberOfTicks = ticks;
+            _numberOfTicks = ticks;
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace System
         /// <param name="hours">Number of hours.</param>
         /// <param name="minutes">Number of minutes.</param>
         /// <param name="seconds">Number of seconds.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern TimeSpan(int hours, int minutes, int seconds);
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace System
         /// <param name="hours">Number of hours.</param>
         /// <param name="minutes">Number of minutes.</param>
         /// <param name="seconds">Number of seconds.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern TimeSpan(int days, int hours, int minutes, int seconds);
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace System
         /// <param name="minutes">Number of minutes.</param>
         /// <param name="seconds">Number of seconds.</param>
         /// <param name="milliseconds">Number of milliseconds.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern TimeSpan(int days, int hours, int minutes, int seconds, int milliseconds);
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace System
         {
             get
             {
-                return NumberOfTicks;
+                return _numberOfTicks;
             }
         }
 
@@ -109,7 +109,7 @@ namespace System
         {
             get
             {
-                return (int)(NumberOfTicks / TicksPerDay);
+                return (int)(_numberOfTicks / TicksPerDay);
             }
         }
 
@@ -121,7 +121,7 @@ namespace System
         {
             get
             {
-                return (int)((NumberOfTicks / TicksPerHour) % 24);
+                return (int)((_numberOfTicks / TicksPerHour) % 24);
             }
         }
 
@@ -133,7 +133,7 @@ namespace System
         {
             get
             {
-                return (int)((NumberOfTicks / TicksPerMillisecond) % 1000);
+                return (int)((_numberOfTicks / TicksPerMillisecond) % 1000);
             }
         }
 
@@ -145,7 +145,7 @@ namespace System
         {
             get
             {
-                return (int)((NumberOfTicks / TicksPerMinute) % 60);
+                return (int)((_numberOfTicks / TicksPerMinute) % 60);
             }
         }
 
@@ -157,7 +157,7 @@ namespace System
         {
             get
             {
-                return (int)((NumberOfTicks / TicksPerSecond) % 60);
+                return (int)((_numberOfTicks / TicksPerSecond) % 60);
             }
         }
 
@@ -168,7 +168,7 @@ namespace System
         /// <returns>A new object that represents the value of this instance plus the value of ts.</returns>
         public TimeSpan Add(TimeSpan ts)
         {
-            return new TimeSpan(NumberOfTicks + ts.NumberOfTicks);
+            return new TimeSpan(_numberOfTicks + ts._numberOfTicks);
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace System
         /// <para>0 if t1 is equal to t2.</para>
         /// <para>1 if t1 is longer than t2.</para>
         /// </returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern int Compare(TimeSpan t1, TimeSpan t2);
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace System
         /// <para>0 if This instance is equal to value.</para>
         /// <para>1 if This instance is longer than value or value is null.</para>
         /// </returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int CompareTo(Object value);
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace System
         /// <returns>A new object whose value is the absolute value of the current TimeSpan object.</returns>
         public TimeSpan Duration()
         {
-            return new TimeSpan(NumberOfTicks >= 0 ? NumberOfTicks : -NumberOfTicks);
+            return new TimeSpan(_numberOfTicks >= 0 ? _numberOfTicks : -_numberOfTicks);
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace System
         /// </summary>
         /// <param name="value">An object to compare with this instance.</param>
         /// <returns>true if value is a TimeSpan object that represents the same time interval as the current TimeSpan structure; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern bool Equals(Object value);
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace System
         /// <param name="t1">The first time interval to compare.</param>
         /// <param name="t2">The second time interval to compare.</param>
         /// <returns>true if the values of t1 and t2 are equal; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool Equals(TimeSpan t1, TimeSpan t2);
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace System
         /// <returns>A new object with the same numeric value as this instance, but with the opposite sign.</returns>
         public TimeSpan Negate()
         {
-            return new TimeSpan(-NumberOfTicks);
+            return new TimeSpan(-_numberOfTicks);
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace System
         /// <returns>A new time interval whose value is the result of the value of this instance minus the value of ts.</returns>
         public TimeSpan Subtract(TimeSpan ts)
         {
-            return new TimeSpan(NumberOfTicks - ts.NumberOfTicks);
+            return new TimeSpan(_numberOfTicks - ts._numberOfTicks);
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace System
         /// </summary>
         /// <returns>The string representation of the current TimeSpan value.</returns>
         /// <remarks>The returned string is formatted with the "c" format specifier and has the following format: [-][d.]hh:mm:ss[.fffffff]</remarks>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern String ToString();
 
         /// <summary>
@@ -266,7 +266,7 @@ namespace System
         /// <returns>An object that has the same numeric value as this instance, but the opposite sign.</returns>
         public static TimeSpan operator -(TimeSpan t)
         {
-            return new TimeSpan(-t.NumberOfTicks);
+            return new TimeSpan(-t._numberOfTicks);
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace System
         /// <returns>An object whose value is the result of the value of t1 minus the value of t2.</returns>
         public static TimeSpan operator -(TimeSpan t1, TimeSpan t2)
         {
-            return new TimeSpan(t1.NumberOfTicks - t2.NumberOfTicks);
+            return new TimeSpan(t1._numberOfTicks - t2._numberOfTicks);
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace System
         /// <returns>An object whose value is the sum of the values of t1 and t2.</returns>
         public static TimeSpan operator +(TimeSpan t1, TimeSpan t2)
         {
-            return new TimeSpan(t1.NumberOfTicks + t2.NumberOfTicks);
+            return new TimeSpan(t1._numberOfTicks + t2._numberOfTicks);
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ namespace System
         /// <returns>true if the values of t1 and t2 are equal; otherwise, false.</returns>
         public static bool operator ==(TimeSpan t1, TimeSpan t2)
         {
-            return t1.NumberOfTicks == t2.NumberOfTicks;
+            return t1._numberOfTicks == t2._numberOfTicks;
         }
 
         /// <summary>
@@ -320,7 +320,7 @@ namespace System
         /// <returns>true if the values of t1 and t2 are not equal; otherwise, false.</returns>
         public static bool operator !=(TimeSpan t1, TimeSpan t2)
         {
-            return t1.NumberOfTicks != t2.NumberOfTicks;
+            return t1._numberOfTicks != t2._numberOfTicks;
         }
 
         /// <summary>
@@ -331,7 +331,7 @@ namespace System
         /// <returns>true if the value of t1 is less than the value of t2; otherwise, false.</returns>
         public static bool operator <(TimeSpan t1, TimeSpan t2)
         {
-            return t1.NumberOfTicks < t2.NumberOfTicks;
+            return t1._numberOfTicks < t2._numberOfTicks;
         }
 
         /// <summary>
@@ -342,7 +342,7 @@ namespace System
         /// <returns>true if the value of t1 is less than or equal to the value of t2; otherwise, false.</returns>
         public static bool operator <=(TimeSpan t1, TimeSpan t2)
         {
-            return t1.NumberOfTicks <= t2.NumberOfTicks;
+            return t1._numberOfTicks <= t2._numberOfTicks;
         }
 
         /// <summary>
@@ -353,7 +353,7 @@ namespace System
         /// <returns>true if the value of t1 is greater than the value of t2; otherwise, false.</returns>
         public static bool operator >(TimeSpan t1, TimeSpan t2)
         {
-            return t1.NumberOfTicks > t2.NumberOfTicks;
+            return t1._numberOfTicks > t2._numberOfTicks;
         }
 
         /// <summary>
@@ -364,7 +364,7 @@ namespace System
         /// <returns>true if the value of t1 is greater than or equal to the value of t2; otherwise, false.</returns>
         public static bool operator >=(TimeSpan t1, TimeSpan t2)
         {
-            return t1.NumberOfTicks >= t2.NumberOfTicks;
+            return t1._numberOfTicks >= t2._numberOfTicks;
         }
 
     }

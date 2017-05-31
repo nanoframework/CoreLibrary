@@ -30,5 +30,3 @@ namespace System.Reflection
         FieldInfo GetField(String name, BindingFlags bindingAttr);
     }
 }
-
-

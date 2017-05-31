@@ -13,7 +13,7 @@ namespace System
     /// </summary>
     public static class GC
     {
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern bool AnyPendingFinalizers();
 
         /// <summary>
@@ -28,14 +28,14 @@ namespace System
         /// Requests that the system not call the finalizer for the specified object.
         /// </summary>
         /// <param name="obj">The object that a finalizer must not be called for. </param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void SuppressFinalize(Object obj);
 
         /// <summary>
         /// Requests that the system call the finalizer for the specified object for which SuppressFinalize has previously been called.
         /// </summary>
         /// <param name="obj">The object that a finalizer must be called for. </param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void ReRegisterForFinalize(Object obj);
 
     }

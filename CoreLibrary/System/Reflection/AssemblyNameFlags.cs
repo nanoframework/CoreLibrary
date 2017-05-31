@@ -64,5 +64,3 @@ namespace System.Reflection
         Amd64 = 0x0004
     }
 }
-
-

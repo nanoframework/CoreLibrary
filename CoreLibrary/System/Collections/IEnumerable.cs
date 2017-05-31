@@ -18,5 +18,3 @@ namespace System.Collections
         IEnumerator GetEnumerator();
     }
 }
-
-

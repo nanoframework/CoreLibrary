@@ -95,5 +95,3 @@ namespace System.Collections
         void RemoveAt(int index);
     }
 }
-
-

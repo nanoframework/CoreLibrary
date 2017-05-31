@@ -57,7 +57,7 @@ namespace System.Reflection
         /// <param name="value">The value to assign to the field.</param>
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern void SetValue(Object obj, Object value);
     }
 }

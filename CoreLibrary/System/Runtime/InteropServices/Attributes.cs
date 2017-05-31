@@ -12,7 +12,7 @@ namespace System.Runtime.InteropServices
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Interface | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Field | AttributeTargets.Method | AttributeTargets.Property, Inherited = false)]
     public sealed class ComVisibleAttribute : Attribute
     {
-        internal bool Val;
+        internal bool _val;
 
         /// <summary>
         /// Initializes a new instance of the ComVisibleAttribute class.
@@ -20,7 +20,7 @@ namespace System.Runtime.InteropServices
         /// <param name="visibility">true to indicate that the type is visible to COM; otherwise, false. The default is true.</param>
         public ComVisibleAttribute(bool visibility)
         {
-            Val = visibility;
+            _val = visibility;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace System.Runtime.InteropServices
         /// <value>
         /// true if the type is visible; otherwise, false. The default value is true.
         /// </value>
-        public bool Value { get { return Val; } }
+        public bool Value { get { return _val; } }
     }
 
     /// <summary>

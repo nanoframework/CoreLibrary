@@ -121,5 +121,3 @@ namespace System.Reflection
         IgnoreReturn = 0x01000000,   // This is used in COM Interop
     }
 }
-
-

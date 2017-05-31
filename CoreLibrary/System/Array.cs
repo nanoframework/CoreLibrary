@@ -24,7 +24,7 @@ namespace System
         /// <remarks><para>Unlike most classes, Array provides the CreateInstance method, instead of public constructors, to allow for late bound access.</para>
         /// <para>Reference-type elements are initialized to nullNothingnullptrunit a null reference(Nothing in Visual Basic). Value-type elements are initialized to zero.</para>
         /// <para>This method is an O(n) operation, where n is length.</para></remarks>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern Array CreateInstance(Type elementType, int length);
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace System
         /// <param name="destinationArray">The Array that receives the data.</param>
         /// <param name="destinationIndex">A 32-bit integer that represents the index in the destinationArray at which storing begins.</param>
         /// <param name="length">A 32-bit integer that represents the number of elements to copy.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void Copy(Array sourceArray, int sourceIndex, Array destinationArray, int destinationIndex, int length);
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace System
         /// <param name="array">The Array whose elements need to be cleared.</param>
         /// <param name="index">The starting index of the range of elements to clear.</param>
         /// <param name="length">The number of elements to clear.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void Clear(Array array, int index, int length);
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace System
         /// </value>
         public extern int Length
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -134,10 +134,10 @@ namespace System
 
         extern Object IList.this[int index]
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
 
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             set;
         }
 
@@ -303,7 +303,7 @@ namespace System
         /// <returns>The index of the first occurrence of value within the range of elements in array that starts at startIndex and contains the number of elements specified in count, if found; otherwise, the lower bound of the array minus 1.</returns>
         public static int IndexOf(Array array, Object value, int startIndex, int count)
         {
-          // Try calling a quick native method to handle primitive types.
+            // Try calling a quick native method to handle primitive types.
             int retVal;
 
             if (TrySzIndexOf(array, startIndex, count, value, out retVal))
@@ -323,12 +323,12 @@ namespace System
             return -1;
         }
 
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern bool TrySzIndexOf(Array sourceArray, int sourceIndex, int count, Object value, out int retVal);
 
-      // This is the underlying Enumerator for all of our array-based data structures (Array, ArrayList, Stack, and Queue)
-      // It supports enumerating over an array, a part of an array, and also will wrap around when the endIndex
-      // specified is larger than the size of the array (to support Queue's internal circular array)
+        // This is the underlying Enumerator for all of our array-based data structures (Array, ArrayList, Stack, and Queue)
+        // It supports enumerating over an array, a part of an array, and also will wrap around when the endIndex
+        // specified is larger than the size of the array (to support Queue's internal circular array)
         internal class SzArrayEnumerator : IEnumerator
         {
             private Array _array;
@@ -346,17 +346,17 @@ namespace System
                 _index = -1;
             }
 
-          // By specifying the startIndex and endIndex, the enumerator will enumerate
-          // only a subset of the array. Note that startIndex is inclusive, while
-          // endIndex is NOT inclusive.
-          // For example, if array is of size 5,
-          // new SZArrayEnumerator(array, 0, 3) will enumerate through
-          // array[0], array[1], array[2]
-          //
-          // This also supports an array acting as a circular data structure.
-          // For example, if array is of size 5,
-          // new SZArrayEnumerator(array, 4, 7) will enumerate through
-          // array[4], array[0], array[1]
+            // By specifying the startIndex and endIndex, the enumerator will enumerate
+            // only a subset of the array. Note that startIndex is inclusive, while
+            // endIndex is NOT inclusive.
+            // For example, if array is of size 5,
+            // new SZArrayEnumerator(array, 0, 3) will enumerate through
+            // array[0], array[1], array[2]
+            //
+            // This also supports an array acting as a circular data structure.
+            // For example, if array is of size 5,
+            // new SZArrayEnumerator(array, 4, 7) will enumerate through
+            // array[4], array[0], array[1]
             internal SzArrayEnumerator(Array array, int startIndex, int endIndex)
             {
                 _array = array;

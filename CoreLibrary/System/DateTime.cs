@@ -157,7 +157,7 @@ namespace System
         /// <param name="minute">The minutes (0 through 59). </param>
         /// <param name="second">The seconds (0 through 59). </param>
         /// <param name="millisecond">The milliseconds (0 through 999). </param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond);
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace System
         public static int DaysInMonth(int year, int month)
         {
             if (month < 1 || month > 12) throw new ArgumentOutOfRangeException();
-            
+
             var days = IsLeapYear(year) ? DaysToMonth366 : DaysToMonth365;
 
             return days[month] - days[month - 1];
@@ -464,7 +464,7 @@ namespace System
         /// </value>
         public static DateTime UtcNow
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get
             {
                 return new DateTime();
@@ -529,7 +529,7 @@ namespace System
         /// </value>
         public static DateTime Today
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get
             {
                 return new DateTime();
@@ -567,7 +567,7 @@ namespace System
         /// <returns>An object that is equal to the date and time represented by this instance minus the time interval represented by val.</returns>
         public DateTime Subtract(TimeSpan val)
         {
-            return new DateTime((long)(_ticks - (ulong)val.NumberOfTicks));
+            return new DateTime((long)(_ticks - (ulong)val._numberOfTicks));
         }
 
         /// <summary>
@@ -599,7 +599,7 @@ namespace System
         /// </returns>
         public static DateTime operator +(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._ticks + (ulong)t.NumberOfTicks));
+            return new DateTime((long)(d._ticks + (ulong)t._numberOfTicks));
         }
 
 
@@ -613,7 +613,7 @@ namespace System
         /// </returns>
         public static DateTime operator -(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._ticks - (ulong)t.NumberOfTicks));
+            return new DateTime((long)(d._ticks - (ulong)t._numberOfTicks));
         }
 
         /// <summary>

@@ -17,7 +17,7 @@ namespace System
         /// Initializes a new instance of the WeakReference class, referencing the specified object.
         /// </summary>
         /// <param name="target">The object to track or null.</param>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public extern WeakReference(Object target);
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace System
         /// <value>true if the object referenced by the current WeakReference object has not been garbage collected and is still accessible; otherwise, false.</value>
         public virtual extern bool IsAlive
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -36,10 +36,10 @@ namespace System
         /// <value>null if the object referenced by the current WeakReference object has been garbage collected; otherwise, a reference to the object referenced by the current WeakReference object.</value>
         public virtual extern Object Target
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
 
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             set;
         }
 

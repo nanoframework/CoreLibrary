@@ -21,7 +21,7 @@ namespace System
         /// <param name="d1">The left operand.</param>
         /// <param name="d2">The right operand.</param>
         /// <returns>true if d1 and d2 have the same invocation lists; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool operator ==(MulticastDelegate d1, MulticastDelegate d2);
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace System
         /// <param name="d1">The left operand.</param>
         /// <param name="d2">The right operand.</param>
         /// <returns>rue if d1 and d2 do not have the same invocation lists; otherwise, false.</returns>
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool operator !=(MulticastDelegate d1, MulticastDelegate d2);
 
     }

@@ -14,7 +14,7 @@ namespace System.Reflection
     {
         public override extern Type ReturnType
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
     }

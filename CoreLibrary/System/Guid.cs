@@ -9,17 +9,17 @@ namespace System
         ////////////////////////////////////////////////////////////////////////////////
         //  Member variables
         ////////////////////////////////////////////////////////////////////////////////
-        private int     _a;
-        private short   _b;
-        private short   _c;
-        private byte    _d;
-        private byte    _e;
-        private byte    _f;
-        private byte    _g;
-        private byte    _h;
-        private byte    _i;
-        private byte    _j;
-        private byte    _k;
+        private int   _a;
+        private short _b;
+        private short _c;
+        private byte _d;
+        private byte _e;
+        private byte _f;
+        private byte _g;
+        private byte _h;
+        private byte _i;
+        private byte _j;
+        private byte _k;
 
         /// <summary>
         /// A read-only instance of the Guid class which consists of all zeros.
@@ -331,7 +331,7 @@ namespace System
         }
 
         // The native methods implementation is to return a 16 byte array properly generated to provide a valid GUID.
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern byte[] GenerateNewGuid();
 
         private static char HexToChar(int a)

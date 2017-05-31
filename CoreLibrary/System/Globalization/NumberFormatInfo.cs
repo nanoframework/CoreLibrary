@@ -4,7 +4,6 @@
 // See LICENSE file in the project root for full license information.
 //
 
-// ReSharper disable InconsistentNaming
 namespace System.Globalization
 {
     using System;
@@ -46,11 +45,11 @@ namespace System.Globalization
     [Serializable]
     public sealed class NumberFormatInfo /*: ICloneable, IFormatProvider*/
     {
-        internal int[] numberGroupSizes;//new int[] { 3 };
-        internal String positiveSign;//"+";
-        internal String negativeSign;//"-";
-        internal String numberDecimalSeparator;//".";
-        internal String numberGroupSeparator;//",";
+        internal int[] _numberGroupSizes;//new int[] { 3 };
+        internal String _positiveSign;//"+";
+        internal String _negativeSign;//"-";
+        internal String _numberDecimalSeparator;//".";
+        internal String _numberGroupSeparator;//",";
         private readonly CultureInfo _cultureInfo;
         internal NumberFormatInfo(CultureInfo cultureInfo)
         {
@@ -66,29 +65,29 @@ namespace System.Globalization
         {
             get
             {
-                if (numberGroupSizes == null)
+                if (_numberGroupSizes == null)
                 {
                     String sizesStr = null;
 
                     _cultureInfo.EnsureStringResource(ref sizesStr, Resources.CultureInfo.StringResources.NumberGroupSizes);
 
                     var sizesLen = sizesStr.Length;
-                    numberGroupSizes = new int[sizesLen];
+                    _numberGroupSizes = new int[sizesLen];
 
                     for (var i = 0; i < sizesLen; i++)
                     {
                         var size = sizesStr[i] - '0';
                         if (size > 9 || size < 0)
                         {
-                            numberGroupSizes = null;
+                            _numberGroupSizes = null;
                             throw new InvalidOperationException();
                         }
 
-                        numberGroupSizes[i] = size;
+                        _numberGroupSizes[i] = size;
                     }
                 }
 
-                return (int[])numberGroupSizes.Clone();
+                return (int[])_numberGroupSizes.Clone();
             }
         }
 
@@ -112,7 +111,7 @@ namespace System.Globalization
         {
             get
             {
-                return _cultureInfo.EnsureStringResource(ref negativeSign, Resources.CultureInfo.StringResources.NegativeSign);
+                return _cultureInfo.EnsureStringResource(ref _negativeSign, Resources.CultureInfo.StringResources.NegativeSign);
             }
         }
 
@@ -124,7 +123,7 @@ namespace System.Globalization
         {
             get
             {
-                return _cultureInfo.EnsureStringResource(ref numberDecimalSeparator, Resources.CultureInfo.StringResources.NumberDecimalSeparator);
+                return _cultureInfo.EnsureStringResource(ref _numberDecimalSeparator, Resources.CultureInfo.StringResources.NumberDecimalSeparator);
             }
         }
 
@@ -136,7 +135,7 @@ namespace System.Globalization
         {
             get
             {
-                return _cultureInfo.EnsureStringResource(ref numberGroupSeparator, Resources.CultureInfo.StringResources.NumberGroupSeparator);
+                return _cultureInfo.EnsureStringResource(ref _numberGroupSeparator, Resources.CultureInfo.StringResources.NumberGroupSeparator);
             }
         }
 
@@ -148,10 +147,8 @@ namespace System.Globalization
         {
             get
             {
-                return _cultureInfo.EnsureStringResource(ref positiveSign, Resources.CultureInfo.StringResources.PositiveSign);
+                return _cultureInfo.EnsureStringResource(ref _positiveSign, Resources.CultureInfo.StringResources.PositiveSign);
             }
         }
     }
 }
-
-

@@ -27,5 +27,3 @@ namespace System.IO
         End = 2,
     }
 }
-
-
