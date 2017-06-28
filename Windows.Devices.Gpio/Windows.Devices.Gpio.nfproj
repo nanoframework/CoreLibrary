@@ -14,6 +14,7 @@
     </RootNamespace>
     <AssemblyName>Windows.Devices.Gpio</AssemblyName>
     <NFTargetVersion>v1.0</NFTargetVersion>
+    <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
     <DocumentationFile>bin\$(Configuration)\Windows.Devices.Gpio.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
@@ -42,7 +43,7 @@
     <Name>Windows.Devices.Gpio</Name>
   </PropertyGroup>
   <ItemGroup>
-    <NFMDP_PE_LoadHints Include="$(MSBuildThisFileDirectory)mscorlib.dll">
+    <NFMDP_PE_LoadHints Include="packages\nanoFramework.CoreLibrary.1.0.0-preview022\lib\mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
   </ItemGroup>
@@ -63,15 +64,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="mscorlib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\Windows.Devices.Gpio\packages\nanoFramework.CoreLibrary.1.0.0-preview020\lib\mscorlib.dll</HintPath>
+      <HintPath>packages\nanoFramework.CoreLibrary.1.0.0-preview022\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="key.snk" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
