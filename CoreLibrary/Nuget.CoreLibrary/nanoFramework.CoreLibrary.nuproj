@@ -26,7 +26,6 @@
     <Content Include="..\bin\$(Configuration)\mscorlib.xml">
       <Link>lib\mscorlib.xml</Link>
     </Content>
-    <Content Include="build\nanoFramework.CoreLibrary.targets" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lib\" />
@@ -35,12 +34,12 @@
     <ProjectGuid>96eaba11-6a33-454d-a7b2-b96ca5617e8c</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
-    <NuProjPath>..\packages\NuProj.0.11.14-beta\tools\</NuProjPath>
+    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.CoreLibrary</Id>
-    <Version>1.0.0-preview020</Version>
+    <Version>1.0.0-preview021</Version>
     <Title>nanoFramework.CoreLibrary</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>

@@ -33,19 +33,16 @@
       <Link>content\disasm\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Windows.Devices.Gpio.csproj" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>8FD36AD6-387C-48F0-A695-52D9149216FB</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
-    <NuProjPath>..\packages\NuProj.0.11.14-beta\tools\</NuProjPath>
+    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Windows.Devices.Gpio.DELIVERABLES</Id>
-    <Version>1.0.0-preview004</Version>
+    <Version>1.0.0-preview005</Version>
     <Title>nanoFramework.Windows.Devices.Gpio.DELIVERABLES</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
