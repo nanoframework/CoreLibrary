@@ -24,6 +24,15 @@
     <DocumentationFile>bin\$(Configuration)\mscorlib.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>  
+  <PropertyGroup>
     <!-- generate PE: TRUE -->
     <NFMDP_PE_SKIP>false</NFMDP_PE_SKIP>
     <NFMDP_PE_NoBitmapCompression>true</NFMDP_PE_NoBitmapCompression>
@@ -208,7 +217,181 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <NFMDP_PE_ExcludeClassByName Include="System.AttributeTargets">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.AttributeUsageAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.ComponentModel.EditorBrowsableAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.CLSCompliantAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.DBNull">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Decimal">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.ConditionalAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggableAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <!--<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>-->
+    <!--<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableState">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>-->
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerDisplayAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerHiddenAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerNonUserCodeAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerStepperBoundaryAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerStepThroughAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerTypeProxyAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.FlagsAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.MTAThreadAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.NonSerializedAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.ObsoleteAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.ParamArrayAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyCompanyAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyConfigurationAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyCopyrightAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyCultureAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyDefaultAliasAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyDelaySignAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyDescriptionAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyFileVersionAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyFlagsAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyInformationalVersionAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyKeyFileAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyKeyNameAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyProductAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyTitleAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyTrademarkAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyVersionAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.DefaultMemberAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.FieldNoReflectionAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.MethodImplAttributes">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.IndexerNameAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.MethodCodeType">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.MethodImplAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.MethodImplOptions">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.InteropServices.CharSet">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.InteropServices.ComVisibleAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.InteropServices.GuidAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.InteropServices.LayoutKind">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.InteropServices.OutAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.InteropServices.StructLayoutAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.Remoting.Proxies.__TransparentProxy">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.SerializableAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.STAThreadAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Threading.Timeout">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.TypedReference">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.UIntPtr">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+  </ItemGroup>
+  <ItemGroup>
+   <None Include="key.snk" />
+   <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
