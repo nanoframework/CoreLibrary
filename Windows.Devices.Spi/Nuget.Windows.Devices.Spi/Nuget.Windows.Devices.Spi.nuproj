@@ -11,7 +11,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Windows.Devices.Spi.nfproj" />
+    <Content Include="..\obj\Release\Windows.Devices.Spi.dll">
+      <Link>lib\Windows.Devices.Spi.dll</Link>
+    </Content>
+    <Content Include="..\obj\Release\Windows.Devices.Spi.pdb">
+      <Link>lib\Windows.Devices.Spi.pdb</Link>
+    </Content>
+    <Content Include="..\obj\Release\Windows.Devices.Spi.pdbx">
+      <Link>lib\Windows.Devices.Spi.pdbx</Link>
+    </Content>
+    <Content Include="..\obj\Release\Windows.Devices.Spi.pe">
+      <Link>lib\Windows.Devices.Spi.pe</Link>
+    </Content>
+    <Content Include="..\bin\$(Configuration)\Windows.Devices.Spi.xml">
+      <Link>lib\Windows.Devices.Spi.xml</Link>
+    </Content>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>298761A4-D2D4-4C23-B280-89034582C925</ProjectGuid>
@@ -22,7 +36,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Windows.Devices.Spi</Id>
-    <Version>1.0.0-preview001</Version>
+    <Version>1.0.0-preview002</Version>
     <Title>nanoFramework.Windows.Devices.Spi</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
