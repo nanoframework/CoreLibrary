@@ -18,7 +18,7 @@
     <AssemblyName>Windows.Devices.Spi</AssemblyName>
     <NFTargetVersion>v1.0</NFTargetVersion>
     <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
-    <DocumentationFile>bin\$(Configuration)\Windows.Devices.Gpio.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\Windows.Devices.Spi.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
