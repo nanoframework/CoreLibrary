@@ -12,13 +12,20 @@ build_script:
 
     msbuild CoreLibrary\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
+
     nuget restore Windows.Devices.Gpio\nanoFramework.Windows.Devices.Gpio.sln
 
     msbuild Windows.Devices.Gpio\nanoFramework.Windows.Devices.Gpio.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
+
     nuget restore Windows.Devices.Spi\nanoFramework.Windows.Devices.Spi.sln
 
     msbuild Windows.Devices.Spi\nanoFramework.Windows.Devices.Spi.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+
+    nuget restore nanoFramework.Runtime.NativeEvents\nanoFramework.Runtime.NativeEvents.sln
+    
+    msbuild nanoFramework.Runtime.NativeEvents\nanoFramework.Runtime.NativeEvents.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
 artifacts:
 - path: '**\bin\Release\*.nupkg'
