@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "nanoFramework.Runtime.NativeEvents", "nanoFramework.Runtime.NativeEvents.nfproj", "{0ABBD655-2F68-4F7D-A66F-A552EA812EB1}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "nanoFramework.Runtime.Events", "nanoFramework.Runtime.Events.nfproj", "{0ABBD655-2F68-4F7D-A66F-A552EA812EB1}"
 EndProject
-Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Nuget.nanoFramework.Runtime.NativeEvents", "Nuget.nanoFramework.Runtime.NativeEvents\Nuget.nanoFramework.Runtime.NativeEvents.nuproj", "{C6829C9D-C824-4609-A1E0-029594AAFFCE}"
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Nuget.nanoFramework.Runtime.Events", "Nuget.nanoFramework.Runtime.Events\Nuget.nanoFramework.Runtime.Events.nuproj", "{C6829C9D-C824-4609-A1E0-029594AAFFCE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0ABBD655-2F68-4F7D-A66F-A552EA812EB1} = {0ABBD655-2F68-4F7D-A66F-A552EA812EB1}
 	EndProjectSection
 EndProject
-Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Nuget.nanoFramework.Runtime.NativeEvents.DELIVERABLES", "Nuget.nanoFramework.Runtime.NativeEvents.DELIVERABLES\Nuget.nanoFramework.Runtime.NativeEvents.DELIVERABLES.nuproj", "{E9FBDD2D-BFF9-41B7-BAE4-0CE37500DECF}"
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Nuget.nanoFramework.Runtime.Events.DELIVERABLES", "Nuget.nanoFramework.Runtime.Events.DELIVERABLES\Nuget.nanoFramework.Runtime.Events.DELIVERABLES.nuproj", "{E9FBDD2D-BFF9-41B7-BAE4-0CE37500DECF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0ABBD655-2F68-4F7D-A66F-A552EA812EB1} = {0ABBD655-2F68-4F7D-A66F-A552EA812EB1}
 	EndProjectSection

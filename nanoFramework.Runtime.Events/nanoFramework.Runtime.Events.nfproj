@@ -12,10 +12,10 @@
     <FileAlignment>512</FileAlignment>
     <RootNamespace>
     </RootNamespace>
-    <AssemblyName>nanoFramework.Runtime.NativeEvents</AssemblyName>
+    <AssemblyName>nanoFramework.Runtime.Events</AssemblyName>
     <NFTargetVersion>v1.0</NFTargetVersion>
     <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
-    <DocumentationFile>bin\$(Configuration)\nanoFramework.Runtime.NativeEvents.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\nanoFramework.Runtime.Events.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -40,7 +40,7 @@
     <NFMDP_STUB_GenerateSkeletonFile>Stubs\nanoframework_runtime_nativeevents</NFMDP_STUB_GenerateSkeletonFile>
     <NFMDP_STUB_GenerateSkeletonProject>nanoFramework_Runtime_NativeEvents</NFMDP_STUB_GenerateSkeletonProject>
     <NFMDP_CMD_LINE_OUTPUT>false</NFMDP_CMD_LINE_OUTPUT>
-    <Name>nanoFramework.Runtime.NativeEvents</Name>
+    <Name>nanoFramework.Runtime.Events</Name>
   </PropertyGroup>
   <ItemGroup>
     <NFMDP_PE_LoadHints Include="packages\nanoFramework.CoreLibrary.1.0.0-preview022\lib\mscorlib.dll">

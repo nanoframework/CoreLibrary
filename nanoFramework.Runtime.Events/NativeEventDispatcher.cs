@@ -7,7 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace nanoFramework.Runtime.NativeEvents
+namespace nanoFramework.Runtime.Events
 {
     /// <summary>
     /// A multicast (combinable) delegate that defines the event handler for a native event.

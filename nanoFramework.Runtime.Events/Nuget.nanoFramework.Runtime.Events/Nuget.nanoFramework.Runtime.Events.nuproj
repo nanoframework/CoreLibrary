@@ -11,20 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\obj\Release\nanoFramework.Runtime.NativeEvents.dll">
-      <Link>lib\nanoFramework.Runtime.NativeEvents.dll</Link>
+    <Content Include="..\obj\$(Configuration)\nanoFramework.Runtime.Events.dll">
+      <Link>lib\nanoFramework.Runtime.Events.dll</Link>
     </Content>
-    <Content Include="..\obj\Release\nanoFramework.Runtime.NativeEvents.pdb">
-      <Link>lib\nanoFramework.Runtime.NativeEvents.pdb</Link>
+    <Content Include="..\obj\$(Configuration)\nanoFramework.Runtime.Events.pdb">
+      <Link>lib\nanoFramework.Runtime.Events.pdb</Link>
     </Content>
-    <Content Include="..\obj\Release\nanoFramework.Runtime.NativeEvents.pdbx">
-      <Link>lib\nanoFramework.Runtime.NativeEvents.pdbx</Link>
+    <Content Include="..\obj\$(Configuration)\nanoFramework.Runtime.Events.pdbx">
+      <Link>lib\nanoFramework.Runtime.Events.pdbx</Link>
     </Content>
-    <Content Include="..\obj\Release\nanoFramework.Runtime.NativeEvents.pe">
-      <Link>lib\nanoFramework.Runtime.NativeEvents.pe</Link>
+    <Content Include="..\obj\$(Configuration)\nanoFramework.Runtime.Events.pe">
+      <Link>lib\nanoFramework.Runtime.Events.pe</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\nanoFramework.Runtime.NativeEvents.xml">
-      <Link>lib\nanoFramework.Runtime.NativeEvents.xml</Link>
+    <Content Include="..\bin\$(Configuration)\nanoFramework.Runtime.Events.xml">
+      <Link>lib\nanoFramework.Runtime.Events.xml</Link>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -34,24 +34,24 @@
     <ProjectGuid>C6829C9D-C824-4609-A1E0-029594AAFFCE</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
-    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
+    <NuProjPath>..\packages\NuProj.0.20.4-beta\tools\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>nanoFramework.nanoFramework.Runtime.NativeEvents</Id>
+    <Id>nanoFramework.nanoFramework.Runtime.Events</Id>
     <Version>1.0.0-preview001</Version>
-    <Title>nanoFramework.nanoFramework.Runtime.NativeEvents</Title>
+    <Title>nanoFramework.nanoFramework.Runtime.Events</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
-    <Summary>nanoFramework.Runtime.NativeEvents assembly for nanoFramework C# projects</Summary>
-    <Description>This package includes the nanoFramework.Runtime.NativeEvents assembly for nanoFramework C# projects</Description>
+    <Summary>nanoFramework.Runtime.Events assembly for nanoFramework C# projects</Summary>
+    <Description>This package includes the nanoFramework.Runtime.Events assembly for nanoFramework C# projects</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>https://github.com/nanoframework/nf-class-libraries</ProjectUrl>
     <LicenseUrl>
     </LicenseUrl>
     <Copyright>Copyright (c) 2017 The nanoFramework project contributors</Copyright>
-    <Tags>nanoFramework C# csharp netmf netnd nanoFramework.Runtime.NativeEvents</Tags>
+    <Tags>nanoFramework C# csharp netmf netnd nanoFramework.Runtime.Events</Tags>
     <IconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</IconUrl>
     <GenerateSymbolPackage>false</GenerateSymbolPackage>
   </PropertyGroup>

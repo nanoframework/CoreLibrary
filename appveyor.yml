@@ -23,9 +23,9 @@ build_script:
     msbuild Windows.Devices.Spi\nanoFramework.Windows.Devices.Spi.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
 
-    nuget restore nanoFramework.Runtime.NativeEvents\nanoFramework.Runtime.NativeEvents.sln
+    nuget restore nanoFramework.Runtime.Events\nanoFramework.Runtime.Events.sln
     
-    msbuild nanoFramework.Runtime.NativeEvents\nanoFramework.Runtime.NativeEvents.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+    msbuild nanoFramework.Runtime.Events\nanoFramework.Runtime.Events.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
 artifacts:
 - path: '**\bin\Release\*.nupkg'

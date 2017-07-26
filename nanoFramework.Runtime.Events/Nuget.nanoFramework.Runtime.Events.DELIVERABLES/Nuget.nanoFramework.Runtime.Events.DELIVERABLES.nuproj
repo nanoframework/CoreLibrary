@@ -14,22 +14,22 @@
     <Folder Include="content\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\obj\Release\Stubs\*.*">
+    <Content Include="..\obj\$(Configuration)\Stubs\*.*">
       <Link>content\Stubs\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.txt">
+    <Content Include="..\obj\$(Configuration)\*.txt">
       <Link>content\txt\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.dump">
+    <Content Include="..\obj\$(Configuration)\*.dump">
       <Link>content\dump\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.strings">
+    <Content Include="..\obj\$(Configuration)\*.strings">
       <Link>content\dump\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.resources">
+    <Content Include="..\obj\$(Configuration)\*.resources">
       <Link>content\resources\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.il">
+    <Content Include="..\obj\$(Configuration)\*.il">
       <Link>content\disasm\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
   </ItemGroup>
@@ -37,17 +37,17 @@
     <ProjectGuid>E9FBDD2D-BFF9-41B7-BAE4-0CE37500DECF</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
-    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
+    <NuProjPath>..\packages\NuProj.0.20.4-beta\tools\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>nanoFramework.nanoFramework.Runtime.NativeEvents.DELIVERABLES</Id>
+    <Id>nanoFramework.nanoFramework.Runtime.Events.DELIVERABLES</Id>
     <Version>1.0.0-preview001</Version>
-    <Title>nanoFramework.nanoFramework.Runtime.NativeEvents.DELIVERABLES</Title>
+    <Title>nanoFramework.nanoFramework.Runtime.Events.DELIVERABLES</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
-    <Summary>nanoFramework.nanoFramework.Runtime.NativeEvents.DELIVERABLES is not meant for development.</Summary>
-    <Description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the nanoFramework.Runtime.NativeEvents assembly for nanoFramework. These are for testing purposes and for updating the native code base of the core library.</Description>
+    <Summary>nanoFramework.nanoFramework.Runtime.Events.DELIVERABLES is not meant for development.</Summary>
+    <Description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the nanoFramework.Runtime.Events assembly for nanoFramework. These are for testing purposes and for updating the native code base of the core library.</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>https://github.com/nanoframework/nf-class-libraries</ProjectUrl>
