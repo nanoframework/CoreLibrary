@@ -46,6 +46,9 @@
     <NFMDP_PE_LoadHints Include="packages\nanoFramework.CoreLibrary.1.0.0-preview022\lib\mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
+    <NFMDP_PE_LoadHints Include="packages\nanoFramework.nanoFramework.Runtime.Events.1.0.0-preview003\lib\nanoFramework.Runtime.Events.dll">
+      <InProject>false</InProject>
+    </NFMDP_PE_LoadHints>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
@@ -53,7 +56,10 @@
     <Compile Include="GpioOpenStatus.cs" />
     <Compile Include="GpioPinDriveMode.cs" />
     <Compile Include="GpioPinEdge.cs" />
+    <Compile Include="GpioPinEvent.cs" />
+    <Compile Include="GpioPinEventListener.cs" />
     <Compile Include="GpioPinValue.cs" />
+    <Compile Include="GpioPinValueChangedEventArgs.cs" />
     <Compile Include="GpioSharingMode.cs" />
     <Compile Include="Gpio​Change​Count.cs" />
     <Compile Include="Gpio​Change​Counter.cs" />
@@ -70,6 +76,11 @@
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.CoreLibrary.1.0.0-preview022\lib\mscorlib.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=72027bbd7f714be2">
+      <HintPath>packages\nanoFramework.nanoFramework.Runtime.Events.1.0.0-preview003\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>

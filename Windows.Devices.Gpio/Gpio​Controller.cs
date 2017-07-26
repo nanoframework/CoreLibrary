@@ -123,12 +123,15 @@ namespace Windows.Devices.Gpio
         public Gpio​Pin OpenPin(int pinNumber, GpioSharingMode sharingMode)
         {
             //Note : sharingMode ignored at the moment because we do not handle shared accessed pins
-            if (NativeOpenpin(pinNumber))
+
+            var pin = new Gpio​Pin(pinNumber);
+
+            if (pin.Init())
             {
-                var pin = new Gpio​Pin(pinNumber);
                 return pin;
             }
-            return null;
+
+            throw new System.InvalidOperationException();
         }
 
         /// <summary>
@@ -143,17 +146,24 @@ namespace Windows.Devices.Gpio
         public bool TryOpenPin(int pinNumber, GpioSharingMode sharingMode, out Gpio​Pin pin, out GpioOpenStatus openStatus)
         {
             //Note : sharingMode ignored at the moment because we do not handle shared accessed pins
-            pin = null;
-            openStatus = GpioOpenStatus.PinUnavailable;
 
-            if (NativeOpenpin(pinNumber))
+            var newPin = new Gpio​Pin(pinNumber);
+
+            if (newPin.Init())
             {
-                pin = new Gpio​Pin(pinNumber);
+                pin = newPin;
                 openStatus = GpioOpenStatus.PinOpened;
+
                 return true;
             }
-            return false;
-        }
+            else
+            {
+                // failed to init the Gpio pint
+                pin = null;
+                openStatus = GpioOpenStatus.PinUnavailable;
 
+                return false;
+            }
+        }
     }
 }

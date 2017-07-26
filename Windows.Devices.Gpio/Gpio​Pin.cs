@@ -8,29 +8,41 @@ using System.Runtime.CompilerServices;
 
 namespace Windows.Devices.Gpio
 {
+    // This should be a TypedEventHandler "EventHandler<GpioPinValueChangedEventArgs>"
+    #pragma warning disable 1591
+    public delegate void GpioPinValueChangedEventHandler(
+        Object sender,
+        GpioPinValueChangedEventArgs e);
+
+
     /// <summary>
     /// Represents a general-purpose I/O (GPIO) pin.
     /// </summary>
     public sealed class Gpio​Pin : IDisposable
     {
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern bool NativeIsDriveModeSupported(byte driveMode);
-
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern GpioPinValue NativeRead(int pinNumber);
-
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern void NativeWrite(int pinNumber, byte value);
-
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern void NativeSetDriveMode(int pinNumber, byte driveMode);
+        // this is used as the lock object 
+        // a lock is required because multiple threads can access the GpioPin
+        private object _syncLock = new object();
 
         private readonly int _pinNumber;
         private GpioPinDriveMode _driveMode = GpioPinDriveMode.Input;
+        private GpioPinValueChangedEventHandler _callbacks = null;
+
+        private static GpioPinEventListener s_eventListener = new GpioPinEventListener();
 
         internal Gpio​Pin(int pinNumber)
         {
             _pinNumber = pinNumber;
+        }
+
+        internal bool Init()
+        {
+            if(NativeInit(_pinNumber))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -58,10 +70,13 @@ namespace Windows.Devices.Gpio
         public int PinNumber {
             get
             {
-                // check if pin has been disposed
-                if (!_disposedValue) { return _pinNumber; }
+                lock (_syncLock)
+                {
+                    // check if pin has been disposed
+                    if (!_disposedValue) { return _pinNumber; }
 
-                throw new ObjectDisposedException();
+                    throw new ObjectDisposedException();
+                }
             }
         }
 
@@ -87,7 +102,13 @@ namespace Windows.Devices.Gpio
         /// The drive mode specifies whether the pin is configured as an input or an output, and determines how values are driven onto the pin.</returns>
         public GpioPinDriveMode GetDriveMode()
         {
-            return _driveMode;
+            lock (_syncLock)
+            {
+                // check if pin has been disposed
+                if (!_disposedValue) { return _driveMode; }
+
+                throw new ObjectDisposedException();
+            }
         }
 
         /// <summary>
@@ -101,16 +122,13 @@ namespace Windows.Devices.Gpio
         
         public bool IsDriveModeSupported(GpioPinDriveMode driveMode)
         {
-            return NativeIsDriveModeSupported ((byte) driveMode);
-        }
+            lock (_syncLock)
+            {
+                // check if pin has been disposed
+                if (!_disposedValue) { return NativeIsDriveModeSupported(driveMode); }
 
-        /// <summary>
-        /// Reads the current value of the general-purpose I/O (GPIO) pin.
-        /// </summary>
-        /// <returns>The current value of the GPIO pin. If the pin is configured as an output, this value is the last value written to the pin.</returns>
-        public GpioPinValue Read()
-        {
-            return NativeRead(_pinNumber);
+                throw new ObjectDisposedException();
+            }
         }
 
         /// <summary>
@@ -127,13 +145,29 @@ namespace Windows.Devices.Gpio
         /// </remarks>
         public void SetDriveMode(GpioPinDriveMode value)
         {
-            if (_driveMode == value) return;
-            if (IsDriveModeSupported(value))
+            lock (_syncLock)
             {
-                NativeSetDriveMode(_pinNumber, (byte) value);
-                _driveMode = value;
+                // check if pin has been disposed
+                if (_disposedValue) { throw new ObjectDisposedException(); }
+
+                if (_driveMode == value) return;
+
+                // check if the request drive mode is supported
+                // need to call the native method directly because we are already inside a lock
+                if (NativeIsDriveModeSupported(value))
+                {
+                    NativeSetDriveMode(value);
+                    _driveMode = value;
+                }
             }
         }
+
+        /// <summary>
+        /// Reads the current value of the general-purpose I/O (GPIO) pin.
+        /// </summary>
+        /// <returns>The current value of the GPIO pin. If the pin is configured as an output, this value is the last value written to the pin.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern GpioPinValue Read();
 
         /// <summary>
         /// Drives the specified value onto the general purpose I/O (GPIO) pin according to the current drive mode for the pin 
@@ -148,9 +182,82 @@ namespace Windows.Devices.Gpio
         /// <item><term>E_ACCESSDENIED : The GPIO pin is open in shared read-only mode. To write to the pin, close the pin and reopen the pin in exclusive mode.</term></item>
         /// </list>
         /// </remarks>
-        public void Write(GpioPinValue value)
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern void Write(GpioPinValue value);
+
+        /// <summary>
+        /// Occurs when the value of the general-purpose I/O (GPIO) pin changes, either because of an external stimulus when the pin is configured as an input, or when a value is written to the pin when the pin in configured as an output.
+        /// </summary>
+        public event GpioPinValueChangedEventHandler ValueChanged
         {
-            NativeWrite(_pinNumber, (byte)value);
+            add
+            {
+                lock (_syncLock)
+                {
+                    if (_disposedValue)
+                    {
+                        throw new ObjectDisposedException();
+                    }
+
+                    var callbacksOld = _callbacks;
+                    var callbacksNew = (GpioPinValueChangedEventHandler)Delegate.Combine(callbacksOld, value);
+
+                    try
+                    {
+                        _callbacks = callbacksNew;
+                        NativeSetDriveMode(_driveMode);
+                    }
+                    catch
+                    {
+                        _callbacks = callbacksOld;
+                        throw;
+                    }
+                }
+            }
+
+            remove
+            {
+                lock (_syncLock)
+                {
+                    if (_disposedValue)
+                    {
+                        throw new ObjectDisposedException();
+                    }
+
+                    var callbacksOld = _callbacks;
+                    var callbacksNew = (GpioPinValueChangedEventHandler)Delegate.Remove(callbacksOld, value);
+
+                    try
+                    {
+                        _callbacks = callbacksNew;
+                        NativeSetDriveMode(_driveMode);
+                    }
+                    catch
+                    {
+                        _callbacks = callbacksOld;
+                        throw;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handles internal events and re-dispatches them to the publicly subsribed delegates.
+        /// </summary>
+        /// <param name="edge">The state transition for this event.</param>
+        internal void OnPinChangedInternal(GpioPinEdge edge)
+        {
+            GpioPinValueChangedEventHandler callbacks = null;
+
+            lock (_syncLock)
+            {
+                if (!_disposedValue)
+                {
+                    callbacks = _callbacks;
+                }
+            }
+
+            callbacks?.Invoke(this, new GpioPinValueChangedEventArgs(edge));
         }
 
         #region IDisposable Support
@@ -188,10 +295,26 @@ namespace Windows.Devices.Gpio
         // This code added to correctly implement the disposable pattern.
         void IDisposable.Dispose()
         {
-            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-            Dispose(true);
-            GC.SuppressFinalize(this);
+            lock (_syncLock)
+            {
+                // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+                Dispose(true);
+                GC.SuppressFinalize(this);
+            }
         }
+
+        #endregion
+
+        #region extenal calls to native implementations
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern bool NativeIsDriveModeSupported(GpioPinDriveMode driveMode);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void NativeSetDriveMode(GpioPinDriveMode driveMode);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern bool NativeInit(int pinNumber);
 
         #endregion
     }

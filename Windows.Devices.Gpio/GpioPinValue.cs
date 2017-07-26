@@ -11,12 +11,12 @@ namespace Windows.Devices.Gpio
     public enum GpioPinValue
     {
         /// <summary>
-        /// The value of the GPIO pin is high.
-        /// </summary>
-        High,
-        /// <summary>
         /// The value of the GPIO pin is low.
         /// </summary>
-        Low
+        Low = 0,
+        /// <summary>
+        /// The value of the GPIO pin is high.
+        /// </summary>
+        High
     }
 }
