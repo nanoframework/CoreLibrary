@@ -37,8 +37,8 @@
     <!-- we like verbose -->
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
     <NFMDP_STUB_VerboseMinimize>true</NFMDP_STUB_VerboseMinimize>
-    <NFMDP_STUB_GenerateSkeletonFile>Stubs\nanoframework_runtime_nativeevents</NFMDP_STUB_GenerateSkeletonFile>
-    <NFMDP_STUB_GenerateSkeletonProject>nanoFramework_Runtime_NativeEvents</NFMDP_STUB_GenerateSkeletonProject>
+    <NFMDP_STUB_GenerateSkeletonFile>Stubs\nanoframework_runtime_events</NFMDP_STUB_GenerateSkeletonFile>
+    <NFMDP_STUB_GenerateSkeletonProject>nanoFramework_Runtime_Events</NFMDP_STUB_GenerateSkeletonProject>
     <NFMDP_CMD_LINE_OUTPUT>false</NFMDP_CMD_LINE_OUTPUT>
     <Name>nanoFramework.Runtime.Events</Name>
   </PropertyGroup>
