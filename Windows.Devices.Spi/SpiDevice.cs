@@ -34,13 +34,18 @@ namespace Windows.Devices.Spi
             NativeInit(spiBus, settings.ChipSelectLine, settings.DataBitLength, (int)settings.Mode);
         }
 
+        private Spi​Connection​Settings _ConnectionSettings;
         /// <summary>
         /// Gets the connection settings for the device.
         /// </summary>
         /// <value>
         /// The connection settings.
         /// </value>
-        public Spi​Connection​Settings ConnectionSettings { get; }
+        public Spi​Connection​Settings ConnectionSettings
+        {
+            get { return _ConnectionSettings; }
+            set { _ConnectionSettings = value; }
+        }
 
         /// <summary>
         /// Gets the unique ID associated with the device.
