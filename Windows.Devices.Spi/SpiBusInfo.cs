@@ -17,13 +17,18 @@ namespace Windows.Devices.Spi
             ChipSelectLineCount = 1;
         }
 
+        private int _ChipSelectLineCount;
         /// <summary>
         /// Gets the number of chip select lines available on the bus.
         /// </summary>
         /// <value>
         /// Number of chip select lines.
         /// </value>
-        public int ChipSelectLineCount { get; }
+        public int ChipSelectLineCount
+        {
+            get { return _ChipSelectLineCount; }
+            set { _ChipSelectLineCount = value; }
+        }
 
         /// <summary>
         /// Maximum clock cycle frequency of the bus.

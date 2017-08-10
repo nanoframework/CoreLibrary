@@ -39,7 +39,7 @@
     <NFMDP_STUB_SKIP>false</NFMDP_STUB_SKIP>
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
     <!-- this is one is absolutely mandatory for base class libraries -->
-    <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>    
+    <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>
     <NFMDP_STUB_VerboseMinimize>true</NFMDP_STUB_VerboseMinimize>
     <NFMDP_STUB_GenerateSkeletonFile>Stubs\win_dev_spi_native</NFMDP_STUB_GenerateSkeletonFile>
     <NFMDP_STUB_GenerateSkeletonProject>win_dev_spi</NFMDP_STUB_GenerateSkeletonProject>
