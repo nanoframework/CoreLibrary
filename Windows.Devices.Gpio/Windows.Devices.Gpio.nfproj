@@ -39,7 +39,7 @@
     <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>    
     <NFMDP_STUB_VerboseMinimize>true</NFMDP_STUB_VerboseMinimize>
     <NFMDP_STUB_GenerateSkeletonFile>Stubs\win_dev_gpio_native</NFMDP_STUB_GenerateSkeletonFile>
-    <NFMDP_STUB_GenerateSkeletonProject>Win_Dev_Gpio</NFMDP_STUB_GenerateSkeletonProject>
+    <NFMDP_STUB_GenerateSkeletonProject>win_dev_gpio</NFMDP_STUB_GenerateSkeletonProject>
     <NFMDP_CMD_LINE_OUTPUT>false</NFMDP_CMD_LINE_OUTPUT>
     <Name>Windows.Devices.Gpio</Name>
   </PropertyGroup>
