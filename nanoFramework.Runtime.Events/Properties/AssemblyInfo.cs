@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("nanoFramework.Runtime.Events")]
 [assembly: AssemblyCompany("nanoFramework Contributors")]
 [assembly: AssemblyProduct("nanoFramework.Runtime.Events")]
-[assembly: AssemblyCopyright("Copyright © nanoFrameowrk Contributors 2017")]
+[assembly: AssemblyCopyright("Copyright © nanoFramework Contributors 2017")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

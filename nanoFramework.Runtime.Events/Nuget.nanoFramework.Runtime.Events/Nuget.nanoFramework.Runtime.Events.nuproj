@@ -11,16 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\obj\$(Configuration)\nanoFramework.Runtime.Events.dll">
+    <Content Include="..\bin\$(Configuration)\nanoFramework.Runtime.Events.dll">
       <Link>lib\nanoFramework.Runtime.Events.dll</Link>
     </Content>
-    <Content Include="..\obj\$(Configuration)\nanoFramework.Runtime.Events.pdb">
+    <Content Include="..\bin\$(Configuration)\nanoFramework.Runtime.Events.pdb">
       <Link>lib\nanoFramework.Runtime.Events.pdb</Link>
     </Content>
-    <Content Include="..\obj\$(Configuration)\nanoFramework.Runtime.Events.pdbx">
+    <Content Include="..\bin\$(Configuration)\nanoFramework.Runtime.Events.pdbx">
       <Link>lib\nanoFramework.Runtime.Events.pdbx</Link>
     </Content>
-    <Content Include="..\obj\$(Configuration)\nanoFramework.Runtime.Events.pe">
+    <Content Include="..\bin\$(Configuration)\nanoFramework.Runtime.Events.pe">
       <Link>lib\nanoFramework.Runtime.Events.pe</Link>
     </Content>
     <Content Include="..\bin\$(Configuration)\nanoFramework.Runtime.Events.xml">
@@ -39,7 +39,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.nanoFramework.Runtime.Events</Id>
-    <Version>1.0.0-preview003</Version>
+    <Version>1.0.0-preview004</Version>
     <Title>nanoFramework.nanoFramework.Runtime.Events</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>

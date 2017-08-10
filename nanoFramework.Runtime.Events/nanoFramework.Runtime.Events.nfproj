@@ -34,11 +34,12 @@
     <NFMDP_PE_VerboseMinimize>true</NFMDP_PE_VerboseMinimize>
     <!-- generate STUBS: TRUE -->
     <NFMDP_STUB_SKIP>false</NFMDP_STUB_SKIP>
-    <!-- we like verbose -->
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
+    <!-- this is one is absolutely mandatory for base class libraries -->
+    <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>    
     <NFMDP_STUB_VerboseMinimize>true</NFMDP_STUB_VerboseMinimize>
-    <NFMDP_STUB_GenerateSkeletonFile>Stubs\nanoframework_runtime_events</NFMDP_STUB_GenerateSkeletonFile>
-    <NFMDP_STUB_GenerateSkeletonProject>nanoFramework_Runtime_Events</NFMDP_STUB_GenerateSkeletonProject>
+    <NFMDP_STUB_GenerateSkeletonFile>Stubs\nf_rt_events_native</NFMDP_STUB_GenerateSkeletonFile>
+    <NFMDP_STUB_GenerateSkeletonProject>NF_Rt_Events</NFMDP_STUB_GenerateSkeletonProject>
     <NFMDP_CMD_LINE_OUTPUT>false</NFMDP_CMD_LINE_OUTPUT>
     <Name>nanoFramework.Runtime.Events</Name>
   </PropertyGroup>

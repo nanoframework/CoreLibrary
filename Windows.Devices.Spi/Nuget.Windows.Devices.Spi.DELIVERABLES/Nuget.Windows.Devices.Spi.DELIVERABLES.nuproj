@@ -14,22 +14,22 @@
     <Folder Include="content\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\obj\Release\Stubs\*.*">
+    <Content Include="..\bin\$(Configuration)\Stubs\*.*">
       <Link>content\Stubs\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.txt">
+    <Content Include="..\bin\$(Configuration)\*.txt">
       <Link>content\txt\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.dump">
+    <Content Include="..\bin\$(Configuration)\*.dump">
       <Link>content\dump\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.strings">
+    <Content Include="..\bin\$(Configuration)\*.strings">
       <Link>content\dump\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.resources">
+    <Content Include="..\bin\$(Configuration)\*.resources">
       <Link>content\resources\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\obj\Release\*.il">
+    <Content Include="..\bin\$(Configuration)\*.il">
       <Link>content\disasm\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
   </ItemGroup>
@@ -42,7 +42,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Windows.Devices.Spi.DELIVERABLES</Id>
-    <Version>1.0.0-preview003</Version>
+    <Version>1.0.0-preview004</Version>
     <Title>nanoFramework.Windows.Devices.Spi.DELIVERABLES</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>

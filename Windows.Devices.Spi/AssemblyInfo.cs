@@ -6,7 +6,7 @@
 [assembly: AssemblyTitle("Windows.Devices.Spi")]
 [assembly: AssemblyCompany("nanoFramework Contributors")]
 [assembly: AssemblyProduct("Windows.Devices.Spi")]
-[assembly: AssemblyCopyright("Copyright © nanoFrameowrk Contributors 2017")]
+[assembly: AssemblyCopyright("Copyright © nanoFramework Contributors 2017")]
 
 // Version information for an assembly consists of the following four values:
 //

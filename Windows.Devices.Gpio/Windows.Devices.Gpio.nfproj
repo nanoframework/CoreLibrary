@@ -34,12 +34,13 @@
     <NFMDP_PE_VerboseMinimize>true</NFMDP_PE_VerboseMinimize>
     <!-- generate STUBS: TRUE -->
     <NFMDP_STUB_SKIP>false</NFMDP_STUB_SKIP>
-    <!-- we like verbose -->
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
+    <!-- this is one is absolutely mandatory for base class libraries -->
+    <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>    
     <NFMDP_STUB_VerboseMinimize>true</NFMDP_STUB_VerboseMinimize>
-    <NFMDP_STUB_GenerateSkeletonFile>Stubs\windows_devices_gpio_native</NFMDP_STUB_GenerateSkeletonFile>
-    <NFMDP_STUB_GenerateSkeletonProject>Windows_Devices_Gpio</NFMDP_STUB_GenerateSkeletonProject>
-    <NFMDP_CMD_LINE_OUTPUT>true</NFMDP_CMD_LINE_OUTPUT>
+    <NFMDP_STUB_GenerateSkeletonFile>Stubs\win_dev_gpio_native</NFMDP_STUB_GenerateSkeletonFile>
+    <NFMDP_STUB_GenerateSkeletonProject>Win_Dev_Gpio</NFMDP_STUB_GenerateSkeletonProject>
+    <NFMDP_CMD_LINE_OUTPUT>false</NFMDP_CMD_LINE_OUTPUT>
     <Name>Windows.Devices.Gpio</Name>
   </PropertyGroup>
   <ItemGroup>
