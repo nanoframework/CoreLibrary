@@ -41,12 +41,12 @@
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>nanoFramework.nanoFramework.Runtime.Events.DELIVERABLES</Id>
+    <Id>nanoFramework.Runtime.Events.DELIVERABLES</Id>
     <Version>1.0.0-preview006</Version>
-    <Title>nanoFramework.nanoFramework.Runtime.Events.DELIVERABLES</Title>
+    <Title>nanoFramework.Runtime.Events.DELIVERABLES</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
-    <Summary>nanoFramework.nanoFramework.Runtime.Events.DELIVERABLES is not meant for development.</Summary>
+    <Summary>nanoFramework.Runtime.Events.DELIVERABLES is not meant for development.</Summary>
     <Description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the nanoFramework.Runtime.Events assembly for nanoFramework. These are for testing purposes and for updating the native code base of the core library.</Description>
     <ReleaseNotes>
     </ReleaseNotes>

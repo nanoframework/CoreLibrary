@@ -38,9 +38,9 @@
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>nanoFramework.nanoFramework.Runtime.Events</Id>
+    <Id>nanoFramework.Runtime.Events</Id>
     <Version>1.0.0-preview006</Version>
-    <Title>nanoFramework.nanoFramework.Runtime.Events</Title>
+    <Title>nanoFramework.Runtime.Events</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
     <Summary>nanoFramework.Runtime.Events assembly for nanoFramework C# projects</Summary>
