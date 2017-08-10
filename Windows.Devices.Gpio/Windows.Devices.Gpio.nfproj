@@ -36,7 +36,7 @@
     <NFMDP_STUB_SKIP>false</NFMDP_STUB_SKIP>
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
     <!-- this is one is absolutely mandatory for base class libraries -->
-    <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>    
+    <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>
     <NFMDP_STUB_VerboseMinimize>true</NFMDP_STUB_VerboseMinimize>
     <NFMDP_STUB_GenerateSkeletonFile>Stubs\win_dev_gpio_native</NFMDP_STUB_GenerateSkeletonFile>
     <NFMDP_STUB_GenerateSkeletonProject>win_dev_gpio</NFMDP_STUB_GenerateSkeletonProject>
@@ -47,7 +47,7 @@
     <NFMDP_PE_LoadHints Include="packages\nanoFramework.CoreLibrary.1.0.0-preview022\lib\mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
-    <NFMDP_PE_LoadHints Include="packages\nanoFramework.nanoFramework.Runtime.Events.1.0.0-preview003\lib\nanoFramework.Runtime.Events.dll">
+    <NFMDP_PE_LoadHints Include="packages\nanoFramework.nanoFramework.Runtime.Events.1.0.0-preview006\lib\nanoFramework.Runtime.Events.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
   </ItemGroup>
@@ -81,7 +81,7 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=72027bbd7f714be2">
-      <HintPath>packages\nanoFramework.nanoFramework.Runtime.Events.1.0.0-preview003\lib\nanoFramework.Runtime.Events.dll</HintPath>
+      <HintPath>packages\nanoFramework.nanoFramework.Runtime.Events.1.0.0-preview006\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
