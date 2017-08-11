@@ -24,24 +24,27 @@ namespace Windows.Devices.Spi
         private extern void NativeTransfer(string spiBus, ushort[] writeBuffer, ushort[] readBuffer, bool fullDuplex);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern void NativeInit(string spiBus, int chipSelect, int dataBitLength, int clockFrequency, int mode);
-
+        private extern void NativeInit();
 
         private readonly string _spiBus;
         private readonly string _deviceId;
+        private readonly Spi​Connection​Settings _connectionSettings;
 
         internal SpiDevice(string spiBus, Spi​Connection​Settings settings)
         {
             _spiBus = spiBus;
-            ConnectionSettings = settings;
+            _connectionSettings = new SpiConnectionSettings(settings);
             
             // generate a unique ID for the device by joining the SPI bus ID and the chip select line, should be pretty unique
-            _deviceId = (spiBus + settings.ChipSelectLine).GetHashCode().ToString();
+            //var uniqueId = (spiBus + settings.ChipSelectLine.ToString()).GetHashCode().ToString();
+            // because this field is readonly it has to be set in a single operation using the var above
+            // using the initialization to load the field breaks the execution at the native end
+            // TODO: there is an issue with initing the above when executing on native
+            _deviceId = "SPIID";
 
-            NativeInit(spiBus, settings.ChipSelectLine, settings.DataBitLength, settings.ClockFrequency, (int)settings.Mode);
+            NativeInit();
         }
 
-        private Spi​Connection​Settings _ConnectionSettings;
         /// <summary>
         /// Gets the connection settings for the device.
         /// </summary>
@@ -57,14 +60,13 @@ namespace Windows.Devices.Spi
                     // check if device has been disposed
                     if (!_disposedValue)
                     {
-                        return _ConnectionSettings;
+                        // need to return a copy so that the caller doesn't change the settings
+                        return new Spi​Connection​Settings(_connectionSettings);
                     }
 
                     throw new ObjectDisposedException();
                 }
             }
-
-            set { _ConnectionSettings = value; }
         }
 
         /// <summary>

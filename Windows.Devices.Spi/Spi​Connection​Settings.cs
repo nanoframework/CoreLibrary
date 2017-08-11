@@ -26,6 +26,19 @@ namespace Windows.Devices.Spi
         }
 
         /// <summary>
+        /// Initializes a copy of a <see cref="SpiConnectionSettings"/> object.
+        /// </summary>
+        /// <param name="value">Object to copy from.</param>
+        internal Spi​Connection​Settings(Spi​Connection​Settings value)
+        {
+            _csLine = value._csLine;
+            _clockFrequency = value._clockFrequency;
+            _databitLength = value._databitLength;
+            _spiMode = value._spiMode;
+            _spiSharingMode = value._spiSharingMode;
+        }
+
+        /// <summary>
         /// Gets or sets the chip select line for the connection to the SPI device.
         /// </summary>
         /// <value>
