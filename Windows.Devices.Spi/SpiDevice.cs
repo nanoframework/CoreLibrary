@@ -13,6 +13,10 @@ namespace Windows.Devices.Spi
     /// </summary>
     public sealed class SpiDevice : IDisposable
     {
+        // this is used as the lock object 
+        // a lock is required because multiple threads can access the GpioPin
+        private object _syncLock = new object();
+
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void NativeTransfer(string spiBus, byte[] writeBuffer, byte[] readBuffer, bool fullDuplex);
 
@@ -20,18 +24,21 @@ namespace Windows.Devices.Spi
         private extern void NativeTransfer(string spiBus, ushort[] writeBuffer, ushort[] readBuffer, bool fullDuplex);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern void NativeInit(string spiBus, int chipSelect, int dataBitLength, int mode);
+        private extern void NativeInit(string spiBus, int chipSelect, int dataBitLength, int clockFrequency, int mode);
+
 
         private readonly string _spiBus;
         private readonly string _deviceId;
-        private static readonly Random Rnd = new Random();
 
         internal SpiDevice(string spiBus, Spi​Connection​Settings settings)
         {
             _spiBus = spiBus;
             ConnectionSettings = settings;
-            _deviceId = Rnd.Next().ToString();
-            NativeInit(spiBus, settings.ChipSelectLine, settings.DataBitLength, (int)settings.Mode);
+            
+            // generate a unique ID for the device by joining the SPI bus ID and the chip select line, should be pretty unique
+            _deviceId = (spiBus + settings.ChipSelectLine).GetHashCode().ToString();
+
+            NativeInit(spiBus, settings.ChipSelectLine, settings.DataBitLength, settings.ClockFrequency, (int)settings.Mode);
         }
 
         private Spi​Connection​Settings _ConnectionSettings;
@@ -43,7 +50,20 @@ namespace Windows.Devices.Spi
         /// </value>
         public Spi​Connection​Settings ConnectionSettings
         {
-            get { return _ConnectionSettings; }
+            get
+            {
+                lock (_syncLock)
+                {
+                    // check if device has been disposed
+                    if (!_disposedValue)
+                    {
+                        return _ConnectionSettings;
+                    }
+
+                    throw new ObjectDisposedException();
+                }
+            }
+
             set { _ConnectionSettings = value; }
         }
 
@@ -55,7 +75,16 @@ namespace Windows.Devices.Spi
         /// </value>
         public string DeviceId
         {
-            get { return _deviceId; }
+            get
+            {
+                lock (_syncLock)
+                {
+                    // check if device has been disposed
+                    if (!_disposedValue) { return _deviceId; }
+
+                    throw new ObjectDisposedException();
+                }
+            }
         }
 
         /// <summary>
@@ -175,11 +204,50 @@ namespace Windows.Devices.Spi
             NativeTransfer(_spiBus, buffer, null, false);
         }
 
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
+        #region IDisposable Support
+
+        private bool _disposedValue; // To detect redundant calls
+
+        private void Dispose(bool disposing)
         {
+            if (!_disposedValue)
+            {
+                if (disposing)
+                {
+                    DisposeNative();
+                }
+
+                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
+                // TODO: set large fields to null.
+
+                _disposedValue = true;
+            }
         }
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void DisposeNative();
+
+        /// <summary>
+        /// Finalizes the instance of the <see cref="Gpio​Pin"/> class.
+        /// </summary>
+        ~SpiDevice()
+        {
+            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+            Dispose(false);
+        }
+
+        // This code added to correctly implement the disposable pattern.
+        void IDisposable.Dispose()
+        {
+            lock (_syncLock)
+            {
+                // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+                Dispose(true);
+                GC.SuppressFinalize(this);
+            }
+        }
+
+        #endregion
+
     }
 }
