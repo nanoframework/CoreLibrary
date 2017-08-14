@@ -14,14 +14,14 @@ namespace Windows.Devices.Spi
     public sealed class SpiDevice : IDisposable
     {
         // this is used as the lock object 
-        // a lock is required because multiple threads can access the GpioPin
+        // a lock is required because multiple threads can access the SPI bus
         private object _syncLock = new object();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern void NativeTransfer(string spiBus, byte[] writeBuffer, byte[] readBuffer, bool fullDuplex);
+        private extern void NativeTransfer(byte[] writeBuffer, byte[] readBuffer, bool fullDuplex);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern void NativeTransfer(string spiBus, ushort[] writeBuffer, ushort[] readBuffer, bool fullDuplex);
+        private extern void NativeTransfer(ushort[] writeBuffer, ushort[] readBuffer, bool fullDuplex);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void NativeInit();
@@ -136,7 +136,7 @@ namespace Windows.Devices.Spi
         /// <param name="buffer">Array containing data read from the device.</param>
         public void Read(byte[] buffer)
         {
-            NativeTransfer(_spiBus, null,buffer, false);
+            NativeTransfer(null, buffer, false);
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Windows.Devices.Spi
         /// <param name="buffer">Array containing data read from the device.</param>
         public void Read(ushort[] buffer)
         {
-            NativeTransfer(_spiBus, null, buffer, false);
+            NativeTransfer(null, buffer, false);
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Windows.Devices.Spi
         /// <param name="readBuffer">Array containing data read from the device.</param>
         public void TransferFullDuplex(byte[] writeBuffer, byte[] readBuffer)
         {
-            NativeTransfer(_spiBus, writeBuffer, readBuffer, true);
+            NativeTransfer(writeBuffer, readBuffer, true);
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Windows.Devices.Spi
         /// <param name="readBuffer">Array containing data read from the device.</param>
         public void TransferFullDuplex(ushort[] writeBuffer, ushort[] readBuffer)
         {
-            NativeTransfer(_spiBus, writeBuffer, readBuffer, true);
+            NativeTransfer(writeBuffer, readBuffer, true);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Windows.Devices.Spi
         /// <param name="readBuffer">Array containing data read from the device.</param>
         public void TransferSequential(byte[] writeBuffer, byte[] readBuffer)
         {
-            NativeTransfer(_spiBus, writeBuffer, readBuffer, false);
+            NativeTransfer(writeBuffer, readBuffer, false);
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Windows.Devices.Spi
         /// <param name="readBuffer">Array containing data read from the device.</param>
         public void TransferSequential(ushort[] writeBuffer, ushort[] readBuffer)
         {
-            NativeTransfer(_spiBus, writeBuffer, readBuffer, false);
+            NativeTransfer(writeBuffer, readBuffer, false);
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace Windows.Devices.Spi
         /// <param name="buffer">Array containing the data to write to the device.</param>
         public void Write(byte[] buffer)
         {
-            NativeTransfer(_spiBus, buffer, null, false);
+            NativeTransfer(buffer, null, false);
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Windows.Devices.Spi
         /// <param name="buffer">Array containing the data to write to the device.</param>
         public void Write(ushort[] buffer)
         {
-            NativeTransfer(_spiBus, buffer, null, false);
+            NativeTransfer(buffer, null, false);
         }
 
         #region IDisposable Support
