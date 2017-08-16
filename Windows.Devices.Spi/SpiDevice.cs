@@ -27,22 +27,36 @@ namespace Windows.Devices.Spi
         private extern void NativeInit();
 
         private readonly string _spiBus;
-        private readonly string _deviceId;
+        private readonly int _deviceId;
         private readonly Spi​Connection​Settings _connectionSettings;
 
         internal SpiDevice(string spiBus, Spi​Connection​Settings settings)
         {
-            _spiBus = spiBus;
-            _connectionSettings = new SpiConnectionSettings(settings);
-            
             // generate a unique ID for the device by joining the SPI bus ID and the chip select line, should be pretty unique
-            //var uniqueId = (spiBus + settings.ChipSelectLine.ToString()).GetHashCode().ToString();
-            // because this field is readonly it has to be set in a single operation using the var above
-            // using the initialization to load the field breaks the execution at the native end
-            // TODO: there is an issue with initing the above when executing on native
-            _deviceId = "SPIID";
+            // the encoding is (SPI bus number x 1000 + chip select line number)
+            // spiBus is an ASCII string with the bus name in format 'SPIn'
+            // need to grab 'n' from the string and convert that to the integer value from the ASCII code (do this by subtracting 48 from the char value)
+            var deviceId = (spiBus[3] - 48) * 1000 + settings.ChipSelectLine;
 
-            NativeInit();
+            // check if this device ID already exists
+            if (!SpiController.DeviceCollection.Contains(deviceId))
+            {
+                _spiBus = spiBus;
+                _connectionSettings = new SpiConnectionSettings(settings);
+
+                // save device ID
+                _deviceId = deviceId;
+
+                NativeInit();
+
+                // add to device collection
+                SpiController.DeviceCollection.Add(deviceId);
+            }
+            else
+            {
+                // this device already exists throw an exception
+                throw new ArgumentException();
+            }
         }
 
         /// <summary>
@@ -82,7 +96,7 @@ namespace Windows.Devices.Spi
                 lock (_syncLock)
                 {
                     // check if device has been disposed
-                    if (!_disposedValue) { return _deviceId; }
+                    if (!_disposedValue) { return _deviceId.ToString(); }
 
                     throw new ObjectDisposedException();
                 }
@@ -95,7 +109,7 @@ namespace Windows.Devices.Spi
         /// <param name="busId">The id of the bus.</param>
         /// <param name="settings">The connection settings.</param>
         /// <returns>The SPI device requested.</returns>
-        /// <remarks>For ChibiOS port, busID is SPID1 to SPIDx</remarks>
+        /// <remarks>This method is specific to nanoFramework. The equivalent method in the UWP API is: FromIdAsync.</remarks>
         public static SpiDevice FromId(string busId, Spi​Connection​Settings settings)
         {
             //TODO: some sanity checks on busId
@@ -214,6 +228,9 @@ namespace Windows.Devices.Spi
         {
             if (!_disposedValue)
             {
+                // remove from device collection
+                SpiController.DeviceCollection.Remove(_deviceId);
+
                 if (disposing)
                 {
                     DisposeNative();

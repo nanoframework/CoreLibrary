@@ -15,6 +15,7 @@ namespace Windows.Devices.Spi
         private int _databitLength;
         private SpiMode _spiMode;
         private SpiSharingMode _spiSharingMode;
+        private DataBitOrder _bitOrder;
 
         /// <summary>
         /// Initializes new instance of SpiConnectionSettings.
@@ -36,6 +37,7 @@ namespace Windows.Devices.Spi
             _databitLength = value._databitLength;
             _spiMode = value._spiMode;
             _spiSharingMode = value._spiSharingMode;
+            _bitOrder = value._bitOrder;
         }
 
         /// <summary>
@@ -96,6 +98,20 @@ namespace Windows.Devices.Spi
         {
             get { return _spiSharingMode; }
             set { _spiSharingMode = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the <see cref="DataBitOrder"/> for the data in the buffers.
+        /// This setting is only used when the <see cref="DataBitLength"/> is set to 16.
+        /// </summary>
+        /// <value>
+        /// The bit order mode.
+        /// </value>
+        /// <remarks>This field is specific to nanoFramework. Doesn't have correspondence in the UWP API.</remarks>
+        public DataBitOrder BitOrder
+        {
+            get { return _bitOrder; }
+            set { _bitOrder = value; }
         }
     }
 }

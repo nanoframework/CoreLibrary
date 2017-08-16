@@ -3,6 +3,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Collections;
+
 namespace Windows.Devices.Spi
 {
     /// <summary>
@@ -10,6 +12,8 @@ namespace Windows.Devices.Spi
     /// </summary>
     public sealed class SpiController
     {
+        internal static ArrayList DeviceCollection = new ArrayList();
+
         /// <summary>
         /// Gets the default SPI controller on the system.
         /// </summary>
