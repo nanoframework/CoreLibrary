@@ -15,6 +15,7 @@ namespace System
     [Serializable]
     public abstract class Array : ICloneable, IList
     {
+
         /// <summary>
         /// Creates a one-dimensional Array of the specified Type and length, with zero-based indexing.
         /// </summary>

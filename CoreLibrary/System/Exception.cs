@@ -16,6 +16,7 @@ namespace System
     {
         private readonly string _message;
         private readonly Exception _innerException;
+
         private object _stackTrace;
         protected int HResult;
 
