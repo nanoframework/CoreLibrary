@@ -31,7 +31,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>
-  </PropertyGroup>  
+  </PropertyGroup>
   <PropertyGroup>
     <!-- generate PE: TRUE -->
     <NFMDP_PE_SKIP>false</NFMDP_PE_SKIP>
@@ -92,6 +92,7 @@
     <Compile Include="System\Diagnostics\DebuggerAttributes.cs" />
     <Compile Include="System\Double.cs" />
     <Compile Include="System\Enum.cs" />
+    <Compile Include="System\Console.cs" />
     <Compile Include="System\Exception.cs" />
     <Compile Include="System\FlagsAttribute.cs" />
     <Compile Include="System\GC.cs" />
@@ -390,8 +391,8 @@
     </NFMDP_PE_ExcludeClassByName>
   </ItemGroup>
   <ItemGroup>
-   <None Include="key.snk" />
-   <None Include="packages.config" />
+    <None Include="key.snk" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
