@@ -24,11 +24,6 @@ namespace nanoFramework.Runtime.Events
         public uint Data;
 
         /// <summary>
-        /// Arbitrary object holding some type of user state.
-        /// </summary>
-        public object Tag;
-
-        /// <summary>
         /// Holds the event's time stamp.
         /// </summary>
         public DateTime Time;

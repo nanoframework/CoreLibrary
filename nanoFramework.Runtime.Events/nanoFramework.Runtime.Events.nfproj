@@ -36,7 +36,7 @@
     <NFMDP_STUB_SKIP>false</NFMDP_STUB_SKIP>
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
     <!-- this is one is absolutely mandatory for base class libraries -->
-    <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>    
+    <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>
     <NFMDP_STUB_VerboseMinimize>true</NFMDP_STUB_VerboseMinimize>
     <NFMDP_STUB_GenerateSkeletonFile>Stubs\nf_rt_events_native</NFMDP_STUB_GenerateSkeletonFile>
     <NFMDP_STUB_GenerateSkeletonProject>nf_rt_events</NFMDP_STUB_GenerateSkeletonProject>
@@ -44,12 +44,13 @@
     <Name>nanoFramework.Runtime.Events</Name>
   </PropertyGroup>
   <ItemGroup>
-    <NFMDP_PE_LoadHints Include="packages\nanoFramework.CoreLibrary.1.0.0-preview022\lib\mscorlib.dll">
+    <NFMDP_PE_LoadHints Include="packages\nanoFramework.CoreLibrary.1.0.0-preview023\lib\mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
+    <Compile Include="EventArgs.cs" />
     <Compile Include="IEventListener.cs" />
     <Compile Include="IEventProcessor.cs" />
     <Compile Include="GenericEvent.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="EventCategory.cs" />
     <Compile Include="NativeEventDispatcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeakDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
@@ -65,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.0.0-preview022\lib\mscorlib.dll</HintPath>
+      <HintPath>packages\nanoFramework.CoreLibrary.1.0.0-preview023\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>

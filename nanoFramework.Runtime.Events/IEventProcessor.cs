@@ -20,11 +20,10 @@ namespace nanoFramework.Runtime.Events
         /// </summary>
         /// <param name="data1">Holds event-specific data.</param>
         /// <param name="data2">Holds event-specific data.</param>
-        /// <param name="tag">Holds event-specific arbitrary object with some type of user state.</param>
         /// <param name="time">Contains the time stamp for the event.</param>
         /// <returns>The event that was processed, or null if the event can't be processed.</returns>
         /// <remarks>In the event that the processor cannot process an event, IEventProcessor should return null.
         /// In that case next processor will be given an opportunity.</remarks>
-        BaseEvent ProcessEvent(uint data1, uint data2, object tag, DateTime time);
+        BaseEvent ProcessEvent(uint data1, uint data2, DateTime time);
     }
 }

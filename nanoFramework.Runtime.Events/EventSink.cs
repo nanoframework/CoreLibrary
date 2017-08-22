@@ -61,12 +61,12 @@ namespace nanoFramework.Runtime.Events
             }
         }
 
-        private void EventDispatchCallback(uint data1, uint data2, object tag, DateTime time)
+        private void EventDispatchCallback(uint data1, uint data2, DateTime time)
         {
             EventInfo eventInfo = null;
             BaseEvent ev = null;
 
-            GetEvent(data1, data2, tag, time, ref eventInfo, ref ev);
+            GetEvent(data1, data2, time, ref eventInfo, ref ev);
 
             ProcessEvent(eventInfo, ev);
         }
@@ -165,17 +165,23 @@ namespace nanoFramework.Runtime.Events
             }
         }
 
-        // doesnt' seem to be used anywhere
-        //[MethodImpl(MethodImplOptions.Synchronized)]
-        //public static void PostManagerEvent(byte category, byte subCategory, ushort data, object tag)
-        //{
-        //    if (_eventSink != null)
-        //    {
-        //        uint d = (uint)(((uint)data << 16) | ((uint)category << 8) | subCategory);
-        //        DateTime time = DateTime.UtcNow;
-        //        _eventSink.EventDispatchCallback(d, tag, time);
-        //    }
-        //}
+        /// <summary>
+        /// Processes event information.
+        /// </summary>
+        /// <param name="category">The event category.</param>
+        /// <param name="subCategory">The event subcategory.</param>
+        /// <param name="data1">Data related to the event.</param>
+        /// <param name="data2">Data related to the event.</param>
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public static void PostManagerEvent(byte category, byte subCategory, ushort data1, uint data2)
+        {
+            if (_eventSink != null)
+            {
+                uint d = (uint)(((uint)data1 << 16) | ((uint)category << 8) | subCategory);
+                DateTime time = DateTime.UtcNow;
+                _eventSink.EventDispatchCallback(d, data2, time);
+            }
+        }
 
         private static EventInfo GetEventInfo(EventCategory category)
         {
@@ -205,14 +211,14 @@ namespace nanoFramework.Runtime.Events
             return eventInfo;
         }
 
-        private static void GetEvent(uint data1, uint data2, object tag, DateTime time, ref EventInfo eventInfo, ref BaseEvent ev)
+        private static void GetEvent(uint data1, uint data2, DateTime time, ref EventInfo eventInfo, ref BaseEvent ev)
         {
             byte category = (byte)((data1 >> 8) & 0xFF);
 
             eventInfo = GetEventInfo((EventCategory)category);
             if (eventInfo.EventProcessor != null)
             {
-                ev = eventInfo.EventProcessor.ProcessEvent(data1, data2, tag, time);
+                ev = eventInfo.EventProcessor.ProcessEvent(data1, data2, time);
             }
             else
             {
@@ -221,8 +227,7 @@ namespace nanoFramework.Runtime.Events
                     Time = time,
                     Message = (byte)(data1 & 0xFF),
                     Category = category,
-                    Data = (data1 >> 16) & 0xFFFF,
-                    Tag = tag
+                    Data = (data1 >> 16) & 0xFFFF
                 };
                 ev = genericEvent;
             }
