@@ -32,14 +32,14 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.CoreLibrary">
-      <Version>1.0.0-preview022</Version>
+      <Version>1.0.0-preview023</Version>
     </Dependency>
-  </ItemGroup>  
+  </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.Runtime.Events">
-      <Version>1.0.0-preview007</Version>
+      <Version>1.0.0-preview009</Version>
     </Dependency>
-  </ItemGroup>  
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>96eaba11-6a33-454d-a7b2-b96ca5617e8c</ProjectGuid>
   </PropertyGroup>
@@ -49,7 +49,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Windows.Devices.Gpio</Id>
-    <Version>1.0.0-preview010</Version>
+    <Version>1.0.0-preview011</Version>
     <Title>nanoFramework.Windows.Devices.Gpio</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>

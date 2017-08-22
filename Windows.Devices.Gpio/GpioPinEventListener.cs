@@ -21,7 +21,7 @@ namespace Windows.Devices.Gpio
             EventSink.AddEventListener(EventCategory.Gpio, this);
         }
 
-        public BaseEvent ProcessEvent(uint data1, uint data2, object tag, DateTime time)
+        public BaseEvent ProcessEvent(uint data1, uint data2, DateTime time)
         {
             return new GpioPinEvent
             {
