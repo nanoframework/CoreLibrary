@@ -32,7 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.CoreLibrary">
-      <Version>1.0.0-preview024</Version>
+      <Version>1.0.0-preview025</Version>
     </Dependency>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -44,7 +44,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Runtime.Events</Id>
-    <Version>1.0.0-preview010</Version>
+    <Version>1.0.0-preview011</Version>
     <Title>nanoFramework.Runtime.Events</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
