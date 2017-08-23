@@ -27,6 +27,11 @@ build_script:
     
     msbuild nanoFramework.Runtime.Events\nanoFramework.Runtime.Events.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
+
+    nuget restore nanoFramework.Runtime.Native\nanoFramework.Runtime.Native.sln
+    
+    msbuild nanoFramework.Runtime.Native\nanoFramework.Runtime.Native.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
 artifacts:
 - path: '**\bin\Release\*.nupkg'
   name: Nuget Packages
