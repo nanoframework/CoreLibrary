@@ -16,12 +16,17 @@ namespace System.Globalization
     /// </summary>
     public class CultureInfo /*: ICloneable , IFormatProvider*/
     {
-        internal NumberFormatInfo _numInfo;
-        internal DateTimeFormatInfo _dateTimeInfo;
-        internal string _cultureInfoName;
+        internal NumberFormatInfo _numInfo = null;
+        internal DateTimeFormatInfo _dateTimeInfo = null;
+        internal string _cultureInfoName = "";
+        internal string _name = null;
         [NonSerialized]
         private CultureInfo _parent;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CultureInfo"/> class based on the culture specified by name.
+        /// </summary>
+        /// <param name="name">A predefined CultureInfo name, Name of an existing CultureInfo, or Windows-only culture name. Name is not case-sensitive.</param>
         public CultureInfo(string name)
         {
             if (name == null)
@@ -29,18 +34,29 @@ namespace System.Globalization
                 throw new ArgumentNullException("name");
             }
 
-            _cultureInfoName = "";
+            _name = name;
         }
 
         /// <summary>
-        /// Gets or sets the CultureInfo object that represents the current user interface culture used by the Resource Manager to look up culture-specific resources at run time.
+        /// Gets the CultureInfo object that represents the current user interface culture used by the Resource Manager to look up culture-specific resources at run time.
         /// </summary>
         /// <value>The culture used by the Resource Manager to look up culture-specific resources at run time.</value>
         public static CultureInfo CurrentUICulture
         {
             get
             {
-                return CurrentUICultureInternal;
+                CultureInfo culture = CurrentUICultureInternal;
+
+                if (culture == null)
+                {
+                    // there is no CurrentUICulture so create one and...
+                    culture = new CultureInfo("");
+
+                    // ... save it for next use
+                    CurrentUICultureInternal = culture;
+                }
+
+                return culture;
             }
         }
 
@@ -48,6 +64,8 @@ namespace System.Globalization
         {
             [MethodImpl(MethodImplOptions.InternalCall)]
             get;
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            set;
         }
 
         /// <summary>
@@ -58,10 +76,32 @@ namespace System.Globalization
         {
             get
             {
-                return this;
+                if (_parent == null)
+                {
+                    if (_name == "") //Invariant culture
+                    {
+                        _parent = this;
+                    }
+                    else
+                    {
+                        string parentName = _name;
+                        int iDash = _name.LastIndexOf('-');
+                        if (iDash >= 0)
+                        {
+                            parentName = parentName.Substring(0, iDash);
+                        }
+                        else
+                        {
+                            parentName = "";
+                        }
+
+                        _parent = new CultureInfo(parentName);
+                    }
+                }
+
+                return _parent;
             }
         }
-
 
         /// <summary>
         /// Gets the culture name in the format languagecode2-country/regioncode2.
@@ -72,7 +112,7 @@ namespace System.Globalization
         {
             get
             {
-                return _cultureInfoName;
+                return _name;
             }
         }
 
@@ -82,7 +122,7 @@ namespace System.Globalization
         /// <returns>A string containing the name of the current CultureInfo.</returns>
         public override String ToString()
         {
-            return _cultureInfoName;
+            return _name;
         }
 
         /// <summary>
