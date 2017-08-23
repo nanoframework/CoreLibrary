@@ -44,10 +44,10 @@
     <Name>Windows.Devices.Gpio</Name>
   </PropertyGroup>
   <ItemGroup>
-    <NFMDP_PE_LoadHints Include="packages\nanoFramework.CoreLibrary.1.0.0-preview025\lib\mscorlib.dll">
+    <NFMDP_PE_LoadHints Include="packages\nanoFramework.CoreLibrary.1.0.0-preview026\lib\mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
-    <NFMDP_PE_LoadHints Include="packages\nanoFramework.Runtime.Events.1.0.0-preview011\lib\nanoFramework.Runtime.Events.dll">
+    <NFMDP_PE_LoadHints Include="packages\nanoFramework.Runtime.Events.1.0.0-preview012\lib\nanoFramework.Runtime.Events.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
   </ItemGroup>
@@ -76,12 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.0.0-preview025\lib\mscorlib.dll</HintPath>
+      <HintPath>packages\nanoFramework.CoreLibrary.1.0.0-preview026\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=72027bbd7f714be2">
-      <HintPath>packages\nanoFramework.Runtime.Events.1.0.0-preview011\lib\nanoFramework.Runtime.Events.dll</HintPath>
+      <HintPath>packages\nanoFramework.Runtime.Events.1.0.0-preview012\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
