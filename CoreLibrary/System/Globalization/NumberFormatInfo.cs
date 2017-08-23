@@ -45,12 +45,13 @@ namespace System.Globalization
     [Serializable]
     public sealed class NumberFormatInfo /*: ICloneable, IFormatProvider*/
     {
-        internal int[] _numberGroupSizes;//new int[] { 3 };
-        internal String _positiveSign;//"+";
-        internal String _negativeSign;//"-";
-        internal String _numberDecimalSeparator;//".";
-        internal String _numberGroupSeparator;//",";
+        internal int[] _numberGroupSizes = new int[] { 3 };
+        internal String _positiveSign = "+";
+        internal String _negativeSign = "-";
+        internal String _numberDecimalSeparator = ".";
+        internal String _numberGroupSeparator = ",";
         private readonly CultureInfo _cultureInfo;
+
         internal NumberFormatInfo(CultureInfo cultureInfo)
         {
             _cultureInfo = cultureInfo;
@@ -65,29 +66,7 @@ namespace System.Globalization
         {
             get
             {
-                if (_numberGroupSizes == null)
-                {
-                    String sizesStr = null;
-
-                    _cultureInfo.EnsureStringResource(ref sizesStr, Resources.CultureInfo.StringResources.NumberGroupSizes);
-
-                    var sizesLen = sizesStr.Length;
-                    _numberGroupSizes = new int[sizesLen];
-
-                    for (var i = 0; i < sizesLen; i++)
-                    {
-                        var size = sizesStr[i] - '0';
-                        if (size > 9 || size < 0)
-                        {
-                            _numberGroupSizes = null;
-                            throw new InvalidOperationException();
-                        }
-
-                        _numberGroupSizes[i] = size;
-                    }
-                }
-
-                return (int[])_numberGroupSizes.Clone();
+                return _numberGroupSizes;
             }
         }
 
@@ -111,7 +90,7 @@ namespace System.Globalization
         {
             get
             {
-                return _cultureInfo.EnsureStringResource(ref _negativeSign, Resources.CultureInfo.StringResources.NegativeSign);
+                return _negativeSign;
             }
         }
 
@@ -123,7 +102,7 @@ namespace System.Globalization
         {
             get
             {
-                return _cultureInfo.EnsureStringResource(ref _numberDecimalSeparator, Resources.CultureInfo.StringResources.NumberDecimalSeparator);
+                return _numberDecimalSeparator;
             }
         }
 
@@ -135,7 +114,7 @@ namespace System.Globalization
         {
             get
             {
-                return _cultureInfo.EnsureStringResource(ref _numberGroupSeparator, Resources.CultureInfo.StringResources.NumberGroupSeparator);
+                return _numberGroupSeparator;
             }
         }
 
@@ -147,7 +126,7 @@ namespace System.Globalization
         {
             get
             {
-                return _cultureInfo.EnsureStringResource(ref _positiveSign, Resources.CultureInfo.StringResources.PositiveSign);
+                return _positiveSign;
             }
         }
     }

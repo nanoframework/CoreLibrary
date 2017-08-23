@@ -15,26 +15,12 @@ namespace System.Globalization
     /// </summary>
     public sealed class DateTimeFormatInfo /*: ICloneable, IFormatProvider*/
     {
-        internal String _amDesignator;
-        internal String _pmDesignator;
-        internal String _dateSeparator;
-        internal String _longTimePattern;
-        internal String _shortTimePattern;
-        internal String _generalShortTimePattern;
-        internal String _generalLongTimePattern;
-        internal String _timeSeparator;
-        internal String _monthDayPattern;
-        internal const String rfc1123Pattern = "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'";
-        internal const String sortableDateTimePattern = "yyyy'-'MM'-'dd'T'HH':'mm':'ss";
-        internal const String universalSortableDateTimePattern = "yyyy'-'MM'-'dd HH':'mm':'ss'Z'";
-        internal String _fullDateTimePattern;
-        internal String _longDatePattern;
-        internal String _shortDatePattern;
-        internal String _yearMonthPattern;
-        internal String[] _abbreviatedDayNames;
-        internal String[] _dayNames;
-        internal String[] _abbreviatedMonthNames;
-        internal String[] _monthNames;
+        internal String _generalShortTimePattern = "MM/dd/yyyy HH:mm";
+        internal String _generalLongTimePattern = "MM/dd/yyyy HH:mm:ss";
+        internal const String _rfc1123Pattern = "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'";
+        internal const String _sortableDateTimePattern = "yyyy'-'MM'-'dd'T'HH':'mm':'ss";
+        internal const String _universalSortableDateTimePattern = "yyyy'-'MM'-'dd HH':'mm':'ss'Z'";
+        internal String _fullDateTimePattern = "dddd, dd MMMM yyyy HH:mm:ss";
         private readonly CultureInfo CultureInfo;
 
         internal DateTimeFormatInfo(CultureInfo cultureInfo)
@@ -62,7 +48,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _amDesignator, Resources.CultureInfo.StringResources.AMDesignator);
+                return "AM";
             }
         }
 
@@ -74,20 +60,18 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _dateSeparator, Resources.CultureInfo.StringResources.DateSeparator);
+                return "/";
             }
         }
 
         /// <summary>
-        /// Gets or sets the custom format string for a long date and long time value.
+        /// Gets the custom format string for a long date and long time value.
         /// </summary>
         /// <value>The custom format string for a long date and long time value.</value>
         public String FullDateTimePattern
         {
             get
             {
-                if (_fullDateTimePattern == null) _fullDateTimePattern = LongDatePattern + " " + LongTimePattern;
-
                 return _fullDateTimePattern;
             }
         }
@@ -100,7 +84,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _longDatePattern, Resources.CultureInfo.StringResources.LongDatePattern);
+                return "dddd, dd MMMM yyyy";
             }
         }
 
@@ -112,7 +96,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _longTimePattern, Resources.CultureInfo.StringResources.LongTimePattern);
+                return "HH:mm:ss";
             }
         }
 
@@ -124,7 +108,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _monthDayPattern, Resources.CultureInfo.StringResources.MonthDayPattern);
+                return "MMMM dd";
             }
         }
 
@@ -136,7 +120,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _pmDesignator, Resources.CultureInfo.StringResources.PMDesignator);
+                return "PM";
             }
         }
 
@@ -148,7 +132,7 @@ namespace System.Globalization
         {
             get
             {
-                return rfc1123Pattern;
+                return _rfc1123Pattern;
             }
         }
 
@@ -160,7 +144,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _shortDatePattern, Resources.CultureInfo.StringResources.ShortDatePattern);
+                return "MM/dd/yyyy";
             }
         }
 
@@ -172,7 +156,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _shortTimePattern, Resources.CultureInfo.StringResources.ShortTimePattern);
+                return "HH:mm";
             }
         }
 
@@ -192,24 +176,14 @@ namespace System.Globalization
         {
             get
             {
-                if (_generalShortTimePattern == null) _generalShortTimePattern = ShortDatePattern + " " + ShortTimePattern;
-
                 return _generalShortTimePattern;
             }
         }
 
-        /*=================================GeneralLongTimePattern=====================
-      //*Property: Return the pattern for 'g' general format: shortDate + Long time
-      //*Note: This is used by DateTimeFormat.cs to get the pattern for 'g'
-      //*      We put this internal property here so that we can avoid doing the
-      //*      concatation every time somebody asks for the general format.
-        ==============================================================================*/
         internal String GeneralLongTimePattern
         {
             get
             {
-                if (_generalLongTimePattern == null) _generalLongTimePattern = ShortDatePattern + " " + LongTimePattern;
-
                 return _generalLongTimePattern;
             }
         }
@@ -222,7 +196,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _timeSeparator, Resources.CultureInfo.StringResources.TimeSeparator);
+                return ":";
             }
         }
 
@@ -234,7 +208,7 @@ namespace System.Globalization
         {
             get
             {
-                return UniversalSortableDateTimePattern;
+                return _universalSortableDateTimePattern;
             }
         }
 
@@ -246,7 +220,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringResource(ref _yearMonthPattern, Resources.CultureInfo.StringResources.YearMonthPattern);
+                return "yyyy MMMM";
             }
         }
 
@@ -258,7 +232,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringArrayResource(ref _abbreviatedDayNames, Resources.CultureInfo.StringResources.AbbreviatedDayNames);
+                return new String[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
             }
         }
 
@@ -270,7 +244,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringArrayResource(ref _dayNames, Resources.CultureInfo.StringResources.DayNames);
+                return new String[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
             }
         }
 
@@ -283,7 +257,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringArrayResource(ref _abbreviatedMonthNames, Resources.CultureInfo.StringResources.AbbreviatedMonthNames);
+                return new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "" };
             }
         }
 
@@ -296,7 +270,7 @@ namespace System.Globalization
         {
             get
             {
-                return CultureInfo.EnsureStringArrayResource(ref _monthNames, Resources.CultureInfo.StringResources.MonthNames);
+                return new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "" };
             }
         }
     }
