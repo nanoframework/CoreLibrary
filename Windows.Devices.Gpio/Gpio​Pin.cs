@@ -39,6 +39,7 @@ namespace Windows.Devices.Gpio
         {
             if(NativeInit(_pinNumber))
             {
+                s_eventListener.AddPin(_pinNumber, this);
                 return true;
             }
 
