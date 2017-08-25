@@ -17,11 +17,11 @@ namespace Windows.Devices.Gpio
     public sealed class Gpio​Change​Reader
     {
         // property backing fields
-        private int _Capacity;
-        private bool _IsOverflowed;
-        private bool _IsStarted;
-        private int _Length;
-        private GpioChangePolarity _Polarity = GpioChangePolarity.Falling;
+        private int _capacity;
+        private bool _isOverflowed;
+        private bool _isStarted;
+        private int _length;
+        private GpioChangePolarity _polarity = GpioChangePolarity.Falling;
 
         /// <summary>
         /// Creates a new GpioChangeReader associated with the specified pin. Only a single GpioChangeReader may be associated with a pin at any given time.
@@ -67,7 +67,7 @@ namespace Windows.Devices.Gpio
         {
             get
             {
-                return _Capacity;
+                return _capacity;
             }
         }
 
@@ -96,7 +96,7 @@ namespace Windows.Devices.Gpio
         {
             get
             {
-                return _IsOverflowed;
+                return _isOverflowed;
             }
         }
 
@@ -110,7 +110,7 @@ namespace Windows.Devices.Gpio
         {
             get
             {
-                return _IsStarted;
+                return _isStarted;
             }
         }
 
@@ -124,7 +124,7 @@ namespace Windows.Devices.Gpio
         {
             get
             {
-                return _Length;
+                return _length;
             }
         }
 
@@ -147,13 +147,13 @@ namespace Windows.Devices.Gpio
         {
             get
             {
-                return _Polarity;
+                return _polarity;
             }
 
             set
             {
                 // TODO implement validation logic as described in the documentation
-                _Polarity = value;
+                _polarity = value;
             }
         }
 

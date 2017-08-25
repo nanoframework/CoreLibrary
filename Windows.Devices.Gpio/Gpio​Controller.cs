@@ -13,9 +13,6 @@ namespace Windows.Devices.Gpio
     /// <remarks>To get a <see cref="Gpio​Controller"/> object, use the <see cref="GetDefault"/> method.</remarks>
     public sealed class Gpio​Controller
     {
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern bool NativeOpenpin(int pinNumber);
-
         /// <summary>
         /// Gets the number of pins on the general-purpose I/O (GPIO) controller.
         /// </summary>
