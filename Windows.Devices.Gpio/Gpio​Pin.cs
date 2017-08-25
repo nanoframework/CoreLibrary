@@ -39,7 +39,9 @@ namespace Windows.Devices.Gpio
         {
             if(NativeInit(_pinNumber))
             {
+                // add the pin to the event listner in order to receive the callbacks from the native interrupts
                 s_eventListener.AddPin(_pinNumber, this);
+
                 return true;
             }
 
@@ -272,10 +274,10 @@ namespace Windows.Devices.Gpio
                 if (disposing)
                 {
                     DisposeNative();
-                }
 
-                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-                // TODO: set large fields to null.
+                    // need to remove the pin from the event listner
+                    s_eventListener.RemovePin(_pinNumber);
+                }
 
                 _disposedValue = true;
             }
