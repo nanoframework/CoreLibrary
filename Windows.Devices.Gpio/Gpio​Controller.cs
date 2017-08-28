@@ -13,6 +13,9 @@ namespace Windows.Devices.Gpio
     /// <remarks>To get a <see cref="Gpio​Controller"/> object, use the <see cref="GetDefault"/> method.</remarks>
     public sealed class Gpio​Controller
     {
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern bool NativeOpenpin(int pinNumber);
+
         /// <summary>
         /// Gets the number of pins on the general-purpose I/O (GPIO) controller.
         /// </summary>
@@ -120,12 +123,14 @@ namespace Windows.Devices.Gpio
         public Gpio​Pin OpenPin(int pinNumber, GpioSharingMode sharingMode)
         {
             //Note : sharingMode ignored at the moment because we do not handle shared accessed pins
-
-            var pin = new Gpio​Pin(pinNumber);
-
-            if (pin.Init())
+            if (NativeOpenpin(pinNumber))
             {
-                return pin;
+                var pin = new Gpio​Pin(pinNumber);
+
+                if (pin.Init())
+                {
+                    return pin;
+                }
             }
 
             throw new System.InvalidOperationException();
@@ -143,24 +148,29 @@ namespace Windows.Devices.Gpio
         public bool TryOpenPin(int pinNumber, GpioSharingMode sharingMode, out Gpio​Pin pin, out GpioOpenStatus openStatus)
         {
             //Note : sharingMode ignored at the moment because we do not handle shared accessed pins
+            pin = null;
+            openStatus = GpioOpenStatus.PinUnavailable;
 
-            var newPin = new Gpio​Pin(pinNumber);
-
-            if (newPin.Init())
+            if (NativeOpenpin(pinNumber))
             {
-                pin = newPin;
-                openStatus = GpioOpenStatus.PinOpened;
+                var newPin = new Gpio​Pin(pinNumber);
 
-                return true;
-            }
-            else
-            {
-                // failed to init the Gpio pint
-                pin = null;
-                openStatus = GpioOpenStatus.PinUnavailable;
+                if (newPin.Init())
+                {
+                    pin = newPin;
+                    openStatus = GpioOpenStatus.PinOpened;
 
-                return false;
+                    return true;
+                }
+                else
+                {
+                    // failed to init the Gpio pint
+                    pin = null;
+                    openStatus = GpioOpenStatus.PinUnavailable;
+                }
             }
+
+            return false;
         }
     }
 }
