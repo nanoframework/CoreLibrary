@@ -26,6 +26,7 @@ namespace Windows.Devices.Gpio
 
         private readonly int _pinNumber;
         private GpioPinDriveMode _driveMode = GpioPinDriveMode.Input;
+        private TimeSpan _debounceTimeout = new TimeSpan(0);
         private GpioPinValueChangedEventHandler _callbacks = null;
 
         private static GpioPinEventListener s_eventListener = new GpioPinEventListener();
@@ -55,15 +56,21 @@ namespace Windows.Devices.Gpio
         /// The debounce timeout for the GPIO pin, which is an interval during which changes to the value of the pin are filtered out and do not generate ValueChanged events.
         /// If the length of this interval is 0, all changes to the value of the pin generate ValueChanged events.
         /// </value>
-        public extern TimeSpan DebounceTimeout
+        public TimeSpan DebounceTimeout
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            set;
+            get
+            {
+                return _debounceTimeout;
+            }
+
+            set
+            {
+                _debounceTimeout = value;
+
+                NativeSetDebounceTimeout();
+            }
         }
 
-        
         /// <summary>
         /// Gets the pin number of the general-purpose I/O (GPIO) pin.
         /// </summary>
@@ -318,6 +325,9 @@ namespace Windows.Devices.Gpio
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern bool NativeInit(int pinNumber);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern TimeSpan NativeSetDebounceTimeout();
 
         #endregion
     }
