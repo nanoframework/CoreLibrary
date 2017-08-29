@@ -173,7 +173,7 @@ namespace nanoFramework.Runtime.Events
         /// <param name="data1">Data related to the event.</param>
         /// <param name="data2">Data related to the event.</param>
         [MethodImpl(MethodImplOptions.Synchronized)]
-        public static void PostManagerEvent(byte category, byte subCategory, ushort data1, uint data2)
+        public static void PostManagedEvent(byte category, byte subCategory, ushort data1, uint data2)
         {
             if (_eventSink != null)
             {
