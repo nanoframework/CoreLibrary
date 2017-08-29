@@ -327,7 +327,7 @@ namespace Windows.Devices.Gpio
         private extern bool NativeInit(int pinNumber);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern TimeSpan NativeSetDebounceTimeout();
+        private extern void NativeSetDebounceTimeout();
 
         #endregion
     }
