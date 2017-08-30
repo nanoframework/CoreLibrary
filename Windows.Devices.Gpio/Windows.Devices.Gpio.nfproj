@@ -53,7 +53,6 @@
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="GpioChangePolarity.cs" />
     <Compile Include="GpioOpenStatus.cs" />
     <Compile Include="GpioPinDriveMode.cs" />
     <Compile Include="GpioPinEdge.cs" />
@@ -62,10 +61,6 @@
     <Compile Include="GpioPinValue.cs" />
     <Compile Include="GpioPinValueChangedEventArgs.cs" />
     <Compile Include="GpioSharingMode.cs" />
-    <Compile Include="Gpio​Change​Count.cs" />
-    <Compile Include="Gpio​Change​Counter.cs" />
-    <Compile Include="Gpio​Change​Reader.cs" />
-    <Compile Include="Gpio​Change​Record.cs" />
     <Compile Include="Gpio​Controller.cs" />
     <Compile Include="Gpio​Pin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -28,6 +28,7 @@ namespace Windows.Devices.Gpio
         private GpioPinDriveMode _driveMode = GpioPinDriveMode.Input;
         private TimeSpan _debounceTimeout = new TimeSpan(0);
         private GpioPinValueChangedEventHandler _callbacks = null;
+        private GpioPinValue _lastOutputValue = GpioPinValue.Low;
 
         private static GpioPinEventListener s_eventListener = new GpioPinEventListener();
 
@@ -192,8 +193,35 @@ namespace Windows.Devices.Gpio
         /// <item><term>E_ACCESSDENIED : The GPIO pin is open in shared read-only mode. To write to the pin, close the pin and reopen the pin in exclusive mode.</term></item>
         /// </list>
         /// </remarks>
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern void Write(GpioPinValue value);
+        public void Write(GpioPinValue value)
+        {
+            lock (_syncLock)
+            {
+                // check if pin has been disposed
+                if (_disposedValue) { throw new ObjectDisposedException(); }
+
+                if (_lastOutputValue != value)
+                {
+                    // value has changed
+                    // native write
+                    WriteNative(value);
+
+                    // trigger the pin value changed event, if any is set
+                    GpioPinValueChangedEventHandler callbacks = _callbacks;
+
+                    if (_lastOutputValue == GpioPinValue.High)
+                    {
+                        // last value is HIGH, so now it's LOW
+                        callbacks?.Invoke(this, new GpioPinValueChangedEventArgs(GpioPinEdge.FallingEdge));
+                    }
+                    else
+                    {
+                        // last value is LOW, so now it's HIGH
+                        callbacks?.Invoke(this, new GpioPinValueChangedEventArgs(GpioPinEdge.RisingEdge));
+                    }
+                }
+            }
+        }
 
         /// <summary>
         /// Occurs when the value of the general-purpose I/O (GPIO) pin changes, either because of an external stimulus when the pin is configured as an input, or when a value is written to the pin when the pin in configured as an output.
@@ -329,6 +357,8 @@ namespace Windows.Devices.Gpio
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void NativeSetDebounceTimeout();
 
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern void WriteNative(GpioPinValue value);
         #endregion
     }
 }
