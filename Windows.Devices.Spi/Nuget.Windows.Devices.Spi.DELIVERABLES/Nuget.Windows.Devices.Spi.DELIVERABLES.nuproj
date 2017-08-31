@@ -37,12 +37,12 @@
     <ProjectGuid>F117EC96-3B2D-4F2F-8683-BF72CA910624</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
-    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
+    <NuProjPath>..\packages\NuProj.0.20.4-beta\tools\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Windows.Devices.Spi.DELIVERABLES</Id>
-    <Version>1.0.0-preview015</Version>
+    <Version>1.0.0-preview016</Version>
     <Title>nanoFramework.Windows.Devices.Spi.DELIVERABLES</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>

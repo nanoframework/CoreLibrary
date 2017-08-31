@@ -32,19 +32,19 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.CoreLibrary">
-      <Version>1.0.0-preview027</Version>
+      <Version>1.0.0-preview028</Version>
     </Dependency>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>298761A4-D2D4-4C23-B280-89034582C925</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
-    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
+    <NuProjPath>..\packages\NuProj.0.20.4-beta\tools\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Windows.Devices.Spi</Id>
-    <Version>1.0.0-preview015</Version>
+    <Version>1.0.0-preview016</Version>
     <Title>nanoFramework.Windows.Devices.Spi</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
