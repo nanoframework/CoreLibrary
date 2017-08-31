@@ -39,7 +39,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.CoreLibrary</Id>
-    <Version>1.0.0-preview027</Version>
+    <Version>1.0.0-preview028</Version>
     <Title>nanoFramework.CoreLibrary</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>

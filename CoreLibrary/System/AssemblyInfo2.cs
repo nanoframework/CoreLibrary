@@ -9,6 +9,6 @@ using System.Reflection;
 
 [assembly: CLSCompliant(true)]
 
-[assembly: AssemblyVersion("1.0.0.27")]
+[assembly: AssemblyVersion("1.0.0.28")]
 
-[assembly: AssemblyFileVersion("1.0.0.27")]
+[assembly: AssemblyFileVersion("1.0.0.28")]
