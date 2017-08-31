@@ -15,8 +15,8 @@ namespace nanoFramework.Runtime.Events
     /// </summary>
     public class EventSink : NativeEventDispatcher
     {
-        private static EventSink _eventSink = null;
-        private static ArrayList _eventInfoTable = new ArrayList();
+        private static EventSink s_eventSink = null;
+        private static Hashtable s_eventInfoTable = null;
 
         private class EventInfo
         {
@@ -34,8 +34,8 @@ namespace nanoFramework.Runtime.Events
 
         static EventSink()
         {
-            _eventSink = new EventSink();
-            _eventSink.OnInterrupt += new NativeEventHandler(_eventSink.EventDispatchCallback);
+            s_eventSink = new EventSink();
+            s_eventSink.OnInterrupt += new NativeEventHandler(s_eventSink.EventDispatchCallback);
         }
 
         // Pass the name to the base so it connects to driver
@@ -175,40 +175,40 @@ namespace nanoFramework.Runtime.Events
         [MethodImpl(MethodImplOptions.Synchronized)]
         public static void PostManagedEvent(byte category, byte subCategory, ushort data1, uint data2)
         {
-            if (_eventSink != null)
+            if (s_eventSink != null)
             {
                 uint d = (uint)(((uint)data1 << 16) | ((uint)category << 8) | subCategory);
                 DateTime time = DateTime.UtcNow;
-                _eventSink.EventDispatchCallback(d, data2, time);
+                s_eventSink.EventDispatchCallback(d, data2, time);
             }
         }
 
         private static EventInfo GetEventInfo(EventCategory category)
         {
-
-            // What we need here is hashtable. Until we get one, we have this implementation where we browse through
-            // registered eventInfos and attempt retrieving matchine one.
-
-            EventInfo eventInfo = null;
-            for (int i = 0; i < _eventInfoTable.Count; i++)
+            // because of lack of constructors in native code we need to check if this field has been initialized
+            if (s_eventInfoTable == null)
             {
-                if (((EventInfo)_eventInfoTable[i]).Category == category)
-                {
-                    eventInfo = (EventInfo)_eventInfoTable[i];
-                    break;
-                }
+                s_eventInfoTable = new Hashtable();
             }
 
-            if (eventInfo == null)
+            if (s_eventInfoTable.Contains(category))
             {
-                eventInfo = new EventInfo()
+                // event already registered
+                return (EventInfo)s_eventInfoTable[category];
+            }
+            else
+            {
+                // create a new EventInfo...
+                EventInfo eventInfo = new EventInfo()
                 {
                     Category = category
                 };
-                _eventInfoTable.Add(eventInfo);
-            }
 
-            return eventInfo;
+                // ... and add it to the events table
+                s_eventInfoTable.Add(category, eventInfo);
+
+                return eventInfo;
+            }
         }
 
         private static void GetEvent(uint data1, uint data2, DateTime time, ref EventInfo eventInfo, ref BaseEvent ev)
