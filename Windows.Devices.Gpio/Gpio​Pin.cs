@@ -20,17 +20,17 @@ namespace Windows.Devices.Gpio
     /// </summary>
     public sealed class Gpio​Pin : IDisposable
     {
+        private static GpioPinEventListener s_eventListener = new GpioPinEventListener();
+
         // this is used as the lock object 
         // a lock is required because multiple threads can access the GpioPin
         private object _syncLock = new object();
 
         private readonly int _pinNumber;
         private GpioPinDriveMode _driveMode = GpioPinDriveMode.Input;
-        private TimeSpan _debounceTimeout = new TimeSpan(0);
+        private TimeSpan _debounceTimeout = TimeSpan.Zero;
         private GpioPinValueChangedEventHandler _callbacks = null;
         private GpioPinValue _lastOutputValue = GpioPinValue.Low;
-
-        private static GpioPinEventListener s_eventListener = new GpioPinEventListener();
 
         internal Gpio​Pin(int pinNumber)
         {
@@ -206,6 +206,9 @@ namespace Windows.Devices.Gpio
                     // native write
                     WriteNative(value);
 
+                    // update mmemory field
+                    _lastOutputValue = value;
+
                     // trigger the pin value changed event, if any is set
                     GpioPinValueChangedEventHandler callbacks = _callbacks;
 
@@ -358,7 +361,8 @@ namespace Windows.Devices.Gpio
         private extern void NativeSetDebounceTimeout();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern void WriteNative(GpioPinValue value);
+        private extern void WriteNative(GpioPinValue value);
+        
         #endregion
     }
 }
