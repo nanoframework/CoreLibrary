@@ -32,9 +32,9 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.CoreLibrary">
-      <Version>1.0.0-preview026</Version>
+      <Version>[1.0.0-preview028]</Version>
     </Dependency>
-  </ItemGroup>  
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>C72CBABD-265A-4B4F-8029-F53B11F009E5</ProjectGuid>
   </PropertyGroup>
@@ -44,7 +44,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Runtime.Native</Id>
-    <Version>1.0.0-preview004</Version>
+    <Version>1.0.0-preview005</Version>
     <Title>nanoFramework.Runtime.Native</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
