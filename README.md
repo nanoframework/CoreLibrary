@@ -18,8 +18,7 @@ This repo contains:
 
 | Component | Build Status |
 |:-|---|
-| Class Libraries | [![Build status](https://ci.appveyor.com/api/projects/status/terbqvfdlw8po3cm?svg=true)](https://ci.appveyor.com/project/nfbot/nf-class-libraries)
- |
+| Class Libraries | [![Build status](https://ci.appveyor.com/api/projects/status/terbqvfdlw8po3cm?svg=true)](https://ci.appveyor.com/project/nfbot/nf-class-libraries) |
 
 
 ## Feedback and documentation
