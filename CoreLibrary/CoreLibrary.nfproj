@@ -389,12 +389,12 @@
       <ProjectConfigurationsDeclaredAsItems />
     </ProjectCapabilities>
   </ProjectExtensions>
-  <Import Project="packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets" Condition="Exists('packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets')" />
+  <Import Project="packages\NuProj.Common.0.20.4-beta\build\dotnet\NuProj.Common.targets" Condition="Exists('packages\NuProj.Common.0.20.4-beta\build\dotnet\NuProj.Common.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets'))" />
-    <Error Condition="!Exists('packages\NuProj.0.11.28-beta\build\NuProj.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NuProj.0.11.28-beta\build\NuProj.props'))" />
+    <Error Condition="!Exists('packages\NuProj.Common.0.20.4-beta\build\dotnet\NuProj.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NuProj.Common.0.20.4-beta\build\dotnet\NuProj.Common.targets'))" />
+    <Error Condition="!Exists('packages\NuProj.0.20.4-beta\build\NuProj.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NuProj.0.20.4-beta\build\NuProj.props'))" />
   </Target>
 </Project>

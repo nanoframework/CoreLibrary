@@ -56,7 +56,7 @@
     <LicenseUrl>
     </LicenseUrl>
     <Copyright>Copyright (c) 2017 The nanoFramework project contributors</Copyright>
-    <Tags>nanoFramework C# csharp netmf netnd Windows.Devices.Spi</Tags>
+    <Tags>nanoFramework C# csharp netmf netnf Windows.Devices.Spi</Tags>
     <IconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</IconUrl>
     <GenerateSymbolPackage>false</GenerateSymbolPackage>
   </PropertyGroup>
