@@ -23,6 +23,11 @@ build_script:
     msbuild Windows.Devices.Spi\nanoFramework.Windows.Devices.Spi.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
 
+    nuget restore Windows.Devices.I2c\nanoFramework.Windows.Devices.I2c.sln
+
+    msbuild Windows.Devices.I2c\nanoFramework.Windows.Devices.I2c.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+
     nuget restore nanoFramework.Runtime.Events\nanoFramework.Runtime.Events.sln
     
     msbuild nanoFramework.Runtime.Events\nanoFramework.Runtime.Events.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
