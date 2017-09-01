@@ -1,25 +1,44 @@
-# Class Libraries for nanoFramework
+![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
+
+-----
+
+### Welcome to the **nanoFramework** Class Libraries repository!
+
+This repo contains:
+
+* [Core Library (mscorlib)](CoreLibrary)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.CoreLibrary.svg)]()
+* [nanoFramework.Runtime.Events](nanoFramework.Runtime.Events)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Runtime.Events.svg)]()
+* [nanoFramework.Runtime.Native](nanoFramework.Runtime.Native)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Runtime.Native.svg)]()
+* [Windows.Devices.Gpio](Windows.Devices.Gpio)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.Gpio.svg)]()
+* [Windows.Devices.Spi](Windows.Devices.Spi)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.Spi.svg)]()
+* [Windows.Devices.I2c](Windows.Devices.I2c)  <!--[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.I2c.svg)]()-->
 
 
-[![Build status](https://ci.appveyor.com/api/projects/status/terbqvfdlw8po3cm?svg=true)](https://ci.appveyor.com/project/nfbot/nf-class-libraries)
-[![Join the chat at https://nanoframework.slack.com/](https://img.shields.io/badge/join%20us-on%20slack-orange.svg)](https://nanoframework.wordpress.com/slack-invite-form/)
+## Build status
 
-Welcome to the repository of nanoFramework Class Libraries!
-
-## How to Engage, Contribute and Provide Feedback
-
-Some of the best ways to contribute are to try things out, file bugs, and join in design conversations. 
-If you are having issues or need a clarification about something, instead of opening an issue the best way is to start a conversation in one of our Slack channels.
-Please select the one that's most appropriate to the matter you are facing.
+| Component | Build Status |
+|:-|---|
+| Class Libraries | [![Build status](https://ci.appveyor.com/api/projects/status/terbqvfdlw8po3cm?svg=true)](https://ci.appveyor.com/project/nfbot/nf-class-libraries)
+ |
 
 
-If you've find a bug or can't use Slack, please open an issue at [Issues](https://github.com/nanoframework/nf-class-libraries/issues).
-We ask you to open an issue only when you have a real and confirmed one. Don't open an issue for support requests or to start a discussion. For that you'll get a better (and quicker!) support/feedback in one of the Slack channels.
+## Feedback and documentation
 
-Looking for something to work on? The list of [up-for-grabs issues](https://github.com/nanoframework/nf-class-libraries/labels/up-for-grabs)
-is a great place to start. Or take a look at our [documentation](docs/).
+For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
+
+Join our Slack community by filling in this [invite form](https://nanoframework.wordpress.com/slack-invite-form/).
+
+
+## Credits
+
+The list of contributors to this project can be found at [CONTRIBUTORS](CONTRIBUTORS.md).
 
 
 ## License
 
-The nanoFramework class libraries are licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0).
+The **nanoFramework** Class Libraries are licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0).
+
+
+## Code of Conduct
+This project has adopted the code of conduct defined by the [Contributor Covenant](http://contributor-covenant.org/)
+to clarify expected behavior in our community.
