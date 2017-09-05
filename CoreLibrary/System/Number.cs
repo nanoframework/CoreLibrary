@@ -287,8 +287,6 @@ namespace System
             ValidateFormat(format, out formatCh, out precision);
 
             String result = FormatNative(value, formatCh, precision);
-            // TODO: fix the FormatNative() method then remove the following line. See https://github.com/nanoframework/nf-interpreter/issues/285
-            if (result.Length == 0) return string.Empty;
 
             if (isInteger)
             {
