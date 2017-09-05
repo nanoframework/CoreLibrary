@@ -13,7 +13,10 @@ namespace Windows.Devices.I2c
     /// </summary>
 	public sealed class I2cController
     {
-        internal static ArrayList DeviceCollection = new ArrayList();
+        // we can have only one instance of the SpiController
+        private static I2cController s_instance = new I2cController();
+
+        internal static Hashtable s_deviceCollection = new Hashtable();
 
         /// <summary>
         /// Gets the default I2C controller on the system.
@@ -21,7 +24,7 @@ namespace Windows.Devices.I2c
         /// <returns>The default I2C controller on the system, or null if the system has no I2C controller.</returns>
         public static I2cController GetDefault()
         {
-            return new I2cController();
+            return s_instance;
         }
 
         /// <summary>
