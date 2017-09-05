@@ -12,7 +12,10 @@ namespace Windows.Devices.Spi
     /// </summary>
     public sealed class SpiController
     {
-        internal static ArrayList DeviceCollection = new ArrayList();
+        // we can have only one instance of the SpiController
+        private static SpiController s_instance = new SpiController();
+
+        internal static Hashtable s_deviceCollection = new Hashtable();
 
         /// <summary>
         /// Gets the default SPI controller on the system.
@@ -20,7 +23,7 @@ namespace Windows.Devices.Spi
         /// <returns>The default SPI controller on the system, or null if the system has no SPI controller.</returns>
         public static SpiController GetDefault()
         {
-            return new SpiController();
+            return s_instance;
         }
 
         /// <summary>
