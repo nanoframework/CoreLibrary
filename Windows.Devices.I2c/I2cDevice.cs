@@ -28,7 +28,6 @@ namespace Windows.Devices.I2c
         private readonly int _deviceId;
         private readonly I2cConnectionSettings _connectionSettings;
         private readonly string _i2cBus;
-        private bool _disposedValue;
 
         internal I2cDevice(string i2cBus, I2cConnectionSettings settings)
         {
@@ -231,42 +230,40 @@ namespace Windows.Devices.I2c
 
         #region IDisposable Support
 
+        private bool _disposedValue;
+
         private void Dispose(bool disposing)
         {
             if (!_disposedValue)
             {
-                // remove from device collection
-                I2cController.s_deviceCollection.Remove(_deviceId);
-
                 if (disposing)
                 {
-                    DisposeNative();
+                    // remove from device collection
+                    I2cController.s_deviceCollection.Remove(_deviceId);
                 }
 
-                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-                // TODO: set large fields to null.
+                DisposeNative();
 
                 _disposedValue = true;
             }
         }
 
-        /// <summary>
-        /// Finalizes the instance of the <see cref="I2cDevice"/> class.
-        /// </summary>
+        #pragma warning disable 1591
         ~I2cDevice()
         {
-            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
             Dispose(false);
         }
 
-        // This code added to correctly implement the disposable pattern.
-        void IDisposable.Dispose()
+        public void Dispose()
         {
             lock (_syncLock)
             {
-                // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-                Dispose(true);
-                GC.SuppressFinalize(this);
+                if (!_disposedValue)
+                {
+                    Dispose(true);
+
+                    GC.SuppressFinalize(this);
+                }
             }
         }
 

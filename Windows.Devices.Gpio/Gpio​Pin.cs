@@ -303,7 +303,7 @@ namespace Windows.Devices.Gpio
 
         #region IDisposable Support
 
-        private bool _disposedValue; // To detect redundant calls
+        private bool _disposedValue;
 
         private void Dispose(bool disposing)
         {
@@ -311,11 +311,11 @@ namespace Windows.Devices.Gpio
             {
                 if (disposing)
                 {
-                    DisposeNative();
-
-                    // need to remove the pin from the event listner
+                    // remove the pin from the event listner
                     s_eventListener.RemovePin(_pinNumber);
                 }
+
+                DisposeNative();
 
                 _disposedValue = true;
             }
@@ -324,23 +324,22 @@ namespace Windows.Devices.Gpio
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void DisposeNative();
 
-        /// <summary>
-        /// Finalizes the instance of the <see cref="Gpio​Pin"/> class.
-        /// </summary>
+        #pragma warning disable 1591
         ~Gpio​Pin()
         {
-            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
             Dispose(false);
         }
 
-        // This code added to correctly implement the disposable pattern.
-        void IDisposable.Dispose()
+        public void Dispose()
         {
             lock (_syncLock)
             {
-                // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-                Dispose(true);
-                GC.SuppressFinalize(this);
+                if (!_disposedValue)
+                {
+                    Dispose(true);
+
+                    GC.SuppressFinalize(this);
+                }
             }
         }
 
@@ -362,7 +361,7 @@ namespace Windows.Devices.Gpio
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void WriteNative(GpioPinValue value);
-        
+
         #endregion
     }
 }

@@ -80,7 +80,7 @@ namespace nanoFramework.Runtime.Events
         /// Releases resources used by this <see cref="NativeEventDispatcher"/> object.
         /// </summary>
         [MethodImpl(MethodImplOptions.Synchronized)]
-        public virtual void Dispose()
+        public void Dispose()
         {
             if (!disposed)
             {

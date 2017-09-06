@@ -222,22 +222,19 @@ namespace Windows.Devices.Spi
 
         #region IDisposable Support
 
-        private bool _disposedValue; // To detect redundant calls
+        private bool _disposedValue;
 
         private void Dispose(bool disposing)
         {
             if (!_disposedValue)
             {
-                // remove from device collection
-                SpiController.s_deviceCollection.Remove(_deviceId);
-
                 if (disposing)
                 {
-                    DisposeNative();
+                    // remove from device collection
+                    SpiController.s_deviceCollection.Remove(_deviceId);
                 }
 
-                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-                // TODO: set large fields to null.
+                DisposeNative();
 
                 _disposedValue = true;
             }
@@ -246,23 +243,22 @@ namespace Windows.Devices.Spi
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void DisposeNative();
 
-        /// <summary>
-        /// Finalizes the instance of the <see cref="SpiDevice"/> class.
-        /// </summary>
+        #pragma warning disable 1591
         ~SpiDevice()
         {
-            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
             Dispose(false);
         }
 
-        // This code added to correctly implement the disposable pattern.
-        void IDisposable.Dispose()
+        public void Dispose()
         {
             lock (_syncLock)
             {
-                // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-                Dispose(true);
-                GC.SuppressFinalize(this);
+                if (!_disposedValue)
+                {
+                    Dispose(true);
+
+                    GC.SuppressFinalize(this);
+                }
             }
         }
 
