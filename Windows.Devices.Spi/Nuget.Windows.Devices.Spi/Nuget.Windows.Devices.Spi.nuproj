@@ -44,7 +44,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>nanoFramework.Windows.Devices.Spi</Id>
-    <Version>1.0.0-preview018</Version>
+    <Version>1.0.0-preview019</Version>
     <Title>nanoFramework.Windows.Devices.Spi</Title>
     <Authors>nanoFramework project contributors</Authors>
     <Owners>nanoFramework project contributors</Owners>
