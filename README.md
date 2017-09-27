@@ -2,23 +2,14 @@
 
 -----
 
-### Welcome to the **nanoFramework** Class Libraries repository!
-
-This repo contains:
-
-* [Core Library (mscorlib)](CoreLibrary)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.CoreLibrary.svg)]()
-* [nanoFramework.Runtime.Events](nanoFramework.Runtime.Events)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Runtime.Events.svg)]()
-* [nanoFramework.Runtime.Native](nanoFramework.Runtime.Native)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Runtime.Native.svg)]()
-* [Windows.Devices.Gpio](Windows.Devices.Gpio)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.Gpio.svg)]()
-* [Windows.Devices.Spi](Windows.Devices.Spi)  [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.Spi.svg)]()
-* [Windows.Devices.I2c](Windows.Devices.I2c)  <!--[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.I2c.svg)]()-->
+### Welcome to the **nanoFramework** Core Library repository!
 
 
 ## Build status
 
-| Component | Build Status |
-|:-|---|
-| Class Libraries | [![Build status](https://ci.appveyor.com/api/projects/status/terbqvfdlw8po3cm?svg=true)](https://ci.appveyor.com/project/nfbot/nf-class-libraries) |
+| Component | Build Status | NuGet Package |
+|:-|---|---|
+| Class Libraries | [![Build status](https://ci.appveyor.com/api/projects/status/terbqvfdlw8po3cm?svg=true)](https://ci.appveyor.com/project/nfbot/nf-class-libraries) | [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.CoreLibrary.svg)]() |
 
 
 ## Feedback and documentation

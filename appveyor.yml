@@ -8,34 +8,9 @@ install:
 build_script:
 - ps: >-
 
-    nuget restore CoreLibrary\nanoFramework.CoreLibrary.sln
+    nuget restore source\nanoFramework.CoreLibrary.sln
 
-    msbuild CoreLibrary\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-
-    nuget restore Windows.Devices.Gpio\nanoFramework.Windows.Devices.Gpio.sln
-
-    msbuild Windows.Devices.Gpio\nanoFramework.Windows.Devices.Gpio.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-
-    nuget restore Windows.Devices.Spi\nanoFramework.Windows.Devices.Spi.sln
-
-    msbuild Windows.Devices.Spi\nanoFramework.Windows.Devices.Spi.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-
-    nuget restore Windows.Devices.I2c\nanoFramework.Windows.Devices.I2c.sln
-
-    msbuild Windows.Devices.I2c\nanoFramework.Windows.Devices.I2c.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-
-    nuget restore nanoFramework.Runtime.Events\nanoFramework.Runtime.Events.sln
-    
-    msbuild nanoFramework.Runtime.Events\nanoFramework.Runtime.Events.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-
-    nuget restore nanoFramework.Runtime.Native\nanoFramework.Runtime.Native.sln
-    
-    msbuild nanoFramework.Runtime.Native\nanoFramework.Runtime.Native.sln /p:Configuration=Release  /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+    msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
 artifacts:
 - path: '**\bin\Release\*.nupkg'
