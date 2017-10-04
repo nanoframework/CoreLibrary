@@ -4,12 +4,15 @@
 
 ### Welcome to the **nanoFramework** Core Library repository!
 
+[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.CoreLibrary.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
+
 
 ## Build status
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| Class Libraries | [![Build status](https://ci.appveyor.com/api/projects/status/terbqvfdlw8po3cm?svg=true)](https://ci.appveyor.com/project/nfbot/nf-class-libraries) | [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.CoreLibrary.svg)]() |
+| Core Library | [![Build status](https://ci.appveyor.com/api/projects/status/5b37qa4h0o2ci3db/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-corelibrary/branch/master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.CoreLibrary.svg)]()  |
+| Core Library (preview) | [![Build status](https://ci.appveyor.com/api/projects/status/5b37qa4h0o2ci3db?svg=true)](https://ci.appveyor.com/project/nfbot/lib-corelibrary) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.CoreLibrary.svg)]() |
 
 
 ## Feedback and documentation
