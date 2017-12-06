@@ -6,6 +6,8 @@
 
   image: Visual Studio 2017
 
+  skip_branch_with_pr: true
+
   # Skipping commits affecting specific files
   skip_commits:
     files:
@@ -52,7 +54,7 @@
 
       nuget restore source\nanoFramework.CoreLibrary.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 
   build_script:
   - ps: >-
@@ -76,6 +78,8 @@
     api_key:
       secure: NSRDXbS8tmzOy4wStGuO3yQMKI8Sk10vF8iQtz9ZDXEnHfwnuDdnXbr/Kno3MMvY
     skip_symbols: true
+    on:
+      appveyor_repo_tag: true
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework Core Library v$(gitversion_semver)
@@ -143,7 +147,7 @@
 
       nuget restore source\nanoFramework.CoreLibrary.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 
   build_script:
   - ps: >-
@@ -250,7 +254,7 @@
 
       nuget restore source\nanoFramework.CoreLibrary.sln
         
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 
   build_script:
   - ps: >-
