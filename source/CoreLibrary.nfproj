@@ -10,13 +10,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{11A8DD76-328B-46DF-9F39-F559912D0360};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>be7b95d5-087c-45f8-8197-4b438bedfe11</ProjectGuid>
     <OutputType>Library</OutputType>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>
     </RootNamespace>
     <AssemblyName>mscorlib</AssemblyName>
-    <NFTargetVersion>v1.0</NFTargetVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputName>mscorlib</OutputName>
     <IsCoreAssembly>true</IsCoreAssembly>
