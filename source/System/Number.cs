@@ -290,6 +290,10 @@ namespace System
 
             if (isInteger)
             {
+                // Special case : type is integer, value = 0 and format string = "N0"
+                // No processing needed, simply return "0" (native code returns empty string for this special case)
+                if (isInteger && result == String.Empty && format == "N0") return "0";
+                
                 return PostProcessInteger(value, result, formatCh, precision, info);
             }
             return PostProcessFloat(result, formatCh, info);
