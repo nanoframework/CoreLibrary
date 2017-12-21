@@ -61,6 +61,8 @@
 
       msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
+      msbuild source\nanoFramework.CoreLibrary.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
   before_deploy:
   # need this to keep ruby happy
   - ps: md c:\tmp
@@ -145,7 +147,7 @@
   before_build:
   - ps: >-
 
-      nuget restore source\nanoFramework.CoreLibrary.sln
+      nuget restore source\nanoFramework.CoreLibrary.Nuget.sln
 
       gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 
@@ -153,6 +155,8 @@
   - ps: >-
 
       msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+      msbuild source\nanoFramework.CoreLibrary.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
   on_success:
   # for this environment variable to work here it has to be set in AppVeyor UI
@@ -252,7 +256,7 @@
   before_build:
   - ps: >-
 
-      nuget restore source\nanoFramework.CoreLibrary.sln
+      nuget restore source\nanoFramework.CoreLibrary.Nuget.sln
         
       gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 
@@ -260,6 +264,8 @@
   - ps: >-
 
       msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+      msbuild source\nanoFramework.CoreLibrary.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
   before_deploy:
   # need this to keep ruby happy
