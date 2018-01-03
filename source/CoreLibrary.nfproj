@@ -83,6 +83,8 @@
     <Compile Include="System\Collections\Stack.cs" />
     <Compile Include="System\ComponentModel\EditorBrowsableAttribute.cs" />
     <Compile Include="System\Convert.cs" />
+    <Compile Include="System\DateTime.cs" />
+    <Compile Include="System\DayOfWeek.cs" />
     <Compile Include="System\DBNull.cs" />
     <Compile Include="System\Decimal.cs" />
     <Compile Include="System\Delegate.cs" />
@@ -96,6 +98,8 @@
     <Compile Include="System\FlagsAttribute.cs" />
     <Compile Include="System\GC.cs" />
     <Compile Include="System\Globalization\CultureInfo.cs" />
+    <Compile Include="System\Globalization\DateTimeFormat.cs" />
+    <Compile Include="System\Globalization\DateTimeFormatInfo.cs" />
     <Compile Include="System\Globalization\NumberFormatInfo.cs" />
     <Compile Include="System\Guid.cs" />
     <Compile Include="System\IAsyncResult.cs" />

@@ -17,6 +17,7 @@ namespace System.Globalization
     public class CultureInfo /*: ICloneable , IFormatProvider*/
     {
         internal NumberFormatInfo _numInfo = null;
+        internal DateTimeFormatInfo _dateTimeInfo = null;
         internal string _cultureInfoName = "";
         internal string _name = null;
         [NonSerialized]
@@ -136,6 +137,20 @@ namespace System.Globalization
                 if (_numInfo == null) _numInfo = new NumberFormatInfo(this);
 
                 return _numInfo;
+            }
+        }
+
+        /// <summary>
+        /// Gets a DateTimeFormatInfo that defines the culturally appropriate format of displaying dates and times.
+        /// </summary>
+        /// <value>A DateTimeFormatInfo that defines the culturally appropriate format of displaying dates and times.</value>
+        public virtual DateTimeFormatInfo DateTimeFormat
+        {
+            get
+            {
+                if (_dateTimeInfo == null) _dateTimeInfo = new DateTimeFormatInfo(this);
+
+                return _dateTimeInfo;
             }
         }
     }
