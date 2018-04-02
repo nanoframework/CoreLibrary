@@ -255,7 +255,7 @@
   before_build:
   - ps: >-
 
-      nuget restore source\nanoFramework.CoreLibrarysln
+      nuget restore source\nanoFramework.CoreLibrary.sln
         
       gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 

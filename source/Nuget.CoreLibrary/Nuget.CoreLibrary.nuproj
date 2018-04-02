@@ -31,7 +31,6 @@
     <Folder Include="lib\" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <ProjectGuid>dd773430-fe47-443c-b2eb-4f1dc0b7e52d</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>

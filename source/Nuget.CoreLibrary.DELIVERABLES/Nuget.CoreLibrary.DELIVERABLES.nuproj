@@ -34,7 +34,6 @@
     </Content>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <ProjectGuid>8FD36AD6-387C-48F0-A695-52D9149216FB</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
