@@ -43,7 +43,6 @@
   install:
     - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
     - bundle config --local path vendor/bundle
-    - gem install bundler --quiet --no-ri --no-rdoc
     - gem install github_changelog_generator --quiet --no-ri --no-rdoc
     # - bundle install
     - choco install gitversion.portable -pre -y
@@ -147,7 +146,7 @@
   before_build:
   - ps: >-
 
-      nuget restore source\nanoFramework.CoreLibrary.Nuget.sln
+      nuget restore source\nanoFramework.CoreLibrary.sln
 
       gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 
@@ -256,7 +255,7 @@
   before_build:
   - ps: >-
 
-      nuget restore source\nanoFramework.CoreLibrary.Nuget.sln
+      nuget restore source\nanoFramework.CoreLibrary.sln
         
       gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 

@@ -9,16 +9,25 @@ using System.Runtime.CompilerServices;
 namespace System
 {
     /// <summary>
-    /// Represents a pseudo-random number generator, a device that produces a
+    /// Represents a random number generator, a device that produces a
     /// sequence of numbers that meet certain statistical requirements for
     /// randomness.
     /// </summary>
+    /// <remarks>
+    /// Depending on the platform it can be a software dependent pseudo-random generator algorithm 
+    /// or a hardware random generator providing true random numbers.
+    /// </remarks>
     public class Random
     {
+        // this field needs to be here because it's required for the native implementation
+#pragma warning disable 0169
         private object _random;
+#pragma warning restore 0169
+
 
         /// <summary>
-        /// Initializes a new instance of the Random class, using a time-
+        /// Initializes a new instance of the Random class. 
+        /// If the provider is algorithm based the initialisation is performed using a time-
         /// dependent default seed value.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]

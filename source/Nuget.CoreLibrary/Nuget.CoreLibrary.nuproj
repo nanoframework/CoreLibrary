@@ -31,7 +31,7 @@
     <Folder Include="lib\" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>96eaba11-6a33-454d-a7b2-b96ca5617e8c</ProjectGuid>
+    <ProjectGuid>dd773430-fe47-443c-b2eb-4f1dc0b7e52d</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <NuProjPath>..\packages\NuProj.0.20.4-beta\tools\</NuProjPath>
