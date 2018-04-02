@@ -47,7 +47,7 @@
     <Description>This package includes the base class library (mscorlib) for nanoFramework C# projects</Description>
     <ReleaseNotes>
     </ReleaseNotes>
-    <ProjectUrl>https://github.com/nanoframework/nf-class-libraries</ProjectUrl>
+    <ProjectUrl>https://github.com/nanoframework/lib-CoreLibrary</ProjectUrl>
     <LicenseUrl>
     </LicenseUrl>
     <Copyright>Copyright (c) 2017 The nanoFramework project contributors</Copyright>
