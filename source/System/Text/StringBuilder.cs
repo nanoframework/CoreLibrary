@@ -364,7 +364,7 @@ Label_0002:
         /// <returns>A reference to this instance after the append operation has completed.</returns>
         public StringBuilder Append(object value)
         {
-            return Append(value.ToString());
+            return value == null ? this : Append(value.ToString());
         }
 
         /// <summary>
