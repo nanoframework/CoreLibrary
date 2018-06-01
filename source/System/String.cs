@@ -636,7 +636,8 @@ namespace System
                     {
                         if (format[i + 1] == '}')
                         {
-                            output += format[++i];
+                            output += chr;
+                            i++;
                         }
 
                         break;
