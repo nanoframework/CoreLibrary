@@ -370,9 +370,6 @@
     <NFMDP_PE_ExcludeClassByName Include="System.STAThreadAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
-    <NFMDP_PE_ExcludeClassByName Include="System.Threading.Timeout">
-      <InProject>false</InProject>
-    </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="System.TypedReference">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
