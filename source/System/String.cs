@@ -532,5 +532,125 @@ namespace System
             return str;
         }
 
+        /// <summary>
+        /// Replaces the format items in a string with the string representations of corresponding objects in a specified array.
+        /// </summary>
+        /// <param name="format">A composite format string</param>
+        /// <param name="args">An object array that contains zero or more objects to format.</param>
+        /// <returns>A copy of format in which the format items have been replaced by the string representation of the corresponding objects in args.</returns>
+        public static string Format(string format, params object[] args)
+        {
+            var index = 0;
+            var chr = '\0';
+            var len = format.Length;
+            var token = Empty;
+            var output = Empty;
+
+            if (format is null)
+            {
+                throw new ArgumentNullException("format can't be null");
+            }
+
+            if (args is null)
+            {
+                throw new ArgumentNullException("args can't be null");
+            }
+
+            for (int i = 0; i < len; i++)
+            {
+                chr = format[i];
+
+                switch (chr)
+                {
+                    case '{':
+                    {
+                        if (format[i + 1] == '{')
+                        {
+                            output += chr;
+                            i++;
+                        }
+                        else
+                        {
+                            token = Empty;
+                            for (i++; i < len; i++)
+                            {
+                                chr = format[i];
+                                if (chr >= '0' && chr <= '9')
+                                {
+                                    token += format[i];
+                                }
+                                else if (chr == ':')
+                                {
+                                    index = int.Parse(token);
+                                    token = Empty;
+                                    for (i++; i < len; i++)
+                                    {
+                                        chr = format[i];
+                                        if (chr == '}')
+                                        {
+                                            if (token.Length > 0)
+                                            {
+                                                var method = args[index].GetType()
+                                                .GetMethod("ToString", new Type[] { typeof(string) });
+                                                output += (method is null)
+                                                    ? args[index].ToString()
+                                                    : method.Invoke(args[index], new object[] { token });
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                throw new ArgumentException("Format error: empty format after ':' at index " + index);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            token += chr;
+                                        }
+                                    }
+
+                                    break;
+                                }
+                                else if (chr == '}')
+                                {
+                                    if (token.Length > 0)
+                                    {
+                                        index = int.Parse(token);
+                                        output += args[index];
+                                    }
+                                    else
+                                    {
+                                        throw new ArgumentException("Format error: empty {}");
+                                    }
+                                    break;
+                                }
+                                else
+                                {
+                                    throw new ArgumentException("Format error: wrong simbol in {}");
+                                }
+                            }
+                        }
+
+                        break;
+                    }
+                    case '}':
+                    {
+                        if (format[i + 1] == '}')
+                        {
+                            output += format[++i];
+                        }
+
+                        break;
+                    }
+                    default:
+                    {
+                        output += chr;
+                        break;
+                    }
+                }
+            }
+
+            return output;
+        }
+
     }
 }
