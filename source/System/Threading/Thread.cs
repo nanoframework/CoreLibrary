@@ -112,11 +112,38 @@ namespace System.Threading
         /// Suspends the current thread for the specified number of milliseconds.
         /// </summary>
         /// <param name="millisecondsTimeout">The number of milliseconds for which the thread is suspended. 
-        /// If the value of the millisecondsTimeout argument is zero, the thread relinquishes the remainder 
+        /// If the value of the <paramref name="millisecondsTimeout"/> argument is zero, the thread relinquishes the remainder 
         /// of its time slice to any thread of equal priority that is ready to run. If there are no other threads 
         /// of equal priority that are ready to run, execution of the current thread is not suspended.</param>
+        /// <remarks>
+        /// The thread will not be scheduled for execution by the operating system for the amount of time specified. 
+        /// You can specify Timeout.Infinite for the <paramref name="millisecondsTimeout"/> parameter to suspend the thread indefinitely. However, we recommend that you use other <see cref="System.Threading"/> classes such as <see cref="AutoResetEvent"/>, <see cref="ManualResetEvent"/>, <see cref="Monitor"/> or <see cref="WaitHandle"/> instead to synchronize threads or manage resources.
+        /// The system clock ticks at a specific rate called the clock resolution. The actual timeout might not be exactly the specified timeout, because the specified timeout will be adjusted to coincide with clock ticks. 
+        /// </remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void Sleep(int millisecondsTimeout);
+
+        /// <summary>
+        /// Suspends the current thread for the specified amount of time.
+        /// </summary>
+        /// <param name="timeout">The amount of time for which the thread is suspended. 
+        /// If the value of the <paramref name="timeout"/> argument is Zero, the thread relinquishes the remainder 
+        /// of its time slice to any thread of equal priority that is ready to run. If there are no other threads 
+        /// of equal priority that are ready to run, execution of the current thread is not suspended.</param>
+        /// <remarks>
+        /// The thread will not be scheduled for execution by the operating system for the amount of time specified. 
+        /// You can specify <see cref="Timeout.Infinite"/> for the <paramref name="timeout"/> parameter to suspend the thread indefinitely. However, we recommend that you use other <see cref="System.Threading"/> classes such as <see cref="AutoResetEvent"/>, <see cref="ManualResetEvent"/>, <see cref="Monitor"/> or <see cref="WaitHandle"/> instead to synchronize threads or manage resources.
+        /// The system clock ticks at a specific rate called the clock resolution. The actual timeout might not be exactly the specified timeout, because the specified timeout will be adjusted to coincide with clock ticks. 
+        /// </remarks>
+        public static void Sleep(TimeSpan timeout)
+        {
+            long tm = timeout.Ticks / TimeSpan.TicksPerMillisecond;
+            if (tm < -1 || tm > Int32.MaxValue)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            Sleep((int)tm);
+        }
 
         /// <summary>
         /// Gets the currently running thread.
