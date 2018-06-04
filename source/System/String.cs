@@ -541,8 +541,10 @@ namespace System
         public static string Format(string format, params object[] args)
         {
             var index = 0;
+            var alignment = 0;
             var chr = '\0';
             var len = format.Length;
+            var fmt = Empty;
             var token = Empty;
             var output = Empty;
 
@@ -551,106 +553,236 @@ namespace System
                 throw new ArgumentNullException("format can't be null");
             }
 
-            if (args is null)
+            for (var i = 0; i < len; i++)
             {
-                throw new ArgumentNullException("args can't be null");
-            }
-
-            for (int i = 0; i < len; i++)
-            {
+                token = Empty;
                 chr = format[i];
 
-                switch (chr)
+                if (chr == '{')
                 {
-                    case '{':
+                    if (i + 1 == len)
                     {
-                        if (format[i + 1] == '{')
+                        throw new ArgumentException("Format error: no closed brace, column " + i);
+                    }
+
+                    if (format[i + 1] == '{')
+                    {
+                        output += chr;
+                        i++;
+                        continue;
+                    }
+                    else
+                    {
+                        alignment = 0;
+                        fmt = Empty;
+
+                        for (i++; i < len; i++)
                         {
-                            output += chr;
-                            i++;
+                            chr = format[i];
+
+                            if (chr >= '0' && chr <= '9')
+                            {
+                                token += chr;
+                            }
+                            else if (chr == ',' || chr == ':' || chr == '}')
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                throw new ArgumentException("Format error: wrong symbol at {}, column " + i);
+                            }
+                        }
+
+                        if (token.Length > 0)
+                        {
+                            index = int.Parse(token);
                         }
                         else
+                        {
+                            throw new ArgumentException("Format error: empty {}, column " + i);
+                        }
+
+                        if (chr == ',')
+                        {
+                            if (format[i + 1] == '-')
+                            {
+                                token = "-";
+                                i++;
+                            }
+                            else
+                            {
+                                token = Empty;
+                            }
+
+                            for (i++; i < len; i++)
+                            {
+                                chr = format[i];
+
+                                if (chr >= '0' && chr <= '9')
+                                {
+                                    token += chr;
+                                }
+                                else if (chr == ':' || chr == '}')
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    throw new ArgumentException("Format error: wrong symbol at alignment, column " + i);
+                                }
+                            }
+
+                            if (token.Length > 0)
+                            {
+                                alignment = int.Parse(token);
+                            }
+                            else
+                            {
+                                throw new ArgumentException("Format error: empty alignment, column " + i);
+                            }
+                        }
+
+                        if (chr == ':')
                         {
                             token = Empty;
                             for (i++; i < len; i++)
                             {
                                 chr = format[i];
-                                if (chr >= '0' && chr <= '9')
-                                {
-                                    token += format[i];
-                                }
-                                else if (chr == ':')
-                                {
-                                    index = int.Parse(token);
-                                    token = Empty;
-                                    for (i++; i < len; i++)
-                                    {
-                                        chr = format[i];
-                                        if (chr == '}')
-                                        {
-                                            if (token.Length > 0)
-                                            {
-                                                var method = args[index].GetType()
-                                                .GetMethod("ToString", new Type[] { typeof(string) });
-                                                output += (method is null)
-                                                    ? args[index].ToString()
-                                                    : method.Invoke(args[index], new object[] { token });
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                throw new ArgumentException("Format error: empty format after ':' at index " + index);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            token += chr;
-                                        }
-                                    }
 
-                                    break;
-                                }
-                                else if (chr == '}')
+                                if (chr == '}')
                                 {
-                                    if (token.Length > 0)
-                                    {
-                                        index = int.Parse(token);
-                                        output += args[index];
-                                    }
-                                    else
-                                    {
-                                        throw new ArgumentException("Format error: empty {}");
-                                    }
                                     break;
                                 }
                                 else
                                 {
-                                    throw new ArgumentException("Format error: wrong simbol in {}");
+                                    token += chr;
                                 }
                             }
-                        }
 
-                        break;
+                            if (token.Length > 0)
+                            {
+                                fmt = token;
+                            }
+                            else
+                            {
+                                throw new ArgumentException("Format error: empty format after ':', column " + i);
+                            }
+                        }
                     }
-                    case '}':
+
+                    if (chr != '}')
                     {
-                        if (format[i + 1] == '}')
-                        {
-                            output += chr;
-                            i++;
-                        }
-
-                        break;
+                        throw new ArgumentException("Format error: no closed brace, column " + i);
                     }
-                    default:
+
+                    if (fmt.Length > 0)
+                    {
+                        var method = args[index].GetType().GetMethod("ToString", new Type[] { typeof(string) });
+                        token = (method is null)
+                            ? args[index].ToString()
+                            : method.Invoke(args[index], new object[] { token }).ToString();
+                    }
+                    else
+                    {
+                        token = args[index].ToString();
+                    }
+
+                    if (alignment > 0)
+                    {
+                        output += token.PadLeft(alignment);
+                    }
+                    else if (alignment < 0)
+                    {
+                        output += token.PadRight(Math.Abs(alignment));
+                    }
+                    else
+                    {
+                        output += token;
+                    }
+                }
+                else if (chr == '}')
+                {
+                    if (i + 1 == len)
+                    {
+                        throw new ArgumentException("Format error: no closed brace, column " + i);
+                    }
+
+                    if (format[i + 1] == '}')
                     {
                         output += chr;
-                        break;
+                        i++;
                     }
+                    else
+                    {
+                        throw new ArgumentException("Format error: no closed brace, column " + i);
+                    }
+                }
+                else
+                {
+                    output += chr;
                 }
             }
 
             return output;
+        }
+
+        /// <summary>
+        /// Returns a new string that right-aligns the characters in this instance by padding them on the left with a specified Unicode character, for a specified total length.
+        /// </summary>
+        /// <param name="totalWidth">The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.</param>
+        /// <param name="paddingChar">A Unicode padding character.</param>
+        /// <returns></returns>
+        public String PadLeft(int totalWidth, char paddingChar = ' ')
+        {
+            if (totalWidth < 0)
+            {
+                throw new ArgumentOutOfRangeException("totalWidth can't be less than 0");
+            }
+
+            if (Length >= totalWidth)
+            {
+                return this;
+            }
+            else
+            {
+                var pad = String.Empty;
+                var len = totalWidth - Length;
+                for (var i = 0; i < len; i++)
+                {
+                    pad += paddingChar;
+                }
+                return pad + this;
+            }
+        }
+
+        /// <summary>
+        /// Returns a new string that left-aligns the characters in this string by padding them on the right with a specified Unicode character, for a specified total length.
+        /// </summary>
+        /// <param name="totalWidth">The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.</param>
+        /// <param name="paddingChar">A Unicode padding character.</param>
+        /// <returns></returns>
+        public String PadRight(int totalWidth, char paddingChar = ' ')
+        {
+            if (totalWidth < 0)
+            {
+                throw new ArgumentOutOfRangeException("totalWidth can't be less than 0");
+            }
+
+            if (Length >= totalWidth)
+            {
+                return this;
+            }
+            else
+            {
+                var pad = String.Empty;
+                var len = totalWidth - Length;
+                for (var i = 0; i < len; i++)
+                {
+                    pad += paddingChar;
+                }
+                return this + pad;
+            }
         }
 
     }
