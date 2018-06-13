@@ -746,13 +746,7 @@ namespace System
             }
             else
             {
-                var pad = String.Empty;
-                var len = totalWidth - Length;
-                for (var i = 0; i < len; i++)
-                {
-                    pad += paddingChar;
-                }
-                return pad + this;
+                return new String(paddingChar, totalWidth - Length) + this;
             }
         }
 
@@ -775,13 +769,7 @@ namespace System
             }
             else
             {
-                var pad = String.Empty;
-                var len = totalWidth - Length;
-                for (var i = 0; i < len; i++)
-                {
-                    pad += paddingChar;
-                }
-                return this + pad;
+                return this + new String(paddingChar, totalWidth - Length);
             }
         }
 
