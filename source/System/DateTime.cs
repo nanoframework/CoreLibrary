@@ -513,7 +513,7 @@ namespace System
         /// <returns>An object that is equal to the date and time represented by this instance minus the time interval represented by val.</returns>
         public DateTime Subtract(TimeSpan val)
         {
-            return new DateTime((long)(_ticks - (ulong)val._numberOfTicks));
+            return new DateTime((long)(_ticks - (ulong)val._ticks));
         }
 
         /// <summary>
@@ -545,7 +545,7 @@ namespace System
         /// </returns>
         public static DateTime operator +(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._ticks + (ulong)t._numberOfTicks));
+            return new DateTime((long)(d._ticks + (ulong)t._ticks));
         }
 
 
@@ -559,7 +559,7 @@ namespace System
         /// </returns>
         public static DateTime operator -(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._ticks - (ulong)t._numberOfTicks));
+            return new DateTime((long)(d._ticks - (ulong)t._ticks));
         }
 
         /// <summary>
