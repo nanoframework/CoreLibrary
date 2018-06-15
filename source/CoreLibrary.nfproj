@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
     <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
@@ -34,21 +34,13 @@
     <DelaySign>false</DelaySign>
   </PropertyGroup>
   <PropertyGroup>
-    <!-- generate PE: TRUE -->
-    <NFMDP_PE_SKIP>false</NFMDP_PE_SKIP>
     <NFMDP_PE_NoBitmapCompression>true</NFMDP_PE_NoBitmapCompression>
-    <!-- generate STUBS: TRUE -->
-    <NFMDP_STUB_SKIP>false</NFMDP_STUB_SKIP>
     <!-- we like verbose -->
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
     <NFMDP_STUB_GenerateSkeletonFile>Stubs\corlib_native</NFMDP_STUB_GenerateSkeletonFile>
     <NFMDP_STUB_GenerateSkeletonProject>CorLib</NFMDP_STUB_GenerateSkeletonProject>
     <!-- this is one is absolutly mandatory for the base class library -->
     <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>
-    <NFMDP_CMD_LINE_OUTPUT>false</NFMDP_CMD_LINE_OUTPUT>
-    <NFMDP_DUMP_SKIP>false</NFMDP_DUMP_SKIP>
-    <NFMDP_DAT_SKIP>false</NFMDP_DAT_SKIP>
-    <NFMDP_XML_SKIP>false</NFMDP_XML_SKIP>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
