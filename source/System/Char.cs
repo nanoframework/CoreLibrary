@@ -12,7 +12,10 @@ namespace System
     [Serializable]
     public struct Char
     {
+        // this field is required in the native end
+#pragma warning disable 0649
         private char _value;
+#pragma warning restore 0649
 
         /// <summary>
         /// Represents the largest possible value of a Char. This field is constant.

@@ -15,7 +15,10 @@ namespace System
     [Serializable]
     public struct Double
     {
+        // this field is required in the native end
+#pragma warning disable 0649
         internal double _value;
+#pragma warning restore 0649
 
         /// <summary>
         /// Represents the smallest possible value of a Double. This field is constant.

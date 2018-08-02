@@ -14,7 +14,10 @@ namespace System
     [Serializable]
     public struct Int16
     {
+        // this field is required in the native end
+#pragma warning disable 0649
         internal short _value;
+#pragma warning restore 0649
 
         /// <summary>
         /// Represents the largest possible value of an Int16. This field is constant.

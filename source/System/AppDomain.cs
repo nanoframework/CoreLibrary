@@ -15,9 +15,13 @@ namespace System
     /// </summary>
     public sealed class AppDomain : MarshalByRefObject
     {
+        // these fields are required in the native end
+#pragma warning disable 0649, 0169
         [FieldNoReflection]
         private object _appDomain;
         private string _friendlyName;
+#pragma warning restore 0649
+#pragma warning restore 0169
 
         private AppDomain()
         {

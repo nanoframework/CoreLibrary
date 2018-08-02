@@ -14,7 +14,10 @@ namespace System
     [Serializable, CLSCompliant(false)]
     public struct UInt16
     {
+        // this field is required in the native end
+#pragma warning disable 0649
         private ushort _value;
+#pragma warning restore 0649
 
         /// <summary>
         /// Represents the largest possible value of UInt16. This field is constant.

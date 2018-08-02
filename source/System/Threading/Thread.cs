@@ -14,6 +14,8 @@ namespace System.Threading
     /// </summary>
     public sealed class Thread
     {
+        // these fields are required in the native end
+#pragma warning disable 0169
         private Delegate _delegate;
         private int _priority;
         [Reflection.FieldNoReflection]
@@ -21,6 +23,7 @@ namespace System.Threading
         [Reflection.FieldNoReflection]
         private object _appDomain;
         private int _id;
+#pragma warning restore 0169
 
         /// <summary>
         /// Initializes a new instance of the Thread class.
