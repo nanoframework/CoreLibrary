@@ -18,6 +18,11 @@ namespace System
         private readonly Exception _innerException;
 
         private object _stackTrace;
+
+        /// <summary>
+        /// Gets or sets HRESULT, a coded numerical value that is assigned to a specific exception.
+        /// </summary>
+        /// <value>The HRESULT value./// </value>
         protected int HResult;
 
         /// <summary>

@@ -53,7 +53,7 @@ namespace System
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>An 8-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
+        /// <returns>An 8-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         /// <remarks>
         /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
         /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
@@ -71,7 +71,7 @@ namespace System
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>An 8-bit unsigned integer that is equivalent to value, or zero if value is null.</returns>
+        /// <returns>An 8-bit unsigned integer that is equivalent to value, or zero if value is <see langword="null"/>.</returns>
         /// <remarks>
         /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
         /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
@@ -88,7 +88,7 @@ namespace System
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 16-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
+        /// <returns>A 16-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         /// <remarks>
         /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
         /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
@@ -105,7 +105,7 @@ namespace System
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 16-bit unsigned integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
+        /// <returns>A 16-bit unsigned integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         /// <remarks>
         /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
         /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
@@ -123,7 +123,7 @@ namespace System
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 32-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
+        /// <returns>A 32-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         /// <remarks>
         /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
         /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
@@ -140,7 +140,7 @@ namespace System
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 32-bit unsigned integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
+        /// <returns>A 32-bit unsigned integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         /// <remarks>
         /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
         /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
@@ -158,13 +158,13 @@ namespace System
         /// </summary>
         /// <param name="value">A string that contains a number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 64-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
+        /// <returns>A 64-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         /// <remarks>
         /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
         /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
         /// </remarks>
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
-        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception
+        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         public static long ToInt64(string value, int fromBase = 10)
         {
             return NativeToInt64(value, true, Int64.MinValue, Int64.MaxValue, fromBase);
@@ -175,7 +175,7 @@ namespace System
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 64-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
+        /// <returns>A 64-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         /// <remarks>
         /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
         /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
@@ -192,7 +192,7 @@ namespace System
         /// Converts the specified string representation of a number to an equivalent double-precision floating-point number.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
-        /// <returns>A double-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is null.</returns>
+        /// <returns>A double-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         public static double ToDouble(string value)
         {
             return NativeToDouble(value);

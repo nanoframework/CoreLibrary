@@ -136,7 +136,7 @@ namespace System
         /// Converts the string representation of a number to its double-precision floating-point number equivalent. A return value indicates whether the conversion succeeded or failed.
         /// </summary>
         /// <param name="s">A string containing a number to convert. </param>
-        /// <param name="result">When this method returns, contains the double-precision floating-point number equivalent to the s parameter, if the conversion succeeded, or zero if the conversion failed. The conversion fails if the s parameter is nullNothingnullptrunita null reference (Nothing in Visual Basic), is not a number in a valid format, or represents a number less than MinValue or greater than MaxValue. This parameter is passed uninitialized.</param>
+        /// <param name="result">When this method returns, contains the double-precision floating-point number equivalent to the s parameter, if the conversion succeeded, or zero if the conversion failed. The conversion fails if the s parameter is  null reference (Nothing in Visual Basic), is not a number in a valid format, or represents a number less than MinValue or greater than MaxValue. This parameter is passed uninitialized.</param>
         /// <returns>true if s was converted successfully; otherwise, false.</returns>
         public static bool TryParse(string s, out double result)
         {

@@ -247,7 +247,7 @@ namespace System
         /// <summary>
         /// Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.
         /// </summary>
-        /// <param name="val">A boxed object to compare, or nullNothingnullptrunita null reference (Nothing in Visual Basic).</param>
+        /// <param name="val">A boxed object to compare, or  null reference (Nothing in Visual Basic).</param>
         /// <returns>A signed number indicating the relative values of this instance and value.</returns>
         public int CompareTo(Object val)
         {

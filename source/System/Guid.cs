@@ -3,6 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace System
 {
+    /// <summary>
+    /// Represents a globally unique identifier (GUID).
+    /// </summary>
     [Serializable]
     public struct Guid
     {

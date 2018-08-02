@@ -13,7 +13,7 @@
 // processing multiple characters at a time, and falling back to the slow loop for all special cases.
 
 // This define can be used to turn off the fast loops. Useful for finding whether
-// the problem is fastloop-specific.
+// the problem is fast-loop specific.
 #define FASTLOOP
 
 namespace System.Text
@@ -31,6 +31,10 @@ namespace System.Text
     // (0xFEFF) written in UTF-8 (0xEF 0xBB 0xBF).  The byte order mark is
     // used mostly to distinguish UTF-8 text from other encodings, and doesn't
     // switch the byte orderings.
+
+    /// <summary>
+    /// Represents a UTF-8 encoding of Unicode characters.
+    /// </summary>
     public class UTF8Encoding : Encoding
     {
 
@@ -52,19 +56,48 @@ namespace System.Text
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern byte[] GetBytes(String s);
 
-
+        /// <summary>
+        /// Encodes a set of characters from the specified <see cref="String"/> into the specified byte array.
+        /// </summary>
+        /// <param name="s">The <see cref="String"/> containing the set of characters to encode.</param>
+        /// <param name="charIndex">The index of the first character to encode.</param>
+        /// <param name="charCount">The number of characters to encode.</param>
+        /// <param name="bytes">The byte array to contain the resulting sequence of bytes.</param>
+        /// <param name="byteIndex">The index at which to start writing the resulting sequence of bytes.</param>
+        /// <returns>The actual number of bytes written into <paramref name="bytes"/>.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern int GetBytes(string s, int charIndex, int charCount, byte[] bytes, int byteIndex);
 
+        /// <summary>
+        /// Decodes a sequence of bytes from the specified byte array into a set of characters.
+        /// </summary>
+        /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
+        /// <returns>The actual number of characters returned.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern char[] GetChars(byte[] bytes);
 
+        /// <summary>
+        /// Decodes a sequence of bytes from the specified byte array into a set of characters.
+        /// </summary>
+        /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
+        /// <param name="byteIndex">The index of the first byte to decode.</param>
+        /// <param name="byteCount">The number of bytes to decode.</param>
+        /// <returns>The actual number of characters returned.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern char[] GetChars(byte[] bytes, int byteIndex, int byteCount);
 
+        /// <summary>
+        /// Obtains a decoder that converts a UTF-8 encoded sequence of bytes into a sequence of Unicode characters.
+        /// </summary>
+        /// <returns>A decoder that converts a UTF-8 encoded sequence of bytes into a sequence of Unicode characters.</returns>
         public override Decoder GetDecoder()
         {
             return new UTF8Decoder();

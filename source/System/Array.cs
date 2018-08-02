@@ -51,7 +51,7 @@ namespace System
         public static extern void Copy(Array sourceArray, int sourceIndex, Array destinationArray, int destinationIndex, int length);
 
         /// <summary>
-        /// Sets a range of elements in the Array to zero, to false, or to nullNothingnullptrunita null reference (Nothing in Visual Basic), depending on the element type.
+        /// Sets a range of elements in the Array to zero, to false, or to  null reference (Nothing in Visual Basic), depending on the element type.
         /// </summary>
         /// <param name="array">The Array whose elements need to be cleared.</param>
         /// <param name="index">The starting index of the range of elements to clear.</param>
@@ -177,6 +177,10 @@ namespace System
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// Creates a shallow copy of the <see cref="Array"/>.
+        /// </summary>
+        /// <returns>A shallow copy of the <see cref="Array"/>.</returns>
         public Object Clone()
         {
             var length = Length;
@@ -211,7 +215,7 @@ namespace System
         /// <para>-or-</para>
         /// <para>nullNothingnullptrunit a null reference(Nothing in Visual Basic) to use the IComparable implementation of each element.</para></param>
         /// <returns>The index of the specified value in the specified array, if value is found. If value is not found and value is less than one or more elements in array, a negative number which is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than any of the elements in array, a negative number which is the bitwise complement of (the index of the last element plus 1).</returns>
-        /// <exception cref="System.InvalidOperationException">comparer is nullNothingnullptrunita null reference (Nothing in Visual Basic), value does not implement the IComparable interface, and the search encounters an element that does not implement the IComparable interface.</exception>
+        /// <exception cref="System.InvalidOperationException">comparer is  null reference (Nothing in Visual Basic), value does not implement the IComparable interface, and the search encounters an element that does not implement the IComparable interface.</exception>
         public static int BinarySearch(Array array, int index, int length, Object value, IComparer comparer)
         {
             var lo = index;
