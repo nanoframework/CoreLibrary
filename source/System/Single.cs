@@ -14,7 +14,10 @@ namespace System
     [Serializable]
     public struct Single
     {
+        // this field is required in the native end
+#pragma warning disable 0649
         internal float _value;
+#pragma warning restore 0649
 
         /// <summary>
         /// Represents the smallest possible value of Single. This field is constant.
@@ -37,16 +40,7 @@ namespace System
         /// <returns>The string representation of the value of this instance.</returns>
         public override String ToString()
         {
-            var str = ((Double)_value).ToString();
-            switch (str)
-            {
-                case "Infinity":
-                case "-Infinity":
-                case "NaN":
-                return str;
-                default:
-                return Number.Format(_value, false, "G", NumberFormatInfo.CurrentInfo);
-            }
+            return Number.Format(_value, false, "G", NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>
@@ -56,16 +50,7 @@ namespace System
         /// <returns>The string representation of the value of this instance as specified by format.</returns>
         public String ToString(String format)
         {
-            var str = ((Double)_value).ToString();
-            switch (str)
-            {
-                case "Infinity":
-                case "-Infinity":
-                case "NaN":
-                return str;
-                default:
-                return Number.Format(_value, false, format, NumberFormatInfo.CurrentInfo);
-            }
+            return Number.Format(_value, false, format, NumberFormatInfo.CurrentInfo);
         }
     }
 }
