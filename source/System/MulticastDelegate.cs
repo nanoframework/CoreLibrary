@@ -33,5 +33,23 @@ namespace System
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool operator !=(MulticastDelegate d1, MulticastDelegate d2);
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
+        public override sealed int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <param name="obj">A 32-bit signed integer hash code.</param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
     }
 }

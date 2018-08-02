@@ -29,7 +29,7 @@ namespace System.ComponentModel
     /// <summary>
     /// Specifies that a property or method is viewable in an editor. This class cannot be inherited.
     /// </summary>
-    [AttributeUsageAttribute(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Interface | AttributeTargets.Delegate)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Interface | AttributeTargets.Delegate)]
     public sealed class EditorBrowsableAttribute : Attribute
     {
         private readonly EditorBrowsableState _browsableState;
@@ -75,5 +75,10 @@ namespace System.ComponentModel
             }
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
+        public override int GetHashCode() => base.GetHashCode();
     }
 }

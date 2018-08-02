@@ -12,10 +12,10 @@ namespace System
     public sealed class Version // : ICloneable, IComparable, IComparable<Version>, IEquatable<Version>
     {
         // AssemblyName depends on the order staying the same
-        private readonly int _major;
-        private readonly int _minor;
-        private readonly int _build;// = -1;
-        private readonly int _revision;// = -1;
+        private readonly int _Major;
+        private readonly int _Minor;
+        private readonly int _Build = -1;
+        private readonly int _Revision = -1;
 
         /// <summary>
         /// Initializes a new instance of the Version class with the specified major, minor, build, and revision numbers.
@@ -29,10 +29,10 @@ namespace System
         {
             if (major < 0 || minor < 0 || revision < 0 || build < 0) throw new ArgumentOutOfRangeException();
 
-            _major = major;
-            _minor = minor;
-            _revision = revision;
-            _build = build;
+            _Major = major;
+            _Minor = minor;
+            _Revision = revision;
+            _Build = build;
         }
 
         /// <summary>
@@ -46,49 +46,37 @@ namespace System
             if (major < 0) throw new ArgumentOutOfRangeException();
             if (minor < 0) throw new ArgumentOutOfRangeException();
 
-            _major = major;
-            _minor = minor;
+            _Major = major;
+            _Minor = minor;
 
             // Other 2 initialize to -1 as it done on desktop and CE
-            _build = -1;
-            _revision = -1;
+            _Build = -1;
+            _Revision = -1;
         }
 
         /// <summary>
         /// Gets the value of the major component of the version number for the current Version object.
         /// </summary>
         /// <value>The major version number.</value>
-        public int Major
-        {
-            get { return _major; }
-        }
+        public int Major => _Major;
 
         /// <summary>
         /// Gets the value of the minor component of the version number for the current Version object.
         /// </summary>
         /// <value>The minor version number.</value>
-        public int Minor
-        {
-            get { return _minor; }
-        }
+        public int Minor => _Minor;
 
         /// <summary>
         /// Gets the value of the revision component of the version number for the current Version object.
         /// </summary>
         /// <value>The revision version number.</value>
-        public int Revision
-        {
-            get { return _revision; }
-        }
+        public int Revision => _Revision;
 
         /// <summary>
         /// Gets the value of the build component of the version number for the current Version object.
         /// </summary>
         /// <value>The build version number.</value>
-        public int Build
-        {
-            get { return _build; }
-        }
+        public int Build => _Build;
 
         /// <summary>
         /// Returns a value indicating whether the current Version object is equal to a specified object.
@@ -101,7 +89,7 @@ namespace System
 
             var v = (Version)obj;
             // check that major, minor, build & revision numbers match
-            return _major == v._major && _minor == v._minor && _build == v._build && _revision == v._revision;
+            return _Major == v._Major && _Minor == v._Minor && _Build == v._Build && _Revision == v._Revision;
         }
 
         /// <summary>
@@ -112,16 +100,35 @@ namespace System
         /// major.minor[.build[.revision]]</returns>
         public override String ToString()
         {
-            var retStr = _major + "." + _minor;
+            var retStr = _Major + "." + _Minor;
 
             // Adds _Build and then _Revision if they are positive. They could be -1 in this case not added.
-            if (_build >= 0)
+            if (_Build >= 0)
             {
-                retStr += "." + _build;
-                if (_revision >= 0) retStr += "." + _revision;
+                retStr += "." + _Build;
+                if (_Revision >= 0) retStr += "." + _Revision;
             }
 
             return retStr;
+        }
+
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
+        public override int GetHashCode()
+        {
+            // Let's assume that most version numbers will be pretty small and just
+            // OR some lower order bits together.
+
+            int accumulator = 0;
+
+            accumulator |= (_Major & 0x0000000F) << 28;
+            accumulator |= (_Minor & 0x000000FF) << 20;
+            accumulator |= (_Build & 0x000000FF) << 12;
+            accumulator |= (_Revision & 0x00000FFF);
+
+            return accumulator;
         }
     }
 }
