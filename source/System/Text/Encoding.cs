@@ -124,6 +124,18 @@ namespace System.Text
         }
 
         /// <summary>
+        /// When overridden in a derived class, decodes a sequence of bytes from the specified byte array into a <see cref="String"/>.
+        /// </summary>
+        /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
+        /// <param name="index">The index of the first byte to decode.</param>
+        /// <param name="count">The number of bytes to decode.</param>
+        /// <returns>A <see cref="String"/> that contains the results of decoding the specified sequence of bytes.</returns>
+        public virtual string GetString(byte[] bytes, int index, int count)
+        {
+            return new string(GetChars(bytes, index, count));
+        }
+
+        /// <summary>
         /// When overridden in a derived class, obtains a decoder that converts an encoded sequence of bytes into a sequence of characters.
         /// </summary>
         /// <returns>A Decoder that converts an encoded sequence of bytes into a sequence of characters.</returns>
