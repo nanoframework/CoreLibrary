@@ -773,5 +773,39 @@ namespace System
             }
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
+        public override int GetHashCode()
+        {
+
+            unsafe
+            {
+                fixed (char* src = this)
+                {
+                    int hash1 = (5381<<16) + 5381;
+                    int hash2 = hash1;
+
+                    // 32 bit machines.
+                    int* pint = (int *)src;
+                    int len = this.Length;
+                    while (len > 2)
+                    {
+                        hash1 = ((hash1 << 5) + hash1 + (hash1 >> 27)) ^ pint[0];
+                        hash2 = ((hash2 << 5) + hash2 + (hash2 >> 27)) ^ pint[1];
+                        pint += 2;
+                        len  -= 4;
+                    }
+ 
+                    if (len > 0)
+                    {
+                        hash1 = ((hash1 << 5) + hash1 + (hash1 >> 27)) ^ pint[0];
+                    }
+
+                    return hash1 + (hash2 * 1566083941);
+                }
+            }
+        }
     }
 }

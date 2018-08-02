@@ -652,5 +652,15 @@ namespace System
         {
             return Compare(t1, t2) >= 0;
         }
+
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
+        public override int GetHashCode()
+        {
+            ulong internalTicks = _ticks;
+            return (((int)internalTicks) ^ ((int)(internalTicks >> 0x20)));
+        }
     }
 }

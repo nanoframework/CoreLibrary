@@ -12,7 +12,10 @@ namespace System
     /// Provides the base class for value types.
     /// </summary>
     [Serializable]
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
+    // It would require to implement this on a call to native which seems a waste of resources.
     public abstract class ValueType
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     {
 
         /// <summary>
@@ -22,6 +25,5 @@ namespace System
         /// <returns>true if obj and this instance are the same type and represent the same value; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern bool Equals(Object obj);
-
     }
 }

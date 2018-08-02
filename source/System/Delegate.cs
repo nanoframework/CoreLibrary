@@ -82,5 +82,13 @@ namespace System
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool operator !=(Delegate d1, Delegate d2);
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
+        public override int GetHashCode()
+        {
+            return GetType().GetHashCode();
+        }
     }
 }

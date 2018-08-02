@@ -345,5 +345,13 @@ namespace System
         /// <returns>true if the value of t1 is greater than or equal to the value of t2; otherwise, false.</returns>
         public static bool operator >=(TimeSpan t1, TimeSpan t2) => t1._ticks >= t2._ticks;
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
+        public override int GetHashCode()
+        {
+            return (int)_ticks ^ (int)(_ticks >> 32);
+        }
     }
 }
