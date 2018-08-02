@@ -20,10 +20,13 @@ namespace System.Threading
     /// </summary>
     public sealed class Timer : MarshalByRefObject, IDisposable
     {
+        // these fields are required in the native end
+#pragma warning disable 0169
         [Reflection.FieldNoReflection]
         private object _timer;
         private object _state;
         private TimerCallback _callback;
+#pragma warning restore 0169
 
         /// <summary>
         /// Initializes a new instance of the Timer class, using a 32-bit signed integer to specify the time interval.

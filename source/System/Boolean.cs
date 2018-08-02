@@ -21,7 +21,10 @@ namespace System
         /// </summary>
         public static readonly string TrueString = "True";
 
+        // this field is required in the native end
+#pragma warning disable 0649
         private bool _value;
+#pragma warning restore 0649
 
         /// <summary>
         /// Converts the value of this instance to its equivalent string representation (either "True" or "False").

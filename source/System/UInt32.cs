@@ -14,7 +14,10 @@ namespace System
     [Serializable, CLSCompliant(false)]
     public struct UInt32
     {
+        // this field is required in the native end
+#pragma warning disable 0649
         private uint _value;
+#pragma warning restore 0649
 
         /// <summary>
         /// Represents the largest possible value of UInt32. This field is constant.

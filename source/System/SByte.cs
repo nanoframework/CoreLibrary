@@ -14,7 +14,10 @@ namespace System
     [Serializable, CLSCompliant(false)]
     public struct SByte
     {
+        // this field is required in the native end
+#pragma warning disable 0649
         private sbyte _value;
+#pragma warning restore 0649
 
         /// <summary>
         /// Represents the largest possible value of SByte. This field is constant.

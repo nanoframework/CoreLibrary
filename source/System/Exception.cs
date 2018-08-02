@@ -17,7 +17,10 @@ namespace System
         private readonly string _message;
         private readonly Exception _innerException;
 
+        // this field is required in the native end
+#pragma warning disable 0169
         private object _stackTrace;
+#pragma warning restore 0169
 
         /// <summary>
         /// Gets or sets HRESULT, a coded numerical value that is assigned to a specific exception.
