@@ -301,7 +301,7 @@ namespace System.Collections
         /// Gets or sets the element with the specified key.
         /// </summary>
         /// <param name="key">The key of the element to get or set.</param>
-        /// <returns>The element with the specified key, or null if the key does not exist.</returns>
+        /// <returns>The element with the specified key, or <see langword="null"/> if the key does not exist.</returns>
         public object this[object key]
         {
             get

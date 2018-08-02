@@ -156,6 +156,9 @@ namespace System.IO
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         ~Stream()
         {
             Dispose(false);

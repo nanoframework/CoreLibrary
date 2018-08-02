@@ -50,7 +50,7 @@ namespace System
         /// </summary>
         /// <param name="s">A string that contains a number to convert. The string is interpreted using the Integer style. </param>
         /// <returns>A byte value that is equivalent to the number contained in s.</returns>
-        /// <exception cref="System.ArgumentNullException">s is nullNothingnullptrunita null reference (Nothing in Visual Basic).</exception>
+        /// <exception cref="System.ArgumentNullException">s is  null reference (Nothing in Visual Basic).</exception>
         [CLSCompliant(false)]
         public static byte Parse(String s)
         {
