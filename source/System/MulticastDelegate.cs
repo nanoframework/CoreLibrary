@@ -12,7 +12,14 @@ namespace System
     /// Represents a multicast delegate; that is, a delegate that can have more than one element in its invocation list.
     /// </summary>
     [Serializable]
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
+#pragma warning disable CS0661 // Type defines operator == or operator != but does not override Object.GetHashCode()
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GetHashCode() implementation is provided by general native function CLR_RT_HeapBlock::GetHashCode //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
     public abstract class MulticastDelegate : Delegate
+#pragma warning restore CS0661 // Type defines operator == or operator != but does not override Object.GetHashCode()
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     {
 
         /// <summary>
@@ -32,15 +39,6 @@ namespace System
         /// <returns>rue if d1 and d2 do not have the same invocation lists; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool operator !=(MulticastDelegate d1, MulticastDelegate d2);
-
-        /// <summary>
-        /// Returns the hash code for this instance.
-        /// </summary>
-        /// <returns>A 32-bit signed integer hash code.</returns>
-        public override sealed int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
 
         /// <summary>
         /// Returns the hash code for this instance.

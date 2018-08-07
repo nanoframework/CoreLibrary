@@ -30,7 +30,12 @@ namespace System.ComponentModel
     /// Specifies that a property or method is viewable in an editor. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Interface | AttributeTargets.Delegate)]
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GetHashCode() implementation is provided by general native function CLR_RT_HeapBlock::GetHashCode //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
     public sealed class EditorBrowsableAttribute : Attribute
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     {
         private readonly EditorBrowsableState _browsableState;
 
@@ -74,11 +79,5 @@ namespace System.ComponentModel
                 return _browsableState;
             }
         }
-
-        /// <summary>
-        /// Returns the hash code for this instance.
-        /// </summary>
-        /// <returns>A 32-bit signed integer hash code.</returns>
-        public override int GetHashCode() => base.GetHashCode();
     }
 }

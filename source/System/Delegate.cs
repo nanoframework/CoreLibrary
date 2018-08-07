@@ -11,7 +11,14 @@ namespace System
     /// Represents a delegate, which is a data structure that refers to a static method or to a class instance and an instance method of that class.
     /// </summary>
     [Serializable]
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
+#pragma warning disable CS0661 // Type defines operator == or operator != but does not override Object.GetHashCode()
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GetHashCode() implementation is provided by general native function CLR_RT_HeapBlock::GetHashCode //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
     public abstract class Delegate
+#pragma warning restore CS0661 // Type defines operator == or operator != but does not override Object.GetHashCode()
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     {
 
         /// <summary>
@@ -81,14 +88,5 @@ namespace System
         /// <returns>true if d1 is not equal to d2; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool operator !=(Delegate d1, Delegate d2);
-
-        /// <summary>
-        /// Returns the hash code for this instance.
-        /// </summary>
-        /// <returns>A 32-bit signed integer hash code.</returns>
-        public override int GetHashCode()
-        {
-            return GetType().GetHashCode();
-        }
     }
 }
