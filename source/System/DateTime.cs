@@ -13,7 +13,7 @@ namespace System
     /// <summary>
     /// Specifies whether a DateTime object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
     /// </summary>
-    /// <remarks>nanoFramework doesn't suport local time, only  UTC, so it's not possible to specify DateTimeKind.Local.</remarks>
+    /// <remarks>nanoFramework doesn't support local time, only  UTC, so it's not possible to specify DateTimeKind.Local.</remarks>
     [Serializable]
     public enum DateTimeKind
     {
@@ -24,7 +24,7 @@ namespace System
         /// <summary>
         /// The time represented is local time.
         /// </summary>
-        [Obsolete("nanoFrameowrk doesn't support local time, so DateTimeKind.Local can't be used for consistency", true)]
+        [Obsolete("nanoFramework doesn't support local time, so DateTimeKind.Local can't be used for consistency", true)]
         Local = 2,
     }
 

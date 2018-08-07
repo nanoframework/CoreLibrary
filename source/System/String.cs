@@ -11,7 +11,14 @@ namespace System
     /// Represents text as a sequence of UTF-16 code units.
     /// </summary>
     [Serializable]
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
+#pragma warning disable CS0661 // Type defines operator == or operator != but does not override Object.GetHashCode()
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GetHashCode() implementation is provided by general native function CLR_RT_HeapBlock::GetHashCode //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
     public sealed class String : IComparable
+#pragma warning restore CS0661 // Type defines operator == or operator != but does not override Object.GetHashCode()
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     {
         /// <summary>
         /// Represents the empty string. This field is read-only.
@@ -770,41 +777,6 @@ namespace System
             else
             {
                 return this + new String(paddingChar, totalWidth - Length);
-            }
-        }
-
-        /// <summary>
-        /// Returns the hash code for this instance.
-        /// </summary>
-        /// <returns>A 32-bit signed integer hash code.</returns>
-        public override int GetHashCode()
-        {
-
-            unsafe
-            {
-                fixed (char* src = this)
-                {
-                    int hash1 = (5381<<16) + 5381;
-                    int hash2 = hash1;
-
-                    // 32 bit machines.
-                    int* pint = (int *)src;
-                    int len = this.Length;
-                    while (len > 2)
-                    {
-                        hash1 = ((hash1 << 5) + hash1 + (hash1 >> 27)) ^ pint[0];
-                        hash2 = ((hash2 << 5) + hash2 + (hash2 >> 27)) ^ pint[1];
-                        pint += 2;
-                        len  -= 4;
-                    }
- 
-                    if (len > 0)
-                    {
-                        hash1 = ((hash1 << 5) + hash1 + (hash1 >> 27)) ^ pint[0];
-                    }
-
-                    return hash1 + (hash2 * 1566083941);
-                }
             }
         }
     }

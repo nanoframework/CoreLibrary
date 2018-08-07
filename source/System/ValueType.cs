@@ -13,7 +13,9 @@ namespace System
     /// </summary>
     [Serializable]
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
-    // It would require to implement this on a call to native which seems a waste of resources.
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GetHashCode() implementation is provided by general native function CLR_RT_HeapBlock::GetHashCode //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
     public abstract class ValueType
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     {
