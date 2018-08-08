@@ -296,7 +296,7 @@ namespace System
                 
                 return PostProcessInteger(value, result, formatCh, precision, info);
             }
-            return PostProcessFloat(result, formatCh, info);
+            return PostProcessFloat(result, formatCh, precision, info);
         }
 
         [MethodImpl(MethodImplOptions.InternalCall)]
@@ -404,7 +404,7 @@ namespace System
             return result;
         }
 
-        private static String PostProcessFloat(String original, char format, NumberFormatInfo info)
+        private static String PostProcessFloat(String original, char format, int precision, NumberFormatInfo info)
         {
             String result = original;
 
@@ -415,6 +415,7 @@ namespace System
 
             result = ReplaceDecimalSeperator(result, info);
             result = ReplaceNegativeSign(result, info);
+            result = AppendFloatTrailingZeros(result, precision, info);
 
             return result;
         }
@@ -424,6 +425,22 @@ namespace System
             if (count > 0)
             {
                 return original + info.NumberDecimalSeparator + new String('0', count);
+            }
+            return original;
+        }
+        private static String AppendFloatTrailingZeros(String original, int count, NumberFormatInfo info)
+        {
+            // find decimal separator
+            int pos = original.IndexOf('.');
+
+            if (pos != -1)
+            {
+                // is the string representation missing any trailing zeros?
+                count = (original.Length - pos) - 1;
+                if(count > 0)
+                {
+                    return original + new String('0', count);
+                }
             }
             return original;
         }
