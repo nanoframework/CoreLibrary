@@ -1,3 +1,4 @@
+[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.CoreLibrary.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
 [![Discord](https://img.shields.io/discord/478725473862549535.svg)](https://discord.gg/gCyBu8T)
 
 
@@ -6,8 +7,6 @@
 -----
 
 ### Welcome to the **nanoFramework** Core Library repository!
-
-[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.CoreLibrary.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
 
 
 ## Build status
