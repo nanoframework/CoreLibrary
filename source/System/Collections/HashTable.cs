@@ -140,12 +140,13 @@ namespace System.Collections
         //implementation for KeyCollection and ValueCollection copyTo method
         private void CopyToCollection(Array array, int index, EnumeratorType type)
         {
-            if (index < 0 && index > _numberOfBuckets) throw new IndexOutOfRangeException("index");
+            if (index < 0 || index >= array.Length) throw new IndexOutOfRangeException("index");
+            if ((index + Count) > array.Length) throw new IndexOutOfRangeException("array length");
 
-            var j = 0;
+            var j = index;
             var len = array.Length;
 
-            for (var i = index; i < _numberOfBuckets; i++)
+            for (var i = 0; i < _numberOfBuckets; i++)
             {
                 for (var cur = _buckets[i]; cur != null && j < len; cur = cur.next)
                 {
@@ -229,18 +230,32 @@ namespace System.Collections
         /// <param name="index">The zero-based index in array at which copying begins.</param>
         public void CopyTo(Array array, int index)
         {
-            if (index < 0 && index > _buckets.Length) throw new IndexOutOfRangeException("index");
+            if (index < 0 || index >= array.Length) throw new IndexOutOfRangeException("index");
+            if ((index + _count) > array.Length) throw new IndexOutOfRangeException("array length");
 
-            var j = 0;
+            var j = index;
             var len = array.Length;
-            for (var i = index; i < _buckets.Length; i++)
+
+            for (var i = 0; i < _numberOfBuckets; i++)
             {
                 for (var cur = _buckets[i]; cur != null && j < len; cur = cur.next)
                 {
                     ((IList)array)[j] = new DictionaryEntry(cur.key, cur.value);
+
                     j++;
                 }
             }
+
+            //if (index < 0 || index >= array.Length) throw new IndexOutOfRangeException("index");
+
+            //var i = index;
+
+            //for (var cur = _buckets[0]; (cur != null && i < array.Length); cur = cur.next)
+            //{
+            //    ((IList)array)[i] = new DictionaryEntry(cur.key, cur.value);
+
+            //    i++;
+            //}
         }
 
         #endregion ICollection Members
