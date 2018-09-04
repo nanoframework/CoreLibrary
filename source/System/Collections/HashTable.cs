@@ -245,17 +245,6 @@ namespace System.Collections
                     j++;
                 }
             }
-
-            //if (index < 0 || index >= array.Length) throw new IndexOutOfRangeException("index");
-
-            //var i = index;
-
-            //for (var cur = _buckets[0]; (cur != null && i < array.Length); cur = cur.next)
-            //{
-            //    ((IList)array)[i] = new DictionaryEntry(cur.key, cur.value);
-
-            //    i++;
-            //}
         }
 
         #endregion ICollection Members
