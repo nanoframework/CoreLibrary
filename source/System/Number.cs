@@ -413,10 +413,10 @@ namespace System
                 result = InsertGroupSeparators(result, info);
             }
 
-            result = ReplaceDecimalSeperator(result, info);
-            result = ReplaceNegativeSign(result, info);
             result = AppendFloatTrailingZeros(result, precision, info);
-
+			result = ReplaceDecimalSeperator(result, info);
+            result = ReplaceNegativeSign(result, info);
+            
             return result;
         }
 
