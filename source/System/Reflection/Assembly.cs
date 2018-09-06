@@ -127,7 +127,7 @@ namespace System.Reflection
         {
             var type = GetType(name);
 
-            if (type == null) throw new ArgumentException();
+            if ( (type == null) && (throwOnError) ) throw new ArgumentException();
 
             return type;
         }
