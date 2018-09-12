@@ -190,7 +190,7 @@ Label_0002:
             //Set the length of the chunk
             _chunkLength = length;
             //Copy the value to the chunkChars
-            value.ToCharArray().CopyTo(_chunkChars, 0);
+            value.ToCharArray(startIndex, length).CopyTo(_chunkChars, 0);
         }
 
         private StringBuilder(int size, int maxCapacity, StringBuilder previousBlock)
