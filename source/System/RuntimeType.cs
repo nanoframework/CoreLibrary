@@ -80,5 +80,7 @@ namespace System
         [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern Type GetElementType();
 
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public override extern object[] GetCustomAttributes(bool inherit);
     }
 }

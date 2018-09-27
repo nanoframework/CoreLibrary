@@ -17,5 +17,8 @@ namespace System.Reflection
             [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
+        
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public override extern object[] GetCustomAttributes(bool inherit);
     }
 }
