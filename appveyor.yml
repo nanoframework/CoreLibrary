@@ -164,7 +164,7 @@
 
       nuget restore source\nanoFramework.CoreLibrary.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
+      gitversion /l console /output buildserver /updateAssemblyInfo "source\System\AssemblyInfo2.cs"
 
   build_script:
   - ps: >-
