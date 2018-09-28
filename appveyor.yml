@@ -66,11 +66,13 @@
     - ps:  >-
 
         # updated assembly info files
+
         git add "source\System\AssemblyInfo2.cs"
+
         git commit -m "Update assembly info file for v$env:GitVersion_NuGetVersionV2"
-        # need to wrap the git command bellow so it doesn't throw an error because of redirecting the output to stderr
+
         "$(git push origin)"
-        
+
         .\generate-change-log.ps1
 
   artifacts:
@@ -204,9 +206,11 @@
     - ps:  >-
 
         # updated assembly info files
+
         git add "source\System\AssemblyInfo2.cs"
+
         git commit -m "Update assembly info file for v$env:GitVersion_NuGetVersionV2"
-        # need to wrap the git command bellow so it doesn't throw an error because of redirecting the output to stderr
+
         "$(git push origin)"
 
         .\generate-change-log.ps1
@@ -314,9 +318,11 @@
     - ps:  >-
 
         # updated assembly info files
+
         git add "source\System\AssemblyInfo2.cs"
+
         git commit -m "Update assembly info file for v$env:GitVersion_NuGetVersionV2"
-        # need to wrap the git command bellow so it doesn't throw an error because of redirecting the output to stderr
+
         "$(git push origin)"
 
         .\generate-change-log.ps1
