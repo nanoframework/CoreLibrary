@@ -1,6 +1,6 @@
 user=nanoframework
 project=lib-CoreLibrary
-issues=false
+issues=true
 add_issues_wo_labels=false
 add_pr_wo_labels=false
 add_issues_wo_labels=false
@@ -9,5 +9,5 @@ exclude_labels=Area: Config-and-Build,Area: Infrastructure-and-Organization,reve
 enhancement_labels=Type: enhancement
 bug_labels=Type: bug
 merge_prefix=**Documentation and other chores:**
-issue_line_labels=[Breaking-Change]
+issue_line_labels=Breaking-Change,documentation
 author=false
