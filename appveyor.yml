@@ -53,7 +53,7 @@
 
       nuget restore source\nanoFramework.CoreLibrary.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
+      C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 
   build_script:
   - ps: >-
@@ -164,7 +164,7 @@
 
       nuget restore source\nanoFramework.CoreLibrary.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo "source\System\AssemblyInfo2.cs"
+      C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 
   build_script:
   - ps: >-
@@ -268,7 +268,7 @@
 
       nuget restore source\nanoFramework.CoreLibrary.sln
         
-      gitversion /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
+      C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo AssemblyInfo2.cs /ensureassemblyinfo
 
   build_script:
   - ps: >-
