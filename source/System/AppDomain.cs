@@ -4,6 +4,12 @@
 // See LICENSE file in the project root for full license information.
 //
 
+///////////////////////////////////////////////////
+// DEV NOTE: to enable the AppDomain API add     //
+// 'NANOCLR_APPDOMAINS' to the compile constants //
+///////////////////////////////////////////////////
+#if (NANOCLR_APPDOMAINS)
+
 using System.Reflection;
 using System.Threading;
 using System.Runtime.CompilerServices;
@@ -113,3 +119,4 @@ namespace System
         public static extern void Unload(AppDomain domain);
     }
 }
+#endif // #if (NANOCLR_APPDOMAINS)
