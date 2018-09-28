@@ -11,7 +11,7 @@
   # Skipping commits affecting specific files
   skip_commits:
     files:
-    - '**\AssemblyInfo.*'
+    - '**\AssemblyInfo*.*'
     - '**/*.md'
     - 'LICENSE'
     - dir/*
@@ -125,7 +125,7 @@
   # Skipping commits affecting specific files
   skip_commits:
     files:
-    - '**\AssemblyInfo.*'
+    - '**\AssemblyInfo*.*'
     - '**/*.md'
     - 'LICENSE'
     - dir/*
@@ -228,7 +228,7 @@
   # Skipping commits affecting specific files
   skip_commits:
     files:
-    - '**\AssemblyInfo.*'
+    - '**\AssemblyInfo*.*'
     - '**/*.md'
     - 'LICENSE'
     - dir/*
