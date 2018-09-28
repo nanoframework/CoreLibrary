@@ -168,11 +168,16 @@ namespace System.Threading
             get;
         }
 
+#if (NANOCLR_APPDOMAINS)
+
         /// <summary>
         /// Returns the current domain in which the current thread is running.
         /// </summary>
         /// <returns>An AppDomain representing the current application domain of the running thread.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern AppDomain GetDomain();
+
+#endif // #if (NANOCLR_APPDOMAINS)
+
     }
 }
