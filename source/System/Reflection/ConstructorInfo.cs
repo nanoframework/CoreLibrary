@@ -6,8 +6,8 @@
 
 namespace System.Reflection
 {
-    using System;
     using Runtime.CompilerServices;
+    using System;
 
     /// <summary>
     /// Discovers the attributes of a class constructor and provides access to constructor metadata.
@@ -38,5 +38,15 @@ namespace System.Reflection
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Object Invoke(Object[] parameters);
+
+        /// <summary>
+        /// When overridden in a derived class, returns an array of all custom attributes applied to this member.
+        /// </summary>
+        /// <param name="inherit">true to search this member's inheritance chain to find the attributes; otherwise, false. This parameter is ignored for properties and events.</param>
+        /// <returns>An array that contains all the custom attributes applied to this member, or an array with zero elements if no attributes are defined.</returns>
+        /// <remarks>This method is not implemented in nanoFramework.</remarks>
+        /// <exception cref="NotImplementedException"/>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern override object[] GetCustomAttributes(bool inherit);
     }
 }
