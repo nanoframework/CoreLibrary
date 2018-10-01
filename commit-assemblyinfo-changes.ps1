@@ -18,7 +18,7 @@ else
     cd nf-interpreter
 
     # new branch name
-    $newBranch = "$env:APPVEYOR_REPO_BRANCH-nfbot/update-version/$env:GitVersion_NuGetVersionV2" 
+    $newBranch = "$env:APPVEYOR_REPO_BRANCH-nfbot/update-version/nanoFramework.CorLib/$env:GitVersion_NuGetVersionV2" 
     
     # create branch to perform updates
     git checkout -b "$newBranch" develop -q
