@@ -45,7 +45,7 @@ else
     git push --set-upstream origin "$newBranch" --porcelain -q > $null
  
     # start PR
-    $prRequestBody = @{title="$commitMessage";body="$commitMessage`n[version update]";head="$newBranch";base="develop"} | ConvertTo-Json
+    $prRequestBody = @{title="$commitMessage";body="$commitMessage`nStarted with $env:APPVEYOR_REPO_NAME#$env:APPVEYOR_PULL_REQUEST_NUMBER`n[version update]";head="$newBranch";base="develop"} | ConvertTo-Json
     $githubApiEndpoint = "https://api.github.com/repos/nanoframework/nf-interpreter/pulls"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
