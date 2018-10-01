@@ -1,9 +1,9 @@
 next-version: 1.0.0
-assembly-versioning-scheme: MajorMinorPatchTag
-assembly-file-versioning-scheme: MajorMinorPatchTag
+assembly-versioning-scheme: MajorMinorPatch
+assembly-file-versioning-scheme: MajorMinorPatch
+assembly-informational-format: '{LegacySemVerPadded}'
 build-metadata-padding: 3
 legacy-semver-padding: 3
-assembly-informational-format: '{LegacySemVerPadded}'
 major-version-bump-message: '\+semver:\s?(breaking|major)'
 minor-version-bump-message: '\+semver:\s?(feature|minor)'
 patch-version-bump-message: '\+semver:\s?(fix|patch)'
@@ -18,7 +18,7 @@ branches:
     regex: dev(elop)?(ment)?$
     mode: ContinuousDeployment
     tag: preview
-    increment: Minor
+    increment: Patch
     prevent-increment-of-merged-branch-version: false
     track-merge-target: true
     tracks-release-branches: true
