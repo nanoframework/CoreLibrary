@@ -37,7 +37,7 @@ else
         $filecontent -replace $versionRegex, $newVersion | Out-File $file -Encoding utf8
     }
 
-    $commitMessage = "Update nanoFramework.CorLib version to $env:GitVersion_AssemblySemFileVer"
+    $commitMessage = "Update nanoFramework.CorLib version to $env:GitVersion_NuGetVersion"
 
     # commit changes
     git add -A 2>&1
@@ -45,7 +45,7 @@ else
     git push --set-upstream origin "$newBranch" --porcelain -q > $null
  
     # start PR
-    $prRequestBody = @{title="$commitMessage";body="$commitMessage`nStarted with $env:APPVEYOR_REPO_NAME#$env:APPVEYOR_PULL_REQUEST_NUMBER`n[version update]";head="$newBranch";base="develop"} | ConvertTo-Json
+    $prRequestBody = @{title="$commitMessage";body="$commitMessage`nStarted with https://github.com/$env:APPVEYOR_REPO_NAME/commit/$env:APPVEYOR_REPO_COMMIT`n[version update]";head="$newBranch";base="develop"} | ConvertTo-Json
     $githubApiEndpoint = "https://api.github.com/repos/nanoframework/nf-interpreter/pulls"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
