@@ -10,26 +10,29 @@
       <Platform>AnyCPU</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <PropertyGroup>
+    <GitVersion_NuGetVersionV2 Condition=" '$(GitVersion_NuGetVersionV2)' == '' ">1.0.0-preview001</GitVersion_NuGetVersionV2>
+  </PropertyGroup>
   <ItemGroup>
     <Folder Include="content\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\bin\$(Configuration)\Stubs\*.*">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\Stubs\*.*">
       <Link>content\Stubs\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\*.txt">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\*.txt">
       <Link>content\txt\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\*.dump">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\*.dump">
       <Link>content\dump\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\*.strings">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\*.strings">
       <Link>content\dump\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\*.resources">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\*.resources">
       <Link>content\resources\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\*.il">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\*.il">
       <Link>content\disasm\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
   </ItemGroup>
