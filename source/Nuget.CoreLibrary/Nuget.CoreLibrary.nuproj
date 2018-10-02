@@ -10,20 +10,23 @@
       <Platform>AnyCPU</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <PropertyGroup>
+    <GitVersion_NuGetVersionV2 Condition=" '$(GitVersion_NuGetVersionV2)' == '' ">1.0.0-preview001</GitVersion_NuGetVersionV2>
+  </PropertyGroup>  
   <ItemGroup>
-    <Content Include="..\bin\$(Configuration)\mscorlib.dll">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\mscorlib.dll">
       <Link>lib\mscorlib.dll</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\mscorlib.pdb">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\mscorlib.pdb">
       <Link>lib\mscorlib.pdb</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\mscorlib.pdbx">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\mscorlib.pdbx">
       <Link>lib\mscorlib.pdbx</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\mscorlib.pe">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\mscorlib.pe">
       <Link>lib\mscorlib.pe</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\mscorlib.xml">
+    <Content Include="..\nanoFramework.CoreLibrary\bin\$(Configuration)\mscorlib.xml">
       <Link>lib\mscorlib.xml</Link>
     </Content>
   </ItemGroup>
