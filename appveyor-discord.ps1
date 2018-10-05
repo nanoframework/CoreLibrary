@@ -7,9 +7,6 @@ $WEBHOOK_URL=$args[1]
 
 Write-Output "[Webhook]: Sending webhook to Discord..."
 
-# change directory to clone directory
-cd $env:APPVEYOR_BUILD_FOLDER
-
 Switch ($STATUS) {
   "success" {
     $EMBED_COLOR=3066993
