@@ -92,7 +92,11 @@
 
   # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
   on_failure:
-    - ps: .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+    - ps: |
+
+          cd $env:APPVEYOR_BUILD_FOLDER
+
+          .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
 
   cache:
     - source\packages -> **source\packages.config
@@ -199,7 +203,11 @@
 
   # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
   on_failure:
-    - ps: .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+    - ps: |
+
+          cd $env:APPVEYOR_BUILD_FOLDER
+
+          .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
 
   cache:
     - source\packages -> **source\packages.config
@@ -302,7 +310,11 @@
 
   # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
   on_failure:
-    - ps: .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+    - ps: |
+
+          cd $env:APPVEYOR_BUILD_FOLDER
+
+          .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
 
   cache:
     - source\packages -> **source\packages.config
