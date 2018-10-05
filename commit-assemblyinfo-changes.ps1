@@ -7,7 +7,7 @@ else
 {
     # updated assembly info files   
     git add "source\nanoFramework.CoreLibrary\System\AssemblyInfo2.cs"
-    git commit -m "Update assembly info file for v$env:GitVersion_NuGetVersionV2"
+    git commit -m "Update assembly info file for v$env:GitVersion_NuGetVersionV2" -m"[version update]"
     git push origin --porcelain -q > $null
     
     'Updated assembly info...' | Write-Host -ForegroundColor White -NoNewline
@@ -47,7 +47,7 @@ else
     }
     else
     {
-        $commitMessage = "Update nanoFramework.CorLib version to $env:GitVersion_AssemblySemFileVer"
+        $commitMessage = "Update nanoFramework.CorLib version to $env:GitVersion_NuGetVersionV2"
 
         # commit changes
         git add -A 2>&1
