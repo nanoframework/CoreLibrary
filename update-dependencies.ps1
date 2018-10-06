@@ -1,10 +1,13 @@
+# Copyright (c) 2018 The nanoFramework project contributors
+# See LICENSE file in the project root for full license information.
+
 # only need to update dependencies when build is NOT for a pull-request
-# if ($env:appveyor_pull_request_number)
-# {
-#     'Skip updating dependencies as this is a PR build...' | Write-Host -ForegroundColor White
-# }
-# else
-# {
+if ($env:appveyor_pull_request_number)
+{
+    'Skip updating dependencies as this is a PR build...' | Write-Host -ForegroundColor White
+}
+else
+{
     # update dependencies for class libraries that depend ONLY on mscorlib
     $commitMessage = ""
     $prTitle = ""
@@ -13,24 +16,27 @@
     # build path to nukeeper 
     $nukeeper = (Get-ChildItem -Path "$env:USERPROFILE\.dotnet\tools\.store" -Include "nukeeper.dll" -Recurse)
 
-    $librariesToUpdate =    "lib-nanoFramework.Runtime.Events", 
+    $librariesToUpdate =    ("lib-nanoFramework.Runtime.Events", 
                             "lib-nanoFramework.Runtime.Native",
                             "lib-Windows.Storage.Streams",
                             "lib-Windows.Devices.Adc",
                             "lib-Windows.Devices.I2c",
                             "lib-Windows.Devices.Pwm",
                             "lib-Windows.Devices.Spi",
-                            "lib-nanoFramework.Networking.Sntp";
+                            "lib-nanoFramework.Networking.Sntp")
 
     ForEach($library in $librariesToUpdate)
     {
-        # make sure we are out of the project directory
-        cd $env:APPVEYOR_BUILD_FOLDER
+        "Updating $library" | Write-Host -ForegroundColor White
+   
+        # make sure we are out of the repo directory
         &  cd .. > $null
 
         # clone library repo and checkout develop branch
-        git clone https://github.com/nanoframework/$library -b develop --depth 1 -q
+        "Cloning $library" | Write-Host -ForegroundColor White
+        git clone "https://github.com/nanoframework/$library" -b develop --depth 1 -q
         cd $library
+        cd source
     
         # find solution file in repository
         $solutionFile = (Get-ChildItem -Path ".\source" -Include "*.sln" -Recurse)
@@ -155,13 +161,39 @@
 
             git push --set-upstream origin $newBranchName --porcelain -q
 
-            # get back to parent directory
+            # start PR
+            $prRequestBody = @{title="$prTitle";body="$commitMessage";head="$newBranchName";base="$env:APPVEYOR_REPO_BRANCH"} | ConvertTo-Json
+            $githubApiEndpoint = "https://api.github.com/repos/nanoframework/$library/pulls"
+            [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+            try 
+            {
+                $result = Invoke-RestMethod -Method Post -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -Uri  $githubApiEndpoint -Header @{"Authorization"="Basic $env:GitRestAuth"} -ContentType "application/json" -Body $prRequestBody
+                'Started PR with dependencies update...' | Write-Host -ForegroundColor White -NoNewline
+                'OK' | Write-Host -ForegroundColor Green
+            }
+            catch 
+            {
+                $result = $_.Exception.Response.GetResponseStream()
+                $reader = New-Object System.IO.StreamReader($result)
+                $reader.BaseStream.Position = 0
+                $reader.DiscardBufferedData()
+                $responseBody = $reader.ReadToEnd();
+
+                "Error starting PR: $responseBody" | Write-Host -ForegroundColor Red
+            }
+
+            # make sure we are out of the source directory
             &  cd .. > $null
+
         }
         else
         {
             # nothing to update???
-            "Couldn't find anything to update..." | Write-Host -ForegroundColor White -BackgroundColor Yellow
+            "Couldn't find anything to update..." | Write-Host -ForegroundColor Black -BackgroundColor Yellow
         }
     }
-# }
+
+    # get back to the original build folder
+    cd $env:APPVEYOR_BUILD_FOLDER
+}

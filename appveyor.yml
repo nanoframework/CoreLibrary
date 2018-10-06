@@ -164,7 +164,7 @@
     - gem install bundler --quiet --no-ri --no-rdoc
     - gem install github_changelog_generator --quiet --no-ri --no-rdoc
     - choco install gitversion.portable -pre -y
-    #- ps: .\install-vsix-appveyor.ps1
+    - ps: .\install-vsix-appveyor.ps1
 
   before_build:
   - ps: >-
@@ -172,16 +172,16 @@
       nuget restore source\nanoFramework.CoreLibrary.sln
 
       C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo "source\nanoFramework.CoreLibrary\System\AssemblyInfo2.cs"
-
+  
   build_script:
   - ps: >-
 
-     # msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+      msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-  #on_success:
+  on_success:
   # for this environment variable to work here it has to be set in AppVeyor UI
-  #- nuget push source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
-  #- nuget push source\Nuget.CoreLibrary.DELIVERABLES\bin\Release\nanoFramework.CoreLibrary.DELIVERABLES.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
+  - nuget push source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
+  - nuget push source\Nuget.CoreLibrary.DELIVERABLES\bin\Release\nanoFramework.CoreLibrary.DELIVERABLES.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
 
   artifacts:
   - path: '**\bin\Release\*.nupkg'
