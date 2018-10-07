@@ -98,6 +98,10 @@
 
           .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
 
+  after_deploy:
+    - dotnet tool install --global NuKeeper
+    - ps: .\update-dependencies.ps1
+
   cache:
     - source\packages -> **source\packages.config
     - C:\ProgramData\chocolatey\bin -> appveyor.yml
@@ -168,7 +172,7 @@
       nuget restore source\nanoFramework.CoreLibrary.sln
 
       C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo "source\nanoFramework.CoreLibrary\System\AssemblyInfo2.cs"
-
+  
   build_script:
   - ps: >-
 
@@ -208,6 +212,10 @@
           cd $env:APPVEYOR_BUILD_FOLDER
 
           .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+
+  after_deploy:
+    - dotnet tool install --global NuKeeper
+    - ps: .\update-dependencies.ps1
 
   cache:
     - source\packages -> **source\packages.config
@@ -315,6 +323,10 @@
           cd $env:APPVEYOR_BUILD_FOLDER
 
           .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+
+  after_deploy:
+    - dotnet tool install --global NuKeeper
+    - ps: .\update-dependencies.ps1
 
   cache:
     - source\packages -> **source\packages.config
