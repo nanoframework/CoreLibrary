@@ -12,7 +12,7 @@ else
 
     # because it can take sometime for the package to become available on the NuGet providers
     # need to hange here for 5 minutes
-    Start-Sleep -Milliseconds 5000
+    Start-Sleep -Milliseconds 5000 * 60
 
     $librariesToUpdate =    ("lib-nanoFramework.Runtime.Events", 
                             "lib-nanoFramework.Runtime.Native",
