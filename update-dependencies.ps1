@@ -119,7 +119,7 @@ else
                 $commitMessage += "Bumps $packageName from $packageOriginVersion to $packageTargetVersion.`n"
 
                 # build PR title
-                $prTitle = ":package: Bumps $packageName from $packageOriginVersion to $packageTargetVersion"
+                $prTitle = "Bumps $packageName from $packageOriginVersion to $packageTargetVersion"
             }
 
             # rename csproj files back to nfproj
@@ -134,7 +134,7 @@ else
             $commitMessage += "`n[version update]`n`n"
 
             # better add this warning line               
-            $commitMessage += ":warning: This is an automated update. Merge only after all tests pass. :warning:`n"
+            $commitMessage += "### :warning: This is an automated update. Merge only after all tests pass. :warning:`n"
 
             # create branch to perform updates
             git branch $newBranchName -q
@@ -148,10 +148,10 @@ else
             # commit message with a different title if one or more dependencies are updated
             if ($packageCount -gt 1)
             {
-                git commit -m ":package: Update several NuGet dependencies" -m"$commitMessage" -q
+                git commit -m "Update several NuGet dependencies" -m"$commitMessage" -q
 
                 # fix PR title
-                $prTitle = ":package: Update several NuGet dependencies"
+                $prTitle = "Update several NuGet dependencies"
             }
             else 
             {
