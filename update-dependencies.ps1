@@ -10,6 +10,10 @@ else
 {
     # update dependencies for class libraries that depend ONLY on mscorlib
 
+    # because it can take sometime for the package to become available on the NuGet providers
+    # need to hange here for 5 minutes
+    Start-Sleep -Milliseconds 5000
+
     $librariesToUpdate =    ("lib-nanoFramework.Runtime.Events", 
                             "lib-nanoFramework.Runtime.Native",
                             "lib-Windows.Storage.Streams",
