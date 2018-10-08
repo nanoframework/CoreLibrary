@@ -10,9 +10,6 @@ else
 {
     # update dependencies for class libraries that depend ONLY on mscorlib
 
-    # build path to nukeeper 
-    $nukeeper = (Get-ChildItem -Path "$env:USERPROFILE\.dotnet\tools\.store" -Include "nukeeper.dll" -Recurse)
-
     $librariesToUpdate =    ("lib-nanoFramework.Runtime.Events", 
                             "lib-nanoFramework.Runtime.Native",
                             "lib-Windows.Storage.Streams",
@@ -44,7 +41,7 @@ else
         $solutionFile = (Get-ChildItem -Path ".\" -Include "*.sln" -Recurse)
 
         # run NuKeeper inspect
-        $nukeeperInspect = dotnet $nukeeper[0] inspect
+        $nukeeperInspect = NuKeeper inspect
 
         $packageCountMatch = [regex]::Match($nukeeperInspect, "Found (\d) possible updates").captures.groups[1].value
         [int]$packageCount = 0
