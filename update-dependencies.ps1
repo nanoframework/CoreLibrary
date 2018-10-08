@@ -9,9 +9,6 @@ if ($env:appveyor_pull_request_number)
 else
 {
     # update dependencies for class libraries that depend ONLY on mscorlib
-    $commitMessage = ""
-    $prTitle = ""
-    $newBranchName = "nfbot/update-dependencies"
 
     # build path to nukeeper 
     $nukeeper = (Get-ChildItem -Path "$env:USERPROFILE\.dotnet\tools\.store" -Include "nukeeper.dll" -Recurse)
@@ -27,10 +24,15 @@ else
 
     ForEach($library in $librariesToUpdate)
     {
+        # init/reset these
+        $commitMessage = ""
+        $prTitle = ""
+        $newBranchName = "nfbot/update-dependencies"
+    
         "Updating $library" | Write-Host -ForegroundColor White
    
-        # make sure we are out of the repo directory
-        &  cd .. > $null
+        # make sure we are in the projects directory
+        &  cd "C:\projects" > $null
 
         # clone library repo and checkout develop branch
         "Cloning $library" | Write-Host -ForegroundColor White
@@ -149,7 +151,7 @@ else
                 git commit -m ":package: Update several NuGet dependencies" -m"$commitMessage" -q
 
                 # fix PR title
-                $prTitle = "Update several NuGet dependencies"
+                $prTitle = ":package: Update several NuGet dependencies"
             }
             else 
             {
@@ -163,9 +165,13 @@ else
             $githubApiEndpoint = "https://api.github.com/repos/nanoframework/$library/pulls"
             [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
+            $headers = @{}
+            $headers.Add("Authorization","Basic $env:GitRestAuth")
+            $headers.Add("Accept","application/vnd.github.symmetra-preview+json")
+
             try 
             {
-                $result = Invoke-RestMethod -Method Post -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -Uri  $githubApiEndpoint -Header @{"Authorization"="Basic $env:GitRestAuth"} -ContentType "application/json" -Body $prRequestBody
+                $result = Invoke-RestMethod -Method Post -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -Uri  $githubApiEndpoint -Header $headers -ContentType "application/json" -Body $prRequestBody
                 'Started PR with dependencies update...' | Write-Host -ForegroundColor White -NoNewline
                 'OK' | Write-Host -ForegroundColor Green
             }
@@ -179,10 +185,6 @@ else
 
                 "Error starting PR: $responseBody" | Write-Host -ForegroundColor Red
             }
-
-            # make sure we are out of the source directory
-            &  cd .. > $null
-
         }
         else
         {
