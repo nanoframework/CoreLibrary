@@ -395,10 +395,10 @@ namespace System
         {
             //TODO: change names here to reflect nanoFramework name
             // valid names are in the forms:
-            // 1) "Microsoft.SPOT.Hardware.Cpu.Pin" or
-            // 2) "Microsoft.SPOT.Hardware.Cpu.Pin, Microsoft.SPOT.Hardware" or
-            // 3) "Microsoft.SPOT.Hardware.Cpu.Pin, Microsoft.SPOT.Hardware, Version=1.2.3.4" 
-            // 4) (FROM THE DEBUGGER) "Microsoft.SPOT.Hardware.Cpu.Pin, Microsoft.SPOT.Hardware, Version=1.2.3.4, Culture=neutral, PublicKeyToken=null[, ...]
+            // 1) "Windows.Devices.Gpio.GpioPin" or
+            // 2) "Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio" or
+            // 3) "Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio, Version=1.2.3.4" 
+            // 4) (FROM THE DEBUGGER) "Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio, Version=1.2.3.4, Culture=neutral, PublicKeyToken=null[, ...]
 
             int commaIdx;
             string name;
