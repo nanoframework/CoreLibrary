@@ -188,11 +188,11 @@ namespace System.Reflection
         internal static string ParseAssemblyName(String assemblyString, ref bool fVersion, ref int[] ver)
         {
             // valid names are in the forms:
-            // 1) "nanoFramework.Native" or
-            // 2) "nanoFramework.Native, Version=1.2.3.4" or
-            // 3) "nanoFramework.Native.resources, Version=1.2.3.4" or
-            // 4) "nanoFramework.Native.tinyresources, Version=1.2.3.4"
-            // 5) (FROM THE DEBUGGER) "nanoFramework.Native, Version=1.2.3.4, Culture=neutral, PublicKeyToken=null[, ...]
+            // 1) "nanoFramework.Runtime.Native" or
+            // 2) "nanoFramework.Runtime.Native, Version=1.2.3.4" or
+            // 3) "nanoFramework.Runtime.Native.resources, Version=1.2.3.4" or
+            // 4) "nanoFramework.Runtime.Native.nanoresources, Version=1.2.3.4"
+            // 5) (FROM THE DEBUGGER) "nanoFramework.Runtime.Native, Version=1.2.3.4, Culture=neutral, PublicKeyToken=null[, ...]
 
             int commaIdx;
             string name;
