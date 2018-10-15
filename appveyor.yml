@@ -72,7 +72,7 @@ before_deploy:
       
       .\generate-change-log.ps1
 
-      Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.%GitVersion_NuGetVersionV2%.nupkg
+      Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.$env:GitVersion_NuGetVersionV2.nupkg
 
 # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
 on_failure:
