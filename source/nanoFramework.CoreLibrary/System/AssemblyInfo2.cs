@@ -14,4 +14,4 @@ using System.Reflection;
 [assembly: AssemblyCopyright("Copyright © nanoFramework Contributors 2017")]
 [assembly: AssemblyVersion("1.0.1.0")]
 [assembly: AssemblyFileVersion("1.0.1.0")]
-[assembly: AssemblyInformationalVersion("1.0.1-preview136")]
+[assembly: AssemblyInformationalVersion("1.0.1-rc001")]
