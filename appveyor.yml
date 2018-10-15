@@ -148,18 +148,19 @@ for:
       - /release.*/
 
   deploy:
+  - provider: NuGet
+    api_key:
+      secure: NSRDXbS8tmzOy4wStGuO3yQMKI8Sk10vF8iQtz9ZDXEnHfwnuDdnXbr/Kno3MMvY
+    skip_symbols: true
+    on:
+      appveyor_repo_tag: true
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework Core Library v$(gitversion_semver)
-    description: 'Check the [changelog](https://github.com/nanoframework/lib-CoreLibrary/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-CoreLibrary/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
     draft: true
     prerelease: true
     force_update: true
-
-  after_deploy:
-  # for this environment variable to work here it has to be set in AppVeyor UI
-  - nuget push source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
-  - nuget push source\Nuget.CoreLibrary.DELIVERABLES\bin\Release\nanoFramework.CoreLibrary.DELIVERABLES.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
