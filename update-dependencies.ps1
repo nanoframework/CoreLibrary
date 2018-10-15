@@ -70,7 +70,7 @@ else
             [array]$packageList = $packageListRaw.Split([Environment]::NewLine, [StringSplitOptions]::RemoveEmptyEntries).Replace([Environment]::NewLine, "")
 
             # restore NuGet packages, need to do this before anything else
-            if ($string -like '*release*' -or $string -like '*master*')
+            if ($env:APPVEYOR_REPO_BRANCH -like '*release*' -or $string -like '*master*')
             {
                 # use NuGet ONLY for release and master branches
                 nuget restore $solutionFile[0] -Source https://api.nuget.org/v3/index.json
@@ -99,7 +99,7 @@ else
                 $packageTargetVersion = $packageDetails.captures.Groups[6].Value.Trim();
     
                 # update package
-                if ($string -like '*release*' -or $string -like '*master*')
+                if ($env:APPVEYOR_REPO_BRANCH -like '*release*' -or $string -like '*master*')
                 {
                     # use NuGet ONLY for release and master branches
                     $updatePackage = nuget update $solutionFile[0].FullName -Source https://api.nuget.org/v3/index.json
