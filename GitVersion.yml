@@ -25,7 +25,6 @@ branches:
     is-release-branch: false
   release:
     tag: rc
-    build-metadata-padding: 1
   pull-request:
     regex: (pull|pull\-requests|pr)[/-]
     tag: alpha
