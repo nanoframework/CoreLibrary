@@ -58,7 +58,16 @@ else
             [array]$packageList = $packageListRaw.Split([Environment]::NewLine, [StringSplitOptions]::RemoveEmptyEntries).Replace([Environment]::NewLine, "")
 
             # restore NuGet packages, need to do this before anything else
-            nuget restore $solutionFile[0] -Source https://www.myget.org/F/nanoframework-dev/api/v3/index.json -Source https://api.nuget.org/v3/index.json
+            if ($string -like '*release*' -or $string -like '*master*')
+            {
+                # use NuGet ONLY for release and master branches
+                nuget restore $solutionFile[0] -Source https://api.nuget.org/v3/index.json
+            }
+            else
+            {
+                # use NuGet and MyGet for all others
+                nuget restore $solutionFile[0] -Source https://www.myget.org/F/nanoframework-dev/api/v3/index.json -Source https://api.nuget.org/v3/index.json                
+            }
     
             # rename nfproj files to csproj
             Get-ChildItem -Path ".\" -Include "*.nfproj" -Recurse |
@@ -78,7 +87,16 @@ else
                 $packageTargetVersion = $packageDetails.captures.Groups[6].Value.Trim();
     
                 # update package
-                $updatePackage = nuget update $solutionFile[0].FullName -Source https://www.myget.org/F/nanoframework-dev/api/v3/index.json -Source https://api.nuget.org/v3/index.json
+                if ($string -like '*release*' -or $string -like '*master*')
+                {
+                    # use NuGet ONLY for release and master branches
+                    $updatePackage = nuget update $solutionFile[0].FullName -Source https://api.nuget.org/v3/index.json
+                }
+                else
+                {
+                    # use NuGet and MyGet for all others
+                    $updatePackage = nuget update $solutionFile[0].FullName -Source https://www.myget.org/F/nanoframework-dev/api/v3/index.json -Source https://api.nuget.org/v3/index.json
+                }
 
                 #  grab csproj from update output
                 $projectPath = [regex]::Match($updatePackage, "((project ')(.*)(', targeting))").captures.Groups[3].Value
