@@ -57,7 +57,7 @@ else
             $nukeeperInspect = NuKeeper inspect
         }
 
-        "NuGet update inspection result:" | Write-Host -ForegroundColor Blue
+        "NuGet update inspection result:" | Write-Host -ForegroundColor Cyan
         $nukeeperInspect | Write-Host -ForegroundColor White
 
         $packageCountMatch = [regex]::Match($nukeeperInspect, "Found (\d) possible updates").captures.groups[1].value
