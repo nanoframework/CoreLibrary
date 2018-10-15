@@ -66,15 +66,13 @@ build_script:
 
     msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-artifacts:
-- path: '**\bin\Release\*.nupkg'
-  name: Nuget_Packages
-
 before_deploy:
   - ps:  >-
       .\commit-assemblyinfo-changes.ps1
       
       .\generate-change-log.ps1
+
+      Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.%GitVersion_NuGetVersionV2%.nupkg
 
 # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
 on_failure:
@@ -113,7 +111,7 @@ for:
     description: 'Check the [changelog](https://github.com/nanoframework/lib-CoreLibrary/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
-    artifact: Nuget_Packages
+    artifact: source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.$(GitVersion_NuGetVersionV2).nupkg
     draft: true
     prerelease: true
     force_update: true
@@ -132,7 +130,7 @@ for:
     description: 'Check the [changelog](https://github.com/nanoframework/lib-CoreLibrary/blob/develop/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\npackage: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
-    artifact: Nuget_Packages
+    artifact: source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.$(GitVersion_NuGetVersionV2).nupkg
     draft: true
     prerelease: true
     force_update: true
@@ -160,7 +158,7 @@ for:
     description: 'Check the [changelog](https://github.com/nanoframework/lib-CoreLibrary/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
-    artifact: Nuget_Packages
+    artifact: source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.$(GitVersion_NuGetVersionV2).nupkg
     draft: true
     prerelease: true
     force_update: true
