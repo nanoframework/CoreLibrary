@@ -12,6 +12,7 @@ else
 
     # because it can take sometime for the package to become available on the NuGet providers
     # need to hange here for 5 minutes (5 * 60 * 1000)
+    "Waiting 5 minutes to let package process flow in NuGet providers..." | Write-Host -ForegroundColor White
     Start-Sleep -Milliseconds 300000
 
     $librariesToUpdate =    ("lib-nanoFramework.Runtime.Events", 
