@@ -45,7 +45,7 @@ else
         $solutionFile = (Get-ChildItem -Path ".\" -Include "*.sln" -Recurse)
 
         # run NuKeeper inspect
-        if ($string -like '*release*' -or $string -like '*master*')
+        if ($env:APPVEYOR_REPO_BRANCH -like '*release*' -or $string -like '*master*')
         {
             # use NuGet ONLY for release and master branches
             $nukeeperInspect = NuKeeper inspect --source https://api.nuget.org/v3/index.json
@@ -55,6 +55,9 @@ else
             # use NuGet and MyGet for all others
             $nukeeperInspect = NuKeeper inspect
         }
+
+        "NuGet update inspection result:" | Write-Host -ForegroundColor Blue
+        $nukeeperInspect | Write-Host -ForegroundColor White
 
         $packageCountMatch = [regex]::Match($nukeeperInspect, "Found (\d) possible updates").captures.groups[1].value
         [int]$packageCount = 0
