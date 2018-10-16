@@ -30,6 +30,8 @@
 
 **Documentation and other chores:**
 
+- merge Release 1.0.2 branch [\#45](https://github.com/nanoframework/lib-CoreLibrary/pull/45)
+- Merge 'develop' for Release 1.0.2 [\#44](https://github.com/nanoframework/lib-CoreLibrary/pull/44)
 - Add all missing comments for documentation and Intellisense [\#18](https://github.com/nanoframework/lib-CoreLibrary/pull/18) [[documentation](https://github.com/nanoframework/lib-CoreLibrary/labels/documentation)]
 - Update comment on Random class [\#9](https://github.com/nanoframework/lib-CoreLibrary/pull/9) [[documentation](https://github.com/nanoframework/lib-CoreLibrary/labels/documentation)]
 
