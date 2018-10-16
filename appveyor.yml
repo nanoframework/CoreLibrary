@@ -1,302 +1,163 @@
-# configuration for "master" branch
+# configuration these branches
+branches:
+  only:
+    - master
+    - /dev.*/
+    - /release.*/
+
+image: Visual Studio 2017
+
+skip_tags: false
+
+skip_branch_with_pr: true
+
+test: off
+
+pull_requests:
+  do_not_increment_build_number: true
+
+# Skipping commits affecting specific files
+skip_commits:
+  files:
+  - '**\AssemblyInfo*.*'
+  - '**/*.md'
+  - 'LICENSE'
+  - dir/*
+  - '.gitignore'
+
+build:
+  verbosity: minimal
+
+environment:
+  APPVEYOR_SAVE_CACHE_ON_ERROR: true
+  matrix:
+    - RUBY_VERSION: 24
+  GitHubUserName:
+    secure: 7OBtVAMTodMWK20wg6pGnQ==
+  GitHubUserEmail:
+    secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
+  GitHubToken:
+    secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
+  GitRestAuth:
+    secure: E3bCMe4LtDdAhHSYRcLp0N6DixJe1m8TNxhYeJW/GnqM3WXdRqsgkHSbwootPjJQtOQJrps4twmzTVzofLSVgPgbzU8PxU0AkJV7zwkyVOE=
+
+init:
+  - git config --global core.autocrlf true
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GitHubToken):x-oauth-basic@github.com`n"
+  - git config --global user.email "%GitHubUserEmail%"
+  - git config --global user.name "%GitHubUserName%"
+  - ps: "$headers = if($env:APPVEYOR_PULL_REQUEST_NUMBER){\n @{\n  \"Authorization\" = \"Basic $env:GitRestAuth\"\n  \"Content-type\" = \"application/json\"\n}\n\n$pr = Invoke-RestMethod -Uri \"https://api.github.com/repos/nanoframework/nf-interpreter/pulls/$env:APPVEYOR_PULL_REQUEST_NUMBER\" -Headers $headers  -Method GET\n\nif($pr.user.login -eq \"nfbot\" -and $pr.body -match \"\\[version update\\]\")\n{\n    # commit was from nfbot AND it's taged as a [version update]\n    # OK to skip AppVeyor build \n    \"Version update only. Skipping build.\" | Write-Host -BackgroundColor White -ForegroundColor Blue\n    Exit-AppveyorBuild\n} }\n"
+
+install:
+  - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+  - bundle config --local path vendor/bundle
+  - gem install bundler --quiet --no-ri --no-rdoc
+  - gem install github_changelog_generator --quiet --no-ri --no-rdoc
+  - choco install gitversion.portable -pre -y
+  - ps: .\install-vsix-appveyor.ps1
+
+before_build:
+- ps: >-
+
+    nuget restore source\nanoFramework.CoreLibrary.sln
+
+    C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo "source\nanoFramework.CoreLibrary\System\AssemblyInfo2.cs"
+
+build_script:
+- ps: >-
+
+    msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+before_deploy:
+  - ps:  >-
+      .\commit-assemblyinfo-changes.ps1
+      
+      .\generate-change-log.ps1
+
+      Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.$env:GitVersion_NuGetVersionV2.nupkg
+
+# requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
+on_failure:
+  - ps: |
+  
+      & $env:APPVEYOR_BUILD_FOLDER\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+
+on_success:
+  - dotnet tool install --global NuKeeper
+  - ps: .\update-dependencies.ps1
+
+cache:
+  - source\packages -> **source\packages.config
+  - C:\ProgramData\chocolatey\bin -> appveyor.yml
+  - C:\ProgramData\chocolatey\lib -> appveyor.yml
+
+################################################
+# override configuration for specific branches
+for:
+
 -
   branches:
     only:
       - master
 
-  image: Visual Studio 2017
-
-  # Skipping commits affecting specific files
-  skip_commits:
-    files:
-    - '**\AssemblyInfo.*'
-    - '**/*.md'
-    - 'LICENSE'
-    - dir/*
-    - '.gitignore'
-
-  build:
-    verbosity: minimal
-
-  test: off
-
-  environment:
-    APPVEYOR_SAVE_CACHE_ON_ERROR: true
-    matrix:
-      - RUBY_VERSION: 24
-    GitHubUserName:
-      secure: 7OBtVAMTodMWK20wg6pGnQ==
-    GitHubUserEmail:
-      secure: HeABB68Sn/Lhbd69C2cUcfWv0ab/rMDEcOLvcxf8gGw=
-    GitHubToken:
-      secure: WOqlCsnwTzfDPJFoNV/h8mEESIpG/9uFn1u6oE8hGZtXwIQQlsY+NyyLt9Y5xoFn
-
-  init:
-    - git config --global core.autocrlf true
-    - git config --global credential.helper store
-    - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GitHubToken):x-oauth-basic@github.com`n"
-    - git config --global user.email "%GitHubUserEmail%"
-    - git config --global user.name "%GitHubUserName%"
-
-  install:
-    - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
-    - bundle config --local path vendor/bundle
-    - gem install bundler --quiet --no-ri --no-rdoc
-    - gem install github_changelog_generator --quiet --no-ri --no-rdoc
-    # - bundle install
-    - choco install gitversion.portable -pre -y
-    - ps: .\install-vsix-appveyor.ps1
-
-  before_build:
-  - ps: >-
-
-      nuget restore source\nanoFramework.CoreLibrary.sln
-
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
-
-  build_script:
-  - ps: >-
-
-      msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-  before_deploy:
-  # need this to keep ruby happy
-  - ps: md c:\tmp
-  - bundle exec github_changelog_generator --token %GitHubToken%
-  # add here the updated changelog and the updated assembly info files
-  - git add .
-  - git commit --amend --no-edit
-
-  artifacts:
-  - path: '**\bin\Release\*.nupkg'
-    name: Nuget_Packages
-
   deploy:
   - provider: NuGet
-    api_key:
-      secure: NSRDXbS8tmzOy4wStGuO3yQMKI8Sk10vF8iQtz9ZDXEnHfwnuDdnXbr/Kno3MMvY
+    api_key: $(NuGetToken)
     skip_symbols: true
+    on:
+      appveyor_repo_tag: true
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework Core Library v$(gitversion_semver)
-    description: '[CHANGELOG.md](https://github.com/nanoframework/lib-CoreLibrary/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-CoreLibrary/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
-    artifact: Nuget_Packages
+    artifact:
     draft: true
-    prerelease: true
+    prerelease: false
     force_update: true
 
-  notifications:
-  - provider: Slack
-    auth_token:
-      secure: 2tqAJTTbN2dm24Vrwo5TXun3Vxc34R5G9l7o3pK3xEuKZAzxx3nbP2yGkMI/kl3+NxHXknjBfZnkhZC5eLYBHb+jO7YVUZwPYOfC/ZGy5HU=
-    channel: '#build-monitor'
-    on_build_status_changed: true
-    on_build_success: false
-    on_build_failure: false
-
-  cache:
-    - source\packages -> **source\packages.config
-    - C:\ProgramData\chocolatey\bin -> appveyor.yml
-    - C:\ProgramData\chocolatey\lib -> appveyor.yml
-    - vendor/bundle
-
-
-####################################
-# configuration for develop branches
 -
   branches:
     only:
       - /dev.*/
 
-  image: Visual Studio 2017
+  deploy:
+  - provider: GitHub
+    tag: v$(GitVersion_NuGetVersionV2)
+    release: nanoFramework Core Library v$(gitversion_semver)
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-CoreLibrary/blob/develop/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\npackage: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    auth_token:
+      secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
+    artifact: source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.$(GitVersion_NuGetVersionV2).nupkg
+    draft: true
+    prerelease: true
+    force_update: true
 
-  skip_branch_with_pr: true
-
-  # Do not build on tags
-  skip_tags: false
-
-  test: off
-  
-  pull_requests:
-    do_not_increment_build_number: true
-
-  # Skipping commits affecting specific files
-  skip_commits:
-    files:
-    - '**\AssemblyInfo.*'
-    - '**/*.md'
-    - 'LICENSE'
-    - dir/*
-    - '.gitignore'
-
-  build:
-    verbosity: minimal
-
-  install:
-    - choco install gitversion.portable -pre -y
-    - ps: .\install-vsix-appveyor.ps1
-
-  before_build:
-  - ps: >-
-
-      nuget restore source\nanoFramework.CoreLibrary.sln
-
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
-
-  build_script:
-  - ps: >-
-
-      msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-  on_success:
+  after_deploy:
   # for this environment variable to work here it has to be set in AppVeyor UI
   - nuget push source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
   - nuget push source\Nuget.CoreLibrary.DELIVERABLES\bin\Release\nanoFramework.CoreLibrary.DELIVERABLES.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
 
-  artifacts:
-  - path: '**\bin\Release\*.nupkg'
-    name: Nuget_Packages
-
-  deploy:
-  # the provider is actually MyGet but works the same as NuGet
-  - provider: NuGet
-    server: https://www.myget.org/F/nanoframework-dev/api/v2/package
-    api_key:
-      secure: 0drE56FivPFYI3oVZWcVFTpjOXSqyjT6kGangIxFRcRLqMhV3lQHqUButuuiPM+N
-    skip_symbols: true
-  - provider: GitHub
-    tag: v$(GitVersion_NuGetVersionV2)
-    release: nanoFramework Core Library v$(gitversion_semver)
-    description: '[CHANGELOG.md](https://github.com/nanoframework/lib-CoreLibrary/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
-    auth_token:
-      secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
-    artifact: Nuget_Packages
-    draft: true
-    prerelease: true
-    force_update: true
-
-  notifications:
-  - provider: Slack
-    auth_token:
-      secure: 2tqAJTTbN2dm24Vrwo5TXun3Vxc34R5G9l7o3pK3xEuKZAzxx3nbP2yGkMI/kl3+NxHXknjBfZnkhZC5eLYBHb+jO7YVUZwPYOfC/ZGy5HU=
-    channel: '#build-monitor'
-    on_build_status_changed: true
-    on_build_success: false
-    on_build_failure: false
-
-  cache:
-    - source\packages -> **source\packages.config
-    - C:\ProgramData\chocolatey\bin -> appveyor.yml
-    - C:\ProgramData\chocolatey\lib -> appveyor.yml
-
-############################################
-# configuration for release candidate branch
 -
   branches:
     only:
-      - release.*
-
-  image: Visual Studio 2017
-
-  skip_branch_with_pr: true
-
-  # OK to get only last commit as we don't need history
-  clone_depth: 1
-
-  # Skipping commits affecting specific files
-  skip_commits:
-    files:
-    - '**\AssemblyInfo.*'
-    - '**/*.md'
-    - 'LICENSE'
-    - dir/*
-    - '.gitignore'
-
-  build:
-    verbosity: minimal
-
-  test: off
-
-  environment:
-    matrix:
-      - RUBY_VERSION: 24
-    GitHubUserName:
-      secure: 7OBtVAMTodMWK20wg6pGnQ==
-    GitHubUserEmail:
-      secure: HeABB68Sn/Lhbd69C2cUcfWv0ab/rMDEcOLvcxf8gGw=
-    GitHubToken:
-      secure: WOqlCsnwTzfDPJFoNV/h8mEESIpG/9uFn1u6oE8hGZtXwIQQlsY+NyyLt9Y5xoFn
-
-  init:
-    - git config --global core.autocrlf true
-    - git config --global credential.helper store
-    - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GitHubToken):x-oauth-basic@github.com`n"
-    - git config --global user.email "%GitHubUserEmail%"
-    - git config --global user.name "%GitHubUserName%"
-
-  install:
-    - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
-    - bundle config --local path vendor/bundle
-    - gem install bundler --quiet --no-ri --no-rdoc
-    - gem install github_changelog_generator --quiet --no-ri --no-rdoc
-    # - bundle install
-    - choco install gitversion.portable -pre -y
-    - ps: .\install-vsix-appveyor.ps1
-
-  before_build:
-  - ps: >-
-
-      nuget restore source\nanoFramework.CoreLibrary.sln
-        
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
-
-  build_script:
-  - ps: >-
-
-      msbuild source\nanoFramework.CoreLibrary.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-  before_deploy:
-  # need this to keep ruby happy
-  - ps: md c:\tmp
-  - bundle exec github_changelog_generator --token %GitHubToken%
-  # add here the updated changelog and the updated assembly info files
-  - git add .
-  - git commit --amend --no-edit
-
-  artifacts:
-  - path: '**\bin\Release\*.nupkg'
-    name: Nuget_Packages
+      - /release.*/
 
   deploy:
   - provider: NuGet
-    api_key:
-      secure: NSRDXbS8tmzOy4wStGuO3yQMKI8Sk10vF8iQtz9ZDXEnHfwnuDdnXbr/Kno3MMvY
+    api_key: $(NuGetToken)
     skip_symbols: true
-
+    on:
+      appveyor_repo_tag: true
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework Core Library v$(gitversion_semver)
-    description: '[CHANGELOG.md](https://github.com/nanoframework/lib-CoreLibrary/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-CoreLibrary/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.CoreLibrary/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
-    artifact: Nuget_Packages
+    artifact:
     draft: true
     prerelease: true
     force_update: true
-
-  notifications:
-  - provider: Slack
-    auth_token:
-      secure: 2tqAJTTbN2dm24Vrwo5TXun3Vxc34R5G9l7o3pK3xEuKZAzxx3nbP2yGkMI/kl3+NxHXknjBfZnkhZC5eLYBHb+jO7YVUZwPYOfC/ZGy5HU=
-    channel: '#build-monitor'
-    on_build_status_changed: true
-    on_build_success: false
-    on_build_failure: false
-
-  cache:
-    - source\packages -> **source\packages.config
-    - C:\ProgramData\chocolatey\bin -> appveyor.yml
-    - C:\ProgramData\chocolatey\lib -> appveyor.yml
-    - vendor/bundle
