@@ -1,7 +1,10 @@
-# only need to commit assembly info changes when build is NOT for a pull-request
-if ($env:appveyor_pull_request_number)
+# Copyright (c) 2018 The nanoFramework project contributors
+# See LICENSE file in the project root for full license information.
+
+# skip updating assembly info changes if build is a pull-request or not a tag
+if ($env:appveyor_pull_request_number -or $env:APPVEYOR_REPO_TAG -eq 'false')
 {
-    'Skip committing assembly info changes as this is a PR build...' | Write-Host -ForegroundColor White
+    'Skip committing assembly info changes...' | Write-Host -ForegroundColor White
 }
 else
 {
