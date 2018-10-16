@@ -1,7 +1,15 @@
 # Change Log
 
-## [v1.0.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.2) (2017-08-31)
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview027...v1.0.2)
+## [v1.0.3](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.3) (2018-10-16)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.2...v1.0.3)
+
+**Documentation and other chores:**
+
+- Improve CI & CD scripts to deal with release and master branches [\#46](https://github.com/nanoframework/lib-CoreLibrary/pull/46)
+- merge Release 1.0.2 branch [\#45](https://github.com/nanoframework/lib-CoreLibrary/pull/45)
+
+## [v1.0.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.2) (2018-10-16)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview028...v1.0.2)
 
 **Implemented enhancements:**
 
