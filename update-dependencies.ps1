@@ -46,7 +46,7 @@ else
         $solutionFile = (Get-ChildItem -Path ".\" -Include "*.sln" -Recurse)
 
         # run NuKeeper inspect
-        if ($env:APPVEYOR_REPO_BRANCH -like '*release*' -or $env:APPVEYOR_REPO_BRANCH-like '*master*')
+        if ($env:APPVEYOR_REPO_BRANCH -like '*release*' -or $env:APPVEYOR_REPO_BRANCH -like '*master*')
         {
             # use NuGet ONLY for release and master branches
             $nukeeperInspect = NuKeeper inspect --source https://api.nuget.org/v3/index.json
