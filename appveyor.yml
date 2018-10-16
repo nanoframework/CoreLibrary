@@ -73,6 +73,11 @@ before_deploy:
 
       Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.$env:GitVersion_NuGetVersionV2.nupkg
 
+after_deploy:
+# for this environment variable to work here it has to be set in AppVeyor UI
+- nuget push source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
+- nuget push source\Nuget.CoreLibrary.DELIVERABLES\bin\Release\nanoFramework.CoreLibrary.DELIVERABLES.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
+
 # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
 on_failure:
   - ps: |
@@ -131,11 +136,6 @@ for:
     draft: true
     prerelease: true
     force_update: true
-
-  after_deploy:
-  # for this environment variable to work here it has to be set in AppVeyor UI
-  - nuget push source\Nuget.CoreLibrary\bin\Release\nanoFramework.CoreLibrary.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
-  - nuget push source\Nuget.CoreLibrary.DELIVERABLES\bin\Release\nanoFramework.CoreLibrary.DELIVERABLES.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
 
 -
   branches:
