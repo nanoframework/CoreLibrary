@@ -119,6 +119,8 @@ for:
     draft: true
     prerelease: false
     force_update: true
+    on:
+      appveyor_repo_tag: false
 
 -
   branches:
@@ -136,6 +138,8 @@ for:
     draft: true
     prerelease: true
     force_update: true
+    on:
+      appveyor_repo_tag: false
 
 -
   branches:
@@ -158,3 +162,5 @@ for:
     draft: true
     prerelease: true
     force_update: true
+    on:
+      appveyor_repo_tag: false
