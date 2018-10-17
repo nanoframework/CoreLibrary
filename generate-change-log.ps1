@@ -1,3 +1,6 @@
+# Copyright (c) 2018 The nanoFramework project contributors
+# See LICENSE file in the project root for full license information.
+
 # generate change log when build is NOT a pull-request or not a tag (master OR release)
 if ($env:appveyor_pull_request_number -or 
     ($env:APPVEYOR_REPO_BRANCH -eq "master" -and $env:APPVEYOR_REPO_TAG -eq 'true') -or

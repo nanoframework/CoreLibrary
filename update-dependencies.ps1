@@ -169,7 +169,10 @@ else
             git push --set-upstream origin $newBranchName --porcelain -q
 
             # start PR
-            $prRequestBody = @{title="$prTitle";body="$commitMessage";head="$newBranchName";base="$env:APPVEYOR_REPO_BRANCH"} | ConvertTo-Json
+            # we are hardcoding to develop branch to have a fixed one
+            # this is very important for tags (which don't have branch information)
+            # considering that the base branch can be changed at the PR ther is no big deal about this 
+            $prRequestBody = @{title="$prTitle";body="$commitMessage";head="$newBranchName";base="develop"} | ConvertTo-Json
             $githubApiEndpoint = "https://api.github.com/repos/nanoframework/$library/pulls"
             [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
