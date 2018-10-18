@@ -4,6 +4,6 @@ $vsixPath = "$($env:USERPROFILE)\nanoFramework.Tools.VS2017.Extension.vsix"
 
 'Installing nanoFramework VS extension ...' | Write-Host -ForegroundColor White -NoNewline
 
-& .\install-vsix.cmd --quiet --no-verbose > $null
+& .\install-vsix.cmd > $null
 
 'OK' | Write-Host -ForegroundColor Green
