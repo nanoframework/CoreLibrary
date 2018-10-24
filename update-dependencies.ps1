@@ -22,7 +22,8 @@ else
                             "lib-Windows.Devices.I2c",
                             "lib-Windows.Devices.Pwm",
                             "lib-Windows.Devices.Spi",
-                            "lib-nanoFramework.Networking.Sntp")
+                            "lib-nanoFramework.Networking.Sntp",
+                            "lib-nanoFramework.Hardware.Stm32")
 
     ForEach($library in $librariesToUpdate)
     {
