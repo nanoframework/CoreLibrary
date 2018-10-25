@@ -91,7 +91,6 @@ on_failure:
       & $env:APPVEYOR_BUILD_FOLDER\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
 
 on_success:
-  - dotnet tool install --global NuKeeper
   - ps: .\update-dependencies.ps1
 
 cache:

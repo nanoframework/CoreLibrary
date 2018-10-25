@@ -23,7 +23,8 @@ else
                             "lib-Windows.Devices.Pwm",
                             "lib-Windows.Devices.Spi",
                             "lib-nanoFramework.Networking.Sntp",
-                            "lib-nanoFramework.Hardware.Stm32")
+                            "lib-nanoFramework.Hardware.Stm32",
+                            "lib-nanoFramework.System.Math")
 
     ForEach($library in $librariesToUpdate)
     {
@@ -46,30 +47,29 @@ else
         # find solution file in repository
         $solutionFile = (Get-ChildItem -Path ".\" -Include "*.sln" -Recurse)
 
-        # run NuKeeper inspect
-        if ($env:APPVEYOR_REPO_BRANCH -like '*release*' -or $env:APPVEYOR_REPO_BRANCH -like '*master*')
+        # find packages.config
+        $packagesConfig = (Get-ChildItem -Path ".\" -Include "packages.config" -Recurse)
+
+        # load packages.config as XML doc
+        [xml]$packagesDoc = Get-Content $packagesConfig
+
+        $nodes = $packagesDoc.SelectNodes("*").SelectNodes("*")
+
+        $packageList = @()
+
+        foreach ($node in $nodes)
         {
-            # use NuGet ONLY for release and master branches
-            $nukeeperInspect = NuKeeper inspect --source https://api.nuget.org/v3/index.json
+            # filter out NuProj packages
+            if($node.id -notlike "NuProj*")
+            {
+                $packageList += $node.id
+            }
         }
-        else
+
+        if ($packageList.length -gt 0)
         {
-            # use NuGet and MyGet for all others
-            $nukeeperInspect = NuKeeper inspect
-        }
-
-        "NuGet update inspection result:" | Write-Host -ForegroundColor Cyan
-        $nukeeperInspect | Write-Host -ForegroundColor White
-
-        $packageCountMatch = [regex]::Match($nukeeperInspect, "Found (\d) possible updates").captures.groups[1].value
-        [int]$packageCount = 0
-        [int]::TryParse($packageCountMatch, [ref]$packageCount)
-
-        if ($packageCount -gt 0)
-        {
-            # get packages to update
-            $packageListRaw = [regex]::Match($nukeeperInspect, "(?>possible updates([^$]*)Found)").captures.Groups[1].Value;
-            [array]$packageList = $packageListRaw.Split([Environment]::NewLine, [StringSplitOptions]::RemoveEmptyEntries).Replace([Environment]::NewLine, "")
+            "NuGet packages to update:" | Write-Host -ForegroundColor White
+            $packageList | Write-Host -ForegroundColor White
 
             # restore NuGet packages, need to do this before anything else
             if ($env:APPVEYOR_REPO_BRANCH -like '*release*' -or $env:APPVEYOR_REPO_BRANCH -like '*master*')
