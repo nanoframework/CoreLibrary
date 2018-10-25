@@ -222,7 +222,7 @@ Label_0002:
             if (capacity > maxCapacity) throw new ArgumentOutOfRangeException("capacity");
             if (maxCapacity < 1) throw new ArgumentOutOfRangeException("maxCapacity");
             if (capacity < 0) throw new ArgumentOutOfRangeException("capacity");
-            if (capacity == 0) capacity = Math.Min(0x10, maxCapacity);
+            if (capacity == 0) capacity = MathInternal.Min(0x10, maxCapacity);
             _maxCapacity = maxCapacity;
             _chunkChars = new char[capacity];
         }
@@ -711,8 +711,8 @@ Label_0048:
             var num4 = startIndex - chunkPrevious._chunkOffset;
             if (num3 >= 0)
             {
-                var index = Math.Max(num4, 0);
-                var num6 = Math.Min(chunkPrevious._chunkLength, num3);
+                var index = MathInternal.Max(num4, 0);
+                var num6 = MathInternal.Min(chunkPrevious._chunkLength, num3);
                 while (index < num6)
                 {
                     if (chunkPrevious._chunkChars[index] == oldChar)
@@ -940,7 +940,7 @@ ReplaceValue:
             while (true)
             {
                 //int num = chunk.m_ChunkLength - indexInChunk;
-                var length = Math.Min(chunk._chunkLength - indexInChunk, count);
+                var length = MathInternal.Min(chunk._chunkLength - indexInChunk, count);
                 //ThreadSafeCopy(value, ref valueIndex, chunk.m_ChunkChars, ref indexInChunk, num2);
                 Array.Copy(value, valueIndex, chunk._chunkChars, indexInChunk, length);
                 indexInChunk += length;
@@ -977,9 +977,9 @@ ReplaceValue:
             }
             else
             {
-                var builder = new StringBuilder(Math.Max(count, 0x10), chunk._maxCapacity, chunk._chunkPrevious);
+                var builder = new StringBuilder(MathInternal.Max(count, 0x10), chunk._maxCapacity, chunk._chunkPrevious);
                 builder._chunkLength = count;
-                var length = Math.Min(count, indexInChunk);
+                var length = MathInternal.Min(count, indexInChunk);
                 if (length > 0)
                 {
                     Array.Copy(chunk._chunkChars, 0, builder._chunkChars, 0, length);
@@ -1016,7 +1016,7 @@ ReplaceValue:
         internal void ExpandByABlock(int minBlockCharCount)
         {
             if (minBlockCharCount + Length > _maxCapacity) throw new ArgumentOutOfRangeException("requiredLength");
-            var num = Math.Max(minBlockCharCount, Math.Min(Length, 0x1f40));
+            var num = MathInternal.Max(minBlockCharCount, MathInternal.Min(Length, 0x1f40));
             _chunkPrevious = new StringBuilder(this);
             _chunkOffset += _chunkLength;
             _chunkLength = 0;

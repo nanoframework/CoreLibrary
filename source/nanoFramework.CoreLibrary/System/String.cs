@@ -701,7 +701,7 @@ namespace System
                     }
                     else if (alignment < 0)
                     {
-                        output += token.PadRight(Math.Abs(alignment));
+                        output += token.PadRight(MathInternal.Abs(alignment));
                     }
                     else
                     {
