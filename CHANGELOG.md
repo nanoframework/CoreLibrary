@@ -2,7 +2,25 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview028...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.4...HEAD)
+
+**Documentation and other chores:**
+
+- Extract System.Math \(except max, min and abs\) +semver:minor [\#50](https://github.com/nanoframework/lib-CoreLibrary/pull/50) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
+## [v1.0.4](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.4) (2018-10-17)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.3...v1.0.4)
+
+## [v1.0.3](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.3) (2018-10-16)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.2...v1.0.3)
+
+**Documentation and other chores:**
+
+- Improve CI & CD scripts to deal with release and master branches [\#46](https://github.com/nanoframework/lib-CoreLibrary/pull/46)
+- merge Release 1.0.2 branch [\#45](https://github.com/nanoframework/lib-CoreLibrary/pull/45)
+
+## [v1.0.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.2) (2018-10-16)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview028...v1.0.2)
 
 **Implemented enhancements:**
 
@@ -30,7 +48,6 @@
 
 **Documentation and other chores:**
 
-- merge Release 1.0.2 branch [\#45](https://github.com/nanoframework/lib-CoreLibrary/pull/45)
 - Merge 'develop' for Release 1.0.2 [\#44](https://github.com/nanoframework/lib-CoreLibrary/pull/44)
 - Add all missing comments for documentation and Intellisense [\#18](https://github.com/nanoframework/lib-CoreLibrary/pull/18) [[documentation](https://github.com/nanoframework/lib-CoreLibrary/labels/documentation)]
 - Update comment on Random class [\#9](https://github.com/nanoframework/lib-CoreLibrary/pull/9) [[documentation](https://github.com/nanoframework/lib-CoreLibrary/labels/documentation)]
