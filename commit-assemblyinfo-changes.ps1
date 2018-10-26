@@ -1,7 +1,10 @@
-# only need to commit assembly info changes when build is NOT for a pull-request
-if ($env:appveyor_pull_request_number)
+# Copyright (c) 2018 The nanoFramework project contributors
+# See LICENSE file in the project root for full license information.
+
+# skip updating assembly info changes if build is a pull-request or not a tag (can't commit when repo is in a tag)
+if ($env:appveyor_pull_request_number -or $env:APPVEYOR_REPO_TAG -eq "true")
 {
-    'Skip committing assembly info changes as this is a PR build...' | Write-Host -ForegroundColor White
+    'Skip committing assembly info changes as this is not a tag build...' | Write-Host -ForegroundColor White
 }
 else
 {
@@ -15,7 +18,7 @@ else
 
     # clone nf-interpreter repo (only a shallow clone with last commit)
     git clone https://github.com/nanoframework/nf-interpreter -b develop --depth 1 -q
-    cd nf-interpreter
+    cd nf-interpreter > $null
 
     # new branch name
     $newBranch = "$env:APPVEYOR_REPO_BRANCH-nfbot/update-version/nanoFramework.CorLib/$env:GitVersion_NuGetVersionV2"
@@ -51,7 +54,7 @@ else
 
         # commit changes
         git add -A 2>&1
-        git commit -m"$commitMessage" -m"[version update]" -q
+        git commit -m"$commitMessage" -q
         git push --set-upstream origin "$newBranch" --porcelain -q > $null
     
         # start PR

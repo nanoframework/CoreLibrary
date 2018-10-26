@@ -1,19 +1,25 @@
 # Copyright (c) 2018 The nanoFramework project contributors
 # See LICENSE file in the project root for full license information.
 
-# only need to update dependencies when build is NOT for a pull-request
-if ($env:appveyor_pull_request_number)
+# only need to update dependencies when build is a tag
+if ($env:appveyor_pull_request_number -or $env:APPVEYOR_REPO_TAG -eq "false")
 {
-    'Skip updating dependencies as this is a PR build...' | Write-Host -ForegroundColor White
+    'Skip updating dependencies as this is not a tag build...' | Write-Host -ForegroundColor White
 }
 else
 {
     # update dependencies for class libraries that depend ONLY on mscorlib
 
     # because it can take sometime for the package to become available on the NuGet providers
-    # need to hange here for 5 minutes (5 * 60 * 1000)
+    # need to hang here for 5 minutes (5 * 60)
     "Waiting 5 minutes to let package process flow in NuGet providers..." | Write-Host -ForegroundColor White
-    Start-Sleep -Milliseconds 300000
+
+    For ($i=300; $i -gt 0; $i–-) 
+    {  
+        Write-Host "`r$i seconds remaining   " -NoNewLine
+        Start-Sleep -Seconds 1 
+    }
+    Write-Host     "`r                       "
 
     $librariesToUpdate =    ("lib-nanoFramework.Runtime.Events", 
                             "lib-nanoFramework.Runtime.Native",
