@@ -14,7 +14,7 @@ else
     # need to hang here for 5 minutes (5 * 60)
     "Waiting 5 minutes to let package process flow in NuGet providers..." | Write-Host -ForegroundColor White
 
-    For ($i=300; $i -gt 0; $i–-) 
+    For ($i=300; $i -gt 0; $i--) 
     {  
         Write-Host "`r$i seconds remaining   " -NoNewLine
         Start-Sleep -Seconds 1 
