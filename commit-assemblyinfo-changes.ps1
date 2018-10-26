@@ -15,6 +15,12 @@ else
     
     'Updated assembly info...' | Write-Host -ForegroundColor White -NoNewline
     'OK' | Write-Host -ForegroundColor Green
+}
+
+# update assembly info in nf-interpreter if this is tag
+if ($env:APPVEYOR_REPO_TAG -eq "true")
+{
+    'Updating assembly version in nf-interpreter...' | Write-Host -ForegroundColor White -NoNewline
 
     # clone nf-interpreter repo (only a shallow clone with last commit)
     git clone https://github.com/nanoframework/nf-interpreter -b develop --depth 1 -q

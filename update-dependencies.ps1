@@ -4,7 +4,7 @@
 # only need to update dependencies when build is a tag
 if ($env:appveyor_pull_request_number -or $env:APPVEYOR_REPO_TAG -eq "false")
 {
-    'Skip updating dependencies as this is not a tag build...' | Write-Host -ForegroundColor White
+    'Skip updating dependencies...' | Write-Host -ForegroundColor White
 }
 else
 {
