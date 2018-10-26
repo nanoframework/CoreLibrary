@@ -1,12 +1,11 @@
 # Change Log
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.4...HEAD)
+## [v1.0.5-preview028](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.5-preview028) (2018-10-26)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.4...v1.0.5-preview028)
 
 **Documentation and other chores:**
 
-- Extract System.Math \(except max, min and abs\) +semver:minor [\#50](https://github.com/nanoframework/lib-CoreLibrary/pull/50) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+- Extract System.Math [\#50](https://github.com/nanoframework/lib-CoreLibrary/pull/50) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
 
 ## [v1.0.4](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.4) (2018-10-17)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.3...v1.0.4)
