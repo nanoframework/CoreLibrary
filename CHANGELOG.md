@@ -1,5 +1,8 @@
 # Change Log
 
+## [v1.0.5-preview029](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.5-preview029) (2018-10-26)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.5-preview028...v1.0.5-preview029)
+
 ## [v1.0.5-preview028](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.5-preview028) (2018-10-26)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.4...v1.0.5-preview028)
 
