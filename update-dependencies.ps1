@@ -28,6 +28,7 @@ else
                             "lib-Windows.Devices.I2c",
                             "lib-Windows.Devices.Pwm",
                             "lib-Windows.Devices.Spi",
+                            "lib-nanoFramework.Devices.OneWire",
                             "lib-nanoFramework.Networking.Sntp",
                             "lib-nanoFramework.Hardware.Stm32",
                             "lib-nanoFramework.System.Math")
