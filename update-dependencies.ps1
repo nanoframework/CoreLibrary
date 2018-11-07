@@ -37,10 +37,11 @@ else
         # init/reset these
         $commitMessage = ""
         $prTitle = ""
+        $projectPath = ""
         $newBranchName = "$env:APPVEYOR_REPO_BRANCH-nfbot/update-dependencies"
     
         "Updating $library" | Write-Host -ForegroundColor White
-   
+    
         # make sure we are in the projects directory
         &  cd "C:\projects" > $null
 
@@ -65,8 +66,8 @@ else
 
         foreach ($node in $nodes)
         {
-            # filter out NuProj packages
-            if($node.id -notlike "NuProj*")
+            # filter out Nerdbank.GitVersioning package
+            if($node.id -notlike "Nerdbank.GitVersioning*")
             {
                 if($packageList)
                 {
@@ -137,28 +138,36 @@ else
                 attrib $projectPath -r
                 $filecontent -replace "($packageName.$packageOriginVersion)", "$packageName.$packageTargetVersion" | Out-File $projectPath -Encoding utf8
 
-                # update nuproj files, if any
-                $nuprojFiles = (Get-ChildItem -Path ".\" -Include "*.nuproj" -Recurse)
+                # update nuspec files, if any
+                $nuspecFiles = (Get-ChildItem -Path ".\" -Include "*.nuspec" -Recurse)
 
-                foreach ($nuproj in $nuprojFiles)
+                foreach ($nuspec in $nuspecFiles)
                 {
-                    [xml]$nuprojDoc = Get-Content $nuproj
+                    [xml]$nuspecDoc = Get-Content $nuspec
 
-                    #$nuprojDoc.Project.ItemGroup
-
-                    $nodes = $nuprojDoc.SelectNodes("*").SelectNodes("*")
+                    $nodes = $nuspecDoc.SelectNodes("*").SelectNodes("*")
 
                     foreach ($node in $nodes)
                     {
-                        $name = $node.Name;
-
-                        if(($node.Name -eq "ItemGroup") -and (($node.ChildNodes[0].Name -eq "Dependency") -and $node.ChildNodes[0].Attributes["Include"].value -eq $packageName))
+                        if($node.Name -eq "metadata")
                         {
-                            $node.ChildNodes[0].ChildNodes[0].innertext = "[$packageTargetVersion]"
+                            foreach ($metadataItem in $node.ChildNodes)
+                            {                          
+                                if($metadataItem.Name -eq "dependencies")
+                                {
+                                    foreach ($dependency in $metadataItem.ChildNodes)
+                                    {
+                                        if($dependency.Attributes["id"].value -eq $packageName)
+                                        {
+                                            $dependency.Attributes["version"].value = "[$packageTargetVersion]"
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
 
-                    $nuprojDoc.Save($nuproj[0].FullName)
+                    $nuspecDoc.Save($nuspec[0].FullName)
                 }
 
                 #  update branch name
@@ -198,10 +207,10 @@ else
             # commit message with a different title if one or more dependencies are updated
             if ($packageCount -gt 1)
             {
-                git commit -m "Update several NuGet dependencies" -m"$commitMessage" -q
+                git commit -m "Update $packageCount NuGet dependencies" -m"$commitMessage" -q
 
                 # fix PR title
-                $prTitle = "Update several NuGet dependencies"
+                $prTitle = "Update $packageCount NuGet dependencies"
             }
             else 
             {
@@ -211,7 +220,10 @@ else
             git push --set-upstream origin $newBranchName --porcelain -q
 
             # start PR
-            $prRequestBody = @{title="$prTitle";body="$commitMessage";head="$newBranchName";base="$env:APPVEYOR_REPO_BRANCH"} | ConvertTo-Json
+            # we are hardcoding to develop branch to have a fixed one
+            # this is very important for tags (which don't have branch information)
+            # considering that the base branch can be changed at the PR ther is no big deal about this 
+            $prRequestBody = @{title="$prTitle";body="$commitMessage";head="$newBranchName";base="develop"} | ConvertTo-Json
             $githubApiEndpoint = "https://api.github.com/repos/nanoframework/$library/pulls"
             [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 

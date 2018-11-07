@@ -14,7 +14,7 @@ else
     if ($env:APPVEYOR_REPO_BRANCH -eq "master" -or $env:APPVEYOR_REPO_BRANCH -match "^release*")
     {
         # generate change log including future version
-        bundle exec github_changelog_generator --token $env:GitHubToken --future-release "v$env:GitVersion_MajorMinorPatch"
+        bundle exec github_changelog_generator --token $env:GitHubToken --future-release "v$env:NBGV_Version"
     }
     else 
     {
@@ -23,8 +23,14 @@ else
         bundle exec github_changelog_generator --token $env:GitHubToken        
     }
 
-    # updated changelog and the updated assembly info files
-    git add CHANGELOG.md
-    git commit -m "Update CHANGELOG for v$env:GitVersion_NuGetVersionV2"
-    git push origin --porcelain -q > $null
+    # updated changelog, if there are any differences
+    $logDif = git diff CHANGELOG.md
+
+    if($logDif -ne $null)
+    {
+        git add CHANGELOG.md
+        git commit -m "Update CHANGELOG for v$env:MyNuGetVersion"
+        # need to wrap the git command bellow so it doesn't throw an error because of redirecting the output to stderr
+        git push origin --porcelain  | Write-Host
+    }
 }

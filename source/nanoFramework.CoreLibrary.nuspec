@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>nanoFramework.CoreLibrary</id>
+    <version>$version$</version>
+    <title>nanoFramework.CoreLibrary</title>
+    <authors>nanoFramework project contributors</authors>
+    <owners>nanoFramework project contributors</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes></releaseNotes>
+    <developmentDependency>false</developmentDependency>
+    <projectUrl>https://github.com/nanoframework/lib-CoreLibrary</projectUrl>
+    <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
+    <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>    
+    <description>This package includes the nanoFramework.CoreLibrary assembly for nanoFramework C# projects.</description>
+    <summary>This package includes the nanoFramework.CoreLibrary assembly for nanoFramework C# projects.</summary>
+    <tags>nanoFramework C# csharp netmf netnf nanoFramework.CoreLibrary</tags>
+  </metadata>
+  <files>
+    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.dll" target="lib\mscorlib.dll" />
+    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pdb" target="lib\mscorlib.pdb" />
+    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pdbx" target="lib\mscorlib.pdbx" />
+    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pe" target="lib\mscorlib.pe" />
+    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.xml" target="lib\mscorlib.xml" /> 
+  </files>
+</package>
