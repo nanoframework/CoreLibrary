@@ -31,6 +31,6 @@ else
         git add CHANGELOG.md
         git commit -m "Update CHANGELOG for v$env:MyNuGetVersion"
         # need to wrap the git command bellow so it doesn't throw an error because of redirecting the output to stderr
-        git push origin --porcelain  | Write-Host
+        git push origin "HEAD:$env:APPVEYOR_REPO_BRANCH" --porcelain  | Write-Host
     }
 }
