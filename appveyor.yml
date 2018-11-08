@@ -71,6 +71,8 @@ before_deploy:
   - nuget pack source\nanoFramework.CoreLibrary.nuspec -Version %MyNuGetVersion%
   - nuget pack source\nanoFramework.CoreLibrary.DELIVERABLES.nuspec -Version %MyNuGetVersion%
   - ps:  >-
+      .\commit-assemblyinfo-changes.ps1
+      
       .\generate-change-log.ps1
 
       Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\nanoFramework.CoreLibrary.$env:MyNuGetVersion.nupkg
