@@ -64,15 +64,13 @@ before_deploy:
   - ps:  >-
       .\nbgv cloud --version=$env:NBGV_SemVer1
 
-      $env:MyNuGetVersion = $env:NBGV_NuGetPackageVersion -replace "\-g$env:NBGV_GitCommitIdShort", " "
+      $env:MyNuGetVersion = $env:NBGV_NuGetPackageVersion -replace "\-g$env:NBGV_GitCommitIdShort", ""
     
       .\generate-change-log.ps1
 
   - nuget pack source\nanoFramework.CoreLibrary.nuspec -Version %MyNuGetVersion%
   - nuget pack source\nanoFramework.CoreLibrary.DELIVERABLES.nuspec -Version %MyNuGetVersion%
   - ps:  >-
-      .\commit-assemblyinfo-changes.ps1
-      
       .\generate-change-log.ps1
 
       Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\nanoFramework.CoreLibrary.$env:MyNuGetVersion.nupkg

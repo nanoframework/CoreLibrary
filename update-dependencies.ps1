@@ -206,12 +206,12 @@ else
             git add -A 2>&1
 
             # commit message with a different title if one or more dependencies are updated
-            if ($packageCount -gt 1)
+            if ($packageList.length -gt 1)
             {
-                git commit -m "Update $packageCount NuGet dependencies" -m"$commitMessage" -q
+                git commit -m "Update $packageList.length NuGet dependencies" -m"$commitMessage" -q
 
                 # fix PR title
-                $prTitle = "Update $packageCount NuGet dependencies"
+                $prTitle = "Update $packageList.length NuGet dependencies"
             }
             else 
             {
