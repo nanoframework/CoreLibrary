@@ -6,6 +6,16 @@ if ($env:APPVEYOR_REPO_TAG -eq "true")
 {
     'Updating assembly version in nf-interpreter...' | Write-Host -ForegroundColor White -NoNewline
 
+    # name of source file with the native declaration
+    $nativeFile = "corlib_native.cpp"
+
+    #  find assembly declaration
+    $assemblyDeclarationPath = (Get-ChildItem -Path ".\*" -Include $nativeFile -Recurse)
+    $filecontent = Get-Content($assemblyDeclarationPath)
+    $assemblyChecksum  = $filecontent -match '(0x.{8})'
+    $assemblyChecksum  = $assemblyChecksum -replace "," , ""
+    $assemblyChecksum  = $assemblyChecksum -replace "    " , ""
+
     # clone nf-interpreter repo (only a shallow clone with last commit)
     git clone https://github.com/nanoframework/nf-interpreter -b develop --depth 1 -q
     cd nf-interpreter > $null
@@ -25,6 +35,12 @@ if ($env:APPVEYOR_REPO_TAG -eq "true")
 
     foreach($file in $assemblyFiles)
     {
+        # replace checksum
+        $filecontent = Get-Content($file)
+        attrib $file -r
+        $filecontent -replace  "0x.{8}", $assemblyChecksum | Out-File $file -Encoding utf8
+
+        # replace version
         $filecontent = Get-Content($file)
         attrib $file -r
         $filecontent -replace $versionRegex, $newVersion | Out-File $file -Encoding utf8
@@ -48,7 +64,7 @@ if ($env:APPVEYOR_REPO_TAG -eq "true")
         git push --set-upstream origin "$newBranch" --porcelain -q > $null
     
         # start PR
-        $prRequestBody = @{title="$commitMessage";body="$commitMessage`nStarted with https://github.com/$env:APPVEYOR_REPO_NAME/commit/$env:APPVEYOR_REPO_COMMIT`n[version update]";head="$newBranch";base="develop"} | ConvertTo-Json
+        $prRequestBody = @{title="$commitMessage";body="$commitMessage`n`nStarted from https://github.com/$env:APPVEYOR_REPO_NAME/commit/$env:APPVEYOR_REPO_COMMIT`n`n[version update]";head="$newBranch";base="develop"} | ConvertTo-Json
         $githubApiEndpoint = "https://api.github.com/repos/nanoframework/nf-interpreter/pulls"
         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
