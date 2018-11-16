@@ -1,5 +1,15 @@
 # Change Log
 
+## [v1.0.6-preview-001](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.6-preview-001) (2018-11-07)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.5-preview035...v1.0.6-preview-001)
+
+**Fixed bugs:**
+
+- Fix bug in FromBase64CharArray [\#55](https://github.com/nanoframework/lib-CoreLibrary/pull/55)
+
+## [v1.0.5-preview035](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.5-preview035) (2018-10-29)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.5-preview029...v1.0.5-preview035)
+
 ## [v1.0.5-preview029](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.5-preview029) (2018-10-26)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.5-preview028...v1.0.5-preview029)
 
