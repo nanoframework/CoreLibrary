@@ -48,7 +48,10 @@ install:
 - gem install bundler --quiet --no-ri --no-rdoc
 - gem install github_changelog_generator --quiet --no-ri --no-rdoc
 - dotnet tool install --tool-path . nbgv
-- ps: .\install-vsix-appveyor.ps1
+- ps: |
+    .\install-vsix-appveyor.ps1
+    
+    if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode)  }
 
 before_build:
 - ps: >-
