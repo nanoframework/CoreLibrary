@@ -21,7 +21,8 @@ else
     }
     Write-Host     "`r                       "
 
-    $librariesToUpdate =    ("lib-nanoFramework.Runtime.Events", 
+    $librariesToUpdate =    ("lib-nanoFramework.Devices.OneWire",
+                            "lib-nanoFramework.Runtime.Events", 
                             "lib-nanoFramework.Runtime.Native",
                             "lib-Windows.Storage.Streams",
                             "lib-Windows.Devices.Adc",
