@@ -267,6 +267,34 @@ namespace System
         public static TimeSpan FromMiliseconds(long value) => new TimeSpan(TimeSpan.TicksPerMillisecond  * value);
 
         /// <summary>
+        /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of seconds.
+        /// </summary>
+        /// <param name="value">A number of seconds that represent a time.</param>
+        /// <returns>An object that represents value.</returns>
+        public static TimeSpan FromSeconds(long value) => new TimeSpan(TimeSpan.TicksPerSecond * value);
+
+        /// <summary>
+        /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of minute.
+        /// </summary>
+        /// <param name="value">A number of minute that represent a time.</param>
+        /// <returns>An object that represents value.</returns>
+        public static TimeSpan FromMinutes(long value) => new TimeSpan(TimeSpan.TicksPerMinute * value);
+
+        /// <summary>
+        /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of hours.
+        /// </summary>
+        /// <param name="value">A number of hours that represent a time.</param>
+        /// <returns>An object that represents value.</returns>
+        public static TimeSpan FromHours(long value) => new TimeSpan(TimeSpan.TicksPerHour * value);
+
+        /// <summary>
+        /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of days.
+        /// </summary>
+        /// <param name="value">A number of days that represent a time.</param>
+        /// <returns>An object that represents value.</returns>
+        public static TimeSpan FromDays(long value) => new TimeSpan(TimeSpan.TicksPerDay * value);
+        
+        /// <summary>
         /// Converts the value of the current <see cref="TimeSpan"/> object to its equivalent string representation.
         /// </summary>
         /// <returns>The string representation of the current <see cref="TimeSpan"/> value.</returns>
