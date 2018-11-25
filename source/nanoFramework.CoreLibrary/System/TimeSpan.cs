@@ -258,6 +258,13 @@ namespace System
         /// <param name="value">A number of ticks that represent a time.</param>
         /// <returns>An object that represents value.</returns>
         public static TimeSpan FromTicks(long value) => new TimeSpan(value);
+        
+        /// <summary>
+        /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of miliseconds.
+        /// </summary>
+        /// <param name="value">A number of miliseconds that represent a time.</param>
+        /// <returns>An object that represents value.</returns>
+        public static TimeSpan FromMiliseconds(long value) => new TimeSpan(TimeSpan.TicksPerMillisecond  * value);
 
         /// <summary>
         /// Converts the value of the current <see cref="TimeSpan"/> object to its equivalent string representation.
