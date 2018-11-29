@@ -1,5 +1,19 @@
 # Change Log
 
+## [v1.0.6-preview-015](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.6-preview-015) (2018-11-29)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.6-preview-010...v1.0.6-preview-015)
+
+**Implemented enhancements:**
+
+- Add new TimeSpan.From methods [\#57](https://github.com/nanoframework/lib-CoreLibrary/pull/57)
+
+**Fixed bugs:**
+
+- Fix ToString\(\) output  [\#56](https://github.com/nanoframework/lib-CoreLibrary/pull/56)
+
+## [v1.0.6-preview-010](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.6-preview-010) (2018-11-16)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.6-preview-001...v1.0.6-preview-010)
+
 ## [v1.0.6-preview-001](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.6-preview-001) (2018-11-07)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.5-preview035...v1.0.6-preview-001)
 
@@ -40,7 +54,7 @@
 - Add Encoding.GetString\(\) method [\#20](https://github.com/nanoframework/lib-CoreLibrary/pull/20)
 - Implement missing GetHashCode\(\) on several classes/structs [\#17](https://github.com/nanoframework/lib-CoreLibrary/pull/17)
 - Improve System.Single [\#16](https://github.com/nanoframework/lib-CoreLibrary/pull/16)
-- Work on Convert\(\) class [\#15](https://github.com/nanoframework/lib-CoreLibrary/pull/15) [[documentation](https://github.com/nanoframework/lib-CoreLibrary/labels/documentation)]
+- Work on Convert\(\) class [\#15](https://github.com/nanoframework/lib-CoreLibrary/pull/15)
 - Work on TimeSpan [\#14](https://github.com/nanoframework/lib-CoreLibrary/pull/14)
 - Add overloads with float parameters to Math methods [\#13](https://github.com/nanoframework/lib-CoreLibrary/pull/13)
 - Add String.Format [\#12](https://github.com/nanoframework/lib-CoreLibrary/pull/12)
@@ -61,8 +75,8 @@
 **Documentation and other chores:**
 
 - Merge 'develop' for Release 1.0.2 [\#44](https://github.com/nanoframework/lib-CoreLibrary/pull/44)
-- Add all missing comments for documentation and Intellisense [\#18](https://github.com/nanoframework/lib-CoreLibrary/pull/18) [[documentation](https://github.com/nanoframework/lib-CoreLibrary/labels/documentation)]
-- Update comment on Random class [\#9](https://github.com/nanoframework/lib-CoreLibrary/pull/9) [[documentation](https://github.com/nanoframework/lib-CoreLibrary/labels/documentation)]
+- Add all missing comments for documentation and Intellisense [\#18](https://github.com/nanoframework/lib-CoreLibrary/pull/18)
+- Update comment on Random class [\#9](https://github.com/nanoframework/lib-CoreLibrary/pull/9)
 
 ## [v1.0.0-preview028](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview028) (2017-08-31)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview027...v1.0.0-preview028)
