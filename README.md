@@ -14,7 +14,7 @@
 | Component | Build Status | NuGet Package |
 |:-|---|---|
 | Core Library | [![Build status](https://ci.appveyor.com/api/projects/status/5b37qa4h0o2ci3db/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-corelibrary/branch/master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.CoreLibrary.svg)](https://www.nuget.org/packages/nanoFramework.CoreLibrary/)  |
-| Core Library (preview) | [![Build status](https://ci.appveyor.com/api/projects/status/5b37qa4h0o2ci3db/branch/develop?svg=true)](https://ci.appveyor.com/project/nfbot/lib-corelibrary/branch/develop) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.CoreLibrary.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.CoreLibrary) |
+| Core Library (preview) | [![Build Status](https://dev.azure.com/nanoframework/CoreLibrary/_apis/build/status/nanoframework.lib-CoreLibrary)](https://dev.azure.com/nanoframework/CoreLibrary/_build/latest?definitionId=24) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.CoreLibrary.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.CoreLibrary) |
 
 
 ## Feedback and documentation
