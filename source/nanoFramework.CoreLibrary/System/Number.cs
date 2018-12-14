@@ -436,7 +436,7 @@ namespace System
             if (pos != -1)
             {
                 // is the string representation missing any trailing zeros?
-                count = (original.Length - pos) - 1;
+                count = (original.Length - pos) - count - 1;
                 if(count > 0)
                 {
                     return original + new String('0', count);

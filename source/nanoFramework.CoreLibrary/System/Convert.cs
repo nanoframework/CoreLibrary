@@ -293,7 +293,7 @@ namespace System
             var destinationArray = new char[length];
             Array.Copy(inArray, offset, destinationArray, 0, length);
 
-            return FromBase64CharArray(inArray, length);
+            return FromBase64CharArray(destinationArray, length);
         }
 
         [MethodImpl(MethodImplOptions.InternalCall)]
