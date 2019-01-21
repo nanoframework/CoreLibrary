@@ -18,7 +18,6 @@
 **Documentation and other chores:**
 
 - Release 1.1.0 [\#62](https://github.com/nanoframework/lib-CoreLibrary/pull/62)
-- Release v1.1.0 [\#60](https://github.com/nanoframework/lib-CoreLibrary/pull/60)
 
 ## [v1.0.6-preview-021](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.6-preview-021) (2018-11-30)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.6-preview-019...v1.0.6-preview-021)
