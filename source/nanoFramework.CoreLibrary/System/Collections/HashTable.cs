@@ -19,15 +19,15 @@ namespace System.Collections
         private int _loadFactor;
         private int _maxLoadFactor;
         private double _growthFactor;
-        private const int HashTableDefaultCapacity = 4;
-        private const int HashTableDefaultLoadFactor = 2;
+        private const int _defaultCapacity = 4;
+        private const int _defaultLoadFactor = 2;
 
         /// <summary>
         /// Initializes a new, empty instance of the Hashtable class using the default initial capacity and load factor.
         /// </summary>
         public Hashtable()
         {
-            InitializeHashTable(HashTableDefaultCapacity, HashTableDefaultLoadFactor);
+            InitializeHashTable(_defaultCapacity, _defaultLoadFactor);
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace System.Collections
         /// <param name="capacity">The initial capacity of the HashTable</param>
         public Hashtable(int capacity)
         {
-            InitializeHashTable(capacity, HashTableDefaultLoadFactor);
+            InitializeHashTable(capacity, _defaultLoadFactor);
         }
 
         /// <summary>
@@ -89,15 +89,21 @@ namespace System.Collections
             var match = EntryForKey(key, buckets[whichBucket]);
 
             if (match != null && overwrite)
-            { //i.e. already exists in table
+            { 
+                //i.e. already exists in table
                 match.value = value;
                 return;
             }
-            if (match != null && !overwrite) throw new ArgumentException("key exists");
-            // insert at front
-            var newOne = new Entry(key, value, ref buckets[whichBucket]);
-            buckets[whichBucket] = newOne;
-            _count++;
+            else if ((match != null && !overwrite))
+            {
+                throw new ArgumentException("key exists");
+            }
+            else
+            {            // insert at front
+                var newOne = new Entry(key, value, ref buckets[whichBucket]);
+                buckets[whichBucket] = newOne;
+                _count++;
+            }
 
             _loadFactor = _count / _numberOfBuckets;
         }
@@ -107,7 +113,11 @@ namespace System.Collections
         {
             var hashcode = key.GetHashCode();
 
-            if (hashcode < 0) hashcode = hashcode * -1;     // don't know how to mod with a negative number
+            if (hashcode < 0)
+            {
+                // don't know how to mod with a negative number
+                hashcode = hashcode * -1;
+            }
 
             return hashcode % numOfBuckets;
         }
@@ -115,43 +125,60 @@ namespace System.Collections
         //looks up value in bucket
         private Entry EntryForKey(object key, Entry head)
         {
-            for (var cur = head; cur != null; cur = cur.next)
-                if (cur.key.Equals(key)) return cur;
+            for (Entry cur = head; cur != null; cur = cur.next)
+            {
+                if (cur.key.Equals(key))
+                {
+                    return cur;
+                }
+            }
+
             return null;
         }
 
         //Rehashes the table to reduce the load factor
         private void Rehash(int newSize)
         {
-            var newTable = new Entry[newSize];
+            Entry[] newTable = new Entry[newSize];
             _numberOfBuckets = newSize;
             _count = 0;
+
             for (var i = 0; i < _buckets.Length; i++)
             {
                 if (_buckets[i] != null)
                 {
-                    for (var cur = _buckets[i]; cur != null; cur = cur.next)
+                    for (Entry cur = _buckets[i]; cur != null; cur = cur.next)
+                    {
                         Add(ref newTable, cur.key, cur.value, false);
+                    }
                 }
             }
+
             _buckets = newTable;
         }
 
         //implementation for KeyCollection and ValueCollection copyTo method
         private void CopyToCollection(Array array, int index, EnumeratorType type)
         {
-            if (index < 0 || index >= array.Length) throw new IndexOutOfRangeException("index");
-            if ((index + Count) > array.Length) throw new IndexOutOfRangeException("array length");
-
-            var j = index;
-            var len = array.Length;
-
-            for (var i = 0; i < _numberOfBuckets; i++)
+            if (index < 0 && index > _numberOfBuckets)
             {
-                for (var cur = _buckets[i]; cur != null && j < len; cur = cur.next)
+                throw new IndexOutOfRangeException("index");
+            }
+
+            for (int i = index; i < _numberOfBuckets; i++)
+            {
+                var j = 0;
+
+                for (Entry cur = _buckets[i]; cur != null && j < array.Length; cur = cur.next)
                 {
-                    if (type == EnumeratorType.KEY) ((IList)array)[j] = cur.key;
-                    else ((IList)array)[j] = cur.value;
+                    if (type == EnumeratorType.KEY)
+                    {
+                        ((IList)array)[j] = cur.key;
+                    }
+                    else
+                    {
+                        ((IList)array)[j] = cur.value;
+                    }
 
                     j++;
                 }
@@ -230,18 +257,16 @@ namespace System.Collections
         /// <param name="index">The zero-based index in array at which copying begins.</param>
         public void CopyTo(Array array, int index)
         {
-            if (index < 0 || index >= array.Length) throw new IndexOutOfRangeException("index");
-            if ((index + _count) > array.Length) throw new IndexOutOfRangeException("array length");
+            if (index < 0 && index > _buckets.Length)
+                throw new IndexOutOfRangeException("index");
 
-            var j = index;
-            var len = array.Length;
-
-            for (var i = 0; i < _numberOfBuckets; i++)
+            for (int i = index; i < _buckets.Length; i++)
             {
-                for (var cur = _buckets[i]; cur != null && j < len; cur = cur.next)
+                var j = 0;
+
+                for (Entry cur = _buckets[i]; cur != null && j < array.Length; cur = cur.next)
                 {
                     ((IList)array)[j] = new DictionaryEntry(cur.key, cur.value);
-
                     j++;
                 }
             }
@@ -310,18 +335,34 @@ namespace System.Collections
         {
             get
             {
-                if (key == null) throw new ArgumentNullException("key is null");
+                if (key == null)
+                {
+                    throw new ArgumentNullException("key is null");
+                }
+
                 var whichBucket = Hash(key, _numberOfBuckets);
                 var match = EntryForKey(key, _buckets[whichBucket]);
 
-                return match != null ? match.value : null;
+                if (match != null)
+                {
+                    return match.value;
+                }
+
+                return null;
             }
             set
             {
-                if (key == null) throw new ArgumentNullException("key is null");
+                if (key == null)
+                {
+                    throw new ArgumentNullException("key is null");
+                }
 
-                Add(ref _buckets, key, value, true);
-                if (_loadFactor >= _maxLoadFactor) Rehash((int)(_numberOfBuckets * _growthFactor));
+                Add(ref _buckets ,key,value,true);
+
+                if (_loadFactor >= _maxLoadFactor)
+                {
+                    Rehash((int)(_numberOfBuckets * _growthFactor));
+                }
             }
         }
 
@@ -335,7 +376,11 @@ namespace System.Collections
             if (key == null) throw new ArgumentNullException("key is null");
 
             Add(ref _buckets, key, value, false);
-            if (_loadFactor >= _maxLoadFactor) Rehash((int)(_numberOfBuckets * _growthFactor));
+
+            if (_loadFactor >= _maxLoadFactor)
+            {
+                Rehash((int)(_numberOfBuckets * _growthFactor));
+            }
         }
 
         /// <summary>
@@ -343,8 +388,8 @@ namespace System.Collections
         /// </summary>
         public void Clear()
         {
-            _buckets = new Entry[HashTableDefaultCapacity];
-            _numberOfBuckets = HashTableDefaultCapacity;
+            _buckets = new Entry[_defaultCapacity];
+            _numberOfBuckets = _defaultCapacity;
             _loadFactor = 0;
             _count = 0;
         }
@@ -356,11 +401,20 @@ namespace System.Collections
         /// <returns>true if the IDictionary contains an element with the key; otherwise, false.</returns>
         public bool Contains(object key)
         {
-            if (key == null) throw new ArgumentNullException("key is null");
+            if (key == null)
+            {
+                throw new ArgumentNullException("key is null");
+            }
+
             var whichBucket = Hash(key, _numberOfBuckets);
             var match = EntryForKey(key, _buckets[whichBucket]);
 
-            return match != null;
+            if (match != null)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -369,12 +423,19 @@ namespace System.Collections
         /// <param name="key">The key of the element to remove.</param>
         public void Remove(object key)
         {
-            if (key == null) throw new ArgumentNullException("key is null");
+            if (key == null)
+            {
+                throw new ArgumentNullException("key is null");
+            }
+
             var whichBucket = Hash(key, _numberOfBuckets);
             var match = EntryForKey(key, _buckets[whichBucket]);
 
             //does entry exist?
-            if (match == null) return;
+            if (match == null)
+            {
+                return;
+            }
 
             //is entry at front?
             if (_buckets[whichBucket] == match)
@@ -385,7 +446,7 @@ namespace System.Collections
             }
 
             //handle entry in middle and at the end
-            for (var cur = _buckets[whichBucket]; cur != null; cur = cur.next)
+            for (Entry cur = _buckets[whichBucket]; cur != null; cur = cur.next)
             {
                 if (cur.next == match)
                 {
@@ -400,7 +461,7 @@ namespace System.Collections
 
         private class Entry
         {
-            public readonly Object key;
+            public Object key;
             public Object value;
             public Entry next;
 
@@ -414,15 +475,15 @@ namespace System.Collections
 
         private class HashtableEnumerator : IEnumerator
         {
-            private readonly Hashtable _ht;
-            private Entry _temp;
-            private Int32 _index = -1;
-            private readonly EnumeratorType _returnType;
+            Hashtable ht;
+            Entry temp;
+            Int32 index = -1;
+            EnumeratorType returnType;
 
             public HashtableEnumerator(Hashtable hashtable, EnumeratorType type)
             {
-                _ht = hashtable;
-                _returnType = type;
+                ht = hashtable;
+                returnType = type;
             }
 
             // Return the current item.
@@ -430,44 +491,59 @@ namespace System.Collections
             {
                 get
                 {
-                    switch (_returnType)
+                    switch (returnType)
                     {
                         case EnumeratorType.DE:
-                        return new DictionaryEntry(_temp.key, _temp.value);
+                            return new DictionaryEntry(temp.key, temp.value);
 
                         case EnumeratorType.KEY:
-                        return _temp.key;
+                            return temp.key;
 
                         case EnumeratorType.VALUE:
-                        return _temp.value;
+                            return temp.value;
+
+                        default:
+                            break;
                     }
-                    return new DictionaryEntry(_temp.key, _temp.value);
+                    return new DictionaryEntry(temp.key, temp.value); 
                 }
             }
 
             // Advance to the next item.
             public Boolean MoveNext()
             {
-startLoop:
-//iterate index or list
-                if (_temp == null)
+            startLoop:
+                //iterate index or list
+                if (temp == null)
                 {
-                    _index++;
-                    if (_index < _ht._numberOfBuckets) _temp = _ht._buckets[_index];
-                    else return false;
+                    index++;
+                    if (index < ht._numberOfBuckets)
+                    {
+                        temp = ht._buckets[index];
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else _temp = _temp.next;
+                else
+                {
+                    temp = temp.next;
+                }
 
                 //null check
-                if (_temp == null) goto startLoop;
-
+                if (temp == null)
+                {
+                    goto startLoop;
+                }
+                    
                 return true;
             }
 
             // Reset the index to restart the enumeration.
             public void Reset()
             {
-                _index = -1;
+                index = -1;
             }
         }
 
@@ -484,11 +560,11 @@ startLoop:
 
         private class KeyCollection : ICollection
         {
-            private readonly Hashtable _ht;
+            Hashtable ht;
 
-            public KeyCollection(Hashtable hashtable)
+            public KeyCollection(Hashtable hashtable) 
             {
-                _ht = hashtable;
+                ht = hashtable;
             }
 
             #region ICollection Members
@@ -497,7 +573,7 @@ startLoop:
             {
                 get
                 {
-                    return _ht._count;
+                    return ht._count;
                 }
             }
 
@@ -505,7 +581,7 @@ startLoop:
             {
                 get
                 {
-                    return _ht.IsSynchronized;
+                    return ht.IsSynchronized;
                 }
             }
 
@@ -513,13 +589,13 @@ startLoop:
             {
                 get
                 {
-                    return _ht.SyncRoot;
+                    return ht.SyncRoot;
                 }
             }
 
             public void CopyTo(Array array, int index)
             {
-                _ht.CopyToCollection(array, index, EnumeratorType.KEY);
+                ht.CopyToCollection(array, index, EnumeratorType.KEY);
             }
 
             #endregion
@@ -528,7 +604,7 @@ startLoop:
 
             public IEnumerator GetEnumerator()
             {
-                return new HashtableEnumerator(_ht, EnumeratorType.KEY);
+                return new HashtableEnumerator(ht, EnumeratorType.KEY);
             }
 
             #endregion
@@ -536,11 +612,11 @@ startLoop:
 
         private class ValueCollection : ICollection
         {
-            private readonly Hashtable _ht;
+            Hashtable ht;
 
             public ValueCollection(Hashtable hashtable)
             {
-                _ht = hashtable;
+                ht = hashtable;
             }
 
             #region ICollection Members
@@ -549,7 +625,7 @@ startLoop:
             {
                 get
                 {
-                    return _ht._count;
+                    return ht._count;
                 }
             }
 
@@ -557,7 +633,7 @@ startLoop:
             {
                 get
                 {
-                    return _ht.IsSynchronized;
+                    return ht.IsSynchronized;
                 }
             }
 
@@ -565,13 +641,13 @@ startLoop:
             {
                 get
                 {
-                    return _ht.SyncRoot;
+                    return ht.SyncRoot;
                 }
             }
 
             public void CopyTo(Array array, int index)
             {
-                _ht.CopyToCollection(array, index, EnumeratorType.VALUE);
+                ht.CopyToCollection(array, index, EnumeratorType.VALUE);
             }
 
             #endregion
@@ -580,7 +656,7 @@ startLoop:
 
             public IEnumerator GetEnumerator()
             {
-                return new HashtableEnumerator(_ht, EnumeratorType.VALUE);
+                return new HashtableEnumerator(ht, EnumeratorType.VALUE);
             }
 
             #endregion

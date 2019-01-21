@@ -4,16 +4,20 @@
 
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.1.0...HEAD)
 
+**Fixed bugs:**
+
+- Major fix on HashTable [\#64](https://github.com/nanoframework/lib-CoreLibrary/pull/64)
+
 **Documentation and other chores:**
 
-- Release 1.1.0 [\#62](https://github.com/nanoframework/lib-CoreLibrary/pull/62)
+- Merge back from Release v1.1.0 [\#63](https://github.com/nanoframework/lib-CoreLibrary/pull/63)
 
 ## [v1.1.0](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.1.0) (2018-12-14)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.6-preview-021...v1.1.0)
 
 **Documentation and other chores:**
 
-- Release v1.1.0 [\#60](https://github.com/nanoframework/lib-CoreLibrary/pull/60)
+- Release 1.1.0 [\#62](https://github.com/nanoframework/lib-CoreLibrary/pull/62)
 
 ## [v1.0.6-preview-021](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.6-preview-021) (2018-11-30)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.6-preview-019...v1.0.6-preview-021)
