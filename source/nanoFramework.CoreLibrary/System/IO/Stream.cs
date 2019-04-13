@@ -83,10 +83,10 @@ namespace System.IO
         }
 
         /// <summary>
-        /// Gets or sets a value, in miliseconds, that determines how long the stream will attempt to read before timing out.
+        /// Gets or sets a value, in milliseconds, that determines how long the stream will attempt to read before timing out.
         /// </summary>
         /// <value>
-        /// A value, in miliseconds, that determines how long the stream will attempt to read before timing out.
+        /// A value, in milliseconds, that determines how long the stream will attempt to read before timing out.
         /// </value>
         /// <exception cref="System.InvalidOperationException"></exception>
         public virtual int ReadTimeout
@@ -103,10 +103,10 @@ namespace System.IO
         }
 
         /// <summary>
-        /// Gets or sets a value, in miliseconds, that determines how long the stream will attempt to write before timing out.
+        /// Gets or sets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.
         /// </summary>
         /// <value>
-        /// A value, in miliseconds, that determines how long the stream will attempt to write before timing out.
+        /// A value, in milliseconds, that determines how long the stream will attempt to write before timing out.
         /// </value>
         /// <exception cref="System.InvalidOperationException"></exception>
         public virtual int WriteTimeout
