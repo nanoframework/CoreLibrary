@@ -260,11 +260,11 @@ namespace System
         public static TimeSpan FromTicks(long value) => new TimeSpan(value);
         
         /// <summary>
-        /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of miliseconds.
+        /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of milliseconds.
         /// </summary>
-        /// <param name="value">A number of miliseconds that represent a time.</param>
+        /// <param name="value">A number of milliseconds that represent a time.</param>
         /// <returns>An object that represents value.</returns>
-        public static TimeSpan FromMiliseconds(long value) => new TimeSpan(TimeSpan.TicksPerMillisecond  * value);
+        public static TimeSpan FromMilliseconds(long value) => new TimeSpan(TimeSpan.TicksPerMillisecond  * value);
 
         /// <summary>
         /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of seconds.
