@@ -1,8 +1,7 @@
 # Change Log
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.1.1...HEAD)
+## [v1.1.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.1.2) (2019-04-23)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.1.1...v1.1.2)
 
 **Implemented enhancements:**
 
@@ -14,6 +13,7 @@
 
 **Documentation and other chores:**
 
+- Release v1.1.2 [\#69](https://github.com/nanoframework/lib-CoreLibrary/pull/69)
 - Update GitVersioning NuGet [\#68](https://github.com/nanoframework/lib-CoreLibrary/pull/68)
 
 ## [v1.1.1](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.1.1) (2019-01-21)
