@@ -39,9 +39,6 @@ steps:
 # step from template @ nf-tools repo
 # all build, update and publish steps
 - template: azure-pipelines-templates/class-lib-build.yml@templates  
-  parameters:
-    sourceFileName: 'corlib_native.cpp'
-    classLibName: 'CoreLibrary'
 
 # update dependencies
 - task: UpdatenFDependencies@1
