@@ -226,4 +226,37 @@ namespace System.Reflection
             get { return _version; }
         }
     }
+
+    /// <summary>
+    /// Defines the required native version required for an assembly.
+    /// At deploy time this is used to check if the target device has the correct native version to support this assembly.
+    /// </summary>
+    /// <remarks>
+    /// This attribute is specific of nanoFramework.
+    /// </remarks>
+    [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class, Inherited = false)]
+    public sealed class AssemblyNativeVersionAttribute : Attribute
+    {
+        private readonly String _nativeVersion;
+
+        /// <summary>
+        /// Initializes a new instance of the AssemblyNativeVersionAttribute class.
+        /// </summary>
+        /// <param name="version">The native version required for the assembly.</param>
+        public AssemblyNativeVersionAttribute(String version)
+        {
+            _nativeVersion = version;
+        }
+
+        /// <summary>
+        /// Gets the native version required for the assembly.
+        /// </summary>
+        /// <value>
+        /// A string containing the native version.
+        /// </value>
+        public String NativeVersion
+        {
+            get { return _nativeVersion; }
+        }
+    }
 }

@@ -313,6 +313,9 @@
     <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyVersionAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Reflection.AssemblyNativeVersionAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="System.Reflection.DefaultMemberAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
