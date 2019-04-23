@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.2.0](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.0) (2019-04-23)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.1.2...v1.2.0)
+
+**Documentation and other chores:**
+
+- Release v1.2.0 [\#70](https://github.com/nanoframework/lib-CoreLibrary/pull/70)
+
 ## [v1.1.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.1.2) (2019-04-23)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.1.1...v1.1.2)
 
