@@ -6,9 +6,12 @@
 
 using System;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 [assembly: CLSCompliant(true)]
 [assembly: AssemblyTitle("mscorlib")]
 [assembly: AssemblyCompany("nanoFramework Contributors")]
 [assembly: AssemblyProduct("nanoFramework mscorlib")]
 [assembly: AssemblyCopyright("Copyright © nanoFramework Contributors 2017")]
+
+[assembly: AssemblyNativeVersion("1.1.1.")]
