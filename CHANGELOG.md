@@ -1,5 +1,21 @@
 # Change Log
 
+## [v1.1.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.1.2) (2019-04-23)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.1.1...v1.1.2)
+
+**Implemented enhancements:**
+
+- Add AssemblyNativeVersionAttribute [\#67](https://github.com/nanoframework/lib-CoreLibrary/pull/67) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
+**Fixed bugs:**
+
+- Fix typo in TimeSpan [\#66](https://github.com/nanoframework/lib-CoreLibrary/pull/66)
+
+**Documentation and other chores:**
+
+- Release v1.1.2 [\#69](https://github.com/nanoframework/lib-CoreLibrary/pull/69)
+- Update GitVersioning NuGet [\#68](https://github.com/nanoframework/lib-CoreLibrary/pull/68)
+
 ## [v1.1.1](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.1.1) (2019-01-21)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.1.0...v1.1.1)
 
