@@ -14,4 +14,4 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyProduct("nanoFramework mscorlib")]
 [assembly: AssemblyCopyright("Copyright © nanoFramework Contributors 2017")]
 
-[assembly: AssemblyNativeVersion("1.1.1.")]
+[assembly: AssemblyNativeVersion("1.1.1.7")]
