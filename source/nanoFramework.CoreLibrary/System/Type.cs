@@ -48,6 +48,7 @@ namespace System
             return GetTypeInternal(name, assemblyName, fVersion, ver);
         }
 
+        [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern Type GetTypeInternal(String typeName, string assemblyName, bool fVersion, int[] ver);
 
