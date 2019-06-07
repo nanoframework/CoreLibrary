@@ -1,5 +1,13 @@
 # Change Log
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.0...HEAD)
+
+**Implemented enhancements:**
+
+- Remove CultureInfo unused field [\#72](https://github.com/nanoframework/lib-CoreLibrary/pull/72)
+
 ## [v1.2.0](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.0) (2019-04-23)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.1.2...v1.2.0)
 
