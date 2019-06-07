@@ -39,6 +39,8 @@ steps:
 # step from template @ nf-tools repo
 # all build, update and publish steps
 - template: azure-pipelines-templates/class-lib-build.yml@templates  
+  parameters:
+    soundCloudProject: 'nanoframework_lib-CoreLibrary'
 
 # update dependencies
 - task: UpdatenFDependencies@1
