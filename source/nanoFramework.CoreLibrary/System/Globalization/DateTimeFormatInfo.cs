@@ -166,7 +166,7 @@ namespace System.Globalization
         {
             get
             {
-                return SortableDateTimePattern;
+                return _sortableDateTimePattern;
             }
         }
 
