@@ -171,11 +171,11 @@ namespace System.Collections
         /// <summary>
         /// Determines whether an element is in the <see cref="ArrayList"/>.
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="value"></param>
         /// <returns>The<see cref="Object"/> to locate in the <see cref="ArrayList"/>.The value can be <see langword="null"/>.</returns>
-        public virtual bool Contains(Object item)
+        public virtual bool Contains(Object value)
         {
-            return Array.IndexOf(_items, item, 0, _size) >= 0;
+            return Array.IndexOf(_items, value, 0, _size) >= 0;
         }
 
         /// <summary>
@@ -191,10 +191,10 @@ namespace System.Collections
         /// Copies the entire <see cref="ArrayList"/> to a compatible one-dimensional Array, starting at the specified index of the target array.
         /// </summary>
         /// <param name="array">The one-dimensional Array that is the destination of the elements copied from <see cref="ArrayList"/>. The Array must have zero-based indexing. </param>
-        /// <param name="arrayIndex">The zero-based index in array at which copying begins. </param>
-        public virtual void CopyTo(Array array, int arrayIndex)
+        /// <param name="index">The zero-based index in array at which copying begins. </param>
+        public virtual void CopyTo(Array array, int index)
         {
-            Array.Copy(_items, 0, array, arrayIndex, _size);
+            Array.Copy(_items, 0, array, index, _size);
         }
 
         /// <summary>
@@ -252,10 +252,10 @@ namespace System.Collections
         /// <summary>
         /// Removes the first occurrence of a specific object from the <see cref="ArrayList"/>.
         /// </summary>
-        /// <param name="obj">The <see cref="Object"/> to remove from the <see cref="ArrayList"/>. The value can be <see langword="null"/>.</param>
-        public virtual void Remove(Object obj)
+        /// <param name="value">The <see cref="Object"/> to remove from the <see cref="ArrayList"/>. The value can be <see langword="null"/>.</param>
+        public virtual void Remove(Object value)
         {
-            var index = Array.IndexOf(_items, obj, 0, _size);
+            var index = Array.IndexOf(_items, value, 0, _size);
             if (index >= 0)
             {
                 RemoveAt(index);
