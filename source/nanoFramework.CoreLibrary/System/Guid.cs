@@ -97,9 +97,13 @@ namespace System
         public Guid(byte[] b)
         {
             if (b == null)
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentNullException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (b.Length != 16)
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             _a = b[3] << 24 | b[2] << 16 | b[1] << 8 | b[0];
             _b = (short)(b[5] << 8 | b[4]);
@@ -127,7 +131,9 @@ namespace System
             }
             if (!(value is Guid))
             {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
 
             Guid g = (Guid)value;
@@ -278,15 +284,15 @@ namespace System
         /// <summary>
         /// Returns a value that indicates whether this instance is equal to a specified object.
         /// </summary>
-        /// <param name="o">The object to compare with this instance. </param>
+        /// <param name="obj">The object to compare with this instance. </param>
         /// <returns></returns>
-        public override bool Equals(Object o)
+        public override bool Equals(Object obj)
         {
             Guid g;
             // Check that o is a Guid first
-            if (o == null || !(o is Guid))
+            if (obj == null || !(obj is Guid))
                 return false;
-            else g = (Guid)o;
+            else g = (Guid)obj;
 
             // Now compare each of the elements
             if (g._a != _a)

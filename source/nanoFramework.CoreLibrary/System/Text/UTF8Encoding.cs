@@ -62,7 +62,9 @@ namespace System.Text
         /// <param name="s"></param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public override extern byte[] GetBytes(String s);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Encodes a set of characters from the specified <see cref="String"/> into the specified byte array.
@@ -74,7 +76,9 @@ namespace System.Text
         /// <param name="byteIndex">The index at which to start writing the resulting sequence of bytes.</param>
         /// <returns>The actual number of bytes written into <paramref name="bytes"/>.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public override extern int GetBytes(string s, int charIndex, int charCount, byte[] bytes, int byteIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Decodes a sequence of bytes from the specified byte array into a set of characters.
@@ -82,7 +86,9 @@ namespace System.Text
         /// <param name="bytes">The byte array containing the sequence of bytes to decode.</param>
         /// <returns>The actual number of characters returned.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public override extern char[] GetChars(byte[] bytes);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Decodes a sequence of bytes from the specified byte array into a set of characters.
@@ -92,7 +98,9 @@ namespace System.Text
         /// <param name="byteCount">The number of bytes to decode.</param>
         /// <returns>The actual number of characters returned.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public override extern char[] GetChars(byte[] bytes, int byteIndex, int byteCount);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Obtains a decoder that converts a UTF-8 encoded sequence of bytes into a sequence of Unicode characters.

@@ -37,7 +37,9 @@ namespace System.Reflection
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern Object Invoke(Object[] parameters);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// When overridden in a derived class, returns an array of all custom attributes applied to this member.
@@ -47,6 +49,8 @@ namespace System.Reflection
         /// <remarks>This method is not implemented in nanoFramework.</remarks>
         /// <exception cref="NotImplementedException"/>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern override object[] GetCustomAttributes(bool inherit);
+#pragma warning restore S4200 // Native methods should be wrapped
     }
 }

@@ -27,6 +27,8 @@ namespace System.Diagnostics
         /// Signals a breakpoint to an attached debugger.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void Break();
+#pragma warning restore S4200 // Native methods should be wrapped
     }
 }

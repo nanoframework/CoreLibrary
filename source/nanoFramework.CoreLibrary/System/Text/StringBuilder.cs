@@ -53,14 +53,18 @@ namespace System.Text
                     {
                         if (num >= chunkPrevious._chunkLength)
                         {
+#pragma warning disable S112 // General exceptions should never be thrown
                             throw new IndexOutOfRangeException();
+#pragma warning restore S112 // General exceptions should never be thrown
                         }
                         return chunkPrevious._chunkChars[num];
                     }
                     chunkPrevious = chunkPrevious._chunkPrevious;
                     if (chunkPrevious == null)
                     {
+#pragma warning disable S112 // General exceptions should never be thrown
                         throw new IndexOutOfRangeException();
+#pragma warning restore S112 // General exceptions should never be thrown
                     }
                 }
             }
@@ -402,12 +406,14 @@ Label_0002:
             return this;
         }
 
+#pragma warning disable CS3001 // Argument type 'sbyte' is not CLS-compliant
         /// <summary>
         /// Appends the string representation of a specified 8-bit signed integer to this instance. 
         /// </summary>
         /// <param name="value">The value to append.</param>
         /// <returns>A reference to this instance after the append operation has completed.</returns>
         public StringBuilder Append(sbyte value)
+#pragma warning restore CS3001 // Argument type 'sbyte' is not CLS-compliant
         {
             return Append(value.ToString());
         }
@@ -422,32 +428,38 @@ Label_0002:
             return Append(value.ToString());
         }
 
+#pragma warning disable CS3001 // Argument type 'ushort' is not CLS-compliant
         /// <summary>
         /// Appends the string representation of a specified 16-bit unsigned integer to this instance. 
         /// </summary>
         /// <param name="value">The value to append.</param>
         /// <returns>A reference to this instance after the append operation has completed.</returns>
         public StringBuilder Append(ushort value)
+#pragma warning restore CS3001 // Argument type 'ushort' is not CLS-compliant
         {
             return Append(value.ToString());
         }
 
+#pragma warning disable CS3001 // Argument type 'uint' is not CLS-compliant
         /// <summary>
         /// Appends the string representation of a specified 32-bit unsigned integer to this instance. 
         /// </summary>
         /// <param name="value">The value to append.</param>
         /// <returns>A reference to this instance after the append operation has completed.</returns>
         public StringBuilder Append(uint value)
+#pragma warning restore CS3001 // Argument type 'uint' is not CLS-compliant
         {
             return Append(value.ToString());
         }
 
+#pragma warning disable CS3001 // Argument type 'ulong' is not CLS-compliant
         /// <summary>
         /// Appends the string representation of a specified 64-bit unsigned integer to this instance. 
         /// </summary>
         /// <param name="value">The value to append.</param>
         /// <returns>A reference to this instance after the append operation has completed.</returns>
         public StringBuilder Append(ulong value)
+#pragma warning restore CS3001 // Argument type 'ulong' is not CLS-compliant
         {
             return Append(value.ToString());
         }
@@ -486,13 +498,17 @@ Label_0002:
         public StringBuilder Append(char[] value, int startIndex, int charCount)
         {
             if (startIndex < 0) throw new ArgumentOutOfRangeException("startIndex");
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (charCount < 0) throw new ArgumentOutOfRangeException("count");
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (value == null)
             {
                 if (startIndex != 0 || charCount != 0) throw new ArgumentNullException("value");
                 return this;
             }
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (charCount > value.Length - startIndex) throw new ArgumentOutOfRangeException("count");
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (charCount != 0)
             {
                 for (var i = startIndex; i < startIndex + charCount; ++i)
@@ -544,7 +560,9 @@ Label_0002:
         {
             if (length < 0) throw new ArgumentOutOfRangeException("length");
             if (startIndex < 0) throw new ArgumentOutOfRangeException("startIndex");
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (length > Length - startIndex) throw new ArgumentOutOfRangeException("index");
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (Length == length && startIndex == 0)
             {
                 Length = 0;
@@ -623,7 +641,9 @@ Label_0002:
                         var chunkChars = chunkPrevious._chunkChars;
                         if (charCount + num3 > length || charCount + index > chunkChars.Length)
                         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                             throw new ArgumentOutOfRangeException("chunkCount");
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                         }
                         Array.Copy(chunkChars, index, result, 0, charCount);
                     }
@@ -651,7 +671,9 @@ Label_0002:
                 StringBuilder builder;
                 int num3;
                 long num2 = value.Length * count;
+#pragma warning disable S112 // General exceptions should never be thrown
                 if (num2 > MaxCapacity - Length) throw new OutOfMemoryException();
+#pragma warning restore S112 // General exceptions should never be thrown
                 MakeRoom(index, (int)num2, out builder, out num3, false);
                 var chars = value.ToCharArray();
                 var charLength = chars.Length;
@@ -683,7 +705,9 @@ Label_0002:
                 return this;
             }
             if (startIndex < 0) throw new ArgumentOutOfRangeException("startIndex");
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (charCount < 0) throw new ArgumentOutOfRangeException("count");
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (startIndex > value.Length - charCount) throw new ArgumentOutOfRangeException("startIndex");
             if (charCount > 0) Insert(index, new string(value, startIndex, charCount), 1);
 
@@ -957,7 +981,9 @@ ReplaceValue:
 
         internal void MakeRoom(int index, int count, out StringBuilder chunk, out int indexInChunk, bool doneMoveFollowingChars)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (count + Length > _maxCapacity) throw new ArgumentOutOfRangeException("requiredLength");
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             chunk = this;
             while (chunk._chunkOffset > index)
             {
@@ -1015,7 +1041,9 @@ ReplaceValue:
 
         internal void ExpandByABlock(int minBlockCharCount)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (minBlockCharCount + Length > _maxCapacity) throw new ArgumentOutOfRangeException("requiredLength");
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             var num = MathInternal.Max(minBlockCharCount, MathInternal.Min(Length, 0x1f40));
             _chunkPrevious = new StringBuilder(this);
             _chunkOffset += _chunkLength;
@@ -1024,7 +1052,9 @@ ReplaceValue:
             if (_chunkOffset + num < num)
             {
                 _chunkChars = null;
+#pragma warning disable S112 // General exceptions should never be thrown
                 throw new OutOfMemoryException();
+#pragma warning restore S112 // General exceptions should never be thrown
             }
             _chunkChars = new char[num];
         }

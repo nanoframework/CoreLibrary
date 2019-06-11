@@ -86,7 +86,9 @@ namespace System.Reflection
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern Object Invoke(Object obj, Object[] parameters);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the name of the current member.

@@ -55,7 +55,9 @@ namespace System
         /// <param name="value">Documentation missing</param>
         /// <returns>Documentation missing</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern int CompareTo(double d, double value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a value indicating whether the specified number evaluates to negative or positive infinity
@@ -65,7 +67,9 @@ namespace System
         /// true if d evaluates to PositiveInfinity or NegativeInfinity; otherwise, false.
         /// </returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern bool IsInfinity(double d);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a value that indicates whether the specified value is not a number (NaN).
@@ -75,7 +79,9 @@ namespace System
         /// true if d evaluates to NaN; otherwise, false.
         /// </returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern bool IsNaN(double d);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a value indicating whether the specified number evaluates to negative infinity.
@@ -85,7 +91,9 @@ namespace System
         /// true if d evaluates to NegativeInfinity; otherwise, false.
         /// </returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern bool IsNegativeInfinity(double d);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a value indicating whether the specified number evaluates to positive infinity.
@@ -95,7 +103,9 @@ namespace System
         /// true if d evaluates to PositiveInfinity; otherwise, false.
         /// </returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern bool IsPositiveInfinity(double d);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Converts the string representation of a number to its double-precision floating-point number equivalent.
@@ -105,7 +115,9 @@ namespace System
         /// <exception cref="System.ArgumentNullException"></exception>
         public static double Parse(String s)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (s == null) throw new ArgumentNullException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             return Convert.ToDouble(s);
         }

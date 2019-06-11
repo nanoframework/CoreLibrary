@@ -36,25 +36,33 @@ namespace System.Threading
         /// Causes the operating system to change the state of the current instance to ThreadState.Running.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern void Start();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Raises a ThreadAbortException in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern void Abort();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Either suspends the thread, or if the thread is already suspended, has no effect.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern void Suspend();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Obsolete : Resumes a thread that has been suspended.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern void Resume();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets or sets a value indicating the scheduling priority of a thread.
@@ -93,7 +101,9 @@ namespace System.Threading
         /// Blocks the calling thread until the thread represented by this instance terminates, while continuing to perform standard COM and SendMessage pumping.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern void Join();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Blocks the calling thread until the thread represented by this instance terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
@@ -101,7 +111,9 @@ namespace System.Threading
         /// <param name="millisecondsTimeout">The number of milliseconds to wait for the thread to terminate.</param>
         /// <returns>true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the millisecondsTimeout parameter has elapsed.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern bool Join(int millisecondsTimeout);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Blocks the calling thread until the thread represented by this instance terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
@@ -109,7 +121,9 @@ namespace System.Threading
         /// <param name="timeout">A TimeSpan set to the amount of time to wait for the thread to terminate.</param>
         /// <returns>true if the thread terminated; false if the thread has not terminated after the amount of time specified by the timeout parameter has elapsed.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern bool Join(TimeSpan timeout);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Suspends the current thread for the specified number of milliseconds.
@@ -124,7 +138,9 @@ namespace System.Threading
         /// The system clock ticks at a specific rate called the clock resolution. The actual timeout might not be exactly the specified timeout, because the specified timeout will be adjusted to coincide with clock ticks. 
         /// </remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void Sleep(int millisecondsTimeout);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Suspends the current thread for the specified amount of time.
@@ -143,7 +159,9 @@ namespace System.Threading
             long tm = timeout.Ticks / TimeSpan.TicksPerMillisecond;
             if (tm < -1 || tm > Int32.MaxValue)
             {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
             Sleep((int)tm);
         }
@@ -175,7 +193,9 @@ namespace System.Threading
         /// </summary>
         /// <returns>An AppDomain representing the current application domain of the running thread.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern AppDomain GetDomain();
+#pragma warning restore S4200 // Native methods should be wrapped
 
 #endif // #if (NANOCLR_APPDOMAINS)
 

@@ -51,7 +51,9 @@ namespace System.Resources
             {
                 if (fThrowOnFailure)
                 {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                     throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 }
             }
         }
@@ -203,7 +205,9 @@ namespace System.Resources
                 rm = rm._rmFallback;
             }
 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
         }
 
         private object GetObjectChunkFromId(short id, int offset, int length)
@@ -232,7 +236,9 @@ namespace System.Resources
                 rm = rm._rmFallback;
             }
 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
         }
 
         [MethodImpl(MethodImplOptions.InternalCall)]

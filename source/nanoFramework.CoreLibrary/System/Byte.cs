@@ -59,7 +59,9 @@ namespace System
         {
             if (s == null)
             {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentNullException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
 
             return Convert.ToByte(s);

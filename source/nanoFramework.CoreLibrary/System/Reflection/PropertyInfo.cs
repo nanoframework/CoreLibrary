@@ -35,7 +35,9 @@ namespace System.Reflection
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern Object GetValue(Object obj, Object[] index);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Sets the property value of a specified object with optional index values for index properties.
@@ -46,6 +48,8 @@ namespace System.Reflection
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern void SetValue(Object obj, Object value, Object[] index);
+#pragma warning restore S4200 // Native methods should be wrapped
     }
 }
