@@ -327,7 +327,9 @@ namespace System
                 if (formatLen > 4)
                 {
                     // Invalid Format
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                     throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 }
 
                 for (int i = 1; i < formatLen; i++)
@@ -336,7 +338,9 @@ namespace System
 
                     if (digit > 9)
                     {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                         throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                     }
 
                     precision = precision * 10 + digit;
@@ -355,7 +359,9 @@ namespace System
                 if (formatLen == 1) precision = 2; // if no precision is specified, use the default
                 break;
                 default:
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
         }
 

@@ -37,7 +37,9 @@ namespace System
         /// <param name="obj">he object to compare with the current object.</param>
         /// <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern bool Equals(Object obj);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Determines whether the specified object instances are considered equal.
@@ -67,28 +69,36 @@ namespace System
         /// <param name="objB">The second object to compare.</param>
         /// <returns>true if objA is the same instance as objB or if both are null; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern bool ReferenceEquals(Object objA, Object objB);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Serves as the default hash function.
         /// </summary>
         /// <returns>A hash code for the current object.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern int GetHashCode();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the Type of the current instance.
         /// </summary>
         /// <returns>The exact runtime type of the current instance.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern Type GetType();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Creates a shallow copy of the current Object.
         /// </summary>
         /// <returns>A shallow copy of the current Object.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         protected extern Object MemberwiseClone();
+#pragma warning restore S4200 // Native methods should be wrapped
 
     }
 }

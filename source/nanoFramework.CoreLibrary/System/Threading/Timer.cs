@@ -57,7 +57,9 @@ namespace System.Threading
         /// Specify Timeout.Infinite to disable periodic signaling.</param>
         /// <returns>true if the timer was successfully updated; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern bool Change(int dueTime, int period);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Changes the start time and the interval between method invocations for a timer, using TimeSpan values to measure time intervals.
@@ -67,13 +69,17 @@ namespace System.Threading
         /// <param name="period">The time interval between invocations of the callback method specified when the Timer was constructed. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
         /// <returns>true if the timer was successfully updated; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern bool Change(TimeSpan dueTime, TimeSpan period);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Releases all resources used by the current instance of Timer.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern void Dispose();
+#pragma warning restore S4200 // Native methods should be wrapped
     }
 }
 

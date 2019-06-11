@@ -27,7 +27,9 @@ namespace System
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public Version(int major, int minor, int build, int revision)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (major < 0 || minor < 0 || revision < 0 || build < 0) throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             _Major = major;
             _Minor = minor;
@@ -43,8 +45,12 @@ namespace System
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public Version(int major, int minor)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (major < 0) throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (minor < 0) throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             _Major = major;
             _Minor = minor;

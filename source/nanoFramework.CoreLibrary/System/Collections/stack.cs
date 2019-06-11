@@ -59,7 +59,9 @@ namespace System.Collections
         /// Removes all Objects from the Stack.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern void Clear();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Creates a shallow copy of the Stack.
@@ -118,21 +120,27 @@ namespace System.Collections
         /// </summary>
         /// <returns>The Object at the top of the Stack.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern Object Peek();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Removes and returns the object at the top of the Stack.
         /// </summary>
         /// <returns>The Object removed from the top of the Stack.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern Object Pop();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Inserts an object at the top of the Stack.
         /// </summary>
         /// <param name="obj">The Object to push onto the Stack.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern void Push(Object obj);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Copies the Stack to a new array, in the same order Pop would return the items.

@@ -94,7 +94,9 @@ namespace System
         /// <exception cref="System.ArgumentOutOfRangeException">ticks - Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.</exception>
         public DateTime(long ticks)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if ((ticks & (long)TickMask) < MinTicks || (ticks & (long)TickMask) > MaxTicks) throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             _ticks = (ulong)ticks;
         }
@@ -262,16 +264,18 @@ namespace System
         /// <returns>The number of days in month for the specified year.
         /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern int DaysInMonth(int year, int month);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a value indicating whether this instance is equal to a specified object.
         /// </summary>
-        /// <param name="val">The object to compare to this instance. </param>
+        /// <param name="obj">The object to compare to this instance. </param>
         /// <returns>true if val is an instance of DateTime and equals the value of this instance; otherwise, false.</returns>
-        public override bool Equals(Object val)
+        public override bool Equals(Object obj)
         {
-            if (val is DateTime)
+            if (obj is DateTime)
             {
                 // Call compare for proper comparison of 2 DateTime objects
                 // Since DateTime is optimized value and internally represented by int64
@@ -280,7 +284,7 @@ namespace System
                 object o = this;
                 var thisTime = (DateTime)o;
 
-                return Compare(thisTime, (DateTime)val) == 0;
+                return Compare(thisTime, (DateTime)obj) == 0;
             }
 
             return false;

@@ -84,7 +84,9 @@ namespace System.Reflection
         /// </summary>
         /// <returns>The assembly that contains the code that is currently executing.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern Assembly GetExecutingAssembly();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         internal extern void GetVersion(ref int major, ref int minor, ref int build, ref int revision);
@@ -114,7 +116,9 @@ namespace System.Reflection
         /// <param name="name">The full name of the type.</param>
         /// <returns>An object that represents the specified class, or null if the class is not found.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern Type GetType(String name);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the Type object with the specified name in the assembly instance and optionally throws an exception if the type is not found.
@@ -127,7 +131,9 @@ namespace System.Reflection
         {
             var type = GetType(name);
 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if ( (type == null) && (throwOnError) ) throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             return type;
         }
@@ -137,7 +143,9 @@ namespace System.Reflection
         /// </summary>
         /// <returns>An array that contains all the types that are defined in this assembly.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern Type[] GetTypes();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the satellite assembly for the specified culture.
@@ -165,7 +173,9 @@ namespace System.Reflection
 
             if (assm == null)
             {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 // FIXME -- throw new FileNotFoundException();
             }
 
@@ -232,12 +242,16 @@ namespace System.Reflection
                     }
                     else
                     {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                         throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                     }
                 }
                 else
                 {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                     throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 }
             }
             else
@@ -260,7 +274,9 @@ namespace System.Reflection
                 if (fThrowOnError)
                 {
                     // FIXME -- should be FileNotFoundException, per spec.
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                     throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 }
             }
 
@@ -276,7 +292,9 @@ namespace System.Reflection
         /// <param name="rawAssembly">A byte array that is a COFF-based image containing an emitted assembly.</param>
         /// <returns>The loaded assembly.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern Assembly Load(byte[] rawAssembly);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         internal extern String[] GetManifestResourceNames();

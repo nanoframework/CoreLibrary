@@ -31,7 +31,9 @@ namespace System
 
         private AppDomain()
         {
+#pragma warning disable S112 // General exceptions should never be thrown
             throw new Exception();
+#pragma warning restore S112 // General exceptions should never be thrown
         }
 
         /// <summary>
@@ -40,7 +42,9 @@ namespace System
         /// <param name="friendlyName">The friendly name of the domain.</param>
         /// <returns>The newly created application domain.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern AppDomain CreateDomain(String friendlyName);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Creates a new instance of the specified type. Parameters specify the assembly where the type is defined, and the name of the type.
@@ -106,7 +110,9 @@ namespace System
         /// </summary>
         /// <returns>An array of assemblies in this application domain.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public extern Assembly[] GetAssemblies();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern Assembly LoadInternal(String assemblyString, bool fVersion, int maj, int min, int build, int rev);
@@ -116,7 +122,9 @@ namespace System
         /// </summary>
         /// <param name="domain">An application domain to unload.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void Unload(AppDomain domain);
+#pragma warning restore S4200 // Native methods should be wrapped
     }
 }
 #endif // #if (NANOCLR_APPDOMAINS)

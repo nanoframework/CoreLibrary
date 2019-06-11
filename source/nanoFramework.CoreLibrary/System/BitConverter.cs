@@ -28,7 +28,9 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern long DoubleToInt64Bits(double value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns the specified Boolean value as an array of bytes.
@@ -36,7 +38,9 @@ namespace System
         /// <param name="value">A Boolean value.</param>
         /// <returns>An array of bytes with length 1.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(bool value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns the specified Unicode character value as an array of bytes.
@@ -44,7 +48,9 @@ namespace System
         /// <param name="value">A character to convert.</param>
         /// <returns>An array of bytes with length 2.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(char value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns the specified double-precision floating point value as an array of bytes.
@@ -52,7 +58,9 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns>An array of bytes with length 8.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(double value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns the specified single-precision floating point value as an array of bytes.
@@ -60,7 +68,9 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns>An array of bytes with length 4.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(float value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns the specified 32-bit signed integer value as an array of bytes.
@@ -68,7 +78,9 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns>An array of bytes with length 4.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(int value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns the specified 64-bit signed integer value as an array of bytes.
@@ -76,7 +88,9 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns>An array of bytes with length 8.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(long value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns the specified 16-bit signed integer value as an array of bytes.
@@ -84,7 +98,9 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns>An array of bytes with length 2.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(short value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns the specified 32-bit unsigned integer value as an array of bytes.
@@ -92,7 +108,11 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns>An array of bytes with length 4.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable CS3001 // Argument type 'uint' is not CLS-compliant
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(uint value);
+#pragma warning restore S4200 // Native methods should be wrapped
+#pragma warning restore CS3001 // Argument type 'uint' is not CLS-compliant
 
         /// <summary>
         /// Returns the specified 64-bit unsigned integer value as an array of bytes.
@@ -100,7 +120,11 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns>An array of bytes with length 8.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable CS3001 // Argument type 'ulong' is not CLS-compliant
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(ulong value);
+#pragma warning restore S4200 // Native methods should be wrapped
+#pragma warning restore CS3001 // Argument type 'ulong' is not CLS-compliant
 
         /// <summary>
         /// Returns the specified 16-bit unsigned integer value as an array of bytes.
@@ -108,7 +132,11 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns>An array of bytes with length 2.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable CS3001 // Argument type 'ushort' is not CLS-compliant
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern byte[] GetBytes(ushort value);
+#pragma warning restore S4200 // Native methods should be wrapped
+#pragma warning restore CS3001 // Argument type 'ushort' is not CLS-compliant
 
         /// <summary>
         /// Converts the specified 64-bit signed integer to a double-precision floating point number.
@@ -116,7 +144,9 @@ namespace System
         /// <param name="value">The number to convert.</param>
         /// <returns>A double-precision floating point number whose value is equivalent to value.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern double Int64BitsToDouble(long value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a Boolean value converted from one byte at a specified position in a byte array.
@@ -125,7 +155,9 @@ namespace System
         /// <param name="startIndex">The starting position within value.</param>
         /// <returns>true if the byte at startIndex in value is nonzero; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern bool ToBoolean(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a Unicode character converted from two bytes at a specified position in a byte array.
@@ -134,7 +166,9 @@ namespace System
         /// <param name="startIndex">The starting position within value.</param>
         /// <returns>A character formed by two bytes beginning at startIndex.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern char ToChar(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a double-precision floating point number converted from eight bytes at a specified position in a byte array.
@@ -143,7 +177,9 @@ namespace System
         /// <param name="startIndex">The starting position within value.</param>
         /// <returns>A double precision floating point number formed by eight bytes beginning at startIndex.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern double ToDouble(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a 16-bit signed integer converted from two bytes at a specified position in a byte array.
@@ -152,7 +188,9 @@ namespace System
         /// <param name="startIndex">The starting position within value.</param>
         /// <returns>A 16-bit signed integer formed by two bytes beginning at startIndex.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern short ToInt16(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a 32-bit signed integer converted from four bytes at a specified position in a byte array.
@@ -161,7 +199,9 @@ namespace System
         /// <param name="startIndex">The starting position within value.</param>
         /// <returns>A 32-bit signed integer formed by four bytes beginning at startIndex.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern int ToInt32(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a 64-bit signed integer converted from eight bytes at a specified position in a byte array.
@@ -170,7 +210,9 @@ namespace System
         /// <param name="startIndex">The starting position within value.</param>
         /// <returns>A 64-bit signed integer formed by eight bytes beginning at startIndex.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern long ToInt64(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a single-precision floating point number converted from four bytes at a specified position in a byte array.
@@ -179,7 +221,9 @@ namespace System
         /// <param name="startIndex">The starting position within value.</param>
         /// <returns>A single-precision floating point number formed by four bytes beginning at startIndex.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern float ToSingle(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Converts the numeric value of each element of a specified array of bytes to its equivalent hexadecimal string representation.
@@ -187,7 +231,9 @@ namespace System
         /// <param name="value">An array of bytes.</param>
         /// <returns>A String of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A".</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern string ToString(byte[] value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Converts the numeric value of each element of a specified subarray of bytes to its equivalent hexadecimal string representation.
@@ -196,7 +242,9 @@ namespace System
         /// <param name="startIndex">The starting position within value.</param>
         /// <returns>A String of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in a subarray of value; for example, "7F-2C-4A".</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern string ToString(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Converts the numeric value of each element of a specified subarray of bytes to its equivalent hexadecimal string representation.
@@ -206,7 +254,9 @@ namespace System
         /// <param name="length">The number of array elements in value to convert.</param>
         /// <returns>A String of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in a subarray of value; for example, "7F-2C-4A".</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern string ToString(byte[] value, int startIndex, int length);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a 16-bit unsigned integer converted from two bytes at a specified position in a byte array.
@@ -216,7 +266,9 @@ namespace System
         /// <returns>A 16-bit unsigned integer formed by two bytes beginning at startIndex.</returns>
         [CLSCompliant(false)]
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern ushort ToUInt16(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a 32-bit unsigned integer converted from two bytes at a specified position in a byte array.
@@ -226,7 +278,9 @@ namespace System
         /// <returns>A 32-bit unsigned integer formed by two bytes beginning at startIndex.</returns>
         [CLSCompliant(false)]
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern uint ToUInt32(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a 64-bit unsigned integer converted from two bytes at a specified position in a byte array.
@@ -236,6 +290,8 @@ namespace System
         /// <returns>A 64-bit unsigned integer formed by two bytes beginning at startIndex.</returns>
         [CLSCompliant(false)]
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern ulong ToUInt64(byte[] value, int startIndex);
+#pragma warning restore S4200 // Native methods should be wrapped
     }
 }

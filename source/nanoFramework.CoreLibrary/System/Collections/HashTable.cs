@@ -60,6 +60,7 @@ namespace System.Collections
             _growthFactor = 2;
         }
 
+#pragma warning disable S2292 // Trivial properties should be auto-implemented
         /// <summary>
         /// MaxLoadFactor Property is the value used to trigger a rehash.
         /// Default value is 2.
@@ -67,16 +68,19 @@ namespace System.Collections
         /// While a value of 1 maintains a constant time complexity at the cost of increased memory requirements.   
         /// </summary>
         public int MaxLoadFactor
+#pragma warning restore S2292 // Trivial properties should be auto-implemented
         {
             get { return _maxLoadFactor; }
             set { _maxLoadFactor = value; }
         }
 
+#pragma warning disable S2292 // Trivial properties should be auto-implemented
         /// <summary>
         /// GrowthFactor Property is a multiplier to increase the HashTable size by during a rehash.
         /// Default value is 2.
         /// </summary>
         public double GrowthFactor
+#pragma warning restore S2292 // Trivial properties should be auto-implemented
         {
             get { return _growthFactor; }
             set { _growthFactor = value; }
@@ -162,7 +166,9 @@ namespace System.Collections
         {
             if (index < 0 && index > _numberOfBuckets)
             {
+#pragma warning disable S112 // General exceptions should never be thrown
                 throw new IndexOutOfRangeException("index");
+#pragma warning restore S112 // General exceptions should never be thrown
             }
 
             for (int i = index; i < _numberOfBuckets; i++)
@@ -258,7 +264,9 @@ namespace System.Collections
         public void CopyTo(Array array, int index)
         {
             if (index < 0 && index > _buckets.Length)
+#pragma warning disable S112 // General exceptions should never be thrown
                 throw new IndexOutOfRangeException("index");
+#pragma warning restore S112 // General exceptions should never be thrown
 
             for (int i = index; i < _buckets.Length; i++)
             {

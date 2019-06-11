@@ -16,7 +16,9 @@ namespace System
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
     // GetHashCode() implementation is provided by general native function CLR_RT_HeapBlock::GetHashCode //
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma warning disable S1206 // "Equals(Object)" and "GetHashCode()" should be overridden in pairs
     public abstract class Delegate
+#pragma warning restore S1206 // "Equals(Object)" and "GetHashCode()" should be overridden in pairs
 #pragma warning restore CS0661 // Type defines operator == or operator != but does not override Object.GetHashCode()
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     {
@@ -27,7 +29,9 @@ namespace System
         /// <param name="obj">The object to compare with the current delegate. </param>
         /// <returns>true if obj and the current delegate have the same targets, methods, and invocation list; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public override extern bool Equals(Object obj);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Concatenates the invocation lists of two delegates.
@@ -36,7 +40,9 @@ namespace System
         /// <param name="b">The delegate whose invocation list comes last. </param>
         /// <returns>A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is  null reference (Nothing in Visual Basic), returns b if a is a null reference, and returns a null reference if both a and b are null references.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern Delegate Combine(Delegate a, Delegate b);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the method represented by the delegate.
@@ -69,7 +75,9 @@ namespace System
         /// <param name="value">The delegate that supplies the invocation list to remove from the invocation list of source.</param>
         /// <returns>A new delegate with an invocation list formed by taking the invocation list of source and removing the last occurrence of the invocation list of value, if the invocation list of value is found within the invocation list of source. Returns source if value is  null reference (Nothing in Visual Basic) or if the invocation list of value is not found within the invocation list of source. Returns a null reference if the invocation list of value is equal to the invocation list of source or if source is a null reference.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static extern Delegate Remove(Delegate source, Delegate value);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Determines whether the specified delegates are equal.
