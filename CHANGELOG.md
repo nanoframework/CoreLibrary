@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Several fixes throughout the code base [\#74](https://github.com/nanoframework/lib-CoreLibrary/pull/74)
 - Remove CultureInfo unused field [\#72](https://github.com/nanoframework/lib-CoreLibrary/pull/72)
 
 **Fixed bugs:**
