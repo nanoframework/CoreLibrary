@@ -54,6 +54,13 @@ namespace System
     [Serializable]
     public struct DateTime
     {
+        /// Our origin is at 1601/01/01:00:00:00.000
+        /// While desktop CLR's origin is at 0001/01/01:00:00:00.000.
+        /// There are 504911232000000000 ticks between them which we are subtracting.
+        /// See nf-interpreter\src\HAL\Include\nanoHAL_Time.h for explanation of why we are taking
+        /// year 1601 as origin for our HAL, PAL, and CLR.
+        private const long _ticksAtOrigin = 504911232000000000;
+
         // Number of 100ns ticks per time unit
         private const long TicksPerMillisecond = 10000;
         private const long TicksPerSecond = TicksPerMillisecond * 1000;
@@ -70,7 +77,7 @@ namespace System
         private const long MinTicks = 0;
         private const long MaxTicks = 441796895990000000;
 
-        // This is mask to extract ticks from m_ticks
+        // This is mask to extract ticks from _ticks
         private const ulong TickMask = 0x7FFFFFFFFFFFFFFFL;
         private const ulong UtcMask = 0x8000000000000000L;
 
@@ -78,12 +85,13 @@ namespace System
         /// Represents the smallest possible value of DateTime. This field is read-only.
         /// </summary>
         /// <remarks>The value of this constant is equivalent to 00:00:00.0000000, January 1, 1601.</remarks>
-        public static readonly DateTime MinValue = new DateTime(MinTicks);
+        public static readonly DateTime MinValue = new DateTime(MinTicks + _ticksAtOrigin);
+
         /// <summary>
         /// Represents the largest possible value of DateTime. This field is read-only.
         /// </summary>
         /// <remarks>The value of this constant is equivalent to 23:59:59.9999999, December 31, 9999, exactly one tick (100 nanoseconds) before 00:00:00, January 1, 10000.</remarks>
-        public static readonly DateTime MaxValue = new DateTime(MaxTicks);
+        public static readonly DateTime MaxValue = new DateTime(MaxTicks + _ticksAtOrigin);
 
         private ulong _ticks;
 
@@ -94,6 +102,8 @@ namespace System
         /// <exception cref="System.ArgumentOutOfRangeException">ticks - Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.</exception>
         public DateTime(long ticks)
         {
+            ticks -= _ticksAtOrigin;
+
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if ((ticks & (long)TickMask) < MinTicks || (ticks & (long)TickMask) > MaxTicks) throw new ArgumentOutOfRangeException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
@@ -158,12 +168,12 @@ namespace System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the time interval represented by val.</returns>
         public DateTime Add(TimeSpan val)
         {
-            return new DateTime((long)_ticks + val.Ticks);
+            return new DateTime((long)_ticks + val.Ticks + _ticksAtOrigin);
         }
 
         private DateTime Add(double val, int scale)
         {
-            return new DateTime((long)_ticks + (long)(val * scale * TicksPerMillisecond + (val >= 0 ? 0.5 : -0.5)));
+            return new DateTime((long)_ticks + (long)(val * scale * TicksPerMillisecond + (val >= 0 ? 0.5 : -0.5)) + _ticksAtOrigin);
         }
 
         /// <summary>
@@ -223,7 +233,7 @@ namespace System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the time represented by val.</returns>
         public DateTime AddTicks(long val)
         {
-            return new DateTime((long)_ticks + val);
+            return new DateTime((long)_ticks + val + _ticksAtOrigin);
         }
 
         /// <summary>
@@ -440,14 +450,6 @@ namespace System
             get;
         }
 
-        /// Our origin is at 1601/01/01:00:00:00.000
-        /// While desktop CLR's origin is at 0001/01/01:00:00:00.000.
-        /// There are 504911232000000000 ticks between them which we are subtracting.
-        /// See DeviceCode\PAL\time_decl.h for explanation of why we are taking
-        /// year 1601 as origin for our HAL, PAL, and CLR.
-        // static Int64 ticksAtOrigin = 504911232000000000;
-        private const Int64 TicksAtOrigin = 0;
-
         /// <summary>
         /// Gets the number of ticks that represent the date and time of this instance.
         /// </summary>
@@ -458,7 +460,7 @@ namespace System
         {
             get
             {
-                return (long)(_ticks & TickMask) + TicksAtOrigin;
+                return (long)(_ticks & TickMask) + _ticksAtOrigin;
             }
         }
 
@@ -507,7 +509,7 @@ namespace System
         /// <returns>A time interval that is equal to the date and time represented by this instance minus the date and time represented by val.</returns>
         public TimeSpan Subtract(DateTime val)
         {
-            return new TimeSpan((long)(_ticks & TickMask) - (long)(val._ticks & TickMask));
+            return new TimeSpan((long)(_ticks & TickMask) - (long)(val._ticks & TickMask) + _ticksAtOrigin);
         }
 
         /// <summary>
@@ -549,7 +551,7 @@ namespace System
         /// </returns>
         public static DateTime operator +(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._ticks + (ulong)t._ticks));
+            return new DateTime((long)(d._ticks + (ulong)t._ticks) + _ticksAtOrigin);
         }
 
 
@@ -563,7 +565,7 @@ namespace System
         /// </returns>
         public static DateTime operator -(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._ticks - (ulong)t._ticks));
+            return new DateTime((long)(d._ticks - (ulong)t._ticks) + _ticksAtOrigin);
         }
 
         /// <summary>
