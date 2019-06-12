@@ -1,5 +1,20 @@
 # Change Log
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.2-preview.20...HEAD)
+
+**Fixed bugs:**
+
+- Remove DebuggerBrowsable from excluded classes [\#78](https://github.com/nanoframework/lib-CoreLibrary/pull/78)
+
+**Documentation and other chores:**
+
+- Update Nerdbank.GitVersioning to 3.0.19-beta [\#77](https://github.com/nanoframework/lib-CoreLibrary/pull/77)
+
+## [v1.2.2-preview.20](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.2-preview.20) (2019-06-11)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.1-preview-013...v1.2.2-preview.20)
+
 ## [v1.2.1-preview-013](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.1-preview-013) (2019-06-11)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.0...v1.2.1-preview-013)
 
