@@ -1,5 +1,16 @@
 # Change Log
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.4-preview.1...HEAD)
+
+**Documentation and other chores:**
+
+- Update AssemblyNativeVersion to 1.2.0.0 [\#79](https://github.com/nanoframework/lib-CoreLibrary/pull/79)
+
+## [v1.2.4-preview.1](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.4-preview.1) (2019-06-12)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.2-preview.5...v1.2.4-preview.1)
+
 ## [v1.2.2-preview.5](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.2-preview.5) (2019-06-12)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.2-preview.20...v1.2.2-preview.5)
 
