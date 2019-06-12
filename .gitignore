@@ -252,3 +252,6 @@ paket-files/
 
 #sonarcloud
 .sonarqube
+
+#SoundCloud
+*.sonarqube/
