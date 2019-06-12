@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.4-preview.1...HEAD)
 
+**Fixed bugs:**
+
+- Fix DateTime ticks discrepancy from full .NET [\#80](https://github.com/nanoframework/lib-CoreLibrary/pull/80) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
 **Documentation and other chores:**
 
 - Update AssemblyNativeVersion to 1.2.0.0 [\#79](https://github.com/nanoframework/lib-CoreLibrary/pull/79)
