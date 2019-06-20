@@ -11,9 +11,11 @@ namespace System
     //     Specifies whether a System.DateTime object represents a local time, a Coordinated
     //     Universal Time (UTC), or is not specified as either local time or UTC.
     /// <summary>
-    /// Specifies whether a DateTime object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
+    /// Specifies whether a <see cref="DateTime"/> object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
     /// </summary>
-    /// <remarks>nanoFramework doesn't support local time, only  UTC, so it's not possible to specify DateTimeKind.Local.</remarks>
+    /// <remarks>
+    /// nanoFramework doesn't support local time, only  UTC, so it's not possible to specify <see cref="DateTimeKind.Local"/>.
+    /// </remarks>
     [Serializable]
     public enum DateTimeKind
     {
@@ -21,33 +23,55 @@ namespace System
         /// The time represented is UTC.
         /// </summary>
         Utc = 1,
+
         /// <summary>
         /// The time represented is local time.
         /// </summary>
-        [Obsolete("nanoFramework doesn't support local time, so DateTimeKind.Local can't be used for consistency", true)]
+        /// <remarks>
+        /// nanoFramework doesn't support local time, so <see cref="DateTimeKind.Local"/> is provided to allow code reuse and keep consistency with full .NET framework.
+        /// </remarks>
+        [Obsolete("nanoFramework doesn't support local time, so DateTimeKind.Local is provided to allow code reuse and keep consistency with full .NET framework", true)]
         Local = 2,
     }
 
-    // This value type represents a date and time.  Every DateTime
-    // object has a private field (Ticks) of type Int64 that stores the
-    // date and time as the number of 100 nanosecond intervals since
-    // 12:00 AM January 1, year 1601 A.D. in the proleptic Gregorian Calendar.
+    // Preamble from .NET code base:
+    // This value type represents a date and time.  Every DateTime 
+    // object has a private field (Ticks) of type Int64 that stores the 
+    // date and time as the number of 100 nanosecond intervals since 
+    // 12:00 AM January 1, year 1 A.D. in the proleptic Gregorian Calendar.
     //
-    // <p>For a description of various calendar issues, look at
-    // <a href="http://serendipity.nofadz.com/hermetic/cal_stud.htm">
-    // Calendar Studies web site</a>, at
+    // Starting from .NET V2.0, DateTime also stored some context about its time
+    // zone in the form of a 3-state value representing Unspecified, Utc or
+    // Local. This is stored in the two top bits of the 64-bit numeric value
+    // with the remainder of the bits storing the tick count. This information 
+    // is only used during time zone conversions and is not part of the 
+    // identity of the DateTime. Thus, operations like Compare and Equals
+    // ignore this state. This is to stay compatible with earlier behavior
+    // and performance characteristics and to avoid forcing  people into dealing 
+    // with the effects of daylight savings. Note, that this has little effect
+    // on how the DateTime works except in a context where its specific time
+    // zone is needed, such as during conversions and some parsing and formatting
+    // cases.
+    //
+    // There is also 4th state stored that is a special type of Local value that
+    // is used to avoid data loss when round-tripping between local and UTC time.
+    // See below for more information on this 4th state, although it is 
+    // effectively hidden from most users, who just see the 3-state DateTimeKind
+    // enumeration.
+    //
+    // For compatibility, DateTime does not serialize the Kind data when used in
+    // binary serialization.
+    // 
+    // For a description of various calendar issues, look at
+    // 
+    // Calendar Studies web site, at 
     // http://serendipity.nofadz.com/hermetic/cal_stud.htm.
     //
-    // <p>
-    // <h2>Warning about 2 digit years</h2>
-    // <p>As a temporary hack until we get new DateTime &lt;-&gt; String code,
-    // some systems won't be able to round trip dates less than 1930.  This
-    // is because we're using OleAut's string parsing routines, which look
-    // at your computer's default short date string format, which uses 2 digit
-    // years on most computers.  To fix this, go to Control Panel -&gt; Regional
-    // Settings -&gt; Date and change the short date style to something like
-    // "M/d/yyyy" (specifying four digits for the year).
-    //
+    // nanoFramework DateTime implementation introduces several simplifications:
+    // - origin is 1601/01/01:00:00:00.000
+    // - maximum value is 3000/12/31:23:59:59.999
+    // - does not support time zone (always UTC) or daylight savings, so these bits are always ignored
+
     /// <summary>
     /// Represents an instant in time, typically expressed as a date and time of day.
     /// </summary>
@@ -57,8 +81,6 @@ namespace System
         /// Our origin is at 1601/01/01:00:00:00.000
         /// While desktop CLR's origin is at 0001/01/01:00:00:00.000.
         /// There are 504911232000000000 ticks between them which we are subtracting.
-        /// See nf-interpreter\src\HAL\Include\nanoHAL_Time.h for explanation of why we are taking
-        /// year 1601 as origin for our HAL, PAL, and CLR.
         private const long _ticksAtOrigin = 504911232000000000;
 
         // Number of 100ns ticks per time unit
@@ -75,56 +97,74 @@ namespace System
         private const int MillisPerDay = MillisPerHour * 24;
 
         private const long MinTicks = 0;
-        private const long MaxTicks = 441796895990000000;
-
-        // This is mask to extract ticks from _ticks
-        private const ulong TickMask = 0x7FFFFFFFFFFFFFFFL;
-        private const ulong UtcMask = 0x8000000000000000L;
+        // ticks value corresponding to 3000/12/31:23:59:59.999
+        private const long MaxTicks = 946708127999999999 - _ticksAtOrigin;
 
         /// <summary>
-        /// Represents the smallest possible value of DateTime. This field is read-only.
+        /// Represents the smallest possible value of <see cref="DateTime"/>. This field is read-only.
         /// </summary>
-        /// <remarks>The value of this constant is equivalent to 00:00:00.0000000, January 1, 1601.</remarks>
+        /// <remarks>The value of this constant is equivalent to 00:00:00.0000000, January 1, 1601.
+        /// This value is specific to nanoFramework. .NET equivalent is 00:00:00.0000000 UTC, January 1, 0001, in the Gregorian calendar.
+        /// </remarks>
         public static readonly DateTime MinValue = new DateTime(MinTicks + _ticksAtOrigin);
 
         /// <summary>
-        /// Represents the largest possible value of DateTime. This field is read-only.
+        /// Represents the largest possible value of <see cref="DateTime"/>. This field is read-only.
         /// </summary>
-        /// <remarks>The value of this constant is equivalent to 23:59:59.9999999, December 31, 9999, exactly one tick (100 nanoseconds) before 00:00:00, January 1, 10000.</remarks>
+        /// <remarks>The value of this constant is equivalent to 23:59:59.9999999, December 31, 3000.
+        /// This value is specific to nanoFramework. .NET equivalent is 23:59:59.9999999 UTC, December 31, 9999 in the Gregorian calendar.
+        /// </remarks>
         public static readonly DateTime MaxValue = new DateTime(MaxTicks + _ticksAtOrigin);
 
-        private ulong _ticks;
+        // The data is stored as an unsigned 64-bit integer
+        //   Bits 01-62: The value of 100-nanosecond ticks where 0 represents 1601/01/01:00:00:00.000, up until the value
+        //               3000/12/31:23:59:59.999
+        //   Bits 63-64: Ignored in .NET nanoFramework implementation.
+        private UInt64 _ticks;
 
         /// <summary>
-        /// Initializes a new instance of the DateTime structure to a specified number of ticks.
+        /// Initializes a new instance of the <see cref="DateTime"/> structure to a specified number of ticks.
         /// </summary>
         /// <param name="ticks">A date and time expressed in the number of 100-nanosecond intervals. </param>
-        /// <exception cref="System.ArgumentOutOfRangeException">ticks - Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="DateTime.MinValue.Ticks"/> and <see cref="DateTime.MaxValue.Ticks"/>.</exception>
         public DateTime(long ticks)
         {
             ticks -= _ticksAtOrigin;
 
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if ((ticks & (long)TickMask) < MinTicks || (ticks & (long)TickMask) > MaxTicks) throw new ArgumentOutOfRangeException();
+            if (ticks < MinTicks || ticks > MaxTicks)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
-            _ticks = (ulong)ticks;
+            _ticks = (UInt64)ticks;
         }
 
         /// <summary>
-        /// Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC).
+        /// Initializes a new instance of the <see cref="DateTime"/> structure to a specified number of ticks and to Coordinated Universal Time (UTC).
         /// </summary>
         /// <param name="ticks">A date and time expressed in the number of 100-nanosecond intervals. </param>
         /// <param name="kind">One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.</param>
-        /// <remarks>nanoFramework doesn't suport local time, only  UTC, so it's not possible to specify DateTimeKind.Local.</remarks>
+        /// <remarks>
+        /// nanoFramework doesn't support local time, only  UTC, so it's not possible to specify <see cref="DateTimeKind.Local"/>.
+        /// </remarks>
         public DateTime(long ticks, DateTimeKind kind)
-            : this(ticks)
+            :this(ticks)
         {
-            _ticks |= UtcMask;
+            // it's OK to check kind parameter only here 
+            // if it's invalid the exception will be thrown anyway and allows the constructor to be reused
+
+            if (kind != DateTimeKind.Utc)
+            {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            }
         }
 
         /// <summary>
-        /// Initializes a new instance of the DateTime structure to the specified year, month, and day.
+        /// Initializes a new instance of the <see cref="DateTime"/> structure to the specified year, month, and day.
         /// </summary>
         /// <param name="year">The year (1 through 9999). </param>
         /// <param name="month">The month (1 through 12). </param>
@@ -135,7 +175,7 @@ namespace System
         }
 
         /// <summary>
-        /// Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, and second.
+        /// Initializes a new instance of the <see cref="DateTime"/> structure to the specified year, month, day, hour, minute, and second.
         /// </summary>
         /// <param name="year">The year (1 through 9999). </param>
         /// <param name="month">The month (1 through 12).</param>
@@ -149,7 +189,7 @@ namespace System
         }
 
         /// <summary>
-        /// Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond.
+        /// Initializes a new instance of the <see cref="DateTime"/> structure to the specified year, month, day, hour, minute, second, and millisecond.
         /// </summary>
         /// <param name="year">The year (1 through 9999). </param>
         /// <param name="month">The month (1 through 12).</param>
@@ -162,10 +202,10 @@ namespace System
         public extern DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond);
 
         /// <summary>
-        /// Returns a new DateTime that adds the value of the specified TimeSpan to the value of this instance.
+        /// Returns a new <see cref="DateTime"/> that adds the value of the specified <see cref="TimeSpan"/> to the value of this instance.
         /// </summary>
         /// <param name="val">A positive or negative time interval. </param>
-        /// <returns>An object whose value is the sum of the date and time represented by this instance and the time interval represented by val.</returns>
+        /// <returns>An object whose value is the sum of the date and time represented by this instance and the time interval represented by <paramref name="val"/>.</returns>
         public DateTime Add(TimeSpan val)
         {
             return new DateTime((long)_ticks + val.Ticks + _ticksAtOrigin);
@@ -177,78 +217,78 @@ namespace System
         }
 
         /// <summary>
-        /// Returns a new DateTime that adds the specified number of days to the value of this instance.
+        /// Returns a new <see cref="DateTime"/> that adds the specified number of days to the value of this instance.
         /// </summary>
-        /// <param name="val">A number of whole and fractional days. The val parameter can be negative or positive. </param>
-        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of days represented by val.</returns>
+        /// <param name="val">A number of whole and fractional days. The <paramref name="val"/> parameter can be negative or positive. </param>
+        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of days represented by <paramref name="val"/>.</returns>
         public DateTime AddDays(double val)
         {
             return Add(val, MillisPerDay);
         }
 
         /// <summary>
-        /// Returns a new DateTime that adds the specified number of hours to the value of this instance.
+        /// Returns a new <see cref="DateTime"/> that adds the specified number of hours to the value of this instance.
         /// </summary>
-        /// <param name="val">A number of whole and fractional hours. The val parameter can be negative or positive. </param>
-        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of hours represented by val.</returns>
+        /// <param name="val">A number of whole and fractional hours. The <paramref name="val"/> parameter can be negative or positive. </param>
+        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of hours represented by <paramref name="val"/>.</returns>
         public DateTime AddHours(double val)
         {
             return Add(val, MillisPerHour);
         }
 
         /// <summary>
-        /// Returns a new DateTime that adds the specified number of milliseconds to the value of this instance.
+        /// Returns a new <see cref="DateTime"/> that adds the specified number of milliseconds to the value of this instance.
         /// </summary>
-        /// <param name="val">A number of whole and fractional milliseconds. The val parameter can be negative or positive. Note that this value is rounded to the nearest integer.</param>
-        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of milliseconds represented by val.</returns>
+        /// <param name="val">A number of whole and fractional milliseconds. The <paramref name="val"/> parameter can be negative or positive. Note that this value is rounded to the nearest integer.</param>
+        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of milliseconds represented by <paramref name="val"/>.</returns>
         public DateTime AddMilliseconds(double val)
         {
             return Add(val, 1);
         }
 
         /// <summary>
-        /// Returns a new DateTime that adds the specified number of minutes to the value of this instance.
+        /// Returns a new <see cref="DateTime"/> that adds the specified number of minutes to the value of this instance.
         /// </summary>
-        /// <param name="val">A number of whole and fractional minutes. The val parameter can be negative or positive. </param>
-        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of minutes represented by val.</returns>
+        /// <param name="val">A number of whole and fractional minutes. The <paramref name="val"/> parameter can be negative or positive. </param>
+        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of minutes represented by <paramref name="val"/>.</returns>
         public DateTime AddMinutes(double val)
         {
             return Add(val, MillisPerMinute);
         }
 
         /// <summary>
-        /// Returns a new DateTime that adds the specified number of seconds to the value of this instance.
+        /// Returns a new <see cref="DateTime"/> that adds the specified number of seconds to the value of this instance.
         /// </summary>
-        /// <param name="val">A number of whole and fractional seconds. The val parameter can be negative or positive. </param>
-        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of seconds represented by val.</returns>
+        /// <param name="val">A number of whole and fractional seconds. The <paramref name="val"/> parameter can be negative or positive. </param>
+        /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of seconds represented by <paramref name="val"/>.</returns>
         public DateTime AddSeconds(double val)
         {
             return Add(val, MillisPerSecond);
         }
 
         /// <summary>
-        /// Returns a new DateTime that adds the specified number of ticks to the value of this instance.
+        /// Returns a new <see cref="DateTime"/> that adds the specified number of ticks to the value of this instance.
         /// </summary>
-        /// <param name="val">A number of 100-nanosecond ticks. The val parameter can be positive or negative. </param>
-        /// <returns>An object whose value is the sum of the date and time represented by this instance and the time represented by val.</returns>
+        /// <param name="val">A number of 100-nanosecond ticks. The <paramref name="val"/> parameter can be positive or negative. </param>
+        /// <returns>An object whose value is the sum of the date and time represented by this instance and the time represented by <paramref name="val"/>.</returns>
         public DateTime AddTicks(long val)
         {
             return new DateTime((long)_ticks + val + _ticksAtOrigin);
         }
 
         /// <summary>
-        /// Compares two instances of DateTime and returns an integer that indicates whether the first instance is earlier than, the same as, or later than the second instance.
+        /// Compares two instances of <see cref="DateTime"/> and returns an integer that indicates whether the first instance is earlier than, the same as, or later than the second instance.
         /// </summary>
         /// <param name="t1">The first object to compare. </param>
         /// <param name="t2">The second object to compare. </param>
-        /// <returns>A signed number indicating the relative values of t1 and t2.</returns>
+        /// <returns>A signed number indicating the relative values of <paramref name="t1"/> and <paramref name="t2"/>.</returns>
         public static int Compare(DateTime t1, DateTime t2)
         {
-            // Get ticks, clear UTC mask
-            var t1Ticks = t1._ticks & TickMask;
-            var t2Ticks = t2._ticks & TickMask;
+            // Get ticks
+            var t1Ticks = t1._ticks;
+            var t2Ticks = t2._ticks;
 
-            // Compare ticks, ignore the Kind property.
+            // Compare ticks.
             if (t1Ticks > t2Ticks) return 1;
             if (t1Ticks < t2Ticks) return -1;
 
@@ -257,9 +297,9 @@ namespace System
         }
 
         /// <summary>
-        /// Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.
+        /// Compares the value of this instance to a specified object that contains a specified <see cref="DateTime"/> value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified <see cref="DateTime"/> value.
         /// </summary>
-        /// <param name="val">A boxed object to compare, or  null reference (Nothing in Visual Basic).</param>
+        /// <param name="val">A boxed object to compare, or null reference (Nothing in Visual Basic).</param>
         /// <returns>A signed number indicating the relative values of this instance and value.</returns>
         public int CompareTo(Object val)
         {
@@ -282,7 +322,7 @@ namespace System
         /// Returns a value indicating whether this instance is equal to a specified object.
         /// </summary>
         /// <param name="obj">The object to compare to this instance. </param>
-        /// <returns>true if val is an instance of DateTime and equals the value of this instance; otherwise, false.</returns>
+        /// <returns>true if <paramref name="obj"/> is an instance of <see cref="DateTime"/> and equals the value of this instance; otherwise, false.</returns>
         public override bool Equals(Object obj)
         {
             if (obj is DateTime)
@@ -290,7 +330,7 @@ namespace System
                 // Call compare for proper comparison of 2 DateTime objects
                 // Since DateTime is optimized value and internally represented by int64
                 // "this" may still have type int64.
-                // Convertion to object and back is a workaround.
+                // Conversion to object and back is a workaround.
                 object o = this;
                 var thisTime = (DateTime)o;
 
@@ -301,7 +341,7 @@ namespace System
         }
 
         /// <summary>
-        /// Returns a value indicating whether two DateTime instances have the same date and time value.
+        /// Returns a value indicating whether two <see cref="DateTime"/> instances have the same date and time value.
         /// </summary>
         /// <param name="t1">The first object to compare. </param>
         /// <param name="t2">The second object to compare. </param>
@@ -321,8 +361,7 @@ namespace System
         {
             get
             {
-                // Need to remove UTC mask before arithmetic operations. Then set it back.
-                return (_ticks & UtcMask) != 0 ? new DateTime((long)(((_ticks & TickMask) - (_ticks & TickMask) % TicksPerDay) | UtcMask)) : new DateTime((long)(_ticks - _ticks % TicksPerDay));
+                return new DateTime((long)(_ticks - (_ticks % TicksPerDay)) + _ticksAtOrigin);
             }
         }
 
@@ -342,11 +381,11 @@ namespace System
         /// Gets the day of the week represented by this instance.
         /// </summary>
         /// <value>
-        /// An enumerated constant that indicates the day of the week of this DateTime value.
+        /// An enumerated constant that indicates the day of the week of this <see cref="DateTime"/> value.
         /// </value>
         public extern DayOfWeek DayOfWeek
         {
-            [MethodImplAttribute(MethodImplOptions.InternalCall)]
+            [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
 
@@ -378,13 +417,16 @@ namespace System
         /// Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.
         /// </summary>
         /// <value>
-        /// One of the enumeration values that indicates what the current time represents. Despite the default in the full .NET Framework is DateTimeKind.Local this won't never happen becuase nanoFramework only suports UTC time.
+        /// One of the enumeration values that indicates what the current time represents.
         /// </value>
+        /// <remarks>
+        /// Despite the default in the full .NET Framework is <see cref="DateTimeKind.Local"/> this won't never happen because nanoFramework only supports UTC time.
+        /// </remarks>
         public DateTimeKind Kind
         {
             get
             {
-                // If mask for UTC time is set - return UTC. If no maskk - return local.
+                // always UTC
                 return DateTimeKind.Utc;
             }
 
@@ -427,7 +469,7 @@ namespace System
         }
 
         /// <summary>
-        /// Gets a DateTime object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).
+        /// Gets a <see cref="DateTime"/> object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).
         /// </summary>
         /// <value>
         /// An object whose value is the current UTC date and time.
@@ -460,7 +502,7 @@ namespace System
         {
             get
             {
-                return (long)(_ticks & TickMask) + _ticksAtOrigin;
+                return (long)_ticks;
             }
         }
 
@@ -474,7 +516,7 @@ namespace System
         {
             get
             {
-                return new TimeSpan((long)((_ticks & TickMask) % TicksPerDay));
+                return new TimeSpan((long)(_ticks % TicksPerDay));
             }
         }
 
@@ -506,33 +548,33 @@ namespace System
         /// Subtracts the specified date and time from this instance.
         /// </summary>
         /// <param name="val">The date and time value to subtract. </param>
-        /// <returns>A time interval that is equal to the date and time represented by this instance minus the date and time represented by val.</returns>
+        /// <returns>A time interval that is equal to the date and time represented by this instance minus the date and time represented by <paramref name="val"/>.</returns>
         public TimeSpan Subtract(DateTime val)
         {
-            return new TimeSpan((long)(_ticks & TickMask) - (long)(val._ticks & TickMask) + _ticksAtOrigin);
+            return new TimeSpan((long)_ticks - (long)val._ticks);
         }
 
         /// <summary>
         /// Subtracts the specified duration from this instance.
         /// </summary>
         /// <param name="val">The time interval to subtract. </param>
-        /// <returns>An object that is equal to the date and time represented by this instance minus the time interval represented by val.</returns>
+        /// <returns>An object that is equal to the date and time represented by this instance minus the time interval represented by <paramref name="val"/>.</returns>
         public DateTime Subtract(TimeSpan val)
         {
-            return new DateTime((long)(_ticks - (ulong)val._ticks));
+            return new DateTime((long)(_ticks - (ulong)val._ticks) + _ticksAtOrigin);
         }
 
         /// <summary>
-        /// Converts the value of the current DateTime object to its equivalent string representation.
+        /// Converts the value of the current <see cref="DateTime"/> object to its equivalent string representation.
         /// </summary>
-        /// <returns>A string representation of the value of the current DateTime object.</returns>
+        /// <returns>A string representation of the value of the current <see cref="DateTime"/> object.</returns>
         public override String ToString()
         {
             return DateTimeFormat.Format(this, null, DateTimeFormatInfo.CurrentInfo);
         }
 
         /// <summary>
-        /// Converts the value of the current DateTime object to its equivalent string representation using the specified format.
+        /// Converts the value of the current <see cref="DateTime"/> object to its equivalent string representation using the specified format.
         /// </summary>
         /// <param name="format">A standard or custom date and time format string (see Remarks). </param>
         /// <returns>A string representation of value of the current DateTime object as specified by format.</returns>
@@ -547,7 +589,7 @@ namespace System
         /// <param name="d">The date and time value to add. </param>
         /// <param name="t">The time interval to add. </param>
         /// <returns>
-        /// An object that is the sum of the values of d and t.
+        /// An object that is the sum of the values of <paramref name="d"/> and <paramref name="t"/>.
         /// </returns>
         public static DateTime operator +(DateTime d, TimeSpan t)
         {
@@ -561,7 +603,7 @@ namespace System
         /// <param name="d">The date and time value to subtract from. </param>
         /// <param name="t">The time interval to subtract. </param>
         /// <returns>
-        /// An object whose value is the value of d minus the value of t.
+        /// An object whose value is the value of <paramref name="d"/> minus the value of <paramref name="t"/>.
         /// </returns>
         public static DateTime operator -(DateTime d, TimeSpan t)
         {
@@ -574,7 +616,7 @@ namespace System
         /// <param name="d1">The date and time value to subtract from (the minuend). </param>
         /// <param name="d2">The date and time value to subtract (the subtrahend). </param>
         /// <returns>
-        /// The time interval between d1 and d2; that is, d1 minus d2.
+        /// The time interval between <paramref name="d1"/> and <paramref name="d2"/>; that is, <paramref name="d1"/> minus <paramref name="d2"/>.
         /// </returns>
         public static TimeSpan operator -(DateTime d1, DateTime d2)
         {
@@ -582,12 +624,12 @@ namespace System
         }
 
         /// <summary>
-        /// Determines whether two specified instances of DateTime are equal.
+        /// Determines whether two specified instances of <see cref="DateTime"/> are equal.
         /// </summary>
         /// <param name="d1">The first object to compare. </param>
         /// <param name="d2">The second object to compare. </param>
         /// <returns>
-        /// true if d1 and d2 represent the same date and time; otherwise, false.
+        /// true if <paramref name="d1"/> and <paramref name="d2"/> represent the same date and time; otherwise, false.
         /// </returns>
         public static bool operator ==(DateTime d1, DateTime d2)
         {
@@ -595,12 +637,12 @@ namespace System
         }
 
         /// <summary>
-        /// Determines whether two specified instances of DateTime are not equal.
+        /// Determines whether two specified instances of <see cref="DateTime"/> are not equal.
         /// </summary>
         /// <param name="t1">The first object to compare. </param>
         /// <param name="t2">The second object to compare. </param>
         /// <returns>
-        /// true if t1 and t2 do not represent the same date and time; otherwise, false.
+        /// true if <paramref name="t1"/> and <paramref name="t2"/> do not represent the same date and time; otherwise, false.
         /// </returns>
         public static bool operator !=(DateTime t1, DateTime t2)
         {
@@ -608,12 +650,12 @@ namespace System
         }
 
         /// <summary>
-        /// Determines whether one specified DateTime is less than another specified DateTime.
+        /// Determines whether one specified <see cref="DateTime"/> is less than another specified <see cref="DateTime"/>.
         /// </summary>
         /// <param name="t1">The first object to compare. </param>
         /// <param name="t2">The second object to compare. </param>
         /// <returns>
-        /// true if t1 is less than t2; otherwise, false.
+        /// true if <paramref name="t1"/> is less than <paramref name="t2"/>; otherwise, false.
         /// </returns>
         public static bool operator <(DateTime t1, DateTime t2)
         {
@@ -621,12 +663,12 @@ namespace System
         }
 
         /// <summary>
-        /// Determines whether one specified DateTime is less than or equal to another specified DateTime.
+        /// Determines whether one specified <see cref="DateTime"/> is less than or equal to another specified DateTime.
         /// </summary>
         /// <param name="t1">The first object to compare. </param>
         /// <param name="t2">The second object to compare. </param>
         /// <returns>
-        /// true if t1 is less than or equal to t2; otherwise, false.
+        /// true if <paramref name="t1"/> is less than or equal to <paramref name="t2"/>; otherwise, false.
         /// </returns>
         public static bool operator <=(DateTime t1, DateTime t2)
         {
@@ -639,7 +681,7 @@ namespace System
         /// <param name="t1">The first object to compare. </param>
         /// <param name="t2">The second object to compare. </param>
         /// <returns>
-        /// true if t1 is greater than t2; otherwise, false.
+        /// true if <paramref name="t1"/> is greater than <paramref name="t2"/>; otherwise, false.
         /// </returns>
         public static bool operator >(DateTime t1, DateTime t2)
         {
@@ -647,12 +689,12 @@ namespace System
         }
 
         /// <summary>
-        /// Determines whether one specified DateTime is greater than or equal to another specified DateTime.
+        /// Determines whether one specified <see cref="DateTime"/> is greater than or equal to another specified DateTime.
         /// </summary>
         /// <param name="t1">The first object to compare. </param>
         /// <param name="t2">The second object to compare. </param>
         /// <returns>
-        /// true if t1 is greater than or equal to t2; otherwise, false.
+        /// true if <paramref name="t1"/> is greater than or equal to <paramref name="t2"/>; otherwise, false.
         /// </returns>
         public static bool operator >=(DateTime t1, DateTime t2)
         {
@@ -666,7 +708,7 @@ namespace System
         public override int GetHashCode()
         {
             ulong internalTicks = _ticks;
-            return (((int)internalTicks) ^ ((int)(internalTicks >> 0x20)));
+            return ((int)internalTicks) ^ ((int)(internalTicks >> 0x20));
         }
     }
 }
