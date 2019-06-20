@@ -2,7 +2,19 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.4-preview.1...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.5-preview.1...HEAD)
+
+**Implemented enhancements:**
+
+- Add support for Unix Epoch [\#82](https://github.com/nanoframework/lib-CoreLibrary/pull/82)
+- Rework DateTime [\#81](https://github.com/nanoframework/lib-CoreLibrary/pull/81) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
+**Fixed bugs:**
+
+- Rework DateTime [\#81](https://github.com/nanoframework/lib-CoreLibrary/pull/81) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
+## [v1.2.5-preview.1](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.5-preview.1) (2019-06-12)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.4-preview.1...v1.2.5-preview.1)
 
 **Fixed bugs:**
 
