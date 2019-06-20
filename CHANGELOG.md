@@ -129,6 +129,10 @@
 ## [v1.0.5-preview028](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.5-preview028) (2018-10-26)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.3...v1.0.5-preview028)
 
+**Implemented enhancements:**
+
+- Work on TimeSpan [\#14](https://github.com/nanoframework/lib-CoreLibrary/pull/14)
+
 **Documentation and other chores:**
 
 - Extract System.Math [\#50](https://github.com/nanoframework/lib-CoreLibrary/pull/50) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
@@ -149,7 +153,6 @@
 - Implement missing GetHashCode\(\) on several classes/structs [\#17](https://github.com/nanoframework/lib-CoreLibrary/pull/17)
 - Improve System.Single [\#16](https://github.com/nanoframework/lib-CoreLibrary/pull/16)
 - Work on Convert\(\) class [\#15](https://github.com/nanoframework/lib-CoreLibrary/pull/15)
-- Work on TimeSpan [\#14](https://github.com/nanoframework/lib-CoreLibrary/pull/14)
 - Add overloads with float parameters to Math methods [\#13](https://github.com/nanoframework/lib-CoreLibrary/pull/13)
 - Add String.Format [\#12](https://github.com/nanoframework/lib-CoreLibrary/pull/12)
 - Add Timeout.InfiniteTimeSpan and Sleep\(timespan\) [\#11](https://github.com/nanoframework/lib-CoreLibrary/pull/11)
