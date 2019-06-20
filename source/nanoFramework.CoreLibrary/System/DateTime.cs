@@ -96,6 +96,10 @@ namespace System
         private const int MillisPerHour = MillisPerMinute * 60;
         private const int MillisPerDay = MillisPerHour * 24;
 
+        // Unix Epoch constants
+        private const long UnixEpochTicks = (TicksPerDay * 719162) - _ticksAtOrigin; // 621355968000000000
+        private const long UnixEpochSeconds = UnixEpochTicks / TicksPerSecond; // 62135596800
+
         private const long MinTicks = 0;
         // ticks value corresponding to 3000/12/31:23:59:59.999
         private const long MaxTicks = 946708127999999999 - _ticksAtOrigin;
@@ -115,6 +119,14 @@ namespace System
         /// This value is specific to nanoFramework. .NET equivalent is 23:59:59.9999999 UTC, December 31, 9999 in the Gregorian calendar.
         /// </remarks>
         public static readonly DateTime MaxValue = new DateTime(MaxTicks + _ticksAtOrigin);
+
+        /// <summary>
+        /// Represents the Unix Epoch value. This field is read-only.
+        /// </summary>
+        /// <remarks>The value of this constant is equivalent to the <see cref="DateTime"/> corresponding to 1970-01-01T00:00:00Z (January 1, 1970, at 12:00 AM UTC).
+        /// This value is specific to nanoFramework.
+        /// </remarks>
+        public static readonly DateTime UnixEpoch = new DateTime(UnixEpochTicks + _ticksAtOrigin, DateTimeKind.Utc);
 
         // The data is stored as an unsigned 64-bit integer
         //   Bits 01-62: The value of 100-nanosecond ticks where 0 represents 1601/01/01:00:00:00.000, up until the value
@@ -699,6 +711,61 @@ namespace System
         public static bool operator >=(DateTime t1, DateTime t2)
         {
             return Compare(t1, t2) >= 0;
+        }
+
+        /// <summary>
+        /// Converts a Unix time expressed as the number of seconds that have elapsed since 1970-01-01T00:00:00Z to a <see cref="DateTime"/> value.
+        /// </summary>
+        /// <param name="seconds">A Unix time, expressed as the number of seconds that have elapsed since 1970-01-01T00:00:00Z (January 1, 1970, at 12:00 AM UTC). For Unix times before this date, its value is negative.</param>
+        /// <returns>A date and time value that represents the same moment in time as the Unix time.</returns>
+        /// <remarks>
+        /// This method is exclusive of nanoFramework.
+        /// </remarks>
+        public static DateTime FromUnixTimeSeconds(long seconds)
+        {
+            const long MinSeconds = (MinTicks / TicksPerSecond) - UnixEpochSeconds;
+            const long MaxSeconds = (MaxTicks / TicksPerSecond) - UnixEpochSeconds;
+
+            if (seconds < MinSeconds || seconds > MaxSeconds)
+            {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            }
+
+            long ticks = (seconds * TicksPerSecond) + UnixEpochTicks;
+            return new DateTime(ticks + _ticksAtOrigin);
+        }
+
+        /// <summary>
+        /// Returns the number of seconds that have elapsed since 1970-01-01T00:00:00Z.
+        /// </summary>
+        /// <returns>The number of seconds that have elapsed since 1970-01-01T00:00:00Z.</returns>
+        /// <remarks>
+        /// Unix time represents the number of seconds that have elapsed since 1970-01-01T00:00:00Z (January 1, 1970, at 12:00 AM UTC). It does not take leap seconds into account.
+        /// 
+        /// This method is exclusive of nanoFramework.
+        /// </remarks>
+        public long ToUnixTimeSeconds()
+        {
+            // Truncate sub-second precision before offsetting by the Unix Epoch to avoid
+            // the last digit being off by one for dates that result in negative Unix times.
+            //
+            // For example, consider the DateTime 12/31/1969 12:59:59.001 +0
+            //   ticks            = 621355967990010000
+            //   ticksFromEpoch   = ticks - UnixEpochTicks                   = -9990000
+            //   secondsFromEpoch = ticksFromEpoch / TicksPerSecond = 0
+            //
+            // Notice that secondsFromEpoch is rounded *up* by the truncation induced by integer division,
+            // whereas we actually always want to round *down* when converting to Unix time. This happens
+            // automatically for positive Unix time values. Now the example becomes:
+            //   seconds          = ticks / TicksPerSecond = 62135596799
+            //   secondsFromEpoch = seconds - UnixEpochSeconds      = -1
+            //
+            // In other words, we want to consistently round toward the time 1/1/0001 00:00:00,
+            // rather than toward the Unix Epoch (1/1/1970 00:00:00).
+            long seconds = (long)(_ticks / TicksPerSecond);
+            return seconds - UnixEpochSeconds;
         }
 
         /// <summary>
