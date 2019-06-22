@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.5-preview.1...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.1...HEAD)
+
+**Documentation and other chores:**
+
+- Work on native assembly declaration [\#83](https://github.com/nanoframework/lib-CoreLibrary/pull/83) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
+## [v1.2.6-preview.1](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.1) (2019-06-20)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.5-preview.1...v1.2.6-preview.1)
 
 **Implemented enhancements:**
 
@@ -129,10 +136,6 @@
 ## [v1.0.5-preview028](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.5-preview028) (2018-10-26)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.3...v1.0.5-preview028)
 
-**Implemented enhancements:**
-
-- Work on TimeSpan [\#14](https://github.com/nanoframework/lib-CoreLibrary/pull/14)
-
 **Documentation and other chores:**
 
 - Extract System.Math [\#50](https://github.com/nanoframework/lib-CoreLibrary/pull/50) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
@@ -143,7 +146,6 @@
 **Documentation and other chores:**
 
 - Improve CI & CD scripts to deal with release and master branches [\#46](https://github.com/nanoframework/lib-CoreLibrary/pull/46)
-- merge Release 1.0.2 branch [\#45](https://github.com/nanoframework/lib-CoreLibrary/pull/45)
 
 ## [v1.0.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.2) (2018-10-16)
 **Implemented enhancements:**
@@ -153,6 +155,7 @@
 - Implement missing GetHashCode\(\) on several classes/structs [\#17](https://github.com/nanoframework/lib-CoreLibrary/pull/17)
 - Improve System.Single [\#16](https://github.com/nanoframework/lib-CoreLibrary/pull/16)
 - Work on Convert\(\) class [\#15](https://github.com/nanoframework/lib-CoreLibrary/pull/15)
+- Work on TimeSpan [\#14](https://github.com/nanoframework/lib-CoreLibrary/pull/14)
 - Add overloads with float parameters to Math methods [\#13](https://github.com/nanoframework/lib-CoreLibrary/pull/13)
 - Add String.Format [\#12](https://github.com/nanoframework/lib-CoreLibrary/pull/12)
 - Add Timeout.InfiniteTimeSpan and Sleep\(timespan\) [\#11](https://github.com/nanoframework/lib-CoreLibrary/pull/11)
@@ -171,6 +174,7 @@
 
 **Documentation and other chores:**
 
+- merge Release 1.0.2 branch [\#45](https://github.com/nanoframework/lib-CoreLibrary/pull/45)
 - Merge 'develop' for Release 1.0.2 [\#44](https://github.com/nanoframework/lib-CoreLibrary/pull/44)
 - Add all missing comments for documentation and Intellisense [\#18](https://github.com/nanoframework/lib-CoreLibrary/pull/18)
 - Update comment on Random class [\#9](https://github.com/nanoframework/lib-CoreLibrary/pull/9)
