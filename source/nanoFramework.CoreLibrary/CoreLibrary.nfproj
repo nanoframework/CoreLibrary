@@ -367,6 +367,9 @@
     <NFMDP_PE_ExcludeClassByName Include="System.UIntPtr">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="ThisAssembly">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
