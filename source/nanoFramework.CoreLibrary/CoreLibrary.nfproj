@@ -53,7 +53,7 @@
     <Compile Include="System\ArgumentNullException.cs" />
     <Compile Include="System\ArgumentOutOfRangeException.cs" />
     <Compile Include="System\Array.cs" />
-    <Compile Include="System\AssemblyInfo2.cs" />
+    <Compile Include="System\AssemblyInfo.cs" />
     <Compile Include="System\AsyncCallback.cs" />
     <Compile Include="System\Attribute.cs" />
     <Compile Include="System\AttributeTargets.cs" />
