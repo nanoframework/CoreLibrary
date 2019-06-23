@@ -147,7 +147,6 @@
 
 - Improve CI & CD scripts to deal with release and master branches [\#46](https://github.com/nanoframework/lib-CoreLibrary/pull/46)
 - merge Release 1.0.2 branch [\#45](https://github.com/nanoframework/lib-CoreLibrary/pull/45)
-- Merge 'develop' for Release 1.0.2 [\#44](https://github.com/nanoframework/lib-CoreLibrary/pull/44)
 
 ## [v1.0.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.2) (2018-10-16)
 **Implemented enhancements:**
@@ -176,6 +175,7 @@
 
 **Documentation and other chores:**
 
+- Merge 'develop' for Release 1.0.2 [\#44](https://github.com/nanoframework/lib-CoreLibrary/pull/44)
 - Add all missing comments for documentation and Intellisense [\#18](https://github.com/nanoframework/lib-CoreLibrary/pull/18)
 - Update comment on Random class [\#9](https://github.com/nanoframework/lib-CoreLibrary/pull/9)
 
