@@ -57,6 +57,17 @@ namespace System
         }
 
         /// <summary>
+        /// Returns the invocation list of the delegate.
+        /// </summary>
+        /// <returns>
+        /// An array of delegates representing the invocation list of the current delegate.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
+        public virtual extern Delegate[] GetInvocationList();
+#pragma warning restore S4200 // Native methods should be wrapped
+
+        /// <summary>
         /// Gets the class instance on which the current delegate invokes the instance method.
         /// </summary>
         /// <value>
