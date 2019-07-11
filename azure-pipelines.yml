@@ -59,7 +59,7 @@ steps:
       lib-nanoFramework.Hardware.Stm32
       lib-nanoFramework.System.Math
       Json.NetMF
-  condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v') )
+  condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***') )
   displayName: Update dependent class libs
 
 # step from template @ nf-tools repo
