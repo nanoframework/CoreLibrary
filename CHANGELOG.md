@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.1...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.7...HEAD)
+
+**Documentation and other chores:**
+
+- Added GetInvocationList to System.Delegate [\#85](https://github.com/nanoframework/lib-CoreLibrary/pull/85)
+
+## [v1.2.6-preview.7](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.7) (2019-06-23)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.1...v1.2.6-preview.7)
 
 **Documentation and other chores:**
 
