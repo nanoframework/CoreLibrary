@@ -1,8 +1,7 @@
 # Change Log
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.10...HEAD)
+## [v1.2.6-preview.12](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.12) (2019-07-15)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.10...v1.2.6-preview.12)
 
 **Documentation and other chores:**
 
@@ -132,10 +131,6 @@
 ## [v1.0.6-preview-015](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.6-preview-015) (2018-11-29)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.6-preview-001...v1.0.6-preview-015)
 
-**Implemented enhancements:**
-
-- Add new TimeSpan.From methods [\#57](https://github.com/nanoframework/lib-CoreLibrary/pull/57)
-
 **Fixed bugs:**
 
 - Fix ToString\(\) output  [\#56](https://github.com/nanoframework/lib-CoreLibrary/pull/56)
@@ -150,12 +145,12 @@
 ## [v1.0.5-preview028](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.5-preview028) (2018-10-26)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.3...v1.0.5-preview028)
 
-**Documentation and other chores:**
-
-- Extract System.Math [\#50](https://github.com/nanoframework/lib-CoreLibrary/pull/50) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
-
 ## [v1.0.3](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.3) (2018-10-16)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.2...v1.0.3)
+
+**Implemented enhancements:**
+
+- Add GetCustomAttributes method to MemberInfo and derived classes [\#27](https://github.com/nanoframework/lib-CoreLibrary/pull/27)
 
 **Documentation and other chores:**
 
@@ -165,7 +160,7 @@
 ## [v1.0.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.2) (2018-10-16)
 **Implemented enhancements:**
 
-- Add GetCustomAttributes method to MemberInfo and derived classes [\#27](https://github.com/nanoframework/lib-CoreLibrary/pull/27)
+- Add new TimeSpan.From methods [\#57](https://github.com/nanoframework/lib-CoreLibrary/pull/57)
 - Add Encoding.GetString\(\) method [\#20](https://github.com/nanoframework/lib-CoreLibrary/pull/20)
 - Implement missing GetHashCode\(\) on several classes/structs [\#17](https://github.com/nanoframework/lib-CoreLibrary/pull/17)
 - Improve System.Single [\#16](https://github.com/nanoframework/lib-CoreLibrary/pull/16)
@@ -189,6 +184,7 @@
 
 **Documentation and other chores:**
 
+- Extract System.Math [\#50](https://github.com/nanoframework/lib-CoreLibrary/pull/50) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
 - Merge 'develop' for Release 1.0.2 [\#44](https://github.com/nanoframework/lib-CoreLibrary/pull/44)
 - Add all missing comments for documentation and Intellisense [\#18](https://github.com/nanoframework/lib-CoreLibrary/pull/18)
 - Update comment on Random class [\#9](https://github.com/nanoframework/lib-CoreLibrary/pull/9)
