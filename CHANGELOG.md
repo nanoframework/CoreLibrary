@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.7...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.10...HEAD)
+
+**Documentation and other chores:**
+
+- Update readme.txt [\#87](https://github.com/nanoframework/lib-CoreLibrary/pull/87)
+
+## [v1.2.6-preview.10](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.10) (2019-07-11)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.7...v1.2.6-preview.10)
 
 **Documentation and other chores:**
 
