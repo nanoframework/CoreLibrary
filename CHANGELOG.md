@@ -1,5 +1,8 @@
 # Change Log
 
+## [v1.2.6-preview.16](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.16) (2019-07-17)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.14...v1.2.6-preview.16)
+
 ## [v1.2.6-preview.14](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.14) (2019-07-17)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.12...v1.2.6-preview.14)
 
@@ -141,7 +144,6 @@
 **Fixed bugs:**
 
 - Fix ToString\(\) output  [\#56](https://github.com/nanoframework/lib-CoreLibrary/pull/56)
-- Fix infinite loop in Append\(object value\) [\#10](https://github.com/nanoframework/lib-CoreLibrary/pull/10)
 
 ## [v1.0.6-preview-001](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.6-preview-001) (2018-11-07)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.5-preview028...v1.0.6-preview-001)
@@ -159,10 +161,6 @@
 
 ## [v1.0.3](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.3) (2018-10-16)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.2...v1.0.3)
-
-**Fixed bugs:**
-
-- Fix PostProcessInteger in System.Number [\#25](https://github.com/nanoframework/lib-CoreLibrary/pull/25)
 
 **Documentation and other chores:**
 
@@ -186,10 +184,12 @@
 **Fixed bugs:**
 
 - Fix Assembly.GetType\(string, bool\) throws ArgumentException [\#26](https://github.com/nanoframework/lib-CoreLibrary/pull/26)
+- Fix PostProcessInteger in System.Number [\#25](https://github.com/nanoframework/lib-CoreLibrary/pull/25)
 - Constructor should copy only the desired chars [\#24](https://github.com/nanoframework/lib-CoreLibrary/pull/24)
 - Fix Hashtable.CopyTo [\#23](https://github.com/nanoframework/lib-CoreLibrary/pull/23)
 - Fix issue with ToString for doubles and floats [\#22](https://github.com/nanoframework/lib-CoreLibrary/pull/22)
 - Remove implementations of GetHashCode\(\) from several classes [\#21](https://github.com/nanoframework/lib-CoreLibrary/pull/21)
+- Fix infinite loop in Append\(object value\) [\#10](https://github.com/nanoframework/lib-CoreLibrary/pull/10)
 - Update Number.cs [\#6](https://github.com/nanoframework/lib-CoreLibrary/pull/6)
 
 **Documentation and other chores:**
