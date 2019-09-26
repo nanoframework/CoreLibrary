@@ -443,8 +443,7 @@ namespace System
             {
                 return false;
             }
-            ++currentPos; // Increment past the '-'
-            startPos = currentPos;
+            ++currentPos; // Increment past the '-'            
 
             if (!StringToLong(guidString, ref currentPos, 12, out templ))
             {
