@@ -12,7 +12,7 @@ namespace System
         ////////////////////////////////////////////////////////////////////////////////
         //  Member variables
         ////////////////////////////////////////////////////////////////////////////////
-        private int _a;
+        private int   _a;
         private short _b;
         private short _c;
         private byte _d;
@@ -131,7 +131,9 @@ namespace System
         public Guid(string g)
         {
             if (!TryParseGuidWithDashes(g, out this))
-                throw new ArgumentException();
+            {
+                throw new ArgumentException("Guid string not in expected format: [{]dddddddd-dddd-dddd-dddd-dddddddddddd[}]");
+            }
         }
 
         /// <summary>
@@ -373,55 +375,81 @@ namespace System
             return 1;
         }
 
-
-        // Check if it's of the form [{|(]dddddddd-dddd-dddd-dddd-dddddddddddd[}|)]
+        /// <summary>
+        ///   Creates a new <see cref="Guid"/> based on the value in the string.  The value is made up
+        ///   of hex digits speared by the dash ("-"). The string may begin and end with
+        ///   brackets ("{", "}").
+        ///   
+        ///   The string must be of the form dddddddd-dddd-dddd-dddd-dddddddddddd. where
+        ///   d is a hex digit. (That is 8 hex digits, followed by 4, then 4, then 4,
+        ///   then 12) such as: "CA761232-ED42-11CE-BACD-00AA0057B223"
+        /// </summary>
+        /// <param name="guidString">Guid string to parse.</param>
+        /// <param name="result">Resulting Guid.</param>
+        /// <returns></returns>
         public static bool TryParseGuidWithDashes(String guidString, out Guid result)
         {
             int startPos = 0;
             int temp;
             long templ;
             int currentPos = 0;
-            result = new Guid();
+            result = Guid.Empty;
 
             // check to see that it's the proper length
             if (guidString[0] == '{')
             {
                 if (guidString.Length != 38 || guidString[37] != '}')
+                {
                     return false;
+                }
                 startPos = 1;
             }
             else if (guidString.Length != 36)
+            {
                 return false;
+            }
 
             if (guidString[8 + startPos] != '-' ||
                 guidString[13 + startPos] != '-' ||
                 guidString[18 + startPos] != '-' ||
                 guidString[23 + startPos] != '-')
+            {
                 return false;
+            }
 
             currentPos = startPos;
             if (!StringToInt(guidString, ref currentPos, 8, out temp))
+            {
                 return false;
+            }
             result._a = temp;
-            ++currentPos; //Increment past the '-';
+            ++currentPos; // Increment past the '-'
 
             if (!StringToInt(guidString, ref currentPos, 4, out temp))
+            {
                 return false;
+            }
             result._b = (short)temp;
-            ++currentPos; //Increment past the '-';
+            ++currentPos; // Increment past the '-'
 
             if (!StringToInt(guidString, ref currentPos, 4, out temp))
+            {
                 return false;
+            }
             result._c = (short)temp;
-            ++currentPos; //Increment past the '-';
+            ++currentPos; // Increment past the '-'
 
             if (!StringToInt(guidString, ref currentPos, 4, out temp))
+            {
                 return false;
-            ++currentPos; //Increment past the '-';
+            }
+            ++currentPos; // Increment past the '-'
             startPos = currentPos;
 
             if (!StringToLong(guidString, ref currentPos, 12, out templ))
+            {
                 return false;
+            }
 
             result._d = (byte)(temp >> 8);
             result._e = (byte)(temp);
@@ -447,12 +475,16 @@ namespace System
         /// <returns>False if any character is not a hex digit or string is shorter than needed for the requiredLength. Otherwise true.</returns>
         private static bool StringToInt(String str, ref int parsePos, int requiredLength, out int result)
         {
-            result = 0;
             if (StringToLong(str, ref parsePos, requiredLength, out long lresult))
+            {
                 result = (int)lresult;
+                return true;
+            }
             else
+            {
+                result = 0;
                 return false;
-            return true;
+            }
         }
 
         /// <summary>
@@ -468,19 +500,29 @@ namespace System
             result = 0;
 
             if (str.Length < parsePos + requiredLength)
+            {
                 return false;
+            }
             while (requiredLength-- > 0)
             {
                 result <<= 4;
                 char c = str[parsePos++];
                 if (c >= '0' && c <= '9')
+                {
                     result += (byte)c - 48;
+                }
                 else if (c >= 'A' && c <= 'F')
+                {
                     result += (byte)c - 55;
+                }
                 else if (c >= 'a' && c <= 'f')
+                {
                     result += (byte)c - 87;
+                }
                 else
+                {
                     return false;
+                }
             }
             return true;
         }
