@@ -12,7 +12,7 @@ namespace System
         ////////////////////////////////////////////////////////////////////////////////
         //  Member variables
         ////////////////////////////////////////////////////////////////////////////////
-        private int   _a;
+        private int _a;
         private short _b;
         private short _c;
         private byte _d;
@@ -116,6 +116,25 @@ namespace System
             _i = b[13];
             _j = b[14];
             _k = b[15];
+        }
+
+        /// <summary>
+        ///   Creates a new <see cref="Guid"/> based on the value in the string.  The value is made up
+        ///   of hex digits speared by the dash ("-"). The string may begin and end with
+        ///   brackets ("{", "}").
+        ///   
+        ///   The string must be of the form dddddddd-dddd-dddd-dddd-dddddddddddd. where
+        ///   d is a hex digit. (That is 8 hex digits, followed by 4, then 4, then 4,
+        ///   then 12) such as: "CA761232-ED42-11CE-BACD-00AA0057B223"
+        /// </summary>
+        /// <param name="g">String representation of new <see cref="Guid"/>.</param>
+        /// <exception cref="ArgumentException"></exception>
+        public Guid(string g)
+        {
+            if (!TryParseGuidWithDashes(g, out this))
+            {
+                throw new ArgumentException("Guid string not in expected format: [{]dddddddd-dddd-dddd-dddd-dddddddddddd[}]");
+            }
         }
 
         /// <summary>
@@ -355,6 +374,95 @@ namespace System
                 return -1;
             }
             return 1;
+        }
+
+        /// <summary>
+        ///   Creates a new <see cref="Guid"/> based on the value in the string.  The value is made up
+        ///   of hex digits speared by the dash ("-"). The string may begin and end with
+        ///   brackets ("{", "}").
+        ///   
+        ///   The string must be of the form dddddddd-dddd-dddd-dddd-dddddddddddd. where
+        ///   d is a hex digit. (That is 8 hex digits, followed by 4, then 4, then 4,
+        ///   then 12) such as: "CA761232-ED42-11CE-BACD-00AA0057B223"
+        /// </summary>
+        /// <param name="guidString">Guid string to parse.</param>
+        /// <param name="result">Resulting Guid.</param>
+        /// <returns></returns>
+        public static bool TryParseGuidWithDashes(String guidString, out Guid result)
+        {
+            int startPos = 0;
+            int temp;
+            long templ;
+            int currentPos = 0;
+            result = Guid.Empty;
+
+            // check to see that it's the proper length
+            if (guidString[0] == '{')
+            {
+                if (guidString.Length != 38 || guidString[37] != '}')
+                {
+                    return false;
+                }
+                startPos = 1;
+            }
+            else if (guidString.Length != 36)
+            {
+                return false;
+            }
+
+            if (guidString[8 + startPos] != '-' ||
+                guidString[13 + startPos] != '-' ||
+                guidString[18 + startPos] != '-' ||
+                guidString[23 + startPos] != '-')
+            {
+                return false;
+            }
+
+            currentPos = startPos;
+            try
+            {
+                result._a = (int)HexStringToLong(guidString, ref currentPos, 8);
+                ++currentPos; // Increment past the '-'
+                result._b = (short)HexStringToLong(guidString, ref currentPos, 4);
+                ++currentPos; // Increment past the '-'
+                result._c = (short)HexStringToLong(guidString, ref currentPos, 4);
+                ++currentPos; // Increment past the '-'
+                temp = (int)HexStringToLong(guidString, ref currentPos, 4);
+                ++currentPos; // Increment past the '-'
+                templ = HexStringToLong(guidString, ref currentPos, 12);
+            }
+            catch
+            {
+                result = Guid.Empty;
+                return false;
+            }
+
+            result._d = (byte)(temp >> 8);
+            result._e = (byte)(temp);
+            temp = (int)(templ >> 32);
+            result._f = (byte)(temp >> 8);
+            result._g = (byte)(temp);
+            temp = (int)(templ);
+            result._h = (byte)(temp >> 24);
+            result._i = (byte)(temp >> 16);
+            result._j = (byte)(temp >> 8);
+            result._k = (byte)(temp);
+
+            return true;
+        }
+
+        /// <summary>
+        /// Converts a hex sub-string to a long, while incrementing the parsePos.
+        /// </summary>
+        /// <param name="str">The string containing the hex sub-string.</param>
+        /// <param name="parsePos">The position of the hex sub-string within str.</param>
+        /// <param name="requiredLength">The length of the hex sub-string.</param>
+        /// <returns>False if any character is not a hex digit or string is shorter than needed for the requiredLength. Otherwise true.</returns>
+        private static long HexStringToLong(String str, ref int parsePos, int requiredLength)
+        {
+            long result = Convert.ToInt64(str.Substring(parsePos, requiredLength), 16);
+            parsePos += requiredLength;
+            return result;
         }
     }
 }
