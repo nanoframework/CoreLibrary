@@ -12,7 +12,7 @@ namespace System
         ////////////////////////////////////////////////////////////////////////////////
         //  Member variables
         ////////////////////////////////////////////////////////////////////////////////
-        private int   _a;
+        private int _a;
         private short _b;
         private short _c;
         private byte _d;
@@ -128,6 +128,7 @@ namespace System
         ///   then 12) such as: "CA761232-ED42-11CE-BACD-00AA0057B223"
         /// </summary>
         /// <param name="g">String representation of new <see cref="Guid"/>.</param>
+        /// <exception cref="ArgumentException"></exception>
         public Guid(string g)
         {
             if (!TryParseGuidWithDashes(g, out this))
@@ -418,35 +419,21 @@ namespace System
             }
 
             currentPos = startPos;
-            if (!StringToInt(guidString, ref currentPos, 8, out temp))
+            try
             {
-                return false;
+                result._a = (int)HexStringToLong(guidString, ref currentPos, 8);
+                ++currentPos; // Increment past the '-'
+                result._b = (short)HexStringToLong(guidString, ref currentPos, 4);
+                ++currentPos; // Increment past the '-'
+                result._c = (short)HexStringToLong(guidString, ref currentPos, 4);
+                ++currentPos; // Increment past the '-'
+                temp = (int)HexStringToLong(guidString, ref currentPos, 4);
+                ++currentPos; // Increment past the '-'
+                templ = HexStringToLong(guidString, ref currentPos, 12);
             }
-            result._a = temp;
-            ++currentPos; // Increment past the '-'
-
-            if (!StringToInt(guidString, ref currentPos, 4, out temp))
+            catch
             {
-                return false;
-            }
-            result._b = (short)temp;
-            ++currentPos; // Increment past the '-'
-
-            if (!StringToInt(guidString, ref currentPos, 4, out temp))
-            {
-                return false;
-            }
-            result._c = (short)temp;
-            ++currentPos; // Increment past the '-'
-
-            if (!StringToInt(guidString, ref currentPos, 4, out temp))
-            {
-                return false;
-            }
-            ++currentPos; // Increment past the '-'            
-
-            if (!StringToLong(guidString, ref currentPos, 12, out templ))
-            {
+                result = Guid.Empty;
                 return false;
             }
 
@@ -465,66 +452,17 @@ namespace System
         }
 
         /// <summary>
-        /// Using StringToLong to convert a hex sub-string to an int, while incrementing the parsePos.
+        /// Converts a hex sub-string to a long, while incrementing the parsePos.
         /// </summary>
         /// <param name="str">The string containing the hex sub-string.</param>
         /// <param name="parsePos">The position of the hex sub-string within str.</param>
         /// <param name="requiredLength">The length of the hex sub-string.</param>
-        /// <param name="result">The numeric value of the hex string.</param>
         /// <returns>False if any character is not a hex digit or string is shorter than needed for the requiredLength. Otherwise true.</returns>
-        private static bool StringToInt(String str, ref int parsePos, int requiredLength, out int result)
+        private static long HexStringToLong(String str, ref int parsePos, int requiredLength)
         {
-            if (StringToLong(str, ref parsePos, requiredLength, out long lresult))
-            {
-                result = (int)lresult;
-                return true;
-            }
-            else
-            {
-                result = 0;
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Converts a hex sub-string to a long with the most basic tools, while incrementing the parsePos.
-        /// </summary>
-        /// <param name="str">The string containing the hex sub-string.</param>
-        /// <param name="parsePos">The position of the hex sub-string within str.</param>
-        /// <param name="requiredLength">The length of the hex sub-string.</param>
-        /// <param name="result">The numeric value of the hex string.</param>
-        /// <returns>False if any character is not a hex digit or string is shorter than needed for the requiredLength. Otherwise true.</returns>
-        private static bool StringToLong(String str, ref int parsePos, int requiredLength, out long result)
-        {
-            result = 0;
-
-            if (str.Length < parsePos + requiredLength)
-            {
-                return false;
-            }
-            while (requiredLength-- > 0)
-            {
-                result <<= 4;
-                char c = str[parsePos++];
-                if (c >= '0' && c <= '9')
-                {
-                    result += (byte)c - 48;
-                }
-                else if (c >= 'A' && c <= 'F')
-                {
-                    result += (byte)c - 55;
-                }
-                else if (c >= 'a' && c <= 'f')
-                {
-                    result += (byte)c - 87;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return true;
+            long result = Convert.ToInt64(str.Substring(parsePos, requiredLength), 16);
+            parsePos += requiredLength;
+            return result;
         }
     }
 }
-
