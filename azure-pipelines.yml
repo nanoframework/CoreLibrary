@@ -58,6 +58,7 @@ steps:
       lib-nanoFramework.Networking.Sntp
       lib-nanoFramework.Hardware.Stm32
       lib-nanoFramework.System.Math
+      lib-nanoFramework.TI.EasyLink
       Json.nanoFramework
   condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
   displayName: Update dependent class libs
