@@ -249,3 +249,9 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+#sonarcloud
+.sonarqube
+
+#SoundCloud
+*.sonarqube/

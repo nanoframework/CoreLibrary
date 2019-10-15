@@ -21,11 +21,9 @@ namespace System.Globalization
         internal const String _sortableDateTimePattern = "yyyy'-'MM'-'dd'T'HH':'mm':'ss";
         internal const String _universalSortableDateTimePattern = "yyyy'-'MM'-'dd HH':'mm':'ss'Z'";
         internal String _fullDateTimePattern = "dddd, dd MMMM yyyy HH:mm:ss";
-        private readonly CultureInfo CultureInfo;
 
         internal DateTimeFormatInfo(CultureInfo cultureInfo)
         {
-            CultureInfo = cultureInfo;
         }
 
         /// <summary>
@@ -168,7 +166,7 @@ namespace System.Globalization
         {
             get
             {
-                return SortableDateTimePattern;
+                return _sortableDateTimePattern;
             }
         }
 

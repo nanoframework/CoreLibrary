@@ -1,5 +1,86 @@
 # Change Log
 
+## [v1.2.6-preview.16](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.16) (2019-07-17)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.14...v1.2.6-preview.16)
+
+## [v1.2.6-preview.14](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.14) (2019-07-17)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.12...v1.2.6-preview.14)
+
+## [v1.2.6-preview.12](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.12) (2019-07-15)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.10...v1.2.6-preview.12)
+
+**Documentation and other chores:**
+
+- Update readme.txt [\#87](https://github.com/nanoframework/lib-CoreLibrary/pull/87)
+
+## [v1.2.6-preview.10](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.10) (2019-07-11)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.7...v1.2.6-preview.10)
+
+**Documentation and other chores:**
+
+- Added GetInvocationList to System.Delegate [\#85](https://github.com/nanoframework/lib-CoreLibrary/pull/85)
+
+## [v1.2.6-preview.7](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.7) (2019-06-23)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.6-preview.1...v1.2.6-preview.7)
+
+**Documentation and other chores:**
+
+- Work on native assembly declaration [\#83](https://github.com/nanoframework/lib-CoreLibrary/pull/83) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
+## [v1.2.6-preview.1](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.6-preview.1) (2019-06-20)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.5-preview.1...v1.2.6-preview.1)
+
+**Implemented enhancements:**
+
+- Add support for Unix Epoch [\#82](https://github.com/nanoframework/lib-CoreLibrary/pull/82)
+- Rework DateTime [\#81](https://github.com/nanoframework/lib-CoreLibrary/pull/81) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
+**Fixed bugs:**
+
+- Rework DateTime [\#81](https://github.com/nanoframework/lib-CoreLibrary/pull/81) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
+## [v1.2.5-preview.1](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.5-preview.1) (2019-06-12)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.4-preview.1...v1.2.5-preview.1)
+
+**Fixed bugs:**
+
+- Fix DateTime ticks discrepancy from full .NET [\#80](https://github.com/nanoframework/lib-CoreLibrary/pull/80) [[Breaking-Change](https://github.com/nanoframework/lib-CoreLibrary/labels/Breaking-Change)]
+
+**Documentation and other chores:**
+
+- Update AssemblyNativeVersion to 1.2.0.0 [\#79](https://github.com/nanoframework/lib-CoreLibrary/pull/79)
+
+## [v1.2.4-preview.1](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.4-preview.1) (2019-06-12)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.2-preview.5...v1.2.4-preview.1)
+
+## [v1.2.2-preview.5](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.2-preview.5) (2019-06-12)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.2-preview.20...v1.2.2-preview.5)
+
+**Fixed bugs:**
+
+- Remove DebuggerBrowsable from excluded classes [\#78](https://github.com/nanoframework/lib-CoreLibrary/pull/78)
+
+**Documentation and other chores:**
+
+- Update Nerdbank.GitVersioning to 3.0.19-beta [\#77](https://github.com/nanoframework/lib-CoreLibrary/pull/77)
+
+## [v1.2.2-preview.20](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.2-preview.20) (2019-06-11)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.1-preview-013...v1.2.2-preview.20)
+
+## [v1.2.1-preview-013](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.1-preview-013) (2019-06-11)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.2.0...v1.2.1-preview-013)
+
+**Implemented enhancements:**
+
+- Fixes in ArrayList [\#76](https://github.com/nanoframework/lib-CoreLibrary/pull/76)
+- Fix debugger attributes [\#75](https://github.com/nanoframework/lib-CoreLibrary/pull/75)
+- Several fixes throughout the code base [\#74](https://github.com/nanoframework/lib-CoreLibrary/pull/74)
+- Remove CultureInfo unused field [\#72](https://github.com/nanoframework/lib-CoreLibrary/pull/72)
+
+**Fixed bugs:**
+
+- Fix SortableDateTimePattern [\#73](https://github.com/nanoframework/lib-CoreLibrary/pull/73)
+
 ## [v1.2.0](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.2.0) (2019-04-23)
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.1.2...v1.2.0)
 

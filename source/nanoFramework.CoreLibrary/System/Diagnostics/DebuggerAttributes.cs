@@ -9,39 +9,65 @@ namespace System.Diagnostics
     using System;
 
     /// <summary>
-    /// Instructs the debugger to step through the code instead of stepping into the code. This class cannot be inherited.
+    /// Identifies a type or member that is not part of the user code for an application.
     /// </summary>
+    /// <remarks>
+    /// Designer provided types and members that are not part of the code specifically created by the user can complicate the debugging experience. This attribute suppresses the display of these adjunct types and members in the debugger window and automatically steps through, rather than into, designer provided code. When the debugger encounters this attribute when stepping through user code, the user experience is to not see the designer provided code and to step to the next user-supplied code statement.
+    /// The debugger behaviour when the <see cref="DebuggerNonUserCodeAttribute"/> is present is similar to using a combination of the <see cref="DebuggerHiddenAttribute"/> attribute, which hides the code from the debugger, and the <see cref="DebuggerStepThroughAttribute"/> attribute, which tells the debugger to step through, rather than into, the code it is applied to.
+    /// </remarks>
     [Serializable, AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Constructor, Inherited = false)]
     public sealed class DebuggerStepThroughAttribute : Attribute
     {
-        //public DebuggerStepThroughAttribute() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DebuggerNonUserCodeAttribute"/> class.
+        /// </summary>
+        public DebuggerStepThroughAttribute() { }
     }
 
     /// <summary>
     /// Indicates the code following the attribute is to be executed in run, not step, mode.
     /// </summary>
+    /// <remarks>
+    /// The <see cref="DebuggerStepperBoundaryAttribute"/> attribute is used as an escape from the effect of a <see cref="DebuggerNonUserCodeAttribute"/>. When executing within the boundaries of the <see cref="DebuggerNonUserCodeAttribute"/>, designer-provided code is executed as a step-through until the next user supplied code is encountered. When context switches are made on a thread, the next user-supplied code module stepped into may not relate to the code that was in the process of being debugged. To avoid this debugging experience, use the <see cref="DebuggerStepperBoundaryAttribute"/> to escape from stepping through code to running code. For example, in Visual Studio 2005, encountering a <see cref="DebuggerStepperBoundaryAttribute"/> while stepping through code using the F10 key (or Step Over command) has the same effect as pressing the F5 key or using the Start Debugging command.
+    /// </remarks>
     [Serializable, AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor, Inherited = false)]
     public sealed class DebuggerStepperBoundaryAttribute : Attribute
     {
-        //public DebuggerStepperBoundaryAttribute() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DebuggerStepperBoundaryAttribute"/> class.
+        /// </summary>
+        public DebuggerStepperBoundaryAttribute() { }
     }
 
     /// <summary>
     /// Specifies the DebuggerHiddenAttribute. This class cannot be inherited.
     /// </summary>
+    /// <remarks>
+    /// The common language runtime attaches no semantics to this attribute. It is provided for use by source code debuggers. For example, the Visual Studio 2005 debugger does not stop in a method marked with this attribute and does not allow a breakpoint to be set in the method. Other debugger attributes recognized by the Visual Studio 2005 debugger are the <see cref="DebuggerNonUserCodeAttribute"/> and the <see cref="DebuggerStepThroughAttribute"/>. 
+    /// </remarks>
     [Serializable, AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Constructor, Inherited = false)]
     public sealed class DebuggerHiddenAttribute : Attribute
     {
-        //public DebuggerHiddenAttribute() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DebuggerHiddenAttribute"/> class.
+        /// </summary>
+        public DebuggerHiddenAttribute() { }
     }
 
     /// <summary>
     /// Identifies a type or member that is not part of the user code for an application.
     /// </summary>
+    /// <remarks>
+    /// Designer provided types and members that are not part of the code specifically created by the user can complicate the debugging experience. This attribute suppresses the display of these adjunct types and members in the debugger window and automatically steps through, rather than into, designer provided code. When the debugger encounters this attribute when stepping through user code, the user experience is to not see the designer provided code and to step to the next user-supplied code statement. 
+    /// The debugger behaviour when the <see cref="DebuggerNonUserCodeAttribute"/> is present is similar to using a combination of the <see cref="DebuggerHiddenAttribute"/> attribute, which hides the code from the debugger, and the <see cref="DebuggerStepThroughAttribute"/> attribute, which tells the debugger to step through, rather than into, the code it is applied to.
+    /// </remarks>
     [Serializable, AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Constructor | AttributeTargets.Struct, Inherited = false)]
     public sealed class DebuggerNonUserCodeAttribute : Attribute
     {
-        //public DebuggerNonUserCodeAttribute() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DebuggerNonUserCodeAttribute"/> class.
+        /// </summary>
+        public DebuggerNonUserCodeAttribute() { }
     }
 
     // Attribute class used by the compiler to mark modules.
@@ -71,24 +97,28 @@ namespace System.Diagnostics
             /// Note that, unlike the None flag, the None flag cannot be used to disable JIT optimizations.
             /// </summary>
             None = 0x0,
+
             /// <summary>
-            /// Instructs the just-in-time (JIT) compiler to use its default behavior, which includes enabling optimizations, disabling Edit and Continue support,
+            /// Instructs the just-in-time (JIT) compiler to use its default behaviour, which includes enabling optimizations, disabling Edit and Continue support,
             /// and using symbol store sequence points if present. Starting with the .NET Framework version 2.0, JIT tracking information, the Microsoft intermediate
             /// language (MSIL) offset to the native-code offset within a method, is always generated.
             /// </summary>
             Default = 0x1,
+
             /// <summary>
             /// Disable optimizations performed by the compiler to make your output file smaller, faster, and more efficient. Optimizations result in code rearrangement
             /// in the output file, which can make debugging difficult. Typically optimization should be disabled while debugging. In versions 2.0 or later, combine this
             /// value with Default (Default | DisableOptimizations) to enable JIT tracking and disable optimizations.
             /// </summary>
             DisableOptimizations = 0x100,
+
             /// <summary>
             /// Use the implicit MSIL sequence points, not the program database (PDB) sequence points. The symbolic information normally includes at least one 
             /// Microsoft intermediate language (MSIL) offset for each source line. When the just-in-time (JIT) compiler is about to compile a method, it asks 
             /// the profiling services for a list of MSIL offsets that should be preserved. These MSIL offsets are called sequence points.
             /// </summary>
             IgnoreSymbolStoreSequencePoints = 0x2,
+
             /// <summary>
             /// Enable edit and continue. Edit and continue enables you to make changes to your source code while your program is in break mode. The ability to edit and continue is compiler dependent.
             /// </summary>
@@ -173,6 +203,7 @@ namespace System.Diagnostics
     public sealed class DebuggerBrowsableAttribute : Attribute
     {
         private readonly DebuggerBrowsableState _state;
+
         /// <summary>
         /// Initializes a new instance of the DebuggerBrowsableAttribute class.
         /// </summary>
@@ -246,13 +277,16 @@ namespace System.Diagnostics
             {
                 if (value == null) throw new ArgumentNullException("value");
 
+#pragma warning disable S4275 // Getters and setters should access the expected fields
                 _targetName = value.FullName + "," + value.Assembly.FullName;
+#pragma warning restore S4275 // Getters and setters should access the expected fields
                 _target = value;
             }
 
             get { return _target; }
         }
 
+#pragma warning disable S2292 // Trivial properties should be auto-implemented
         /// <summary>
         /// Gets or sets the name of the target type.
         /// </summary>
@@ -260,6 +294,7 @@ namespace System.Diagnostics
         /// The name of the target type.
         /// </value>
         public string TargetTypeName
+#pragma warning restore S2292 // Trivial properties should be auto-implemented
         {
             get { return _targetName; }
             set { _targetName = value; }
@@ -310,21 +345,25 @@ namespace System.Diagnostics
             get { return _value; }
         }
 
+#pragma warning disable S2292 // Trivial properties should be auto-implemented
         /// <summary>
         /// Gets or sets the name to display in the debugger variable windows.
         /// </summary>
         /// <value>The name to display in the debugger variable windows.</value>
         public string Name
+#pragma warning restore S2292 // Trivial properties should be auto-implemented
         {
             get { return _name; }
             set { _name = value; }
         }
 
+#pragma warning disable S2292 // Trivial properties should be auto-implemented
         /// <summary>
         /// Gets or sets the string to display in the type column of the debugger variable windows.
         /// </summary>
         /// <value>The string to display in the type column of the debugger variable windows.</value>
         public string Type
+#pragma warning restore S2292 // Trivial properties should be auto-implemented
         {
             get { return _type; }
             set { _type = value; }
@@ -341,22 +380,25 @@ namespace System.Diagnostics
             {
                 if (value == null) throw new ArgumentNullException("value");
 
+#pragma warning disable S4275 // Getters and setters should access the expected fields
                 _targetName = value.FullName + "," + value.Assembly.FullName;
+#pragma warning restore S4275 // Getters and setters should access the expected fields
                 _target = value;
             }
 
             get { return _target; }
         }
 
+#pragma warning disable S2292 // Trivial properties should be auto-implemented
         /// <summary>
         /// Gets or sets the type name of the attribute's target.
         /// </summary>
         /// <value>The name of the attribute's target type.</value>
         public string TargetTypeName
+#pragma warning restore S2292 // Trivial properties should be auto-implemented
         {
             get { return _targetName; }
             set { _targetName = value; }
-
         }
     }
 }

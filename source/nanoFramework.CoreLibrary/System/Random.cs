@@ -48,7 +48,9 @@ namespace System
         /// <returns>A 32-bit signed integer greater than or equal to zero and
         /// less than MaxValue.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern int Next();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a nonnegative random number less than the specified maximum.
@@ -58,7 +60,9 @@ namespace System
         /// <returns>A 32-bit signed integer greater than or equal to zero, and
         /// less than maxValue.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern int Next(int maxValue);
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a random number between 0.0 and 1.0.
@@ -66,13 +70,17 @@ namespace System
         /// <returns>A double-precision floating point number greater than or equal
         /// to 0.0, and less than 1.0.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern double NextDouble();
+#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Fills the elements of a specified array of bytes with random numbers.
         /// </summary>
         /// <param name="buffer">An array of bytes to contain random numbers.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern void NextBytes(byte[] buffer);
+#pragma warning restore S4200 // Native methods should be wrapped
     }
 }

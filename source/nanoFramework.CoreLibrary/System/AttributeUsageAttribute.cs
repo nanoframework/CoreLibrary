@@ -36,21 +36,25 @@ namespace System
             get { return _attributeTarget; }
         }
 
+#pragma warning disable S2292 // Trivial properties should be auto-implemented
         /// <summary>
         /// Gets or sets a Boolean value indicating whether more than one instance of the indicated attribute can be specified for a single program element.
         /// </summary>
         /// <value>true if more than one instance is allowed to be specified; otherwise, false. The default is false.</value>
         public bool AllowMultiple
+#pragma warning restore S2292 // Trivial properties should be auto-implemented
         {
             get { return _allowMultipleAttributes; }
             set { _allowMultipleAttributes = value; }
         }
 
+#pragma warning disable S2292 // Trivial properties should be auto-implemented
         /// <summary>
         /// Gets or sets a Boolean value that determines whether the indicated attribute is inherited by derived classes and overriding members.
         /// </summary>
         /// <value>true if the attribute can be inherited by derived classes and overriding members; otherwise, false. The default is true.</value>
         public bool Inherited
+#pragma warning restore S2292 // Trivial properties should be auto-implemented
         {
             get { return _iInheritedAttribute; }
             set { _iInheritedAttribute = value; }

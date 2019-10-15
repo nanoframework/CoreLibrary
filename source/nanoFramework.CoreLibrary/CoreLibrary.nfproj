@@ -29,7 +29,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>
@@ -53,7 +53,7 @@
     <Compile Include="System\ArgumentNullException.cs" />
     <Compile Include="System\ArgumentOutOfRangeException.cs" />
     <Compile Include="System\Array.cs" />
-    <Compile Include="System\AssemblyInfo2.cs" />
+    <Compile Include="System\AssemblyInfo.cs" />
     <Compile Include="System\AsyncCallback.cs" />
     <Compile Include="System\Attribute.cs" />
     <Compile Include="System\AttributeTargets.cs" />
@@ -226,12 +226,6 @@
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggableAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
-    <!--<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableAttribute">
-      <InProject>false</InProject>
-    </NFMDP_PE_ExcludeClassByName>-->
-    <!--<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerBrowsableState">
-      <InProject>false</InProject>
-    </NFMDP_PE_ExcludeClassByName>-->
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerDisplayAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
@@ -373,9 +367,12 @@
     <NFMDP_PE_ExcludeClassByName Include="System.UIntPtr">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="ThisAssembly">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\key.snk" />
+    <None Include="key.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
@@ -384,11 +381,11 @@
       <ProjectConfigurationsDeclaredAsItems />
     </ProjectCapabilities>
   </ProjectExtensions>
-  <Import Project="..\packages\Nerdbank.GitVersioning.3.0.6-beta\build\Nerdbank.GitVersioning.targets" Condition="Exists('..\packages\Nerdbank.GitVersioning.3.0.6-beta\build\Nerdbank.GitVersioning.targets')" />
+  <Import Project="..\packages\Nerdbank.GitVersioning.3.0.19-beta\build\Nerdbank.GitVersioning.targets" Condition="Exists('..\packages\Nerdbank.GitVersioning.3.0.19-beta\build\Nerdbank.GitVersioning.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Nerdbank.GitVersioning.3.0.6-beta\build\Nerdbank.GitVersioning.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nerdbank.GitVersioning.3.0.6-beta\build\Nerdbank.GitVersioning.targets'))" />
+    <Error Condition="!Exists('..\packages\Nerdbank.GitVersioning.3.0.19-beta\build\Nerdbank.GitVersioning.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nerdbank.GitVersioning.3.0.19-beta\build\Nerdbank.GitVersioning.targets'))" />
   </Target>
 </Project>

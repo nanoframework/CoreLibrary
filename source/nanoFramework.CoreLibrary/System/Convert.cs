@@ -183,17 +183,21 @@ namespace System
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         [CLSCompliant(false)]
+#pragma warning disable S4200 // Native methods should be wrapped
         public static ulong ToUInt64(string value, int fromBase = 10)
+#pragma warning restore S4200 // Native methods should be wrapped
         {
             return (ulong)NativeToInt64(value, true, 0, 0, fromBase);
         }
 
+#pragma warning disable S4200 // Native methods should be wrapped
         /// <summary>
         /// Converts the specified string representation of a number to an equivalent double-precision floating-point number.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <returns>A double-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         public static double ToDouble(string value)
+#pragma warning restore S4200 // Native methods should be wrapped
         {
             return NativeToDouble(value);
         }
@@ -205,7 +209,9 @@ namespace System
         /// <returns>The String representation, in base 64, of the contents of <paramref name="inArray"/>.</returns>
         public static string ToBase64String(byte[] inArray)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (inArray == null) throw new ArgumentNullException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             return ToBase64String(inArray, 0, inArray.Length, Base64FormattingOptions.None);
         }
@@ -218,7 +224,9 @@ namespace System
         /// <returns>The string representation in base 64 of the elements in <paramref name="inArray"/>.</returns>
         public static String ToBase64String(byte[] inArray, Base64FormattingOptions options)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (inArray == null) throw new ArgumentNullException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             return ToBase64String(inArray, 0, inArray.Length, options);
         }
@@ -246,10 +254,18 @@ namespace System
         public static string ToBase64String(byte[] inArray, int offset, int length, Base64FormattingOptions options)
         {
             //Do data verfication
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (inArray == null) throw new ArgumentNullException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (length < 0) throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (offset < 0) throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (options < Base64FormattingOptions.None || options > Base64FormattingOptions.InsertLineBreaks) throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             return ToBase64String(inArray, offset, length, options == Base64FormattingOptions.InsertLineBreaks);
         }
@@ -268,7 +284,9 @@ namespace System
         /// </remarks>
         public static byte[] FromBase64String(string inString)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (inString == null) throw new ArgumentNullException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             var chArray = inString.ToCharArray();
 
@@ -284,10 +302,18 @@ namespace System
         /// <returns>An array of 8-bit unsigned integers equivalent to <paramref name="length"/> elements at position <paramref name="offset"/> in <paramref name="inArray"/>.</returns>
         public static byte[] FromBase64CharArray(char[] inArray, int offset, int length)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (inArray == null) throw new ArgumentNullException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (length < 0) throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (offset < 0) throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (offset > inArray.Length - length) throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             // copy to new array
             var destinationArray = new char[length];

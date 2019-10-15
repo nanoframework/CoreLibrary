@@ -57,7 +57,9 @@ namespace System
         /// <exception cref="ArgumentNullException"></exception>
         public static short Parse(String s)
         {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (s == null) throw new ArgumentNullException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             return Convert.ToInt16(s);
         }

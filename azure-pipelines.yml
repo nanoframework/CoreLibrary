@@ -39,6 +39,8 @@ steps:
 # step from template @ nf-tools repo
 # all build, update and publish steps
 - template: azure-pipelines-templates/class-lib-build.yml@templates  
+  parameters:
+    sonarCloudProject: 'nanoframework_lib-CoreLibrary'
 
 # update dependencies
 - task: UpdatenFDependencies@1
@@ -56,7 +58,8 @@ steps:
       lib-nanoFramework.Networking.Sntp
       lib-nanoFramework.Hardware.Stm32
       lib-nanoFramework.System.Math
-  condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v') )
+      Json.nanoFramework
+  condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
   displayName: Update dependent class libs
 
 # step from template @ nf-tools repo
