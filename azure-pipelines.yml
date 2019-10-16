@@ -54,11 +54,13 @@ steps:
       lib-Windows.Devices.I2c
       lib-Windows.Devices.Pwm
       lib-Windows.Devices.Spi
+      lib-System.Devices.Dac
       lib-nanoFramework.Devices.OneWire
       lib-nanoFramework.Networking.Sntp
       lib-nanoFramework.Hardware.Stm32
       lib-nanoFramework.System.Math
-      Json.nanoFramework
+      lib-nanoFramework.TI.EasyLink
+      Json.NetMF
   condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
   displayName: Update dependent class libs
 
