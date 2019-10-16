@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using System;
@@ -11,6 +13,7 @@ namespace System.Reflection
     /// <summary>
     /// Interoperates with the IDispatch interface.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     public interface IReflect
     {
         /// <summary>
@@ -30,3 +33,5 @@ namespace System.Reflection
         FieldInfo GetField(String name, BindingFlags bindingAttr);
     }
 }
+
+#endif // NANOCLR_REFLECTION

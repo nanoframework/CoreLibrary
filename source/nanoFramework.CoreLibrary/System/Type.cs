@@ -3,14 +3,19 @@
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
 //
+
+#if NANOCLR_REFLECTION
+
 namespace System
 {
+    
     using Reflection;
     using Runtime.CompilerServices;
 
     /// <summary>
     /// Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
     public abstract class Type : MemberInfo, IReflect
     {
@@ -28,6 +33,7 @@ namespace System
             [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
+
 
         /// <summary>
         /// Gets the Type with the specified name, performing a case-sensitive search.
@@ -443,3 +449,5 @@ namespace System
         }
     }
 }
+
+#endif // NANOCLR_REFLECTION

@@ -13,7 +13,9 @@ namespace System.Collections
     /// An array implementation of a stack. Push can be O(n). Pop is O(1).
     /// </summary>
     [Serializable]
+#if NANOCLR_REFLECTION
     [DebuggerDisplay("Count = {Count}")]
+#endif // NANOCLR_REFLECTION
     public class Stack : ICollection, ICloneable
     {
         private Object[] _array;   // Storage for stack elements

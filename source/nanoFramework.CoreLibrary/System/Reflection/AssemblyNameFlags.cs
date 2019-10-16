@@ -4,12 +4,15 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using System;
     /// <summary>
     /// Provides information about an Assembly reference.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable, FlagsAttribute]
     public enum AssemblyNameFlags
     {
@@ -64,3 +67,5 @@ namespace System.Reflection
         Amd64 = 0x0004
     }
 }
+
+#endif // NANOCLR_REFLECTION

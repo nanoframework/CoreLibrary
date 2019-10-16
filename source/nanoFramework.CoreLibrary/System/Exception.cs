@@ -65,7 +65,11 @@ namespace System
         {
             get
             {
+#if NANOCLR_REFLECTION
                 if (_message == null) return "Exception was thrown: " + GetType().FullName;
+#else
+                if (_message == null) return "Exception was thrown";
+#endif // NANOCLR_REFLECTION
 
                 return _message;
             }

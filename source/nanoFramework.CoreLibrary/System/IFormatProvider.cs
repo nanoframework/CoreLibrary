@@ -4,11 +4,14 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System
 {
     /// <summary>
     /// Provides a mechanism for retrieving an object to control formatting.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     public interface IFormatProvider
     {
         /// <summary>
@@ -19,3 +22,6 @@ namespace System
         Object GetFormat(Type formatType);
     }
 }
+
+#endif // NANOCLR_REFLECTION
+

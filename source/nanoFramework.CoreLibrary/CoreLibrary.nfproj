@@ -21,7 +21,7 @@
     <OutputName>mscorlib</OutputName>
     <IsCoreAssembly>true</IsCoreAssembly>
     <IsMscorlib>true</IsMscorlib>
-    <DefineConstants>$(DefineConstants);NANOCLR_APPDOMAINS</DefineConstants>
+    <DefineConstants>$(DefineConstants);</DefineConstants>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <DocumentationFile>bin\$(Configuration)\mscorlib.xml</DocumentationFile>
   </PropertyGroup>

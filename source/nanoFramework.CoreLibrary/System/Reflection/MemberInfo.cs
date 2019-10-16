@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using System;
@@ -11,6 +13,7 @@ namespace System.Reflection
     /// <summary>
     /// Obtains information about the attributes of a member and provides access to member metadata.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
     public abstract class MemberInfo
     {
@@ -55,3 +58,5 @@ namespace System.Reflection
         public abstract object[] GetCustomAttributes(bool inherit);
     }
 }
+
+#endif // NANOCLR_REFLECTION

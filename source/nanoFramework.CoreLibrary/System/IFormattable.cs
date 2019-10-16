@@ -3,11 +3,15 @@
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
 //
+
+#if NANOCLR_REFLECTION
+
 namespace System
 {
     /// <summary>
     /// Provides functionality to format the value of an object into a string representation.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     public interface IFormattable
     {
         /// <summary>
@@ -19,3 +23,5 @@ namespace System
         String ToString(String format, IFormatProvider formatProvider);
     }
 }
+
+#endif // NANOCLR_REFLECTION

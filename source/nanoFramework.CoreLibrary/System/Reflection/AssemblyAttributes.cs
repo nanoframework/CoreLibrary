@@ -153,10 +153,12 @@ namespace System.Reflection
         }
     }
 
+#if NANOCLR_REFLECTION
     /// <summary>
     /// Specifies a bitwise combination of AssemblyNameFlags flags for an assembly, describing just-in-time (JIT) compiler options,
     /// whether the assembly is retargetable, and whether it has a full or tokenized public key. This class cannot be inherited.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [AttributeUsage(AttributeTargets.Assembly)]
     public sealed class AssemblyFlagsAttribute : Attribute
     {
@@ -195,6 +197,7 @@ namespace System.Reflection
             _flags = assemblyFlags;
         }
     }
+#endif //NANOCLR_REFLECTION
 
     /// <summary>
     /// Instructs a compiler to use a specific version number for the Win32 file version resource. The Win32 file version is not required to be the same as the assembly's version number.
