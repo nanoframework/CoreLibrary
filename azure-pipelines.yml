@@ -24,51 +24,105 @@ resources:
       name: nanoframework/nf-tools
       endpoint: nanoframework
 
-pool:
-  vmImage: 'VS2017-Win2016'
+jobs:
 
-variables:
-  solution: '**/source/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-  nugetPackageName: 'nanoFramework.CoreLibrary'
-  repoName: 'lib-CoreLibrary'
+##############################
+- job: Build_mscorlib
+  pool:
+    vmImage: 'VS2017-Win2016'
 
-steps:
+  variables:
+    solution: '**/source/*.sln'
+    buildPlatform: 'Any CPU'
+    buildConfiguration: 'Release'
+    nugetPackageName: 'nanoFramework.CoreLibrary'
+    repoName: 'lib-CoreLibrary'
 
-# step from template @ nf-tools repo
-# all build, update and publish steps
-- template: azure-pipelines-templates/class-lib-build.yml@templates  
-  parameters:
-    sonarCloudProject: 'nanoframework_lib-CoreLibrary'
+  steps:
 
-# update dependencies
-- task: UpdatenFDependencies@1
-  inputs:
-    gitHubToken: $(GitHubToken)
-    repositoriesToUpdate: |
-      lib-nanoFramework.Runtime.Events
-      lib-nanoFramework.Runtime.Native
-      lib-Windows.Storage.Streams
-      lib-Windows.Devices.Adc
-      lib-Windows.Devices.I2c
-      lib-Windows.Devices.Pwm
-      lib-Windows.Devices.Spi
-      lib-System.Devices.Dac
-      lib-nanoFramework.Devices.OneWire
-      lib-nanoFramework.Networking.Sntp
-      lib-nanoFramework.Hardware.Stm32
-      lib-nanoFramework.System.Math
-      lib-nanoFramework.TI.EasyLink
-      lib-nanoFramework.ResourceManager
-      Json.NetMF
-  condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
-  displayName: Update dependent class libs
+  # step from template @ nf-tools repo
+  # all build, update and publish steps
+  - template: azure-pipelines-templates/class-lib-build.yml@templates  
+    parameters:
+      sonarCloudProject: 'nanoframework_lib-CoreLibrary'
+      msbuildExtraParams: '/p:DefineConstants="NANOCLR_REFLECTION"'
 
-# step from template @ nf-tools repo
-# report error
-- template: azure-pipelines-templates/discord-webhook-task.yml@templates  
-  parameters:
-    status: 'failure'
-    webhookUrl: '$(DiscordWebhook)'
-    message: ''
+##############################
+- job: Build_mscorlib_no_reflection
+  pool:
+    vmImage: 'VS2017-Win2016'
+
+  variables:
+    solution: '**/source/*.sln'
+    buildPlatform: 'Any CPU'
+    buildConfiguration: 'Release'
+    nugetPackageName: 'nanoFramework.CoreLibrary.NoReflection'
+    repoName: 'lib-CoreLibrary'
+
+  steps:
+
+  # step from template @ nf-tools repo
+  # all build, update and publish steps
+  - template: azure-pipelines-templates/class-lib-build.yml@templates  
+    parameters:
+      sonarCloudProject: 'nanoframework_lib-CoreLibrary.NoReflection'
+
+##############################
+- job: Update_Dependencies
+  condition: ne( variables['StartReleaseCandidate'], true )
+
+  dependsOn:
+  - Build_mscorlib
+  - Build_mscorlib_no_reflection
+
+  pool:
+    vmImage: 'VS2017-Win2016'
+
+  steps:
+  # update dependencies
+  - task: UpdatenFDependencies@1
+    inputs:
+      gitHubToken: $(GitHubToken)
+      repositoriesToUpdate: |
+        lib-nanoFramework.Runtime.Events
+        lib-nanoFramework.Runtime.Native
+        lib-Windows.Storage.Streams
+        lib-Windows.Devices.Adc
+        lib-Windows.Devices.I2c
+        lib-Windows.Devices.Pwm
+        lib-Windows.Devices.Spi
+        lib-System.Devices.Dac
+        lib-nanoFramework.Devices.OneWire
+        lib-nanoFramework.Networking.Sntp
+        lib-nanoFramework.Hardware.Stm32
+        lib-nanoFramework.System.Math
+        lib-nanoFramework.TI.EasyLink
+        lib-nanoFramework.ResourceManager
+        Json.NetMF
+    condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
+    displayName: Update dependent class libs
+
+##################################
+# report build failure to Discord
+- job: Report_Build_Failure
+  
+  dependsOn:
+  - Build_mscorlib
+  - Build_mscorlib_no_reflection
+  - Update_Dependencies
+  condition: or( failed('Build_mscorlib'), failed('Build_mscorlib_no_reflection'), failed('Update_Dependencies'))
+
+  pool:
+    vmImage: 'VS2017-Win2016'
+
+  steps:
+  
+  - checkout: self
+
+  # step from template @ nf-tools repo
+  # report error
+  - template: azure-pipelines-templates/discord-webhook-task.yml@templates  
+    parameters:
+      status: 'failure'
+      webhookUrl: '$(DiscordWebhook)'
+      message: ''

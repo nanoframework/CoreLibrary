@@ -3,6 +3,9 @@
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
 //
+
+#if NANOCLR_REFLECTION
+
 namespace System
 {
     using Reflection;
@@ -84,3 +87,5 @@ namespace System
         public override extern object[] GetCustomAttributes(bool inherit);
     }
 }
+
+#endif // NANOCLR_REFLECTION

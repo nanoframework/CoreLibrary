@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using System;
@@ -11,6 +13,7 @@ namespace System.Reflection
     /// <summary>
     /// Marks each type of member that is defined as a derived class of MemberInfo.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
     public enum MemberTypes
     {
@@ -52,3 +55,5 @@ namespace System.Reflection
         All = Constructor | Event | Field | Method | Property | TypeInfo | NestedType,
     }
 }
+
+#endif // NANOCLR_REFLECTION

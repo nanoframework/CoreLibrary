@@ -4,11 +4,14 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System
 {
     /// <summary>
     /// Defines a method that supports custom formatting of the value of an object.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     public interface ICustomFormatter
     {
         /// <summary>
@@ -22,3 +25,5 @@ namespace System
 
     }
 }
+
+#endif //NANOCLR_REFLECTION

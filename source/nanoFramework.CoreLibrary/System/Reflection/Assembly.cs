@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using System;
@@ -13,6 +15,7 @@ namespace System.Reflection
     /// <summary>
     /// Describes an assembly's unique identity in full.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     public sealed class AssemblyName
     {
         private readonly Assembly _assembly;
@@ -300,3 +303,5 @@ namespace System.Reflection
         internal extern String[] GetManifestResourceNames();
     }
 }
+
+#endif // NANOCLR_REFLECTION

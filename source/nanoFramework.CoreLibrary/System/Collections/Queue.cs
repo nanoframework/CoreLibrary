@@ -12,7 +12,9 @@ namespace System.Collections
     /// <summary>
     /// A circular-array implementation of a queue. Enqueue can be O(n).  Dequeue is O(1).
     /// </summary>
+#if NANOCLR_REFLECTION
     [DebuggerDisplay("Count = {Count}")]
+#endif // NANOCLR_REFLECTION
     [Serializable]
     public class Queue : ICollection, ICloneable
     {

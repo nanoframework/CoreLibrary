@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using Runtime.CompilerServices;
@@ -12,6 +14,7 @@ namespace System.Reflection
     /// <summary>
     /// Provides information about methods and constructors.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
     public abstract class MethodBase : MemberInfo
     {
@@ -115,3 +118,5 @@ namespace System.Reflection
         }
     }
 }
+
+#endif // NANOCLR_REFLECTION

@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using System;
@@ -34,3 +36,5 @@ namespace System.Reflection
         public override extern Object GetValue(Object obj);
     }
 }
+
+#endif // NANOCLR_REFLECTION

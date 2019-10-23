@@ -44,12 +44,15 @@ namespace System
         public static extern Delegate Combine(Delegate a, Delegate b);
 #pragma warning restore S4200 // Native methods should be wrapped
 
+#if NANOCLR_REFLECTION
+
         /// <summary>
         /// Gets the method represented by the delegate.
         /// </summary>
         /// <value>
         /// A MethodInfo describing the method represented by the delegate.
         /// </value>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         public extern MethodInfo Method
         {
             [MethodImpl(MethodImplOptions.InternalCall)]
@@ -78,6 +81,7 @@ namespace System
             [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
+#endif // NANOCLR_REFLECTION
 
         /// <summary>
         /// Removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.

@@ -5,14 +5,20 @@
 
 -----
 
-### Welcome to the **nanoFramework** Core Library repository!
+### Welcome to the **nanoFramework** Base Class Library repository!
 
 ## Build status
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| Core Library | [![Build Status](https://dev.azure.com/nanoframework/CoreLibrary/_apis/build/status/nanoframework.lib-CoreLibrary?branchName=develop)](https://dev.azure.com/nanoframework/CoreLibrary/_build/latest?definitionId=24?branchName=master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.CoreLibrary.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.CoreLibrary/)  |
-| Core Library (preview) | [![Build Status](https://dev.azure.com/nanoframework/CoreLibrary/_apis/build/status/nanoframework.lib-CoreLibrary?branchName=develop)](https://dev.azure.com/nanoframework/CoreLibrary/_build/latest?definitionId=24?branchName=develop) | [![](https://badgen.net/badge/NuGet/preview/D7B023?icon=https://simpleicons.now.sh/azuredevops/fff)](https://dev.azure.com/nanoframework/feed/_packaging?_a=package&feed=sandbox&package=nanoFramework.CoreLibrary&protocolType=NuGet&view=overview) |
+| Base Class Library | [![Build Status](https://dev.azure.com/nanoframework/CoreLibrary/_apis/build/status/nanoframework.lib-CoreLibrary?branchName=develop)](https://dev.azure.com/nanoframework/CoreLibrary/_build/latest?definitionId=24?branchName=master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.CoreLibrary.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.CoreLibrary/)  |
+| Base Class Library w/o reflection | [![Build Status](https://dev.azure.com/nanoframework/CoreLibrary/_apis/build/status/nanoframework.lib-CoreLibrary?branchName=develop)](https://dev.azure.com/nanoframework/CoreLibrary/_build/latest?definitionId=24?branchName=master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.CoreLibrary.NoReflection.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.CoreLibrary/)  |
+| Base Class Library (preview) | [![Build Status](https://dev.azure.com/nanoframework/CoreLibrary/_apis/build/status/nanoframework.lib-CoreLibrary?branchName=develop)](https://dev.azure.com/nanoframework/CoreLibrary/_build/latest?definitionId=24?branchName=develop) | [![](https://badgen.net/badge/NuGet/preview/D7B023?icon=https://simpleicons.now.sh/azuredevops/fff)](https://dev.azure.com/nanoframework/feed/_packaging?_a=package&feed=sandbox&package=nanoFramework.CoreLibrary&protocolType=NuGet&view=overview) |
+| Base Class Library w/o reflection (preview) | [![Build Status](https://dev.azure.com/nanoframework/CoreLibrary/_apis/build/status/nanoframework.lib-CoreLibrary?branchName=develop)](https://dev.azure.com/nanoframework/CoreLibrary/_build/latest?definitionId=24?branchName=develop) | [![](https://badgen.net/badge/NuGet/preview/D7B023?icon=https://simpleicons.now.sh/azuredevops/fff)](https://dev.azure.com/nanoframework/feed/_packaging?_a=package&feed=sandbox&package=nanoFramework.CoreLibrary.NoReflection&protocolType=NuGet&view=overview) |
+
+## BCL Flavours
+
+The **nanoFramework** Base Class Library is provided in two flavours: with or without support for System.Reflection namespace. The reason for this is that the reflection API adds up a significant size to the DLL and image size. For targets with smaller flash this can be prohibitive.
 
 ## Feedback and documentation
 

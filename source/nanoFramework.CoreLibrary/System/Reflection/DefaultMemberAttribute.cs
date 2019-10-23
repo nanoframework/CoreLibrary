@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using System;
@@ -11,6 +13,7 @@ namespace System.Reflection
     /// <summary>
     /// Defines the member of a type that is the default member used by InvokeMember.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface), Serializable]
     public sealed class DefaultMemberAttribute : Attribute
     {
@@ -39,3 +42,5 @@ namespace System.Reflection
         }
     }
 }
+
+#endif // NANOCLR_REFLECTION
