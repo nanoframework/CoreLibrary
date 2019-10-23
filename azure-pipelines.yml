@@ -28,6 +28,7 @@ jobs:
 
 ##############################
 - job: Build_mscorlib
+  condition: eq(variables['UPDATE_DEPENDENTS'], 'false')
   pool:
     vmImage: 'VS2017-Win2016'
 
@@ -49,6 +50,7 @@ jobs:
 
 ##############################
 - job: Build_mscorlib_no_reflection
+  condition: eq(variables['UPDATE_DEPENDENTS'], 'false')
   pool:
     vmImage: 'VS2017-Win2016'
 
@@ -69,7 +71,7 @@ jobs:
 
 ##############################
 - job: Update_Dependencies
-  condition: ne( variables['StartReleaseCandidate'], true )
+  condition: and( ne( variables['StartReleaseCandidate'], true ), eq(variables['UPDATE_DEPENDENTS'], true) )
 
   dependsOn:
   - Build_mscorlib
