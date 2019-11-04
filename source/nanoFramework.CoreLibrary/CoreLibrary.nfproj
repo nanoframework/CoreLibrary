@@ -64,17 +64,12 @@
     <Compile Include="System\Char.cs" />
     <Compile Include="System\CLSCompliantAttribute.cs" />
     <Compile Include="System\Collections\ArrayList.cs" />
-    <Compile Include="System\Collections\DictionaryEntry.cs" />
-    <Compile Include="System\Collections\Hashtable.cs" />
     <Compile Include="System\Collections\ICollection.cs" />
     <Compile Include="System\Collections\IComparer.cs" />
-    <Compile Include="System\Collections\IDictionary.cs" />
     <Compile Include="System\Collections\IEnumerable.cs" />
     <Compile Include="System\Collections\IEnumerator.cs" />
     <Compile Include="System\Collections\IEqualityComparer.cs" />
     <Compile Include="System\Collections\IList.cs" />
-    <Compile Include="System\Collections\Queue.cs" />
-    <Compile Include="System\Collections\Stack.cs" />
     <Compile Include="System\ComponentModel\EditorBrowsableAttribute.cs" />
     <Compile Include="System\Convert.cs" />
     <Compile Include="System\DateTime.cs" />

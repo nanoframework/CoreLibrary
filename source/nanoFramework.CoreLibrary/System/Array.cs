@@ -158,6 +158,11 @@ namespace System
             set;
         }
 
+        internal void SetByIndex(int index, object value)
+        {
+            ((IList)this)[index] = value;
+        }
+
         int IList.Add(Object value)
         {
             throw new NotSupportedException();
