@@ -78,6 +78,11 @@ namespace System
             get;
         }
 
+        internal char GetCharByIndex(int index)
+        {
+            return this[index];
+        }
+
         /// <summary>
         /// Copies the characters in this instance to a Unicode character array.
         /// </summary>
