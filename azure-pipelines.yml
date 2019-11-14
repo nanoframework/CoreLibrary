@@ -103,7 +103,6 @@ jobs:
       repositoriesToUpdate: |
         lib-nanoFramework.Runtime.Events
         lib-nanoFramework.Runtime.Native
-        lib-Windows.Storage.Streams
         lib-Windows.Devices.Adc
         lib-Windows.Devices.I2c
         lib-Windows.Devices.Pwm
