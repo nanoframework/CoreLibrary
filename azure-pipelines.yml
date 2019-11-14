@@ -116,6 +116,7 @@ jobs:
         lib-nanoFramework.TI.EasyLink
         lib-nanoFramework.ResourceManager
         lib-nanoFramework.System.Collections
+        lib-nanoFramework.System.Text
         Json.NetMF
     condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), and( succeeded(), contains(variables['Build.SourceVersionMessage'], '***UPDATE_DEPENDENTS***') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
     displayName: Update dependent class libs
