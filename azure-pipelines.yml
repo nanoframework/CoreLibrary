@@ -164,12 +164,6 @@ jobs:
       git config --global core.autocrlf true
     displayName: Setup git identity
 
-  - task: NuGetToolInstaller@0
-    inputs:
-      versionSpec: '4.9.3'
-    condition: ne( variables['StartReleaseCandidate'], true )
-    displayName: 'Install specific version of NuGet'
-
   # update dependencies
   - task: UpdatenFDependencies@1
     inputs:
