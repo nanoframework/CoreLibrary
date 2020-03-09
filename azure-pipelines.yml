@@ -146,7 +146,7 @@ jobs:
 
 ##############################
 - job: Update_Dependencies
-  condition: and( ne( variables['StartReleaseCandidate'], true ), eq(variables['UPDATE_DEPENDENTS'], true) )
+  condition: and( ne( variables['StartReleaseCandidate'], true ), or( contains(variables['Build.SourceVersionMessage'], '***UPDATE_DEPENDENTS***'), eq(variables['UPDATE_DEPENDENTS'], 'true') ) )
 
   dependsOn:
   - Build_mscorlib
