@@ -68,14 +68,55 @@ namespace System.Reflection
         /// <summary>
         /// When overridden in a derived class, returns an array of all custom attributes applied to this member.
         /// </summary>
-        /// <param name="inherit">true to search this member's inheritance chain to find the attributes; otherwise, false. This parameter is ignored for properties and events.</param>
+        /// <param name="inherit"><c>true</c> to search this member's inheritance chain to find the attributes; otherwise, <c>false</c>. This parameter is ignored for properties and events.</param>
         /// <returns>An array that contains all the custom attributes applied to this member, or an array with zero elements if no attributes are defined.</returns>
-        /// <remarks>This method is not implemented in nanoFramework.</remarks>
-        /// <exception cref="NotImplementedException">This method is not implemente.</exception>
-        /// <exception cref="NotImplementedException"/>
+        /// <remarks>This method ignores the inherit parameter for properties and events.</remarks>
+        public override object[] GetCustomAttributes(bool inherit)
+        {
+            // get the custom attributes data for the field
+            // these are returned "encoded" in an object array with 2 positions for each attribute
+            // 1st the attribute type
+            // 2nd the constructor parameter or null, if the attribute has no constructor
+            // 
+            // current limitations: 
+            // - works only for constructors with a single parameter
+            // - the parameter has to be a string or numeric type
+            //
+            // both limitations above can be relatively easily overcome by adding the appropriate code at the native handler
+            var ret = GetCustomAttributesNative(inherit);
+
+            object[] attributes = new object[ ret.Length/2 ];
+
+            for (int i = 0; i < ret.Length; i += 2)
+            {
+                // peek next element to determine if it's null
+                if(ret[ i+1 ] == null)
+                {
+                    // attribute without default constructor, just copy it
+                    attributes[ i/2 ] = ret[i];
+                }
+                else
+                {
+                    // has default constructor, invoke it
+
+                    // get the types
+                    Type objectType = ret[i].GetType();
+                    Type paramType = ret[ i+1 ].GetType();
+
+                    // get constructor
+                    ConstructorInfo ctor = objectType.GetConstructor(new Type[] { paramType });
+
+                    // invoke constructor with the parameter
+                    attributes[ i/2 ] = ctor.Invoke(new object[] { ret[ i+1 ] });
+                }
+            }
+
+            return attributes;
+        }
+
         [MethodImpl(MethodImplOptions.InternalCall)]
 #pragma warning disable S4200 // Native methods should be wrapped
-        public extern override object[] GetCustomAttributes(bool inherit);
+        private extern object[] GetCustomAttributesNative(bool inherit);
 #pragma warning restore S4200 // Native methods should be wrapped
     }
 }
