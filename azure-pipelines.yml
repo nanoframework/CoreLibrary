@@ -158,12 +158,6 @@ jobs:
   # need this here in order to persist GitHub credentials 
   - checkout: self
 
-  - script: |
-      git config --global user.email nanoframework@outlook.com
-      git config --global user.name nfbot
-      git config --global core.autocrlf true
-    displayName: Setup git identity
-
   # update dependencies
   - task: UpdatenFDependencies@1
     inputs:
