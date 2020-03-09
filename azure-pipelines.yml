@@ -157,6 +157,13 @@ jobs:
   steps:
   # need this here in order to persist GitHub credentials 
   - checkout: self
+    fetchDepth: 1
+
+  - task: NuGetToolInstaller@0
+    inputs:
+      versionSpec: '5.4.0'
+    condition: ne( variables['StartReleaseCandidate'], true )
+    displayName: 'Install specific version of NuGet'
 
   # update dependencies
   - task: UpdatenFDependencies@1
