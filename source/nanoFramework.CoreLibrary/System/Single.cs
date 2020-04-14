@@ -107,7 +107,6 @@ namespace System
         /// <summary>
         /// Compares this instance to a specified single-precision floating-point number and returns an integer that indicates whether the value of this instance is less than, equal to, or greater than the value of the specified single-precision floating-point number.
         /// </summary>
-        /// <param name="f">A single-precision floating-point number to compare.</param>
         /// <param name="value">A single-precision floating-point number to compare.</param>
         /// <returns>A signed number indicating the relative values of this instance and value.
         /// Less than zero: This instance is less than value. -or- This instance is not a number (<see cref="NaN"/>) and value is a number.

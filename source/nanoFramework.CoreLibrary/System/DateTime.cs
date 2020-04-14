@@ -138,7 +138,7 @@ namespace System
         /// Initializes a new instance of the <see cref="DateTime"/> structure to a specified number of ticks.
         /// </summary>
         /// <param name="ticks">A date and time expressed in the number of 100-nanosecond intervals. </param>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="DateTime.MinValue.Ticks"/> and <see cref="DateTime.MaxValue.Ticks"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="DateTime.MinValue"/> and <see cref="DateTime.MaxValue"/>.</exception>
         public DateTime(long ticks)
         {
             ticks -= _ticksAtOrigin;
