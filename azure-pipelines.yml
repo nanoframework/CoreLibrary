@@ -28,7 +28,7 @@ jobs:
 
 ##############################
 - job: Build_mscorlib
-  condition: eq(variables['UPDATE_DEPENDENTS'], 'false')
+  condition: or( eq(variables['UPDATE_DEPENDENTS'], 'false'), eq(variables['StartReleaseCandidate'], 'true') )
   pool:
     vmImage: 'VS2017-Win2016'
 
