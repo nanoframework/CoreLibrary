@@ -83,8 +83,15 @@ namespace System
         [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern Type GetElementType();
 
+        public override object[] GetCustomAttributes(bool inherit)
+        {
+            return CustomAttributesHelpers.GetCustomAttributesInternal(GetCustomAttributesNative(inherit));
+        }
+
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public override extern object[] GetCustomAttributes(bool inherit);
+#pragma warning disable S4200 // Native methods should be wrapped
+        private extern object[] GetCustomAttributesNative(bool inherit);
+#pragma warning restore S4200 // Native methods should be wrapped
     }
 }
 
