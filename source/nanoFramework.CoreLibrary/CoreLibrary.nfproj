@@ -129,6 +129,7 @@
     <Compile Include="System\Reflection\Binder.cs" />
     <Compile Include="System\Reflection\BindingFlags.cs" />
     <Compile Include="System\Reflection\ConstructorInfo.cs" />
+    <Compile Include="System\Reflection\CustomAttributesHelpers.cs" />
     <Compile Include="System\Reflection\DefaultMemberAttribute.cs" />
     <Compile Include="System\Reflection\FieldInfo.cs" />
     <Compile Include="System\Reflection\FieldReflectionAttributes.cs" />
