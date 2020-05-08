@@ -170,14 +170,15 @@ namespace System
         /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="DateTime.MinValue"/> and <see cref="DateTime.MaxValue"/>.</exception>
         public DateTime(long ticks)
         {
-            ticks -= _ticksAtOrigin;
-
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (ticks < MinTicks || ticks > MaxTicks)
             {
                 throw new ArgumentOutOfRangeException();
             }
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+
+            // need to subtract our ticks at origin
+            ticks -= _ticksAtOrigin;
 
             _ticks = (ulong)ticks;
 
