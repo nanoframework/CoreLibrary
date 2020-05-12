@@ -22,6 +22,7 @@ namespace System
         /// Writes the specified string value to the standard output stream.
         /// </summary>
         /// <param name="value">The value to write.</param>
+        [Obsolete("This method is going to be removed in a future version. Call Debug.Write instead.")]
         public static void Write(string value)
 #pragma warning restore S4200 // Native methods should be wrapped
         {
@@ -33,6 +34,7 @@ namespace System
         /// Writes the specified string value, followed by the current line terminator, to the standard output stream.
         /// </summary>
         /// <param name="value">The value to write.</param>
+        [Obsolete("This method is going to be removed in a future version. Call Debug.Write instead.")]
         public static void WriteLine(string value)
 #pragma warning restore S4200 // Native methods should be wrapped
         {
