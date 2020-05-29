@@ -78,6 +78,7 @@
     <Compile Include="System\Decimal.cs" />
     <Compile Include="System\Delegate.cs" />
     <Compile Include="System\Diagnostics\ConditionalAttribute.cs" />
+    <Compile Include="System\Diagnostics\Debug.cs" />
     <Compile Include="System\Diagnostics\Debugger.cs" />
     <Compile Include="System\Diagnostics\DebuggerAttributes.cs" />
     <Compile Include="System\Double.cs" />
