@@ -78,6 +78,7 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\Decimal.cs" Link="System\Decimal.cs"/>
     <Compile Include="..\nanoFramework.CoreLibrary\System\Delegate.cs" Link="System\v.cs"/>
     <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\ConditionalAttribute.cs" Link="System\Diagnostics\ConditionalAttribute.cs"/>
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debug.cs" Link="System\Diagnostics\Debug.cs"/>
     <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debugger.cs" Link="System\Diagnostics\Debugger.cs"/>
     <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\DebuggerAttributes.cs" Link="System\Diagnostics\DebuggerAttributes.cs"/>
     <Compile Include="..\nanoFramework.CoreLibrary\System\Double.cs" Link="System\Double.cs"/>
