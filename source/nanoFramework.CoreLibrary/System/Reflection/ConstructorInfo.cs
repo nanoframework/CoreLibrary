@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using Runtime.CompilerServices;
@@ -12,6 +14,7 @@ namespace System.Reflection
     /// <summary>
     /// Discovers the attributes of a class constructor and provides access to constructor metadata.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
     public abstract class ConstructorInfo : MethodBase
     {
@@ -54,3 +57,5 @@ namespace System.Reflection
 #pragma warning restore S4200 // Native methods should be wrapped
     }
 }
+
+#endif // NANOCLR_REFLECTION

@@ -24,50 +24,170 @@ resources:
       name: nanoframework/nf-tools
       endpoint: nanoframework
 
-pool:
-  vmImage: 'VS2017-Win2016'
+jobs:
 
-variables:
-  solution: '**/source/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-  nugetPackageName: 'nanoFramework.CoreLibrary'
-  repoName: 'lib-CoreLibrary'
+##############################
+- job: Build_mscorlib
+  condition: or( eq(variables['UPDATE_DEPENDENTS'], 'false'), eq(variables['StartReleaseCandidate'], 'true') )
+  pool:
+    vmImage: 'VS2017-Win2016'
 
-steps:
+  variables:
+    solution: '**/source/*.sln'
+    buildPlatform: 'Any CPU'
+    buildConfiguration: 'Release'
+    nugetPackageName: 'nanoFramework.CoreLibrary'
+    repoName: 'lib-CoreLibrary'
 
-# step from template @ nf-tools repo
-# all build, update and publish steps
-- template: azure-pipelines-templates/class-lib-build.yml@templates  
-  parameters:
-    sonarCloudProject: 'nanoframework_lib-CoreLibrary'
+  steps:
 
-# update dependencies
-- task: UpdatenFDependencies@1
-  inputs:
-    gitHubToken: $(GitHubToken)
-    repositoriesToUpdate: |
-      lib-nanoFramework.Runtime.Events
-      lib-nanoFramework.Runtime.Native
-      lib-Windows.Storage.Streams
-      lib-Windows.Devices.Adc
-      lib-Windows.Devices.I2c
-      lib-Windows.Devices.Pwm
-      lib-Windows.Devices.Spi
-      lib-System.Devices.Dac
-      lib-nanoFramework.Devices.OneWire
-      lib-nanoFramework.Networking.Sntp
-      lib-nanoFramework.Hardware.Stm32
-      lib-nanoFramework.System.Math
-      lib-nanoFramework.TI.EasyLink
-      Json.NetMF
-  condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
-  displayName: Update dependent class libs
+  # step from template @ nf-tools repo
 
-# step from template @ nf-tools repo
-# report error
-- template: azure-pipelines-templates/discord-webhook-task.yml@templates  
-  parameters:
-    status: 'failure'
-    webhookUrl: '$(DiscordWebhook)'
-    message: ''
+  # build steps only
+  - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
+    parameters:
+      sonarCloudProject: 'nanoframework_lib-CoreLibrary'
+
+  # package steps
+  - template: azure-pipelines-templates/class-lib-package.yml@templates  
+    parameters:
+      nugetPackageName: 'nanoFramework.CoreLibrary'
+
+  - template: azure-pipelines-templates/class-lib-package.yml@templates  
+    parameters:
+      nugetPackageName: 'nanoFramework.CoreLibrary.NoReflection'
+      
+  - template: azure-pipelines-templates/class-lib-publish.yml@templates  
+
+  # need to push the other package to NuGet because the template above can only push one package (happens on tag builds for any branch)
+  - task: NuGetCommand@2
+    inputs:
+      command: push
+      nuGetFeedType: external
+      allowPackageConflicts: true
+      packagesToPush: 
+        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
+      publishFeedCredentials: 'AzureArtifacts-CoreLibrary'
+    condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
+    continueOnError: true
+    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
+
+  - task: NuGetCommand@2
+    inputs:
+      command: push
+      nuGetFeedType: external
+      allowPackageConflicts: true
+      packagesToPush: 
+        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
+      publishFeedCredentials: 'NuGet-CoreLibrary'
+    condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
+    continueOnError: true
+    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
+
+  # create or update GitHub release
+  - task: GitHubReleasePublish@1
+    inputs:
+      githubEndpoint: 'nanoframework'
+      githubOwner: 'nanoframework'
+      githubRepositoryName: $(repoName)
+      githubTag: v$(MY_NUGET_VERSION)
+      githubReleaseTitle: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
+      githubReleaseNotes: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
+      githubTargetCommitsh: $(Build.SourceVersion)
+      githubReleaseDraft: $(RELEASE_DRAFT)
+      githubReleasePrerelease: true
+      githubReuseDraftOnly: false
+      githubReuseRelease: true
+      githubEditRelease: true
+      githubDeleteEmptyTag: true
+      githubReleaseAsset: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    condition: and( succeeded(), not( startsWith(variables['Build.SourceBranch'], 'refs/pull') ), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), ne( variables['StartReleaseCandidate'], true ) )
+    displayName: Create/Update GitHub PREVIEW release 
+
+  # create or update GitHub release ON tags from release or master branches
+  - task: GitHubReleasePublish@1
+    inputs:
+      githubEndpoint: 'nanoframework'
+      githubOwner: 'nanoframework'
+      githubRepositoryName: $(repoName)
+      githubTag: v$(MY_NUGET_VERSION)
+      githubReleaseTitle: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
+      githubReleaseNotes: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
+      githubTargetCommitsh: $(Build.SourceVersion)
+      githubReleaseDraft: false
+      githubReleasePrerelease: false
+      githubReuseDraftOnly: false
+      githubReuseRelease: true
+      githubEditRelease: true
+      githubDeleteEmptyTag: true
+      githubReleaseAsset: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], 'preview') ), ne( variables['StartReleaseCandidate'], true ) )
+    displayName: Create/Update GitHub stable release
+
+##############################
+- job: Update_Dependents
+  condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['StartReleaseCandidate'], 'false') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'), eq(variables['StartReleaseCandidate'], 'false') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
+
+  dependsOn:
+  - Build_mscorlib
+
+  pool:
+    vmImage: 'VS2017-Win2016'
+
+  steps:
+  # need this here in order to persist GitHub credentials 
+  - checkout: self
+    fetchDepth: 1
+
+  - task: NuGetToolInstaller@0
+    inputs:
+      versionSpec: '5.4.0'
+    condition: ne( variables['StartReleaseCandidate'], true )
+    displayName: 'Install specific version of NuGet'
+
+  # update dependents
+  - task: UpdatenFDependencies@1
+    inputs:
+      gitHubToken: $(GitHubToken)
+      repositoriesToUpdate: |
+        lib-nanoFramework.Runtime.Events
+        lib-nanoFramework.Runtime.Native
+        lib-Windows.Devices.Adc
+        lib-Windows.Devices.I2c
+        lib-Windows.Devices.Pwm
+        lib-Windows.Devices.Spi
+        lib-System.Devices.Dac
+        lib-nanoFramework.Devices.OneWire
+        lib-nanoFramework.Networking.Sntp
+        lib-nanoFramework.Hardware.Stm32
+        lib-nanoFramework.System.Math
+        lib-nanoFramework.TI.EasyLink
+        lib-nanoFramework.ResourceManager
+        lib-nanoFramework.System.Collections
+        lib-nanoFramework.System.Text
+        lib-nanoFramework.Json
+    displayName: Update dependent class libs
+
+##################################
+# report build failure to Discord
+- job: Report_Build_Failure
+  
+  dependsOn:
+  - Build_mscorlib
+  - Update_Dependents
+  condition: or( failed('Build_mscorlib'), failed('Build_mscorlib_no_reflection'), failed('Update_Dependents'))
+
+  pool:
+    vmImage: 'VS2017-Win2016'
+
+  steps:
+  
+  - checkout: self
+
+  # step from template @ nf-tools repo
+  # report error
+  - template: azure-pipelines-templates/discord-webhook-task.yml@templates  
+    parameters:
+      status: 'failure'
+      webhookUrl: '$(DiscordWebhook)'
+      message: ''

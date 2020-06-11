@@ -192,6 +192,7 @@ namespace System.Threading
         /// Returns the current domain in which the current thread is running.
         /// </summary>
         /// <returns>An AppDomain representing the current application domain of the running thread.</returns>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
 #pragma warning disable S4200 // Native methods should be wrapped
         public static extern AppDomain GetDomain();

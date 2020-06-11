@@ -19,11 +19,16 @@ namespace System
     /// <summary>
     /// Represents an application domain, which is an isolated environment where applications execute. This class cannot be inherited.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     public sealed class AppDomain : MarshalByRefObject
     {
         // these fields are required in the native end
 #pragma warning disable 0649, 0169
+
+#if NANOCLR_REFLECTION
         [FieldNoReflection]
+#endif // NANOCLR_REFLECTION
+
         private object _appDomain;
         private string _friendlyName;
 #pragma warning restore 0649
@@ -46,12 +51,14 @@ namespace System
         public static extern AppDomain CreateDomain(String friendlyName);
 #pragma warning restore S4200 // Native methods should be wrapped
 
+#if NANOCLR_REFLECTION
         /// <summary>
         /// Creates a new instance of the specified type. Parameters specify the assembly where the type is defined, and the name of the type.
         /// </summary>
         /// <param name="assemblyName">The display name of the assembly. See Assembly.FullName.</param>
         /// <param name="typeName">The fully qualified name of the requested type, including the namespace but not the assembly, as returned by the Type.FullName property.</param>
         /// <returns>An instance of the object specified by typeName.</returns>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         public Object CreateInstanceAndUnwrap(String assemblyName, String typeName)
         {
             var assembly = Assembly.Load(assemblyName);
@@ -61,6 +68,7 @@ namespace System
 
             return obj;
         }
+#endif // NANOCLR_REFLECTION
 
         /// <summary>
         /// Gets the current application domain for the current Thread.
@@ -90,11 +98,14 @@ namespace System
             }
         }
 
+#if NANOCLR_REFLECTION
+
         /// <summary>
         /// Loads an Assembly given its display name.
         /// </summary>
         /// <param name="assemblyString">The display name of the assembly. See Assembly.FullName.</param>
         /// <returns>The loaded assembly.</returns>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         public Assembly Load(String assemblyString)
         {
             var fVersion = false;
@@ -117,10 +128,13 @@ namespace System
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern Assembly LoadInternal(String assemblyString, bool fVersion, int maj, int min, int build, int rev);
 
+#endif // NANOCLR_REFLECTION
+
         /// <summary>
         /// Unloads the specified application domain.
         /// </summary>
         /// <param name="domain">An application domain to unload.</param>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
 #pragma warning disable S4200 // Native methods should be wrapped
         public static extern void Unload(AppDomain domain);

@@ -22,14 +22,27 @@ namespace System
         {
         }
 
+#if NANOCLR_REFLECTION
+
+        /// <summary>
+        /// Returns a string that represents the current object.
+        /// </summary>
+        /// <returns>A string that represents the current object.</returns>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
+        public virtual String ToString()
+        {
+            return GetType().FullName;
+        }
+#else
         /// <summary>
         /// Returns a string that represents the current object.
         /// </summary>
         /// <returns>A string that represents the current object.</returns>
         public virtual String ToString()
         {
-            return GetType().FullName;
+            throw new NotImplementedException();
         }
+#endif // NANOCLR_REFLECTION
 
         /// <summary>
         /// Determines whether the specified object is equal to the current object.
@@ -82,14 +95,19 @@ namespace System
         public virtual extern int GetHashCode();
 #pragma warning restore S4200 // Native methods should be wrapped
 
+#if NANOCLR_REFLECTION
+
         /// <summary>
         /// Gets the Type of the current instance.
         /// </summary>
         /// <returns>The exact runtime type of the current instance.</returns>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
 #pragma warning disable S4200 // Native methods should be wrapped
         public extern Type GetType();
 #pragma warning restore S4200 // Native methods should be wrapped
+
+#endif // NANOCLR_REFLECTION
 
         /// <summary>
         /// Creates a shallow copy of the current Object.

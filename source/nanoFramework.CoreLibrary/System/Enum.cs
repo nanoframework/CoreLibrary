@@ -17,13 +17,18 @@ namespace System
         /// Converts the value of this instance to its equivalent string representation.
         /// </summary>
         /// <returns>The string representation of the value of this instance.</returns>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         public override String ToString()
         {
+#if NANOCLR_REFLECTION
             var type = GetType();
             var field = type.GetField("value__");
             var value = field.GetValue(this);
 
             return value.ToString();
+#else
+            throw new NotImplementedException();
+#endif // NANOCLR_REFLECTION
         }
 
     }

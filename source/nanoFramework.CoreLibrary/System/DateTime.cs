@@ -1,4 +1,4 @@
-//
+﻿//
 // Copyright (c) 2017 The nanoFramework project contributors
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
@@ -6,6 +6,7 @@ namespace System
 {
     using Runtime.CompilerServices;
     using Globalization;
+    using System.Diagnostics;
 
     // Summary:
     //     Specifies whether a System.DateTime object represents a local time, a Coordinated
@@ -76,11 +77,15 @@ namespace System
     /// Represents an instant in time, typically expressed as a date and time of day.
     /// </summary>
     [Serializable]
+#if NANOCLR_REFLECTION
+    [DebuggerDisplay("{DateTimeDisplay,nq}")]
+#endif // NANOCLR_REFLECTION
     public struct DateTime
     {
         /// Our origin is at 1601/01/01:00:00:00.000
         /// While desktop CLR's origin is at 0001/01/01:00:00:00.000.
         /// There are 504911232000000000 ticks between them which we are subtracting.
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private const long _ticksAtOrigin = 504911232000000000;
 
         // Number of 100ns ticks per time unit
@@ -97,12 +102,20 @@ namespace System
         private const int MillisPerDay = MillisPerHour * 24;
 
         // Unix Epoch constants
-        private const long UnixEpochTicks = (TicksPerDay * 719162) - _ticksAtOrigin; // 621355968000000000
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private const long UnixEpochTicks = (TicksPerDay * 719162); // 621355968000000000
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private const long UnixEpochSeconds = UnixEpochTicks / TicksPerSecond; // 62135596800
 
-        private const long MinTicks = 0;
-        // ticks value corresponding to 3000/12/31:23:59:59.999
-        private const long MaxTicks = 946708127999999999 - _ticksAtOrigin;
+        // ticks value corresponding to 1601/01/01:00:00:00.000 (nanoFramework origin date time)
+        private const long MinTicks = _ticksAtOrigin;
+        // ticks value corresponding to 3000/12/31:23:59:59.999 (nanoFramework maximum date time)
+        private const long MaxTicks = 946708127999999999;
+
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private const ulong _tickMask = 0x7FFFFFFFFFFFFFFFL;
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private const ulong _UTCMask = 0x8000000000000000L;
 
         /// <summary>
         /// Represents the smallest possible value of <see cref="DateTime"/>. This field is read-only.
@@ -110,7 +123,7 @@ namespace System
         /// <remarks>The value of this constant is equivalent to 00:00:00.0000000, January 1, 1601.
         /// This value is specific to nanoFramework. .NET equivalent is 00:00:00.0000000 UTC, January 1, 0001, in the Gregorian calendar.
         /// </remarks>
-        public static readonly DateTime MinValue = new DateTime(MinTicks + _ticksAtOrigin);
+        public static readonly DateTime MinValue = new DateTime(MinTicks);
 
         /// <summary>
         /// Represents the largest possible value of <see cref="DateTime"/>. This field is read-only.
@@ -118,7 +131,7 @@ namespace System
         /// <remarks>The value of this constant is equivalent to 23:59:59.9999999, December 31, 3000.
         /// This value is specific to nanoFramework. .NET equivalent is 23:59:59.9999999 UTC, December 31, 9999 in the Gregorian calendar.
         /// </remarks>
-        public static readonly DateTime MaxValue = new DateTime(MaxTicks + _ticksAtOrigin);
+        public static readonly DateTime MaxValue = new DateTime(MaxTicks);
 
         /// <summary>
         /// Represents the Unix Epoch value. This field is read-only.
@@ -126,23 +139,37 @@ namespace System
         /// <remarks>The value of this constant is equivalent to the <see cref="DateTime"/> corresponding to 1970-01-01T00:00:00Z (January 1, 1970, at 12:00 AM UTC).
         /// This value is specific to nanoFramework.
         /// </remarks>
-        public static readonly DateTime UnixEpoch = new DateTime(UnixEpochTicks + _ticksAtOrigin, DateTimeKind.Utc);
+        public static readonly DateTime UnixEpoch = new DateTime(UnixEpochTicks, DateTimeKind.Utc);
 
         // The data is stored as an unsigned 64-bit integer
         //   Bits 01-62: The value of 100-nanosecond ticks where 0 represents 1601/01/01:00:00:00.000, up until the value
         //               3000/12/31:23:59:59.999
         //   Bits 63-64: Ignored in .NET nanoFramework implementation.
-        private UInt64 _ticks;
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private ulong _ticks;
+
+        // this enum is used to make the call to get date part
+        // keep in sync with native 
+        private enum DateTimePart
+        {
+            Year,
+            Month,
+            Day,
+            DayOfWeek,
+            DayOfYear,
+            Hour,
+            Minute,
+            Second,
+            Millisecond
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DateTime"/> structure to a specified number of ticks.
         /// </summary>
         /// <param name="ticks">A date and time expressed in the number of 100-nanosecond intervals. </param>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="DateTime.MinValue.Ticks"/> and <see cref="DateTime.MaxValue.Ticks"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="DateTime.MinValue"/> and <see cref="DateTime.MaxValue"/>.</exception>
         public DateTime(long ticks)
         {
-            ticks -= _ticksAtOrigin;
-
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (ticks < MinTicks || ticks > MaxTicks)
             {
@@ -150,7 +177,13 @@ namespace System
             }
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
-            _ticks = (UInt64)ticks;
+            // need to subtract our ticks at origin
+            ticks -= _ticksAtOrigin;
+
+            _ticks = (ulong)ticks;
+
+            // allways UTC
+            _ticks |= _UTCMask;
         }
 
         /// <summary>
@@ -170,7 +203,7 @@ namespace System
             if (kind != DateTimeKind.Utc)
             {
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
         }
@@ -178,7 +211,7 @@ namespace System
         /// <summary>
         /// Initializes a new instance of the <see cref="DateTime"/> structure to the specified year, month, and day.
         /// </summary>
-        /// <param name="year">The year (1 through 9999). </param>
+        /// <param name="year">The year (1601 through 3000). </param>
         /// <param name="month">The month (1 through 12). </param>
         /// <param name="day">The day (1 through the number of days in month). </param>
         public DateTime(int year, int month, int day)
@@ -189,7 +222,7 @@ namespace System
         /// <summary>
         /// Initializes a new instance of the <see cref="DateTime"/> structure to the specified year, month, day, hour, minute, and second.
         /// </summary>
-        /// <param name="year">The year (1 through 9999). </param>
+        /// <param name="year">The year (1601 through 3000). </param>
         /// <param name="month">The month (1 through 12).</param>
         /// <param name="day">The day (1 through the number of days in month).</param>
         /// <param name="hour">The hours (0 through 23). </param>
@@ -203,13 +236,14 @@ namespace System
         /// <summary>
         /// Initializes a new instance of the <see cref="DateTime"/> structure to the specified year, month, day, hour, minute, second, and millisecond.
         /// </summary>
-        /// <param name="year">The year (1 through 9999). </param>
+        /// <param name="year">The year (1601 through 3000). </param>
         /// <param name="month">The month (1 through 12).</param>
         /// <param name="day">The day (1 through the number of days in month).</param>
         /// <param name="hour">The hours (0 through 23). </param>
         /// <param name="minute">The minutes (0 through 59). </param>
         /// <param name="second">The seconds (0 through 59). </param>
         /// <param name="millisecond">The milliseconds (0 through 999). </param>
+        /// <exception cref="ArgumentOutOfRangeException">Any parameter out of the accepted ranges</exception>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond);
 
@@ -220,12 +254,12 @@ namespace System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the time interval represented by <paramref name="val"/>.</returns>
         public DateTime Add(TimeSpan val)
         {
-            return new DateTime((long)_ticks + val.Ticks + _ticksAtOrigin);
+            return new DateTime(Ticks + val.Ticks);
         }
 
         private DateTime Add(double val, int scale)
         {
-            return new DateTime((long)_ticks + (long)(val * scale * TicksPerMillisecond + (val >= 0 ? 0.5 : -0.5)) + _ticksAtOrigin);
+            return new DateTime(Ticks + (long)(val * scale * TicksPerMillisecond + (val >= 0 ? 0.5 : -0.5)));
         }
 
         /// <summary>
@@ -285,7 +319,7 @@ namespace System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the time represented by <paramref name="val"/>.</returns>
         public DateTime AddTicks(long val)
         {
-            return new DateTime((long)_ticks + val + _ticksAtOrigin);
+            return new DateTime(Ticks + val);
         }
 
         /// <summary>
@@ -297,8 +331,8 @@ namespace System
         public static int Compare(DateTime t1, DateTime t2)
         {
             // Get ticks
-            var t1Ticks = t1._ticks;
-            var t2Ticks = t2._ticks;
+            var t1Ticks = t1.Ticks;
+            var t2Ticks = t2.Ticks;
 
             // Compare ticks.
             if (t1Ticks > t2Ticks) return 1;
@@ -373,7 +407,7 @@ namespace System
         {
             get
             {
-                return new DateTime((long)(_ticks - (_ticks % TicksPerDay)) + _ticksAtOrigin);
+                return new DateTime(Ticks - (Ticks % TicksPerDay));
             }
         }
 
@@ -383,10 +417,9 @@ namespace System
         /// <value>
         /// The day component, expressed as a value between 1 and 31.
         /// </value>
-        public extern int Day
+        public int Day
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => GetDateTimePart(DateTimePart.Day);
         }
 
         /// <summary>
@@ -395,10 +428,9 @@ namespace System
         /// <value>
         /// An enumerated constant that indicates the day of the week of this <see cref="DateTime"/> value.
         /// </value>
-        public extern DayOfWeek DayOfWeek
+        public DayOfWeek DayOfWeek
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => (DayOfWeek)GetDateTimePart(DateTimePart.DayOfWeek);
         }
 
         /// <summary>
@@ -407,10 +439,9 @@ namespace System
         /// <value>
         /// The day of the year, expressed as a value between 1 and 366.
         /// </value>
-        public extern int DayOfYear
+        public int DayOfYear
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => GetDateTimePart(DateTimePart.DayOfYear);
         }
 
         /// <summary>
@@ -419,10 +450,9 @@ namespace System
         /// <value>
         /// The hour component, expressed as a value between 0 and 23.
         /// </value>
-        public extern int Hour
+        public int Hour
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => GetDateTimePart(DateTimePart.Hour);
         }
 
         /// <summary>
@@ -434,15 +464,7 @@ namespace System
         /// <remarks>
         /// Despite the default in the full .NET Framework is <see cref="DateTimeKind.Local"/> this won't never happen because nanoFramework only supports UTC time.
         /// </remarks>
-        public DateTimeKind Kind
-        {
-            get
-            {
-                // always UTC
-                return DateTimeKind.Utc;
-            }
-
-        }
+        public DateTimeKind Kind => DateTimeKind.Utc; // always UTC in nanoFramework
 
         /// <summary>
         /// Gets the milliseconds component of the date represented by this instance.
@@ -450,10 +472,9 @@ namespace System
         /// <value>
         /// The milliseconds component, expressed as a value between 0 and 999.
         /// </value>
-        public extern int Millisecond
+        public int Millisecond
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => GetDateTimePart(DateTimePart.Millisecond);
         }
 
         /// <summary>
@@ -462,10 +483,9 @@ namespace System
         /// <value>
         /// The minute component, expressed as a value between 0 and 59.
         /// </value>
-        public extern int Minute
+        public int Minute
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => GetDateTimePart(DateTimePart.Minute);
         }
 
         /// <summary>
@@ -474,10 +494,9 @@ namespace System
         /// <value>
         /// The month component, expressed as a value between 1 and 12.
         /// </value>
-        public extern int Month
+        public int Month
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => GetDateTimePart(DateTimePart.Month);
         }
 
         /// <summary>
@@ -486,10 +505,10 @@ namespace System
         /// <value>
         /// An object whose value is the current UTC date and time.
         /// </value>
-        public static extern DateTime UtcNow
+        public static DateTime UtcNow
         {
             [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => new DateTime();
         }
 
         /// <summary>
@@ -498,10 +517,9 @@ namespace System
         /// <value>
         /// The seconds component, expressed as a value between 0 and 59.
         /// </value>
-        public extern int Second
+        public int Second
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => GetDateTimePart(DateTimePart.Second);
         }
 
         /// <summary>
@@ -514,7 +532,7 @@ namespace System
         {
             get
             {
-                return (long)_ticks;
+                return (long)(_ticks & _tickMask) + _ticksAtOrigin;
             }
         }
 
@@ -528,7 +546,7 @@ namespace System
         {
             get
             {
-                return new TimeSpan((long)(_ticks % TicksPerDay));
+                return new TimeSpan(Ticks % TicksPerDay);
             }
         }
 
@@ -538,10 +556,10 @@ namespace System
         /// <value>
         /// An object that is set to today's date, with the time component set to 00:00:00.
         /// </value>
-        public static extern DateTime Today
+        public static DateTime Today
         {
             [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => new DateTime();
         }
 
         /// <summary>
@@ -550,10 +568,9 @@ namespace System
         /// <value>
         /// The year, between 1 and 9999.
         /// </value>
-        public extern int Year
+        public int Year
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get;
+            get => GetDateTimePart(DateTimePart.Year);
         }
 
         /// <summary>
@@ -563,7 +580,7 @@ namespace System
         /// <returns>A time interval that is equal to the date and time represented by this instance minus the date and time represented by <paramref name="val"/>.</returns>
         public TimeSpan Subtract(DateTime val)
         {
-            return new TimeSpan((long)_ticks - (long)val._ticks);
+            return new TimeSpan(Ticks - val.Ticks);
         }
 
         /// <summary>
@@ -573,27 +590,21 @@ namespace System
         /// <returns>An object that is equal to the date and time represented by this instance minus the time interval represented by <paramref name="val"/>.</returns>
         public DateTime Subtract(TimeSpan val)
         {
-            return new DateTime((long)(_ticks - (ulong)val._ticks) + _ticksAtOrigin);
+            return new DateTime(Ticks - val._ticks);
         }
 
         /// <summary>
         /// Converts the value of the current <see cref="DateTime"/> object to its equivalent string representation.
         /// </summary>
         /// <returns>A string representation of the value of the current <see cref="DateTime"/> object.</returns>
-        public override String ToString()
-        {
-            return DateTimeFormat.Format(this, null, DateTimeFormatInfo.CurrentInfo);
-        }
+        public override string ToString() => DateTimeFormat.Format(this, null, DateTimeFormatInfo.CurrentInfo);
 
         /// <summary>
         /// Converts the value of the current <see cref="DateTime"/> object to its equivalent string representation using the specified format.
         /// </summary>
         /// <param name="format">A standard or custom date and time format string (see Remarks). </param>
         /// <returns>A string representation of value of the current DateTime object as specified by format.</returns>
-        public String ToString(String format)
-        {
-            return DateTimeFormat.Format(this, format, DateTimeFormatInfo.CurrentInfo);
-        }
+        public string ToString(string format) => DateTimeFormat.Format(this, format, DateTimeFormatInfo.CurrentInfo);
 
         /// <summary>
         /// Adds a specified time interval to a specified date and time, yielding a new date and time.
@@ -605,7 +616,7 @@ namespace System
         /// </returns>
         public static DateTime operator +(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._ticks + (ulong)t._ticks) + _ticksAtOrigin);
+            return new DateTime(d.Ticks + t.Ticks);
         }
 
 
@@ -619,7 +630,7 @@ namespace System
         /// </returns>
         public static DateTime operator -(DateTime d, TimeSpan t)
         {
-            return new DateTime((long)(d._ticks - (ulong)t._ticks) + _ticksAtOrigin);
+            return new DateTime(d.Ticks - t.Ticks);
         }
 
         /// <summary>
@@ -723,10 +734,9 @@ namespace System
         /// </remarks>
         public static DateTime FromUnixTimeSeconds(long seconds)
         {
-            const long MinSeconds = (MinTicks / TicksPerSecond) - UnixEpochSeconds;
             const long MaxSeconds = (MaxTicks / TicksPerSecond) - UnixEpochSeconds;
 
-            if (seconds < MinSeconds || seconds > MaxSeconds)
+            if (seconds < 0 || seconds > MaxSeconds)
             {
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentOutOfRangeException();
@@ -734,7 +744,7 @@ namespace System
             }
 
             long ticks = (seconds * TicksPerSecond) + UnixEpochTicks;
-            return new DateTime(ticks + _ticksAtOrigin);
+            return new DateTime(ticks);
         }
 
         /// <summary>
@@ -764,7 +774,7 @@ namespace System
             //
             // In other words, we want to consistently round toward the time 1/1/0001 00:00:00,
             // rather than toward the Unix Epoch (1/1/1970 00:00:00).
-            long seconds = (long)(_ticks / TicksPerSecond);
+            long seconds = Ticks / TicksPerSecond;
             return seconds - UnixEpochSeconds;
         }
 
@@ -776,6 +786,13 @@ namespace System
         {
             ulong internalTicks = _ticks;
             return ((int)internalTicks) ^ ((int)(internalTicks >> 0x20));
+
         }
+
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        private string DateTimeDisplay => $"{{{new DateTime(Ticks).ToString()}}}";
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern int GetDateTimePart(DateTimePart part);
     }
 }

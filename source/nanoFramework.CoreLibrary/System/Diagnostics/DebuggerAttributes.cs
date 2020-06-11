@@ -226,9 +226,12 @@ namespace System.Diagnostics
         }
     }
 
+#if NANOCLR_REFLECTION
+
     /// <summary>
     /// Specifies the display proxy for a type.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [AttributeUsage(AttributeTargets.Struct | AttributeTargets.Class | AttributeTargets.Assembly, AllowMultiple = true)]
     public sealed class DebuggerTypeProxyAttribute : Attribute
     {
@@ -401,4 +404,7 @@ namespace System.Diagnostics
             set { _targetName = value; }
         }
     }
+
+#endif // NANOCLR_REFLECTION
+
 }

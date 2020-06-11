@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using System;
@@ -11,6 +13,7 @@ namespace System.Reflection
     /// <summary>
     /// Discovers the attributes of a method and provides access to method metadata.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
     public abstract class MethodInfo : MethodBase
     {
@@ -38,3 +41,5 @@ namespace System.Reflection
         }
     }
 }
+
+#endif // NANOCLR_REFLECTION

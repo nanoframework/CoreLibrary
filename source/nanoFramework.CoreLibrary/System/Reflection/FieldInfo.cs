@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using Runtime.CompilerServices;
@@ -12,6 +14,7 @@ namespace System.Reflection
     /// <summary>
     /// Discovers the attributes of a field and provides access to field metadata.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
     public abstract class FieldInfo : MemberInfo
     {
@@ -65,16 +68,19 @@ namespace System.Reflection
         /// <summary>
         /// When overridden in a derived class, returns an array of all custom attributes applied to this member.
         /// </summary>
-        /// <param name="inherit">true to search this member's inheritance chain to find the attributes; otherwise, false. This parameter is ignored for properties and events.</param>
+        /// <param name="inherit"><c>true</c> to search this member's inheritance chain to find the attributes; otherwise, <c>false</c>. This parameter is ignored for properties and events.</param>
         /// <returns>An array that contains all the custom attributes applied to this member, or an array with zero elements if no attributes are defined.</returns>
-        /// <remarks>This method is not implemented in nanoFramework.</remarks>
-        /// <exception cref="NotImplementedException">This method is not implemente.</exception>
-        /// <exception cref="NotImplementedException"/>
+        /// <remarks>This method ignores the inherit parameter for properties and events.</remarks>
+        public override object[] GetCustomAttributes(bool inherit)
+        {
+            return CustomAttributesHelpers.GetCustomAttributesInternal(GetCustomAttributesNative(inherit));
+        }
+
         [MethodImpl(MethodImplOptions.InternalCall)]
 #pragma warning disable S4200 // Native methods should be wrapped
-        public extern override object[] GetCustomAttributes(bool inherit);
+        private extern object[] GetCustomAttributesNative(bool inherit);
 #pragma warning restore S4200 // Native methods should be wrapped
     }
 }
 
-
+#endif // NANOCLR_REFLECTION

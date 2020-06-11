@@ -78,6 +78,11 @@ namespace System
             get;
         }
 
+        internal char GetCharByIndex(int index)
+        {
+            return this[index];
+        }
+
         /// <summary>
         /// Copies the characters in this instance to a Unicode character array.
         /// </summary>
@@ -763,10 +768,15 @@ namespace System
 
                     if (fmt.Length > 0)
                     {
+#if NANOCLR_REFLECTION
                         var method = args[index].GetType().GetMethod("ToString", new Type[] { typeof(string) });
                         token = (method is null)
                             ? args[index].ToString()
                             : method.Invoke(args[index], new object[] { token }).ToString();
+#else
+                        throw new NotImplementedException();
+#endif // NANOCLR_REFLECTION
+
                     }
                     else
                     {

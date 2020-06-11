@@ -15,6 +15,10 @@ namespace System
     [Serializable]
     public struct Double
     {
+        internal const string _naNSymbol = "Nan";
+        internal const string _negativeInfinitySymbol = "-" + _positiveInfinitySymbol;
+        internal const string _positiveInfinitySymbol = "Infinity";
+
         // this field is required in the native end
 #pragma warning disable 0649
         internal double _value;
@@ -30,34 +34,48 @@ namespace System
         /// </summary>
         /// <remarks>The value of this constant is positive 1.7976931348623157E+308.</remarks>
         public const double MaxValue = 1.7976931348623157E+308;
+
         /// <summary>
         /// Represents the smallest positive Double value that is greater than zero. This field is constant.
         /// </summary>
         /// <remarks>The value of this constant is 4.94065645841247e-324.</remarks>
         public const double Epsilon = 4.9406564584124650E-324;
+
         /// <summary>
         /// Represents negative infinity. This field is constant.
         /// </summary>
         public const double NegativeInfinity = -1.0 / 0.0;
+
         /// <summary>
         /// Represents positive infinity. This field is constant.
         /// </summary>
         public const double PositiveInfinity = 1.0 / 0.0;
+
+#pragma warning disable S1764 // Identical expressions should not be used on both sides of a binary operator
+        // intended as the purpose is to a NaN value
+
         /// <summary>
         /// Represents a value that is not a number (NaN). This field is constant.
         /// </summary>
         public const double NaN = 0.0 / 0.0;
+#pragma warning restore S1764 // Identical expressions should not be used on both sides of a binary operator
 
         /// <summary>
-        /// Documentation missing
+        /// Compares this instance to a specified double-precision floating-point number and returns an integer that indicates whether the value of this instance is less than, equal to, or greater than the value of the specified double-precision floating-point number.
         /// </summary>
-        /// <param name="d">Documentation missing</param>
-        /// <param name="value">Documentation missing</param>
-        /// <returns>Documentation missing</returns>
+        /// <param name="value">A double-precision floating-point number to compare.</param>
+        /// <returns>A signed number indicating the relative values of this instance and value.
+        /// Less than zero: This instance is less than value. -or- This instance is not a number (<see cref="NaN"/>) and value is a number.
+        /// Zero: This instance is equal to value. -or- Both this instance and value are not a number (<see cref="NaN"/>), <see cref="PositiveInfinity"/>, or <see cref="NegativeInfinity"/>. 
+        /// Greater than zero: This instance is greater than value. -or- This instance is a number and value is not a number (<see cref="NaN"/>). 
+        /// </returns>
+        public int CompareTo(double value)
+        {
+            return CompareTo(this, value);
+        }
+
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
-        public static extern int CompareTo(double d, double value);
-#pragma warning restore S4200 // Native methods should be wrapped
+        internal static extern int CompareTo(double d, double value);
 
         /// <summary>
         /// Returns a value indicating whether the specified number evaluates to negative or positive infinity
@@ -126,12 +144,9 @@ namespace System
         /// Converts the numeric value of this instance to its equivalent string representation.
         /// </summary>
         /// <returns>The string representation of the value of this instance.</returns>
-        public override String ToString()
+        public override string ToString()
         {
-            if (IsPositiveInfinity(this)) return "Infinity";
-            if (IsNegativeInfinity(this)) return "-Infinity";
-
-            return IsNaN(this) ? "NaN" : Number.Format(_value, false, "G", NumberFormatInfo.CurrentInfo);
+            return ToString("G");
         }
 
         /// <summary>
@@ -139,12 +154,22 @@ namespace System
         /// </summary>
         /// <param name="format">A numeric format string.</param>
         /// <returns>The string representation of the value of this instance as specified by format.</returns>
-        public String ToString(String format)
+        public string ToString(string format)
         {
-            if (IsPositiveInfinity(this)) return "Infinity";
-            if (IsNegativeInfinity(this)) return "-Infinity";
+            if (IsPositiveInfinity(this))
+            {
+                return _positiveInfinitySymbol;
+            }
+            else if (IsNegativeInfinity(this))
+            {
+                return _negativeInfinitySymbol;
+            }
+            else if (IsNaN(this))
+            {
+                return _naNSymbol;
+            }
 
-            return IsNaN(this) ? "NaN" : Number.Format(_value, false, format, NumberFormatInfo.CurrentInfo);
+            return Number.Format(_value, false, format, NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>

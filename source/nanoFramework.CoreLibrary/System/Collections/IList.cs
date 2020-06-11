@@ -21,7 +21,7 @@ namespace System.Collections
         /// </value>
         /// <param name="index">The zero-based index of the element to get or set.</param>
         /// <returns>The element at the specified index.</returns>
-        Object this[int index]
+        object this[int index]
         {
             get;
             set;

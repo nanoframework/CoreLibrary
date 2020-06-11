@@ -13,9 +13,14 @@ namespace System
     /// Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays in the common language runtime.
     /// </summary>
     [Serializable]
+#if NANOCLR_REFLECTION
     public abstract class Array : ICloneable, IList
+#else
+    public abstract class Array : IList
+#endif // NANOCLR_REFLECTION
     {
 
+#if NANOCLR_REFLECTION
         /// <summary>
         /// Creates a one-dimensional Array of the specified Type and length, with zero-based indexing.
         /// </summary>
@@ -24,11 +29,14 @@ namespace System
         /// <returns>A new one-dimensional Array of the specified Type with the specified length, using zero-based indexing.</returns>
         /// <remarks><para>Unlike most classes, Array provides the CreateInstance method, instead of public constructors, to allow for late bound access.</para>
         /// <para>Reference-type elements are initialized to nullNothingnullptrunit a null reference(Nothing in Visual Basic). Value-type elements are initialized to zero.</para>
-        /// <para>This method is an O(n) operation, where n is length.</para></remarks>
+        /// <para>This method is an O(n) operation, where n is length.</para>
+        /// Available only in mscorlib build with support for System.Reflection.</remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
 #pragma warning disable S4200 // Native methods should be wrapped
         public static extern Array CreateInstance(Type elementType, int length);
 #pragma warning restore S4200 // Native methods should be wrapped
+
+#endif // NANOCLR_REFLECTION
 
 #pragma warning disable S4200 // Native methods should be wrapped
         /// <summary>
@@ -150,6 +158,11 @@ namespace System
             set;
         }
 
+        internal void SetByIndex(int index, object value)
+        {
+            ((IList)this)[index] = value;
+        }
+
         int IList.Add(Object value)
         {
             throw new NotSupportedException();
@@ -185,10 +198,13 @@ namespace System
             throw new NotSupportedException();
         }
 
+#if NANOCLR_REFLECTION
+
         /// <summary>
         /// Creates a shallow copy of the <see cref="Array"/>.
         /// </summary>
         /// <returns>A shallow copy of the <see cref="Array"/>.</returns>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         public Object Clone()
         {
             var length = Length;
@@ -197,6 +213,8 @@ namespace System
 
             return destArray;
         }
+
+#endif  // NANOCLR_REFLECTION
 
         /// <summary>
         /// Searches an entire one-dimensional sorted Array for a value using the specified IComparer interface.

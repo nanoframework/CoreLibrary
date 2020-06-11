@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+#if NANOCLR_REFLECTION
+
 namespace System.Reflection
 {
     using System;
@@ -12,6 +14,7 @@ namespace System.Reflection
     /// <summary>
     /// Discovers the attributes of a property and provides access to property metadata.
     /// </summary>
+    /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
     public abstract class PropertyInfo : MemberInfo
     {
@@ -53,3 +56,5 @@ namespace System.Reflection
 #pragma warning restore S4200 // Native methods should be wrapped
     }
 }
+
+#endif // NANOCLR_REFLECTION

@@ -202,6 +202,18 @@ namespace System
             return NativeToDouble(value);
         }
 
+#pragma warning disable S4200 // Native methods should be wrapped
+        /// <summary>
+        /// Converts the specified string representation of a number to an equivalent single-precision floating-point number.
+        /// </summary>
+        /// <param name="value">A string that contains the number to convert.</param>
+        /// <returns>A single-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
+        public static float ToSingle(string value)
+#pragma warning restore S4200 // Native methods should be wrapped
+        {
+            return (float)NativeToDouble(value);
+        }
+
         /// <summary>
         /// Converts an array of 8-bit unsigned integers to its equivalent String representation encoded with base 64 digits.
         /// </summary>

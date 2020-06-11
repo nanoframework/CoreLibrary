@@ -13,7 +13,9 @@ namespace System.Collections
     /// Implements the IList interface using an array whose size is dynamically increased as required.
     /// </summary>
     [Serializable]
+#if NANOCLR_REFLECTION
     [DebuggerDisplay("Count = {Count}")]
+#endif // NANOCLR_REFLECTION
     public class ArrayList : IList, ICloneable
     {
         private Object[] _items;
@@ -271,10 +273,13 @@ namespace System.Collections
         public virtual extern void RemoveAt(int index);
 #pragma warning restore S4200 // Native methods should be wrapped
 
+#if NANOCLR_REFLECTION
+
         /// <summary>
         /// Copies the elements of the <see cref="ArrayList"/> to a new <see cref="Object"/> array.
         /// </summary>
         /// <returns>An Object array containing copies of the elements of the <see cref="ArrayList"/>.</returns>
+        /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         public virtual Object[] ToArray()
         {
             return (Object[])ToArray(typeof(object));
@@ -293,5 +298,8 @@ namespace System.Collections
 
             return array;
         }
+
+#endif // NANOCLR_REFLECTION
+
     }
 }

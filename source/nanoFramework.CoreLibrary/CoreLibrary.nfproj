@@ -21,7 +21,7 @@
     <OutputName>mscorlib</OutputName>
     <IsCoreAssembly>true</IsCoreAssembly>
     <IsMscorlib>true</IsMscorlib>
-    <DefineConstants>$(DefineConstants);NANOCLR_APPDOMAINS</DefineConstants>
+    <DefineConstants>$(DefineConstants);NANOCLR_REFLECTION</DefineConstants>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <DocumentationFile>bin\$(Configuration)\mscorlib.xml</DocumentationFile>
   </PropertyGroup>
@@ -38,8 +38,8 @@
     <NFMDP_PE_NoBitmapCompression>true</NFMDP_PE_NoBitmapCompression>
     <!-- we like verbose -->
     <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
-    <NFMDP_STUB_GenerateSkeletonFile>Stubs\corlib_native</NFMDP_STUB_GenerateSkeletonFile>
-    <NFMDP_STUB_GenerateSkeletonProject>CorLib</NFMDP_STUB_GenerateSkeletonProject>
+    <NF_GenerateStubsDirectory>bin\$(Configuration)\Stubs</NF_GenerateStubsDirectory>
+    <NF_GenerateSkeletonProjectName>corlib_native</NF_GenerateSkeletonProjectName>
     <!-- this is one is absolutly mandatory for the base class library -->
     <NFMDP_STUB_SkeletonWithoutInterop>true</NFMDP_STUB_SkeletonWithoutInterop>
   </PropertyGroup>
@@ -64,17 +64,12 @@
     <Compile Include="System\Char.cs" />
     <Compile Include="System\CLSCompliantAttribute.cs" />
     <Compile Include="System\Collections\ArrayList.cs" />
-    <Compile Include="System\Collections\DictionaryEntry.cs" />
-    <Compile Include="System\Collections\Hashtable.cs" />
     <Compile Include="System\Collections\ICollection.cs" />
     <Compile Include="System\Collections\IComparer.cs" />
-    <Compile Include="System\Collections\IDictionary.cs" />
     <Compile Include="System\Collections\IEnumerable.cs" />
     <Compile Include="System\Collections\IEnumerator.cs" />
     <Compile Include="System\Collections\IEqualityComparer.cs" />
     <Compile Include="System\Collections\IList.cs" />
-    <Compile Include="System\Collections\Queue.cs" />
-    <Compile Include="System\Collections\Stack.cs" />
     <Compile Include="System\ComponentModel\EditorBrowsableAttribute.cs" />
     <Compile Include="System\Convert.cs" />
     <Compile Include="System\DateTime.cs" />
@@ -83,6 +78,7 @@
     <Compile Include="System\Decimal.cs" />
     <Compile Include="System\Delegate.cs" />
     <Compile Include="System\Diagnostics\ConditionalAttribute.cs" />
+    <Compile Include="System\Diagnostics\Debug.cs" />
     <Compile Include="System\Diagnostics\Debugger.cs" />
     <Compile Include="System\Diagnostics\DebuggerAttributes.cs" />
     <Compile Include="System\Double.cs" />
@@ -134,6 +130,7 @@
     <Compile Include="System\Reflection\Binder.cs" />
     <Compile Include="System\Reflection\BindingFlags.cs" />
     <Compile Include="System\Reflection\ConstructorInfo.cs" />
+    <Compile Include="System\Reflection\CustomAttributesHelpers.cs" />
     <Compile Include="System\Reflection\DefaultMemberAttribute.cs" />
     <Compile Include="System\Reflection\FieldInfo.cs" />
     <Compile Include="System\Reflection\FieldReflectionAttributes.cs" />
@@ -147,7 +144,6 @@
     <Compile Include="System\Reflection\RuntimeConstructorInfo.cs" />
     <Compile Include="System\Reflection\RuntimeFieldInfo.cs" />
     <Compile Include="System\Reflection\RuntimeMethodInfo.cs" />
-    <Compile Include="System\Resources\ResourceManager.cs" />
     <Compile Include="System\RuntimeArgumentHandle.cs" />
     <Compile Include="System\RuntimeFieldHandle.cs" />
     <Compile Include="System\RuntimeMethodHandle.cs" />
@@ -170,11 +166,6 @@
     <Compile Include="System\String.cs" />
     <Compile Include="System\SystemException.cs" />
     <Compile Include="System\TargetFrameworkAttribute.cs" />
-    <Compile Include="System\Text\Decoder.cs" />
-    <Compile Include="System\Text\Encoding.cs" />
-    <Compile Include="System\Text\StringBuilder.cs" />
-    <Compile Include="System\Text\UTF8Decoder.cs" />
-    <Compile Include="System\Text\UTF8Encoding.cs" />
     <Compile Include="System\ThreadAttributes.cs" />
     <Compile Include="System\Threading\AutoResetEvent.cs" />
     <Compile Include="System\Threading\Interlocked.cs" />
