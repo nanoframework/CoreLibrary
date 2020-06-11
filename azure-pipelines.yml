@@ -92,7 +92,7 @@ jobs:
       githubRepositoryName: $(repoName)
       githubTag: v$(MY_NUGET_VERSION)
       githubReleaseTitle: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
-      githubReleaseNotes: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from nanoFramework Azure Artifacts development feed</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://dev.azure.com/nanoframework/feed/_packaging?_a=package&feed=sandbox&view=overview&package=$(nugetPackageName)&protocolType=NuGet&version=$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)<br>:package: [.NET (without Reflection)](https://dev.azure.com/nanoframework/feed/_packaging?_a=package&feed=sandbox&view=overview&package=$(nugetPackageName).NoReflection&protocolType=NuGet&version=$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
+      githubReleaseNotes: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
       githubTargetCommitsh: $(Build.SourceVersion)
       githubReleaseDraft: $(RELEASE_DRAFT)
       githubReleasePrerelease: true
@@ -101,27 +101,7 @@ jobs:
       githubEditRelease: true
       githubDeleteEmptyTag: true
       githubReleaseAsset: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    condition: and( succeeded(), not( startsWith(variables['Build.SourceBranch'], 'refs/pull') ), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ) )
-    displayName: Create/Update GitHub release
-
-  # create or update GitHub release ON tags from release or master branches
-  - task: GitHubReleasePublish@1
-    inputs:
-      githubEndpoint: 'nanoframework'
-      githubOwner: 'nanoframework'
-      githubRepositoryName: $(repoName)
-      githubTag: v$(MY_NUGET_VERSION)
-      githubReleaseTitle: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
-      githubReleaseNotes: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
-      githubTargetCommitsh: $(Build.SourceVersion)
-      githubReleaseDraft: $(RELEASE_DRAFT)
-      githubReleasePrerelease: true
-      githubReuseDraftOnly: false
-      githubReuseRelease: true
-      githubEditRelease: true
-      githubDeleteEmptyTag: true
-      githubReleaseAsset: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), contains(variables['Build.SourceBranch'], 'preview') )
+    condition: and( succeeded(), not( startsWith(variables['Build.SourceBranch'], 'refs/pull') ), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), ne( variables['StartReleaseCandidate'], true ) )
     displayName: Create/Update GitHub PREVIEW release 
 
   # create or update GitHub release ON tags from release or master branches
@@ -132,20 +112,20 @@ jobs:
       githubRepositoryName: $(repoName)
       githubTag: v$(MY_NUGET_VERSION)
       githubReleaseTitle: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
-      githubReleaseNotes: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
+      githubReleaseNotes: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
       githubTargetCommitsh: $(Build.SourceVersion)
       githubReleaseDraft: false
       githubReleasePrerelease: false
       githubReuseDraftOnly: false
-      githubReuseRelease: false
-      githubEditRelease: false
+      githubReuseRelease: true
+      githubEditRelease: true
       githubDeleteEmptyTag: true
       githubReleaseAsset: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], 'preview') ) )
+    condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], 'preview') ), ne( variables['StartReleaseCandidate'], true ) )
     displayName: Create/Update GitHub stable release
 
 ##############################
-- job: Update_Dependencies
+- job: Update_Dependents
   condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['StartReleaseCandidate'], 'false') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'), eq(variables['StartReleaseCandidate'], 'false') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
 
   dependsOn:
@@ -165,7 +145,7 @@ jobs:
     condition: ne( variables['StartReleaseCandidate'], true )
     displayName: 'Install specific version of NuGet'
 
-  # update dependencies
+  # update dependents
   - task: UpdatenFDependencies@1
     inputs:
       gitHubToken: $(GitHubToken)
@@ -185,7 +165,7 @@ jobs:
         lib-nanoFramework.ResourceManager
         lib-nanoFramework.System.Collections
         lib-nanoFramework.System.Text
-        Json.NetMF
+        lib-nanoFramework.Json
     displayName: Update dependent class libs
 
 ##################################
@@ -194,8 +174,8 @@ jobs:
   
   dependsOn:
   - Build_mscorlib
-  - Update_Dependencies
-  condition: or( failed('Build_mscorlib'), failed('Build_mscorlib_no_reflection'), failed('Update_Dependencies'))
+  - Update_Dependents
+  condition: or( failed('Build_mscorlib'), failed('Build_mscorlib_no_reflection'), failed('Update_Dependents'))
 
   pool:
     vmImage: 'VS2017-Win2016'
