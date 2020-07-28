@@ -26,7 +26,7 @@ jobs:
 
   variables:
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-    solution: '**/source/*.sln'
+    solution: '**/*.sln'
     buildPlatform: 'Any CPU'
     buildConfiguration: 'Release'
     nugetPackageName: 'nanoFramework.CoreLibrary'
@@ -60,6 +60,7 @@ jobs:
       allowPackageConflicts: true
       packagesToPush: 
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
+        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).snupkg
       publishFeedCredentials: 'AzureArtifacts-CoreLibrary'
     condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
     continueOnError: true
@@ -72,6 +73,7 @@ jobs:
       allowPackageConflicts: true
       packagesToPush: 
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
+        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).snupkg
       publishFeedCredentials: 'NuGet-CoreLibrary'
     condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
     continueOnError: true
