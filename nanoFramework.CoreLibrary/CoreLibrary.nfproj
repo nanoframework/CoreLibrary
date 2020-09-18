@@ -75,7 +75,6 @@
     <Compile Include="System\DateTime.cs" />
     <Compile Include="System\DayOfWeek.cs" />
     <Compile Include="System\DBNull.cs" />
-    <Compile Include="System\Decimal.cs" />
     <Compile Include="System\Delegate.cs" />
     <Compile Include="System\Diagnostics\ConditionalAttribute.cs" />
     <Compile Include="System\Diagnostics\Debug.cs" />
