@@ -6,7 +6,8 @@
 
 namespace System
 {
-    //TODO: Implemenation of Decimal type if needed
+    // The System.Decimal class it's available only as a managed class. There is no native support for it.
+    // It can be added to mscorlib to make the type available but it will throw a "type unavailable" exception during the type resolution stage if used.
 
     /// <summary>
     /// Represents a decimal number.

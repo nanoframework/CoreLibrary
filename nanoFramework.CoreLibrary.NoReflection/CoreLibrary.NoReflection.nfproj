@@ -47,149 +47,148 @@
   <ItemGroup>
     <Compile Include="..\nanoFramework.CoreLibrary\Friends.cs" Link="Friends.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\AppDomain.cs" Link="System\AppDomain.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\AppDomainUnloadedException.cs" Link="System\AppDomainUnloadedException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ApplicationException.cs" Link="System\ApplicationException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ArgumentException.cs" Link="System\ArgumentException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ArgumentNullException.cs" Link="System\ArgumentNullException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ArgumentOutOfRangeException.cs" Link="System\ArgumentOutOfRangeException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Array.cs" Link="System\Array.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\AssemblyInfo.cs" Link="System\AssemblyInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\AsyncCallback.cs" Link="System\AsyncCallback.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Attribute.cs" Link="System\Attribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\AttributeTargets.cs" Link="System\AttributeTargets.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\AttributeUsageAttribute.cs" Link="System\AttributeUsageAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\BitConverter.cs" Link="System\BitConverter.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Boolean.cs" Link="System\Boolean.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Byte.cs" Link="System\Byte.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Char.cs" Link="System\Char.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\CLSCompliantAttribute.cs" Link="System\CLSCompliantAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\ArrayList.cs" Link="System\Collections\ArrayList.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\ICollection.cs" Link="System\Collections\ICollection.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IComparer.cs" Link="System\Collections\IComparer.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IEnumerable.cs" Link="System\Collections\IEnumerable.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IEnumerator.cs" Link="System\Collections\IEnumerator.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IEqualityComparer.cs" Link="System\Collections\IEqualityComparer.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IList.cs" Link="System\Collections\IList.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ComponentModel\EditorBrowsableAttribute.cs" Link="System\ComponentModel\EditorBrowsableAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Convert.cs" Link="System\Convert.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\DateTime.cs" Link="System\DateTime.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\DayOfWeek.cs" Link="System\DayOfWeek.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\DBNull.cs" Link="System\DBNull.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Decimal.cs" Link="System\Decimal.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Delegate.cs" Link="System\v.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\ConditionalAttribute.cs" Link="System\Diagnostics\ConditionalAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debug.cs" Link="System\Diagnostics\Debug.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debugger.cs" Link="System\Diagnostics\Debugger.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\DebuggerAttributes.cs" Link="System\Diagnostics\DebuggerAttributes.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Double.cs" Link="System\Double.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Enum.cs" Link="System\Enum.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Console.cs" Link="System\Console.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Exception.cs" Link="System\Exception.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\FlagsAttribute.cs" Link="System\FlagsAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\GC.cs" Link="System\GC.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Globalization\CultureInfo.cs" Link="System\Globalization\CultureInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Globalization\DateTimeFormat.cs" Link="System\Globalization\DateTimeFormat.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Globalization\DateTimeFormatInfo.cs" Link="System\Globalization\DateTimeFormatInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Globalization\NumberFormatInfo.cs" Link="System\Globalization\NumberFormatInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Guid.cs" Link="System\Guid.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IAsyncResult.cs" Link="System\IAsyncResult.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ICloneable.cs" Link="System\ICloneable.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IComparable.cs" Link="System\IComparable.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ICustomFormatter.cs" Link="System\ICustomFormatter.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IDisposable.cs" Link="System\IDisposable.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IFormatProvider.cs" Link="System\IFormatProvider.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IFormattable.cs" Link="System\IFormattable.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IndexOutOfRangeException.cs" Link="System\IndexOutOfRangeException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Int16.cs" Link="System\Int16.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Int32.cs" Link="System\Int32.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Int64.cs" Link="System\Int64.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IntPtr.cs" Link="System\IntPtr.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\InvalidCastException.cs" Link="System\InvalidCastException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\InvalidOperationException.cs" Link="System\InvalidOperationException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\IOException.cs" Link="System\IO\IOException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\SeekOrigin.cs" Link="System\IO\SeekOrigin.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\Stream.cs" Link="System\IO\Stream.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\MarshalByRefObject.cs" Link="System\MarshalByRefObject.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Math.cs" Link="System\Math.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\MulticastDelegate.cs" Link="System\MulticastDelegate.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\NonSerializedAttribute.cs" Link="System\NonSerializedAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\NotImplementedException.cs" Link="System\NotImplementedException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\NotSupportedException.cs" Link="System\NotSupportedException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\NullReferenceException.cs" Link="System\NullReferenceException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Number.cs" Link="System\Number.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Object.cs" Link="System\Object.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ObjectDisposedException.cs" Link="System\ObjectDisposedException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ObsoleteAttribute.cs" Link="System\ObsoleteAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\OutOfMemoryException.cs" Link="System\OutOfMemoryException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ParamArrayAttribute.cs" Link="System\ParamArrayAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Random.cs" Link="System\Random.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\Assembly.cs" Link="System\Reflection\Assembly.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\AssemblyAttributes.cs" Link="System\Reflection\AssemblyAttributes.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\AssemblyNameFlags.cs" Link="System\Reflection\AssemblyNameFlags.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\AssemblyReflectionAttributes.cs" Link="System\Reflection\AssemblyReflectionAttributes.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\Binder.cs" Link="System\Reflection\Binder.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\BindingFlags.cs" Link="System\Reflection\BindingFlags.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\ConstructorInfo.cs" Link="System\Reflection\ConstructorInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\DefaultMemberAttribute.cs" Link="System\Reflection\DefaultMemberAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\FieldInfo.cs" Link="System\Reflection\FieldInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\FieldReflectionAttributes.cs" Link="System\Reflection\FieldReflectionAttributes.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\IReflect.cs" Link="System\Reflection\IReflect.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MemberInfo.cs" Link="System\Reflection\MemberInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MemberTypes.cs" Link="System\.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MethodBase.cs" Link="System\.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MethodImplAttributes.cs" Link="System\.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MethodInfo.cs" Link="System\Reflection\MethodInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\PropertyInfo.cs" Link="System\Reflection\PropertyInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\RuntimeConstructorInfo.cs" Link="System\Reflection\RuntimeConstructorInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\RuntimeFieldInfo.cs" Link="System\Reflection\RuntimeFieldInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\RuntimeMethodInfo.cs" Link="System\Reflection\RuntimeMethodInfo.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeArgumentHandle.cs" Link="System\RuntimeArgumentHandle.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeFieldHandle.cs" Link="System\RuntimeFieldHandle.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeMethodHandle.cs" Link="System\RuntimeMethodHandle.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeType.cs" Link="System\RuntimeType.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeTypeHandle.cs" Link="System\RuntimeTypeHandle.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" Link="System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\ExtensionAttribute.cs" Link="System\Runtime\CompilerServices\ExtensionAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IndexerNameAttribute.cs" Link="System\CompilerServices\IndexerNameAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" Link="System\CompilerServices\InternalsVisibleToAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\MethodImplAttribute.cs" Link="System\CompilerServices\MethodImplAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\RuntimeHelpers.cs" Link="System\CompilerServices\RuntimeHelpers.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\Attributes.cs" Link="System\InteropServices\Attributes.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\CharSet.cs" Link="System\InteropServices\CharSet.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\LayoutKind.cs" Link="System\InteropServices\LayoutKind.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\Remoting\RemotingServices.cs" Link="System\Remoting\RemotingServices.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\Remoting\__TransparentProxy.cs" Link="System\Remoting\__TransparentProxy.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\SByte.cs" Link="System\SByte.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\SerializableAttribute.cs" Link="System\SerializableAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Single.cs" Link="System\Single.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\String.cs" Link="System\String.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\SystemException.cs" Link="System\SystemException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\TargetFrameworkAttribute.cs" Link="System\TargetFrameworkAttribute.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ThreadAttributes.cs" Link="System\ThreadAttributes.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\AutoResetEvent.cs" Link="System\Threading\AutoResetEvent.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Interlocked.cs" Link="System\Threading\Interlocked.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ManualResetEvent.cs" Link="System\Threading\ManualResetEvent.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Monitor.cs" Link="System\Threading\Monitor.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Thread.cs" Link="System\Threading\Thread.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ThreadAbortException.cs" Link="System\Threading\ThreadAbortException.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ThreadPriority.cs" Link="System\Threading\ThreadPriority.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ThreadStart.cs" Link="System\Threading\ThreadStart.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ThreadState.cs" Link="System\Threading\ThreadState.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Timeout.cs" Link="System\Threading\Timeout.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Timer.cs" Link="System\Threading\Timer.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\WaitHandle.cs" Link="System\Threading\WaitHandle.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\TimeSpan.cs" Link="System\TimeSpan.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Type.cs" Link="System\Type.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\TypeCode.cs" Link="System\TypeCode.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\TypedReference.cs" Link="System\TypedReference.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\UInt16.cs" Link="System\UInt16.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\UInt32.cs" Link="System\UInt32.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\UInt64.cs" Link="System\UInt64.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\UIntPtr.cs" Link="System\UIntPtr.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\ValueType.cs" Link="System\ValueType.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Version.cs" Link="System\Version.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Void.cs" Link="System\Void.cs"/>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\WeakReference.cs" Link="System\WeakReference.cs"/>
+    <Compile Include="..\nanoFramework.CoreLibrary\System\AppDomainUnloadedException.cs" Link="System\AppDomainUnloadedException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ApplicationException.cs" Link="System\ApplicationException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ArgumentException.cs" Link="System\ArgumentException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ArgumentNullException.cs" Link="System\ArgumentNullException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ArgumentOutOfRangeException.cs" Link="System\ArgumentOutOfRangeException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Array.cs" Link="System\Array.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\AssemblyInfo.cs" Link="System\AssemblyInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\AsyncCallback.cs" Link="System\AsyncCallback.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Attribute.cs" Link="System\Attribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\AttributeTargets.cs" Link="System\AttributeTargets.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\AttributeUsageAttribute.cs" Link="System\AttributeUsageAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\BitConverter.cs" Link="System\BitConverter.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Boolean.cs" Link="System\Boolean.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Byte.cs" Link="System\Byte.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Char.cs" Link="System\Char.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\CLSCompliantAttribute.cs" Link="System\CLSCompliantAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\ArrayList.cs" Link="System\Collections\ArrayList.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\ICollection.cs" Link="System\Collections\ICollection.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IComparer.cs" Link="System\Collections\IComparer.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IEnumerable.cs" Link="System\Collections\IEnumerable.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IEnumerator.cs" Link="System\Collections\IEnumerator.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IEqualityComparer.cs" Link="System\Collections\IEqualityComparer.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Collections\IList.cs" Link="System\Collections\IList.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ComponentModel\EditorBrowsableAttribute.cs" Link="System\ComponentModel\EditorBrowsableAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Convert.cs" Link="System\Convert.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\DateTime.cs" Link="System\DateTime.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\DayOfWeek.cs" Link="System\DayOfWeek.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\DBNull.cs" Link="System\DBNull.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Delegate.cs" Link="System\v.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\ConditionalAttribute.cs" Link="System\Diagnostics\ConditionalAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debug.cs" Link="System\Diagnostics\Debug.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debugger.cs" Link="System\Diagnostics\Debugger.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\DebuggerAttributes.cs" Link="System\Diagnostics\DebuggerAttributes.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Double.cs" Link="System\Double.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Enum.cs" Link="System\Enum.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Console.cs" Link="System\Console.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Exception.cs" Link="System\Exception.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\FlagsAttribute.cs" Link="System\FlagsAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\GC.cs" Link="System\GC.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Globalization\CultureInfo.cs" Link="System\Globalization\CultureInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Globalization\DateTimeFormat.cs" Link="System\Globalization\DateTimeFormat.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Globalization\DateTimeFormatInfo.cs" Link="System\Globalization\DateTimeFormatInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Globalization\NumberFormatInfo.cs" Link="System\Globalization\NumberFormatInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Guid.cs" Link="System\Guid.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IAsyncResult.cs" Link="System\IAsyncResult.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ICloneable.cs" Link="System\ICloneable.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IComparable.cs" Link="System\IComparable.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ICustomFormatter.cs" Link="System\ICustomFormatter.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IDisposable.cs" Link="System\IDisposable.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IFormatProvider.cs" Link="System\IFormatProvider.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IFormattable.cs" Link="System\IFormattable.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IndexOutOfRangeException.cs" Link="System\IndexOutOfRangeException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Int16.cs" Link="System\Int16.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Int32.cs" Link="System\Int32.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Int64.cs" Link="System\Int64.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IntPtr.cs" Link="System\IntPtr.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\InvalidCastException.cs" Link="System\InvalidCastException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\InvalidOperationException.cs" Link="System\InvalidOperationException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\IOException.cs" Link="System\IO\IOException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\SeekOrigin.cs" Link="System\IO\SeekOrigin.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\Stream.cs" Link="System\IO\Stream.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\MarshalByRefObject.cs" Link="System\MarshalByRefObject.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Math.cs" Link="System\Math.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\MulticastDelegate.cs" Link="System\MulticastDelegate.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\NonSerializedAttribute.cs" Link="System\NonSerializedAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\NotImplementedException.cs" Link="System\NotImplementedException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\NotSupportedException.cs" Link="System\NotSupportedException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\NullReferenceException.cs" Link="System\NullReferenceException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Number.cs" Link="System\Number.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Object.cs" Link="System\Object.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ObjectDisposedException.cs" Link="System\ObjectDisposedException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ObsoleteAttribute.cs" Link="System\ObsoleteAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\OutOfMemoryException.cs" Link="System\OutOfMemoryException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ParamArrayAttribute.cs" Link="System\ParamArrayAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Random.cs" Link="System\Random.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\Assembly.cs" Link="System\Reflection\Assembly.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\AssemblyAttributes.cs" Link="System\Reflection\AssemblyAttributes.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\AssemblyNameFlags.cs" Link="System\Reflection\AssemblyNameFlags.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\AssemblyReflectionAttributes.cs" Link="System\Reflection\AssemblyReflectionAttributes.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\Binder.cs" Link="System\Reflection\Binder.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\BindingFlags.cs" Link="System\Reflection\BindingFlags.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\ConstructorInfo.cs" Link="System\Reflection\ConstructorInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\DefaultMemberAttribute.cs" Link="System\Reflection\DefaultMemberAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\FieldInfo.cs" Link="System\Reflection\FieldInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\FieldReflectionAttributes.cs" Link="System\Reflection\FieldReflectionAttributes.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\IReflect.cs" Link="System\Reflection\IReflect.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MemberInfo.cs" Link="System\Reflection\MemberInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MemberTypes.cs" Link="System\.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MethodBase.cs" Link="System\.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MethodImplAttributes.cs" Link="System\.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MethodInfo.cs" Link="System\Reflection\MethodInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\PropertyInfo.cs" Link="System\Reflection\PropertyInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\RuntimeConstructorInfo.cs" Link="System\Reflection\RuntimeConstructorInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\RuntimeFieldInfo.cs" Link="System\Reflection\RuntimeFieldInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\RuntimeMethodInfo.cs" Link="System\Reflection\RuntimeMethodInfo.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeArgumentHandle.cs" Link="System\RuntimeArgumentHandle.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeFieldHandle.cs" Link="System\RuntimeFieldHandle.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeMethodHandle.cs" Link="System\RuntimeMethodHandle.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeType.cs" Link="System\RuntimeType.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeTypeHandle.cs" Link="System\RuntimeTypeHandle.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" Link="System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\ExtensionAttribute.cs" Link="System\Runtime\CompilerServices\ExtensionAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IndexerNameAttribute.cs" Link="System\CompilerServices\IndexerNameAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" Link="System\CompilerServices\InternalsVisibleToAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\MethodImplAttribute.cs" Link="System\CompilerServices\MethodImplAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\RuntimeHelpers.cs" Link="System\CompilerServices\RuntimeHelpers.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\Attributes.cs" Link="System\InteropServices\Attributes.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\CharSet.cs" Link="System\InteropServices\CharSet.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\LayoutKind.cs" Link="System\InteropServices\LayoutKind.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\Remoting\RemotingServices.cs" Link="System\Remoting\RemotingServices.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\Remoting\__TransparentProxy.cs" Link="System\Remoting\__TransparentProxy.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\SByte.cs" Link="System\SByte.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\SerializableAttribute.cs" Link="System\SerializableAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Single.cs" Link="System\Single.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\String.cs" Link="System\String.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\SystemException.cs" Link="System\SystemException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\TargetFrameworkAttribute.cs" Link="System\TargetFrameworkAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ThreadAttributes.cs" Link="System\ThreadAttributes.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\AutoResetEvent.cs" Link="System\Threading\AutoResetEvent.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Interlocked.cs" Link="System\Threading\Interlocked.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ManualResetEvent.cs" Link="System\Threading\ManualResetEvent.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Monitor.cs" Link="System\Threading\Monitor.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Thread.cs" Link="System\Threading\Thread.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ThreadAbortException.cs" Link="System\Threading\ThreadAbortException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ThreadPriority.cs" Link="System\Threading\ThreadPriority.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ThreadStart.cs" Link="System\Threading\ThreadStart.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\ThreadState.cs" Link="System\Threading\ThreadState.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Timeout.cs" Link="System\Threading\Timeout.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Timer.cs" Link="System\Threading\Timer.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\WaitHandle.cs" Link="System\Threading\WaitHandle.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\TimeSpan.cs" Link="System\TimeSpan.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Type.cs" Link="System\Type.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\TypeCode.cs" Link="System\TypeCode.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\TypedReference.cs" Link="System\TypedReference.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\UInt16.cs" Link="System\UInt16.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\UInt32.cs" Link="System\UInt32.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\UInt64.cs" Link="System\UInt64.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\UIntPtr.cs" Link="System\UIntPtr.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ValueType.cs" Link="System\ValueType.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Version.cs" Link="System\Version.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Void.cs" Link="System\Void.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\WeakReference.cs" Link="System\WeakReference.cs" />
   </ItemGroup>
   <ItemGroup>
     <NFMDP_PE_ExcludeClassByName Include="System.AttributeTargets">
