@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2017 The nanoFramework project contributors
+// Copyright (c) .NET Foundation and Contributors
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
 //
@@ -37,8 +37,8 @@ namespace System.Threading
         /// </summary>
         Stopped = 16,
         /// <summary>
-        /// The thread is blocked. This could be the result of calling Thread.Sleep or Thread.Join, of requesting a lock — for example, by calling Monitor.Enter 
-        /// or Monitor.Wait — or of waiting on a thread synchronization object such as ManualResetEvent.
+        /// The thread is blocked. This could be the result of calling Thread.Sleep or Thread.Join, of requesting a lock ï¿½ for example, by calling Monitor.Enter 
+        /// or Monitor.Wait ï¿½ or of waiting on a thread synchronization object such as ManualResetEvent.
         /// </summary>
         WaitSleepJoin = 32,
         /// <summary>

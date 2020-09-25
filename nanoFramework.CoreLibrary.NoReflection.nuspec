@@ -13,7 +13,7 @@
     <projectUrl>https://github.com/nanoframework/lib-CoreLibrary</projectUrl>
     <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
     <repository type="git" url="https://github.com/nanoframework/lib-CoreLibrary" commit="$commit$" />
-    <copyright>Copyright (c) 2019 The nanoFramework project contributors</copyright>    
+    <copyright>Copyright (c) .NET Foundation and Contributors</copyright>    
     <description>This package includes the nanoFramework.CoreLibrary assembly for nanoFramework C# projects **WITHOUT** the System.Reflection API.&#10;This package requires a target with mscorlib v$nativeVersion$.&#10;There is another version that includes the System.Reflection API.</description>
     <summary>This package includes the nanoFramework.CoreLibrary assembly for nanoFramework C# projects **WITHOUT** the System.Reflection API.</summary>
     <tags>nanoFramework C# csharp netmf netnf nanoFramework.CoreLibrary</tags>

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2017 The nanoFramework project contributors
+// Copyright (c) .NET Foundation and Contributors
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
 //
@@ -10,7 +10,7 @@ namespace System.Threading
     using System;
 
     /// <summary>
-    /// Encapsulates operating system–specific objects that wait for exclusive access to shared resources.
+    /// Encapsulates operating systemï¿½specific objects that wait for exclusive access to shared resources.
     /// </summary>
     public abstract class WaitHandle : MarshalByRefObject
     {
