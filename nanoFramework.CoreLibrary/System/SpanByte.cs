@@ -163,7 +163,7 @@ namespace System
         public byte[] ToArray()
         {
             byte[] array = new byte[_length];
-            for (int i = 0; i < Length; i++)
+            for (int i = 0; i < _length; i++)
             {
                 array[i] = _array[_start + i];
             }
