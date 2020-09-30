@@ -42,7 +42,7 @@ namespace System
         {
             if (array != null)
             {
-                if ((length > array.Length - start) || (start >= array.Length))
+                if ((length > array.Length - start) || (start > array.Length))
                 {
                     throw new ArgumentOutOfRangeException($"Array length too small");
                 }
