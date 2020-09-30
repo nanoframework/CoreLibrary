@@ -148,7 +148,7 @@ namespace System
         /// <exception cref="System.ArgumentOutOfRangeException">start or start + length is less than zero or greater than System.Span.Length.</exception>
         public SpanByte Slice(int start, int length)
         {
-            if ((start < 0) || (length < 0) || (start + length > _length) || (start + _start > _length))
+            if ((start < 0) || (length < 0) || (start + length > _length))
             {
                 throw new ArgumentOutOfRangeException($"start or start + length is less than zero or greater than length");
             }
