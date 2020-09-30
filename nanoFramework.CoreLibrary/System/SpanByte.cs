@@ -9,7 +9,8 @@ namespace System
     /// <summary>
     /// Provides a type- and memory-safe representation of a contiguous region of arbitrary byte array
     /// </summary>
-    public struct SpanByte
+    [Serializable, CLSCompliant(false)]
+    public readonly ref struct SpanByte
     {
         private byte[] _array;
         private readonly int _start;
@@ -68,10 +69,20 @@ namespace System
         {
             get
             {
+                if (_start + index > _length)
+                {
+                    throw new ArgumentOutOfRangeException($"Index out of range");
+                }
+
                 return _array[_start + index];
             }
             set
             {
+                if (_start + index > _length)
+                {
+                    throw new ArgumentOutOfRangeException($"Index out of range");
+                }
+
                 _array[_start + index] = value;
             }
         }
