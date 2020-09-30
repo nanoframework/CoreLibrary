@@ -12,7 +12,7 @@ namespace System
     [Serializable, CLSCompliant(false)]
     public readonly ref struct SpanByte
     {
-        private byte[] _array;
+        private readonly byte[] _array;
         private readonly int _start;
         private readonly int _length;
 
