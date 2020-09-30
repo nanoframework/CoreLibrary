@@ -90,7 +90,7 @@ namespace System
         /// Returns a value that indicates whether the current System.Span is empty.
         /// true if the current span is empty; otherwise, false.
         /// </summary>
-        public bool IsEmpty => Length == 0;
+        public bool IsEmpty => _length == 0;
 
         /// <summary>
         /// Copies the contents of this System.Span into a destination System.Span.
@@ -120,12 +120,12 @@ namespace System
         /// <exception cref="System.ArgumentOutOfRangeException">start is less than zero or greater than System.Span.Length.</exception>
         public SpanByte Slice(int start)
         {
-            if ((start > _length - _start) || (start < 0))
+            if ((start > _length) || (start < 0))
             {
                 throw new ArgumentOutOfRangeException($"start is less than zero or greater than length");
             }
 
-            return new SpanByte(_array, _start + start, Length - start - _start);
+            return new SpanByte(_array, _start + start, _length - start);
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace System
         /// <exception cref="System.ArgumentOutOfRangeException">start or start + length is less than zero or greater than System.Span.Length.</exception>
         public SpanByte Slice(int start, int length)
         {
-            if ((start < 0) || (start + length < 0) || (start + length > _length - _start))
+            if ((start < 0) || (length < 0) || (length > _length - _start) || (start + _start > _length))
             {
                 throw new ArgumentOutOfRangeException($"start or start + length is less than zero or greater than length");
             }
@@ -151,7 +151,7 @@ namespace System
         /// <returns> An array containing the data in the current span.</returns>
         public byte[] ToArray()
         {
-            byte[] array = new byte[Length];
+            byte[] array = new byte[_length];
             for (int i = 0; i < Length; i++)
             {
                 array[i] = _array[_start + i];
