@@ -1,4 +1,4 @@
-﻿//
+//
 // Copyright (c) .NET Foundation and Contributors
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
@@ -112,14 +112,14 @@ namespace System
         /// </exception>
         public void CopyTo(SpanByte destination)
         {
-            if (destination.Length < _length - _start)
+            if (destination.Length < _length)
             {
                 throw new ArgumentException($"Destination too small");
             }
 
-            for (int i = 0; i < _array.Length; i++)
+            for (int i = 0; i < _length; i++)
             {
-                destination[i] = _array[i];
+                destination[i] = _array[_start + i];
             }
         }
 
