@@ -9,7 +9,7 @@ namespace System
     /// <summary>
     /// Provides a type- and memory-safe representation of a contiguous region of arbitrary byte array
     /// </summary>
-    public ref struct SpanByte
+    public struct SpanByte
     {
         private byte[] _array;
         private readonly int _start;
