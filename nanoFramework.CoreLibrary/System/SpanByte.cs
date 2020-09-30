@@ -69,7 +69,7 @@ namespace System
         {
             get
             {
-                if (_start + index > _length)
+                if (index > _length)
                 {
                     throw new ArgumentOutOfRangeException($"Index out of range");
                 }
@@ -78,7 +78,7 @@ namespace System
             }
             set
             {
-                if (_start + index > _length)
+                if (index > _length)
                 {
                     throw new ArgumentOutOfRangeException($"Index out of range");
                 }
