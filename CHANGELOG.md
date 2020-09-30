@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.7.3...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.8.0-preview.11...HEAD)
+
+**Fixed bugs:**
+
+- Small correction on SpanByte [\#110](https://github.com/nanoframework/lib-CoreLibrary/pull/110)
+
+## [v1.8.0-preview.11](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.8.0-preview.11) (2020-09-30)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.7.3...v1.8.0-preview.11)
 
 **Implemented enhancements:**
 
