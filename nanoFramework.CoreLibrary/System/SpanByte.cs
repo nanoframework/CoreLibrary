@@ -16,7 +16,7 @@ namespace System
         private readonly int _length;
 
         /// <summary>
-        /// Creates a new System.Span`1 object over the entirety of a specified array.
+        /// Creates a new System.SpanByte object over the entirety of a specified array.
         /// </summary>
         /// <param name="array">The array from which to create the System.Span object.</param>
         public SpanByte(byte[] array)
@@ -27,7 +27,7 @@ namespace System
         }
 
         /// <summary>
-        /// Creates a new System.Span`1 object that includes a specified number of elements
+        /// Creates a new System.SpanByte object that includes a specified number of elements
         /// of an array starting at a specified index.
         /// </summary>
         /// <param name="array">The source array.</param>
