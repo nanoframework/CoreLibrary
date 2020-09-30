@@ -189,6 +189,7 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\Version.cs" Link="System\Version.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Void.cs" Link="System\Void.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\WeakReference.cs" Link="System\WeakReference.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\SpanByte.cs" Link="System\SpanByte.cs" />
   </ItemGroup>
   <ItemGroup>
     <NFMDP_PE_ExcludeClassByName Include="System.AttributeTargets">
