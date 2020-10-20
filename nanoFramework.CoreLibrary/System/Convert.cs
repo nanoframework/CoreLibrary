@@ -36,6 +36,15 @@ namespace System
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern double NativeToDouble(string value);
+        /// <summary>
+        /// Converts the value of the specified 8-bit unsigned integer to an equivalent Boolean value.
+        /// </summary>
+        /// <param name="value">The 8-bit unsigned integer to convert.</param>
+        /// <returns><see langword="true"/> if <paramref name="value"/> is not zero; otherwise, <see langword="false"/>.</returns>
+        public static bool ToBoolean(byte value)
+        {
+            return value != 0;
+        }
 
         /// <summary>
         /// Converts the value of the specified 16-bit unsigned integer to its equivalent Unicode character.
