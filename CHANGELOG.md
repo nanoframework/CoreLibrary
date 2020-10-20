@@ -2,7 +2,27 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.8.0-preview.11...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.9.0-alpha.11...HEAD)
+
+**Implemented enhancements:**
+
+- Add Enum.HasFlag [\#112](https://github.com/nanoframework/lib-CoreLibrary/pull/112)
+
+## [v1.9.0-alpha.11](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.9.0-alpha.11) (2020-10-20)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.9.0-preview.11...v1.9.0-alpha.11)
+
+## [v1.9.0-preview.11](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.9.0-preview.11) (2020-10-20)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.9.0-preview.5...v1.9.0-preview.11)
+
+**Implemented enhancements:**
+
+- Add Convert.ToBolean\(byte\) [\#111](https://github.com/nanoframework/lib-CoreLibrary/pull/111)
+
+## [v1.9.0-preview.5](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.9.0-preview.5) (2020-09-30)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.8.0-preview.11...v1.9.0-preview.5)
 
 **Fixed bugs:**
 
