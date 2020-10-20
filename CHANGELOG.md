@@ -1,8 +1,8 @@
 # Changelog
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
+## [v1.9.1-preview.4](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.9.1-preview.4) (2020-10-20)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.9.0-alpha.11...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.9.0-alpha.11...v1.9.1-preview.4)
 
 **Implemented enhancements:**
 
