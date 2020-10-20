@@ -32,13 +32,10 @@ namespace System
         /// <para>This method is an O(n) operation, where n is length.</para>
         /// Available only in mscorlib build with support for System.Reflection.</remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern Array CreateInstance(Type elementType, int length);
-#pragma warning restore S4200 // Native methods should be wrapped
 
 #endif // NANOCLR_REFLECTION
 
-#pragma warning disable S4200 // Native methods should be wrapped
         /// <summary>
         /// Copies a range of elements from an Array starting at the first element and pastes them into another Array starting at the first element. The length is specified as a 32-bit integer.
         /// </summary>
@@ -46,7 +43,6 @@ namespace System
         /// <param name="destinationArray">The Array that receives the data.</param>
         /// <param name="length">A 32-bit integer that represents the number of elements to copy.</param>
         public static void Copy(Array sourceArray, Array destinationArray, int length)
-#pragma warning restore S4200 // Native methods should be wrapped
         {
             Copy(sourceArray, 0, destinationArray, 0, length);
         }
@@ -60,9 +56,7 @@ namespace System
         /// <param name="destinationIndex">A 32-bit integer that represents the index in the destinationArray at which storing begins.</param>
         /// <param name="length">A 32-bit integer that represents the number of elements to copy.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void Copy(Array sourceArray, int sourceIndex, Array destinationArray, int destinationIndex, int length);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Sets a range of elements in the Array to zero, to false, or to  null reference (Nothing in Visual Basic), depending on the element type.
@@ -71,9 +65,7 @@ namespace System
         /// <param name="index">The starting index of the range of elements to clear.</param>
         /// <param name="length">The number of elements to clear.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void Clear(Array array, int index, int length);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.

@@ -202,9 +202,7 @@ namespace System
         /// <para>1 if t1 is longer than t2.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern int Compare(TimeSpan t1, TimeSpan t2);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Compares this instance to a specified object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the specified object.
@@ -216,9 +214,7 @@ namespace System
         /// <para>1 if This instance is longer than value or value is null.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int CompareTo(Object value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a new <see cref="TimeSpan"/> object whose value is the absolute value of the current <see cref="TimeSpan"/> object.
@@ -232,9 +228,7 @@ namespace System
         /// <param name="value">An object to compare with this instance.</param>
         /// <returns>true if value is a <see cref="TimeSpan"/> object that represents the same time interval as the current <see cref="TimeSpan"/> structure; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public override extern bool Equals(Object value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a value that indicates whether two specified instances of <see cref="TimeSpan"/> are equal.
@@ -243,9 +237,7 @@ namespace System
         /// <param name="t2">The second time interval to compare.</param>
         /// <returns>true if the values of t1 and t2 are equal; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern bool Equals(TimeSpan t1, TimeSpan t2);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a new <see cref="TimeSpan"/> object whose value is the negated value of this instance.
@@ -308,9 +300,7 @@ namespace System
         /// <returns>The string representation of the current <see cref="TimeSpan"/> value.</returns>
         /// <remarks>The returned string is formatted with the "c" format specifier and has the following format: [-][d.]hh:mm:ss[.fffffff]</remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public override extern String ToString();
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a <see cref="TimeSpan"/> whose value is the negated value of the specified instance.

@@ -1,0 +1,5 @@
+﻿[*.cs]
+
+# S4200: Native methods should be wrapped
+# It's OK to have native methods unwrapped in nanoFramework
+dotnet_diagnostic.S4200.severity = none

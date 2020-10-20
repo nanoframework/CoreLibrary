@@ -26,9 +26,7 @@ namespace System.Threading
         /// <param name="exitContext">true to exit the synchronization domain for the context before the wait (if in a synchronized context), and reacquire it afterward; otherwise, false.</param>
         /// <returns>true if the current instance receives a signal; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern bool WaitOne(int millisecondsTimeout, bool exitContext);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Blocks the current thread until the current WaitHandle receives a signal.
@@ -42,7 +40,6 @@ namespace System.Threading
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern int WaitMultiple(WaitHandle[] waitHandles, int millisecondsTimeout, bool exitContext, bool waitAll);
 
-#pragma warning disable S4200 // Native methods should be wrapped
         /// <summary>
         /// Waits for all the elements in the specified array to receive a signal, using an Int32 value to specify the time interval and specifying whether to exit the synchronization domain before the wait.
         /// </summary>
@@ -51,7 +48,6 @@ namespace System.Threading
         /// <param name="exitContext">true to exit the synchronization domain for the context before the wait (if in a synchronized context), and reacquire it afterward; otherwise, false.</param>
         /// <returns>true when every element in waitHandles has received a signal; otherwise, false.</returns>
         public static bool WaitAll(WaitHandle[] waitHandles, int millisecondsTimeout, bool exitContext)
-#pragma warning restore S4200 // Native methods should be wrapped
         {
             return WaitMultiple(waitHandles, millisecondsTimeout, exitContext, true /* waitall*/ ) != WaitTimeout;
         }
@@ -66,7 +62,6 @@ namespace System.Threading
             return WaitAll(waitHandles, Timeout.Infinite, true);
         }
 
-#pragma warning disable S4200 // Native methods should be wrapped
         /// <summary>
         /// Waits for any of the elements in the specified array to receive a signal, using a 32-bit signed integer to specify the time interval, and specifying whether to exit the synchronization domain before the wait.
         /// </summary>
@@ -75,7 +70,6 @@ namespace System.Threading
         /// <param name="exitContext">true to exit the synchronization domain for the context before the wait (if in a synchronized context), and reacquire it afterward; otherwise, false.</param>
         /// <returns>The array index of the object that satisfied the wait, or WaitTimeout if no object satisfied the wait and a time interval equivalent to millisecondsTimeout has passed.</returns>
         public static int WaitAny(WaitHandle[] waitHandles, int millisecondsTimeout, bool exitContext)
-#pragma warning restore S4200 // Native methods should be wrapped
         {
             return WaitMultiple(waitHandles, millisecondsTimeout, exitContext, false /* waitany*/ );
         }

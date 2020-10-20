@@ -29,18 +29,14 @@ namespace System
         /// </summary>
         /// <param name="obj">The object that a finalizer must not be called for. </param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void SuppressFinalize(Object obj);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Requests that the system call the finalizer for the specified object for which SuppressFinalize has previously been called.
         /// </summary>
         /// <param name="obj">The object that a finalizer must be called for. </param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void ReRegisterForFinalize(Object obj);
-#pragma warning restore S4200 // Native methods should be wrapped
 
     }
 }

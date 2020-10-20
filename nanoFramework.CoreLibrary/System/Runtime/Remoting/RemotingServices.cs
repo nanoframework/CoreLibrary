@@ -13,8 +13,6 @@ namespace System.Runtime.Remoting
         /// <param name="proxy">The reference to the object to check.</param>
         /// <returns>A Boolean value that indicates whether the object specified in the proxy parameter is a transparent proxy or a real object.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern bool IsTransparentProxy(Object proxy);
-#pragma warning restore S4200 // Native methods should be wrapped
     }
 }
