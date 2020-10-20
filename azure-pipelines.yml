@@ -155,6 +155,7 @@ jobs:
         lib-Windows.Devices.Pwm
         lib-Windows.Devices.Spi
         lib-System.Device.Dac
+        lib-System.Device.I2c
         lib-nanoFramework.Devices.OneWire
         lib-nanoFramework.Networking.Sntp
         lib-nanoFramework.Hardware.Stm32
