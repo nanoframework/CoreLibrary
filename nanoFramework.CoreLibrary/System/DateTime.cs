@@ -360,9 +360,7 @@ namespace System
         /// <returns>The number of days in month for the specified year.
         /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern int DaysInMonth(int year, int month);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a value indicating whether this instance is equal to a specified object.

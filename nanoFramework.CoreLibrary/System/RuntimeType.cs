@@ -89,9 +89,7 @@ namespace System
         }
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         private extern object[] GetCustomAttributesNative(bool inherit);
-#pragma warning restore S4200 // Native methods should be wrapped
     }
 }
 

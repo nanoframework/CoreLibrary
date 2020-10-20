@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "CoreLibrary", "nanoFramework.CoreLibrary\CoreLibrary.nfproj", "{BE7B95D5-087C-45F8-8197-4B438BEDFE11}"
 EndProject
@@ -9,6 +9,7 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "CoreLibrary.NoReflection", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{05E83B20-2648-4807-8F3E-D656497E3481}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		nanoFramework.CoreLibrary.NoReflection.nuspec = nanoFramework.CoreLibrary.NoReflection.nuspec
 		nanoFramework.CoreLibrary.nuspec = nanoFramework.CoreLibrary.nuspec
 		NuGet.Config = NuGet.Config

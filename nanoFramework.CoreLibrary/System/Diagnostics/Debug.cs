@@ -64,9 +64,7 @@ namespace System.Diagnostics
         /// In nanoFramework implementation the message is output to Visual Studio debugger window.
         /// </remarks>
         [Conditional("DEBUG")]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static void Write(string message) => WriteLineNative(message, false);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Writes a message followed by a line terminator to the trace listeners in the Listeners collection.
@@ -76,9 +74,7 @@ namespace System.Diagnostics
         /// In nanoFramework implementation the message is output to Visual Studio debugger window.
         /// </remarks>
         [Conditional("DEBUG")]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static void WriteLine(string message) => WriteLineNative(message, true);
-#pragma warning restore S4200 // Native methods should be wrapped
 
 
         [MethodImpl(MethodImplOptions.InternalCall)]

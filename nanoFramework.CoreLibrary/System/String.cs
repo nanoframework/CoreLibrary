@@ -44,9 +44,7 @@ namespace System
         /// <param name="b">The second string to compare, or null.</param>
         /// <returns>true if the value of a is the same as the value of b; otherwise, false. If both a and b are null, the method returns true.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern bool Equals(String a, String b);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Determines whether two specified strings have the same value.
@@ -88,9 +86,7 @@ namespace System
         /// </summary>
         /// <returns>A Unicode character array whose elements are the individual characters of this instance. If this instance is an empty string, the returned array is empty and has a zero length.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern char[] ToCharArray();
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Copies the characters in a specified substring in this instance to a Unicode character array.
@@ -99,9 +95,7 @@ namespace System
         /// <param name="length">The length of the substring in this instance.</param>
         /// <returns>A Unicode character array whose elements are the length number of characters in this instance starting from character position startIndex.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern char[] ToCharArray(int startIndex, int length);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the number of characters in the current String object.
@@ -121,9 +115,7 @@ namespace System
         /// <param name="separator">A character array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</param>
         /// <returns>An array whose elements contain the substrings from this instance that are delimited by one or more characters in separator. For more information, see the Remarks section.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String[] Split(params char[] separator);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Splits a string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
@@ -132,9 +124,7 @@ namespace System
         /// <param name="count">The maximum number of substrings to return.</param>
         /// <returns>An array whose elements contain the substrings in this instance that are delimited by one or more characters in separator. For more information, see the Remarks section.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String[] Split(char[] separator, int count);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Retrieves a substring from this instance. The substring starts at a specified character position and continues to the end of the string.
@@ -142,9 +132,7 @@ namespace System
         /// <param name="startIndex">The zero-based starting character position of a substring in this instance.</param>
         /// <returns>A string that is equivalent to the substring that begins at startIndex in this instance, or Empty if startIndex is equal to the length of this instance.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String Substring(int startIndex);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
@@ -153,9 +141,7 @@ namespace System
         /// <param name="length">The number of characters in the substring.</param>
         /// <returns>A string that is equivalent to the substring of length length that begins at startIndex in this instance, or Empty if startIndex is equal to the length of this instance and length is zero.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String Substring(int startIndex, int length);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Removes all leading and trailing occurrences of a set of characters specified in an array from the current String object.
@@ -165,9 +151,7 @@ namespace System
         /// If trimChars is null or an empty array, white-space characters are removed instead. If no characters can be trimmed from the current instance, 
         /// the method returns the current instance unchanged.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String Trim(params char[] trimChars);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Removes all leading occurrences of a set of characters specified in an array from the current String object.
@@ -175,9 +159,7 @@ namespace System
         /// <param name="trimChars">An array of Unicode characters to remove, or null.</param>
         /// <returns>The string that remains after all occurrences of characters in the trimChars parameter are removed from the start of the current string. If trimChars is null or an empty array, white-space characters are removed instead.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String TrimStart(params char[] trimChars);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Removes all trailing occurrences of a set of characters specified in an array from the current String object.
@@ -185,9 +167,7 @@ namespace System
         /// <param name="trimChars">An array of Unicode characters to remove, or null.</param>
         /// <returns>The string that remains after all occurrences of the characters in the trimChars parameter are removed from the end of the current string. If trimChars is null or an empty array, Unicode white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String TrimEnd(params char[] trimChars);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Initializes a new instance of the String class to the value indicated by an array of Unicode characters, a starting character position within that array, and a length.
@@ -220,9 +200,7 @@ namespace System
         /// <param name="strB">The second string to compare.</param>
         /// <returns>A 32-bit signed integer that indicates the lexical relationship between the two comparands.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern int Compare(String strA, String strB);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Compares this instance with a specified Object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified Object.
@@ -230,9 +208,7 @@ namespace System
         /// <param name="value">An object that evaluates to a String.</param>
         /// <returns>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int CompareTo(Object value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Compares this instance with a specified String object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified string.
@@ -240,9 +216,7 @@ namespace System
         /// <param name="strB">The string to compare with this instance.</param>
         /// <returns>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the strB parameter.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int CompareTo(String strB);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence of the specified Unicode character in this string.
@@ -250,9 +224,7 @@ namespace System
         /// <param name="value">A Unicode character to seek.</param>
         /// <returns>The zero-based index position of value if that character is found, or -1 if it is not.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int IndexOf(char value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence of the specified Unicode character in this string. The search starts at a specified character position.
@@ -261,9 +233,7 @@ namespace System
         /// <param name="startIndex">The search starting position.</param>
         /// <returns>The zero-based index position of value from the start of the string if that character is found, or -1 if it is not.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int IndexOf(char value, int startIndex);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence of the specified character in this instance. The search starts at a specified character position and examines a specified number of character positions.
@@ -273,9 +243,7 @@ namespace System
         /// <param name="count">The number of character positions to examine.</param>
         /// <returns>The zero-based index position of value if that character is found, or -1 if it is not.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int IndexOf(char value, int startIndex, int count);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters.
@@ -283,9 +251,7 @@ namespace System
         /// <param name="anyOf">A Unicode character array containing one or more characters to seek.</param>
         /// <returns>The zero-based index position of the first occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int IndexOfAny(char[] anyOf);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters. The search starts at a specified character position.
@@ -294,9 +260,7 @@ namespace System
         /// <param name="startIndex">The search starting position.</param>
         /// <returns>The zero-based index position of the first occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int IndexOfAny(char[] anyOf, int startIndex);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters. The search starts at a specified character position and examines a specified number of character positions.
@@ -306,9 +270,7 @@ namespace System
         /// <param name="count">The number of character positions to examine.</param>
         /// <returns>The zero-based index position of the first occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int IndexOfAny(char[] anyOf, int startIndex, int count);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence of the specified string in this instance.
@@ -316,9 +278,7 @@ namespace System
         /// <param name="value">The string to seek.</param>
         /// <returns>The zero-based index position of value if that string is found, or -1 if it is not. If value is String.Empty, the return value is 0.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int IndexOf(String value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence of the specified string in this instance. The search starts at a specified character position.
@@ -327,9 +287,7 @@ namespace System
         /// <param name="startIndex">The search starting position.</param>
         /// <returns>The zero-based index position of value from the start of the current instance if that string is found, or -1 if it is not. If value is String.Empty, the return value is startIndex.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int IndexOf(String value, int startIndex);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence of the specified string in this instance. The search starts at a specified character position and examines a specified number of character positions.
@@ -339,9 +297,7 @@ namespace System
         /// <param name="count">The number of character positions to examine.</param>
         /// <returns>The zero-based index position of value from the start of the current instance if that string is found, or -1 if it is not. If value is String.Empty, the return value is startIndex.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int IndexOf(String value, int startIndex, int count);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence of a specified Unicode character within this instance.
@@ -349,9 +305,7 @@ namespace System
         /// <param name="value">The Unicode character to seek.</param>
         /// <returns>The zero-based index position of value if that character is found, or -1 if it is not.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int LastIndexOf(char value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence of a specified Unicode character within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string.
@@ -360,9 +314,7 @@ namespace System
         /// <param name="startIndex">The starting position of the search. The search proceeds from startIndex toward the beginning of this instance.</param>
         /// <returns>The zero-based index position of value if that character is found, or -1 if it is not found or if the current instance equals String.Empty.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int LastIndexOf(char value, int startIndex);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence of the specified Unicode character in a substring within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string for a specified number of character positions.
@@ -372,9 +324,7 @@ namespace System
         /// <param name="count">The number of character positions to examine. </param>
         /// <returns>The zero-based index position of value if that character is found, or -1 if it is not found or if the current instance equals String.Empty.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int LastIndexOf(char value, int startIndex, int count);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence in this instance of one or more characters specified in a Unicode array.
@@ -382,9 +332,7 @@ namespace System
         /// <param name="anyOf">A Unicode character array containing one or more characters to seek.</param>
         /// <returns>The index position of the last occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int LastIndexOfAny(char[] anyOf);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence in this instance of one or more characters specified in a Unicode array. The search starts at a specified character position and proceeds backward toward the beginning of the string.
@@ -393,9 +341,7 @@ namespace System
         /// <param name="startIndex">The search starting position. The search proceeds from startIndex toward the beginning of this instance.</param>
         /// <returns>The index position of the last occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found or if the current instance equals String.Empty.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int LastIndexOfAny(char[] anyOf, int startIndex);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence in this instance of one or more characters specified in a Unicode array. The search starts at a specified character position and proceeds backward toward the beginning of the string for a specified number of character positions.
@@ -405,9 +351,7 @@ namespace System
         /// <param name="count">The number of character positions to examine.</param>
         /// <returns>The index position of the last occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found or if the current instance equals String.Empty.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int LastIndexOfAny(char[] anyOf, int startIndex, int count);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence of a specified string within this instance.
@@ -415,9 +359,7 @@ namespace System
         /// <param name="value">The string to seek.</param>
         /// <returns>The zero-based starting index position of value if that string is found, or -1 if it is not. If value is String.Empty, the return value is the last index position in this instance.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int LastIndexOf(String value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence of a specified string within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string.
@@ -426,9 +368,7 @@ namespace System
         /// <param name="startIndex">The search starting position. The search proceeds from startIndex toward the beginning of this instance.</param>
         /// <returns>The zero-based starting index position of value if that string is found, or -1 if it is not found or if the current instance equals String.Empty. If value is String.Empty, the return value is the smaller of startIndex and the last index position in this instance.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int LastIndexOf(String value, int startIndex);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence of a specified string within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string for a specified number of character positions.
@@ -438,27 +378,21 @@ namespace System
         /// <param name="count">The number of character positions to examine.</param>
         /// <returns>The zero-based starting index position of value if that string is found, or -1 if it is not found or if the current instance equals String.Empty. If value is Empty, the return value is the smaller of startIndex and the last index position in this instance.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern int LastIndexOf(String value, int startIndex, int count);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a copy of this string converted to lowercase.
         /// </summary>
         /// <returns>A string in lowercase.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String ToLower();
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a copy of this string converted to uppercase.
         /// </summary>
         /// <returns>The uppercase equivalent of the current string.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String ToUpper();
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns this instance of String; no actual conversion is performed.
@@ -474,9 +408,7 @@ namespace System
         /// </summary>
         /// <returns>The string that remains after all white-space characters are removed from the start and end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern String Trim();
-#pragma warning restore S4200 // Native methods should be wrapped
         /// <summary>
         /// Creates the string representation of a specified object.
         /// </summary>
@@ -563,9 +495,7 @@ namespace System
         /// <param name="str1">The second string to concatenate.</param>
         /// <returns>The concatenation of str0 and str1.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern String Concat(String str0, String str1);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Concatenates three specified instances of String.
@@ -575,9 +505,7 @@ namespace System
         /// <param name="str2">The third string to concatenate.</param>
         /// <returns>The concatenation of str0, str1 and str2.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern String Concat(String str0, String str1, String str2);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Concatenates four specified instances of String.
@@ -588,9 +516,7 @@ namespace System
         /// <param name="str3">The fourth string to concatenate.</param>
         /// <returns>The concatenation of str0, str1, str2 and str3.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern String Concat(String str0, String str1, String str2, String str3);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Concatenates the elements of a specified String array.
@@ -598,9 +524,7 @@ namespace System
         /// <param name="values">An array of string instances.</param>
         /// <returns>The concatenated elements of values.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern String Concat(params String[] values);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Retrieves the system's reference to the specified String.

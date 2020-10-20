@@ -18,9 +18,7 @@ namespace System.Runtime.CompilerServices
         /// <param name="array">The array to be initialized.</param>
         /// <param name="fldHandle">A field handle that specifies the location of the data used to initialize the array.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void InitializeArray(Array array, RuntimeFieldHandle fldHandle);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Boxes a value type.
@@ -28,18 +26,14 @@ namespace System.Runtime.CompilerServices
         /// <param name="obj">The value type to be boxed.</param>
         /// <returns>A boxed copy of obj if it is a value class; otherwise, obj itself.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern Object GetObjectValue(Object obj);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Runs a specified class constructor method.
         /// </summary>
         /// <param name="type">A type handle that specifies the class constructor method to run.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void RunClassConstructor(RuntimeTypeHandle type);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the offset, in bytes, to the data in the given string.

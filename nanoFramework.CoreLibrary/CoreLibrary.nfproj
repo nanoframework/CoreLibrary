@@ -363,6 +363,7 @@
     </NFMDP_PE_ExcludeClassByName>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
     <None Include="key.snk" />
     <None Include="packages.config" />
   </ItemGroup>
