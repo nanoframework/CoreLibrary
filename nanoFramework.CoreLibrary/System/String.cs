@@ -7,6 +7,7 @@
 namespace System
 {
     using Runtime.CompilerServices;
+    using System.Collections;
     /// <summary>
     /// Represents text as a sequence of UTF-16 code units.
     /// </summary>
@@ -17,11 +18,26 @@ namespace System
     // GetHashCode() implementation is provided by general native function CLR_RT_HeapBlock::GetHashCode //
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma warning disable S1206 // "Equals(Object)" and "GetHashCode()" should be overridden in pairs
-    public sealed class String : IComparable
+    public sealed class String : IComparable, IEnumerable
 #pragma warning restore S1206 // "Equals(Object)" and "GetHashCode()" should be overridden in pairs
 #pragma warning restore CS0661 // Type defines operator == or operator != but does not override Object.GetHashCode()
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     {
+        /// <summary>
+        /// **Not supported in NanoFramework**  
+        /// Return an enumerator that iterate on each char of the string.
+        /// </summary>
+        /// <returns>An IEnumerator object that can be used to iterate through the collection.</returns>
+        public IEnumerator GetEnumerator()
+        {
+            // Not implemented because of assembly size constraint
+            // Throw a NotSupportedException in compliance of .net practices 
+            // (no message to preserve assembly size/memory consumption)
+            // See https://docs.microsoft.com/en-us/dotnet/api/system.notsupportedexception 
+            throw new NotSupportedException(); 
+        }
+
+
         /// <summary>
         /// Represents the empty string. This field is read-only.
         /// </summary>
@@ -63,6 +79,9 @@ namespace System
         /// <returns>true if the value of a is different from the value of b; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool operator !=(String a, String b);
+
+
+        
 
         /// <summary>
         /// Gets the Char object at a specified position in the current String object.
