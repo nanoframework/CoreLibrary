@@ -24,18 +24,23 @@
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <DocumentationFile>bin\$(Configuration)\mscorlib.xml</DocumentationFile>
     <Deterministic>true</Deterministic>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <Deterministic>true</Deterministic>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <ContinuousIntegrationBuild Condition="'$(TF_BUILD)' == 'true'">True</ContinuousIntegrationBuild>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
   </PropertyGroup>
@@ -60,6 +65,9 @@
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
     <Compile Include="..\nanoFramework.CoreLibrary\Friends.cs" Link="Friends.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Action.cs">
+      <Link>System\Action.cs</Link>
+    </Compile>
     <Compile Include="..\nanoFramework.CoreLibrary\System\AppDomain.cs" Link="System\AppDomain.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\AppDomainUnloadedException.cs" Link="System\AppDomainUnloadedException.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\ApplicationException.cs" Link="System\ApplicationException.cs" />
@@ -97,6 +105,12 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\Double.cs" Link="System\Double.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Enum.cs" Link="System\Enum.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Console.cs" Link="System\Console.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\EventArgs.cs">
+      <Link>System\EventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\nanoFramework.CoreLibrary\System\EventHandler.cs">
+      <Link>System\EventHandler.cs</Link>
+    </Compile>
     <Compile Include="..\nanoFramework.CoreLibrary\System\Exception.cs" Link="System\Exception.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\FlagsAttribute.cs" Link="System\FlagsAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\GC.cs" Link="System\GC.cs" />
