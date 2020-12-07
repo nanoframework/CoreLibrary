@@ -1,5 +1,18 @@
 # Changelog
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.9.1-preview.6...HEAD)
+
+**Implemented enhancements:**
+
+- Add Action, Function and EventHandler [\#116](https://github.com/nanoframework/lib-CoreLibrary/pull/116)
+- Add IEnumerable implementation on String with exception throwing. [\#114](https://github.com/nanoframework/lib-CoreLibrary/pull/114)
+
+## [v1.9.1-preview.6](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.9.1-preview.6) (2020-10-20)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.9.1-preview.4...v1.9.1-preview.6)
+
 ## [v1.9.1-preview.4](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.9.1-preview.4) (2020-10-20)
 
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.9.0-alpha.11...v1.9.1-preview.4)
@@ -18,7 +31,7 @@
 
 **Implemented enhancements:**
 
-- Add Convert.ToBolean\(byte\) [\#111](https://github.com/nanoframework/lib-CoreLibrary/pull/111)
+- Add Convert.ToBoolean\(byte\) [\#111](https://github.com/nanoframework/lib-CoreLibrary/pull/111)
 
 ## [v1.9.0-preview.5](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.9.0-preview.5) (2020-09-30)
 
