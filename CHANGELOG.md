@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.10.1-preview.6](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.10.1-preview.6) (2020-12-28)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.0-preview.4...v1.10.1-preview.6)
+
 ## [v1.10.0-preview.4](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.10.0-preview.4) (2020-12-07)
 
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.9.1-preview.6...v1.10.0-preview.4)
