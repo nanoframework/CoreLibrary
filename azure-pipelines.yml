@@ -150,6 +150,7 @@ jobs:
       repositoriesToUpdate: |
         lib-nanoFramework.Runtime.Events
         lib-nanoFramework.Runtime.Native
+        lib-nanoFramework.System.Threading
         lib-Windows.Devices.Adc
         lib-Windows.Devices.I2c
         lib-Windows.Devices.Pwm
