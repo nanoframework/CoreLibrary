@@ -37,11 +37,11 @@ namespace System
             throw new NotSupportedException(); 
         }
 
-
         /// <summary>
         /// Represents the empty string. This field is read-only.
         /// </summary>
         public static readonly String Empty = "";
+        
         /// <summary>
         /// Determines whether this instance and a specified object, which must also be a String object, have the same value.
         /// </summary>
@@ -79,9 +79,6 @@ namespace System
         /// <returns>true if the value of a is different from the value of b; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern bool operator !=(String a, String b);
-
-
-        
 
         /// <summary>
         /// Gets the Char object at a specified position in the current String object.
@@ -813,6 +810,16 @@ namespace System
             {
                 return this + new String(paddingChar, totalWidth - Length);
             }
+        }
+
+        /// <summary>
+        /// Indicates whether the specified string is <see langword="null"/> or an empty string ("").
+        /// </summary>
+        /// <param name="value">The string to test.</param>
+        /// <returns><see langword="true"/> if the value parameter is <see langword="null"/> or an empty string (""); otherwise, <see langword="false"/>.</returns>
+        public static bool IsNullOrEmpty(string value)
+        {
+            return value == null || value.Length == 0;
         }
     }
 }
