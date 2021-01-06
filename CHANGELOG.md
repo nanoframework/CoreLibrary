@@ -1,5 +1,17 @@
 # Changelog
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.1-preview.7...HEAD)
+
+**Implemented enhancements:**
+
+- Add IsNullOrEmpty to string [\#117](https://github.com/nanoframework/lib-CoreLibrary/pull/117)
+
+## [v1.10.1-preview.7](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.10.1-preview.7) (2020-12-29)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.1-preview.6...v1.10.1-preview.7)
+
 ## [v1.10.1-preview.6](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.10.1-preview.6) (2020-12-28)
 
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.0-preview.4...v1.10.1-preview.6)
