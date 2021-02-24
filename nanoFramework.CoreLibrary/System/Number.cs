@@ -282,6 +282,31 @@ namespace System
     {
         public static String Format(Object value, bool isInteger, String format, NumberFormatInfo info)
         {
+            String ret = FormatNative(
+                value,
+                isInteger,
+                format,
+                info.NumberDecimalSeparator,
+                info.NegativeSign,
+                info.NumberGroupSeparator,
+                info.NumberGroupSizes);
+
+            return ret;
+        }
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private static extern String FormatNative(
+            Object value,
+            bool isInteger,
+            String format,
+            String numberDecimalSeparator,
+            String negativeSign,
+            String numberGroupSeparator,
+            int[] numberGroupSizes);
+
+
+        public static String LegacyFormat(Object value, bool isInteger, String format, NumberFormatInfo info)
+        {
             char formatCh;
             int precision;
             ValidateFormat(format, out formatCh, out precision);
@@ -301,6 +326,7 @@ namespace System
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern String FormatNative(Object value, char format, int precision);
+
 
         private static void ValidateFormat(String format, out char formatCh, out int precision)
         {
