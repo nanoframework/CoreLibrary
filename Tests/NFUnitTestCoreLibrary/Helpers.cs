@@ -165,7 +165,7 @@ namespace NFUnitTestCoreLibrary
             if (!CompareByteArray(ret, expected))
             {
                 throw new Exception(
-                    $"BitConverter.GetBytes<short> result:{ByteArrayToHex(ret)} expected:{ByteArrayToHex(expected)} input:{input}");               
+                    $"BitConverter.GetBytes<short> result:{ByteArrayToHex(ret)} expected:{ByteArrayToHex(expected)} input:{input}");
             }
         }
 
@@ -205,6 +205,11 @@ namespace NFUnitTestCoreLibrary
         static public void LongBitsToDouble(long input, double expected)
         {
             double ret = BitConverter.Int64BitsToDouble(input);
+
+            if (double.IsNaN(ret) && double.IsNaN(expected))
+            {
+                return;
+            }
 
             if (ret != expected)
             {
@@ -278,6 +283,11 @@ namespace NFUnitTestCoreLibrary
         static public void BAToDouble(byte[] bytes, int index, double expected)
         {
             double ret = BitConverter.ToDouble(bytes, index);
+
+            if (double.IsNaN(ret) && double.IsNaN(expected))
+            {
+                return;
+            }
 
             if (ret != expected)
             {
@@ -402,6 +412,11 @@ namespace NFUnitTestCoreLibrary
         static public void BAToSingle(byte[] bytes, int index, float expected)
         {
             float ret = BitConverter.ToSingle(bytes, index);
+
+            if (double.IsNaN(ret) && double.IsNaN(expected))
+            {
+                return;
+            }
 
             if (ret != expected)
             {

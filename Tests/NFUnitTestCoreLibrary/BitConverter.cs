@@ -213,6 +213,16 @@ namespace NFUnitTestCoreLibrary
         }
 
         [TestMethod]
+        public void IsNan()
+        {
+            double one = double.NaN;
+            if(!double.IsNaN(one))
+            {
+                throw new Exception($"double.NaN: {one} should be {double.NaN}");
+            }
+        }
+
+        [TestMethod]
         public void BitConverterTest_ToBoolean()
         {
             var byteArray = new byte[] { 0, 1, 2, 4, 8, 16, 32, 64, 128, 255 };
