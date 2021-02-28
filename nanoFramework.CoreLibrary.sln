@@ -21,6 +21,8 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestBitConverter", "T
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestVariables", "Tests\NFUnitTestVariables\NFUnitTestVariables.nfproj", "{6D93536D-2CFC-4BB8-B490-080EB11D40DD}"
 EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestTypes", "Tests\NFUnitTestTypes\NFUnitTestTypes.nfproj", "{05B18D3A-F70D-4104-8F78-FDC577E11081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,12 @@ Global
 		{6D93536D-2CFC-4BB8-B490-080EB11D40DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D93536D-2CFC-4BB8-B490-080EB11D40DD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D93536D-2CFC-4BB8-B490-080EB11D40DD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{05B18D3A-F70D-4104-8F78-FDC577E11081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B18D3A-F70D-4104-8F78-FDC577E11081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B18D3A-F70D-4104-8F78-FDC577E11081}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{05B18D3A-F70D-4104-8F78-FDC577E11081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B18D3A-F70D-4104-8F78-FDC577E11081}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B18D3A-F70D-4104-8F78-FDC577E11081}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +62,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8D47514F-552C-4862-961F-0CAA315A231F} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
 		{6D93536D-2CFC-4BB8-B490-080EB11D40DD} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
+		{05B18D3A-F70D-4104-8F78-FDC577E11081} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8DE44407-9B41-4459-97D2-FCE54B1F4300}
