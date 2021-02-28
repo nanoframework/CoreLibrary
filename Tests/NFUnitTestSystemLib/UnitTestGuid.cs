@@ -39,8 +39,8 @@ namespace NFUnitTestSystemLib
             Guid anotherGuid = Guid.NewGuid();
 
             // must be the different
-            Assert.Equal(theGuid.CompareTo(anotherGuid), 0);
-            Assert.True(theGuid.Equals(anotherGuid));
+            Assert.NotEqual(theGuid.CompareTo(anotherGuid), 0);
+            Assert.False(theGuid.Equals(anotherGuid));
         }
 
         /// <summary>
