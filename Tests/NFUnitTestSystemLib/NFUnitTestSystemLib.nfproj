@@ -28,10 +28,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="UnitTestDateTime.cs" />
+    <Compile Include="UnitTestGCTest.cs" />
     <Compile Include="UnitTestGuid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestInitLocalTests.cs" />
     <Compile Include="UnitTestParseTests.cs" />
+    <Compile Include="UnitTestReflectionAssemblyTest.cs" />
+    <Compile Include="UnitTestReflectionMemberTest.cs" />
+    <Compile Include="UnitTestReflectionTypeTest.cs" />
     <Compile Include="UnitTestTimeSpan.cs" />
   </ItemGroup>
   <ItemGroup>
