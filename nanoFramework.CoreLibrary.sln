@@ -35,6 +35,8 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestNamespace", "Test
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestLexical", "Tests\NFUnitTestLexical\NFUnitTestLexical.nfproj", "{E0538338-9941-410C-B8C8-0C928F26F8A7}"
 EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestInterface", "Tests\NFUnitTestInterface\NFUnitTestInterface.nfproj", "{89C61C69-A9F3-43BF-B501-5913BE8FE829}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,12 @@ Global
 		{E0538338-9941-410C-B8C8-0C928F26F8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0538338-9941-410C-B8C8-0C928F26F8A7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0538338-9941-410C-B8C8-0C928F26F8A7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{89C61C69-A9F3-43BF-B501-5913BE8FE829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C61C69-A9F3-43BF-B501-5913BE8FE829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C61C69-A9F3-43BF-B501-5913BE8FE829}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{89C61C69-A9F3-43BF-B501-5913BE8FE829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C61C69-A9F3-43BF-B501-5913BE8FE829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89C61C69-A9F3-43BF-B501-5913BE8FE829}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +125,7 @@ Global
 		{222D8571-6646-47E4-95A5-8AED732DCB70} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
 		{9B5EFD66-CCDC-4D00-960C-993296C56F3B} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
 		{E0538338-9941-410C-B8C8-0C928F26F8A7} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
+		{89C61C69-A9F3-43BF-B501-5913BE8FE829} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8DE44407-9B41-4459-97D2-FCE54B1F4300}
