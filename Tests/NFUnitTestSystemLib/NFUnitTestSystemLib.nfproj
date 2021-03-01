@@ -36,7 +36,10 @@
     <Compile Include="UnitTestReflectionAssemblyTest.cs" />
     <Compile Include="UnitTestReflectionMemberTest.cs" />
     <Compile Include="UnitTestReflectionTypeTest.cs" />
+    <Compile Include="UnitTestStringTests.cs" />
     <Compile Include="UnitTestTimeSpan.cs" />
+    <Compile Include="UnitTestTypeTests.cs" />
+    <Compile Include="UnitTestWeakReferenceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.10.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
