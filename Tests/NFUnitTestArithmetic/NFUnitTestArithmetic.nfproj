@@ -30,6 +30,7 @@
     <Compile Include="UnitTestArithmeticTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestArithmeticTest2.cs" />
+    <Compile Include="UnitTestExpressionTests.cs" />
     <Compile Include="UnitTestOtherArithmeticTests.cs" />
   </ItemGroup>
   <ItemGroup>
