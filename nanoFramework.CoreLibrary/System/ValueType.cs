@@ -28,8 +28,6 @@ namespace System
         /// <param name="obj">The object to compare with the current instance.</param>
         /// <returns>true if obj and this instance are the same type and represent the same value; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public override extern bool Equals(Object obj);
-#pragma warning restore S4200 // Native methods should be wrapped
     }
 }

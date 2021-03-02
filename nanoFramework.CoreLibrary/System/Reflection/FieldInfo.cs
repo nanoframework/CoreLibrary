@@ -61,9 +61,7 @@ namespace System.Reflection
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern void SetValue(Object obj, Object value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// When overridden in a derived class, returns an array of all custom attributes applied to this member.
@@ -77,9 +75,7 @@ namespace System.Reflection
         }
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         private extern object[] GetCustomAttributesNative(bool inherit);
-#pragma warning restore S4200 // Native methods should be wrapped
     }
 }
 

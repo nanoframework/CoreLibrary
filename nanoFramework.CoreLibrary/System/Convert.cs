@@ -36,6 +36,15 @@ namespace System
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern double NativeToDouble(string value);
+        /// <summary>
+        /// Converts the value of the specified 8-bit unsigned integer to an equivalent Boolean value.
+        /// </summary>
+        /// <param name="value">The 8-bit unsigned integer to convert.</param>
+        /// <returns><see langword="true"/> if <paramref name="value"/> is not zero; otherwise, <see langword="false"/>.</returns>
+        public static bool ToBoolean(byte value)
+        {
+            return value != 0;
+        }
 
         /// <summary>
         /// Converts the value of the specified 16-bit unsigned integer to its equivalent Unicode character.
@@ -183,33 +192,27 @@ namespace System
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         [CLSCompliant(false)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static ulong ToUInt64(string value, int fromBase = 10)
-#pragma warning restore S4200 // Native methods should be wrapped
         {
             return (ulong)NativeToInt64(value, true, 0, 0, fromBase);
         }
 
-#pragma warning disable S4200 // Native methods should be wrapped
         /// <summary>
         /// Converts the specified string representation of a number to an equivalent double-precision floating-point number.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <returns>A double-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         public static double ToDouble(string value)
-#pragma warning restore S4200 // Native methods should be wrapped
         {
             return NativeToDouble(value);
         }
 
-#pragma warning disable S4200 // Native methods should be wrapped
         /// <summary>
         /// Converts the specified string representation of a number to an equivalent single-precision floating-point number.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <returns>A single-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         public static float ToSingle(string value)
-#pragma warning restore S4200 // Native methods should be wrapped
         {
             return (float)NativeToDouble(value);
         }

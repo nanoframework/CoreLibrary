@@ -125,9 +125,7 @@ namespace System.Collections
         /// <param name="value"></param>
         /// <returns>The <see cref="Object"/> to be added to the end of the <see cref="ArrayList"/>. The value can be <see langword="null"/>.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern int Add(Object value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Searches the entire sorted <see cref="ArrayList"/> for an element using the specified comparer and returns the zero-based index of the element.
@@ -146,9 +144,7 @@ namespace System.Collections
         /// Removes all elements from the <see cref="ArrayList"/>.
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern void Clear();
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Creates a shallow copy of the <see cref="ArrayList"/>.
@@ -247,9 +243,7 @@ namespace System.Collections
         /// <param name="index">The zero-based index at which <para>value</para> should be inserted.</param>
         /// <param name="value">The <see cref="Object"/> to insert. The `value` can be <see langword="null"/>.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern void Insert(int index, Object value);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Removes the first occurrence of a specific object from the <see cref="ArrayList"/>.
@@ -269,9 +263,7 @@ namespace System.Collections
         /// </summary>
         /// <param name="index">The zero-based index of the element to remove.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern void RemoveAt(int index);
-#pragma warning restore S4200 // Native methods should be wrapped
 
 #if NANOCLR_REFLECTION
 

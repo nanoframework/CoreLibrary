@@ -22,7 +22,7 @@ jobs:
 - job: Build_mscorlib
   condition: or( eq(variables['UPDATE_DEPENDENTS'], 'false'), eq(variables['StartReleaseCandidate'], 'true') )
   pool:
-    vmImage: 'VS2017-Win2016'
+    vmImage: 'windows-2019'
 
   variables:
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
@@ -150,11 +150,13 @@ jobs:
       repositoriesToUpdate: |
         lib-nanoFramework.Runtime.Events
         lib-nanoFramework.Runtime.Native
+        lib-nanoFramework.System.Threading
         lib-Windows.Devices.Adc
         lib-Windows.Devices.I2c
         lib-Windows.Devices.Pwm
         lib-Windows.Devices.Spi
-        lib-System.Devices.Dac
+        lib-System.Device.Dac
+        lib-System.Device.I2c
         lib-nanoFramework.Devices.OneWire
         lib-nanoFramework.Networking.Sntp
         lib-nanoFramework.Hardware.Stm32

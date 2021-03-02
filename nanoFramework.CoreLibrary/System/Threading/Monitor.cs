@@ -19,17 +19,13 @@ namespace System.Threading
         /// </summary>
         /// <param name="obj">The object on which to acquire the monitor lock.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void Enter(Object obj);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Releases an exclusive lock on the specified object.
         /// </summary>
         /// <param name="obj">The object on which to release the lock.</param>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void Exit(Object obj);
-#pragma warning restore S4200 // Native methods should be wrapped
     }
 }

@@ -80,9 +80,7 @@ namespace System
         [Diagnostics.DebuggerStepThrough]
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern Object InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the Assembly in which the type is declared. For generic types, gets the Assembly in which the generic type is defined.
@@ -102,9 +100,7 @@ namespace System
         /// <param name="handle">The object that refers to the type.</param>
         /// <returns>The type referenced by the specified RuntimeTypeHandle, or null if the Value property of handle is null.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern Type GetTypeFromHandle(RuntimeTypeHandle handle);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Gets the fully qualified name of the type, including its namespace but not its assembly.
@@ -150,9 +146,7 @@ namespace System
         /// </param>
         /// <returns>An object representing the public instance constructor whose parameters match the types in the parameter type array, if found; otherwise, null.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern ConstructorInfo GetConstructor(Type[] types);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Searches for the specified public method whose parameters match the specified argument types.
@@ -164,9 +158,7 @@ namespace System
         /// </param>
         /// <returns>An object representing the public method whose parameters match the specified argument types, if found; otherwise, null.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern MethodInfo GetMethod(String name, Type[] types);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Searches for the specified method, using the specified binding constraints.
@@ -175,9 +167,7 @@ namespace System
         /// <param name="bindingAttr">A bitmask comprised of one or more BindingFlags that specify how the search is conducted or Zero, to return null.</param>
         /// <returns>An object representing the method that matches the specified requirements, if found; otherwise, null.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern MethodInfo GetMethod(String name, BindingFlags bindingAttr);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Searches for the public method with the specified name.
@@ -185,9 +175,7 @@ namespace System
         /// <param name="name">The string containing the name of the public method to get.</param>
         /// <returns>An object that represents the public method with the specified name, if found; otherwise, null.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern MethodInfo GetMethod(String name);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         // GetMethods
         // This routine will return all the methods implemented by the class
@@ -397,9 +385,7 @@ namespace System
         /// false if neither of these conditions is the case, if o is null, or if the current Type is an open generic type (that is, ContainsGenericParameters returns true).
         /// </returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public virtual extern bool IsInstanceOfType(Object o);
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Returns a String representing the name of the current Type.

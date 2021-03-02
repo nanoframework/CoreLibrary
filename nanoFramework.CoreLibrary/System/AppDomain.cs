@@ -47,9 +47,7 @@ namespace System
         /// <param name="friendlyName">The friendly name of the domain.</param>
         /// <returns>The newly created application domain.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern AppDomain CreateDomain(String friendlyName);
-#pragma warning restore S4200 // Native methods should be wrapped
 
 #if NANOCLR_REFLECTION
         /// <summary>
@@ -121,9 +119,7 @@ namespace System
         /// </summary>
         /// <returns>An array of assemblies in this application domain.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern Assembly[] GetAssemblies();
-#pragma warning restore S4200 // Native methods should be wrapped
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern Assembly LoadInternal(String assemblyString, bool fVersion, int maj, int min, int build, int rev);
@@ -136,9 +132,7 @@ namespace System
         /// <param name="domain">An application domain to unload.</param>
         /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public static extern void Unload(AppDomain domain);
-#pragma warning restore S4200 // Native methods should be wrapped
     }
 }
 #endif // #if (NANOCLR_APPDOMAINS)

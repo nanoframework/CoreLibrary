@@ -24,17 +24,13 @@ namespace System.Threading
         /// </summary>
         /// <returns>true if the operation succeeds; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern bool Reset();
-#pragma warning restore S4200 // Native methods should be wrapped
 
         /// <summary>
         /// Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
         /// </summary>
         /// <returns>true if the operation succeeds; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-#pragma warning disable S4200 // Native methods should be wrapped
         public extern bool Set();
-#pragma warning restore S4200 // Native methods should be wrapped
     }
 }
