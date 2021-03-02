@@ -282,238 +282,27 @@ namespace System
     {
         public static String Format(Object value, bool isInteger, String format, NumberFormatInfo info)
         {
-            char formatCh;
-            int precision;
-            ValidateFormat(format, out formatCh, out precision);
+            String ret = FormatNative(
+                value,
+                isInteger,
+                format,
+                info.NumberDecimalSeparator,
+                info.NegativeSign,
+                info.NumberGroupSeparator,
+                info.NumberGroupSizes);
 
-            String result = FormatNative(value, formatCh, precision);
-
-            if (isInteger)
-            {
-                // Special case : type is integer, value = 0 and format string = "N0"
-                // No processing needed, simply return "0" (native code returns empty string for this special case)
-                if (isInteger && result == String.Empty && format == "N0") return "0";
-                
-                return PostProcessInteger(value, result, formatCh, precision, info);
-            }
-            return PostProcessFloat(result, formatCh, precision, info);
+            return ret;
         }
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern String FormatNative(Object value, char format, int precision);
+        private static extern String FormatNative(
+            Object value,
+            bool isInteger,
+            String format,
+            String numberDecimalSeparator,
+            String negativeSign,
+            String numberGroupSeparator,
+            int[] numberGroupSizes);
 
-        private static void ValidateFormat(String format, out char formatCh, out int precision)
-        {
-            precision = 0;
-
-            if (format == null || format == "")
-            {
-                formatCh = 'G';
-                return;
-            }
-
-            formatCh = format[0];
-
-            // ToUpper, since all the supported format characters are invariant in case
-            if (formatCh >= 'a' && formatCh <= 'z')
-            {
-                formatCh = (char)(formatCh - ('a' - 'A'));
-            }
-
-            int formatLen = format.Length;
-
-            if (formatLen > 1)
-            {
-                if (formatLen > 4)
-                {
-                    // Invalid Format
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-                    throw new ArgumentException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-                }
-
-                for (int i = 1; i < formatLen; i++)
-                {
-                    var digit = (ushort)(format[i] - '0');
-
-                    if (digit > 9)
-                    {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-                        throw new ArgumentException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-                    }
-
-                    precision = precision * 10 + digit;
-                }
-            }
-
-            // Set default precision, if neccessary + check for valid formatCh
-            switch (formatCh)
-            {
-                case 'G':
-                break;
-                case 'X':
-                case 'F':
-                case 'N':
-                case 'D':
-                if (formatLen == 1) precision = 2; // if no precision is specified, use the default
-                break;
-                default:
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-                throw new ArgumentException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            }
-        }
-
-        private static String PostProcessInteger(Object value, String original, char format, int precision, NumberFormatInfo info)
-        {
-            String result = original;
-
-            switch (format)
-            {
-                case 'X':
-                // truncate negative numbers to 
-                if (result.Length > precision && (result[0] == 'F' || result[0] == 'f'))
-                {
-                    int len = result.Length;
-
-                    if (value is sbyte || value is byte)
-                    {
-                        if (len > 2)
-                        {
-                            result = result.Substring(len - 2, 2);
-                        }
-                    }
-                    else if (value is short)
-                    {
-                        if (len > 4)
-                        {
-                            result = result.Substring(len - 4, 4);
-                        }
-                    }
-                }
-                break;
-
-                case 'N':
-                // InsertGroupSeparators, AppendTrailingZeros, ReplaceNegativeSign
-                result = InsertGroupSeparators(result, info);
-                goto case 'F'; // falls through
-                case 'F':
-                // AppendTrailingZeros, ReplaceNegativeSign
-                result = AppendTrailingZeros(result, precision, info);
-                goto case 'G'; // falls through
-                case 'G':
-                result = ReplaceNegativeSign(result, info);
-                break;
-            }
-
-            return result;
-        }
-
-        private static String PostProcessFloat(String original, char format, int precision, NumberFormatInfo info)
-        {
-            String result = original;
-
-            if (format == 'N')
-            {
-                result = InsertGroupSeparators(result, info);
-            }
-
-            result = AppendFloatTrailingZeros(result, precision, info);
-			result = ReplaceDecimalSeperator(result, info);
-            result = ReplaceNegativeSign(result, info);
-            
-            return result;
-        }
-
-        private static String AppendTrailingZeros(String original, int count, NumberFormatInfo info)
-        {
-            if (count > 0)
-            {
-                return original + info.NumberDecimalSeparator + new String('0', count);
-            }
-            return original;
-        }
-        private static String AppendFloatTrailingZeros(String original, int count, NumberFormatInfo info)
-        {
-            // find decimal separator
-            int pos = original.IndexOf('.');
-
-            if (pos != -1)
-            {
-                // is the string representation missing any trailing zeros?
-                count = (original.Length - pos) - count - 1;
-                if(count > 0)
-                {
-                    return original + new String('0', count);
-                }
-            }
-            return original;
-        }
-
-        private static String ReplaceNegativeSign(String original, NumberFormatInfo info)
-        {
-            if (original[0] == '-')
-            {
-                return info.NegativeSign + original.Substring(1);
-            }
-            return original;
-        }
-
-        private static String ReplaceDecimalSeperator(String original, NumberFormatInfo info)
-        {
-            int pos = original.IndexOf('.');
-
-            if (pos != -1)
-            {
-                return original.Substring(0, pos) + info.NumberDecimalSeparator + original.Substring(pos + 1);
-            }
-            return original;
-        }
-
-        private static String InsertGroupSeparators(String original, NumberFormatInfo info)
-        {
-            int digitsStartPos = (original[0] == '-') ? 1 : 0;
-
-            int decimalPointPos = original.IndexOf('.');
-            if (decimalPointPos == -1) decimalPointPos = original.Length;
-
-            String prefix = (digitsStartPos == 1) ? "-" : "";
-            String suffix = original.Substring(decimalPointPos);
-            String digits = original.Substring(digitsStartPos, decimalPointPos - digitsStartPos);
-
-            String result = String.Empty;
-
-            int[] groupSizes = info.NumberGroupSizes;
-
-            int sizeInd = 0;
-            int size = groupSizes[sizeInd];
-            int pos = digits.Length - size;
-
-            String seperator = info.NumberGroupSeparator;
-            int lastSizeInd = groupSizes.Length - 1;
-
-            while (pos > 0)
-            {
-                result = seperator + digits.Substring(pos, size) + result;
-
-                if (sizeInd < lastSizeInd)
-                {
-                    sizeInd++;
-                    size = groupSizes[sizeInd];
-
-                    if (size == 0) // per spec, when we see a 0, we leave the remaining digits ungrouped.
-                    {
-                        break;
-                    }
-                }
-
-                pos -= size;
-            }
-
-            result = prefix + digits.Substring(0, size + pos) + result + suffix;
-
-            return result;
-        }
     }
 }
