@@ -67,7 +67,7 @@ namespace NFUnitTestSystemLib
             Debug.WriteLine("Creating Minimum DateTime and verifying");
             DateTime minDT1 = DateTime.MinValue;
             DateTime minDT2 = new DateTime();
-            DateTime minDT3 = new DateTime(0);
+            DateTime minDT3 = new DateTime(504911232000000000);
             DateTime minDT4 = new DateTime(1601, 1, 1, 0, 0, 0, 0);
 
             if ((DateTime.Compare(minDT1, minDT2) != 0) ||
@@ -82,7 +82,7 @@ namespace NFUnitTestSystemLib
             }
 
             Debug.WriteLine("Creating Maximum DateTime and verifying");
-            DateTime maxDateTime = new DateTime(441796895990000000);
+            DateTime maxDateTime = new DateTime(946708127999999999);
             Assert.True(DateTime.MaxValue.Equals(maxDateTime));
         }
 
@@ -704,7 +704,7 @@ namespace NFUnitTestSystemLib
             for (int i = 0; i < dtArr.Length; i++)
             {
                 DateTime dt1 = dtArr[i];
-                DateTime dt2 = new DateTime(random.Next(1000) + 1);
+                DateTime dt2 = new DateTime(504911232000000000 + random.Next(1000) + 1);
                 TimeSpan ts = dt1 - dt2;
                 Assert.Equal(ts.Ticks, (dt1.Ticks - dt2.Ticks));
             }
@@ -843,7 +843,8 @@ namespace NFUnitTestSystemLib
             /// </summary>
             Debug.WriteLine("Getting the Min. DateTime and Verifying");
             DateTime field = DateTime.MinValue;
-            Assert.Equal(field.Ticks, 0);
+            Debug.WriteLine(field.Ticks.ToString());
+            Assert.Equal(field.Ticks, 504911232000000000);
         }
 
         [TestMethod]
@@ -855,7 +856,7 @@ namespace NFUnitTestSystemLib
             Debug.WriteLine("Getting the Max. DateTime and Verifying");
             DateTime field = DateTime.MaxValue;
             Debug.WriteLine(field.Ticks.ToString());
-            Assert.Equal(field.Ticks, 441796895990000000);
+            Assert.Equal(field.Ticks, 946708127999999999);
         }
 
         [TestMethod]
@@ -1000,9 +1001,9 @@ namespace NFUnitTestSystemLib
             ///  1. Verifies the Ticks property
             /// </summary>
             Debug.WriteLine("Creating a DateTime, getting the Ticks and Verifying");
-            DateTime testDateTime = new System.DateTime(0);
+            DateTime testDateTime = new System.DateTime(504911232000000000);
             long _ticks = testDateTime.Ticks;
-            Assert.Equal(_ticks, 0);
+            Assert.Equal(_ticks, 504911232000000000);
         }
 
         [TestMethod]

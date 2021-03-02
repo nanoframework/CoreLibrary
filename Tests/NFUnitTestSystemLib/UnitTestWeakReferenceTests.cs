@@ -54,7 +54,7 @@ namespace NFUnitTestSystemLib
 
             Debug.WriteLine("Allow for GC");
             nanoFramework.Runtime.Native.GC.Run(true);
-            int sleepTime = 1000;
+            int sleepTime = 2000;
             int slept = 0;
             while (!hasFinalized1 && slept < sleepTime)
             {
@@ -73,7 +73,8 @@ namespace NFUnitTestSystemLib
             Debug.WriteLine("Allow for GC");
             // We should force the finalizer somehow
             nanoFramework.Runtime.Native.GC.Run(true);
-            sleepTime = 1000;
+            GC.WaitForPendingFinalizers();
+            sleepTime = 2000;
             slept = 0;
             while (!hasFinalized1 && slept < sleepTime)
             {
