@@ -23,12 +23,11 @@
   <ItemGroup>
     <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestExtensions.cs" />
     <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestFramework.cs" />
-    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>   
+  <ItemGroup>
     <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />
   </ItemGroup>
- <Import Project="..\..\nanoFramework.TestFramework\source\TestFrameworkShared\TestFrameworkShared.projitems" Label="Shared" />
+  <Import Project="..\..\nanoFramework.TestFramework\source\TestFrameworkShared\TestFrameworkShared.projitems" Label="Shared" />
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
     <ProjectCapabilities>
