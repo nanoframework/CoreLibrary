@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.1-preview.7...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.1-preview.9...HEAD)
+
+**Implemented enhancements:**
+
+- ToString\(\) reimplementation [\#118](https://github.com/nanoframework/lib-CoreLibrary/pull/118)
+
+## [v1.10.1-preview.9](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.10.1-preview.9) (2021-01-06)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.1-preview.7...v1.10.1-preview.9)
 
 **Implemented enhancements:**
 
