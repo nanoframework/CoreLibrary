@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <ProjectCapability Include="TestContainer" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
   </PropertyGroup>
@@ -11,37 +8,27 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{11A8DD76-328B-46DF-9F39-F559912D0360};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>6b598666-54c8-4705-a7fb-b2bc75ca00bc</ProjectGuid>
+    <ProjectGuid>44a0c6a8-4f31-405b-95ca-6f0d65bc11b8</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>NFUnitTestArithmetic</RootNamespace>
-    <AssemblyName>NFUnitTest</AssemblyName>
-    <IsCodedUITest>False</IsCodedUITest>
-    <IsTestProject>true</IsTestProject>
-    <TestProjectType>UnitTest</TestProjectType>
+    <RootNamespace>TestFramework</RootNamespace>
+    <AssemblyName>TestFramework</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
-  <PropertyGroup>
-    <RunSettingsFilePath>$(MSBuildProjectDirectory)\nano.runsettings</RunSettingsFilePath>
-  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="UnitTestArithmeticTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTestArithmeticTest2.cs" />
-    <Compile Include="UnitTestExpressionTests.cs" />
-    <Compile Include="UnitTestOtherArithmeticTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="nano.runsettings" />
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestExtensions.cs" />
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestFramework.cs" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup>   
     <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />
-    <ProjectReference Include="..\TestFramework\TestFramework.nfproj" />
-    <ProjectReference Include="..\UnitTestLauncher\UnitTestLauncher.nfproj" />
   </ItemGroup>
+ <Import Project="..\..\nanoFramework.TestFramework\source\TestFrameworkShared\TestFrameworkShared.projitems" Label="Shared" />
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
     <ProjectCapabilities>
