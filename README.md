@@ -5,7 +5,7 @@
 
 -----
 
-### Welcome to the **nanoFramework** Base Class Library repository!
+# Welcome to the **nanoFramework** Base Class Library repository!
 
 ## Build status
 
@@ -19,6 +19,23 @@
 ## BCL Flavours
 
 The **nanoFramework** Base Class Library is provided in two flavours: with or without support for System.Reflection namespace. The reason for this is that the reflection API adds up a significant size to the DLL and image size. For targets with smaller flash this can be prohibitive.
+
+## Unit Test
+
+nanoFramework has a dedicated [Unit Test framework](https://github.com/nanoframework/nanoFramework.TestFramework). This repository has Unit Test and you will find all of them under the `Tests`folder. The main solution embed all all the tests as well. You can run them directly from Visual Studio and create new tests. For more information on the [Unit Test Framework](https://docs.nanoframework.net/content/unit-test/index.html).
+
+lib-CoreLibrary has specific needs that differ from what you'll find in the documentation:
+
+- You need to have th nanoFramework.TestFramework as a nuget package as it will bring the nanoCLR Win32 emulator
+- You need to remove the reference to mscorlib, nanoFramework.TestFramework and nanoFramework.UnitTestLauncher
+- Use project reference instead for all those 3 elements
+
+You can then run the test either on a real device, either in the emulator as described in the documentation. You may have to manually flash your device for the mscorlib version to match the one you are building on.
+
+**Important**: Any new code checked in this repository will have to:
+
+- have a proper test covering for all the methods, properties, events and the possible exceptions,
+- do not break more of the the existing tests meaning, in other words, it should not create more issues than already existing.
 
 ## Feedback and documentation
 

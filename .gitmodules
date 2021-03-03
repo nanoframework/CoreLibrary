@@ -1,0 +1,3 @@
+[submodule "nanoFramework.TestFramework"]
+	path = nanoFramework.TestFramework
+	url = https://github.com/nanoframework/nanoFramework.TestFramework
