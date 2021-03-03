@@ -36,10 +36,6 @@
     <ProjectReference Include="..\TestFramework\TestFramework.nfproj" />
     <ProjectReference Include="..\UnitTestLauncher\UnitTestLauncher.nfproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="nano.runsettings" />
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
     <ProjectCapabilities>

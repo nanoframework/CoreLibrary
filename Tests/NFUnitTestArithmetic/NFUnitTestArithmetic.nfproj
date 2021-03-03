@@ -35,7 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="nano.runsettings" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />
