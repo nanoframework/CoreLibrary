@@ -46,6 +46,18 @@
     <ProjectReference Include="..\UnitTestLauncher\UnitTestLauncher.nfproj" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="nanoFramework.TestFramework, Version=1.0.67.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.67\lib\nanoFramework.TestFramework.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="nanoFramework.UnitTestLauncher, Version=0.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.67\lib\nanoFramework.UnitTestLauncher.exe</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="nano.runsettings" />
     <None Include="packages.config" />
   </ItemGroup>
