@@ -37,6 +37,23 @@ You can then run the test either on a real device, either in the emulator as des
 - have a proper test covering for all the methods, properties, events and the possible exceptions,
 - do not break more of the the existing tests meaning, in other words, it should not create more issues than already existing.
 
+### Test structure and project reference
+
+All the projects are referenced based and to be able to run the tests in the pipeline, in command line and in Visual Studio, it does require a specific structure:
+
+- The `NFUnitTestAdapter` project must be present and untouched. It does contains the core elements needed to have the nanoCLR Win32 application present.
+- You need to have a `nano.runsettings` file in each sub directory you want to run the tests on from Visual Studio
+- If you want to run the tests in command line you have to use the `Developer Command Prompt for VS 2019` then you can use from the home cloned lib-CoreLibrary directory a command line like this one:
+
+```cmd
+vstest.console.exe .\Tests\NFUnitTestCoreLibrary\bin\Release\NFUnitTest.dll  /Settings:.\Tests\NFUnitTestAdapater\nano.runsettings /TestAdapterPath:.\nanoFramework.TestFramework\source\TestAdapter\bin\Debug\net4.8 /Diag:.\log.txt /Logger:trx
+```
+
+*Notes*:
+
+- You have to build the TestAdapter from the source in this case. You can use the path to the nuget as well, this will have the same effect.
+- you have full diagnostic enabled in this case.
+
 ## Feedback and documentation
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
