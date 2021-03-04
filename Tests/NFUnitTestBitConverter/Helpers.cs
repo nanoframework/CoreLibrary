@@ -6,7 +6,7 @@
 
 using System;
 
-namespace NFUnitTestCoreLibrary
+namespace NFUnitTestBitConverter
 {
     class Helper
     {

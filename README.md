@@ -46,7 +46,7 @@ All the projects are referenced based and to be able to run the tests in the pip
 - If you want to run the tests in command line you have to use the `Developer Command Prompt for VS 2019` then you can use from the home cloned lib-CoreLibrary directory a command line like this one:
 
 ```cmd
-vstest.console.exe .\Tests\NFUnitTestCoreLibrary\bin\Release\NFUnitTest.dll  /Settings:.\Tests\NFUnitTestAdapater\nano.runsettings /TestAdapterPath:.\nanoFramework.TestFramework\source\TestAdapter\bin\Debug\net4.8 /Diag:.\log.txt /Logger:trx
+vstest.console.exe .\Tests\NFUnitTestBitConverter\bin\Release\NFUnitTest.dll  /Settings:.\Tests\NFUnitTestAdapater\nano.runsettings /TestAdapterPath:.\nanoFramework.TestFramework\source\TestAdapter\bin\Debug\net4.8 /Diag:.\log.txt /Logger:trx
 ```
 
 *Notes*:

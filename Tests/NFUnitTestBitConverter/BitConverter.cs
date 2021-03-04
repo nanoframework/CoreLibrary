@@ -8,7 +8,7 @@ using nanoFramework.TestFramework;
 using System;
 using System.Diagnostics;
 
-namespace NFUnitTestCoreLibrary
+namespace NFUnitTestBitConverter
 {
     [TestClass]
     public class Test1
