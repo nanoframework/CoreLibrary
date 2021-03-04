@@ -10,11 +10,9 @@ using System.Diagnostics;
 
 namespace NFUnitTestAdpater
 {
-    [TestClass]
-    public class Test1
+    public class DummyClass
     {
-        [TestMethod]
-        public void TestMethod()
+        public void DummyMethod()
         {
             Debug.WriteLine("This is just to get the TestAdapter. Don not remove this project!");
         }
