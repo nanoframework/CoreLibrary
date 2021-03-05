@@ -433,9 +433,9 @@ namespace NFUnitTestThread
 
             Debug.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
-            Assert.Trows(typeof(Exception), () =>
+            Assert.Trows(typeof(ArgumentNullException), () =>
             {
-                Debug.WriteLine("Passing callback parameter to a timer should throw exception");
+                Debug.WriteLine("Passing a 'null' callback parameter to a timer should throw exception");
                 Timer stateTimer = new Timer(null, autoEvent, 1000, 250);
                 Debug.WriteLine("Waiting and verifying");
                 autoEvent.WaitOne(7500, false);
