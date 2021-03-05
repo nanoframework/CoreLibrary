@@ -55,7 +55,7 @@ namespace NFUnitTestSystemLib
             // assigned to a object container (this used to lead to a access violation)
             Type type = typeof(int);
             list.Add(type);
-            string name = ((Type)list[i]).Name;
+            string name = ((Type)list[i]).Name;            
             Assert.Equal(name, "Int32");
             i++;
 
@@ -72,7 +72,7 @@ namespace NFUnitTestSystemLib
             //fRes &= name.ToLower() == "mscorlib";
             //i++;
 
-            type = Type.GetType("NFUnitTestSystemLib.UnitTestInitLocalTests.TestObj");
+            type = Type.GetType("NFUnitTestSystemLib.UnitTestInitLocalTests+TestObj");
             list.Add(type);
             name = ((Type)list[i]).Name;
             Assert.Equal(name, "TestObj");
@@ -109,7 +109,7 @@ namespace NFUnitTestSystemLib
             // 
             // Now test arrays of reflection types
             // 
-            Type[] types = new Type[] { typeof(int), typeof(bool), Type.GetType("NFUnitTestSystemLib.UnitTestInitLocalTests.TestObj") };
+            Type[] types = new Type[] { typeof(int), typeof(bool), Type.GetType("NFUnitTestSystemLib.UnitTestInitLocalTests+TestObj") };
             list.Add(types[2]);
             name = ((Type)list[i]).Name;
             Assert.Equal(name, "TestObj");

@@ -110,7 +110,7 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Ctor_Test()
+        public void Ctor_with_Int64()
         {
             /// <summary>
             /// 1. Test constructor with Int64

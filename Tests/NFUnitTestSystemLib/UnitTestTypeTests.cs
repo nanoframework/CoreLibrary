@@ -45,43 +45,51 @@ namespace NFUnitTestSystemLib
         {
             // if the negative number can not be truncated to the range specified it
             // will display its full hex value
-            Assert.Equal("FE", ((sbyte)-2).ToString("x02"));
+            Assert.Equal("fe", ((sbyte)-2).ToString("x02"));
             Assert.Equal("36", ((byte)0x36).ToString("x02"));
             Assert.Equal("FF", ((byte)255).ToString("X2"));
-            Assert.Equal("FFFD", ((short)-3).ToString("x04"));
+            Assert.Equal("fffd", ((short)-3).ToString("x04"));
             Assert.Equal("3049", ((ushort)0x3049).ToString("x4"));
-            Assert.Equal("FC00", ((short)-1024).ToString("x02"));
-            Assert.Equal("FFFFFFFC", ((int)-4).ToString("x8"));
+            Assert.Equal("fc00", ((short)-1024).ToString("x02"));
+            Assert.Equal("fffffffc", ((int)-4).ToString("x8"));
             Assert.Equal("00004494", ((uint)0x4494).ToString("x8"));
-            Assert.Equal("FFFFFFFC", ((int)-4).ToString("x04"));
-            Assert.Equal("FFFFFFFFFFFFFFFB", ((long)-5).ToString("x016"));
+            Assert.Equal("fffffffc", ((int)-4).ToString("x04"));
+            Assert.Equal("fffffffffffffffb", ((long)-5).ToString("x016"));
             Assert.Equal("1234567890123456", ((ulong)0x1234567890123456).ToString("x16"));
             // you should not be able to truncate the value only leading zeros
             Assert.Equal("1234567890123456", ((ulong)0x1234567890123456).ToString("x06"));
             Assert.Equal("34567890123456", ((ulong)0x0034567890123456).ToString("x14"));
 
             string tst = 3210.ToString("D");
+            Debug.WriteLine($"3210: {tst}");
             Assert.Equal("3210", tst);
 
             tst = (-3210).ToString("d");
+            Debug.WriteLine($"-3210: {tst}");
             Assert.Equal("-3210", tst);
 
             tst = 3210.ToString("d06");
+            Debug.WriteLine($"003210: {tst}");
             Assert.Equal("003210", tst);
 
             tst = (-3210).ToString("d06");
+            Debug.WriteLine($"-003210: {tst}");
             Assert.Equal("-003210", tst);
 
             tst = 3210.ToString("d1");
+            Debug.WriteLine($"3210: {tst}");
             Assert.Equal("3210", tst);
 
             tst = (-3210).ToString("d1");
+            Debug.WriteLine($"-3210: {tst}");
             Assert.Equal("-3210", tst);
 
             tst = 3210.ToString("g");
+            Debug.WriteLine($"3210 {tst}");
             Assert.Equal("3210", tst);
 
             tst = (-3210).ToString("g");
+            Debug.WriteLine($"-3210 {tst}");
             Assert.Equal("-3210", tst);
 
             Assert.Equal("NaN", ((float)0f / 0f).ToString());
@@ -410,22 +418,23 @@ namespace NFUnitTestSystemLib
             Assert.Equal((int)(methodInfo1.Invoke(testTestObject2, new object[] { 1 })), 1);
         }
 
-        [TestMethod]
-        public void SystemType12_InvokeMember_Test()
-        {
-            Debug.WriteLine("This tests the InvokeMember(String,BindingFlags) method");
-            Debug.WriteLine("This test must be re-written once BindingFlags is working, ");
-            Debug.WriteLine("see 17246 for more details.");
-            //Assigned and manipulated to avoid compiler warning
-            Int32 I = 0;
-            I++;
-            TestObject2 testTestObject2 = new TestObject2(5);
-            Type myType2 = testTestObject2.GetType();
-            Debug.WriteLine("The full name is " + myType2.FullName);
-            Assert.Equal((int)myType2.InvokeMember("Method2", BindingFlags.Default
-                | BindingFlags.InvokeMethod, null, testTestObject2,
-                new object[] { -6 }), -6);
-        }
+        // Removing this one as not implemented scenario in nano
+        //[TestMethod]
+        //public void SystemType12_InvokeMember_Test()
+        //{
+        //    Debug.WriteLine("This tests the InvokeMember(String,BindingFlags) method");
+        //    Debug.WriteLine("This test must be re-written once BindingFlags is working, ");
+        //    Debug.WriteLine("see 17246 for more details.");
+        //    //Assigned and manipulated to avoid compiler warning
+        //    Int32 I = 0;
+        //    I++;
+        //    TestObject2 testTestObject2 = new TestObject2(5);
+        //    Type myType2 = testTestObject2.GetType();
+        //    Debug.WriteLine("The full name is " + myType2.FullName);
+        //    Assert.Equal((int)myType2.InvokeMember("Method2", BindingFlags.Default
+        //        | BindingFlags.InvokeMethod, null, testTestObject2,
+        //        new object[] { -6 }), -6);
+        //}
 
     }
 }

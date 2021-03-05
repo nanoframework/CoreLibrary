@@ -20,18 +20,21 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("Declare a basic attribute class, example from C# Language reference, 1.1");
             Assert.True(Attrib_TestClass_attrib000.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib000_2_Test()
         {
             Debug.WriteLine("17.1 - A non-abstract attribute class must have public accessibility.");
             Assert.True(Attrib_TestClass_attrib000_2.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib001_Test()
         {
             Debug.WriteLine("Declare a basic attribute class, example from C# Language reference, 1.1");
             Assert.True(Attrib_TestClass_attrib001.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib002_Test()
         {
@@ -39,12 +42,14 @@ namespace NFUnitTestAttributes
             Assert.True(Attrib_TestClass_attrib002.testMethod());
         }
 
-        [TestMethod]
-        public void Attrib_attrib017_7a_Test()
-        {
-            Debug.WriteLine("17.4.5 test of conditional when DEBUG is undefined");
-            Assert.True(Attrib_TestClass_attrib017_7a.testMethod());
-        }
+        // Removing this test as not supported scenario in nano
+        //[TestMethod]
+        //public void Attrib_attrib017_7a_Test()
+        //{
+        //    Debug.WriteLine("17.4.5 test of conditional when DEBUG is undefined");
+        //    Assert.True(Attrib_TestClass_attrib017_7a.testMethod());
+        //}
+
         [TestMethod]
         public void Attrib_attrib017_8c_Test()
         {
@@ -59,12 +64,14 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("CLR 17.4.9 - guid Attribute");
             Assert.True(Attrib_TestClass_attrib021_2.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib021_4_Test()
         {
             Debug.WriteLine("CLR 17.4.9 - guid Attribute");
             Assert.True(Attrib_TestClass_attrib021_4.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib029_8_Test()
         {
@@ -73,6 +80,7 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("obsolete methods");
             Assert.True(Attrib_TestClass_attrib029_8.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib029_9_Test()
         {
@@ -81,6 +89,7 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("obsolete methods");
             Assert.True(Attrib_TestClass_attrib029_9.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib029_a_Test()
         {
@@ -89,6 +98,7 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("obsolete methods");
             Assert.True(Attrib_TestClass_attrib029_a.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib029_b_Test()
         {
@@ -96,24 +106,28 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("obsolete can be used on any declaration, but overrides should generate warning");
             Assert.True(Attrib_TestClass_attrib029_b.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib031_4_Test()
         {
             Debug.WriteLine("CLR 17.4.22 - serializable Attribute");
             Assert.True(Attrib_TestClass_attrib031_4.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib032_2_Test()
         {
             Debug.WriteLine("CLR 17.4.23 - structlayout Attribute");
             Assert.True(Attrib_TestClass_attrib032_2.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib033_2_Test()
         {
             Debug.WriteLine("Attribute usage is inherited.");
             Assert.True(Attrib_TestClass_attrib033_2.testMethod());
         }
+
         /*
          * These tests are excluded because they require parts of System.Reflection that are not supported in the MF
          * 
@@ -138,6 +152,7 @@ namespace NFUnitTestAttributes
             return MFTestResults.Fail;
         }
          */
+
         [TestMethod]
         public void Attrib_attrib036_1_Test()
         {
@@ -146,12 +161,14 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("protected, or protected internal.");
             Assert.True(Attrib_TestClass_attrib036_1.testMethod());            
         }
+
         [TestMethod]
         public void Attrib_attrib038_1_Test()
         {
             Debug.WriteLine("Verify params keyword");
                 Assert.True(Attrib_TestClass_attrib038_1.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib047_4_Test()
         {
@@ -163,6 +180,7 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("	AttributeTargets.Interface | AttributeTargets.Delegate)]");
             Assert.True(Attrib_TestClass_attrib047_4.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib047_5_Test()
         {
@@ -174,12 +192,14 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("	AttributeTargets.Interface | AttributeTargets.Delegate)]");
             Assert.True(Attrib_TestClass_attrib047_5.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib049_4_Test()
         {
             Debug.WriteLine("Bad named attribute argumements should be an error");
             Assert.True(Attrib_TestClass_attrib049_4.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib054_Test()
         {
@@ -187,6 +207,7 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("explictly specify attribute location with @");
             Assert.True(Attrib_TestClass_attrib054.testMethod());
         }
+
         [TestMethod]
         public void Attrib_attrib062_Test()
         {
@@ -195,7 +216,6 @@ namespace NFUnitTestAttributes
             Debug.WriteLine("circular dependencies.");
             Assert.True(Attrib_TestClass_attrib062.testMethod());
         }
-
 
         //Compiled Test Cases 
         [AttributeUsage(AttributeTargets.Class)]
