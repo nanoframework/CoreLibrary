@@ -27,17 +27,17 @@ namespace NFUnitTestClasses
         //    Assert.True(DestructorsTestClass3.testMethod());
         //}
 
-        [TestMethod]
-        public void Destructors4_Test()
-        {
-            //Ported from Destructors4.cs
-            Debug.WriteLine(" Section 10.11");
-            Debug.WriteLine(" Destructors implement the actions required to ");
-            Debug.WriteLine(" destruct the instances of a class.");
-            Debug.WriteLine("");
-            Debug.WriteLine("Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs");
-            Assert.True(DestructorsTestClass4.testMethod());
-        }
+        //[TestMethod]
+        //public void Destructors4_Test()
+        //{
+        //    //Ported from Destructors4.cs
+        //    Debug.WriteLine(" Section 10.11");
+        //    Debug.WriteLine(" Destructors implement the actions required to ");
+        //    Debug.WriteLine(" destruct the instances of a class.");
+        //    Debug.WriteLine("");
+        //    Debug.WriteLine("Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs");
+        //    Assert.True(DestructorsTestClass4.testMethod());
+        //}
 
         // Removed as using a class out of mscorlib
         //[TestMethod]

@@ -1569,11 +1569,11 @@ namespace NFUnitTestClasses
             }
         }
 
-        public class Test
-        {
-            //extern modifier
-            extern public int MyMeth();
-        }
+        //public class Something
+        //{
+        //    //extern modifier
+        //    extern public int MyMeth();
+        //}
         public class MethodsTestClass17
         {
             public static bool testMethod()
