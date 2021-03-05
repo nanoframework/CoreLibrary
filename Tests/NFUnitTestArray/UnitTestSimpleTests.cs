@@ -3402,7 +3402,8 @@ namespace NFUnitTestArray
             public static int Main_old()
             {
                 int[] arr = new int[5] { 1, 2, 3, 4, 5 };
-                Debug.WriteLine(ElementTaker(ref arr[2]).ToString());
+                var ret = ElementTaker(ref arr[2]).ToString();
+                Debug.WriteLine(ret);
                 if (arr[2] != 8)
                     return 1;
                 return 0;
@@ -3423,7 +3424,8 @@ namespace NFUnitTestArray
             public static int Main_old()
             {
                 int[] arr = new int[5] { 1, 2, 3, 4, 5 };
-                Debug.WriteLine(ElementTaker(out arr[2]).ToString());
+                var ret = ElementTaker(out arr[2]).ToString();
+                Debug.WriteLine(ret);
                 if (arr[2] != 5)
                     return 1;
                 return 0;
