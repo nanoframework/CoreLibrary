@@ -79,7 +79,7 @@ namespace NFUnitTestThread
             Debug.WriteLine("Starting a thread without explicit declaration of ThreadStart Delegate");
             Debug.WriteLine("Starts two threads, waits for them to complete and passes, ");
             Debug.WriteLine("this may erroneously fail for extremely slow devices.");
-            Debug.WriteLine("All other threading tests are dependant on this, if this fails, ");
+            Debug.WriteLine("All other threading tests are dependent on this, if this fails, ");
             Debug.WriteLine("all other results are invalid.");
 
             Debug.WriteLine("Starting thread 1");
@@ -120,7 +120,6 @@ namespace NFUnitTestThread
             Debug.WriteLine("Starts two threads with ThreadStart Delegate,");
             Debug.WriteLine("waits for them to complete and passes, ");
             Debug.WriteLine("this may erroneously fail for extremely slow devices.");
-            Debug.WriteLine("This explicit declaration is not necessary as of .Net 2.0");
 
             ThreadStart threadDelegate = new ThreadStart(Work.DoWork);
             Thread newThread1 = new Thread(threadDelegate);
@@ -199,7 +198,6 @@ namespace NFUnitTestThread
                 throw new Exception("Expected both threads in Stopped state '" + ThreadState.Stopped +
                     "' but got Thread1 in '" + tState1 + "' and Thread2 in '" + tState2 + "'");
             }
-            Debug.WriteLine("This is Fixed, see 17343 for details");
         }
 
         [TestMethod]
@@ -437,7 +435,6 @@ namespace NFUnitTestThread
 
             Debug.WriteLine("Starts five threads of increasing priority and a control thread, priority not set ");
             Debug.WriteLine("verifies that they get increasing amounts of attention");
-            Debug.WriteLine("This is Fixed, see 17201 for details");
 
             threadLowest.Priority = ThreadPriority.Lowest;
             threadBelow.Priority = ThreadPriority.BelowNormal;
@@ -579,7 +576,6 @@ namespace NFUnitTestThread
             /// </summary>
             ///          
             Debug.WriteLine("This test verifies the thread slept at least for the amount of time required");
-            Debug.WriteLine("This is Fixed, see  20831 for details");
             int[] sleepTime = new int[] { 10, 100, 1000, 10000, 60000 };
             for (int i = 0; i < sleepTime.Length; i++)
             {
@@ -605,7 +601,6 @@ namespace NFUnitTestThread
             Debug.WriteLine("Gets the state of the 1st thread");
             Debug.WriteLine("Resumes the 1st thread ");
             Debug.WriteLine("Verifies that calling Suspend for the 2nd time has no effect");
-            Debug.WriteLine("This is Fixed, see 20247 for details");
             Work.run = true;
             Work w1 = new Work();
             Thread newThread1 = new Thread(w1.DoWorkThreadState);
@@ -707,7 +702,6 @@ namespace NFUnitTestThread
             Debug.WriteLine("Starts a second thread");
             Debug.WriteLine("Gets the state of the 1st thread and Resumes it");
             Debug.WriteLine("Verifies that the state of the 1st thread was Suspended");
-            Debug.WriteLine("This is Fixed, see 20249 for details");
             Work.run = true;
             Work w1 = new Work();
             Thread newThread1 = new Thread(w1.DoWorkThreadState);
@@ -739,7 +733,6 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("This currently fails, see 20737 for details");
             Debug.WriteLine("Starting 10 Threads");
             Thread[] newThread = new Thread[10];
             Work[] w = new Work[10];
@@ -792,7 +785,6 @@ namespace NFUnitTestThread
             Debug.WriteLine("Starts a second thread");
             Debug.WriteLine("Gets the state of the 1st thread");
             Debug.WriteLine("Verifies the state of the 1st thread is Aborted");
-            Debug.WriteLine("This is Fixed, see 20495 for details");
 
             DateTime t1, t2;
             TimeSpan period;
@@ -857,7 +849,6 @@ namespace NFUnitTestThread
 
             Work.hasAborted = false;
             Thread newThread1 = new Thread(Work.DoWorkThreadAbortException);
-            Debug.WriteLine("This is Fixed, see 20743 for details");
             Debug.WriteLine("starting a thread and Aborting it immediately");
             newThread1.Start();
             Thread.Sleep(50);
@@ -884,7 +875,6 @@ namespace NFUnitTestThread
             Debug.WriteLine("Starts two threads");
             Debug.WriteLine("Both threads Joins the main thread");
             Debug.WriteLine("verify calling thread (main thread) is blocked for millisecondsTimeout");
-            Debug.WriteLine("This is fixed, see 20739 for details");
             Work.run = true;
             Work w = new Work();
 
@@ -1005,7 +995,6 @@ namespace NFUnitTestThread
 
             Debug.WriteLine("Starting a thread , Thread.Sleep(0) on the main thread");
             Debug.WriteLine("Verify the thread is immediately scheduled to execute");
-            Debug.WriteLine("This is fixed, see 20753 for details");
             sleepZero = true;
             Thread t1 = new Thread(new ThreadStart(SleepTest));
             t1.Start();
@@ -1165,7 +1154,7 @@ namespace NFUnitTestThread
         public void Threading_Thread_CurrentThread_Suspend_Test26()
         {
             int count = 0;
-            Debug.WriteLine("This is fixed, see 19911 for details");
+
             Thread newThread = new Thread(new ThreadStart(
                 delegate
                 {

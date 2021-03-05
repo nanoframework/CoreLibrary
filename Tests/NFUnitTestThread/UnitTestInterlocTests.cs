@@ -207,7 +207,6 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("This is Fixed, see 20323 for details");
             int[] value = new int[] { -2147483648, 0, 2147483647 };
             int temp1, temp2;
             Debug.WriteLine("Verification of original value returned needs temp1 = temp2");
@@ -246,7 +245,6 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("This is Fixed, see 20323 for details");
             int[] value = new int[] { -2147483648, 0, 2147483647 };
             int temp1, temp2;
 

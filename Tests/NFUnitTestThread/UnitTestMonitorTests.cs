@@ -126,7 +126,6 @@ namespace NFUnitTestThread
             /// </summary>
             ///
             Debug.WriteLine("Verify SynchronizationLockException exception is thrown");
-            Debug.WriteLine("This currently fails, see 20281");
             Debug.WriteLine("Calling Monitor.Exit without first calling Monitor.Enter should throw an exception");
             Assert.Trows(typeof(Exception), () => { Monitor.Exit(locker1); });
         }
@@ -141,7 +140,6 @@ namespace NFUnitTestThread
             ///
 
             Debug.WriteLine("verify ArgumentNullException exception is thrown ");
-            Debug.WriteLine("This is fixed, see 20730 for details");
             Debug.WriteLine("Calling Monitor.Enter passing null reference parameter should throw exception");
             Assert.Trows(typeof(ArgumentNullException), () => { Monitor.Enter(null); });
 
@@ -156,8 +154,7 @@ namespace NFUnitTestThread
             /// </summary>
             ///
             Debug.WriteLine("verify ArgumentNullException exception is thrown ");
-            Debug.WriteLine("This is fixed, see 20731 for details");
-            Debug.WriteLine("Calling Monitor.Exit passing null reference parameter should throw exception");
+            Debug.WriteLine("Calling Monitor.Exit passing 'null' reference parameter should throw exception");
             Assert.Trows(typeof(ArgumentNullException), () => { Monitor.Exit(null); });
         }
 
