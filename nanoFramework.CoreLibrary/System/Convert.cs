@@ -72,7 +72,7 @@ namespace System
         [CLSCompliant(false)]
         public static sbyte ToSByte(string value, int fromBase = 10)
         {
-            return (sbyte)NativeToInt64(value, true, SByte.MinValue, SByte.MaxValue, fromBase);
+            return (sbyte)NativeToInt64(value.Trim(), true, SByte.MinValue, SByte.MaxValue, fromBase);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace System
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         public static byte ToByte(string value, int fromBase = 10)
         {
-            return (byte)NativeToInt64(value, false, Byte.MinValue, Byte.MaxValue, fromBase);
+            return (byte)NativeToInt64(value.Trim(), false, Byte.MinValue, Byte.MaxValue, fromBase);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace System
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         public static short ToInt16(string value, int fromBase = 10)
         {
-            return (short)NativeToInt64(value, true, Int16.MinValue, Int16.MaxValue, fromBase);
+            return (short)NativeToInt64(value.Trim(), true, Int16.MinValue, Int16.MaxValue, fromBase);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace System
         [CLSCompliant(false)]
         public static ushort ToUInt16(string value, int fromBase = 10)
         {
-            return (ushort)NativeToInt64(value, false, UInt16.MinValue, UInt16.MaxValue, fromBase);
+            return (ushort)NativeToInt64(value.Trim(), false, UInt16.MinValue, UInt16.MaxValue, fromBase);
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace System
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         public static int ToInt32(string value, int fromBase = 10)
         {
-            return (int)NativeToInt64(value, true, Int32.MinValue, Int32.MaxValue, fromBase);
+            return (int)NativeToInt64(value.Trim(), true, Int32.MinValue, Int32.MaxValue, fromBase);
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace System
         [CLSCompliant(false)]
         public static uint ToUInt32(string value, int fromBase = 10)
         {
-            return (uint)NativeToInt64(value, false, UInt32.MinValue, UInt32.MaxValue, fromBase);
+            return (uint)NativeToInt64(value.Trim(), false, UInt32.MinValue, UInt32.MaxValue, fromBase);
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace System
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         public static long ToInt64(string value, int fromBase = 10)
         {
-            return NativeToInt64(value, true, Int64.MinValue, Int64.MaxValue, fromBase);
+            return NativeToInt64(value.Trim(), true, Int64.MinValue, Int64.MaxValue, fromBase);
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace System
         [CLSCompliant(false)]
         public static ulong ToUInt64(string value, int fromBase = 10)
         {
-            return (ulong)NativeToInt64(value, true, 0, 0, fromBase);
+            return (ulong)NativeToInt64(value.Trim(), true, 0, 0, fromBase);
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace System
         /// <returns>A double-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         public static double ToDouble(string value)
         {
-            return NativeToDouble(value);
+            return NativeToDouble(value.Trim());
         }
 
         /// <summary>
@@ -214,7 +214,7 @@ namespace System
         /// <returns>A single-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         public static float ToSingle(string value)
         {
-            return (float)NativeToDouble(value);
+            return (float)NativeToDouble(value.Trim());
         }
 
         /// <summary>
