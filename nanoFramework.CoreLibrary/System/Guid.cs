@@ -373,7 +373,12 @@ namespace System
             {
                 return -1;
             }
-            return 1;
+            else if (me > them)
+            {
+                return 1;
+            }
+
+            return 0;
         }
 
         /// <summary>
