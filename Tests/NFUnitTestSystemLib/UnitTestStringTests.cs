@@ -263,9 +263,9 @@ namespace NFUnitTestSystemLib
             string str1 = "@ abc@de ";
             Assert.Equal(str1.LastIndexOf('@'), 5);
             Assert.Equal(str1.LastIndexOf("abc"), 2);
-            Assert.Equal(str1.LastIndexOf('@', 1), 5);
+            Assert.Equal(str1.LastIndexOf('@', 1), 0);
             Assert.Equal(str1.LastIndexOf('@', 1, 1), -1);
-            Assert.Equal(str1.LastIndexOf("abc", 2), 2);
+            Assert.Equal(str1.LastIndexOf("abc", 2), -1);
             Assert.Equal(str1.LastIndexOf("@", 6, 1), -1);
         }
 
@@ -278,7 +278,7 @@ namespace NFUnitTestSystemLib
             char[] car1 = new Char[] { '@', 'b' };
 
             Assert.Equal(str1.LastIndexOfAny(car1), 5);
-            Assert.Equal(str1.LastIndexOfAny(car1, 1), 5);
+            Assert.Equal(str1.LastIndexOfAny(car1, 1), 0);
             Assert.Equal(str1.LastIndexOfAny(car1, 4, 1), -1);
         }
 
