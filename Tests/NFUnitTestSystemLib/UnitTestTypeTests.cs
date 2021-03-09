@@ -99,6 +99,90 @@ namespace NFUnitTestSystemLib
             Assert.Equal("NaN", ((double)0f / 0f).ToString());
             Assert.Equal("Infinity", ((double)1f / 0f).ToString());
             Assert.Equal("-Infinity", ((double)-1f / 0f).ToString());
+
+
+            Assert.Equal("Da1x", (1).ToString("Da1x"));
+            Assert.Equal("1", (1).ToString("D"));
+            Assert.Equal("-1", (-1).ToString("D"));
+            Assert.Equal("1234", (1234).ToString("D"));
+            Assert.Equal("-1234", (-1234).ToString("D"));
+            Assert.Equal("001234", (1234).ToString("D6"));
+            Assert.Equal("-001234", (-1234).ToString("D6"));
+            Assert.Equal("2147483647", (Int32.MaxValue).ToString("D"));
+            Assert.Equal("-2147483648", (Int32.MinValue).ToString("D"));
+            Assert.Equal("000000000002147483647", (Int32.MaxValue).ToString("D21")); 
+            Assert.Equal("-000000000002147483648", (Int32.MinValue).ToString("D21"));
+            Assert.Equal("9223372036854775807", (Int64.MaxValue).ToString("D")); 
+            Assert.Equal("-9223372036854775808",    (Int64.MinValue).ToString("D")); 
+            Assert.Equal("009223372036854775807", (Int64.MaxValue).ToString("D21"));
+            Assert.Equal("-009223372036854775808",    (Int64.MinValue).ToString("D21")); 
+            Assert.Equal("2147483747",    ((Int64)Int32.MaxValue + 100).ToString("D")); 
+            Assert.Equal("-2147483748", ((Int64)Int32.MinValue - 100).ToString("D"));
+            Assert.Equal("000000000002147483747",    ((Int64)Int32.MaxValue + 100).ToString("D21")); 
+            Assert.Equal("-000000000002147483748", ((Int64)Int32.MinValue - 100).ToString("D21"));
+
+            Assert.Equal("1234.57", (1234.567).ToString("F"));
+            Assert.Equal("-1234.57", (-1234.567).ToString("F"));
+            Assert.Equal("1235", (1234.567).ToString("F0"));
+            Assert.Equal("-1235", (-1234.567).ToString("F0"));
+            Assert.Equal("1234.0", (1234).ToString("F1"));
+            Assert.Equal("-1234.0", (-1234).ToString("F1"));
+            Assert.Equal("1234.5600", (1234.56).ToString("F4"));
+            Assert.Equal("-1234.5600", (-1234.56).ToString("F4"));
+            Assert.Equal("1234.6", (1234.56).ToString("F1"));
+            Assert.Equal("-1234.6", (-1234.56).ToString("F1"));
+            Assert.Equal("1234.0", (1234.0056).ToString("F1"));
+            Assert.Equal("-1234.0", (-1234.0056).ToString("F1"));
+            Assert.Equal("1", (1).ToString());
+            Assert.Equal("1", (1).ToString((string)null));
+            Assert.Equal("1", (1).ToString(String.Empty));
+            Assert.Equal("1234.567", (1234.567).ToString());
+            Assert.Equal("123.456", (123.456).ToString("G"));
+            Assert.Equal("-123.456", (-123.456).ToString("G"));
+            Assert.Equal("1.2E+02", (123.4546).ToString("G2"));
+            Assert.Equal("-1.2E+02", (-123.4546).ToString("G2"));
+            Assert.Equal("123.5", (123.4546).ToString("G4"));
+            Assert.Equal("-123.5", (-123.4546).ToString("G4"));
+            Assert.Equal("123.4546", (123.4546).ToString("G10"));
+            Assert.Equal("-123.4546", (-123.4546).ToString("G10"));
+            Assert.Equal("100", (99.9999).ToString("G4"));
+            Assert.Equal("-100", (-99.9999).ToString("G4"));
+            Assert.Equal("1234567890", (1234567890).ToString("G"));
+            Assert.Equal("-1234567890", (-1234567890).ToString("G"));
+            Assert.Equal("1.235E+09", (1234567890).ToString("G4"));
+            Assert.Equal("-1.235E+09", (-1234567890).ToString("G4"));
+            Assert.Equal("9.877E+09", (9876543210).ToString("G4"));
+            Assert.Equal("-9.877E+09", (-9876543210).ToString("G4"));
+            Assert.Equal("1234567890", (1234567890).ToString("G15"));
+            Assert.Equal("-1234567890", (-1234567890).ToString("G15"));
+            Assert.Equal("1,234.57", (1234.567).ToString("N"));
+            Assert.Equal("-1,234.57", (-1234.567).ToString("N"));
+            Assert.Equal("0", (0).ToString("N0"));
+            Assert.Equal("1,234", (1234).ToString("N0"));
+            Assert.Equal("-1,234", (-1234).ToString("N0"));
+            Assert.Equal("12.0", (12).ToString("N1"));
+            Assert.Equal("-12.0", (-12).ToString("N1"));
+            Assert.Equal("1,234.0", (1234).ToString("N1"));
+            Assert.Equal("-1,234.0", (-1234).ToString("N1"));
+            Assert.Equal("1,234.560", (1234.56).ToString("N3"));
+            Assert.Equal("-1,234.560", (-1234.56).ToString("N3"));
+            Assert.Equal("34,561,234.560", (34561234.56).ToString("N3"));
+            Assert.Equal("-34,561,234.560", (-34561234.56).ToString("N3"));
+
+            Assert.Equal("FF", (255).ToString("X"));
+            Assert.Equal("1", ((Int32)1).ToString("X"));
+            Assert.Equal("ffffffff", ((Int32)(-1)).ToString("x"));
+            Assert.Equal("1", (unchecked((byte)1)).ToString("x"));
+            Assert.Equal("ff", (unchecked((byte)(-1))).ToString("x"));
+            Assert.Equal("1", ((short)1).ToString("x"));
+            Assert.Equal("01", ((short)1).ToString("x2"));
+            Assert.Equal("ffff", ((short)(-1)).ToString("x"));
+            Assert.Equal("00ff", (255).ToString("x4"));
+            Assert.Equal("FFFFFFFF", ((Int32)(-1)).ToString("X4"));
+            Assert.Equal("7ffffffffffffff5", (Int64.MaxValue - 10).ToString("x")); 
+            Assert.Equal("a", ((Int64)10).ToString("x"));
+            Assert.Equal("0000a", ((Int64)10).ToString("x5"));
+
         }
 
         [TestMethod]
