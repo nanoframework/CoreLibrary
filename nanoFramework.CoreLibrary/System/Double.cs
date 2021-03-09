@@ -15,7 +15,7 @@ namespace System
     [Serializable]
     public struct Double
     {
-        internal const string _naNSymbol = "Nan";
+        internal const string _naNSymbol = "NaN";
         internal const string _negativeInfinitySymbol = "-" + _positiveInfinitySymbol;
         internal const string _positiveInfinitySymbol = "Infinity";
 
