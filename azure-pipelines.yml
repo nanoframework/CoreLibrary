@@ -26,7 +26,7 @@ jobs:
 
   variables:
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-    solution: '**/*.sln'
+    solution: 'nanoFramework.CoreLibrary.sln'
     buildPlatform: 'Any CPU'
     buildConfiguration: 'Release'
     nugetPackageName: 'nanoFramework.CoreLibrary'
@@ -56,6 +56,9 @@ jobs:
 
   # need to push the other package to NuGet because the template above can only push one package (happens on tag builds for any branch)
   - task: NuGetCommand@2
+    condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
+    continueOnError: true
+    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
       command: push
       nuGetFeedType: external
@@ -64,11 +67,11 @@ jobs:
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).snupkg
       publishFeedCredentials: 'AzureArtifacts-CoreLibrary'
+
+  - task: NuGetCommand@2
     condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
     continueOnError: true
     displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
-
-  - task: NuGetCommand@2
     inputs:
       command: push
       nuGetFeedType: external
@@ -77,12 +80,11 @@ jobs:
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).snupkg
       publishFeedCredentials: 'NuGet-CoreLibrary'
-    condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
-    continueOnError: true
-    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
 
   # create or update GitHub release
   - task: GitHubReleasePublish@1
+    condition: and( succeeded(), ne(variables['Build.Reason'], 'PullRequest'), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), ne( variables['StartReleaseCandidate'], true ) )
+    displayName: Create/Update GitHub PREVIEW release 
     inputs:
       githubEndpoint: 'nanoframework'
       githubOwner: 'nanoframework'
@@ -98,11 +100,11 @@ jobs:
       githubEditRelease: true
       githubDeleteEmptyTag: true
       githubReleaseAsset: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    condition: and( succeeded(), ne(variables['Build.Reason'], 'PullRequest'), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), ne( variables['StartReleaseCandidate'], true ) )
-    displayName: Create/Update GitHub PREVIEW release 
 
   # create or update GitHub release ON tags from release or master branches
   - task: GitHubReleasePublish@1
+    condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], 'preview') ), ne( variables['StartReleaseCandidate'], true ) )
+    displayName: Create/Update GitHub stable release
     inputs:
       githubEndpoint: 'nanoframework'
       githubOwner: 'nanoframework'
@@ -118,8 +120,6 @@ jobs:
       githubEditRelease: true
       githubDeleteEmptyTag: true
       githubReleaseAsset: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], 'preview') ), ne( variables['StartReleaseCandidate'], true ) )
-    displayName: Create/Update GitHub stable release
 
 ##############################
 - job: Update_Dependents
@@ -147,6 +147,7 @@ jobs:
 
   # update dependents
   - task: UpdatenFDependencies@1
+    displayName: Update dependent class libs
     inputs:
       gitHubToken: $(GitHubToken)
       repositoriesToUpdate: |
@@ -168,7 +169,7 @@ jobs:
         lib-nanoFramework.System.Collections
         lib-nanoFramework.System.Text
         lib-nanoFramework.Json
-    displayName: Update dependent class libs
+        nanoFramework.TestFramework
 
 ##################################
 # report build failure to Discord
