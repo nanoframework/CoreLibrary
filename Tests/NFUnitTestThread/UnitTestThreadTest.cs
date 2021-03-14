@@ -915,7 +915,7 @@ namespace NFUnitTestThread
 
             Thread newThread1 = new Thread(Work.DoWork);
             newThread1.Start();
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { newThread1.Join(-77); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { newThread1.Join(-77); });
         }
 
         [TestMethod]
@@ -929,7 +929,7 @@ namespace NFUnitTestThread
 
             Debug.WriteLine("Verify ArgumentOutOfRangeException exception is thrown");
             Debug.WriteLine("Why not for -1 ?");
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { Thread.Sleep(-2); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { Thread.Sleep(-2); });
         }
 
         [TestMethod]
@@ -943,7 +943,7 @@ namespace NFUnitTestThread
 
             Debug.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
-            Assert.Trows(typeof(Exception), () => { newThread1.Join(); });
+            Assert.Throws(typeof(Exception), () => { newThread1.Join(); });
         }
 
         [TestMethod]
@@ -957,7 +957,7 @@ namespace NFUnitTestThread
 
             Debug.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
-            Assert.Trows(typeof(Exception), () => { newThread1.Suspend(); });
+            Assert.Throws(typeof(Exception), () => { newThread1.Suspend(); });
         }
 
         [TestMethod]
@@ -972,7 +972,7 @@ namespace NFUnitTestThread
 
             Debug.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
-            Assert.Trows(typeof(Exception), () => { newThread1.Resume(); });
+            Assert.Throws(typeof(Exception), () => { newThread1.Resume(); });
         }
 
         static bool sleepZero = false;
