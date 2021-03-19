@@ -78,6 +78,6 @@ namespace System.Diagnostics
 
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        extern static private void WriteLineNative(string text, bool addLineFeed);
+        static extern internal void WriteLineNative(string text, bool addLineFeed);
     }
 }
