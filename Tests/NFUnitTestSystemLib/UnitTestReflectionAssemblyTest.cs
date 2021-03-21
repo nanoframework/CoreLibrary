@@ -58,7 +58,7 @@ namespace NFUnitTestSystemLib
             Assembly assm1 = Assembly.Load("mscorlib, Version=" + v);
             Assert.NotNull(assm1);
 
-            Assert.Trows(typeof(ArgumentException), () => { Assembly assm2 = Assembly.Load("mscorlib, <THIS SHOULD NOT BE HERE>,Version=" + v); });
+            Assert.Throws(typeof(ArgumentException), () => { Assembly assm2 = Assembly.Load("mscorlib, <THIS SHOULD NOT BE HERE>,Version=" + v); });
 
             // Test for extra parameters after assembly version.  The assembly version parser needs to handle this
             // because the VS debugger will identify in CultureInfo and PublicKeyToken when debugging.

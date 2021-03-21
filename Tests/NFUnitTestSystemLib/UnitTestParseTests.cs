@@ -491,49 +491,49 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SByte_ArgumentNullException_Test_17()
         {
-            Assert.Trows(typeof(ArgumentNullException), () => { SByte.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { SByte.Parse(str); });
         }
 
         [TestMethod]
         public void Byte_ArgumentNullException_Test_18()
         {
-            Assert.Trows(typeof(ArgumentNullException), () => { Byte.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { Byte.Parse(str); });
         }
 
         [TestMethod]
         public void Int16_ArgumentNullException_Test_19()
         {
-            Assert.Trows(typeof(ArgumentNullException), () => { Int16.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { Int16.Parse(str); });
         }
 
         [TestMethod]
         public void UInt16_ArgumentNullException_Test_20()
         {
-            Assert.Trows(typeof(ArgumentNullException), () => { UInt16.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { UInt16.Parse(str); });
         }
 
         [TestMethod]
         public void Int32_ArgumentNullException_Test_21()
         {
-            Assert.Trows(typeof(ArgumentNullException), () => { Int32.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { Int32.Parse(str); });
         }
 
         [TestMethod]
         public void UInt32_ArgumentNullException_Test_22()
         {
-            Assert.Trows(typeof(ArgumentNullException), () => { UInt32.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { UInt32.Parse(str); });
         }
 
         [TestMethod]
         public void Int64_ArgumentNullException_Test_23()
         {
-            Assert.Trows(typeof(ArgumentNullException), () => { Int64.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { Int64.Parse(str); });
         }
 
         [TestMethod]
         public void UInt64_ArgumentNullException_Test_24()
         {
-            Assert.Trows(typeof(ArgumentNullException), () => { UInt64.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { UInt64.Parse(str); });
         }
 
         /// <summary>
@@ -581,12 +581,12 @@ namespace NFUnitTestSystemLib
             String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { SByte.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { SByte.Parse(strArr[i]); });
             }
             for (int i = 0; i < 5; i++)
             {
                 String rdmString = GetRandomString();
-                Assert.Trows(typeof(Exception), () => { SByte.Parse(rdmString); });
+                Assert.Throws(typeof(Exception), () => { SByte.Parse(rdmString); });
             }
         }
 
@@ -596,12 +596,12 @@ namespace NFUnitTestSystemLib
             String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { Byte.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { Byte.Parse(strArr[i]); });
             }
             for (int i = 0; i < 5; i++)
             {
                 String rdmString = GetRandomString();
-                Assert.Trows(typeof(Exception), () => { Byte.Parse(rdmString); });
+                Assert.Throws(typeof(Exception), () => { Byte.Parse(rdmString); });
             }
         }
 
@@ -611,12 +611,12 @@ namespace NFUnitTestSystemLib
             String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { Int16.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { Int16.Parse(strArr[i]); });
             }
             for (int i = 0; i < 5; i++)
             {
                 String rdmString = GetRandomString();
-                Assert.Trows(typeof(Exception), () => { Int16.Parse(rdmString); });
+                Assert.Throws(typeof(Exception), () => { Int16.Parse(rdmString); });
             }
         }
 
@@ -626,12 +626,12 @@ namespace NFUnitTestSystemLib
             String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { UInt16.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { UInt16.Parse(strArr[i]); });
             }
             for (int i = 0; i < 5; i++)
             {
                 String rdmString = GetRandomString();
-                Assert.Trows(typeof(Exception), () => { UInt16.Parse(rdmString); });
+                Assert.Throws(typeof(Exception), () => { UInt16.Parse(rdmString); });
             }
         }
 
@@ -641,12 +641,12 @@ namespace NFUnitTestSystemLib
             String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { Int32.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { Int32.Parse(strArr[i]); });
             }
             for (int i = 0; i < 5; i++)
             {
                 String rdmString = GetRandomString();
-                Assert.Trows(typeof(Exception), () => { Int32.Parse(rdmString); });
+                Assert.Throws(typeof(Exception), () => { Int32.Parse(rdmString); });
             }
         }
 
@@ -656,12 +656,12 @@ namespace NFUnitTestSystemLib
             String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { UInt32.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { UInt32.Parse(strArr[i]); });
             }
             for (int i = 0; i < 5; i++)
             {
                 String rdmString = GetRandomString();
-                Assert.Trows(typeof(Exception), () => { UInt32.Parse(rdmString); });
+                Assert.Throws(typeof(Exception), () => { UInt32.Parse(rdmString); });
             }
         }
 
@@ -671,12 +671,12 @@ namespace NFUnitTestSystemLib
             String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { Int64.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { Int64.Parse(strArr[i]); });
             }
             for (int i = 0; i < 5; i++)
             {
                 String rdmString = GetRandomString();
-                Assert.Trows(typeof(Exception), () => { Int64.Parse(rdmString); });
+                Assert.Throws(typeof(Exception), () => { Int64.Parse(rdmString); });
             }
         }
 
@@ -686,12 +686,12 @@ namespace NFUnitTestSystemLib
             String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { UInt64.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { UInt64.Parse(strArr[i]); });
             }
             for (int i = 0; i < 5; i++)
             {
                 String rdmString = GetRandomString();
-                Assert.Trows(typeof(Exception), () => { UInt64.Parse(rdmString); });
+                Assert.Throws(typeof(Exception), () => { UInt64.Parse(rdmString); });
             }
         }
 
@@ -707,7 +707,7 @@ namespace NFUnitTestSystemLib
                                              ((Int64)SByte.MaxValue + 1).ToString(), ((Int64)SByte.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { SByte.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { SByte.Parse(strArr[i]); });
             }
         }
 
@@ -718,7 +718,7 @@ namespace NFUnitTestSystemLib
                                              ((Int64)Byte.MaxValue + 1).ToString(), ((Int64)Byte.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { Byte.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { Byte.Parse(strArr[i]); });
             }
         }
 
@@ -729,7 +729,7 @@ namespace NFUnitTestSystemLib
                                              ((Int64)Int16.MaxValue + 1).ToString(), ((Int64)Int16.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { Int16.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { Int16.Parse(strArr[i]); });
             }
         }
 
@@ -740,7 +740,7 @@ namespace NFUnitTestSystemLib
                                              ((Int64)UInt16.MaxValue + 1).ToString(), ((Int64)UInt16.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { UInt16.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { UInt16.Parse(strArr[i]); });
             }
         }
 
@@ -751,7 +751,7 @@ namespace NFUnitTestSystemLib
                                              ((Int64)Int32.MaxValue + 1).ToString(), ((Int64)Int32.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { Int32.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { Int32.Parse(strArr[i]); });
             }
         }
 
@@ -762,7 +762,7 @@ namespace NFUnitTestSystemLib
                                              ((Int64)UInt32.MaxValue + 1).ToString(), ((Int64)UInt32.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { UInt32.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { UInt32.Parse(strArr[i]); });
             }
         }
 
@@ -774,7 +774,7 @@ namespace NFUnitTestSystemLib
                                              "9223372036854775808", "9223372036854775900" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { Int64.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { Int64.Parse(strArr[i]); });
             }
         }
 
@@ -784,7 +784,7 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "-1", "-100", "18446744073709551616", "18446744073709551700" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Trows(typeof(Exception), () => { UInt64.Parse(strArr[i]); });
+                Assert.Throws(typeof(Exception), () => { UInt64.Parse(strArr[i]); });
             }
         }
 
@@ -850,27 +850,27 @@ namespace NFUnitTestSystemLib
             Guid guid = (Guid)o_guid;
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Trows(typeof(InvalidCastException), () => {
+            Assert.Throws(typeof(InvalidCastException), () => {
                 MyEnum1 e1 = (MyEnum1)o_enum;
             });
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Trows(typeof(InvalidCastException), () => {
+            Assert.Throws(typeof(InvalidCastException), () => {
                 int i = (int)o_long;
             });
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Trows(typeof(InvalidCastException), () => {
+            Assert.Throws(typeof(InvalidCastException), () => {
                 int i = (int)o_class;
             });
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Trows(typeof(InvalidCastException), () => {
+            Assert.Throws(typeof(InvalidCastException), () => {
                 int i = (int)o_enum;
             });
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Trows(typeof(InvalidCastException), () => {
+            Assert.Throws(typeof(InvalidCastException), () => {
                 int i = (int)o_guid;
             });
         }

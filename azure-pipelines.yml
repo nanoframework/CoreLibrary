@@ -62,7 +62,6 @@ jobs:
       allowPackageConflicts: true
       packagesToPush: 
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
-        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).snupkg
       publishFeedCredentials: 'AzureArtifacts-CoreLibrary'
     condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
     continueOnError: true
@@ -75,7 +74,6 @@ jobs:
       allowPackageConflicts: true
       packagesToPush: 
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
-        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).snupkg
       publishFeedCredentials: 'NuGet-CoreLibrary'
     condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
     continueOnError: true
@@ -173,7 +171,7 @@ jobs:
 ##################################
 # report build failure to Discord
 - job: Report_Build_Failure
-  
+
   dependsOn:
   - Build_mscorlib
   - Update_Dependents
@@ -183,7 +181,7 @@ jobs:
     vmImage: 'VS2017-Win2016'
 
   steps:
-  
+
   - checkout: self
 
   # step from template @ nf-tools repo

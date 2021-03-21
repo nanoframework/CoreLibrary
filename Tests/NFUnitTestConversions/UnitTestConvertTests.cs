@@ -104,16 +104,16 @@ namespace NFUnitTestConversions
 
             SByte value_sb = Convert.ToSByte(number);
             Assert.Equal(value_sb, (sbyte)actualNumber);
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { Byte value_b = Convert.ToByte(number); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { Byte value_b = Convert.ToByte(number); });
             Int16 value_s16 = Convert.ToInt16(number);
             Assert.Equal(value_s16, (short)actualNumber);
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { UInt16 value_u16 = Convert.ToUInt16(number); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { UInt16 value_u16 = Convert.ToUInt16(number); });
             Int32 value_s32 = Convert.ToInt32(number);
             Assert.Equal(value_s32, (int)actualNumber);
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { UInt32 value_u32 = Convert.ToUInt32(number); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { UInt32 value_u32 = Convert.ToUInt32(number); });
             Int64 value_s64 = Convert.ToInt32(number);
             Assert.Equal(value_s64, (long)actualNumber);
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { UInt64 value_u64 = Convert.ToUInt64(number); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { UInt64 value_u64 = Convert.ToUInt64(number); });
         }
 
         [TestMethod]

@@ -36,13 +36,13 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.TestFramework, Version=1.0.80.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.80\lib\nanoFramework.TestFramework.dll</HintPath>
+    <Reference Include="nanoFramework.TestFramework, Version=1.0.92.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.92\lib\nanoFramework.TestFramework.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.UnitTestLauncher, Version=0.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.80\lib\nanoFramework.UnitTestLauncher.exe</HintPath>
+      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.92\lib\nanoFramework.UnitTestLauncher.exe</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
@@ -52,9 +52,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
+  <!-- MANUAL UPDATE HERE -->
+  <Import Project="..\..\packages\nanoFramework.TestFramework.1.0.92\build\nanoFramework.TestFramework.targets" Condition="Exists('..\..\packages\nanoFramework.TestFramework.1.0.92\build\nanoFramework.TestFramework.targets')" />
   <ProjectExtensions>
     <ProjectCapabilities>
       <ProjectConfigurationsDeclaredAsItems />
     </ProjectCapabilities>
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <WarningText>Update the Import path in nfproj to the correct nanoFramework.TestFramework NuGet package folder.</WarningText>
+    </PropertyGroup>
+    <Warning Condition="!Exists('..\..\packages\nanoFramework.TestFramework.1.0.92\build\nanoFramework.TestFramework.targets')" Text="'$(WarningText)'" />
+  </Target>
 </Project>

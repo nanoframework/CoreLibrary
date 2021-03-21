@@ -223,7 +223,7 @@ namespace NFUnitTestSystemLib
 
             Debug.WriteLine("Since NoneSuch does not exist in this assembly, ");
             Debug.WriteLine("GetType throws a TypeLoadException.");
-            Assert.Trows(typeof(NullReferenceException), () =>
+            Assert.Throws(typeof(NullReferenceException), () =>
             {
                 Type myType5 = Type.GetType("NoneSuch");
                 Debug.WriteLine("The full name is " + myType5.FullName);

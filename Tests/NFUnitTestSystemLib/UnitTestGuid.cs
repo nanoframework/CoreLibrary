@@ -88,7 +88,7 @@ namespace NFUnitTestSystemLib
                 size = random.Next(100);
             }
             Byte[] guidNot16 = GetRandomBytes(size);
-            Assert.Trows(typeof(ArgumentException), () => { Guid myGuid1 = new Guid(guidNot16); });
+            Assert.Throws(typeof(ArgumentException), () => { Guid myGuid1 = new Guid(guidNot16); });
         }
 
         [TestMethod]
@@ -101,7 +101,7 @@ namespace NFUnitTestSystemLib
             ///
 
             Byte[] nullByte = null;
-            Assert.Trows(typeof(ArgumentNullException), () => { Guid myGuid1 = new Guid(nullByte); });
+            Assert.Throws(typeof(ArgumentNullException), () => { Guid myGuid1 = new Guid(nullByte); });
         }
 
         public static Guid GetGuid()
