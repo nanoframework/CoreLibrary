@@ -2,7 +2,33 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.1-preview.9...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.80...HEAD)
+
+**Fixed bugs:**
+
+- Fix case of Double.NaN [\#123](https://github.com/nanoframework/lib-CoreLibrary/pull/123)
+- Fixed bad test expectations in String Tests [\#122](https://github.com/nanoframework/lib-CoreLibrary/pull/122)
+- Fixing Convert with whitespaces [\#121](https://github.com/nanoframework/lib-CoreLibrary/pull/121)
+
+**Documentation and other chores:**
+
+- Remove Console class [\#126](https://github.com/nanoframework/lib-CoreLibrary/pull/126)
+
+## [v1.0.80](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.80) (2021-03-05)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.67...v1.0.80)
+
+**Fixed bugs:**
+
+- Fix comparer in GUID [\#120](https://github.com/nanoframework/lib-CoreLibrary/pull/120)
+
+## [v1.0.67](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.67) (2021-03-03)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.1-preview.11...v1.0.67)
+
+## [v1.10.1-preview.11](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.10.1-preview.11) (2021-03-02)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.1-preview.9...v1.10.1-preview.11)
 
 **Implemented enhancements:**
 
