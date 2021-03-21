@@ -127,7 +127,7 @@ namespace NFUnitTestThread
             ///
             Debug.WriteLine("Verify SynchronizationLockException exception is thrown");
             Debug.WriteLine("Calling Monitor.Exit without first calling Monitor.Enter should throw an exception");
-            Assert.Trows(typeof(Exception), () => { Monitor.Exit(locker1); });
+            Assert.Throws(typeof(Exception), () => { Monitor.Exit(locker1); });
         }
 
         [TestMethod]
@@ -141,7 +141,7 @@ namespace NFUnitTestThread
 
             Debug.WriteLine("verify ArgumentNullException exception is thrown ");
             Debug.WriteLine("Calling Monitor.Enter passing null reference parameter should throw exception");
-            Assert.Trows(typeof(ArgumentNullException), () => { Monitor.Enter(null); });
+            Assert.Throws(typeof(ArgumentNullException), () => { Monitor.Enter(null); });
 
         }
 
@@ -155,7 +155,7 @@ namespace NFUnitTestThread
             ///
             Debug.WriteLine("verify ArgumentNullException exception is thrown ");
             Debug.WriteLine("Calling Monitor.Exit passing 'null' reference parameter should throw exception");
-            Assert.Trows(typeof(ArgumentNullException), () => { Monitor.Exit(null); });
+            Assert.Throws(typeof(ArgumentNullException), () => { Monitor.Exit(null); });
         }
 
         static ManualResetEvent flag = new ManualResetEvent(false);

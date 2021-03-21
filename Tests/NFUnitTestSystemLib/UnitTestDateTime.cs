@@ -1028,7 +1028,7 @@ namespace NFUnitTestSystemLib
         {
             Debug.WriteLine("Creating a DateTime with -ve Ticks and,");
             Debug.WriteLine("verifying ArgumentOutOfRangeException is thrown");
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { DateTime dt = new DateTime(-(new Random().Next(10) + 1)); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { DateTime dt = new DateTime(-(new Random().Next(10) + 1)); });
         }
 
         [TestMethod]
@@ -1036,8 +1036,8 @@ namespace NFUnitTestSystemLib
         {
             Debug.WriteLine("Creating a DateTime later than DateTime.MaxValue and,");
             Debug.WriteLine("verifying ArgumentOutOfRangeException is thrown");
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { DateTime dt1 = new DateTime(DateTime.MaxValue.Ticks + 1); });
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { DateTime dt2 = new DateTime(10000, 1, 1, 0, 0, 0, 0); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { DateTime dt1 = new DateTime(DateTime.MaxValue.Ticks + 1); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { DateTime dt2 = new DateTime(10000, 1, 1, 0, 0, 0, 0); });
         }
 
         static double[] rdmFraction = new double[] { 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 };
