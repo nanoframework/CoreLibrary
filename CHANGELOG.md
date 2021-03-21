@@ -1,5 +1,17 @@
 # Changelog
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-CoreLibrary/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.3-preview.5...HEAD)
+
+**Implemented enhancements:**
+
+- Update test framework [\#127](https://github.com/nanoframework/lib-CoreLibrary/pull/127)
+
+## [v1.10.3-preview.5](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.10.3-preview.5) (2021-03-21)
+
+[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.10.3-preview.4...v1.10.3-preview.5)
+
 ## [v1.10.3-preview.4](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.10.3-preview.4) (2021-03-21)
 
 [Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.80...v1.10.3-preview.4)
