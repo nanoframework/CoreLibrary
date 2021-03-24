@@ -62,7 +62,7 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "TestFramework", "Tests\Test
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "TestFrameworkShared", "nanoFramework.TestFramework\source\TestFrameworkShared\TestFrameworkShared.shproj", "{55F048B5-6739-43C5-A93D-DB61DB8E912F}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestAdapater", "Tests\NFUnitTestAdpater\NFUnitTestAdapater.nfproj", "{396A2B21-8A5F-4274-9FDD-3B35DC8EAE47}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTest_DummyAdapter", "Tests\NFUnitTest_DummyAdapter\NFUnitTest_DummyAdapter.nfproj", "{396A2B21-8A5F-4274-9FDD-3B35DC8EAE47}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
