@@ -30,7 +30,7 @@ jobs:
     buildPlatform: 'Any CPU'
     buildConfiguration: 'Release'
     nugetPackageName: 'nanoFramework.CoreLibrary'
-    repoName: 'lib-CoreLibrary'
+    repoName: 'CoreLibrary'
 
   steps:
 
@@ -148,24 +148,24 @@ jobs:
     inputs:
       gitHubToken: $(GitHubToken)
       repositoriesToUpdate: |
-        lib-nanoFramework.Runtime.Events
-        lib-nanoFramework.Runtime.Native
-        lib-nanoFramework.System.Threading
-        lib-Windows.Devices.Adc
-        lib-Windows.Devices.I2c
-        lib-Windows.Devices.Pwm
-        lib-Windows.Devices.Spi
-        lib-System.Device.Dac
-        lib-System.Device.I2c
-        lib-nanoFramework.Devices.OneWire
-        lib-nanoFramework.Networking.Sntp
-        lib-nanoFramework.Hardware.Stm32
-        lib-nanoFramework.System.Math
-        lib-nanoFramework.TI.EasyLink
-        lib-nanoFramework.ResourceManager
-        lib-nanoFramework.System.Collections
-        lib-nanoFramework.System.Text
-        lib-nanoFramework.Json
+        nanoFramework.Runtime.Events
+        nanoFramework.Runtime.Native
+        nanoFramework.System.Threading
+        Windows.Devices.Adc
+        Windows.Devices.I2c
+        Windows.Devices.Pwm
+        Windows.Devices.Spi
+        System.Device.Dac
+        System.Device.I2c
+        nanoFramework.Devices.OneWire
+        nanoFramework.Networking.Sntp
+        nanoFramework.Hardware.Stm32
+        nanoFramework.System.Math
+        nanoFramework.TI.EasyLink
+        nanoFramework.ResourceManager
+        nanoFramework.System.Collections
+        nanoFramework.System.Text
+        nanoFramework.Json
     displayName: Update dependent class libs
 
 ##################################
