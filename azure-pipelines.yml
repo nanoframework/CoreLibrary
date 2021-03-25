@@ -41,7 +41,7 @@ jobs:
     parameters:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
       runUnitTests: true
-      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestAdpater\nano.runsettings'
+      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTest_DummyAdapter\nano.runsettings'
 
   # package steps
   - template: azure-pipelines-templates/class-lib-package.yml@templates  
