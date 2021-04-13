@@ -397,6 +397,12 @@ namespace NFUnitTestEnum
             Debug.WriteLine("check Enum.HasFlag");
             TestClassEnumFlags05.TestMethod();
         }
+        [TestMethod]
+        public void EnumFlags06_Test()
+        {
+            Debug.WriteLine("check Enum.HasFlag throws exception");
+            TestClassEnumFlags06.TestMethod();
+        }
 
         //Compiled Test Cases 
         public class Enum_TestClass_enum01
@@ -2627,6 +2633,41 @@ namespace NFUnitTestEnum
                 TestClassEnumFlags e2 = TestClassEnumFlags.Third;
                 Assert.False(e2.HasFlag(TestClassEnumFlags.Fourth));
                 Assert.True(e2.HasFlag(TestClassEnumFlags.Third));
+            }
+        }
+
+        public class TestClassEnumFlags06
+        {
+            [Flags]
+            enum enum1
+            {
+                Zero = 0x0000,
+                First = 0x0001,
+                Second = 0x0002,
+            }
+            [Flags]
+            enum enum2
+            {
+                Zero = 0x0000,
+                First = 0x0001,
+                Second = 0x0002,
+            }
+
+
+            public static void TestMethod()
+            {
+                var e1 = enum1.First;
+                var e2 = enum2.First;
+
+                try
+                {
+                    e1.HasFlag(e2);
+                    Assert.False(true, "No exception thrown!");
+                }
+                catch (ArgumentException)
+                {
+                    // no op
+                }
             }
         }
     }
