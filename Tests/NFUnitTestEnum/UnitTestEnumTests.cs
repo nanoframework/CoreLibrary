@@ -2578,6 +2578,17 @@ namespace NFUnitTestEnum
             Third = 0x0004,
             Fourth = 0x0008,
         }
+
+        [Flags]
+        enum TestClassAnotherEnumFlags
+        {
+            Zero = 0x0000,
+            First = 0x0001,
+            Second = 0x0002,
+            Third = 0x0004,
+            Fourth = 0x0008,
+        }
+
         public class TestClassEnumFlags01
         {
             public static bool TestMethod()
@@ -2638,26 +2649,12 @@ namespace NFUnitTestEnum
 
         public class TestClassEnumFlags06
         {
-            [Flags]
-            enum enum1
-            {
-                Zero = 0x0000,
-                First = 0x0001,
-                Second = 0x0002,
-            }
-            [Flags]
-            enum enum2
-            {
-                Zero = 0x0000,
-                First = 0x0001,
-                Second = 0x0002,
-            }
 
 
             public static void TestMethod()
             {
-                var e1 = enum1.First;
-                var e2 = enum2.First;
+                var e1 = TestClassEnumFlags.First;
+                var e2 = TestClassAnotherEnumFlags.First;
 
                 try
                 {
