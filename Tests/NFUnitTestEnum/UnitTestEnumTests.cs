@@ -368,28 +368,34 @@ namespace NFUnitTestEnum
             Assert.True(Enum_TestClass_enum94.testMethod());
         }
         [TestMethod]
-        public void Enum_enum_flags01_Test()
+        public void EnumFlags01_Test()
         {
             Debug.WriteLine("check FlagAttribute with enum");
-            Assert.True(Enum_TestClass_enum_flags01.testMethod());
+            TestClassEnumFlags01.TestMethod();
         }
         [TestMethod]
-        public void Enum_enum_flags02_Test()
+        public void EnumFlags02_Test()
         {
             Debug.WriteLine("check FlagAttribute with enum");
-            Assert.True(Enum_TestClass_enum_flags02.testMethod());
+            TestClassEnumFlags02.TestMethod();
         }
         [TestMethod]
-        public void Enum_enum_flags03_Test()
+        public void EnumFlags03_Test()
         {
             Debug.WriteLine("check FlagAttribute with enum");
-            Assert.True(Enum_TestClass_enum_flags03.testMethod());
+            TestClassEnumFlags03.TestMethod();
         }
         [TestMethod]
-        public void Enum_enum_flags04_Test()
+        public void EnumFlags04_Test()
         {
             Debug.WriteLine("check FlagAttribute with enum with conversion");
-            Assert.True(Enum_TestClass_enum_flags04.testMethod());
+            TestClassEnumFlags04.TestMethod();
+        }
+        [TestMethod]
+        public void EnumFlags05_Test()
+        {
+            Debug.WriteLine("check Enum.HasFlag");
+            TestClassEnumFlags05.TestMethod();
         }
 
         //Compiled Test Cases 
@@ -2558,7 +2564,7 @@ namespace NFUnitTestEnum
             }
         }
         [Flags]
-        enum Enum_TestClass_enum_flags01_Flag
+        enum TestClassEnumFlags
         {
             Zero = 0x0000,
             First = 0x0001,
@@ -2566,89 +2572,62 @@ namespace NFUnitTestEnum
             Third = 0x0004,
             Fourth = 0x0008,
         }
-        public class Enum_TestClass_enum_flags01
+        public class TestClassEnumFlags01
         {
-            public static int Main_old()
+            public static bool TestMethod()
             {
-                Enum_TestClass_enum_flags01_Flag r = Enum_TestClass_enum_flags01_Flag.First | Enum_TestClass_enum_flags01_Flag.Fourth;
+                TestClassEnumFlags r = TestClassEnumFlags.First | TestClassEnumFlags.Fourth;
                 Debug.WriteLine(r.ToString());
-                return (int)r == (int)0x0009 ? 0 : 1;
-            }
-            public static bool testMethod()
-            {
-                return (Main_old() == 0);
+
+                return (int)r == 0x0009;
             }
         }
-        [Flags]
-        enum Enum_TestClass_enum_flags02_Flag
+        public class TestClassEnumFlags02
         {
-            Zero = 0x0000,
-            First = 0x0001,
-            Second = 0x0002,
-            Third = 0x0004,
-            Fourth = 0x0008,
-        }
-        public class Enum_TestClass_enum_flags02
-        {
-            public static int Main_old()
+            public static void TestMethod()
             {
-                Enum_TestClass_enum_flags02_Flag r = Enum_TestClass_enum_flags02_Flag.First | Enum_TestClass_enum_flags02_Flag.Fourth;
-                r = r | Enum_TestClass_enum_flags02_Flag.Second | Enum_TestClass_enum_flags02_Flag.Third;
+                TestClassEnumFlags r = TestClassEnumFlags.First | TestClassEnumFlags.Fourth;
+                r = r | TestClassEnumFlags.Second | TestClassEnumFlags.Third;
 
                 Debug.WriteLine(r.ToString());
-                return (int)r == (int)0x000f ? 0 : 1;
-            }
-            public static bool testMethod()
-            {
-                return (Main_old() == 0);
+                Assert.Equal((int)r, 0x000f);
             }
         }
-        [Flags]
-        enum Enum_TestClass_enum_flags03_Flag
+
+        public class TestClassEnumFlags03
         {
-            Zero = 0x0000,
-            First = 0x0001,
-            Second = 0x0002,
-            Third = 0x0004,
-            Fourth = 0x0008,
-        }
-        public class Enum_TestClass_enum_flags03
-        {
-            public static int Main_old()
+            public static void TestMethod()
             {
-                Enum_TestClass_enum_flags03_Flag r = Enum_TestClass_enum_flags03_Flag.First | Enum_TestClass_enum_flags03_Flag.Fourth;
+                TestClassEnumFlags r = TestClassEnumFlags.First | TestClassEnumFlags.Fourth;
                 r += 0x00f; // out of range
                 Debug.WriteLine(r.ToString());
-                return (int)r == (int)24 ? 0 : 1;
-            }
-            public static bool testMethod()
-            {
-                return (Main_old() == 0);
-            }
-        }
-        [Flags]
-        enum Enum_TestClass_enum_flags04_Flag
-        {
-            Zero = 0x0000,
-            First = 0x0001,
-            Second = 0x0002,
-            Third = 0x0004,
-            Fourth = 0x0008,
-        }
-        public class Enum_TestClass_enum_flags04
-        {
-            public static int Main_old()
-            {
-                int i = 0x0f;
-                Enum_TestClass_enum_flags04_Flag r = (Enum_TestClass_enum_flags04_Flag)i;
-                Debug.WriteLine(r.ToString());
-                return (int)r == (int)0x000f ? 0 : 1;
-            }
-            public static bool testMethod()
-            {
-                return (Main_old() == 0);
+                Assert.Equal((int)r, 24);
             }
         }
 
+        public class TestClassEnumFlags04
+        {
+            public static void TestMethod()
+            {
+                int i = 0x0f;
+                TestClassEnumFlags r = (TestClassEnumFlags)i;
+                Debug.WriteLine(r.ToString());
+                Assert.Equal((int)r, 0x000f);
+            }
+        }       
+        
+        public class TestClassEnumFlags05
+        {
+            public static void TestMethod()
+            {
+                TestClassEnumFlags e1 = TestClassEnumFlags.First;
+                Assert.False(e1.HasFlag(TestClassEnumFlags.Second));
+                Assert.True(e1.HasFlag(TestClassEnumFlags.First));
+
+                TestClassEnumFlags e2 = TestClassEnumFlags.Third;
+                Assert.False(e2.HasFlag(TestClassEnumFlags.Fourth));
+                Assert.True(e2.HasFlag(TestClassEnumFlags.Third));
+            }
+        }
     }
 }
