@@ -392,6 +392,35 @@ namespace NFUnitTestEnum
             Assert.True(Enum_TestClass_enum_flags04.testMethod());
         }
 
+        [TestMethod]
+        public void Enum_enum_flags05_Test()
+        {
+            Debug.WriteLine("HasFlag works correctly.");
+
+            var e = Enum_TestClass_enum_flags01_Flag.First;
+            Assert.False(e.HasFlag(Enum_TestClass_enum_flags01_Flag.Second));
+            Assert.True(e.HasFlag(Enum_TestClass_enum_flags01_Flag.First));
+        }
+
+        [TestMethod]
+        public void Enum_enum_flags06_Test()
+        {
+            Debug.WriteLine("HasFlag should throw ArgumentException.");
+
+            var e1 = Enum_TestClass_enum_flags01_Flag.First;
+            var e2 = Enum_TestClass_enum_flags02_Flag.Second;
+
+            try
+            {
+                e1.HasFlag(e2);
+                Assert.False(true, "No exception thrown!");
+            }
+            catch (ArgumentException)
+            {
+                // no op
+            }
+        }
+
         //Compiled Test Cases 
         public class Enum_TestClass_enum01
         {
@@ -2649,6 +2678,5 @@ namespace NFUnitTestEnum
                 return (Main_old() == 0);
             }
         }
-
     }
 }
