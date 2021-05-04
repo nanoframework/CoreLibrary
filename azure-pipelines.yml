@@ -127,7 +127,7 @@ jobs:
   - Build_mscorlib
 
   pool:
-    vmImage: 'VS2017-Win2016'
+    vmImage: 'windows-2019'
 
   variables:
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
@@ -181,7 +181,7 @@ jobs:
   condition: or( failed('Build_mscorlib'), failed('Build_mscorlib_no_reflection'), failed('Update_Dependents'))
 
   pool:
-    vmImage: 'VS2017-Win2016'
+    vmImage: 'windows-2019'
 
   steps:
 
