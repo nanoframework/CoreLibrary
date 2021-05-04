@@ -10,7 +10,7 @@
     <license type="file">LICENSE.md</license>
     <releaseNotes></releaseNotes>
     <developmentDependency>false</developmentDependency>
-    <projectUrl>https://github.com/nanoframework/lib-CoreLibrary</projectUrl>
+    <projectUrl>https://github.com/nanoframework/CoreLibrary</projectUrl>
     <icon>nf-logo.png</icon>
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>    
     <description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the base class library (mscorlib) of nanoFramework. These are for testing purposes and for updating the native code base of the core library.</description>

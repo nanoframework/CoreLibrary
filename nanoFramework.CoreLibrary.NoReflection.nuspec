@@ -11,10 +11,10 @@
     <releaseNotes></releaseNotes>
     <developmentDependency>false</developmentDependency>
     <projectUrl>https://github.com/nanoframework/lib-CoreLibrary</projectUrl>
-    <icon>nf-logo.png</icon>
+    <icon>images\nf-logo.png</icon>
     <repository type="git" url="https://github.com/nanoframework/lib-CoreLibrary" commit="$commit$" />
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>    
-    <description>This package includes the nanoFramework.CoreLibrary assembly for nanoFramework C# projects **WITHOUT** the System.Reflection API.&#10;This package requires a target with mscorlib v$nativeVersion$.&#10;There is another version that includes the System.Reflection API.</description>
+    <description>This package includes the CoreLibrary assembly for .NET nanoFramework C# projects **WITHOUT** the System.Reflection API.&#10;This package requires a target with mscorlib v$nativeVersion$ (checksum $checksum$).&#10;There is another version that includes the System.Reflection API.</description>
     <tags>nanoFramework C# csharp netmf netnf nanoFramework.CoreLibrary</tags>
   </metadata>
   <files>
@@ -24,7 +24,7 @@
     <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pe" target="lib\mscorlib.pe" />
     <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.xml" target="lib\mscorlib.xml" /> 
 
-    <file src="assets\readme.txt" target="" />
+    <file src="assets\readme.txt" target="images" />
     <file src="assets\nf-logo.png" target="" />
     <file src="LICENSE.md" target="" />
   </files>
