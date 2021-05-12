@@ -357,5 +357,17 @@ namespace NFUnitTestConversions
             Assert.Equal(val, -7446744073709551615L);
         }
 
+        [TestMethod]
+        public void Convert_FromBoolean()
+        {
+            bool iamTrue = true;
+            bool iamFalse = false;
+
+            byte convTrueIsOne = Convert.ToByte(iamTrue);
+            byte convFalseIsZero = Convert.ToByte(iamFalse);
+
+            Assert.Equals(convTrueIsOne, 1);
+            Assert.Equals(convFalseIsZero, 0);
+        }
     }
 }

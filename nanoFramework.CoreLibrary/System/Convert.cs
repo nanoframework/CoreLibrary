@@ -36,6 +36,7 @@ namespace System
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern double NativeToDouble(string value);
+
         /// <summary>
         /// Converts the value of the specified 8-bit unsigned integer to an equivalent Boolean value.
         /// </summary>
@@ -90,6 +91,16 @@ namespace System
         public static byte ToByte(string value, int fromBase = 10)
         {
             return (byte)NativeToInt64(value.Trim(), false, Byte.MinValue, Byte.MaxValue, fromBase);
+        }
+
+        /// <summary>
+        /// Converts the specified <see cref="Boolean"/> value to the equivalent 8-bit unsigned integer.
+        /// </summary>
+        /// <param name="value">The <see cref="Boolean"/> value to convert.</param>
+        /// <returns>The number 1 if <paramref name="value"/> is <see langword="true"/>; otherwise, 0.</returns>
+        public static byte ToByte(bool value)
+        {
+            return value ? (byte)1 : (byte)0;
         }
 
         /// <summary>
