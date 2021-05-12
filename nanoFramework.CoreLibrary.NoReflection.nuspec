@@ -5,7 +5,7 @@
     <version>$version$</version>
     <title>nanoFramework.CoreLibrary.NoReflection</title>
     <authors>nanoFramework project contributors</authors>
-    <owners>nanoFramework project contributors</owners>
+    <owners>nanoFramework project contributors,dotnetfoundation</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE.md</license>
     <releaseNotes></releaseNotes>
@@ -18,11 +18,11 @@
     <tags>nanoFramework C# csharp netmf netnf nanoFramework.CoreLibrary</tags>
   </metadata>
   <files>
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.dll" target="lib\mscorlib.dll" />
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pdb" target="lib\mscorlib.pdb" />
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pdbx" target="lib\mscorlib.pdbx" />
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pe" target="lib\mscorlib.pe" />
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.xml" target="lib\mscorlib.xml" /> 
+    <file src="nanoFramework.CoreLibrary.NoReflection\bin\Release\mscorlib.dll" target="lib\mscorlib.dll" />
+    <file src="nanoFramework.CoreLibrary.NoReflection\bin\Release\mscorlib.pdb" target="lib\mscorlib.pdb" />
+    <file src="nanoFramework.CoreLibrary.NoReflection\bin\Release\mscorlib.pdbx" target="lib\mscorlib.pdbx" />
+    <file src="nanoFramework.CoreLibrary.NoReflection\bin\Release\mscorlib.pe" target="lib\mscorlib.pe" />
+    <file src="nanoFramework.CoreLibrary.NoReflection\bin\Release\mscorlib.xml" target="lib\mscorlib.xml" /> 
 
     <file src="assets\readme.txt" target="" />
     <file src="assets\nf-logo.png" target="images" />
