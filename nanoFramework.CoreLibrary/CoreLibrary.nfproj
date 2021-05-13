@@ -199,6 +199,7 @@
     <Compile Include="System\Threading\ThreadStart.cs" />
     <Compile Include="System\Threading\ThreadState.cs" />
     <Compile Include="System\Threading\Timeout.cs" />
+    <Compile Include="System\Threading\SpinWait.cs" />
     <Compile Include="System\Threading\Timer.cs" />
     <Compile Include="System\Threading\WaitHandle.cs" />
     <Compile Include="System\TimeSpan.cs" />
