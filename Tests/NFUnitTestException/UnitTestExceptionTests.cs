@@ -14,6 +14,15 @@ namespace NFUnitTestException
     public class UnitTestExceptionTests
     {
         [TestMethod]
+        public void TestTimeoutException()
+        {
+            Assert.Throws(typeof(TimeoutException), () =>
+            {
+                throw new TimeoutException();
+            });
+        }
+
+        [TestMethod]
         public void Exc_excep01_Test()
         {
             Debug.WriteLine("This test will confirm that the the thrown exception is caught by the matching catch");
