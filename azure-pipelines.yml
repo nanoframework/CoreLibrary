@@ -25,7 +25,7 @@ jobs:
     vmImage: 'windows-2019'
 
   variables:
-    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+    DOTNET_NOLOGO: true
     solution: '**/*.sln'
     buildPlatform: 'Any CPU'
     buildConfiguration: 'Release'
@@ -43,10 +43,32 @@ jobs:
       runUnitTests: true
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTest_DummyAdapter\nano.runsettings'
 
+  # rebuild CoreLibrary project to get the assembky checksum
+  - task: MSBuild@1
+    condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
+    displayName: Rebuild CoreLibrary
+    inputs:
+      solution: 'nanoFramework.CoreLibrary\CoreLibrary.nfproj' 
+      platform: 'AnyCPU'
+      configuration: '$(buildConfiguration)'
+      msbuildArguments: '/p:PublicRelease=true'
+      maximumCpuCount: true
+
   # package steps
   - template: azure-pipelines-templates/class-lib-package.yml@templates  
     parameters:
       nugetPackageName: 'nanoFramework.CoreLibrary'
+
+  # rebuild CoreLibrary.NoReflection project to get the assembky checksum
+  - task: MSBuild@1
+    condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
+    displayName: Rebuild CoreLibrary.NoReflection
+    inputs:
+      solution: 'nanoFramework.CoreLibrary.NoReflection\CoreLibrary.NoReflection.nfproj' 
+      platform: 'AnyCPU'
+      configuration: '$(buildConfiguration)'
+      msbuildArguments: '/p:PublicRelease=true'
+      maximumCpuCount: true
 
   - template: azure-pipelines-templates/class-lib-package.yml@templates  
     parameters:
@@ -139,7 +161,7 @@ jobs:
 
   - task: NuGetToolInstaller@0
     inputs:
-      versionSpec: '5.4.0'
+      versionSpec: '5.9.0'
     condition: ne( variables['StartReleaseCandidate'], true )
     displayName: 'Install specific version of NuGet'
 
