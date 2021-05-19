@@ -56,6 +56,8 @@ jobs:
 
   # need to push the other package to NuGet because the template above can only push one package (happens on tag builds for any branch)
   - task: NuGetCommand@2
+    condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
+    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
       command: push
       nuGetFeedType: external
@@ -63,11 +65,11 @@ jobs:
       packagesToPush: 
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
       publishFeedCredentials: 'AzureArtifacts-CoreLibrary'
-    condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
     continueOnError: true
-    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
 
   - task: NuGetCommand@2
+    condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
+    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
       command: push
       nuGetFeedType: external
@@ -75,9 +77,7 @@ jobs:
       packagesToPush: 
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
       publishFeedCredentials: 'NuGet-CoreLibrary'
-    condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
     continueOnError: true
-    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
 
   # create or update GitHub release
   - task: GitHubReleasePublish@1
