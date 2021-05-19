@@ -18,7 +18,7 @@ namespace System.Reflection
     public abstract class MemberInfo
     {
         /// <summary>
-        /// When overridden in a derived class, gets a MemberTypes value indicating the type of the member � method, constructor, event, and so on.
+        /// When overridden in a derived class, gets a MemberTypes value indicating the type of the member method, constructor, event, and so on.
         /// </summary>
         /// <value>
         /// A MemberTypes value indicating the type of member.

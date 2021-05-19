@@ -38,7 +38,7 @@ namespace System.Threading
         Stopped = 16,
         /// <summary>
         /// The thread is blocked. This could be the result of calling Thread.Sleep or Thread.Join, of requesting a lock � for example, by calling Monitor.Enter 
-        /// or Monitor.Wait � or of waiting on a thread synchronization object such as ManualResetEvent.
+        /// or Monitor.Wait or of waiting on a thread synchronization object such as ManualResetEvent.
         /// </summary>
         WaitSleepJoin = 32,
         /// <summary>

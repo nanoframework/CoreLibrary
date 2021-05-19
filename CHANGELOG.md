@@ -2,7 +2,23 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.3-preview.20...HEAD)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.4-preview.6...HEAD)
+
+**Implemented enhancements:**
+
+- Add timeout exception to no reflection project [\#138](https://github.com/nanoframework/CoreLibrary/pull/138)
+
+## [v1.10.4-preview.6](https://github.com/nanoframework/CoreLibrary/tree/v1.10.4-preview.6) (2021-05-19)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.4-preview.4...v1.10.4-preview.6)
+
+**Implemented enhancements:**
+
+- Add TimeoutException [\#137](https://github.com/nanoframework/CoreLibrary/pull/137)
+
+## [v1.10.4-preview.4](https://github.com/nanoframework/CoreLibrary/tree/v1.10.4-preview.4) (2021-05-13)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.3-preview.20...v1.10.4-preview.4)
 
 **Implemented enhancements:**
 
@@ -101,20 +117,20 @@
 
 ## [v1.9.1-preview.4](https://github.com/nanoframework/CoreLibrary/tree/v1.9.1-preview.4) (2020-10-20)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-alpha.11...v1.9.1-preview.4)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.11...v1.9.1-preview.4)
 
 **Implemented enhancements:**
 
 - Add Enum.HasFlag [\#112](https://github.com/nanoframework/CoreLibrary/pull/112)
 - Add Convert.ToBoolean\(byte\) [\#111](https://github.com/nanoframework/CoreLibrary/pull/111)
 
-## [v1.9.0-alpha.11](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-alpha.11) (2020-10-20)
-
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.11...v1.9.0-alpha.11)
-
 ## [v1.9.0-preview.11](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-preview.11) (2020-10-20)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.5...v1.9.0-preview.11)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-alpha.11...v1.9.0-preview.11)
+
+## [v1.9.0-alpha.11](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-alpha.11) (2020-10-20)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.5...v1.9.0-alpha.11)
 
 ## [v1.9.0-preview.5](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-preview.5) (2020-09-30)
 
