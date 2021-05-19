@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.4-preview.4...HEAD)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.4-preview.6...HEAD)
+
+**Implemented enhancements:**
+
+- Add timeout exception to no reflection project [\#138](https://github.com/nanoframework/CoreLibrary/pull/138)
+
+## [v1.10.4-preview.6](https://github.com/nanoframework/CoreLibrary/tree/v1.10.4-preview.6) (2021-05-19)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.4-preview.4...v1.10.4-preview.6)
 
 **Implemented enhancements:**
 
