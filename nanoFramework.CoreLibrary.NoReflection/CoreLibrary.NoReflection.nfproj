@@ -205,6 +205,9 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Timeout.cs" Link="System\Threading\Timeout.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\Timer.cs" Link="System\Threading\Timer.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Threading\WaitHandle.cs" Link="System\Threading\WaitHandle.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\TimeoutException.cs">
+      <Link>System\TimeoutException.cs</Link>
+    </Compile>
     <Compile Include="..\nanoFramework.CoreLibrary\System\TimeSpan.cs" Link="System\TimeSpan.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Type.cs" Link="System\Type.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\TypeCode.cs" Link="System\TypeCode.cs" />
