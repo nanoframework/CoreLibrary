@@ -10,7 +10,7 @@ namespace System.Threading
     using System;
 
     /// <summary>
-    /// Encapsulates operating system�specific objects that wait for exclusive access to shared resources.
+    /// Encapsulates operating system specific objects that wait for exclusive access to shared resources.
     /// </summary>
     public abstract class WaitHandle : MarshalByRefObject
     {
