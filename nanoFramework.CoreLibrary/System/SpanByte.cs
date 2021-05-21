@@ -42,7 +42,10 @@ namespace System
         {
             if (array != null)
             {
-                if ((length > array.Length - start) || (start > array.Length))
+                if (start < 0 ||
+                    length < 0 ||
+                    start + length > array.Length ||
+                    (start == array.Length && start > 0))
                 {
                     throw new ArgumentOutOfRangeException($"Array length too small");
                 }
@@ -69,7 +72,7 @@ namespace System
         {
             get
             {
-                if (index > _length)
+                if (index >= _length)
                 {
                     throw new ArgumentOutOfRangeException($"Index out of range");
                 }
@@ -78,7 +81,7 @@ namespace System
             }
             set
             {
-                if (index > _length)
+                if (index >= _length)
                 {
                     throw new ArgumentOutOfRangeException($"Index out of range");
                 }
@@ -131,12 +134,7 @@ namespace System
         /// <exception cref="System.ArgumentOutOfRangeException">start is less than zero or greater than System.Span.Length.</exception>
         public SpanByte Slice(int start)
         {
-            if ((start > _length) || (start < 0))
-            {
-                throw new ArgumentOutOfRangeException($"start is less than zero or greater than length");
-            }
-
-            return new SpanByte(_array, _start + start, _length - start);
+            return Slice(start, _length - start);
         }
 
         /// <summary>
