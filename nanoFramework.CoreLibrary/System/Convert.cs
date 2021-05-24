@@ -205,7 +205,7 @@ namespace System
         [CLSCompliant(false)]
         public static ulong ToUInt64(string value, int fromBase = 10)
         {
-            return (ulong)NativeToInt64(value.Trim(), true, 0, 0, fromBase);
+            return (ulong)NativeToInt64(value.Trim(), false, 0, 0, fromBase);  // the interface use long for min/max, and uint64 is bigger.  Setting min/max to 0/0 will cause the native code to calculate the largest value and return it as Int64 which when cast to UInt64 returns the larger numbers that a UInt64 can reach
         }
 
         /// <summary>
