@@ -53,7 +53,6 @@ namespace NFUnitTestConversions
         public void Convert_Positive()
         {
             string number = "12";
-            int actualNumber = 12;
             SByte value_sb = Convert.ToSByte(number);
             Assert.Equal(value_sb, (byte)12);
             Byte value_b = Convert.ToByte(number);
@@ -76,7 +75,6 @@ namespace NFUnitTestConversions
         public void Convert_PositivePlus()
         {
             string number = "+12";
-            int actualNumber = 12;
             SByte value_sb = Convert.ToSByte(number);
             Assert.Equal(value_sb, (byte)12);
             Byte value_b = Convert.ToByte(number);
@@ -177,29 +175,18 @@ namespace NFUnitTestConversions
             string num2 = "4.848747585e-12";  // same number as above, but we've moved the digits over a bit and adjusted the exponent
             double dnum1Roslyn = +0.000000004848747585e-3;  // Roslyn compiler will parse the value and put it into the double at compile time
             double dnum1Native = Convert.ToDouble(num1);    // Native code will parse the value and put it into the double at run time
-            double dnum2Roslyn = 4.848747585e-12;           // Roslyn 
+            double dnum2Roslyn = 4.848747585e-12;           // Compiler 
             double dnum2Native = Convert.ToDouble(num2);    // Native
 
-            // Note: in the Asserts below the message should NOT be displayed - which is why "unless..." is added to the message.
-            // If the message appears then something has changed.  
-            // First we compare the hex values so we don't see any "softness" from the native Double.ToString printf processing
-
-            // comparing the Roslyn results should always match and not display the message
-            Assert.Equal(DoubleToHex(dnum1Roslyn), DoubleToHex(dnum2Roslyn), $"Two numbers parsed from Roslyn should always match, unless...");
-            // sometimes you can mix and it will work
-            Assert.Equal(DoubleToHex(dnum1Roslyn), DoubleToHex(dnum2Native), $"Mixing numbers from Roslyn and Native can sometimes work, unless...");
-            // sometimes you can mix and it won't work - depends on how rounding happens in the parser
-            Assert.NotEqual(DoubleToHex(dnum1Native), DoubleToHex(dnum2Roslyn), $"Mixing numbers from Roslyn and Native sometimes doesn't work, unless...");
 
             // Now we will compare some of the ToString values
             // compare native to native - but parsing e-3 versus e-12 means 9 more loops thru the double multiplication where rounding can occur so this won't work for all numbers
-            Assert.Equal(dnum1Native.ToString(), dnum2Native.ToString(), $"Comparing native parse then tostring will often work, unless...");
+            Assert.Equal(dnum1Native.ToString(), dnum2Native.ToString(), $"Comparing native parse tostring");
             // compare roslyn to roslyn - the roslyn parser is more accurate and that means the double is much more likely to be the same
-            Assert.Equal(dnum1Roslyn.ToString(), dnum2Roslyn.ToString(), $"Comparing Roslyn parse then tostring should always work, unless...");
+            Assert.Equal(dnum1Roslyn.ToString(), dnum2Roslyn.ToString(), $"Comparing Roslyn parse tostring");
             // Now mix things up
-            Assert.Equal(dnum1Roslyn.ToString(), dnum2Native.ToString(), $"Comparing Roslyn parse and native parse then tostring sometimes works, unless...");
-            // Suprising that this next test passes - from above we know that Roslyn and native parsers generated different hex values.  But the native ToString can lose some precision, so that can mask this difference
-            Assert.Equal(dnum1Native.ToString(), dnum2Roslyn.ToString(), $"Comparing Roslyn parse and native parse then tostring sometimes works, unless...");
+            Assert.Equal(dnum1Roslyn.ToString(), dnum2Native.ToString(), $"Comparing Roslyn parse and native parse tostring");
+            Assert.Equal(dnum1Native.ToString(), dnum2Roslyn.ToString(), $"Comparing Roslyn parse and native parse tostring");
             Assert.Equal(dnum1Roslyn.ToString(), dnum1Native.ToString(), $"Comparing Roslyn to native using {num1}");
             Assert.Equal(dnum2Roslyn.ToString(), dnum2Native.ToString(), $"Comparing Roslyn to natvie using {num2}");
         }
@@ -230,40 +217,33 @@ namespace NFUnitTestConversions
         public void Convert_BoundaryValues()
         {
             //***
-            //* Commented out tests and values are due to problems with Parsing of double/float which appear to have rounding errors.
-            //* For example, the parse of a Double.MaxValue as a string should be hex 0x43EFFFFFFFFFFFFF but comes back as 0x43EFFFFFFFFFFFFC, so 3 bits off
+            //* Boundary tests - tests of the min and max values for double, float and int's.  
+            //* Note for double/float - the ToString() function is limited to a range around 2^64 and 2^-64 - otherwise you get a string of 'oor' or '-oor' (oor = out-of-range)
+            //  Boundary tests for double/float include the numbers that are around the edge of where out-of-range is produced.
             //***
 
             const string OUT_OF_RANGE = "oor";            // nanoPrintf can only print up to 2^64-2 as a max value for double/floating
             const string OUT_OF_RANGE_NEG = "-oor";       // nanoPrintf can only print down to -2^64+2 as a min value for double/floating
 
             const string DOUBLE_MAX_VAL  = "1.7976931348623157E+308";  // will get 'oor' when printed
-            const string DOUBLE_MAX_HEX  = "0x7FEFFFFFFFFFFFFF";
+            const string DOUBLE_MAX_HEX  = "0x7FEFFFFFFFFFFFFF";       // value from IEEE 574
             const string DOUBLE_MIN_VAL  = "-1.7976931348623157E+308"; // will get '-oor' when printed
-            const string DOUBLE_MIN_HEX  = "0xFFEFFFFFFFFFFFFF";
+            const string DOUBLE_MIN_HEX  = "0xFFEFFFFFFFFFFFFF";       // value from IEEE 574
             const string DOUBLE_ZERO_HEX = "0x0000000000000000";
-            const string DOUBLE_LARGEST_PRINT = "1.84467440737095E+19";
-            const string DOUBLE_LARGEST_PRINT_HEX = "0x43EFFFFFFFFFFFE8";
-            const string DOUBLE_LARGESTINVALID_PRINT = "1.8446744073709552E+19";  // will get 'oor' when printed
-            const string DOUBLE_LARGESTINVALID_PRINT_HEX = "0x43F0000000000000";
-            const string DOUBLE_SMALLEST_PRINT = "-1.32585973029787E+19"; // "-1.844674407370955e19";
-            const string DOUBLE_SMALLEST_PRINT_HEX = "0xC3E6FFFFFFFFFFED";
-            const string DOUBLE_SMALLESTINVALID_PRINT = "-1.8446744073709552E+19"; // will get '-oor' when printed
-            const string DOUBLE_SMALLESTINVALID_PRINT_HEX = "0xC3F0000000000000";
+            const string DOUBLE_LARGEST_PRINT = "1.84467440737095E+19";  // this is the largest number you can ask for ToString() and get a response
+            const string DOUBLE_LARGESTINVALID_PRINT = "1.8446744073709552E+19";  // first positive value that will get the response 'oor' when printed
+            const string DOUBLE_SMALLEST_PRINT = "-1.32585973029787E+19";  // this is the smallest number you can ask for ToString() and get a response
+            const string DOUBLE_SMALLESTINVALID_PRINT = "-1.8446744073709552E+19"; // first negative value that will get the response '-oor' when printed
 
             const string FLOAT_MAX_VAL = "3.40282347E+38";
             const string FLOAT_MAX_HEX = "0x7F7FFFFF";  // will get 'oor' when printed
             const string FLOAT_MIN_VAL = "-3.40282347E+38";
             const string FLOAT_MIN_HEX = "0xFF7FFFFF";  // will get '-oor' when printed
             const string FLOAT_ZERO_HEX = "0x00000000";
-            const string FLOAT_LARGEST_PRINT = "1.844674E+19";
-            const string FLOAT_LARGEST_PRINT_HEX = "0x5F7FFFFC";
-            const string FLOAT_LARGESTINVALID_PRINT = "1.8446744E+19";  // will get 'oor' when printed
-            const string FLOAT_LARGESTINVALID_PRINT_HEX = "0x5F800000";
-            const string FLOAT_SMALLEST_PRINT = "-1.844674E+19";
-            const string FLOAT_SMALLEST_PRINT_HEX = "0xDF7FFFFC";
-            const string FLOAT_SMALLESTINVALID_PRINT = "-1.8446744E+19"; // will get '-oor' when printed
-            const string FLOAT_SMALLESTINVALID_PRINT_HEX = "0xDF800000";
+            const string FLOAT_LARGEST_PRINT = "1.844674E+19";  // this is the largest number you can ask for ToString() and get a response
+            const string FLOAT_LARGESTINVALID_PRINT = "1.8446744E+19";  // first positive value that will get the response 'oor' when printed
+            const string FLOAT_SMALLEST_PRINT = "-1.844674E+19";       // this is the smallest number you can ask for ToString() and get a response 
+            const string FLOAT_SMALLESTINVALID_PRINT = "-1.8446744E+19"; // first negative value that will get the response '-oor' when printed
 
             // boundary: double max
             string time = DateTime.UtcNow.ToString("hh:mm:ss");
@@ -285,22 +265,18 @@ namespace NFUnitTestConversions
 
             // boundary: double largest-in-range
             double doubleInRange = Convert.ToDouble(DOUBLE_LARGEST_PRINT);
-            Assert.Equal(DoubleToHex(doubleInRange), DOUBLE_LARGEST_PRINT_HEX, "Parsing double largest in ranges does not return correct hex value");
             Assert.Equal(doubleInRange.ToString(), DOUBLE_LARGEST_PRINT, "Double.ToString did not return the correct value for largest in range value");
 
             // boundary: double largest-out-of-range
             double doubleOutRange = Convert.ToDouble(DOUBLE_LARGESTINVALID_PRINT);
-            Assert.Equal(DoubleToHex(doubleOutRange), DOUBLE_LARGESTINVALID_PRINT_HEX, "Parsing double largest out range does not return correct hex value");
             Assert.Equal(doubleOutRange.ToString(), OUT_OF_RANGE, "Double.ToString did not return 'oor' for first out-of-range value");
 
             // boundary: double smallest-in-range
             double doubleInRangeNeg = Convert.ToDouble(DOUBLE_SMALLEST_PRINT);
-            Assert.Equal(DoubleToHex(doubleInRangeNeg), DOUBLE_SMALLEST_PRINT_HEX, "Parsing double smallest in ranges does not return correct hex value");
             Assert.Equal(doubleInRangeNeg.ToString(), DOUBLE_SMALLEST_PRINT, "Double.ToString did not return the correct value for smallest in range value");
 
             // boundary: double smallest-out-of-range
             double doubleOutRangeNeg = Convert.ToDouble(DOUBLE_SMALLESTINVALID_PRINT);
-            Assert.Equal(DoubleToHex(doubleOutRangeNeg), DOUBLE_SMALLESTINVALID_PRINT_HEX, "Parsing double smallest out range does not return correct hex value");
             Assert.Equal(doubleOutRangeNeg.ToString(), OUT_OF_RANGE_NEG, "Double.ToString did not return 'oor' for smallest out-of-range value");
 
             // boundary: float max
@@ -316,28 +292,24 @@ namespace NFUnitTestConversions
             Assert.Equal(FloatToHex((float)Convert.ToDouble(FLOAT_MIN_VAL)), FLOAT_MIN_HEX, "Parsing float min value does not return correct hex value");
 
             //boundary: float zero
-            float floatZero = 0;   // test that zero gets a zero exponent and a value like 1023 the exponent bias used in floating point math
+            float floatZero = 0;   // test that zero gets a zero exponent and not a value like 1023 the exponent bias used in floating point math
             Assert.Equal(floatZero.ToString(), "0", "ToString of a string with zero value formats incorrectly");
             Assert.Equal(FloatToHex(floatZero), FLOAT_ZERO_HEX, "Float with zero value returns the wrong hex value");
 
             // boundary: float largest-in-range
             float floatInRange = (float)Convert.ToDouble(FLOAT_LARGEST_PRINT);
-            Assert.Equal(FloatToHex(floatInRange), FLOAT_LARGEST_PRINT_HEX, "Parsing float largest in ranges does not return correct hex value");
             Assert.Equal(floatInRange.ToString(), FLOAT_LARGEST_PRINT, "Float.ToString did not return the correct value for largest in range value");
 
             // boundary: float largest-out-of-range
             float floatOutRange = (float)Convert.ToDouble(FLOAT_LARGESTINVALID_PRINT);
-            Assert.Equal(FloatToHex(floatOutRange), FLOAT_LARGESTINVALID_PRINT_HEX, "Parsing float largest out range does not return correct hex value");
             Assert.Equal(floatOutRange.ToString(), OUT_OF_RANGE, "Float.ToString did not return 'oor' for first out-of-range value");
 
             // boundary: float smallest-in-range
             float floatInRangeNeg = (float)Convert.ToDouble(FLOAT_SMALLEST_PRINT);
-            Assert.Equal(FloatToHex(floatInRangeNeg), FLOAT_SMALLEST_PRINT_HEX, "Parsing float smallest in ranges does not return correct hex value");
             Assert.Equal(floatInRangeNeg.ToString(), FLOAT_SMALLEST_PRINT, "Float.ToString did not return the correct value for smallest in range value");
 
             // boundary: float smallest-out-of-range
             float floatOutRangeNeg = (float)Convert.ToDouble(FLOAT_SMALLESTINVALID_PRINT);
-            Assert.Equal(FloatToHex(floatOutRangeNeg), FLOAT_SMALLESTINVALID_PRINT_HEX, "Parsing float smallest out range does not return correct hex value");
             Assert.Equal(floatOutRangeNeg.ToString(), OUT_OF_RANGE_NEG, "Float.ToString did not return 'oor' for smallest out-of-range value");
 
             long lMax = long.MaxValue;
@@ -392,6 +364,10 @@ namespace NFUnitTestConversions
             numMax = sbMax.ToString();
             sbyte sbMin = sbyte.MinValue;
             numMin = sbMin.ToString();
+
+            sbMax = Convert.ToSByte(numMax);
+
+            sbMin = Convert.ToSByte(numMin);
 
             Assert.Equal(sbMax, Convert.ToSByte(numMax));
             Assert.Equal(sbMin, Convert.ToSByte(numMin));
