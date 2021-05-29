@@ -107,6 +107,7 @@
     <Compile Include="System\EventHandler.cs" />
     <Compile Include="System\Exception.cs" />
     <Compile Include="System\FlagsAttribute.cs" />
+    <Compile Include="System\FormatException.cs" />
     <Compile Include="System\GC.cs" />
     <Compile Include="System\Globalization\CultureInfo.cs" />
     <Compile Include="System\Globalization\DateTimeFormat.cs" />
