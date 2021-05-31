@@ -172,7 +172,6 @@ jobs:
       repositoriesToUpdate: |
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
-        nanoFramework.System.Threading
         nanoFramework.TestFramework
         nanoFramework.Logging
         Windows.Devices.Adc
@@ -182,6 +181,7 @@ jobs:
         System.Device.Dac
         System.Device.I2c
         System.Device.Spi
+        System.Threading
         nanoFramework.Devices.OneWire
         nanoFramework.Networking.Sntp
         nanoFramework.Hardware.Stm32
