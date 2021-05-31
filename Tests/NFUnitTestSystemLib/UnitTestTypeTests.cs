@@ -94,11 +94,11 @@ namespace NFUnitTestSystemLib
 
             Assert.Equal("NaN", ((float)0f / 0f).ToString());
             Assert.Equal("Infinity", ((float)1f / 0f).ToString());
-            Assert.Equal("-Infinity", ((float)-1f / 0f).ToString());
+            Assert.Equal("-Infinity", ((float)(-1f / 0f)).ToString(),"float negative infinity test");
 
             Assert.Equal("NaN", ((double)0f / 0f).ToString());
             Assert.Equal("Infinity", ((double)1f / 0f).ToString());
-            Assert.Equal("-Infinity", ((double)-1f / 0f).ToString());
+            Assert.Equal("-Infinity", double.NegativeInfinity.ToString(), "double negative infinity"); // ((double)1f / -0f).ToString());
 
 
             Assert.Equal("Da1x", (1).ToString("Da1x"));
