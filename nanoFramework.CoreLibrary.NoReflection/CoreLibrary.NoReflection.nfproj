@@ -221,7 +221,7 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\Void.cs" Link="System\Void.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\WeakReference.cs" Link="System\WeakReference.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\SpanByte.cs" Link="System\SpanByte.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\FormatException.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\FormatException.cs" Link="System\FormatException.cs" />
   </ItemGroup>
   <ItemGroup>
     <NFMDP_PE_ExcludeClassByName Include="System.AttributeTargets">
@@ -396,6 +396,9 @@
   <ItemGroup>
     <None Include="..\nanoFramework.CoreLibrary\key.snk" />
     <None Include="packages.config" />
+  </ItemGroup>
+    <ItemGroup>
+    <Folder Include="System\" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
