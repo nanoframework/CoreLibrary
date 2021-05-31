@@ -109,7 +109,6 @@ namespace NFUnitTestSystemLib
         {
             Debug.WriteLine("UInt16 MinValue = " + UInt16.MinValue.ToString());
             Debug.WriteLine("UInt16 MaxValue = " + UInt16.MaxValue.ToString());
-            //Debug.WriteLine("This currently fails, see 21634  for details");
 
 
             String[] strArr = GetRandomStringArray(UInt16.MaxValue, false);
@@ -132,7 +131,6 @@ namespace NFUnitTestSystemLib
         {
             Debug.WriteLine("Int32 MinValue = " + Int32.MinValue.ToString());
             Debug.WriteLine("Int32 MaxValue = " + Int32.MaxValue.ToString());
-            //Debug.WriteLine("This currently Fails, See 21626 for details");
 
 
             String[] strArr = GetRandomStringArray(Int32.MaxValue, true);
@@ -168,7 +166,6 @@ namespace NFUnitTestSystemLib
         {
             Debug.WriteLine("UInt32 MinValue = " + UInt32.MinValue.ToString());
             Debug.WriteLine("UInt32 MaxValue = " + UInt32.MaxValue.ToString());
-            //Debug.WriteLine("This currently fails, see 21634  for details");
 
             Random random = new Random();
             String[] strArr = new String[] { "0", "-0","+0",
@@ -262,7 +259,6 @@ namespace NFUnitTestSystemLib
         {
             Debug.WriteLine("UInt64 MinValue = " + UInt64.MinValue.ToString());
             Debug.WriteLine("UInt64 MaxValue = " + UInt64.MaxValue.ToString());
-            //Debug.WriteLine("This currently fails, see 21634  for details");
 
             Random random = new Random();
             String[] strArr = new String[] { "0", "-0","+0",
@@ -792,7 +788,6 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseInt64_OverflowException_Test_39()
         {
-            Debug.WriteLine("This currently fails, see 21641 for details");
 
             string[] strArr = new string[] { "-9223372036854775809", "-9223372036854775900",
                                              "9223372036854775808", "9223372036854775900" };
