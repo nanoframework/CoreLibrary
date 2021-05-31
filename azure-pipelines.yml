@@ -174,6 +174,12 @@ jobs:
         nanoFramework.Runtime.Native
         nanoFramework.TestFramework
         nanoFramework.Logging
+        nanoFramework.Devices.OneWire
+        nanoFramework.Networking.Sntp
+        nanoFramework.Hardware.Stm32
+        nanoFramework.TI.EasyLink
+        nanoFramework.ResourceManager
+        nanoFramework.Json
         Windows.Devices.Adc
         Windows.Devices.I2c
         Windows.Devices.Pwm
@@ -182,15 +188,9 @@ jobs:
         System.Device.I2c
         System.Device.Spi
         System.Threading
-        nanoFramework.Devices.OneWire
-        nanoFramework.Networking.Sntp
-        nanoFramework.Hardware.Stm32
-        nanoFramework.System.Math
-        nanoFramework.TI.EasyLink
-        nanoFramework.ResourceManager
-        nanoFramework.System.Collections
-        nanoFramework.System.Text
-        nanoFramework.Json
+        System.Math
+        System.Collections
+        System.Text
     displayName: Update dependent class libs
 
 ##################################
