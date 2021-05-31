@@ -2,7 +2,24 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.4-preview.6...HEAD)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.4-preview.11...HEAD)
+
+**Implemented enhancements:**
+
+- Fixing more unit tests [\#142](https://github.com/nanoframework/CoreLibrary/pull/142)
+
+**Fixed bugs:**
+
+- Fix access beyond array boundaries in SpanByte [\#140](https://github.com/nanoframework/CoreLibrary/pull/140)
+
+**Documentation and other chores:**
+
+- Fixed unit tests NFUnitTestConversions  [\#141](https://github.com/nanoframework/CoreLibrary/pull/141)
+- Update TestFramework [\#139](https://github.com/nanoframework/CoreLibrary/pull/139)
+
+## [v1.10.4-preview.11](https://github.com/nanoframework/CoreLibrary/tree/v1.10.4-preview.11) (2021-05-19)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.4-preview.6...v1.10.4-preview.11)
 
 **Implemented enhancements:**
 
