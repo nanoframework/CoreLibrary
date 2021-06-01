@@ -22,11 +22,11 @@ The .NET **nanoFramework** Base Class Library is provided in two flavours: with 
 
 ## Unit Test
 
-nanoFramework has a dedicated [Unit Test framework](https://github.com/nanoframework/nanoFramework.TestFramework). This repository has Unit Test and you will find all of them under the `Tests`folder. The main solution embed all all the tests as well. You can run them directly from Visual Studio and create new tests. For more information on the [Unit Test Framework](https://docs.nanoframework.net/content/unit-test/index.html).
+nanoFramework has a dedicated [Unit Test framework](https://github.com/nanoframework/nanoFramework.TestFramework). This repository has Unit Test and you will find all of them under the `Tests` folder. The main solution embed all all the tests as well. You can run them directly from Visual Studio and create new tests. For more information on the [Unit Test Framework](https://docs.nanoframework.net/content/unit-test/index.html).
 
 CoreLibrary has specific needs that differ from what you'll find in the documentation:
 
-- You need to have th nanoFramework.TestFramework as a nuget package as it will bring the nanoCLR Win32 emulator
+- You need to have the nanoFramework.TestFramework as a nuget package as it will bring the nanoCLR Win32 emulator
 - You need to remove the reference to mscorlib, nanoFramework.TestFramework and nanoFramework.UnitTestLauncher
 - Use project reference instead for all those 3 elements
 

@@ -11,7 +11,7 @@
     <releaseNotes></releaseNotes>
     <developmentDependency>false</developmentDependency>
     <projectUrl>https://github.com/nanoframework/CoreLibrary</projectUrl>
-    <icon>nf-logo.png</icon>
+    <icon>images\nf-logo.png</icon>
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>    
     <description>** DON'T REFERENCE THIS PACKAGE ** Not meant for development. This package includes the deliverable artifacts of the base class library (mscorlib) of nanoFramework. These are for testing purposes and for updating the native code base of the core library.</description>
     <tags></tags>
@@ -25,7 +25,7 @@
     <file src="nanoFramework.CoreLibrary\obj\Release\*.il" target="content\disasm\" /> 
 
     <file src="assets\readme.txt" target="" />
-    <file src="assets\nf-logo.png" target="" />
+    <file src="assets\nf-logo.png" target="images" />
     <file src="LICENSE.md" target="" />
   </files>
 </package>
