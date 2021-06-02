@@ -76,9 +76,9 @@ jobs:
       
   - template: azure-pipelines-templates/class-lib-publish.yml@templates  
 
-  # need to push the other package to NuGet because the template above can only push one package (happens on tag builds for any branch)
+  # need to push the other package to NuGet because the template above can only push one package (happens on all builds except PRs)
   - task: NuGetCommand@2
-    condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
+    condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
     displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
       command: push
@@ -152,18 +152,14 @@ jobs:
     vmImage: 'windows-2019'
 
   variables:
-    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+    DOTNET_NOLOGO: true
 
   steps:
   # need this here in order to persist GitHub credentials 
   - checkout: self
     fetchDepth: 1
 
-  - task: NuGetToolInstaller@0
-    inputs:
-      versionSpec: '5.9.0'
-    condition: ne( variables['StartReleaseCandidate'], true )
-    displayName: 'Install specific version of NuGet'
+  - template: azure-pipelines-templates/install-nuget.yml@templates
 
   # update dependents
   - task: UpdatenFDependencies@1
@@ -172,9 +168,14 @@ jobs:
       repositoriesToUpdate: |
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
-        nanoFramework.System.Threading
         nanoFramework.TestFramework
         nanoFramework.Logging
+        nanoFramework.Devices.OneWire
+        nanoFramework.Networking.Sntp
+        nanoFramework.Hardware.Stm32
+        nanoFramework.TI.EasyLink
+        nanoFramework.ResourceManager
+        nanoFramework.Json
         Windows.Devices.Adc
         Windows.Devices.I2c
         Windows.Devices.Pwm
@@ -182,15 +183,10 @@ jobs:
         System.Device.Dac
         System.Device.I2c
         System.Device.Spi
-        nanoFramework.Devices.OneWire
-        nanoFramework.Networking.Sntp
-        nanoFramework.Hardware.Stm32
-        nanoFramework.System.Math
-        nanoFramework.TI.EasyLink
-        nanoFramework.ResourceManager
-        nanoFramework.System.Collections
-        nanoFramework.System.Text
-        nanoFramework.Json
+        System.Threading
+        System.Math
+        System.Collections
+        System.Text
     displayName: Update dependent class libs
 
 ##################################
