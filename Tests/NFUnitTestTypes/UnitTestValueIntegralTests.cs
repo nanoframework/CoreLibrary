@@ -8,6 +8,10 @@ using nanoFramework.TestFramework;
 using System;
 using System.Diagnostics;
 
+// disable a number of warnings that we are intentionally going to test
+#pragma warning disable CS1718 // Comparison made to same variable
+#pragma warning disable CS0675 // Bitwise-or operator used on a sign-extended operand
+
 namespace NFUnitTestTypes
 {
     [TestClass]
@@ -512,7 +516,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -544,7 +547,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -576,7 +578,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -608,7 +609,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -635,7 +635,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -663,7 +662,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -691,7 +689,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -719,7 +716,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -747,7 +743,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 bool TestBool = false;
                 short s1 = 2;
                 byte b1 = 3;
@@ -776,7 +771,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 bool TestBool = false;
                 short s1 = 2;
                 byte b1 = 3;
@@ -1014,7 +1008,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1062,7 +1055,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1109,7 +1101,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1157,7 +1148,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1205,7 +1195,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1253,7 +1242,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1301,7 +1289,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1349,7 +1336,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1397,7 +1383,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1446,7 +1431,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1495,7 +1479,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1544,7 +1527,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1593,7 +1575,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1642,7 +1623,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 short s1 = 2;
                 byte b1 = 3;
                 int i1 = 4;
@@ -1691,7 +1671,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 ushort s1 = 2;
                 sbyte b1 = 3;
                 uint i1 = 4;
@@ -1708,7 +1687,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 ushort s1 = 2;
                 sbyte b1 = 3;
                 uint i1 = 4;
