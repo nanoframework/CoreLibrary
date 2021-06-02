@@ -115,7 +115,8 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 byte[] b = { 0 };
-                Assert.IsType(b.GetType(), Type.GetType("System.Byte[]"));
+                Type compareType = Type.GetType("System.Byte[]");
+                Assert.IsType(compareType, b, $"The type {compareType.Name} is not equal to {b.GetType().Name}");
             }
         }
         public class ValueArrayTestClass02
@@ -123,7 +124,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 char[] c = { 'a' };
-                Assert.IsType(c.GetType(), Type.GetType("System.Char[]"));
+                Assert.IsType(Type.GetType("System.Char[]"), c);
             }
         }
         public class ValueArrayTestClass03
@@ -131,7 +132,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 short[] s = { 0 };
-                Assert.IsType(s.GetType(), Type.GetType("System.Int16[]"));
+                Assert.IsType(Type.GetType("System.Int16[]"), s);
             }
         }
         public class ValueArrayTestClass04
@@ -139,7 +140,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 int[] i = { 0 };
-                Assert.IsType(i.GetType(), Type.GetType("System.Int32[]"));
+                Assert.IsType(Type.GetType("System.Int32[]"), i);
             }
         }
         public class ValueArrayTestClass05
@@ -147,7 +148,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 long[] l = { 0L };
-                Assert.IsType(l.GetType(), Type.GetType("System.Int64[]"));
+                Assert.IsType(Type.GetType("System.Int64[]"), l);
             }
         }
         public class ValueArrayTestClass06
@@ -155,7 +156,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 float[] f = { 0.0f };
-                Assert.IsType(f.GetType(), Type.GetType("System.Single[]"));
+                Assert.IsType(Type.GetType("System.Single[]"), f);
             }
         }
         public class ValueArrayTestClass07
@@ -163,7 +164,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 double[] d = { 0.0d };
-                Assert.IsType(d.GetType(), Type.GetType("System.Double[]"));
+                Assert.IsType(Type.GetType("System.Double[]"), d);
             }
         }
         public class ValueArrayTestClass09
@@ -171,7 +172,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 bool[] b = { true };
-                Assert.IsType(b.GetType(), Type.GetType("System.Boolean[]"));
+                Assert.IsType(Type.GetType("System.Boolean[]"), b);
             }
         }
 
@@ -179,32 +180,32 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                string[] b = { "string" };
-                Assert.IsType(b.GetType(), Type.GetType("System.String[]"));
+                string[] strArray = { "string" };
+                Assert.IsType(Type.GetType("System.String[]"), strArray);
             }
         }
         public class ValueArrayTestClass13
         {
             public static void testMethod()
             {
-                sbyte[] b = { 0 };
-                Assert.IsType(b.GetType(), Type.GetType("System.SByte[]"));
+                sbyte[] sb = { 0 };
+                Assert.IsType(Type.GetType("System.SByte[]"), sb);
             }
         }
         public class ValueArrayTestClass14
         {
             public static void testMethod()
             {
-                ushort[] s = { 0 };
-                Assert.IsType(s.GetType(), Type.GetType("System.UInt16[]"));
+                ushort[] us = { 0 };
+                Assert.IsType(Type.GetType("System.UInt16[]"), us);
             }
         }
         public class ValueArrayTestClass15
         {
             public static void testMethod()
             {
-                uint[] i = { 0 };
-                Assert.IsType(i.GetType(), Type.GetType("System.UInt32[]"));
+                uint[] ui = { 0 };
+                Assert.IsType(Type.GetType("System.UInt32[]"), ui);
             }
         }
     }

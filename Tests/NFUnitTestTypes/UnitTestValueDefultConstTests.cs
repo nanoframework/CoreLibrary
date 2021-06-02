@@ -199,8 +199,10 @@ namespace NFUnitTestTypes
 
         struct MyStruct
         {
+#pragma warning disable CS0649  // variable not initialized
             public int I;
             public Object MyObj;
+#pragma warning restore CS0649  
         }
 
         public class ValueDefault_ConstTestClass12

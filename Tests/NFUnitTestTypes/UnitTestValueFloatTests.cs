@@ -8,6 +8,9 @@ using nanoFramework.TestFramework;
 using System;
 using System.Diagnostics;
 
+// disable a number of warnings that we are intentionally going to test
+#pragma warning disable CS1718 // Comparison made to same variable
+
 namespace NFUnitTestTypes
 {
     [TestClass]
@@ -206,7 +209,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 float f1 = 11.0f;
                 short s1 = 2;
                 byte b1 = 3;
@@ -230,7 +232,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 double d1 = 11.0d;
                 short s1 = 2;
                 byte b1 = 3;
@@ -254,7 +255,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 float f1 = 11.0f;
                 short s1 = 2;
                 byte b1 = 3;
@@ -278,7 +278,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 double d1 = 11.0d;
                 short s1 = 2;
                 byte b1 = 3;
@@ -302,7 +301,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 float f1 = 11.0f;
                 short s1 = 2;
                 byte b1 = 3;
@@ -326,7 +324,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 double d1 = 11.0d;
                 short s1 = 2;
                 byte b1 = 3;
@@ -350,7 +347,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 float f1 = 11.0f;
                 short s1 = 2;
                 byte b1 = 3;
@@ -374,7 +370,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 double d1 = 11.0d;
                 short s1 = 2;
                 byte b1 = 3;
@@ -398,7 +393,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 float f1 = 11.0f;
                 short s1 = 2;
                 byte b1 = 3;
@@ -422,7 +416,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 double d1 = 11.0d;
                 short s1 = 2;
                 byte b1 = 3;
@@ -446,7 +439,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 bool b = true;
                 float f1 = 11.0f;
                 short s1 = 2;
@@ -471,8 +463,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
-
                 bool b = false;
                 double d1 = 11.0d;
                 short s1 = 2;
@@ -497,7 +487,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 bool b = true;
                 float f1 = 11.0f;
                 short s1 = 2;
@@ -522,8 +511,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
-
                 bool b = false;
                 double d1 = 11.0d;
                 short s1 = 2;
@@ -548,7 +535,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 bool b = true;
                 float f1 = 11.0f;
                 short s1 = 2;
@@ -573,8 +559,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
-
                 bool b = false;
                 double d1 = 11.0d;
                 short s1 = 2;
@@ -599,7 +583,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 bool b = true;
                 float f1 = 11.0f;
                 short s1 = 2;
@@ -624,8 +607,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
-
                 bool b = false;
                 double d1 = 11.0d;
                 short s1 = 2;
@@ -650,7 +631,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 bool b = true;
                 float f1 = 11.0f;
                 short s1 = 2;
@@ -675,8 +655,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
-
                 bool b = false;
                 double d1 = 11.0d;
                 short s1 = 2;
@@ -701,7 +679,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 bool b = true;
                 float f1 = 11.0f;
                 short s1 = 2;
@@ -726,8 +703,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
-
                 bool b = false;
                 double d1 = 11.0d;
                 short s1 = 2;
@@ -752,7 +727,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 double d1 = 11.0d;
                 float f1 = 12.0f;
 
@@ -777,7 +751,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 double d1 = 11.0d;
                 float f1 = 12.0f;
                 bool b = false;
@@ -805,7 +778,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 float f1 = 11.0f;
                 float f2 = 12.0f;
 
@@ -820,7 +792,6 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                int intRet = 0;
                 double f1 = 11.0d;
                 float f2 = 12.0f;
                 bool b = false;
