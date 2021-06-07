@@ -320,9 +320,9 @@ namespace NFUnitTestSystemLib
         public void Format()
         {
             Assert.Equal(String.Format("The value is {0}", 32), "The value is 32",
-                "String.Format should treat a null argument as an empty string");
+                "String.Format with a single variable");
             Assert.Equal(String.Format("The value with formatter is {0:d3}", 32), "The value with formatter is 032",
-                "String.Format should treat a null argument as an empty string when used with formatters.");
+                "String.Format with a decimal formatter.");
         }
 
         [TestMethod]
