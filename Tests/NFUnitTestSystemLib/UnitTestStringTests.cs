@@ -315,6 +315,28 @@ namespace NFUnitTestSystemLib
             string str = "a" + 1 + "b" + new ToStringReturnsNull();
             Assert.Equal(str, "a1b");
         }
+
+        [TestMethod]
+        public void Format()
+        {
+            Assert.Equal(String.Format("The value is {0}", 32), "The value is 32",
+                "String.Format with a single variable");
+            Assert.Equal(String.Format("The value with formatter is {0:d3}", 32), "The value with formatter is 032",
+                "String.Format with a decimal formatter.");
+        }
+
+        [TestMethod]
+        public void FormatWithNull()
+        {
+            object nullObject = null;
+            Assert.Equal(String.Format("The value is {0}", nullObject), "The value is ", 
+                "String.Format should treat a null argument as an empty string");
+            Assert.Equal(String.Format("The value with formatter is {0:d}", nullObject), "The value with formatter is ", 
+                "String.Format should treat a null argument as an empty string when used with formatters.");
+            Assert.Equal(String.Format("First parm: '{0}' second parm: '{1}'", new object[] { nullObject, 32 }), "First parm: '' second parm: '32'", 
+                "Formatting with two parms should also work");
+            Assert.Equal($"the value is {nullObject}", "the value is ", "Interpolated strings should use string.format and work correctly");
+        }
     }
 
     /// <summary>
