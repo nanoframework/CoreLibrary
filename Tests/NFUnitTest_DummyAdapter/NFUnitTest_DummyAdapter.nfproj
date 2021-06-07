@@ -31,7 +31,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="nano.runsettings" />
     <None Include="packages.config" />
   </ItemGroup>
