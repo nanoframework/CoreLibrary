@@ -510,5 +510,72 @@ namespace NFUnitTestConversions
 
         #endregion
 
+        #region Base64 conversions
+
+        [TestMethod]
+        public void Convert_FromToBase64()
+        {
+            string sharedAccessKeyPlainText = "IAmALongAndNiceKeyInPlainText";
+            string sharedAccessKey = "SUFtQUxvbmdBbmROaWNlS2V5SW5QbGFpblRleHQ=";
+
+            byte[] sharedAccessKeyAsByte = Convert.FromBase64String(sharedAccessKey);
+
+            char[] charArray = new char[sharedAccessKeyAsByte.Length];
+
+            for (int i = 0; i < sharedAccessKeyAsByte.Length; i++)
+            {
+                charArray[i] = (char)sharedAccessKeyAsByte[i];
+            }
+
+            string sharedAccessKeyAsString = new(charArray);
+
+            Assert.Equal(sharedAccessKeyAsString, sharedAccessKeyPlainText, "Converted string as byte array is not correct.");
+
+            string convertedFromBase64 = Convert.ToBase64String(sharedAccessKeyAsByte);
+
+            Debug.WriteLine($">>{convertedFromBase64}");
+            Debug.WriteLine($">>{sharedAccessKey}");
+
+            Assert.Equal(convertedFromBase64, sharedAccessKey, "Converted string from byte array is not correct.");
+        }
+
+        [TestMethod]
+        public void Convert_ToFromBase64()
+        {
+            byte[] inArray = new byte[256];
+            byte[] outArray;
+            int x;
+
+            for (x = 0; x < inArray.Length; x++)
+            {
+                inArray[x] = (byte)x;
+            }
+
+            string base64EncodedString_WithLineBreaks = @"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4
+OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3Bx
+cnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmq
+q6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj
+5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w==";
+            
+            string base64EncodedString_WithoutLineBreaks = "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w==";
+
+            string base64string1 = Convert.ToBase64String(
+                inArray,
+                0,
+                inArray.Length,
+                Base64FormattingOptions.InsertLineBreaks);
+
+            Assert.Equal(base64string1, base64EncodedString_WithLineBreaks, "Converted Base64 string with line breaks is not correct.");
+
+            string base64string2 = Convert.ToBase64String(inArray);
+
+            Assert.Equal(base64string2, base64EncodedString_WithoutLineBreaks, "Converted Base64 string without line breaks is not correct.");
+
+            outArray = Convert.FromBase64String(base64string1);
+
+            Assert.Equal(inArray, outArray, "Convert back from Base64 encoded array is not equal");
+        }
+
+        #endregion
     }
 }

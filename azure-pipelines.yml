@@ -34,8 +34,6 @@ jobs:
 
   steps:
 
-  # step from template @ nf-tools repo
-
   # build steps only
   - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
     parameters:
@@ -43,7 +41,7 @@ jobs:
       runUnitTests: true
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTest_DummyAdapter\nano.runsettings'
 
-  # rebuild CoreLibrary project to get the assembky checksum
+  # rebuild CoreLibrary project to get the assembly checksum
   - task: MSBuild@1
     condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
     displayName: Rebuild CoreLibrary
@@ -59,7 +57,7 @@ jobs:
     parameters:
       nugetPackageName: 'nanoFramework.CoreLibrary'
 
-  # rebuild CoreLibrary.NoReflection project to get the assembky checksum
+  # rebuild CoreLibrary.NoReflection project to get the assembly checksum
   - task: MSBuild@1
     condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
     displayName: Rebuild CoreLibrary.NoReflection

@@ -308,16 +308,8 @@ namespace System
         /// The white-space characters, and their Unicode names and hexadecimal code points, are tab(CHARACTER TABULATION, U+0009), newline(LINE FEED, U+000A), carriage return (CARRIAGE RETURN, U+000D), and blank(SPACE, U+0020). An arbitrary number of white-space characters can appear in s because all white-space characters are ignored.
         /// The valueless character, "=", is used for trailing padding. The end of s can consist of zero, one, or two padding characters.
         /// </remarks>
-        public static byte[] FromBase64String(string inString)
-        {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (inString == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-
-            var chArray = inString.ToCharArray();
-
-            return FromBase64CharArray(chArray, 0, chArray.Length);
-        }
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern static byte[] FromBase64String(string inString);
 
         /// <summary>
         /// Converts a subset of a Unicode character array, which encodes binary data as base-64 digits, to an equivalent 8-bit unsigned integer array. Parameters specify the subset in the input array and the number of elements to convert.
@@ -341,14 +333,10 @@ namespace System
             if (offset > inArray.Length - length) throw new ArgumentOutOfRangeException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
-            // copy to new array
-            var destinationArray = new char[length];
-            Array.Copy(inArray, offset, destinationArray, 0, length);
+            // copy to new string
+            string base64String = new(inArray, offset, length);
 
-            return FromBase64CharArray(destinationArray, length);
+            return FromBase64String(base64String);
         }
-
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern byte[] FromBase64CharArray(char[] inArray, int length);
     }
 }
