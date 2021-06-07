@@ -709,10 +709,18 @@ namespace System
                     if (fmt.Length > 0)
                     {
 #if NANOCLR_REFLECTION
-                        var method = args[index].GetType().GetMethod("ToString", new Type[] { typeof(string) });
-                        token = (method is null)
-                            ? args[index].ToString()
-                            : method.Invoke(args[index], new object[] { token }).ToString();
+                        
+                        if (args[index] is null)
+                        {
+                           token = "";
+                        }
+                        else
+                        {
+                            var method = args[index].GetType().GetMethod("ToString", new Type[] { typeof(string) });
+                            token = (method is null)
+                                ? args[index].ToString()
+                                : method.Invoke(args[index], new object[] { token }).ToString();
+                        }
 #else
                         throw new NotImplementedException();
 #endif // NANOCLR_REFLECTION
@@ -720,7 +728,7 @@ namespace System
                     }
                     else
                     {
-                        token = args[index].ToString();
+                        token = args[index] == null ? "" : args[index].ToString();
                     }
 
                     if (alignment > 0)
