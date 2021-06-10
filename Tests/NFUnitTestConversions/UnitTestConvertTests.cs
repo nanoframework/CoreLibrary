@@ -121,6 +121,9 @@ namespace NFUnitTestConversions
 
             double value_dd = Convert.ToDouble(number);
             Assert.Equal(value_dd, actualNumber);
+
+            Assert.Equal(-129, Convert.ToDouble("-129"), "The value '-129' did not parse to -129");  // can't handle not having a decimal point!
+            Assert.Equal(-123.456, Convert.ToDouble("-123.456"), "The value -123.456 did not parse to -123.456");
         }
 
         [TestMethod]
@@ -131,6 +134,7 @@ namespace NFUnitTestConversions
 
             double value_dd = Convert.ToDouble(number);
             Assert.Equal(value_dd, actualNumber);
+            Assert.Equal(0, Convert.ToDouble("+0"), "The string +0 did not parse to 0 for Double");
         }
 
         [TestMethod]
@@ -142,6 +146,8 @@ namespace NFUnitTestConversions
             double value_dd = Convert.ToDouble(number);
 
             Assert.Equal(value_dd, actualNumber);
+            Assert.Equal(0, Convert.ToDouble("-0"), "The string -0 did not parse to 0 for Double");
+
         }
 
         [TestMethod]
