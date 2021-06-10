@@ -10,6 +10,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
 
+
 namespace NFUnitTestArithmetic
 {
     [TestClass]
