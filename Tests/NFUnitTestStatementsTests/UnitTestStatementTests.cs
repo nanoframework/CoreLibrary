@@ -10,1015 +10,1015 @@ namespace NFUnitTestStatementsTests
         [TestMethod]
         public void Statements_Label_001_Test()
         {
-            Debug.WriteLine("Label_001.sc");
-            Debug.WriteLine("Make sure labels can be declared");
+            OutputHelper.WriteLine("Label_001.sc");
+            OutputHelper.WriteLine("Make sure labels can be declared");
             Assert.True(Statements_TestClass_Label_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_Label_002_Test()
         {
-            Debug.WriteLine("Label_002.sc");
-            Debug.WriteLine("Make sure labels can be referenced. Assumes 'goto'");
+            OutputHelper.WriteLine("Label_002.sc");
+            OutputHelper.WriteLine("Make sure labels can be referenced. Assumes 'goto'");
             Assert.True(Statements_TestClass_Label_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_Label_004_Test()
         {
-            Debug.WriteLine("Label_004.sc");
-            Debug.WriteLine("Make sure labels can be associated with an empty statement");
+            OutputHelper.WriteLine("Label_004.sc");
+            OutputHelper.WriteLine("Make sure labels can be associated with an empty statement");
             Assert.True(Statements_TestClass_Label_004.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_001_Test()
         {
-            Debug.WriteLine("Decl_001.sc");
-            Debug.WriteLine("Declare a local variable of an intrinsic type");
+            OutputHelper.WriteLine("Decl_001.sc");
+            OutputHelper.WriteLine("Declare a local variable of an intrinsic type");
             Assert.True(Statements_TestClass_Decl_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_002_Test()
         {
-            Debug.WriteLine("Decl_002.sc");
-            Debug.WriteLine("Declare a local variable of an intrinsic type and initialize it");
+            OutputHelper.WriteLine("Decl_002.sc");
+            OutputHelper.WriteLine("Declare a local variable of an intrinsic type and initialize it");
             Assert.True(Statements_TestClass_Decl_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_003_Test()
         {
-            Debug.WriteLine("Decl_003.sc");
-            Debug.WriteLine("Declare a local variable of an intrinsic type and initialize it");
-            Debug.WriteLine("with an expression.");
+            OutputHelper.WriteLine("Decl_003.sc");
+            OutputHelper.WriteLine("Declare a local variable of an intrinsic type and initialize it");
+            OutputHelper.WriteLine("with an expression.");
             Assert.True(Statements_TestClass_Decl_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_004_Test()
         {
-            Debug.WriteLine("Decl_004.sc");
-            Debug.WriteLine("Declare a local variable of an external object type");
+            OutputHelper.WriteLine("Decl_004.sc");
+            OutputHelper.WriteLine("Declare a local variable of an external object type");
             Assert.True(Statements_TestClass_Decl_004.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_007_Test()
         {
-            Debug.WriteLine("Decl_007.sc");
-            Debug.WriteLine("Declare a series of local variables of an intrinsic type with commas");
+            OutputHelper.WriteLine("Decl_007.sc");
+            OutputHelper.WriteLine("Declare a series of local variables of an intrinsic type with commas");
             Assert.True(Statements_TestClass_Decl_007.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_009_Test()
         {
-            Debug.WriteLine("Decl_009.sc");
-            Debug.WriteLine("Declare a series of local variables of an intrinsic type with commas and");
-            Debug.WriteLine("initial assignments.");
+            OutputHelper.WriteLine("Decl_009.sc");
+            OutputHelper.WriteLine("Declare a series of local variables of an intrinsic type with commas and");
+            OutputHelper.WriteLine("initial assignments.");
             Assert.True(Statements_TestClass_Decl_009.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_010_Test()
         {
-            Debug.WriteLine("Decl_010.sc");
-            Debug.WriteLine("Declare a local variable of an intrinsic type as an array");
+            OutputHelper.WriteLine("Decl_010.sc");
+            OutputHelper.WriteLine("Declare a local variable of an intrinsic type as an array");
             Assert.True(Statements_TestClass_Decl_010.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_012_Test()
         {
-            Debug.WriteLine("Decl_012.sc");
-            Debug.WriteLine("Declare a local variable of an intrinsic type as an array, allocate and reference it.");
+            OutputHelper.WriteLine("Decl_012.sc");
+            OutputHelper.WriteLine("Declare a local variable of an intrinsic type as an array, allocate and reference it.");
             Assert.True(Statements_TestClass_Decl_012.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_014_Test()
         {
-            Debug.WriteLine("Decl_014.sc");
-            Debug.WriteLine("Declare a local variable of an intrinsic type as an initialized array");
+            OutputHelper.WriteLine("Decl_014.sc");
+            OutputHelper.WriteLine("Declare a local variable of an intrinsic type as an initialized array");
             Assert.True(Statements_TestClass_Decl_014.testMethod());
         }
 
         [TestMethod]
         public void Statements_Decl_016_Test()
         {
-            Debug.WriteLine("Decl_016.sc");
-            Debug.WriteLine("Correctly declare a local variable of a type that has no default constructor");
-            Debug.WriteLine("as an array.");
+            OutputHelper.WriteLine("Decl_016.sc");
+            OutputHelper.WriteLine("Correctly declare a local variable of a type that has no default constructor");
+            OutputHelper.WriteLine("as an array.");
             Assert.True(Statements_TestClass_Decl_016.testMethod());
         }
 
         [TestMethod]
         public void Statements_Block_001_Test()
         {
-            Debug.WriteLine("Block_001.sc");
-            Debug.WriteLine("Statements_TestClass_? Several types of statement blocks.  Statement blocks");
-            Debug.WriteLine("are so fundamental, that most can be tested in one pass.");
-            Debug.WriteLine("Note that by the nature of this code, many warnings");
-            Debug.WriteLine("could/should be generated about items that are never reached.");
+            OutputHelper.WriteLine("Block_001.sc");
+            OutputHelper.WriteLine("Statements_TestClass_? Several types of statement blocks.  Statement blocks");
+            OutputHelper.WriteLine("are so fundamental, that most can be tested in one pass.");
+            OutputHelper.WriteLine("Note that by the nature of this code, many warnings");
+            OutputHelper.WriteLine("could/should be generated about items that are never reached.");
             Assert.True(Statements_TestClass_Block_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_Empty_001_Test()
         {
-            Debug.WriteLine("Empty_001.sc");
-            Debug.WriteLine("Statements_TestClass_? Several scenarios for empty statement.  Emtpy statements");
-            Debug.WriteLine("are so fundamental, that most can be tested in one pass.");
-            Debug.WriteLine("Note that by the nature of this code, many warnings");
-            Debug.WriteLine("could/should be generated about items that are never reached.");
+            OutputHelper.WriteLine("Empty_001.sc");
+            OutputHelper.WriteLine("Statements_TestClass_? Several scenarios for empty statement.  Emtpy statements");
+            OutputHelper.WriteLine("are so fundamental, that most can be tested in one pass.");
+            OutputHelper.WriteLine("Note that by the nature of this code, many warnings");
+            OutputHelper.WriteLine("could/should be generated about items that are never reached.");
             Assert.True(Statements_TestClass_Empty_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_Expr_002_Test()
         {
-            Debug.WriteLine("Expr_002.sc");
-            Debug.WriteLine("Use an expression with side effects.");
+            OutputHelper.WriteLine("Expr_002.sc");
+            OutputHelper.WriteLine("Use an expression with side effects.");
             Assert.True(Statements_TestClass_Expr_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_Expr_003_Test()
         {
-            Debug.WriteLine("Expr_003.sc");
-            Debug.WriteLine("Use an expression with side effects and multiple l-values.");
+            OutputHelper.WriteLine("Expr_003.sc");
+            OutputHelper.WriteLine("Use an expression with side effects and multiple l-values.");
             Assert.True(Statements_TestClass_Expr_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_Expr_004_Test()
         {
-            Debug.WriteLine("Expr_004.sc");
-            Debug.WriteLine("Run a quick test of common operator/assignment combos");
+            OutputHelper.WriteLine("Expr_004.sc");
+            OutputHelper.WriteLine("Run a quick test of common operator/assignment combos");
             Assert.True(Statements_TestClass_Expr_004.testMethod());
         }
 
         [TestMethod]
         public void Statements_Expr_006_Test()
         {
-            Debug.WriteLine("   complex assignment");
+            OutputHelper.WriteLine("   complex assignment");
             Assert.True(Statements_TestClass_Expr_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_if_001_Test()
         {
-            Debug.WriteLine("if_001.sc");
-            Debug.WriteLine("Simple boolean if with a single statement");
+            OutputHelper.WriteLine("if_001.sc");
+            OutputHelper.WriteLine("Simple boolean if with a single statement");
             Assert.True(Statements_TestClass_if_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_if_003_Test()
         {
-            Debug.WriteLine("if_003.sc");
-            Debug.WriteLine("Simple boolean if with a block statement");
+            OutputHelper.WriteLine("if_003.sc");
+            OutputHelper.WriteLine("Simple boolean if with a block statement");
             Assert.True(Statements_TestClass_if_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_if_005_Test()
         {
-            Debug.WriteLine("if_005.sc");
-            Debug.WriteLine("Simple boolean if with a single statement and else");
+            OutputHelper.WriteLine("if_005.sc");
+            OutputHelper.WriteLine("Simple boolean if with a single statement and else");
             Assert.True(Statements_TestClass_if_005.testMethod());
         }
 
         [TestMethod]
         public void Statements_if_007_Test()
         {
-            Debug.WriteLine("if_007.sc");
-            Debug.WriteLine("Simple boolean if with a block statement");
+            OutputHelper.WriteLine("if_007.sc");
+            OutputHelper.WriteLine("Simple boolean if with a block statement");
             Assert.True(Statements_TestClass_if_007.testMethod());
         }
 
         [TestMethod]
         public void Statements_if_009_Test()
         {
-            Debug.WriteLine("if_009.sc");
-            Debug.WriteLine("Nest ifs with elses without blocks. Statements_TestClass_? that the 'else' ambiguity from");
-            Debug.WriteLine("C/C++ is handled the same way (else bound to closest if)");
+            OutputHelper.WriteLine("if_009.sc");
+            OutputHelper.WriteLine("Nest ifs with elses without blocks. Statements_TestClass_? that the 'else' ambiguity from");
+            OutputHelper.WriteLine("C/C++ is handled the same way (else bound to closest if)");
             Assert.True(Statements_TestClass_if_009.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_001_Test()
         {
-            Debug.WriteLine("switch_001.sc");
-            Debug.WriteLine("Empty switch");
+            OutputHelper.WriteLine("switch_001.sc");
+            OutputHelper.WriteLine("Empty switch");
             Assert.True(Statements_TestClass_switch_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_002_Test()
         {
-            Debug.WriteLine("switch_002.sc");
-            Debug.WriteLine("Default only switch");
+            OutputHelper.WriteLine("switch_002.sc");
+            OutputHelper.WriteLine("Default only switch");
             Assert.True(Statements_TestClass_switch_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_003_Test()
         {
-            Debug.WriteLine("switch_003.sc");
-            Debug.WriteLine("Switch with single case without break - no default");
+            OutputHelper.WriteLine("switch_003.sc");
+            OutputHelper.WriteLine("Switch with single case without break - no default");
             Assert.True(Statements_TestClass_switch_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_004_Test()
         {
-            Debug.WriteLine("switch_004.sc");
-            Debug.WriteLine("Switch with one case, using break");
+            OutputHelper.WriteLine("switch_004.sc");
+            OutputHelper.WriteLine("Switch with one case, using break");
             Assert.True(Statements_TestClass_switch_004.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_005_Test()
         {
-            Debug.WriteLine("switch_005.sc");
-            Debug.WriteLine("Switch with two cases, using break");
+            OutputHelper.WriteLine("switch_005.sc");
+            OutputHelper.WriteLine("Switch with two cases, using break");
             Assert.True(Statements_TestClass_switch_005.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_006_Test()
         {
-            Debug.WriteLine("switch_006.sc");
-            Debug.WriteLine("Switch with one case and a default");
+            OutputHelper.WriteLine("switch_006.sc");
+            OutputHelper.WriteLine("Switch with one case and a default");
             Assert.True(Statements_TestClass_switch_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_007_Test()
         {
-            Debug.WriteLine("switch_007.sc");
-            Debug.WriteLine("Switch with two cases and a default");
+            OutputHelper.WriteLine("switch_007.sc");
+            OutputHelper.WriteLine("Switch with two cases and a default");
             Assert.True(Statements_TestClass_switch_007.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_010_Test()
         {
-            Debug.WriteLine("switch_010.sc");
-            Debug.WriteLine("Switch with a const variable in a case");
+            OutputHelper.WriteLine("switch_010.sc");
+            OutputHelper.WriteLine("Switch with a const variable in a case");
             Assert.True(Statements_TestClass_switch_010.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_012_Test()
         {
-            Debug.WriteLine("switch_012.sc");
-            Debug.WriteLine("Multiple case labels");
+            OutputHelper.WriteLine("switch_012.sc");
+            OutputHelper.WriteLine("Multiple case labels");
             Assert.True(Statements_TestClass_switch_012.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_013_Test()
         {
-            Debug.WriteLine("switch_013.sc");
-            Debug.WriteLine("test goto all over");
-            Debug.WriteLine("Expected Output");
+            OutputHelper.WriteLine("switch_013.sc");
+            OutputHelper.WriteLine("test goto all over");
+            OutputHelper.WriteLine("Expected Output");
             Assert.True(Statements_TestClass_switch_013.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_015_Test()
         {
-            Debug.WriteLine("switch_015.sc");
-            Debug.WriteLine("Run a switch over a specific type: byte");
+            OutputHelper.WriteLine("switch_015.sc");
+            OutputHelper.WriteLine("Run a switch over a specific type: byte");
             Assert.True(Statements_TestClass_switch_015.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_016_Test()
         {
-            Debug.WriteLine("switch_016.sc");
-            Debug.WriteLine("Run a switch over a specific type: char");
+            OutputHelper.WriteLine("switch_016.sc");
+            OutputHelper.WriteLine("Run a switch over a specific type: char");
             Assert.True(Statements_TestClass_switch_016.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_017_Test()
         {
-            Debug.WriteLine("switch_017.sc");
-            Debug.WriteLine("Run a switch over a specific type: short");
+            OutputHelper.WriteLine("switch_017.sc");
+            OutputHelper.WriteLine("Run a switch over a specific type: short");
             Assert.True(Statements_TestClass_switch_017.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_018_Test()
         {
-            Debug.WriteLine("switch_018.sc");
-            Debug.WriteLine("Run a switch over a specific type: int");
+            OutputHelper.WriteLine("switch_018.sc");
+            OutputHelper.WriteLine("Run a switch over a specific type: int");
             Assert.True(Statements_TestClass_switch_018.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_019_Test()
         {
-            Debug.WriteLine("switch_019.sc");
-            Debug.WriteLine("Run a switch over a specific type: long");
+            OutputHelper.WriteLine("switch_019.sc");
+            OutputHelper.WriteLine("Run a switch over a specific type: long");
             Assert.True(Statements_TestClass_switch_019.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_023_Test()
         {
-            Debug.WriteLine("switch_023.sc");
-            Debug.WriteLine("Run a switch over a specific type: enum");
+            OutputHelper.WriteLine("switch_023.sc");
+            OutputHelper.WriteLine("Run a switch over a specific type: enum");
             Assert.True(Statements_TestClass_switch_023.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_030_Test()
         {
-            Debug.WriteLine("   switch on int variable, float case");
+            OutputHelper.WriteLine("   switch on int variable, float case");
             Assert.True(Statements_TestClass_switch_030.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_031_Test()
         {
-            Debug.WriteLine("   switch with holes in range");
+            OutputHelper.WriteLine("   switch with holes in range");
             Assert.True(Statements_TestClass_switch_031.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_032_Test()
         {
-            Debug.WriteLine("   switch: default case at top");
+            OutputHelper.WriteLine("   switch: default case at top");
             Assert.True(Statements_TestClass_switch_032.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_033_Test()
         {
-            Debug.WriteLine("   switch: default case in middle");
+            OutputHelper.WriteLine("   switch: default case in middle");
             Assert.True(Statements_TestClass_switch_033.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_034_Test()
         {
-            Debug.WriteLine("   switch: default case in middle");
+            OutputHelper.WriteLine("   switch: default case in middle");
             Assert.True(Statements_TestClass_switch_034.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_035_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
             Assert.True(Statements_TestClass_switch_035.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_036_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
             Assert.True(Statements_TestClass_switch_036.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_037_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
             Assert.True(Statements_TestClass_switch_037.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_038_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
             Assert.True(Statements_TestClass_switch_038.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_039_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
             Assert.True(Statements_TestClass_switch_039.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_040_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
             Assert.True(Statements_TestClass_switch_040.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_041_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
             Assert.True(Statements_TestClass_switch_041.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_042_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
             Assert.True(Statements_TestClass_switch_042.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_044_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
             Assert.True(Statements_TestClass_switch_044.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_047_Test()
         {
-            Debug.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
-            Debug.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
-            Debug.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
-            Debug.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
-            Debug.WriteLine("Ensure error is emmited on when more than one implicit conversion to an acceptable governing type is defined");
+            OutputHelper.WriteLine("Otherwise, exactly one user-defined implicit conversion (�6.4) must exist from the type of ");
+            OutputHelper.WriteLine("the switch expression to one of the following possible governing types: sbyte, byte, short,");
+            OutputHelper.WriteLine("ushort, int, uint, long, ulong, char, string. If no such implicit conversion exists, or if ");
+            OutputHelper.WriteLine("more than one such implicit conversion exists, a compile-time error occurs.");
+            OutputHelper.WriteLine("Ensure error is emmited on when more than one implicit conversion to an acceptable governing type is defined");
             Assert.True(Statements_TestClass_switch_047.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_049_Test()
         {
-            Debug.WriteLine("warning CS1522: Empty switch block");
+            OutputHelper.WriteLine("warning CS1522: Empty switch block");
             Assert.True(Statements_TestClass_switch_049.testMethod());
         }
 
         [TestMethod]
         public void Statements_switch_string_001_Test()
         {
-            Debug.WriteLine("   switch on string: null");
+            OutputHelper.WriteLine("   switch on string: null");
             Assert.True(Statements_TestClass_switch_string_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_dowhile_001_Test()
         {
-            Debug.WriteLine("dowhile_001.sc");
-            Debug.WriteLine("do/while with a single statement");
+            OutputHelper.WriteLine("dowhile_001.sc");
+            OutputHelper.WriteLine("do/while with a single statement");
             Assert.True(Statements_TestClass_dowhile_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_dowhile_002_Test()
         {
-            Debug.WriteLine("dowhile_002.sc");
-            Debug.WriteLine("do/while with a compound statement");
+            OutputHelper.WriteLine("dowhile_002.sc");
+            OutputHelper.WriteLine("do/while with a compound statement");
             Assert.True(Statements_TestClass_dowhile_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_dowhile_003_Test()
         {
-            Debug.WriteLine("dowhile_003.sc");
-            Debug.WriteLine("verify known false condition executes only once with single statement");
+            OutputHelper.WriteLine("dowhile_003.sc");
+            OutputHelper.WriteLine("verify known false condition executes only once with single statement");
             Assert.True(Statements_TestClass_dowhile_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_dowhile_004_Test()
         {
-            Debug.WriteLine("dowhile_004.sc");
-            Debug.WriteLine("verify known true condition executes with single statement");
+            OutputHelper.WriteLine("dowhile_004.sc");
+            OutputHelper.WriteLine("verify known true condition executes with single statement");
             Assert.True(Statements_TestClass_dowhile_004.testMethod());
         }
 
         [TestMethod]
         public void Statements_dowhile_005_Test()
         {
-            Debug.WriteLine("dowhile_005.sc");
-            Debug.WriteLine("verify known false condition executes once with compound statements");
+            OutputHelper.WriteLine("dowhile_005.sc");
+            OutputHelper.WriteLine("verify known false condition executes once with compound statements");
             Assert.True(Statements_TestClass_dowhile_005.testMethod());
         }
 
         [TestMethod]
         public void Statements_dowhile_006_Test()
         {
-            Debug.WriteLine("dowhile_006.sc");
-            Debug.WriteLine("verify known true condition executes with compound statements");
+            OutputHelper.WriteLine("dowhile_006.sc");
+            OutputHelper.WriteLine("verify known true condition executes with compound statements");
             Assert.True(Statements_TestClass_dowhile_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_001_Test()
         {
-            Debug.WriteLine("for_001.sc");
-            Debug.WriteLine("empty for loop");
+            OutputHelper.WriteLine("for_001.sc");
+            OutputHelper.WriteLine("empty for loop");
             Assert.True(Statements_TestClass_for_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_003_Test()
         {
-            Debug.WriteLine("for_003.sc");
-            Debug.WriteLine("empty initializer in for loop");
+            OutputHelper.WriteLine("for_003.sc");
+            OutputHelper.WriteLine("empty initializer in for loop");
             Assert.True(Statements_TestClass_for_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_004_Test()
         {
-            Debug.WriteLine("for_004.sc");
-            Debug.WriteLine("empty iterator in for loop");
+            OutputHelper.WriteLine("for_004.sc");
+            OutputHelper.WriteLine("empty iterator in for loop");
             Assert.True(Statements_TestClass_for_004.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_006_Test()
         {
-            Debug.WriteLine("for_006.sc");
-            Debug.WriteLine("Full normal for loop");
+            OutputHelper.WriteLine("for_006.sc");
+            OutputHelper.WriteLine("Full normal for loop");
             Assert.True(Statements_TestClass_for_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_007_Test()
         {
-            Debug.WriteLine("for_007.sc");
-            Debug.WriteLine("Full normal for loop with a compound statement");
+            OutputHelper.WriteLine("for_007.sc");
+            OutputHelper.WriteLine("Full normal for loop with a compound statement");
             Assert.True(Statements_TestClass_for_007.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_008_Test()
         {
-            Debug.WriteLine("for_008.sc");
-            Debug.WriteLine("Multiple declarations in initializer");
+            OutputHelper.WriteLine("for_008.sc");
+            OutputHelper.WriteLine("Multiple declarations in initializer");
             Assert.True(Statements_TestClass_for_008.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_009_Test()
         {
-            Debug.WriteLine("for_009.sc");
-            Debug.WriteLine("Statements_TestClass_? statement expression lists in for initializer");
+            OutputHelper.WriteLine("for_009.sc");
+            OutputHelper.WriteLine("Statements_TestClass_? statement expression lists in for initializer");
             Assert.True(Statements_TestClass_for_009.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_010_Test()
         {
-            Debug.WriteLine("for_010.sc");
-            Debug.WriteLine("Statements_TestClass_? statement expression lists in for iterator");
+            OutputHelper.WriteLine("for_010.sc");
+            OutputHelper.WriteLine("Statements_TestClass_? statement expression lists in for iterator");
             Assert.True(Statements_TestClass_for_010.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_011_Test()
         {
-            Debug.WriteLine("for_011.sc");
-            Debug.WriteLine("Statements_TestClass_? statement expression lists in for initializer and iterator");
+            OutputHelper.WriteLine("for_011.sc");
+            OutputHelper.WriteLine("Statements_TestClass_? statement expression lists in for initializer and iterator");
             Assert.True(Statements_TestClass_for_011.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_013_Test()
         {
-            Debug.WriteLine("for_013.sc");
-            Debug.WriteLine("Verify conditional evaluates before iterator");
+            OutputHelper.WriteLine("for_013.sc");
+            OutputHelper.WriteLine("Verify conditional evaluates before iterator");
             Assert.True(Statements_TestClass_for_013.testMethod());
         }
 
         [TestMethod]
         public void Statements_for_014_Test()
         {
-            Debug.WriteLine("for_014.sc");
-            Debug.WriteLine("Verify method calls work ok in all for loop areas");
+            OutputHelper.WriteLine("for_014.sc");
+            OutputHelper.WriteLine("Verify method calls work ok in all for loop areas");
             Assert.True(Statements_TestClass_for_014.testMethod());
         }
 
         [TestMethod]
         public void Statements_char_in_string_s01_Test()
         {
-            Debug.WriteLine("Optimization to foreach (char c in String) by treating String as a char array");
+            OutputHelper.WriteLine("Optimization to foreach (char c in String) by treating String as a char array");
             Assert.True(Statements_TestClass_char_in_string_s01.testMethod());
         }
 
         [TestMethod]
         public void Statements_char_in_string_ex01_Test()
         {
-            Debug.WriteLine("Optimization to foreach (char c in String) by treating String as a char array");
+            OutputHelper.WriteLine("Optimization to foreach (char c in String) by treating String as a char array");
             Assert.True(Statements_TestClass_char_in_string_ex01.testMethod());
         }
 
         [TestMethod]
         public void Statements_while_001_Test()
         {
-            Debug.WriteLine("while_001.sc");
-            Debug.WriteLine("while with a single statement");
+            OutputHelper.WriteLine("while_001.sc");
+            OutputHelper.WriteLine("while with a single statement");
             Assert.True(Statements_TestClass_while_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_while_002_Test()
         {
-            Debug.WriteLine("while_002.sc");
-            Debug.WriteLine("while with a compound statement");
+            OutputHelper.WriteLine("while_002.sc");
+            OutputHelper.WriteLine("while with a compound statement");
             Assert.True(Statements_TestClass_while_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_while_003_Test()
         {
-            Debug.WriteLine("while_003.sc");
-            Debug.WriteLine("verify known false condition doesn't execute with single statement");
+            OutputHelper.WriteLine("while_003.sc");
+            OutputHelper.WriteLine("verify known false condition doesn't execute with single statement");
             Assert.True(Statements_TestClass_while_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_while_004_Test()
         {
-            Debug.WriteLine("while_004.sc");
-            Debug.WriteLine("verify known true condition executes with single statement");
+            OutputHelper.WriteLine("while_004.sc");
+            OutputHelper.WriteLine("verify known true condition executes with single statement");
             Assert.True(Statements_TestClass_while_004.testMethod());
         }
 
         [TestMethod]
         public void Statements_while_005_Test()
         {
-            Debug.WriteLine("while_005.sc");
-            Debug.WriteLine("verify known false condition doesn't execute with compound statements");
+            OutputHelper.WriteLine("while_005.sc");
+            OutputHelper.WriteLine("verify known false condition doesn't execute with compound statements");
             Assert.True(Statements_TestClass_while_005.testMethod());
         }
 
         [TestMethod]
         public void Statements_while_006_Test()
         {
-            Debug.WriteLine("while_006.sc");
-            Debug.WriteLine("verify known true condition executes with compound statements");
+            OutputHelper.WriteLine("while_006.sc");
+            OutputHelper.WriteLine("verify known true condition executes with compound statements");
             Assert.True(Statements_TestClass_while_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_break_001_Test()
         {
-            Debug.WriteLine("break_001.sc");
-            Debug.WriteLine("Make sure break works in all basic single statement loops");
+            OutputHelper.WriteLine("break_001.sc");
+            OutputHelper.WriteLine("Make sure break works in all basic single statement loops");
             Assert.True(Statements_TestClass_break_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_break_002_Test()
         {
-            Debug.WriteLine("break_002.sc");
-            Debug.WriteLine("Make sure break works in all basic compound statement loops");
+            OutputHelper.WriteLine("break_002.sc");
+            OutputHelper.WriteLine("Make sure break works in all basic compound statement loops");
             Assert.True(Statements_TestClass_break_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_break_003_Test()
         {
-            Debug.WriteLine("break_003.sc");
-            Debug.WriteLine("Make sure break optional on end of switch");
+            OutputHelper.WriteLine("break_003.sc");
+            OutputHelper.WriteLine("Make sure break optional on end of switch");
             Assert.True(Statements_TestClass_break_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_break_006_Test()
         {
-            Debug.WriteLine("break_006.sc");
-            Debug.WriteLine("break in an if successfully breaks loop");
+            OutputHelper.WriteLine("break_006.sc");
+            OutputHelper.WriteLine("break in an if successfully breaks loop");
             Assert.True(Statements_TestClass_break_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_break_007_Test()
         {
-            Debug.WriteLine("break_007.sc");
-            Debug.WriteLine("break in a blocked if successfully breaks loop");
+            OutputHelper.WriteLine("break_007.sc");
+            OutputHelper.WriteLine("break in a blocked if successfully breaks loop");
             Assert.True(Statements_TestClass_break_007.testMethod());
         }
 
         [TestMethod]
         public void Statements_break_010_Test()
         {
-            Debug.WriteLine("break_010.sc");
-            Debug.WriteLine("Make sure break correctly when nested");
+            OutputHelper.WriteLine("break_010.sc");
+            OutputHelper.WriteLine("Make sure break correctly when nested");
             Assert.True(Statements_TestClass_break_010.testMethod());
         }
 
         [TestMethod]
         public void Statements_continue_001_Test()
         {
-            Debug.WriteLine("continue_001.sc");
-            Debug.WriteLine("Make sure continue works in all basic single statement loops");
+            OutputHelper.WriteLine("continue_001.sc");
+            OutputHelper.WriteLine("Make sure continue works in all basic single statement loops");
             Assert.True(Statements_TestClass_continue_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_continue_002_Test()
         {
-            Debug.WriteLine("continue_002.sc");
-            Debug.WriteLine("Make sure continue works in all basic compound statement loops");
-            Debug.WriteLine("Expected Output");
+            OutputHelper.WriteLine("continue_002.sc");
+            OutputHelper.WriteLine("Make sure continue works in all basic compound statement loops");
+            OutputHelper.WriteLine("Expected Output");
             Assert.True(Statements_TestClass_continue_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_continue_006_Test()
         {
-            Debug.WriteLine("continue_006.sc");
-            Debug.WriteLine("continue in an if successfully continues loop");
+            OutputHelper.WriteLine("continue_006.sc");
+            OutputHelper.WriteLine("continue in an if successfully continues loop");
             Assert.True(Statements_TestClass_continue_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_continue_007_Test()
         {
-            Debug.WriteLine("continue_007.sc");
-            Debug.WriteLine("continue in a block if successfully continues loop");
+            OutputHelper.WriteLine("continue_007.sc");
+            OutputHelper.WriteLine("continue in a block if successfully continues loop");
             Assert.True(Statements_TestClass_continue_007.testMethod());
         }
 
         [TestMethod]
         public void Statements_continue_010_Test()
         {
-            Debug.WriteLine("continue_010.sc");
-            Debug.WriteLine("Make sure continue works correctly when nested");
+            OutputHelper.WriteLine("continue_010.sc");
+            OutputHelper.WriteLine("Make sure continue works correctly when nested");
             Assert.True(Statements_TestClass_continue_010.testMethod());
         }
 
         [TestMethod]
         public void Statements_goto_001_Test()
         {
-            Debug.WriteLine("goto_001.sc");
-            Debug.WriteLine("simple goto to adjust flow control");
+            OutputHelper.WriteLine("goto_001.sc");
+            OutputHelper.WriteLine("simple goto to adjust flow control");
             Assert.True(Statements_TestClass_goto_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_goto_008_Test()
         {
-            Debug.WriteLine("goto_008.sc");
-            Debug.WriteLine("goto currect case");
+            OutputHelper.WriteLine("goto_008.sc");
+            OutputHelper.WriteLine("goto currect case");
             Assert.True(Statements_TestClass_goto_008.testMethod());
         }
 
         [TestMethod]
         public void Statements_goto_009_Test()
         {
-            Debug.WriteLine("goto_009.sc");
-            Debug.WriteLine("goto a different case");
-            Debug.WriteLine("Expected Output");
+            OutputHelper.WriteLine("goto_009.sc");
+            OutputHelper.WriteLine("goto a different case");
+            OutputHelper.WriteLine("Expected Output");
             Assert.True(Statements_TestClass_goto_009.testMethod());
         }
 
         [TestMethod]
         public void Statements_goto_010_Test()
         {
-            Debug.WriteLine("goto_010.sc");
-            Debug.WriteLine("goto default correctly");
+            OutputHelper.WriteLine("goto_010.sc");
+            OutputHelper.WriteLine("goto default correctly");
             Assert.True(Statements_TestClass_goto_010.testMethod());
         }
 
         [TestMethod]
         public void Statements_goto_014_Test()
         {
-            Debug.WriteLine("goto_014.sc");
-            Debug.WriteLine("simple gotos to test jumping to parent process.");
+            OutputHelper.WriteLine("goto_014.sc");
+            OutputHelper.WriteLine("simple gotos to test jumping to parent process.");
             Assert.True(Statements_TestClass_goto_014.testMethod());
         }
 
         [TestMethod]
         public void Statements_goto_017_Test()
         {
-            Debug.WriteLine("   some gotos");
+            OutputHelper.WriteLine("   some gotos");
             Assert.True(Statements_TestClass_goto_017.testMethod());
         }
 
         [TestMethod]
         public void Statements_goto_018_Test()
         {
-            Debug.WriteLine("   try/catch/finally with goto");
+            OutputHelper.WriteLine("   try/catch/finally with goto");
             Assert.True(Statements_TestClass_goto_018.testMethod());
         }
 
         [TestMethod]
         public void Statements_return_001_Test()
         {
-            Debug.WriteLine("return_001.sc");
-            Debug.WriteLine("simple void return on a void method");
+            OutputHelper.WriteLine("return_001.sc");
+            OutputHelper.WriteLine("simple void return on a void method");
             Assert.True(Statements_TestClass_return_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_return_004_Test()
         {
-            Debug.WriteLine("return_004.sc");
-            Debug.WriteLine("simple return a normal type, assigning, and ignoring return value");
+            OutputHelper.WriteLine("return_004.sc");
+            OutputHelper.WriteLine("simple return a normal type, assigning, and ignoring return value");
             Assert.True(Statements_TestClass_return_004.testMethod());
         }
 
         [TestMethod]
         public void Statements_return_006_Test()
         {
-            Debug.WriteLine("return_006.sc");
-            Debug.WriteLine("simple return a type mismatch that has an implicit conversion");
+            OutputHelper.WriteLine("return_006.sc");
+            OutputHelper.WriteLine("simple return a type mismatch that has an implicit conversion");
             Assert.True(Statements_TestClass_return_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_return_008_Test()
         {
-            Debug.WriteLine("return_008.sc");
-            Debug.WriteLine("simple return a type mismatch that has an explicit convertion conversion,");
-            Debug.WriteLine("applying the cast");
+            OutputHelper.WriteLine("return_008.sc");
+            OutputHelper.WriteLine("simple return a type mismatch that has an explicit convertion conversion,");
+            OutputHelper.WriteLine("applying the cast");
             Assert.True(Statements_TestClass_return_008.testMethod());
         }
 
         [TestMethod]
         public void Statements_return_009_Test()
         {
-            Debug.WriteLine("return_009.sc");
-            Debug.WriteLine("return of a struct");
+            OutputHelper.WriteLine("return_009.sc");
+            OutputHelper.WriteLine("return of a struct");
             Assert.True(Statements_TestClass_return_009.testMethod());
         }
 
         [TestMethod]
         public void Statements_return_010_Test()
         {
-            Debug.WriteLine("return_010.sc");
-            Debug.WriteLine("return of a class");
+            OutputHelper.WriteLine("return_010.sc");
+            OutputHelper.WriteLine("return of a class");
             Assert.True(Statements_TestClass_return_010.testMethod());
         }
 
         [TestMethod]
         public void Statements_return_013_Test()
         {
-            Debug.WriteLine("return_013.sc");
-            Debug.WriteLine("simple falloff on a void method");
+            OutputHelper.WriteLine("return_013.sc");
+            OutputHelper.WriteLine("simple falloff on a void method");
             Assert.True(Statements_TestClass_return_013.testMethod());
         }
 
         [TestMethod]
         public void Statements_return_014_Test()
         {
-            Debug.WriteLine("return_014.sc");
-            Debug.WriteLine("verify that a 'throw' is adequate for flow control analysis of return type");
+            OutputHelper.WriteLine("return_014.sc");
+            OutputHelper.WriteLine("verify that a 'throw' is adequate for flow control analysis of return type");
             Assert.True(Statements_TestClass_return_014.testMethod());
         }
 
         [TestMethod]
         public void Statements_throw_001_Test()
         {
-            Debug.WriteLine("throw_001.sc");
-            Debug.WriteLine("simple throw");
+            OutputHelper.WriteLine("throw_001.sc");
+            OutputHelper.WriteLine("simple throw");
             Assert.True(Statements_TestClass_throw_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_throw_005_Test()
         {
-            Debug.WriteLine("throw_005.sc");
-            Debug.WriteLine("simple throw with output");
+            OutputHelper.WriteLine("throw_005.sc");
+            OutputHelper.WriteLine("simple throw with output");
             Assert.True(Statements_TestClass_throw_005.testMethod());
         }
 
         [TestMethod]
         public void Statements_trycatch_001_Test()
         {
-            Debug.WriteLine("trycatch_001.sc");
-            Debug.WriteLine("simple throw");
+            OutputHelper.WriteLine("trycatch_001.sc");
+            OutputHelper.WriteLine("simple throw");
             Assert.True(Statements_TestClass_trycatch_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_trycatch_006_Test()
         {
-            Debug.WriteLine("trycatch_006.sc");
-            Debug.WriteLine("simple system generated System.Exception");
+            OutputHelper.WriteLine("trycatch_006.sc");
+            OutputHelper.WriteLine("simple system generated System.Exception");
             Assert.True(Statements_TestClass_trycatch_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_trycatch_007_Test()
         {
-            Debug.WriteLine("trycatch_007.sc");
-            Debug.WriteLine("simple re-throw");
+            OutputHelper.WriteLine("trycatch_007.sc");
+            OutputHelper.WriteLine("simple re-throw");
             Assert.True(Statements_TestClass_trycatch_007.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_001_Test()
         {
-            Debug.WriteLine("tryfinally_001.sc");
-            Debug.WriteLine("simple finally");
+            OutputHelper.WriteLine("tryfinally_001.sc");
+            OutputHelper.WriteLine("simple finally");
             Assert.True(Statements_TestClass_tryfinally_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_002_Test()
         {
-            Debug.WriteLine("tryfinally_002.sc");
-            Debug.WriteLine("simple finally inside try/catch");
+            OutputHelper.WriteLine("tryfinally_002.sc");
+            OutputHelper.WriteLine("simple finally inside try/catch");
             Assert.True(Statements_TestClass_tryfinally_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_003_Test()
         {
-            Debug.WriteLine("tryfinally_003.sc");
-            Debug.WriteLine("simple finally outside try/catch");
+            OutputHelper.WriteLine("tryfinally_003.sc");
+            OutputHelper.WriteLine("simple finally outside try/catch");
             Assert.True(Statements_TestClass_tryfinally_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_004_Test()
         {
-            Debug.WriteLine("tryfinally_004.sc");
-            Debug.WriteLine("simple finally passed 'over' by a goto");
+            OutputHelper.WriteLine("tryfinally_004.sc");
+            OutputHelper.WriteLine("simple finally passed 'over' by a goto");
             Assert.True(Statements_TestClass_tryfinally_004.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_006_Test()
         {
-            Debug.WriteLine("tryfinally_006.sc");
-            Debug.WriteLine("simple finally exited by throw");
+            OutputHelper.WriteLine("tryfinally_006.sc");
+            OutputHelper.WriteLine("simple finally exited by throw");
             Assert.True(Statements_TestClass_tryfinally_006.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_007_Test()
         {
-            Debug.WriteLine("tryfinally_007.sc");
-            Debug.WriteLine("simple finally exited by throw in a called method");
+            OutputHelper.WriteLine("tryfinally_007.sc");
+            OutputHelper.WriteLine("simple finally exited by throw in a called method");
             Assert.True(Statements_TestClass_tryfinally_007.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_008_Test()
         {
-            Debug.WriteLine("tryfinally_008.sc");
-            Debug.WriteLine("simple finally exited by return");
+            OutputHelper.WriteLine("tryfinally_008.sc");
+            OutputHelper.WriteLine("simple finally exited by return");
             Assert.True(Statements_TestClass_tryfinally_008.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_009_Test()
         {
-            Debug.WriteLine("tryfinally_009.sc");
-            Debug.WriteLine("simple finally exited by continue");
+            OutputHelper.WriteLine("tryfinally_009.sc");
+            OutputHelper.WriteLine("simple finally exited by continue");
             Assert.True(Statements_TestClass_tryfinally_009.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_010_Test()
         {
-            Debug.WriteLine("tryfinally_010.sc");
-            Debug.WriteLine("simple finally exited by break");
+            OutputHelper.WriteLine("tryfinally_010.sc");
+            OutputHelper.WriteLine("simple finally exited by break");
             Assert.True(Statements_TestClass_tryfinally_010.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_011_Test()
         {
-            Debug.WriteLine("tryfinally_011.sc");
-            Debug.WriteLine("simple finally exited by break (where break is outside try)");
+            OutputHelper.WriteLine("tryfinally_011.sc");
+            OutputHelper.WriteLine("simple finally exited by break (where break is outside try)");
             Assert.True(Statements_TestClass_tryfinally_011.testMethod());
         }
 
         [TestMethod]
         public void Statements_tryfinally_012_Test()
         {
-            Debug.WriteLine("tryfinally_012.sc");
-            Debug.WriteLine("simple finally exited by system System.Exception");
+            OutputHelper.WriteLine("tryfinally_012.sc");
+            OutputHelper.WriteLine("simple finally exited by system System.Exception");
             Assert.True(Statements_TestClass_tryfinally_012.testMethod());
         }
 
@@ -1031,160 +1031,160 @@ namespace NFUnitTestStatementsTests
         [TestMethod]
         public void Statements_Using_001_Test()
         {
-            Debug.WriteLine("using_001.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Cast a class to IDisposable explicitly, use that in the using statement. (1.a)");
+            OutputHelper.WriteLine("using_001.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Cast a class to IDisposable explicitly, use that in the using statement. (1.a)");
             Assert.True(Statements_TestClass_Using_001.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_002_Test()
         {
-            Debug.WriteLine("using_002.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Use a class directly in using (1.b)");
+            OutputHelper.WriteLine("using_002.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Use a class directly in using (1.b)");
             Assert.True(Statements_TestClass_Using_002.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_003_Test()
         {
-            Debug.WriteLine("using_003.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Creation of class as part of using statement (1.c)");
+            OutputHelper.WriteLine("using_003.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Creation of class as part of using statement (1.c)");
             Assert.True(Statements_TestClass_Using_003.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_005_Test()
         {
-            Debug.WriteLine("using_005.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("A class that explicitly implements IDisposable. (1.e)");
+            OutputHelper.WriteLine("using_005.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("A class that explicitly implements IDisposable. (1.e)");
             Assert.True(Statements_TestClass_Using_005.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_009_Test()
         {
-            Debug.WriteLine("using_009.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Statements_TestClass_? the behavior if the used variable is nulled-out in the using block (4)");
+            OutputHelper.WriteLine("using_009.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Statements_TestClass_? the behavior if the used variable is nulled-out in the using block (4)");
             Assert.True(Statements_TestClass_Using_009.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_010_Test()
         {
-            Debug.WriteLine("using_010.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Dispose() called during normal exit (5.a)");
+            OutputHelper.WriteLine("using_010.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Dispose() called during normal exit (5.a)");
             Assert.True(Statements_TestClass_Using_010.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_011_Test()
         {
-            Debug.WriteLine("using_011.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Dispose() called after throw (5.b)");
-            Debug.WriteLine("Expected Output");
+            OutputHelper.WriteLine("using_011.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Dispose() called after throw (5.b)");
+            OutputHelper.WriteLine("Expected Output");
             Assert.True(Statements_TestClass_Using_011.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_012_Test()
         {
-            Debug.WriteLine("using_012.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Dispose() called for two objects during normal exit. (5.c)");
+            OutputHelper.WriteLine("using_012.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Dispose() called for two objects during normal exit. (5.c)");
             Assert.True(Statements_TestClass_Using_012.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_013_Test()
         {
-            Debug.WriteLine("using_013.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Dispose() called for first objects with System.Exception thrown before second block. (5.d)");
+            OutputHelper.WriteLine("using_013.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Dispose() called for first objects with System.Exception thrown before second block. (5.d)");
             Assert.True(Statements_TestClass_Using_013.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_014_Test()
         {
-            Debug.WriteLine("using_014.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Dispose() called for first objects with System.Exception thrown after second block. (5.e)");
+            OutputHelper.WriteLine("using_014.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Dispose() called for first objects with System.Exception thrown after second block. (5.e)");
             Assert.True(Statements_TestClass_Using_014.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_015_Test()
         {
-            Debug.WriteLine("using_015.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Dispose() called for both objects when System.Exception thrown inside second block. (5.f)");
+            OutputHelper.WriteLine("using_015.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Dispose() called for both objects when System.Exception thrown inside second block. (5.f)");
             Assert.True(Statements_TestClass_Using_015.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_017_Test()
         {
-            Debug.WriteLine("using_017.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Dispose() called for both objects when System.Exception thrown in compound case (5.h)");
+            OutputHelper.WriteLine("using_017.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Dispose() called for both objects when System.Exception thrown in compound case (5.h)");
             Assert.True(Statements_TestClass_Using_017.testMethod());
         }
 
         [TestMethod]
         public void Statements_Using_018_Test()
         {
-            Debug.WriteLine("using_018.cs");
-            Debug.WriteLine("Statements_TestClass_? the using statement.");
-            Debug.WriteLine("Dispose() called for both objects in compound using. (5.g)");
+            OutputHelper.WriteLine("using_018.cs");
+            OutputHelper.WriteLine("Statements_TestClass_? the using statement.");
+            OutputHelper.WriteLine("Dispose() called for both objects in compound using. (5.g)");
             Assert.True(Statements_TestClass_Using_018.testMethod());
         }
 
         [TestMethod]
         public void Statements_lock001_Test()
         {
-            Debug.WriteLine("The expression of a lock statement must denote a value of a reference-type");
+            OutputHelper.WriteLine("The expression of a lock statement must denote a value of a reference-type");
             Assert.True(Statements_TestClass_lock001.testMethod());
         }
 
         [TestMethod]
         public void Statements_lock003_Test()
         {
-            Debug.WriteLine("The System.Type object of a class can conveniently be used as the mutual-exclusion lock for static methods of the class");
+            OutputHelper.WriteLine("The System.Type object of a class can conveniently be used as the mutual-exclusion lock for static methods of the class");
             Assert.True(Statements_TestClass_lock003.testMethod());
         }
 
         [TestMethod]
         public void Statements_lock004_Test()
         {
-            Debug.WriteLine("possible mistaken null statement when semi-column appears directly after lock()");
+            OutputHelper.WriteLine("possible mistaken null statement when semi-column appears directly after lock()");
             Assert.True(Statements_TestClass_lock004.testMethod());
         }
 
         [TestMethod]
         public void Statements_lock005_Test()
         {
-            Debug.WriteLine("this as the lock expression in a reference type");
+            OutputHelper.WriteLine("this as the lock expression in a reference type");
             Assert.True(Statements_TestClass_lock005.testMethod());
         }
 
         [TestMethod]
         public void Statements_lock007_Test()
         {
-            Debug.WriteLine("nested lock statements");
+            OutputHelper.WriteLine("nested lock statements");
             Assert.True(Statements_TestClass_lock007.testMethod());
         }
 
         [TestMethod]
         public void Statements_enum_002_Test()
         {
-            Debug.WriteLine("   enum: comparing constant casted to an enum type to a variable");
+            OutputHelper.WriteLine("   enum: comparing constant casted to an enum type to a variable");
             Assert.True(Statements_TestClass_enum_002.testMethod());
         }
 
@@ -1192,11 +1192,11 @@ namespace NFUnitTestStatementsTests
         {
             public void Dispose()
             {
-                Debug.WriteLine("Res1.Dispose()");
+                OutputHelper.WriteLine("Res1.Dispose()");
             }
             public void Func()
             {
-                Debug.WriteLine("Res1.Func()");
+                OutputHelper.WriteLine("Res1.Func()");
             }
             public void Throw()
             {
@@ -1208,11 +1208,11 @@ namespace NFUnitTestStatementsTests
         {
             public void Dispose()
             {
-                Debug.WriteLine("Res2.Dispose()");
+                OutputHelper.WriteLine("Res2.Dispose()");
             }
             public void Func()
             {
-                Debug.WriteLine("Res2.Func()");
+                OutputHelper.WriteLine("Res2.Func()");
             }
             public void Throw()
             {
@@ -1225,11 +1225,11 @@ namespace NFUnitTestStatementsTests
         {
             void IDisposable.Dispose()
             {
-                Debug.WriteLine("ResExplicit.Dispose()");
+                OutputHelper.WriteLine("ResExplicit.Dispose()");
             }
             public void Func()
             {
-                Debug.WriteLine("ResExplicit.Func()");
+                OutputHelper.WriteLine("ResExplicit.Func()");
             }
             public void Throw()
             {
@@ -1242,11 +1242,11 @@ namespace NFUnitTestStatementsTests
         {
             public void GarbageDisposal()
             {
-                Debug.WriteLine("NonRes1.GarbageDisposal()");
+                OutputHelper.WriteLine("NonRes1.GarbageDisposal()");
             }
             public void Func()
             {
-                Debug.WriteLine("NonRes1.Func()");
+                OutputHelper.WriteLine("NonRes1.Func()");
             }
             public void Throw()
             {
@@ -1259,11 +1259,11 @@ namespace NFUnitTestStatementsTests
         {
             public void Dispose()
             {
-                Debug.WriteLine("NonRes2.Dispose()");
+                OutputHelper.WriteLine("NonRes2.Dispose()");
             }
             public void Func()
             {
-                Debug.WriteLine("NonRes2.Func()");
+                OutputHelper.WriteLine("NonRes2.Func()");
             }
             public void Throw()
             {
@@ -1478,17 +1478,17 @@ namespace NFUnitTestStatementsTests
                     f[i] = foo = new Foo(i);
                     if (foo.GetInt() != i)
                     {
-                        Debug.WriteLine("new Foo() didn't take");
+                        OutputHelper.WriteLine("new Foo() didn't take");
                         return (1);
                     }
                     if (f[i].GetInt() != i)
                     {
-                        Debug.WriteLine("Array didn't get updated");
+                        OutputHelper.WriteLine("Array didn't get updated");
                         return (1);
                     }
                     if (f[i] != foo)
                     {
-                        Debug.WriteLine("Array element and foo are different");
+                        OutputHelper.WriteLine("Array element and foo are different");
                         return (i);
                     }
                 }
@@ -1761,28 +1761,28 @@ namespace NFUnitTestStatementsTests
             public static int Main_old(string[] args)
             {
                 int i = 0;
-                Debug.WriteLine("Adding 5");
+                OutputHelper.WriteLine("Adding 5");
                 i += 5;  // i == 5
                 if (i != 5) return (1);
-                Debug.WriteLine("Subtracting 3");
+                OutputHelper.WriteLine("Subtracting 3");
                 i -= 3;  // i == 2
                 if (i != 2) return (1);
-                Debug.WriteLine("Multiplying by 4");
+                OutputHelper.WriteLine("Multiplying by 4");
                 i *= 4;  // i == 8
                 if (i != 8) return (1);
-                Debug.WriteLine("Dividing by 2");
+                OutputHelper.WriteLine("Dividing by 2");
                 i /= 2;  // i == 4
                 if (i != 4) return (1);
-                Debug.WriteLine("Left Shifting 3");
+                OutputHelper.WriteLine("Left Shifting 3");
                 i <<= 3; // i == 32
                 if (i != 32) return (1);
-                Debug.WriteLine("Right Shifting 2");
+                OutputHelper.WriteLine("Right Shifting 2");
                 i >>= 2; // i == 8
                 if (i != 8) return (1);
-                Debug.WriteLine("ANDing against logical not");
+                OutputHelper.WriteLine("ANDing against logical not");
                 i &= ~i; // i = 0
                 if (i != 0) return (1);
-                Debug.WriteLine("ORing by 0xBeaf");
+                OutputHelper.WriteLine("ORing by 0xBeaf");
                 i |= 48815; // i = 0xBeaf
                 if (i != 0xBeaf) return (1);
                 return (true ? 0 : 1);
@@ -2114,33 +2114,33 @@ namespace NFUnitTestStatementsTests
                 {
                     case 0:
                         ret--; // 2
-                        Debug.WriteLine("case 0: ");
-                        Debug.WriteLine(ret.ToString());
+                        OutputHelper.WriteLine("case 0: ");
+                        OutputHelper.WriteLine(ret.ToString());
                         goto case 9999;
                     case 2:
                         ret--; // 4
-                        Debug.WriteLine("case 2: ");
-                        Debug.WriteLine(ret.ToString());
+                        OutputHelper.WriteLine("case 2: ");
+                        OutputHelper.WriteLine(ret.ToString());
                         goto case 255;
                     case 6:			// start here
                         ret--; // 5
-                        Debug.WriteLine("case 5: ");
-                        Debug.WriteLine(ret.ToString());
+                        OutputHelper.WriteLine("case 5: ");
+                        OutputHelper.WriteLine(ret.ToString());
                         goto case 2;
                     case 9999:
                         ret--; // 1
-                        Debug.WriteLine("case 9999: ");
-                        Debug.WriteLine(ret.ToString());
+                        OutputHelper.WriteLine("case 9999: ");
+                        OutputHelper.WriteLine(ret.ToString());
                         goto default;
                     case 0xff:
                         ret--; // 3
-                        Debug.WriteLine("case 0xff: ");
-                        Debug.WriteLine(ret.ToString());
+                        OutputHelper.WriteLine("case 0xff: ");
+                        OutputHelper.WriteLine(ret.ToString());
                         goto case 0;
                     default:
                         ret--;
-                        Debug.WriteLine("Default: ");
-                        Debug.WriteLine(ret.ToString());
+                        OutputHelper.WriteLine("Default: ");
+                        OutputHelper.WriteLine(ret.ToString());
                         if (ret > 0)
                         {
                             goto case -1;
@@ -2148,8 +2148,8 @@ namespace NFUnitTestStatementsTests
                         break;
                     case -1:
                         ret = 999;
-                        Debug.WriteLine("case -1: ");
-                        Debug.WriteLine(ret.ToString());
+                        OutputHelper.WriteLine("case -1: ");
+                        OutputHelper.WriteLine(ret.ToString());
                         break;
                 }
                 return (ret);
@@ -2193,7 +2193,7 @@ namespace NFUnitTestStatementsTests
                         break;
                 }
                 if (ret > 0)
-                    Debug.WriteLine("byte failed");
+                    OutputHelper.WriteLine("byte failed");
                 return (ret);
             }
 
@@ -2237,7 +2237,7 @@ namespace NFUnitTestStatementsTests
                         break;
                 }
                 if (ret > 0)
-                    Debug.WriteLine("char failed");
+                    OutputHelper.WriteLine("char failed");
                 return (ret);
             }
             public static bool testMethod()
@@ -2279,7 +2279,7 @@ namespace NFUnitTestStatementsTests
                         break;
                 }
                 if (ret > 0)
-                    Debug.WriteLine("short failed");
+                    OutputHelper.WriteLine("short failed");
                 return (ret);
             }
 
@@ -2323,7 +2323,7 @@ namespace NFUnitTestStatementsTests
                         break;
                 }
                 if (ret > 0)
-                    Debug.WriteLine("int failed");
+                    OutputHelper.WriteLine("int failed");
                 return (ret);
             }
             public static bool testMethod()
@@ -2365,7 +2365,7 @@ namespace NFUnitTestStatementsTests
                         break;
                 }
                 if (ret > 0)
-                    Debug.WriteLine("long failed");
+                    OutputHelper.WriteLine("long failed");
                 return (ret);
             }
 
@@ -2415,7 +2415,7 @@ namespace NFUnitTestStatementsTests
                         break;
                 }
                 if (ret > 0)
-                    Debug.WriteLine("enum	failed");
+                    OutputHelper.WriteLine("enum	failed");
                 return (ret);
             }
             public static bool testMethod()
@@ -2527,7 +2527,7 @@ namespace NFUnitTestStatementsTests
                 switch (t)
                 {
                     case 1:
-                        Debug.WriteLine("a");
+                        OutputHelper.WriteLine("a");
                         return 0;
                     default:
                         return 1;
@@ -2825,7 +2825,7 @@ namespace NFUnitTestStatementsTests
                 switch (s)
                 {
                     case null:
-                        Debug.WriteLine("null");
+                        OutputHelper.WriteLine("null");
                         return 0;
                     default:
                         return 1;
@@ -2920,7 +2920,7 @@ namespace NFUnitTestStatementsTests
                 int ret = 1;
                 do
                 {
-                    Debug.WriteLine("Hello World");
+                    OutputHelper.WriteLine("Hello World");
                     ret--;
                 } while (bFalse);
                 return (ret);
@@ -2938,7 +2938,7 @@ namespace NFUnitTestStatementsTests
                 bool bTrue = true;
                 do
                 {
-                    Debug.WriteLine("Hello World");
+                    OutputHelper.WriteLine("Hello World");
                     return (0);
                 } while (bTrue);
                 return (1);
@@ -3061,12 +3061,12 @@ namespace NFUnitTestStatementsTests
                 }
                 if (i + 1 != j)
                 {
-                    Debug.WriteLine("Failure: i + 1 != j");
+                    OutputHelper.WriteLine("Failure: i + 1 != j");
                     return (1);
                 }
                 if (j + 1 != k)
                 {
-                    Debug.WriteLine("Failure: j + 1 != k");
+                    OutputHelper.WriteLine("Failure: j + 1 != k");
                     return (1);
                 }
                 return (ret);
@@ -3089,12 +3089,12 @@ namespace NFUnitTestStatementsTests
                 }
                 if (i + 1 != j)
                 {
-                    Debug.WriteLine("Failure: i + 1 != j");
+                    OutputHelper.WriteLine("Failure: i + 1 != j");
                     return (1);
                 }
                 if (j + 1 != k)
                 {
-                    Debug.WriteLine("Failure: j + 1 != k");
+                    OutputHelper.WriteLine("Failure: j + 1 != k");
                     return (1);
                 }
                 return (ret);
@@ -3118,12 +3118,12 @@ namespace NFUnitTestStatementsTests
                 }
                 if (i + 1 != j)
                 {
-                    Debug.WriteLine("Failure: i + 1 != j");
+                    OutputHelper.WriteLine("Failure: i + 1 != j");
                     return (1);
                 }
                 if (j + 1 != k)
                 {
-                    Debug.WriteLine("Failure: j + 1 != k");
+                    OutputHelper.WriteLine("Failure: j + 1 != k");
                     return (1);
                 }
                 return (ret);
@@ -3213,7 +3213,7 @@ namespace NFUnitTestStatementsTests
                     foreach (char C in Str)
                     {
                         return 1;
-                        Debug.WriteLine("Fail");
+                        OutputHelper.WriteLine("Fail");
                     }
                 }
                 catch (System.Exception)
@@ -3307,7 +3307,7 @@ namespace NFUnitTestStatementsTests
                 bool bFalse = false;
                 while (bFalse)
                 {
-                    Debug.WriteLine("Hello World");
+                    OutputHelper.WriteLine("Hello World");
                     return (1);
                 }
                 return (0);
@@ -3325,7 +3325,7 @@ namespace NFUnitTestStatementsTests
                 bool bTrue = true;
                 while (bTrue)
                 {
-                    Debug.WriteLine("Hello World");
+                    OutputHelper.WriteLine("Hello World");
                     return (0);
                 }
                 return (1);
@@ -3485,19 +3485,19 @@ namespace NFUnitTestStatementsTests
             {
                 int i = 5;
                 int ret = 0;
-                Debug.WriteLine("Doing while");
+                OutputHelper.WriteLine("Doing while");
                 while (--i != 0)
                     continue;
                 if (i != 0)
                     return (1);
-                Debug.WriteLine("Doing do/while");
+                OutputHelper.WriteLine("Doing do/while");
                 i = 5;
                 do
                     continue;
                 while (--i != 0);
                 if (i != 0)
                     return (1);
-                Debug.WriteLine("Doing for");
+                OutputHelper.WriteLine("Doing for");
                 for (i = 5; i != 0; i--)
                     continue;
                 int[] iArr = new int[20];
@@ -3517,14 +3517,14 @@ namespace NFUnitTestStatementsTests
             {
                 int i = 1;
                 int ret = 6;
-                Debug.WriteLine(ret.ToString());
+                OutputHelper.WriteLine(ret.ToString());
                 while (i-- > 0)
                 {
                     ret--;
                     continue;
                     ret--;
                 }
-                Debug.WriteLine(ret.ToString());
+                OutputHelper.WriteLine(ret.ToString());
                 i = 1;
                 do
                 {
@@ -3532,7 +3532,7 @@ namespace NFUnitTestStatementsTests
                     continue;
                     ret--;
                 } while (--i > 0);
-                Debug.WriteLine(ret.ToString());
+                OutputHelper.WriteLine(ret.ToString());
                 for (i = 1; i > 0; i--)
                 {
                     ret--;
@@ -3541,14 +3541,14 @@ namespace NFUnitTestStatementsTests
                 }
                 int[] iArr = new int[3];
                 i = 0;
-                Debug.WriteLine(ret.ToString());
+                OutputHelper.WriteLine(ret.ToString());
                 foreach (int i2 in iArr)
                 {
                     ret--;
                     continue;
                     ret--;
                 }
-                Debug.WriteLine(ret.ToString());
+                OutputHelper.WriteLine(ret.ToString());
                 return (ret);
             }
             public static bool testMethod()
@@ -3690,14 +3690,14 @@ namespace NFUnitTestStatementsTests
                     case 1:
                         if (--ret > 0)
                         {
-                            Debug.WriteLine("Case 1:" + ret.ToString());
+                            OutputHelper.WriteLine("Case 1:" + ret.ToString());
                             goto case 32;
                         }
                         break;
                     case 32:
                         if (--ret > 0)
                         {
-                            Debug.WriteLine("Case 32:" + ret.ToString());
+                            OutputHelper.WriteLine("Case 32:" + ret.ToString());
                             goto case 1;
                         }
                         break;
@@ -4182,7 +4182,7 @@ namespace NFUnitTestStatementsTests
                 }
                 catch (System.Exception e)
                 {
-                    Debug.WriteLine(e.ToString());
+                    OutputHelper.WriteLine(e.ToString());
                     return (0);
                 }
                 return (i);
@@ -4234,7 +4234,7 @@ namespace NFUnitTestStatementsTests
                 try
                 {
                     int x = 1 / i;
-                    Debug.WriteLine(x.ToString()); // prevent it being optimized away
+                    OutputHelper.WriteLine(x.ToString()); // prevent it being optimized away
                 }
                 catch (System.Exception e)
                 {
@@ -4256,7 +4256,7 @@ namespace NFUnitTestStatementsTests
                 Statements_TestClass_trycatch_007 t = new Statements_TestClass_trycatch_007();
                 i = t.Method();
                 int tt = i == 0 ? 0 : 1;
-                Debug.WriteLine("Value is" + tt);
+                OutputHelper.WriteLine("Value is" + tt);
                 return (i == 0 ? 0 : 1);
             }
             private int Method()
@@ -4270,13 +4270,13 @@ namespace NFUnitTestStatementsTests
                     }
                     catch (System.Exception e)
                     {
-                        Debug.WriteLine("Rethrow");
+                        OutputHelper.WriteLine("Rethrow");
                         throw;
                     }
                 }
                 catch (System.Exception e)
                 {
-                    Debug.WriteLine("Recatch");
+                    OutputHelper.WriteLine("Recatch");
                     return (0);
                 }
                 return (1);
@@ -4636,7 +4636,7 @@ namespace NFUnitTestStatementsTests
             {
                 try
                 {
-                    Debug.WriteLine((10 / (i - 1)).ToString());
+                    OutputHelper.WriteLine((10 / (i - 1)).ToString());
                 }
                 finally
                 {
@@ -4799,7 +4799,7 @@ namespace NFUnitTestStatementsTests
                 }
                 catch
                 {
-                    Debug.WriteLine("System.Exception caught");
+                    OutputHelper.WriteLine("System.Exception caught");
                 }
             }
             public static bool testMethod()
@@ -4847,7 +4847,7 @@ namespace NFUnitTestStatementsTests
                 }
                 catch
                 {
-                    Debug.WriteLine("System.Exception caught");
+                    OutputHelper.WriteLine("System.Exception caught");
                 }
             }
             public static bool testMethod()
@@ -4875,7 +4875,7 @@ namespace NFUnitTestStatementsTests
                 }
                 catch
                 {
-                    Debug.WriteLine("System.Exception caught");
+                    OutputHelper.WriteLine("System.Exception caught");
                 }
             }
             public static bool testMethod()
@@ -4903,7 +4903,7 @@ namespace NFUnitTestStatementsTests
                 }
                 catch
                 {
-                    Debug.WriteLine("System.Exception caught");
+                    OutputHelper.WriteLine("System.Exception caught");
                 }
             }
             public static bool testMethod()
@@ -4929,7 +4929,7 @@ namespace NFUnitTestStatementsTests
                 }
                 catch
                 {
-                    Debug.WriteLine("System.Exception caught");
+                    OutputHelper.WriteLine("System.Exception caught");
                 }
             }
             public static bool testMethod()

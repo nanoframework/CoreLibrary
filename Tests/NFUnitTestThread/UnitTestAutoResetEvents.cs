@@ -25,24 +25,24 @@ namespace NFUnitTestThread
 
             public void DoWait()
             {
-                Debug.WriteLine("Waiting...");
+                OutputHelper.WriteLine("Waiting...");
                 t1 = DateTime.UtcNow;
                 are1.WaitOne();
                 t2 = DateTime.UtcNow;
                 flag = true;
-                Debug.WriteLine("Notified");
+                OutputHelper.WriteLine("Notified");
             }
 
             public void DoWaitTimeOut()
             {
-                Debug.WriteLine("Waiting...");
+                OutputHelper.WriteLine("Waiting...");
                 are1.WaitOne(wait, false);
                 flag = true;
             }
 
             public void DoWaitReset()
             {
-                Debug.WriteLine("Waiting...");
+                OutputHelper.WriteLine("Waiting...");
                 are2.WaitOne();
                 flag = true;
             }
@@ -57,23 +57,23 @@ namespace NFUnitTestThread
             ///</summary>
             /// 
 
-            Debug.WriteLine("Starts a thread and calls WaitOne inside the thread ");
-            Debug.WriteLine("Signals The thread to continue execution");
-            Debug.WriteLine("Verifies the thread has waited and continued execution upon calling Set");
+            OutputHelper.WriteLine("Starts a thread and calls WaitOne inside the thread ");
+            OutputHelper.WriteLine("Signals The thread to continue execution");
+            OutputHelper.WriteLine("Verifies the thread has waited and continued execution upon calling Set");
 
-            Debug.WriteLine("Starting Thread");
+            OutputHelper.WriteLine("Starting Thread");
             Waiter newWaiter1 = new Waiter();
             Thread newThread1 = new Thread(newWaiter1.DoWait);
             newThread1.Start();
 
-            Debug.WriteLine("Waiting and Signaling after 1000msec.");
+            OutputHelper.WriteLine("Waiting and Signaling after 1000msec.");
             Thread.Sleep(1000);
 
-            Debug.WriteLine("wake it up");
+            OutputHelper.WriteLine("wake it up");
             DateTime t3 = DateTime.UtcNow;
             Waiter.are1.Set();
 
-            Debug.WriteLine("Waiting the thread to finish and also to get t2");
+            OutputHelper.WriteLine("Waiting the thread to finish and also to get t2");
             Thread.Sleep(10);
             TimeSpan duration1 = newWaiter1.t2 - newWaiter1.t1;
             TimeSpan duration2 = newWaiter1.t2 - t3;
@@ -81,12 +81,12 @@ namespace NFUnitTestThread
             // Assuming atleast the thread should wait for 750ms           
             if (duration1.CompareTo(new TimeSpan(0, 0, 0, 0, 750)) <= 0)
             {
-                Debug.WriteLine("The thread should have waited atleast 750 msec.");
+                OutputHelper.WriteLine("The thread should have waited atleast 750 msec.");
                 throw new Exception("The thread should have waited atleast 750 msec.");
             }
             if (duration2.CompareTo(new TimeSpan(0, 0, 0, 0, 0)) < 0)
             {
-                Debug.WriteLine("The thread continued executing before it's signaled");
+                OutputHelper.WriteLine("The thread continued executing before it's signaled");
                 throw new Exception("The thread continued executing before it's signaled");
             }
         }
@@ -102,10 +102,10 @@ namespace NFUnitTestThread
             ///</summary>
             ///
 
-            Debug.WriteLine("Calls Set repeatedly while no thread was blocked");
-            Debug.WriteLine("Starts two threads and calls WaitOne on both threads ");
-            Debug.WriteLine("Signals The thread to continue execution calling Set once");
-            Debug.WriteLine("Verifies only one blocked thread is released");
+            OutputHelper.WriteLine("Calls Set repeatedly while no thread was blocked");
+            OutputHelper.WriteLine("Starts two threads and calls WaitOne on both threads ");
+            OutputHelper.WriteLine("Signals The thread to continue execution calling Set once");
+            OutputHelper.WriteLine("Verifies only one blocked thread is released");
 
             Waiter.are1.Set();
             Waiter.are1.Set();
@@ -116,16 +116,16 @@ namespace NFUnitTestThread
             Waiter newWaiter2 = new Waiter();
             newWaiter2.flag = false;
             Thread newThread2 = new Thread(newWaiter2.DoWait);
-            Debug.WriteLine("Starting The threads");
+            OutputHelper.WriteLine("Starting The threads");
             newThread1.Start();
             newThread2.Start();
 
-            Debug.WriteLine("Waiting and verifying only one of the threads is signaled");
+            OutputHelper.WriteLine("Waiting and verifying only one of the threads is signaled");
             Thread.Sleep(1000);
-            Debug.WriteLine("flag1 XOR flag2 =  ~((flag1 & flag2)||(~flag1 & ~flag2))");
+            OutputHelper.WriteLine("flag1 XOR flag2 =  ~((flag1 & flag2)||(~flag1 & ~flag2))");
             if ((newWaiter1.flag && newWaiter2.flag) || ((!newWaiter1.flag) && (!newWaiter2.flag)))
             {
-                Debug.WriteLine("Only One of the threads should have been signaled");
+                OutputHelper.WriteLine("Only One of the threads should have been signaled");
                 throw new Exception("Only One of the threads should have been signaled");
             }
             Waiter.are1.Set();
@@ -141,9 +141,9 @@ namespace NFUnitTestThread
             ///</summary>
             ///
 
-            Debug.WriteLine("Starts two threads and calls WaitOne on both threads ");
-            Debug.WriteLine("Signals The threads to continue execution calling Set twice");
-            Debug.WriteLine("Verifies both blocked threads are released");
+            OutputHelper.WriteLine("Starts two threads and calls WaitOne on both threads ");
+            OutputHelper.WriteLine("Signals The threads to continue execution calling Set twice");
+            OutputHelper.WriteLine("Verifies both blocked threads are released");
 
             Waiter newWaiter1 = new Waiter();
             Thread newThread1 = new Thread(newWaiter1.DoWait);
@@ -151,24 +151,24 @@ namespace NFUnitTestThread
             Waiter newWaiter2 = new Waiter();
             Thread newThread2 = new Thread(newWaiter2.DoWait);
             newWaiter2.flag = false;
-            Debug.WriteLine("Starting threads, waiting and verifying both are waiting");
+            OutputHelper.WriteLine("Starting threads, waiting and verifying both are waiting");
             newThread1.Start();
             newThread2.Start();
             Thread.Sleep(1000);
             if (newWaiter1.flag || newWaiter2.flag)
             {
-                Debug.WriteLine("Failure: One or both threads are not waiting, Thread1 = '" +
+                OutputHelper.WriteLine("Failure: One or both threads are not waiting, Thread1 = '" +
                     newWaiter1.flag + "' Thread2 = '" + newWaiter2.flag + "'");
                 throw new Exception("Failure: One or both threads are not waiting, Thread1 = '" +
                     newWaiter1.flag + "' Thread2 = '" + newWaiter2.flag + "'");
             }
-            Debug.WriteLine("Signaling twice, waiting and verifying both threads are signaled");
+            OutputHelper.WriteLine("Signaling twice, waiting and verifying both threads are signaled");
             Waiter.are1.Set();
             Waiter.are1.Set();
             Thread.Sleep(1000);
             if (!newWaiter1.flag || !newWaiter2.flag)
             {
-                Debug.WriteLine("Not both threads are signaled, Thread1 = '" + newWaiter1.flag +
+                OutputHelper.WriteLine("Not both threads are signaled, Thread1 = '" + newWaiter1.flag +
                     "' and Thread2 = '" + newWaiter2.flag + "'");
                 throw new Exception("Not both threads are signaled, Thread1 = '" + newWaiter1.flag +
                     "' and Thread2 = '" + newWaiter2.flag + "'");
@@ -184,36 +184,36 @@ namespace NFUnitTestThread
             ///</summary>
             ///
 
-            Debug.WriteLine("Starts a thread and call WatiOne passing timeout parameter");
-            Debug.WriteLine("verifies the wait will end because of timeout");
-            Debug.WriteLine("Starts a 2nd thread and call WatiOne passing Timeout.Infinite");
-            Debug.WriteLine("verifies the wait will not end for 3 sec (assumed Infinite)");
+            OutputHelper.WriteLine("Starts a thread and call WatiOne passing timeout parameter");
+            OutputHelper.WriteLine("verifies the wait will end because of timeout");
+            OutputHelper.WriteLine("Starts a 2nd thread and call WatiOne passing Timeout.Infinite");
+            OutputHelper.WriteLine("verifies the wait will not end for 3 sec (assumed Infinite)");
 
             Waiter newWaiter1 = new Waiter();
             newWaiter1.wait = 100;
             newWaiter1.flag = false;
             Thread newThread1 = new Thread(newWaiter1.DoWaitTimeOut);
-            Debug.WriteLine("Starting thread, waiting and verifying wait timeouts");
+            OutputHelper.WriteLine("Starting thread, waiting and verifying wait timeouts");
             newThread1.Start();
             Thread.Sleep(500);
             if (!newWaiter1.flag)
             {
-                Debug.WriteLine("Waited for 500msec. but Thread should have timeouted in " + newWaiter1.wait + "");
+                OutputHelper.WriteLine("Waited for 500msec. but Thread should have timeouted in " + newWaiter1.wait + "");
                 throw new Exception("Waited for 500msec. but Thread should have timeouted in " + newWaiter1.wait + "");
             }
             Waiter newWaiter2 = new Waiter();
             newWaiter2.wait = -1;
             newWaiter2.flag = false;
             Thread newThread2 = new Thread(newWaiter2.DoWaitTimeOut);
-            Debug.WriteLine("Starting thread, waiting for Timeout.Infinite and verifying");
+            OutputHelper.WriteLine("Starting thread, waiting for Timeout.Infinite and verifying");
             newThread2.Start();
             Thread.Sleep(3000);
             if (newWaiter2.flag)
             {
-                Debug.WriteLine("Failure: thread didn't wait for Infinite.Timeout");
+                OutputHelper.WriteLine("Failure: thread didn't wait for Infinite.Timeout");
                 throw new Exception("Failure: thread didn't wait for Infinite.Timeout");
             }
-            Debug.WriteLine("finally signaling the Infinite.Timeout thread");
+            OutputHelper.WriteLine("finally signaling the Infinite.Timeout thread");
             Waiter.are1.Set();
         }
 
@@ -230,45 +230,45 @@ namespace NFUnitTestThread
             ///</summary>
             ///
 
-            Debug.WriteLine("Creates an AutoResetEvent having an initial state signaled");
-            Debug.WriteLine("Start a thread, call WaitOne and verify the thread is not blocked");
-            Debug.WriteLine("Starts a 2nd thread, call WaitOne and verify it's auto reset (thread is blocked)");
-            Debug.WriteLine("call Set and verify it's set (signaled)");
-            Debug.WriteLine("call Set, call Reset, starts a thread and call WaitOne on the thread");
-            Debug.WriteLine("Verify the thread remains blocked");
+            OutputHelper.WriteLine("Creates an AutoResetEvent having an initial state signaled");
+            OutputHelper.WriteLine("Start a thread, call WaitOne and verify the thread is not blocked");
+            OutputHelper.WriteLine("Starts a 2nd thread, call WaitOne and verify it's auto reset (thread is blocked)");
+            OutputHelper.WriteLine("call Set and verify it's set (signaled)");
+            OutputHelper.WriteLine("call Set, call Reset, starts a thread and call WaitOne on the thread");
+            OutputHelper.WriteLine("Verify the thread remains blocked");
 
             Waiter newWaiter1 = new Waiter();
             newWaiter1.flag = false;
             Thread newThread1 = new Thread(newWaiter1.DoWaitReset);
-            Debug.WriteLine("Starting thread, waiting and verifying thread not blocked if initial state is signaled");
+            OutputHelper.WriteLine("Starting thread, waiting and verifying thread not blocked if initial state is signaled");
             newThread1.Start();
             Thread.Sleep(100);
             if (!newWaiter1.flag)
             {
-                Debug.WriteLine("Faiure : AutoResetEvent initial state signaled but blocked thread");
+                OutputHelper.WriteLine("Faiure : AutoResetEvent initial state signaled but blocked thread");
                 throw new Exception("Faiure : AutoResetEvent initial state signaled but blocked thread");
             }
 
             Waiter newWaiter2 = new Waiter();
             newWaiter2.flag = false;
             Thread newThread2 = new Thread(newWaiter2.DoWaitReset);
-            Debug.WriteLine("Starting thread, waiting and verifying autoreset blocks the thread");
+            OutputHelper.WriteLine("Starting thread, waiting and verifying autoreset blocks the thread");
             newThread2.Start();
             Thread.Sleep(100);
             if (newWaiter2.flag)
             {
-                Debug.WriteLine("Failure : AutoResetEvent not autoreseted");
+                OutputHelper.WriteLine("Failure : AutoResetEvent not autoreseted");
                 throw new Exception("Failure : AutoResetEvent not autoreseted");
             }
-            Debug.WriteLine("Signaling, waiting and verifying");
+            OutputHelper.WriteLine("Signaling, waiting and verifying");
             Waiter.are2.Set();
             Thread.Sleep(100);
             if (!newWaiter2.flag)
             {
-                Debug.WriteLine("Failure : AutoResetEvent signaled but thread blocked");
+                OutputHelper.WriteLine("Failure : AutoResetEvent signaled but thread blocked");
                 throw new Exception("Failure : AutoResetEvent signaled but thread blocked");
             }
-            Debug.WriteLine("Set, Reset, Start a thread, waiting and verifying thread remain blocked");
+            OutputHelper.WriteLine("Set, Reset, Start a thread, waiting and verifying thread remain blocked");
             Waiter newWaiter3 = new Waiter();
             newWaiter3.flag = false;
             Thread newThread3 = new Thread(newWaiter3.DoWaitReset);
@@ -278,11 +278,11 @@ namespace NFUnitTestThread
             Thread.Sleep(100);
             if (newWaiter3.flag)
             {
-                Debug.WriteLine("Failure: a Reseted AutoResetEvent didn't block thread");
+                OutputHelper.WriteLine("Failure: a Reseted AutoResetEvent didn't block thread");
                 throw new Exception("Failure: a Reseted AutoResetEvent didn't block thread");
             }
 
-            Debug.WriteLine("Finally Setting the reseted AutoResetEvent");
+            OutputHelper.WriteLine("Finally Setting the reseted AutoResetEvent");
             Waiter.are2.Set();
         }
 

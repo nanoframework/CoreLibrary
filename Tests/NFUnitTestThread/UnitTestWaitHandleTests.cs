@@ -49,56 +49,56 @@ namespace NFUnitTestThread
             /// 6. Verifies that only one threads has executed
             /// </summary>
             ///
-            Debug.WriteLine("This test may erroneously pass or fail due to machine speed");
-            Debug.WriteLine("Tests the WaitAll method");
+            OutputHelper.WriteLine("This test may erroneously pass or fail due to machine speed");
+            OutputHelper.WriteLine("Tests the WaitAll method");
 
-            Debug.WriteLine("Create threads");
+            OutputHelper.WriteLine("Create threads");
             Thread t1 = new Thread(DoTask1);
             Thread t2 = new Thread(DoTask2);
             t1.Start();
             t2.Start();
             Thread.Sleep(1);
 
-            Debug.WriteLine("Waiting for all tasks to complete and verifying");
+            OutputHelper.WriteLine("Waiting for all tasks to complete and verifying");
             if (!WaitHandle.WaitAll(waitHandles))
             {
-                Debug.WriteLine("Not all waithandles has received the signal");
+                OutputHelper.WriteLine("Not all waithandles has received the signal");
                 throw new Exception("Not all waithandles has received the signal");
             }
             bool r = t1.IsAlive, s = t2.IsAlive;
             if (r || s)
             {
-                Debug.WriteLine("Not all threads are dead");
+                OutputHelper.WriteLine("Not all threads are dead");
                 if (r)
                 {
-                    Debug.WriteLine("t1 is Alive");
+                    OutputHelper.WriteLine("t1 is Alive");
                 }
                 if (s)
                 {
-                    Debug.WriteLine("t2 is Alive");
+                    OutputHelper.WriteLine("t2 is Alive");
                 }
                 throw new Exception("Not all threads are dead");
             }
 
-            Debug.WriteLine("Re-create threads");
+            OutputHelper.WriteLine("Re-create threads");
             t1 = new Thread(DoTask1);
             t2 = new Thread(DoTask2);
             t1.Start();
             t2.Start();
             Thread.Sleep(1);
 
-            Debug.WriteLine("Waiting for either task to complete and verifying");
-            Debug.WriteLine("The WaitHandle with index " + WaitHandle.WaitAny(waitHandles).ToString() + " satisfied the wait");
-            Debug.WriteLine("Doing t1 XOR t2 to verify only one but not both are alive or dead");
-            Debug.WriteLine("t1 XOR t2 = ~((p&q)||(~p & ~q))");
+            OutputHelper.WriteLine("Waiting for either task to complete and verifying");
+            OutputHelper.WriteLine("The WaitHandle with index " + WaitHandle.WaitAny(waitHandles).ToString() + " satisfied the wait");
+            OutputHelper.WriteLine("Doing t1 XOR t2 to verify only one but not both are alive or dead");
+            OutputHelper.WriteLine("t1 XOR t2 = ~((p&q)||(~p & ~q))");
             bool p = t1.IsAlive, q = t2.IsAlive;
             if ((p && q) || ((!p) && (!q)))
             {
-                Debug.WriteLine("Not both but either one should have finished");
+                OutputHelper.WriteLine("Not both but either one should have finished");
                 throw new Exception("Not both but either one should have finished");
             }
-            Debug.WriteLine(p == true ? "t1 is Alive " : "t1 is Dead ");
-            Debug.WriteLine(q == true ? "t2 is Alive " : "t2 is Dead ");
+            OutputHelper.WriteLine(p == true ? "t1 is Alive " : "t1 is Dead ");
+            OutputHelper.WriteLine(q == true ? "t2 is Alive " : "t2 is Dead ");
 
         }
 
@@ -113,7 +113,7 @@ namespace NFUnitTestThread
                 ready.Set();                          // Indicate that we're ready
                 go.WaitOne();                         // Wait to be kicked off...
                 if (counter == 0) return;             // Gracefully exit
-                Debug.WriteLine("Counter = " + counter);
+                OutputHelper.WriteLine("Counter = " + counter);
             }
         }
 
@@ -130,27 +130,27 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("This test verifies thread waits, and executes when signaled");
-            Debug.WriteLine("Tests WaitOne method");
+            OutputHelper.WriteLine("This test verifies thread waits, and executes when signaled");
+            OutputHelper.WriteLine("Tests WaitOne method");
             Thread newThread1 = new Thread(Work);
             newThread1.Start();
 
-            Debug.WriteLine("Signal the worker 5 times");
+            OutputHelper.WriteLine("Signal the worker 5 times");
             for (int i = 1; i <= 5; i++)
             {
-                Debug.WriteLine("First wait until worker is ready");
+                OutputHelper.WriteLine("First wait until worker is ready");
                 ready.WaitOne();
-                Debug.WriteLine("Doing task");
+                OutputHelper.WriteLine("Doing task");
                 counter++;
-                Debug.WriteLine("Tell worker to go!");
+                OutputHelper.WriteLine("Tell worker to go!");
                 go.Set();
             }
             if (counter != 5)
             {
-                Debug.WriteLine("expected signaling '5' but got '" + counter + "'");
+                OutputHelper.WriteLine("expected signaling '5' but got '" + counter + "'");
                 throw new Exception("expected signaling '5' but got '" + counter + "'");
             }
-            Debug.WriteLine("Tell the worker to end by reseting counter to 0(zero)");
+            OutputHelper.WriteLine("Tell the worker to end by reseting counter to 0(zero)");
             ready.WaitOne();
             counter = 0;
             go.Set();

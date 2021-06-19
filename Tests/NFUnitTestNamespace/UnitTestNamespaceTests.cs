@@ -19,377 +19,377 @@ namespace NFUnitTestNamespace
         [TestMethod]
         public void NS_attribute_01_Test()
         {
-            Debug.WriteLine("Section 9.1 Compilation Units");
-            Debug.WriteLine("Verify that the CLSCompliant attribute is allowed at the assembly level in a comp. unit");
+            OutputHelper.WriteLine("Section 9.1 Compilation Units");
+            OutputHelper.WriteLine("Verify that the CLSCompliant attribute is allowed at the assembly level in a comp. unit");
             Assert.True(NS_TestClass_attribute_01.testMethod());
         }
 
         [TestMethod]
         public void NS_attribute_02_Test()
         {
-            Debug.WriteLine("Section 9.1 Compilation Units");
-            Debug.WriteLine("Verify that the CLSCompliant attribute is allowed at the module level in a comp. unit (cause a warning)");
+            OutputHelper.WriteLine("Section 9.1 Compilation Units");
+            OutputHelper.WriteLine("Verify that the CLSCompliant attribute is allowed at the module level in a comp. unit (cause a warning)");
             Assert.True(NS_TestClass_attribute_02.testMethod()) ;
         }
 
         [TestMethod]
         public void NS_compunit_01_Test()
         {
-            Debug.WriteLine("Section 9.1 Compilation Units");
-            Debug.WriteLine("Verify that a program with multiple files depending on each other works");
+            OutputHelper.WriteLine("Section 9.1 Compilation Units");
+            OutputHelper.WriteLine("Verify that a program with multiple files depending on each other works");
             Assert.True(NS_TestClass_compunit_01.testMethod()) ;
         }
 
         [TestMethod]
         public void NS_compunit_03_Test()
         {
-            Debug.WriteLine("Section 9.1 Compilation Units");
-            Debug.WriteLine("Verify three source files all requiring each other in circular fashion compiles/runs successfully");
+            OutputHelper.WriteLine("Section 9.1 Compilation Units");
+            OutputHelper.WriteLine("Verify three source files all requiring each other in circular fashion compiles/runs successfully");
             Assert.True(NS_TestClass_compunit_03.testMethod());
         }
 
         [TestMethod]
         public void NS_compunit_04_Test()
         {
-            Debug.WriteLine("Section 9.1 Compilation Units");
-            Debug.WriteLine("Two source files with their own namespaces, each have a class named A, and can be used successfully by a third file");
+            OutputHelper.WriteLine("Section 9.1 Compilation Units");
+            OutputHelper.WriteLine("Two source files with their own namespaces, each have a class named A, and can be used successfully by a third file");
             Assert.True(NS_TestClass_compunit_04.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_01_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Declare the simplest namespace possible (without semi-colon at the end)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Declare the simplest namespace possible (without semi-colon at the end)");
             Assert.True(NS_TestClass_decl_01.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_02_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Declare the simplest namespace possible (with semi-colon at the end)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Declare the simplest namespace possible (with semi-colon at the end)");
             Assert.True(NS_TestClass_decl_02.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_03_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Declare a namespace inside another namespace");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Declare a namespace inside another namespace");
             Assert.True(NS_TestClass_decl_03.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_04_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Declare a namespace inside another namespace (with semicolon at end of nested ns decl)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Declare a namespace inside another namespace (with semicolon at end of nested ns decl)");
             Assert.True(NS_TestClass_decl_04.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_05_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Two separately declared namespaces in one compilation unit (file)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Two separately declared namespaces in one compilation unit (file)");
             Assert.True(NS_TestClass_decl_05.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_06_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Two separately declared namespaces in one compilation unit (file)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Two separately declared namespaces in one compilation unit (file)");
             Assert.True(NS_TestClass_decl_06.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_08_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Access class member declared in external namespace directly when adding a Using");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Access class member declared in external namespace directly when adding a Using");
             Assert.True(NS_TestClass_decl_08.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_10_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Namespace identifier with . in it");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Namespace identifier with . in it");
             Assert.True(NS_TestClass_decl_10.foo.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_11_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Namespace identifier with .'s in it and underscores, etc.");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Namespace identifier with .'s in it and underscores, etc.");
             Assert.True(NS_TestClass_decl_11.foo.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_12_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Two separate namespace declarations contribute to same declaration space (with using)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Two separate namespace declarations contribute to same declaration space (with using)");
             Assert.True(NS_TestClass_decl_12.foo.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_13_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Two separate namespace declarations contribute to same declaration space (direct referencing)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Two separate namespace declarations contribute to same declaration space (direct referencing)");
             Assert.True(NS_TestClass_decl_13.foo.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_14_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Two separate namespace declarations contribute to same declaration space (direct referencing)");
-            Debug.WriteLine("   namespace declarations are in two different compilation units (files)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Two separate namespace declarations contribute to same declaration space (direct referencing)");
+            OutputHelper.WriteLine("   namespace declarations are in two different compilation units (files)");
             Assert.True(NS_TestClass_decl_14.foo.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_15_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Two separate namespace declarations contribute to same declaration space (with using)");
-            Debug.WriteLine("   namespace declarations are in two different compilation units (files)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Two separate namespace declarations contribute to same declaration space (with using)");
+            OutputHelper.WriteLine("   namespace declarations are in two different compilation units (files)");
             Assert.True(NS_TestClass_decl_15.foo.A.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_17_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Declare a namespace called _Foo");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Declare a namespace called _Foo");
             Assert.True(NS_TestClass_decl_17.main.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_20_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Declare an empty namespace");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Declare an empty namespace");
             Assert.True(NS_TestClass_decl_20.main.testMethod());
         }
 
         [TestMethod]
         public void NS_decl_21_Test()
         {
-            Debug.WriteLine("Section 9.2 Namespace Declarations");
-            Debug.WriteLine("Declare ten empty nested namespaces (with and without semi-colons)");
+            OutputHelper.WriteLine("Section 9.2 Namespace Declarations");
+            OutputHelper.WriteLine("Declare ten empty nested namespaces (with and without semi-colons)");
             Assert.True(NS_TestClass_decl_21.main.testMethod());
         }
 
         [TestMethod]
         public void NS_alias_01_Test()
         {
-            Debug.WriteLine("Section 9.3.1 Using alias directives ");
-            Debug.WriteLine("Verify simplest form of alias reference to a namespace");
+            OutputHelper.WriteLine("Section 9.3.1 Using alias directives ");
+            OutputHelper.WriteLine("Verify simplest form of alias reference to a namespace");
             Assert.True(NS_TestClass_alias_01.A.testMethod());
         }
 
         [TestMethod]
         public void NS_alias_02_Test()
         {
-            Debug.WriteLine("Section 9.3.1 Using alias directives ");
-            Debug.WriteLine("Verify simplest form of alias reference to a namespace with .'s");
+            OutputHelper.WriteLine("Section 9.3.1 Using alias directives ");
+            OutputHelper.WriteLine("Verify simplest form of alias reference to a namespace with .'s");
             Assert.True(NS_TestClass_alias_02.A.testMethod());
         }
 
         [TestMethod]
         public void NS_alias_03_Test()
         {
-            Debug.WriteLine("Section 9.3.1 Using alias directives ");
-            Debug.WriteLine("Verify simplest form of alias reference to a specific type in a namespace");
+            OutputHelper.WriteLine("Section 9.3.1 Using alias directives ");
+            OutputHelper.WriteLine("Verify simplest form of alias reference to a specific type in a namespace");
             Assert.True(NS_TestClass_alias_03.A.testMethod());
         }
 
         [TestMethod]
         public void NS_alias_04_Test()
         {
-            Debug.WriteLine("Section 9.3.1 Using alias directives ");
-            Debug.WriteLine("Verify simplest form of alias reference to a specific type in a namespace");
+            OutputHelper.WriteLine("Section 9.3.1 Using alias directives ");
+            OutputHelper.WriteLine("Verify simplest form of alias reference to a specific type in a namespace");
             Assert.True(NS_TestClass_alias_04.B.testMethod());
         }
 
         [TestMethod]
         public void NS_alias_10_Test()
         {
-            Debug.WriteLine("Section 9.3.1 Using alias directives ");
-            Debug.WriteLine("Third code example in 9.3.1 - unique alias identifiers");
+            OutputHelper.WriteLine("Section 9.3.1 Using alias directives ");
+            OutputHelper.WriteLine("Third code example in 9.3.1 - unique alias identifiers");
             Assert.True(NS_TestClass_alias_10.main.testMethod());
         }
 
         [TestMethod]
         public void NS_alias_13_Test()
         {
-            Debug.WriteLine("Section 9.3.1 Using alias directives ");
-            Debug.WriteLine("A using-alias-directive can create an alias for the namespace in which it appears");
+            OutputHelper.WriteLine("Section 9.3.1 Using alias directives ");
+            OutputHelper.WriteLine("A using-alias-directive can create an alias for the namespace in which it appears");
             Assert.True(NS_TestClass_alias_13.main.testMethod());
         }
 
         [TestMethod]
         public void NS_alias_14_Test()
         {
-            Debug.WriteLine("Section 9.3.1 Using namespace directives ");
-            Debug.WriteLine("A using-alias-directive can create an alias for a type declared within the ns in which it appears ");
+            OutputHelper.WriteLine("Section 9.3.1 Using namespace directives ");
+            OutputHelper.WriteLine("A using-alias-directive can create an alias for a type declared within the ns in which it appears ");
             Assert.True(NS_TestClass_alias_14.main.testMethod());
         }
 
         [TestMethod]
         public void NS_direct_01_Test()
         {
-            Debug.WriteLine("Section 9.3.2 Using namespace directives ");
-            Debug.WriteLine("The members of a namespace can be accessed directly post using ");
+            OutputHelper.WriteLine("Section 9.3.2 Using namespace directives ");
+            OutputHelper.WriteLine("The members of a namespace can be accessed directly post using ");
             Assert.True(NS_TestClass_direct_01.main.testMethod());
         }
 
         [TestMethod]
         public void NS_direct_02_Test()
         {
-            Debug.WriteLine("Section 9.3.2 Using namespace directives ");
-            Debug.WriteLine("A newly declared class will hide a class (with the same name) brought in with a using directive");
+            OutputHelper.WriteLine("Section 9.3.2 Using namespace directives ");
+            OutputHelper.WriteLine("A newly declared class will hide a class (with the same name) brought in with a using directive");
             Assert.True(NS_TestClass_direct_02.main.testMethod());
         }
 
         [TestMethod]
         public void NS_direct_03_Test()
         {
-            Debug.WriteLine("Section 9.3.2 Using namespace directives ");
-            Debug.WriteLine("Names imported by using-namespace-directive are hidden by same-named members ");
+            OutputHelper.WriteLine("Section 9.3.2 Using namespace directives ");
+            OutputHelper.WriteLine("Names imported by using-namespace-directive are hidden by same-named members ");
             Assert.True(NS_TestClass_direct_03.main.testMethod());
         }
 
         [TestMethod]
         public void NS_direct_05_Test()
         {
-            Debug.WriteLine("Section 9.3.2 Using namespace directives ");
-            Debug.WriteLine("Ambiguous reference is overridden by using alias statement");
+            OutputHelper.WriteLine("Section 9.3.2 Using namespace directives ");
+            OutputHelper.WriteLine("Ambiguous reference is overridden by using alias statement");
             Assert.True(NS_TestClass_direct_05.main.testMethod());
         }
 
         [TestMethod]
         public void NS_typedecl_01_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Ambiguous reference is overridden by using alias statement");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Ambiguous reference is overridden by using alias statement");
             Assert.True(NS_TestClass_typedecl_01.testMethod());
         }
 
         [TestMethod]
         public void NS_typedecl_06_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Declaring a class member as public is okay");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Declaring a class member as public is okay");
             Assert.True(NS_TestClass_typedecl_06.testMethod());
         }
 
         [TestMethod]
         public void NS_typedecl_07_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Declaring a class member as protected internal is okay");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Declaring a class member as protected internal is okay");
             Assert.True(NS_TestClass_typedecl_07.testMethod());
         }
 
         [TestMethod]
         public void NS_typedecl_08_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Declaring a class member as protected is okay");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Declaring a class member as protected is okay");
             Assert.True(NS_TestClass_typedecl_08.testMethod());
         }
 
         [TestMethod]
         public void NS_typedecl_09_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Declaring a class member as internal is okay");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Declaring a class member as internal is okay");
             Assert.True(NS_TestClass_typedecl_09.testMethod());
         }
 
         [TestMethod]
         public void NS_typedecl_10_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Declaring a class member as private is okay");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Declaring a class member as private is okay");
             Assert.True(NS_TestClass_typedecl_10.testMethod());
         }
 
         [TestMethod]
         public void NS_typedecl_11_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Declaring a struct member as public is okay");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Declaring a struct member as public is okay");
             Assert.True(NS_TestClass_typedecl_11.testMethod());
         }
 
         [TestMethod]
         public void NS_typedecl_12_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Declaring a struct member as internal is okay");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Declaring a struct member as internal is okay");
             Assert.True(NS_TestClass_typedecl_12.testMethod());
         }
 
         [TestMethod]
         public void NS_typedecl_13_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Declaring a struct member as private is okay");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Declaring a struct member as private is okay");
             Assert.True(NS_TestClass_typedecl_13.testMethod());
         }
 
         [TestMethod]
         public void NS_validaccess_01_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Verify all valid accessibility levels for class declarations are allowed");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Verify all valid accessibility levels for class declarations are allowed");
             Assert.True(NS_TestClass_validaccess_01.testMethod());
         }
 
         [TestMethod]
         public void NS_validaccess_02_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Verify all valid accessibility levels for struct declarations are allowed");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Verify all valid accessibility levels for struct declarations are allowed");
             Assert.True(NS_TestClass_validaccess_02.testMethod());
         }
 
         [TestMethod]
         public void NS_validaccess_03_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Verify all valid accessibility levels for interface declarations are allowed");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Verify all valid accessibility levels for interface declarations are allowed");
             Assert.True(NS_TestClass_validaccess_03.testMethod());
         }
 
         [TestMethod]
         public void NS_validaccess_04_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Verify all valid accessibility levels for enum declarations are allowed");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Verify all valid accessibility levels for enum declarations are allowed");
             Assert.True(NS_TestClass_validaccess_04.testMethod());
         }
 
         [TestMethod]
         public void NS_validaccess_05_Test()
         {
-            Debug.WriteLine("Section 9.5 Type declarations ");
-            Debug.WriteLine("Verify all valid accessibility levels for delegate declarations are allowed");
+            OutputHelper.WriteLine("Section 9.5 Type declarations ");
+            OutputHelper.WriteLine("Verify all valid accessibility levels for delegate declarations are allowed");
             Assert.True(NS_TestClass_validaccess_05.testMethod());
         }
 
         [TestMethod]
         public void NS_contexts_025_Test()
         {
-            Debug.WriteLine("Verify that you can use the qualifier in a cref attribute of xml docs tag");
+            OutputHelper.WriteLine("Verify that you can use the qualifier in a cref attribute of xml docs tag");
             Assert.True(NS_TestClass_contexts_025.Test.testMethod());
         }
 
@@ -403,7 +403,7 @@ namespace NFUnitTestNamespace
 
                 cA.printClassName();
                 cB.printClassName();
-                Debug.WriteLine("Class C");
+                OutputHelper.WriteLine("Class C");
             }
 
             public static bool testMethod()
@@ -426,7 +426,7 @@ namespace NFUnitTestNamespace
 
                 cA.printClassName();
                 cB.printClassName();
-                Debug.WriteLine("Class C");
+                OutputHelper.WriteLine("Class C");
             }
 
             public static bool testMethod()
@@ -598,7 +598,7 @@ class NS_TestClass_compunit_03
 
     public void showName()
     {
-        Debug.WriteLine("Class C");
+        OutputHelper.WriteLine("Class C");
     }
 
     public static void Main_old(String[] args)
@@ -626,7 +626,7 @@ namespace NS_TestClass_decl_01
     {
         public static void Main_old(String[] args)
         {
-            Debug.WriteLine("This worked!");
+            OutputHelper.WriteLine("This worked!");
         }
         public static bool testMethod()
         {
@@ -642,7 +642,7 @@ namespace NS_TestClass_decl_02
     {
         public static void Main_old(String[] args)
         {
-            Debug.WriteLine("This worked!");
+            OutputHelper.WriteLine("This worked!");
         }
         public static bool testMethod()
         {
@@ -668,7 +668,7 @@ namespace NS_TestClass_decl_03
             innertest.B b = new innertest.B();
             b.i = 3;
 
-            Debug.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
         }
         public static bool testMethod()
         {
@@ -694,7 +694,7 @@ namespace NS_TestClass_decl_04
             innertest.B b = new innertest.B();
             b.i = 3;
 
-            Debug.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
         }
         public static bool testMethod()
         {
@@ -719,7 +719,7 @@ namespace NS_TestClass_decl_05
         {
             NS_TestClass_decl_05_other.B b = new NS_TestClass_decl_05_other.B();
             b.i = 500;
-            Debug.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
         }
         public static bool testMethod()
         {
@@ -747,7 +747,7 @@ namespace NS_TestClass_decl_06
         {
             NS_TestClass_decl_06_other.inothertest.B b = new NS_TestClass_decl_06_other.inothertest.B();
             b.i = 500;
-            Debug.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
         }
         public static bool testMethod()
         {
@@ -773,7 +773,7 @@ namespace NS_TestClass_decl_08
         {
             B b = new B();
             b.i = 3;
-            Debug.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
         }
         public static bool testMethod()
         {
@@ -799,7 +799,7 @@ namespace NS_TestClass_decl_10.foo
             NS_TestClass_decl_10_one.NS_TestClass_decl_10_two.NS_TestClass_decl_10_three.B b = new NS_TestClass_decl_10_one.NS_TestClass_decl_10_two.NS_TestClass_decl_10_three.B();
             b.i = 500;
 
-            Debug.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
         }
         public static bool testMethod()
         {
@@ -835,8 +835,8 @@ namespace NS_TestClass_decl_11.foo
 
             b.i = 500;
             c.j = 300;
-            Debug.WriteLine((b.i).ToString());
-            Debug.WriteLine((c.j).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((c.j).ToString());
         }
         public static bool testMethod()
         {
@@ -872,8 +872,8 @@ namespace NS_TestClass_decl_12.foo
 
             b.i = 500;
             c.j = 300;
-            Debug.WriteLine((b.i).ToString());
-            Debug.WriteLine((c.j).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((c.j).ToString());
         }
         public static bool testMethod()
         {
@@ -908,8 +908,8 @@ namespace NS_TestClass_decl_13.foo
 
             b.i = 500;
             c.j = 300;
-            Debug.WriteLine((b.i).ToString());
-            Debug.WriteLine((c.j).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((c.j).ToString());
         }
         public static bool testMethod()
         {
@@ -939,8 +939,8 @@ namespace NS_TestClass_decl_14.foo
 
             b.i = 500;
             c.j = 300;
-            Debug.WriteLine((b.i).ToString());
-            Debug.WriteLine((c.j).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((c.j).ToString());
         }
 
         public static bool testMethod()
@@ -973,8 +973,8 @@ namespace NS_TestClass_decl_15.foo
 
             b.i = 500;
             c.j = 300;
-            Debug.WriteLine((b.i).ToString());
-            Debug.WriteLine((c.j).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((c.j).ToString());
         }
 
         public static bool testMethod()
@@ -992,7 +992,7 @@ namespace NS_TestClass_decl_17_Foo
     {
         public void print()
         {
-            Debug.WriteLine("Test");
+            OutputHelper.WriteLine("Test");
         }
     }
 }
@@ -1051,7 +1051,7 @@ namespace NS_TestClass_decl_21_test
                                         {
                                             public void SayHello()
                                             {
-                                                Debug.WriteLine("Hello");
+                                                OutputHelper.WriteLine("Hello");
                                             }
                                         }
                                     }
@@ -1103,7 +1103,7 @@ namespace NS_TestClass_alias_01
             en.B b = new en.B();
             b.i = 3;
 
-            Debug.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
         }
 
         public static bool testMethod()
@@ -1135,7 +1135,7 @@ namespace NS_TestClass_alias_02
             tn.B b = new tn.B();
             b.i = 3;
 
-            Debug.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
         }
 
         public static bool testMethod()
@@ -1166,7 +1166,7 @@ namespace NS_TestClass_alias_03
             tn b = new tn();
             b.i = 3;
 
-            Debug.WriteLine((b.i).ToString());
+            OutputHelper.WriteLine((b.i).ToString());
         }
 
         public static bool testMethod()
@@ -1191,7 +1191,7 @@ namespace NS_TestClass_alias_04
     {
         public static void Main_old(String[] args)
         {
-            Debug.WriteLine("Worked!");
+            OutputHelper.WriteLine("Worked!");
         }
 
         public static bool testMethod()
@@ -1305,7 +1305,7 @@ namespace NS_TestClass_direct_02_Foo.Bar
     {
         public void showMessage()
         {
-            Debug.WriteLine("Foo.Bar.A");
+            OutputHelper.WriteLine("Foo.Bar.A");
         }
     }
 }
@@ -1319,7 +1319,7 @@ namespace NS_TestClass_direct_02
     {
         public void showMessage()
         {
-            Debug.WriteLine("testns.A");
+            OutputHelper.WriteLine("testns.A");
         }
     }
 
@@ -1362,7 +1362,7 @@ namespace NS_TestClass_direct_03
             A a = new A();
             a.i = 25;
 
-            Debug.WriteLine("This works!");
+            OutputHelper.WriteLine("This works!");
 
             return 0;
         }
@@ -1397,7 +1397,7 @@ namespace NS_TestClass_direct_05
         {
             A a = new A();
 
-            Debug.WriteLine("This works!");
+            OutputHelper.WriteLine("This works!");
 
             return 0;
         }

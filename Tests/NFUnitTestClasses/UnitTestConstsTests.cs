@@ -18,11 +18,11 @@ namespace NFUnitTestClasses
         public void Const1_Test()
         {
             //Ported from const1.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant-declaration may include a set of attributes,");
-            Debug.WriteLine("a new modifier, and one of four access modifiers.  The");
-            Debug.WriteLine("attributes and modifiers apply to all of the members ");
-            Debug.WriteLine("declared by the constant declaration.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant-declaration may include a set of attributes,");
+            OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
+            OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
+            OutputHelper.WriteLine("declared by the constant declaration.");
             Assert.True(ConstTestClass1.test());
         }
 
@@ -30,11 +30,11 @@ namespace NFUnitTestClasses
         public void Const2_Test()
         {
             //Ported from const2.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant-declaration may include a set of attributes,");
-            Debug.WriteLine("a new modifier, and one of four access modifiers.  The");
-            Debug.WriteLine("attributes and modifiers apply to all of the members ");
-            Debug.WriteLine("declared by the constant declaration.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant-declaration may include a set of attributes,");
+            OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
+            OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
+            OutputHelper.WriteLine("declared by the constant declaration.");
             Assert.True(ConstTestClass2.test());
         }
 
@@ -42,11 +42,11 @@ namespace NFUnitTestClasses
         public void Const3_Test()
         {
             //Ported from const3.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant-declaration may include a set of attributes,");
-            Debug.WriteLine("a new modifier, and one of four access modifiers.  The");
-            Debug.WriteLine("attributes and modifiers apply to all of the members ");
-            Debug.WriteLine("declared by the constant declaration.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant-declaration may include a set of attributes,");
+            OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
+            OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
+            OutputHelper.WriteLine("declared by the constant declaration.");
             Assert.True(ConstTestClass3.test());
 
         }
@@ -55,11 +55,11 @@ namespace NFUnitTestClasses
         public void Const4_Test()
         {
             //Ported from const4.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant-declaration may include a set of attributes,");
-            Debug.WriteLine("a new modifier, and one of four access modifiers.  The");
-            Debug.WriteLine("attributes and modifiers apply to all of the members ");
-            Debug.WriteLine("declared by the constant declaration.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant-declaration may include a set of attributes,");
+            OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
+            OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
+            OutputHelper.WriteLine("declared by the constant declaration.");
             Assert.True(ConstTestClass4.test());
         }
 
@@ -67,11 +67,11 @@ namespace NFUnitTestClasses
         public void Const5_Test()
         {
             //Ported from const5.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant-declaration may include a set of attributes,");
-            Debug.WriteLine("a new modifier, and one of four access modifiers.  The");
-            Debug.WriteLine("attributes and modifiers apply to all of the members ");
-            Debug.WriteLine("declared by the constant declaration.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant-declaration may include a set of attributes,");
+            OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
+            OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
+            OutputHelper.WriteLine("declared by the constant declaration.");
             Assert.True(ConstTestClass5.test());
         }
 
@@ -79,11 +79,11 @@ namespace NFUnitTestClasses
         public void Const6_Test()
         {
             //Ported from const6.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant-declaration may include a set of attributes,");
-            Debug.WriteLine("a new modifier, and one of four access modifiers.  The");
-            Debug.WriteLine("attributes and modifiers apply to all of the members ");
-            Debug.WriteLine("declared by the constant declaration.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant-declaration may include a set of attributes,");
+            OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
+            OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
+            OutputHelper.WriteLine("declared by the constant declaration.");
             Assert.True(ConstTestClass6.test());
         }
 
@@ -92,11 +92,11 @@ namespace NFUnitTestClasses
         public void Const9_Test()
         {
             //Ported from const9.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant-declaration may include a set of attributes,");
-            Debug.WriteLine("a new modifier, and one of four access modifiers.  The");
-            Debug.WriteLine("attributes and modifiers apply to all of the members ");
-            Debug.WriteLine("declared by the constant declaration.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant-declaration may include a set of attributes,");
+            OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
+            OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
+            OutputHelper.WriteLine("declared by the constant declaration.");
             Assert.True(ConstTestClass9.test());
         }
 
@@ -104,14 +104,14 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Const11_Test()
         {
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             //Ported from const11.cs
             Assert.True(ConstTestClass11.test());
         }
@@ -120,14 +120,14 @@ namespace NFUnitTestClasses
         public void Const12_Test()
         {
             //Ported from const12.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass12.test());
         }
 
@@ -135,14 +135,14 @@ namespace NFUnitTestClasses
         public void Const13_Test()
         {
             //Ported from const13.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass13.test());
         }
 
@@ -150,14 +150,14 @@ namespace NFUnitTestClasses
         public void Const14_Test()
         {
             //Ported from const14.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass14.test());
         }
 
@@ -165,14 +165,14 @@ namespace NFUnitTestClasses
         public void Const15_Test()
         {
             //Ported from const15.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass15.test());
         }
 
@@ -180,14 +180,14 @@ namespace NFUnitTestClasses
         public void Const16_Test()
         {
             //Ported from const16.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass16.test());
         }
 
@@ -195,14 +195,14 @@ namespace NFUnitTestClasses
         public void Const17_Test()
         {
             //Ported from const17.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass17.test());
         }
 
@@ -210,14 +210,14 @@ namespace NFUnitTestClasses
         public void Const18_Test()
         {
             //Ported from const18.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass18.test());
         }
 
@@ -225,14 +225,14 @@ namespace NFUnitTestClasses
         public void Const19_Test()
         {
             //Ported from const19.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass19.test());
         }
 
@@ -240,14 +240,14 @@ namespace NFUnitTestClasses
         public void Const20_Test()
         {
             //Ported from const20.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass20.test());
         }
 
@@ -255,14 +255,14 @@ namespace NFUnitTestClasses
         public void Const21_Test()
         {
             //Ported from const21.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass21.test());
         }
 
@@ -270,14 +270,14 @@ namespace NFUnitTestClasses
         public void Const24_Test()
         {
             //Ported from const24.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass24.test());
         }
 
@@ -285,12 +285,12 @@ namespace NFUnitTestClasses
         public void Const25_Test()
         {
             //Ported from const25.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant itself can participate in a constant-expression.");
-            Debug.WriteLine("Thus, a constant may be used in any construct that requires");
-            Debug.WriteLine("a constant-expression.  Examples of such constructs include");
-            Debug.WriteLine("case labels, goto case statements, enum member declarations,");
-            Debug.WriteLine("attributes, and other constant declarations.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant itself can participate in a constant-expression.");
+            OutputHelper.WriteLine("Thus, a constant may be used in any construct that requires");
+            OutputHelper.WriteLine("a constant-expression.  Examples of such constructs include");
+            OutputHelper.WriteLine("case labels, goto case statements, enum member declarations,");
+            OutputHelper.WriteLine("attributes, and other constant declarations.");
             Assert.True(ConstTestClass25.test());
         }
 
@@ -298,12 +298,12 @@ namespace NFUnitTestClasses
         public void Const26_Test()
         {
             //Ported from const26.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant itself can participate in a constant-expression.");
-            Debug.WriteLine("Thus, a constant may be used in any construct that requires");
-            Debug.WriteLine("a constant-expression.  Examples of such constructs include");
-            Debug.WriteLine("case labels, goto case statements, enum member declarations,");
-            Debug.WriteLine("attributes, and other constant declarations.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant itself can participate in a constant-expression.");
+            OutputHelper.WriteLine("Thus, a constant may be used in any construct that requires");
+            OutputHelper.WriteLine("a constant-expression.  Examples of such constructs include");
+            OutputHelper.WriteLine("case labels, goto case statements, enum member declarations,");
+            OutputHelper.WriteLine("attributes, and other constant declarations.");
             Assert.True(ConstTestClass26.test());
         }
 
@@ -311,12 +311,12 @@ namespace NFUnitTestClasses
         public void Const27_Test()
         {
             //Ported from const27.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant itself can participate in a constant-expression.");
-            Debug.WriteLine("Thus, a constant may be used in any construct that requires");
-            Debug.WriteLine("a constant-expression.  Examples of such constructs include");
-            Debug.WriteLine("case labels, goto case statements, enum member declarations,");
-            Debug.WriteLine("attributes, and other constant declarations.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant itself can participate in a constant-expression.");
+            OutputHelper.WriteLine("Thus, a constant may be used in any construct that requires");
+            OutputHelper.WriteLine("a constant-expression.  Examples of such constructs include");
+            OutputHelper.WriteLine("case labels, goto case statements, enum member declarations,");
+            OutputHelper.WriteLine("attributes, and other constant declarations.");
             Assert.True(ConstTestClass27.test());
         }
 
@@ -324,12 +324,12 @@ namespace NFUnitTestClasses
         public void Const28_Test()
         {
             //Ported from const28.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant itself can participate in a constant-expression.");
-            Debug.WriteLine("Thus, a constant may be used in any construct that requires");
-            Debug.WriteLine("a constant-expression.  Examples of such constructs include");
-            Debug.WriteLine("case labels, goto case statements, enum member declarations,");
-            Debug.WriteLine("attributes, and other constant declarations.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant itself can participate in a constant-expression.");
+            OutputHelper.WriteLine("Thus, a constant may be used in any construct that requires");
+            OutputHelper.WriteLine("a constant-expression.  Examples of such constructs include");
+            OutputHelper.WriteLine("case labels, goto case statements, enum member declarations,");
+            OutputHelper.WriteLine("attributes, and other constant declarations.");
             Assert.True(ConstTestClass28.test());
         }
 
@@ -337,12 +337,12 @@ namespace NFUnitTestClasses
         public void Const30_Test()
         {
             //Ported from const30.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("Constants are permitted to depend on other constants");
-            Debug.WriteLine("within the same project as long as the dependencies");
-            Debug.WriteLine("are not of a circular nature.  The compiler automatically");
-            Debug.WriteLine("arranges to evaluate the constant declarations in the");
-            Debug.WriteLine("appropriate order.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("Constants are permitted to depend on other constants");
+            OutputHelper.WriteLine("within the same project as long as the dependencies");
+            OutputHelper.WriteLine("are not of a circular nature.  The compiler automatically");
+            OutputHelper.WriteLine("arranges to evaluate the constant declarations in the");
+            OutputHelper.WriteLine("appropriate order.");
             Assert.True(ConstTestClass30.test());
         }
 
@@ -350,14 +350,14 @@ namespace NFUnitTestClasses
         public void Const32_Test()
         {
             //Ported from const32.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass32.test());
         }
 
@@ -365,14 +365,14 @@ namespace NFUnitTestClasses
         public void Const33_Test()
         {
             //Ported from const33.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass33.test());
         }
 
@@ -380,14 +380,14 @@ namespace NFUnitTestClasses
         public void Const34_Test()
         {
             //Ported from const34.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass34.test());
         }
 
@@ -395,14 +395,14 @@ namespace NFUnitTestClasses
         public void Const35_Test()
         {
             //Ported from const35.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type specified in a constant declaration");
-            Debug.WriteLine("must be byte, char, short, int, long, float,");
-            Debug.WriteLine("double, double, bool, string, an enum-type,");
-            Debug.WriteLine("or a reference type.  Each constant-expression");
-            Debug.WriteLine("must yield a value of the target type or of a ");
-            Debug.WriteLine("type that can be converted to the target type");
-            Debug.WriteLine("by implicit conversion.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type specified in a constant declaration");
+            OutputHelper.WriteLine("must be byte, char, short, int, long, float,");
+            OutputHelper.WriteLine("double, double, bool, string, an enum-type,");
+            OutputHelper.WriteLine("or a reference type.  Each constant-expression");
+            OutputHelper.WriteLine("must yield a value of the target type or of a ");
+            OutputHelper.WriteLine("type that can be converted to the target type");
+            OutputHelper.WriteLine("by implicit conversion.");
             Assert.True(ConstTestClass35.test());
         }
 
@@ -410,14 +410,14 @@ namespace NFUnitTestClasses
         public void Const42_Test()
         {
             //Ported from const42.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant declarator introduces a new member");
-            Debug.WriteLine("This test is expected to fail");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant declarator introduces a new member");
+            OutputHelper.WriteLine("This test is expected to fail");
             Assert.False(ConstTestClass42.test());
             {
-                Debug.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-                Debug.WriteLine("It previously marked as known failure because of bug # 17246");
-                Debug.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
+                OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
+                OutputHelper.WriteLine("It previously marked as known failure because of bug # 17246");
+                OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
             }
         }
 
@@ -425,14 +425,14 @@ namespace NFUnitTestClasses
         public void Const43_Test()
         {
             //Ported from const43.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant declarator introduces a new member");
-            Debug.WriteLine("This test is expected to fail");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant declarator introduces a new member");
+            OutputHelper.WriteLine("This test is expected to fail");
             Assert.False(ConstTestClass43.test());
             {
-                Debug.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-                Debug.WriteLine("It previously marked as known failure because of bug # 17246");
-                Debug.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
+                OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
+                OutputHelper.WriteLine("It previously marked as known failure because of bug # 17246");
+                OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
             }
         }
 
@@ -440,8 +440,8 @@ namespace NFUnitTestClasses
         public void Const44_Test()
         {
             //Ported from const44.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("The type of a constant must be at least as acccessible as the constant itself.");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("The type of a constant must be at least as acccessible as the constant itself.");
             Assert.True(ConstTestClass44.test());
         }
 
@@ -450,9 +450,9 @@ namespace NFUnitTestClasses
         public void Const56_Test()
         {
             //Ported from const56.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("...the only possible value for constants of reference-types other than ");
-            Debug.WriteLine("string is null");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("...the only possible value for constants of reference-types other than ");
+            OutputHelper.WriteLine("string is null");
             Assert.True(ConstTestClass56.test());
         }
 
@@ -460,10 +460,10 @@ namespace NFUnitTestClasses
         public void Const57_Test()
         {
             //Ported from const57.cs
-            Debug.WriteLine("Section 10.3");
-            Debug.WriteLine("A constant declaration that declares multiple constants is equivalent to ");
-            Debug.WriteLine("multiple declarations of single constants with the same attributes, ");
-            Debug.WriteLine("modifiers, and type. ");
+            OutputHelper.WriteLine("Section 10.3");
+            OutputHelper.WriteLine("A constant declaration that declares multiple constants is equivalent to ");
+            OutputHelper.WriteLine("multiple declarations of single constants with the same attributes, ");
+            OutputHelper.WriteLine("modifiers, and type. ");
             Assert.True(ConstTestClass57.test());
         }
 

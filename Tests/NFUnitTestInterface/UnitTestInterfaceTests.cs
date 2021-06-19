@@ -16,344 +16,344 @@ namespace NFUnitTestInterface
         [TestMethod]
         public void Interface_base_06_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("If effective visibility is internal, public iface may have an internal base iface ");
-            Debug.WriteLine("(Bug 86453: has some details on this.  But it has to do with class  internal)");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("If effective visibility is internal, public iface may have an internal base iface ");
+            OutputHelper.WriteLine("(Bug 86453: has some details on this.  But it has to do with class  internal)");
             Assert.True(Interface_TestClass_base_06.testMethod());
         }
         [TestMethod]
         public void Interface_decl_01_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest interface declared in global namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest interface declared in global namespace");
             Assert.True(Interface_TestClass_decl_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_decl_03_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest interface declared in class in default global namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest interface declared in class in default global namespace");
             Assert.True(Interface_TestClass_decl_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_decl_05_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simple interface declaration with diff types of methods, args, and properties");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simple interface declaration with diff types of methods, args, and properties");
             Assert.True(Interface_TestClass_decl_05.testMethod());
         }
 
         [TestMethod]
         public void Interface_decl_06_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simple interface declaration properties with only gets");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simple interface declaration properties with only gets");
             Assert.True(Interface_TestClass_decl_06.testMethod());
         }
 
         [TestMethod]
         public void Interface_decl_07_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simple interface declaration properties with only sets");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simple interface declaration properties with only sets");
             Assert.True(Interface_TestClass_decl_07.testMethod());
         }
 
         [TestMethod]
         public void Interface_inherit_01_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify that an interface can be hidden by 'new' member in derived class");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify that an interface can be hidden by 'new' member in derived class");
             Assert.True(Interface_TestClass_inherit_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_inherit_02_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest form of interface inheritance");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest form of interface inheritance");
             Assert.True(Interface_TestClass_inherit_02.testMethod());
         }
 
         [TestMethod]
         public void Interface_inherit_03_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest form of interface inheritance, inheriting multiple interfaces");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest form of interface inheritance, inheriting multiple interfaces");
             Assert.True(Interface_TestClass_inherit_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_inherit_04_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest form of interface inheritance, inheriting multiple interfaces");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest form of interface inheritance, inheriting multiple interfaces");
             Assert.True(Interface_TestClass_inherit_04.testMethod());
         }
 
         [TestMethod]
         public void Interface_inherit_08_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify that an interface hidden without using new results in warning");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify that an interface hidden without using new results in warning");
             Assert.True(Interface_TestClass_inherit_08.testMethod());
         }
 
         [TestMethod]
         public void Interface_modifier_01_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify public and internal interfaces declared in global namespace are valid");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify public and internal interfaces declared in global namespace are valid");
             Assert.True(Interface_TestClass_modifier_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_modifier_05_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify public and internal interfaces are valid inside classes");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify public and internal interfaces are valid inside classes");
             Assert.True(Interface_TestClass_modifier_05.testMethod());
         }
 
         [TestMethod]
         public void Interface_modifier_06_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify private and protected interfaces are valid inside classes");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify private and protected interfaces are valid inside classes");
             Assert.True(Interface_TestClass_modifier_06.testMethod());
         }
 
         [TestMethod]
         public void Interface_modifier_07_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify new interface gens warning if not hiding anything");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify new interface gens warning if not hiding anything");
             Assert.True(Interface_TestClass_modifier_07.testMethod());
         }
 
         [TestMethod]
         public void Interface_modifier_08_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify new interface is valid inside classes when properly hiding an inherited member");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify new interface is valid inside classes when properly hiding an inherited member");
             Assert.True(Interface_TestClass_modifier_08.testMethod());
         }
 
         [TestMethod]
         public void Interface_modifier_10_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify protected internal interfaces are valid inside classes");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify protected internal interfaces are valid inside classes");
             Assert.True(Interface_TestClass_modifier_10.testMethod());
         }
 
         [TestMethod]
         public void Interface_semicolon_01_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest interface declared (with semi-colon) in global namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest interface declared (with semi-colon) in global namespace");
             Assert.True(Interface_TestClass_semicolon_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_semicolon_03_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest interface declared (with semi-colon) in  class in default global namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest interface declared (with semi-colon) in  class in default global namespace");
             Assert.True(Interface_TestClass_semicolon_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_04_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("A member of an interface-type can be assigned an instance of class that implements it");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("A member of an interface-type can be assigned an instance of class that implements it");
             Assert.True(Interface_TestClass_impl_04.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_05_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Warning gets generated when two methods implement an inherited method");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Warning gets generated when two methods implement an inherited method");
             Assert.True(Interface_TestClass_impl_05.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_06_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Using the 'override' keyword allows you to hide previous method implementation");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Using the 'override' keyword allows you to hide previous method implementation");
             Assert.True(Interface_TestClass_impl_06.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_07_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("A class that implements an interface with method, property, event, and indexer");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("A class that implements an interface with method, property, event, and indexer");
             Assert.True(Interface_TestClass_impl_07.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_08_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Implementing method that was defined identically by two different base-interfaces should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Implementing method that was defined identically by two different base-interfaces should work");
             Assert.True(Interface_TestClass_impl_08.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_09_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Implementing property that was defined identically by two different base-interfaces should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Implementing property that was defined identically by two different base-interfaces should work");
             Assert.True(Interface_TestClass_impl_09.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_10_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Implementing an event that was defined identically by two different base-interfaces should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Implementing an event that was defined identically by two different base-interfaces should work");
             Assert.True(Interface_TestClass_impl_10.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_11_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Implementing an indexer that was defined identically by two different base-interfaces should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Implementing an indexer that was defined identically by two different base-interfaces should work");
             Assert.True(Interface_TestClass_impl_11.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_12_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("The members of base class participate in interface mapping");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("The members of base class participate in interface mapping");
             Assert.True(Interface_TestClass_impl_12.testMethod());
         }
 
         [TestMethod]
         public void Interface_impl_13_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Two interfaces on the same object must resolve to the same reference");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Two interfaces on the same object must resolve to the same reference");
             Assert.True(Interface_TestClass_impl_13.testMethod());
         }
 
         [TestMethod]
         public void Interface_implinherit_01_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Interface methods implementation inheritance map as expected (1st/2nd example in 13.4.3)");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Interface methods implementation inheritance map as expected (1st/2nd example in 13.4.3)");
             Assert.True(Interface_TestClass_implinherit_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_implinherit_02_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Interface methods implementation inheritance (w/virtual) map as expected (3rd/4th example in 13.4.3)");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Interface methods implementation inheritance (w/virtual) map as expected (3rd/4th example in 13.4.3)");
             Assert.True(Interface_TestClass_implinherit_02.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_04_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementation of a method");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementation of a method");
             Assert.True(Interface_TestClass_explicit_04.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_05_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementation of a property");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementation of a property");
             Assert.True(Interface_TestClass_explicit_05.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_06_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementation of an event (Bug 89766)");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementation of an event (Bug 89766)");
             Assert.True(Interface_TestClass_explicit_06.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_07_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementation of an indexer");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementation of an indexer");
             Assert.True(Interface_TestClass_explicit_07.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_10_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implemented members (method) can be called through interface instances");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implemented members (method) can be called through interface instances");
             Assert.True(Interface_TestClass_explicit_10.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_11_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implemented members (property) can be called through interface instances");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implemented members (property) can be called through interface instances");
             Assert.True(Interface_TestClass_explicit_11.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_12_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implemented members (indexer) can be called through interface instances");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implemented members (indexer) can be called through interface instances");
             Assert.True(Interface_TestClass_explicit_12.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_13_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implemented members (event) can be called through interface instances  (Bug 89766)");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implemented members (event) can be called through interface instances  (Bug 89766)");
             Assert.True(Interface_TestClass_explicit_13.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_21_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Hidden base interface members may be implemented in all of the ways used in this");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Hidden base interface members may be implemented in all of the ways used in this");
             Assert.True(Interface_TestClass_explicit_21.testMethod());
         }
 
         [TestMethod]
         public void Interface_explicit_25_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implementing overloaded methods should work ");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implementing overloaded methods should work ");
             Assert.True(Interface_TestClass_explicit_25.testMethod());
         }
 
         [TestMethod]
         public void Interface_mdfrmeth_09_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("An abstract class can implement an interface's methods as abstract");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("An abstract class can implement an interface's methods as abstract");
             Assert.True(Interface_TestClass_mdfrmeth_09.testMethod());
         }
 
         [TestMethod]
         public void Interface_ifreimp_01_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("A class that inherits an interface implementation is permitted to re-implement the interface by including it in the base class list");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("A class that inherits an interface implementation is permitted to re-implement the interface by including it in the base class list");
             // Known failure
             Assert.False(Interface_TestClass_ifreimp_01.testMethod());
         }
@@ -361,8 +361,8 @@ namespace NFUnitTestInterface
         [TestMethod]
         public void Interface_ifreimp_02_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Inherited public member declarations and inherited explicit interface member declarations participate in the interface mapping process for re-implemented interfaces (Bug 90165)");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Inherited public member declarations and inherited explicit interface member declarations participate in the interface mapping process for re-implemented interfaces (Bug 90165)");
             // Known failure
             Assert.False(Interface_TestClass_ifreimp_02.testMethod());
         }
@@ -370,426 +370,426 @@ namespace NFUnitTestInterface
         [TestMethod]
         public void Interface_ifreimp_03_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Interface reimplementation also reimplements the interface's base interfaces.  Verify mapping is done correctly. (90165)");
-            Debug.WriteLine("This Test is an expected fail in the baseline, but has passed in recent testing");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Interface reimplementation also reimplements the interface's base interfaces.  Verify mapping is done correctly. (90165)");
+            OutputHelper.WriteLine("This Test is an expected fail in the baseline, but has passed in recent testing");
             Assert.True(Interface_TestClass_ifreimp_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_abstract_01_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("An abstract class is permitted to map base-interface methods onto abstract methods");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("An abstract class is permitted to map base-interface methods onto abstract methods");
             Assert.True(Interface_TestClass_abstract_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_abstract_02_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("The abstract methods implementing interface methods must be overridden by inheriting classes");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("The abstract methods implementing interface methods must be overridden by inheriting classes");
             Assert.True(Interface_TestClass_abstract_02.testMethod());
         }
 
         [TestMethod]
         public void Interface_abstract_03_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementations are permitted to call abstract methods");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementations are permitted to call abstract methods");
             Assert.True(Interface_TestClass_abstract_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_indexer_02_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Simplest interface indexer declaration (int)");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Simplest interface indexer declaration (int)");
             Assert.True(Interface_TestClass_indexer_02.testMethod());
         }
 
         [TestMethod]
         public void Interface_indexer_03_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Simplest interface indexer declaration (String)");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Simplest interface indexer declaration (String)");
             Assert.True(Interface_TestClass_indexer_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_indexer_04_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Simplest interface indexer declaration (user-defined struct)");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Simplest interface indexer declaration (user-defined struct)");
             Assert.True(Interface_TestClass_indexer_04.testMethod());
         }
 
         [TestMethod]
         public void Interface_indexer_05_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Interface indexer with multiple parameters in formal-index-parameter-list");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Interface indexer with multiple parameters in formal-index-parameter-list");
             Assert.True(Interface_TestClass_indexer_05.testMethod());
         }
 
         [TestMethod]
         public void Interface_indexer_06_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Interface indexer with just get accessor");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Interface indexer with just get accessor");
             Assert.True(Interface_TestClass_indexer_06.testMethod());
         }
 
         [TestMethod]
         public void Interface_indexer_07_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Interface indexer with just set accessor");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Interface indexer with just set accessor");
             Assert.True(Interface_TestClass_indexer_07.testMethod());
         }
 
         [TestMethod]
         public void Interface_indexer_18_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Using 'new' on an interface member (indexer) that doesn't hide an inherited member should gen warning ");
-            Debug.WriteLine("(Related Bug: 86609)");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Using 'new' on an interface member (indexer) that doesn't hide an inherited member should gen warning ");
+            OutputHelper.WriteLine("(Related Bug: 86609)");
             Assert.True(Interface_TestClass_indexer_18.testMethod());
         }
 
         [TestMethod]
         public void Interface_meth_09_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Using 'new' on an interface member (method) that doesn't hide an inherited member should gen warning (Bug: 86609)");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Using 'new' on an interface member (method) that doesn't hide an inherited member should gen warning (Bug: 86609)");
             Assert.True(Interface_TestClass_meth_09.testMethod());
         }
 
         [TestMethod]
         public void Interface_prop_09_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Using 'new' on an interface member (property) that doesn't hide an inherited member should gen warning (Bug: 86609)");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Using 'new' on an interface member (property) that doesn't hide an inherited member should gen warning (Bug: 86609)");
             Assert.True(Interface_TestClass_prop_09.testMethod());
         }
 
         [TestMethod]
         public void Interface_namesig_02_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Member functions of an interface may have same name if they have diff args");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Member functions of an interface may have same name if they have diff args");
             Assert.True(Interface_TestClass_namesig_02.testMethod());
         }
 
         [TestMethod]
         public void Interface_namesig_03_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Interface member that is hidden by an inheriting interface (without using new) gens warning");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Interface member that is hidden by an inheriting interface (without using new) gens warning");
             Assert.True(Interface_TestClass_namesig_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_namesig_04_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Interface that inherits 2 other interfaces that have a member with same sig");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Interface that inherits 2 other interfaces that have a member with same sig");
             Assert.True(Interface_TestClass_namesig_04.testMethod());
         }
 
         [TestMethod]
         public void Interface_namesig_05_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Interface member that is hidden by an inheriting interface (using new) works correctly");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Interface member that is hidden by an inheriting interface (using new) works correctly");
             Assert.True(Interface_TestClass_namesig_05.testMethod());
         }
 
         [TestMethod]
         public void Interface_events_08_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Using 'new' on an interface member (event) that doesn't hide an inherited member should gen warning (Bug: 118831)");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Using 'new' on an interface member (event) that doesn't hide an inherited member should gen warning (Bug: 118831)");
             Assert.True(Interface_TestClass_events_08.testMethod());
         }
 
         [TestMethod]
         public void Interface_events_09_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Simple Event declaration within an interface");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Simple Event declaration within an interface");
             Assert.True(Interface_TestClass_events_09.testMethod());
         }
 
         [TestMethod]
         public void Interface_maccess_01_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Inherited members with same sig, from diff interfaces, can be accessed through casting");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Inherited members with same sig, from diff interfaces, can be accessed through casting");
             Assert.True(Interface_TestClass_maccess_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_maccess_03_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Inherited members with same method names but diff args can be accessed by casting");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Inherited members with same method names but diff args can be accessed by casting");
             Assert.True(Interface_TestClass_maccess_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_maccess_04_Test()
         {
-            Debug.WriteLine("Section 13.2 Interface members");
-            Debug.WriteLine("Inherited members with same method names but diff args should work if arg passed is not ambiguous (Regression bug: 90867)");
+            OutputHelper.WriteLine("Section 13.2 Interface members");
+            OutputHelper.WriteLine("Inherited members with same method names but diff args should work if arg passed is not ambiguous (Regression bug: 90867)");
             Assert.True(Interface_TestClass_maccess_04.testMethod());
         }
 
         [TestMethod]
         public void Interface_modifier_02_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify private interfaces gen error when declared in global namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify private interfaces gen error when declared in global namespace");
             Assert.True(Interface_TestClass_modifier_02.testMethod());
         }
 
         [TestMethod]
         public void Interface_modifier_03_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify protected interfaces gen error when declared in global namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify protected interfaces gen error when declared in global namespace");
             Assert.True(Interface_TestClass_modifier_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_impl_01_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Simple struct implementation of two interfaces");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Simple struct implementation of two interfaces");
             Assert.True(Interface_TestClass_struct_impl_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_impl_02_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("A struct that implements an interface also implicitly implements all of the interface's base interfaces");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("A struct that implements an interface also implicitly implements all of the interface's base interfaces");
             Assert.True(Interface_TestClass_struct_impl_02.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_impl_04_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("A member of an interface-type can be assigned an instance of a struct that implements it");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("A member of an interface-type can be assigned an instance of a struct that implements it");
             Assert.True(Interface_TestClass_struct_impl_04.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_impl_05_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("A struct that implements an interface with a method, property, event, and indexer");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("A struct that implements an interface with a method, property, event, and indexer");
             Assert.True(Interface_TestClass_struct_impl_05.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_impl_06_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Implementing a method that was defined identically by two different base-interfaces should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Implementing a method that was defined identically by two different base-interfaces should work");
             Assert.True(Interface_TestClass_struct_impl_06.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_impl_07_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Implementing a property that was defined identically by two different base-interfaces should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Implementing a property that was defined identically by two different base-interfaces should work");
             Assert.True(Interface_TestClass_struct_impl_07.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_impl_08_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Implementing an event that was defined identically by two different base-interfaces should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Implementing an event that was defined identically by two different base-interfaces should work");
             Assert.True(Interface_TestClass_struct_impl_08.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_impl_09_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Implementing an indexer that was defined identically by two different base-interfaces should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Implementing an indexer that was defined identically by two different base-interfaces should work");
             Assert.True(Interface_TestClass_struct_impl_09.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_01_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementations");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementations");
             Assert.True(Interface_TestClass_struct_explicit_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_03_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Implementing an iface method in a struct that doesn't list the iface as a base iface but does list a iface that inherits the iface should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Implementing an iface method in a struct that doesn't list the iface as a base iface but does list a iface that inherits the iface should work");
             Assert.True(Interface_TestClass_struct_explicit_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_04_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementation of a method");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementation of a method");
             Assert.True(Interface_TestClass_struct_explicit_04.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_05_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementation of a property");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementation of a property");
             Assert.True(Interface_TestClass_struct_explicit_05.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_06_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementation of an event (Bug: 89766)");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementation of an event (Bug: 89766)");
             Assert.True(Interface_TestClass_struct_explicit_06.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_07_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicit interface member implementation of an indexer");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicit interface member implementation of an indexer");
             Assert.True(Interface_TestClass_struct_explicit_07.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_09_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Multiple base interfaces and explicit interface member implementations work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Multiple base interfaces and explicit interface member implementations work");
             Assert.True(Interface_TestClass_struct_explicit_09.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_10_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implemented members (method) can be called through interface instances");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implemented members (method) can be called through interface instances");
             Assert.True(Interface_TestClass_struct_explicit_10.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_11_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implemented members (property) can be called through interface instances (Bug 90570)");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implemented members (property) can be called through interface instances (Bug 90570)");
             Assert.True(Interface_TestClass_struct_explicit_11.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_12_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implemented members (indexer) can be called through interface instances (Bug 90570)");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implemented members (indexer) can be called through interface instances (Bug 90570)");
             Assert.True(Interface_TestClass_struct_explicit_12.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_13_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implemented members (event) can be called through interface instances (89766)");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implemented members (event) can be called through interface instances (89766)");
             Assert.True(Interface_TestClass_struct_explicit_13.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_19_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Explicitly implementing member from interface not in base-list (but in base-list of a base interface) should work");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Explicitly implementing member from interface not in base-list (but in base-list of a base interface) should work");
             Assert.True(Interface_TestClass_struct_explicit_19.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_explicit_20_Test()
         {
-            Debug.WriteLine("Section 13.4 Interface implementations");
-            Debug.WriteLine("Hidden base interface members may be implemented in all of the ways used in this");
+            OutputHelper.WriteLine("Section 13.4 Interface implementations");
+            OutputHelper.WriteLine("Hidden base interface members may be implemented in all of the ways used in this");
             Assert.True(Interface_TestClass_struct_explicit_20.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_decl_01_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest interface declared in a struct in default global namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest interface declared in a struct in default global namespace");
             Assert.True(Interface_TestClass_struct_decl_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_decl_02_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest interface declared in a struct in a declared namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest interface declared in a struct in a declared namespace");
             Assert.True(Interface_TestClass_decl_02_NS.Interface_TestClass_decl_02.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_inherit_01_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest form of interface inheritance, inheriting multiple interfaces");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest form of interface inheritance, inheriting multiple interfaces");
             Assert.True(Interface_TestClass_struct_inherit_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_modifier_01_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify public and internal interfaces are valid inside structs");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify public and internal interfaces are valid inside structs");
             Assert.True(Interface_TestClass_struct_modifier_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_modifier_02_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify private interfaces are valid inside structs");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify private interfaces are valid inside structs");
             Assert.True(Interface_TestClass_struct_modifier_02.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_modifier_03_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Verify new interface gens warning if not hiding anything");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Verify new interface gens warning if not hiding anything");
             Assert.True(Interface_TestClass_struct_modifier_03.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_semicolon_01_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest interface declared (with semi-colon) in a struct in default global namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest interface declared (with semi-colon) in a struct in default global namespace");
             Assert.True(Interface_TestClass_struct_semicolon_01.testMethod());
         }
 
         [TestMethod]
         public void Interface_struct_semicolon_02_Test()
         {
-            Debug.WriteLine("Section 13.1 Interface declarations ");
-            Debug.WriteLine("Simplest interface declared (with semi-colon) in a struct in a declared namespace");
+            OutputHelper.WriteLine("Section 13.1 Interface declarations ");
+            OutputHelper.WriteLine("Simplest interface declared (with semi-colon) in a struct in a declared namespace");
             Assert.True(Interface_TestClass_semicolon_02_NS.Interface_TestClass_semicolon_02.testMethod());
         }
 
@@ -814,7 +814,7 @@ namespace NFUnitTestInterface
         {
             public static void Main_old()
             {
-                Debug.WriteLine("This works!");
+                OutputHelper.WriteLine("This works!");
             }
             public static bool testMethod()
             {
@@ -830,7 +830,7 @@ namespace NFUnitTestInterface
             }
             public static void Main_old()
             {
-                Debug.WriteLine("This works!");
+                OutputHelper.WriteLine("This works!");
             }
             public static bool testMethod()
             {
@@ -961,7 +961,7 @@ namespace NFUnitTestInterface
         {
             public void m()
             {
-                Debug.WriteLine("This works!");
+                OutputHelper.WriteLine("This works!");
             }
 
             public static void Main_old()
@@ -1066,7 +1066,7 @@ namespace NFUnitTestInterface
         {
             public static void Main_old()
             {
-                Debug.WriteLine("This works!");
+                OutputHelper.WriteLine("This works!");
             }
             public static bool testMethod()
             {
@@ -1082,7 +1082,7 @@ namespace NFUnitTestInterface
             };
             public static void Main_old()
             {
-                Debug.WriteLine("This works!");
+                OutputHelper.WriteLine("This works!");
             }
             public static bool testMethod()
             {
@@ -1148,7 +1148,7 @@ namespace NFUnitTestInterface
         {
             public void F()
             {
-                Debug.WriteLine("Interface_TestClass_impl_04_C.F()");
+                OutputHelper.WriteLine("Interface_TestClass_impl_04_C.F()");
             }
         }
         class Interface_TestClass_impl_04
@@ -1174,14 +1174,14 @@ namespace NFUnitTestInterface
         {
             public void F()
             {
-                Debug.WriteLine("Interface_TestClass_impl_05_C.F()");
+                OutputHelper.WriteLine("Interface_TestClass_impl_05_C.F()");
             }
         }
         class Interface_TestClass_impl_05_D : Interface_TestClass_impl_05_C
         {
             public void F()
             {
-                Debug.WriteLine("Interface_TestClass_impl_05_D.F()");
+                OutputHelper.WriteLine("Interface_TestClass_impl_05_D.F()");
             }
         }
         class Interface_TestClass_impl_05
@@ -1210,14 +1210,14 @@ namespace NFUnitTestInterface
         {
             public virtual void F()
             {
-                Debug.WriteLine("Interface_TestClass_impl_06_C.F()");
+                OutputHelper.WriteLine("Interface_TestClass_impl_06_C.F()");
             }
         }
         class Interface_TestClass_impl_06_D : Interface_TestClass_impl_06_C
         {
             public override void F()
             {
-                Debug.WriteLine("Interface_TestClass_impl_06_D.F()");
+                OutputHelper.WriteLine("Interface_TestClass_impl_06_D.F()");
             }
         }
         class Interface_TestClass_impl_06
@@ -1252,7 +1252,7 @@ namespace NFUnitTestInterface
 
             public void Method()
             {
-                Debug.WriteLine("Method()");
+                OutputHelper.WriteLine("Method()");
             }
             public int Property
             {
@@ -1445,14 +1445,14 @@ namespace NFUnitTestInterface
         {
             public void Paint()
             {
-                Debug.WriteLine("Interface_TestClass_implinherit_01_1.Paint()");
+                OutputHelper.WriteLine("Interface_TestClass_implinherit_01_1.Paint()");
             }
         }
         class Interface_TestClass_implinherit_01_2 : Interface_TestClass_implinherit_01_1
         {
             new public void Paint()
             {
-                Debug.WriteLine("Interface_TestClass_implinherit_01_2.Paint()");
+                OutputHelper.WriteLine("Interface_TestClass_implinherit_01_2.Paint()");
             }
         }
         class Interface_TestClass_implinherit_01
@@ -1482,14 +1482,14 @@ namespace NFUnitTestInterface
         {
             public virtual void Paint()
             {
-                Debug.WriteLine("Interface_TestClass_implinherit_02_1.Paint()");
+                OutputHelper.WriteLine("Interface_TestClass_implinherit_02_1.Paint()");
             }
         }
         class Interface_TestClass_implinherit_02_2 : Interface_TestClass_implinherit_02_1
         {
             public override void Paint()
             {
-                Debug.WriteLine("Interface_TestClass_implinherit_02_2.Paint()");
+                OutputHelper.WriteLine("Interface_TestClass_implinherit_02_2.Paint()");
             }
         }
         class Interface_TestClass_implinherit_02
@@ -1557,7 +1557,7 @@ namespace NFUnitTestInterface
         {
             void Interface_TestClass_explicit_04_1.Method()
             {
-                Debug.WriteLine("Method()");
+                OutputHelper.WriteLine("Method()");
             }
         }
         class Interface_TestClass_explicit_04
@@ -2001,7 +2001,7 @@ namespace NFUnitTestInterface
         {
             void Interface_TestClass_ifreimp_01_I1.Paint()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_01_1.Interface_TestClass_ifreimp_01_I1.Paint()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_01_1.Interface_TestClass_ifreimp_01_I1.Paint()");
                 throw new Exception("Incorrect method got called!");
             }
         }
@@ -2009,7 +2009,7 @@ namespace NFUnitTestInterface
         {
             public void Paint()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_01_3.Paint()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_01_3.Paint()");
             }
         }
         class Interface_TestClass_ifreimp_01
@@ -2040,36 +2040,36 @@ namespace NFUnitTestInterface
         {
             void Interface_TestClass_ifreimp_02_I1.F()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_02_2.Interface_TestClass_ifreimp_02_I1.F()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_02_2.Interface_TestClass_ifreimp_02_I1.F()");
                 throw new Exception("Incorrect method got called!");
             }
 
             void Interface_TestClass_ifreimp_02_I1.G()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_02_2.Interface_TestClass_ifreimp_02_I1.G()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_02_2.Interface_TestClass_ifreimp_02_I1.G()");
             }
 
             public void H()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_02_2.H()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_02_2.H()");
                 throw new Exception("Incorrect method got called!");
             }
 
             public void I()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_02_2.I()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_02_2.I()");
             }
         }
         class Interface_TestClass_ifreimp_02_1 : Interface_TestClass_ifreimp_02_2, Interface_TestClass_ifreimp_02_I1
         {
             public void F()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_02_1.F()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_02_1.F()");
             }
 
             void Interface_TestClass_ifreimp_02_I1.H()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_02_1.Interface_TestClass_ifreimp_02_I1.H()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_02_1.Interface_TestClass_ifreimp_02_I1.H()");
             }
         }
         class Interface_TestClass_ifreimp_02
@@ -2104,22 +2104,22 @@ namespace NFUnitTestInterface
         {
             void Interface_TestClass_ifreimp_03_I2.F()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_03_C.Interface_TestClass_ifreimp_03_I2.F()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_03_C.Interface_TestClass_ifreimp_03_I2.F()");
             }
             void Interface_TestClass_ifreimp_03_I3.G()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_03_C.Interface_TestClass_ifreimp_03_I3.G()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_03_C.Interface_TestClass_ifreimp_03_I3.G()");
             }
         }
         class Interface_TestClass_ifreimp_03_D : Interface_TestClass_ifreimp_03_C, Interface_TestClass_ifreimp_03_I3
         {
             public void F()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_03_D.F()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_03_D.F()");
             }
             public void G()
             {
-                Debug.WriteLine("Interface_TestClass_ifreimp_03_D.G()");
+                OutputHelper.WriteLine("Interface_TestClass_ifreimp_03_D.G()");
             }
         }
         class Interface_TestClass_ifreimp_03
@@ -2351,11 +2351,11 @@ namespace NFUnitTestInterface
         {
             public void F(int x)
             {
-                Debug.WriteLine("F(int x) works!");
+                OutputHelper.WriteLine("F(int x) works!");
             }
             public void F(String x)
             {
-                Debug.WriteLine("F(String x) works!");
+                OutputHelper.WriteLine("F(String x) works!");
             }
         }
         class Interface_TestClass_namesig_02
@@ -2628,7 +2628,7 @@ namespace NFUnitTestInterface
         {
             public void F()
             {
-                Debug.WriteLine("Interface_TestClass_struct_impl_04_C.F()");
+                OutputHelper.WriteLine("Interface_TestClass_struct_impl_04_C.F()");
             }
         }
         class Interface_TestClass_struct_impl_04
@@ -2660,7 +2660,7 @@ namespace NFUnitTestInterface
 
             public void Method()
             {
-                Debug.WriteLine("Method()");
+                OutputHelper.WriteLine("Method()");
             }
             public int Property
             {
@@ -2843,7 +2843,7 @@ namespace NFUnitTestInterface
         {
             void Interface_TestClass_struct_explicit_04_1.Method()
             {
-                Debug.WriteLine("Method()");
+                OutputHelper.WriteLine("Method()");
             }
         }
         class Interface_TestClass_struct_explicit_04
@@ -3034,7 +3034,7 @@ namespace NFUnitTestInterface
                 set
                 {
                     val = value;
-                    Debug.WriteLine(val.ToString());
+                    OutputHelper.WriteLine(val.ToString());
                 }
             }
 
@@ -3052,7 +3052,7 @@ namespace NFUnitTestInterface
                     Interface_TestClass_struct_explicit_11_1 le = new Interface_TestClass_struct_explicit_11_1();
                     ((Interface_TestClass_struct_explicit_11_I1)le).Value = 5;
 
-                    Debug.WriteLine((((Interface_TestClass_struct_explicit_11_I1)le).Value).ToString());
+                    OutputHelper.WriteLine((((Interface_TestClass_struct_explicit_11_I1)le).Value).ToString());
                     return 0;
                 }
                 catch (System.Exception)
@@ -3231,7 +3231,7 @@ namespace NFUnitTestInterface
         {
             public static void Main_old()
             {
-                Debug.WriteLine("This works!");
+                OutputHelper.WriteLine("This works!");
             }
             public static bool testMethod()
             {
@@ -3250,7 +3250,7 @@ namespace NFUnitTestInterface
         {
             public void m()
             {
-                Debug.WriteLine("This works!");
+                OutputHelper.WriteLine("This works!");
             }
         }
         class Interface_TestClass_struct_inherit_01
@@ -3316,7 +3316,7 @@ namespace NFUnitTestInterface
         {
             public static void Main_old()
             {
-                Debug.WriteLine("This works!");
+                OutputHelper.WriteLine("This works!");
             }
             public static bool testMethod()
             {
@@ -3341,7 +3341,7 @@ namespace Interface_TestClass_struct_decl_02_NS
     {
         public static void Main_old()
         {
-            Debug.WriteLine("This works!");
+            OutputHelper.WriteLine("This works!");
         }
         public static bool testMethod()
         {
@@ -3364,7 +3364,7 @@ namespace Interface_TestClass_struct_semicolon_02_NS
     {
         public static void Main_old()
         {
-            Debug.WriteLine("This works!");
+            OutputHelper.WriteLine("This works!");
         }
         public static bool testMethod()
         {
@@ -3385,7 +3385,7 @@ namespace Interface_TestClass_decl_02_NS
     {
         public static void Main_old()
         {
-            Debug.WriteLine("This works!");
+            OutputHelper.WriteLine("This works!");
         }
         public static bool testMethod()
         {
@@ -3406,7 +3406,7 @@ namespace Interface_TestClass_semicolon_04_NS
         };
         public static void Main_old()
         {
-            Debug.WriteLine("This works!");
+            OutputHelper.WriteLine("This works!");
         }
         public static bool testMethod()
         {
@@ -3427,7 +3427,7 @@ namespace Interface_TestClass_semicolon_02_NS
     {
         public static void Main_old()
         {
-            Debug.WriteLine("This works!");
+            OutputHelper.WriteLine("This works!");
         }
         public static bool testMethod()
         {
@@ -3448,7 +3448,7 @@ namespace Interface_TestClass_decl_04_NS
         }
         public static void Main_old()
         {
-            Debug.WriteLine("This works!");
+            OutputHelper.WriteLine("This works!");
         }
         public static bool testMethod()
         {

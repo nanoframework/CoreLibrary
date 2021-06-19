@@ -16,1241 +16,1241 @@ namespace NFUnitTestBasicConcepts
         [TestMethod]
         public void Basic_scope001_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a namespace member declared by");
-            Debug.WriteLine("a namespace-member-declaration with no enclosing");
-            Debug.WriteLine("namespace-declaration is the entire program text");
-            Debug.WriteLine("of each compilation unit.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a namespace member declared by");
+            OutputHelper.WriteLine("a namespace-member-declaration with no enclosing");
+            OutputHelper.WriteLine("namespace-declaration is the entire program text");
+            OutputHelper.WriteLine("of each compilation unit.");
             Assert.True(Basic_TestClass_scope001.testMethod());
         }
         [TestMethod]
         public void Basic_scope002_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a namespace member declared by a ");
-            Debug.WriteLine("namespace-member-declaration within a ");
-            Debug.WriteLine("namespace-declaration whose fully qualified name");
-            Debug.WriteLine("is N is the namespace-body of every namespace-declaration");
-            Debug.WriteLine("whose fully qualified name is N or starts with the same ");
-            Debug.WriteLine("sequence of indentifiers as N.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a namespace member declared by a ");
+            OutputHelper.WriteLine("namespace-member-declaration within a ");
+            OutputHelper.WriteLine("namespace-declaration whose fully qualified name");
+            OutputHelper.WriteLine("is N is the namespace-body of every namespace-declaration");
+            OutputHelper.WriteLine("whose fully qualified name is N or starts with the same ");
+            OutputHelper.WriteLine("sequence of indentifiers as N.");
             Assert.True(NS_Basic_TestClass_scope002.Basic_TestClass_scope002.testMethod());
         }
         [TestMethod]
         public void Basic_scope003_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a namespace member declared by a ");
-            Debug.WriteLine("namespace-member-declaration within a ");
-            Debug.WriteLine("namespace-declaration whose fully qualified name");
-            Debug.WriteLine("is N is the namespace-body of every namespace-declaration");
-            Debug.WriteLine("whose fully qualified name is N or starts with the same ");
-            Debug.WriteLine("sequence of indentifiers as N.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a namespace member declared by a ");
+            OutputHelper.WriteLine("namespace-member-declaration within a ");
+            OutputHelper.WriteLine("namespace-declaration whose fully qualified name");
+            OutputHelper.WriteLine("is N is the namespace-body of every namespace-declaration");
+            OutputHelper.WriteLine("whose fully qualified name is N or starts with the same ");
+            OutputHelper.WriteLine("sequence of indentifiers as N.");
             Assert.True(NS_Basic_TestClass_scope003.Basic_TestClass_scope003.testMethod());
         }
         [TestMethod]
         public void Basic_scope004_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a namespace member declared by a ");
-            Debug.WriteLine("namespace-member-declaration within a ");
-            Debug.WriteLine("namespace-declaration whose fully qualified name");
-            Debug.WriteLine("is N is the namespace-body of every namespace-declaration");
-            Debug.WriteLine("whose fully qualified name is N or starts with the same ");
-            Debug.WriteLine("sequence of indentifiers as N.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a namespace member declared by a ");
+            OutputHelper.WriteLine("namespace-member-declaration within a ");
+            OutputHelper.WriteLine("namespace-declaration whose fully qualified name");
+            OutputHelper.WriteLine("is N is the namespace-body of every namespace-declaration");
+            OutputHelper.WriteLine("whose fully qualified name is N or starts with the same ");
+            OutputHelper.WriteLine("sequence of indentifiers as N.");
             Assert.True(NS_Basic_TestClass_scope004.NS_Basic_TestClass_scope004_2.Basic_TestClass_scope004.testMethod());
         }
         [TestMethod]
         public void Basic_scope005_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a namespace member declared by a ");
-            Debug.WriteLine("namespace-member-declaration within a ");
-            Debug.WriteLine("namespace-declaration whose fully qualified name");
-            Debug.WriteLine("is N is the namespace-body of every namespace-declaration");
-            Debug.WriteLine("whose fully qualified name is N or starts with the same ");
-            Debug.WriteLine("sequence of indentifiers as N.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a namespace member declared by a ");
+            OutputHelper.WriteLine("namespace-member-declaration within a ");
+            OutputHelper.WriteLine("namespace-declaration whose fully qualified name");
+            OutputHelper.WriteLine("is N is the namespace-body of every namespace-declaration");
+            OutputHelper.WriteLine("whose fully qualified name is N or starts with the same ");
+            OutputHelper.WriteLine("sequence of indentifiers as N.");
             Assert.True(NS_Basic_TestClass_scope005.NS_Basic_TestClass_scope005_2.Basic_TestClass_scope005.testMethod());
         }
         [TestMethod]
         public void Basic_scope006_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a namespace member declared by a ");
-            Debug.WriteLine("namespace-member-declaration within a ");
-            Debug.WriteLine("namespace-declaration whose fully qualified name");
-            Debug.WriteLine("is N is the namespace-body of every namespace-declaration");
-            Debug.WriteLine("whose fully qualified name is N or starts with the same ");
-            Debug.WriteLine("sequence of indentifiers as N.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a namespace member declared by a ");
+            OutputHelper.WriteLine("namespace-member-declaration within a ");
+            OutputHelper.WriteLine("namespace-declaration whose fully qualified name");
+            OutputHelper.WriteLine("is N is the namespace-body of every namespace-declaration");
+            OutputHelper.WriteLine("whose fully qualified name is N or starts with the same ");
+            OutputHelper.WriteLine("sequence of indentifiers as N.");
             Assert.True(NS_Basic_TestClass_scope006.NS_Basic_TestClass_scope006_2.Basic_TestClass_scope006.testMethod());
         }
         [TestMethod]
         public void Basic_scope012_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a name defined or imported by a using-directive");
-            Debug.WriteLine("extends over the namespace-member-declarations of the");
-            Debug.WriteLine("compilation-unit or namespace-body in which the using-directive");
-            Debug.WriteLine("occurs.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a name defined or imported by a using-directive");
+            OutputHelper.WriteLine("extends over the namespace-member-declarations of the");
+            OutputHelper.WriteLine("compilation-unit or namespace-body in which the using-directive");
+            OutputHelper.WriteLine("occurs.");
             Assert.True(NS_Basic_TestClass_scope012.Basic_TestClass_scope012.testMethod());
         }
         [TestMethod]
         public void Basic_scope019_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a member declared by a class-member-declaration");
-            Debug.WriteLine("is the class body in which the declaration occurs.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a member declared by a class-member-declaration");
+            OutputHelper.WriteLine("is the class body in which the declaration occurs.");
             Assert.True(Basic_TestClass_scope019.testMethod());
         }
         [TestMethod]
         public void Basic_scope022_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a member declared by a class-member-declaration");
-            Debug.WriteLine("is the class body in which the declaration occurs.  In addition,");
-            Debug.WriteLine("the scope of a class member extends to the class-body of those");
-            Debug.WriteLine("derived classes that are included in the accessibility domain");
-            Debug.WriteLine("of the member.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a member declared by a class-member-declaration");
+            OutputHelper.WriteLine("is the class body in which the declaration occurs.  In addition,");
+            OutputHelper.WriteLine("the scope of a class member extends to the class-body of those");
+            OutputHelper.WriteLine("derived classes that are included in the accessibility domain");
+            OutputHelper.WriteLine("of the member.");
             Assert.True(Basic_TestClass_scope022.testMethod());
         }
         [TestMethod]
         public void Basic_scope023_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a member declared by a class-member-declaration");
-            Debug.WriteLine("is the class body in which the declaration occurs.  In addition,");
-            Debug.WriteLine("the scope of a class member extends to the class-body of those");
-            Debug.WriteLine("derived classes that are included in the accessibility domain");
-            Debug.WriteLine("of the member.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a member declared by a class-member-declaration");
+            OutputHelper.WriteLine("is the class body in which the declaration occurs.  In addition,");
+            OutputHelper.WriteLine("the scope of a class member extends to the class-body of those");
+            OutputHelper.WriteLine("derived classes that are included in the accessibility domain");
+            OutputHelper.WriteLine("of the member.");
             Assert.True(Basic_TestClass_scope023.testMethod());
         }
         [TestMethod]
         public void Basic_scope024_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a member declared by a class-member-declaration");
-            Debug.WriteLine("is the class body in which the declaration occurs.  In addition,");
-            Debug.WriteLine("the scope of a class member extends to the class-body of those");
-            Debug.WriteLine("derived classes that are included in the accessibility domain");
-            Debug.WriteLine("of the member.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a member declared by a class-member-declaration");
+            OutputHelper.WriteLine("is the class body in which the declaration occurs.  In addition,");
+            OutputHelper.WriteLine("the scope of a class member extends to the class-body of those");
+            OutputHelper.WriteLine("derived classes that are included in the accessibility domain");
+            OutputHelper.WriteLine("of the member.");
             Assert.True(Basic_TestClass_scope024.testMethod());
         }
         [TestMethod]
         public void Basic_scope025_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a member declared by a struct-member-declaration");
-            Debug.WriteLine("is the struct-body in which the declaration occurs.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a member declared by a struct-member-declaration");
+            OutputHelper.WriteLine("is the struct-body in which the declaration occurs.");
             Assert.True(Basic_TestClass_scope025.testMethod());
         }
         [TestMethod]
         public void Basic_scope027_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a member declared by an enum-member-declaration");
-            Debug.WriteLine("is the enum-body in which the declaration occurs.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a member declared by an enum-member-declaration");
+            OutputHelper.WriteLine("is the enum-body in which the declaration occurs.");
             Assert.True(Basic_TestClass_scope027.testMethod());
         }
         [TestMethod]
         public void Basic_scope029_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a parameter declared in a constructor-declaration");
-            Debug.WriteLine("is the constructor-initializer and the block of that ");
-            Debug.WriteLine("constructor-declaration.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a parameter declared in a constructor-declaration");
+            OutputHelper.WriteLine("is the constructor-initializer and the block of that ");
+            OutputHelper.WriteLine("constructor-declaration.");
             Assert.True(Basic_TestClass_scope029.testMethod());
         }
         [TestMethod]
         public void Basic_scope033_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a parameter declared in a method-declaration");
-            Debug.WriteLine("is the method-body of that method-declaration.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a parameter declared in a method-declaration");
+            OutputHelper.WriteLine("is the method-body of that method-declaration.");
             Assert.True(Basic_TestClass_scope033.testMethod());
         }
         [TestMethod]
         public void Basic_scope037_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a parameter declared in an indexer-declaration");
-            Debug.WriteLine("is the accessor-declarations of that indexer-declaration.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a parameter declared in an indexer-declaration");
+            OutputHelper.WriteLine("is the accessor-declarations of that indexer-declaration.");
             Assert.True(Basic_TestClass_scope037.testMethod());
         }
         [TestMethod]
         public void Basic_scope041_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a parameter declared in an operator-declaration");
-            Debug.WriteLine("is the block of that operator-declaration.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a parameter declared in an operator-declaration");
+            OutputHelper.WriteLine("is the block of that operator-declaration.");
             Assert.True(Basic_TestClass_scope041.testMethod());
         }
         [TestMethod]
         public void Basic_scope044_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a local variable declared in a local-variable-declaration");
-            Debug.WriteLine("is the block in which the declaration occurs.  It is an error to refer to");
-            Debug.WriteLine("a lcaol variable in a textual position that precedes the variable-declaratior");
-            Debug.WriteLine("of the local variable.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a local variable declared in a local-variable-declaration");
+            OutputHelper.WriteLine("is the block in which the declaration occurs.  It is an error to refer to");
+            OutputHelper.WriteLine("a lcaol variable in a textual position that precedes the variable-declaratior");
+            OutputHelper.WriteLine("of the local variable.");
             Assert.True(Basic_TestClass_scope044.testMethod());
         }
         [TestMethod]
         public void Basic_scope051_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a local variable in a for-initializer of a ");
-            Debug.WriteLine("for statement is the for-initializer, the for-condition,");
-            Debug.WriteLine("the for-iterator, and the contained statement of the for");
-            Debug.WriteLine("statement.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a local variable in a for-initializer of a ");
+            OutputHelper.WriteLine("for statement is the for-initializer, the for-condition,");
+            OutputHelper.WriteLine("the for-iterator, and the contained statement of the for");
+            OutputHelper.WriteLine("statement.");
             Assert.True(Basic_TestClass_scope051.testMethod());
         }
         [TestMethod]
         public void Basic_scope053_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a label declared in a label-statement");
-            Debug.WriteLine("is the block in which the declaration occurs.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a label declared in a label-statement");
+            OutputHelper.WriteLine("is the block in which the declaration occurs.");
             Assert.True(Basic_TestClass_scope053.testMethod());
         }
         [TestMethod]
         public void Basic_scope055_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a label declared in a label-statement");
-            Debug.WriteLine("is the block in which the declaration occurs.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a label declared in a label-statement");
+            OutputHelper.WriteLine("is the block in which the declaration occurs.");
             Assert.True(Basic_TestClass_scope055.testMethod());
         }
         [TestMethod]
         public void Basic_scope056_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("Within the scope of a namespace, class,");
-            Debug.WriteLine("struct, interface, or enumeration member ");
-            Debug.WriteLine("it is possible to refer to the member in ");
-            Debug.WriteLine("a textual position that precedes the ");
-            Debug.WriteLine("declaration of the member.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Within the scope of a namespace, class,");
+            OutputHelper.WriteLine("struct, interface, or enumeration member ");
+            OutputHelper.WriteLine("it is possible to refer to the member in ");
+            OutputHelper.WriteLine("a textual position that precedes the ");
+            OutputHelper.WriteLine("declaration of the member.");
             Assert.True(NS_Basic_TestClass_scope056.Basic_TestClass_scope056.testMethod());
         }
         [TestMethod]
         public void Basic_scope057_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("Within the scope of a namespace, class,");
-            Debug.WriteLine("struct, interface, or enumeration member ");
-            Debug.WriteLine("it is possible to refer to the member in ");
-            Debug.WriteLine("a textual position that precedes the ");
-            Debug.WriteLine("declaration of the member.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Within the scope of a namespace, class,");
+            OutputHelper.WriteLine("struct, interface, or enumeration member ");
+            OutputHelper.WriteLine("it is possible to refer to the member in ");
+            OutputHelper.WriteLine("a textual position that precedes the ");
+            OutputHelper.WriteLine("declaration of the member.");
             Assert.True(Basic_TestClass_scope057.testMethod());
         }
         [TestMethod]
         public void Basic_scope058_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("Within the scope of a namespace, class,");
-            Debug.WriteLine("struct, interface, or enumeration member ");
-            Debug.WriteLine("it is possible to refer to the member in ");
-            Debug.WriteLine("a textual position that precedes the ");
-            Debug.WriteLine("declaration of the member.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Within the scope of a namespace, class,");
+            OutputHelper.WriteLine("struct, interface, or enumeration member ");
+            OutputHelper.WriteLine("it is possible to refer to the member in ");
+            OutputHelper.WriteLine("a textual position that precedes the ");
+            OutputHelper.WriteLine("declaration of the member.");
             Assert.True(Basic_TestClass_scope058.testMethod());
         }
         [TestMethod]
         public void Basic_scope059_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("Within the scope of a namespace, class,");
-            Debug.WriteLine("struct, interface, or enumeration member ");
-            Debug.WriteLine("it is possible to refer to the member in ");
-            Debug.WriteLine("a textual position that precedes the ");
-            Debug.WriteLine("declaration of the member.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Within the scope of a namespace, class,");
+            OutputHelper.WriteLine("struct, interface, or enumeration member ");
+            OutputHelper.WriteLine("it is possible to refer to the member in ");
+            OutputHelper.WriteLine("a textual position that precedes the ");
+            OutputHelper.WriteLine("declaration of the member.");
             Assert.True(Basic_TestClass_scope059.testMethod());
         }
         [TestMethod]
         public void Basic_scope061_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("Witin the scope of a local variable, it is an");
-            Debug.WriteLine("error to refer to the local variable in a ");
-            Debug.WriteLine("textual position that precedes the");
-            Debug.WriteLine("variable-declarator of the local variable.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Witin the scope of a local variable, it is an");
+            OutputHelper.WriteLine("error to refer to the local variable in a ");
+            OutputHelper.WriteLine("textual position that precedes the");
+            OutputHelper.WriteLine("variable-declarator of the local variable.");
             Assert.True(Basic_TestClass_scope061.testMethod());
         }
         [TestMethod]
         public void Basic_scope062_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The meaning of a name within a block may differ");
-            Debug.WriteLine("based on the context in which the name is used.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The meaning of a name within a block may differ");
+            OutputHelper.WriteLine("based on the context in which the name is used.");
             Assert.True(Basic_TestClass_scope062.testMethod());
         }
         [TestMethod]
         public void Basic_scope063_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_scope063.testMethod());
         }
         [TestMethod]
         public void Basic_scope064_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_scope064.testMethod());
         }
         [TestMethod]
         public void Basic_scope067_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_scope067.testMethod());
         }
         [TestMethod]
         public void Basic_scope068_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_scope068.testMethod());
         }
         [TestMethod]
         public void Basic_scope069_Test()
         {
-            Debug.WriteLine("Section 3");
+            OutputHelper.WriteLine("Section 3");
             Assert.True(Basic_TestClass_scope069.testMethod());
         }
         [TestMethod]
         public void Basic_scope070_Test()
         {
-            Debug.WriteLine("Section 3");
+            OutputHelper.WriteLine("Section 3");
             Assert.True(Basic_TestClass_scope070.testMethod());
         }
         [TestMethod]
         public void Basic_scope071_Test()
         {
-            Debug.WriteLine("Section 3");
+            OutputHelper.WriteLine("Section 3");
             Assert.True(Basic_TestClass_scope071.testMethod());
         }
         [TestMethod]
         public void Basic_scope074_Test()
         {
-            Debug.WriteLine("Section 3.5");
-            Debug.WriteLine("The scope of a label declared in a label-statement");
-            Debug.WriteLine("is the block in which the declaration occurs.");
+            OutputHelper.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("The scope of a label declared in a label-statement");
+            OutputHelper.WriteLine("is the block in which the declaration occurs.");
             Assert.True(Basic_TestClass_scope074.testMethod());
         }
         [TestMethod]
         public void Basic_nhide001_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide001.Basic_TestClass_nhide001.testMethod());
         }
         [TestMethod]
         public void Basic_nhide002_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide002.Basic_TestClass_nhide002.testMethod());
         }
         [TestMethod]
         public void Basic_nhide003_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide003.Basic_TestClass_nhide003.testMethod());
         }
         [TestMethod]
         public void Basic_nhide004_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide004.Basic_TestClass_nhide004.testMethod());
         }
         [TestMethod]
         public void Basic_nhide005_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide005.Basic_TestClass_nhide005.testMethod());
         }
         [TestMethod]
         public void Basic_nhide006_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide006.Basic_TestClass_nhide006.testMethod());
         }
         [TestMethod]
         public void Basic_nhide007_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide007.testMethod());
         }
         [TestMethod]
         public void Basic_nhide008_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide008.Basic_TestClass_nhide008.testMethod());
         }
         [TestMethod]
         public void Basic_nhide009_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide009.Basic_TestClass_nhide009.testMethod());
         }
         [TestMethod]
         public void Basic_nhide010_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide010.Basic_TestClass_nhide010.testMethod());
         }
         [TestMethod]
         public void Basic_nhide011_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide011.Basic_TestClass_nhide011.testMethod());
         }
         [TestMethod]
         public void Basic_nhide012_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide012.Basic_TestClass_nhide012.testMethod());
         }
         [TestMethod]
         public void Basic_nhide013_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(NS_Basic_TestClass_nhide013.Basic_TestClass_nhide013.testMethod());
         }
         [TestMethod]
         public void Basic_nhide014_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide014.testMethod());
         }
         [TestMethod]
         public void Basic_nhide015_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide015.testMethod());
         }
         [TestMethod]
         public void Basic_nhide016_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide016.testMethod());
         }
         [TestMethod]
         public void Basic_nhide017_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide017.testMethod());
         }
         [TestMethod]
         public void Basic_nhide018_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide018.testMethod());
         }
         [TestMethod]
         public void Basic_nhide019_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide019.testMethod());
         }
         [TestMethod]
         public void Basic_nhide020_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide020.testMethod());
         }
         [TestMethod]
         public void Basic_nhide021_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide021.testMethod());
         }
         [TestMethod]
         public void Basic_nhide022_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide022.testMethod());
         }
         [TestMethod]
         public void Basic_nhide023_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide023.testMethod());
         }
         [TestMethod]
         public void Basic_nhide024_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide024.testMethod());
         }
         [TestMethod]
         public void Basic_nhide025_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide025.testMethod());
         }
         [TestMethod]
         public void Basic_nhide026_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide026.testMethod());
         }
         [TestMethod]
         public void Basic_nhide027_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide027.testMethod());
         }
         [TestMethod]
         public void Basic_nhide028_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide028.testMethod());
         }
         [TestMethod]
         public void Basic_nhide029_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide029.testMethod());
         }
         [TestMethod]
         public void Basic_nhide030_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide030.testMethod());
         }
         [TestMethod]
         public void Basic_nhide031_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide031.testMethod());
         }
         [TestMethod]
         public void Basic_nhide032_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide032.testMethod());
         }
         [TestMethod]
         public void Basic_nhide033_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide033.testMethod());
         }
         [TestMethod]
         public void Basic_nhide034_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide034.testMethod());
         }
         [TestMethod]
         public void Basic_nhide035_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide035.testMethod());
         }
         [TestMethod]
         public void Basic_nhide036_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide036.testMethod());
         }
         [TestMethod]
         public void Basic_nhide037_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide037.testMethod());
         }
         [TestMethod]
         public void Basic_nhide038_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide038.testMethod());
         }
         [TestMethod]
         public void Basic_nhide039_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide039.testMethod());
         }
         [TestMethod]
         public void Basic_nhide040_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide040.testMethod());
         }
         [TestMethod]
         public void Basic_nhide041_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide041.testMethod());
         }
         [TestMethod]
         public void Basic_nhide042_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide042.testMethod());
         }
         [TestMethod]
         public void Basic_nhide043_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide043.testMethod());
         }
         [TestMethod]
         public void Basic_nhide044_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Name hiding through nesting can occur as a result of");
-            Debug.WriteLine("nesting namespaces or types within namespaces, as a ");
-            Debug.WriteLine("result of nesting types within classes or structs,");
-            Debug.WriteLine("and as a result of parameter and local variable");
-            Debug.WriteLine("declarations.  Name hiding through nesting of scopes");
-            Debug.WriteLine("always occurs silently, i.e. no errors or warnings");
-            Debug.WriteLine("are reported when outer names are hidden by inner names.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Name hiding through nesting can occur as a result of");
+            OutputHelper.WriteLine("nesting namespaces or types within namespaces, as a ");
+            OutputHelper.WriteLine("result of nesting types within classes or structs,");
+            OutputHelper.WriteLine("and as a result of parameter and local variable");
+            OutputHelper.WriteLine("declarations.  Name hiding through nesting of scopes");
+            OutputHelper.WriteLine("always occurs silently, i.e. no errors or warnings");
+            OutputHelper.WriteLine("are reported when outer names are hidden by inner names.");
             Assert.True(Basic_TestClass_nhide044.testMethod());
         }
         [TestMethod]
         public void Basic_nhide045_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide045.testMethod());
         }
         [TestMethod]
         public void Basic_nhide047_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide047.testMethod());
         }
         [TestMethod]
         public void Basic_nhide049_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide049.testMethod());
         }
         [TestMethod]
         public void Basic_nhide050_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide050.testMethod());
         }
         [TestMethod]
         public void Basic_nhide051_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide051.testMethod());
         }
         [TestMethod]
         public void Basic_nhide053_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide053.testMethod());
         }
         [TestMethod]
         public void Basic_nhide055_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide055.testMethod());
         }
         [TestMethod]
         public void Basic_nhide056_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide056.testMethod());
         }
         [TestMethod]
         public void Basic_nhide057_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide057.testMethod());
         }
         [TestMethod]
         public void Basic_nhide059_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("When a name in an inner scope hides a name");
-            Debug.WriteLine("in an outer scope, it hides all overloaded ");
-            Debug.WriteLine("occurrences of that name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("When a name in an inner scope hides a name");
+            OutputHelper.WriteLine("in an outer scope, it hides all overloaded ");
+            OutputHelper.WriteLine("occurrences of that name.");
             Assert.True(Basic_TestClass_nhide059.testMethod());
         }
         [TestMethod]
         public void Basic_nhide061_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A constant, field, property, event or type introduced");
-            Debug.WriteLine("in a class or struct hides all base class members with the ");
-            Debug.WriteLine("same name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A constant, field, property, event or type introduced");
+            OutputHelper.WriteLine("in a class or struct hides all base class members with the ");
+            OutputHelper.WriteLine("same name.");
             Assert.True(Basic_TestClass_nhide061.testMethod());
         }
         [TestMethod]
         public void Basic_nhide062_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A constant, field, property, event or type introduced");
-            Debug.WriteLine("in a class or struct hides all base class members with the ");
-            Debug.WriteLine("same name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A constant, field, property, event or type introduced");
+            OutputHelper.WriteLine("in a class or struct hides all base class members with the ");
+            OutputHelper.WriteLine("same name.");
             Assert.True(Basic_TestClass_nhide062.testMethod());
         }
         [TestMethod]
         public void Basic_nhide063_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A constant, field, property, event or type introduced");
-            Debug.WriteLine("in a class or struct hides all base class members with the ");
-            Debug.WriteLine("same name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A constant, field, property, event or type introduced");
+            OutputHelper.WriteLine("in a class or struct hides all base class members with the ");
+            OutputHelper.WriteLine("same name.");
             Assert.True(Basic_TestClass_nhide063.testMethod());
         }
         [TestMethod]
         public void Basic_nhide064_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A constant, field, property, event or type introduced");
-            Debug.WriteLine("in a class or struct hides all base class members with the ");
-            Debug.WriteLine("same name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A constant, field, property, event or type introduced");
+            OutputHelper.WriteLine("in a class or struct hides all base class members with the ");
+            OutputHelper.WriteLine("same name.");
             Assert.True(Basic_TestClass_nhide064.testMethod());
         }
         [TestMethod]
         public void Basic_nhide067_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A constant, field, property, event or type introduced");
-            Debug.WriteLine("in a class or struct hides all base class members with the ");
-            Debug.WriteLine("same name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A constant, field, property, event or type introduced");
+            OutputHelper.WriteLine("in a class or struct hides all base class members with the ");
+            OutputHelper.WriteLine("same name.");
             Assert.True(Basic_TestClass_nhide067.testMethod());
         }
         [TestMethod]
         public void Basic_nhide068_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A constant, field, property, event or type introduced");
-            Debug.WriteLine("in a class or struct hides all base class members with the ");
-            Debug.WriteLine("same name.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A constant, field, property, event or type introduced");
+            OutputHelper.WriteLine("in a class or struct hides all base class members with the ");
+            OutputHelper.WriteLine("same name.");
             Assert.True(Basic_TestClass_nhide068.testMethod());
         }
         [TestMethod]
         public void Basic_nhide071_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide071.testMethod());
         }
         [TestMethod]
         public void Basic_nhide072_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide072.testMethod());
         }
         [TestMethod]
         public void Basic_nhide075_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide075.testMethod());
         }
         [TestMethod]
         public void Basic_nhide076_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide076.testMethod());
         }
         [TestMethod]
         public void Basic_nhide077_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide077.testMethod());
         }
         [TestMethod]
         public void Basic_nhide079_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide079.testMethod());
         }
         [TestMethod]
         public void Basic_nhide081_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide081.testMethod());
         }
         [TestMethod]
         public void Basic_nhide082_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide082.testMethod());
         }
         [TestMethod]
         public void Basic_nhide085_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide085.testMethod());
         }
         [TestMethod]
         public void Basic_nhide086_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide086.testMethod());
         }
         [TestMethod]
         public void Basic_nhide087_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
             Assert.True(Basic_TestClass_nhide087.testMethod());
         }
         [TestMethod]
         public void Basic_nhide088_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A method introduced in a class or a struct");
-            Debug.WriteLine("hides all non-method base class members with");
-            Debug.WriteLine("the same name, and all base class methods");
-            Debug.WriteLine("with the same signature (method name and");
-            Debug.WriteLine("parameter count, modifiers, and types).");
-            Debug.WriteLine("This test passes in the baseline, but is an expected Fail");
-            Debug.WriteLine("See bug 16852 for more details");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A method introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all non-method base class members with");
+            OutputHelper.WriteLine("the same name, and all base class methods");
+            OutputHelper.WriteLine("with the same signature (method name and");
+            OutputHelper.WriteLine("parameter count, modifiers, and types).");
+            OutputHelper.WriteLine("This test passes in the baseline, but is an expected Fail");
+            OutputHelper.WriteLine("See bug 16852 for more details");
 
             Assert.True(Basic_TestClass_nhide088.testMethod());
         }
         [TestMethod]
         public void Basic_nhide089_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("An indexer introduced in a class or a struct");
-            Debug.WriteLine("hides all base class indexers with the same");
-            Debug.WriteLine("signature (parameter count and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("An indexer introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all base class indexers with the same");
+            OutputHelper.WriteLine("signature (parameter count and types).");
             Assert.True(Basic_TestClass_nhide089.testMethod());
         }
         [TestMethod]
         public void Basic_nhide090_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("An indexer introduced in a class or a struct");
-            Debug.WriteLine("hides all base class indexers with the same");
-            Debug.WriteLine("signature (parameter count and types).");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("An indexer introduced in a class or a struct");
+            OutputHelper.WriteLine("hides all base class indexers with the same");
+            OutputHelper.WriteLine("signature (parameter count and types).");
             Assert.True(Basic_TestClass_nhide090.testMethod());
         }
         [TestMethod]
         public void Basic_nhide091_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("Contrary to hiding a name from an outer scope,");
-            Debug.WriteLine("hding an accessible name from an inherited scope");
-            Debug.WriteLine("causes a warning to be reported.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("Contrary to hiding a name from an outer scope,");
+            OutputHelper.WriteLine("hding an accessible name from an inherited scope");
+            OutputHelper.WriteLine("causes a warning to be reported.");
             Assert.True(Basic_TestClass_nhide091.testMethod());
         }
         [TestMethod]
         public void Basic_nhide092_Test()
         {
-            Debug.WriteLine("Section 3.5.1");
-            Debug.WriteLine("A declaration of a new member hides an inherited");
-            Debug.WriteLine("member only within the scope of the new member.");
+            OutputHelper.WriteLine("Section 3.5.1");
+            OutputHelper.WriteLine("A declaration of a new member hides an inherited");
+            OutputHelper.WriteLine("member only within the scope of the new member.");
             Assert.True(Basic_TestClass_nhide092.testMethod());
         }
         [TestMethod]
         public void Basic_memac009_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Then, if M is public, the access is permitted.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Then, if M is public, the access is permitted.");
             Assert.True(Basic_TestClass_memac009.testMethod());
         }
         [TestMethod]
         public void Basic_memac010_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Then, if M is public, the access is permitted.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Then, if M is public, the access is permitted.");
             Assert.True(Basic_TestClass_memac010.testMethod());
         }
         [TestMethod]
         public void Basic_memac011_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is protected internal, the access");
-            Debug.WriteLine("is permitted if it occurs within the project in which");
-            Debug.WriteLine("M is declared, or if it occurs within a class derived ");
-            Debug.WriteLine("from the class in which M is declared and takes place ");
-            Debug.WriteLine("through the derived class type.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is protected internal, the access");
+            OutputHelper.WriteLine("is permitted if it occurs within the project in which");
+            OutputHelper.WriteLine("M is declared, or if it occurs within a class derived ");
+            OutputHelper.WriteLine("from the class in which M is declared and takes place ");
+            OutputHelper.WriteLine("through the derived class type.");
             Assert.True(Basic_TestClass_memac011.testMethod());
         }
         [TestMethod]
         public void Basic_memac012_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is protected internal, the access");
-            Debug.WriteLine("is permitted if it occurs within the project in which");
-            Debug.WriteLine("M is declared, or if it occurs within a class derived ");
-            Debug.WriteLine("from the class in which M is declared and takes place ");
-            Debug.WriteLine("through the derived class type.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is protected internal, the access");
+            OutputHelper.WriteLine("is permitted if it occurs within the project in which");
+            OutputHelper.WriteLine("M is declared, or if it occurs within a class derived ");
+            OutputHelper.WriteLine("from the class in which M is declared and takes place ");
+            OutputHelper.WriteLine("through the derived class type.");
             Assert.True(Basic_TestClass_memac012.testMethod());
         }
         /*
@@ -1259,12 +1259,12 @@ namespace NFUnitTestBasicConcepts
         [TestMethod]
         public void Basic_memac013_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is protected internal, the access");
-            Debug.WriteLine("is permitted if it occurs within the project in which");
-            Debug.WriteLine("M is declared, or if it occurs within a class derived ");
-            Debug.WriteLine("from the class in which M is declared and takes place ");
-            Debug.WriteLine("through the derived class type.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is protected internal, the access");
+            OutputHelper.WriteLine("is permitted if it occurs within the project in which");
+            OutputHelper.WriteLine("M is declared, or if it occurs within a class derived ");
+            OutputHelper.WriteLine("from the class in which M is declared and takes place ");
+            OutputHelper.WriteLine("through the derived class type.");
             Assert.True(Basic_TestClass_memac013.testMethod())
             {
                 return MFTestResults.Pass;
@@ -1274,12 +1274,12 @@ namespace NFUnitTestBasicConcepts
         [TestMethod]
         public void Basic_memac014_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is protected internal, the access");
-            Debug.WriteLine("is permitted if it occurs within the project in which");
-            Debug.WriteLine("M is declared, or if it occurs within a class derived ");
-            Debug.WriteLine("from the class in which M is declared and takes place ");
-            Debug.WriteLine("through the derived class type.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is protected internal, the access");
+            OutputHelper.WriteLine("is permitted if it occurs within the project in which");
+            OutputHelper.WriteLine("M is declared, or if it occurs within a class derived ");
+            OutputHelper.WriteLine("from the class in which M is declared and takes place ");
+            OutputHelper.WriteLine("through the derived class type.");
             Assert.True(Basic_TestClass_memac014.testMethod())
             {
                 return MFTestResults.Pass;
@@ -1290,96 +1290,96 @@ namespace NFUnitTestBasicConcepts
         [TestMethod]
         public void Basic_memac019_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is protected, the access is permitted");
-            Debug.WriteLine("if it occurs within the class in which M is declared, or");
-            Debug.WriteLine("if it occurs within a class derived from the class in");
-            Debug.WriteLine("which M is delared and takes place through the derived class ");
-            Debug.WriteLine("type.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is protected, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the class in which M is declared, or");
+            OutputHelper.WriteLine("if it occurs within a class derived from the class in");
+            OutputHelper.WriteLine("which M is delared and takes place through the derived class ");
+            OutputHelper.WriteLine("type.");
             Assert.True(Basic_TestClass_memac019.testMethod());
         }
         [TestMethod]
         public void Basic_memac020_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is protected, the access is permitted");
-            Debug.WriteLine("if it occurs within the class in which M is declared, or");
-            Debug.WriteLine("if it occurs within a class derived from the class in");
-            Debug.WriteLine("which M is delared and takes place through the derived class ");
-            Debug.WriteLine("type.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is protected, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the class in which M is declared, or");
+            OutputHelper.WriteLine("if it occurs within a class derived from the class in");
+            OutputHelper.WriteLine("which M is delared and takes place through the derived class ");
+            OutputHelper.WriteLine("type.");
             Assert.True(Basic_TestClass_memac020.testMethod());
         }
         [TestMethod]
         public void Basic_memac021_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is protected, the access is permitted");
-            Debug.WriteLine("if it occurs within the class in which M is declared, or");
-            Debug.WriteLine("if it occurs within a class derived from the class in");
-            Debug.WriteLine("which M is delared and takes place through the derived class ");
-            Debug.WriteLine("type.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is protected, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the class in which M is declared, or");
+            OutputHelper.WriteLine("if it occurs within a class derived from the class in");
+            OutputHelper.WriteLine("which M is delared and takes place through the derived class ");
+            OutputHelper.WriteLine("type.");
             Assert.True(Basic_TestClass_memac021.testMethod());
         }
         [TestMethod]
         public void Basic_memac022_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is protected, the access is permitted");
-            Debug.WriteLine("if it occurs within the class in which M is declared, or");
-            Debug.WriteLine("if it occurs within a class derived from the class in");
-            Debug.WriteLine("which M is delared and takes place through the derived class ");
-            Debug.WriteLine("type.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is protected, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the class in which M is declared, or");
+            OutputHelper.WriteLine("if it occurs within a class derived from the class in");
+            OutputHelper.WriteLine("which M is delared and takes place through the derived class ");
+            OutputHelper.WriteLine("type.");
             Assert.True(Basic_TestClass_memac022.testMethod());
         }
         [TestMethod]
         public void Basic_memac025_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is protected, the access is permitted");
-            Debug.WriteLine("if it occurs within the class in which M is declared, or");
-            Debug.WriteLine("if it occurs within a class derived from the class in");
-            Debug.WriteLine("which M is delared and takes place through the derived class ");
-            Debug.WriteLine("type.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is protected, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the class in which M is declared, or");
+            OutputHelper.WriteLine("if it occurs within a class derived from the class in");
+            OutputHelper.WriteLine("which M is delared and takes place through the derived class ");
+            OutputHelper.WriteLine("type.");
             Assert.True(Basic_TestClass_memac025.testMethod());
         }
         [TestMethod]
         public void Basic_memac027_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is internal, the access is permitted");
-            Debug.WriteLine("if it occurs within the project in which M is declared.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is internal, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the project in which M is declared.");
             Assert.True(Basic_TestClass_memac027.testMethod());
         }
         [TestMethod]
         public void Basic_memac029_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is internal, the access is permitted");
-            Debug.WriteLine("if it occurs within the project in which M is declared.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is internal, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the project in which M is declared.");
             Assert.True(Basic_TestClass_memac029.testMethod());
         }
         [TestMethod]
         public void Basic_memac030_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is internal, the access is permitted");
-            Debug.WriteLine("if it occurs within the project in which M is declared.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is internal, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the project in which M is declared.");
             Assert.True(Basic_TestClass_memac030.testMethod());
         }
         [TestMethod]
         public void Basic_memac033_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is private, the access is permitted");
-            Debug.WriteLine("if it occurs within the type in which M is declared.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is private, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the type in which M is declared.");
             Assert.True(Basic_TestClass_memac033.testMethod());
         }
         [TestMethod]
         public void Basic_memac034_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("Otherwise, if M is private, the access is permitted");
-            Debug.WriteLine("if it occurs within the type in which M is declared.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("Otherwise, if M is private, the access is permitted");
+            OutputHelper.WriteLine("if it occurs within the type in which M is declared.");
             Assert.True(Basic_TestClass_memac034.testMethod());
         }
 
@@ -1389,7 +1389,7 @@ namespace NFUnitTestBasicConcepts
         [TestMethod]
         public void Basic_memac039_Test()
         {
-            Debug.WriteLine("VS Bug 75548");
+            OutputHelper.WriteLine("VS Bug 75548");
             Assert.True(Basic_TestClass_memac039.testMethod())
             {
                 return MFTestResults.Pass;
@@ -1409,264 +1409,264 @@ namespace NFUnitTestBasicConcepts
         [TestMethod]
         public void Basic_memac042_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_memac042.testMethod());
         }
         [TestMethod]
         public void Basic_memac043_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_memac043.testMethod());
         }
         [TestMethod]
         public void Basic_memac044_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_memac044.testMethod());
         }
         [TestMethod]
         public void Basic_memac045_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_memac045.testMethod());
         }
         [TestMethod]
         public void Basic_memac046_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_memac046.testMethod());
         }
         [TestMethod]
         public void Basic_memac047_Test()
         {
-            Debug.WriteLine("Section 3.5");
+            OutputHelper.WriteLine("Section 3.5");
             Assert.True(Basic_TestClass_memac047.testMethod());
         }
         [TestMethod]
         public void Basic_accon001_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon001.testMethod());
         }
         [TestMethod]
         public void Basic_accon003_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon003.testMethod());
         }
         [TestMethod]
         public void Basic_accon005_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon005.testMethod());
         }
         [TestMethod]
         public void Basic_accon007_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon007.testMethod());
         }
         [TestMethod]
         public void Basic_accon009_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon009.testMethod());
         }
         [TestMethod]
         public void Basic_accon011_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon011.testMethod());
         }
         [TestMethod]
         public void Basic_accon013_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon013.testMethod());
         }
         [TestMethod]
         public void Basic_accon015_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon015.testMethod());
         }
         [TestMethod]
         public void Basic_accon019_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon019.testMethod());
         }
         [TestMethod]
         public void Basic_accon021_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The direct base class of a class type must be");
-            Debug.WriteLine("at least as accessible as the class type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The direct base class of a class type must be");
+            OutputHelper.WriteLine("at least as accessible as the class type itself.");
             Assert.True(Basic_TestClass_accon021.testMethod());
         }
         [TestMethod]
         public void Basic_accon023_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The explicit base interfaces of an interface ");
-            Debug.WriteLine("type must be at least as accessible as the interface");
-            Debug.WriteLine("type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The explicit base interfaces of an interface ");
+            OutputHelper.WriteLine("type must be at least as accessible as the interface");
+            OutputHelper.WriteLine("type itself.");
             Assert.True(Basic_TestClass_accon023.testMethod());
         }
         [TestMethod]
         public void Basic_accon025_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The explicit base interfaces of an interface ");
-            Debug.WriteLine("type must be at least as accessible as the interface");
-            Debug.WriteLine("type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The explicit base interfaces of an interface ");
+            OutputHelper.WriteLine("type must be at least as accessible as the interface");
+            OutputHelper.WriteLine("type itself.");
             Assert.True(Basic_TestClass_accon025.testMethod());
         }
         [TestMethod]
         public void Basic_accon027_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The explicit base interfaces of an interface ");
-            Debug.WriteLine("type must be at least as accessible as the interface");
-            Debug.WriteLine("type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The explicit base interfaces of an interface ");
+            OutputHelper.WriteLine("type must be at least as accessible as the interface");
+            OutputHelper.WriteLine("type itself.");
             Assert.True(Basic_TestClass_accon027.testMethod());
         }
         [TestMethod]
         public void Basic_accon029_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The explicit base interfaces of an interface ");
-            Debug.WriteLine("type must be at least as accessible as the interface");
-            Debug.WriteLine("type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The explicit base interfaces of an interface ");
+            OutputHelper.WriteLine("type must be at least as accessible as the interface");
+            OutputHelper.WriteLine("type itself.");
             Assert.True(Basic_TestClass_accon029.testMethod());
         }
         [TestMethod]
         public void Basic_accon031_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The explicit base interfaces of an interface ");
-            Debug.WriteLine("type must be at least as accessible as the interface");
-            Debug.WriteLine("type itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The explicit base interfaces of an interface ");
+            OutputHelper.WriteLine("type must be at least as accessible as the interface");
+            OutputHelper.WriteLine("type itself.");
             Assert.True(Basic_TestClass_accon031.testMethod());
         }
         [TestMethod]
         public void Basic_accon033_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The return type and parameter types of a delegate");
-            Debug.WriteLine("type must be at least as accessible as the delegate");
-            Debug.WriteLine("ytpe itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The return type and parameter types of a delegate");
+            OutputHelper.WriteLine("type must be at least as accessible as the delegate");
+            OutputHelper.WriteLine("ytpe itself.");
             Assert.True(Basic_TestClass_accon033.testMethod());
         }
         [TestMethod]
         public void Basic_accon035_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The return type and parameter types of a delegate");
-            Debug.WriteLine("type must be at least as accessible as the delegate");
-            Debug.WriteLine("ytpe itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The return type and parameter types of a delegate");
+            OutputHelper.WriteLine("type must be at least as accessible as the delegate");
+            OutputHelper.WriteLine("ytpe itself.");
             Assert.True(Basic_TestClass_accon035.testMethod());
         }
         [TestMethod]
         public void Basic_accon037_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The type of a constant must be at least as");
-            Debug.WriteLine("accessible as the constant itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The type of a constant must be at least as");
+            OutputHelper.WriteLine("accessible as the constant itself.");
             Assert.True(Basic_TestClass_accon037.testMethod());
         }
         [TestMethod]
         public void Basic_accon039_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The type of a field must be at least as accessible");
-            Debug.WriteLine("as the field itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The type of a field must be at least as accessible");
+            OutputHelper.WriteLine("as the field itself.");
             Assert.True(Basic_TestClass_accon039.testMethod());
         }
         [TestMethod]
         public void Basic_accon041_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The return type and parameter types of a method");
-            Debug.WriteLine("must be at least asaccessible as the method itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The return type and parameter types of a method");
+            OutputHelper.WriteLine("must be at least asaccessible as the method itself.");
             Assert.True(Basic_TestClass_accon041.testMethod());
         }
         [TestMethod]
         public void Basic_accon043_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The return type and parameter types of a method");
-            Debug.WriteLine("must be at least asaccessible as the method itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The return type and parameter types of a method");
+            OutputHelper.WriteLine("must be at least asaccessible as the method itself.");
             Assert.True(Basic_TestClass_accon043.testMethod());
         }
         [TestMethod]
         public void Basic_accon045_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The type of a property must be at least as");
-            Debug.WriteLine("accessible as the property itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The type of a property must be at least as");
+            OutputHelper.WriteLine("accessible as the property itself.");
             Assert.True(Basic_TestClass_accon045.testMethod());
         }
         [TestMethod]
         public void Basic_accon047_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The return type and parameter types of an");
-            Debug.WriteLine("indexer must be at least as accessible as the");
-            Debug.WriteLine("indexer itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The return type and parameter types of an");
+            OutputHelper.WriteLine("indexer must be at least as accessible as the");
+            OutputHelper.WriteLine("indexer itself.");
             Assert.True(Basic_TestClass_accon047.testMethod());
         }
         [TestMethod]
         public void Basic_accon049_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The return type and parameter types of an");
-            Debug.WriteLine("indexer must be at least as accessible as the");
-            Debug.WriteLine("indexer itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The return type and parameter types of an");
+            OutputHelper.WriteLine("indexer must be at least as accessible as the");
+            OutputHelper.WriteLine("indexer itself.");
             Assert.True(Basic_TestClass_accon049.testMethod());
         }
         [TestMethod]
         public void Basic_accon051_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The return type and parameter types of an");
-            Debug.WriteLine("operator must be at least as accessible as");
-            Debug.WriteLine("the operator itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The return type and parameter types of an");
+            OutputHelper.WriteLine("operator must be at least as accessible as");
+            OutputHelper.WriteLine("the operator itself.");
             Assert.True(Basic_TestClass_accon051.testMethod());
         }
         [TestMethod]
         public void Basic_accon053_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The return type and parameter types of an");
-            Debug.WriteLine("operator must be at least as accessible as");
-            Debug.WriteLine("the operator itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The return type and parameter types of an");
+            OutputHelper.WriteLine("operator must be at least as accessible as");
+            OutputHelper.WriteLine("the operator itself.");
             Assert.True(Basic_TestClass_accon053.testMethod());
         }
         [TestMethod]
         public void Basic_accon055_Test()
         {
-            Debug.WriteLine("Section 3.3");
-            Debug.WriteLine("The parameter types of a constructor must be at least");
-            Debug.WriteLine("as accessible as the constructor itself.");
+            OutputHelper.WriteLine("Section 3.3");
+            OutputHelper.WriteLine("The parameter types of a constructor must be at least");
+            OutputHelper.WriteLine("as accessible as the constructor itself.");
             Assert.True(Basic_TestClass_accon055.testMethod());
         }
 
@@ -2512,7 +2512,7 @@ namespace NFUnitTestBasicConcepts
                 {
                     if (Basic_TestClass_nhide015_C1.Basic_TestClass_nhide015_I.intI == 2)
                     {
-                        Debug.WriteLine("foo");
+                        OutputHelper.WriteLine("foo");
                         return 0;
                     }
                     else
@@ -2722,7 +2722,7 @@ namespace NFUnitTestBasicConcepts
                 {
                     if (Basic_TestClass_nhide022_C1.Basic_TestClass_nhide022_I.intI == 2)
                     {
-                        Debug.WriteLine("foo");
+                        OutputHelper.WriteLine("foo");
                         return 0;
                     }
                     else
@@ -2808,7 +2808,7 @@ namespace NFUnitTestBasicConcepts
                 {
                     if (Basic_TestClass_nhide024_St1.Basic_TestClass_nhide024_I.intI == 2)
                     {
-                        Debug.WriteLine("foo");
+                        OutputHelper.WriteLine("foo");
                         return 0;
                     }
                     else
@@ -4733,7 +4733,7 @@ namespace NFUnitTestBasicConcepts
         public class Basic_TestClass_memac041_B : Basic_TestClass_memac041_A
         {
             protected override void f()
-            { Debug.WriteLine("Basic_TestClass_memac041_B.f()"); }
+            { OutputHelper.WriteLine("Basic_TestClass_memac041_B.f()"); }
             static void Main_old()
             {
                 Basic_TestClass_memac041_B b = new Basic_TestClass_memac041_B();
@@ -5861,7 +5861,7 @@ namespace NS_Basic_TestClass_nhide008
         {
             if (Basic_TestClass_nhide008_C1.Basic_TestClass_nhide008_I.intI == 2)
             {
-                Debug.WriteLine("foo");
+                OutputHelper.WriteLine("foo");
                 return 0;
             }
             else
@@ -5932,7 +5932,7 @@ namespace NS_Basic_TestClass_nhide010
         {
             if (Basic_TestClass_nhide010_St1.Basic_TestClass_nhide010_I.intI == 2)
             {
-                Debug.WriteLine("foo");
+                OutputHelper.WriteLine("foo");
                 return 0;
             }
             else

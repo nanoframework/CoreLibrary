@@ -4,8 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
 
 [module: CLSCompliant(true)]
 
@@ -13,7 +13,7 @@ class NS_TestClass_attribute_02
 {
     public void printClassName()
     {
-        Debug.WriteLine("Class A");
+        OutputHelper.WriteLine("Class A");
     }
 
     static void Main_old() { }

@@ -459,10 +459,10 @@ namespace NFUnitTestArithmetic
             {
                 if (GetColumnInfo((ColumnType)i).DefaultOnly == false)
                 {
-                    Debug.Write(GetColumnInfo((ColumnType)i).ColumnHeader.PadLeft(GetColumnInfo((ColumnType)i).LargestLength + 1));  // +1 for an extra space between columns    
+                    OutputHelper.Write(GetColumnInfo((ColumnType)i).ColumnHeader.PadLeft(GetColumnInfo((ColumnType)i).LargestLength + 1));  // +1 for an extra space between columns    
                 }
             }
-            Debug.WriteLine("");  // complete the line
+            OutputHelper.WriteLine("");  // complete the line
 
             // now write out the row data
             for (int i = 0; i < m_rows.Count; i++)
@@ -478,14 +478,14 @@ namespace NFUnitTestArithmetic
                     // Right align the format string column, left align all the others
                     if (j == (int)ColumnType.FormatString)
                     {
-                        Debug.Write(" " + rd.ColumnData[j].PadRight(GetColumnInfo((ColumnType)j).LargestLength));  // add " "for an extra space between columns    
+                        OutputHelper.Write(" " + rd.ColumnData[j].PadRight(GetColumnInfo((ColumnType)j).LargestLength));  // add " "for an extra space between columns    
                     }
                     else
                     {
-                        Debug.Write(rd.ColumnData[j].PadLeft(GetColumnInfo((ColumnType)j).LargestLength + 1));  // +1 for an extra space between columns    
+                        OutputHelper.Write(rd.ColumnData[j].PadLeft(GetColumnInfo((ColumnType)j).LargestLength + 1));  // +1 for an extra space between columns    
                     }
                 }
-                Debug.WriteLine("");  // complete the line
+                OutputHelper.WriteLine("");  // complete the line
             }
 
         }

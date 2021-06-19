@@ -19,189 +19,189 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void ValueFloat04_Test()
         {
-            Debug.WriteLine("Testing float type is kept after addition with other types");
+            OutputHelper.WriteLine("Testing float type is kept after addition with other types");
             ValueFloatTestClass04.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat05_Test()
         {
-            Debug.WriteLine("Testing double type is kept after addition with other types");
+            OutputHelper.WriteLine("Testing double type is kept after addition with other types");
             ValueFloatTestClass05.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat06_Test()
         {
-            Debug.WriteLine("Testing float type is kept after subtraction with other types");
+            OutputHelper.WriteLine("Testing float type is kept after subtraction with other types");
             ValueFloatTestClass06.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat07_Test()
         {
-            Debug.WriteLine("Testing double type is kept after subtraction with other types");
+            OutputHelper.WriteLine("Testing double type is kept after subtraction with other types");
             ValueFloatTestClass07.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat08_Test()
         {
-            Debug.WriteLine("Testing float type is kept after multiplication with other types");
+            OutputHelper.WriteLine("Testing float type is kept after multiplication with other types");
             ValueFloatTestClass08.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat09_Test()
         {
-            Debug.WriteLine("Testing double type is kept after maultiplication with other types");
+            OutputHelper.WriteLine("Testing double type is kept after maultiplication with other types");
             ValueFloatTestClass09.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat10_Test()
         {
-            Debug.WriteLine("Testing float type is kept after division with other types");
+            OutputHelper.WriteLine("Testing float type is kept after division with other types");
             ValueFloatTestClass10.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat11_Test()
         {
-            Debug.WriteLine("Testing double type is kept after division with other types");
+            OutputHelper.WriteLine("Testing double type is kept after division with other types");
             ValueFloatTestClass11.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat12_Test()
         {
-            Debug.WriteLine("Testing float type is kept after modulus with other types");
+            OutputHelper.WriteLine("Testing float type is kept after modulus with other types");
             ValueFloatTestClass12.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat13_Test()
         {
-            Debug.WriteLine("Testing double type is kept after modulus with other types");
+            OutputHelper.WriteLine("Testing double type is kept after modulus with other types");
             ValueFloatTestClass13.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat14_Test()
         {
-            Debug.WriteLine("Testing that equality operations return bool type objects");
+            OutputHelper.WriteLine("Testing that equality operations return bool type objects");
             ValueFloatTestClass14.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat15_Test()
         {
-            Debug.WriteLine("Testing that equality operations return bool type objects");
+            OutputHelper.WriteLine("Testing that equality operations return bool type objects");
             ValueFloatTestClass15.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat16_Test()
         {
-            Debug.WriteLine("Testing that non-equality operations return bool type objects");
+            OutputHelper.WriteLine("Testing that non-equality operations return bool type objects");
             ValueFloatTestClass16.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat17_Test()
         {
-            Debug.WriteLine("Testing that non-equality operations return bool type objects");
+            OutputHelper.WriteLine("Testing that non-equality operations return bool type objects");
             ValueFloatTestClass17.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat18_Test()
         {
-            Debug.WriteLine("Testing that greater than operations return bool type objects");
+            OutputHelper.WriteLine("Testing that greater than operations return bool type objects");
             ValueFloatTestClass18.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat19_Test()
         {
-            Debug.WriteLine("Testing that greater than operations return bool type objects");
+            OutputHelper.WriteLine("Testing that greater than operations return bool type objects");
             ValueFloatTestClass19.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat20_Test()
         {
-            Debug.WriteLine("Testing that less than operations return bool type objects");
+            OutputHelper.WriteLine("Testing that less than operations return bool type objects");
             ValueFloatTestClass20.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat21_Test()
         {
-            Debug.WriteLine("Testing that less than operations return bool type objects");
+            OutputHelper.WriteLine("Testing that less than operations return bool type objects");
             ValueFloatTestClass21.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat22_Test()
         {
-            Debug.WriteLine("Testing that greater than or equal operations return bool type objects");
+            OutputHelper.WriteLine("Testing that greater than or equal operations return bool type objects");
             ValueFloatTestClass22.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat23_Test()
         {
-            Debug.WriteLine("Testing that greater than or equal operations return bool type objects");
+            OutputHelper.WriteLine("Testing that greater than or equal operations return bool type objects");
             ValueFloatTestClass23.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat24_Test()
         {
-            Debug.WriteLine("Testing that less than or equal operations return bool type objects");
+            OutputHelper.WriteLine("Testing that less than or equal operations return bool type objects");
             ValueFloatTestClass24.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat25_Test()
         {
-            Debug.WriteLine("Testing that less than or equal operations return bool type objects");
+            OutputHelper.WriteLine("Testing that less than or equal operations return bool type objects");
             ValueFloatTestClass25.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat26_Test()
         {
-            Debug.WriteLine("Testing that double keeps its type in all operations with float");
+            OutputHelper.WriteLine("Testing that double keeps its type in all operations with float");
             ValueFloatTestClass26.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat27_Test()
         {
-            Debug.WriteLine("Testing that comparisons between floats and doubles return bools");
+            OutputHelper.WriteLine("Testing that comparisons between floats and doubles return bools");
             ValueFloatTestClass27.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat28_Test()
         {
-            Debug.WriteLine("Testing that float keeps its type after any operation with a float");
+            OutputHelper.WriteLine("Testing that float keeps its type after any operation with a float");
             ValueFloatTestClass28.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat29_Test()
         {
-            Debug.WriteLine("Testing that comparisons between floats return bools");
+            OutputHelper.WriteLine("Testing that comparisons between floats return bools");
             ValueFloatTestClass29.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat30_Test()
         {
-            Debug.WriteLine("Testing float and double .epsilon values");
+            OutputHelper.WriteLine("Testing float and double .epsilon values");
             ValueFloatTestClass30.testMethod();
         }
 

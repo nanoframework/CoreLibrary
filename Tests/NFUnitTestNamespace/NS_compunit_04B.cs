@@ -4,17 +4,15 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System.Diagnostics;
-
 namespace NS_TestClass_compunit_04_second
 {
-    using System;
+    using nanoFramework.TestFramework;
 
     class NS_TestClass_compunit_04A
     {
         public void printClassName()
         {
-            Debug.WriteLine("Class B");
+            OutputHelper.WriteLine("Class B");
         }
     }
 }

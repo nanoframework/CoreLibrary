@@ -16,446 +16,446 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Properties003_Test()
         {
-            Debug.WriteLine("Section 10.6");
-            Debug.WriteLine("A property declaration may include set of");
-            Debug.WriteLine("attributes, a new modifier, a valid combination");
-            Debug.WriteLine("nof the four access modifiers, and a static modifier.");
+            OutputHelper.WriteLine("Section 10.6");
+            OutputHelper.WriteLine("A property declaration may include set of");
+            OutputHelper.WriteLine("attributes, a new modifier, a valid combination");
+            OutputHelper.WriteLine("nof the four access modifiers, and a static modifier.");
             Assert.True(PropertiesTestClass003.testMethod());
         }
         [TestMethod]
         public void Properties004_Test()
         {
-            Debug.WriteLine("Section 10.6");
-            Debug.WriteLine("A property declaration may include set of");
-            Debug.WriteLine("attributes, a new modifier, a valid combination");
-            Debug.WriteLine("nof the four access modifiers, and a static modifier.");
+            OutputHelper.WriteLine("Section 10.6");
+            OutputHelper.WriteLine("A property declaration may include set of");
+            OutputHelper.WriteLine("attributes, a new modifier, a valid combination");
+            OutputHelper.WriteLine("nof the four access modifiers, and a static modifier.");
             Assert.True(PropertiesTestClass004.testMethod());
         }
         [TestMethod]
         public void Properties005_Test()
         {
-            Debug.WriteLine("Section 10.6");
-            Debug.WriteLine("A property declaration may include set of");
-            Debug.WriteLine("attributes, a new modifier, a valid combination");
-            Debug.WriteLine("nof the four access modifiers, and a static modifier.");
+            OutputHelper.WriteLine("Section 10.6");
+            OutputHelper.WriteLine("A property declaration may include set of");
+            OutputHelper.WriteLine("attributes, a new modifier, a valid combination");
+            OutputHelper.WriteLine("nof the four access modifiers, and a static modifier.");
             Assert.True(PropertiesTestClass005.testMethod());
         }
         [TestMethod]
         public void Properties006_Test()
         {
-            Debug.WriteLine("Section 10.6");
-            Debug.WriteLine("A property declaration may include set of");
-            Debug.WriteLine("attributes, a new modifier, a valid combination");
-            Debug.WriteLine("nof the four access modifiers, and a static modifier.");
+            OutputHelper.WriteLine("Section 10.6");
+            OutputHelper.WriteLine("A property declaration may include set of");
+            OutputHelper.WriteLine("attributes, a new modifier, a valid combination");
+            OutputHelper.WriteLine("nof the four access modifiers, and a static modifier.");
             Assert.True(PropertiesTestClass006.testMethod());
         }
         [TestMethod]
         public void Properties007_Test()
         {
-            Debug.WriteLine("Section 10.6");
-            Debug.WriteLine("A property declaration may include set of");
-            Debug.WriteLine("attributes, a new modifier, a valid combination");
-            Debug.WriteLine("nof the four access modifiers, and a static modifier.");
+            OutputHelper.WriteLine("Section 10.6");
+            OutputHelper.WriteLine("A property declaration may include set of");
+            OutputHelper.WriteLine("attributes, a new modifier, a valid combination");
+            OutputHelper.WriteLine("nof the four access modifiers, and a static modifier.");
             Assert.True(PropertiesTestClass007.testMethod());
         }
         [TestMethod]
         public void Properties008_Test()
         {
-            Debug.WriteLine("Section 10.6");
-            Debug.WriteLine("A property declaration may include set of");
-            Debug.WriteLine("attributes, a new modifier, a valid combination");
-            Debug.WriteLine("nof the four access modifiers, and a static modifier.");
+            OutputHelper.WriteLine("Section 10.6");
+            OutputHelper.WriteLine("A property declaration may include set of");
+            OutputHelper.WriteLine("attributes, a new modifier, a valid combination");
+            OutputHelper.WriteLine("nof the four access modifiers, and a static modifier.");
             Assert.True(PropertiesTestClass008.testMethod());
         }
         [TestMethod]
         public void Properties009_Test()
         {
-            Debug.WriteLine("Section 10.6");
-            Debug.WriteLine("A property declaration may include set of");
-            Debug.WriteLine("attributes, a new modifier, a valid combination");
-            Debug.WriteLine("nof the four access modifiers, and a static modifier.");
+            OutputHelper.WriteLine("Section 10.6");
+            OutputHelper.WriteLine("A property declaration may include set of");
+            OutputHelper.WriteLine("attributes, a new modifier, a valid combination");
+            OutputHelper.WriteLine("nof the four access modifiers, and a static modifier.");
             Assert.True(PropertiesTestClass009.testMethod());
         }
         [TestMethod]
         public void Properties010_Test()
         {
-            Debug.WriteLine("Section 10.6");
-            Debug.WriteLine("A property declaration may include set of");
-            Debug.WriteLine("attributes, a new modifier, a valid combination");
-            Debug.WriteLine("nof the four access modifiers, and a static modifier.");
+            OutputHelper.WriteLine("Section 10.6");
+            OutputHelper.WriteLine("A property declaration may include set of");
+            OutputHelper.WriteLine("attributes, a new modifier, a valid combination");
+            OutputHelper.WriteLine("nof the four access modifiers, and a static modifier.");
             Assert.True(PropertiesTestClass010.testMethod());
         }
         [TestMethod]
         public void Properties011_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("The type of a property declaration specifies");
-            Debug.WriteLine("the type of the property introduced by the");
-            Debug.WriteLine("declaration, and the member-name specifies");
-            Debug.WriteLine("the name of the property.  Unless the property");
-            Debug.WriteLine("is an explicit interface member implementation,");
-            Debug.WriteLine("the member name is simply an identifier.  For an");
-            Debug.WriteLine("explicit interface member implementation, the");
-            Debug.WriteLine("member name consists of an interface-type followed");
-            Debug.WriteLine("by a . and an identifier.");
-            Debug.WriteLine("This is currently an expected fail, but is resolved in 3.0 see Bug  16341 for details");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("The type of a property declaration specifies");
+            OutputHelper.WriteLine("the type of the property introduced by the");
+            OutputHelper.WriteLine("declaration, and the member-name specifies");
+            OutputHelper.WriteLine("the name of the property.  Unless the property");
+            OutputHelper.WriteLine("is an explicit interface member implementation,");
+            OutputHelper.WriteLine("the member name is simply an identifier.  For an");
+            OutputHelper.WriteLine("explicit interface member implementation, the");
+            OutputHelper.WriteLine("member name consists of an interface-type followed");
+            OutputHelper.WriteLine("by a . and an identifier.");
+            OutputHelper.WriteLine("This is currently an expected fail, but is resolved in 3.0 see Bug  16341 for details");
             Assert.True(PropertiesTestClass011.testMethod());
         }
         [TestMethod]
         public void Properties024_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("An instance property is associated with");
-            Debug.WriteLine("a given instance of a class, and this instance");
-            Debug.WriteLine("can be accessed as this in the accessors of");
-            Debug.WriteLine("the property.");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("An instance property is associated with");
+            OutputHelper.WriteLine("a given instance of a class, and this instance");
+            OutputHelper.WriteLine("can be accessed as this in the accessors of");
+            OutputHelper.WriteLine("the property.");
             Assert.True(PropertiesTestClass024.testMethod());
         }
         [TestMethod]
         public void Properties025_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("An instance property is associated with");
-            Debug.WriteLine("a given instance of a class, and this instance");
-            Debug.WriteLine("can be accessed as this in the accessors of");
-            Debug.WriteLine("the property.");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("An instance property is associated with");
+            OutputHelper.WriteLine("a given instance of a class, and this instance");
+            OutputHelper.WriteLine("can be accessed as this in the accessors of");
+            OutputHelper.WriteLine("the property.");
             Assert.True(PropertiesTestClass025.testMethod());
         }
         [TestMethod]
         public void Properties026_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("When a property is referenced in a member-access");
-            Debug.WriteLine("of the form E.M, if M is a static property, E must");
-            Debug.WriteLine("denote a type, and if M is an instance property,");
-            Debug.WriteLine("E must denote an instance.");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("When a property is referenced in a member-access");
+            OutputHelper.WriteLine("of the form E.M, if M is a static property, E must");
+            OutputHelper.WriteLine("denote a type, and if M is an instance property,");
+            OutputHelper.WriteLine("E must denote an instance.");
             Assert.True(PropertiesTestClass026.testMethod());
         }
         [TestMethod]
         public void Properties027_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("When a property is referenced in a member-access");
-            Debug.WriteLine("of the form E.M, if M is a static property, E must");
-            Debug.WriteLine("denote a type, and if M is an instance property,");
-            Debug.WriteLine("E must denote an instance.");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("When a property is referenced in a member-access");
+            OutputHelper.WriteLine("of the form E.M, if M is a static property, E must");
+            OutputHelper.WriteLine("denote a type, and if M is an instance property,");
+            OutputHelper.WriteLine("E must denote an instance.");
             Assert.True(PropertiesTestClass027.testMethod());
         }
         [TestMethod]
         public void Properties033_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("The accessor declarations consist of a ");
-            Debug.WriteLine("get-accessor-declaration, a set-accessor");
-            Debug.WriteLine("declaration, or both.");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("The accessor declarations consist of a ");
+            OutputHelper.WriteLine("get-accessor-declaration, a set-accessor");
+            OutputHelper.WriteLine("declaration, or both.");
             Assert.True(PropertiesTestClass033.testMethod());
         }
         [TestMethod]
         public void Properties034_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("The accessor declarations consist of a ");
-            Debug.WriteLine("get-accessor-declaration, a set-accessor");
-            Debug.WriteLine("declaration, or both.");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("The accessor declarations consist of a ");
+            OutputHelper.WriteLine("get-accessor-declaration, a set-accessor");
+            OutputHelper.WriteLine("declaration, or both.");
             Assert.True(PropertiesTestClass034.testMethod());
         }
         [TestMethod]
         public void Properties035_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("The accessor declarations consist of a ");
-            Debug.WriteLine("get-accessor-declaration, a set-accessor");
-            Debug.WriteLine("declaration, or both.");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("The accessor declarations consist of a ");
+            OutputHelper.WriteLine("get-accessor-declaration, a set-accessor");
+            OutputHelper.WriteLine("declaration, or both.");
             Assert.True(PropertiesTestClass035.testMethod());
         }
         [TestMethod]
         public void Properties036_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass036.testMethod());
         }
         [TestMethod]
         public void Properties037_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass037.testMethod());
         }
         [TestMethod]
         public void Properties038_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass038.testMethod());
         }
         [TestMethod]
         public void Properties043_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass043.testMethod());
         }
         [TestMethod]
         public void Properties046_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass046.testMethod());
         }
         [TestMethod]
         public void Properties048_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass048.testMethod());
         }
         [TestMethod]
         public void Properties050_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass050.testMethod());
         }
         [TestMethod]
         public void Properties053_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass053.testMethod());
         }
         [TestMethod]
         public void Properties054_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass054.testMethod());
         }
         [TestMethod]
         public void Properties056_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass056.testMethod());
         }
         [TestMethod]
         public void Properties058_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass058.testMethod());
         }
         [TestMethod]
         public void Properties059_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass059.testMethod());
         }
         [TestMethod]
         public void Properties060_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass060.testMethod());
         }
         [TestMethod]
         public void Properties062_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass062.testMethod());
         }
         [TestMethod]
         public void Properties068_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass068.testMethod());
         }
         [TestMethod]
         public void Properties071_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass071.testMethod());
         }
         [TestMethod]
         public void Properties072_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass072.testMethod());
         }
         [TestMethod]
         public void Properties073_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass073.testMethod());
         }
         [TestMethod]
         public void Properties074_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass074.testMethod());
         }
         [TestMethod]
         public void Properties075_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass075.testMethod());
         }
         [TestMethod]
         public void Properties078_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass078.testMethod());
         }
         [TestMethod]
         public void Properties089_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass089.testMethod());
         }
         [TestMethod]
         public void Properties090_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass090.testMethod());
         }
         [TestMethod]
         public void Properties097_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass097.testMethod());
         }
         [TestMethod]
         public void Properties109_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass109.testMethod());
         }
         [TestMethod]
         public void Properties110_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass110.testMethod());
         }
         [TestMethod]
         public void Properties121_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass121.testMethod());
         }
         [TestMethod]
         public void Properties122_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass122.testMethod());
         }
         [TestMethod]
         public void Properties123_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
-            Debug.WriteLine("This test is an expected fail");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("This test is an expected fail");
             Assert.False(PropertiesTestClass123.testMethod());
         }
         [TestMethod]
         public void Properties124_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
-            Debug.WriteLine("This test is an expected fail");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("This test is an expected fail");
             Assert.False(PropertiesTestClass124.testMethod());
         }
         [TestMethod]
         public void Properties125_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass125.testMethod());
         }
         [TestMethod]
         public void Properties126_Test()
         {
-            Debug.WriteLine("Section 10.6 ");
-            Debug.WriteLine("Each accessor declaration consists of an");
-            Debug.WriteLine("optional accessor-modifier, followed by the");
-            Debug.WriteLine("keyword get or set, followed by an accessor");
+            OutputHelper.WriteLine("Section 10.6 ");
+            OutputHelper.WriteLine("Each accessor declaration consists of an");
+            OutputHelper.WriteLine("optional accessor-modifier, followed by the");
+            OutputHelper.WriteLine("keyword get or set, followed by an accessor");
             Assert.True(PropertiesTestClass126.testMethod());
         }
 

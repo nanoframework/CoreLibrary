@@ -22,16 +22,16 @@ namespace NFUnitTestSystemLib
 
             // we will check that the Name and FullName from the AssemblyName class do go along
             string name = assm.GetName().Name;
-            Debug.WriteLine("Assembly name from AssemblyName type is: \"" + name + "\"");
+            OutputHelper.WriteLine("Assembly name from AssemblyName type is: \"" + name + "\"");
             string fullNameFromAssemblyName = assm.GetName().FullName;
-            Debug.WriteLine("Assembly FullNme from AssemblyName type is: \"" + fullNameFromAssemblyName + "\"");
+            OutputHelper.WriteLine("Assembly FullNme from AssemblyName type is: \"" + fullNameFromAssemblyName + "\"");
 
             string nameParsedFromFullName = fullNameFromAssemblyName.Substring(0, fullNameFromAssemblyName.IndexOf(','));
             Assert.Equal(nameParsedFromFullName, name);
 
             // we will check that the FullName from Assembly and FullName from the AssemblyName class do match
             string fullName = assm.FullName;
-            Debug.WriteLine("Assembly FullName from Assembly type: \"" + fullName + "\"");
+            OutputHelper.WriteLine("Assembly FullName from Assembly type: \"" + fullName + "\"");
 
             Assert.Equal(fullName, (name + ", Version=" + assm.GetName().Version.ToString()));
         }

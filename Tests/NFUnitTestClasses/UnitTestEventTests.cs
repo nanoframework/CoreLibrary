@@ -16,7 +16,7 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Events1_Test()
         {
-            Debug.WriteLine("This is testing an obsolete event structure, but should pass.");
+            OutputHelper.WriteLine("This is testing an obsolete event structure, but should pass.");
             Assert.True(EventsTestClass1.testMethod());
         }
 

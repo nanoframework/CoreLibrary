@@ -20,424 +20,424 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void ValueIntegral01_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the +, - and ~ unary operators, of the operand is of type long, the");
-            Debug.WriteLine(" operation is performed using 64-bit precision, and the type of the result");
-            Debug.WriteLine(" is long.  Otherwise, the operand is converted to int, and operation is");
-            Debug.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the +, - and ~ unary operators, of the operand is of type long, the");
+            OutputHelper.WriteLine(" operation is performed using 64-bit precision, and the type of the result");
+            OutputHelper.WriteLine(" is long.  Otherwise, the operand is converted to int, and operation is");
+            OutputHelper.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
             ValueIntegralTestClass01.testMethod();
         }
         [TestMethod]
         public void ValueIntegral05_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the +, - and ~ unary operators, of the operand is of type long, the");
-            Debug.WriteLine(" operation is performed using 64-bit precision, and the type of the result");
-            Debug.WriteLine(" is long.  Otherwise, the operand is converted to int, and operation is");
-            Debug.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the +, - and ~ unary operators, of the operand is of type long, the");
+            OutputHelper.WriteLine(" operation is performed using 64-bit precision, and the type of the result");
+            OutputHelper.WriteLine(" is long.  Otherwise, the operand is converted to int, and operation is");
+            OutputHelper.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
             ValueIntegralTestClass05.testMethod();
         }
         [TestMethod]
         public void ValueIntegral09_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the +, - and ~ unary operators, of the operand is of type long, the");
-            Debug.WriteLine(" operation is performed using 64-bit precision, and the type of the result");
-            Debug.WriteLine(" is long.  Otherwise, the operand is converted to int, and operation is");
-            Debug.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the +, - and ~ unary operators, of the operand is of type long, the");
+            OutputHelper.WriteLine(" operation is performed using 64-bit precision, and the type of the result");
+            OutputHelper.WriteLine(" is long.  Otherwise, the operand is converted to int, and operation is");
+            OutputHelper.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
             ValueIntegralTestClass09.testMethod();
         }
         [TestMethod]
         public void ValueIntegral13_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass13.testMethod();
         }
         [TestMethod]
         public void ValueIntegral14_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass14.testMethod();
         }
         [TestMethod]
         public void ValueIntegral15_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass15.testMethod();
         }
         [TestMethod]
         public void ValueIntegral16_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass16.testMethod();
         }
         [TestMethod]
         public void ValueIntegral17_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass17.testMethod();
         }
         [TestMethod]
         public void ValueIntegral18_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass18.testMethod();
         }
         [TestMethod]
         public void ValueIntegral19_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass19.testMethod();
         }
         [TestMethod]
         public void ValueIntegral20_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass20.testMethod();
         }
         [TestMethod]
         public void ValueIntegral21_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass21.testMethod();
         }
         [TestMethod]
         public void ValueIntegral22_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass22.testMethod();
         }
         [TestMethod]
         public void ValueIntegral23_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass23.testMethod();
         }
         [TestMethod]
         public void ValueIntegral24_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass24.testMethod();
         }
         [TestMethod]
         public void ValueIntegral25_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass25.testMethod();
         }
         [TestMethod]
         public void ValueIntegral26_Test()
         {
-            Debug.WriteLine(" For the binary operators other than shift, if at least one");
-            Debug.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
-            Debug.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
-            Debug.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
-            Debug.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
+            OutputHelper.WriteLine(" For the binary operators other than shift, if at least one");
+            OutputHelper.WriteLine(" operand is of type long, then both operands are converted to long, the operation");
+            OutputHelper.WriteLine(" is performed using 64-bit precision, and the type of the result is long or bool. ");
+            OutputHelper.WriteLine(" Otherwise, both operands are converted to int, the operation is performed using ");
+            OutputHelper.WriteLine(" 32-bit precision, and the type of the result is int or bool.");
             ValueIntegralTestClass26.testMethod();
         }
         [TestMethod]
         public void ValueIntegral27_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the shift operators, if the left-hand operand is of type long,");
-            Debug.WriteLine(" the operation is performed using 64-bit precision, and the type of the result");
-            Debug.WriteLine(" is long.  Otherwise, the left hand-operand is converted to int, the operation is ");
-            Debug.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the shift operators, if the left-hand operand is of type long,");
+            OutputHelper.WriteLine(" the operation is performed using 64-bit precision, and the type of the result");
+            OutputHelper.WriteLine(" is long.  Otherwise, the left hand-operand is converted to int, the operation is ");
+            OutputHelper.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
             ValueIntegralTestClass27.testMethod();
         }
         [TestMethod]
         public void ValueIntegral28_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the shift operators, if the left-hand operand is of type long,");
-            Debug.WriteLine(" the operation is performed using 64-bit precision, and the type of the result");
-            Debug.WriteLine(" is long.  Otherwise, the left hand-operand is converted to int, the operation is ");
-            Debug.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the shift operators, if the left-hand operand is of type long,");
+            OutputHelper.WriteLine(" the operation is performed using 64-bit precision, and the type of the result");
+            OutputHelper.WriteLine(" is long.  Otherwise, the left hand-operand is converted to int, the operation is ");
+            OutputHelper.WriteLine(" performed using 32-bit precision, and the type of the result is int.");
             ValueIntegralTestClass28.testMethod();
         }
         [TestMethod]
         public void ValueIntegral38_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" Constants of the char type must be written as character-literals.");
-            Debug.WriteLine(" Character constants can only be written as integer-literals");
-            Debug.WriteLine(" in combination with a cast. For example, (char)10 is the same as");
-            Debug.WriteLine(" '\x000A'.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" Constants of the char type must be written as character-literals.");
+            OutputHelper.WriteLine(" Character constants can only be written as integer-literals");
+            OutputHelper.WriteLine(" in combination with a cast. For example, (char)10 is the same as");
+            OutputHelper.WriteLine(" '\x000A'.");
             ValueIntegralTestClass38.testMethod();
         }
         [TestMethod]
         public void ValueIntegral39_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the unary + and ~ operators, the operand is converted");
-            Debug.WriteLine(" to type T, where T is the first of int, uint, long, and");
-            Debug.WriteLine(" ulong that can fully represent all possible values of the");
-            Debug.WriteLine(" operand. The operation is then performed using the precision ");
-            Debug.WriteLine(" of type T, and the type of the result is T.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the unary + and ~ operators, the operand is converted");
+            OutputHelper.WriteLine(" to type T, where T is the first of int, uint, long, and");
+            OutputHelper.WriteLine(" ulong that can fully represent all possible values of the");
+            OutputHelper.WriteLine(" operand. The operation is then performed using the precision ");
+            OutputHelper.WriteLine(" of type T, and the type of the result is T.");
             ValueIntegralTestClass39.testMethod();
         }
         [TestMethod]
         public void ValueIntegral42_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the unary + and ~ operators, the operand is converted");
-            Debug.WriteLine(" to type T, where T is the first of int, uint, long, and");
-            Debug.WriteLine(" ulong that can fully represent all possible values of the");
-            Debug.WriteLine(" operand. The operation is then performed using the precision ");
-            Debug.WriteLine(" of type T, and the type of the result is T.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the unary + and ~ operators, the operand is converted");
+            OutputHelper.WriteLine(" to type T, where T is the first of int, uint, long, and");
+            OutputHelper.WriteLine(" ulong that can fully represent all possible values of the");
+            OutputHelper.WriteLine(" operand. The operation is then performed using the precision ");
+            OutputHelper.WriteLine(" of type T, and the type of the result is T.");
             ValueIntegralTestClass42.testMethod();
         }
         [TestMethod]
         public void ValueIntegral45_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the unary - operator, the operand is converted");
-            Debug.WriteLine(" to type T, where T is the first of int and long that ");
-            Debug.WriteLine(" can fully represent all possible values of the ");
-            Debug.WriteLine(" operand.  The operation is then performed using the");
-            Debug.WriteLine(" precision of type T, and the type of the result is T.");
-            Debug.WriteLine(" The unary - operator cannot be applied to operands of");
-            Debug.WriteLine(" type ulong.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the unary - operator, the operand is converted");
+            OutputHelper.WriteLine(" to type T, where T is the first of int and long that ");
+            OutputHelper.WriteLine(" can fully represent all possible values of the ");
+            OutputHelper.WriteLine(" operand.  The operation is then performed using the");
+            OutputHelper.WriteLine(" precision of type T, and the type of the result is T.");
+            OutputHelper.WriteLine(" The unary - operator cannot be applied to operands of");
+            OutputHelper.WriteLine(" type ulong.");
             ValueIntegralTestClass45.testMethod();
         }
         [TestMethod]
         public void ValueIntegral49_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass49.testMethod();
         }
         [TestMethod]
         public void ValueIntegral50_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass50.testMethod();
         }
         [TestMethod]
         public void ValueIntegral51_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass51.testMethod();
         }
         [TestMethod]
         public void ValueIntegral52_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass52.testMethod();
         }
         [TestMethod]
         public void ValueIntegral53_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass53.testMethod();
         }
         [TestMethod]
         public void ValueIntegral54_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass54.testMethod();
         }
         [TestMethod]
         public void ValueIntegral55_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass55.testMethod();
         }
         [TestMethod]
         public void ValueIntegral56_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass56.testMethod();
         }
         [TestMethod]
         public void ValueIntegral57_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass57.testMethod();
         }
         [TestMethod]
         public void ValueIntegral58_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass58.testMethod();
         }
         [TestMethod]
         public void ValueIntegral59_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass59.testMethod();
         }
         [TestMethod]
         public void ValueIntegral60_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass60.testMethod();
         }
         [TestMethod]
         public void ValueIntegral61_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass61.testMethod();
         }
         [TestMethod]
         public void ValueIntegral62_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary operators except shift, the operands");
-            Debug.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
-            Debug.WriteLine(" that can fully represent all possible values of each operand. The operation");
-            Debug.WriteLine(" is then performed using the precision of type T, and the type of the result");
-            Debug.WriteLine(" is T (or bool for relational operators).");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary operators except shift, the operands");
+            OutputHelper.WriteLine(" are converted to type T, where T is the first of int, uint, long, and ulong");
+            OutputHelper.WriteLine(" that can fully represent all possible values of each operand. The operation");
+            OutputHelper.WriteLine(" is then performed using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" is T (or bool for relational operators).");
             ValueIntegralTestClass62.testMethod();
         }
         [TestMethod]
         public void ValueIntegral63_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary shift operators, the left operand");
-            Debug.WriteLine(" is converted to type T, where T is the first of int,");
-            Debug.WriteLine(" uint, long, and ulong that can fully represent all possible");
-            Debug.WriteLine(" values of the operand. The operation is then performed");
-            Debug.WriteLine(" using the precision of type T, and the type of the result");
-            Debug.WriteLine(" T.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary shift operators, the left operand");
+            OutputHelper.WriteLine(" is converted to type T, where T is the first of int,");
+            OutputHelper.WriteLine(" uint, long, and ulong that can fully represent all possible");
+            OutputHelper.WriteLine(" values of the operand. The operation is then performed");
+            OutputHelper.WriteLine(" using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" T.");
             ValueIntegralTestClass63.testMethod();
         }
         [TestMethod]
         public void ValueIntegral64_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" For the binary shift operators, the left operand");
-            Debug.WriteLine(" is converted to type T, where T is the first of int,");
-            Debug.WriteLine(" uint, long, and ulong that can fully represent all possible");
-            Debug.WriteLine(" values of the operand. The operation is then performed");
-            Debug.WriteLine(" using the precision of type T, and the type of the result");
-            Debug.WriteLine(" T.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" For the binary shift operators, the left operand");
+            OutputHelper.WriteLine(" is converted to type T, where T is the first of int,");
+            OutputHelper.WriteLine(" uint, long, and ulong that can fully represent all possible");
+            OutputHelper.WriteLine(" values of the operand. The operation is then performed");
+            OutputHelper.WriteLine(" using the precision of type T, and the type of the result");
+            OutputHelper.WriteLine(" T.");
             ValueIntegralTestClass64.testMethod();
         }
         [TestMethod]
         public void ValueIntegral70_Test()
         {
-            Debug.WriteLine(" Section 4.1");
-            Debug.WriteLine(" Constants of the char type must be written as character-literals.");
-            Debug.WriteLine(" Character constants can only be written as integer-literals");
-            Debug.WriteLine(" in compination with a cast.  For example, (char)10 is the same ");
-            Debug.WriteLine(" as '\x000a'.");
+            OutputHelper.WriteLine(" Section 4.1");
+            OutputHelper.WriteLine(" Constants of the char type must be written as character-literals.");
+            OutputHelper.WriteLine(" Character constants can only be written as integer-literals");
+            OutputHelper.WriteLine(" in compination with a cast.  For example, (char)10 is the same ");
+            OutputHelper.WriteLine(" as '\x000a'.");
             ValueIntegralTestClass70.testMethod();
         }
 

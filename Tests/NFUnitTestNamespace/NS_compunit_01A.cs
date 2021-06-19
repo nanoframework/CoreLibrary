@@ -4,12 +4,12 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 class NS_TestClass_compunit_01A
 {
     public void printClassName()
     {
-        Debug.WriteLine("Class A");
+        OutputHelper.WriteLine("Class A");
     }
 }

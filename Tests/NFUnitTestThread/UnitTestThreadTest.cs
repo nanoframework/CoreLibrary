@@ -19,27 +19,27 @@ namespace NFUnitTestThread
             public static void DoWork()
             {
                 Thread.Sleep(300);
-                Debug.WriteLine("Static thread procedure DoWork.");
+                OutputHelper.WriteLine("Static thread procedure DoWork.");
                 Thread.Sleep(300);
             }
             public int m_data = 0;
             public Thread currThread;
             public void DoMoreWork()
             {
-                Debug.WriteLine("Instance thread procedure DoMoreWork. Data= " + m_data);
+                OutputHelper.WriteLine("Instance thread procedure DoMoreWork. Data= " + m_data);
                 currThread = Thread.CurrentThread;
             }
             public static void DoWorkAbort()
             {
                 Thread.Sleep(300);
-                Debug.WriteLine("Static thread procedure DoWorkAbort.");
+                OutputHelper.WriteLine("Static thread procedure DoWorkAbort.");
                 Thread.Sleep(10000);
             }
             public Thread m_toJoin = null;
             public void DoWorkJoin()
             {
                 m_toJoin.Join();
-                Debug.WriteLine("Instance thread procedure DoWorkJoin.");
+                OutputHelper.WriteLine("Instance thread procedure DoWorkJoin.");
             }
 
             public static bool hasAborted = false;
@@ -54,8 +54,8 @@ namespace NFUnitTestThread
                     catch (ThreadAbortException e)
                     {
                         hasAborted = true;
-                        Debug.WriteLine("Thread State = " + Thread.CurrentThread.ThreadState);
-                        Debug.WriteLine("verifying ThreadAbortException named " + e.ToString() + " is thrown");
+                        OutputHelper.WriteLine("Thread State = " + Thread.CurrentThread.ThreadState);
+                        OutputHelper.WriteLine("verifying ThreadAbortException named " + e.ToString() + " is thrown");
                     }
                 }
             }
@@ -76,24 +76,24 @@ namespace NFUnitTestThread
             /// 2. Verifies that they execute in a reasonable time
             /// </summary>
             ///
-            Debug.WriteLine("Starting a thread without explicit declaration of ThreadStart Delegate");
-            Debug.WriteLine("Starts two threads, waits for them to complete and passes, ");
-            Debug.WriteLine("this may erroneously fail for extremely slow devices.");
-            Debug.WriteLine("All other threading tests are dependent on this, if this fails, ");
-            Debug.WriteLine("all other results are invalid.");
+            OutputHelper.WriteLine("Starting a thread without explicit declaration of ThreadStart Delegate");
+            OutputHelper.WriteLine("Starts two threads, waits for them to complete and passes, ");
+            OutputHelper.WriteLine("this may erroneously fail for extremely slow devices.");
+            OutputHelper.WriteLine("All other threading tests are dependent on this, if this fails, ");
+            OutputHelper.WriteLine("all other results are invalid.");
 
-            Debug.WriteLine("Starting thread 1");
+            OutputHelper.WriteLine("Starting thread 1");
             Thread newThread1 = new Thread(Work.DoWork);
             newThread1.Start();
 
-            Debug.WriteLine("Starting thread 2");
+            OutputHelper.WriteLine("Starting thread 2");
             Work w = new Work();
             w.m_data = 42;
             Thread newThread2 = new Thread(w.DoMoreWork);
             newThread2.Start();
             Thread.Sleep(1);
 
-            Debug.WriteLine("Waiting for them to finish");
+            OutputHelper.WriteLine("Waiting for them to finish");
             int slept = 0;
             while ((newThread1.ThreadState != ThreadState.Stopped
                 || newThread2.ThreadState != ThreadState.Stopped) && slept < 1000)
@@ -104,7 +104,7 @@ namespace NFUnitTestThread
             if (!(newThread1.ThreadState == ThreadState.Stopped &&
                 newThread2.ThreadState == ThreadState.Stopped))
             {
-                Debug.WriteLine("The threads took more than 1000msec to come to Stopped state");
+                OutputHelper.WriteLine("The threads took more than 1000msec to come to Stopped state");
                 throw new Exception("The threads took more than 1000msec to come to Stopped state");
             }
         }
@@ -117,23 +117,23 @@ namespace NFUnitTestThread
             /// 2. Verifies that they execute in a reasonable time
             /// </summary>
             ///
-            Debug.WriteLine("Starts two threads with ThreadStart Delegate,");
-            Debug.WriteLine("waits for them to complete and passes, ");
-            Debug.WriteLine("this may erroneously fail for extremely slow devices.");
+            OutputHelper.WriteLine("Starts two threads with ThreadStart Delegate,");
+            OutputHelper.WriteLine("waits for them to complete and passes, ");
+            OutputHelper.WriteLine("this may erroneously fail for extremely slow devices.");
 
             ThreadStart threadDelegate = new ThreadStart(Work.DoWork);
             Thread newThread1 = new Thread(threadDelegate);
-            Debug.WriteLine("Starting thread 1");
+            OutputHelper.WriteLine("Starting thread 1");
             newThread1.Start();
             Work w = new Work();
             w.m_data = 42;
             threadDelegate = new ThreadStart(w.DoMoreWork);
             Thread newThread2 = new Thread(threadDelegate);
-            Debug.WriteLine("Starting thread 2");
+            OutputHelper.WriteLine("Starting thread 2");
             newThread2.Start();
             Thread.Sleep(1);
 
-            Debug.WriteLine("Waiting for them to complete");
+            OutputHelper.WriteLine("Waiting for them to complete");
             int slept = 0;
             while ((newThread1.ThreadState != ThreadState.Stopped
                 || newThread2.ThreadState != ThreadState.Stopped) && slept < 1000)
@@ -144,7 +144,7 @@ namespace NFUnitTestThread
             if (!(newThread1.ThreadState == ThreadState.Stopped
                 && newThread2.ThreadState == ThreadState.Stopped))
             {
-                Debug.WriteLine("The threads took more than 1000msec to come to Stopped state");
+                OutputHelper.WriteLine("The threads took more than 1000msec to come to Stopped state");
                 throw new Exception("The threads took more than 1000msec to come to Stopped state");
             }
         }
@@ -159,31 +159,31 @@ namespace NFUnitTestThread
             /// 4. Verifies that the short thread finishes normally
             /// </summary>
             ///
-            Debug.WriteLine("Starting long thread");
+            OutputHelper.WriteLine("Starting long thread");
             Thread newThread1 = new Thread(Work.DoWorkAbort);
             newThread1.Start();
 
-            Debug.WriteLine("Starting short thread");
+            OutputHelper.WriteLine("Starting short thread");
             Work w = new Work();
             w.m_data = 42;
             Thread newThread2 = new Thread(w.DoMoreWork);
             newThread2.Start();
             Thread.Sleep(1);
 
-            Debug.WriteLine("Aborting long thread and verifying it's Aborted");
+            OutputHelper.WriteLine("Aborting long thread and verifying it's Aborted");
             newThread1.Abort();
             ThreadState tState = newThread1.ThreadState;
             if (tState != ThreadState.Aborted
                         && newThread1.ThreadState != ThreadState.Stopped)
             {
-                Debug.WriteLine("Expected long thread state Aborted/Stopped '" + ThreadState.Aborted +
+                OutputHelper.WriteLine("Expected long thread state Aborted/Stopped '" + ThreadState.Aborted +
                     "/" + ThreadState.Stopped + "' but got '" + tState + "'");
                 throw new Exception("Expected long thread state Aborted/Stopped '" + ThreadState.Aborted +
                     "/" + ThreadState.Stopped + "' but got '" + tState + "'");
             }
             int slept = 0;
 
-            Debug.WriteLine("Waiting for 1 or both threads to finish");
+            OutputHelper.WriteLine("Waiting for 1 or both threads to finish");
             while ((newThread1.ThreadState != ThreadState.Stopped ||
                 newThread2.ThreadState != ThreadState.Stopped) && slept < 1000)
             {
@@ -193,7 +193,7 @@ namespace NFUnitTestThread
             ThreadState tState1 = newThread1.ThreadState, tState2 = newThread2.ThreadState;
             if (tState1 != ThreadState.Stopped || tState2 != ThreadState.Stopped)
             {
-                Debug.WriteLine("Expected both threads in Stopped state '" + ThreadState.Stopped +
+                OutputHelper.WriteLine("Expected both threads in Stopped state '" + ThreadState.Stopped +
                     "' but got Thread1 in '" + tState1 + "' and Thread2 in '" + tState2 + "'");
                 throw new Exception("Expected both threads in Stopped state '" + ThreadState.Stopped +
                     "' but got Thread1 in '" + tState1 + "' and Thread2 in '" + tState2 + "'");
@@ -211,23 +211,23 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Starts two threads, aborts one and verifies the IsAlive property, ");
-            Debug.WriteLine("this may erroneously fail for extremely slow devices.");
-            Debug.WriteLine("Starting long thread and verifying it's alive");
+            OutputHelper.WriteLine("Starts two threads, aborts one and verifies the IsAlive property, ");
+            OutputHelper.WriteLine("this may erroneously fail for extremely slow devices.");
+            OutputHelper.WriteLine("Starting long thread and verifying it's alive");
             Thread newThread1 = new Thread(Work.DoWorkAbort);
             newThread1.Start();
 
-            Debug.WriteLine("Starting short thread");
+            OutputHelper.WriteLine("Starting short thread");
             Work w = new Work();
             w.m_data = 42;
             Thread newThread2 = new Thread(w.DoMoreWork);
             newThread2.Start();
             if (!newThread1.IsAlive)
             {
-                Debug.WriteLine("Long thread not alive");
+                OutputHelper.WriteLine("Long thread not alive");
                 throw new Exception("Long thread not alive");
             }
-            Debug.WriteLine("Aborting long thread, waiting and verifying both threads are dead");
+            OutputHelper.WriteLine("Aborting long thread, waiting and verifying both threads are dead");
             newThread1.Abort();
             int slept = 0;
             while ((newThread1.IsAlive || newThread2.IsAlive) && slept < 1000)
@@ -238,7 +238,7 @@ namespace NFUnitTestThread
 
             if (newThread1.IsAlive || newThread2.IsAlive)
             {
-                Debug.WriteLine("Expected both threads dead but got long thread '" +
+                OutputHelper.WriteLine("Expected both threads dead but got long thread '" +
                     newThread1.ThreadState + "' and short thread '" + newThread2.ThreadState + "'");
                 throw new Exception("Expected both threads dead but got long thread '" +
                     newThread1.ThreadState + "' and short thread '" + newThread2.ThreadState + "'");
@@ -255,9 +255,9 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Starts two threads, the second thread Join()s the first");
-            Debug.WriteLine("Verifies they finish in a reasonable amount of time");
-            Debug.WriteLine("this may erroneously fail for extremely slow or fast devices.");
+            OutputHelper.WriteLine("Starts two threads, the second thread Join()s the first");
+            OutputHelper.WriteLine("Verifies they finish in a reasonable amount of time");
+            OutputHelper.WriteLine("this may erroneously fail for extremely slow or fast devices.");
 
             Thread newThread1 = new Thread(Work.DoWork);
             newThread1.Start();
@@ -276,7 +276,7 @@ namespace NFUnitTestThread
             }
             if (newThread1.IsAlive || newThread2.IsAlive)
             {
-                Debug.WriteLine("Expected both threads dead but got thread1 '" + newThread1.ThreadState +
+                OutputHelper.WriteLine("Expected both threads dead but got thread1 '" + newThread1.ThreadState +
                     "' and thread2 '" + newThread2.ThreadState + "'");
                 throw new Exception("Expected both threads dead but got thread1 '" + newThread1.ThreadState +
                     "' and thread2 '" + newThread2.ThreadState + "'");
@@ -433,8 +433,8 @@ namespace NFUnitTestThread
 
             const double acceptedTolerance = 5.0; // 5% tolerance
 
-            Debug.WriteLine("Starts five threads of increasing priority and a control thread, priority not set ");
-            Debug.WriteLine("verifies that they get increasing amounts of attention");
+            OutputHelper.WriteLine("Starts five threads of increasing priority and a control thread, priority not set ");
+            OutputHelper.WriteLine("verifies that they get increasing amounts of attention");
 
             threadLowest.Priority = ThreadPriority.Lowest;
             threadBelow.Priority = ThreadPriority.BelowNormal;
@@ -442,7 +442,7 @@ namespace NFUnitTestThread
             threadAbove.Priority = ThreadPriority.AboveNormal;
             threadHighest.Priority = ThreadPriority.Highest;
 
-            Debug.WriteLine("Starting Threads");
+            OutputHelper.WriteLine("Starting Threads");
             threadHighest.Start();
             threadAbove.Start();
             threadNorm.Start();
@@ -450,21 +450,21 @@ namespace NFUnitTestThread
             threadLowest.Start();
             threadControl.Start();
 
-            Debug.WriteLine("Allow counting for 1 seconds.");
+            OutputHelper.WriteLine("Allow counting for 1 seconds.");
             Thread.Sleep(1000);
             PriorityTest.loopSwitch.Set();
             Thread.Sleep(1000);
 
-            Debug.WriteLine("Lowest         " + PriorityTest.resultLowest);
-            Debug.WriteLine("Below          " + PriorityTest.resultBelow);
-            Debug.WriteLine("Normal         " + PriorityTest.resultNorm);
-            Debug.WriteLine("Above          " + PriorityTest.resultAbove);
-            Debug.WriteLine("Highest        " + PriorityTest.resultHighest);
-            Debug.WriteLine("Control Thread " + PriorityTest.resultControl);
+            OutputHelper.WriteLine("Lowest         " + PriorityTest.resultLowest);
+            OutputHelper.WriteLine("Below          " + PriorityTest.resultBelow);
+            OutputHelper.WriteLine("Normal         " + PriorityTest.resultNorm);
+            OutputHelper.WriteLine("Above          " + PriorityTest.resultAbove);
+            OutputHelper.WriteLine("Highest        " + PriorityTest.resultHighest);
+            OutputHelper.WriteLine("Control Thread " + PriorityTest.resultControl);
 
-            Debug.WriteLine("Verifies that each thread recieves attention less than or equal");
-            Debug.WriteLine("to higher priority threads.");
-            Debug.WriteLine("Accepted tolerance : " + acceptedTolerance + "%");
+            OutputHelper.WriteLine("Verifies that each thread recieves attention less than or equal");
+            OutputHelper.WriteLine("to higher priority threads.");
+            OutputHelper.WriteLine("Accepted tolerance : " + acceptedTolerance + "%");
 
             PriorityTest.startSecond.Set();
             PriorityTest.keepAlive.Set();
@@ -476,12 +476,12 @@ namespace NFUnitTestThread
                 (Tolerance(2 * PriorityTest.resultAbove, PriorityTest.resultHighest) > acceptedTolerance) ||
                 (Tolerance(PriorityTest.resultNorm, PriorityTest.resultControl) > acceptedTolerance))
             {
-                Debug.WriteLine("Lowest thread should execute at least once, got " + PriorityTest.resultLowest);
-                Debug.WriteLine("Deviation b/n 2*Lowest and Below " + Tolerance(2 * PriorityTest.resultLowest, PriorityTest.resultBelow));
-                Debug.WriteLine("Deviation b/n 2*Below and Normal " + Tolerance(2 * PriorityTest.resultBelow, PriorityTest.resultNorm));
-                Debug.WriteLine("Deviation b/n 2*Normal and Above " + Tolerance(2 * PriorityTest.resultNorm, PriorityTest.resultAbove));
-                Debug.WriteLine("Deviation b/n 2*Above and Highest " + Tolerance(2 * PriorityTest.resultAbove, PriorityTest.resultHighest));
-                Debug.WriteLine("Deviation b/n Normal and Control " + Tolerance(PriorityTest.resultNorm, PriorityTest.resultControl));
+                OutputHelper.WriteLine("Lowest thread should execute at least once, got " + PriorityTest.resultLowest);
+                OutputHelper.WriteLine("Deviation b/n 2*Lowest and Below " + Tolerance(2 * PriorityTest.resultLowest, PriorityTest.resultBelow));
+                OutputHelper.WriteLine("Deviation b/n 2*Below and Normal " + Tolerance(2 * PriorityTest.resultBelow, PriorityTest.resultNorm));
+                OutputHelper.WriteLine("Deviation b/n 2*Normal and Above " + Tolerance(2 * PriorityTest.resultNorm, PriorityTest.resultAbove));
+                OutputHelper.WriteLine("Deviation b/n 2*Above and Highest " + Tolerance(2 * PriorityTest.resultAbove, PriorityTest.resultHighest));
+                OutputHelper.WriteLine("Deviation b/n Normal and Control " + Tolerance(PriorityTest.resultNorm, PriorityTest.resultControl));
                 throw new Exception("Tolerance not met");
             }
         }
@@ -497,8 +497,8 @@ namespace NFUnitTestThread
             /// 5. Verifies that they finish in a reasonable amount of time
             /// </summary>
             ///
-            Debug.WriteLine("Starts two threads, suspends and resumes them, ");
-            Debug.WriteLine("this may erroneously fail for extremely slow devices.");
+            OutputHelper.WriteLine("Starts two threads, suspends and resumes them, ");
+            OutputHelper.WriteLine("this may erroneously fail for extremely slow devices.");
 
             Thread newThread1 = new Thread(Work.DoWork);
             newThread1.Start();
@@ -515,7 +515,7 @@ namespace NFUnitTestThread
             ThreadState tState = newThread2.ThreadState;
             if ((int)tState != 96)
             {
-                Debug.WriteLine("expected Thread2 in WaitSleepJoin + Suspended ('96') but got '" +
+                OutputHelper.WriteLine("expected Thread2 in WaitSleepJoin + Suspended ('96') but got '" +
                     tState + "'");
                 throw new Exception("expected Thread2 in WaitSleepJoin + Suspended ('96') but got '" +
                     tState + "'");
@@ -525,7 +525,7 @@ namespace NFUnitTestThread
             tState = newThread1.ThreadState;
             if ((int)tState != 96)
             {
-                Debug.WriteLine("expected Thread1 in WaitSleepJoin + Suspended ('96') but got '" +
+                OutputHelper.WriteLine("expected Thread1 in WaitSleepJoin + Suspended ('96') but got '" +
                    tState + "'");
                 throw new Exception("expected Thread1 in WaitSleepJoin + Suspended ('96') but got '" +
                    tState + "'");
@@ -540,7 +540,7 @@ namespace NFUnitTestThread
             }
             if (newThread1.IsAlive || newThread2.IsAlive)
             {
-                Debug.WriteLine("expected both threads dead after 1000msec but got thread1 '" +
+                OutputHelper.WriteLine("expected both threads dead after 1000msec but got thread1 '" +
                     newThread1.ThreadState + "' and thread2 '" + newThread2.ThreadState + "'");
                 throw new Exception("expected both threads dead after 1000msec but got thread1 '" +
                     newThread1.ThreadState + "' and thread2 '" + newThread2.ThreadState + "'");
@@ -557,12 +557,12 @@ namespace NFUnitTestThread
             long sleptSpan = DateTime.UtcNow.Ticks - startTime;
             if ((sleptSpan / TicksPerMillisecond) < Msec)
             {
-                Debug.WriteLine("Expected the thread slept for at least " + Msec + " Msec. but slept only for "
+                OutputHelper.WriteLine("Expected the thread slept for at least " + Msec + " Msec. but slept only for "
                     + (sleptSpan / TicksPerMillisecond) + " Msec");
                 return false;
             }
 
-            Debug.WriteLine(Msec + " Msec sleep success, slept for "
+            OutputHelper.WriteLine(Msec + " Msec sleep success, slept for "
                 + (sleptSpan / TicksPerMillisecond) + " Msec");
             return true;
         }
@@ -575,7 +575,7 @@ namespace NFUnitTestThread
             /// 2. Verifies the thread sleeps at least for the time requested         
             /// </summary>
             ///          
-            Debug.WriteLine("This test verifies the thread slept at least for the amount of time required");
+            OutputHelper.WriteLine("This test verifies the thread slept at least for the amount of time required");
             int[] sleepTime = new int[] { 10, 100, 1000, 10000, 60000 };
             for (int i = 0; i < sleepTime.Length; i++)
             {
@@ -597,10 +597,10 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Starts two threads and suspends the first thread twice");
-            Debug.WriteLine("Gets the state of the 1st thread");
-            Debug.WriteLine("Resumes the 1st thread ");
-            Debug.WriteLine("Verifies that calling Suspend for the 2nd time has no effect");
+            OutputHelper.WriteLine("Starts two threads and suspends the first thread twice");
+            OutputHelper.WriteLine("Gets the state of the 1st thread");
+            OutputHelper.WriteLine("Resumes the 1st thread ");
+            OutputHelper.WriteLine("Verifies that calling Suspend for the 2nd time has no effect");
             Work.run = true;
             Work w1 = new Work();
             Thread newThread1 = new Thread(w1.DoWorkThreadState);
@@ -618,7 +618,7 @@ namespace NFUnitTestThread
             newThread1.Abort();
             if (tState != ThreadState.Suspended)
             {
-                Debug.WriteLine("Suspending twice, expected thread state Suspended(" +
+                OutputHelper.WriteLine("Suspending twice, expected thread state Suspended(" +
                     ThreadState.Suspended + ") but got '" + tState + "'");
                 throw new Exception("Suspending twice, expected thread state Suspended(" +
                     ThreadState.Suspended + ") but got '" + tState + "'");
@@ -637,39 +637,39 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Creating a thread and verifing its state is Unstarted");
+            OutputHelper.WriteLine("Creating a thread and verifing its state is Unstarted");
             Thread newThread1 = new Thread(Work.DoWork);
             ThreadState tState = newThread1.ThreadState;
             if (tState != ThreadState.Unstarted)
             {
-                Debug.WriteLine("Expected thread state Unstarted(" + ThreadState.Unstarted +
+                OutputHelper.WriteLine("Expected thread state Unstarted(" + ThreadState.Unstarted +
                     ") but got '" + tState + "'");
                 throw new Exception("Expected thread state Unstarted(" + ThreadState.Unstarted +
                     ") but got '" + tState + "'");
             }
 
-            Debug.WriteLine("Verifying the state of the current thread is Running");
+            OutputHelper.WriteLine("Verifying the state of the current thread is Running");
             newThread1.Start();
             tState = Thread.CurrentThread.ThreadState;
             if (tState != ThreadState.Running)
             {
-                Debug.WriteLine("expected the state of current thread Running(" + ThreadState.Running +
+                OutputHelper.WriteLine("expected the state of current thread Running(" + ThreadState.Running +
                     ") but got '" + tState + "'");
                 throw new Exception("expected the state of current thread Running(" + ThreadState.Running +
                     ") but got '" + tState + "'");
             }
 
-            Debug.WriteLine("Sleeping a thread and verifing its state is WaitSleepJoin");
+            OutputHelper.WriteLine("Sleeping a thread and verifing its state is WaitSleepJoin");
             Thread.Sleep(100);
             tState = newThread1.ThreadState;
             if (tState != ThreadState.WaitSleepJoin)
             {
-                Debug.WriteLine("expected thread1 in WaitSleepJoin(" + ThreadState.WaitSleepJoin +
+                OutputHelper.WriteLine("expected thread1 in WaitSleepJoin(" + ThreadState.WaitSleepJoin +
                     ") but got '" + newThread1.ThreadState + "'");
                 throw new Exception("expected thread1 in WaitSleepJoin(" + ThreadState.WaitSleepJoin +
                     ") but got '" + newThread1.ThreadState + "'");
             }
-            Debug.WriteLine(" Joining a thread and verifing its state is WaitSleepJoin");
+            OutputHelper.WriteLine(" Joining a thread and verifing its state is WaitSleepJoin");
             Work w = new Work();
             Thread newThread3 = new Thread(Work.DoWork);
             w.m_toJoin = newThread3;
@@ -680,7 +680,7 @@ namespace NFUnitTestThread
             tState = newThread2.ThreadState;
             if (tState != ThreadState.WaitSleepJoin)
             {
-                Debug.WriteLine("expected a joined sleeping thread in WaitSleepJoin state(" +
+                OutputHelper.WriteLine("expected a joined sleeping thread in WaitSleepJoin state(" +
                     ThreadState.WaitSleepJoin + ") but got '" + tState + "'");
                 throw new Exception("expected a joined sleeping thread in WaitSleepJoin state(" +
                     ThreadState.WaitSleepJoin + ") but got '" + tState + "'");
@@ -698,10 +698,10 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Starts a thread and Suspends it immediately");
-            Debug.WriteLine("Starts a second thread");
-            Debug.WriteLine("Gets the state of the 1st thread and Resumes it");
-            Debug.WriteLine("Verifies that the state of the 1st thread was Suspended");
+            OutputHelper.WriteLine("Starts a thread and Suspends it immediately");
+            OutputHelper.WriteLine("Starts a second thread");
+            OutputHelper.WriteLine("Gets the state of the 1st thread and Resumes it");
+            OutputHelper.WriteLine("Verifies that the state of the 1st thread was Suspended");
             Work.run = true;
             Work w1 = new Work();
             Thread newThread1 = new Thread(w1.DoWorkThreadState);
@@ -718,7 +718,7 @@ namespace NFUnitTestThread
             newThread1.Abort();
             if (tState != ThreadState.Suspended)
             {
-                Debug.WriteLine("expected state Suspended(" + ThreadState.Suspended + ") but got '" + tState + "'");
+                OutputHelper.WriteLine("expected state Suspended(" + ThreadState.Suspended + ") but got '" + tState + "'");
                 throw new Exception("expected state Suspended(" + ThreadState.Suspended + ") but got '" + tState + "'");
             }
         }
@@ -733,7 +733,7 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Starting 10 Threads");
+            OutputHelper.WriteLine("Starting 10 Threads");
             Thread[] newThread = new Thread[10];
             Work[] w = new Work[10];
             int i = 0, k = 0;
@@ -745,8 +745,8 @@ namespace NFUnitTestThread
                 newThread[i].Start();
                 i++;
             }
-            Debug.WriteLine("Suspending the Threads and checking for SuspendRequested");
-            Debug.WriteLine("At least one of the threads should be in SuspendRequested");
+            OutputHelper.WriteLine("Suspending the Threads and checking for SuspendRequested");
+            OutputHelper.WriteLine("At least one of the threads should be in SuspendRequested");
             while (k < 10)
             {
                 while (newThread[k].ThreadState != ThreadState.Suspended)
@@ -781,10 +781,10 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Starts a thread and Aborts it immediately");
-            Debug.WriteLine("Starts a second thread");
-            Debug.WriteLine("Gets the state of the 1st thread");
-            Debug.WriteLine("Verifies the state of the 1st thread is Aborted");
+            OutputHelper.WriteLine("Starts a thread and Aborts it immediately");
+            OutputHelper.WriteLine("Starts a second thread");
+            OutputHelper.WriteLine("Gets the state of the 1st thread");
+            OutputHelper.WriteLine("Verifies the state of the 1st thread is Aborted");
 
             DateTime t1, t2;
             TimeSpan period;
@@ -797,16 +797,16 @@ namespace NFUnitTestThread
             w.m_data = 42;
             Thread newThread2 = new Thread(w.DoMoreWork);
             newThread2.Start();
-            Debug.WriteLine("Pass Requires either of the next two compared values to be equal");
-            Debug.WriteLine(newThread1.ThreadState + " Compare to " + ThreadState.Aborted);
-            Debug.WriteLine(newThread1.ThreadState + " Compare to " + ThreadState.Stopped);
+            OutputHelper.WriteLine("Pass Requires either of the next two compared values to be equal");
+            OutputHelper.WriteLine(newThread1.ThreadState + " Compare to " + ThreadState.Aborted);
+            OutputHelper.WriteLine(newThread1.ThreadState + " Compare to " + ThreadState.Stopped);
             t2 = DateTime.UtcNow;
             ThreadState tState = newThread1.ThreadState;
             period = t2 - t1;
-            Debug.WriteLine("Waited for at least " + period.Milliseconds.ToString() + " before checking the state");
+            OutputHelper.WriteLine("Waited for at least " + period.Milliseconds.ToString() + " before checking the state");
             if (tState != ThreadState.Aborted && tState != ThreadState.Stopped)
             {
-                Debug.WriteLine("expected the thread to be in Aborted/Stopped(" + ThreadState.Aborted +
+                OutputHelper.WriteLine("expected the thread to be in Aborted/Stopped(" + ThreadState.Aborted +
                     "/" + ThreadState.Stopped + ") state but got '" + tState + "'");
                 throw new Exception("expected the thread to be in Aborted/Stopped(" + ThreadState.Aborted +
                     "/" + ThreadState.Stopped + ") state but got '" + tState + "'");
@@ -822,16 +822,16 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("The type of exception thrown should be ThreadStateException");
+            OutputHelper.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
             try
             {
-                Debug.WriteLine("Aborting a thread not started should throw exception");
+                OutputHelper.WriteLine("Aborting a thread not started should throw exception");
                 newThread1.Abort();
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Correctly threw " + e.ToString() + " in an attempt to Abort Unstarted thread");
+                OutputHelper.WriteLine("Correctly threw " + e.ToString() + " in an attempt to Abort Unstarted thread");
                 return;
             }
 
@@ -849,15 +849,15 @@ namespace NFUnitTestThread
 
             Work.hasAborted = false;
             Thread newThread1 = new Thread(Work.DoWorkThreadAbortException);
-            Debug.WriteLine("starting a thread and Aborting it immediately");
+            OutputHelper.WriteLine("starting a thread and Aborting it immediately");
             newThread1.Start();
             Thread.Sleep(50);
             newThread1.Abort();
             Thread.Sleep(500);
-            Debug.WriteLine("Verifying");
+            OutputHelper.WriteLine("Verifying");
             if (!Work.hasAborted)
             {
-                Debug.WriteLine("Aborting a Thread didn't throw ThreadAbortException");
+                OutputHelper.WriteLine("Aborting a Thread didn't throw ThreadAbortException");
                 throw new Exception("Aborting a Thread didn't throw ThreadAbortException");
             }
         }
@@ -872,9 +872,9 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Starts two threads");
-            Debug.WriteLine("Both threads Joins the main thread");
-            Debug.WriteLine("verify calling thread (main thread) is blocked for millisecondsTimeout");
+            OutputHelper.WriteLine("Starts two threads");
+            OutputHelper.WriteLine("Both threads Joins the main thread");
+            OutputHelper.WriteLine("verify calling thread (main thread) is blocked for millisecondsTimeout");
             Work.run = true;
             Work w = new Work();
 
@@ -898,7 +898,7 @@ namespace NFUnitTestThread
             int result2 = duration1.CompareTo(new TimeSpan(0, 0, 0, 0, 250));
             if (result1 < 0 || result2 < 0)
             {
-                Debug.WriteLine("expected the main thread to be blocked at least for '250' msec. but was blocked for '" +
+                OutputHelper.WriteLine("expected the main thread to be blocked at least for '250' msec. but was blocked for '" +
                     duration1.ToString() + "' by Thread1 and '" + duration2.ToString() + "' by Thread2");
                 throw new Exception("expected the main thread to be blocked at least for '250' msec. but was blocked for '" +
                     duration1.ToString() + "' by Thread1 and '" + duration2.ToString() + "' by Thread2");
@@ -927,8 +927,8 @@ namespace NFUnitTestThread
             /// </summary>
             /// 
 
-            Debug.WriteLine("Verify ArgumentOutOfRangeException exception is thrown");
-            Debug.WriteLine("Why not for -1 ?");
+            OutputHelper.WriteLine("Verify ArgumentOutOfRangeException exception is thrown");
+            OutputHelper.WriteLine("Why not for -1 ?");
             Assert.Throws(typeof(ArgumentOutOfRangeException), () => { Thread.Sleep(-2); });
         }
 
@@ -941,7 +941,7 @@ namespace NFUnitTestThread
             /// </summary>
             /// 
 
-            Debug.WriteLine("The type of exception thrown should be ThreadStateException");
+            OutputHelper.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
             Assert.Throws(typeof(Exception), () => { newThread1.Join(); });
         }
@@ -955,7 +955,7 @@ namespace NFUnitTestThread
             /// </summary>
             /// 
 
-            Debug.WriteLine("The type of exception thrown should be ThreadStateException");
+            OutputHelper.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
             Assert.Throws(typeof(Exception), () => { newThread1.Suspend(); });
         }
@@ -970,7 +970,7 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("The type of exception thrown should be ThreadStateException");
+            OutputHelper.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
             Assert.Throws(typeof(Exception), () => { newThread1.Resume(); });
         }
@@ -993,8 +993,8 @@ namespace NFUnitTestThread
             /// </summary>
             /// 
 
-            Debug.WriteLine("Starting a thread , Thread.Sleep(0) on the main thread");
-            Debug.WriteLine("Verify the thread is immediately scheduled to execute");
+            OutputHelper.WriteLine("Starting a thread , Thread.Sleep(0) on the main thread");
+            OutputHelper.WriteLine("Verify the thread is immediately scheduled to execute");
             sleepZero = true;
             Thread t1 = new Thread(new ThreadStart(SleepTest));
             t1.Start();
@@ -1003,12 +1003,12 @@ namespace NFUnitTestThread
             Thread.Sleep(0);
             if (!sleepResult)
             {
-                Debug.WriteLine("Test Thread.Sleep(0) Failed");
+                OutputHelper.WriteLine("Test Thread.Sleep(0) Failed");
                 throw new Exception("Test Thread.Sleep(0) Failed");
             }
             else
             {
-                Debug.WriteLine("Test Thread.Sleep(0) Successful");
+                OutputHelper.WriteLine("Test Thread.Sleep(0) Successful");
             }
             sleepZero = false;
         }
@@ -1025,9 +1025,9 @@ namespace NFUnitTestThread
             ///
 
             const double acceptedTolerance = 5.0; // 5% tolerance
-            Debug.WriteLine("Starts five threads of increasing priority and ");
-            Debug.WriteLine("a control thread priority not set ");
-            Debug.WriteLine("verifies that they get increasing amounts of attention");
+            OutputHelper.WriteLine("Starts five threads of increasing priority and ");
+            OutputHelper.WriteLine("a control thread priority not set ");
+            OutputHelper.WriteLine("verifies that they get increasing amounts of attention");
 
             PriorityTest.loopSwitch.Reset();
             PriorityTest.startSecond.Reset();
@@ -1046,7 +1046,7 @@ namespace NFUnitTestThread
             threadAbove.Priority = ThreadPriority.AboveNormal;
             threadHighest.Priority = ThreadPriority.Highest;
 
-            Debug.WriteLine("Starting Threads");
+            OutputHelper.WriteLine("Starting Threads");
             threadHighest.Start();
             threadAbove.Start();
             threadNorm.Start();
@@ -1054,41 +1054,41 @@ namespace NFUnitTestThread
             threadLowest.Start();
             threadControl.Start();
 
-            Debug.WriteLine("Allow counting for 1 seconds.");
+            OutputHelper.WriteLine("Allow counting for 1 seconds.");
             Thread.Sleep(1000);
             PriorityTest.loopSwitch.Set();
             Thread.Sleep(1000);
 
-            Debug.WriteLine("Lowest         " + PriorityTest.resultLowest);
-            Debug.WriteLine("Below          " + PriorityTest.resultBelow);
-            Debug.WriteLine("Normal         " + PriorityTest.resultNorm);
-            Debug.WriteLine("Above          " + PriorityTest.resultAbove);
-            Debug.WriteLine("Highest        " + PriorityTest.resultHighest);
-            Debug.WriteLine("Control Thread " + PriorityTest.resultControl);
+            OutputHelper.WriteLine("Lowest         " + PriorityTest.resultLowest);
+            OutputHelper.WriteLine("Below          " + PriorityTest.resultBelow);
+            OutputHelper.WriteLine("Normal         " + PriorityTest.resultNorm);
+            OutputHelper.WriteLine("Above          " + PriorityTest.resultAbove);
+            OutputHelper.WriteLine("Highest        " + PriorityTest.resultHighest);
+            OutputHelper.WriteLine("Control Thread " + PriorityTest.resultControl);
 
             threadLowest.Priority = ThreadPriority.BelowNormal;
             threadBelow.Priority = ThreadPriority.Normal;
             threadNorm.Priority = ThreadPriority.AboveNormal;
             threadAbove.Priority = ThreadPriority.Highest;
             threadHighest.Priority = ThreadPriority.Lowest;
-            Debug.WriteLine("Thread Priorities of each thread changed");
-            Debug.WriteLine("Allow counting for 1 seconds.");
+            OutputHelper.WriteLine("Thread Priorities of each thread changed");
+            OutputHelper.WriteLine("Allow counting for 1 seconds.");
 
             PriorityTest.startSecond.Set();
             Thread.Sleep(1000);
             PriorityTest.keepAlive.Set();
             Thread.Sleep(1000);
 
-            Debug.WriteLine("Lowest - > Below   " + PriorityTest.resultNewLowest);
-            Debug.WriteLine("Below - > Normal   " + PriorityTest.resultNewBelow);
-            Debug.WriteLine("Normal - > Above   " + PriorityTest.resultNewNorm);
-            Debug.WriteLine("Above - > Highest  " + PriorityTest.resultNewAbove);
-            Debug.WriteLine("Highest - > Lowest " + PriorityTest.resultNewHighest);
-            Debug.WriteLine("Control Thread     " + PriorityTest.resultNewControl);
+            OutputHelper.WriteLine("Lowest - > Below   " + PriorityTest.resultNewLowest);
+            OutputHelper.WriteLine("Below - > Normal   " + PriorityTest.resultNewBelow);
+            OutputHelper.WriteLine("Normal - > Above   " + PriorityTest.resultNewNorm);
+            OutputHelper.WriteLine("Above - > Highest  " + PriorityTest.resultNewAbove);
+            OutputHelper.WriteLine("Highest - > Lowest " + PriorityTest.resultNewHighest);
+            OutputHelper.WriteLine("Control Thread     " + PriorityTest.resultNewControl);
 
-            Debug.WriteLine("Verifies that each thread recieves attention less than or equal");
-            Debug.WriteLine("to higher priority threads based on the newly assigned priorities.");
-            Debug.WriteLine("Accepted Tolerance : " + acceptedTolerance + "%");
+            OutputHelper.WriteLine("Verifies that each thread recieves attention less than or equal");
+            OutputHelper.WriteLine("to higher priority threads based on the newly assigned priorities.");
+            OutputHelper.WriteLine("Accepted Tolerance : " + acceptedTolerance + "%");
 
             if ((PriorityTest.resultNewHighest <= 0) ||
                 (Tolerance(2 * PriorityTest.resultNewHighest, PriorityTest.resultNewLowest) > acceptedTolerance) ||
@@ -1097,12 +1097,12 @@ namespace NFUnitTestThread
                 (Tolerance(2 * PriorityTest.resultNewNorm, PriorityTest.resultNewAbove) > acceptedTolerance) ||
                 (Tolerance(PriorityTest.resultNewBelow, PriorityTest.resultNewControl) > acceptedTolerance))
             {
-                Debug.WriteLine("NewHighest thread should execute at least once, got " + PriorityTest.resultNewHighest);
-                Debug.WriteLine("Deviation b/n 2*NewHighest and NewLowest " + Tolerance(2 * PriorityTest.resultNewHighest, PriorityTest.resultNewLowest));
-                Debug.WriteLine("Deviation b/n 2*NewLowest and NewBelow " + Tolerance(2 * PriorityTest.resultNewLowest, PriorityTest.resultNewBelow));
-                Debug.WriteLine("Deviation b/n 2*NewBelow and NewNorm " + Tolerance(2 * PriorityTest.resultNewBelow, PriorityTest.resultNewNorm));
-                Debug.WriteLine("Deviation b/n 2*NewNorm and NewAbove " + Tolerance(2 * PriorityTest.resultNewNorm, PriorityTest.resultNewAbove));
-                Debug.WriteLine("Deviation b/n NewBelow and Control " + Tolerance(PriorityTest.resultNewBelow, PriorityTest.resultNewControl));
+                OutputHelper.WriteLine("NewHighest thread should execute at least once, got " + PriorityTest.resultNewHighest);
+                OutputHelper.WriteLine("Deviation b/n 2*NewHighest and NewLowest " + Tolerance(2 * PriorityTest.resultNewHighest, PriorityTest.resultNewLowest));
+                OutputHelper.WriteLine("Deviation b/n 2*NewLowest and NewBelow " + Tolerance(2 * PriorityTest.resultNewLowest, PriorityTest.resultNewBelow));
+                OutputHelper.WriteLine("Deviation b/n 2*NewBelow and NewNorm " + Tolerance(2 * PriorityTest.resultNewBelow, PriorityTest.resultNewNorm));
+                OutputHelper.WriteLine("Deviation b/n 2*NewNorm and NewAbove " + Tolerance(2 * PriorityTest.resultNewNorm, PriorityTest.resultNewAbove));
+                OutputHelper.WriteLine("Deviation b/n NewBelow and Control " + Tolerance(PriorityTest.resultNewBelow, PriorityTest.resultNewControl));
                 throw new Exception("Failed to change priority");
             }
         }
@@ -1116,16 +1116,16 @@ namespace NFUnitTestThread
             /// </summary>
             /// 
 
-            Debug.WriteLine("Starting the Thread");
+            OutputHelper.WriteLine("Starting the Thread");
             Work w = new Work();
             w.m_data = 7;
             Thread newThread1 = new Thread(w.DoMoreWork);
             newThread1.Start();
             Thread.Sleep(1);
-            Debug.WriteLine("verifying Thread.CurrentThread gives the Thread itself");
+            OutputHelper.WriteLine("verifying Thread.CurrentThread gives the Thread itself");
             if (!newThread1.Equals(w.currThread))
             {
-                Debug.WriteLine("Comparing the Thread with its own (Thread.Equals(Thread.CurrentThread)) failed");
+                OutputHelper.WriteLine("Comparing the Thread with its own (Thread.Equals(Thread.CurrentThread)) failed");
                 throw new Exception("Comparing the Thread with its own (Thread.Equals(Thread.CurrentThread)) failed");
             }
         }
@@ -1139,13 +1139,13 @@ namespace NFUnitTestThread
         //    /// </summary>
         //    /// 
 
-        //    Debug.WriteLine("Getting the AppDomain");
+        //    OutputHelper.WriteLine("Getting the AppDomain");
         //    AppDomain domain = Thread.GetDomain();
-        //    Debug.WriteLine("Verifying the domain");
+        //    OutputHelper.WriteLine("Verifying the domain");
 
         //    if (!domain.Equals(AppDomain.CurrentDomain))
         //    {
-        //        Debug.WriteLine("Thread.GetDomain().Equals(AppDomain.CurrentDomain) Failed");
+        //        OutputHelper.WriteLine("Thread.GetDomain().Equals(AppDomain.CurrentDomain) Failed");
         //        throw new Exception("Thread.GetDomain().Equals(AppDomain.CurrentDomain) Failed");
         //    }
         //}
@@ -1159,34 +1159,34 @@ namespace NFUnitTestThread
                 delegate
                 {
                     count += 2;
-                    Debug.WriteLine("2) Worker thread started...");
-                    Debug.WriteLine("Suspending Worker thread...");
+                    OutputHelper.WriteLine("2) Worker thread started...");
+                    OutputHelper.WriteLine("Suspending Worker thread...");
                     Thread.CurrentThread.Suspend();
-                    Debug.WriteLine("4) Worker thread resumed...");
+                    OutputHelper.WriteLine("4) Worker thread resumed...");
                     count += 5;
                 }
                 ));
 
             if (count != 0)
             {
-                Debug.WriteLine("Failure verifying counter reset to zero before starting the thread");
+                OutputHelper.WriteLine("Failure verifying counter reset to zero before starting the thread");
                 throw new Exception("Failure verifying counter reset to zero before starting the thread");
             }
-            Debug.WriteLine("1) Starting worker...");
+            OutputHelper.WriteLine("1) Starting worker...");
             newThread.Start();
             Thread.Sleep(3000);
             if (count != 2)
             {
-                Debug.WriteLine("Failure : Worker Thread is not Suspended !");
+                OutputHelper.WriteLine("Failure : Worker Thread is not Suspended !");
                 throw new Exception("Failure : Worker Thread is not Suspended !");
             }
-            Debug.WriteLine("3) Wake up suspended thread...");
+            OutputHelper.WriteLine("3) Wake up suspended thread...");
             newThread.Resume();
             Thread.Sleep(3000);
-            Debug.WriteLine("5) Main thread finished");
+            OutputHelper.WriteLine("5) Main thread finished");
             if (count != 7)
             {
-                Debug.WriteLine("Worker thread not finished for 3000msec after resumed");
+                OutputHelper.WriteLine("Worker thread not finished for 3000msec after resumed");
                 throw new Exception("Worker thread not finished for 3000msec after resumed");
             }
         }

@@ -21,7 +21,7 @@ namespace NFUnitTestSystemLib
             {
                 if (m_hasFinalized1 == false)
                 {
-                    Debug.WriteLine("First finalization");
+                    OutputHelper.WriteLine("First finalization");
 
                     // Put this object back into a root by creating
                     // a reference to it.
@@ -36,7 +36,7 @@ namespace NFUnitTestSystemLib
                 }
                 else
                 {
-                    Debug.WriteLine("Second finalization");
+                    OutputHelper.WriteLine("Second finalization");
                     m_hasFinalized2 = true;
                 }
             }
@@ -58,16 +58,16 @@ namespace NFUnitTestSystemLib
         //    /// 6. Verify that object has been collected
         //    /// </summary>
         //    ///
-        //    Debug.WriteLine("Tests ReRegisterForFinalize");
-        //    Debug.WriteLine("Create a FinalizeObject.");
+        //    OutputHelper.WriteLine("Tests ReRegisterForFinalize");
+        //    OutputHelper.WriteLine("Create a FinalizeObject.");
         //    FinalizeObject mfo = new FinalizeObject();
         //    m_hasFinalized1 = false;
         //    m_hasFinalized2 = false;
 
-        //    Debug.WriteLine("Release reference");
+        //    OutputHelper.WriteLine("Release reference");
         //    mfo = null;
 
-        //    Debug.WriteLine("Allow GC");
+        //    OutputHelper.WriteLine("Allow GC");
         //    GC.WaitForPendingFinalizers();
         //    int sleepTime = 1000;
         //    int slept = 0;
@@ -76,14 +76,14 @@ namespace NFUnitTestSystemLib
         //        System.Threading.Thread.Sleep(10);
         //        slept += 10;
         //    }
-        //    Debug.WriteLine("GC took " + slept);
+        //    OutputHelper.WriteLine("GC took " + slept);
 
         //    // At this point mfo will have gone through the first Finalize.
         //    // There should now be a reference to mfo in the static
         //    // FinalizeObject.m_currentInstance field.  Setting this value
         //    // to null and forcing another garbage collection will now
         //    // cause the object to Finalize permanently.
-        //    Debug.WriteLine("Reregister and allow for GC");
+        //    OutputHelper.WriteLine("Reregister and allow for GC");
         //    FinalizeObject.m_currentInstance = null;
         //    GC.WaitForPendingFinalizers();
         //    sleepTime = 1000;
@@ -93,7 +93,7 @@ namespace NFUnitTestSystemLib
         //        System.Threading.Thread.Sleep(10);
         //        slept += 10;
         //    }
-        //    Debug.WriteLine("GC took " + slept);
+        //    OutputHelper.WriteLine("GC took " + slept);
 
         //    m_Test1Result = m_hasFinalized2;
         //    Assert.True(m_hasFinalized2);
@@ -110,17 +110,17 @@ namespace NFUnitTestSystemLib
         //    /// 6. Verify that object has not been collected
         //    /// </summary>
         //    ///
-        //    Debug.WriteLine("Tests SuppressFinalize");
-        //    Debug.WriteLine("Create a FinalizeObject.");
+        //    OutputHelper.WriteLine("Tests SuppressFinalize");
+        //    OutputHelper.WriteLine("Create a FinalizeObject.");
         //    FinalizeObject mfo = new FinalizeObject();
         //    m_hasFinalized1 = false;
         //    m_hasFinalized2 = false;
 
-        //    Debug.WriteLine("Releasing");
+        //    OutputHelper.WriteLine("Releasing");
         //    System.GC.SuppressFinalize(mfo);
         //    mfo = null;
 
-        //    Debug.WriteLine("Allow GC");
+        //    OutputHelper.WriteLine("Allow GC");
         //    GC.WaitForPendingFinalizers();
         //    int sleepTime = 1000;
         //    int slept = 0;
@@ -129,7 +129,7 @@ namespace NFUnitTestSystemLib
         //        System.Threading.Thread.Sleep(10);
         //        slept += 10;
         //    }
-        //    Debug.WriteLine("GC took " + slept);
+        //    OutputHelper.WriteLine("GC took " + slept);
 
         //    Assert.False(m_hasFinalized1);
         //}
@@ -145,26 +145,26 @@ namespace NFUnitTestSystemLib
         //    /// 6. Verify that object has not been collected
         //    /// </summary>
         //    ///
-        //    Debug.WriteLine("Tests WaitForPendingFinalizers, dependant on test 1");
-        //    Debug.WriteLine("will auto-fail if test 1 fails.");
+        //    OutputHelper.WriteLine("Tests WaitForPendingFinalizers, dependant on test 1");
+        //    OutputHelper.WriteLine("will auto-fail if test 1 fails.");
         //    Assert.True(m_Test1Result);
 
-        //    Debug.WriteLine("Create a FinalizeObject.");
+        //    OutputHelper.WriteLine("Create a FinalizeObject.");
         //    FinalizeObject mfo = new FinalizeObject();
         //    m_hasFinalized1 = false;
         //    m_hasFinalized2 = false;
 
-        //    Debug.WriteLine("Releasing");
+        //    OutputHelper.WriteLine("Releasing");
         //    mfo = null;
 
-        //    Debug.WriteLine("Wait for GC");
+        //    OutputHelper.WriteLine("Wait for GC");
         //    GC.WaitForPendingFinalizers();
         //    System.GC.WaitForPendingFinalizers();
 
-        //    Debug.WriteLine("Releasing again");
+        //    OutputHelper.WriteLine("Releasing again");
         //    FinalizeObject.m_currentInstance = null;
 
-        //    Debug.WriteLine("Wait for GC");
+        //    OutputHelper.WriteLine("Wait for GC");
         //    GC.WaitForPendingFinalizers();
         //    System.GC.WaitForPendingFinalizers();
 

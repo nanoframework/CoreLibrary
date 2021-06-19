@@ -45,8 +45,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseSByte_Test_1()
         {
-            Debug.WriteLine("SByte MinValue = " + SByte.MinValue.ToString());
-            Debug.WriteLine("SByte MaxValue = " + SByte.MaxValue.ToString());
+            OutputHelper.WriteLine("SByte MinValue = " + SByte.MinValue.ToString());
+            OutputHelper.WriteLine("SByte MaxValue = " + SByte.MaxValue.ToString());
 
             String[] strArr = GetRandomStringArray(SByte.MaxValue, true);
             SByte[] _sByte = new SByte[intArr.Length];
@@ -66,8 +66,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseByte_Test_2()
         {
-            Debug.WriteLine("Byte MinValue = " + Byte.MinValue.ToString());
-            Debug.WriteLine("Byte MaxValue = " + Byte.MaxValue.ToString());
+            OutputHelper.WriteLine("Byte MinValue = " + Byte.MinValue.ToString());
+            OutputHelper.WriteLine("Byte MaxValue = " + Byte.MaxValue.ToString());
 
             String[] strArr = GetRandomStringArray(Byte.MaxValue, false);
             Byte[] _byte = new Byte[intArr.Length];
@@ -87,8 +87,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseInt16_Test_3()
         {
-            Debug.WriteLine("Int16 MinValue = " + Int16.MinValue.ToString());
-            Debug.WriteLine("Int16 MaxValue = " + Int16.MaxValue.ToString());
+            OutputHelper.WriteLine("Int16 MinValue = " + Int16.MinValue.ToString());
+            OutputHelper.WriteLine("Int16 MaxValue = " + Int16.MaxValue.ToString());
 
             String[] strArr = GetRandomStringArray(Int16.MaxValue, true);
             Int16[] _int16 = new Int16[intArr.Length];
@@ -107,8 +107,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseUInt16_Test_4()
         {
-            Debug.WriteLine("UInt16 MinValue = " + UInt16.MinValue.ToString());
-            Debug.WriteLine("UInt16 MaxValue = " + UInt16.MaxValue.ToString());
+            OutputHelper.WriteLine("UInt16 MinValue = " + UInt16.MinValue.ToString());
+            OutputHelper.WriteLine("UInt16 MaxValue = " + UInt16.MaxValue.ToString());
 
 
             String[] strArr = GetRandomStringArray(UInt16.MaxValue, false);
@@ -129,8 +129,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseInt32_Test_5()
         {
-            Debug.WriteLine("Int32 MinValue = " + Int32.MinValue.ToString());
-            Debug.WriteLine("Int32 MaxValue = " + Int32.MaxValue.ToString());
+            OutputHelper.WriteLine("Int32 MinValue = " + Int32.MinValue.ToString());
+            OutputHelper.WriteLine("Int32 MaxValue = " + Int32.MaxValue.ToString());
 
 
             String[] strArr = GetRandomStringArray(Int32.MaxValue, true);
@@ -164,8 +164,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseUInt32_Test_6()
         {
-            Debug.WriteLine("UInt32 MinValue = " + UInt32.MinValue.ToString());
-            Debug.WriteLine("UInt32 MaxValue = " + UInt32.MaxValue.ToString());
+            OutputHelper.WriteLine("UInt32 MinValue = " + UInt32.MinValue.ToString());
+            OutputHelper.WriteLine("UInt32 MaxValue = " + UInt32.MaxValue.ToString());
 
             Random random = new Random();
             String[] strArr = new String[] { "0", "-0","+0",
@@ -192,8 +192,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseInt64_Test_7()
         {
-            Debug.WriteLine("Int64 MinValue = " + Int64.MinValue.ToString());
-            Debug.WriteLine("Int64 MaxValue = " + Int64.MaxValue.ToString());
+            OutputHelper.WriteLine("Int64 MinValue = " + Int64.MinValue.ToString());
+            OutputHelper.WriteLine("Int64 MaxValue = " + Int64.MaxValue.ToString());
 
             Random random = new Random();
             String[] strArr = new String[] { "0", "-0","+0",
@@ -257,8 +257,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseUInt64_Test_8()
         {
-            Debug.WriteLine("UInt64 MinValue = " + UInt64.MinValue.ToString());
-            Debug.WriteLine("UInt64 MaxValue = " + UInt64.MaxValue.ToString());
+            OutputHelper.WriteLine("UInt64 MinValue = " + UInt64.MinValue.ToString());
+            OutputHelper.WriteLine("UInt64 MaxValue = " + UInt64.MaxValue.ToString());
 
             Random random = new Random();
             String[] strArr = new String[] { "0", "-0","+0",
@@ -892,7 +892,7 @@ namespace NFUnitTestSystemLib
             //Assert.Throws(typeof(InvalidCastException), () => {
             //    int i = (int)o_guid;
             //}, "Trying to cast Guid to int - should throw InvalidCastException");
-            Assert.SkipTest("test of casting guid disabled");
+            Assert.SkipTest("test of casting guid to int disabled");
         }
 
     }
