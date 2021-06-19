@@ -2,7 +2,19 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-alpha.150.10...HEAD)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.13...HEAD)
+
+**Implemented enhancements:**
+
+- Add Contains, StartsWith, EndsWith to String [\#148](https://github.com/nanoframework/CoreLibrary/pull/148)
+
+**Documentation and other chores:**
+
+- New unit tests for String.Format  and number-type.ToString\(\) [\#146](https://github.com/nanoframework/CoreLibrary/pull/146)
+
+## [v1.10.5-preview.13](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.13) (2021-06-07)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-alpha.150.10...v1.10.5-preview.13)
 
 **Fixed bugs:**
 
