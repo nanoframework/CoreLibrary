@@ -829,5 +829,81 @@ namespace System
         {
             return value == null || value.Length == 0;
         }
+
+        /// <summary>
+        /// Returns a value indicating whether a specified substring occurs within this string.
+        /// </summary>
+        /// <param name="value">The string to seek.</param>
+        /// <returns><see langword="true"/> if the <paramref name="value"/> parameter occurs within this string, or if <paramref name="value"/> is the empty string (""); otherwise, <see langword="false"/>.</returns>
+        public bool Contains(string value)
+        {
+            if (value == Empty)
+            {
+                return true;
+            }
+
+            return IndexOf(value) >= 0;
+        }
+
+        /// <summary>
+        /// Determines whether the beginning of this string instance matches the specified string.
+        /// </summary>
+        /// <param name="value">The string to compare.</param>
+        /// <returns><see langword="true"/> if <paramref name="value"/> matches the beginning of this string; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        public bool StartsWith(string value)
+        {
+            if ((object)value == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if ((object)this == value)
+            {
+                return true;
+            }
+
+            if (value.Length == 0)
+            {
+                return true;
+            }
+
+            if (Length < value.Length)
+            {
+                return false;
+            }
+
+            return Compare(
+                Substring(0, value.Length),
+                value) == 0;
+        }
+
+        /// <summary>
+        /// Determines whether the end of this string instance matches the specified string.
+        /// </summary>
+        /// <param name="value">The string to compare to the substring at the end of this instance.</param>
+        /// <returns><see langword="true"/> if <paramref name="value"/> matches the end of this instance; otherwise, <see langword="false"/>.</returns>
+        public bool EndsWith(string value)
+        {
+            if ((object)value == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if ((object)this == value)
+            {
+                return true;
+            }
+
+            if (value.Length == 0)
+            {
+                return true;
+            }
+
+            return Length >= value.Length
+                   && (Compare(
+                       Substring(Length - value.Length),
+                       value) == 0);
+        }
     }
 }
