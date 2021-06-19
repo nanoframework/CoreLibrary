@@ -329,26 +329,654 @@ namespace NFUnitTestSystemLib
         public void FormatWithNull()
         {
             object nullObject = null;
-            Assert.Equal(String.Format("The value is {0}", nullObject), "The value is ", 
+            Assert.Equal(String.Format("The value is {0}", nullObject), "The value is ",
                 "String.Format should treat a null argument as an empty string");
-            Assert.Equal(String.Format("The value with formatter is {0:d}", nullObject), "The value with formatter is ", 
+            Assert.Equal(String.Format("The value with formatter is {0:d}", nullObject), "The value with formatter is ",
                 "String.Format should treat a null argument as an empty string when used with formatters.");
-            Assert.Equal(String.Format("First parm: '{0}' second parm: '{1}'", new object[] { nullObject, 32 }), "First parm: '' second parm: '32'", 
+            Assert.Equal(String.Format("First parm: '{0}' second parm: '{1}'", new object[] { nullObject, 32 }), "First parm: '' second parm: '32'",
                 "Formatting with two parms should also work");
             Assert.Equal($"the value is {nullObject}", "the value is ", "Interpolated strings should use string.format and work correctly");
         }
-    }
 
-    /// <summary>
-    /// A class whose ToString method return null
-    /// </summary>
-    public class ToStringReturnsNull
-    {
-        public override string ToString()
+        [TestMethod]
+        public void Contains_String()
         {
-            return null;
+            Debug.WriteLine("Test of Contains");
+
+            string s = "Hello";
+            string value = "ello";
+            Assert.True(s.Contains(value));
+
+            value = "";
+            Assert.True(s.Contains(value));
+
+            value = "hello";
+            Assert.False(s.Contains(value));
+
+            value = "ELL";
+            Assert.False(s.Contains(value));
+
+            value = "Larger Hello";
+            Assert.False(s.Contains(value));
+
+            value = "Goodbye";
+            Assert.False(s.Contains(value));
+
+            value = "";
+            Assert.True(value.Contains(value));
+
+            string s1 = "456";
+            Assert.True(s1.Contains(s1));
+        }
+
+        [TestMethod]
+        public void ZeroLengthContains_StringComparison()
+        {
+            Debug.WriteLine("Test of Zero Length Contains");
+
+            var a = new char[3];
+
+            string s1 = new string(a);
+            string s2 = new string(a, 2, 0);
+            Assert.True(s1.Contains(s2));
+
+            s1 = string.Empty;
+            Assert.True(s1.Contains(s2));
+
+            var span = new string(a);
+            var emptySlice = new string(a, 2, 0);
+            Assert.True(span.Contains(emptySlice));
+
+            Assert.True(span.Contains(emptySlice));
+
+            span = string.Empty;
+            Assert.True(span.Contains(emptySlice));
+        }
+
+        [TestMethod]
+        public void ContainsMatch_StringComparison()
+        {
+            Debug.WriteLine("Test of Contains match");
+
+            string value = "456";
+
+            string s1 = value.Substring(0, 3);
+            string s2 = value.Substring(0, 2);
+            Assert.True(s1.Contains(s2));
+        }
+
+        [TestMethod]
+        public void ContainsMatchDifferentSpans_StringComparison()
+        {
+            Debug.WriteLine("Test of Contains match with differnet lengths");
+
+            string value1 = "4567";
+            string value2 = "456";
+
+            string s1 = value1.Substring(0, 3);
+            string s2 = value2.Substring(0, 3);
+            Assert.True(s1.Contains(s2));
+        }
+
+        [TestMethod]
+        public void ContainsNoMatch_StringComparison()
+        {
+            Debug.WriteLine("Test of Contains with no match");
+
+            for (int length = 1; length < 150; length++)
+            {
+                for (int mismatchIndex = 0; mismatchIndex < length; mismatchIndex++)
+                {
+                    var first = new char[length];
+                    var second = new char[length];
+                    for (int i = 0; i < length; i++)
+                    {
+                        first[i] = second[i] = (char)(i + 1);
+                    }
+
+                    second[mismatchIndex] = (char)(second[mismatchIndex] + 1);
+
+                    string s1 = new(first);
+                    string s2 = new(second);
+                    Assert.False(s1.Contains(s2));
+
+                    Assert.Equal(
+                        s1.StartsWith(s2),
+                        s1.Contains(s2));
+                }
+            }
+        }
+
+        [TestMethod]
+        public void MakeSureNoContainsChecksGoOutOfRange_StringComparison()
+        {
+            Debug.WriteLine("Test of Contains with no match out of range");
+
+            for (int length = 0; length < 100; length++)
+            {
+                var first = new char[length + 2];
+                first[0] = (char)99;
+                first[length + 1] = (char)99;
+                var second = new char[length + 2];
+                second[0] = (char)100;
+                second[length + 1] = (char)100;
+
+                string s1 = new(first, 1, length);
+                string s2 = new(second, 1, length);
+
+                // Contains either works or throws ArgumentOutOfRangeException
+                try
+                {
+                    Assert.True(s1.Contains(s2));
+                }
+                catch(ArgumentOutOfRangeException)
+                {
+                    // this is the intended outcome at some point
+                    Assert.True(true);
+                }
+            }
+        }
+
+        [TestMethod]
+        public static void StartsWith_StringComparison()
+        {
+            Debug.WriteLine("Test of StartsWith");
+
+            string s = "Hello";
+            string value = "H";
+
+            Assert.True(s.StartsWith(value));
+
+            value = "Hel";
+            Assert.True(s.StartsWith(value));
+
+            value = "Hello";
+            Assert.True(s.StartsWith(value));
+
+            value = "";
+            Assert.True(s.StartsWith(value));
+
+            value = "Hello Larger";
+            Assert.False(s.StartsWith(value));
+
+            value = "HEL";
+            Assert.False(s.StartsWith(value));
+
+            value = "Abc";
+            Assert.False(s.StartsWith(value));
+
+            s = "";
+            value = "Hello";
+            Assert.False(s.StartsWith(value));
+
+            s = "abcdefghijklmnopqrstuvwxyz";
+            value = "abcdefghijklmnopqrstuvwxyz";
+            Assert.True(s.StartsWith(value));
+
+            value = "abcdefghijklmnopqrstuvwx";
+            Assert.True(s.StartsWith(value));
+
+            value = "abcdefghijklm";
+            Assert.True(s.StartsWith(value));
+
+            value = "ab_defghijklmnopqrstu";
+            Assert.False(s.StartsWith(value));
+
+            value = "abcdef_hijklmn";
+            Assert.False(s.StartsWith(value));
+
+            value = "abcdefghij_lmn";
+            Assert.False(s.StartsWith(value));
+
+            value = "a";
+            Assert.True(s.StartsWith(value));
+
+            value = "abcdefghijklmnopqrstuvwxyza";
+            Assert.False(s.StartsWith(value));
+        }
+
+        [TestMethod]
+        public static void StartsWith_NullInStrings()
+        {
+            Debug.WriteLine("Test of StartsWith with null strings");
+
+            Assert.False("\0test".StartsWith("test"));
+            Assert.False("te\0st".StartsWith("test"));
+            Assert.True("te\0st".StartsWith("te\0s"));
+            Assert.True("test\0".StartsWith("test"));
+            Assert.True("test".StartsWith("te\0"));
+        }
+
+        [TestMethod]
+        public static void StartsWith_Invalid()
+        {
+            Debug.WriteLine("Test of invalid StartsWith");
+
+            string s = "Hello";
+
+            // Value is null
+            Assert.Throws(typeof(ArgumentNullException), () => { s.StartsWith(null); });
+        }
+
+        [TestMethod]
+        public static void ZeroLengthStartsWith_Char()
+        {
+            Debug.WriteLine("Test of StartsWith with zero length char");
+
+            var a = new char[3];
+
+            string s1 = new(a);
+            string s2 = new(a, 2, 0);
+            bool b = s1.StartsWith(s2);
+            Assert.True(b);
+        }
+
+        [TestMethod]
+        public static void EndsWith_Invalid()
+        {
+            Debug.WriteLine("Test of invalid EndsWith");
+
+            string s = "Hello";
+
+            // Value is null
+            Assert.Throws(typeof(ArgumentNullException), () => { s.EndsWith(null); });
+        }
+
+        [TestMethod]
+        public static void SameSpanStartsWith_Char()
+        {
+            Debug.WriteLine("Test of StartsWith with self");
+
+            string s1 = "456";
+
+            Assert.True(s1.StartsWith(s1));
+        }
+
+        [TestMethod]
+        public static void LengthMismatchStartsWith_Char()
+        {
+            Debug.WriteLine("Test of StartsWith with length mismatch and chars");
+
+            char[] a = { '4', '5', '6' };
+
+            string s1 = new string(a, 0, 2);
+            string s2 = new string(a, 0, 3);
+            bool b = s1.StartsWith(s2);
+            Assert.False(b);
+        }
+
+        [TestMethod]
+        public static void StartsWithMatch_Char()
+        {
+            Debug.WriteLine("Test of StartsWith with matching chars");
+
+            char[] a = { '4', '5', '6' };
+
+            string s1 = new(a, 0, 3);
+            string s2 = new(a, 0, 2);
+            bool b = s1.StartsWith(s2);
+            Assert.True(b);
+        }
+
+        [TestMethod]
+        public static void StartsWithNoMatch_Char()
+        {
+            Debug.WriteLine("Test of StartsWith with no matching chars");
+
+            for (int length = 1; length < 32; length++)
+            {
+                for (int mismatchIndex = 0; mismatchIndex < length; mismatchIndex++)
+                {
+                    var first = new char[length];
+                    var second = new char[length];
+                    for (int i = 0; i < length; i++)
+                    {
+                        first[i] = second[i] = (char)(i + 1);
+                    }
+
+                    second[mismatchIndex] = (char)(second[mismatchIndex] + 1);
+
+                    string s1 = new(first);
+                    string s2 = new(second);
+                    bool b = s1.StartsWith(s2);
+                    Assert.False(b);
+                }
+            }
+        }
+
+        [TestMethod]
+        public static void MakeSureNoStartsWithChecksGoOutOfRange_Char()
+        {
+            Debug.WriteLine("Test of StartsWith with no matching chars and going out of range");
+
+            for (int length = 0; length < 100; length++)
+            {
+                var first = new char[length + 2];
+                first[0] = '9';
+                first[length + 1] = '9';
+                var second = new char[length + 2];
+                second[0] = 'a';
+                second[length + 1] = 'a';
+
+                string s1 = new(first, 1, length);
+                string s2 = new(second, 1, length);
+                bool b = s1.StartsWith(s2);
+                Assert.True(b);
+            }
+        }
+
+        [TestMethod]
+        public static void ZeroLengthStartsWith_StringComparison()
+        {
+            Debug.WriteLine("Test of StartsWith with zero length");
+
+            var a = new char[3];
+
+            string s1 = new string(a);
+            string s2 = new string(a, 2, 0);
+            Assert.True(s1.StartsWith(s2));
+
+            s1 = string.Empty;
+            Assert.True(s1.StartsWith(s2));
+        }
+
+        [TestMethod]
+        public static void SameSpanStartsWith_StringComparison()
+        {
+            Debug.WriteLine("Test of StartsWith with self");
+
+            string s1 = "456";
+            Assert.True(s1.StartsWith(s1));
+        }
+
+        [TestMethod]
+        public static void LengthMismatchStartsWith_StringComparison()
+        {
+            Debug.WriteLine("Test of StartsWith with length mismatch");
+
+            string value = "456";
+
+            string s1 = value.Substring(0, 2);
+            string s2 = value.Substring(0, 3);
+            Assert.False(s1.StartsWith(s2));
+        }
+
+        [TestMethod]
+        public static void StartsWithMatch_StringComparison()
+        {
+            Debug.WriteLine("Test of StartsWith with match with different lengths");
+
+            string value = "456";
+
+            string s1 = value.Substring(0, 3);
+            string s2 = value.Substring(0, 2);
+            Assert.True(s1.StartsWith(s2));
+        }
+
+        [TestMethod]
+        public static void EndsWith_StringComparison()
+        {
+            Debug.WriteLine("Test of EndsWith");
+
+            string s = "Hello";
+            string value = "o";
+
+            Assert.True(s.EndsWith(value));
+
+            value = "llo";
+            Assert.True(s.EndsWith(value));
+
+            value = "Hello";
+            Assert.True(s.EndsWith(value));
+
+            value = "";
+            Assert.True(s.EndsWith(value));
+
+            value = "Larger Hello";
+            Assert.False(s.EndsWith(value));
+
+            value = "LLO";
+            Assert.False(s.EndsWith(value));
+
+            value = "Abc";
+            Assert.False(s.EndsWith(value));
+
+            value = "a";
+            Assert.False(s.EndsWith(value));
+
+            s = "";
+            value = "";
+            Assert.True(s.EndsWith(value));
+
+            value = "a";
+            Assert.False(s.EndsWith(value));
+        }
+
+        [TestMethod]
+        public static void EndsWith_NullInStrings()
+        {
+            Debug.WriteLine("Test of EndsWith with null strings");
+
+            Assert.True("te\0st".EndsWith("e\0st"));
+            Assert.False("te\0st".EndsWith("test"));
+            Assert.True("test\0".EndsWith("test"));
+            Assert.True("test".EndsWith("\0st"));
+        }
+
+        [TestMethod]
+        public static void ZeroLengthEndsWith_Char()
+        {
+            Debug.WriteLine("Test of EndsWith with chars");
+            
+            var a = new char[3];
+
+            string s1 = new string(a);
+            string s2 = new string(a, 2, 0);
+            bool b = s1.EndsWith(s2);
+            Assert.True(b);
+        }
+
+        [TestMethod]
+        public static void SameSpanEndsWith_Char()
+        {
+            Debug.WriteLine("Test of EndsWith with self");
+
+            string s = "456";
+            bool b = s.EndsWith(s);
+            Assert.True(b);
+        }
+
+        [TestMethod]
+        public static void LengthMismatchEndsWith_Char()
+        {
+            Debug.WriteLine("Test of EndsWith with length mismatch");
+
+            string value = "456";
+
+            string s1 = value.Substring(0, 2);
+            string s2 = value.Substring(0, 3);
+            bool b = s1.EndsWith(s2);
+            Assert.False(b);
+        }
+
+        [TestMethod]
+        public static void EndsWithMatch_Char()
+        {
+            Debug.WriteLine("Test of EndsWith match with chars");
+
+            string value = "456";
+
+            string s1 = value.Substring(0, 3);
+            string s2 = value.Substring(1, 2);
+            bool b = s1.EndsWith(s2);
+            Assert.True(b);
+        }
+
+        [TestMethod]
+        public static void EndsWithNoMatch_Char()
+        {
+            Debug.WriteLine("Test of EndsWith with no match");
+
+            for (int length = 1; length < 32; length++)
+            {
+                for (int mismatchIndex = 0; mismatchIndex < length; mismatchIndex++)
+                {
+                    var first = new char[length];
+                    var second = new char[length];
+                    for (int i = 0; i < length; i++)
+                    {
+                        first[i] = second[i] = (char)(i + 1);
+                    }
+
+                    second[mismatchIndex] = (char)(second[mismatchIndex] + 1);
+
+                    string s1 = new(first);
+                    string s2 = new(second);
+
+                    bool b = s1.EndsWith(s2);
+                    Assert.False(b);
+                }
+            }
+        }
+
+        [TestMethod]
+        public static void ZeroLengthEndsWith_StringComparison()
+        {
+            Debug.WriteLine("Test of EndsWith with zero length");
+
+            var a = new char[3];
+
+            string s1 = new(a);
+            string s2 = new(a, 2, 0);
+            Assert.True(s1.EndsWith(s2));
+
+            s1 = string.Empty;
+            Assert.True(s1.EndsWith(s2));
+        }
+
+        [TestMethod]
+        public static void MakeSureNoEndsWithChecksGoOutOfRange_Char()
+        {
+            Debug.WriteLine("Test of EndsWith with no match and going out of range");
+
+            for (int length = 0; length < 100; length++)
+            {
+                var first = new char[length + 2];
+                first[0] = '9';
+                first[length + 1] = '9';
+                var second = new char[length + 2];
+                second[0] = 'a';
+                second[length + 1] = 'a';
+
+                string s1 = new(first, 1, length);
+                string s2 = new(second, 1, length);
+                bool b = s1.EndsWith(s2);
+                Assert.True(b);
+            }
+        }
+
+        [TestMethod]
+        public static void LengthMismatchEndsWith_StringComparison()
+        {
+            Debug.WriteLine("Test of EndsWith with lenght mismatch");
+
+            string value = "456";
+
+            string s1 = value.Substring(0, 2);
+            string s2 = value.Substring(0, 3);
+            Assert.False(s1.EndsWith(s2));
+        }
+
+        [TestMethod]
+        public static void EndsWithMatch_StringComparison()
+        {
+            Debug.WriteLine("Test of EndsWith with substrings");
+
+            string value = "456";
+
+            string s1 = value.Substring(0, 3);
+            string s2 = value.Substring(1, 2);
+            Assert.True(s1.EndsWith(s2));
+        }
+
+        [TestMethod]
+        public static void EndsWithMatchDifferentSpans_StringComparison()
+        {
+            Debug.WriteLine("Test of EndsWith with natch on different comparisons");
+
+            string value1 = "7456";
+            string value2 = "456";
+
+            string s1 = value1.Substring(1, 3);
+            string s2 = value2.Substring(0, 3);
+            Assert.True(s1.EndsWith(s2));
+        }
+
+        [TestMethod]
+        public static void EndsWithNoMatch_StringComparison()
+        {
+            Debug.WriteLine("Test of EndsWith with no match on different lengths and comparisons");
+
+            for (int length = 1; length < 150; length++)
+            {
+                for (int mismatchIndex = 0; mismatchIndex < length; mismatchIndex++)
+                {
+                    var first = new char[length];
+                    var second = new char[length];
+                    for (int i = 0; i < length; i++)
+                    {
+                        first[i] = second[i] = (char)(i + 1);
+                    }
+
+                    second[mismatchIndex] = (char)(second[mismatchIndex] + 1);
+
+                    string s1 = new(first);
+                    string s2 = new(second);
+                    Assert.False(s1.EndsWith(s2));
+                }
+            }
+        }
+
+        [TestMethod]
+        public static void MakeSureNoEndsWithChecksGoOutOfRange_StringComparison()
+        {
+            Debug.WriteLine("Test of EndsWith with no match and gogin out of range");
+
+            for (int length = 0; length < 100; length++)
+            {
+                var first = new char[length + 2];
+                first[0] = (char)99;
+                first[length + 1] = (char)99;
+                var second = new char[length + 2];
+                second[0] = (char)100;
+                second[length + 1] = (char)100;
+
+                string s1 = new string(first, 1, length);
+                string s2 = new string(second, 1, length);
+                Assert.True(s1.EndsWith(s2));
+            }
+        }
+
+        [TestMethod]
+        public static void EndsWithNoMatchNonOrdinal_StringComparison()
+        {
+            Debug.WriteLine("Test of EndsWith with no match on different ordinal comparisons");
+
+            string s = "dabc";
+            string value = "aDc";
+            Assert.False(s.EndsWith(value));
+        }
+
+        /// <summary>
+        /// A class whose ToString method return null
+        /// </summary>
+        public class ToStringReturnsNull
+        {
+            public override string ToString()
+            {
+                return null;
+            }
         }
     }
-
 }
 
