@@ -35,7 +35,7 @@ namespace NFUnitTestThread
             Thread[] threadArrayInc = new Thread[4];
             for (int i = 0; i < 4; i++)
             {
-                Debug.WriteLine("Attempting to start inc thread " + i);
+                OutputHelper.WriteLine("Attempting to start inc thread " + i);
                 threadArrayInc[i] = new Thread(MonitoredThreadIncrementor);
                 threadArrayInc[i].Start();
                 Thread.Sleep(1);
@@ -51,7 +51,7 @@ namespace NFUnitTestThread
             Thread[] threadArrayDec = new Thread[5];
             for (int i = 0; i < 5; i++)
             {
-                Debug.WriteLine("Attempting to start dec thread " + i);
+                OutputHelper.WriteLine("Attempting to start dec thread " + i);
                 threadArrayDec[i] = new Thread(MonitoredThreadDecrementor);
                 threadArrayDec[i].Start();
                 Thread.Sleep(1);
@@ -67,7 +67,7 @@ namespace NFUnitTestThread
             Thread[] threadArrayInc2 = new Thread[6];
             for (int i = 0; i < 6; i++)
             {
-                Debug.WriteLine("Attempting to start inc2 thread " + i);
+                OutputHelper.WriteLine("Attempting to start inc2 thread " + i);
                 threadArrayInc2[i] = new Thread(MonitoredThreadIncrementor);
                 threadArrayInc2[i].Start();
                 Thread.Sleep(1);
@@ -89,10 +89,10 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Starts several async threads that Enter and Exit critical sections.");
-            Debug.WriteLine("This may erroneously pass.");
-            Debug.WriteLine("This may erroneously fail for extremely slow devices.");
-            Debug.WriteLine("Starting the 4 threads");
+            OutputHelper.WriteLine("Starts several async threads that Enter and Exit critical sections.");
+            OutputHelper.WriteLine("This may erroneously pass.");
+            OutputHelper.WriteLine("This may erroneously fail for extremely slow devices.");
+            OutputHelper.WriteLine("Starting the 4 threads");
             Thread incThread = new Thread(MonitoredThreadIncrementorStarter);
             incThread.Start();
             Thread decThread = new Thread(MonitoredThreadDecrementorStarter);
@@ -102,15 +102,15 @@ namespace NFUnitTestThread
             Thread lastThread = new Thread(MonitoredThreadDecrementor);
             lastThread.Start();
             Thread.Sleep(1);
-            Debug.WriteLine("Joining All threads to main thread");
+            OutputHelper.WriteLine("Joining All threads to main thread");
             incThread.Join();
             decThread.Join();
             inc2Thread.Join();
             lastThread.Join();
-            Debug.WriteLine("Verifying all operations completed successfully");
+            OutputHelper.WriteLine("Verifying all operations completed successfully");
             if (monCount != 4)
             {
-                Debug.WriteLine("expected final result = '4' but got '" + monCount + "'");
+                OutputHelper.WriteLine("expected final result = '4' but got '" + monCount + "'");
                 throw new Exception("expected final result = '4' but got '" + monCount + "'");
             }
         }
@@ -125,8 +125,8 @@ namespace NFUnitTestThread
             /// 2. Verify SynchronizationLockException exception is thrown
             /// </summary>
             ///
-            Debug.WriteLine("Verify SynchronizationLockException exception is thrown");
-            Debug.WriteLine("Calling Monitor.Exit without first calling Monitor.Enter should throw an exception");
+            OutputHelper.WriteLine("Verify SynchronizationLockException exception is thrown");
+            OutputHelper.WriteLine("Calling Monitor.Exit without first calling Monitor.Enter should throw an exception");
             Assert.Throws(typeof(Exception), () => { Monitor.Exit(locker1); });
         }
 
@@ -139,8 +139,8 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("verify ArgumentNullException exception is thrown ");
-            Debug.WriteLine("Calling Monitor.Enter passing null reference parameter should throw exception");
+            OutputHelper.WriteLine("verify ArgumentNullException exception is thrown ");
+            OutputHelper.WriteLine("Calling Monitor.Enter passing null reference parameter should throw exception");
             Assert.Throws(typeof(ArgumentNullException), () => { Monitor.Enter(null); });
 
         }
@@ -153,8 +153,8 @@ namespace NFUnitTestThread
             /// 2. verify ArgumentNullException exception is thrown
             /// </summary>
             ///
-            Debug.WriteLine("verify ArgumentNullException exception is thrown ");
-            Debug.WriteLine("Calling Monitor.Exit passing 'null' reference parameter should throw exception");
+            OutputHelper.WriteLine("verify ArgumentNullException exception is thrown ");
+            OutputHelper.WriteLine("Calling Monitor.Exit passing 'null' reference parameter should throw exception");
             Assert.Throws(typeof(ArgumentNullException), () => { Monitor.Exit(null); });
         }
 
@@ -163,65 +163,65 @@ namespace NFUnitTestThread
         static object locker2 = new object();
         static void RepeatedLock()
         {
-            Debug.WriteLine("T1 = " + DateTime.UtcNow);
+            OutputHelper.WriteLine("T1 = " + DateTime.UtcNow);
             Monitor.Enter(locker2);
             try
             {
                 lockResult = !lockResult;
-                Debug.WriteLine("I have the lock");
+                OutputHelper.WriteLine("I have the lock");
                 Nest();
-                Debug.WriteLine("I still have the lock");
+                OutputHelper.WriteLine("I still have the lock");
             }
             finally
             {
                 if (flag.WaitOne(500, false))
                 {
                     Monitor.Exit(locker2);
-                    Debug.WriteLine("Here the lock is released");
+                    OutputHelper.WriteLine("Here the lock is released");
                 }
             }
-            Debug.WriteLine("T4 = " + DateTime.UtcNow);
+            OutputHelper.WriteLine("T4 = " + DateTime.UtcNow);
         }
 
         static void Nest()
         {
-            Debug.WriteLine("T2 = " + DateTime.UtcNow);
+            OutputHelper.WriteLine("T2 = " + DateTime.UtcNow);
             Monitor.Enter(locker2);
             try
             {
-                Debug.WriteLine("Inside Lock");
+                OutputHelper.WriteLine("Inside Lock");
             }
             finally
             {
                 Monitor.Exit(locker2);
-                Debug.WriteLine("Released the lock? Not quite!");
+                OutputHelper.WriteLine("Released the lock? Not quite!");
             }
-            Debug.WriteLine("T3 = " + DateTime.UtcNow);
+            OutputHelper.WriteLine("T3 = " + DateTime.UtcNow);
         }
 
         [TestMethod]
         public void Monitor5_Repeatedly_Lock_Unlock_Test()
         {
-            Debug.WriteLine("Starts two Threads ");
-            Debug.WriteLine("Repeatedly locks an object by multiple calls to Monitor.Enter");
-            Debug.WriteLine("Verifies the object is unlocked only by a corresponding number of Monitor.Exit");
+            OutputHelper.WriteLine("Starts two Threads ");
+            OutputHelper.WriteLine("Repeatedly locks an object by multiple calls to Monitor.Enter");
+            OutputHelper.WriteLine("Verifies the object is unlocked only by a corresponding number of Monitor.Exit");
             Thread newThread1 = new Thread(RepeatedLock);
             Thread newThread2 = new Thread(RepeatedLock);
-            Debug.WriteLine("Starting two threads, repeatedly locking, waiting and verifying");
+            OutputHelper.WriteLine("Starting two threads, repeatedly locking, waiting and verifying");
             newThread1.Start();
             newThread2.Start();
             Thread.Sleep(100);
             if (!lockResult)
             {
-                Debug.WriteLine("Failure : both threads passed lock");
+                OutputHelper.WriteLine("Failure : both threads passed lock");
                 throw new Exception("Failure : both threads passed lock");                
             }
-            Debug.WriteLine("unlocking the final lock and verifying the waiting thread continues");
+            OutputHelper.WriteLine("unlocking the final lock and verifying the waiting thread continues");
             flag.Set();
             Thread.Sleep(500);
             if (lockResult)
             {
-                Debug.WriteLine("Failure : lock not released by equal number of unlocks");
+                OutputHelper.WriteLine("Failure : lock not released by equal number of unlocks");
                 throw new Exception("Failure : lock not released by equal number of unlocks");
             }
             if (newThread1.IsAlive)

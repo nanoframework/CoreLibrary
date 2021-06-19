@@ -13,16 +13,26 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>TestFramework</RootNamespace>
-    <AssemblyName>TestFramework</AssemblyName>
+    <AssemblyName>nanoFramework.TestFramework</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\nanoFramework.CoreLibrary\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestExtensions.cs" />
     <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestFramework.cs" />
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\OutputHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />

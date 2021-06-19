@@ -73,175 +73,175 @@ namespace NFUnitTestLexical
         [TestMethod]
         public void Lexical_pre_009_Test()
         {
-            Debug.WriteLine("Section 2.3Preprocessing");
-            Debug.WriteLine("Verify #define and #undef");
+            OutputHelper.WriteLine("Section 2.3Preprocessing");
+            OutputHelper.WriteLine("Verify #define and #undef");
             Assert.True(Lexical_TestClass_pre_009.testMethod());
         }
 
         [TestMethod]
         public void Lexical_pre_012_Test()
         {
-            Debug.WriteLine("Section 2.3Preprocessing");
-            Debug.WriteLine("Verify #if operators and parens");
+            OutputHelper.WriteLine("Section 2.3Preprocessing");
+            OutputHelper.WriteLine("Verify #if operators and parens");
             Assert.True(Lexical_TestClass_pre_012.testMethod());
         }
 
         [TestMethod]
         public void Lexical_pre_013_Test()
         {
-            Debug.WriteLine("Section 2.3Preprocessing");
-            Debug.WriteLine("Verify # commands with comments");
+            OutputHelper.WriteLine("Section 2.3Preprocessing");
+            OutputHelper.WriteLine("Verify # commands with comments");
             Assert.True(Lexical_TestClass_pre_013.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_03_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("#define/#undef - verify #define works");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("#define/#undef - verify #define works");
             Assert.True(Lexical_TestClass_preproc_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_04_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("#define/#undef - verify #undef works");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("#define/#undef - verify #undef works");
             Assert.True(Lexical_TestClass_preproc_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_05_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Exact example used in spec definition - 2.3.1");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Exact example used in spec definition - 2.3.1");
             Assert.True(Lexical_TestClass_preproc_05.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_06_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Using #undef on a non-existing identifier compiles fine");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Using #undef on a non-existing identifier compiles fine");
             Assert.True(Lexical_TestClass_preproc_06.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_07_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Nested #if's");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Nested #if's");
             Assert.True(Lexical_TestClass_preproc_07.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_15_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify the ! operator on #identifiers");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify the ! operator on #identifiers");
             Assert.True(Lexical_TestClass_preproc_15.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_16_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify the ! operator on #identifiers with parenthesis");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify the ! operator on #identifiers with parenthesis");
             Assert.True(Lexical_TestClass_preproc_16.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_17_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify the double ampersand operator works");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify the double ampersand operator works");
             Assert.True(Lexical_TestClass_preproc_17.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_18_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify the double ampersand operator works with parentheses");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify the double ampersand operator works with parentheses");
             Assert.True(Lexical_TestClass_preproc_18.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_19_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify the || operator works ");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify the || operator works ");
             Assert.True(Lexical_TestClass_preproc_19.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_20_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify the || operator works with parentheses");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify the || operator works with parentheses");
             Assert.True(Lexical_TestClass_preproc_20.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_21_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify the == operator works with/without parentheses");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify the == operator works with/without parentheses");
             Assert.True(Lexical_TestClass_preproc_21.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_22_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify the != operator works with/without parentheses");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify the != operator works with/without parentheses");
             Assert.True(Lexical_TestClass_preproc_22.testMethod());
         }
         [TestMethod]
         public void Lexical_preproc_23_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Grouping operators: ! double ampersand || != == true false");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Grouping operators: ! double ampersand || != == true false");
             Assert.True(Lexical_TestClass_preproc_23.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_24_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verifying comments and #preprocessor items");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verifying comments and #preprocessor items");
             Assert.True(Lexical_TestClass_preproc_24.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_25_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verifying comments and #preprocessor items");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verifying comments and #preprocessor items");
             Assert.True(Lexical_TestClass_preproc_25.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_31_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verifying comments and #preprocessor items");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verifying comments and #preprocessor items");
             Assert.True(Lexical_TestClass_preproc_31.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_32_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify the usage of #elif");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify the usage of #elif");
             Assert.True(Lexical_TestClass_preproc_32.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_39_Test()
         {
-            Debug.WriteLine("Section 2.3 Preprocessing");
-            Debug.WriteLine("Verify that a # keyword (i.e. for) can be used as a #preprocessor identifier");
+            OutputHelper.WriteLine("Section 2.3 Preprocessing");
+            OutputHelper.WriteLine("Verify that a # keyword (i.e. for) can be used as a #preprocessor identifier");
             Assert.True(Lexical_TestClass_preproc_39.testMethod());
         }
 
@@ -322,11 +322,11 @@ namespace NFUnitTestLexical
         {
             public static void Main_old(String[] args)
             {
-                Debug.WriteLine("Starting!");
+                OutputHelper.WriteLine("Starting!");
 #if TESTDEF
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #else
-                Debug.WriteLine("Bad");
+                OutputHelper.WriteLine("Bad");
 #endif
             }
             public static bool testMethod()
@@ -340,16 +340,16 @@ namespace NFUnitTestLexical
         {
             public static void Main_old(String[] args)
             {
-                Debug.WriteLine("Starting!");
+                OutputHelper.WriteLine("Starting!");
 #if TESTDEF3
-			Debug.WriteLine("TESTDEF3 is defined");
+			OutputHelper.WriteLine("TESTDEF3 is defined");
 #else
-                Debug.WriteLine("TESTDEF3 is not defined");
+                OutputHelper.WriteLine("TESTDEF3 is not defined");
 #endif
 #if TESTDEF2
-                Debug.WriteLine("TESTDEF2 is defined");
+                OutputHelper.WriteLine("TESTDEF2 is defined");
 #else
-                Debug.WriteLine("TESTDEF2 not defined");
+                OutputHelper.WriteLine("TESTDEF2 not defined");
 #endif
             }
             public static bool testMethod()
@@ -389,13 +389,13 @@ namespace NFUnitTestLexical
         {
             public static void Main_old(String[] args)
             {
-                Debug.WriteLine("Starting:");
+                OutputHelper.WriteLine("Starting:");
 #if FOO3
-                Debug.WriteLine("Inside FOO");
+                OutputHelper.WriteLine("Inside FOO");
 #if BAR3
-			Debug.WriteLine("Inside BAR");
+			OutputHelper.WriteLine("Inside BAR");
 #else
-                Debug.WriteLine("Inside BAR's else");
+                OutputHelper.WriteLine("Inside BAR's else");
 #endif
 #endif
             }
@@ -410,9 +410,9 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if !TEST
-                Debug.WriteLine("Problem");
+                OutputHelper.WriteLine("Problem");
 #else
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
             }
             public static bool testMethod()
@@ -427,9 +427,9 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if !(TEST)
-                Debug.WriteLine("Problem");
+                OutputHelper.WriteLine("Problem");
 #else
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
             }
             public static bool testMethod()
@@ -444,10 +444,10 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if TEST && TEST2
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if TEST && TEST3
-			Debug.WriteLine("Problem");
+			OutputHelper.WriteLine("Problem");
 #endif
             }
             public static bool testMethod()
@@ -461,10 +461,10 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if (TEST && TEST2)
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if (TEST && TEST3)
-			Debug.WriteLine("Problem");
+			OutputHelper.WriteLine("Problem");
 #endif
             }
             public static bool testMethod()
@@ -478,13 +478,13 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if TEST || TEST2
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if TEST3 || TEST2
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if TEST3 || TEST4
-			Debug.WriteLine("Problem");
+			OutputHelper.WriteLine("Problem");
 #endif
             }
             public static bool testMethod()
@@ -498,13 +498,13 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if (TEST || TEST2)
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if (TEST3 || TEST2)
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if (TEST3 || TEST4)
-			Debug.WriteLine("Problem");
+			OutputHelper.WriteLine("Problem");
 #endif
             }
             public static bool testMethod()
@@ -518,19 +518,19 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if TEST == TEST2
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if (TEST == TEST2)
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if TEST==TEST2
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if (TEST == TEST3)
-                Debug.WriteLine("Bad");
+                OutputHelper.WriteLine("Bad");
 #endif
 #if TEST3 == TEST
-                Debug.WriteLine("Bad");
+                OutputHelper.WriteLine("Bad");
 #endif
             }
             public static bool testMethod()
@@ -544,22 +544,22 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if TEST != TEST2
-			Debug.WriteLine("Bad");
+			OutputHelper.WriteLine("Bad");
 #endif
 #if (TEST != TEST2)
-			Debug.WriteLine("Bad");
+			OutputHelper.WriteLine("Bad");
 #endif
 #if TEST!=TEST2
-			Debug.WriteLine("Bad");
+			OutputHelper.WriteLine("Bad");
 #endif
 #if (TEST != TEST3)
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if TEST3 != TEST
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
 #if TEST3!=TEST
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
             }
             public static bool testMethod()
@@ -573,19 +573,19 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if (TEST && TEST2) || (TEST3 || TEST4)
-                Debug.WriteLine("1 - Good");
+                OutputHelper.WriteLine("1 - Good");
 #endif
 #if (TEST3 == TEST4) || (TEST == TEST2)
-                Debug.WriteLine("2 - Good");
+                OutputHelper.WriteLine("2 - Good");
 #endif
 #if (TEST != TEST3) && (TEST2 != TEST4)
-                Debug.WriteLine("3 - Good");
+                OutputHelper.WriteLine("3 - Good");
 #endif
 #if (! TEST4) && (TEST2 == TEST)
-                Debug.WriteLine("4 - Good");
+                OutputHelper.WriteLine("4 - Good");
 #endif
 #if (TEST == true) && (TEST2 != false)
-                Debug.WriteLine("5 - Good");
+                OutputHelper.WriteLine("5 - Good");
 #endif
             }
             public static bool testMethod()
@@ -599,7 +599,7 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if TEST
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
             }
             public static bool testMethod()
@@ -613,7 +613,7 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if TEST
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
             }
             public static bool testMethod()
@@ -627,9 +627,9 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if TEST
-                Debug.WriteLine("Bad");
+                OutputHelper.WriteLine("Bad");
 #else
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
             }
             public static bool testMethod()
@@ -643,9 +643,9 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if TEST3
-			Debug.WriteLine("Bad");
+			OutputHelper.WriteLine("Bad");
 #elif TEST2 && TEST
-                Debug.WriteLine("Good");
+                OutputHelper.WriteLine("Good");
 #endif
             }
             public static bool testMethod()
@@ -660,9 +660,9 @@ namespace NFUnitTestLexical
             {
 #if for
                 for (int x = 0; x < 3; x++)
-                    Debug.WriteLine("Worked");
+                    OutputHelper.WriteLine("Worked");
 #else
-                Debug.WriteLine("It should not be showing this!");
+                OutputHelper.WriteLine("It should not be showing this!");
 #endif
             }
             public static bool testMethod()

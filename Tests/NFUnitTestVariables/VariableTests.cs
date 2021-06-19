@@ -16,13 +16,13 @@ namespace NFUnitTestVariables
         [Setup]
         public void InitializeVariables()
         {
-            Debug.WriteLine("Adding set up for the tests");
+            OutputHelper.WriteLine("Adding set up for the tests");
         }
 
         [Cleanup]
         public void CleanUpVariables()
         {
-            Debug.WriteLine("Cleaning up after the tests");
+            OutputHelper.WriteLine("Cleaning up after the tests");
         }
 
         //Variables Test methods
@@ -33,161 +33,161 @@ namespace NFUnitTestVariables
         [TestMethod]
         public void Variables_S5_range_byte_0_Test()
         {
-            Debug.WriteLine("S5_range_byte_0.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("byte");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		255Y");
+            OutputHelper.WriteLine("S5_range_byte_0.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("byte");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		255Y");
             Variables_TestClass_S5_range_byte_0.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_byte_1_Test()
         {
-            Debug.WriteLine("S5_range_byte_1.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("byte");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		0Y");
+            OutputHelper.WriteLine("S5_range_byte_1.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("byte");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		0Y");
             Variables_TestClass_S5_range_byte_1.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_char_0_Test()
         {
-            Debug.WriteLine("S5_range_char_0.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("char");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		65535");
+            OutputHelper.WriteLine("S5_range_char_0.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("char");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		65535");
             Variables_TestClass_S5_range_char_0.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_char_1_Test()
         {
-            Debug.WriteLine("S5_range_char_1.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("char");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		0");
+            OutputHelper.WriteLine("S5_range_char_1.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("char");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		0");
             Variables_TestClass_S5_range_char_1.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_double_0_Test()
         {
-            Debug.WriteLine("S5_range_double_0.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("double");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		1.7e308d");
+            OutputHelper.WriteLine("S5_range_double_0.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("double");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		1.7e308d");
             Variables_TestClass_S5_range_double_0.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_double_1_Test()
         {
-            Debug.WriteLine("S5_range_double_1.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("double");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		-1.7e308d");
+            OutputHelper.WriteLine("S5_range_double_1.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("double");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		-1.7e308d");
             Variables_TestClass_S5_range_double_1.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_float_0_Test()
         {
-            Debug.WriteLine("S5_range_float_0.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("float");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		3.4e38F");
+            OutputHelper.WriteLine("S5_range_float_0.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("float");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		3.4e38F");
             Variables_TestClass_S5_range_float_0.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_float_1_Test()
         {
-            Debug.WriteLine("S5_range_float_1.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("float");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		-3.4e38F");
+            OutputHelper.WriteLine("S5_range_float_1.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("float");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		-3.4e38F");
             Variables_TestClass_S5_range_float_1.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_int_0_Test()
         {
-            Debug.WriteLine("S5_range_int_0.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("int");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		2147483647");
+            OutputHelper.WriteLine("S5_range_int_0.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("int");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		2147483647");
             Variables_TestClass_S5_range_int_0.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_int_1_Test()
         {
-            Debug.WriteLine("S5_range_int_1.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("int");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		-2147483647");
+            OutputHelper.WriteLine("S5_range_int_1.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("int");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		-2147483647");
             Variables_TestClass_S5_range_int_1.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_int_3_Test()
         {
-            Debug.WriteLine("S5_range_int_3.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("int");
-            Debug.WriteLine("	CompilesOK:	0");
-            Debug.WriteLine("	Value:		-2147483648");
+            OutputHelper.WriteLine("S5_range_int_3.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("int");
+            OutputHelper.WriteLine("	CompilesOK:	0");
+            OutputHelper.WriteLine("	Value:		-2147483648");
             Variables_TestClass_S5_range_int_3.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_long_0_Test()
         {
-            Debug.WriteLine("S5_range_long_0.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("long");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		9223372036854775807L");
+            OutputHelper.WriteLine("S5_range_long_0.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("long");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		9223372036854775807L");
             Variables_TestClass_S5_range_long_0.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_long_1_Test()
         {
-            Debug.WriteLine("S5_range_long_1.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("long");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		-9223372036854775807L");
+            OutputHelper.WriteLine("S5_range_long_1.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("long");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		-9223372036854775807L");
             Variables_TestClass_S5_range_long_1.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_long_3_Test()
         {
-            Debug.WriteLine("S5_range_long_3.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("long");
-            Debug.WriteLine("	CompilesOK:	0");
-            Debug.WriteLine("	Value:		-9223372036854775808L");
+            OutputHelper.WriteLine("S5_range_long_3.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("long");
+            OutputHelper.WriteLine("	CompilesOK:	0");
+            OutputHelper.WriteLine("	Value:		-9223372036854775808L");
             Variables_TestClass_S5_range_long_3.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_short_0_Test()
         {
-            Debug.WriteLine("S5_range_short_0.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("short");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		32767S");
+            OutputHelper.WriteLine("S5_range_short_0.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("short");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		32767S");
             Variables_TestClass_S5_range_short_0.testMethod();
         }
         [TestMethod]
         public void Variables_S5_range_short_1_Test()
         {
-            Debug.WriteLine("S5_range_short_1.sc");
-            Debug.WriteLine("This is a variable range test:");
-            Debug.WriteLine("short");
-            Debug.WriteLine("	CompilesOK:	1");
-            Debug.WriteLine("	Value:		-32767S");
+            OutputHelper.WriteLine("S5_range_short_1.sc");
+            OutputHelper.WriteLine("This is a variable range test:");
+            OutputHelper.WriteLine("short");
+            OutputHelper.WriteLine("	CompilesOK:	1");
+            OutputHelper.WriteLine("	Value:		-32767S");
             Variables_TestClass_S5_range_short_1.testMethod();
         }
 

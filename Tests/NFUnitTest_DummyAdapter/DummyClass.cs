@@ -5,6 +5,7 @@
 //
 
 using System.Diagnostics;
+using System.Threading;
 
 namespace NFUnitTestAdapater
 {
@@ -12,7 +13,12 @@ namespace NFUnitTestAdapater
     {
         public void DummyMethod()
         {
-            Debug.WriteLine("This is just to get the TestAdapter. Don not remove this project!");
+            //////////////////////////////////////////////////////////////////////
+            // This is just to get the TestAdapter. DO NOT remove this project! //
+            //////////////////////////////////////////////////////////////////////
+            
+            // do something here so the method isn't removed on Release build
+            Thread.Sleep(Timeout.Infinite);
         }
     }
 }

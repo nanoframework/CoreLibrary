@@ -6,15 +6,13 @@
 
 namespace NS_TestClass_compunit_04_first
 {
-
-    using System;
-    using System.Diagnostics;
+    using nanoFramework.TestFramework;
 
     class NS_TestClass_compunit_04A
     {
         public void printClassName()
         {
-            Debug.WriteLine("Class A");
+            OutputHelper.WriteLine("Class A");
         }
     }
 

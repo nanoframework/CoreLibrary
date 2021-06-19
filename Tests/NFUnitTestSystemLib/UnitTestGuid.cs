@@ -127,7 +127,7 @@ namespace NFUnitTestSystemLib
 
         //    Guid g = (Guid)list[1];
 
-        //    Debug.WriteLine(g.ToString());
+        //    OutputHelper.WriteLine(g.ToString());
         //    Type t = Type.GetType("Microsoft.SPOT.Platform.Tests.ITest");
 
         //    Type[] apps = System.Reflection.GetTypesImplementingInterface(t);
@@ -144,7 +144,7 @@ namespace NFUnitTestSystemLib
         //            }
         //            catch (Exception ex)
         //            {
-        //                Debug.WriteLine("Caught : " + ex.Message);
+        //                OutputHelper.WriteLine("Caught : " + ex.Message);
         //                testResult = MFTestResults.Fail;
         //            }
         //        }
@@ -214,10 +214,10 @@ namespace NFUnitTestSystemLib
             ///
 
             Guid guid1 = Guid.Empty;
-            Debug.WriteLine("Verifing any instance of Guid, regardless of its value, is greater than null");
+            OutputHelper.WriteLine("Verifing any instance of Guid, regardless of its value, is greater than null");
             Assert.Equal(guid1.CompareTo(null), 1);
             Byte[] _bArr = new Byte[16];
-            Debug.WriteLine("Creating a Guid with all bytes zero");
+            OutputHelper.WriteLine("Creating a Guid with all bytes zero");
             Guid guid2 = new Guid(_bArr);
             Assert.Equal(guid1.CompareTo(guid2), 0);
             Guid guid3 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
@@ -264,7 +264,7 @@ namespace NFUnitTestSystemLib
             String[] strArr2 = new String[] { guid1.ToString(), guid2.ToString(), guid3.ToString(), guid4.ToString() };
             for (int i = 0; i < strArr1.Length; i++)
             {
-                Debug.WriteLine(strArr1[i]);
+                OutputHelper.WriteLine(strArr1[i]);
                 Assert.Equal(String.Compare(strArr1[i], strArr2[i]), 0);
             }
         }
@@ -278,13 +278,13 @@ namespace NFUnitTestSystemLib
             /// </summary>
             ///
 
-            Debug.WriteLine("Creating 3 Guids with Guid.Empty and hex values");
+            OutputHelper.WriteLine("Creating 3 Guids with Guid.Empty and hex values");
             Guid guid11 = Guid.Empty;
             Guid guid12 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
             Guid guid13 = new Guid(0x7FFFFFFF, 0x7FFF, 0x7FFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
             Guid[] gArr1 = new Guid[] { guid11, guid12, guid13 };
 
-            Debug.WriteLine("Creating Guids with 16 bytes constructor");
+            OutputHelper.WriteLine("Creating Guids with 16 bytes constructor");
             Byte[] _bArr1 = new Byte[16];
             Guid guid21 = new Guid(_bArr1);
             Byte[] _bArr2 = new Byte[] { 181, 54, 255, 77, 222, 157, 118, 79, 154, 42, 150, 67, 80, 71, 6, 61 };
@@ -293,7 +293,7 @@ namespace NFUnitTestSystemLib
             Guid guid23 = new Guid(_bArr3);
             Guid[] gArr2 = new Guid[] { guid21, guid22, guid23 };
 
-            Debug.WriteLine("Creating 3 Guids with Guid(int, short, short, byte ....) constructor");
+            OutputHelper.WriteLine("Creating 3 Guids with Guid(int, short, short, byte ....) constructor");
             Guid guid31 = new Guid(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             Guid guid32 = new Guid(1308571317, 40414, 20342, 154, 42, 150, 67, 80, 71, 6, 61);
             Guid guid33 = new Guid(int.MaxValue, short.MaxValue, short.MaxValue, byte.MaxValue, byte.MaxValue,
@@ -304,17 +304,17 @@ namespace NFUnitTestSystemLib
             {
                 if ((!gArr1[i].Equals(gArr2[i])) || (gArr1[i].GetHashCode() != gArr2[i].GetHashCode()))
                 {
-                    Debug.WriteLine(i + " Expecting : " + gArr1[i].ToString() + " equals " + gArr2[i].ToString() + " comparing 1 and 2");
+                    OutputHelper.WriteLine(i + " Expecting : " + gArr1[i].ToString() + " equals " + gArr2[i].ToString() + " comparing 1 and 2");
                     throw new Exception(" Expecting :  hashcode " + gArr1[i].GetHashCode().ToString() + " equals " + gArr2[i].GetHashCode().ToString());
                 }
                 if ((!gArr1[i].Equals(gArr3[i])) || (gArr1[i].GetHashCode() != gArr3[i].GetHashCode()))
                 {
-                    Debug.WriteLine(i + " Expecting : " + gArr1[i].ToString() + " equals " + gArr3[i].ToString() + " comparing 1 and 3");
+                    OutputHelper.WriteLine(i + " Expecting : " + gArr1[i].ToString() + " equals " + gArr3[i].ToString() + " comparing 1 and 3");
                     throw new Exception(" Expecting :  hashcode " + gArr1[i].GetHashCode().ToString() + " equals " + gArr3[i].GetHashCode().ToString());
                 }
                 if ((!gArr2[i].Equals(gArr3[i])) || (gArr2[i].GetHashCode() != gArr3[i].GetHashCode()))
                 {
-                    Debug.WriteLine(i + " Expecting : " + gArr2[i].ToString() + " equals " + gArr3[i].ToString() + " comparing 2 and 3");
+                    OutputHelper.WriteLine(i + " Expecting : " + gArr2[i].ToString() + " equals " + gArr3[i].ToString() + " comparing 2 and 3");
                     throw new Exception(" Expecting :  hashcode " + gArr2[i].GetHashCode().ToString() + " equals " + gArr3[i].GetHashCode().ToString());
                 }
             }

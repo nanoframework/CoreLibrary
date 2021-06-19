@@ -3,7 +3,7 @@
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
 //
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 class NS_TestClass_compunit_03B
 {
@@ -15,6 +15,6 @@ class NS_TestClass_compunit_03B
 
     public void showName()
     {
-        Debug.WriteLine("Class B");
+        OutputHelper.WriteLine("Class B");
     }
 }

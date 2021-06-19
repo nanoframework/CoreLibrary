@@ -458,7 +458,7 @@ namespace NFUnitTestConversions
             {
                 val = Convert.ToInt64(number);
             }
-            Debug.WriteLine("Time: " + (DateTime.UtcNow - start).ToString());
+            OutputHelper.WriteLine("Time: " + (DateTime.UtcNow - start).ToString());
 
             Assert.Equal(val, -7446744073709551615L);
         }
@@ -539,8 +539,8 @@ namespace NFUnitTestConversions
 
             string convertedFromBase64 = Convert.ToBase64String(sharedAccessKeyAsByte);
 
-            Debug.WriteLine($">>{convertedFromBase64}");
-            Debug.WriteLine($">>{sharedAccessKey}");
+            OutputHelper.WriteLine($">>{convertedFromBase64}");
+            OutputHelper.WriteLine($">>{sharedAccessKey}");
 
             Assert.Equal(convertedFromBase64, sharedAccessKey, "Converted string from byte array is not correct.");
         }

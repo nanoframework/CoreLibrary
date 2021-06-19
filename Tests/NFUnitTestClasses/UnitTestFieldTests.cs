@@ -16,379 +16,379 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Fields1_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A field-declaration may include set of attributes,");
-            Debug.WriteLine(" a new modifier, one of four access modifiers, a");
-            Debug.WriteLine(" static modifier, and a readonly modifier.  The ");
-            Debug.WriteLine(" attributes and modifiers apply to all of the ");
-            Debug.WriteLine(" members declared by the field-declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A field-declaration may include set of attributes,");
+            OutputHelper.WriteLine(" a new modifier, one of four access modifiers, a");
+            OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
+            OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
+            OutputHelper.WriteLine(" members declared by the field-declaration.");
             Assert.True(FieldsTestClass1.testMethod());
         }
 
         [TestMethod]
         public void Fields2_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A field-declaration may include set of attributes,");
-            Debug.WriteLine(" a new modifier, one of four access modifiers, a");
-            Debug.WriteLine(" static modifier, and a readonly modifier.  The ");
-            Debug.WriteLine(" attributes and modifiers apply to all of the ");
-            Debug.WriteLine(" members declared by the field-declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A field-declaration may include set of attributes,");
+            OutputHelper.WriteLine(" a new modifier, one of four access modifiers, a");
+            OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
+            OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
+            OutputHelper.WriteLine(" members declared by the field-declaration.");
             Assert.True(FieldsTestClass2.testMethod());
         }
 
         [TestMethod]
         public void Fields3_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A field-declaration may include set of attributes,");
-            Debug.WriteLine(" a new modifier, one of four access modifiers, a");
-            Debug.WriteLine(" static modifier, and a readonly modifier.  The ");
-            Debug.WriteLine(" attributes and modifiers apply to all of the ");
-            Debug.WriteLine(" members declared by the field-declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A field-declaration may include set of attributes,");
+            OutputHelper.WriteLine(" a new modifier, one of four access modifiers, a");
+            OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
+            OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
+            OutputHelper.WriteLine(" members declared by the field-declaration.");
             Assert.True(FieldsTestClass3.testMethod());
         }
 
         [TestMethod]
         public void Fields4_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A field-declaration may include set of attributes,");
-            Debug.WriteLine(" a new modifier, one of four access modifiers, a");
-            Debug.WriteLine(" static modifier, and a readonly modifier.  The ");
-            Debug.WriteLine(" attributes and modifiers apply to all of the ");
-            Debug.WriteLine(" members declared by the field-declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A field-declaration may include set of attributes,");
+            OutputHelper.WriteLine(" a new modifier, one of four access modifiers, a");
+            OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
+            OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
+            OutputHelper.WriteLine(" members declared by the field-declaration.");
             Assert.True(FieldsTestClass4.testMethod());
         }
 
         [TestMethod]
         public void Fields5_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A field-declaration may include set of attributes,");
-            Debug.WriteLine(" a new modifier, one of four access modifiers, a");
-            Debug.WriteLine(" static modifier, and a readonly modifier.  The ");
-            Debug.WriteLine(" attributes and modifiers apply to all of the ");
-            Debug.WriteLine(" members declared by the field-declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A field-declaration may include set of attributes,");
+            OutputHelper.WriteLine(" a new modifier, one of four access modifiers, a");
+            OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
+            OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
+            OutputHelper.WriteLine(" members declared by the field-declaration.");
             Assert.True(FieldsTestClass5.testMethod());
         }
 
         [TestMethod]
         public void Fields6_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A field-declaration may include set of attributes,");
-            Debug.WriteLine(" a new modifier, one of four access modifiers, a");
-            Debug.WriteLine(" static modifier, and a readonly modifier.  The ");
-            Debug.WriteLine(" attributes and modifiers apply to all of the ");
-            Debug.WriteLine(" members declared by the field-declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A field-declaration may include set of attributes,");
+            OutputHelper.WriteLine(" a new modifier, one of four access modifiers, a");
+            OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
+            OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
+            OutputHelper.WriteLine(" members declared by the field-declaration.");
             Assert.True(FieldsTestClass6.testMethod());
         }
 
         [TestMethod]
         public void Fields7_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A field-declaration may include set of attributes,");
-            Debug.WriteLine(" a new modifier, one of four access modifiers, a");
-            Debug.WriteLine(" static modifier, and a readonly modifier.  The ");
-            Debug.WriteLine(" attributes and modifiers apply to all of the ");
-            Debug.WriteLine(" members declared by the field-declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A field-declaration may include set of attributes,");
+            OutputHelper.WriteLine(" a new modifier, one of four access modifiers, a");
+            OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
+            OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
+            OutputHelper.WriteLine(" members declared by the field-declaration.");
             Assert.True(FieldsTestClass7.testMethod());
         }
 
         [TestMethod]
         public void Fields8_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A field-declaration may include set of attributes,");
-            Debug.WriteLine(" a new modifier, one of four access modifiers, a");
-            Debug.WriteLine(" static modifier, and a readonly modifier.  The ");
-            Debug.WriteLine(" attributes and modifiers apply to all of the ");
-            Debug.WriteLine(" members declared by the field-declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A field-declaration may include set of attributes,");
+            OutputHelper.WriteLine(" a new modifier, one of four access modifiers, a");
+            OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
+            OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
+            OutputHelper.WriteLine(" members declared by the field-declaration.");
             Assert.True(FieldsTestClass8.testMethod());
         }
 
         [TestMethod]
         public void Fields13_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A field-declaration may include set of attributes,");
-            Debug.WriteLine(" a new modifier, one of four access modifiers, a");
-            Debug.WriteLine(" static modifier, and a readonly modifier.  The ");
-            Debug.WriteLine(" attributes and modifiers apply to all of the ");
-            Debug.WriteLine(" members declared by the field-declaration.");
-            Debug.WriteLine("");
-            Debug.WriteLine(" A field declaration that declares multiple fields");
-            Debug.WriteLine(" is equivalent to multiple declarations of single ");
-            Debug.WriteLine(" fields with the same attributes, modifiers, and type.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A field-declaration may include set of attributes,");
+            OutputHelper.WriteLine(" a new modifier, one of four access modifiers, a");
+            OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
+            OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
+            OutputHelper.WriteLine(" members declared by the field-declaration.");
+            OutputHelper.WriteLine("");
+            OutputHelper.WriteLine(" A field declaration that declares multiple fields");
+            OutputHelper.WriteLine(" is equivalent to multiple declarations of single ");
+            OutputHelper.WriteLine(" fields with the same attributes, modifiers, and type.");
             Assert.True(FieldsTestClass13.testMethod());
         }
 
         [TestMethod]
         public void Fields14_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A static field identifies exactly on storage location.");
-            Debug.WriteLine(" No matter how many instances of a class are created,");
-            Debug.WriteLine(" there is only ever one copy of a static field.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A static field identifies exactly on storage location.");
+            OutputHelper.WriteLine(" No matter how many instances of a class are created,");
+            OutputHelper.WriteLine(" there is only ever one copy of a static field.");
             Assert.True(FieldsTestClass14.testMethod());
         }
 
         [TestMethod]
         public void Fields15_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A static field comes into existence when the ");
-            Debug.WriteLine(" type in which it is declared is loaded, and ");
-            Debug.WriteLine(" ceases to exist when the type in which it ");
-            Debug.WriteLine(" is declared in unloaded.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A static field comes into existence when the ");
+            OutputHelper.WriteLine(" type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine(" ceases to exist when the type in which it ");
+            OutputHelper.WriteLine(" is declared in unloaded.");
             Assert.True(FieldsTestClass15.testMethod());
         }
 
         [TestMethod]
         public void Fields16_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" Every instance of a class contains a separate copy");
-            Debug.WriteLine(" of all instance fields of the class.  An instance ");
-            Debug.WriteLine(" field comes into existence when a new instance of ");
-            Debug.WriteLine(" its class is created, and ceases to exist when there ");
-            Debug.WriteLine(" are no references to that instance and the destructor");
-            Debug.WriteLine(" of the instance has executed.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" Every instance of a class contains a separate copy");
+            OutputHelper.WriteLine(" of all instance fields of the class.  An instance ");
+            OutputHelper.WriteLine(" field comes into existence when a new instance of ");
+            OutputHelper.WriteLine(" its class is created, and ceases to exist when there ");
+            OutputHelper.WriteLine(" are no references to that instance and the destructor");
+            OutputHelper.WriteLine(" of the instance has executed.");
             Assert.True(FieldsTestClass16.testMethod());
         }
 
         [TestMethod]
         public void Fields17_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" Every instance of a class contains a separate copy");
-            Debug.WriteLine(" of all instance fields of the class.  An instance ");
-            Debug.WriteLine(" field comes into existence when a new instance of ");
-            Debug.WriteLine(" its class is created, and ceases to exist when there ");
-            Debug.WriteLine(" are no references to that instance and the destructor");
-            Debug.WriteLine(" of the instance has executed.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" Every instance of a class contains a separate copy");
+            OutputHelper.WriteLine(" of all instance fields of the class.  An instance ");
+            OutputHelper.WriteLine(" field comes into existence when a new instance of ");
+            OutputHelper.WriteLine(" its class is created, and ceases to exist when there ");
+            OutputHelper.WriteLine(" are no references to that instance and the destructor");
+            OutputHelper.WriteLine(" of the instance has executed.");
             Assert.True(FieldsTestClass17.testMethod());
         }
 
         [TestMethod]
         public void Fields18_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" When a field is referenced in a member-access of");
-            Debug.WriteLine(" the form E.M, if M is a static field, E must denote");
-            Debug.WriteLine(" a type, and if M is an instance field, E must ");
-            Debug.WriteLine(" denote an instance.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" When a field is referenced in a member-access of");
+            OutputHelper.WriteLine(" the form E.M, if M is a static field, E must denote");
+            OutputHelper.WriteLine(" a type, and if M is an instance field, E must ");
+            OutputHelper.WriteLine(" denote an instance.");
             Assert.True(FieldsTestClass18.testMethod());
         }
 
         [TestMethod]
         public void Fields20_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" When a field is referenced in a member-access of");
-            Debug.WriteLine(" the form E.M, if M is a static field, E must denote");
-            Debug.WriteLine(" a type, and if M is an instance field, E must ");
-            Debug.WriteLine(" denote an instance.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" When a field is referenced in a member-access of");
+            OutputHelper.WriteLine(" the form E.M, if M is a static field, E must denote");
+            OutputHelper.WriteLine(" a type, and if M is an instance field, E must ");
+            OutputHelper.WriteLine(" denote an instance.");
             Assert.True(FieldsTestClass20.testMethod());
         }
 
         [TestMethod]
         public void Fields22_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" When a field-declaration includes a readonly");
-            Debug.WriteLine(" modifier, assignments to the fields introduced");
-            Debug.WriteLine(" by the declaration can only occur as part of");
-            Debug.WriteLine(" the declaration or in a constructor in the");
-            Debug.WriteLine(" same class.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" When a field-declaration includes a readonly");
+            OutputHelper.WriteLine(" modifier, assignments to the fields introduced");
+            OutputHelper.WriteLine(" by the declaration can only occur as part of");
+            OutputHelper.WriteLine(" the declaration or in a constructor in the");
+            OutputHelper.WriteLine(" same class.");
             Assert.True(FieldsTestClass22.testMethod());
         }
 
         [TestMethod]
         public void Fields23_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" When a field-declaration includes a readonly");
-            Debug.WriteLine(" modifier, assignments to the fields introduced");
-            Debug.WriteLine(" by the declaration can only occur as part of");
-            Debug.WriteLine(" the declaration or in a constructor in the");
-            Debug.WriteLine(" same class.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" When a field-declaration includes a readonly");
+            OutputHelper.WriteLine(" modifier, assignments to the fields introduced");
+            OutputHelper.WriteLine(" by the declaration can only occur as part of");
+            OutputHelper.WriteLine(" the declaration or in a constructor in the");
+            OutputHelper.WriteLine(" same class.");
             Assert.True(FieldsTestClass23.testMethod());
         }
 
         [TestMethod]
         public void Fields24_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" When a field-declaration includes a readonly");
-            Debug.WriteLine(" modifier, assignments to the fields introduced");
-            Debug.WriteLine(" by the declaration can only occur as part of");
-            Debug.WriteLine(" the declaration or in a constructor in the");
-            Debug.WriteLine(" same class.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" When a field-declaration includes a readonly");
+            OutputHelper.WriteLine(" modifier, assignments to the fields introduced");
+            OutputHelper.WriteLine(" by the declaration can only occur as part of");
+            OutputHelper.WriteLine(" the declaration or in a constructor in the");
+            OutputHelper.WriteLine(" same class.");
             Assert.True(FieldsTestClass24.testMethod());
         }
 
         [TestMethod]
         public void Fields41_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" A static readonly field is useful when a symbolic");
-            Debug.WriteLine(" name for a constant value is desired, but when the ");
-            Debug.WriteLine(" type of the value is not permitted in a const declaration");
-            Debug.WriteLine(" or when the value cannot be computed at compile-time");
-            Debug.WriteLine(" by a constant expression.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" A static readonly field is useful when a symbolic");
+            OutputHelper.WriteLine(" name for a constant value is desired, but when the ");
+            OutputHelper.WriteLine(" type of the value is not permitted in a const declaration");
+            OutputHelper.WriteLine(" or when the value cannot be computed at compile-time");
+            OutputHelper.WriteLine(" by a constant expression.");
             Assert.True(FieldsTestClass41.testMethod());
         }
 
         [TestMethod]
         public void Fields42_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" Field declarations may include variable-initializers.");
-            Debug.WriteLine(" For static fields, varaible initializers correspond to");
-            Debug.WriteLine(" assignment statements that are executed when the class");
-            Debug.WriteLine(" is loaded. For instance fields, variable initializers");
-            Debug.WriteLine(" correspond to assignment statements that are executed");
-            Debug.WriteLine(" when an instance of the class is created.");
-            Debug.WriteLine("This test has been rewritten to avoid use of the Math.Abs function which the MF does not support");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" Field declarations may include variable-initializers.");
+            OutputHelper.WriteLine(" For static fields, varaible initializers correspond to");
+            OutputHelper.WriteLine(" assignment statements that are executed when the class");
+            OutputHelper.WriteLine(" is loaded. For instance fields, variable initializers");
+            OutputHelper.WriteLine(" correspond to assignment statements that are executed");
+            OutputHelper.WriteLine(" when an instance of the class is created.");
+            OutputHelper.WriteLine("This test has been rewritten to avoid use of the Math.Abs function which the MF does not support");
             Assert.True(FieldsTestClass42.testMethod());
         }
 
         [TestMethod]
         public void Fields43_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" The static field variable initializers of a class");
-            Debug.WriteLine(" correspond to a sequence of assignments that are ");
-            Debug.WriteLine(" executed immediately upon entry to the static");
-            Debug.WriteLine(" constructor of a class.  The variable initializers");
-            Debug.WriteLine(" are executed in the textual order they appear");
-            Debug.WriteLine(" in the class declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" The static field variable initializers of a class");
+            OutputHelper.WriteLine(" correspond to a sequence of assignments that are ");
+            OutputHelper.WriteLine(" executed immediately upon entry to the static");
+            OutputHelper.WriteLine(" constructor of a class.  The variable initializers");
+            OutputHelper.WriteLine(" are executed in the textual order they appear");
+            OutputHelper.WriteLine(" in the class declaration.");
             Assert.True(FieldsTestClass43.testMethod());
         }
 
         [TestMethod]
         public void Fields44_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" The static field variable initializers of a class");
-            Debug.WriteLine(" correspond to a sequence of assignments that are ");
-            Debug.WriteLine(" executed immediately upon entry to the static");
-            Debug.WriteLine(" constructor of a class.  The variable initializers");
-            Debug.WriteLine(" are executed in the textual order they appear");
-            Debug.WriteLine(" in the class declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" The static field variable initializers of a class");
+            OutputHelper.WriteLine(" correspond to a sequence of assignments that are ");
+            OutputHelper.WriteLine(" executed immediately upon entry to the static");
+            OutputHelper.WriteLine(" constructor of a class.  The variable initializers");
+            OutputHelper.WriteLine(" are executed in the textual order they appear");
+            OutputHelper.WriteLine(" in the class declaration.");
             Assert.True(FieldsTestClass44.testMethod());
         }
 
         [TestMethod]
         public void Fields45_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" The static field variable initializers of a class");
-            Debug.WriteLine(" correspond to a sequence of assignments that are ");
-            Debug.WriteLine(" executed immediately upon entry to the static");
-            Debug.WriteLine(" constructor of a class.  The variable initializers");
-            Debug.WriteLine(" are executed in the textual order they appear");
-            Debug.WriteLine(" in the class declaration.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" The static field variable initializers of a class");
+            OutputHelper.WriteLine(" correspond to a sequence of assignments that are ");
+            OutputHelper.WriteLine(" executed immediately upon entry to the static");
+            OutputHelper.WriteLine(" constructor of a class.  The variable initializers");
+            OutputHelper.WriteLine(" are executed in the textual order they appear");
+            OutputHelper.WriteLine(" in the class declaration.");
             Assert.True(FieldsTestClass45.testMethod());
         }
 
         [TestMethod]
         public void Fields46_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" The instance field variable initializers of a class");
-            Debug.WriteLine(" correspond to a sequence of assignments that are ");
-            Debug.WriteLine(" executed immediately upon entry to one of the instance");
-            Debug.WriteLine(" constructors of the class.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" The instance field variable initializers of a class");
+            OutputHelper.WriteLine(" correspond to a sequence of assignments that are ");
+            OutputHelper.WriteLine(" executed immediately upon entry to one of the instance");
+            OutputHelper.WriteLine(" constructors of the class.");
             Assert.True(FieldsTestClass46.testMethod());
         }
 
         [TestMethod]
         public void Fields49_testMethod()
         {
-            Debug.WriteLine(" A variable initializer for an instance field");
-            Debug.WriteLine(" cannot reference the instance being created.");
-            Debug.WriteLine(" Thus, it is an error to reference this in a ");
-            Debug.WriteLine(" variable initializer, as it is an error for");
-            Debug.WriteLine(" a variable initialzer to reference any instance");
-            Debug.WriteLine(" member through a simple-name.");
+            OutputHelper.WriteLine(" A variable initializer for an instance field");
+            OutputHelper.WriteLine(" cannot reference the instance being created.");
+            OutputHelper.WriteLine(" Thus, it is an error to reference this in a ");
+            OutputHelper.WriteLine(" variable initializer, as it is an error for");
+            OutputHelper.WriteLine(" a variable initialzer to reference any instance");
+            OutputHelper.WriteLine(" member through a simple-name.");
             Assert.True(FieldsTestClass49.testMethod());
         }
 
         [TestMethod]
         public void Fields51_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" Specifically, assignments to a readonly field");
-            Debug.WriteLine(" are permitted only in the following context.");
-            Debug.WriteLine(" ...");
-            Debug.WriteLine(" For an instance field, in the instance constructors");
-            Debug.WriteLine(" of the class that contains the field declaration, or");
-            Debug.WriteLine(" for a static field, in the static constructor of the");
-            Debug.WriteLine(" class the contains the field declaration. These are also");
-            Debug.WriteLine(" contexts in which it is valid to pass a readonly field");
-            Debug.WriteLine(" as an out or ref parameter.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" Specifically, assignments to a readonly field");
+            OutputHelper.WriteLine(" are permitted only in the following context.");
+            OutputHelper.WriteLine(" ...");
+            OutputHelper.WriteLine(" For an instance field, in the instance constructors");
+            OutputHelper.WriteLine(" of the class that contains the field declaration, or");
+            OutputHelper.WriteLine(" for a static field, in the static constructor of the");
+            OutputHelper.WriteLine(" class the contains the field declaration. These are also");
+            OutputHelper.WriteLine(" contexts in which it is valid to pass a readonly field");
+            OutputHelper.WriteLine(" as an out or ref parameter.");
             Assert.True(FieldsTestClass51.testMethod());
         }
 
         [TestMethod]
         public void Fields52_testMethod()
         {
-            Debug.WriteLine(" Section 10.4");
-            Debug.WriteLine(" Specifically, assignments to a readonly field");
-            Debug.WriteLine(" are permitted only in the following context.");
-            Debug.WriteLine(" ...");
-            Debug.WriteLine(" For an instance field, in the instance constructors");
-            Debug.WriteLine(" of the class that contains the field declaration, or");
-            Debug.WriteLine(" for a static field, in the static constructor of the");
-            Debug.WriteLine(" class the contains the field declaration. These are also");
-            Debug.WriteLine(" contexts in which it is valid to pass a readonly field");
-            Debug.WriteLine(" as an out or ref parameter.");
+            OutputHelper.WriteLine(" Section 10.4");
+            OutputHelper.WriteLine(" Specifically, assignments to a readonly field");
+            OutputHelper.WriteLine(" are permitted only in the following context.");
+            OutputHelper.WriteLine(" ...");
+            OutputHelper.WriteLine(" For an instance field, in the instance constructors");
+            OutputHelper.WriteLine(" of the class that contains the field declaration, or");
+            OutputHelper.WriteLine(" for a static field, in the static constructor of the");
+            OutputHelper.WriteLine(" class the contains the field declaration. These are also");
+            OutputHelper.WriteLine(" contexts in which it is valid to pass a readonly field");
+            OutputHelper.WriteLine(" as an out or ref parameter.");
             Assert.True(FieldsTestClass52.testMethod());
         }
 
         [TestMethod]
         public void Fields53_testMethod()
         {
-            Debug.WriteLine("Testing bools assigned with (x == y)");
+            OutputHelper.WriteLine("Testing bools assigned with (x == y)");
             Assert.True(FieldsTestClass53.testMethod());
         }
 
         [TestMethod]
         public void Fields54_testMethod()
         {
-            Debug.WriteLine("Testing bools assigned with function calls");
+            OutputHelper.WriteLine("Testing bools assigned with function calls");
             Assert.True(FieldsTestClass54.testMethod());
         }
 
         [TestMethod]
         public void Fields55_testMethod()
         {
-            Debug.WriteLine("Testing bools assigned with conditionals");
+            OutputHelper.WriteLine("Testing bools assigned with conditionals");
             Assert.True(FieldsTestClass55.testMethod());
         }
 
         [TestMethod]
         public void Fields56_testMethod()
         {
-            Debug.WriteLine("Testing ints assigned with function calls");
+            OutputHelper.WriteLine("Testing ints assigned with function calls");
             Assert.True(FieldsTestClass56.testMethod());
         }
 
         [TestMethod]
         public void Fields57_testMethod()
         {
-            Debug.WriteLine("Testing strings assigned with \"x\" + \"y\"");
+            OutputHelper.WriteLine("Testing strings assigned with \"x\" + \"y\"");
             Assert.True(FieldsTestClass57.testMethod());
         }
 
         [TestMethod]
         public void Fields58_testMethod()
         {
-            Debug.WriteLine("Testing strings assigned with function calls");
+            OutputHelper.WriteLine("Testing strings assigned with function calls");
             Assert.True(FieldsTestClass58.testMethod());
         }
 

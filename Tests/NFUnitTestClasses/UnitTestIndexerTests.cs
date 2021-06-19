@@ -16,30 +16,30 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Indexers1_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" An indexer-declaration may include set of");
-            Debug.WriteLine(" attributes, a new modifier, and a valid combination");
-            Debug.WriteLine(" of the four access modifiers.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" An indexer-declaration may include set of");
+            OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
+            OutputHelper.WriteLine(" of the four access modifiers.");
             Assert.True(IndexersTestClass1.testMethod());
         }
 
         [TestMethod]
         public void Indexers2_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" An indexer-declaration may include set of");
-            Debug.WriteLine(" attributes, a new modifier, and a valid combination");
-            Debug.WriteLine(" of the four access modifiers.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" An indexer-declaration may include set of");
+            OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
+            OutputHelper.WriteLine(" of the four access modifiers.");
             Assert.True(IndexersTestClass2.testMethod());
         }
 
         [TestMethod]
         public void Indexers3_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" An indexer-declaration may include set of");
-            Debug.WriteLine(" attributes, a new modifier, and a valid combination");
-            Debug.WriteLine(" of the four access modifiers.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" An indexer-declaration may include set of");
+            OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
+            OutputHelper.WriteLine(" of the four access modifiers.");
             Assert.True(IndexersTestClass3.testMethod());
 
         }
@@ -47,257 +47,257 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Indexers4_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" An indexer-declaration may include set of");
-            Debug.WriteLine(" attributes, a new modifier, and a valid combination");
-            Debug.WriteLine(" of the four access modifiers.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" An indexer-declaration may include set of");
+            OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
+            OutputHelper.WriteLine(" of the four access modifiers.");
             Assert.True(IndexersTestClass4.testMethod());
         }
 
         [TestMethod]
         public void Indexers5_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" An indexer-declaration may include set of");
-            Debug.WriteLine(" attributes, a new modifier, and a valid combination");
-            Debug.WriteLine(" of the four access modifiers.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" An indexer-declaration may include set of");
+            OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
+            OutputHelper.WriteLine(" of the four access modifiers.");
             Assert.True(IndexersTestClass5.testMethod());
         }
 
         [TestMethod]
         public void Indexers6_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" An indexer-declaration may include set of");
-            Debug.WriteLine(" attributes, a new modifier, and a valid combination");
-            Debug.WriteLine(" of the four access modifiers.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" An indexer-declaration may include set of");
+            OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
+            OutputHelper.WriteLine(" of the four access modifiers.");
             Assert.True(IndexersTestClass6.testMethod());
         }
 
         [TestMethod]
         public void Indexers10_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" An indexer-declaration may include set of");
-            Debug.WriteLine(" attributes, a new modifier, and a valid combination");
-            Debug.WriteLine(" of the four access modifiers.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" An indexer-declaration may include set of");
+            OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
+            OutputHelper.WriteLine(" of the four access modifiers.");
             Assert.True(IndexersTestClass10.testMethod());
         }
 
         [TestMethod]
         public void Indexers11_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" An indexer-declaration may include set of");
-            Debug.WriteLine(" attributes, a new modifier, and a valid combination");
-            Debug.WriteLine(" of the four access modifiers.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" An indexer-declaration may include set of");
+            OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
+            OutputHelper.WriteLine(" of the four access modifiers.");
             Assert.True(IndexersTestClass11.testMethod());
         }
 
         [TestMethod]
         public void Indexers12_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" The type on an indexer declaration specifies");
-            Debug.WriteLine(" the element type of the indexer introduced");
-            Debug.WriteLine(" by the declaration");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" The type on an indexer declaration specifies");
+            OutputHelper.WriteLine(" the element type of the indexer introduced");
+            OutputHelper.WriteLine(" by the declaration");
             Assert.True(IndexersTestClass12.testMethod());
         }
 
         [TestMethod]
         public void Indexers14_Test()
         {
-            Debug.WriteLine(" Unless the indexer is an explicit interface");
-            Debug.WriteLine(" member implementation, the type is followed");
-            Debug.WriteLine(" by the keyword this.  For an explicit ");
-            Debug.WriteLine(" interface member implementation, the type is ");
-            Debug.WriteLine(" followed by an interface-type, a . and the ");
-            Debug.WriteLine(" keyword this.");
-            Debug.WriteLine("This is currently an expected fail, but is resolved in 3.0 see Bug  16341 for details");
+            OutputHelper.WriteLine(" Unless the indexer is an explicit interface");
+            OutputHelper.WriteLine(" member implementation, the type is followed");
+            OutputHelper.WriteLine(" by the keyword this.  For an explicit ");
+            OutputHelper.WriteLine(" interface member implementation, the type is ");
+            OutputHelper.WriteLine(" followed by an interface-type, a . and the ");
+            OutputHelper.WriteLine(" keyword this.");
+            OutputHelper.WriteLine("This is currently an expected fail, but is resolved in 3.0 see Bug  16341 for details");
             Assert.True(IndexersTestClass14.testMethod());
         }
 
         [TestMethod]
         public void Indexers18_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" The formal-index-parameter-list specifies");
-            Debug.WriteLine(" the parameters of the indexer.  The formal");
-            Debug.WriteLine(" parameter list of an indexer corresponds");
-            Debug.WriteLine(" to that of a method, except that at least");
-            Debug.WriteLine(" one parameter must be specified, and that the");
-            Debug.WriteLine(" ref and out parameter modifiers are not");
-            Debug.WriteLine(" permitted.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" The formal-index-parameter-list specifies");
+            OutputHelper.WriteLine(" the parameters of the indexer.  The formal");
+            OutputHelper.WriteLine(" parameter list of an indexer corresponds");
+            OutputHelper.WriteLine(" to that of a method, except that at least");
+            OutputHelper.WriteLine(" one parameter must be specified, and that the");
+            OutputHelper.WriteLine(" ref and out parameter modifiers are not");
+            OutputHelper.WriteLine(" permitted.");
             Assert.True(IndexersTestClass18.testMethod());
         }
 
         [TestMethod]
         public void Indexers23_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" The type of an indexer declaration and each ");
-            Debug.WriteLine(" of the types referenced in the formal-index");
-            Debug.WriteLine(" parameter list must be at least as accessible");
-            Debug.WriteLine(" as the indexer itself.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" The type of an indexer declaration and each ");
+            OutputHelper.WriteLine(" of the types referenced in the formal-index");
+            OutputHelper.WriteLine(" parameter list must be at least as accessible");
+            OutputHelper.WriteLine(" as the indexer itself.");
             Assert.True(IndexersTestClass23.testMethod());
         }
 
         [TestMethod]
         public void Indexers29_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" The formal parameter list of an indexer defines");
-            Debug.WriteLine(" the signature of the indexer.  Specifically, the");
-            Debug.WriteLine(" signature of an indexer consists of the number and");
-            Debug.WriteLine(" types of its formal parameters.  The element type");
-            Debug.WriteLine(" is not a part of an index signature, nor are the");
-            Debug.WriteLine(" names of the formal parameters.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" The formal parameter list of an indexer defines");
+            OutputHelper.WriteLine(" the signature of the indexer.  Specifically, the");
+            OutputHelper.WriteLine(" signature of an indexer consists of the number and");
+            OutputHelper.WriteLine(" types of its formal parameters.  The element type");
+            OutputHelper.WriteLine(" is not a part of an index signature, nor are the");
+            OutputHelper.WriteLine(" names of the formal parameters.");
             Assert.True(IndexersTestClass29.testMethod());
         }
 
         [TestMethod]
         public void Indexers32_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" The formal parameter list of an indexer defines");
-            Debug.WriteLine(" the signature of the indexer.  Specifically, the");
-            Debug.WriteLine(" signature of an indexer consists of the number and");
-            Debug.WriteLine(" types of its formal parameters.  The element type");
-            Debug.WriteLine(" is not a part of an index signature, nor are the");
-            Debug.WriteLine(" names of the formal parameters.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" The formal parameter list of an indexer defines");
+            OutputHelper.WriteLine(" the signature of the indexer.  Specifically, the");
+            OutputHelper.WriteLine(" signature of an indexer consists of the number and");
+            OutputHelper.WriteLine(" types of its formal parameters.  The element type");
+            OutputHelper.WriteLine(" is not a part of an index signature, nor are the");
+            OutputHelper.WriteLine(" names of the formal parameters.");
             Assert.True(IndexersTestClass32.testMethod());
         }
 
         [TestMethod]
         public void Indexers33_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" The formal parameter list of an indexer defines");
-            Debug.WriteLine(" the signature of the indexer.  Specifically, the");
-            Debug.WriteLine(" signature of an indexer consists of the number and");
-            Debug.WriteLine(" types of its formal parameters.  The element type");
-            Debug.WriteLine(" is not a part of an index signature, nor are the");
-            Debug.WriteLine(" names of the formal parameters.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" The formal parameter list of an indexer defines");
+            OutputHelper.WriteLine(" the signature of the indexer.  Specifically, the");
+            OutputHelper.WriteLine(" signature of an indexer consists of the number and");
+            OutputHelper.WriteLine(" types of its formal parameters.  The element type");
+            OutputHelper.WriteLine(" is not a part of an index signature, nor are the");
+            OutputHelper.WriteLine(" names of the formal parameters.");
             Assert.True(IndexersTestClass33.testMethod());
         }
 
         [TestMethod]
         public void Indexers37_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" With these differences in mind, all rules");
-            Debug.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
-            Debug.WriteLine(" accessors as well as property accessors.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" With these differences in mind, all rules");
+            OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
+            OutputHelper.WriteLine(" accessors as well as property accessors.");
             Assert.True(IndexersTestClass37.testMethod());
         }
 
         [TestMethod]
         public void Indexers38_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" With these differences in mind, all rules");
-            Debug.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
-            Debug.WriteLine(" accessors as well as property accessors.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" With these differences in mind, all rules");
+            OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
+            OutputHelper.WriteLine(" accessors as well as property accessors.");
             Assert.True(IndexersTestClass38.testMethod());
         }
         [TestMethod]
         public void Indexers39_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" With these differences in mind, all rules");
-            Debug.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
-            Debug.WriteLine(" accessors as well as property accessors.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" With these differences in mind, all rules");
+            OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
+            OutputHelper.WriteLine(" accessors as well as property accessors.");
             Assert.True(IndexersTestClass39.testMethod());
         }
 
         [TestMethod]
         public void Indexers42_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" With these differences in mind, all rules");
-            Debug.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
-            Debug.WriteLine(" accessors as well as property accessors.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" With these differences in mind, all rules");
+            OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
+            OutputHelper.WriteLine(" accessors as well as property accessors.");
             Assert.True(IndexersTestClass42.testMethod());
         }
 
         [TestMethod]
         public void Indexers43_Test()
         {
-            Debug.WriteLine(" Section 10.8");
-            Debug.WriteLine(" With these differences in mind, all rules");
-            Debug.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
-            Debug.WriteLine(" accessors as well as property accessors.");
+            OutputHelper.WriteLine(" Section 10.8");
+            OutputHelper.WriteLine(" With these differences in mind, all rules");
+            OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
+            OutputHelper.WriteLine(" accessors as well as property accessors.");
             Assert.True(IndexersTestClass43.testMethod());
         }
 
         [TestMethod]
         public void Indexers46_Test()
         {
-            Debug.WriteLine("Testing multiple comma seperated indexers");
+            OutputHelper.WriteLine("Testing multiple comma seperated indexers");
             Assert.True(IndexersTestClass46.testMethod());
         }
 
         [TestMethod]
         public void Indexers47_Test()
         {
-            Debug.WriteLine("Testing multiple comma seperated indexers to a public variable");
+            OutputHelper.WriteLine("Testing multiple comma seperated indexers to a public variable");
             Assert.True(IndexersTestClass47.testMethod());
         }
 
         [TestMethod]
         public void Indexers48_Test()
         {
-            Debug.WriteLine("Testing multiple comma seperated indexers with a protected internal get and set");
+            OutputHelper.WriteLine("Testing multiple comma seperated indexers with a protected internal get and set");
             Assert.True(IndexersTestClass48.testMethod());
         }
 
         [TestMethod]
         public void Indexers49_Test()
         {
-            Debug.WriteLine("Testing multiple comma seperated indexers with an internal get and set");
+            OutputHelper.WriteLine("Testing multiple comma seperated indexers with an internal get and set");
             Assert.True(IndexersTestClass49.testMethod());
         }
 
         [TestMethod]
         public void Indexers50_Test()
         {
-            Debug.WriteLine("Testing multiple comma seperated indexers with a private get and set");
+            OutputHelper.WriteLine("Testing multiple comma seperated indexers with a private get and set");
             Assert.True(IndexersTestClass50.testMethod());
         }
 
         [TestMethod]
         public void Indexers51_Test()
         {
-            Debug.WriteLine("Testing multiple comma seperated indexers with a public virtual get and set");
+            OutputHelper.WriteLine("Testing multiple comma seperated indexers with a public virtual get and set");
             Assert.True(IndexersTestClass51.testMethod());
         }
 
         [TestMethod]
         public void Indexers52_Test()
         {
-            Debug.WriteLine("Testing multiple comma seperated indexers with an overridden public virtual get and set");
-            Debug.WriteLine("This test is expected to fail");
+            OutputHelper.WriteLine("Testing multiple comma seperated indexers with an overridden public virtual get and set");
+            OutputHelper.WriteLine("This test is expected to fail");
             Assert.False(IndexersTestClass52.testMethod());
         }
 
         [TestMethod]
         public void Indexers53_Test()
         {
-            Debug.WriteLine("Testing multiple comma seperated indexers with an overridden public abstract get and set");
+            OutputHelper.WriteLine("Testing multiple comma seperated indexers with an overridden public abstract get and set");
             Assert.True(IndexersTestClass53.testMethod());
         }
 
         [TestMethod]
         public void Indexers55_Test()
         {
-            Debug.WriteLine("Testing 10 explicitly specified indexers");
+            OutputHelper.WriteLine("Testing 10 explicitly specified indexers");
             Assert.True(IndexersTestClass55.testMethod());
         }
 
         [TestMethod]
         public void Indexers56_Test()
         {
-            Debug.WriteLine("Testing a single indexers with an overridden public abstract get");
+            OutputHelper.WriteLine("Testing a single indexers with an overridden public abstract get");
             Assert.True(IndexersTestClass56.testMethod());
         }
 

@@ -16,223 +16,223 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_unary068_Test()
         {
-            Debug.WriteLine(" 7.6.5 Operator Overloading - Unary operator");
+            OutputHelper.WriteLine(" 7.6.5 Operator Overloading - Unary operator");
             Assert.True(Other_TestClass_unary068.testMethod());
         }
         [TestMethod]
         public void Other_relat001_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat001.testMethod());
         }
         [TestMethod]
         public void Other_relat002_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat002.testMethod());
         }
         [TestMethod]
         public void Other_relat003_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat003.testMethod());
         }
         [TestMethod]
         public void Other_relat004_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat004.testMethod());
         }
         [TestMethod]
         public void Other_relat005_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat005.testMethod());
         }
         [TestMethod]
         public void Other_relat006_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat006.testMethod());
         }
         [TestMethod]
         public void Other_relat007_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat007.testMethod());
         }
         [TestMethod]
         public void Other_relat008_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat008.testMethod());
         }
         [TestMethod]
         public void Other_relat009_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat009.testMethod());
         }
         [TestMethod]
         public void Other_relat010_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat010.testMethod());
         }
         [TestMethod]
         public void Other_relat011_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat011.testMethod());
         }
         [TestMethod]
         public void Other_relat012_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat012.testMethod());
         }
         [TestMethod]
         public void Other_relat013_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat013.testMethod());
         }
         [TestMethod]
         public void Other_relat014_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat014.testMethod());
         }
         [TestMethod]
         public void Other_relat015_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat015.testMethod());
         }
         [TestMethod]
         public void Other_relat016_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat016.testMethod());
         }
         [TestMethod]
         public void Other_relat017_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat017.testMethod());
         }
         [TestMethod]
         public void Other_relat018_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat018.testMethod());
         }
         [TestMethod]
         public void Other_relat019_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat019.testMethod());
         }
         [TestMethod]
         public void Other_relat020_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat020.testMethod());
         }
         [TestMethod]
         public void Other_relat021_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat021.testMethod());
         }
         [TestMethod]
         public void Other_relat022_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat022.testMethod());
         }
         [TestMethod]
         public void Other_relat023_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat023.testMethod());
         }
         [TestMethod]
         public void Other_relat024_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat024.testMethod());
         }
         [TestMethod]
         public void Other_relat025_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat025.testMethod());
         }
         [TestMethod]
         public void Other_relat026_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat026.testMethod());
         }
         [TestMethod]
         public void Other_relat027_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat027.testMethod());
         }
         [TestMethod]
         public void Other_relat028_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat028.testMethod());
         }
         [TestMethod]
         public void Other_relat029_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat029.testMethod());
         }
         [TestMethod]
         public void Other_relat030_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat030.testMethod());
         }
         [TestMethod]
         public void Other_relat031_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat031.testMethod());
         }
         [TestMethod]
         public void Other_relat032_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat032.testMethod());
         }
         [TestMethod]
         public void Other_relat033_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat033.testMethod());
         }
         [TestMethod]
         public void Other_relat034_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat034.testMethod());
         }
         [TestMethod]
         public void Other_relat035_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat035.testMethod());
         }
         [TestMethod]
         public void Other_relat036_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat036.testMethod());
         }
 
@@ -241,10 +241,10 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat037_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("If either operand is NaN, the result is false");
-            Debug.WriteLine("for all operators except !=, and true for !=");
-            Debug.WriteLine("operator.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("If either operand is NaN, the result is false");
+            OutputHelper.WriteLine("for all operators except !=, and true for !=");
+            OutputHelper.WriteLine("operator.");
             Assert.True(Other_TestClass_relat037.testMethod())
             {
                 return MFTestResults.Pass;
@@ -254,10 +254,10 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat038_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("If either operand is NaN, the result is false");
-            Debug.WriteLine("for all operators except !=, and true for !=");
-            Debug.WriteLine("operator.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("If either operand is NaN, the result is false");
+            OutputHelper.WriteLine("for all operators except !=, and true for !=");
+            OutputHelper.WriteLine("operator.");
             Assert.True(Other_TestClass_relat038.testMethod())
             {
                 return MFTestResults.Pass;
@@ -267,10 +267,10 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat039_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("If either operand is NaN, the result is false");
-            Debug.WriteLine("for all operators except !=, and true for !=");
-            Debug.WriteLine("operator.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("If either operand is NaN, the result is false");
+            OutputHelper.WriteLine("for all operators except !=, and true for !=");
+            OutputHelper.WriteLine("operator.");
             Assert.True(Other_TestClass_relat039.testMethod())
             {
                 return MFTestResults.Pass;
@@ -280,10 +280,10 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat040_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("If either operand is NaN, the result is false");
-            Debug.WriteLine("for all operators except !=, and true for !=");
-            Debug.WriteLine("operator.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("If either operand is NaN, the result is false");
+            OutputHelper.WriteLine("for all operators except !=, and true for !=");
+            OutputHelper.WriteLine("operator.");
             Assert.True(Other_TestClass_relat040.testMethod())
             {
                 return MFTestResults.Pass;
@@ -293,10 +293,10 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat041_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("If either operand is NaN, the result is false");
-            Debug.WriteLine("for all operators except !=, and true for !=");
-            Debug.WriteLine("operator.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("If either operand is NaN, the result is false");
+            OutputHelper.WriteLine("for all operators except !=, and true for !=");
+            OutputHelper.WriteLine("operator.");
             Assert.True(Other_TestClass_relat041.testMethod())
             {
                 return MFTestResults.Pass;
@@ -306,10 +306,10 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat042_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("If either operand is NaN, the result is false");
-            Debug.WriteLine("for all operators except !=, and true for !=");
-            Debug.WriteLine("operator.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("If either operand is NaN, the result is false");
+            OutputHelper.WriteLine("for all operators except !=, and true for !=");
+            OutputHelper.WriteLine("operator.");
             Assert.True(Other_TestClass_relat042.testMethod())
             {
                 return MFTestResults.Pass;
@@ -319,9 +319,9 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat043_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("Negative and positive zero is considered");
-            Debug.WriteLine("equal.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Negative and positive zero is considered");
+            OutputHelper.WriteLine("equal.");
             Assert.True(Other_TestClass_relat043.testMethod())
             {
                 return MFTestResults.Pass;
@@ -331,9 +331,9 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat044_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("Negative and positive zero is considered");
-            Debug.WriteLine("equal.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Negative and positive zero is considered");
+            OutputHelper.WriteLine("equal.");
             Assert.True(Other_TestClass_relat044.testMethod())
             {
                 return MFTestResults.Pass;
@@ -343,10 +343,10 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat045_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("Other_TestClass_?_A negative infinity is considered less than");
-            Debug.WriteLine("all other values, but equal to another negative");
-            Debug.WriteLine("infinity.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Other_TestClass_?_A negative infinity is considered less than");
+            OutputHelper.WriteLine("all other values, but equal to another negative");
+            OutputHelper.WriteLine("infinity.");
             Assert.True(Other_TestClass_relat045.testMethod())
             {
                 return MFTestResults.Pass;
@@ -356,10 +356,10 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat046_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("Other_TestClass_?_A negative infinity is considered less than");
-            Debug.WriteLine("all other values, but equal to another negative");
-            Debug.WriteLine("infinity.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Other_TestClass_?_A negative infinity is considered less than");
+            OutputHelper.WriteLine("all other values, but equal to another negative");
+            OutputHelper.WriteLine("infinity.");
             Assert.True(Other_TestClass_relat046.testMethod())
             {
                 return MFTestResults.Pass;
@@ -369,9 +369,9 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat047_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("Other_TestClass_?_A positive infinity is considered greater than all");
-            Debug.WriteLine("other values, but equal to positive infinity.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Other_TestClass_?_A positive infinity is considered greater than all");
+            OutputHelper.WriteLine("other values, but equal to positive infinity.");
             Assert.True(Other_TestClass_relat047.testMethod())
             {
                 return MFTestResults.Pass;
@@ -381,9 +381,9 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat048_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("Other_TestClass_?_A positive infinity is considered greater than all");
-            Debug.WriteLine("other values, but equal to positive infinity.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Other_TestClass_?_A positive infinity is considered greater than all");
+            OutputHelper.WriteLine("other values, but equal to positive infinity.");
             Assert.True(Other_TestClass_relat048.testMethod())
             {
                 return MFTestResults.Pass;
@@ -394,180 +394,180 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat055_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat055.testMethod());
         }
         [TestMethod]
         public void Other_relat056_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat056.testMethod());
         }
         [TestMethod]
         public void Other_relat057_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat057.testMethod());
         }
         [TestMethod]
         public void Other_relat058_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat058.testMethod());
         }
         [TestMethod]
         public void Other_relat059_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat059.testMethod());
         }
         [TestMethod]
         public void Other_relat060_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat060.testMethod());
         }
         [TestMethod]
         public void Other_relat061_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat061.testMethod());
         }
         [TestMethod]
         public void Other_relat062_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat062.testMethod());
         }
         [TestMethod]
         public void Other_relat063_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("since the predefined reference type equality");
-            Debug.WriteLine("operators accept operands of type object, they");
-            Debug.WriteLine("apply to all types that do not declare applicable");
-            Debug.WriteLine("operator == and != members.  Conversely, any ");
-            Debug.WriteLine("applicable user-defined equality operators");
-            Debug.WriteLine("effectively hide the predefined reference type");
-            Debug.WriteLine("equality operators.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("since the predefined reference type equality");
+            OutputHelper.WriteLine("operators accept operands of type object, they");
+            OutputHelper.WriteLine("apply to all types that do not declare applicable");
+            OutputHelper.WriteLine("operator == and != members.  Conversely, any ");
+            OutputHelper.WriteLine("applicable user-defined equality operators");
+            OutputHelper.WriteLine("effectively hide the predefined reference type");
+            OutputHelper.WriteLine("equality operators.");
             Assert.True(Other_TestClass_relat063.testMethod());
         }
         [TestMethod]
         public void Other_relat064_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("since the predefined reference type equality");
-            Debug.WriteLine("operators accept operands of type object, they");
-            Debug.WriteLine("apply to all types that do not declare applicable");
-            Debug.WriteLine("operator == and != members.  Conversely, any ");
-            Debug.WriteLine("applicable user-defined equality operators");
-            Debug.WriteLine("effectively hide the predefined reference type");
-            Debug.WriteLine("equality operators.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("since the predefined reference type equality");
+            OutputHelper.WriteLine("operators accept operands of type object, they");
+            OutputHelper.WriteLine("apply to all types that do not declare applicable");
+            OutputHelper.WriteLine("operator == and != members.  Conversely, any ");
+            OutputHelper.WriteLine("applicable user-defined equality operators");
+            OutputHelper.WriteLine("effectively hide the predefined reference type");
+            OutputHelper.WriteLine("equality operators.");
             Assert.True(Other_TestClass_relat064.testMethod());
         }
         [TestMethod]
         public void Other_relat065_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("since the predefined reference type equality");
-            Debug.WriteLine("operators accept operands of type object, they");
-            Debug.WriteLine("apply to all types that do not declare applicable");
-            Debug.WriteLine("operator == and != members.  Conversely, any ");
-            Debug.WriteLine("applicable user-defined equality operators");
-            Debug.WriteLine("effectively hide the predefined reference type");
-            Debug.WriteLine("equality operators.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("since the predefined reference type equality");
+            OutputHelper.WriteLine("operators accept operands of type object, they");
+            OutputHelper.WriteLine("apply to all types that do not declare applicable");
+            OutputHelper.WriteLine("operator == and != members.  Conversely, any ");
+            OutputHelper.WriteLine("applicable user-defined equality operators");
+            OutputHelper.WriteLine("effectively hide the predefined reference type");
+            OutputHelper.WriteLine("equality operators.");
             Assert.True(Other_TestClass_relat065.testMethod());
         }
         [TestMethod]
         public void Other_relat066_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("since the predefined reference type equality");
-            Debug.WriteLine("operators accept operands of type object, they");
-            Debug.WriteLine("apply to all types that do not declare applicable");
-            Debug.WriteLine("operator == and != members.  Conversely, any ");
-            Debug.WriteLine("applicable user-defined equality operators");
-            Debug.WriteLine("effectively hide the predefined reference type");
-            Debug.WriteLine("equality operators.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("since the predefined reference type equality");
+            OutputHelper.WriteLine("operators accept operands of type object, they");
+            OutputHelper.WriteLine("apply to all types that do not declare applicable");
+            OutputHelper.WriteLine("operator == and != members.  Conversely, any ");
+            OutputHelper.WriteLine("applicable user-defined equality operators");
+            OutputHelper.WriteLine("effectively hide the predefined reference type");
+            OutputHelper.WriteLine("equality operators.");
             Assert.True(Other_TestClass_relat066.testMethod());
         }
         [TestMethod]
         public void Other_relat069_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("It is an error to use the predefined reference");
-            Debug.WriteLine("type equality operators to compare two references");
-            Debug.WriteLine("that are known to be different at compile-time.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("It is an error to use the predefined reference");
+            OutputHelper.WriteLine("type equality operators to compare two references");
+            OutputHelper.WriteLine("that are known to be different at compile-time.");
             Assert.True(Other_TestClass_relat069.testMethod());
         }
         [TestMethod]
         public void Other_relat072_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("The predefined reference type equality operators");
-            Debug.WriteLine("do not permit value type operands to be compared.");
-            Debug.WriteLine("Therefore, unless a struct type declares its own");
-            Debug.WriteLine("equality operators, it is not possible to compare");
-            Debug.WriteLine("values of that struct type.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("The predefined reference type equality operators");
+            OutputHelper.WriteLine("do not permit value type operands to be compared.");
+            OutputHelper.WriteLine("Therefore, unless a struct type declares its own");
+            OutputHelper.WriteLine("equality operators, it is not possible to compare");
+            OutputHelper.WriteLine("values of that struct type.");
             Assert.True(Other_TestClass_relat072.testMethod());
         }
         [TestMethod]
         public void Other_relat073_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("For an operation of the form x==y or x!=y, ");
-            Debug.WriteLine("if any appicable operator == or != exists, the");
-            Debug.WriteLine("operator overload resolution rules will select");
-            Debug.WriteLine("that operator instead of the predefined reference");
-            Debug.WriteLine("type equality operator.  However, it is always");
-            Debug.WriteLine("possible to select the reference type equality");
-            Debug.WriteLine("operator by explicitly casting one or both of");
-            Debug.WriteLine("the operands to type object.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("For an operation of the form x==y or x!=y, ");
+            OutputHelper.WriteLine("if any appicable operator == or != exists, the");
+            OutputHelper.WriteLine("operator overload resolution rules will select");
+            OutputHelper.WriteLine("that operator instead of the predefined reference");
+            OutputHelper.WriteLine("type equality operator.  However, it is always");
+            OutputHelper.WriteLine("possible to select the reference type equality");
+            OutputHelper.WriteLine("operator by explicitly casting one or both of");
+            OutputHelper.WriteLine("the operands to type object.");
             Assert.True(Other_TestClass_relat073.testMethod());
         }
         [TestMethod]
         public void Other_relat074_Test()
         {
-            Debug.WriteLine("Section 7.9");
-            Debug.WriteLine("For an operation of the form x==y or x!=y, ");
-            Debug.WriteLine("if any appicable operator == or != exists, the");
-            Debug.WriteLine("operator overload resolution rules will select");
-            Debug.WriteLine("that operator instead of the predefined reference");
-            Debug.WriteLine("type equality operator.  However, it is always");
-            Debug.WriteLine("possible to select the reference type equality");
-            Debug.WriteLine("operator by explicitly casting one or both of");
-            Debug.WriteLine("the operands to type object.");
+            OutputHelper.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("For an operation of the form x==y or x!=y, ");
+            OutputHelper.WriteLine("if any appicable operator == or != exists, the");
+            OutputHelper.WriteLine("operator overload resolution rules will select");
+            OutputHelper.WriteLine("that operator instead of the predefined reference");
+            OutputHelper.WriteLine("type equality operator.  However, it is always");
+            OutputHelper.WriteLine("possible to select the reference type equality");
+            OutputHelper.WriteLine("operator by explicitly casting one or both of");
+            OutputHelper.WriteLine("the operands to type object.");
             Assert.True(Other_TestClass_relat074.testMethod());
         }
         [TestMethod]
         public void Other_relat075_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat075.testMethod());
         }
         [TestMethod]
         public void Other_relat076_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat076.testMethod());
         }
         [TestMethod]
         public void Other_relat077_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat077.testMethod());
         }
         [TestMethod]
         public void Other_relat078_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat078.testMethod());
         }
         /*
         [TestMethod]
         public void Other_relat079_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat079.testMethod())
             {
                 return MFTestResults.Pass;
@@ -578,198 +578,198 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_relat080_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat080.testMethod());
         }
         [TestMethod]
         public void Other_relat081_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat081.testMethod());
         }
         [TestMethod]
         public void Other_relat083_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat083.testMethod());
         }
         [TestMethod]
         public void Other_relat084_Test()
         {
-            Debug.WriteLine("Section 7.9");
+            OutputHelper.WriteLine("Section 7.9");
             Assert.True(Other_TestClass_relat084.testMethod());
         }
         [TestMethod]
         public void Other_relat086_Test()
         {
-            Debug.WriteLine("Making sure floating point relational operators are working correctly for negative");
-            Debug.WriteLine("vs. positive values.");
+            OutputHelper.WriteLine("Making sure floating point relational operators are working correctly for negative");
+            OutputHelper.WriteLine("vs. positive values.");
             Assert.True(Other_TestClass_relat086.testMethod());
         }
         [TestMethod]
         public void Other_relat087_Test()
         {
-            Debug.WriteLine("Making sure floating point relational operators are working correctly for negative");
-            Debug.WriteLine("vs. positive values.");
+            OutputHelper.WriteLine("Making sure floating point relational operators are working correctly for negative");
+            OutputHelper.WriteLine("vs. positive values.");
             Assert.True(Other_TestClass_relat087.testMethod());
         }
         [TestMethod]
         public void Other_relat088_Test()
         {
-            Debug.WriteLine("Making sure floating point relational operators are working correctly for negative");
-            Debug.WriteLine("vs. positive values.");
+            OutputHelper.WriteLine("Making sure floating point relational operators are working correctly for negative");
+            OutputHelper.WriteLine("vs. positive values.");
             Assert.True(Other_TestClass_relat088.testMethod());
         }
         [TestMethod]
         public void Other_relat089_Test()
         {
-            Debug.WriteLine("Making sure floating point relational operators are working correctly for negative");
-            Debug.WriteLine("vs. positive values.");
+            OutputHelper.WriteLine("Making sure floating point relational operators are working correctly for negative");
+            OutputHelper.WriteLine("vs. positive values.");
             Assert.True(Other_TestClass_relat089.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic001_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic001.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic002_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic002.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic003_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic003.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic004_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic004.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic005_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic005.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic006_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic006.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic007_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic007.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic008_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic008.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic009_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic009.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic010_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic010.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic011_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic011.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic012_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic012.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic013_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic013.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic014_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic014.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic015_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_operators_logic015.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic016_Test()
         {
-            Debug.WriteLine("Section 7.11");
-            Debug.WriteLine("The operation x (double amp) y corresponds to the");
-            Debug.WriteLine("operation x (amp) y except that y is evaluated only");
-            Debug.WriteLine("if x is true.");
+            OutputHelper.WriteLine("Section 7.11");
+            OutputHelper.WriteLine("The operation x (double amp) y corresponds to the");
+            OutputHelper.WriteLine("operation x (amp) y except that y is evaluated only");
+            OutputHelper.WriteLine("if x is true.");
             Assert.True(Other_TestClass_operators_logic016.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic017_Test()
         {
-            Debug.WriteLine("Section 7.11");
-            Debug.WriteLine("The operation x (double amp) y corresponds to the");
-            Debug.WriteLine("operation x (amp) y except that y is evaluated only");
-            Debug.WriteLine("if x is true.");
+            OutputHelper.WriteLine("Section 7.11");
+            OutputHelper.WriteLine("The operation x (double amp) y corresponds to the");
+            OutputHelper.WriteLine("operation x (amp) y except that y is evaluated only");
+            OutputHelper.WriteLine("if x is true.");
             Assert.True(Other_TestClass_operators_logic017.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic018_Test()
         {
-            Debug.WriteLine("Section 7.11");
-            Debug.WriteLine("The operation x || y corresponds to the");
-            Debug.WriteLine("operation x (amp) y except that y is evaluated only");
-            Debug.WriteLine("if x is false.");
+            OutputHelper.WriteLine("Section 7.11");
+            OutputHelper.WriteLine("The operation x || y corresponds to the");
+            OutputHelper.WriteLine("operation x (amp) y except that y is evaluated only");
+            OutputHelper.WriteLine("if x is false.");
             Assert.True(Other_TestClass_operators_logic018.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic019_Test()
         {
-            Debug.WriteLine("Section 7.11");
-            Debug.WriteLine("The operation x || y corresponds to the");
-            Debug.WriteLine("operation x (amp) y except that y is evaluated only");
-            Debug.WriteLine("if x is false.");
+            OutputHelper.WriteLine("Section 7.11");
+            OutputHelper.WriteLine("The operation x || y corresponds to the");
+            OutputHelper.WriteLine("operation x (amp) y except that y is evaluated only");
+            OutputHelper.WriteLine("if x is false.");
             Assert.True(Other_TestClass_operators_logic019.testMethod());
         }
         /*
         [TestMethod]
         public void Other_operators_logic022_Test()
         {
-            Debug.WriteLine("Section 7.11");
-            Debug.WriteLine("When the operands of && or || are of types");
-            Debug.WriteLine("that declare an applicable user-defined operator &");
-            Debug.WriteLine("or operator |, both of the following must be true,");
-            Debug.WriteLine("where T is the type in which the selected operand");
-            Debug.WriteLine("is declared:");
-                        Debug.WriteLine("The return type and the type of each parameter of ");
-            Debug.WriteLine("the selected operator must be T.  In other words, ");
-            Debug.WriteLine("the operator must compute the logical AND or the");
-            Debug.WriteLine("logical OR of the two operands of type T, and must");
-            Debug.WriteLine("return a result of type T.");
-                        Debug.WriteLine("T must contain declarations of operator true and");
-            Debug.WriteLine("operator false.");
+            OutputHelper.WriteLine("Section 7.11");
+            OutputHelper.WriteLine("When the operands of && or || are of types");
+            OutputHelper.WriteLine("that declare an applicable user-defined operator &");
+            OutputHelper.WriteLine("or operator |, both of the following must be true,");
+            OutputHelper.WriteLine("where T is the type in which the selected operand");
+            OutputHelper.WriteLine("is declared:");
+                        OutputHelper.WriteLine("The return type and the type of each parameter of ");
+            OutputHelper.WriteLine("the selected operator must be T.  In other words, ");
+            OutputHelper.WriteLine("the operator must compute the logical AND or the");
+            OutputHelper.WriteLine("logical OR of the two operands of type T, and must");
+            OutputHelper.WriteLine("return a result of type T.");
+                        OutputHelper.WriteLine("T must contain declarations of operator true and");
+            OutputHelper.WriteLine("operator false.");
                         Assert.True(Other_TestClass_operators_logic022.testMethod())
             {
                 return MFTestResults.Pass;
@@ -779,19 +779,19 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_operators_logic023_Test()
         {
-            Debug.WriteLine("Section 7.11");
-            Debug.WriteLine("When the operands of && or || are of types");
-            Debug.WriteLine("that declare an applicable user-defined operator &");
-            Debug.WriteLine("or operator |, both of the following must be true,");
-            Debug.WriteLine("where T is the type in which the selected operand");
-            Debug.WriteLine("is declared:");
-                        Debug.WriteLine("The return type and the type of each parameter of ");
-            Debug.WriteLine("the selected operator must be T.  In other words, ");
-            Debug.WriteLine("the operator must compute the logical AND or the");
-            Debug.WriteLine("logical OR of the two operands of type T, and must");
-            Debug.WriteLine("return a result of type T.");
-                        Debug.WriteLine("T must contain declarations of operator true and");
-            Debug.WriteLine("operator false.");
+            OutputHelper.WriteLine("Section 7.11");
+            OutputHelper.WriteLine("When the operands of && or || are of types");
+            OutputHelper.WriteLine("that declare an applicable user-defined operator &");
+            OutputHelper.WriteLine("or operator |, both of the following must be true,");
+            OutputHelper.WriteLine("where T is the type in which the selected operand");
+            OutputHelper.WriteLine("is declared:");
+                        OutputHelper.WriteLine("The return type and the type of each parameter of ");
+            OutputHelper.WriteLine("the selected operator must be T.  In other words, ");
+            OutputHelper.WriteLine("the operator must compute the logical AND or the");
+            OutputHelper.WriteLine("logical OR of the two operands of type T, and must");
+            OutputHelper.WriteLine("return a result of type T.");
+                        OutputHelper.WriteLine("T must contain declarations of operator true and");
+            OutputHelper.WriteLine("operator false.");
                         Assert.True(Other_TestClass_operators_logic023.testMethod())
             {
                 return MFTestResults.Pass;
@@ -801,7 +801,7 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_operators_logic032_Test()
         {
-            Debug.WriteLine("Section 7.11");
+            OutputHelper.WriteLine("Section 7.11");
             Assert.True(Other_TestClass_operators_logic032.testMethod())
             {
                 return MFTestResults.Pass;
@@ -812,886 +812,886 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Other_operators_logic033_Test()
         {
-            Debug.WriteLine("Section 7.11");
+            OutputHelper.WriteLine("Section 7.11");
             Assert.True(Other_TestClass_operators_logic033.testMethod());
         }
         [TestMethod]
         public void Other_cond001_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("Other_TestClass_?_A conditional expression of the form b(question) x(colon)y");
-            Debug.WriteLine("first evaluates the condition b.  Then, if b");
-            Debug.WriteLine("is true, x is evaluated and becomes the result");
-            Debug.WriteLine("of the operation.  Otherwise, y is evaluated");
-            Debug.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
-            Debug.WriteLine("conditional expression never evaluates both x");
-            Debug.WriteLine("and y.");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("Other_TestClass_?_A conditional expression of the form b(question) x(colon)y");
+            OutputHelper.WriteLine("first evaluates the condition b.  Then, if b");
+            OutputHelper.WriteLine("is true, x is evaluated and becomes the result");
+            OutputHelper.WriteLine("of the operation.  Otherwise, y is evaluated");
+            OutputHelper.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
+            OutputHelper.WriteLine("conditional expression never evaluates both x");
+            OutputHelper.WriteLine("and y.");
             Assert.True(Other_TestClass_cond001.testMethod());
         }
         [TestMethod]
         public void Other_cond002_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("Other_TestClass_?_A conditional expression of the form b(question) x(colon)y");
-            Debug.WriteLine("first evaluates the condition b.  Then, if b");
-            Debug.WriteLine("is true, x is evaluated and becomes the result");
-            Debug.WriteLine("of the operation.  Otherwise, y is evaluated");
-            Debug.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
-            Debug.WriteLine("conditional expression never evaluates both x");
-            Debug.WriteLine("and y.");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("Other_TestClass_?_A conditional expression of the form b(question) x(colon)y");
+            OutputHelper.WriteLine("first evaluates the condition b.  Then, if b");
+            OutputHelper.WriteLine("is true, x is evaluated and becomes the result");
+            OutputHelper.WriteLine("of the operation.  Otherwise, y is evaluated");
+            OutputHelper.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
+            OutputHelper.WriteLine("conditional expression never evaluates both x");
+            OutputHelper.WriteLine("and y.");
             Assert.True(Other_TestClass_cond002.testMethod());
         }
         [TestMethod]
         public void Other_cond003_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("Other_TestClass_?_A conditional expression of the form b(question) x(colon)y");
-            Debug.WriteLine("first evaluates the condition b.  Then, if b");
-            Debug.WriteLine("is true, x is evaluated and becomes the result");
-            Debug.WriteLine("of the operation.  Otherwise, y is evaluated");
-            Debug.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
-            Debug.WriteLine("conditional expression never evaluates both x");
-            Debug.WriteLine("and y.");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("Other_TestClass_?_A conditional expression of the form b(question) x(colon)y");
+            OutputHelper.WriteLine("first evaluates the condition b.  Then, if b");
+            OutputHelper.WriteLine("is true, x is evaluated and becomes the result");
+            OutputHelper.WriteLine("of the operation.  Otherwise, y is evaluated");
+            OutputHelper.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
+            OutputHelper.WriteLine("conditional expression never evaluates both x");
+            OutputHelper.WriteLine("and y.");
             Assert.True(Other_TestClass_cond003.testMethod());
         }
         [TestMethod]
         public void Other_cond004_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("Other_TestClass_?_A conditional expression of the form b(question) x(colon)y");
-            Debug.WriteLine("first evaluates the condition b.  Then, if b");
-            Debug.WriteLine("is true, x is evaluated and becomes the result");
-            Debug.WriteLine("of the operation.  Otherwise, y is evaluated");
-            Debug.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
-            Debug.WriteLine("conditional expression never evaluates both x");
-            Debug.WriteLine("and y.");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("Other_TestClass_?_A conditional expression of the form b(question) x(colon)y");
+            OutputHelper.WriteLine("first evaluates the condition b.  Then, if b");
+            OutputHelper.WriteLine("is true, x is evaluated and becomes the result");
+            OutputHelper.WriteLine("of the operation.  Otherwise, y is evaluated");
+            OutputHelper.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
+            OutputHelper.WriteLine("conditional expression never evaluates both x");
+            OutputHelper.WriteLine("and y.");
             Assert.True(Other_TestClass_cond004.testMethod());
         }
         [TestMethod]
         public void Other_cond005_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("The conditional operator is right-associative, meaning");
-            Debug.WriteLine("that operations are grouped from right to left.  For example,");
-            Debug.WriteLine("an expression of the form a?b:c?d:e is evaluated as a?b:(c?d:e).");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("The conditional operator is right-associative, meaning");
+            OutputHelper.WriteLine("that operations are grouped from right to left.  For example,");
+            OutputHelper.WriteLine("an expression of the form a?b:c?d:e is evaluated as a?b:(c?d:e).");
             Assert.True(Other_TestClass_cond005.testMethod());
         }
         [TestMethod]
         public void Other_cond006_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("The first operand of the ?: operator must");
-            Debug.WriteLine("be an expression of a type that can be ");
-            Debug.WriteLine("implicitly converted to bool, or an expression");
-            Debug.WriteLine("of a type that implements operator true.  If neither");
-            Debug.WriteLine("of these requirements are satisfied, a compile-time");
-            Debug.WriteLine("error occurs.");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("The first operand of the ?: operator must");
+            OutputHelper.WriteLine("be an expression of a type that can be ");
+            OutputHelper.WriteLine("implicitly converted to bool, or an expression");
+            OutputHelper.WriteLine("of a type that implements operator true.  If neither");
+            OutputHelper.WriteLine("of these requirements are satisfied, a compile-time");
+            OutputHelper.WriteLine("error occurs.");
             Assert.True(Other_TestClass_cond006.testMethod());
         }
         [TestMethod]
         public void Other_cond008_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("The first operand of the ?: operator must");
-            Debug.WriteLine("be an expression of a type that can be ");
-            Debug.WriteLine("implicitly converted to bool, or an expression");
-            Debug.WriteLine("of a type that implements operator true.  If neither");
-            Debug.WriteLine("of these requirements are satisfied, a compile-time");
-            Debug.WriteLine("error occurs.");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("The first operand of the ?: operator must");
+            OutputHelper.WriteLine("be an expression of a type that can be ");
+            OutputHelper.WriteLine("implicitly converted to bool, or an expression");
+            OutputHelper.WriteLine("of a type that implements operator true.  If neither");
+            OutputHelper.WriteLine("of these requirements are satisfied, a compile-time");
+            OutputHelper.WriteLine("error occurs.");
             Assert.True(Other_TestClass_cond008.testMethod());
         }
         [TestMethod]
         public void Other_cond010_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("Let X and Y be the types of the second and");
-            Debug.WriteLine("third operands. Then,");
-            Debug.WriteLine("If X and Y are the same types, then this is");
-            Debug.WriteLine("the type of the conditional expression.");
-            Debug.WriteLine("Otherwise, if an implicit conversion exists");
-            Debug.WriteLine("from X to Y, but not from Y to X, then Y");
-            Debug.WriteLine("is the type of the conditional expression.");
-            Debug.WriteLine("Otherwise, if an implicit conversion exists");
-            Debug.WriteLine("from Y to X, but not from X to Y, then X");
-            Debug.WriteLine("is the type of the conditional expression.");
-            Debug.WriteLine("Otherwise, no expression type can be ");
-            Debug.WriteLine("determined, and a compile time error occurs. ");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("Let X and Y be the types of the second and");
+            OutputHelper.WriteLine("third operands. Then,");
+            OutputHelper.WriteLine("If X and Y are the same types, then this is");
+            OutputHelper.WriteLine("the type of the conditional expression.");
+            OutputHelper.WriteLine("Otherwise, if an implicit conversion exists");
+            OutputHelper.WriteLine("from X to Y, but not from Y to X, then Y");
+            OutputHelper.WriteLine("is the type of the conditional expression.");
+            OutputHelper.WriteLine("Otherwise, if an implicit conversion exists");
+            OutputHelper.WriteLine("from Y to X, but not from X to Y, then X");
+            OutputHelper.WriteLine("is the type of the conditional expression.");
+            OutputHelper.WriteLine("Otherwise, no expression type can be ");
+            OutputHelper.WriteLine("determined, and a compile time error occurs. ");
             Assert.True(Other_TestClass_cond010.testMethod());
         }
         [TestMethod]
         public void Other_cond011_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("Let X and Y be the types of the second and");
-            Debug.WriteLine("third operands. Then,");
-            Debug.WriteLine("If X and Y are the same types, then this is");
-            Debug.WriteLine("the type of the conditional expression.");
-            Debug.WriteLine("Otherwise, if an implicit conversion exists");
-            Debug.WriteLine("from X to Y, but not from Y to X, then Y");
-            Debug.WriteLine("is the type of the conditional expression.");
-            Debug.WriteLine("Otherwise, if an implicit conversion exists");
-            Debug.WriteLine("from Y to X, but not from X to Y, then X");
-            Debug.WriteLine("is the type of the conditional expression.");
-            Debug.WriteLine("Otherwise, no expression type can be ");
-            Debug.WriteLine("determined, and a compile time error occurs. ");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("Let X and Y be the types of the second and");
+            OutputHelper.WriteLine("third operands. Then,");
+            OutputHelper.WriteLine("If X and Y are the same types, then this is");
+            OutputHelper.WriteLine("the type of the conditional expression.");
+            OutputHelper.WriteLine("Otherwise, if an implicit conversion exists");
+            OutputHelper.WriteLine("from X to Y, but not from Y to X, then Y");
+            OutputHelper.WriteLine("is the type of the conditional expression.");
+            OutputHelper.WriteLine("Otherwise, if an implicit conversion exists");
+            OutputHelper.WriteLine("from Y to X, but not from X to Y, then X");
+            OutputHelper.WriteLine("is the type of the conditional expression.");
+            OutputHelper.WriteLine("Otherwise, no expression type can be ");
+            OutputHelper.WriteLine("determined, and a compile time error occurs. ");
             Assert.True(Other_TestClass_cond011.testMethod());
         }
         [TestMethod]
         public void Other_cond014_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("The run-time processing of a conditional expression of");
-            Debug.WriteLine("the form b? x: y consists of the following steps:");
-            Debug.WriteLine("If an implicit conversion from type b to bool exists,");
-            Debug.WriteLine("then this implicit conversion is performed to produce");
-            Debug.WriteLine("a bool value.");
-            Debug.WriteLine("Otherwise, the operator true defined by the type of");
-            Debug.WriteLine("b is invoked to produce a bool value.");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("The run-time processing of a conditional expression of");
+            OutputHelper.WriteLine("the form b? x: y consists of the following steps:");
+            OutputHelper.WriteLine("If an implicit conversion from type b to bool exists,");
+            OutputHelper.WriteLine("then this implicit conversion is performed to produce");
+            OutputHelper.WriteLine("a bool value.");
+            OutputHelper.WriteLine("Otherwise, the operator true defined by the type of");
+            OutputHelper.WriteLine("b is invoked to produce a bool value.");
             Assert.True(Other_TestClass_cond014.testMethod());
         }
         [TestMethod]
         public void Other_cond015_Test()
         {
-            Debug.WriteLine("Section 7.12");
-            Debug.WriteLine("The run-time processing of a conditional expression of");
-            Debug.WriteLine("the form b? x: y consists of the following steps:");
-            Debug.WriteLine("If an implicit conversion from type b to bool exists,");
-            Debug.WriteLine("then this implicit conversion is performed to produce");
-            Debug.WriteLine("a bool value.");
-            Debug.WriteLine("Otherwise, the operator true defined by the type of");
-            Debug.WriteLine("b is invoked to produce a bool value.");
+            OutputHelper.WriteLine("Section 7.12");
+            OutputHelper.WriteLine("The run-time processing of a conditional expression of");
+            OutputHelper.WriteLine("the form b? x: y consists of the following steps:");
+            OutputHelper.WriteLine("If an implicit conversion from type b to bool exists,");
+            OutputHelper.WriteLine("then this implicit conversion is performed to produce");
+            OutputHelper.WriteLine("a bool value.");
+            OutputHelper.WriteLine("Otherwise, the operator true defined by the type of");
+            OutputHelper.WriteLine("b is invoked to produce a bool value.");
             Assert.True(Other_TestClass_cond015.testMethod());
         }
         [TestMethod]
         public void Other_is005_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The is operator is used to check whether the run-time type");
-            Debug.WriteLine("of an ojbect is compatible with a given type.  In an operation");
-            Debug.WriteLine("of the form e is T, e must be an expression of a reference-type");
-            Debug.WriteLine("and T must be a reference-type.  If this is not the case, a compile");
-            Debug.WriteLine("time error occurs.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The is operator is used to check whether the run-time type");
+            OutputHelper.WriteLine("of an ojbect is compatible with a given type.  In an operation");
+            OutputHelper.WriteLine("of the form e is T, e must be an expression of a reference-type");
+            OutputHelper.WriteLine("and T must be a reference-type.  If this is not the case, a compile");
+            OutputHelper.WriteLine("time error occurs.");
             Assert.True(Other_TestClass_is005.testMethod());
         }
         [TestMethod]
         public void Other_is006_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The is operator is used to check whether the run-time type");
-            Debug.WriteLine("of an ojbect is compatible with a given type.  In an operation");
-            Debug.WriteLine("of the form e is T, e must be an expression of a reference-type");
-            Debug.WriteLine("and T must be a reference-type.  If this is not the case, a compile");
-            Debug.WriteLine("time error occurs.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The is operator is used to check whether the run-time type");
+            OutputHelper.WriteLine("of an ojbect is compatible with a given type.  In an operation");
+            OutputHelper.WriteLine("of the form e is T, e must be an expression of a reference-type");
+            OutputHelper.WriteLine("and T must be a reference-type.  If this is not the case, a compile");
+            OutputHelper.WriteLine("time error occurs.");
             Assert.True(Other_TestClass_is006.testMethod());
         }
         [TestMethod]
         public void Other_is007_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is007.testMethod());
         }
         [TestMethod]
         public void Other_is008_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is008.testMethod());
         }
         [TestMethod]
         public void Other_is009_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is009.testMethod());
         }
         [TestMethod]
         public void Other_is010_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is010.testMethod());
         }
         [TestMethod]
         public void Other_is011_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is011.testMethod());
         }
         [TestMethod]
         public void Other_is012_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is012.testMethod());
         }
         [TestMethod]
         public void Other_is013_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is013.testMethod());
         }
         [TestMethod]
         public void Other_is014_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is014.testMethod());
         }
         [TestMethod]
         public void Other_is015_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is015.testMethod());
         }
         [TestMethod]
         public void Other_is016_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is016.testMethod());
         }
         [TestMethod]
         public void Other_is017_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is017.testMethod());
         }
         [TestMethod]
         public void Other_is018_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is018.testMethod());
         }
         [TestMethod]
         public void Other_is019_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is019.testMethod());
         }
         [TestMethod]
         public void Other_is020_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is020.testMethod());
         }
         [TestMethod]
         public void Other_is021_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is021.testMethod());
         }
         [TestMethod]
         public void Other_is022_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("The operation e is T returns true if not null");
-            Debug.WriteLine("and if an implicit reference conversion from the ");
-            Debug.WriteLine("run-time type of the instance referenced by e to ");
-            Debug.WriteLine("the type given by T exists.  In other words, e is T");
-            Debug.WriteLine("checks that e is not null and that a cast-expression");
-            Debug.WriteLine("of the form (T)(e) will complete without throwing an ");
-            Debug.WriteLine("System.Exception.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("The operation e is T returns true if not null");
+            OutputHelper.WriteLine("and if an implicit reference conversion from the ");
+            OutputHelper.WriteLine("run-time type of the instance referenced by e to ");
+            OutputHelper.WriteLine("the type given by T exists.  In other words, e is T");
+            OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
+            OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
+            OutputHelper.WriteLine("System.Exception.");
             Assert.True(Other_TestClass_is022.testMethod());
         }
         [TestMethod]
         public void Other_is023_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is023.testMethod());
         }
         [TestMethod]
         public void Other_is024_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is024.testMethod());
         }
         [TestMethod]
         public void Other_is025_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is025.testMethod());
         }
         [TestMethod]
         public void Other_is026_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is026.testMethod());
         }
         [TestMethod]
         public void Other_is027_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is027.testMethod());
         }
 
         [TestMethod]
         public void Other_is028_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is028.testMethod());
         }
 
         [TestMethod]
         public void Other_is029_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is029.testMethod());
         }
 
         [TestMethod]
         public void Other_is030_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is030.testMethod());
         }
 
         [TestMethod]
         public void Other_is031_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is031.testMethod());
         }
 
         [TestMethod]
         public void Other_is032_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is032.testMethod());
         }
 
         [TestMethod]
         public void Other_is033_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is033.testMethod());
         }
 
         [TestMethod]
         public void Other_is034_Test()
         {
-            Debug.WriteLine("Section 7.9.9");
-            Debug.WriteLine("If e is T is known at compile-time to always be");
-            Debug.WriteLine("true or always be false, a compile-time error");
-            Debug.WriteLine("occurs.  The operation is known to always be ");
-            Debug.WriteLine("true if an implicit reference conversion exists from");
-            Debug.WriteLine("the compile-time type of e to T.  The operation is known");
-            Debug.WriteLine("to always be false if no implicit or explicit reference");
-            Debug.WriteLine("conversion exists from the compile-time type of e to t.");
+            OutputHelper.WriteLine("Section 7.9.9");
+            OutputHelper.WriteLine("If e is T is known at compile-time to always be");
+            OutputHelper.WriteLine("true or always be false, a compile-time error");
+            OutputHelper.WriteLine("occurs.  The operation is known to always be ");
+            OutputHelper.WriteLine("true if an implicit reference conversion exists from");
+            OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
+            OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
+            OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
             Assert.True(Other_TestClass_is034.testMethod());
         }
 
         [TestMethod]
         public void Other_as001_Test()
         {
-            Debug.WriteLine("Section 7.9.10");
+            OutputHelper.WriteLine("Section 7.9.10");
             Assert.True(Other_TestClass_as001.testMethod());
         }
 
         [TestMethod]
         public void Other_as002_Test()
         {
-            Debug.WriteLine("Section 7.9.10");
+            OutputHelper.WriteLine("Section 7.9.10");
             Assert.True(Other_TestClass_as002.testMethod());
         }
 
         [TestMethod]
         public void Other_as003_Test()
         {
-            Debug.WriteLine("Section 7.9.10");
-            Debug.WriteLine("string->object->array  ");
+            OutputHelper.WriteLine("Section 7.9.10");
+            OutputHelper.WriteLine("string->object->array  ");
             Assert.True(Other_TestClass_as003.testMethod());
         }
 
         [TestMethod]
         public void Other_as004_Test()
         {
-            Debug.WriteLine("Section 7.9.10");
-            Debug.WriteLine("string->object->array  ");
+            OutputHelper.WriteLine("Section 7.9.10");
+            OutputHelper.WriteLine("string->object->array  ");
             Assert.True(Other_TestClass_as004.testMethod());
         }
 
         [TestMethod]
         public void Other_as007_Test()
         {
-            Debug.WriteLine("Section 7.9.10");
-            Debug.WriteLine("string->object->array  ");
+            OutputHelper.WriteLine("Section 7.9.10");
+            OutputHelper.WriteLine("string->object->array  ");
             Assert.True(Other_TestClass_as007.testMethod());
         }
 
         [TestMethod]
         public void Other_as008_Test()
         {
-            Debug.WriteLine("Section 7.9.10");
-            Debug.WriteLine("exp as object  ");
+            OutputHelper.WriteLine("Section 7.9.10");
+            OutputHelper.WriteLine("exp as object  ");
             Assert.True(Other_TestClass_as008.testMethod());
         }
 
         [TestMethod]
         public void Other_as011_Test()
         {
-            Debug.WriteLine("Section 7.9.10");
-            Debug.WriteLine("expression as for a deep inheritance");
+            OutputHelper.WriteLine("Section 7.9.10");
+            OutputHelper.WriteLine("expression as for a deep inheritance");
             Assert.True(Other_TestClass_as011.testMethod());
         }
 
         [TestMethod]
         public void Other_as012_Test()
         {
-            Debug.WriteLine("Section 7.9.10");
-            Debug.WriteLine("expression as non-type through interface (check at runtime)");
+            OutputHelper.WriteLine("Section 7.9.10");
+            OutputHelper.WriteLine("expression as non-type through interface (check at runtime)");
             Assert.True(Other_TestClass_as012.testMethod());
         }
 
         [TestMethod]
         public void Other_add001_Test()
         {
-            Debug.WriteLine("Section 7.7.4");
-            Debug.WriteLine("When one or both operands are of type string, the");
-            Debug.WriteLine("predefined addition operators concatenate the string");
-            Debug.WriteLine("representation of the operands.");
+            OutputHelper.WriteLine("Section 7.7.4");
+            OutputHelper.WriteLine("When one or both operands are of type string, the");
+            OutputHelper.WriteLine("predefined addition operators concatenate the string");
+            OutputHelper.WriteLine("representation of the operands.");
             Assert.True(Other_TestClass_add001.testMethod());
         }
 
         [TestMethod]
         public void Other_add002_Test()
         {
-            Debug.WriteLine("Section 7.7.4");
-            Debug.WriteLine("When one or both operands are of type string, the");
-            Debug.WriteLine("predefined addition operators concatenate the string");
-            Debug.WriteLine("representation of the operands.");
+            OutputHelper.WriteLine("Section 7.7.4");
+            OutputHelper.WriteLine("When one or both operands are of type string, the");
+            OutputHelper.WriteLine("predefined addition operators concatenate the string");
+            OutputHelper.WriteLine("representation of the operands.");
             Assert.True(Other_TestClass_add002.testMethod());
         }
 
         [TestMethod]
         public void Other_add003_Test()
         {
-            Debug.WriteLine("Section 7.7.4");
-            Debug.WriteLine("When one or both operands are of type string, the");
-            Debug.WriteLine("predefined addition operators concatenate the string");
-            Debug.WriteLine("representation of the operands.");
+            OutputHelper.WriteLine("Section 7.7.4");
+            OutputHelper.WriteLine("When one or both operands are of type string, the");
+            OutputHelper.WriteLine("predefined addition operators concatenate the string");
+            OutputHelper.WriteLine("representation of the operands.");
             Assert.True(Other_TestClass_add003.testMethod());
         }
 
         [TestMethod]
         public void Other_add004_Test()
         {
-            Debug.WriteLine("Section 7.7.4");
-            Debug.WriteLine("When one or both operands are of type string, the");
-            Debug.WriteLine("predefined addition operators concatenate the string");
-            Debug.WriteLine("representation of the operands.");
+            OutputHelper.WriteLine("Section 7.7.4");
+            OutputHelper.WriteLine("When one or both operands are of type string, the");
+            OutputHelper.WriteLine("predefined addition operators concatenate the string");
+            OutputHelper.WriteLine("representation of the operands.");
             Assert.True(Other_TestClass_add004.testMethod());
         }
 
         [TestMethod]
         public void Other_add005_Test()
         {
-            Debug.WriteLine("Section 7.7.4");
-            Debug.WriteLine("When one or both operands are of type string, the");
-            Debug.WriteLine("predefined addition operators concatenate the string");
-            Debug.WriteLine("representation of the operands.");
+            OutputHelper.WriteLine("Section 7.7.4");
+            OutputHelper.WriteLine("When one or both operands are of type string, the");
+            OutputHelper.WriteLine("predefined addition operators concatenate the string");
+            OutputHelper.WriteLine("representation of the operands.");
             Assert.True(Other_TestClass_add005.testMethod());
         }
 
         [TestMethod]
         public void Other_add006_Test()
         {
-            Debug.WriteLine("Section 7.7.4");
-            Debug.WriteLine("When one or both operands are of type string, the");
-            Debug.WriteLine("predefined addition operators concatenate the string");
-            Debug.WriteLine("representation of the operands.");
+            OutputHelper.WriteLine("Section 7.7.4");
+            OutputHelper.WriteLine("When one or both operands are of type string, the");
+            OutputHelper.WriteLine("predefined addition operators concatenate the string");
+            OutputHelper.WriteLine("representation of the operands.");
             Assert.True(Other_TestClass_add006.testMethod());
         }
 
         [TestMethod]
         public void Other_logic001_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic001.testMethod());
         }
 
         [TestMethod]
         public void Other_logic002_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic002.testMethod());
         }
 
         [TestMethod]
         public void Other_logic003_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic003.testMethod());
         }
 
         [TestMethod]
         public void Other_logic004_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic004.testMethod());
         }
 
         [TestMethod]
         public void Other_logic005_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic005.testMethod());
         }
 
         [TestMethod]
         public void Other_logic006_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic006.testMethod());
         }
 
         [TestMethod]
         public void Other_logic007_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic007.testMethod());
         }
 
         [TestMethod]
         public void Other_logic008_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic008.testMethod());
         }
 
         [TestMethod]
         public void Other_logic009_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic009.testMethod());
         }
 
         [TestMethod]
         public void Other_logic010_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic010.testMethod());
         }
 
         [TestMethod]
         public void Other_logic011_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic011.testMethod());
         }
 
         [TestMethod]
         public void Other_logic012_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic012.testMethod());
         }
 
         [TestMethod]
         public void Other_logic013_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic013.testMethod());
         }
 
         [TestMethod]
         public void Other_logic014_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic014.testMethod());
         }
 
         [TestMethod]
         public void Other_logic015_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic015.testMethod());
         }
 
         [TestMethod]
         public void Other_logic016_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic016.testMethod());
         }
 
         [TestMethod]
         public void Other_logic017_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic017.testMethod());
         }
 
         [TestMethod]
         public void Other_logic018_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic018.testMethod());
         }
 
         [TestMethod]
         public void Other_logic019_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic019.testMethod());
         }
 
         [TestMethod]
         public void Other_logic020_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic020.testMethod());
         }
 
         [TestMethod]
         public void Other_logic021_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic021.testMethod());
         }
 
         [TestMethod]
         public void Other_logic022_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic022.testMethod());
         }
 
         [TestMethod]
         public void Other_logic023_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic023.testMethod());
         }
 
         [TestMethod]
         public void Other_logic024_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic024.testMethod());
         }
 
         [TestMethod]
         public void Other_logic025_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic025.testMethod());
         }
 
         [TestMethod]
         public void Other_logic026_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic026.testMethod());
         }
 
         [TestMethod]
         public void Other_logic027_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic027.testMethod());
         }
 
         [TestMethod]
         public void Other_logic028_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic028.testMethod());
         }
 
         [TestMethod]
         public void Other_logic029_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic029.testMethod());
         }
 
         [TestMethod]
         public void Other_logic030_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic030.testMethod());
         }
 
         [TestMethod]
         public void Other_logic032_Test()
         {
-            Debug.WriteLine("Section 7.10");
+            OutputHelper.WriteLine("Section 7.10");
             Assert.True(Other_TestClass_logic032.testMethod());
         }
 

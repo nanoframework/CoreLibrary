@@ -44,8 +44,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType1_GetType_Test()
         {
-            Debug.WriteLine("Checking reflection types to assure that they are boxed when used as local variables");
-            Debug.WriteLine("and when they are assigned to non-valuetype containers (which used to crash)");
+            OutputHelper.WriteLine("Checking reflection types to assure that they are boxed when used as local variables");
+            OutputHelper.WriteLine("and when they are assigned to non-valuetype containers (which used to crash)");
 
             ArrayList list = new ArrayList();
             int i = 0;

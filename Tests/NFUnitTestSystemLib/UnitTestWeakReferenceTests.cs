@@ -21,7 +21,7 @@ namespace NFUnitTestSystemLib
             public WeakRefClass() { }
             ~WeakRefClass()
             {
-                Debug.WriteLine("Finalized.");
+                OutputHelper.WriteLine("Finalized.");
                 hasFinalized1 = true;
             }
             void MakeSomeGarbage()
@@ -46,14 +46,14 @@ namespace NFUnitTestSystemLib
         //    //  4. Verify & Remove Strong reference
         //    //  5. Allow for GC
         //    //  6. If weak ref surivived verify its data
-        //    Debug.WriteLine("Create an object with strong ref");
+        //    OutputHelper.WriteLine("Create an object with strong ref");
         //    WeakRefClass WRC1 = new WeakRefClass();
 
-        //    Debug.WriteLine("Create a short weak ref to the onject");
+        //    OutputHelper.WriteLine("Create a short weak ref to the onject");
         //    WeakReference wr = new WeakReference(WRC1);
         //    wr.Target = WRC1;
 
-        //    Debug.WriteLine("Allow for GC");
+        //    OutputHelper.WriteLine("Allow for GC");
         //    nanoFramework.Runtime.Native.GC.Run(true);
         //    int sleepTime = 2000;
         //    int slept = 0;
@@ -62,16 +62,16 @@ namespace NFUnitTestSystemLib
         //        System.Threading.Thread.Sleep(10);
         //        slept += 10;
         //    }
-        //    Debug.WriteLine("GC took " + slept);
+        //    OutputHelper.WriteLine("GC took " + slept);
 
         //    Assert.False(hasFinalized1);
 
-        //    Debug.WriteLine("Verify & Remove Strong reference");
+        //    OutputHelper.WriteLine("Verify & Remove Strong reference");
         //    Assert.Equal(((WeakRefClass)wr.Target).data, 5);
         //    WRC1 = null;
         //    Assert.Null(WRC1);
 
-        //    Debug.WriteLine("Allow for GC");
+        //    OutputHelper.WriteLine("Allow for GC");
         //    // We should force the finalizer somehow
         //    nanoFramework.Runtime.Native.GC.Run(true);
         //    GC.WaitForPendingFinalizers();
@@ -82,18 +82,18 @@ namespace NFUnitTestSystemLib
         //        System.Threading.Thread.Sleep(10);
         //        slept += 10;
         //    }
-        //    Debug.WriteLine("GC took " + slept);
+        //    OutputHelper.WriteLine("GC took " + slept);
         //    Assert.True(hasFinalized1);
         //    Assert.Null(WRC1 );
 
         //    if (wr.IsAlive)
         //    {
         //        Assert.Equal(((WeakRefClass)wr.Target).data, 5);
-        //        Debug.WriteLine("Weak Reference survived.");
+        //        OutputHelper.WriteLine("Weak Reference survived.");
         //    }
         //    else
         //    {
-        //        Debug.WriteLine("Weak Reference has been collected");
+        //        OutputHelper.WriteLine("Weak Reference has been collected");
         //    }
         //}
     }

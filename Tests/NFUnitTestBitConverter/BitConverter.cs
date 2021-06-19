@@ -6,7 +6,6 @@
 
 using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
 
 namespace NFUnitTestBitConverter
 {
@@ -16,13 +15,13 @@ namespace NFUnitTestBitConverter
         [Setup]
         public void Initialize()
         {
-            Debug.WriteLine("BitConverter tests initialized.");
+            OutputHelper.WriteLine("BitConverter tests initialized.");
         }
 
         [Cleanup]
         public void CleanUp()
         {
-            Debug.WriteLine("Cleaning up after BitConverter tests.");
+            OutputHelper.WriteLine("Cleaning up after BitConverter tests.");
         }
 
         //Test Case Calls

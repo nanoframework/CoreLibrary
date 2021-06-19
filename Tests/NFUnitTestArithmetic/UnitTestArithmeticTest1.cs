@@ -5,8 +5,6 @@
 //
 
 using nanoFramework.TestFramework;
-using System;
-using System.Diagnostics;
 
 namespace NFUnitTestArithmetic
 {
@@ -16,307 +14,307 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Arith_arith001_Test()
         {
-            Debug.WriteLine("Section 7.4 ");
-            Debug.WriteLine("This code tests basic literal integral arthimetic additive expressions.");
+            OutputHelper.WriteLine("Section 7.4 ");
+            OutputHelper.WriteLine("This code tests basic literal integral arthimetic additive expressions.");
             Assert.True(Arith_TestClass_arith001.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith003_Test()
         {
-            Debug.WriteLine("Section 7.4 ");
-            Debug.WriteLine("This code tests basic literal integral arthimetic multiplicative expressions.");
+            OutputHelper.WriteLine("Section 7.4 ");
+            OutputHelper.WriteLine("This code tests basic literal integral arthimetic multiplicative expressions.");
             Assert.True(Arith_TestClass_arith003.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith005_Test()
         {
-            Debug.WriteLine("Section 7.4 ");
-            Debug.WriteLine("This code tests basic integral arthimetic additive expressions using variables.");
+            OutputHelper.WriteLine("Section 7.4 ");
+            OutputHelper.WriteLine("This code tests basic integral arthimetic additive expressions using variables.");
             Assert.True(Arith_TestClass_arith005.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith007_Test()
         {
-            Debug.WriteLine("Section 7.4 ");
-            Debug.WriteLine("This code tests basic integral arthimetic multiplicative expressions with variables.");
+            OutputHelper.WriteLine("Section 7.4 ");
+            OutputHelper.WriteLine("This code tests basic integral arthimetic multiplicative expressions with variables.");
             Assert.True(Arith_TestClass_arith007.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith023_Test()
         {
-            Debug.WriteLine("Section 7.4 ");
-            Debug.WriteLine("This code tests enum additive expressions.");
+            OutputHelper.WriteLine("Section 7.4 ");
+            OutputHelper.WriteLine("This code tests enum additive expressions.");
             Assert.True(Arith_TestClass_arith023.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith024_Test()
         {
-            Debug.WriteLine("Section 7.4 ");
-            Debug.WriteLine("This code tests enum additive expressions.");
+            OutputHelper.WriteLine("Section 7.4 ");
+            OutputHelper.WriteLine("This code tests enum additive expressions.");
             Assert.True(Arith_TestClass_arith024.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith028_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith028.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith029_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith029.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith030_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith030.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith031_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith031.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith032_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith032.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith033_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith033.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith034_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith034.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith035_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith035.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith036_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith036.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith037_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith037.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith038_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith038.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith039_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith039.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith040_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith040.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith041_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith041.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith042_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith042.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith043_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith043.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith044_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith044.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith045_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith045.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith046_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith046.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith047_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith047.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith048_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith048.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith049_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith049.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith050_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith050.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith051_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith051.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith052_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith052.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith053_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith053.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith054_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith054.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith055_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith055.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith056_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith056.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith057_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith057.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith058_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith058.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith059_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith059.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith060_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith060.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith061_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith061.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith062_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith062.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith064_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith064.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith065_Test()
         {
-            Debug.WriteLine("Section 7.7");
+            OutputHelper.WriteLine("Section 7.7");
             Assert.True(Arith_TestClass_arith065.testMethod());
         }
 
@@ -330,25 +328,25 @@ namespace NFUnitTestArithmetic
                 if (5 != (3 + 2))
                 {
                     intRet = 1;
-                    Debug.WriteLine("Failure at Scenario 1");
+                    OutputHelper.WriteLine("Failure at Scenario 1");
                 }
                 //Scenario 2: type int
                 if (4 != (9 - 5))
                 {
-                    Debug.WriteLine("Failure at Scenario 2");
+                    OutputHelper.WriteLine("Failure at Scenario 2");
                     intRet = 1;
                 }
 
                 //Scenario 7: type long
                 if (1047L != (999L + 48L))
                 {
-                    Debug.WriteLine("Failure at Scenario 7");
+                    OutputHelper.WriteLine("Failure at Scenario 7");
                     intRet = 1;
                 }
                 //Scenario 8: type long
                 if (441L != (786L - 345L))
                 {
-                    Debug.WriteLine("Failure at Scenario 8");
+                    OutputHelper.WriteLine("Failure at Scenario 8");
                     intRet = 1;
                 }
                 return intRet;
@@ -366,38 +364,38 @@ namespace NFUnitTestArithmetic
                 //Scenario 1: type int
                 if (12 != (4 * 3))
                 {
-                    Debug.WriteLine("Failure at Scenario 1");
+                    OutputHelper.WriteLine("Failure at Scenario 1");
                     intRet = 1;
                 }
                 //Scenario 2: type int
                 if (4 != (8 / 2))
                 {
-                    Debug.WriteLine("Failure at Scenario 2");
+                    OutputHelper.WriteLine("Failure at Scenario 2");
                     intRet = 1;
                 }
                 //Scenario 3; type int
                 if (14 != (64 % 25))
                 {
-                    Debug.WriteLine("Failure at Scenario 3");
+                    OutputHelper.WriteLine("Failure at Scenario 3");
                     intRet = 1;
                 }
 
                 //Scenario 10: type long
                 if (361362L != (458L * 789L))
                 {
-                    Debug.WriteLine("Failure at Scenario 10");
+                    OutputHelper.WriteLine("Failure at Scenario 10");
                     intRet = 1;
                 }
                 //Scenario 11: type long
                 if (36L != (32004L / 889L))
                 {
-                    Debug.WriteLine("Failure at Scenario 11");
+                    OutputHelper.WriteLine("Failure at Scenario 11");
                     intRet = 1;
                 }
                 //Scenario 12: type long 
                 if (29L != (985013L % 56L))
                 {
-                    Debug.WriteLine("Failure at Scenario 12");
+                    OutputHelper.WriteLine("Failure at Scenario 12");
                     intRet = 1;
                 }
                 return intRet;
@@ -431,7 +429,7 @@ namespace NFUnitTestArithmetic
                 i3 = 5;
                 if (i1 != (i2 + i3))
                 {
-                    Debug.WriteLine("Failure at Scenario 1");
+                    OutputHelper.WriteLine("Failure at Scenario 1");
                     intRet = 1;
                 }
                 //Scenario 2: type int
@@ -440,7 +438,7 @@ namespace NFUnitTestArithmetic
                 i3 = 3;
                 if (i1 != (i2 - i3))
                 {
-                    Debug.WriteLine("Failure at Scenario 2");
+                    OutputHelper.WriteLine("Failure at Scenario 2");
                     intRet = 1;
                 }
                 //Scenario 3: type byte
@@ -449,7 +447,7 @@ namespace NFUnitTestArithmetic
                 b3 = 2;
                 if (b1 != (b2 + b3))
                 {
-                    Debug.WriteLine("Failure at Scenario 3");
+                    OutputHelper.WriteLine("Failure at Scenario 3");
                     intRet = 1;
                 }
                 //Scenario 4: type byte
@@ -458,7 +456,7 @@ namespace NFUnitTestArithmetic
                 b3 = 39;
                 if (b1 != (b2 - b3))
                 {
-                    Debug.WriteLine("Failure at Scenario 4");
+                    OutputHelper.WriteLine("Failure at Scenario 4");
                     intRet = 1;
                 }
                 //Scenario 5: type short
@@ -467,7 +465,7 @@ namespace NFUnitTestArithmetic
                 s3 = 22;
                 if (s1 != (s2 + s3))
                 {
-                    Debug.WriteLine("Failure at Scenario 5");
+                    OutputHelper.WriteLine("Failure at Scenario 5");
                     intRet = 1;
                 }
                 //Scenario 6: type short
@@ -476,7 +474,7 @@ namespace NFUnitTestArithmetic
                 s3 = 14;
                 if (s1 != (s2 - s3))
                 {
-                    Debug.WriteLine("Failure at Scenario 6");
+                    OutputHelper.WriteLine("Failure at Scenario 6");
                     intRet = 1;
                 }
                 //Scenario 7: type long
@@ -485,7 +483,7 @@ namespace NFUnitTestArithmetic
                 l3 = 855L;
                 if (l1 != (l2 + l3))
                 {
-                    Debug.WriteLine("Failure at Scenario 7");
+                    OutputHelper.WriteLine("Failure at Scenario 7");
                     intRet = 1;
                 }
                 //Scenario 8: type long
@@ -494,7 +492,7 @@ namespace NFUnitTestArithmetic
                 l3 = 136920L;
                 if (l1 != (l2 - l3))
                 {
-                    Debug.WriteLine("Failure at Scenario 8");
+                    OutputHelper.WriteLine("Failure at Scenario 8");
                     intRet = 1;
                 }
                 return intRet;
@@ -528,7 +526,7 @@ namespace NFUnitTestArithmetic
                 i3 = 6;
                 if (i1 != (i2 * i3))
                 {
-                    Debug.WriteLine("Failure at Scenario 1");
+                    OutputHelper.WriteLine("Failure at Scenario 1");
                     intRet = 1;
                 }
                 //Scenario 2: type int
@@ -537,7 +535,7 @@ namespace NFUnitTestArithmetic
                 i3 = 14;
                 if (i1 != (i2 / i3))
                 {
-                    Debug.WriteLine("Failure at Scenario 2");
+                    OutputHelper.WriteLine("Failure at Scenario 2");
                     intRet = 1;
                 }
                 //Scenario 3; type int
@@ -546,7 +544,7 @@ namespace NFUnitTestArithmetic
                 i3 = 31;
                 if (i1 != (i2 % i3))
                 {
-                    Debug.WriteLine("Failure at Scenario 3");
+                    OutputHelper.WriteLine("Failure at Scenario 3");
                     intRet = 1;
                 }
                 //Scenario 4: type byte
@@ -555,7 +553,7 @@ namespace NFUnitTestArithmetic
                 b3 = 47;
                 if (b1 != (b2 * b3))
                 {
-                    Debug.WriteLine("Failure at Scenario 4");
+                    OutputHelper.WriteLine("Failure at Scenario 4");
                     intRet = 1;
                 }
                 //Scenario 5: type byte
@@ -564,7 +562,7 @@ namespace NFUnitTestArithmetic
                 b3 = 6;
                 if (b1 != (b2 / b3))
                 {
-                    Debug.WriteLine("Failure at Scenario 5");
+                    OutputHelper.WriteLine("Failure at Scenario 5");
                     intRet = 1;
                 }
                 //Scenario 6: type byte 
@@ -573,7 +571,7 @@ namespace NFUnitTestArithmetic
                 b3 = 86;
                 if (b1 != (b2 % b3))
                 {
-                    Debug.WriteLine("Failure at Scenario 6");
+                    OutputHelper.WriteLine("Failure at Scenario 6");
                     intRet = 1;
                 }
                 //Scenario 7: type short
@@ -582,7 +580,7 @@ namespace NFUnitTestArithmetic
                 s3 = 35;
                 if (s1 != (s2 * s3))
                 {
-                    Debug.WriteLine("Failure at Scenario 7");
+                    OutputHelper.WriteLine("Failure at Scenario 7");
                     intRet = 1;
                 }
                 //Scenario 8: type short
@@ -591,7 +589,7 @@ namespace NFUnitTestArithmetic
                 s3 = 26;
                 if (s1 != (s2 / s3))
                 {
-                    Debug.WriteLine("Failure at Scenario 8");
+                    OutputHelper.WriteLine("Failure at Scenario 8");
                     intRet = 1;
                 }
                 //Scenario 9: type short
@@ -600,7 +598,7 @@ namespace NFUnitTestArithmetic
                 s3 = 90;
                 if (s1 != (s2 % s3))
                 {
-                    Debug.WriteLine("Failure at Scenario 9");
+                    OutputHelper.WriteLine("Failure at Scenario 9");
                     intRet = 1;
                 }
                 //Scenario 10: type long
@@ -609,7 +607,7 @@ namespace NFUnitTestArithmetic
                 l3 = 98L;
                 if (l1 != (l2 * l3))
                 {
-                    Debug.WriteLine("Failure at Scenario 10");
+                    OutputHelper.WriteLine("Failure at Scenario 10");
                     intRet = 1;
                 }
                 //Scenario 11: type long
@@ -618,7 +616,7 @@ namespace NFUnitTestArithmetic
                 l3 = 7L;
                 if (l1 != (l2 / l3))
                 {
-                    Debug.WriteLine("Failure at Scenario 11");
+                    OutputHelper.WriteLine("Failure at Scenario 11");
                     intRet = 1;
                 }
                 //Scenario 12: type long 
@@ -627,7 +625,7 @@ namespace NFUnitTestArithmetic
                 l3 = 458L;
                 if (l1 != (l2 % l3))
                 {
-                    Debug.WriteLine("Failure at Scenario 12");
+                    OutputHelper.WriteLine("Failure at Scenario 12");
                     intRet = 1;
                 }
                 return intRet;

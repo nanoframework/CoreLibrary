@@ -17,21 +17,21 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Ctor_Test()
         {
-            Debug.WriteLine("Test of the standard constructor");
+            OutputHelper.WriteLine("Test of the standard constructor");
             char[] car = new Char[] { 'a', 'b', 'c', 'd' };
 
-            Debug.WriteLine("Char [], start, number");
+            OutputHelper.WriteLine("Char [], start, number");
             string str = new string(car, 1, 2);
             Assert.Equal(str, "bc");
 
             str = new string(car, 0, 4);
             Assert.Equal(str, "abcd");
 
-            Debug.WriteLine("Char []");
+            OutputHelper.WriteLine("Char []");
             str = new string(car);
             Assert.Equal(str, "abcd");
 
-            Debug.WriteLine("Char, number");
+            OutputHelper.WriteLine("Char, number");
             str = new string('\n', 33);
             Assert.Equal(str.Length, 33);
             for (int i = 0; i < str.Length; i++)
@@ -39,17 +39,17 @@ namespace NFUnitTestSystemLib
                 Assert.Equal(str[i], '\n');
             }
 
-            Debug.WriteLine("Char, string terminator known failure. ");
+            OutputHelper.WriteLine("Char, string terminator known failure. ");
             char[] car2 = new char[] { (char)0, (char)65 };
             string s = new string(car2);
             Assert.Equal(s, "\0A");
-            Debug.WriteLine("This was previously bug 20620");
+            OutputHelper.WriteLine("This was previously bug 20620");
 
-            Debug.WriteLine("new char[0]");
+            OutputHelper.WriteLine("new char[0]");
             str = new string(new char[0]);
             Assert.Equal(str, string.Empty);
 
-            Debug.WriteLine("null");
+            OutputHelper.WriteLine("null");
             str = new string(null);
             Assert.Equal(str, string.Empty);
         }
@@ -57,28 +57,28 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void CompareTo_Test3()
         {
-            Debug.WriteLine("Test of the CompareTo method");
+            OutputHelper.WriteLine("Test of the CompareTo method");
             string str = "hello";
             object ob = "Hello";
-            Debug.WriteLine("NormalCompareTo");
+            OutputHelper.WriteLine("NormalCompareTo");
             Assert.Equal(str.CompareTo((object)"hello"), 0);
             Assert.True(str.CompareTo(ob) > 0);
             Assert.True(str.CompareTo((object)"zello") < 0);
-            Debug.WriteLine("CompareTo null");
+            OutputHelper.WriteLine("CompareTo null");
             Assert.True(str.CompareTo((object)null) > 0);
         }
 
         [TestMethod]
         public void GetHashCode_Test4()
         {
-            Debug.WriteLine("Test of the GetHashCode method");
+            OutputHelper.WriteLine("Test of the GetHashCode method");
             string[] strs = new string[] { "abcd", "bcda", "cdab", "dabc" };
 
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    Debug.WriteLine(strs[i].GetHashCode().ToString() + " - " +
+                    OutputHelper.WriteLine(strs[i].GetHashCode().ToString() + " - " +
                         strs[j].GetHashCode().ToString());
                     if (i == j)
                     {
@@ -95,9 +95,9 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Equals_Test5()
         {
-            Debug.WriteLine("This verifies the String.Equals functionality.");
-            Debug.WriteLine("It compares the string value using the Equals function");
-            Debug.WriteLine("to valid and invalid values as well as casted object values.");
+            OutputHelper.WriteLine("This verifies the String.Equals functionality.");
+            OutputHelper.WriteLine("It compares the string value using the Equals function");
+            OutputHelper.WriteLine("to valid and invalid values as well as casted object values.");
 
             string str = "abcd";
             object ob2 = "bcd";
@@ -121,7 +121,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ToString_Test6()
         {
-            Debug.WriteLine("Test of the ToString method");
+            OutputHelper.WriteLine("Test of the ToString method");
             string str = "abc";
             Assert.Equal(str, str.ToString());
             Assert.Equal(str, str.ToString().ToString().ToString());
@@ -131,7 +131,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ToCharArray_Test13()
         {
-            Debug.WriteLine("Test of the ToCharArray method");
+            OutputHelper.WriteLine("Test of the ToCharArray method");
 
             char[] car1 = new Char[] { 'a', 'b', 'c', 'd' };
             char[] car2 = new Char[] { };
@@ -140,13 +140,13 @@ namespace NFUnitTestSystemLib
             string str2 = "abcde";
             string str3 = "ABCD";
 
-            Debug.WriteLine("With 0 args");
+            OutputHelper.WriteLine("With 0 args");
             Assert.Equal(str1.ToCharArray(), car1);
             Assert.NotEqual(str2.ToCharArray(), car1);
             Assert.NotEqual(str3.ToCharArray(), car1);
             Assert.NotEqual(str1.ToCharArray(), car2);
 
-            Debug.WriteLine("With 1 args");
+            OutputHelper.WriteLine("With 1 args");
             Assert.NotEqual(str1.ToCharArray(0, 3), car1);
             Assert.Equal(str2.ToCharArray(0, 4), car1);
             Assert.NotEqual(str3.ToCharArray(0, 3), car1);
@@ -156,7 +156,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Split_Test15()
         {
-            Debug.WriteLine("Testing the Split method");
+            OutputHelper.WriteLine("Testing the Split method");
             char[] car1 = new Char[] { '@', 'q' };
             char[] car2 = new Char[] { };
             string str1 = "ab@cd";
@@ -168,9 +168,9 @@ namespace NFUnitTestSystemLib
             Assert.Equal(str2.Split(car1)[1], "");
             Assert.Equal(str1.Split(car2)[0], "ab@cd");
 
-            Debug.WriteLine("Verify split with a count");
-            Debug.WriteLine("This is currently a known issue");
-            Debug.WriteLine("20659	String.Split with a count parameter always returns the whole string.");
+            OutputHelper.WriteLine("Verify split with a count");
+            OutputHelper.WriteLine("This is currently a known issue");
+            OutputHelper.WriteLine("20659	String.Split with a count parameter always returns the whole string.");
             string[] oneTwoThree = "1 2 3".Split(new char[] { ' ' }, 1);
             Assert.True(oneTwoThree.Length <= 1);
         }
@@ -178,7 +178,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Substring_Test17()
         {
-            Debug.WriteLine("Testing the Substring method");
+            OutputHelper.WriteLine("Testing the Substring method");
             string str1 = "abcde";
 
             Assert.Equal(str1.Substring(0), str1);
@@ -190,7 +190,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Trim_Test19()
         {
-            Debug.WriteLine("Testing the Trim method");
+            OutputHelper.WriteLine("Testing the Trim method");
 
             char[] car1 = new Char[] { '@', 'q' };
             string str1 = " abc@de ";
@@ -204,7 +204,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void TrimStart_Test20()
         {
-            Debug.WriteLine("Testing the TrimStart method");
+            OutputHelper.WriteLine("Testing the TrimStart method");
 
             char[] car1 = new Char[] { '@', 'q' };
             string str1 = " abc@de ";
@@ -218,7 +218,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void TrimEnd_Test21()
         {
-            Debug.WriteLine("Testing the TrimEnd method");
+            OutputHelper.WriteLine("Testing the TrimEnd method");
 
             char[] car1 = new Char[] { '@', 'q' };
             string str1 = " abc@de ";
@@ -232,7 +232,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void IndexOf_Test28()
         {
-            Debug.WriteLine("Testing the IndexOf method");
+            OutputHelper.WriteLine("Testing the IndexOf method");
 
             string str1 = "@ abc@de ";
             Assert.Equal(str1.IndexOf('@'), 0);
@@ -246,7 +246,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void IndexOfAny_Test31()
         {
-            Debug.WriteLine("Testing the IndexOfAny method");
+            OutputHelper.WriteLine("Testing the IndexOfAny method");
 
             string str1 = "@ abc@de ";
             char[] car1 = new Char[] { '@', 'b' };
@@ -258,7 +258,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void LastIndexOf_Test37()
         {
-            Debug.WriteLine("Testing the LastIndexOf method");
+            OutputHelper.WriteLine("Testing the LastIndexOf method");
 
             string str1 = "@ abc@de ";
             Assert.Equal(str1.LastIndexOf('@'), 5);
@@ -272,7 +272,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void LastIndexOfAny_Test40()
         {
-            Debug.WriteLine("Testing the LastIndexOfAny method");
+            OutputHelper.WriteLine("Testing the LastIndexOfAny method");
 
             string str1 = "@ abc@de ";
             char[] car1 = new Char[] { '@', 'b' };
@@ -285,7 +285,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ToLower_Test51()
         {
-            Debug.WriteLine("Testing the ToLower method");
+            OutputHelper.WriteLine("Testing the ToLower method");
 
             string str1 = "@ ABC@de ";
             Assert.Equal(str1.ToLower(), "@ abc@de ");
@@ -294,7 +294,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ToUpper_Test52()
         {
-            Debug.WriteLine("Testing the ToUpper method"); ;
+            OutputHelper.WriteLine("Testing the ToUpper method"); ;
 
             string str1 = "@ ABC@de ";
             Assert.Equal(str1.ToUpper(), "@ ABC@DE ");
@@ -303,7 +303,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Length_Test71()
         {
-            Debug.WriteLine("Testing the Length property"); ;
+            OutputHelper.WriteLine("Testing the Length property"); ;
 
             string str1 = "@ ABC@de ";
             Assert.Equal(str1.Length, 9);
@@ -341,7 +341,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Contains_String()
         {
-            Debug.WriteLine("Test of Contains");
+            OutputHelper.WriteLine("Test of Contains");
 
             string s = "Hello";
             string value = "ello";
@@ -372,7 +372,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ZeroLengthContains_StringComparison()
         {
-            Debug.WriteLine("Test of Zero Length Contains");
+            OutputHelper.WriteLine("Test of Zero Length Contains");
 
             var a = new char[3];
 
@@ -396,7 +396,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ContainsMatch_StringComparison()
         {
-            Debug.WriteLine("Test of Contains match");
+            OutputHelper.WriteLine("Test of Contains match");
 
             string value = "456";
 
@@ -408,7 +408,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ContainsMatchDifferentSpans_StringComparison()
         {
-            Debug.WriteLine("Test of Contains match with differnet lengths");
+            OutputHelper.WriteLine("Test of Contains match with differnet lengths");
 
             string value1 = "4567";
             string value2 = "456";
@@ -421,7 +421,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ContainsNoMatch_StringComparison()
         {
-            Debug.WriteLine("Test of Contains with no match");
+            OutputHelper.WriteLine("Test of Contains with no match");
 
             for (int length = 1; length < 150; length++)
             {
@@ -450,7 +450,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void MakeSureNoContainsChecksGoOutOfRange_StringComparison()
         {
-            Debug.WriteLine("Test of Contains with no match out of range");
+            OutputHelper.WriteLine("Test of Contains with no match out of range");
 
             for (int length = 0; length < 100; length++)
             {
@@ -480,7 +480,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void StartsWith_StringComparison()
         {
-            Debug.WriteLine("Test of StartsWith");
+            OutputHelper.WriteLine("Test of StartsWith");
 
             string s = "Hello";
             string value = "H";
@@ -538,7 +538,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void StartsWith_NullInStrings()
         {
-            Debug.WriteLine("Test of StartsWith with null strings");
+            OutputHelper.WriteLine("Test of StartsWith with null strings");
 
             Assert.False("\0test".StartsWith("test"));
             Assert.False("te\0st".StartsWith("test"));
@@ -550,7 +550,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void StartsWith_Invalid()
         {
-            Debug.WriteLine("Test of invalid StartsWith");
+            OutputHelper.WriteLine("Test of invalid StartsWith");
 
             string s = "Hello";
 
@@ -561,7 +561,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void ZeroLengthStartsWith_Char()
         {
-            Debug.WriteLine("Test of StartsWith with zero length char");
+            OutputHelper.WriteLine("Test of StartsWith with zero length char");
 
             var a = new char[3];
 
@@ -574,7 +574,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void EndsWith_Invalid()
         {
-            Debug.WriteLine("Test of invalid EndsWith");
+            OutputHelper.WriteLine("Test of invalid EndsWith");
 
             string s = "Hello";
 
@@ -585,7 +585,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void SameSpanStartsWith_Char()
         {
-            Debug.WriteLine("Test of StartsWith with self");
+            OutputHelper.WriteLine("Test of StartsWith with self");
 
             string s1 = "456";
 
@@ -595,7 +595,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void LengthMismatchStartsWith_Char()
         {
-            Debug.WriteLine("Test of StartsWith with length mismatch and chars");
+            OutputHelper.WriteLine("Test of StartsWith with length mismatch and chars");
 
             char[] a = { '4', '5', '6' };
 
@@ -608,7 +608,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void StartsWithMatch_Char()
         {
-            Debug.WriteLine("Test of StartsWith with matching chars");
+            OutputHelper.WriteLine("Test of StartsWith with matching chars");
 
             char[] a = { '4', '5', '6' };
 
@@ -621,7 +621,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void StartsWithNoMatch_Char()
         {
-            Debug.WriteLine("Test of StartsWith with no matching chars");
+            OutputHelper.WriteLine("Test of StartsWith with no matching chars");
 
             for (int length = 1; length < 32; length++)
             {
@@ -647,7 +647,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void MakeSureNoStartsWithChecksGoOutOfRange_Char()
         {
-            Debug.WriteLine("Test of StartsWith with no matching chars and going out of range");
+            OutputHelper.WriteLine("Test of StartsWith with no matching chars and going out of range");
 
             for (int length = 0; length < 100; length++)
             {
@@ -668,7 +668,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void ZeroLengthStartsWith_StringComparison()
         {
-            Debug.WriteLine("Test of StartsWith with zero length");
+            OutputHelper.WriteLine("Test of StartsWith with zero length");
 
             var a = new char[3];
 
@@ -683,7 +683,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void SameSpanStartsWith_StringComparison()
         {
-            Debug.WriteLine("Test of StartsWith with self");
+            OutputHelper.WriteLine("Test of StartsWith with self");
 
             string s1 = "456";
             Assert.True(s1.StartsWith(s1));
@@ -692,7 +692,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void LengthMismatchStartsWith_StringComparison()
         {
-            Debug.WriteLine("Test of StartsWith with length mismatch");
+            OutputHelper.WriteLine("Test of StartsWith with length mismatch");
 
             string value = "456";
 
@@ -704,7 +704,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void StartsWithMatch_StringComparison()
         {
-            Debug.WriteLine("Test of StartsWith with match with different lengths");
+            OutputHelper.WriteLine("Test of StartsWith with match with different lengths");
 
             string value = "456";
 
@@ -716,7 +716,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void EndsWith_StringComparison()
         {
-            Debug.WriteLine("Test of EndsWith");
+            OutputHelper.WriteLine("Test of EndsWith");
 
             string s = "Hello";
             string value = "o";
@@ -755,7 +755,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void EndsWith_NullInStrings()
         {
-            Debug.WriteLine("Test of EndsWith with null strings");
+            OutputHelper.WriteLine("Test of EndsWith with null strings");
 
             Assert.True("te\0st".EndsWith("e\0st"));
             Assert.False("te\0st".EndsWith("test"));
@@ -766,7 +766,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void ZeroLengthEndsWith_Char()
         {
-            Debug.WriteLine("Test of EndsWith with chars");
+            OutputHelper.WriteLine("Test of EndsWith with chars");
             
             var a = new char[3];
 
@@ -779,7 +779,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void SameSpanEndsWith_Char()
         {
-            Debug.WriteLine("Test of EndsWith with self");
+            OutputHelper.WriteLine("Test of EndsWith with self");
 
             string s = "456";
             bool b = s.EndsWith(s);
@@ -789,7 +789,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void LengthMismatchEndsWith_Char()
         {
-            Debug.WriteLine("Test of EndsWith with length mismatch");
+            OutputHelper.WriteLine("Test of EndsWith with length mismatch");
 
             string value = "456";
 
@@ -802,7 +802,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void EndsWithMatch_Char()
         {
-            Debug.WriteLine("Test of EndsWith match with chars");
+            OutputHelper.WriteLine("Test of EndsWith match with chars");
 
             string value = "456";
 
@@ -815,7 +815,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void EndsWithNoMatch_Char()
         {
-            Debug.WriteLine("Test of EndsWith with no match");
+            OutputHelper.WriteLine("Test of EndsWith with no match");
 
             for (int length = 1; length < 32; length++)
             {
@@ -842,7 +842,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void ZeroLengthEndsWith_StringComparison()
         {
-            Debug.WriteLine("Test of EndsWith with zero length");
+            OutputHelper.WriteLine("Test of EndsWith with zero length");
 
             var a = new char[3];
 
@@ -857,7 +857,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void MakeSureNoEndsWithChecksGoOutOfRange_Char()
         {
-            Debug.WriteLine("Test of EndsWith with no match and going out of range");
+            OutputHelper.WriteLine("Test of EndsWith with no match and going out of range");
 
             for (int length = 0; length < 100; length++)
             {
@@ -878,7 +878,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void LengthMismatchEndsWith_StringComparison()
         {
-            Debug.WriteLine("Test of EndsWith with lenght mismatch");
+            OutputHelper.WriteLine("Test of EndsWith with lenght mismatch");
 
             string value = "456";
 
@@ -890,7 +890,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void EndsWithMatch_StringComparison()
         {
-            Debug.WriteLine("Test of EndsWith with substrings");
+            OutputHelper.WriteLine("Test of EndsWith with substrings");
 
             string value = "456";
 
@@ -902,7 +902,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void EndsWithMatchDifferentSpans_StringComparison()
         {
-            Debug.WriteLine("Test of EndsWith with natch on different comparisons");
+            OutputHelper.WriteLine("Test of EndsWith with natch on different comparisons");
 
             string value1 = "7456";
             string value2 = "456";
@@ -915,7 +915,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void EndsWithNoMatch_StringComparison()
         {
-            Debug.WriteLine("Test of EndsWith with no match on different lengths and comparisons");
+            OutputHelper.WriteLine("Test of EndsWith with no match on different lengths and comparisons");
 
             for (int length = 1; length < 150; length++)
             {
@@ -940,7 +940,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void MakeSureNoEndsWithChecksGoOutOfRange_StringComparison()
         {
-            Debug.WriteLine("Test of EndsWith with no match and gogin out of range");
+            OutputHelper.WriteLine("Test of EndsWith with no match and gogin out of range");
 
             for (int length = 0; length < 100; length++)
             {
@@ -960,7 +960,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public static void EndsWithNoMatchNonOrdinal_StringComparison()
         {
-            Debug.WriteLine("Test of EndsWith with no match on different ordinal comparisons");
+            OutputHelper.WriteLine("Test of EndsWith with no match on different ordinal comparisons");
 
             string s = "dabc";
             string value = "aDc";

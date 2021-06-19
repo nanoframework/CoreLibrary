@@ -6,7 +6,6 @@
 
 using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
 
 namespace NFUnitTestVariables
 {
@@ -16,14 +15,14 @@ namespace NFUnitTestVariables
         [Setup]
         public void Initialize()
         {
-            Debug.WriteLine("Adding set up for the tests.");
+            OutputHelper.WriteLine("Adding set up for the tests.");
             // Add your functionality here.                
         }
 
         [Cleanup]
         public void CleanUp()
         {
-            Debug.WriteLine("Cleaning up after the tests");
+            OutputHelper.WriteLine("Cleaning up after the tests");
         }
 
         //Categories Test methods
@@ -35,201 +34,201 @@ namespace NFUnitTestVariables
         [TestMethod]
         public void Categories_static01_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static01.testMethod();
         }
         [TestMethod]
         public void Categories_static02_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static02.testMethod();
         }
         [TestMethod]
         public void Categories_static03_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static03.testMethod();
         }
         [TestMethod]
         public void Categories_static04_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static04.testMethod();
         }
         [TestMethod]
         public void Categories_static05_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static05.testMethod();
         }
 
         [TestMethod]
         public void Categories_static06_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static06.testMethod();
         }
         [TestMethod]
         public void Categories_static07_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static07.testMethod();
         }
         [TestMethod]
         public void Categories_static09_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static09.testMethod();
         }
         [TestMethod]
         public void Categories_static11_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static11.testMethod();
         }
 
         [TestMethod]
         public void Categories_static12_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static12.testMethod();
         }
         [TestMethod]
         public void Categories_static13_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static13.testMethod();
         }
         [TestMethod]
         public void Categories_static14_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static14.testMethod();
         }
         [TestMethod]
         public void Categories_static15_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static15.testMethod();
         }
         [TestMethod]
         public void Categories_static16_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static16.testMethod();
         }
         [TestMethod]
         public void Categories_static17_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
-            Debug.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
-            Debug.WriteLine("when the type in which it is declared is loaded, and ");
-            Debug.WriteLine("ceases to exist when the type in which it is declared");
-            Debug.WriteLine("is unloaded.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine(" Categories_TestClass_?_A field declared with the static modifier is called a");
+            OutputHelper.WriteLine("static variable.   Categories_TestClass_?_A static variable comes into existence");
+            OutputHelper.WriteLine("when the type in which it is declared is loaded, and ");
+            OutputHelper.WriteLine("ceases to exist when the type in which it is declared");
+            OutputHelper.WriteLine("is unloaded.");
             Categories_TestClass_static17.testMethod();
         }
 
         [TestMethod]
         public void Categories_static18_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine("The initial value of a static variable is the default value");
-            Debug.WriteLine("of the variable's type.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine("The initial value of a static variable is the default value");
+            OutputHelper.WriteLine("of the variable's type.");
             Categories_TestClass_static18.testMethod();
         }
         [TestMethod]
         public void Categories_static19_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine("The initial value of a static variable is the default value");
-            Debug.WriteLine("of the variable's type.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine("The initial value of a static variable is the default value");
+            OutputHelper.WriteLine("of the variable's type.");
             Categories_TestClass_static19.testMethod();
         }
 
         [TestMethod]
         public void Categories_static20_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine("The initial value of a static variable is the default value");
-            Debug.WriteLine("of the variable's type.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine("The initial value of a static variable is the default value");
+            OutputHelper.WriteLine("of the variable's type.");
             Categories_TestClass_static20.testMethod();
         }
         /*
         [TestMethod]
         public void Categories_static21_Test()
         {
-            Debug.WriteLine("Section 5");
+            OutputHelper.WriteLine("Section 5");
             Categories_TestClass_static21.testMethod())
             {
                 return MFTestResults.Pass;
@@ -240,340 +239,340 @@ namespace NFUnitTestVariables
         [TestMethod]
         public void Categories_inst018_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst018.testMethod();
         }
         [TestMethod]
         public void Categories_inst019_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst019.testMethod();
         }
         [TestMethod]
         public void Categories_inst020_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst020.testMethod();
         }
         [TestMethod]
         public void Categories_inst021_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst021.testMethod();
         }
         [TestMethod]
         public void Categories_inst022_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst022.testMethod();
         }
         [TestMethod]
         public void Categories_inst023_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst023.testMethod();
         }
         [TestMethod]
         public void Categories_inst024_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst024.testMethod();
         }
         [TestMethod]
         public void Categories_inst026_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst026.testMethod();
         }
         [TestMethod]
         public void Categories_inst028_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst028.testMethod();
         }
         [TestMethod]
         public void Categories_inst029_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst029.testMethod();
         }
         [TestMethod]
         public void Categories_inst030_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst030.testMethod();
         }
         [TestMethod]
         public void Categories_inst031_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst031.testMethod();
         }
         [TestMethod]
         public void Categories_inst032_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst032.testMethod();
         }
         [TestMethod]
         public void Categories_inst033_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst033.testMethod();
         }
         [TestMethod]
         public void Categories_inst034_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a class comes into existence when ");
-            Debug.WriteLine("a new instance of that class is created, and ceases to exist");
-            Debug.WriteLine("when there are no references to that instance and the finalizer");
-            Debug.WriteLine("of the instance has executed.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a class comes into existence when ");
+            OutputHelper.WriteLine("a new instance of that class is created, and ceases to exist");
+            OutputHelper.WriteLine("when there are no references to that instance and the finalizer");
+            OutputHelper.WriteLine("of the instance has executed.");
             Categories_TestClass_inst034.testMethod();
         }
         [TestMethod]
         public void Categories_inst035_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine("The initial value of an instance variable is the default value");
-            Debug.WriteLine("of the variable's type.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine("The initial value of an instance variable is the default value");
+            OutputHelper.WriteLine("of the variable's type.");
             Categories_TestClass_inst035.testMethod();
         }
         [TestMethod]
         public void Categories_inst036_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine("The initial value of an instance variable is the default value");
-            Debug.WriteLine("of the variable's type.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine("The initial value of an instance variable is the default value");
+            OutputHelper.WriteLine("of the variable's type.");
             Categories_TestClass_inst036.testMethod();
         }
         [TestMethod]
         public void Categories_inst037_Test()
         {
-            Debug.WriteLine("Section 5.1.1");
-            Debug.WriteLine("The initial value of an instance variable is the default value");
-            Debug.WriteLine("of the variable's type.");
+            OutputHelper.WriteLine("Section 5.1.1");
+            OutputHelper.WriteLine("The initial value of an instance variable is the default value");
+            OutputHelper.WriteLine("of the variable's type.");
             Categories_TestClass_inst037.testMethod();
         }
         [TestMethod]
         public void Categories_inst038_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst038.testMethod();
         }
         [TestMethod]
         public void Categories_inst039_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst039.testMethod();
         }
         [TestMethod]
         public void Categories_inst040_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst040.testMethod();
         }
         [TestMethod]
         public void Categories_inst041_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst041.testMethod();
         }
         [TestMethod]
         public void Categories_inst042_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst042.testMethod();
         }
         [TestMethod]
         public void Categories_inst043_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst043.testMethod();
         }
         [TestMethod]
         public void Categories_inst044_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst044.testMethod();
         }
         [TestMethod]
         public void Categories_inst046_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst046.testMethod();
         }
         [TestMethod]
         public void Categories_inst048_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst048.testMethod();
         }
         [TestMethod]
         public void Categories_inst049_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst049.testMethod();
         }
         [TestMethod]
         public void Categories_inst050_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst050.testMethod();
         }
         [TestMethod]
         public void Categories_inst051_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst051.testMethod();
         }
         [TestMethod]
         public void Categories_inst052_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst052.testMethod();
         }
         [TestMethod]
         public void Categories_inst053_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst053.testMethod();
         }
         [TestMethod]
         public void Categories_inst054_Test()
         {
-            Debug.WriteLine("Section 5.1.2");
-            Debug.WriteLine("An instance variable of a struct has exactly the");
-            Debug.WriteLine("same lifetime as the struct variable to which it");
-            Debug.WriteLine("belongs. In other words, when a variable of a ");
-            Debug.WriteLine("struct type comes into existence or ceases to ");
-            Debug.WriteLine("exist, so do the instance variables of the struct.");
+            OutputHelper.WriteLine("Section 5.1.2");
+            OutputHelper.WriteLine("An instance variable of a struct has exactly the");
+            OutputHelper.WriteLine("same lifetime as the struct variable to which it");
+            OutputHelper.WriteLine("belongs. In other words, when a variable of a ");
+            OutputHelper.WriteLine("struct type comes into existence or ceases to ");
+            OutputHelper.WriteLine("exist, so do the instance variables of the struct.");
             Categories_TestClass_inst054.testMethod();
         }
 

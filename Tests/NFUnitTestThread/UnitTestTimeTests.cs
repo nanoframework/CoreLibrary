@@ -50,13 +50,13 @@ namespace NFUnitTestThread
                     counter++;
                 }
                 AutoResetEvent autoEvent = (AutoResetEvent)stateInfo;
-                Debug.WriteLine("Checking status: " +
+                OutputHelper.WriteLine("Checking status: " +
                     DateTime.UtcNow.ToString() + " " +
                     (++m_invokeCount).ToString());
 
                 if (m_invokeCount == m_maxCount)
                 {
-                    Debug.WriteLine("Reset the counter and signal Main.");
+                    OutputHelper.WriteLine("Reset the counter and signal Main.");
                     m_invokeCount = 0;
                     autoEvent.Set();
                     m_result = true;
@@ -76,40 +76,40 @@ namespace NFUnitTestThread
             /// 6. Verifies that the TimerCallback has been called
             /// </summary>
             ///
-            Debug.WriteLine("Tests the Timer and TimerCallback classes, ");
-            Debug.WriteLine("as well as the Change and Dispose methods");
+            OutputHelper.WriteLine("Tests the Timer and TimerCallback classes, ");
+            OutputHelper.WriteLine("as well as the Change and Dispose methods");
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
 
-            Debug.WriteLine("Creating the TimerCallback");
+            OutputHelper.WriteLine("Creating the TimerCallback");
             TimerCallback timerDelegate =
                 new TimerCallback(statusChecker.CheckStatus);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Timer stateTimer =
                     new Timer(timerDelegate, autoEvent, 1000, 250);
 
             statusChecker.m_result = false;
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(5000, false);
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
             }
             statusChecker.m_result = false;
-            Debug.WriteLine("Changing period to 500msec");
+            OutputHelper.WriteLine("Changing period to 500msec");
             stateTimer.Change(0, 500);
-            Debug.WriteLine("Waiting for 7500msec and verifying");
+            OutputHelper.WriteLine("Waiting for 7500msec and verifying");
             autoEvent.WaitOne(7500, false);
             stateTimer.Dispose();
-            Debug.WriteLine("Destroying timer.");
+            OutputHelper.WriteLine("Destroying timer.");
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
@@ -129,50 +129,50 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Tests the Timer and TimerCallback classes, ");
-            Debug.WriteLine("as well as the Change and Dispose methods");
+            OutputHelper.WriteLine("Tests the Timer and TimerCallback classes, ");
+            OutputHelper.WriteLine("as well as the Change and Dispose methods");
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
 
-            Debug.WriteLine("Creating the TimerCallback");
+            OutputHelper.WriteLine("Creating the TimerCallback");
             TimerCallback timerDelegate =
                 new TimerCallback(statusChecker.CheckStatus);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Timer stateTimer =
                     new Timer(timerDelegate, autoEvent, 1000, 250);
 
             statusChecker.m_result = false;
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(5000, false);
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
             }
             statusChecker.m_result = false;
             statusChecker.z_flag = true;
-            Debug.WriteLine("Changing duetime to zero and Verifying the timer started Immediately.");
+            OutputHelper.WriteLine("Changing duetime to zero and Verifying the timer started Immediately.");
             DateTime t1 = DateTime.UtcNow;
             stateTimer.Change(0, 500);
             Thread.Sleep(1);
             TimeSpan time = DateTime.UtcNow - statusChecker.t2;
-            Debug.WriteLine("callback method called within " + time.ToString());
+            OutputHelper.WriteLine("callback method called within " + time.ToString());
             if (time.CompareTo(new TimeSpan(0, 0, 0, 0, 100)) > 0)
             {
-                Debug.WriteLine("The timer didn't start immediately, started after '" + time.ToString() + "'");
+                OutputHelper.WriteLine("The timer didn't start immediately, started after '" + time.ToString() + "'");
                 throw new Exception("The timer didn't start immediately, started after '" + time.ToString() + "'");
             }
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(7500, false);
-            Debug.WriteLine("Destroying timer.");
+            OutputHelper.WriteLine("Destroying timer.");
             stateTimer.Dispose();
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
@@ -196,25 +196,25 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Tests the Timer and TimerCallback classes, ");
-            Debug.WriteLine("as well as the Change and Dispose methods");
+            OutputHelper.WriteLine("Tests the Timer and TimerCallback classes, ");
+            OutputHelper.WriteLine("as well as the Change and Dispose methods");
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
 
-            Debug.WriteLine("Creating the TimerCallback");
+            OutputHelper.WriteLine("Creating the TimerCallback");
             TimerCallback timerDelegate =
                 new TimerCallback(statusChecker.CheckStatus);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Timer stateTimer =
                     new Timer(timerDelegate, autoEvent, 1000, 250);
 
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(5000, false);
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
@@ -222,38 +222,38 @@ namespace NFUnitTestThread
 
             statusChecker.m_result = false;
             statusChecker.c_flag = true;
-            Debug.WriteLine("Changing period to zero (0) ");
+            OutputHelper.WriteLine("Changing period to zero (0) ");
             stateTimer.Change(0, 0);
 
-            Debug.WriteLine("Waiting and verifying the callback method is invoked once");
+            OutputHelper.WriteLine("Waiting and verifying the callback method is invoked once");
             autoEvent.WaitOne(5000, false);
             if (statusChecker.counter != 1)
             {
-                Debug.WriteLine("Failure : expected callback '1' times but got '" + statusChecker.counter + "'");
+                OutputHelper.WriteLine("Failure : expected callback '1' times but got '" + statusChecker.counter + "'");
                 throw new Exception("Failure : expected callback '1' times but got '" + statusChecker.counter + "'");
             }
 
-            Debug.WriteLine("Reseting counter to zero");
+            OutputHelper.WriteLine("Reseting counter to zero");
             statusChecker.counter = 0;
-            Debug.WriteLine("Changing period to Timeout.Infinite");
+            OutputHelper.WriteLine("Changing period to Timeout.Infinite");
             stateTimer.Change(0, Timeout.Infinite);
-            Debug.WriteLine("Waiting and verifying the callback method is invoked once");
+            OutputHelper.WriteLine("Waiting and verifying the callback method is invoked once");
             autoEvent.WaitOne(5000, false);
             if (statusChecker.counter != 1)
             {
-                Debug.WriteLine("Failure : expected callback '1' times but got '" + statusChecker.counter + "'");
+                OutputHelper.WriteLine("Failure : expected callback '1' times but got '" + statusChecker.counter + "'");
                 throw new Exception("Failure : expected callback '1' times but got '" + statusChecker.counter + "'");
             }
 
-            Debug.WriteLine("Changing period to quarter sec ");
+            OutputHelper.WriteLine("Changing period to quarter sec ");
             stateTimer.Change(0, 250);
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(5000, false);
-            Debug.WriteLine("Destroying timer.");
+            OutputHelper.WriteLine("Destroying timer.");
             stateTimer.Dispose();
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
@@ -270,26 +270,26 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Tests the TimerCallback is never invoked if it's duetime is infinite ");
+            OutputHelper.WriteLine("Tests the TimerCallback is never invoked if it's duetime is infinite ");
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
             statusChecker.c_flag = true;
-            Debug.WriteLine("Creating the TimerCallback");
+            OutputHelper.WriteLine("Creating the TimerCallback");
             TimerCallback timerDelegate =
                 new TimerCallback(statusChecker.CheckStatus);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Timer stateTimer =
                     new Timer(timerDelegate, autoEvent, Timeout.Infinite, 250);
 
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(5000, false);
-            Debug.WriteLine("Destroying timer.");
+            OutputHelper.WriteLine("Destroying timer.");
             stateTimer.Dispose();
             if (statusChecker.counter != 0)
             {
-                Debug.WriteLine("Failure : expected callback  method never invoked" +
+                OutputHelper.WriteLine("Failure : expected callback  method never invoked" +
                     " but is invoked '" + statusChecker.counter + "' times");
                 throw new Exception("Failure : expected callback  method never invoked" +
                     " but is invoked '" + statusChecker.counter + "' times");
@@ -307,26 +307,26 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Tests the Timer and TimerCallback classes, ");
-            Debug.WriteLine("as well as the Change and Dispose methods");
+            OutputHelper.WriteLine("Tests the Timer and TimerCallback classes, ");
+            OutputHelper.WriteLine("as well as the Change and Dispose methods");
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
             statusChecker.c_flag = true;
-            Debug.WriteLine("Creating the TimerCallback");
+            OutputHelper.WriteLine("Creating the TimerCallback");
             TimerCallback timerDelegate =
                 new TimerCallback(statusChecker.CheckStatus);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Timer stateTimer =
                     new Timer(timerDelegate, autoEvent, 1000, 250);
-            Debug.WriteLine("Immediately Destroying timer");
+            OutputHelper.WriteLine("Immediately Destroying timer");
             stateTimer.Dispose();
-            Debug.WriteLine("Waiting and verifying for Timer disposed");
+            OutputHelper.WriteLine("Waiting and verifying for Timer disposed");
             autoEvent.WaitOne(5000, false);
             if (statusChecker.counter != 0)
             {
-                Debug.WriteLine("Failure : expected timer destroyed immediately hence callback method" +
+                OutputHelper.WriteLine("Failure : expected timer destroyed immediately hence callback method" +
                     " never invoked but is invoked '" + statusChecker.counter + "' times");
                 throw new Exception("Failure : expected timer destroyed immediately hence callback method" +
                     " never invoked but is invoked '" + statusChecker.counter + "' times");
@@ -346,33 +346,33 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Tests the Timer and TimerCallback classes, ");
-            Debug.WriteLine("as well as the Change and Dispose methods");
+            OutputHelper.WriteLine("Tests the Timer and TimerCallback classes, ");
+            OutputHelper.WriteLine("as well as the Change and Dispose methods");
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
 
-            Debug.WriteLine("Creating the TimerCallback");
+            OutputHelper.WriteLine("Creating the TimerCallback");
             TimerCallback timerDelegate =
                 new TimerCallback(statusChecker.CheckStatus);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Timer stateTimer =
                     new Timer(timerDelegate, autoEvent, 1000, 250);
 
             statusChecker.m_result = false;
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(5000, false);
             statusChecker.m_result = false;
-            Debug.WriteLine("Changing period to -ve");
-            Debug.WriteLine("period is negative and is not equal to Infinite (or -1) should throw an exception");
+            OutputHelper.WriteLine("Changing period to -ve");
+            OutputHelper.WriteLine("period is negative and is not equal to Infinite (or -1) should throw an exception");
             Assert.Throws(typeof(ArgumentOutOfRangeException), () =>
             {
                 stateTimer.Change(0, -2);
-                Debug.WriteLine("Waiting and verifying");
+                OutputHelper.WriteLine("Waiting and verifying");
                 autoEvent.WaitOne(7500, false);
             });
-            Debug.WriteLine("Destroying timer.");
+            OutputHelper.WriteLine("Destroying timer.");
             stateTimer.Dispose();
         }
 
@@ -388,33 +388,33 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Tests the Timer Change method for ArgumentOutOfRangeException");
+            OutputHelper.WriteLine("Tests the Timer Change method for ArgumentOutOfRangeException");
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
 
-            Debug.WriteLine("Creating the TimerCallback");
+            OutputHelper.WriteLine("Creating the TimerCallback");
             TimerCallback timerDelegate =
                 new TimerCallback(statusChecker.CheckStatus);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Timer stateTimer =
                     new Timer(timerDelegate, autoEvent, 1000, 250);
 
             statusChecker.m_result = false;
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(5000, false);
             statusChecker.m_result = false;
-            Debug.WriteLine("Changing period -ve");
-            Debug.WriteLine("duetime is negative and is not equal to Infinite(or -1) should throw an exception");
+            OutputHelper.WriteLine("Changing period -ve");
+            OutputHelper.WriteLine("duetime is negative and is not equal to Infinite(or -1) should throw an exception");
             Assert.Throws(typeof(ArgumentOutOfRangeException), () =>
             {
                 stateTimer.Change(-2, 500);
-                Debug.WriteLine("Waiting and verifying");
+                OutputHelper.WriteLine("Waiting and verifying");
                 autoEvent.WaitOne(7500, false);
             });
 
-            Debug.WriteLine("Destroying timer.");
+            OutputHelper.WriteLine("Destroying timer.");
             stateTimer.Dispose();
         }
 
@@ -426,20 +426,20 @@ namespace NFUnitTestThread
             /// 2. Verifies ArgumentNullException exception is thrown
             /// </summary>
             ///
-            Debug.WriteLine("Tests the Timer for ArgumentNullException");
+            OutputHelper.WriteLine("Tests the Timer for ArgumentNullException");
 
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Assert.Throws(typeof(ArgumentNullException), () =>
             {
-                Debug.WriteLine("Passing a 'null' callback parameter to a timer should throw exception");
+                OutputHelper.WriteLine("Passing a 'null' callback parameter to a timer should throw exception");
                 Timer stateTimer = new Timer(null, autoEvent, 1000, 250);
-                Debug.WriteLine("Waiting and verifying");
+                OutputHelper.WriteLine("Waiting and verifying");
                 autoEvent.WaitOne(7500, false);
-                Debug.WriteLine("Destroying timer.");
+                OutputHelper.WriteLine("Destroying timer.");
                 stateTimer.Dispose();
             });
         }
@@ -457,54 +457,54 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Tests the Timer and TimerCallback classes, ");
-            Debug.WriteLine("as well as the Change and Dispose methods");
+            OutputHelper.WriteLine("Tests the Timer and TimerCallback classes, ");
+            OutputHelper.WriteLine("as well as the Change and Dispose methods");
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
 
-            Debug.WriteLine("Creating the TimerCallback");
+            OutputHelper.WriteLine("Creating the TimerCallback");
             TimerCallback timerDelegate =
                 new TimerCallback(statusChecker.CheckStatus);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Timer stateTimer =
                     new Timer(timerDelegate, autoEvent, 1000, 250);
 
             statusChecker.m_result = false;
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(5000, false);
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
             }
             statusChecker.m_result = false;
             statusChecker.z_flag = true;
-            Debug.WriteLine("Changing duetime to 4 sec (Assumed MaxInt)");
+            OutputHelper.WriteLine("Changing duetime to 4 sec (Assumed MaxInt)");
             DateTime t1 = DateTime.UtcNow;
             stateTimer.Change(4000, 250);
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(8000, false);
             TimeSpan duration = statusChecker.t2 - t1;
-            Debug.WriteLine("Verifying callback method 1st invoked after 4000msec.");
+            OutputHelper.WriteLine("Verifying callback method 1st invoked after 4000msec.");
             if (duration.CompareTo(new TimeSpan(4000)) <= 0)
             {
-                Debug.WriteLine("Failure : expected 1st callback happens more than" +
+                OutputHelper.WriteLine("Failure : expected 1st callback happens more than" +
                     " '4000msec.' but happened after '" + duration.ToString() + "'");
                 throw new Exception("Failure : expected 1st callback happens more than" +
                     " '4000msec.' but happened after '" + duration.ToString() + "'");
             }
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
             }
-            Debug.WriteLine("Destroying timer.");
+            OutputHelper.WriteLine("Destroying timer.");
             stateTimer.Dispose();
         }
 
@@ -521,51 +521,51 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            Debug.WriteLine("Tests the Timer and TimerCallback classes, ");
-            Debug.WriteLine("as well as the Change and Dispose methods");
+            OutputHelper.WriteLine("Tests the Timer and TimerCallback classes, ");
+            OutputHelper.WriteLine("as well as the Change and Dispose methods");
             AutoResetEvent autoEvent = new AutoResetEvent(false);
             StatusChecker statusChecker = new StatusChecker(15);
 
-            Debug.WriteLine("Creating the TimerCallback");
+            OutputHelper.WriteLine("Creating the TimerCallback");
             TimerCallback timerDelegate =
                 new TimerCallback(statusChecker.CheckStatus);
 
-            Debug.WriteLine("Creating timer: " +
+            OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
             Timer stateTimer =
                     new Timer(timerDelegate, autoEvent, 1000, 250);
 
             statusChecker.m_result = false;
-            Debug.WriteLine("Waiting and verifying");
+            OutputHelper.WriteLine("Waiting and verifying");
             autoEvent.WaitOne(5000, false);
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : expected callback '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
             }
             statusChecker.m_result = false;
             statusChecker.m_flag = true;
-            Debug.WriteLine("Changing period to 4 sec (Assumed MaxInt)");
+            OutputHelper.WriteLine("Changing period to 4 sec (Assumed MaxInt)");
             stateTimer.Change(0, 4000);
-            Debug.WriteLine("Waiting and verifying callback method is invoked every 4 sec");
+            OutputHelper.WriteLine("Waiting and verifying callback method is invoked every 4 sec");
             autoEvent.WaitOne(60000, false);
             if (!statusChecker.m_result)
             {
-                Debug.WriteLine("Failure : after 60sec. expected callback invoked '" + statusChecker.m_maxCount +
+                OutputHelper.WriteLine("Failure : after 60sec. expected callback invoked '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
                 throw new Exception("Failure : after 60sec. expected callback invoked '" + statusChecker.m_maxCount +
                     "' times but got '" + statusChecker.m_invokeCount + "'");
             }
-            Debug.WriteLine("Verifying time interval b/n callback invoke is atleast 4sec.");
+            OutputHelper.WriteLine("Verifying time interval b/n callback invoke is atleast 4sec.");
             TimeSpan duration = statusChecker.t2 - statusChecker.t1;
             if (duration.CompareTo(new TimeSpan(4000)) < 0)
             {
-                Debug.WriteLine("Failure : expected interval b/n callbacks at least '4sec' but got '" + duration.Seconds.ToString() + "sec'");
+                OutputHelper.WriteLine("Failure : expected interval b/n callbacks at least '4sec' but got '" + duration.Seconds.ToString() + "sec'");
                 throw new Exception("Failure : expected interval b/n callbacks at least '4sec' but got '" + duration.Seconds.ToString() + "sec'");
             }
-            Debug.WriteLine("Destroying timer.");
+            OutputHelper.WriteLine("Destroying timer.");
             stateTimer.Dispose();
         }
 
