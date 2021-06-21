@@ -889,11 +889,10 @@ namespace NFUnitTestSystemLib
             }, "Trying to cast enum to int - should throw InvalidCastException");
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            //Assert.Throws(typeof(InvalidCastException), () => {
-            //    int i = (int)o_guid;
-            //}, "Trying to cast Guid to int - should throw InvalidCastException");
-            Assert.SkipTest("test of casting guid to int disabled");
+            Assert.Throws(typeof(InvalidCastException), () =>
+            {
+                int i = (int)o_guid;
+            }, "Trying to cast Guid to int - should throw InvalidCastException");
         }
-
     }
 }
