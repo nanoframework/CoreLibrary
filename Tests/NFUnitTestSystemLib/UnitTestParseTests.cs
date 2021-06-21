@@ -894,6 +894,5 @@ namespace NFUnitTestSystemLib
                 int i = (int)o_guid;
             }, "Trying to cast Guid to int - should throw InvalidCastException");
         }
-
     }
 }
