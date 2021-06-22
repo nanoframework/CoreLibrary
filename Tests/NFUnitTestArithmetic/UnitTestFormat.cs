@@ -164,6 +164,7 @@ namespace NFUnitTestArithmetic
             TestFormat("-1234.567", "N2", "-1,234.57");
             TestFormat("123456.78", "N2", "123,456.78");
             TestFormat("1234567.1210", "N2", "1,234,567.12");
+            TestFormat("-0.099999999999999978", "N2", "-0.10");
             sampleDisplay.WriteOutput();
         }
 
