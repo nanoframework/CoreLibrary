@@ -288,6 +288,7 @@ namespace System.Reflection
         /// </summary>
         /// <param name="rawAssembly">A byte array that is a COFF-based image containing an emitted assembly.</param>
         /// <returns>The loaded assembly.</returns>
+        /// <exception cref="ArgumentException"><paramref name="rawAssembly"/> is not a valid assembly.</exception>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern Assembly Load(byte[] rawAssembly);
 
