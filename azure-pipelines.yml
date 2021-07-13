@@ -1,20 +1,12 @@
 trigger:
   branches:
-    include:
-    - master
-    - develop
-    - release/*
-    - refs/tags/*
+    include: [main, develop, "release-*" ]
   paths:
-    exclude:
-    - CHANGELOG.md
-    - /*.md
-    - .gitignore
-    - appveyor.yml
-  # waiting for feature to become available
-  # tags:
-  #   include:
-  #   - v/*
+    exclude: [README.md, LICENSE.md, NuGet.Config, .github_changelog_generator, .gitignore]
+  tags:
+    include: ["v*"]
+
+# PR always trigger build
 
 # add nf-tools repo to resources (for Azure Pipelines templates)
 resources:
@@ -30,28 +22,51 @@ jobs:
 - job: Build_mscorlib
   condition: or( eq(variables['UPDATE_DEPENDENTS'], 'false'), eq(variables['StartReleaseCandidate'], 'true') )
   pool:
-    vmImage: 'VS2017-Win2016'
+    vmImage: 'windows-2019'
 
   variables:
-    solution: '**/source/*.sln'
+    DOTNET_NOLOGO: true
+    solution: '**/*.sln'
     buildPlatform: 'Any CPU'
     buildConfiguration: 'Release'
     nugetPackageName: 'nanoFramework.CoreLibrary'
-    repoName: 'lib-CoreLibrary'
+    repoName: 'CoreLibrary'
 
   steps:
-
-  # step from template @ nf-tools repo
 
   # build steps only
   - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
     parameters:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
+      runUnitTests: true
+      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTest_DummyAdapter\nano.runsettings'
+
+  # rebuild CoreLibrary project to get the assembly checksum
+  - task: MSBuild@1
+    condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
+    displayName: Rebuild CoreLibrary
+    inputs:
+      solution: 'nanoFramework.CoreLibrary\CoreLibrary.nfproj' 
+      platform: 'AnyCPU'
+      configuration: '$(buildConfiguration)'
+      msbuildArguments: '/p:PublicRelease=true'
+      maximumCpuCount: true
 
   # package steps
   - template: azure-pipelines-templates/class-lib-package.yml@templates  
     parameters:
       nugetPackageName: 'nanoFramework.CoreLibrary'
+
+  # rebuild CoreLibrary.NoReflection project to get the assembly checksum
+  - task: MSBuild@1
+    condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
+    displayName: Rebuild CoreLibrary.NoReflection
+    inputs:
+      solution: 'nanoFramework.CoreLibrary.NoReflection\CoreLibrary.NoReflection.nfproj' 
+      platform: 'AnyCPU'
+      configuration: '$(buildConfiguration)'
+      msbuildArguments: '/p:PublicRelease=true'
+      maximumCpuCount: true
 
   - template: azure-pipelines-templates/class-lib-package.yml@templates  
     parameters:
@@ -59,8 +74,10 @@ jobs:
       
   - template: azure-pipelines-templates/class-lib-publish.yml@templates  
 
-  # need to push the other package to NuGet because the template above can only push one package (happens on tag builds for any branch)
+  # need to push the other package to NuGet because the template above can only push one package (happens on all builds except PRs)
   - task: NuGetCommand@2
+    condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
+    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
       command: push
       nuGetFeedType: external
@@ -68,11 +85,11 @@ jobs:
       packagesToPush: 
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
       publishFeedCredentials: 'AzureArtifacts-CoreLibrary'
-    condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
     continueOnError: true
-    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
 
   - task: NuGetCommand@2
+    condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
+    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
       command: push
       nuGetFeedType: external
@@ -80,49 +97,39 @@ jobs:
       packagesToPush: 
         $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
       publishFeedCredentials: 'NuGet-CoreLibrary'
-    condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
     continueOnError: true
-    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
 
   # create or update GitHub release
-  - task: GitHubReleasePublish@1
-    inputs:
-      githubEndpoint: 'nanoframework'
-      githubOwner: 'nanoframework'
-      githubRepositoryName: $(repoName)
-      githubTag: v$(MY_NUGET_VERSION)
-      githubReleaseTitle: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
-      githubReleaseNotes: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
-      githubTargetCommitsh: $(Build.SourceVersion)
-      githubReleaseDraft: $(RELEASE_DRAFT)
-      githubReleasePrerelease: true
-      githubReuseDraftOnly: false
-      githubReuseRelease: true
-      githubEditRelease: true
-      githubDeleteEmptyTag: true
-      githubReleaseAsset: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    condition: and( succeeded(), not( startsWith(variables['Build.SourceBranch'], 'refs/pull') ), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), ne( variables['StartReleaseCandidate'], true ) )
+  - task: GithubRelease@1
+    condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), ne( variables['StartReleaseCandidate'], true ) )
     displayName: Create/Update GitHub PREVIEW release 
+    inputs:
+      gitHubConnection: 'github.com_nano-$(System.TeamProject)'
+      tagSource: userSpecifiedTag
+      tag: v$(MY_NUGET_VERSION)
+      title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
+      releaseNotesSource: inline
+      releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
+      assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+      assetUploadMode: replace
+      isPreRelease: true
+      addChangeLog: false
 
   # create or update GitHub release ON tags from release or master branches
-  - task: GitHubReleasePublish@1
-    inputs:
-      githubEndpoint: 'nanoframework'
-      githubOwner: 'nanoframework'
-      githubRepositoryName: $(repoName)
-      githubTag: v$(MY_NUGET_VERSION)
-      githubReleaseTitle: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
-      githubReleaseNotes: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
-      githubTargetCommitsh: $(Build.SourceVersion)
-      githubReleaseDraft: false
-      githubReleasePrerelease: false
-      githubReuseDraftOnly: false
-      githubReuseRelease: true
-      githubEditRelease: true
-      githubDeleteEmptyTag: true
-      githubReleaseAsset: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+  - task: GithubRelease@1
     condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], 'preview') ), ne( variables['StartReleaseCandidate'], true ) )
     displayName: Create/Update GitHub stable release
+    inputs:
+      gitHubConnection: 'github.com_nano-$(System.TeamProject)'
+      tagSource: userSpecifiedTag
+      tag: v$(MY_NUGET_VERSION)
+      title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
+      releaseNotesSource: inline
+      releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
+      assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+      assetUploadMode: replace
+      isPreRelease: false
+      addChangeLog: false
 
 ##############################
 - job: Update_Dependents
@@ -132,56 +139,60 @@ jobs:
   - Build_mscorlib
 
   pool:
-    vmImage: 'VS2017-Win2016'
+    vmImage: 'windows-2019'
+
+  variables:
+    DOTNET_NOLOGO: true
 
   steps:
   # need this here in order to persist GitHub credentials 
   - checkout: self
     fetchDepth: 1
 
-  - task: NuGetToolInstaller@0
-    inputs:
-      versionSpec: '5.4.0'
-    condition: ne( variables['StartReleaseCandidate'], true )
-    displayName: 'Install specific version of NuGet'
+  - template: azure-pipelines-templates/install-nuget.yml@templates
 
   # update dependents
   - task: UpdatenFDependencies@1
     inputs:
       gitHubToken: $(GitHubToken)
       repositoriesToUpdate: |
-        lib-nanoFramework.Runtime.Events
-        lib-nanoFramework.Runtime.Native
-        lib-Windows.Devices.Adc
-        lib-Windows.Devices.I2c
-        lib-Windows.Devices.Pwm
-        lib-Windows.Devices.Spi
-        lib-System.Devices.Dac
-        lib-nanoFramework.Devices.OneWire
-        lib-nanoFramework.Networking.Sntp
-        lib-nanoFramework.Hardware.Stm32
-        lib-nanoFramework.System.Math
-        lib-nanoFramework.TI.EasyLink
-        lib-nanoFramework.ResourceManager
-        lib-nanoFramework.System.Collections
-        lib-nanoFramework.System.Text
-        lib-nanoFramework.Json
+        nanoFramework.Runtime.Events
+        nanoFramework.Runtime.Native
+        nanoFramework.TestFramework
+        nanoFramework.Logging
+        nanoFramework.Devices.OneWire
+        nanoFramework.Networking.Sntp
+        nanoFramework.Hardware.Stm32
+        nanoFramework.TI.EasyLink
+        nanoFramework.ResourceManager
+        nanoFramework.Json
+        Windows.Devices.Adc
+        Windows.Devices.I2c
+        Windows.Devices.Pwm
+        Windows.Devices.Spi
+        System.Device.Dac
+        System.Device.I2c
+        System.Device.Spi
+        System.Threading
+        System.Math
+        System.Collections
+        System.Text
     displayName: Update dependent class libs
 
 ##################################
 # report build failure to Discord
 - job: Report_Build_Failure
-  
+
   dependsOn:
   - Build_mscorlib
   - Update_Dependents
   condition: or( failed('Build_mscorlib'), failed('Build_mscorlib_no_reflection'), failed('Update_Dependents'))
 
   pool:
-    vmImage: 'VS2017-Win2016'
+    vmImage: 'windows-2019'
 
   steps:
-  
+
   - checkout: self
 
   # step from template @ nf-tools repo
