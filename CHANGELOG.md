@@ -2,7 +2,21 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.13...HEAD)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.18...HEAD)
+
+**Documentation and other chores:**
+
+- Update test framework @10d5471 [\#156](https://github.com/nanoframework/CoreLibrary/pull/156)
+- Update test framewok @965a065 [\#155](https://github.com/nanoframework/CoreLibrary/pull/155)
+- Add exception to System.Reflection.Load documentation [\#154](https://github.com/nanoframework/CoreLibrary/pull/154)
+- Add new Unit Test [\#152](https://github.com/nanoframework/CoreLibrary/pull/152)
+- Fix NFUnitTestArray Unit Test project [\#151](https://github.com/nanoframework/CoreLibrary/pull/151)
+- Fix Unit Test for GUID box/unbox [\#150](https://github.com/nanoframework/CoreLibrary/pull/150)
+- Update Unit Tests [\#149](https://github.com/nanoframework/CoreLibrary/pull/149)
+
+## [v1.10.5-preview.18](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.18) (2021-06-19)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.13...v1.10.5-preview.18)
 
 **Implemented enhancements:**
 
@@ -428,7 +442,6 @@
 
 **Fixed bugs:**
 
-- Fix bug in FromBase64CharArray [\#55](https://github.com/nanoframework/lib-CoreLibrary/pull/55)
 - Fix SortableDateTimePattern [\#73](https://github.com/nanoframework/CoreLibrary/pull/73)
 - Fix typo in TimeSpan [\#66](https://github.com/nanoframework/CoreLibrary/pull/66)
 - Major fix on HashTable [\#64](https://github.com/nanoframework/CoreLibrary/pull/64)
@@ -462,7 +475,7 @@
 
 [Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.0.6-preview-015...v1.0.6-preview-019)
 
-## [v1.0.2](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.2) (2018-10-16)
+**Documentation and other chores:**
 
 - Update Nerdbank.GitVersioning to 2.2.33 [\#59](https://github.com/nanoframework/CoreLibrary/pull/59)
 
@@ -624,102 +637,6 @@
 ## [v1.0.0-preview005](https://github.com/nanoframework/CoreLibrary/tree/v1.0.0-preview005) (2017-04-28)
 
 [Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/2cee8113c914cb09d4ed7f41a533ef0e580c2c12...v1.0.0-preview005)
-
-## [v1.0.0-preview028](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview028) (2017-08-31)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview027...v1.0.0-preview028)
-
-## [v1.0.0-preview027](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview027) (2017-08-30)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview026...v1.0.0-preview027)
-
-## [v1.0.0-preview026](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview026) (2017-08-23)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview025...v1.0.0-preview026)
-
-## [v1.0.0-preview025](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview025) (2017-08-23)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview024...v1.0.0-preview025)
-
-## [v1.0.0-preview024](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview024) (2017-08-23)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview023...v1.0.0-preview024)
-
-## [v1.0.0-preview023](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview023) (2017-08-18)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview022...v1.0.0-preview023)
-
-## [v1.0.0-preview022](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview022) (2017-06-28)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview021...v1.0.0-preview022)
-
-## [v1.0.0-preview021](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview021) (2017-06-28)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview020...v1.0.0-preview021)
-
-## [v1.0.0-preview020](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview020) (2017-05-31)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview019...v1.0.0-preview020)
-
-## [v1.0.0-preview019](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview019) (2017-05-31)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview018...v1.0.0-preview019)
-
-## [v1.0.0-preview018](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview018) (2017-05-31)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview017...v1.0.0-preview018)
-
-## [v1.0.0-preview017](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview017) (2017-05-23)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview016...v1.0.0-preview017)
-
-## [v1.0.0-preview016](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview016) (2017-05-13)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview015...v1.0.0-preview016)
-
-## [v1.0.0-preview015](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview015) (2017-05-12)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview014...v1.0.0-preview015)
-
-## [v1.0.0-preview014](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview014) (2017-05-09)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview013...v1.0.0-preview014)
-
-## [v1.0.0-preview013](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview013) (2017-05-08)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview012...v1.0.0-preview013)
-
-## [v1.0.0-preview012](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview012) (2017-05-05)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview011...v1.0.0-preview012)
-
-## [v1.0.0-preview011](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview011) (2017-05-04)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview010...v1.0.0-preview011)
-
-## [v1.0.0-preview010](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview010) (2017-05-04)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview009...v1.0.0-preview010)
-
-## [v1.0.0-preview009](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview009) (2017-05-03)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview008...v1.0.0-preview009)
-
-## [v1.0.0-preview008](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview008) (2017-05-03)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview007...v1.0.0-preview008)
-
-## [v1.0.0-preview007](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview007) (2017-05-02)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview006...v1.0.0-preview007)
-
-## [v1.0.0-preview006](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview006) (2017-04-28)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/v1.0.0-preview005...v1.0.0-preview006)
-
-## [v1.0.0-preview005](https://github.com/nanoframework/lib-CoreLibrary/tree/v1.0.0-preview005) (2017-04-28)
-
-[Full Changelog](https://github.com/nanoframework/lib-CoreLibrary/compare/2cee8113c914cb09d4ed7f41a533ef0e580c2c12...v1.0.0-preview005)
 
 
 
