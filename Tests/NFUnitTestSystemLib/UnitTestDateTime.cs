@@ -157,58 +157,58 @@ namespace NFUnitTestSystemLib
             Assert.Equal(dt.ToString(), str);
         }
 
-        //[TestMethod]
-        //public void DateTime_ToStringTest7()
-        //{
-        //    /// <summary>
-        //    ///  1. Creates a DateTime
-        //    ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
-        //    /// </summary>
-        //    OutputHelper.WriteLine("Generating random DateTime");
-        //    DateTime dt = GetRandomDateTime();
-        //    OutputHelper.WriteLine("DateTime.ToString(String) using Standard Formats and Verifying");
-        //    string[] standardFmts = { "d", "D", "f", "F", "g", "G", "m", "M", "o", "R", "r", "s", "t", "T", "u", "U", "Y", "y" };
-        //    foreach (string standardFmt in standardFmts)
-        //    {
-        //        try
-        //        {
-        //            if (dt.ToString(standardFmt).Length < 1)
-        //            {
-        //                OutputHelper.WriteLine("Expected a String length greater than '0' but got '" +
-        //                    dt.ToString(standardFmt).Length + "'");
-        //                testResult = MFTestResults.Fail;
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            OutputHelper.WriteLine("This currently fails, DateTime.ToString(String)" +
-        //                " throws ArgumentException for some string formats, see 22837 for details");
-        //            OutputHelper.WriteLine("Caught " + ex.Message + " when Trying DateTime.ToString(" + standardFmt + ")");
-        //            testResult = MFTestResults.KnownFailure;
-        //        }
-        //    }
-        //    OutputHelper.WriteLine("DateTime.ToString(String) using Custom Formats and Verifying");
-        //    string[] customFmts = {"h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f","dd MMM HH:mm:ss",
-        //          @"\Mon\t\h\: M", "MM/dd/yyyy", "dddd, dd MMMM yyyy", "MMMM dd", "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'",
-        //                     "yyyy'-'MM'-'dd'T'HH':'mm':'ss", "HH:mm", "yyyy'-'MM'-'dd HH':'mm':'ss'Z'", "yyyy MMMM"};
-        //    foreach (string customFmt in customFmts)
-        //    {
-        //        try
-        //        {
-        //            if (dt.ToString(customFmt).Length < 1)
-        //            {
-        //                OutputHelper.WriteLine("Expected a String length greater than '0' but got '" +
-        //                    dt.ToString(customFmt).Length + "'");
-        //                testResult = MFTestResults.Fail;
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            OutputHelper.WriteLine("Caught " + ex.Message + " when Trying DateTime.ToString(" + customFmt + ")");
-        //            testResult = MFTestResults.KnownFailure;
-        //        }
-        //    }
-        //}
+        [TestMethod]
+        public void DateTime_ToStringTest7()
+        {
+           /// <summary>
+           ///  1. Creates a DateTime
+           ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
+           /// </summary>
+           OutputHelper.WriteLine("Generating random DateTime");
+           DateTime dt = GetRandomDateTime();
+           OutputHelper.WriteLine("DateTime.ToString(String) using Standard Formats and Verifying");
+           string[] standardFmts = { "d", "D", "f", "F", "g", "G", "m", "M", "o", "O", "R", "r", "s", "t", "T", "u", "U", "Y", "y" };
+           foreach (string standardFmt in standardFmts)
+           {
+               try
+               {
+                   if (dt.ToString(standardFmt).Length < 1)
+                   {
+                       OutputHelper.WriteLine("Expected a String length greater than '0' but got '" +
+                           dt.ToString(standardFmt).Length + "'");
+                       testResult = MFTestResults.Fail;
+                   }
+               }
+               catch (Exception ex)
+               {
+                   OutputHelper.WriteLine("This currently fails, DateTime.ToString(String)" +
+                       " throws ArgumentException for some string formats, see 22837 for details");
+                   OutputHelper.WriteLine("Caught " + ex.Message + " when Trying DateTime.ToString(" + standardFmt + ")");
+                   testResult = MFTestResults.KnownFailure;
+               }
+           }
+           OutputHelper.WriteLine("DateTime.ToString(String) using Custom Formats and Verifying");
+           string[] customFmts = {"h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f","dd MMM HH:mm:ss",
+                 @"\Mon\t\h\: M", "MM/dd/yyyy", "dddd, dd MMMM yyyy", "MMMM dd", "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'",
+                            "yyyy'-'MM'-'dd'T'HH':'mm':'ss", "HH:mm", "yyyy'-'MM'-'dd HH':'mm':'ss'Z'", "yyyy MMMM"};
+           foreach (string customFmt in customFmts)
+           {
+               try
+               {
+                   if (dt.ToString(customFmt).Length < 1)
+                   {
+                       OutputHelper.WriteLine("Expected a String length greater than '0' but got '" +
+                           dt.ToString(customFmt).Length + "'");
+                       testResult = MFTestResults.Fail;
+                   }
+               }
+               catch (Exception ex)
+               {
+                   OutputHelper.WriteLine("Caught " + ex.Message + " when Trying DateTime.ToString(" + customFmt + ")");
+                   testResult = MFTestResults.KnownFailure;
+               }
+           }
+        }
 
         [TestMethod]
         public void DateTime_AddTest8()
