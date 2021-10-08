@@ -19,8 +19,8 @@ namespace System.Globalization
         internal String _generalLongTimePattern = "MM/dd/yyyy HH:mm:ss";
         internal const String _rfc1123Pattern = "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'";
         internal const String _sortableDateTimePattern = "yyyy'-'MM'-'dd'T'HH':'mm':'ss";
-        internal const String _universalSortableDateTimePattern = "yyyy'-'MM'-'dd HH':'mm':'ss'Z'"; //Note: we only support UTC (Z) time.
-        internal const String _universalRoundtripDateTimePattern = "yyyy'-'MM'-'ddTHH':'mm':'ss.fffffff'Z'";
+        internal const String _universalSortableDateTimePattern = "yyyy'-'MM'-'dd HH':'mm':'ss'Z'";
+        internal const String _universalRoundtripDateTimePattern = "yyyy'-'MM'-'ddTHH':'mm':'ss.fffffff'Z'";  //Note: we only support UTC (Z) time, so dont use the kind (K).
         internal String _fullDateTimePattern = "dddd, dd MMMM yyyy HH:mm:ss";
 
         internal DateTimeFormatInfo(CultureInfo cultureInfo)
