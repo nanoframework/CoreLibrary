@@ -182,6 +182,7 @@ namespace NFUnitTestSystemLib
                {
                    throw new Exception("Caught " + ex.Message + " when Trying DateTime.ToString(" + standardFmt + ")");
                }
+               OutputHelper.WriteLine("Successfully verified 'DateTime.ToString(" + standardFmt + ")' format as: " + dt.ToString(standardFmt));
            }
            OutputHelper.WriteLine("DateTime.ToString(String) using Custom Formats and Verifying");
            string[] customFmts = {"h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f","dd MMM HH:mm:ss",
@@ -201,6 +202,7 @@ namespace NFUnitTestSystemLib
                {
                    throw new Exception("Caught " + ex.Message + " when Trying DateTime.ToString(" + customFmt + ")");
                }
+               OutputHelper.WriteLine("Successfully verified 'DateTime.ToString(" + customFmt + ")' format as: " + dt.ToString(customFmt));
            }
         }
 
