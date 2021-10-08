@@ -174,17 +174,15 @@ namespace NFUnitTestSystemLib
                {
                    if (dt.ToString(standardFmt).Length < 1)
                    {
-                       OutputHelper.WriteLine("Expected a String length greater than '0' but got '" +
+                       throw new Exception("Expected a String length greater than '0' but got '" +
                            dt.ToString(standardFmt).Length + "'");
-                       testResult = MFTestResults.Fail;
                    }
                }
                catch (Exception ex)
                {
                    OutputHelper.WriteLine("This currently fails, DateTime.ToString(String)" +
                        " throws ArgumentException for some string formats, see 22837 for details");
-                   OutputHelper.WriteLine("Caught " + ex.Message + " when Trying DateTime.ToString(" + standardFmt + ")");
-                   testResult = MFTestResults.KnownFailure;
+                   throw new Exception("Caught " + ex.Message + " when Trying DateTime.ToString(" + standardFmt + ")");
                }
            }
            OutputHelper.WriteLine("DateTime.ToString(String) using Custom Formats and Verifying");
@@ -197,15 +195,13 @@ namespace NFUnitTestSystemLib
                {
                    if (dt.ToString(customFmt).Length < 1)
                    {
-                       OutputHelper.WriteLine("Expected a String length greater than '0' but got '" +
+                       throw new Exception("Expected a String length greater than '0' but got '" +
                            dt.ToString(customFmt).Length + "'");
-                       testResult = MFTestResults.Fail;
                    }
                }
                catch (Exception ex)
                {
-                   OutputHelper.WriteLine("Caught " + ex.Message + " when Trying DateTime.ToString(" + customFmt + ")");
-                   testResult = MFTestResults.KnownFailure;
+                   throw new Exception("Caught " + ex.Message + " when Trying DateTime.ToString(" + customFmt + ")");
                }
            }
         }
