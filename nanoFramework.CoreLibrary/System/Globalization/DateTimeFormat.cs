@@ -441,7 +441,7 @@ namespace System.Globalization
                     break;
                 case 'o':
                 case 'O':     // Roundtrip ISO8601 compatible
-                    realFormat = dtfi.RoundtripDateTimePattern;
+                    realFormat = dtfi.UniversalRoundtripDateTimePattern;
                     break;
                 case 'r':
                 case 'R':     // RFC 1123 Standard
