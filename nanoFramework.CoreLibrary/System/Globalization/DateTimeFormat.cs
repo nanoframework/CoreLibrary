@@ -108,6 +108,7 @@ namespace System.Globalization
     //        "t"                 short time                              culture-specific                        2:00 AM
     //        "T"                 long time                               culture-specific                        2:00:00 AM
     //(G)     "u"                 Universal time with sortable format,    "yyyy'-'MM'-'dd HH':'mm':'ss'Z'"        1999-10-31 10:00:00Z
+    //                            based on ISO 8601.
     //(U)     "U"                 Universal time with full                culture-specific                        Sunday, October 31, 1999 10:00:00 AM
     //                            (long date + long time) format
     //                            "y"/"Y"             Year/Month day                          culture-specific                        October, 1999
@@ -441,7 +442,9 @@ namespace System.Globalization
                     break;
                 case 'o':
                 case 'O':     // Roundtrip ISO8601 compatible
-                    realFormat = dtfi.SortableDateTimePattern + ".fffZ";  //Note: we only support UTC (Z) time, so dont use the kind (K). Also we dont suppost precision more than 3 digits!
+                    // Note: we only support UTC (Z) time, so dont use the kind (K). 
+                    // Also we dont support precision more than 1 thousandth of a second (although could add "0000" to make it fully compliant)!
+                    realFormat = dtfi.SortableDateTimePattern + ".fffZ";
                     break;
                 case 'r':
                 case 'R':     // RFC 1123 Standard
