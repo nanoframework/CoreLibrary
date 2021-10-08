@@ -441,7 +441,7 @@ namespace System.Globalization
                     break;
                 case 'o':
                 case 'O':     // Roundtrip ISO8601 compatible
-                    realFormat = dtfi.SortableDateTimePattern + ".fffffff'Z'";  //Note: we only support UTC (Z) time, so dont use the kind (K).
+                    realFormat = dtfi.SortableDateTimePattern + "'.'fffffff'Z'";  //Note: we only support UTC (Z) time, so dont use the kind (K).
                     break;
                 case 'r':
                 case 'R':     // RFC 1123 Standard
