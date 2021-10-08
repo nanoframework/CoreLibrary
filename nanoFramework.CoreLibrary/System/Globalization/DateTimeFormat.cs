@@ -101,14 +101,13 @@ namespace System.Globalization
     //        "g"                 general date (short date + short time)  culture-specific                        10/31/1999 2:00 AM
     //        "G"                 general date (short date + long time)   culture-specific                        10/31/1999 2:00:00 AM
     //        "m"/"M"             Month/Day date                          culture-specific                        October 31
-    //(G)     "o"/"O"             Round Trip XML                          "yyyy-MM-ddTHH:mm:ss.fffffffK"          1999-10-31 02:00:00.0000000Z
+    //(G)     "o"/"O"             Round Trip ISO 8601 compatible          "yyyy-MM-ddTHH:mm:ss.fffffffK"          1999-10-31T02:00:00.0000000Z
     //(G)     "r"/"R"             RFC 1123 date,                          "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'"   Sun, 31 Oct 1999 10:00:00 GMT
     //(G)     "s"                 Sortable format, based on ISO 8601.     "yyyy-MM-dd'T'HH:mm:ss"                 1999-10-31T02:00:00
     //                                                                    ('T' for local time)
     //        "t"                 short time                              culture-specific                        2:00 AM
     //        "T"                 long time                               culture-specific                        2:00:00 AM
     //(G)     "u"                 Universal time with sortable format,    "yyyy'-'MM'-'dd HH':'mm':'ss'Z'"        1999-10-31 10:00:00Z
-    //                            based on ISO 8601.
     //(U)     "U"                 Universal time with full                culture-specific                        Sunday, October 31, 1999 10:00:00 AM
     //                            (long date + long time) format
     //                            "y"/"Y"             Year/Month day                          culture-specific                        October, 1999
@@ -439,6 +438,10 @@ namespace System.Globalization
                 case 'm':
                 case 'M':     // Month/Day Date
                     realFormat = dtfi.MonthDayPattern;
+                    break;
+                case 'o':
+                case 'O':     // Roundtrip ISO8601 compatible
+                    realFormat = dtfi.RoundtripDateTimePattern;
                     break;
                 case 'r':
                 case 'R':     // RFC 1123 Standard
