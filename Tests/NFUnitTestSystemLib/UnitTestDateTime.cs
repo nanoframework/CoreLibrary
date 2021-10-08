@@ -180,8 +180,6 @@ namespace NFUnitTestSystemLib
                }
                catch (Exception ex)
                {
-                   OutputHelper.WriteLine("This currently fails, DateTime.ToString(String)" +
-                       " throws ArgumentException for some string formats, see 22837 for details");
                    throw new Exception("Caught " + ex.Message + " when Trying DateTime.ToString(" + standardFmt + ")");
                }
            }
