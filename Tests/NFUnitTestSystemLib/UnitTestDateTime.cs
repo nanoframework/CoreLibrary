@@ -157,58 +157,146 @@ namespace NFUnitTestSystemLib
             Assert.Equal(dt.ToString(), str);
         }
 
-        //[TestMethod]
-        //public void DateTime_ToStringTest7()
-        //{
-        //    /// <summary>
-        //    ///  1. Creates a DateTime
-        //    ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
-        //    /// </summary>
-        //    OutputHelper.WriteLine("Generating random DateTime");
-        //    DateTime dt = GetRandomDateTime();
-        //    OutputHelper.WriteLine("DateTime.ToString(String) using Standard Formats and Verifying");
-        //    string[] standardFmts = { "d", "D", "f", "F", "g", "G", "m", "M", "o", "R", "r", "s", "t", "T", "u", "U", "Y", "y" };
-        //    foreach (string standardFmt in standardFmts)
-        //    {
-        //        try
-        //        {
-        //            if (dt.ToString(standardFmt).Length < 1)
-        //            {
-        //                OutputHelper.WriteLine("Expected a String length greater than '0' but got '" +
-        //                    dt.ToString(standardFmt).Length + "'");
-        //                testResult = MFTestResults.Fail;
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            OutputHelper.WriteLine("This currently fails, DateTime.ToString(String)" +
-        //                " throws ArgumentException for some string formats, see 22837 for details");
-        //            OutputHelper.WriteLine("Caught " + ex.Message + " when Trying DateTime.ToString(" + standardFmt + ")");
-        //            testResult = MFTestResults.KnownFailure;
-        //        }
-        //    }
-        //    OutputHelper.WriteLine("DateTime.ToString(String) using Custom Formats and Verifying");
-        //    string[] customFmts = {"h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f","dd MMM HH:mm:ss",
-        //          @"\Mon\t\h\: M", "MM/dd/yyyy", "dddd, dd MMMM yyyy", "MMMM dd", "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'",
-        //                     "yyyy'-'MM'-'dd'T'HH':'mm':'ss", "HH:mm", "yyyy'-'MM'-'dd HH':'mm':'ss'Z'", "yyyy MMMM"};
-        //    foreach (string customFmt in customFmts)
-        //    {
-        //        try
-        //        {
-        //            if (dt.ToString(customFmt).Length < 1)
-        //            {
-        //                OutputHelper.WriteLine("Expected a String length greater than '0' but got '" +
-        //                    dt.ToString(customFmt).Length + "'");
-        //                testResult = MFTestResults.Fail;
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            OutputHelper.WriteLine("Caught " + ex.Message + " when Trying DateTime.ToString(" + customFmt + ")");
-        //            testResult = MFTestResults.KnownFailure;
-        //        }
-        //    }
-        //}
+        [TestMethod]
+        public void DateTime_ToStringTest7()
+        {
+           /// <summary>
+           ///  1. Creates a DateTime
+           ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
+           /// </summary>
+           OutputHelper.WriteLine("Generating random DateTime");
+           DateTime dt = GetRandomDateTime();
+           OutputHelper.WriteLine("DateTime.ToString(String) using Standard Formats and Verifying");
+           string[] standardFmts = { "d", "D", "f", "F", "g", "G", "m", "M", "o", "O", "R", "r", "s", "t", "T", "u", "U", "Y", "y" };
+           foreach (string standardFmt in standardFmts)
+           {
+               try
+               {
+                   if (dt.ToString(standardFmt).Length < 1)
+                   {
+                       throw new Exception("Expected a String length greater than '0' but got '" +
+                           dt.ToString(standardFmt).Length + "'");
+                   }
+               }
+               catch (Exception ex)
+               {
+                   throw new Exception("Caught " + ex.Message + " when Trying DateTime.ToString(" + standardFmt + ")");
+               }
+               OutputHelper.WriteLine("Successfully verified 'DateTime.ToString(" + standardFmt + ")' format as: " + dt.ToString(standardFmt));
+           }
+           OutputHelper.WriteLine("DateTime.ToString(String) using Custom Formats and Verifying");
+           string[] customFmts = {"h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f","dd MMM HH:mm:ss",
+                 @"\Mon\t\h\: M", "MM/dd/yyyy", "dddd, dd MMMM yyyy", "MMMM dd", "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'",
+                            "yyyy'-'MM'-'dd'T'HH':'mm':'ss", "HH:mm", "yyyy'-'MM'-'dd HH':'mm':'ss'Z'", "yyyy MMMM"};
+           foreach (string customFmt in customFmts)
+           {
+               try
+               {
+                   if (dt.ToString(customFmt).Length < 1)
+                   {
+                       throw new Exception("Expected a String length greater than '0' but got '" +
+                           dt.ToString(customFmt).Length + "'");
+                   }
+               }
+               catch (Exception ex)
+               {
+                   throw new Exception("Caught " + ex.Message + " when Trying DateTime.ToString(" + customFmt + ")");
+               }
+               OutputHelper.WriteLine("Successfully verified 'DateTime.ToString(" + customFmt + ")' format as: " + dt.ToString(customFmt));
+           }
+        }
+
+        [TestMethod]
+        public void DateTime_ToStringTest8()
+        {
+            /// <summary>
+            ///  1. Creates a DateTime
+            ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
+            /// </summary>
+            OutputHelper.WriteLine("Generating random DateTime");
+
+            DateTime dt = GetRandomDateTime();
+
+            OutputHelper.WriteLine($"Test DateTime is: {dt}");
+
+            OutputHelper.WriteLine("DateTime.ToString(String) using specified formats and Verifying");
+
+            // "o" and "O"
+            string specifier1 = "o";
+            string specifier2 = "O";
+
+            OutputHelper.WriteLine($"Testing specified format(s): '{specifier1}' and '{specifier2}'");
+
+            try
+            {
+                string dtOutput1 = dt.ToString(specifier1);
+                string dtOutput2 = dt.ToString(specifier2);
+
+                OutputHelper.WriteLine($"Output from ToString(\"{specifier1}\") was '{dtOutput1}'");
+                OutputHelper.WriteLine($"Output from ToString(\"{specifier2}\") was '{dtOutput2}'");
+
+                // expected format is yyyy-MM-ddTHH:mm:ss.fffffffZ
+
+                int length = 28;
+
+                // check length
+                Assert.True(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.True(length == dtOutput2.Length, $"Wrong output1 length: {dtOutput2.Length}, should have been {length}");
+
+                // check 'yyyy'
+                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(0, 4)), "Wrong output1 for 'yyyy'");
+                Assert.Equal(dt.Year, int.Parse(dtOutput2.Substring(0, 4)), "Wrong output2 for 'yyyy'");
+                // check 'MM'
+                Assert.Equal(dt.Month, int.Parse(dtOutput1.Substring(5, 2)), "Wrong output1 in for 'MM'");
+                Assert.Equal(dt.Month, int.Parse(dtOutput2.Substring(5, 2)), "Wrong output2 in for 'MM'");
+                // check 'dd'
+                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(8, 2)), "Wrong output1 in for 'dd'");
+                Assert.Equal(dt.Day, int.Parse(dtOutput2.Substring(8, 2)), "Wrong output2 in for 'dd'");
+                // check 'HH'
+                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
+                Assert.Equal(dt.Hour, int.Parse(dtOutput2.Substring(11, 2)), "Wrong output2 in for 'HH'");
+                // check 'mm'
+                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
+                Assert.Equal(dt.Minute, int.Parse(dtOutput2.Substring(14, 2)), "Wrong output2 in for 'mm'");
+                // check 'ss'
+                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'ss'");
+                Assert.Equal(dt.Second, int.Parse(dtOutput2.Substring(17, 2)), "Wrong output2 in for 'ss'");
+
+                // check 'fffffff'
+                // need to do the math to get the fraction part from ticks
+                var fraction = dt.Ticks % _TicksPerSecond;
+                Assert.Equal(fraction, int.Parse(dtOutput1.Substring(20, 7)), "Wrong output1 in for 'fffffff'");
+                Assert.Equal(fraction, int.Parse(dtOutput2.Substring(20, 7)), "Wrong output2 in for 'fffffff'");
+
+                // check '-'
+                Assert.Equal("-", dtOutput1.Substring(4, 1), "Wrong output1 in for '-'");
+                Assert.Equal("-", dtOutput2.Substring(4, 1), "Wrong output2 in for '-'");
+                Assert.Equal("-", dtOutput1.Substring(7, 1), "Wrong output1 in for '-'");
+                Assert.Equal("-", dtOutput2.Substring(7, 1), "Wrong output2 in for '-'");
+                // check 'T'
+                Assert.Equal("T", dtOutput1.Substring(10, 1), "Wrong output1 in for 'T'");
+                Assert.Equal("T", dtOutput2.Substring(10, 1), "Wrong output2 in for 'T'");
+                // check ':'
+                Assert.Equal(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
+                Assert.Equal(":", dtOutput2.Substring(13, 1), "Wrong output2 in for ':'");
+                Assert.Equal(":", dtOutput1.Substring(16, 1), "Wrong output1 in for ':'");
+                Assert.Equal(":", dtOutput2.Substring(16, 1), "Wrong output2 in for ':'");
+                // check '.'
+                Assert.Equal(".", dtOutput1.Substring(19, 1), "Wrong output1 in for '.'");
+                Assert.Equal(".", dtOutput2.Substring(19, 1), "Wrong output2 in for '.'");
+                // check 'Z'
+                Assert.Equal("Z", dtOutput1.Substring(27, 1), "Wrong output1 in for 'Z'");
+                Assert.Equal("Z", dtOutput2.Substring(27, 1), "Wrong output2 in for 'Z'");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Caught {ex.Message} when Trying DateTime.ToString(\"{specifier1}\")");
+            }
+
+            OutputHelper.WriteLine("");
+
+        }
+
 
         [TestMethod]
         public void DateTime_AddTest8()
@@ -1047,6 +1135,10 @@ namespace NFUnitTestSystemLib
         static int[] leapYear = new int[] {2000, 2004, 2008, 2012, 2016, 2020, 2024, 2028, 2032, 2036, 2040, 2044, 2048,
                 2052, 2056, 2060, 2064, 2068, 2072, 2076, 2080, 2084, 2088, 2092, 2096};
 
+        // computing our constants here, as these are not accessible
+        // equivalent to  DateTime.TicksPerSecond
+        const int _TicksPerSecond = 10000 * 1000;
+
         private DateTime[] Get_ArrayOfRandomDateTimes()
         {
             OutputHelper.WriteLine(DateTime_btwn_1801_And_2801().ToString());
@@ -1089,21 +1181,34 @@ namespace NFUnitTestSystemLib
             Random random = new Random();
             year = random.Next(1399) + 1601;
             month = random.Next(12) + 1;
+
             if (month == 2 && IsLeapYear(year))
+            {
                 day = random.Next(29) + 1;
+            }
             else if (month == 2 && (!IsLeapYear(year)))
+            {
                 day = random.Next(28) + 1;
-            else if (((month <= 7) && ((month + 1) % 2 == 0)) ||
-                ((month > 7) && ((month % 2) == 0)))
+            }
+            else if (((month <= 7) && ((month + 1) % 2 == 0))
+                     || ((month > 7) && ((month % 2) == 0)))
+            {
                 day = random.Next(31) + 1;
+            }
             else
+            {
                 day = random.Next(30) + 1;
+            }
+
             hour = random.Next(24);
             minute = random.Next(60);
             second = random.Next(60);
             millisec = random.Next(1000);
 
-            return new DateTime(year, month, day, hour, minute, second, millisec);
+            DateTime dt = new(year, month, day, hour, minute, second, millisec);
+
+            // fill in random ticks value so we can have a fully filled ticks value
+            return new DateTime(dt.Ticks + random.Next(1000_000));
         }
 
         private DateTime GetLeapYearDateTime()
