@@ -119,10 +119,11 @@ namespace System.Globalization
     internal static
     class DateTimeFormat
     {
-        internal const int _maxSecondsFractionDigits = 3;
+        internal const int MaxSecondsFractionDigits = 7;
+
         ////////////////////////////////////////////////////////////////////////////
         //
-        // Format the positive integer value to a string and perfix with assigned
+        // Format the positive integer value to a string and prefix with assigned
         // length of leading zero.
         //
         // Parameters:
@@ -327,21 +328,23 @@ namespace System.Globalization
                             tempResult = FormatDigits(dateTime.Second, tokenLen);
                             break;
                         case 'f':
-                            if (tokenLen <= _maxSecondsFractionDigits)
+                            if (tokenLen <= MaxSecondsFractionDigits)
                             {
-                                var precision = 3;
-                                var fraction = dateTime.Millisecond;
+                                // compute requested precision
+                                var precision = MaxSecondsFractionDigits - (MaxSecondsFractionDigits - tokenLen);
 
-                                // Note: Need to add special case when tokenLen > precision to begin with
-                                // if we're to change MaxSecondsFractionDigits to be more than 3
+                                // get fraction value from ticks
+                                var fraction = dateTime.Ticks % DateTime.TicksPerSecond;
 
-                                while (tokenLen < precision)
+                                // compute value with effective digits from requested precision
+                                int effectiveDigits = MaxSecondsFractionDigits - precision;
+                                while (effectiveDigits > 0)
                                 {
                                     fraction /= 10;
-                                    precision--;
+                                    effectiveDigits--;
                                 }
-
-                                tempResult = FormatDigits(fraction, tokenLen);
+                          
+                                tempResult = FormatDigits((int)fraction, precision);
                             }
                             else throw new ArgumentException("Format_InvalidString");
                             break;
@@ -440,12 +443,13 @@ namespace System.Globalization
                 case 'M':     // Month/Day Date
                     realFormat = dtfi.MonthDayPattern;
                     break;
+
                 case 'o':
-                case 'O':     // Roundtrip ISO8601 compatible
-                    // Note: we only support UTC (Z) time, so dont use the kind (K). 
-                    // Also we dont support precision more than 1 thousandth of a second (although could add "0000" to make it fully compliant)!
-                    realFormat = dtfi.SortableDateTimePattern + ".fffZ";
+                case 'O':     // Round-trip ISO8601 compatible
+                    // Note: .NET nanoFramework has support for UTC (Z) time, so we're not processing the kind token (K). 
+                    realFormat = dtfi.SortableDateTimePattern + ".fffffffZ";
                     break;
+
                 case 'r':
                 case 'R':     // RFC 1123 Standard
                     realFormat = dtfi.RFC1123Pattern;
