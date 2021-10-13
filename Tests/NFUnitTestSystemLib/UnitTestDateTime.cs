@@ -1342,7 +1342,7 @@ namespace NFUnitTestSystemLib
                 // check 'f'
                 // need to do the math to get the fraction part from ticks
                 var fraction = dt.Ticks % _TicksPerSecond;
-                Assert.Equal(fraction.ToString().Substring(0, 1), dtOutput1.Substring(9, 1), "Wrong output1 in for 'f'");
+                Assert.Equal(fraction.ToString("D7").Substring(0, 1), dtOutput1.Substring(9, 1), "Wrong output1 in for 'f'");
 
                 // check ':'
                 Assert.Equal(":", dtOutput1.Substring(2, 1), "Wrong output1 in for ':'");
