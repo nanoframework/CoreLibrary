@@ -156,6 +156,7 @@ jobs:
     inputs:
       gitHubToken: $(GitHubToken)
       repositoriesToUpdate: |
+        nanoFramework.Devices.OneWire
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
         nanoFramework.TestFramework
@@ -163,6 +164,7 @@ jobs:
         nanoFramework.Devices.OneWire
         nanoFramework.Networking.Sntp
         nanoFramework.Hardware.Stm32
+        nanoFramework.Hardware.TI
         nanoFramework.TI.EasyLink
         nanoFramework.ResourceManager
         nanoFramework.Json
@@ -173,6 +175,7 @@ jobs:
         System.Device.Dac
         System.Device.I2c
         System.Device.Spi
+        System.Device.Pwm
         System.Threading
         System.Math
         System.Collections
