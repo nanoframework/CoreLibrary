@@ -172,14 +172,15 @@ jobs:
         Windows.Devices.I2c
         Windows.Devices.Pwm
         Windows.Devices.Spi
+        System.Collections
+        System.Device.Adc
         System.Device.Dac
         System.Device.I2c
-        System.Device.Spi
         System.Device.Pwm
-        System.Threading
+        System.Device.Spi
         System.Math
-        System.Collections
         System.Text
+        System.Threading
     displayName: Update dependent class libs
 
 ##################################
