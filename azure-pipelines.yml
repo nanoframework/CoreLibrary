@@ -2,11 +2,13 @@ trigger:
   branches:
     include: [main, develop, "release-*" ]
   paths:
-    exclude: [README.md, LICENSE.md, NuGet.Config, .github_changelog_generator, .gitignore]
+    exclude: [README.md, LICENSE.md, CHANGELOG.md, CODE_OF_CONDUCT.md, NuGet.Config, .github_changelog_generator, .gitignore]
   tags:
     include: ["v*"]
 
 # PR always trigger build
+pr:
+  autoCancel: true
 
 # add nf-tools repo to resources (for Azure Pipelines templates)
 resources:
@@ -26,7 +28,7 @@ jobs:
 
   variables:
     DOTNET_NOLOGO: true
-    solution: '**/*.sln'
+    solution: 'nanoFramework.CoreLibrary.sln'
     buildPlatform: 'Any CPU'
     buildConfiguration: 'Release'
     nugetPackageName: 'nanoFramework.CoreLibrary'
@@ -76,7 +78,12 @@ jobs:
 
   # need to push the other package to NuGet because the template above can only push one package (happens on all builds except PRs)
   - task: NuGetCommand@2
-    condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
+    condition: >-
+      and(
+        succeeded(),
+        eq(variables['System.PullRequest.PullRequestId'], ''),
+        eq(variables['StartReleaseCandidate'], false)
+      )
     displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
       command: push
@@ -88,7 +95,12 @@ jobs:
     continueOnError: true
 
   - task: NuGetCommand@2
-    condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
+    condition: >-
+      and(
+        succeeded(),
+        eq(variables['System.PullRequest.PullRequestId'], ''),
+        eq(variables['StartReleaseCandidate'], false)
+      )
     displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
       command: push
@@ -101,7 +113,13 @@ jobs:
 
   # create or update GitHub release
   - task: GithubRelease@1
-    condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), ne( variables['StartReleaseCandidate'], true ) )
+    condition: >-
+      and(
+        succeeded(),
+        eq(variables['System.PullRequest.PullRequestId'], ''),
+        not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v')),
+        ne(variables['StartReleaseCandidate'], true)
+      )
     displayName: Create/Update GitHub PREVIEW release 
     inputs:
       gitHubConnection: 'github.com_nano-$(System.TeamProject)'
@@ -117,7 +135,13 @@ jobs:
 
   # create or update GitHub release ON tags from release or master branches
   - task: GithubRelease@1
-    condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], 'preview') ), ne( variables['StartReleaseCandidate'], true ) )
+    condition: >-
+      and(
+        succeeded(),
+        startsWith(variables['Build.SourceBranch'], 'refs/tags/v'),
+        not(contains(variables['Build.SourceBranch'], 'preview')),
+        ne(variables['StartReleaseCandidate'], true)
+      )
     displayName: Create/Update GitHub stable release
     inputs:
       gitHubConnection: 'github.com_nano-$(System.TeamProject)'
@@ -133,7 +157,20 @@ jobs:
 
 ##############################
 - job: Update_Dependents
-  condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['StartReleaseCandidate'], 'false') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'), eq(variables['StartReleaseCandidate'], 'false') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
+  condition: >-
+    or(
+      and(
+        succeeded(),
+        startsWith(variables['Build.SourceBranch'], 'refs/tags/v'),
+        eq(variables['StartReleaseCandidate'], 'false')
+      ),
+      and(
+        succeeded(),
+        contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'),
+        eq(variables['StartReleaseCandidate'], 'false')
+      ),
+      eq(variables['UPDATE_DEPENDENTS'], 'true')
+    )
 
   dependsOn:
   - Build_mscorlib
@@ -190,7 +227,12 @@ jobs:
   dependsOn:
   - Build_mscorlib
   - Update_Dependents
-  condition: or( failed('Build_mscorlib'), failed('Build_mscorlib_no_reflection'), failed('Update_Dependents'))
+  condition: >-
+    or(
+      failed('Build_mscorlib'),
+      failed('Build_mscorlib_no_reflection'),
+      failed('Update_Dependents')
+    )
 
   pool:
     vmImage: 'windows-2019'

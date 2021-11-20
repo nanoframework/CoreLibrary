@@ -1,11 +1,11 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-CoreLibrary&metric=alert_status)](https://sonarcloud.io/dashboard?id=nanoframework_lib-CoreLibrary) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-CoreLibrary&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=nanoframework_lib-CoreLibrary) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.CoreLibrary.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.CoreLibrary/) [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/main/CONTRIBUTING.md) 
 [![Discord](https://img.shields.io/discord/478725473862549535.svg?logo=discord&logoColor=white&label=Discord&color=7289DA)](https://discord.gg/gCyBu8T)
 
-![nanoFramework logo](https://github.com/nanoframework/Home/blob/main/resources/logo/nanoFramework-repo-logo.png)
+![nanoFramework logo](https://raw.githubusercontent.com/nanoframework/Home/main/resources/logo/nanoFramework-repo-logo.png)
 
 -----
 
-# Welcome to the **nanoFramework** Base Class Library repository!
+# Welcome to the .NET **nanoFramework** Base Class Library repository
 
 ## Build status
 
@@ -26,7 +26,7 @@ nanoFramework has a dedicated [Unit Test framework](https://github.com/nanoframe
 
 CoreLibrary has specific needs that differ from what you'll find in the documentation:
 
-- You need to have the nanoFramework.TestFramework as a nuget package as it will bring the nanoCLR Win32 emulator
+- You need to have the nanoFramework.TestFramework as a NuGet package as it will bring the nanoCLR Win32 emulator
 - You need to remove the reference to mscorlib, nanoFramework.TestFramework and nanoFramework.UnitTestLauncher
 - Use project reference instead for all those 3 elements
 
@@ -51,7 +51,7 @@ vstest.console.exe .\Tests\NFUnitTestBitConverter\bin\Release\NFUnitTest.dll  /S
 
 *Notes*:
 
-- You have to build the TestAdapter from the source in this case. You can use the path to the nuget as well, this will have the same effect.
+- You have to build the TestAdapter from the source in this case. You can use the path to the NuGet as well, this will have the same effect.
 - you have full diagnostic enabled in this case.
 
 ## Feedback and documentation
@@ -70,7 +70,7 @@ The **nanoFramework** Class Libraries are licensed under the [MIT license](LICEN
 
 ## Code of Conduct
 
-This project has adopted the code of conduct defined by the Contributor Covenant to clarify expected behavior in our community.
+This project has adopted the code of conduct defined by the Contributor Covenant to clarify expected behaviour in our community.
 For more information see the [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct).
 
 ### .NET Foundation
