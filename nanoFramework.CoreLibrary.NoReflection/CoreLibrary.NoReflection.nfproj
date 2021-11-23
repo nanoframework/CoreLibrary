@@ -180,6 +180,9 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IndexerNameAttribute.cs" Link="System\CompilerServices\IndexerNameAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" Link="System\CompilerServices\InternalsVisibleToAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\MethodImplAttribute.cs" Link="System\CompilerServices\MethodImplAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\RuntimeFeature.cs">
+      <Link>System\Runtime\CompilerServices\RuntimeFeature.cs</Link>
+    </Compile>
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\RuntimeHelpers.cs" Link="System\CompilerServices\RuntimeHelpers.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\Attributes.cs" Link="System\InteropServices\Attributes.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\CharSet.cs" Link="System\InteropServices\CharSet.cs" />
