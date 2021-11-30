@@ -2,7 +2,33 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/CoreLibrary/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.13...HEAD)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5...HEAD)
+
+**Implemented enhancements:**
+
+- Add IsExternalInit [\#163](https://github.com/nanoframework/CoreLibrary/pull/163)
+- Add Console.Write and Console.WriteLine [\#162](https://github.com/nanoframework/CoreLibrary/pull/162)
+- Improvements and fixes in DateTimeFormatInfo [\#159](https://github.com/nanoframework/CoreLibrary/pull/159)
+- ISO8601 compatibility for DateTime ToString [\#158](https://github.com/nanoframework/CoreLibrary/pull/158)
+
+**Documentation and other chores:**
+
+- Fix DateTime\_ToString Test25 [\#160](https://github.com/nanoframework/CoreLibrary/pull/160)
+- Update test framework @10d5471 [\#156](https://github.com/nanoframework/CoreLibrary/pull/156)
+- Update test framewok @965a065 [\#155](https://github.com/nanoframework/CoreLibrary/pull/155)
+- Add exception to System.Reflection.Load documentation [\#154](https://github.com/nanoframework/CoreLibrary/pull/154)
+- Add new Unit Test [\#152](https://github.com/nanoframework/CoreLibrary/pull/152)
+- Fix NFUnitTestArray Unit Test project [\#151](https://github.com/nanoframework/CoreLibrary/pull/151)
+- Fix Unit Test for GUID box/unbox [\#150](https://github.com/nanoframework/CoreLibrary/pull/150)
+- Update Unit Tests [\#149](https://github.com/nanoframework/CoreLibrary/pull/149)
+
+## [v1.10.5](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5) (2021-07-13)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.18...v1.10.5)
+
+## [v1.10.5-preview.18](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.18) (2021-06-19)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.13...v1.10.5-preview.18)
 
 **Implemented enhancements:**
 
@@ -14,7 +40,7 @@
 
 ## [v1.10.5-preview.13](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.13) (2021-06-07)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-alpha.150.10...v1.10.5-preview.13)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.10...v1.10.5-preview.13)
 
 **Fixed bugs:**
 
@@ -25,13 +51,13 @@
 
 - Clean up unit tests for CoreLibrary and complete tests for Type.GetType [\#143](https://github.com/nanoframework/CoreLibrary/pull/143)
 
-## [v1.10.5-alpha.150.10](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-alpha.150.10) (2021-06-02)
-
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.10...v1.10.5-alpha.150.10)
-
 ## [v1.10.5-preview.10](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.10) (2021-06-02)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.4...v1.10.5-preview.10)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-alpha.150.10...v1.10.5-preview.10)
+
+## [v1.10.5-alpha.150.10](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-alpha.150.10) (2021-06-02)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.4...v1.10.5-alpha.150.10)
 
 ## [v1.10.5-preview.4](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.4) (2021-05-31)
 
@@ -167,20 +193,20 @@
 
 ## [v1.9.1-preview.4](https://github.com/nanoframework/CoreLibrary/tree/v1.9.1-preview.4) (2020-10-20)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-alpha.11...v1.9.1-preview.4)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.11...v1.9.1-preview.4)
 
 **Implemented enhancements:**
 
 - Add Enum.HasFlag [\#112](https://github.com/nanoframework/CoreLibrary/pull/112)
 - Add Convert.ToBoolean\(byte\) [\#111](https://github.com/nanoframework/CoreLibrary/pull/111)
 
-## [v1.9.0-alpha.11](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-alpha.11) (2020-10-20)
-
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.11...v1.9.0-alpha.11)
-
 ## [v1.9.0-preview.11](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-preview.11) (2020-10-20)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.5...v1.9.0-preview.11)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-alpha.11...v1.9.0-preview.11)
+
+## [v1.9.0-alpha.11](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-alpha.11) (2020-10-20)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.5...v1.9.0-alpha.11)
 
 ## [v1.9.0-preview.5](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-preview.5) (2020-09-30)
 
