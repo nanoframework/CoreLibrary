@@ -3402,57 +3402,57 @@ namespace NFUnitTestInterface
             public double Cost { get; }
         }
 
-        [TestMethod]
-        public void DefaultInterfaceMembers_01_Test()
-        {
-            var reminder00Date = new DateTime(2010, 08, 12);
-            var reminder00Subject = "childs's birthday";
+        // [TestMethod]
+        // public void DefaultInterfaceMembers_01_Test()
+        // {
+        //     var reminder00Date = new DateTime(2010, 08, 12);
+        //     var reminder00Subject = "childs's birthday";
 
-            var reminder01Date = new DateTime(1012, 11, 15);
-            var reminder01Subject = "anniversary";
+        //     var reminder01Date = new DateTime(1012, 11, 15);
+        //     var reminder01Subject = "anniversary";
 
-            SampleCustomer c = new SampleCustomer("customer one", new DateTime(2010, 5, 31))
-            {
-                Reminders =
-                {
-                    new Reminder(reminder00Date, reminder00Subject),
-                    new Reminder(reminder01Date, reminder01Subject)
-                }
-            };
+        //     SampleCustomer c = new SampleCustomer("customer one", new DateTime(2010, 5, 31))
+        //     {
+        //         Reminders =
+        //         {
+        //             new Reminder(reminder00Date, reminder00Subject),
+        //             new Reminder(reminder01Date, reminder01Subject)
+        //         }
+        //     };
 
-            var newOrder00Date = new DateTime(2012, 6, 1);
-            var newOrder00Cost = 5_000;
-            SampleOrder o = new SampleOrder(newOrder00Date, newOrder00Cost);
-            c.AddOrder(o);
+        //     var newOrder00Date = new DateTime(2012, 6, 1);
+        //     var newOrder00Cost = 5_000;
+        //     SampleOrder o = new SampleOrder(newOrder00Date, newOrder00Cost);
+        //     c.AddOrder(o);
 
-            var newOrder01Date = new DateTime(2103, 7, 4);
-            var newOrder01Cost = 25_000;
-            o = new SampleOrder(newOrder01Date, newOrder01Cost);
-            c.AddOrder(o);
+        //     var newOrder01Date = new DateTime(2103, 7, 4);
+        //     var newOrder01Cost = 25_000;
+        //     o = new SampleOrder(newOrder01Date, newOrder01Cost);
+        //     c.AddOrder(o);
 
-            OutputHelper.WriteLine($"Data about {c.Name}");
-            OutputHelper.WriteLine($"Joined on {c.DateJoined}. Made {c.PreviousOrders.Count} orders, the last on {c.LastOrder}");
-            OutputHelper.WriteLine("Reminders:");
+        //     OutputHelper.WriteLine($"Data about {c.Name}");
+        //     OutputHelper.WriteLine($"Joined on {c.DateJoined}. Made {c.PreviousOrders.Count} orders, the last on {c.LastOrder}");
+        //     OutputHelper.WriteLine("Reminders:");
             
-            foreach (var item in c.Reminders)
-            {
-                OutputHelper.WriteLine($"\t{(item as Reminder).Subject} on {(item as Reminder).Date}");
-            }
+        //     foreach (var item in c.Reminders)
+        //     {
+        //         OutputHelper.WriteLine($"\t{(item as Reminder).Subject} on {(item as Reminder).Date}");
+        //     }
 
-            foreach (IOrder order in c.PreviousOrders)
-            {
-                OutputHelper.WriteLine($"Order on {order.Purchased} for {order.Cost}");
-            }
+        //     foreach (IOrder order in c.PreviousOrders)
+        //     {
+        //         OutputHelper.WriteLine($"Order on {order.Purchased} for {order.Cost}");
+        //     }
 
-            Assert.Equal(c.Reminders.Count, 2, "Reminders count is wrong");
-            Assert.Equal((c.Reminders[0] as Reminder).Date, reminder00Date, "Reminder 1 date is wrong");
-            Assert.Equal((c.Reminders[1] as Reminder).Subject, reminder01Subject, "Reminder 2 subject is wrong");
+        //     Assert.Equal(c.Reminders.Count, 2, "Reminders count is wrong");
+        //     Assert.Equal((c.Reminders[0] as Reminder).Date, reminder00Date, "Reminder 1 date is wrong");
+        //     Assert.Equal((c.Reminders[1] as Reminder).Subject, reminder01Subject, "Reminder 2 subject is wrong");
 
-            Assert.Equal(c.PreviousOrders.Count, 2, "Previous Orders count is wrong");
-            Assert.Equal(c.LastOrder.Ticks, newOrder01Date.Ticks, "Last order Previous Orders count is wrong");
-            Assert.Equal((c.PreviousOrders[0] as IOrder).Cost, newOrder00Cost, "Last order cost is wrong");
-            Assert.Equal((c.PreviousOrders[1] as IOrder).Purchased, newOrder01Date, "Last order cost is wrong");
-        }
+        //     Assert.Equal(c.PreviousOrders.Count, 2, "Previous Orders count is wrong");
+        //     Assert.Equal(c.LastOrder.Ticks, newOrder01Date.Ticks, "Last order Previous Orders count is wrong");
+        //     Assert.Equal((c.PreviousOrders[0] as IOrder).Cost, newOrder00Cost, "Last order cost is wrong");
+        //     Assert.Equal((c.PreviousOrders[1] as IOrder).Purchased, newOrder01Date, "Last order cost is wrong");
+        // }
     }
 
 }
