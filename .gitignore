@@ -255,3 +255,7 @@ paket-files/
 
 #SoundCloud
 *.sonarqube/
+
+# VS Code
+.vscode/settings.json
+

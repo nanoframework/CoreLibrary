@@ -101,7 +101,7 @@ namespace System.Globalization
     //        "g"                 general date (short date + short time)  culture-specific                        10/31/1999 2:00 AM
     //        "G"                 general date (short date + long time)   culture-specific                        10/31/1999 2:00:00 AM
     //        "m"/"M"             Month/Day date                          culture-specific                        October 31
-    //(G)     "o"/"O"             Round Trip XML                          "yyyy-MM-ddTHH:mm:ss.fffffffK"          1999-10-31 02:00:00.0000000Z
+    //(G)     "o"/"O"             Round Trip ISO 8601 compatible          "yyyy-MM-ddTHH:mm:ss.fffffffK"          1999-10-31T02:00:00.0000000Z
     //(G)     "r"/"R"             RFC 1123 date,                          "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'"   Sun, 31 Oct 1999 10:00:00 GMT
     //(G)     "s"                 Sortable format, based on ISO 8601.     "yyyy-MM-dd'T'HH:mm:ss"                 1999-10-31T02:00:00
     //                                                                    ('T' for local time)
@@ -119,10 +119,11 @@ namespace System.Globalization
     internal static
     class DateTimeFormat
     {
-        internal const int _maxSecondsFractionDigits = 3;
+        internal const int MaxSecondsFractionDigits = 7;
+
         ////////////////////////////////////////////////////////////////////////////
         //
-        // Format the positive integer value to a string and perfix with assigned
+        // Format the positive integer value to a string and prefix with assigned
         // length of leading zero.
         //
         // Parameters:
@@ -247,64 +248,64 @@ namespace System.Globalization
                 switch (ch)
                 {
                     case ':':
-                    tempResult = dtfi.TimeSeparator;
-                    tokenLen = 1;
-                    break;
+                        tempResult = dtfi.TimeSeparator;
+                        tokenLen = 1;
+                        break;
                     case '/':
-                    tempResult = dtfi.DateSeparator;
-                    tokenLen = 1;
-                    break;
+                        tempResult = dtfi.DateSeparator;
+                        tokenLen = 1;
+                        break;
                     case '\'':
                     case '\"':
-                    tempResult = ParseQuoteString(format, i, out tokenLen);
-                    break;
+                        tempResult = ParseQuoteString(format, i, out tokenLen);
+                        break;
                     case '%':
-                    // Optional format character.
-                    // For example, format string "%d" will print day of month
-                    // without leading zero.  Most of the cases, "%" can be ignored.
-                    nextChar = ParseNextChar(format, i);
-                    // nextChar will be -1 if we already reach the end of the format string.
-                    // Besides, we will not allow "%%" appear in the pattern.
-                    if (nextChar >= 0 && nextChar != '%')
-                    {
-                        tempResult = FormatCustomized(dateTime, ((char)nextChar).ToString(), dtfi);
-                        tokenLen = 2;
-                    }
-                    else
-                    {
-                        //
-                        // This means that '%' is at the end of the format string or
-                        // "%%" appears in the format string.
-                        //
-                        throw new ArgumentException("Format_InvalidString");
-                    }
-                    break;
+                        // Optional format character.
+                        // For example, format string "%d" will print day of month
+                        // without leading zero.  Most of the cases, "%" can be ignored.
+                        nextChar = ParseNextChar(format, i);
+                        // nextChar will be -1 if we already reach the end of the format string.
+                        // Besides, we will not allow "%%" appear in the pattern.
+                        if (nextChar >= 0 && nextChar != '%')
+                        {
+                            tempResult = FormatCustomized(dateTime, ((char)nextChar).ToString(), dtfi);
+                            tokenLen = 2;
+                        }
+                        else
+                        {
+                            //
+                            // This means that '%' is at the end of the format string or
+                            // "%%" appears in the format string.
+                            //
+                            throw new ArgumentException("Format_InvalidString");
+                        }
+                        break;
                     case '\\':
-                    // Escaped character.  Can be used to insert character into the format string.
-                    // For exmple, "\d" will insert the character 'd' into the string.
-                    //
-                    // NOTENOTE : we can remove this format character if we enforce the enforced quote
-                    // character rule.
-                    // That is, we ask everyone to use single quote or double quote to insert characters,
-                    // then we can remove this character.
-                    //
-                    nextChar = ParseNextChar(format, i);
-                    if (nextChar >= 0)
-                    {
-                        tempResult = ((char)nextChar).ToString();
-                        tokenLen = 2;
-                    }
-                    else
-                    {
+                        // Escaped character.  Can be used to insert character into the format string.
+                        // For exmple, "\d" will insert the character 'd' into the string.
                         //
-                        // This means that '\' is at the end of the formatting string.
+                        // NOTENOTE : we can remove this format character if we enforce the enforced quote
+                        // character rule.
+                        // That is, we ask everyone to use single quote or double quote to insert characters,
+                        // then we can remove this character.
                         //
-                        throw new ArgumentException("Format_InvalidString");
-                    }
-                    break;
+                        nextChar = ParseNextChar(format, i);
+                        if (nextChar >= 0)
+                        {
+                            tempResult = ((char)nextChar).ToString();
+                            tokenLen = 2;
+                        }
+                        else
+                        {
+                            //
+                            // This means that '\' is at the end of the formatting string.
+                            //
+                            throw new ArgumentException("Format_InvalidString");
+                        }
+                        break;
                     default:
-                    doneParsingCh = false;
-                    break;
+                        doneParsingCh = false;
+                        break;
                 }
 
                 if (!doneParsingCh)
@@ -313,95 +314,97 @@ namespace System.Globalization
                     switch (ch)
                     {
                         case 'h':
-                        var hour12 = dateTime.Hour % 12;
-                        if (hour12 == 0) hour12 = 12;
-                        tempResult = FormatDigits(hour12, tokenLen);
-                        break;
+                            var hour12 = dateTime.Hour % 12;
+                            if (hour12 == 0) hour12 = 12;
+                            tempResult = FormatDigits(hour12, tokenLen);
+                            break;
                         case 'H':
-                        tempResult = FormatDigits(dateTime.Hour, tokenLen);
-                        break;
+                            tempResult = FormatDigits(dateTime.Hour, tokenLen);
+                            break;
                         case 'm':
-                        tempResult = FormatDigits(dateTime.Minute, tokenLen);
-                        break;
+                            tempResult = FormatDigits(dateTime.Minute, tokenLen);
+                            break;
                         case 's':
-                        tempResult = FormatDigits(dateTime.Second, tokenLen);
-                        break;
+                            tempResult = FormatDigits(dateTime.Second, tokenLen);
+                            break;
                         case 'f':
-                        if (tokenLen <= _maxSecondsFractionDigits)
-                        {
-                            var precision = 3;
-                            var fraction = dateTime.Millisecond;
-
-                            // Note: Need to add special case when tokenLen > precision to begin with
-                            // if we're to change MaxSecondsFractionDigits to be more than 3
-
-                            while (tokenLen < precision)
+                            if (tokenLen <= MaxSecondsFractionDigits)
                             {
-                                fraction /= 10;
-                                precision--;
-                            }
+                                // compute requested precision
+                                var precision = MaxSecondsFractionDigits - (MaxSecondsFractionDigits - tokenLen);
 
-                            tempResult = FormatDigits(fraction, tokenLen);
-                        }
-                        else throw new ArgumentException("Format_InvalidString");
-                        break;
+                                // get fraction value from ticks
+                                var fraction = dateTime.Ticks % DateTime.TicksPerSecond;
+
+                                // compute value with effective digits from requested precision
+                                int effectiveDigits = MaxSecondsFractionDigits - precision;
+                                while (effectiveDigits > 0)
+                                {
+                                    fraction /= 10;
+                                    effectiveDigits--;
+                                }
+                          
+                                tempResult = FormatDigits((int)fraction, precision);
+                            }
+                            else throw new ArgumentException("Format_InvalidString");
+                            break;
                         case 't':
-                        if (tokenLen == 1)
-                        {
-                            if (dateTime.Hour < 12)
+                            if (tokenLen == 1)
                             {
-                                if (dtfi.AMDesignator.Length >= 1) tempResult = dtfi.AMDesignator[0].ToString();
+                                if (dateTime.Hour < 12)
+                                {
+                                    if (dtfi.AMDesignator.Length >= 1) tempResult = dtfi.AMDesignator[0].ToString();
+                                }
+                                else
+                                {
+                                    if (dtfi.PMDesignator.Length >= 1) tempResult = dtfi.PMDesignator[0].ToString();
+                                }
+
                             }
+                            else tempResult = dateTime.Hour < 12 ? dtfi.AMDesignator : dtfi.PMDesignator;
+                            break;
+                        case 'd':
+                            //
+                            // tokenLen == 1 : Day of month as digits with no leading zero.
+                            // tokenLen == 2 : Day of month as digits with leading zero for single-digit months.
+                            // tokenLen == 3 : Day of week as a three-leter abbreviation.
+                            // tokenLen >= 4 : Day of week as its full name.
+                            //
+                            if (tokenLen <= 2) tempResult = FormatDigits(dateTime.Day, tokenLen);
                             else
                             {
-                                if (dtfi.PMDesignator.Length >= 1) tempResult = dtfi.PMDesignator[0].ToString();
+                                var dayOfWeek = (int)dateTime.DayOfWeek;
+
+                                tempResult = tokenLen == 3 ? dtfi.AbbreviatedDayNames[dayOfWeek] : dtfi.DayNames[dayOfWeek];
                             }
-
-                        }
-                        else tempResult = dateTime.Hour < 12 ? dtfi.AMDesignator : dtfi.PMDesignator;
-                        break;
-                        case 'd':
-                        //
-                        // tokenLen == 1 : Day of month as digits with no leading zero.
-                        // tokenLen == 2 : Day of month as digits with leading zero for single-digit months.
-                        // tokenLen == 3 : Day of week as a three-leter abbreviation.
-                        // tokenLen >= 4 : Day of week as its full name.
-                        //
-                        if (tokenLen <= 2) tempResult = FormatDigits(dateTime.Day, tokenLen);
-                        else
-                        {
-                            var dayOfWeek = (int)dateTime.DayOfWeek;
-
-                            tempResult = tokenLen == 3 ? dtfi.AbbreviatedDayNames[dayOfWeek] : dtfi.DayNames[dayOfWeek];
-                        }
-                        break;
+                            break;
                         case 'M':
-                        //
-                        // tokenLen == 1 : Month as digits with no leading zero.
-                        // tokenLen == 2 : Month as digits with leading zero for single-digit months.
-                        // tokenLen == 3 : Month as a three-letter abbreviation.
-                        // tokenLen >= 4 : Month as its full name.
-                        //
-                        var month = dateTime.Month;
-                        if (tokenLen <= 2) tempResult = FormatDigits(month, tokenLen);
-                        else tempResult = tokenLen == 3 ? dtfi.AbbreviatedMonthNames[month - 1] : dtfi.MonthNames[month - 1];
-                        break;
+                            //
+                            // tokenLen == 1 : Month as digits with no leading zero.
+                            // tokenLen == 2 : Month as digits with leading zero for single-digit months.
+                            // tokenLen == 3 : Month as a three-letter abbreviation.
+                            // tokenLen >= 4 : Month as its full name.
+                            //
+                            var month = dateTime.Month;
+                            if (tokenLen <= 2) tempResult = FormatDigits(month, tokenLen);
+                            else tempResult = tokenLen == 3 ? dtfi.AbbreviatedMonthNames[month - 1] : dtfi.MonthNames[month - 1];
+                            break;
                         case 'y':
-                        // Notes about OS behavior:
-                        // y: Always print (year % 100). No leading zero.
-                        // yy: Always print (year % 100) with leading zero.
-                        // yyy/yyyy/yyyyy/... : Print year value.  With leading zeros.
+                            // Notes about OS behavior:
+                            // y: Always print (year % 100). No leading zero.
+                            // yy: Always print (year % 100) with leading zero.
+                            // yyy/yyyy/yyyyy/... : Print year value.  With leading zeros.
 
-                        var year = dateTime.Year;
+                            var year = dateTime.Year;
 
-                        tempResult = tokenLen <= 2 ? FormatDigits(year % 100, tokenLen) : year.ToString();
+                            tempResult = tokenLen <= 2 ? FormatDigits(year % 100, tokenLen) : year.ToString();
 
-                        if (tempResult.Length < tokenLen) tempResult = new string('0', tokenLen - tempResult.Length) + tempResult;
-                        break;
+                            if (tempResult.Length < tokenLen) tempResult = new string('0', tokenLen - tempResult.Length) + tempResult;
+                            break;
 
                         default:
-                        tempResult = tokenLen == 1 ? ch.ToString() : new String(ch, tokenLen);
-                        break;
+                            tempResult = tokenLen == 1 ? ch.ToString() : new String(ch, tokenLen);
+                            break;
                     }
                 }
 
@@ -419,52 +422,59 @@ namespace System.Globalization
             switch (format[0])
             {
                 case 'd':     // Short Date
-                realFormat = dtfi.ShortDatePattern;
-                break;
+                    realFormat = dtfi.ShortDatePattern;
+                    break;
                 case 'D':     // Long Date
-                realFormat = dtfi.LongDatePattern;
-                break;
+                    realFormat = dtfi.LongDatePattern;
+                    break;
                 case 'f':     // Full (long date + short time)
-                realFormat = dtfi.LongDatePattern + " " + dtfi.ShortTimePattern;
-                break;
+                    realFormat = dtfi.LongDatePattern + " " + dtfi.ShortTimePattern;
+                    break;
                 case 'F':     // Full (long date + long time)
-                realFormat = dtfi.FullDateTimePattern;
-                break;
+                    realFormat = dtfi.FullDateTimePattern;
+                    break;
                 case 'g':     // General (short date + short time)
-                realFormat = dtfi.GeneralShortTimePattern;
-                break;
+                    realFormat = dtfi.GeneralShortTimePattern;
+                    break;
                 case 'G':     // General (short date + long time)
-                realFormat = dtfi.GeneralLongTimePattern;
-                break;
+                    realFormat = dtfi.GeneralLongTimePattern;
+                    break;
                 case 'm':
                 case 'M':     // Month/Day Date
-                realFormat = dtfi.MonthDayPattern;
-                break;
+                    realFormat = dtfi.MonthDayPattern;
+                    break;
+
+                case 'o':
+                case 'O':     // Round-trip ISO8601 compatible
+                    // Note: .NET nanoFramework has support for UTC (Z) time, so we're not processing the kind token (K). 
+                    realFormat = dtfi.SortableDateTimePattern + ".fffffffZ";
+                    break;
+
                 case 'r':
                 case 'R':     // RFC 1123 Standard
-                realFormat = dtfi.RFC1123Pattern;
-                break;
+                    realFormat = dtfi.RFC1123Pattern;
+                    break;
                 case 's':     // Sortable without Time Zone Info
-                realFormat = dtfi.SortableDateTimePattern;
-                break;
+                    realFormat = dtfi.SortableDateTimePattern;
+                    break;
                 case 't':     // Short Time
-                realFormat = dtfi.ShortTimePattern;
-                break;
+                    realFormat = dtfi.ShortTimePattern;
+                    break;
                 case 'T':     // Long Time
-                realFormat = dtfi.LongTimePattern;
-                break;
+                    realFormat = dtfi.LongTimePattern;
+                    break;
                 case 'u':     // Universal with Sortable format
-                realFormat = dtfi.UniversalSortableDateTimePattern;
-                break;
+                    realFormat = dtfi.UniversalSortableDateTimePattern;
+                    break;
                 case 'U':     // Universal with Full (long date + long time) format
-                realFormat = dtfi.FullDateTimePattern;
-                break;
+                    realFormat = dtfi.FullDateTimePattern;
+                    break;
                 case 'y':
                 case 'Y':     // Year/Month Date
-                realFormat = dtfi.YearMonthPattern;
-                break;
+                    realFormat = dtfi.YearMonthPattern;
+                    break;
                 default:
-                throw new ArgumentException("Format_InvalidString");
+                    throw new ArgumentException("Format_InvalidString");
             }
 
             return realFormat;

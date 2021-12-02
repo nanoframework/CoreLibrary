@@ -5,10 +5,11 @@
     <version>$version$</version>
     <title>nanoFramework.CoreLibrary</title>
     <authors>nanoFramework project contributors</authors>
-    <owners>nanoFramework project contributors,dotnetfoundation</owners>
+    <owners>nanoFramework,dotnetfoundation</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE.md</license>
     <releaseNotes></releaseNotes>
+    <readme>docs\README.md</readme>
     <developmentDependency>false</developmentDependency>
     <projectUrl>https://github.com/nanoframework/CoreLibrary</projectUrl>
     <icon>images\nf-logo.png</icon>
@@ -25,6 +26,7 @@
     <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.xml" target="lib\mscorlib.xml" /> 
 
     <file src="assets\readme.txt" target="" />
+    <file src="README.md" target="docs\" />
     <file src="assets\nf-logo.png" target="images" />
     <file src="LICENSE.md" target="" />
   </files>
