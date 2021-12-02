@@ -1,8 +1,8 @@
 # Changelog
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/CoreLibrary/tree/HEAD)
+## [v1.11.6-preview.2](https://github.com/nanoframework/CoreLibrary/tree/v1.11.6-preview.2) (2021-11-30)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5...HEAD)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5...v1.11.6-preview.2)
 
 **Implemented enhancements:**
 
@@ -40,7 +40,7 @@
 
 ## [v1.10.5-preview.13](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.13) (2021-06-07)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.10...v1.10.5-preview.13)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-alpha.150.10...v1.10.5-preview.13)
 
 **Fixed bugs:**
 
@@ -51,13 +51,13 @@
 
 - Clean up unit tests for CoreLibrary and complete tests for Type.GetType [\#143](https://github.com/nanoframework/CoreLibrary/pull/143)
 
-## [v1.10.5-preview.10](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.10) (2021-06-02)
-
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-alpha.150.10...v1.10.5-preview.10)
-
 ## [v1.10.5-alpha.150.10](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-alpha.150.10) (2021-06-02)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.4...v1.10.5-alpha.150.10)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.10...v1.10.5-alpha.150.10)
+
+## [v1.10.5-preview.10](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.10) (2021-06-02)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5-preview.4...v1.10.5-preview.10)
 
 ## [v1.10.5-preview.4](https://github.com/nanoframework/CoreLibrary/tree/v1.10.5-preview.4) (2021-05-31)
 
