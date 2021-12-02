@@ -90,43 +90,6 @@ jobs:
       
   - template: azure-pipelines-templates/class-lib-publish.yml@templates  
 
-  # need to push the other package to NuGet because the template above can only push one package (happens on all builds except PRs)
-  - task: NuGetCommand@2
-    condition: >-
-      and(
-        succeeded(),
-        eq(variables['System.PullRequest.PullRequestId'], ''),
-        eq(variables['StartReleaseCandidate'], false),
-        not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
-      )
-    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
-    inputs:
-      command: push
-      nuGetFeedType: external
-      allowPackageConflicts: true
-      packagesToPush: 
-        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
-      publishFeedCredentials: 'AzureArtifacts-CoreLibrary'
-    continueOnError: true
-
-  - task: NuGetCommand@2
-    condition: >-
-      and(
-        succeeded(),
-        eq(variables['System.PullRequest.PullRequestId'], ''),
-        eq(variables['StartReleaseCandidate'], false),
-        not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
-      )
-    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
-    inputs:
-      command: push
-      nuGetFeedType: external
-      allowPackageConflicts: true
-      packagesToPush: 
-        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
-      publishFeedCredentials: 'NuGet-CoreLibrary'
-    continueOnError: true
-
   # create or update GitHub release
   - task: GithubRelease@1
     condition: >-
