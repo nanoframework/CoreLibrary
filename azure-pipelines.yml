@@ -22,7 +22,11 @@ jobs:
 
 ##############################
 - job: Build_mscorlib
-  condition: or( eq(variables['UPDATE_DEPENDENTS'], 'false'), eq(variables['StartReleaseCandidate'], 'true') )
+  condition: >-
+    or(
+      eq(variables['UPDATE_DEPENDENTS'], 'false'),
+      eq(variables['StartReleaseCandidate'], 'true')
+    )
   pool:
     vmImage: 'windows-2019'
 
@@ -45,7 +49,12 @@ jobs:
 
   # rebuild CoreLibrary project to get the assembly checksum
   - task: MSBuild@1
-    condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
+    condition: >-
+      and(
+        succeeded(),
+        eq(variables['StartReleaseCandidate'], false),
+        not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
+      )
     displayName: Rebuild CoreLibrary
     inputs:
       solution: 'nanoFramework.CoreLibrary\CoreLibrary.nfproj' 
@@ -61,7 +70,12 @@ jobs:
 
   # rebuild CoreLibrary.NoReflection project to get the assembly checksum
   - task: MSBuild@1
-    condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
+    condition: >-
+      and(
+        succeeded(),
+        eq(variables['StartReleaseCandidate'], false),
+        not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
+      )
     displayName: Rebuild CoreLibrary.NoReflection
     inputs:
       solution: 'nanoFramework.CoreLibrary.NoReflection\CoreLibrary.NoReflection.nfproj' 
@@ -82,7 +96,8 @@ jobs:
       and(
         succeeded(),
         eq(variables['System.PullRequest.PullRequestId'], ''),
-        eq(variables['StartReleaseCandidate'], false)
+        eq(variables['StartReleaseCandidate'], false),
+        not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
       )
     displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
@@ -99,7 +114,8 @@ jobs:
       and(
         succeeded(),
         eq(variables['System.PullRequest.PullRequestId'], ''),
-        eq(variables['StartReleaseCandidate'], false)
+        eq(variables['StartReleaseCandidate'], false),
+        not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
       )
     displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
     inputs:
@@ -118,7 +134,7 @@ jobs:
         succeeded(),
         eq(variables['System.PullRequest.PullRequestId'], ''),
         not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v')),
-        ne(variables['StartReleaseCandidate'], true)
+        eq(variables['StartReleaseCandidate'], false)
       )
     displayName: Create/Update GitHub PREVIEW release 
     inputs:
@@ -140,10 +156,11 @@ jobs:
         succeeded(),
         startsWith(variables['Build.SourceBranch'], 'refs/tags/v'),
         not(contains(variables['Build.SourceBranch'], 'preview')),
-        ne(variables['StartReleaseCandidate'], true)
+        eq(variables['StartReleaseCandidate'], false)
       )
     displayName: Create/Update GitHub stable release
     inputs:
+      action: edit
       gitHubConnection: 'github.com_nano-$(System.TeamProject)'
       tagSource: userSpecifiedTag
       tag: v$(MY_NUGET_VERSION)
