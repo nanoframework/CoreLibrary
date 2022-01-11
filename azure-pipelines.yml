@@ -166,12 +166,9 @@ jobs:
   - checkout: self
     fetchDepth: 1
 
-  - template: azure-pipelines-templates/install-nuget.yml@templates
-
   # update dependents
-  - task: UpdatenFDependencies@1
-    inputs:
-      gitHubToken: $(GitHubToken)
+  - template: azure-pipelines-templates/update-dependents.yml@templates  
+    parameters:
       repositoriesToUpdate: |
         nanoFramework.Devices.OneWire
         nanoFramework.Runtime.Events
@@ -198,7 +195,6 @@ jobs:
         System.Math
         System.Text
         System.Threading
-    displayName: Update dependent class libs
 
 ##################################
 # report build failure to Discord
