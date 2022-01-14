@@ -27,6 +27,7 @@
     <RunSettingsFilePath>$(MSBuildProjectDirectory)\nano.runsettings</RunSettingsFilePath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="UnitTestObjectTypeTests.cs" />
     <Compile Include="UnitTestSubTypeTests.cs" />
     <Compile Include="UnitTestValueArrayTypess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
