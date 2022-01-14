@@ -404,7 +404,41 @@ namespace NFUnitTestEnum
             TestClassEnumFlags06.TestMethod();
         }
 
+        [TestMethod]
+        public void Enum_EqualsTest_01()
+        {
+            OutputHelper.WriteLine("Check Equals with Enums");
+            Enum_TestClass_Equals.TestMethod();
+        }
+
         //Compiled Test Cases 
+        public class Enum_TestClass_Equals
+        {
+            public enum e1 { one = 1, two = 2, three = 3 };
+            
+            public static void TestMethod()
+            {
+                var e1_one = e1.one;
+                var e1_two = e1.two;
+                var e1_three = e1.three;
+
+                var e1_one_clone = e1_one;
+                var e1_two_clone = e1_two;
+
+                Assert.True(e1_one.Equals(e1.one), "e1_one should be equal to e1.one");
+                Assert.True(e1_two.Equals(e1.two), "e1_two should be equal to e1.two");
+
+                Assert.True(e1_one_clone.Equals(e1_one), "e1_one_clone should be equal to e1_one");
+                Assert.True(e1_two_clone.Equals(e1_two), "e1_two_clone should be equal to e1_two");
+
+                Assert.False(e1_three.Equals(e1.two), "e1_three should NOT be equal to e1.two");
+                Assert.False(e1_two.Equals(e1.one), "e1_two should NOT be equal to e1.one");
+
+                Assert.False(e1_one_clone.Equals(e1_two), "e1_one_clone should NOT be equal to e1_two");
+                Assert.False(e1_two_clone.Equals(e1_one), "e1_two_clone should NOT be equal to e1_one");
+            }
+        };
+
         public class Enum_TestClass_enum01
         {
             public enum e1 { one = 1, two = 2, three = 3 };

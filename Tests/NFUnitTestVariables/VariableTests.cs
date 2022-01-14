@@ -191,6 +191,66 @@ namespace NFUnitTestVariables
             Variables_TestClass_S5_range_short_1.testMethod();
         }
 
+        [TestMethod]
+        public static void Variables_EqualTest_00()
+        {
+            {
+                OutputHelper.WriteLine("Test Equal with int32 variables");
+
+                int one = 1;
+                int two = -2;
+                int one_is_one = one;
+                int two_is_two = two;
+
+                Assert.True(one_is_one.Equals(1), "one_is_one should be equal one");
+                Assert.True(two_is_two.Equals(two), "two_is_two should be equal two");
+                Assert.False(two_is_two.Equals(one), "two_is_two should NOT be equal one");
+                Assert.False(one_is_one.Equals(two), "one_is_one should NOT be equal two");
+            }
+
+            {
+                OutputHelper.WriteLine("Test Equal with uint32 variables");
+
+                uint one = 1;
+                uint two = 2;
+                uint one_is_one = one;
+                uint two_is_two = two;
+
+                Assert.True(one_is_one.Equals(1), "one_is_one should be equal one");
+                Assert.True(two_is_two.Equals(two), "two_is_two should be equal two");
+                Assert.False(two_is_two.Equals(one), "two_is_two should NOT be equal one");
+                Assert.False(one_is_one.Equals(two), "one_is_one should NOT be equal two");
+            }
+
+            {
+                OutputHelper.WriteLine("Test Equal with float variables");
+
+                float one = 1.0011223f;
+                float two = -2.445588f;
+                float one_is_one = one;
+                float two_is_two = two;
+
+                Assert.True(one_is_one.Equals(1), "one_is_one should be equal one");
+                Assert.True(two_is_two.Equals(two), "two_is_two should be equal two");
+                Assert.False(two_is_two.Equals(one), "two_is_two should NOT be equal one");
+                Assert.False(one_is_one.Equals(two), "one_is_one should NOT be equal two");
+            }
+
+            {
+                OutputHelper.WriteLine("Test Equal with double variables");
+
+                double one = 1.4444;
+                double two = -2.8888;
+                double one_is_one = one;
+                double two_is_two = two;
+
+                Assert.True(one_is_one.Equals(1), "one_is_one should be equal one");
+                Assert.True(two_is_two.Equals(two), "two_is_two should be equal two");
+                Assert.False(two_is_two.Equals(one), "two_is_two should NOT be equal one");
+                Assert.False(one_is_one.Equals(two), "one_is_one should NOT be equal two");
+            }
+        }
+
         public class Variables_TestClass_S5_range_byte_0
         {
             public static void Main_old()
