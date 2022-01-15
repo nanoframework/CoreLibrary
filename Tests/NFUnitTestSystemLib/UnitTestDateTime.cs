@@ -2372,9 +2372,10 @@ namespace NFUnitTestSystemLib
 
             dt = new(ticks);
 
-            // need to update millisec and second because it could have changed with new ticks value
+            // need to update minutesm, millisec and second because it could have changed with new ticks value
             millisec = dt.Millisecond;
             second = dt.Second;
+            minute = dt.Minute;
 
             return dt;
         }
