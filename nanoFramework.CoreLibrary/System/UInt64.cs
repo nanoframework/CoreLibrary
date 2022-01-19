@@ -9,7 +9,7 @@ namespace System
     using Globalization;
 
     /// <summary>
-    /// Represents a 64-bit unsigned integer.
+    /// Represents a 64-bit ununsigned integer.
     /// </summary>
     [Serializable, CLSCompliant(false)]
     public struct UInt64
@@ -51,16 +51,38 @@ namespace System
         /// </summary>
         /// <param name="s">A string that represents the number to convert.</param>
         /// <returns>A 64-bit unsigned integer equivalent to the number contained in s.</returns>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentNullException"><paramref name="s"/> is <see langword="null"/>.</exception>
         [CLSCompliant(false)]
-        public static ulong Parse(String s)
+        public static ulong Parse(string s)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (s == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-
+            // check for null string is carried out in native code
             return Convert.ToUInt64(s);
         }
 
+        /// <summary>
+        /// Converts the string representation of a number to its 64-bit unsigned integer equivalent. A return value indicates whether the conversion succeeded.
+        /// </summary>
+        /// <param name="s">Converts the string representation of a number to its 64-bit unsigned integer equivalent. A return value indicates whether the conversion succeeded.</param>
+        /// <param name="result">When this method returns, contains the 64-bit unsigned integer value equivalent of the number contained in <paramref name="s"/>, if the conversion succeeded, or zero if the conversion failed. The conversion fails if the <paramref name="s"/> parameter is <see langword="null"/> or <see cref="string.Empty"/>, is not of the correct format, or represents a number less than <see cref="MinValue"/> or greater than <see cref="MaxValue"/>. This parameter is passed uninitialized; any value originally supplied in result will be overwritten.</param>
+        /// <returns><see langword="true"/> if s was converted successfully; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// The <see cref="TryParse"/> method is like the <see cref="Parse"/> method, except the <see cref="TryParse"/> method does not throw an exception if the conversion fails. It eliminates the need to use exception handling to test for a <see cref="FormatException"/> in the event that <paramref name="s"/> is invalid and cannot be successfully parsed.
+        /// </remarks>
+        public static bool TryParse(
+            string s,
+            out ulong result)
+        {
+            // the interface use long for min/max, and uint64 is bigger. Setting min/max to 0/0 will cause the native code to calculate the largest value and return it as Int64 which when cast to UInt64 returns the larger numbers that a UInt64 can reach
+            result = (ulong)Convert.NativeToInt64(
+                s,
+                true,
+                0,
+                0,
+                10,
+                false,
+                out bool success);
+
+            return success;
+        }
     }
 }

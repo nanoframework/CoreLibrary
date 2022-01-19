@@ -13,16 +13,60 @@ namespace NFUnitTestSystemLib
     [TestClass]
     class UnitTestParseTests
     {
-        public static int[] intArr = null;
-        public String[] GetRandomStringArray(int max, bool signed)
+        public int[] intArr = null;
+        
+        public string[] GetRandomStringArray(int max, bool signed)
         {
             Random random = new Random();
-            String[] arr1 = new String[] { "0", "-0","+0",
-                                        "00000     ", "    -00000","   +00000  ",
-                                        "   0   ", "  -00000  ",
-                                        "+123", "  +123  ", "   +123", "+123    " };
-            String[] arr2 = new String[10];
-            intArr = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 123, 123, 123, 123, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+            string[] arr1 = new string[] { 
+                "0",
+                "-0",
+                "+0",
+                "00000     ",
+                "    -00000",
+                "   +00000  ",
+                "   0   ",
+                "  -00000  ",
+                "+123",
+                "  +123  ",
+                "   +123",
+                "+123    ",
+                "56",
+                "62",
+                "100"
+            };
+
+            string[] arr2 = new string[10];
+
+            intArr = new int[] {
+                0, 
+                0, 
+                0, 
+                0, 
+                0, 
+                0,
+                0, 
+                0,
+                123,
+                123,
+                123,
+                123,
+                0, 
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                56,
+                62,
+                100
+            };
+
             for (int i = 0; i < arr2.Length; i++)
             {
                 if (signed && ((i % 2) == 0))
@@ -36,115 +80,123 @@ namespace NFUnitTestSystemLib
                     arr2[i] = intArr[i + 12].ToString();
                 }
             }
-            String[] arr = new String[22];
+
+            string[] arr = new string[22];
+
             Array.Copy(arr1, arr, arr1.Length);
             Array.Copy(arr2, 0, arr, arr1.Length, arr2.Length);
+            
             return arr;
         }
 
         [TestMethod]
         public void ParseSByte_Test_1()
         {
-            OutputHelper.WriteLine("SByte MinValue = " + SByte.MinValue.ToString());
-            OutputHelper.WriteLine("SByte MaxValue = " + SByte.MaxValue.ToString());
+            OutputHelper.WriteLine("SByte MinValue = " + sbyte.MinValue.ToString());
+            OutputHelper.WriteLine("SByte MaxValue = " + sbyte.MaxValue.ToString());
 
-            String[] strArr = GetRandomStringArray(SByte.MaxValue, true);
-            SByte[] _sByte = new SByte[intArr.Length];
+            string[] strArr = GetRandomStringArray(sbyte.MaxValue, true);
+            sbyte[] _sByte = new sbyte[intArr.Length];
             for (int i = 0; i < _sByte.Length; i++)
             {
-                _sByte[i] = (SByte)intArr[i];
+                _sByte[i] = (sbyte)intArr[i];
             }
 
-            SByte temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = SByte.Parse(strArr[i]);
-                Assert.Equal(temp, _sByte[i]);
+                Assert.Equal(sbyte.Parse(strArr[i]), _sByte[i]);
+
+                Assert.True(sbyte.TryParse(strArr[i], out sbyte result), $"TryParse failed for {strArr[i]} expecting: {_sByte[i]}");
+                Assert.Equal(_sByte[i], result);
             }
         }
 
         [TestMethod]
         public void ParseByte_Test_2()
         {
-            OutputHelper.WriteLine("Byte MinValue = " + Byte.MinValue.ToString());
-            OutputHelper.WriteLine("Byte MaxValue = " + Byte.MaxValue.ToString());
+            OutputHelper.WriteLine("Byte MinValue = " + byte.MinValue.ToString());
+            OutputHelper.WriteLine("Byte MaxValue = " + byte.MaxValue.ToString());
 
-            String[] strArr = GetRandomStringArray(Byte.MaxValue, false);
-            Byte[] _byte = new Byte[intArr.Length];
+            string[] strArr = GetRandomStringArray(byte.MaxValue, false);
+            byte[] _byte = new byte[intArr.Length];
             for (int i = 0; i < _byte.Length; i++)
             {
-                    _byte[i] = (Byte)intArr[i];
-             }
+                _byte[i] = (byte)intArr[i];
+            }
 
-            Byte temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = Byte.Parse(strArr[i]);
-                Assert.Equal(temp, _byte[i]);
+                Assert.Equal(byte.Parse(strArr[i]), _byte[i]);
+
+                Assert.True(byte.TryParse(strArr[i], out byte result), $"TryParse failed for {strArr[i]} expecting: {_byte[i]}");
+                Assert.Equal(_byte[i], result);
             }
         }
 
         [TestMethod]
         public void ParseInt16_Test_3()
         {
-            OutputHelper.WriteLine("Int16 MinValue = " + Int16.MinValue.ToString());
-            OutputHelper.WriteLine("Int16 MaxValue = " + Int16.MaxValue.ToString());
+            OutputHelper.WriteLine("Int16 MinValue = " + short.MinValue.ToString());
+            OutputHelper.WriteLine("Int16 MaxValue = " + short.MaxValue.ToString());
 
-            String[] strArr = GetRandomStringArray(Int16.MaxValue, true);
-            Int16[] _int16 = new Int16[intArr.Length];
+            string[] strArr = GetRandomStringArray(short.MaxValue, true);
+            short[] _int16 = new short[intArr.Length];
             for (int i = 0; i < _int16.Length; i++)
             {
-                _int16[i] = (Int16)intArr[i];
+                _int16[i] = (short)intArr[i];
             }
-            Int16 temp = 0;
+
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = Int16.Parse(strArr[i]);
-                Assert.Equal(temp, _int16[i]);
+                Assert.Equal(short.Parse(strArr[i]), _int16[i]);
+
+                Assert.True(short.TryParse(strArr[i], out short result), $"TryParse failed for {strArr[i]} expecting: {_int16[i]}");
+                Assert.Equal(_int16[i], result);
             }
         }
 
         [TestMethod]
         public void ParseUInt16_Test_4()
         {
-            OutputHelper.WriteLine("UInt16 MinValue = " + UInt16.MinValue.ToString());
-            OutputHelper.WriteLine("UInt16 MaxValue = " + UInt16.MaxValue.ToString());
+            OutputHelper.WriteLine("UInt16 MinValue = " + ushort.MinValue.ToString());
+            OutputHelper.WriteLine("UInt16 MaxValue = " + ushort.MaxValue.ToString());
 
 
-            String[] strArr = GetRandomStringArray(UInt16.MaxValue, false);
-            UInt16[] _uInt16 = new UInt16[intArr.Length];
+            string[] strArr = GetRandomStringArray(ushort.MaxValue, false);
+            ushort[] _uInt16 = new ushort[intArr.Length];
             for (int i = 0; i < _uInt16.Length; i++)
             {
-                _uInt16[i] = (UInt16)intArr[i];
+                _uInt16[i] = (ushort)intArr[i];
             }
 
-            UInt16 temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = UInt16.Parse(strArr[i]);
-                Assert.Equal(temp, _uInt16[i]);
+                Assert.True(ushort.TryParse(strArr[i], out ushort result), $"TryParse failed for {strArr[i]} expecting: {_uInt16[i]}");
+                Assert.Equal(_uInt16[i], result);
+
+                Assert.Equal(ushort.Parse(strArr[i]), _uInt16[i]);
             }
         }
 
         [TestMethod]
         public void ParseInt32_Test_5()
         {
-            OutputHelper.WriteLine("Int32 MinValue = " + Int32.MinValue.ToString());
-            OutputHelper.WriteLine("Int32 MaxValue = " + Int32.MaxValue.ToString());
+            OutputHelper.WriteLine("Int32 MinValue = " + int.MinValue.ToString());
+            OutputHelper.WriteLine("Int32 MaxValue = " + int.MaxValue.ToString());
 
-
-            String[] strArr = GetRandomStringArray(Int32.MaxValue, true);
-            Int32[] _int32 = new Int32[intArr.Length];
+            string[] strArr = GetRandomStringArray(int.MaxValue, true);
+            int[] _int32 = new int[intArr.Length];
             for (int i = 0; i < _int32.Length; i++)
             {
-                _int32[i] = (Int32)intArr[i];
+                _int32[i] = intArr[i];
             }
 
-            Int32 temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = Int32.Parse(strArr[i]);
-                Assert.Equal(temp, _int32[i]);
+                Assert.Equal(int.Parse(strArr[i]), _int32[i]);
+
+                Assert.True(int.TryParse(strArr[i], out int result), $"TryParse failed for {strArr[i]} expecting: {_int32[i]}");
+                Assert.Equal(_int32[i], result);
             }
         }
 
@@ -164,16 +216,16 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseUInt32_Test_6()
         {
-            OutputHelper.WriteLine("UInt32 MinValue = " + UInt32.MinValue.ToString());
-            OutputHelper.WriteLine("UInt32 MaxValue = " + UInt32.MaxValue.ToString());
+            OutputHelper.WriteLine("UInt32 MinValue = " + uint.MinValue.ToString());
+            OutputHelper.WriteLine("UInt32 MaxValue = " + uint.MaxValue.ToString());
 
             Random random = new Random();
-            String[] strArr = new String[] { "0", "-0","+0",
+            string[] strArr = new string[] { "0", "-0","+0",
                                         "00000     ", "    -00000","   +00000  ",
                                         "   0   ", "  -00000  ",
                                         "+123", "  +123  ", "   +123", "+123    ",
                                         "","","","","","","","","",""};
-            UInt32[] _uInt32 = new UInt32[] { 0, 0, 0, 0, 0, 0, 0, 0, 123, 123, 123, 123, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            uint[] _uInt32 = new uint[] { 0, 0, 0, 0, 0, 0, 0, 0, 123, 123, 123, 123, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             for (int i = 12; i < _uInt32.Length; i++)
             {
                 int power = random.Next(33);
@@ -181,75 +233,76 @@ namespace NFUnitTestSystemLib
                 strArr[i] = _uInt32[i].ToString();
             }
 
-            UInt32 temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = UInt32.Parse(strArr[i]);
-                Assert.Equal(temp, _uInt32[i]);
+                Assert.True(uint.TryParse(strArr[i], out uint result), $"TryParse failed for {strArr[i]} expecting: {_uInt32[i]}");
+                Assert.Equal(_uInt32[i], result);
+
+                Assert.Equal(uint.Parse(strArr[i]), _uInt32[i]);
             }
         }
 
         [TestMethod]
         public void ParseInt64_Test_7()
         {
-            OutputHelper.WriteLine("Int64 MinValue = " + Int64.MinValue.ToString());
-            OutputHelper.WriteLine("Int64 MaxValue = " + Int64.MaxValue.ToString());
+            OutputHelper.WriteLine("Int64 MinValue = " + long.MinValue.ToString());
+            OutputHelper.WriteLine("Int64 MaxValue = " + long.MaxValue.ToString());
 
             Random random = new Random();
-            String[] strArr = new String[] { "0", "-0","+0",
+            string[] strArr = new string[] { "0", "-0","+0",
                                         "00000     ", "    -00000","   +00000  ",
                                         "   0   ", "  -00000  ",
                                         "+123", "  +123  ", "   +123", "+123    ",
                                         "","","","","","","","","",""};
-            Int64[] _int64 = new Int64[] { 0, 0, 0, 0, 0, 0, 0, 0, 123, 123, 123, 123, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            long[] _int64 = new long[] { 0, 0, 0, 0, 0, 0, 0, 0, 123, 123, 123, 123, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             for (int i = 12; i < _int64.Length; i++)
             {
                 int power = random.Next(64);
                 if (i % 2 == 0)
                 {
-                    _int64[i] = (Int64)(-Pow(2, power) - 1);
+                    _int64[i] = (long)(-Pow(2, power) - 1);
                 }
                 else
                 {
-                    _int64[i] = (Int64)(Pow(2, power) - 1);
+                    _int64[i] = (long)(Pow(2, power) - 1);
                 }
                 strArr[i] = _int64[i].ToString();
             }
 
-            Int64 temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
+                Assert.Equal(long.Parse(strArr[i]), _int64[i]);
 
-                temp = Int64.Parse(strArr[i]);
-                Assert.Equal(temp, _int64[i]);
+                Assert.True(long.TryParse(strArr[i], out long result), $"TryParse failed for {strArr[i]} expecting: {_int64[i]}");
+                Assert.Equal(_int64[i], result);
             }
 
             //Int32:  -2147483648 --> 2147483647
-            CheckValues(Int32.MinValue);
-            CheckValues(Int32.MaxValue);
+            CheckValues(int.MinValue);
+            CheckValues(int.MaxValue);
 
             //UInt32: 0 ---> 4294967295
-            CheckValues(UInt32.MinValue);
-            CheckValues(UInt32.MaxValue);
+            CheckValues(uint.MinValue);
+            CheckValues(uint.MaxValue);
 
             //Int64: -9223372036854775808  --> 9223372036854775807
-            CheckValues(Int64.MinValue);
-            CheckValues(Int64.MaxValue);
+            CheckValues(long.MinValue);
+            CheckValues(long.MaxValue);
 
             //Uint64: 0 --> 18446744073709551615
-            CheckValues((Int64)UInt64.MinValue);
+            CheckValues((long)ulong.MinValue);
         }
 
 
-        private void CheckValues(Int64 start)
+        private void CheckValues(long start)
         {
-            Int64 newVal = 0;
+            long newVal = 0;
             string temp;
-            for (Int64 i = start - 10; i < start + 10; i++)
+            for (long i = start - 10; i < start + 10; i++)
             {
                 temp = i.ToString();
-                newVal = Int64.Parse(temp);
+                newVal = long.Parse(temp);
                 Assert.Equal(i, newVal);
             }
         }
@@ -257,82 +310,159 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseUInt64_Test_8()
         {
-            OutputHelper.WriteLine("UInt64 MinValue = " + UInt64.MinValue.ToString());
-            OutputHelper.WriteLine("UInt64 MaxValue = " + UInt64.MaxValue.ToString());
+            OutputHelper.WriteLine("UInt64 MinValue = " + ulong.MinValue.ToString());
+            OutputHelper.WriteLine("UInt64 MaxValue = " + ulong.MaxValue.ToString());
 
             Random random = new Random();
-            String[] strArr = new String[] { "0", "-0","+0",
+            string[] strArr = new string[] { "0", "-0","+0",
                                         "00000     ", "    -00000","   +00000  ",
                                         "   0   ", "  -00000  ",
                                         "+123", "  +123  ", "   +123", "+123    ",
                                         "","","","","","","","","",""};
-            UInt64[] _uInt64 = new UInt64[] { 0, 0, 0, 0, 0, 0, 0, 0, 123, 123, 123, 123, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            ulong[] _uInt64 = new ulong[] { 0, 0, 0, 0, 0, 0, 0, 0, 123, 123, 123, 123, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             for (int i = 12; i < _uInt64.Length; i++)
             {
                 int power = random.Next(65);
-                _uInt64[i] = (UInt64)(Pow(2, power) - 1);
+                _uInt64[i] = (ulong)(Pow(2, power) - 1);
                 strArr[i] = _uInt64[i].ToString();
             }
 
-            UInt64 temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
+                Assert.True(ulong.TryParse(strArr[i], out ulong result), $"TryParse failed for {strArr[i]} expecting: {_uInt64[i]}");
+                Assert.Equal(_uInt64[i], result);
 
-                temp = UInt64.Parse(strArr[i]);
-                Assert.Equal(temp, _uInt64[i]);
+                result = ulong.Parse(strArr[i]);
+                Assert.Equal(result, _uInt64[i]);
             }
 
             //Int32:  -2147483648 --> 2147483647
-            CheckUValues(Int32.MaxValue);
+            CheckUValues(int.MaxValue);
 
             //UInt32: 0 ---> 4294967295
-            CheckUValues(UInt32.MinValue);
-            CheckUValues(UInt32.MaxValue);
+            CheckUValues(uint.MinValue);
+            CheckUValues(uint.MaxValue);
 
             //Int64: -9223372036854775808  --> 9223372036854775807
-            CheckUValues(UInt64.MaxValue);
+            CheckUValues(ulong.MaxValue);
 
             //Uint64: 0 --> 18446744073709551615
-            CheckUValues(UInt64.MinValue);
-            CheckUValues(UInt64.MaxValue);
+            CheckUValues(ulong.MinValue);
+            CheckUValues(ulong.MaxValue);
         }
 
         [TestMethod]
         public void ParseDouble_Test_Valid_Values()
         {
+            string[] strArr = new string[] {
+                "0",
+                "-0",
+                "+0",
+                "00000     ",
+                "    -00000",
+                "   +00000  ",
+                "   0   ",
+                "  -00000  ",
+                "+123",
+                "  +123  ",
+                "   +123",
+                "+123    ",
+                "567.89",
+                "-567.89",
+                "1E23",
+                "9007199254740997.0",
+                "9007199254740997.00000000000000000000000000000000000000000000000000000",
+                "5.005",
+                "5.050",
+                "50050.0",
+                "0.005",
+                "6250000000000000000000000000000000e-12",
+                "6250000e0",
+                "6250100e-5",
+                "625010.00e-4",
+                "62500e-4",
+                "62500",
+                "10e-3"
+            };
 
-            Random random = new Random();
-            String[] strArr = new String[] { "0", "-0","+0",
-                                        "00000     ", "    -00000","   +00000  ",
-                                        "   0   ", "  -00000  ",
-                                        "+123", "  +123  ", "   +123", "+123    "};
-            double[] _double = new double[] { 0, 0, 0, 0, 0, 0, 0, 0, 123, 123, 123, 123 };
+            double[] _double = new double[] {
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                123,
+                123,
+                123,
+                123,
+                567.89,
+                -567.89,
+                1E23,
+                9007199254740997.0,
+                9007199254740996.0,
+                5.005,
+                5.050,
+                50050.0,
+                0.005,
+                6250000000000000000000000000000000e-12,
+                6.25e6,
+                62.501,
+                62.501,
+                6.25,
+                62500,
+                0.01
+            };
 
-            double temp;
+            double result;
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = double.Parse(strArr[i]);
-                Assert.Equal(temp, _double[i], $"Failed while parsing string: {strArr[i]} expecting: {_double[i].ToString()}");
+                OutputHelper.WriteLine($"Parsing {strArr[i]} expecting: {_double[i]}");
+
+                Assert.Equal(double.Parse(strArr[i]), _double[i], $"Failed while parsing string: {strArr[i]} expecting: {_double[i]}");
+
+                Assert.True(double.TryParse(strArr[i], out result), $"TryParse failed for {strArr[i]} expecting: {_double[i]}");
+                Assert.Equal(_double[i], result);
             }
 
             double d = double.Parse("-0.1");
             Assert.Equal(d, -0.1);
 
+            Assert.True(double.TryParse("-0.1", out result), $"TryParse failed for -0.1 expecting: {d}");
+            Assert.Equal(-0.1, result);
+
             d = double.Parse("0.1");
             Assert.Equal(d, 0.1);
+
+            Assert.True(double.TryParse("0.1", out result), $"TryParse failed for 0.1 expecting: {d}");
+            Assert.Equal(0.1, result);
 
             d = double.Parse(" -1.1");
             Assert.Equal(d, -1.1);
 
+            Assert.True(double.TryParse(" -1.1", out result), $"TryParse failed for -1.1 expecting: {d}");
+            Assert.Equal(-1.1, result);
+
             d = double.Parse(" -0.0001");
             Assert.Equal(d, -0.0001);
+
+            Assert.True(double.TryParse(" -0.0001", out result), $"TryParse failed for -0.0001 expecting: {d}");
+            Assert.Equal(-0.0001, result);
 
             d = double.Parse(" -10.0001");
             Assert.Equal(d, -10.0001);
 
+            Assert.True(double.TryParse(" -10.0001", out result), $"TryParse failed for -10.0001 expecting: {d}");
+            Assert.Equal(-10.0001, result);
+
             d = double.Parse("-0.01e-10");
             Assert.Equal(d, -0.01e-10);
+
+            Assert.True(double.TryParse("-0.01e-10", out result), $"TryParse failed for -0.01e-10 expecting: {d}");
+            Assert.Equal(-0.01e-10, result);
 
             // can't use Min/MaxValue.ToString() because the fast float-to-string routine only works in the range 2^64 to 2^-64 (there-about).
             string t = "-1.7976931348623157E+308";  // double.MinValue
@@ -346,19 +476,39 @@ namespace NFUnitTestSystemLib
 
             t = "3.40282347E+38";
             Assert.Equal(float.MaxValue, (float)double.Parse(t), "Testing float max value parse");
-
         }
+
         [TestMethod]
         public void ParseDouble_Test_Invalid_Values()
         {
-
-            String[] strArr = new String[] { "", "   ", " ", "-0e-a", "+123a4", "   +123f.1", "123ea2", "1.111.1", 
-                        "   -123-e3", " 123.456 777", "1234567ee73", "  +1234e-77+", "++1", "--1", "+1+", "   .1123abc", " .123+456",
-                        "+123e++10", "+123e--10", "-123e++10"};
+            string[] strArr = new string[] {
+                "", 
+                "   ",
+                " ",
+                "-0e-a",
+                "+123a4", 
+                "   +123f.1",
+                "123ea2",
+                "1.111.1",
+                "   -123-e3",
+                " 123.456 777",
+                "1234567ee73",
+                "  +1234e-77+",
+                "++1",
+                "--1",
+                "+1+",
+                "   .1123abc",
+                " .123+456",
+                "+123e++10",
+                "+123e--10",
+                "-123e++10"
+            };
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { double.Parse(strArr[i]); }, $"Should throw exception of type FormatExeception while parsing string: '{strArr[i]}'");
+                Assert.Throws(typeof(FormatException), () => { _ = double.Parse(strArr[i]); }, $"Should throw exception of type FormatExeception while parsing string: '{strArr[i]}'");
+
+                Assert.False(double.TryParse(strArr[i], out double _), $"TryParse should return false while parsing string: '{strArr[i]}'");
             }
         }
 
@@ -380,14 +530,15 @@ namespace NFUnitTestSystemLib
 
         }
 
-        private void CheckUValues(UInt64 start)
+        private void CheckUValues(ulong start)
         {
-            UInt64 newVal = 0;
-            string temp;
-            for (UInt64 i = start - 10; i < start + 10; i++)
+            for (ulong i = start - 10; i < start + 10; i++)
             {
-                temp = i.ToString();
-                newVal = UInt64.Parse(temp);
+                ulong newVal = ulong.Parse(i.ToString());
+
+                Assert.True(ulong.TryParse(i.ToString(), out ulong result), $"TryParse failed for {i.ToString()} expecting: {newVal}");
+                Assert.Equal(newVal, result);
+
                 Assert.Equal(i, newVal);
             }
         }
@@ -400,92 +551,99 @@ namespace NFUnitTestSystemLib
         public void SByte_Boundary_Test_9()
         {
 
-            String[] strArr = new String[] { SByte.MaxValue.ToString(), "127", SByte.MinValue.ToString(), "-128" };
-            SByte[] _SByte = new SByte[] { 127, 127, -128, -128 };
-            SByte temp = 0;
+            string[] strArr = new string[] { sbyte.MaxValue.ToString(), "127", sbyte.MinValue.ToString(), "-128" };
+            sbyte[] _SByte = new sbyte[] { 127, 127, -128, -128 };
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = SByte.Parse(strArr[i]);
-                Assert.Equal(temp, _SByte[i]);
+                Assert.Equal(sbyte.Parse(strArr[i]), _SByte[i]);
+
+                Assert.True(sbyte.TryParse(strArr[i], out sbyte result), $"TryParse failed for {strArr[i]} expecting: {_SByte[i]}");
+                Assert.Equal(_SByte[i], result);
             }
         }
 
         [TestMethod]
         public void Byte_Boundary_Test_10()
         {
+            string[] strArr = new string[] { byte.MaxValue.ToString(), "255", byte.MinValue.ToString(), "0" };
+            byte[] _byte = new byte[] { 255, 255, 0, 0 };
 
-            String[] strArr = new String[] { Byte.MaxValue.ToString(), "255", Byte.MinValue.ToString(), "0" };
-            Byte[] _byte = new Byte[] { 255, 255, 0, 0 };
-            Byte temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = Byte.Parse(strArr[i]);
-                Assert.Equal(temp, _byte[i]);
+                Assert.Equal(byte.Parse(strArr[i]), _byte[i]);
+
+                Assert.True(byte.TryParse(strArr[i], out byte result), $"TryParse failed for {strArr[i]} expecting: {_byte[i]}");
+                Assert.Equal(_byte[i], result);
             }
         }
 
         [TestMethod]
         public void Int16_Boundary_Test_11()
         {
-            String[] strArr = new String[] { Int16.MaxValue.ToString(), "32767", Int16.MinValue.ToString(), "-32768" };
-            Int16[] _int16 = new Int16[] { 32767, 32767, -32768, -32768 };
-            Int16 temp = 0;
+            string[] strArr = new string[] { short.MaxValue.ToString(), "32767", short.MinValue.ToString(), "-32768" };
+            short[] _int16 = new short[] { 32767, 32767, -32768, -32768 };
+
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = Int16.Parse(strArr[i]);
-                Assert.Equal(temp, _int16[i]);
+                Assert.Equal(short.Parse(strArr[i]), _int16[i]);
+
+                Assert.True(short.TryParse(strArr[i], out short result), $"TryParse failed for {strArr[i]} expecting: {_int16[i]}");
+                Assert.Equal(_int16[i], result);
             }
         }
 
         [TestMethod]
         public void UInt16_Boundary_Test_12()
         {
-            String[] strArr = new String[] { UInt16.MaxValue.ToString(), "65535", UInt16.MinValue.ToString(), "0" };
-            UInt16[] _uInt16 = new UInt16[] { 65535, 65535, 0, 0 };
-            UInt16 temp = 0;
+            string[] strArr = new string[] { ushort.MaxValue.ToString(), "65535", ushort.MinValue.ToString(), "0" };
+            ushort[] _uInt16 = new ushort[] { 65535, 65535, 0, 0 };
+
             for (int i = 0; i < strArr.Length; i++)
             {
+                Assert.True(ushort.TryParse(strArr[i], out ushort result), $"TryParse failed for {strArr[i]} expecting: {_uInt16[i]}");
+                Assert.Equal(_uInt16[i], result);
 
-                temp = UInt16.Parse(strArr[i]);
-                Assert.Equal(temp, _uInt16[i]);
+                Assert.Equal(ushort.Parse(strArr[i]), _uInt16[i]);
             }
         }
 
         [TestMethod]
         public void Int32_Boundary_Test_13()
         {
-            String[] strArr = new String[] { Int32.MaxValue.ToString(), "2147483647", Int32.MinValue.ToString(), "-2147483648" };
-            Int32[] _int32 = new Int32[] { 2147483647, 2147483647, -2147483648, -2147483648 };
-            Int32 temp = 0;
+            string[] strArr = new string[] { int.MaxValue.ToString(), "2147483647", int.MinValue.ToString(), "-2147483648" };
+            int[] _int32 = new int[] { 2147483647, 2147483647, -2147483648, -2147483648 };
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = Int32.Parse(strArr[i]);
-                Assert.Equal(temp, _int32[i]);
+                Assert.Equal(int.Parse(strArr[i]), _int32[i]);
+
+                Assert.True(int.TryParse(strArr[i], out int result), $"TryParse failed for {strArr[i]} expecting: {_int32[i]}");
+                Assert.Equal(_int32[i], result);
             }
         }
 
         [TestMethod]
         public void UInt32_Boundary_Test_14()
         {
-            String[] strArr = new String[] { UInt32.MaxValue.ToString(), "4294967295", UInt32.MinValue.ToString(), "0" };
-            UInt32[] _uInt32 = new UInt32[] { 4294967295, 4294967295, 0, 0 };
-            UInt32 temp = 0;
+            string[] strArr = new string[] { uint.MaxValue.ToString(), "4294967295", uint.MinValue.ToString(), "0" };
+            uint[] _uInt32 = new uint[] { 4294967295, 4294967295, 0, 0 };
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = UInt32.Parse(strArr[i]);
-                Assert.Equal(temp, _uInt32[i]);
+                Assert.True(uint.TryParse(strArr[i], out uint result), $"TryParse failed for {strArr[i]} expecting: {_uInt32[i]}");
+                Assert.Equal(_uInt32[i], result);
+
+                Assert.Equal(uint.Parse(strArr[i]), _uInt32[i]);
             }
         }
 
         [TestMethod]
         public void Int64_Boundary_Test_15()
         {
-            String[] strArr = new String[] { Int64.MaxValue.ToString(), "9223372036854775807", Int64.MinValue.ToString(), "-9223372036854775808" };
-            Int64[] _int64 = new Int64[] { 9223372036854775807, 9223372036854775807, -9223372036854775808, -9223372036854775808 };
-            Int64 temp = 0;
+            string[] strArr = new string[] { long.MaxValue.ToString(), "9223372036854775807", long.MinValue.ToString(), "-9223372036854775808" };
+            long[] _int64 = new long[] { 9223372036854775807, 9223372036854775807, -9223372036854775808, -9223372036854775808 };
+            long temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = Int64.Parse(strArr[i]);
+                temp = long.Parse(strArr[i]);
                 Assert.Equal(temp, _int64[i]);
             }
         }
@@ -493,12 +651,12 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void UInt64_Boundary_Test_16()
         {
-            String[] strArr = new String[] { UInt64.MaxValue.ToString(), "18446744073709551615", UInt64.MinValue.ToString(), "0" };
-            UInt64[] _uInt64 = new UInt64[] { 18446744073709551615, 18446744073709551615, 0, 0 };
-            UInt64 temp = 0;
+            string[] strArr = new string[] { ulong.MaxValue.ToString(), "18446744073709551615", ulong.MinValue.ToString(), "0" };
+            ulong[] _uInt64 = new ulong[] { 18446744073709551615, 18446744073709551615, 0, 0 };
+            ulong temp = 0;
             for (int i = 0; i < strArr.Length; i++)
             {
-                temp = UInt64.Parse(strArr[i]);
+                temp = ulong.Parse(strArr[i]);
                 Assert.Equal(temp, _uInt64[i]);
             }
         }
@@ -511,49 +669,97 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SByte_ArgumentNullException_Test_17()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { SByte.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { sbyte.Parse(str); });
+        }
+
+        [TestMethod]
+        public void SByte_TryParse_Test()
+        {
+            Assert.False(sbyte.TryParse(str, out sbyte _));
         }
 
         [TestMethod]
         public void Byte_ArgumentNullException_Test_18()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { Byte.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { byte.Parse(str); });
+        }
+
+        [TestMethod]
+        public void Byte_TryParse_Test()
+        {
+            Assert.False(byte.TryParse(str, out byte _));
         }
 
         [TestMethod]
         public void Int16_ArgumentNullException_Test_19()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { Int16.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { short.Parse(str); });
+        }
+
+        [TestMethod]
+        public void Int16_TryParse_Test()
+        {
+            Assert.False(short.TryParse(str, out short _));
         }
 
         [TestMethod]
         public void UInt16_ArgumentNullException_Test_20()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { UInt16.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { ushort.Parse(str); });
+        }
+
+        [TestMethod]
+        public void UInt16_TryParse_Test()
+        {
+            Assert.False(ushort.TryParse(str, out ushort _));
         }
 
         [TestMethod]
         public void Int32_ArgumentNullException_Test_21()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { Int32.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { int.Parse(str); });
+        }
+
+        [TestMethod]
+        public void Int32_TryParse_Test()
+        {
+            Assert.False(int.TryParse(str, out int _));
         }
 
         [TestMethod]
         public void UInt32_ArgumentNullException_Test_22()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { UInt32.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { uint.Parse(str); });
+        }
+
+        [TestMethod]
+        public void UInt32_TryParse_Test()
+        {
+            Assert.False(uint.TryParse(str, out uint _));
         }
 
         [TestMethod]
         public void Int64_ArgumentNullException_Test_23()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { Int64.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { long.Parse(str); });
+        }
+
+        [TestMethod]
+        public void Int64_TryParse_Test()
+        {
+            Assert.False(long.TryParse(str, out long _));
         }
 
         [TestMethod]
         public void UInt64_ArgumentNullException_Test_24()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { UInt64.Parse(str); });
+            Assert.Throws(typeof(ArgumentNullException), () => { ulong.Parse(str); });
+        }
+
+        [TestMethod]
+        public void UInt64_TryParse_Test()
+        {
+            Assert.False(ulong.TryParse(str, out ulong _));
         }
 
         /// <summary>
@@ -597,120 +803,161 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseSByte_FormatException_Test_25()
         {
-            String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
+            string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { SByte.Parse(strArr[i]); });
+                Assert.Throws(typeof(FormatException), () => { _ = sbyte.Parse(strArr[i]); });
+
+                Assert.False(sbyte.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
-                String rdmString = GetRandomString();
-                Assert.Throws(typeof(FormatException), () => { SByte.Parse(rdmString); });
+                string rdmString = GetRandomString();
+
+                Assert.Throws(typeof(FormatException), () => { _ = sbyte.Parse(rdmString); });
+
+                Assert.False(sbyte.TryParse(rdmString, out _));
             }
         }
 
         [TestMethod]
         public void ParseByte_FormatException_Test_26()
         {
-            String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
+            string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { Byte.Parse(strArr[i]); }, $"Value '{strArr[i]}' did not throw exception of type FormatException");
+                Assert.Throws(typeof(FormatException), () => { _ = byte.Parse(strArr[i]); }, $"Value '{strArr[i]}' did not throw exception of type FormatException");
+
+                Assert.False(byte.TryParse(strArr[i], out _));
             }
+
             for (int i = 0; i < 5; i++)
             {
-                String rdmString = GetRandomString();
-                Assert.Throws(typeof(FormatException), () => { Byte.Parse(rdmString); }, $"Random string '{rdmString}' did not throw exception of FormatException");
+                string rdmString = GetRandomString();
+                
+                Assert.Throws(typeof(FormatException), () => { _ = byte.Parse(rdmString); }, $"Random string '{rdmString}' did not throw exception of FormatException");
+
+                Assert.False(byte.TryParse(rdmString, out _));
             }
         }
 
         [TestMethod]
         public void ParseInt16_FormatException_Test_27()
         {
-            String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
+            string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { Int16.Parse(strArr[i]); });
+                Assert.Throws(typeof(FormatException), () => { _ = short.Parse(strArr[i]); });
+                
+                Assert.False(short.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
-                String rdmString = GetRandomString();
-                Assert.Throws(typeof(FormatException), () => { Int16.Parse(rdmString); });
+                string rdmString = GetRandomString();
+
+                Assert.Throws(typeof(FormatException), () => { _ = short.Parse(rdmString); });
+
+                Assert.False(short.TryParse(rdmString, out _));
             }
         }
 
         [TestMethod]
         public void ParseUInt16_FormatException_Test_28()
         {
-            String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
+            string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { UInt16.Parse(strArr[i]); });
+                Assert.Throws(typeof(FormatException), () => { _ = ushort.Parse(strArr[i]); });
+
+                Assert.False(ushort.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
-                String rdmString = GetRandomString();
-                Assert.Throws(typeof(FormatException), () => { UInt16.Parse(rdmString); });
+                string rdmString = GetRandomString();
+
+                Assert.Throws(typeof(FormatException), () => { _ = ushort.Parse(rdmString); });
+
+                Assert.False(ushort.TryParse(rdmString, out _));
             }
         }
 
         [TestMethod]
         public void ParseInt32_FormatException_Test_29()
         {
-            String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
+            string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { Int32.Parse(strArr[i]); });
+                Assert.Throws(typeof(FormatException), () => { _ = int.Parse(strArr[i]); });
+
+                Assert.False(int.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
-                String rdmString = GetRandomString();
-                Assert.Throws(typeof(FormatException), () => { Int32.Parse(rdmString); });
+                string rdmString = GetRandomString();
+
+                Assert.Throws(typeof(FormatException), () => { _ = int.Parse(rdmString); });
+
+                Assert.False(int.TryParse(rdmString, out _));
             }
         }
 
         [TestMethod]
         public void ParseUInt32_FormatException_Test_30()
         {
-            String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
+            string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { UInt32.Parse(strArr[i]); });
+                Assert.Throws(typeof(FormatException), () => { _ = uint.Parse(strArr[i]); });
+
+                Assert.False(uint.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
-                String rdmString = GetRandomString();
-                Assert.Throws(typeof(FormatException), () => { UInt32.Parse(rdmString); });
+                string rdmString = GetRandomString();
+
+                Assert.Throws(typeof(FormatException), () => { _ = uint.Parse(rdmString); });
+
+                Assert.False(uint.TryParse(rdmString, out _));
             }
         }
 
         [TestMethod]
         public void ParseInt64_FormatException_Test_31()
         {
-            String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
+            string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { Int64.Parse(strArr[i]); });
+                Assert.Throws(typeof(FormatException), () => { _ = long.Parse(strArr[i]); });
+
+                Assert.False(long.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
-                String rdmString = GetRandomString();
-                Assert.Throws(typeof(FormatException), () => { Int64.Parse(rdmString); });
+                string rdmString = GetRandomString();
+
+                Assert.Throws(typeof(FormatException), () => { _ = long.Parse(rdmString); });
+
+                Assert.False(long.TryParse(rdmString, out _));
             }
         }
 
         [TestMethod]
         public void ParseUInt64_FormatException_Test_32()
         {
-            String[] strArr = new String[] { "", "1,234", "123e5", "a", "3.14159265358979" };
+            string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { UInt64.Parse(strArr[i]); });
+                Assert.Throws(typeof(FormatException), () => { _ = ulong.Parse(strArr[i]); });
+
+                Assert.False(ulong.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
-                String rdmString = GetRandomString();
-                Assert.Throws(typeof(FormatException), () => { UInt64.Parse(rdmString); });
+                string rdmString = GetRandomString();
+
+                Assert.Throws(typeof(FormatException), () => { _ = ulong.Parse(rdmString); });
+
+                Assert.False(ulong.TryParse(rdmString, out _));
             }
         }
 
@@ -722,66 +969,78 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void ParseSByte_OverflowException_Test_33()
         {
-            String[] strArr = new String[] { ((Int64)SByte.MinValue - 1).ToString(), ((Int64)SByte.MinValue - 100).ToString(),
-                                             ((Int64)SByte.MaxValue + 1).ToString(), ((Int64)SByte.MaxValue + 100).ToString() };
+            string[] strArr = new string[] { ((long)sbyte.MinValue - 1).ToString(), ((long)sbyte.MinValue - 100).ToString(),
+                                             ((long)sbyte.MaxValue + 1).ToString(), ((long)sbyte.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { SByte.Parse(strArr[i]); }, $"The value '{strArr[i]}' did not produce an exception type of ArgumentOutOfRange");
+                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = sbyte.Parse(strArr[i]); }, $"The value '{strArr[i]}' did not produce an exception type of ArgumentOutOfRange");
+
+                Assert.False(sbyte.TryParse(strArr[i], out _));
             }
         }
 
         [TestMethod]
         public void ParseByte_OverflowException_Test_34()
         {
-            String[] strArr = new String[] { ((Int64)Byte.MinValue - 1).ToString(), ((Int64)Byte.MinValue - 100).ToString(),
-                                             ((Int64)Byte.MaxValue + 1).ToString(), ((Int64)Byte.MaxValue + 100).ToString() };
+            string[] strArr = new string[] { ((long)byte.MinValue - 1).ToString(), ((long)byte.MinValue - 100).ToString(),
+                                             ((long)byte.MaxValue + 1).ToString(), ((long)byte.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { Byte.Parse(strArr[i]); });
+                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = byte.Parse(strArr[i]); });
+
+                Assert.False(byte.TryParse(strArr[i], out _));
             }
         }
 
         [TestMethod]
         public void ParseInt16_OverflowException_Test_35()
         {
-            String[] strArr = new String[] { ((Int64)Int16.MinValue - 1).ToString(), ((Int64)Int16.MinValue - 100).ToString(),
-                                             ((Int64)Int16.MaxValue + 1).ToString(), ((Int64)Int16.MaxValue + 100).ToString() };
+            string[] strArr = new string[] { ((long)short.MinValue - 1).ToString(), ((long)short.MinValue - 100).ToString(),
+                                             ((long)short.MaxValue + 1).ToString(), ((long)short.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { Int16.Parse(strArr[i]); });
+                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = short.Parse(strArr[i]); });
+
+                Assert.False(short.TryParse(strArr[i], out _));
             }
         }
 
         [TestMethod]
         public void ParseUInt16_OverflowException_Test_36()
         {
-            String[] strArr = new String[] { ((Int64)UInt16.MinValue - 1).ToString(), ((Int64)UInt16.MinValue - 100).ToString(),
-                                             ((Int64)UInt16.MaxValue + 1).ToString(), ((Int64)UInt16.MaxValue + 100).ToString() };
+            string[] strArr = new string[] { ((long)ushort.MinValue - 1).ToString(), ((long)ushort.MinValue - 100).ToString(),
+                                             ((long)ushort.MaxValue + 1).ToString(), ((long)ushort.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { UInt16.Parse(strArr[i]); });
+                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = ushort.Parse(strArr[i]); });
+
+                Assert.False(ushort.TryParse(strArr[i], out _));
             }
         }
 
         [TestMethod]
         public void ParseInt32_OverflowException_Test_37()
         {
-            String[] strArr = new String[] { ((Int64)Int32.MinValue - 1).ToString(), ((Int64)Int32.MinValue - 100).ToString(),
-                                             ((Int64)Int32.MaxValue + 1).ToString(), ((Int64)Int32.MaxValue + 100).ToString() };
+            string[] strArr = new string[] { ((long)int.MinValue - 1).ToString(), ((long)int.MinValue - 100).ToString(),
+                                             ((long)int.MaxValue + 1).ToString(), ((long)int.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { Int32.Parse(strArr[i]); });
+                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = int.Parse(strArr[i]); });
+
+                Assert.False(int.TryParse(strArr[i], out _));
             }
         }
 
         [TestMethod]
         public void ParseUInt32_OverflowException_Test_38()
         {
-            String[] strArr = new String[] { ((Int64)UInt32.MinValue - 1).ToString(), ((Int64)UInt32.MinValue - 100).ToString(),
-                                             ((Int64)UInt32.MaxValue + 1).ToString(), ((Int64)UInt32.MaxValue + 100).ToString() };
+            string[] strArr = new string[] { ((long)uint.MinValue - 1).ToString(), ((long)uint.MinValue - 100).ToString(),
+                                             ((long)uint.MaxValue + 1).ToString(), ((long)uint.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { UInt32.Parse(strArr[i]); });
+                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = uint.Parse(strArr[i]); });
+
+                Assert.False(uint.TryParse(strArr[i], out _));
             }
         }
 
@@ -793,7 +1052,9 @@ namespace NFUnitTestSystemLib
                                              "9223372036854775808", "9223372036854775900" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { Int64.Parse(strArr[i]); }, $"An exception of type ArgumentOutOfRangeException was not thrown when values was {strArr[i]}");
+                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = long.Parse(strArr[i]); }, $"An exception of type ArgumentOutOfRangeException was not thrown when values was {strArr[i]}");
+
+                Assert.False(long.TryParse(strArr[i], out _));
             }
         }
 
@@ -803,10 +1064,11 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "-1", "-100", "18446744073709551616", "18446744073709551700" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { UInt64.Parse(strArr[i]); });
+                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = ulong.Parse(strArr[i]); });
+
+                Assert.False(ulong.TryParse(strArr[i], out _));
             }
         }
-
 
         [TestMethod]
         public void Cast_Double_to_int64_Test_40()
@@ -869,22 +1131,26 @@ namespace NFUnitTestSystemLib
             Guid guid = (Guid)o_guid;
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Throws(typeof(InvalidCastException), () => {
+            Assert.Throws(typeof(InvalidCastException), () =>
+            {
                 MyEnum1 e1 = (MyEnum1)o_enum;
             }, "Trying to cast incompatible enums - should throw InvalidCastException");
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Throws(typeof(InvalidCastException), () => {
+            Assert.Throws(typeof(InvalidCastException), () =>
+            {
                 int i = (int)o_long;
             }, "Trying to cast long to int - should throw InvalidCastException");
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Throws(typeof(InvalidCastException), () => {
+            Assert.Throws(typeof(InvalidCastException), () =>
+            {
                 int i = (int)o_class;
             }, "Trying to cast object to int - should throw InvalidCastException");
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Throws(typeof(InvalidCastException), () => {
+            Assert.Throws(typeof(InvalidCastException), () =>
+            {
                 int i = (int)o_enum;
             }, "Trying to cast enum to int - should throw InvalidCastException");
 

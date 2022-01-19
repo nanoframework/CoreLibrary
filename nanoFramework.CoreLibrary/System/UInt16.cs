@@ -54,16 +54,37 @@ namespace System
         /// </summary>
         /// <param name="s">A string that represents the number to convert.</param>
         /// <returns>A 16-bit unsigned integer equivalent to the number contained in s.</returns>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentNullException"><paramref name="s"/> is <see langword="null"/>.</exception>
         [CLSCompliant(false)]
-        public static ushort Parse(String s)
+        public static ushort Parse(string s)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (s == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-
+            // check for null string is carried out in native code
             return Convert.ToUInt16(s);
         }
 
+        /// <summary>
+        /// Converts the string representation of a number to its 16-bit unsigned integer equivalent. A return value indicates whether the conversion succeeded or failed.
+        /// </summary>
+        /// <param name="s">A <see cref="string"/> that contains a number to convert.</param>
+        /// <param name="result">When this method returns, contains the 16-bit unsigned integer value equivalent to the number contained in <paramref name="s"/>, if the conversion succeeded, or zero if the conversion failed. The conversion fails if the <paramref name="s"/> parameter is <see langword="null"/> or <see cref="string.Empty"/>, is not of the correct format, or represents a number less than <see cref="MinValue"/> or greater than <see cref="MaxValue"/>. This parameter is passed uninitialized; any value originally supplied in <paramref name="result"/> will be overwritten.</param>
+        /// <returns>true if <paramref name="s"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// The <see cref="TryParse"/> method differs from the <see cref="Parse"/> method by returning a <see cref="bool"/> value that indicates whether the parse operation succeeded instead of returning the parsed <see cref="short"/> value. It eliminates the need to use exception handling to test for a <see cref="FormatException"/> in the event that <paramref name="s"/> is invalid and cannot be successfully parsed.
+        /// </remarks>
+        public static bool TryParse(
+            string s,
+            out ushort result)
+        {
+            result = (ushort)Convert.NativeToInt64(
+                s,
+                true,
+                MinValue,
+                MaxValue,
+                10,
+                false,
+                out bool success);
+
+            return success;
+        }
     }
 }

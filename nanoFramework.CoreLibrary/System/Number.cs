@@ -258,7 +258,7 @@ namespace System
     //
     // The Parse methods provided by the numeric classes are all of the form
     //
-    //  public static XXX Parse(String s);
+    //  public static XXX Parse(string s);
     //  public static XXX Parse(String s, int style);
     //  public static XXX Parse(String s, int style, NumberFormatInfo info);
     //
