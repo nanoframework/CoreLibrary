@@ -37,6 +37,9 @@ namespace System
         [MethodImpl(MethodImplOptions.InternalCall)]
         internal static extern double NativeToDouble(string value, bool throwException, out bool success);
 
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        internal static extern DateTime NativeToDateTime(string value, bool throwException, out bool success);
+
         /// <summary>
         /// Converts the value of the specified 8-bit unsigned integer to an equivalent Boolean value.
         /// </summary>
@@ -119,6 +122,31 @@ namespace System
         public static byte ToByte(bool value)
         {
             return value ? (byte)1 : (byte)0;
+        }
+
+        /// <summary>
+        /// Converts the specified string representation of a date and time to an equivalent date and time value.
+        /// </summary>
+        /// <param name="value">The string representation of a date and time.</param>
+        /// <returns>The date and time equivalent of the value of <paramref name="value"/>, or the date and time equivalent of <see cref="DateTime.MinValue"/> if value is null.</returns>
+        /// <exception cref="FormatException"><paramref name="value"/> is not a properly formatted date and time string.</exception>
+        /// <remarks>
+        /// <para>
+        /// If <paramref name="value"/> is not null, the return value is the result of invoking the <see cref="DateTime.Parse"/> method on value using the formatting information of the Invariant Culture. The <paramref name="value"/> argument must contain the representation of a date and time in one of the formats described in the DateTimeFormatInfo topic. If <paramref name="value"/> is <see langword="null"/>, the method returns <see cref="DateTime.MinValue"/>.
+        /// </para>
+        /// <para>
+        /// This method tries to parse <paramref name="value"/> completely and avoid throwing a <see cref="FormatException"/>. It completes missing month, day, and year information with the current date. If value contains only a date and no time, this method assumes a time of midnight. Any leading, inner, or trailing white-space characters in value are ignored.
+        /// </para>
+        /// <para>
+        /// If you prefer not to handle an exception if the conversion fails, you can call the <see cref="DateTime.TryParse"/> method instead. It returns a <see cref="bool"/> value that indicates whether the conversion succeeded or failed.
+        /// </para>
+        /// </remarks>
+        public static DateTime ToDateTime(string value)
+        {
+            return NativeToDateTime(
+                value,
+                true,
+                out _);
         }
 
         /// <summary>
