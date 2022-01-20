@@ -13,9 +13,9 @@ namespace NFUnitTestSystemLib
     [TestClass]
     class UnitTestParseTests
     {
-        public int[] intArr = null;
+        private static int[] _intArr = new int[0];
         
-        public string[] GetRandomStringArray(int max, bool signed)
+        public static string[] GetRandomStringArray(int max, bool signed)
         {
             Random random = new Random();
 
@@ -34,13 +34,13 @@ namespace NFUnitTestSystemLib
                 "+123    ",
                 "56",
                 "62",
-                "100"
+                "100",
+                "22"
             };
-
 
             string[] arr2 = new string[arr1.Length];
 
-            intArr = new int[] {
+            _intArr = new int[] {
                 0,
                 0,
                 0,
@@ -56,6 +56,8 @@ namespace NFUnitTestSystemLib
                 56,
                 62,
                 100,
+                22,
+                0,
                 0,
                 0,
                 0,
@@ -74,23 +76,23 @@ namespace NFUnitTestSystemLib
             };
 
             // sanity check for when the test arrays above change
-            Debug.Assert(intArr.Length == 2 * arr1.Length);
+            Assert.Equal(_intArr.Length, 2 * arr1.Length);
 
             for (int i = 0; i < arr2.Length; i++)
             {
                 if (signed && ((i % 2) == 0))
                 {
-                    intArr[i + arr1.Length] = -(random.Next(max));
-                    arr2[i] = (intArr[i + arr1.Length].ToString());
+                    _intArr[i + arr1.Length] = -(random.Next(max));
+                    arr2[i] = (_intArr[i + arr1.Length].ToString());
                 }
                 else
                 {
-                    intArr[i + arr1.Length] = random.Next(max);
-                    arr2[i] = intArr[i + arr1.Length].ToString();
+                    _intArr[i + arr1.Length] = random.Next(max);
+                    arr2[i] = _intArr[i + arr1.Length].ToString();
                 }
             }
 
-            string[] arr = new string[intArr.Length];
+            string[] arr = new string[_intArr.Length];
 
             Array.Copy(arr1, arr, arr1.Length);
             Array.Copy(arr2, 0, arr, arr1.Length, arr2.Length);
@@ -105,10 +107,10 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("SByte MaxValue = " + sbyte.MaxValue.ToString());
 
             string[] strArr = GetRandomStringArray(sbyte.MaxValue, true);
-            sbyte[] _sByte = new sbyte[intArr.Length];
+            sbyte[] _sByte = new sbyte[_intArr.Length];
             for (int i = 0; i < _sByte.Length; i++)
             {
-                _sByte[i] = (sbyte)intArr[i];
+                _sByte[i] = (sbyte)_intArr[i];
             }
 
             for (int i = 0; i < strArr.Length; i++)
@@ -127,15 +129,16 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Byte MaxValue = " + byte.MaxValue.ToString());
 
             string[] strArr = GetRandomStringArray(byte.MaxValue, false);
-            byte[] _byte = new byte[intArr.Length];
+            byte[] _byte = new byte[_intArr.Length];
+            
             for (int i = 0; i < _byte.Length; i++)
             {
-                _byte[i] = (byte)intArr[i];
+                _byte[i] = (byte)_intArr[i];
             }
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(byte.Parse(strArr[i]), _byte[i]);
+                Assert.Equal(byte.Parse(strArr[i]), _byte[i], $"Parse failed for {strArr[i]}, expecting: {_byte[i]}");
 
                 Assert.True(byte.TryParse(strArr[i], out byte result), $"TryParse failed for {strArr[i]} expecting: {_byte[i]}");
                 Assert.Equal(_byte[i], result);
@@ -149,10 +152,10 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Int16 MaxValue = " + short.MaxValue.ToString());
 
             string[] strArr = GetRandomStringArray(short.MaxValue, true);
-            short[] _int16 = new short[intArr.Length];
+            short[] _int16 = new short[_intArr.Length];
             for (int i = 0; i < _int16.Length; i++)
             {
-                _int16[i] = (short)intArr[i];
+                _int16[i] = (short)_intArr[i];
             }
 
             for (int i = 0; i < strArr.Length; i++)
@@ -172,10 +175,10 @@ namespace NFUnitTestSystemLib
 
 
             string[] strArr = GetRandomStringArray(ushort.MaxValue, false);
-            ushort[] _uInt16 = new ushort[intArr.Length];
+            ushort[] _uInt16 = new ushort[_intArr.Length];
             for (int i = 0; i < _uInt16.Length; i++)
             {
-                _uInt16[i] = (ushort)intArr[i];
+                _uInt16[i] = (ushort)_intArr[i];
             }
 
             for (int i = 0; i < strArr.Length; i++)
@@ -194,10 +197,10 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Int32 MaxValue = " + int.MaxValue.ToString());
 
             string[] strArr = GetRandomStringArray(int.MaxValue, true);
-            int[] _int32 = new int[intArr.Length];
+            int[] _int32 = new int[_intArr.Length];
             for (int i = 0; i < _int32.Length; i++)
             {
-                _int32[i] = intArr[i];
+                _int32[i] = _intArr[i];
             }
 
             for (int i = 0; i < strArr.Length; i++)
@@ -515,7 +518,11 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { _ = double.Parse(strArr[i]); }, $"Should throw exception of type FormatExeception while parsing string: '{strArr[i]}'");
+                OutputHelper.WriteLine($"parse {strArr[i]}");
+
+                Assert.Throws(typeof(FormatException),
+                              () => { double.Parse(strArr[i]); },
+                              $"Should throw exception of type FormatExeception while parsing string: '{strArr[i]}'");
 
                 Assert.False(double.TryParse(strArr[i], out double _), $"TryParse should return false while parsing string: '{strArr[i]}'");
             }
