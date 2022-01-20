@@ -787,6 +787,53 @@ namespace System
 
         }
 
+        /// <summary>
+        /// Converts the string representation of a date and time to its <see cref="DateTime"/> equivalent by using the conventions of the current culture.
+        /// </summary>
+        /// <param name="s">A string that contains a date and time to convert. See The string to parse for more information.</param>
+        /// <returns>An object that is equivalent to the date and time contained in <paramref name="s"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="s"/> is <see langword="null"/>.</exception>
+        /// <exception cref="FormatException">Failed to parse <paramref name="s"/>.</exception>
+        /// <remarks>
+        /// <para>
+        /// .NET nanoFramework doesn't support local times so converted values will always have <see cref="Kind"/> set to <see cref="DateTimeKind.Utc"/>.
+        /// </para>
+        /// <para>
+        /// This attempts to parse <paramref name="s"/> by using the formatting conventions of Invariant Culture.
+        /// </para>
+        /// </remarks>
+        public static DateTime Parse(string s)
+        {
+            // check for null string is carried out in native code
+            return Convert.ToDateTime(s);
+        }
+
+        /// <summary>
+        /// Converts the specified string representation of a date and time to its <see cref="DateTime"/> equivalent and returns a value that indicates whether the conversion succeeded.
+        /// </summary>
+        /// <param name="s">A string containing a date and time to convert.</param>
+        /// <param name="result">When this method returns, contains the <see cref="DateTime"/> value equivalent to the date and time contained in <paramref name="s"/>, if the conversion succeeded, or <see cref="MinValue"/> if the conversion failed. The conversion fails if the <paramref name="s"/> parameter is <see langword="null"/>, is an <see cref="string.Empty"/>, or does not contain a valid string representation of a date and time. This parameter is passed uninitialized.</param>
+        /// <returns><see langword="true"/> if the <paramref name="s"/> parameter was converted successfully; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// <para>
+        /// The <see cref="TryParse"/> method is similar to the <see cref="Parse"/> method, except that the <see cref="TryParse"/> method does not throw an exception if the conversion fails.
+        /// </para>
+        /// <para>
+        /// The string <paramref name="s"/> is parsed using formatting information of the Invariant Culture.
+        /// </para>
+        /// </remarks>
+        public static bool TryParse(
+            string s,
+            out DateTime result)
+        {
+            result = Convert.NativeToDateTime(
+                s,
+                false,
+                out bool success);
+
+            return success;
+        }
+
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private string DateTimeDisplay => $"{{{new DateTime(Ticks).ToString()}}}";
 
