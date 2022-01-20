@@ -37,55 +37,64 @@ namespace NFUnitTestSystemLib
                 "100"
             };
 
-            string[] arr2 = new string[10];
+
+            string[] arr2 = new string[arr1.Length];
 
             intArr = new int[] {
-                0, 
-                0, 
-                0, 
-                0, 
-                0, 
                 0,
-                0, 
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
                 0,
                 123,
                 123,
                 123,
                 123,
-                0, 
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
                 56,
                 62,
-                100
+                100,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
             };
+
+            // sanity check for when the test arrays above change
+            Debug.Assert(intArr.Length == 2 * arr1.Length);
 
             for (int i = 0; i < arr2.Length; i++)
             {
                 if (signed && ((i % 2) == 0))
                 {
-                    intArr[i + 12] = -(random.Next(max));
-                    arr2[i] = (intArr[i + 12].ToString());
+                    intArr[i + arr1.Length] = -(random.Next(max));
+                    arr2[i] = (intArr[i + arr1.Length].ToString());
                 }
                 else
                 {
-                    intArr[i + 12] = random.Next(max);
-                    arr2[i] = intArr[i + 12].ToString();
+                    intArr[i + arr1.Length] = random.Next(max);
+                    arr2[i] = intArr[i + arr1.Length].ToString();
                 }
             }
 
-            string[] arr = new string[22];
+            string[] arr = new string[intArr.Length];
 
             Array.Copy(arr1, arr, arr1.Length);
             Array.Copy(arr2, 0, arr, arr1.Length, arr2.Length);
-            
+
             return arr;
         }
 
