@@ -176,7 +176,6 @@ jobs:
         nanoFramework.Runtime.Native
         nanoFramework.TestFramework
         nanoFramework.Logging
-        nanoFramework.Devices.OneWire
         nanoFramework.Networking.Sntp
         nanoFramework.Hardware.Stm32
         nanoFramework.Hardware.TI
