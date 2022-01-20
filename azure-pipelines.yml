@@ -165,6 +165,7 @@ jobs:
   # need this here in order to persist GitHub credentials 
   - checkout: self
     fetchDepth: 1
+    persistCredentials: true
 
   # update dependents
   - template: azure-pipelines-templates/update-dependents.yml@templates  
