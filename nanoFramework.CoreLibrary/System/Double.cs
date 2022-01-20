@@ -181,7 +181,7 @@ namespace System
         {
             result = Convert.NativeToDouble(
               s,
-              true,
+              false,
               out bool success);
 
             return success;
