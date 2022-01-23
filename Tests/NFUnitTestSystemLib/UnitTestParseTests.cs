@@ -14,12 +14,12 @@ namespace NFUnitTestSystemLib
     class UnitTestParseTests
     {
         private static int[] _intArr = new int[0];
-        
+
         public static string[] GetRandomStringArray(int max, bool signed)
         {
             Random random = new Random();
 
-            string[] arr1 = new string[] { 
+            string[] arr1 = new string[] {
                 "0",
                 "-0",
                 "+0",
@@ -130,7 +130,7 @@ namespace NFUnitTestSystemLib
 
             string[] strArr = GetRandomStringArray(byte.MaxValue, false);
             byte[] _byte = new byte[_intArr.Length];
-            
+
             for (int i = 0; i < _byte.Length; i++)
             {
                 _byte[i] = (byte)_intArr[i];
@@ -482,23 +482,17 @@ namespace NFUnitTestSystemLib
 
             t = "1.7976931348623157E+308";
             Assert.Equal(double.MaxValue, double.Parse(t), "Testing double max value parse");
-
-            t = "-3.40282347E+38";
-            Assert.Equal(float.MinValue, (float)double.Parse(t), "Testing float min value parse");
-
-            t = "3.40282347E+38";
-            Assert.Equal(float.MaxValue, (float)double.Parse(t), "Testing float max value parse");
         }
 
         [TestMethod]
         public void ParseDouble_Test_Invalid_Values()
         {
             string[] strArr = new string[] {
-                "", 
+                "",
                 "   ",
                 " ",
                 "-0e-a",
-                "+123a4", 
+                "+123a4",
                 "   +123f.1",
                 "123ea2",
                 "1.111.1",
@@ -537,13 +531,175 @@ namespace NFUnitTestSystemLib
 
             t = "1.7976931348623180E+308";
             Assert.Equal(double.PositiveInfinity, double.Parse(t), "High positive values should return double.PositiveInfinity value when parsed");
+        }
 
-            t = "-3.40282380E+38";
+        [TestMethod]
+        public void ParseFloat_Test_Valid_Values()
+        {
+            string[] strArr = new string[] {
+                "0",
+                "-0",
+                "+0",
+                "00000     ",
+                "    -00000",
+                "   +00000  ",
+                "   0   ",
+                "  -00000  ",
+                "+123",
+                "  +123  ",
+                "   +123",
+                "+123    ",
+                "567.89",
+                "-567.89",
+                "1E23",
+                "9007199254740997.0",
+                "9007199254740997.00000000000000000000000000000000000000000000000000000",
+                "5.005",
+                "5.050",
+                "50050.0",
+                "0.005",
+                "6250000000000000000000000000000000e-12",
+                "6250000e0",
+                "6250100e-5",
+                "625010.00e-4",
+                "62500e-4",
+                "62500",
+                "10e-3"
+            };
+
+            float[] _float = new float[] {
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                123,
+                123,
+                123,
+                123,
+                567.89f,
+                -567.89f,
+                1E23f,
+                9007199254740997.0f,
+                9007199254740996.0f,
+                5.005f,
+                5.050f,
+                50050.0f,
+                0.005f,
+                6250000000000000000000000000000000e-12f,
+                6.25e6f,
+                62.501f,
+                62.501f,
+                6.25f,
+                62500,
+                0.01f
+            };
+
+            float result;
+            for (int i = 0; i < strArr.Length; i++)
+            {
+                OutputHelper.WriteLine($"Parsing {strArr[i]} expecting: {_float[i]}");
+
+                Assert.Equal(float.Parse(strArr[i]), _float[i], $"Failed while parsing string: {strArr[i]} expecting: {_float[i]}");
+
+                Assert.True(float.TryParse(strArr[i], out result), $"TryParse failed for {strArr[i]} expecting: {_float[i]}");
+                Assert.Equal(_float[i], result);
+            }
+
+            float f = float.Parse("-0.1");
+            Assert.Equal(f, -0.1f);
+
+            Assert.True(float.TryParse("-0.1", out result), $"TryParse failed for -0.1 expecting: {f}");
+            Assert.Equal(-0.1f, result);
+
+            f = float.Parse("0.1");
+            Assert.Equal(f, 0.1f);
+
+            Assert.True(float.TryParse("0.1", out result), $"TryParse failed for 0.1 expecting: {f}");
+            Assert.Equal(0.1f, result);
+
+            f = float.Parse(" -1.1");
+            Assert.Equal(f, -1.1f);
+
+            Assert.True(float.TryParse(" -1.1", out result), $"TryParse failed for -1.1 expecting: {f}");
+            Assert.Equal(-1.1f, result);
+
+            f = float.Parse(" -0.0001");
+            Assert.Equal(f, -0.0001f);
+
+            Assert.True(float.TryParse(" -0.0001", out result), $"TryParse failed for -0.0001 expecting: {f}");
+            Assert.Equal(-0.0001f, result);
+
+            f = float.Parse(" -10.0001");
+            Assert.Equal(f, -10.0001f);
+
+            Assert.True(float.TryParse(" -10.0001", out result), $"TryParse failed for -10.0001 expecting: {f}");
+            Assert.Equal(-10.0001f, result);
+
+            f = float.Parse("-0.01e-10");
+            Assert.Equal(f, -0.01e-10f);
+
+            Assert.True(float.TryParse("-0.01e-10", out result), $"TryParse failed for -0.01e-10 expecting: {f}");
+            Assert.Equal(-0.01e-10f, result);
+
+            // can't use Min/MaxValue.ToString() because the fast float-to-string routine only works in the range 2^64 to 2^-64 (there-about).
+            string t = "-3.40282347E+38";  // float.MinValue
+            Assert.Equal(float.MinValue, float.Parse(t), "Testing float min value parse");
+
+            t = "3.40282347E+38"; // float.MaxValue
+            Assert.Equal(float.MaxValue, float.Parse(t), "Testing float max value parse");
+        }
+
+        [TestMethod]
+        public void ParseFloat_Test_Invalid_Values()
+        {
+            string[] strArr = new string[] {
+                "",
+                "   ",
+                " ",
+                "-0e-a",
+                "+123a4",
+                "   +123f.1",
+                "123ea2",
+                "1.111.1",
+                "   -123-e3",
+                " 123.456 777",
+                "1234567ee73",
+                "  +1234e-77+",
+                "++1",
+                "--1",
+                "+1+",
+                "   .1123abc",
+                " .123+456",
+                "+123e++10",
+                "+123e--10",
+                "-123e++10"
+            };
+
+            for (int i = 0; i < strArr.Length; i++)
+            {
+                OutputHelper.WriteLine($"parse {strArr[i]}");
+
+                Assert.Throws(typeof(FormatException),
+                              () => { float.Parse(strArr[i]); },
+                              $"Should throw exception of type FormatExeception while parsing string: '{strArr[i]}'");
+
+                Assert.False(float.TryParse(strArr[i], out float _), $"TryParse should return false while parsing string: '{strArr[i]}'");
+            }
+        }
+
+        [TestMethod]
+        public void ParseFloat_OverflowTests()
+        {
+            // Note we have to check hex values - again, the ToString() works over a subset of the range for double/float, and returns 'oor' or '-oor' for anything outside that range
+            string t = "-3.40282380E+38";
             Assert.Equal(float.NegativeInfinity, float.Parse(t), "High negative values should return float.NegativeInfinity value when parsed");
 
             t = "3.40282380E+38";
             Assert.Equal(float.PositiveInfinity, float.Parse(t), "High positive values should return float.PositiveInfinity value when parsed");
-
         }
 
         private void CheckUValues(ulong start)
@@ -850,7 +1006,7 @@ namespace NFUnitTestSystemLib
             for (int i = 0; i < 5; i++)
             {
                 string rdmString = GetRandomString();
-                
+
                 Assert.Throws(typeof(FormatException), () => { _ = byte.Parse(rdmString); }, $"Random string '{rdmString}' did not throw exception of FormatException");
 
                 Assert.False(byte.TryParse(rdmString, out _));
@@ -864,7 +1020,7 @@ namespace NFUnitTestSystemLib
             for (int i = 0; i < strArr.Length; i++)
             {
                 Assert.Throws(typeof(FormatException), () => { _ = short.Parse(strArr[i]); });
-                
+
                 Assert.False(short.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
