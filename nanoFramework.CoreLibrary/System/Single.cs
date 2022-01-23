@@ -183,7 +183,7 @@ namespace System
         {
             result = (float)Convert.NativeToDouble(
                 s,
-                true,
+                false,
                 out bool success);
 
             return success;
