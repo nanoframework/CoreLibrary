@@ -149,6 +149,15 @@ namespace System
         public extern ConstructorInfo GetConstructor(Type[] types);
 
         /// <summary>
+        /// Returns all the public constructors defined for the current <see cref="Type"/>.
+        /// </summary>
+        /// <returns>
+        /// An array of <see cref="ConstructorInfo"/> objects representing all the public instance constructors defined for the current <see cref="Type"/>, but not including the type initializer (static constructor). If no public instance constructors are defined for the current <see cref="Type"/>, or if the current <see cref="Type"/> represents a type parameter in the definition of a generic type or generic method, an empty array of type <see cref="ConstructorInfo"/> is returned.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern ConstructorInfo[] GetConstructors();
+
+        /// <summary>
         /// Searches for the specified public method whose parameters match the specified argument types.
         /// </summary>
         /// <param name="name">The string containing the name of the public method to get.</param>

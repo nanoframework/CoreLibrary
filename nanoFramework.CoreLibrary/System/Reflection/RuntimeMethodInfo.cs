@@ -25,6 +25,11 @@ namespace System.Reflection
             return CustomAttributesHelpers.GetCustomAttributesInternal(GetCustomAttributesNative(inherit));
         }
 
+        public override ParameterInfo[] GetParameters()
+        {
+            return GetParametersNative();
+        }
+
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern object[] GetCustomAttributesNative(bool inherit);
     }
