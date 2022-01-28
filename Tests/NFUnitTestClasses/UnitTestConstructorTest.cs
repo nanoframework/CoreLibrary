@@ -362,6 +362,148 @@ namespace NFUnitTestClasses
             Assert.True(ConstructorsTestClass64.testMethod());
         }
 
+        [TestMethod]
+        public void ConstructorName_01()
+        {
+            var classToTest = typeof(ClassWith3Constructors);
+
+            ConstructorInfo[] constructors = classToTest.GetConstructors();
+
+            Assert.Equal(3, constructors.Length, $"Expecting 3 constructors, got {constructors.Length}.");
+            
+            foreach (ConstructorInfo constructorInfo in constructors)
+            {
+                Assert.Equal(constructorInfo.Name, ".ctor", $"Expecting '.ctor' as constructor name, but got: {constructorInfo.Name}");
+            }
+        }
+
+        [TestMethod]
+        public void ConstructorName_02()
+        {
+            var classToTest = typeof(ConstructorsTestClass2);
+
+            ConstructorInfo[] constructors = classToTest.GetConstructors();
+
+            Assert.Equal(1, constructors.Length, $"Expecting 1 constructor, got {constructors.Length}.");
+
+            foreach (ConstructorInfo constructorInfo in constructors)
+            {
+                Assert.Equal(constructorInfo.Name, ".ctor", $"Expecting '.ctor' as constructor name, but got: {constructorInfo.Name}");
+            }
+        }
+
+        [TestMethod]
+        public void ConstructorName_03()
+        {
+            // constructor without modifier
+            var classToTest = typeof(ConstructorsTestClass3);
+
+            ConstructorInfo[] constructors = classToTest.GetConstructors();
+
+            Assert.Equal(0, constructors.Length, $"Didn't expecting any constructor, got {constructors.Length}.");
+        }
+
+        [TestMethod]
+        public void ConstructorName_04()
+        {
+            // internal constructor 
+            var classToTest = typeof(ConstructorsTestClass5);
+
+            ConstructorInfo[] constructors = classToTest.GetConstructors();
+
+            Assert.Equal(0, constructors.Length, $"Didn't expecting any constructor, got {constructors.Length}.");
+        }
+
+        [TestMethod]
+        public void ConstructorName_05()
+        {
+            // private constructor 
+            var classToTest = typeof(ConstructorsTestClass6);
+
+            ConstructorInfo[] constructors = classToTest.GetConstructors();
+
+            Assert.Equal(0, constructors.Length, $"Didn't expecting any constructor, got {constructors.Length}.");
+        }
+
+        [TestMethod]
+        public void ConstructorName_06()
+        {
+            // static constructor 
+            var classToTest = typeof(ConstructorsTestClass36);
+
+            ConstructorInfo[] constructors = classToTest.GetConstructors();
+
+            Assert.Equal(1, constructors.Length, $"Expecting 1 constructor, got {constructors.Length}.");
+
+            foreach (ConstructorInfo constructorInfo in constructors)
+            {
+                Assert.Equal(constructorInfo.Name, ".ctor", $"Expecting '.ctor' as constructor name, but got: {constructorInfo.Name}");
+            }
+        }
+
+        [TestMethod]
+        public void ConstructorName_07()
+        {
+            // constructor for base class
+            var classToTest = typeof(ConstructorsTestClass44_Base);
+
+            ConstructorInfo[] constructors = classToTest.GetConstructors();
+
+            Assert.Equal(1, constructors.Length, $"Expecting 1 constructor, got {constructors.Length}.");
+
+            foreach (ConstructorInfo constructorInfo in constructors)
+            {
+                Assert.Equal(constructorInfo.Name, ".ctor", $"Expecting '.ctor' as constructor name, but got: {constructorInfo.Name}");
+            }
+        }
+
+        [TestMethod]
+        public void ConstructorName_08()
+        {
+            // constructor for derived class
+            var classToTest = typeof(ConstructorsTestClass44);
+
+            ConstructorInfo[] constructors = classToTest.GetConstructors();
+
+            Assert.Equal(1, constructors.Length, $"Expecting 1 constructor, got {constructors.Length}.");
+
+            foreach (ConstructorInfo constructorInfo in constructors)
+            {
+                Assert.Equal(constructorInfo.Name, ".ctor", $"Expecting '.ctor' as constructor name, but got: {constructorInfo.Name}");
+            }
+        }
+
+        [TestMethod]
+        public void ConstructorParametersInfo_01()
+        {
+            var classToTest = typeof(ClassWith3Constructors);
+
+            ConstructorInfo[] constructors = classToTest.GetConstructors();
+
+            // get ParameterInfo for 1st constructor
+            ParameterInfo[] constructorParameters = constructors[0].GetParameters();
+
+            OutputHelper.WriteLine("Checking parameters for 1st constructor of ClassWith3Constructors");
+            Assert.Equal(0, constructorParameters.Length, $"Expecting no parameters, got {constructorParameters.Length}.");
+
+            // get ParameterInfo for 2nd constructor
+            constructorParameters = constructors[1].GetParameters();
+
+            Assert.Equal(1, constructorParameters.Length, $"Expecting 1 parameter, got {constructorParameters.Length}.");
+
+            OutputHelper.WriteLine("Checking parameters for 2nd constructor of ClassWith3Constructors");
+            Assert.Equal(constructorParameters[0].ParameterType.ToString(), $"{typeof(int)}", $"Expecting parameter of type {typeof(int)}, got {constructorParameters[0].ParameterType}.");
+
+            // get ParameterInfo for 3rd constructor
+            constructorParameters = constructors[2].GetParameters();
+
+            Assert.Equal(2, constructorParameters.Length, $"Expecting 2 parameters, got {constructorParameters.Length}.");
+
+            OutputHelper.WriteLine("Checking parameters for 3rd constructor of ClassWith3Constructors");
+            Assert.Equal(constructorParameters[0].ParameterType.ToString(), $"{typeof(int)}", $"Expecting parameter of type {typeof(int)}, got {constructorParameters[0].ParameterType}.");
+            Assert.Equal(constructorParameters[1].ParameterType.ToString(), $"{typeof(string)}", $"Expecting parameter of type {typeof(string)}, got {constructorParameters[0].ParameterType}.");
+        }
+
         //Constructors Test Classes
         class ConstructorsTestClass1
         {
@@ -1180,6 +1322,22 @@ namespace NFUnitTestClasses
             }
         }
 
+        class ConstructorsTestClass36
+        {
+
+            // static constructor
+            static ConstructorsTestClass36()
+            {
+                intI = 5;
+            }
+
+            static int intI = 1;
+
+            public static bool testMethod()
+            {
+                return (intI == 5);
+            }
+        }
 
         class ConstructorsTestClass44_Base
         {
@@ -1565,6 +1723,22 @@ namespace NFUnitTestClasses
                 }
 
                 return true;
+            }
+        }
+
+        public class ClassWith3Constructors
+        {
+            public int intValue = 0;
+            public string stringValue = "";
+
+            public ClassWith3Constructors() { }
+
+            public ClassWith3Constructors(int intValue) { this.intValue = intValue; }
+
+            public ClassWith3Constructors(int intValue, string stringValue)
+            {
+                this.intValue = intValue;
+                this.stringValue = stringValue;
             }
         }
     }

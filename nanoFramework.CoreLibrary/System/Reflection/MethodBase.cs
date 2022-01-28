@@ -18,6 +18,9 @@ namespace System.Reflection
     [Serializable]
     public abstract class MethodBase : MemberInfo
     {
+        // required to store native
+        private int _token;
+
         /// <summary>
         /// Gets a value indicating whether this is a public method.
         /// </summary>
@@ -79,6 +82,12 @@ namespace System.Reflection
         }
 
         /// <summary>
+        /// When overridden in a derived class, gets the parameters of the specified method or constructor.
+        /// </summary>
+        /// <returns>An array of type <see cref="ParameterInfo"/> containing information that matches the signature of the method (or constructor) reflected by this <see cref="MethodBase"/> instance.</returns>
+        public abstract ParameterInfo[] GetParameters();
+
+        /// <summary>
         /// Invokes the method or constructor represented by the current instance, using the specified parameters.
         /// </summary>
         /// <param name="obj">The object on which to invoke the method or constructor. If a method is static, this argument is ignored. 
@@ -114,6 +123,9 @@ namespace System.Reflection
             [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        internal extern ParameterInfo[] GetParametersNative();
     }
 }
 
