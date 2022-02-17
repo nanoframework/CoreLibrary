@@ -122,8 +122,6 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\InvalidCastException.cs" Link="System\InvalidCastException.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\InvalidOperationException.cs" Link="System\InvalidOperationException.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\IO\IOException.cs" Link="System\IO\IOException.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\SeekOrigin.cs" Link="System\IO\SeekOrigin.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\Stream.cs" Link="System\IO\Stream.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\MarshalByRefObject.cs" Link="System\MarshalByRefObject.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Math.cs" Link="System\Math.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\MulticastDelegate.cs" Link="System\MulticastDelegate.cs" />
