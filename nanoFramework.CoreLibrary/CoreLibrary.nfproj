@@ -59,6 +59,7 @@
     <Compile Include="System\AppDomainUnloadedException.cs" />
     <Compile Include="System\ApplicationException.cs" />
     <Compile Include="System\ArgumentException.cs" />
+    <Compile Include="System\PlatformNotSupportedException.cs" />
     <Compile Include="System\ArgumentNullException.cs" />
     <Compile Include="System\ArgumentOutOfRangeException.cs" />
     <Compile Include="System\Array.cs" />
