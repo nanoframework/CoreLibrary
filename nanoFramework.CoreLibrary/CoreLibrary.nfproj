@@ -119,8 +119,6 @@
     <Compile Include="System\InvalidCastException.cs" />
     <Compile Include="System\InvalidOperationException.cs" />
     <Compile Include="System\IO\IOException.cs" />
-    <Compile Include="System\IO\SeekOrigin.cs" />
-    <Compile Include="System\IO\Stream.cs" />
     <Compile Include="System\MarshalByRefObject.cs" />
     <Compile Include="System\Math.cs" />
     <Compile Include="System\MulticastDelegate.cs" />
