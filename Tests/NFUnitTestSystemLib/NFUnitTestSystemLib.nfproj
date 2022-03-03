@@ -27,6 +27,17 @@
     <RunSettingsFilePath>$(MSBuildProjectDirectory)\nano.runsettings</RunSettingsFilePath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="UnitTestUInt64.cs" />
+    <Compile Include="UnitTestUInt32.cs" />
+    <Compile Include="UnitTestSingle.cs" />
+    <Compile Include="UnitTestSByte.cs" />
+    <Compile Include="UnitTestInt64.cs" />
+    <Compile Include="UnitTestInt32.cs" />
+    <Compile Include="UnitTestUInt16.cs" />
+    <Compile Include="UnitTestInt16.cs" />
+    <Compile Include="UnitTestDouble.cs" />
+    <Compile Include="UnitTestChar.cs" />
+    <Compile Include="UnitTestByte.cs" />
     <Compile Include="UnitTestDateTime.cs" />
     <Compile Include="UnitTestGCTest.cs" />
     <Compile Include="UnitTestGuid.cs" />
@@ -37,6 +48,7 @@
     <Compile Include="UnitTestReflectionMemberTest.cs" />
     <Compile Include="UnitTestReflectionTypeTest.cs" />
     <Compile Include="UnitTestStringTests.cs" />
+    <Compile Include="UnitTestBoolean.cs" />
     <Compile Include="UnitTestTimeSpan.cs" />
     <Compile Include="UnitTestTypeTests.cs" />
     <Compile Include="UnitTestWeakReferenceTests.cs" />

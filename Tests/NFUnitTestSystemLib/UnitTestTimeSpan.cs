@@ -1142,5 +1142,74 @@ namespace NFUnitTestSystemLib
             }
         }
 
+        [TestMethod]
+        public void Equals()
+        {
+            TimeSpanTestData[] testData = new TimeSpanTestData[]
+            {
+                new TimeSpanTestData(new TimeSpan(0, 0, 0), new TimeSpan(0, 0, 0), true),
+
+                new TimeSpanTestData( new TimeSpan(1, 2, 3), new TimeSpan(1, 2, 3), true),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3), new TimeSpan(1, 2, 4), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3), new TimeSpan(1, 3, 3), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3), new TimeSpan(2, 2, 3), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3), new TimeSpan(0, 1, 2, 3), true),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3), new TimeSpan(0, 1, 2, 3, 0), true),
+
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4), new TimeSpan(1, 2, 3, 4), true),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4), new TimeSpan(1, 2, 3, 5), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4), new TimeSpan(1, 2, 4, 4), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4), new TimeSpan(1, 3, 3, 4), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4), new TimeSpan(2, 2, 3, 4), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4, 5), new TimeSpan(2, 3, 4), false),
+
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4, 5), new TimeSpan(1, 2, 3, 4, 5), true),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4, 5), new TimeSpan(1, 2, 3, 4, 6), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4, 5), new TimeSpan(1, 2, 3, 5, 5), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4, 5), new TimeSpan(1, 2, 4, 4, 5), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4, 5), new TimeSpan(1, 3, 3, 4, 5), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4, 5), new TimeSpan(2, 2, 3, 4, 5), false),
+
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4, 5), new TimeSpan(1, 2, 3, 4), false),
+                new TimeSpanTestData( new TimeSpan(1, 2, 3, 4, 5), new TimeSpan(2, 2, 3), false),
+
+                new TimeSpanTestData( new TimeSpan(10000), new TimeSpan(10000), true),
+                new TimeSpanTestData( new TimeSpan(10000), new TimeSpan(20000), false),
+
+                new TimeSpanTestData( new TimeSpan(10000), null, false),
+            };
+
+            foreach (var test in testData)
+            {
+                OutputHelper.WriteLine($"Testing combination {test.TimeSpan1} and {test.Obj}");
+
+                if (test.Obj is TimeSpan)
+                {
+                    TimeSpan timeSpan2 = (TimeSpan)test.Obj;
+                    Assert.Equal(test.Expected, TimeSpan.Equals(test.TimeSpan1, timeSpan2));
+                    Assert.Equal(test.Expected, test.TimeSpan1.Equals(timeSpan2));
+                    Assert.Equal(test.Expected, (TimeSpan)test.TimeSpan1 == timeSpan2);
+                    Assert.Equal(!test.Expected, (TimeSpan)test.TimeSpan1 != timeSpan2);
+
+                    Assert.Equal(test.Expected, test.TimeSpan1.GetHashCode().Equals(timeSpan2.GetHashCode()));
+                }
+
+                Assert.Equal(test.Expected, test.TimeSpan1.Equals(test.Obj));
+            }
+        }
+
+        private sealed class TimeSpanTestData
+        {
+            public object TimeSpan1 { get; }
+            public object Obj { get; }
+            public bool Expected { get; }
+
+            public TimeSpanTestData(object timeSpan1, object obj, bool expected)
+            {
+                TimeSpan1 = timeSpan1;
+                Obj = obj;
+                Expected = expected;
+            }
+        }
     }
 }
