@@ -62,7 +62,7 @@ namespace System
             }
             else
             {
-                throw new Exception("Could not generate SpanByte");
+                throw new NullReferenceException("Array is null");
             }
         }
 
