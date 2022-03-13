@@ -156,7 +156,7 @@ namespace System.Threading
         /// <param name="iterations">A 32-bit signed integer that defines how long a thread is to wait.</param>
         /// <remarks>
         /// The <see cref="SpinWait"/> method is useful for implementing locks. Classes in the .NET Framework, such as <see cref="Monitor"/> use this method internally. <see cref="SpinWait"/> essentially puts the processor into a very tight loop, with the loop count specified by the <paramref name="iterations"/> parameter. The duration of the wait therefore depends on the speed of the processor.
-        /// Contrast this with the <see cref="Sleep"/> method. A thread that calls <see cref="Sleep"/> yields the rest of its current slice of processor time, even if the specified interval is zero. Specifying a non-zero interval for <see cref="Sleep"/> removes the thread from consideration by the thread scheduler until the time interval has elapsed.
+        /// Contrast this with the <see cref="Sleep(int)"/> method. A thread that calls <see cref="Sleep(int)"/> yields the rest of its current slice of processor time, even if the specified interval is zero. Specifying a non-zero interval for <see cref="Sleep(int)"/> removes the thread from consideration by the thread scheduler until the time interval has elapsed.
         /// </remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void SpinWait(int iterations);
