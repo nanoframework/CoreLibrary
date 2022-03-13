@@ -54,7 +54,7 @@ namespace System
                 if (start < 0 ||
                     length < 0 ||
                     start + length > array.Length ||
-                    (start == array.Length && start > 0))
+                    start >= array.Length)
                 {
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                     throw new ArgumentOutOfRangeException();
