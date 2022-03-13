@@ -168,7 +168,6 @@ namespace System
         /// <param name="s">A string containing a number to convert. </param>
         /// <param name="result">When this method returns, contains single-precision floating-point number equivalent to the numeric value or symbol contained in <paramref name="s"/>, if the conversion succeeded, or zero if the conversion failed. The conversion fails if the <paramref name="s"/> parameter is <see langword="null"/> or <see cref="string.Empty"/>, is not a number in a valid format, or represents a number less than <see cref="MinValue"/> or greater than <see cref="MaxValue"/>. This parameter is passed uninitialized; any value originally supplied in result will be overwritten.</param>
         /// <returns><see langword="true"/> if s was converted successfully; otherwise, <see langword="false"/>.</returns>
-        /// <summary>
         /// <remarks>
         /// <para>
         /// Values that are too large to represent are rounded to <see cref="PositiveInfinity"/> or <see cref="NegativeInfinity"/> as required by the IEEE 754 specification.
