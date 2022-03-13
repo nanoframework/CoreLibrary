@@ -35,8 +35,17 @@ namespace System
         /// <param name="start">The index of the first element to include in the new System.Span</param>
         /// <param name="length">The number of elements to include in the new System.Span</param>
         /// <exception cref="System.ArgumentOutOfRangeException">
-        /// array is null, but start or length is non-zero. -or- start is outside the bounds
-        /// of the array. -or- start and length exceeds the number of elements in the array.
+        /// <para>
+        /// array is null, but start or length is non-zero
+        /// </para>
+        /// <para>-or-</para>
+        /// <para>
+        /// start is outside the bounds of the array.
+        /// </para>
+        /// <para>-or-</para>
+        /// <para>
+        /// <param name="start"> + <param name="length"> exceed the number of elements in the array.
+        /// </para>
         /// </exception>
         public SpanByte(byte[] array, int start, int length)
         {
@@ -71,6 +80,9 @@ namespace System
         /// </summary>
         /// <param name="index">The zero-based index of the element.</param>
         /// <returns>The element at the specified index.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// <param name="index"> is out of range.
+        /// </exception>
         public byte this[int index]
         {
             get
@@ -114,7 +126,7 @@ namespace System
         /// </summary>
         /// <param name="destination"> The destination System.Span object.</param>
         /// <exception cref="System.ArgumentException">
-        /// destination is shorter than the source System.Span.
+        /// destination is shorter than the source <see cref="SpanByte"/>.
         /// </exception>
         public void CopyTo(SpanByte destination)
         {
@@ -130,23 +142,23 @@ namespace System
         }
 
         /// <summary>
-        /// Forms a slice out of the current span that begins at a specified index.
+        /// Forms a slice out of the current <see cref="SpanByte"/> that begins at a specified index.
         /// </summary>
         /// <param name="start">The index at which to begin the slice.</param>
         /// <returns>A span that consists of all elements of the current span from start to the end of the span.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException">start is less than zero or greater than System.Span.Length.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><param name="start"> is &lt; zero or &gt; <see cref="Length"/>.</exception>
         public SpanByte Slice(int start)
         {
             return Slice(start, _length - start);
         }
 
         /// <summary>
-        /// Forms a slice out of the current span starting at a specified index for a specified length.
+        /// Forms a slice out of the current <see cref="SpanByte"/> starting at a specified index for a specified length.
         /// </summary>
         /// <param name="start">The index at which to begin this slice.</param>
         /// <param name="length">The desired length for the slice.</param>
         /// <returns>A span that consists of length elements from the current span starting at start.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException">start or start + length is less than zero or greater than System.Span.Length.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><param name="start"> or <param name="start"> + <param name="length"> is &lt; zero or &gt; <see cref="Length"/>.</exception>
         public SpanByte Slice(int start, int length)
         {
             if ((start < 0) || (length < 0) || (start + length > _length))
@@ -158,7 +170,7 @@ namespace System
         }
 
         /// <summary>
-        /// Copies the contents of this span into a new array.
+        /// Copies the contents of this <see cref="SpanByte"/> into a new array.
         /// </summary>
         /// <returns> An array containing the data in the current span.</returns>
         public byte[] ToArray()
@@ -173,7 +185,7 @@ namespace System
         }
 
         /// <summary>
-        /// Implicit conversion of an array to a span of byte
+        /// Implicit conversion of an array to a <see cref="SpanByte"/>.
         /// </summary>
         /// <param name="array"></param>
         public static implicit operator SpanByte(byte[] array)
