@@ -56,7 +56,9 @@ namespace System
                     start + length > array.Length ||
                     (start == array.Length && start > 0))
                 {
-                    throw new ArgumentOutOfRangeException($"Array length too small");
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                    throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 }
                 else
                 {
@@ -67,11 +69,15 @@ namespace System
             }
             else if ((start != 0) || (length != 0))
             {
-                throw new ArgumentOutOfRangeException($"Array is null but start and length are not 0");
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
             else
             {
-                throw new NullReferenceException("Array is null");
+#pragma warning disable S3928 
+                throw new NullReferenceException();
+#pragma warning restore S3928  
             }
         }
 
@@ -89,7 +95,9 @@ namespace System
             {
                 if (index >= _length)
                 {
-                    throw new ArgumentOutOfRangeException($"Index out of range");
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                    throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 }
 
                 return _array[_start + index];
@@ -98,7 +106,9 @@ namespace System
             {
                 if (index >= _length)
                 {
-                    throw new ArgumentOutOfRangeException($"Index out of range");
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                    throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 }
 
                 _array[_start + index] = value;
@@ -132,7 +142,9 @@ namespace System
         {
             if (destination.Length < _length)
             {
-                throw new ArgumentException($"Destination too small");
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
 
             for (int i = 0; i < _length; i++)
@@ -163,7 +175,9 @@ namespace System
         {
             if ((start < 0) || (length < 0) || (start + length > _length))
             {
-                throw new ArgumentOutOfRangeException($"start or start + length is less than zero or greater than length");
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
 
             return new SpanByte(_array, _start + start, length);
