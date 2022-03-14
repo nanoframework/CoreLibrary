@@ -41,8 +41,32 @@ namespace System.Reflection
                     // get constructor
                     ConstructorInfo ctor = objectType.GetConstructor(new Type[] { paramType });
 
+                    // get params
+                    object[] ctorParams = new object[] { rawAttributes[i + 1] };
+
+                    if (ctor is null)
+                    {
+                        // give it another try, this time with an array of the parameters types
+                        // rebuild params list 
+                        ctorParams = (object[])rawAttributes[i + 1];
+
+                        Type[] paramsTypes = new Type[ctorParams.Length];
+
+                        for (int p = 0; p < ctorParams.Length; p++)
+                        {
+                            paramsTypes[p] = ctorParams[p].GetType();
+                        }
+
+                        ctor = objectType.GetConstructor(paramsTypes);
+
+                        if (ctor is null)
+                        {
+                            throw new InvalidOperationException();
+                        }
+                    }
+
                     // invoke constructor with the parameter
-                    attributes[i / 2] = ctor.Invoke(new object[] { rawAttributes[i + 1] });
+                    attributes[i / 2] = ctor.Invoke(ctorParams);
                 }
             }
 
