@@ -188,7 +188,7 @@ jobs:
   - template: azure-pipelines-templates/update-dependents.yml@templates  
     parameters:
       repositoriesToUpdate: |
-        nanoFramework.Devices.OneWire
+        nanoFramework.Device.OneWire
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
         nanoFramework.TestFramework

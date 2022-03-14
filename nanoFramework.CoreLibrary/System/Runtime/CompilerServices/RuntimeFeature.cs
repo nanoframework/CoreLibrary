@@ -6,6 +6,9 @@
 
 namespace System.Runtime.CompilerServices
 {
+    /// <summary>
+    /// Defines APIs to determine whether specific features are supported by the common language runtime.
+    /// </summary>
     public static partial class RuntimeFeature
     {
         /// <summary>
