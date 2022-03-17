@@ -28,6 +28,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="UnitTestObjectTypeTests.cs" />
+    <Compile Include="UnitTestsSpanByte.cs" />
     <Compile Include="UnitTestSubTypeTests.cs" />
     <Compile Include="UnitTestValueArrayTypess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
