@@ -55,16 +55,38 @@ namespace System
         /// </summary>
         /// <param name="s">A string that represents a number to convert. The string is interpreted using the NumberStyles.Integer style.</param>
         /// <returns>An 8-bit signed integer that is equivalent to the number contained in the s parameter.</returns>
-        /// <exception cref="System.ArgumentNullException"></exception>
+        /// <exception cref="ArgumentNullException"><paramref name="s"/> is <see langword="null"/>.</exception>
         [CLSCompliant(false)]
-        public static sbyte Parse(String s)
+        public static sbyte Parse(string s)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (s == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-
+            // check for null string is carried out in native code
             return Convert.ToSByte(s);
         }
 
+        /// <summary>
+        /// Tries to convert the string representation of a number to its <see cref="SByte"/> equivalent, and returns a value that indicates whether the conversion succeeded.
+        /// </summary>
+        /// <param name="s">A string that contains a number to convert.</param>
+        /// <param name="result">When this method returns, contains the 8-bit signed integer value that is equivalent to the number contained in <paramref name="s"/> if the conversion succeeded, or zero if the conversion failed. The conversion fails if the s parameter is <see langword="null"/> or <see cref="string.Empty"/>, is not in the correct format, or represents a number that is less than <see cref="MinValue"/> or greater than <see cref="MaxValue"/>. This parameter is passed uninitialized; any value originally supplied in result will be overwritten.</param>
+        /// <returns><see langword="true"/> if <paramref name="s"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// The <see cref="TryParse"/>(String, SByte) method is like the <see cref="Parse"/>(String) method, except that it does not throw an exception if the conversion fails. This method eliminates the need to use exception handling to test for a <see cref="FormatException"/> if value is invalid and cannot be successfully parsed.
+        /// </remarks>
+        [CLSCompliant(false)]
+        public static bool TryParse(
+            string s,
+            out sbyte result)
+        {
+            result = (sbyte)Convert.NativeToInt64(
+                s,
+                true,
+                MinValue,
+                MaxValue,
+                10,
+                false,
+                out bool success);
+
+            return success;
+        }
     }
 }

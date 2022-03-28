@@ -1,10 +1,27 @@
+# Copyright (c) .NET Foundation and Contributors
+# See LICENSE file in the project root for full license information.
+
 trigger:
   branches:
-    include: [main, develop, "release-*" ]
+    include:
+      - main
+      - develop
+      - release-*
   paths:
-    exclude: [README.md, LICENSE.md, CHANGELOG.md, CODE_OF_CONDUCT.md, NuGet.Config, .github_changelog_generator, .gitignore]
+    exclude:
+      - .github_changelog_generator
+      - .gitignore
+      - CHANGELOG.md
+      - CODE_OF_CONDUCT.md
+      - LICENSE.md
+      - README.md
+      - NuGet.Config
+      - assets/*
+      - config/*
+      - .github/*
   tags:
-    include: ["v*"]
+    include: 
+      - v*
 
 # PR always trigger build
 pr:
@@ -28,7 +45,7 @@ jobs:
       eq(variables['StartReleaseCandidate'], 'true')
     )
   pool:
-    vmImage: 'windows-2019'
+    vmImage: 'windows-latest'
 
   variables:
     DOTNET_NOLOGO: true
@@ -89,43 +106,6 @@ jobs:
       nugetPackageName: 'nanoFramework.CoreLibrary.NoReflection'
       
   - template: azure-pipelines-templates/class-lib-publish.yml@templates  
-
-  # need to push the other package to NuGet because the template above can only push one package (happens on all builds except PRs)
-  - task: NuGetCommand@2
-    condition: >-
-      and(
-        succeeded(),
-        eq(variables['System.PullRequest.PullRequestId'], ''),
-        eq(variables['StartReleaseCandidate'], false),
-        not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
-      )
-    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
-    inputs:
-      command: push
-      nuGetFeedType: external
-      allowPackageConflicts: true
-      packagesToPush: 
-        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
-      publishFeedCredentials: 'AzureArtifacts-CoreLibrary'
-    continueOnError: true
-
-  - task: NuGetCommand@2
-    condition: >-
-      and(
-        succeeded(),
-        eq(variables['System.PullRequest.PullRequestId'], ''),
-        eq(variables['StartReleaseCandidate'], false),
-        not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
-      )
-    displayName: Push "NoReflection" variant NuGet package to Azure Artifacts
-    inputs:
-      command: push
-      nuGetFeedType: external
-      allowPackageConflicts: true
-      packagesToPush: 
-        $(Build.ArtifactStagingDirectory)/nanoFramework.CoreLibrary.NoReflection.$(MY_NUGET_VERSION).nupkg
-      publishFeedCredentials: 'NuGet-CoreLibrary'
-    continueOnError: true
 
   # create or update GitHub release
   - task: GithubRelease@1
@@ -193,7 +173,7 @@ jobs:
   - Build_mscorlib
 
   pool:
-    vmImage: 'windows-2019'
+    vmImage: 'windows-latest'
 
   variables:
     DOTNET_NOLOGO: true
@@ -202,20 +182,17 @@ jobs:
   # need this here in order to persist GitHub credentials 
   - checkout: self
     fetchDepth: 1
-
-  - template: azure-pipelines-templates/install-nuget.yml@templates
+    persistCredentials: true
 
   # update dependents
-  - task: UpdatenFDependencies@1
-    inputs:
-      gitHubToken: $(GitHubToken)
+  - template: azure-pipelines-templates/update-dependents.yml@templates  
+    parameters:
       repositoriesToUpdate: |
-        nanoFramework.Devices.OneWire
+        nanoFramework.Device.OneWire
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
         nanoFramework.TestFramework
         nanoFramework.Logging
-        nanoFramework.Devices.OneWire
         nanoFramework.Networking.Sntp
         nanoFramework.Hardware.Stm32
         nanoFramework.Hardware.TI
@@ -235,7 +212,6 @@ jobs:
         System.Math
         System.Text
         System.Threading
-    displayName: Update dependent class libs
 
 ##################################
 # report build failure to Discord
@@ -252,7 +228,7 @@ jobs:
     )
 
   pool:
-    vmImage: 'windows-2019'
+    vmImage: 'windows-latest'
 
   steps:
 

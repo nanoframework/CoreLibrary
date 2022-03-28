@@ -2287,6 +2287,68 @@ namespace NFUnitTestSystemLib
             Assert.Throws(typeof(ArgumentOutOfRangeException), () => { DateTime dt2 = new DateTime(10000, 1, 1, 0, 0, 0, 0); });
         }
 
+        [TestMethod]
+        public void DateTime_ParseTest00()
+        {
+            // perform 10 random conversions
+            for (int i = 0; i < 10; i++)
+            {
+                DateTime dt = GetRandomDateTime();
+
+                // UniversalSortableDateTimePattern
+                var specifier1 = "u";
+
+                string dtOutput1 = dt.ToString(specifier1);
+
+                Assert.Equal(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"DateTime.Parse '{dt}' failed");
+
+                Assert.True(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
+                Assert.Equal(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
+            }
+        }
+
+        [TestMethod]
+        public void DateTime_ParseTest01()
+        {
+            // perform 10 random conversions
+            for (int i = 0; i < 10; i++)
+            {
+                DateTime dt = GetRandomDateTime();
+
+                // Round Trip ISO 8601 compatible
+                var specifier1 = "o";
+
+                string dtOutput1 = dt.ToString(specifier1);
+
+                // expected format is yyyy-MM-ddTHH:mm:ss.fffffffK
+                Assert.Equal(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"Parsing DateTime '{dt}' failed");
+
+                Assert.True(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
+                Assert.Equal(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
+            }
+        }
+
+        [TestMethod]
+        public void DateTime_ParseTest02()
+        {
+            // perform 10 random conversions
+            for (int i = 0; i < 10; i++)
+            {
+                DateTime dt = GetRandomDateTime();
+
+                // RFC 1123 date
+                var specifier1 = "r";
+
+                string dtOutput1 = dt.ToString(specifier1);
+
+                // expected format is ddd, dd MMM yyyy HH':'mm':'ss 'GMT'
+                Assert.Equal(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"Parsing DateTime '{dt}' failed");
+
+                Assert.True(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
+                Assert.Equal(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
+            }
+        }
+
         static double[] rdmFraction = new double[] { 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 };
 
         static int year, month, day, hour, minute, second, millisec;
@@ -2372,9 +2434,10 @@ namespace NFUnitTestSystemLib
 
             dt = new(ticks);
 
-            // need to update millisec and second because it could have changed with new ticks value
+            // need to update minutesm, millisec and second because it could have changed with new ticks value
             millisec = dt.Millisecond;
             second = dt.Second;
+            minute = dt.Minute;
 
             return dt;
         }

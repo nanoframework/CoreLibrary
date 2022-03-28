@@ -32,10 +32,13 @@ namespace System
     public static class Convert
     {
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern long NativeToInt64(string value, bool signed, long min, long max, int fromBase);
+        internal static extern long NativeToInt64(string value, bool signed, long min, long max, int fromBase, bool throwException, out bool success);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern double NativeToDouble(string value);
+        internal static extern double NativeToDouble(string value, bool throwException, out bool success);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        internal static extern DateTime NativeToDateTime(string value, bool throwException, out bool success);
 
         /// <summary>
         /// Converts the value of the specified 8-bit unsigned integer to an equivalent Boolean value.
@@ -71,9 +74,18 @@ namespace System
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         [CLSCompliant(false)]
-        public static sbyte ToSByte(string value, int fromBase = 10)
+        public static sbyte ToSByte(
+            string value,
+            int fromBase = 10)
         {
-            return (sbyte)NativeToInt64(value.Trim(), true, SByte.MinValue, SByte.MaxValue, fromBase);
+            return (sbyte)NativeToInt64(
+                value,
+                true,
+                sbyte.MinValue,
+                sbyte.MaxValue,
+                fromBase,
+                true,
+                out _);
         }
 
         /// <summary>
@@ -88,9 +100,18 @@ namespace System
         /// </remarks>
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
-        public static byte ToByte(string value, int fromBase = 10)
+        public static byte ToByte(
+            string value,
+            int fromBase = 10)
         {
-            return (byte)NativeToInt64(value.Trim(), false, Byte.MinValue, Byte.MaxValue, fromBase);
+            return (byte)NativeToInt64(
+                value,
+                false,
+                byte.MinValue,
+                byte.MaxValue,
+                fromBase,
+                true,
+                out _);
         }
 
         /// <summary>
@@ -101,6 +122,31 @@ namespace System
         public static byte ToByte(bool value)
         {
             return value ? (byte)1 : (byte)0;
+        }
+
+        /// <summary>
+        /// Converts the specified string representation of a date and time to an equivalent date and time value.
+        /// </summary>
+        /// <param name="value">The string representation of a date and time.</param>
+        /// <returns>The date and time equivalent of the value of <paramref name="value"/>, or the date and time equivalent of <see cref="DateTime.MinValue"/> if value is null.</returns>
+        /// <exception cref="FormatException"><paramref name="value"/> is not a properly formatted date and time string.</exception>
+        /// <remarks>
+        /// <para>
+        /// If <paramref name="value"/> is not null, the return value is the result of invoking the <see cref="DateTime.Parse"/> method on value using the formatting information of the Invariant Culture. The <paramref name="value"/> argument must contain the representation of a date and time in one of the formats described in the DateTimeFormatInfo topic. If <paramref name="value"/> is <see langword="null"/>, the method returns <see cref="DateTime.MinValue"/>.
+        /// </para>
+        /// <para>
+        /// This method tries to parse <paramref name="value"/> completely and avoid throwing a <see cref="FormatException"/>. It completes missing month, day, and year information with the current date. If value contains only a date and no time, this method assumes a time of midnight. Any leading, inner, or trailing white-space characters in value are ignored.
+        /// </para>
+        /// <para>
+        /// If you prefer not to handle an exception if the conversion fails, you can call the <see cref="DateTime.TryParse"/> method instead. It returns a <see cref="bool"/> value that indicates whether the conversion succeeded or failed.
+        /// </para>
+        /// </remarks>
+        public static DateTime ToDateTime(string value)
+        {
+            return NativeToDateTime(
+                value,
+                true,
+                out _);
         }
 
         /// <summary>
@@ -115,9 +161,18 @@ namespace System
         /// </remarks>
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
-        public static short ToInt16(string value, int fromBase = 10)
+        public static short ToInt16(
+            string value,
+            int fromBase = 10)
         {
-            return (short)NativeToInt64(value.Trim(), true, Int16.MinValue, Int16.MaxValue, fromBase);
+            return (short)NativeToInt64(
+                value,
+                true,
+                short.MinValue,
+                short.MaxValue,
+                fromBase,
+                true,
+                out _);
         }
 
         /// <summary>
@@ -133,9 +188,18 @@ namespace System
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         [CLSCompliant(false)]
-        public static ushort ToUInt16(string value, int fromBase = 10)
+        public static ushort ToUInt16(
+            string value,
+            int fromBase = 10)
         {
-            return (ushort)NativeToInt64(value.Trim(), false, UInt16.MinValue, UInt16.MaxValue, fromBase);
+            return (ushort)NativeToInt64(
+                value,
+                false,
+                ushort.MinValue,
+                ushort.MaxValue,
+                fromBase,
+                true,
+                out _);
         }
 
         /// <summary>
@@ -150,9 +214,18 @@ namespace System
         /// </remarks>
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
-        public static int ToInt32(string value, int fromBase = 10)
+        public static int ToInt32(
+            string value,
+            int fromBase = 10)
         {
-            return (int)NativeToInt64(value.Trim(), true, Int32.MinValue, Int32.MaxValue, fromBase);
+            return (int)NativeToInt64(
+                value,
+                true,
+                int.MinValue,
+                int.MaxValue,
+                fromBase,
+                true,
+                out _);
         }
 
         /// <summary>
@@ -168,9 +241,18 @@ namespace System
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         [CLSCompliant(false)]
-        public static uint ToUInt32(string value, int fromBase = 10)
+        public static uint ToUInt32(
+            string value,
+            int fromBase = 10)
         {
-            return (uint)NativeToInt64(value.Trim(), false, UInt32.MinValue, UInt32.MaxValue, fromBase);
+            return (uint)NativeToInt64(
+                value,
+                false,
+                uint.MinValue,
+                uint.MaxValue,
+                fromBase,
+                true,
+                out _);
         }
 
         /// <summary>
@@ -185,9 +267,18 @@ namespace System
         /// </remarks>
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
-        public static long ToInt64(string value, int fromBase = 10)
+        public static long ToInt64(
+            string value,
+            int fromBase = 10)
         {
-            return NativeToInt64(value.Trim(), true, Int64.MinValue, Int64.MaxValue, fromBase);
+            return NativeToInt64(
+                value,
+                true,
+                long.MinValue,
+                long.MaxValue,
+                fromBase,
+                true,
+                out _);
         }
 
         /// <summary>
@@ -203,9 +294,19 @@ namespace System
         /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
         /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         [CLSCompliant(false)]
-        public static ulong ToUInt64(string value, int fromBase = 10)
+        public static ulong ToUInt64(
+            string value,
+            int fromBase = 10)
         {
-            return (ulong)NativeToInt64(value.Trim(), false, 0, 0, fromBase);  // the interface use long for min/max, and uint64 is bigger.  Setting min/max to 0/0 will cause the native code to calculate the largest value and return it as Int64 which when cast to UInt64 returns the larger numbers that a UInt64 can reach
+            // the interface use long for min/max, and uint64 is bigger. Setting min/max to 0/0 will cause the native code to calculate the largest value and return it as Int64 which when cast to UInt64 returns the larger numbers that a UInt64 can reach
+            return (ulong)NativeToInt64(
+                value,
+                false,
+                0,
+                0,
+                fromBase,
+                true,
+                out _);  
         }
 
         /// <summary>
@@ -215,7 +316,10 @@ namespace System
         /// <returns>A double-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         public static double ToDouble(string value)
         {
-            return NativeToDouble(value.Trim());
+            return NativeToDouble(
+                value,
+                true,
+                out _);
         }
 
         /// <summary>
@@ -225,7 +329,10 @@ namespace System
         /// <returns>A single-precision floating-point number that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
         public static float ToSingle(string value)
         {
-            return (float)NativeToDouble(value.Trim());
+            return (float)NativeToDouble(
+                value,
+                true,
+                out _);
         }
 
         /// <summary>

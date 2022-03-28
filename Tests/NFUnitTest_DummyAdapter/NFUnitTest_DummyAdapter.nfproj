@@ -4,7 +4,7 @@
     <ProjectCapability Include="TestContainer" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
+    <NanoFrameworkProjectSystemPath>$(MSBuildExtensionsPath)\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props')" />
   <PropertyGroup>
@@ -35,25 +35,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.10.5.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\..\packages\nanoFramework.CoreLibrary.1.10.5-preview.10\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.11.7.2, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\..\packages\nanoFramework.CoreLibrary.1.11.7\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.TestFramework, Version=1.0.157.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.157\lib\nanoFramework.TestFramework.dll</HintPath>
+    <Reference Include="nanoFramework.TestFramework, Version=1.0.170.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.170\lib\nanoFramework.TestFramework.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.UnitTestLauncher, Version=0.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.157\lib\nanoFramework.UnitTestLauncher.exe</HintPath>
+      <HintPath>..\..\packages\nanoFramework.TestFramework.1.0.170\lib\nanoFramework.UnitTestLauncher.exe</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <!-- MANUAL UPDATE HERE -->
-  <Import Project="..\..\packages\nanoFramework.TestFramework.1.0.157\build\nanoFramework.TestFramework.targets" Condition="Exists('..\..\packages\nanoFramework.TestFramework.1.0.157\build\nanoFramework.TestFramework.targets')" />
+  <Import Project="..\..\packages\nanoFramework.TestFramework.1.0.170\build\nanoFramework.TestFramework.targets" Condition="Exists('..\..\packages\nanoFramework.TestFramework.1.0.170\build\nanoFramework.TestFramework.targets')" />
   <ProjectExtensions>
     <ProjectCapabilities>
       <ProjectConfigurationsDeclaredAsItems />
@@ -63,6 +63,6 @@
     <PropertyGroup>
       <WarningText>Update the Import path in nfproj to the correct nanoFramework.TestFramework NuGet package folder.</WarningText>
     </PropertyGroup>
-    <Warning Condition="!Exists('..\..\packages\nanoFramework.TestFramework.1.0.157\build\nanoFramework.TestFramework.targets')" Text="'$(WarningText)'" />
+    <Warning Condition="!Exists('..\..\packages\nanoFramework.TestFramework.1.0.170\build\nanoFramework.TestFramework.targets')" Text="'$(WarningText)'" />
   </Target>
 </Project>

@@ -123,13 +123,10 @@ namespace System
         /// </summary>
         /// <param name="s">A string that contains a number to convert. </param>
         /// <returns>A single-precision floating-point number equivalent to the numeric value or symbol specified in <code>s</code>.</returns>
-        /// <exception cref="System.ArgumentNullException"></exception>
+        /// <exception cref="ArgumentNullException"><paramref name="s"/> is <see langword="null"/>.</exception>
         public static float Parse(string s)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (s == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-
+            // check for null string is carried out in native code
             return Convert.ToSingle(s);
         }
 
@@ -169,25 +166,26 @@ namespace System
         /// Converts the string representation of a number to its single-precision floating-point number equivalent. A return value indicates whether the conversion succeeded or failed.
         /// </summary>
         /// <param name="s">A string containing a number to convert. </param>
-        /// <param name="result">When this method returns, contains single-precision floating-point number equivalent to the numeric value or symbol contained in s, if the conversion succeeded, or zero if the conversion failed. The conversion fails if the s parameter is <see langword="null"/> or Empty, is not a number in a valid format, or represents a number less than <see cref="MinValue"/> or greater than <see cref="MaxValue"/>. This parameter is passed uninitialized; any value originally supplied in result will be overwritten.</param>
+        /// <param name="result">When this method returns, contains single-precision floating-point number equivalent to the numeric value or symbol contained in <paramref name="s"/>, if the conversion succeeded, or zero if the conversion failed. The conversion fails if the <paramref name="s"/> parameter is <see langword="null"/> or <see cref="string.Empty"/>, is not a number in a valid format, or represents a number less than <see cref="MinValue"/> or greater than <see cref="MaxValue"/>. This parameter is passed uninitialized; any value originally supplied in result will be overwritten.</param>
         /// <returns><see langword="true"/> if s was converted successfully; otherwise, <see langword="false"/>.</returns>
-        public static bool TryParse(string s, out float result)
+        /// <remarks>
+        /// <para>
+        /// Values that are too large to represent are rounded to <see cref="PositiveInfinity"/> or <see cref="NegativeInfinity"/> as required by the IEEE 754 specification.
+        /// </para>
+        /// <para>
+        /// This overload differs from the <see cref="Parse"/> method by returning a <see cref="bool"/> value that indicates whether the parse operation succeeded instead of returning the parsed numeric value. It eliminates the need to use exception handling to test for a <see cref="FormatException"/> in the event that s is invalid and cannot be successfully parsed.
+        /// </para>
+        /// </remarks>
+        public static bool TryParse(
+            string s,
+            out float result)
         {
-            result = 0.0f;
+            result = (float)Convert.NativeToDouble(
+                s,
+                false,
+                out bool success);
 
-            if (s == null) return false;
-
-            try
-            {
-                result = Convert.ToSingle(s);
-                return true;
-            }
-            catch
-            {
-                result = 0.0f;
-            }
-
-            return false;
+            return success;
         }
     }
 }

@@ -4,7 +4,7 @@
     <ProjectCapability Include="TestContainer" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
+    <NanoFrameworkProjectSystemPath>$(MSBuildExtensionsPath)\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props')" />
   <PropertyGroup>
@@ -27,6 +27,17 @@
     <RunSettingsFilePath>$(MSBuildProjectDirectory)\nano.runsettings</RunSettingsFilePath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="UnitTestUInt64.cs" />
+    <Compile Include="UnitTestUInt32.cs" />
+    <Compile Include="UnitTestSingle.cs" />
+    <Compile Include="UnitTestSByte.cs" />
+    <Compile Include="UnitTestInt64.cs" />
+    <Compile Include="UnitTestInt32.cs" />
+    <Compile Include="UnitTestUInt16.cs" />
+    <Compile Include="UnitTestInt16.cs" />
+    <Compile Include="UnitTestDouble.cs" />
+    <Compile Include="UnitTestChar.cs" />
+    <Compile Include="UnitTestByte.cs" />
     <Compile Include="UnitTestDateTime.cs" />
     <Compile Include="UnitTestGCTest.cs" />
     <Compile Include="UnitTestGuid.cs" />
@@ -37,6 +48,7 @@
     <Compile Include="UnitTestReflectionMemberTest.cs" />
     <Compile Include="UnitTestReflectionTypeTest.cs" />
     <Compile Include="UnitTestStringTests.cs" />
+    <Compile Include="UnitTestBoolean.cs" />
     <Compile Include="UnitTestTimeSpan.cs" />
     <Compile Include="UnitTestTypeTests.cs" />
     <Compile Include="UnitTestWeakReferenceTests.cs" />
@@ -46,9 +58,12 @@
     <ProjectReference Include="..\TestFramework\TestFramework.nfproj" />
     <ProjectReference Include="..\UnitTestLauncher\UnitTestLauncher.nfproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="nano.runsettings" />
+  </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <!-- MANUAL UPDATE HERE -->
-  <Import Project="..\..\packages\nanoFramework.TestFramework.1.0.157\build\nanoFramework.TestFramework.targets" Condition="Exists('..\..\packages\nanoFramework.TestFramework.1.0.157\build\nanoFramework.TestFramework.targets')" />
+  <Import Project="..\..\packages\nanoFramework.TestFramework.1.0.170\build\nanoFramework.TestFramework.targets" Condition="Exists('..\..\packages\nanoFramework.TestFramework.1.0.170\build\nanoFramework.TestFramework.targets')" />
   <ProjectExtensions>
     <ProjectCapabilities>
       <ProjectConfigurationsDeclaredAsItems />
@@ -58,6 +73,6 @@
     <PropertyGroup>
       <WarningText>Update the Import path in nfproj to the correct nanoFramework.TestFramework NuGet package folder.</WarningText>
     </PropertyGroup>
-    <Warning Condition="!Exists('..\..\packages\nanoFramework.TestFramework.1.0.157\build\nanoFramework.TestFramework.targets')" Text="'$(WarningText)'" />
+    <Warning Condition="!Exists('..\..\packages\nanoFramework.TestFramework.1.0.170\build\nanoFramework.TestFramework.targets')" Text="'$(WarningText)'" />
   </Target>
 </Project>

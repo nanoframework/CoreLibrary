@@ -122,8 +122,6 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\InvalidCastException.cs" Link="System\InvalidCastException.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\InvalidOperationException.cs" Link="System\InvalidOperationException.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\IO\IOException.cs" Link="System\IO\IOException.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\SeekOrigin.cs" Link="System\IO\SeekOrigin.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\IO\Stream.cs" Link="System\IO\Stream.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\MarshalByRefObject.cs" Link="System\MarshalByRefObject.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Math.cs" Link="System\Math.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\MulticastDelegate.cs" Link="System\MulticastDelegate.cs" />
@@ -137,6 +135,9 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\ObsoleteAttribute.cs" Link="System\ObsoleteAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\OutOfMemoryException.cs" Link="System\OutOfMemoryException.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\ParamArrayAttribute.cs" Link="System\ParamArrayAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\PlatformNotSupportedException.cs">
+      <Link>System\PlatformNotSupportedException.cs</Link>
+    </Compile>
     <Compile Include="..\nanoFramework.CoreLibrary\System\Random.cs" Link="System\Random.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\Assembly.cs" Link="System\Reflection\Assembly.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\AssemblyAttributes.cs" Link="System\Reflection\AssemblyAttributes.cs" />

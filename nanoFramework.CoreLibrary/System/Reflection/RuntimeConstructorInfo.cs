@@ -9,10 +9,15 @@
 namespace System.Reflection
 {
     using System;
+    using System.Runtime.CompilerServices;
 
     [Serializable]
     internal sealed class RuntimeConstructorInfo : ConstructorInfo
     {
+        public override ParameterInfo[] GetParameters()
+        {
+            return GetParametersNative();
+        }
     }
 }
 

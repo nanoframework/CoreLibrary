@@ -253,7 +253,10 @@ namespace NFUnitTestArithmetic
                 && (numType == NumType.IntOnly || numType == NumType.All)
                 )
             {
-                CheckValue(SByte.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.SByte, rowData);
+                CheckValue(sbyte.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.SByte, rowData);
+
+                Assert.True(sbyte.TryParse(valueStr, out sbyte result), $"TryParse failed for sbyte {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.SByte, rowData);
             }
 
             if (value <= Int16.MaxValue
@@ -261,7 +264,10 @@ namespace NFUnitTestArithmetic
                 && (numType == NumType.IntOnly || numType == NumType.All)
                 )
             {
-                CheckValue(Int16.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int16, rowData);
+                CheckValue(short.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int16, rowData);
+
+                Assert.True(short.TryParse(valueStr, out short result), $"TryParse failed for short {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int16, rowData);
             }
 
             if (value <= Int32.MaxValue
@@ -269,7 +275,10 @@ namespace NFUnitTestArithmetic
                 && (numType == NumType.IntOnly || numType == NumType.All)
                 )
             {
-                CheckValue(Int32.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int32, rowData);
+                CheckValue(int.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int32, rowData);
+
+                Assert.True(int.TryParse(valueStr, out int result), $"TryParse failed for int {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int32, rowData);
             }
 
             if (value <= Int64.MaxValue
@@ -277,39 +286,54 @@ namespace NFUnitTestArithmetic
                 && (numType == NumType.IntOnly || numType == NumType.All)
                 )
             {
-                CheckValue(Int64.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int64, rowData);
+                CheckValue(long.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int64, rowData);
+
+                Assert.True(long.TryParse(valueStr, out long result), $"TryParse failed for long {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int64, rowData);
             }
 
             if (value <= Byte.MaxValue
                 && value >= Byte.MinValue
                 && (numType == NumType.IntOnly || numType == NumType.All)
-                && isNegative == false)
+                && !isNegative)
             {
-                CheckValue(Byte.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Byte, rowData);
+                CheckValue(byte.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Byte, rowData);
+
+                Assert.True(byte.TryParse(valueStr, out byte result), $"TryParse failed for byte {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Byte, rowData);
             }
 
             if (value <= UInt16.MaxValue
                 && value >= UInt16.MinValue
                 && (numType == NumType.IntOnly || numType == NumType.All)
-                && isNegative == false)
+                && !isNegative)
             {
-                CheckValue(UInt16.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt16, rowData);
+                CheckValue(ushort.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt16, rowData);
+                
+                Assert.True(ushort.TryParse(valueStr, out ushort result), $"TryParse failed for ushort {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt16, rowData);
             }
 
             if (value <= UInt32.MaxValue
                 && value >= UInt32.MinValue
                 && (numType == NumType.IntOnly || numType == NumType.All)
-                && isNegative == false)
+                && !isNegative)
             {
-                CheckValue(UInt32.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt32, rowData);
+                CheckValue(uint.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt32, rowData);
+
+                Assert.True(uint.TryParse(valueStr, out uint result), $"TryParse failed for uint {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt32, rowData);
             }
 
             if (value <= UInt64.MaxValue
                 && value >= UInt64.MinValue
                 && (numType == NumType.IntOnly || numType == NumType.All)
-                && isNegative == false)
+                && !isNegative)
             {
-                CheckValue(UInt64.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt64, rowData);
+                CheckValue(ulong.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt64, rowData);
+
+                Assert.True(ulong.TryParse(valueStr, out ulong result), $"TryParse failed for ulong {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt64, rowData);
             }
 
             if (value <= Single.MaxValue
@@ -317,7 +341,10 @@ namespace NFUnitTestArithmetic
                 && (numType == NumType.FloatDoubleOnly || numType == NumType.All)
                 )
             {
-                CheckValue(Single.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Single, rowData);
+                CheckValue(float.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Single, rowData);
+
+                Assert.True(float.TryParse(valueStr, out float result), $"TryParse failed for float {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Single, rowData);
             }
 
             if (value <= Double.MaxValue
@@ -325,10 +352,11 @@ namespace NFUnitTestArithmetic
                 && (numType == NumType.FloatDoubleOnly || numType == NumType.All)
                 )
             {
-                CheckValue(Double.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Double, rowData);
+                CheckValue(double.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Double, rowData);
+
+                Assert.True(double.TryParse(valueStr, out double result), $"TryParse failed for double {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Double, rowData);
             }
-
-
         }
 
         private void CheckValue(object value, string valueStr, string formatString, string expectedResult, SampleDisplay.ColumnType columnType, SampleDisplay.RowData rowData)
