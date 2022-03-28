@@ -1,5 +1,88 @@
 # Changelog
 
+## [v1.12.0-preview.19](https://github.com/nanoframework/CoreLibrary/tree/v1.12.0-preview.19) (2022-03-17)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.12.0-preview.18...v1.12.0-preview.19)
+
+**Fixed bugs:**
+
+- Fix SpanByte for edge cases [\#182](https://github.com/nanoframework/CoreLibrary/pull/182)
+
+## [v1.12.0-preview.18](https://github.com/nanoframework/CoreLibrary/tree/v1.12.0-preview.18) (2022-03-14)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.12.0-preview.16...v1.12.0-preview.18)
+
+**Implemented enhancements:**
+
+- Add support for multi parameter constructors in attributes [\#177](https://github.com/nanoframework/CoreLibrary/pull/177)
+
+## [v1.12.0-preview.16](https://github.com/nanoframework/CoreLibrary/tree/v1.12.0-preview.16) (2022-03-13)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.12.0-preview.15...v1.12.0-preview.16)
+
+**Implemented enhancements:**
+
+- Rework SpanByte [\#178](https://github.com/nanoframework/CoreLibrary/pull/178)
+
+## [v1.12.0-preview.15](https://github.com/nanoframework/CoreLibrary/tree/v1.12.0-preview.15) (2022-03-13)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.12.0-preview.9...v1.12.0-preview.15)
+
+**Documentation and other chores:**
+
+- Fix Thread.cs comment [\#181](https://github.com/nanoframework/CoreLibrary/pull/181)
+- Fix RuntimeFeature.cs comment [\#180](https://github.com/nanoframework/CoreLibrary/pull/180)
+- Fix Single.cs comment [\#179](https://github.com/nanoframework/CoreLibrary/pull/179)
+- Add unit tests for Equal and GetHashCode [\#176](https://github.com/nanoframework/CoreLibrary/pull/176)
+
+## [v1.12.0-preview.9](https://github.com/nanoframework/CoreLibrary/tree/v1.12.0-preview.9) (2022-02-17)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.12.0-preview.5...v1.12.0-preview.9)
+
+**Implemented enhancements:**
+
+- Add PlatformNotSupportedException exception [\#174](https://github.com/nanoframework/CoreLibrary/pull/174)
+
+**Documentation and other chores:**
+
+- Remove Stream class [\#175](https://github.com/nanoframework/CoreLibrary/pull/175)
+
+## [v1.12.0-preview.5](https://github.com/nanoframework/CoreLibrary/tree/v1.12.0-preview.5) (2022-01-28)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.12.0-preview.1...v1.12.0-preview.5)
+
+**Implemented enhancements:**
+
+- Improvements in Reflection [\#173](https://github.com/nanoframework/CoreLibrary/pull/173)
+
+**Fixed bugs:**
+
+- Fix float TryParse [\#172](https://github.com/nanoframework/CoreLibrary/pull/172)
+
+## [v1.12.0-preview.1](https://github.com/nanoframework/CoreLibrary/tree/v1.12.0-preview.1) (2022-01-20)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.11.7-preview.14...v1.12.0-preview.1)
+
+## [v1.11.7-preview.14](https://github.com/nanoframework/CoreLibrary/tree/v1.11.7-preview.14) (2022-01-20)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.11.7...v1.11.7-preview.14)
+
+**Implemented enhancements:**
+
+- Add DateTime.Parse, TryParse and Convert.ToDateTime [\#169](https://github.com/nanoframework/CoreLibrary/pull/169)
+- Add TryParse [\#168](https://github.com/nanoframework/CoreLibrary/pull/168)
+
+**Documentation and other chores:**
+
+- Fix Unit Tests for Parse [\#171](https://github.com/nanoframework/CoreLibrary/pull/171)
+- Fix Parse Unit Tests [\#170](https://github.com/nanoframework/CoreLibrary/pull/170)
+- Fix DateTime test [\#167](https://github.com/nanoframework/CoreLibrary/pull/167)
+- Add Unit Tests for Object and Equals [\#166](https://github.com/nanoframework/CoreLibrary/pull/166)
+
+## [v1.11.7](https://github.com/nanoframework/CoreLibrary/tree/v1.11.7) (2021-12-02)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.11.6...v1.11.7)
+
 ## [v1.11.6](https://github.com/nanoframework/CoreLibrary/tree/v1.11.6) (2021-12-02)
 
 [Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.11.6-preview.2...v1.11.6)
