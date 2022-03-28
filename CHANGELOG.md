@@ -1,8 +1,12 @@
 # Changelog
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/CoreLibrary/tree/HEAD)
+## [v1.11.6](https://github.com/nanoframework/CoreLibrary/tree/v1.11.6) (2021-12-02)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5...HEAD)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.11.6-preview.2...v1.11.6)
+
+## [v1.11.6-preview.2](https://github.com/nanoframework/CoreLibrary/tree/v1.11.6-preview.2) (2021-11-30)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.10.5...v1.11.6-preview.2)
 
 **Implemented enhancements:**
 
@@ -193,20 +197,20 @@
 
 ## [v1.9.1-preview.4](https://github.com/nanoframework/CoreLibrary/tree/v1.9.1-preview.4) (2020-10-20)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.11...v1.9.1-preview.4)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-alpha.11...v1.9.1-preview.4)
 
 **Implemented enhancements:**
 
 - Add Enum.HasFlag [\#112](https://github.com/nanoframework/CoreLibrary/pull/112)
 - Add Convert.ToBoolean\(byte\) [\#111](https://github.com/nanoframework/CoreLibrary/pull/111)
 
-## [v1.9.0-preview.11](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-preview.11) (2020-10-20)
-
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-alpha.11...v1.9.0-preview.11)
-
 ## [v1.9.0-alpha.11](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-alpha.11) (2020-10-20)
 
-[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.5...v1.9.0-alpha.11)
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.11...v1.9.0-alpha.11)
+
+## [v1.9.0-preview.11](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-preview.11) (2020-10-20)
+
+[Full Changelog](https://github.com/nanoframework/CoreLibrary/compare/v1.9.0-preview.5...v1.9.0-preview.11)
 
 ## [v1.9.0-preview.5](https://github.com/nanoframework/CoreLibrary/tree/v1.9.0-preview.5) (2020-09-30)
 
