@@ -61,17 +61,26 @@ namespace System.Diagnostics
         /// </summary>
         /// <param name="message">A message to write.</param>
         /// <remarks>
-        /// In nanoFramework implementation the message is output to Visual Studio debugger window.
+        /// In .NET nanoFramework implementation the message is output to Visual Studio debugger window.
         /// </remarks>
         [Conditional("DEBUG")]
         public static void Write(string message) => WriteLineNative(message, false);
+
+        /// <summary>
+        /// Writes the current line terminator to the standard output stream.
+        /// </summary>
+        /// <remarks>
+        /// In .NET nanoFramework implementation the message is output to Visual Studio debugger window.
+        /// </remarks>
+        [Conditional("DEBUG")]
+        public static void WriteLine() => WriteLineNative(string.Empty, true);
 
         /// <summary>
         /// Writes a message followed by a line terminator to the trace listeners in the Listeners collection.
         /// </summary>
         /// <param name="message">A message to write.</param>
         /// <remarks>
-        /// In nanoFramework implementation the message is output to Visual Studio debugger window.
+        /// In .NET nanoFramework implementation the message is output to Visual Studio debugger window.
         /// </remarks>
         [Conditional("DEBUG")]
         public static void WriteLine(string message) => WriteLineNative(message, true);
