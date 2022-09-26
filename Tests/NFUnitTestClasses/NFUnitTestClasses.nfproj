@@ -23,9 +23,6 @@
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
-  <PropertyGroup>
-    <RunSettingsFilePath>$(MSBuildProjectDirectory)\nano.runsettings</RunSettingsFilePath>
-  </PropertyGroup>
   <ItemGroup>
     <Compile Include="UnitTestConstructorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -45,9 +42,6 @@
     <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />
     <ProjectReference Include="..\TestFramework\TestFramework.nfproj" />
     <ProjectReference Include="..\UnitTestLauncher\UnitTestLauncher.nfproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="nano.runsettings" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <!-- MANUAL UPDATE HERE -->

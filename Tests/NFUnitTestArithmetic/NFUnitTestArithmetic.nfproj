@@ -23,9 +23,6 @@
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
-  <PropertyGroup>
-    <RunSettingsFilePath>$(MSBuildProjectDirectory)\nano.runsettings</RunSettingsFilePath>
-  </PropertyGroup>
   <ItemGroup>
     <Compile Include="UnitTestFormat.cs" />
     <Compile Include="UnitTestArithmeticTest1.cs" />
@@ -33,9 +30,6 @@
     <Compile Include="UnitTestArithmeticTest2.cs" />
     <Compile Include="UnitTestExpressionTests.cs" />
     <Compile Include="UnitTestOtherArithmeticTests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="nano.runsettings" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />
