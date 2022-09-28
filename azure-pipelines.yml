@@ -61,7 +61,7 @@ jobs:
     parameters:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
       runUnitTests: true
-      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTest_DummyAdapter\nano.runsettings'
+      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
 
   # rebuild CoreLibrary project to get the assembly checksum
   - task: MSBuild@1
