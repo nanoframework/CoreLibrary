@@ -178,6 +178,21 @@ namespace NFUnitTestStruct
             Assert.True(StructsTestClass_55.testMethod());
         }
 
+        [TestMethod]
+        public void ValueTest_StructEquals_01()
+        {
+            AStruct s1 = new AStruct() { a = 1 };
+            AStruct s2 = new AStruct() { a = 2 };
+
+            Assert.True(s1.Equals(s1), "Comparing struct failed: s1.Equals(s1)");
+            Assert.False(s1.Equals(s2), "Comparing struct failed: s1.Equals(s2)");
+            Assert.True(s1.a.Equals(s1.a), "Comparing struct failed: s1.a.Equals(s1.a)");
+            Assert.False(s1.a.Equals(s2.a), "Comparing struct failed: s1.a.Equals(s2.a)");
+            // TODO
+            // these are failing: need to fix the comparer at CLR
+            //Assert.False(s1.Equals(null), "Comparing struct failed: s1.Equals(null)");
+            //Assert.False(s1.Equals(null), "Comparing struct failed: s1.Equals(null)");
+        }
 
         //Compiled Test Cases 
         class StructsTestClass_01_Notes
@@ -1031,6 +1046,9 @@ namespace NFUnitTestStruct
             }
         }
 
-
+        public struct AStruct
+        {
+            public int a { get; set; }
+        }
     }
 }
