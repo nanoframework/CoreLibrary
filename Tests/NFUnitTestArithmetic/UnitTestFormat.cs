@@ -38,33 +38,43 @@ namespace NFUnitTestArithmetic
         }
 
         [TestMethod]
-        public void StringFormat()
+        public void StringFormat_00()
         {
             // Test a null string in String.Format - should be treated like an empty string.
             string nullArg = null;
             Assert.Equal(string.Format("Value is {0}", nullArg), "Value is ", "");
+        }
 
+        [TestMethod]
+        public void StringFormat_01()
+        {
             // catch an exception if the format string is null
             string nullFormat = null;
             Assert.Throws(typeof(NullReferenceException), () => { string.Format(nullFormat, 12345.67); });
-
-            // Test alignment operator which is the "," and a number.  Negative is right aligned, positive left aligned 
-
-            Assert.Equal(string.Format("Left align in 10 chars: {0,-10:N2}: and then more", 1234.5641), "Left align in 10 chars: 1,234.56  : and then more");
-            Assert.Equal(string.Format("Right align in 10 chars: {0,10:N2}: and then more", 1234.5641), "Right align in 10 chars:   1,234.56: and then more");
-
-            // invalid alignment cases
-
-            Assert.Throws(typeof(ArgumentException), () => { string.Format("{0,}", 12345.67); }, "Should throw with error message: Format error: empty alignment, column 3");
-            Assert.Throws(typeof(ArgumentException), () => { string.Format("{0,a10}", 12345.67); }, "Should throw with error message: Format error: wrong symbol at alignment, column 3");
-            Assert.Throws(typeof(ArgumentException), () => { string.Format("{0,-a10}", 12345.67); }, "Should throw with error message: Format error: wrong symbol at alignment, column 4");
-            Assert.Throws(typeof(ArgumentException), () => { string.Format("{a}", 12345.67); }, "Should throw with error message: Format error: wrong symbol at {}, column 1");
-            Assert.Throws(typeof(ArgumentException), () => { string.Format("{0:}", 12345.67); }, "Should throw with error message: Format error: empty format after ':', column 3");
-            Assert.Throws(typeof(ArgumentException), () => { string.Format("{0", 12345.67); }, "Should throw with error message: Format error: no closed brace, column 2");
-
         }
 
+        [TestMethod]
+        [DataRow("Left align in 10 chars: {0,-10:N2}: and then more", 1234.5641, "Left align in 10 chars: 1,234.56  : and then more")]
+        [DataRow("Right align in 10 chars: {0,10:N2}: and then more", 1234.5641, "Right align in 10 chars:   1,234.56: and then more")]
+        public void StringFormat_02(string formatString, double value, string outcomeMessage)
+        {
+            // Test alignment operator which is the "," and a number.  Negative is right aligned, positive left aligned 
+            Assert.Equal(string.Format(formatString, value), outcomeMessage);
+        }
 
+        [TestMethod]
+        [DataRow("{0,}", 12345.67, "Should throw with error message: Format error: empty alignment, column 3")]
+        [DataRow("{0,a10}", 12345.67, "Should throw with error message: Format error: wrong symbol at alignment, column 3")]
+        [DataRow("{0, -a10}", 12345.67, "Should throw with error message: Format error: wrong symbol at alignment, column 4")]
+        [DataRow("{a}", 12345.67, "Should throw with error message: Format error: wrong symbol at {}, column 1")]
+        [DataRow("{0:}", 12345.67, "Should throw with error message: Format error: empty format after ':', column 3")]
+        [DataRow("{0", 12345.67, "Should throw with error message: Format error: no closed brace, column 2")]
+        public void StringFormat_03(string formatString, double value, string outcomeMessage)
+        {
+            OutputHelper.WriteLine("formatString is" + formatString);
+            // invalid alignment cases
+            Assert.Throws(typeof(ArgumentException), () => { string.Format(formatString, value); }, outcomeMessage);
+        }
 
         [TestMethod]
         // the D format can only be used with integers (no double or floats)
