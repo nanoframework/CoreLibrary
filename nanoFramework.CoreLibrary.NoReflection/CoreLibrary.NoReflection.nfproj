@@ -397,6 +397,7 @@
   <ItemGroup>
     <None Include="..\nanoFramework.CoreLibrary\key.snk" />
     <None Include="packages.config" />
+    <None Include="packages.lock.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="System\" />
