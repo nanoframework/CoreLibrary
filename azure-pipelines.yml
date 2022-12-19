@@ -62,6 +62,7 @@ jobs:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
       runUnitTests: true
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
+      skipNuGetCache: true
 
   # rebuild CoreLibrary project to get the assembly checksum
   - task: MSBuild@1

@@ -400,13 +400,13 @@ namespace NFUnitTestSystemLib
 
             double[] _double = new double[] {
                 0,
+                double.Parse("-0"),
+                double.Parse("+0"),
+                0,
+                double.Parse("-0"),
                 0,
                 0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                double.Parse("-0"),
                 123,
                 123,
                 123,
@@ -434,54 +434,54 @@ namespace NFUnitTestSystemLib
             {
                 OutputHelper.WriteLine($"Parsing {strArr[i]} expecting: {_double[i]}");
 
-                Assert.Equal(double.Parse(strArr[i]), _double[i], $"Failed while parsing string: {strArr[i]} expecting: {_double[i]}");
+                Assert.AreEqual(double.Parse(strArr[i]), _double[i], $"Failed while parsing string: {strArr[i]} expecting: {_double[i]}");
 
-                Assert.True(double.TryParse(strArr[i], out result), $"TryParse failed for {strArr[i]} expecting: {_double[i]}");
-                Assert.Equal(_double[i], result);
+                Assert.IsTrue(double.TryParse(strArr[i], out result), $"TryParse failed for {strArr[i]} expecting: {_double[i]}");
+                Assert.AreEqual(_double[i], result);
             }
 
             double d = double.Parse("-0.1");
-            Assert.Equal(d, -0.1);
+            Assert.AreEqual(d, -0.1);
 
-            Assert.True(double.TryParse("-0.1", out result), $"TryParse failed for -0.1 expecting: {d}");
-            Assert.Equal(-0.1, result);
+            Assert.IsTrue(double.TryParse("-0.1", out result), $"TryParse failed for -0.1 expecting: {d}");
+            Assert.AreEqual(-0.1, result);
 
             d = double.Parse("0.1");
-            Assert.Equal(d, 0.1);
+            Assert.AreEqual(d, 0.1);
 
-            Assert.True(double.TryParse("0.1", out result), $"TryParse failed for 0.1 expecting: {d}");
-            Assert.Equal(0.1, result);
+            Assert.IsTrue(double.TryParse("0.1", out result), $"TryParse failed for 0.1 expecting: {d}");
+            Assert.AreEqual(0.1, result);
 
             d = double.Parse(" -1.1");
-            Assert.Equal(d, -1.1);
+            Assert.AreEqual(d, -1.1);
 
-            Assert.True(double.TryParse(" -1.1", out result), $"TryParse failed for -1.1 expecting: {d}");
-            Assert.Equal(-1.1, result);
+            Assert.IsTrue(double.TryParse(" -1.1", out result), $"TryParse failed for -1.1 expecting: {d}");
+            Assert.AreEqual(-1.1, result);
 
             d = double.Parse(" -0.0001");
-            Assert.Equal(d, -0.0001);
+            Assert.AreEqual(d, -0.0001);
 
-            Assert.True(double.TryParse(" -0.0001", out result), $"TryParse failed for -0.0001 expecting: {d}");
-            Assert.Equal(-0.0001, result);
+            Assert.IsTrue(double.TryParse(" -0.0001", out result), $"TryParse failed for -0.0001 expecting: {d}");
+            Assert.AreEqual(-0.0001, result);
 
             d = double.Parse(" -10.0001");
-            Assert.Equal(d, -10.0001);
+            Assert.AreEqual(d, -10.0001);
 
-            Assert.True(double.TryParse(" -10.0001", out result), $"TryParse failed for -10.0001 expecting: {d}");
-            Assert.Equal(-10.0001, result);
+            Assert.IsTrue(double.TryParse(" -10.0001", out result), $"TryParse failed for -10.0001 expecting: {d}");
+            Assert.AreEqual(-10.0001, result);
 
             d = double.Parse("-0.01e-10");
-            Assert.Equal(d, -0.01e-10);
+            Assert.AreEqual(d, -0.01e-10);
 
-            Assert.True(double.TryParse("-0.01e-10", out result), $"TryParse failed for -0.01e-10 expecting: {d}");
-            Assert.Equal(-0.01e-10, result);
+            Assert.IsTrue(double.TryParse("-0.01e-10", out result), $"TryParse failed for -0.01e-10 expecting: {d}");
+            Assert.AreEqual(-0.01e-10, result);
 
             // can't use Min/MaxValue.ToString() because the fast float-to-string routine only works in the range 2^64 to 2^-64 (there-about).
             string t = "-1.7976931348623157E+308";  // double.MinValue
-            Assert.Equal(double.MinValue, double.Parse(t), "Testing double min value parse");
+            Assert.AreEqual(double.MinValue, double.Parse(t), "Testing double min value parse");
 
             t = "1.7976931348623157E+308";
-            Assert.Equal(double.MaxValue, double.Parse(t), "Testing double max value parse");
+            Assert.AreEqual(double.MaxValue, double.Parse(t), "Testing double max value parse");
         }
 
         [TestMethod]
@@ -569,13 +569,13 @@ namespace NFUnitTestSystemLib
 
             float[] _float = new float[] {
                 0,
+                float.Parse("-0"),
+                float.Parse("+0"),
+                0,
+                float.Parse("-0"),
                 0,
                 0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                float.Parse("-0"),
                 123,
                 123,
                 123,
@@ -603,23 +603,23 @@ namespace NFUnitTestSystemLib
             {
                 OutputHelper.WriteLine($"Parsing {strArr[i]} expecting: {_float[i]}");
 
-                Assert.Equal(float.Parse(strArr[i]), _float[i], $"Failed while parsing string: {strArr[i]} expecting: {_float[i]}");
+                Assert.AreEqual(float.Parse(strArr[i]), _float[i], $"Failed while parsing string: {strArr[i]} expecting: {_float[i]}");
 
-                Assert.True(float.TryParse(strArr[i], out result), $"TryParse failed for {strArr[i]} expecting: {_float[i]}");
-                Assert.Equal(_float[i], result);
+                Assert.IsTrue(float.TryParse(strArr[i], out result), $"TryParse failed for {strArr[i]} expecting: {_float[i]}");
+                Assert. Equal(_float[i], result);
             }
 
             float f = float.Parse("-0.1");
-            Assert.Equal(f, -0.1f);
+            Assert.AreEqual(f, -0.1f);
 
             Assert.True(float.TryParse("-0.1", out result), $"TryParse failed for -0.1 expecting: {f}");
-            Assert.Equal(-0.1f, result);
+            Assert. Equal(-0.1f, result);
 
             f = float.Parse("0.1");
-            Assert.Equal(f, 0.1f);
+            Assert.AreEqual(f, 0.1f);
 
-            Assert.True(float.TryParse("0.1", out result), $"TryParse failed for 0.1 expecting: {f}");
-            Assert.Equal(0.1f, result);
+            Assert.IsTrue(float.TryParse("0.1", out result), $"TryParse failed for 0.1 expecting: {f}");
+            Assert. Equal(0.1f, result);
 
             f = float.Parse(" -1.1");
             Assert.Equal(f, -1.1f);
@@ -628,29 +628,29 @@ namespace NFUnitTestSystemLib
             Assert.Equal(-1.1f, result);
 
             f = float.Parse(" -0.0001");
-            Assert.Equal(f, -0.0001f);
+            Assert.AreEqual(f, -0.0001f);
 
-            Assert.True(float.TryParse(" -0.0001", out result), $"TryParse failed for -0.0001 expecting: {f}");
-            Assert.Equal(-0.0001f, result);
+            Assert. True(float.TryParse(" -0.0001", out result), $"TryParse failed for -0.0001 expecting: {f}");
+            Assert. Equal(-0.0001f, result);
 
             f = float.Parse(" -10.0001");
             Assert.Equal(f, -10.0001f);
 
-            Assert.True(float.TryParse(" -10.0001", out result), $"TryParse failed for -10.0001 expecting: {f}");
-            Assert.Equal(-10.0001f, result);
+            Assert.IsTrue(float.TryParse(" -10.0001", out result), $"TryParse failed for -10.0001 expecting: {f}");
+            Assert. Equal(-10.0001f, result);
 
             f = float.Parse("-0.01e-10");
-            Assert.Equal(f, -0.01e-10f);
+            Assert.AreEqual(f, -0.01e-10f);
 
-            Assert.True(float.TryParse("-0.01e-10", out result), $"TryParse failed for -0.01e-10 expecting: {f}");
-            Assert.Equal(-0.01e-10f, result);
+            Assert. True(float.TryParse("-0.01e-10", out result), $"TryParse failed for -0.01e-10 expecting: {f}");
+            Assert. Equal(-0.01e-10f, result);
 
             // can't use Min/MaxValue.ToString() because the fast float-to-string routine only works in the range 2^64 to 2^-64 (there-about).
             string t = "-3.40282347E+38";  // float.MinValue
-            Assert.Equal(float.MinValue, float.Parse(t), "Testing float min value parse");
+            Assert.AreEqual(float.MinValue, float.Parse(t), "Testing float min value parse");
 
             t = "3.40282347E+38"; // float.MaxValue
-            Assert.Equal(float.MaxValue, float.Parse(t), "Testing float max value parse");
+            Assert. Equal(float.MaxValue, float.Parse(t), "Testing float max value parse");
         }
 
         [TestMethod]

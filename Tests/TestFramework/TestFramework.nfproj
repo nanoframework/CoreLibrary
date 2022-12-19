@@ -31,7 +31,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestExtensions.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestFramework.cs" />
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.cs" />
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\CollectionAssert.cs" />
     <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\OutputHelper.cs" />
   </ItemGroup>
   <ItemGroup>

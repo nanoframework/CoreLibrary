@@ -85,9 +85,12 @@ namespace NFUnitTestTypes
         public void ToArrayTest()
         {
             byte[] array = new byte[16] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F };
-            SpanByte span = new SpanByte(array);
+            
+            SpanByte span = new(array);
+            
             byte[] toArray = span.ToArray();
-            Assert.Equal(array, toArray, "Original array and SpanByte.ToArray should be the same");
+            
+            CollectionAssert.AreEqual(array, toArray, "Original array and SpanByte.ToArray should be the same");
         }
 
         [TestMethod]

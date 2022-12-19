@@ -145,9 +145,11 @@ namespace NFUnitTestConversions
 
             double value_dd = Convert.ToDouble(number);
 
-            Assert.Equal(value_dd, actualNumber);
-            Assert.Equal(0, Convert.ToDouble("-0"), "The string -0 did not parse to 0 for Double");
+            Assert.AreEqual(value_dd, actualNumber);
 
+            // need to use this hack to be able to compare negative zero
+            var negativeZero = Convert.ToDouble("-0");
+            Assert.AreEqual(negativeZero, Convert.ToDouble("-0"), "The string -0 did not parse to 0 for Double");
         }
 
         [TestMethod]
@@ -571,15 +573,15 @@ q6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj
                 inArray.Length,
                 Base64FormattingOptions.InsertLineBreaks);
 
-            Assert.Equal(base64string1, base64EncodedString_WithLineBreaks, "Converted Base64 string with line breaks is not correct.");
+            Assert.AreEqual(base64string1, base64EncodedString_WithLineBreaks, "Converted Base64 string with line breaks is not correct.");
 
             string base64string2 = Convert.ToBase64String(inArray);
 
-            Assert.Equal(base64string2, base64EncodedString_WithoutLineBreaks, "Converted Base64 string without line breaks is not correct.");
+            Assert.AreEqual(base64string2, base64EncodedString_WithoutLineBreaks, "Converted Base64 string without line breaks is not correct.");
 
             outArray = Convert.FromBase64String(base64string1);
 
-            Assert.Equal(inArray, outArray, "Convert back from Base64 encoded array is not equal");
+            CollectionAssert.AreEqual(inArray, outArray, "Convert back from Base64 encoded array is not equal");
         }
 
         #endregion
