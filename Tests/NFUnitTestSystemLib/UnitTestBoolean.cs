@@ -14,13 +14,13 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void TrueString_Get_ReturnsTrue()
         {
-            Assert.Equal("True", bool.TrueString);
+            Assert.AreEqual("True", bool.TrueString);
         }
 
         [TestMethod]
         public void FalseString_Get_ReturnsFalse()
         {
-            Assert.Equal("False", bool.FalseString);
+            Assert.AreEqual("False", bool.FalseString);
         }
 
         [TestMethod]
@@ -29,8 +29,8 @@ namespace NFUnitTestSystemLib
             bool _true = true;
             bool _false = false;
 
-            Assert.Equal(_true.GetHashCode(), 1);
-            Assert.Equal(_false.GetHashCode(), 0);
+            Assert.AreEqual(_true.GetHashCode(), 1);
+            Assert.AreEqual(_false.GetHashCode(), 0);
         }
     }
 }

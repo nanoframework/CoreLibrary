@@ -17,7 +17,7 @@ namespace NFUnitTestTypes
             OutputHelper.WriteLine("Test of Object constructor");
 
             object o = new();
-            Assert.NotNull(o, "failed to create an Object");
+            Assert.IsNotNull(o, "failed to create an Object");
         }
 
         [TestMethod]
@@ -28,14 +28,14 @@ namespace NFUnitTestTypes
             object objectX = new();
             object objectY = new();
 
-            Assert.True(objectX.Equals(objectX), "Object should equal itself");
-            Assert.True(!objectX.Equals(null), "object should not equal null");
-            Assert.True(!objectX.Equals(objectY), "Different objects should not equal 1");
-            Assert.True(!objectY.Equals(objectX), "Different objects should not equal 2");
+            Assert.IsTrue(objectX.Equals(objectX), "Object should equal itself");
+            Assert.IsTrue(!objectX.Equals(null), "object should not equal null");
+            Assert.IsTrue(!objectX.Equals(objectY), "Different objects should not equal 1");
+            Assert.IsTrue(!objectY.Equals(objectX), "Different objects should not equal 2");
 
             double doubleX = double.NaN;
             double doubleY = double.NaN;
-            Assert.True(((object)doubleX).Equals(doubleY), "NaNs should always equal each other");
+            Assert.IsTrue(((object)doubleX).Equals(doubleY), "NaNs should always equal each other");
         }
 
         [TestMethod]
@@ -46,17 +46,17 @@ namespace NFUnitTestTypes
             object objectX = new();
             object objectY = new();
 
-            Assert.True(Equals(objectX, objectX), "Object should equal itself");
-            Assert.True(!Equals(objectX, null), "object should not equal null");
-            Assert.True(!Equals(null, objectX), "null should not equal object");
-            Assert.True(!Equals(objectX, objectY), "Different objects should not equal 1");
-            Assert.True(!Equals(objectY, objectX), "Different objects should not equal 2");
-            Assert.True(Equals(null, null), "null should equal null");
+            Assert.IsTrue(Equals(objectX, objectX), "Object should equal itself");
+            Assert.IsTrue(!Equals(objectX, null), "object should not equal null");
+            Assert.IsTrue(!Equals(null, objectX), "null should not equal object");
+            Assert.IsTrue(!Equals(objectX, objectY), "Different objects should not equal 1");
+            Assert.IsTrue(!Equals(objectY, objectX), "Different objects should not equal 2");
+            Assert.IsTrue(Equals(null, null), "null should equal null");
 
 
             double doubleX = double.NaN;
             double doubleY = double.NaN;
-            Assert.True(Equals(doubleX, doubleY), "NaNs should always equal each other");
+            Assert.IsTrue(Equals(doubleX, doubleY), "NaNs should always equal each other");
         }
 
         [TestMethod]
@@ -65,7 +65,7 @@ namespace NFUnitTestTypes
             OutputHelper.WriteLine("Test Object HashCode");
 
             object objectX = new();
-            Assert.Equal(objectX.GetHashCode(), objectX.GetHashCode(), "Object's hash code should not change");
+            Assert.AreEqual(objectX.GetHashCode(), objectX.GetHashCode(), "Object's hash code should not change");
         }
 
         [TestMethod]
@@ -75,8 +75,8 @@ namespace NFUnitTestTypes
 
             object objectX = new();
 
-            Assert.NotNull(objectX.GetType(), "Should get a type for Object");
-            Assert.Equal(objectX.GetType().ToString(), "System.Object", "Wrong ToString from Object type");
+            Assert.IsNotNull(objectX.GetType(), "Should get a type for Object");
+            Assert.AreEqual(objectX.GetType().ToString(), "System.Object", "Wrong ToString from Object type");
         }
 
         [TestMethod]
@@ -87,12 +87,12 @@ namespace NFUnitTestTypes
             object objectX = new();
             object objectY = new();
 
-            Assert.True(ReferenceEquals(objectX, objectX), "Object should equal itself");
-            Assert.True(!ReferenceEquals(objectX, null), "object should not equal null");
-            Assert.True(!ReferenceEquals(null, objectX), "null should not equal object");
-            Assert.True(!ReferenceEquals(objectX, objectY), "Different objects should not equal 1");
-            Assert.True(!ReferenceEquals(objectY, objectX), "Different objects should not equal 2");
-            Assert.True(ReferenceEquals(null, null), "null should not equal null");
+            Assert.IsTrue(ReferenceEquals(objectX, objectX), "Object should equal itself");
+            Assert.IsTrue(!ReferenceEquals(objectX, null), "object should not equal null");
+            Assert.IsTrue(!ReferenceEquals(null, objectX), "null should not equal object");
+            Assert.IsTrue(!ReferenceEquals(objectX, objectY), "Different objects should not equal 1");
+            Assert.IsTrue(!ReferenceEquals(objectY, objectX), "Different objects should not equal 2");
+            Assert.IsTrue(ReferenceEquals(null, null), "null should not equal null");
         }
 
         [TestMethod]
@@ -103,7 +103,7 @@ namespace NFUnitTestTypes
             object objectX = new();
             object objectY = new();
 
-            Assert.Equal(objectX.ToString(), objectY.ToString(), "All Objects should have same string representation");
+            Assert.AreEqual(objectX.ToString(), objectY.ToString(), "All Objects should have same string representation");
         }
     }
 }

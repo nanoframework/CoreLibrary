@@ -96,7 +96,7 @@ namespace NFUnitTestSystemLib
         //    OutputHelper.WriteLine("GC took " + slept);
 
         //    m_Test1Result = m_hasFinalized2;
-        //    Assert.True(m_hasFinalized2);
+        //    Assert.IsTrue(m_hasFinalized2);
         //}
 
         //[TestMethod]
@@ -131,7 +131,7 @@ namespace NFUnitTestSystemLib
         //    }
         //    OutputHelper.WriteLine("GC took " + slept);
 
-        //    Assert.False(m_hasFinalized1);
+        //    Assert.IsFalse(m_hasFinalized1);
         //}
 
         //[TestMethod]
@@ -147,7 +147,7 @@ namespace NFUnitTestSystemLib
         //    ///
         //    OutputHelper.WriteLine("Tests WaitForPendingFinalizers, dependant on test 1");
         //    OutputHelper.WriteLine("will auto-fail if test 1 fails.");
-        //    Assert.True(m_Test1Result);
+        //    Assert.IsTrue(m_Test1Result);
 
         //    OutputHelper.WriteLine("Create a FinalizeObject.");
         //    FinalizeObject mfo = new FinalizeObject();
@@ -168,7 +168,7 @@ namespace NFUnitTestSystemLib
         //    GC.WaitForPendingFinalizers();
         //    System.GC.WaitForPendingFinalizers();
 
-        //    Assert.True(m_hasFinalized2);
+        //    Assert.IsTrue(m_hasFinalized2);
         //}
 
     }

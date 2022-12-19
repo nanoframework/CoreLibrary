@@ -28,11 +28,11 @@ namespace NFUnitTestSystemLib
             {
                 if (test.Obj is char)
                 {
-                    Assert.Equal(test.Expected, test.C.Equals((char)test.Obj));
-                    Assert.Equal(test.Expected, test.C.GetHashCode().Equals(test.Obj.GetHashCode()));
+                    Assert.AreEqual(test.Expected, test.C.Equals((char)test.Obj));
+                    Assert.AreEqual(test.Expected, test.C.GetHashCode().Equals(test.Obj.GetHashCode()));
                 }
 
-                Assert.Equal(test.Expected, test.C.Equals(test.Obj));
+                Assert.AreEqual(test.Expected, test.C.Equals(test.Obj));
             }
         }
 

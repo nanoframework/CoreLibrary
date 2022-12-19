@@ -54,13 +54,13 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Copy Constructor test");
             TimeSpan ts = new TimeSpan();
             OutputHelper.WriteLine(ts.ToString());
-            Assert.True(CCtorHelper(ref ts));
+            Assert.IsTrue(CCtorHelper(ref ts));
             ts = TimeSpan.MaxValue;
             ts = new TimeSpan();
             OutputHelper.WriteLine(ts.ToString());
-            Assert.True(CCtorHelper(ref ts));
+            Assert.IsTrue(CCtorHelper(ref ts));
             ts = TimeSpan.MinValue;
-            Assert.True(CCtorHelper(ref ts));
+            Assert.IsTrue(CCtorHelper(ref ts));
             int mxd = 24000;
             int mx = 1000;
 
@@ -78,7 +78,7 @@ namespace NFUnitTestSystemLib
                 int ims = (random.Next(1) == 0 ? -1 : 1) *
                     random.Next(mx);
                 ts = new TimeSpan(id, ih, im, ise, ims);
-                Assert.True(CCtorHelper(ref ts));
+                Assert.IsTrue(CCtorHelper(ref ts));
             }
         }
 
@@ -100,11 +100,11 @@ namespace NFUnitTestSystemLib
             long milliseconds = (i64 - ts.Days * m_TicksPerDay - ts.Hours *
                 m_TicksPerHour - ts.Minutes * m_TicksPerMinute - ts.Seconds * m_TicksPerSecond) /
                 m_TicksPerMillisecond;
-            Assert.Equal(ts.Days, days);
-            Assert.Equal(ts.Hours, hours);
-            Assert.Equal(ts.Minutes, minutes);
-            Assert.Equal(ts.Seconds, seconds);
-            Assert.Equal(ts.Milliseconds, milliseconds);
+            Assert.AreEqual(ts.Days, days);
+            Assert.AreEqual(ts.Hours, hours);
+            Assert.AreEqual(ts.Minutes, minutes);
+            Assert.AreEqual(ts.Seconds, seconds);
+            Assert.AreEqual(ts.Milliseconds, milliseconds);
             OutputHelper.WriteLine(ts.ToString());
 
         }
@@ -179,13 +179,13 @@ namespace NFUnitTestSystemLib
                     throw new Exception("Invalid parameter!");
                     break;
             }
-            Assert.Equal(ts.Days, i64 / m_TicksPerDay);
-            Assert.Equal(ts.Hours, (i64 - ts.Days * m_TicksPerDay) / m_TicksPerHour);
-            Assert.Equal(ts.Minutes, (i64 - ts.Days * m_TicksPerDay - ts.Hours *
+            Assert.AreEqual(ts.Days, i64 / m_TicksPerDay);
+            Assert.AreEqual(ts.Hours, (i64 - ts.Days * m_TicksPerDay) / m_TicksPerHour);
+            Assert.AreEqual(ts.Minutes, (i64 - ts.Days * m_TicksPerDay - ts.Hours *
                     m_TicksPerHour) / m_TicksPerMinute);
-            Assert.Equal(ts.Seconds, (i64 - ts.Days * m_TicksPerDay - ts.Hours *
+            Assert.AreEqual(ts.Seconds, (i64 - ts.Days * m_TicksPerDay - ts.Hours *
                     m_TicksPerHour - ts.Minutes * m_TicksPerMinute) / m_TicksPerSecond);
-            Assert.Equal(ts.Milliseconds, (i64 - ts.Days * m_TicksPerDay - ts.Hours *
+            Assert.AreEqual(ts.Milliseconds, (i64 - ts.Days * m_TicksPerDay - ts.Hours *
                     m_TicksPerHour - ts.Minutes * m_TicksPerMinute - ts.Seconds * m_TicksPerSecond) / m_TicksPerMillisecond);
 
             OutputHelper.WriteLine(ts.Days.ToString() + " : " +
@@ -292,11 +292,11 @@ namespace NFUnitTestSystemLib
             TimeSpan ts1 = new TimeSpan(day, hour, minute, second, msec);
 
             OutputHelper.WriteLine("Testing CompareTo");
-            Assert.Equal(-1, ts1.CompareTo(new TimeSpan(day + 1, hour, minute, second, msec)));
+            Assert.AreEqual(-1, ts1.CompareTo(new TimeSpan(day + 1, hour, minute, second, msec)));
             OutputHelper.WriteLine(ts1.CompareTo(new TimeSpan(day + 1, hour, minute, second, msec)).ToString());
-            Assert.Equal(1, ts1.CompareTo(new TimeSpan(day, hour - 1, minute, second, msec)));
+            Assert.AreEqual(1, ts1.CompareTo(new TimeSpan(day, hour - 1, minute, second, msec)));
             OutputHelper.WriteLine(ts1.CompareTo(new TimeSpan(day, hour - 1, minute, second, msec)).ToString());
-            Assert.Equal(0, ts1.CompareTo(new TimeSpan(day, hour, minute, second, msec)));
+            Assert.AreEqual(0, ts1.CompareTo(new TimeSpan(day, hour, minute, second, msec)));
             OutputHelper.WriteLine(ts1.CompareTo(new TimeSpan(day, hour, minute, second, msec)).ToString());
         }
 
@@ -321,7 +321,7 @@ namespace NFUnitTestSystemLib
                 TimeSpan ts02 = new TimeSpan(hours, minutes, seconds);
                 OutputHelper.WriteLine(ts01.GetHashCode().ToString() + " == " +
                     ts02.GetHashCode().ToString());
-                Assert.Equal(ts01.GetHashCode(), ts02.GetHashCode());
+                Assert.AreEqual(ts01.GetHashCode(), ts02.GetHashCode());
             }
 
             TimeSpan ts1 = new TimeSpan(1, 1, 1);
@@ -337,11 +337,11 @@ namespace NFUnitTestSystemLib
                     ts2.GetHashCode().ToString());
                 if (ts1 != ts2)
                 {
-                    Assert.NotEqual(ts1.GetHashCode(), ts2.GetHashCode());
+                    Assert.AreNotEqual(ts1.GetHashCode(), ts2.GetHashCode());
                 }
                 else
                 {
-                    Assert.Equal(ts1.GetHashCode(), ts2.GetHashCode());
+                    Assert.AreEqual(ts1.GetHashCode(), ts2.GetHashCode());
                 }
             }
         }
@@ -365,11 +365,11 @@ namespace NFUnitTestSystemLib
                 TimeSpan ts02 = new TimeSpan(hours, minutes, seconds);
                 OutputHelper.WriteLine(ts01.ToString() + " == " + ts02.ToString());
                 OutputHelper.WriteLine("Expected true");
-                Assert.True(ts01.Equals(ts02));
+                Assert.IsTrue(ts01.Equals(ts02));
                 TimeSpan ts03 = new TimeSpan(hours, minutes, seconds);
                 TimeSpan ts04 = new TimeSpan(hours + 1, minutes - 1, seconds + 1);
                 OutputHelper.WriteLine("Expected false");
-                Assert.False(ts03.Equals(ts04));
+                Assert.IsFalse(ts03.Equals(ts04));
             }
         }
 
@@ -393,7 +393,7 @@ namespace NFUnitTestSystemLib
                     (hours < 10 ? "0" : "") + hours.ToString() + ":" +
                     (minutes < 10 ? "0" : "") + minutes.ToString() + ":" +
                     (seconds < 10 ? "0" : "") + seconds.ToString();
-                Assert.Equal(str, ts01.ToString());
+                Assert.AreEqual(str, ts01.ToString());
                 OutputHelper.WriteLine(str + " == " + ts01.ToString());
             }
         }
@@ -430,48 +430,48 @@ namespace NFUnitTestSystemLib
                 int seconds = random.Next(30);
                 TimeSpan ts02 = new TimeSpan(hours, minutes, seconds);
                 TimeSpan ts03 = ts01.Add(ts02);
-                Assert.True(ts01 != ts03);
-                Assert.False(CompareTimeSpan(ts01, ts03));
-                Assert.True(CompareTimeSpan(ts03, ts01 + ts02));
-                Assert.True(ts03.Days == (ts01.Days + ts02.Days));
-                Assert.True(ts03.Hours == (ts01.Hours + hours));
-                Assert.True(ts03.Minutes == (ts01.Minutes + minutes));
-                Assert.True(ts03.Seconds == (ts01.Seconds + seconds));
-                Assert.True(ts03.Milliseconds == (ts01.Milliseconds + ts02.Milliseconds));
+                Assert.IsTrue(ts01 != ts03);
+                Assert.IsFalse(CompareTimeSpan(ts01, ts03));
+                Assert.IsTrue(CompareTimeSpan(ts03, ts01 + ts02));
+                Assert.IsTrue(ts03.Days == (ts01.Days + ts02.Days));
+                Assert.IsTrue(ts03.Hours == (ts01.Hours + hours));
+                Assert.IsTrue(ts03.Minutes == (ts01.Minutes + minutes));
+                Assert.IsTrue(ts03.Seconds == (ts01.Seconds + seconds));
+                Assert.IsTrue(ts03.Milliseconds == (ts01.Milliseconds + ts02.Milliseconds));
                 OutputHelper.WriteLine(b.ToString());
             }
             TimeSpan ts1 = new TimeSpan(2, 2, 2, 2, 2);
             TimeSpan ts2 = new TimeSpan(0, 0, 0, 0, 999);
             TimeSpan ts3 = ts1.Add(ts2);
-            Assert.Equal(ts3.Milliseconds, 1);
-            Assert.Equal(ts3.Seconds, 3);
-            Assert.Equal(ts3.Minutes, 2);
-            Assert.Equal(ts3.Hours, 2);
-            Assert.Equal(ts3.Days, 2);
+            Assert.AreEqual(ts3.Milliseconds, 1);
+            Assert.AreEqual(ts3.Seconds, 3);
+            Assert.AreEqual(ts3.Minutes, 2);
+            Assert.AreEqual(ts3.Hours, 2);
+            Assert.AreEqual(ts3.Days, 2);
 
             ts2 = new TimeSpan(0, 0, 0, 58, 0);
             ts3 = ts1.Add(ts2);
-            Assert.Equal(ts3.Milliseconds, 2);
-            Assert.Equal(ts3.Seconds, 0);
-            Assert.Equal(ts3.Minutes, 3);
-            Assert.Equal(ts3.Hours, 2);
-            Assert.Equal(ts3.Days, 2);
+            Assert.AreEqual(ts3.Milliseconds, 2);
+            Assert.AreEqual(ts3.Seconds, 0);
+            Assert.AreEqual(ts3.Minutes, 3);
+            Assert.AreEqual(ts3.Hours, 2);
+            Assert.AreEqual(ts3.Days, 2);
 
             ts2 = new TimeSpan(0, 0, 59, 0, 0);
             ts3 = ts1.Add(ts2);
-            Assert.Equal(ts3.Milliseconds, 2);
-            Assert.Equal(ts3.Seconds, 2);
-            Assert.Equal(ts3.Minutes, 1);
-            Assert.Equal(ts3.Hours, 3);
-            Assert.Equal(ts3.Days, 2);
+            Assert.AreEqual(ts3.Milliseconds, 2);
+            Assert.AreEqual(ts3.Seconds, 2);
+            Assert.AreEqual(ts3.Minutes, 1);
+            Assert.AreEqual(ts3.Hours, 3);
+            Assert.AreEqual(ts3.Days, 2);
 
             ts2 = new TimeSpan(0, 22, 0, 0, 0);
             ts3 = ts1.Add(ts2);
-            Assert.Equal(ts3.Milliseconds, 2);
-            Assert.Equal(ts3.Seconds, 2);
-            Assert.Equal(ts3.Minutes, 2);
-            Assert.Equal(ts3.Hours, 0);
-            Assert.Equal(ts3.Days, 3);
+            Assert.AreEqual(ts3.Milliseconds, 2);
+            Assert.AreEqual(ts3.Seconds, 2);
+            Assert.AreEqual(ts3.Minutes, 2);
+            Assert.AreEqual(ts3.Hours, 0);
+            Assert.AreEqual(ts3.Days, 3);
         }
 
         [TestMethod]
@@ -492,17 +492,17 @@ namespace NFUnitTestSystemLib
             int msec = random.Next(999);  //milliseconds
             TimeSpan ts1 = new TimeSpan(day, hour, minute, second, msec);
 
-            Assert.Equal(-1, TimeSpan.Compare(ts1, new TimeSpan
+            Assert.AreEqual(-1, TimeSpan.Compare(ts1, new TimeSpan
                 (day, hour, minute, second + 1, msec)));
             OutputHelper.WriteLine(TimeSpan.Compare(ts1, new TimeSpan
                 (day, hour, minute, second + 1, msec)).ToString());
 
-            Assert.Equal(1, TimeSpan.Compare(ts1, new TimeSpan
+            Assert.AreEqual(1, TimeSpan.Compare(ts1, new TimeSpan
                 (day, hour, minute, second, msec - 1)));
             OutputHelper.WriteLine(TimeSpan.Compare(ts1, new TimeSpan
                 (day, hour, minute, second, msec - 1)).ToString());
 
-            Assert.Equal(0, TimeSpan.Compare(ts1, new TimeSpan
+            Assert.AreEqual(0, TimeSpan.Compare(ts1, new TimeSpan
                 (day, hour, minute, second, msec)));
             OutputHelper.WriteLine(TimeSpan.Compare(ts1, new TimeSpan
                 (day, hour, minute, second, msec)).ToString());
@@ -524,9 +524,9 @@ namespace NFUnitTestSystemLib
                 int minutes = random.Next(59);
                 int seconds = random.Next(59);
                 TimeSpan ts = new TimeSpan(-hours, -minutes, -seconds);
-                Assert.True(ts.Duration() == new TimeSpan(hours, minutes, seconds));
+                Assert.IsTrue(ts.Duration() == new TimeSpan(hours, minutes, seconds));
                 ts = new TimeSpan(hours, minutes, seconds);
-                Assert.True(ts.Duration() == new TimeSpan(hours, minutes, seconds));
+                Assert.IsTrue(ts.Duration() == new TimeSpan(hours, minutes, seconds));
             }
         }
 
@@ -547,10 +547,10 @@ namespace NFUnitTestSystemLib
                 int seconds = random.Next(59);
                 TimeSpan tsN = new TimeSpan(-hours, -minutes, -seconds);
                 TimeSpan tsP = new TimeSpan(hours, minutes, seconds);
-                Assert.True(tsN.Negate() == tsP);
-                Assert.True(tsP.Negate() == tsN);
-                Assert.True(tsN.Negate().Negate() == tsN);
-                Assert.True(tsP.Negate().Negate() == tsP);
+                Assert.IsTrue(tsN.Negate() == tsP);
+                Assert.IsTrue(tsP.Negate() == tsN);
+                Assert.IsTrue(tsN.Negate().Negate() == tsN);
+                Assert.IsTrue(tsP.Negate().Negate() == tsP);
             }
         }
 
@@ -573,55 +573,55 @@ namespace NFUnitTestSystemLib
                 int seconds = random.Next(59);
                 TimeSpan ts02 = new TimeSpan(hours, minutes, seconds);
                 TimeSpan ts03 = ts01.Subtract(ts02);
-                Assert.True((ts01 != ts03) || (ts02.Ticks == 0));
-                Assert.False(CompareTimeSpan(ts01, ts03));
-                Assert.True(CompareTimeSpan(ts03, ts01 - ts02));
-                Assert.True(ts03.Days == (ts01.Days - ts02.Days));
-                Assert.True(ts03.Hours == (ts01.Hours - hours));
-                Assert.True(ts03.Minutes == (ts01.Minutes - minutes));
-                Assert.True(ts03.Seconds == (ts01.Seconds - seconds));
-                Assert.True(ts03.Milliseconds == (ts01.Milliseconds - ts02.Milliseconds));
+                Assert.IsTrue((ts01 != ts03) || (ts02.Ticks == 0));
+                Assert.IsFalse(CompareTimeSpan(ts01, ts03));
+                Assert.IsTrue(CompareTimeSpan(ts03, ts01 - ts02));
+                Assert.IsTrue(ts03.Days == (ts01.Days - ts02.Days));
+                Assert.IsTrue(ts03.Hours == (ts01.Hours - hours));
+                Assert.IsTrue(ts03.Minutes == (ts01.Minutes - minutes));
+                Assert.IsTrue(ts03.Seconds == (ts01.Seconds - seconds));
+                Assert.IsTrue(ts03.Milliseconds == (ts01.Milliseconds - ts02.Milliseconds));
             }
             TimeSpan ts1 = new TimeSpan(2, 2, 2, 2, 2);
             TimeSpan ts2 = new TimeSpan(0, 0, 0, 0, 3);
             TimeSpan ts3 = ts1.Subtract(ts2);
-            Assert.Equal(ts3.Milliseconds, 999);
-            Assert.Equal(ts3.Seconds, 1);
-            Assert.Equal(ts3.Minutes, 2);
-            Assert.Equal(ts3.Hours, 2);
-            Assert.Equal(ts3.Days, 2);
+            Assert.AreEqual(ts3.Milliseconds, 999);
+            Assert.AreEqual(ts3.Seconds, 1);
+            Assert.AreEqual(ts3.Minutes, 2);
+            Assert.AreEqual(ts3.Hours, 2);
+            Assert.AreEqual(ts3.Days, 2);
 
             ts2 = new TimeSpan(0, 0, 0, 3, 0);
             ts3 = ts1.Subtract(ts2);
-            Assert.Equal(ts3.Milliseconds, 2);
-            Assert.Equal(ts3.Seconds, 59);
-            Assert.Equal(ts3.Minutes, 1);
-            Assert.Equal(ts3.Hours, 2);
-            Assert.Equal(ts3.Days, 2);
+            Assert.AreEqual(ts3.Milliseconds, 2);
+            Assert.AreEqual(ts3.Seconds, 59);
+            Assert.AreEqual(ts3.Minutes, 1);
+            Assert.AreEqual(ts3.Hours, 2);
+            Assert.AreEqual(ts3.Days, 2);
 
             ts2 = new TimeSpan(0, 0, 3, 0, 0);
             ts3 = ts1.Subtract(ts2);
-            Assert.Equal(ts3.Milliseconds, 2);
-            Assert.Equal(ts3.Seconds, 2);
-            Assert.Equal(ts3.Minutes, 59);
-            Assert.Equal(ts3.Hours, 1);
-            Assert.Equal(ts3.Days, 2);
+            Assert.AreEqual(ts3.Milliseconds, 2);
+            Assert.AreEqual(ts3.Seconds, 2);
+            Assert.AreEqual(ts3.Minutes, 59);
+            Assert.AreEqual(ts3.Hours, 1);
+            Assert.AreEqual(ts3.Days, 2);
 
             ts2 = new TimeSpan(0, 3, 0, 0, 0);
             ts3 = ts1.Subtract(ts2);
-            Assert.Equal(ts3.Milliseconds, 2);
-            Assert.Equal(ts3.Seconds, 2);
-            Assert.Equal(ts3.Minutes, 2);
-            Assert.Equal(ts3.Hours, 23);
-            Assert.Equal(ts3.Days, 1);
+            Assert.AreEqual(ts3.Milliseconds, 2);
+            Assert.AreEqual(ts3.Seconds, 2);
+            Assert.AreEqual(ts3.Minutes, 2);
+            Assert.AreEqual(ts3.Hours, 23);
+            Assert.AreEqual(ts3.Days, 1);
 
             ts2 = new TimeSpan(3, 0, 0, 0, 0);
             ts3 = ts1.Subtract(ts2);
-            Assert.Equal(ts3.Milliseconds, -998);
-            Assert.Equal(ts3.Seconds, -57);
-            Assert.Equal(ts3.Minutes, -57);
-            Assert.Equal(ts3.Hours, -21);
-            Assert.Equal(ts3.Days, 0);
+            Assert.AreEqual(ts3.Milliseconds, -998);
+            Assert.AreEqual(ts3.Seconds, -57);
+            Assert.AreEqual(ts3.Minutes, -57);
+            Assert.AreEqual(ts3.Hours, -21);
+            Assert.AreEqual(ts3.Days, 0);
         }
 
         private void FromTicksHelper(int days, int hours, int mins, int secs, int ms)
@@ -636,23 +636,23 @@ namespace NFUnitTestSystemLib
 
             int dys = (int)(ticks / m_TicksPerDay);
             OutputHelper.WriteLine(dys.ToString());
-            Assert.Equal(ts.Days, dys);
+            Assert.AreEqual(ts.Days, dys);
 
             int hrs = (int)(ticks / m_TicksPerHour) % 24;
             OutputHelper.WriteLine(hrs.ToString());
-            Assert.Equal(ts.Hours, hrs);
+            Assert.AreEqual(ts.Hours, hrs);
 
             int mns = (int)(ticks / m_TicksPerMinute) % 60;
             OutputHelper.WriteLine(mns.ToString());
-            Assert.Equal(ts.Minutes, mns);
+            Assert.AreEqual(ts.Minutes, mns);
 
             int scs = (int)(ticks / m_TicksPerSecond) % 60;
             OutputHelper.WriteLine(scs.ToString());
-            Assert.Equal(ts.Seconds, scs);
+            Assert.AreEqual(ts.Seconds, scs);
 
             int mss = (int)ms % 1000;
             OutputHelper.WriteLine("MS: " + mss.ToString());
-            Assert.Equal(ts.Milliseconds, mss);
+            Assert.AreEqual(ts.Milliseconds, mss);
 
             OutputHelper.WriteLine("Days= " + days + " Hours= " + hours +
                 " Minutes= " + mins + " Secs= " + secs + " ms= " + ms);
@@ -698,19 +698,19 @@ namespace NFUnitTestSystemLib
             int m_s = (int)((ticks % m_TicksPerDay % m_TicksPerHour % m_TicksPerMinute
                 % m_TicksPerSecond) / m_TicksPerMillisecond);
 
-            Assert.Equal(nts.Days, (neg ? -d : +d));
+            Assert.AreEqual(nts.Days, (neg ? -d : +d));
             OutputHelper.WriteLine(nts.Days.ToString() + " == " + (neg ? -d : +d).ToString());
 
-            Assert.Equal(nts.Hours, (neg ? -h : +h));
+            Assert.AreEqual(nts.Hours, (neg ? -h : +h));
             OutputHelper.WriteLine(nts.Hours.ToString() + " == " + ((neg ? -h : +h)).ToString());
 
-            Assert.Equal(nts.Minutes, (neg ? -m : +m));
+            Assert.AreEqual(nts.Minutes, (neg ? -m : +m));
             OutputHelper.WriteLine(nts.Minutes.ToString() + " == " + ((neg ? -m : +m)).ToString());
 
-            Assert.Equal(nts.Seconds, (neg ? -s : +s));
+            Assert.AreEqual(nts.Seconds, (neg ? -s : +s));
             OutputHelper.WriteLine(nts.Seconds.ToString() + " == " + ((neg ? -s : +s)).ToString());
 
-            Assert.Equal(nts.Milliseconds, (neg ? -m_s : +m_s));
+            Assert.AreEqual(nts.Milliseconds, (neg ? -m_s : +m_s));
             OutputHelper.WriteLine(nts.Milliseconds.ToString() + " == " + ((neg ? -m_s : +m_s)).ToString());
 
             OutputHelper.WriteLine(ts.ToString());
@@ -771,19 +771,19 @@ namespace NFUnitTestSystemLib
             TimeSpan ts2 = new TimeSpan(days2, hours2, mins2, secs2, ms2);
             TimeSpan ts3 = (add ? (ts1 + ts2) : (ts1 - ts2));
 
-            Assert.Equal(ts3.Days, d1);
+            Assert.AreEqual(ts3.Days, d1);
             OutputHelper.WriteLine(ts3.Days.ToString() + " == " + d1.ToString());
 
-            Assert.Equal(ts3.Hours, h1);
+            Assert.AreEqual(ts3.Hours, h1);
             OutputHelper.WriteLine(ts3.Hours.ToString() + " == " + h1.ToString());
 
-            Assert.Equal(ts3.Minutes, m1);
+            Assert.AreEqual(ts3.Minutes, m1);
             OutputHelper.WriteLine(ts3.Minutes.ToString() + " == " + m1.ToString());
 
-            Assert.Equal(ts3.Seconds, s1);
+            Assert.AreEqual(ts3.Seconds, s1);
             OutputHelper.WriteLine(ts3.Seconds.ToString() + " == " + s1.ToString());
 
-            Assert.Equal(ts3.Milliseconds, m_s1);
+            Assert.AreEqual(ts3.Milliseconds, m_s1);
             OutputHelper.WriteLine(ts3.Milliseconds.ToString() + " == " + m_s1.ToString());
 
             OutputHelper.WriteLine(ts1.ToString());
@@ -875,7 +875,7 @@ namespace NFUnitTestSystemLib
 
             TimeSpan ts1 = new TimeSpan(days1, hours1, mins1, secs1, ms1);
             TimeSpan ts2 = new TimeSpan(days2, hours2, mins2, secs2, ms2);
-            Assert.True((ts1 == ts2) == expected);
+            Assert.IsTrue((ts1 == ts2) == expected);
         }
 
         [TestMethod]
@@ -915,7 +915,7 @@ namespace NFUnitTestSystemLib
         {
             TimeSpan ts1 = new TimeSpan(days1, hours1, mins1, secs1, ms1);
             TimeSpan ts2 = new TimeSpan(days2, hours2, mins2, secs2, ms2);
-            Assert.True((ts1 != ts2) == expected);
+            Assert.IsTrue((ts1 != ts2) == expected);
 
         }
 
@@ -999,17 +999,17 @@ namespace NFUnitTestSystemLib
                 int im = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
                 int ise = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
                 int ims = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims, false, 0));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id + 1, ih, im, ise, ims, true, 0));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih + 1, im, ise, ims, true, 0));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im + 1, ise, ims, true, 0));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise + 1, ims, true, 0));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims + 1, true, 0));
-                Assert.True(LTGTHelper(id + 1, ih, im, ise, ims, id, ih, im, ise, ims, false, 0));
-                Assert.True(LTGTHelper(id, ih + 1, im, ise, ims, id, ih, im, ise, ims, false, 0));
-                Assert.True(LTGTHelper(id, ih, im + 1, ise, ims, id, ih, im, ise, ims, false, 0));
-                Assert.True(LTGTHelper(id, ih, im, ise + 1, ims, id, ih, im, ise, ims, false, 0));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims + 1, id, ih, im, ise, ims, false, 0));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims, false, 0));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id + 1, ih, im, ise, ims, true, 0));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih + 1, im, ise, ims, true, 0));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im + 1, ise, ims, true, 0));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise + 1, ims, true, 0));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims + 1, true, 0));
+                Assert.IsTrue(LTGTHelper(id + 1, ih, im, ise, ims, id, ih, im, ise, ims, false, 0));
+                Assert.IsTrue(LTGTHelper(id, ih + 1, im, ise, ims, id, ih, im, ise, ims, false, 0));
+                Assert.IsTrue(LTGTHelper(id, ih, im + 1, ise, ims, id, ih, im, ise, ims, false, 0));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise + 1, ims, id, ih, im, ise, ims, false, 0));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims + 1, id, ih, im, ise, ims, false, 0));
             }
         }
 
@@ -1031,17 +1031,17 @@ namespace NFUnitTestSystemLib
                 int im = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
                 int ise = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
                 int ims = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims, true, 1));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id + 1, ih, im, ise, ims, true, 1));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih + 1, im, ise, ims, true, 1));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im + 1, ise, ims, true, 1));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise + 1, ims, true, 1));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims + 1, true, 1));
-                Assert.True(LTGTHelper(id + 1, ih, im, ise, ims, id, ih, im, ise, ims, false, 1));
-                Assert.True(LTGTHelper(id, ih + 1, im, ise, ims, id, ih, im, ise, ims, false, 1));
-                Assert.True(LTGTHelper(id, ih, im + 1, ise, ims, id, ih, im, ise, ims, false, 1));
-                Assert.True(LTGTHelper(id, ih, im, ise + 1, ims, id, ih, im, ise, ims, false, 1));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims + 1, id, ih, im, ise, ims, false, 1));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims, true, 1));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id + 1, ih, im, ise, ims, true, 1));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih + 1, im, ise, ims, true, 1));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im + 1, ise, ims, true, 1));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise + 1, ims, true, 1));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims + 1, true, 1));
+                Assert.IsTrue(LTGTHelper(id + 1, ih, im, ise, ims, id, ih, im, ise, ims, false, 1));
+                Assert.IsTrue(LTGTHelper(id, ih + 1, im, ise, ims, id, ih, im, ise, ims, false, 1));
+                Assert.IsTrue(LTGTHelper(id, ih, im + 1, ise, ims, id, ih, im, ise, ims, false, 1));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise + 1, ims, id, ih, im, ise, ims, false, 1));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims + 1, id, ih, im, ise, ims, false, 1));
             }
         }
 
@@ -1063,17 +1063,17 @@ namespace NFUnitTestSystemLib
                 int im = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
                 int ise = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
                 int ims = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims, false, 2));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id + 1, ih, im, ise, ims, false, 2));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih + 1, im, ise, ims, false, 2));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im + 1, ise, ims, false, 2));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise + 1, ims, false, 2));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims + 1, false, 2));
-                Assert.True(LTGTHelper(id + 1, ih, im, ise, ims, id, ih, im, ise, ims, true, 2));
-                Assert.True(LTGTHelper(id, ih + 1, im, ise, ims, id, ih, im, ise, ims, true, 2));
-                Assert.True(LTGTHelper(id, ih, im + 1, ise, ims, id, ih, im, ise, ims, true, 2));
-                Assert.True(LTGTHelper(id, ih, im, ise + 1, ims, id, ih, im, ise, ims, true, 2));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims + 1, id, ih, im, ise, ims, true, 2));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims, false, 2));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id + 1, ih, im, ise, ims, false, 2));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih + 1, im, ise, ims, false, 2));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im + 1, ise, ims, false, 2));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise + 1, ims, false, 2));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims + 1, false, 2));
+                Assert.IsTrue(LTGTHelper(id + 1, ih, im, ise, ims, id, ih, im, ise, ims, true, 2));
+                Assert.IsTrue(LTGTHelper(id, ih + 1, im, ise, ims, id, ih, im, ise, ims, true, 2));
+                Assert.IsTrue(LTGTHelper(id, ih, im + 1, ise, ims, id, ih, im, ise, ims, true, 2));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise + 1, ims, id, ih, im, ise, ims, true, 2));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims + 1, id, ih, im, ise, ims, true, 2));
             }
         }
 
@@ -1095,17 +1095,17 @@ namespace NFUnitTestSystemLib
                 int im = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
                 int ise = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
                 int ims = (random.Next(1) == 0 ? -1 : 1) * random.Next(mx);
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims, true, 3));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id + 1, ih, im, ise, ims, false, 3));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih + 1, im, ise, ims, false, 3));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im + 1, ise, ims, false, 3));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise + 1, ims, false, 3));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims + 1, false, 3));
-                Assert.True(LTGTHelper(id + 1, ih, im, ise, ims, id, ih, im, ise, ims, true, 3));
-                Assert.True(LTGTHelper(id, ih + 1, im, ise, ims, id, ih, im, ise, ims, true, 3));
-                Assert.True(LTGTHelper(id, ih, im + 1, ise, ims, id, ih, im, ise, ims, true, 3));
-                Assert.True(LTGTHelper(id, ih, im, ise + 1, ims, id, ih, im, ise, ims, true, 3));
-                Assert.True(LTGTHelper(id, ih, im, ise, ims + 1, id, ih, im, ise, ims, true, 3));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims, true, 3));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id + 1, ih, im, ise, ims, false, 3));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih + 1, im, ise, ims, false, 3));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im + 1, ise, ims, false, 3));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise + 1, ims, false, 3));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims, id, ih, im, ise, ims + 1, false, 3));
+                Assert.IsTrue(LTGTHelper(id + 1, ih, im, ise, ims, id, ih, im, ise, ims, true, 3));
+                Assert.IsTrue(LTGTHelper(id, ih + 1, im, ise, ims, id, ih, im, ise, ims, true, 3));
+                Assert.IsTrue(LTGTHelper(id, ih, im + 1, ise, ims, id, ih, im, ise, ims, true, 3));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise + 1, ims, id, ih, im, ise, ims, true, 3));
+                Assert.IsTrue(LTGTHelper(id, ih, im, ise, ims + 1, id, ih, im, ise, ims, true, 3));
             }
         }
 
@@ -1118,7 +1118,7 @@ namespace NFUnitTestSystemLib
                 mins * m_TicksPerMinute +
                 secs * m_TicksPerSecond +
                 ms * m_TicksPerMillisecond;
-            Assert.Equal(ts.Ticks, ticks);
+            Assert.AreEqual(ts.Ticks, ticks);
             OutputHelper.WriteLine(ts.Ticks.ToString() + " == " + ticks.ToString());
         }
         [TestMethod]
@@ -1186,15 +1186,15 @@ namespace NFUnitTestSystemLib
                 if (test.Obj is TimeSpan)
                 {
                     TimeSpan timeSpan2 = (TimeSpan)test.Obj;
-                    Assert.Equal(test.Expected, TimeSpan.Equals(test.TimeSpan1, timeSpan2));
-                    Assert.Equal(test.Expected, test.TimeSpan1.Equals(timeSpan2));
-                    Assert.Equal(test.Expected, (TimeSpan)test.TimeSpan1 == timeSpan2);
-                    Assert.Equal(!test.Expected, (TimeSpan)test.TimeSpan1 != timeSpan2);
+                    Assert.AreEqual(test.Expected, TimeSpan.Equals(test.TimeSpan1, timeSpan2));
+                    Assert.AreEqual(test.Expected, test.TimeSpan1.Equals(timeSpan2));
+                    Assert.AreEqual(test.Expected, (TimeSpan)test.TimeSpan1 == timeSpan2);
+                    Assert.AreEqual(!test.Expected, (TimeSpan)test.TimeSpan1 != timeSpan2);
 
-                    Assert.Equal(test.Expected, test.TimeSpan1.GetHashCode().Equals(timeSpan2.GetHashCode()));
+                    Assert.AreEqual(test.Expected, test.TimeSpan1.GetHashCode().Equals(timeSpan2.GetHashCode()));
                 }
 
-                Assert.Equal(test.Expected, test.TimeSpan1.Equals(test.Obj));
+                Assert.AreEqual(test.Expected, test.TimeSpan1.Equals(test.Obj));
             }
         }
 

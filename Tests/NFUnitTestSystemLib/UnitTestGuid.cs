@@ -31,16 +31,16 @@ namespace NFUnitTestSystemLib
             Guid theGuid = Guid.NewGuid();
 
             byte[] bGuid1 = theGuid.ToByteArray();
-            Assert.Equal(bGuid1.Length, 16);
+            Assert.AreEqual(bGuid1.Length, 16);
             Guid theSameGuid = new Guid(bGuid1);
             // must be the same
-            Assert.Equal(theGuid.CompareTo(theSameGuid), 0);
-            Assert.True(theGuid.Equals(theSameGuid));
+            Assert.AreEqual(theGuid.CompareTo(theSameGuid), 0);
+            Assert.IsTrue(theGuid.Equals(theSameGuid));
             Guid anotherGuid = Guid.NewGuid();
 
             // must be the different
-            Assert.NotEqual(theGuid.CompareTo(anotherGuid), 0);
-            Assert.False(theGuid.Equals(anotherGuid));
+            Assert.AreNotEqual(theGuid.CompareTo(anotherGuid), 0);
+            Assert.IsFalse(theGuid.Equals(anotherGuid));
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace NFUnitTestSystemLib
                 size = random.Next(100);
             }
             Byte[] guidNot16 = GetRandomBytes(size);
-            Assert.Throws(typeof(ArgumentException), () => { Guid myGuid1 = new Guid(guidNot16); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { Guid myGuid1 = new Guid(guidNot16); });
         }
 
         [TestMethod]
@@ -101,7 +101,7 @@ namespace NFUnitTestSystemLib
             ///
 
             Byte[] nullByte = null;
-            Assert.Throws(typeof(ArgumentNullException), () => { Guid myGuid1 = new Guid(nullByte); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { Guid myGuid1 = new Guid(nullByte); });
         }
 
         public static Guid GetGuid()
@@ -200,7 +200,7 @@ namespace NFUnitTestSystemLib
             Byte[] _bArr = guid.ToByteArray();
             for (int i = 0; i < 16; i++)
             {
-                Assert.Equal(_bArr[i], (byte)0);
+                Assert.AreEqual(_bArr[i], (byte)0);
             }
         }
 
@@ -215,18 +215,18 @@ namespace NFUnitTestSystemLib
 
             Guid guid1 = Guid.Empty;
             OutputHelper.WriteLine("Verifing any instance of Guid, regardless of its value, is greater than null");
-            Assert.Equal(guid1.CompareTo(null), 1);
+            Assert.AreEqual(guid1.CompareTo(null), 1);
             Byte[] _bArr = new Byte[16];
             OutputHelper.WriteLine("Creating a Guid with all bytes zero");
             Guid guid2 = new Guid(_bArr);
-            Assert.Equal(guid1.CompareTo(guid2), 0);
+            Assert.AreEqual(guid1.CompareTo(guid2), 0);
             Guid guid3 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
             if (guid3.CompareTo(guid1) <= 0)
             {
                 throw new Exception("Expected : " + guid3.ToString() + " is greater than " + guid1.ToString());
             }
             Guid guid4 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
-            Assert.Equal(guid4.CompareTo(guid3), 0);
+            Assert.AreEqual(guid4.CompareTo(guid3), 0);
             Guid guid5 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3e);
             if (guid5.CompareTo(guid4) <= 0)
             {
@@ -265,7 +265,7 @@ namespace NFUnitTestSystemLib
             for (int i = 0; i < strArr1.Length; i++)
             {
                 OutputHelper.WriteLine(strArr1[i]);
-                Assert.Equal(String.Compare(strArr1[i], strArr2[i]), 0);
+                Assert.AreEqual(String.Compare(strArr1[i], strArr2[i]), 0);
             }
         }
 

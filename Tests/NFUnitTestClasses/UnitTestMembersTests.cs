@@ -16,7 +16,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
             OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
             OutputHelper.WriteLine(" hides the inherited member).");
-            Assert.True(MembersTestClass023.testMethod());
+            Assert.IsTrue(MembersTestClass023.testMethod());
         }
 
         [TestMethod]
@@ -28,7 +28,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
             OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
             OutputHelper.WriteLine(" hides the inherited member).");
-            Assert.True(MembersTestClass024.testMethod());
+            Assert.IsTrue(MembersTestClass024.testMethod());
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
             OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
             OutputHelper.WriteLine(" hides the inherited member).");
-            Assert.True(MembersTestClass025.testMethod());
+            Assert.IsTrue(MembersTestClass025.testMethod());
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
             OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
             OutputHelper.WriteLine(" hides the inherited member).");
-            Assert.True(MembersTestClass026.testMethod());
+            Assert.IsTrue(MembersTestClass026.testMethod());
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
             OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
             OutputHelper.WriteLine(" hides the inherited member).");
-            Assert.True(MembersTestClass027.testMethod());
+            Assert.IsTrue(MembersTestClass027.testMethod());
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
             OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
             OutputHelper.WriteLine(" hides the inherited member).");
-            Assert.True(MembersTestClass028.testMethod());
+            Assert.IsTrue(MembersTestClass028.testMethod());
         }
 
         //Test Case Calls 
@@ -87,7 +87,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
             OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
             OutputHelper.WriteLine(" members declared in B as well as the members");
-            Assert.True(MembersInheritanceTestClass001.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass001.testMethod());
         }
         [TestMethod]
         public void MembersInheritance002_Test()
@@ -96,7 +96,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
             OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
             OutputHelper.WriteLine(" members declared in B as well as the members");
-            Assert.True(MembersInheritanceTestClass002.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass002.testMethod());
         }
         [TestMethod]
         public void MembersInheritance003_Test()
@@ -105,7 +105,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
             OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
             OutputHelper.WriteLine(" members declared in B as well as the members");
-            Assert.True(MembersInheritanceTestClass003.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass003.testMethod());
         }
         [TestMethod]
         public void MembersInheritance004_Test()
@@ -114,7 +114,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
             OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
             OutputHelper.WriteLine(" members declared in B as well as the members");
-            Assert.True(MembersInheritanceTestClass004.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass004.testMethod());
         }
         [TestMethod]
         public void MembersInheritance005_Test()
@@ -123,7 +123,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
             OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
             OutputHelper.WriteLine(" members declared in B as well as the members");
-            Assert.True(MembersInheritanceTestClass005.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass005.testMethod());
         }
         [TestMethod]
         public void MembersInheritance006_Test()
@@ -132,7 +132,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
             OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
             OutputHelper.WriteLine(" members declared in B as well as the members");
-            Assert.True(MembersInheritanceTestClass006.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass006.testMethod());
         }
         [TestMethod]
         public void MembersInheritance007_Test()
@@ -141,7 +141,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
             OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
             OutputHelper.WriteLine(" members declared in B as well as the members");
-            Assert.True(MembersInheritanceTestClass007.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass007.testMethod());
         }
         [TestMethod]
         public void MembersInheritance008_Test()
@@ -150,7 +150,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
             OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
             OutputHelper.WriteLine(" members declared in B as well as the members");
-            Assert.True(MembersInheritanceTestClass008.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass008.testMethod());
         }
         [TestMethod]
         public void MembersInheritance018_Test()
@@ -160,7 +160,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
             OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
             OutputHelper.WriteLine(" members may not be accessible in the derived class.");
-            Assert.True(MembersInheritanceTestClass018.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass018.testMethod());
         }
         [TestMethod]
         public void MembersInheritance019_Test()
@@ -170,7 +170,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
             OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
             OutputHelper.WriteLine(" members may not be accessible in the derived class.");
-            Assert.True(MembersInheritanceTestClass019.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass019.testMethod());
         }
         [TestMethod]
         public void MembersInheritance020_Test()
@@ -180,7 +180,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
             OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
             OutputHelper.WriteLine(" members may not be accessible in the derived class.");
-            Assert.True(MembersInheritanceTestClass020.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass020.testMethod());
         }
         [TestMethod]
         public void MembersInheritance021_Test()
@@ -190,7 +190,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
             OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
             OutputHelper.WriteLine(" members may not be accessible in the derived class.");
-            Assert.True(MembersInheritanceTestClass021.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass021.testMethod());
         }
         [TestMethod]
         public void MembersInheritance022_Test()
@@ -200,7 +200,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
             OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
             OutputHelper.WriteLine(" members may not be accessible in the derived class.");
-            Assert.True(MembersInheritanceTestClass022.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass022.testMethod());
         }
         [TestMethod]
         public void MembersInheritance023_Test()
@@ -210,7 +210,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
             OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
             OutputHelper.WriteLine(" members may not be accessible in the derived class.");
-            Assert.True(MembersInheritanceTestClass023.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass023.testMethod());
         }
         [TestMethod]
         public void MembersInheritance024_Test()
@@ -220,7 +220,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
             OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
             OutputHelper.WriteLine(" members may not be accessible in the derived class.");
-            Assert.True(MembersInheritanceTestClass024.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass024.testMethod());
         }
         [TestMethod]
         public void MembersInheritance025_Test()
@@ -230,7 +230,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
             OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
             OutputHelper.WriteLine(" members may not be accessible in the derived class.");
-            Assert.True(MembersInheritanceTestClass025.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass025.testMethod());
         }
         [TestMethod]
         public void MembersInheritance026_Test()
@@ -241,7 +241,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" conversion exists from a derived class type to any of its base ");
             OutputHelper.WriteLine(" class types.  Thus, a reference to a derived class instance");
             OutputHelper.WriteLine(" can be treated as a reference to a base class instance.");
-            Assert.True(MembersInheritanceTestClass026.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass026.testMethod());
         }
         [TestMethod]
         public void MembersInheritance027_Test()
@@ -252,7 +252,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" conversion exists from a derived class type to any of its base ");
             OutputHelper.WriteLine(" class types.  Thus, a reference to a derived class instance");
             OutputHelper.WriteLine(" can be treated as a reference to a base class instance.");
-            Assert.True(MembersInheritanceTestClass027.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass027.testMethod());
         }
         [TestMethod]
         public void MembersInheritance028_Test()
@@ -265,7 +265,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" actions performed by a function member invocation");
             OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
             OutputHelper.WriteLine(" through which the member is invoked.");
-            Assert.True(MembersInheritanceTestClass028.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass028.testMethod());
         }
         [TestMethod]
         public void MembersInheritance029_Test()
@@ -278,7 +278,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" actions performed by a function member invocation");
             OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
             OutputHelper.WriteLine(" through which the member is invoked.");
-            Assert.True(MembersInheritanceTestClass029.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass029.testMethod());
         }
         [TestMethod]
         public void MembersInheritance030_Test()
@@ -291,7 +291,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" actions performed by a function member invocation");
             OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
             OutputHelper.WriteLine(" through which the member is invoked.");
-            Assert.True(MembersInheritanceTestClass030.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass030.testMethod());
         }
         [TestMethod]
         public void MembersInheritance031_Test()
@@ -304,7 +304,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" actions performed by a function member invocation");
             OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
             OutputHelper.WriteLine(" through which the member is invoked.");
-            Assert.True(MembersInheritanceTestClass031.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass031.testMethod());
         }
         [TestMethod]
         public void MembersInheritance032_Test()
@@ -317,7 +317,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" actions performed by a function member invocation");
             OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
             OutputHelper.WriteLine(" through which the member is invoked.");
-            Assert.False(MembersInheritanceTestClass032.testMethod());
+            Assert.IsFalse(MembersInheritanceTestClass032.testMethod());
             OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
             OutputHelper.WriteLine("It previously marked as known failure because of bug # 21562");
             OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
@@ -334,7 +334,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" actions performed by a function member invocation");
             OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
             OutputHelper.WriteLine(" through which the member is invoked.");
-            Assert.True(MembersInheritanceTestClass033.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass033.testMethod());
         }
         [TestMethod]
         public void MembersInheritance034_Test()
@@ -347,7 +347,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" actions performed by a function member invocation");
             OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
             OutputHelper.WriteLine(" through which the member is invoked.");
-            Assert.True(MembersInheritanceTestClass034.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass034.testMethod());
         }
         [TestMethod]
         public void MembersInheritance035_Test()
@@ -360,7 +360,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" actions performed by a function member invocation");
             OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
             OutputHelper.WriteLine(" through which the member is invoked.");
-            Assert.True(MembersInheritanceTestClass035.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass035.testMethod());
         }
         [TestMethod]
         public void MembersInheritance036_Test()
@@ -373,7 +373,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" actions performed by a function member invocation");
             OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
             OutputHelper.WriteLine(" through which the member is invoked.");
-            Assert.False(MembersInheritanceTestClass036.testMethod());
+            Assert.IsFalse(MembersInheritanceTestClass036.testMethod());
             OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
             OutputHelper.WriteLine("It previously marked as known failure because of bug # 21562");
             OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
@@ -386,7 +386,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a member with the same name or signature as an ");
             OutputHelper.WriteLine(" inherited member.  When this occurs, the derived");
             OutputHelper.WriteLine(" class member is said to hide the base class member.");
-            Assert.True(MembersInheritanceTestClass037.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass037.testMethod());
         }
         [TestMethod]
         public void MembersInheritance038_Test()
@@ -396,7 +396,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a member with the same name or signature as an ");
             OutputHelper.WriteLine(" inherited member.  When this occurs, the derived");
             OutputHelper.WriteLine(" class member is said to hide the base class member.");
-            Assert.True(MembersInheritanceTestClass038.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass038.testMethod());
         }
         [TestMethod]
         public void MembersInheritance039_Test()
@@ -406,7 +406,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a member with the same name or signature as an ");
             OutputHelper.WriteLine(" inherited member.  When this occurs, the derived");
             OutputHelper.WriteLine(" class member is said to hide the base class member.");
-            Assert.True(MembersInheritanceTestClass039.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass039.testMethod());
         }
         [TestMethod]
         public void MembersInheritance040_Test()
@@ -416,7 +416,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a member with the same name or signature as an ");
             OutputHelper.WriteLine(" inherited member.  When this occurs, the derived");
             OutputHelper.WriteLine(" class member is said to hide the base class member.");
-            Assert.True(MembersInheritanceTestClass040.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass040.testMethod());
         }
         [TestMethod]
         public void MembersInheritance041_Test()
@@ -425,7 +425,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If a new modifier is included in a declaration");
             OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
             OutputHelper.WriteLine(" is issued to that effect.");
-            Assert.True(MembersInheritanceTestClass041.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass041.testMethod());
         }
         [TestMethod]
         public void MembersInheritance042_Test()
@@ -434,7 +434,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If a new modifier is included in a declaration");
             OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
             OutputHelper.WriteLine(" is issued to that effect.");
-            Assert.True(MembersInheritanceTestClass042.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass042.testMethod());
         }
         [TestMethod]
         public void MembersInheritance043_Test()
@@ -443,7 +443,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If a new modifier is included in a declaration");
             OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
             OutputHelper.WriteLine(" is issued to that effect.");
-            Assert.True(MembersInheritanceTestClass043.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass043.testMethod());
         }
         [TestMethod]
         public void MembersInheritance044_Test()
@@ -452,7 +452,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If a new modifier is included in a declaration");
             OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
             OutputHelper.WriteLine(" is issued to that effect.");
-            Assert.True(MembersInheritanceTestClass044.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass044.testMethod());
         }
         [TestMethod]
         public void MembersInheritance045_Test()
@@ -461,7 +461,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If a new modifier is included in a declaration");
             OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
             OutputHelper.WriteLine(" is issued to that effect.");
-            Assert.True(MembersInheritanceTestClass045.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass045.testMethod());
         }
         [TestMethod]
         public void MembersInheritance046_Test()
@@ -470,7 +470,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If a new modifier is included in a declaration");
             OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
             OutputHelper.WriteLine(" is issued to that effect.");
-            Assert.True(MembersInheritanceTestClass046.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass046.testMethod());
         }
         [TestMethod]
         public void MembersInheritance047_Test()
@@ -479,7 +479,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If a new modifier is included in a declaration");
             OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
             OutputHelper.WriteLine(" is issued to that effect.");
-            Assert.True(MembersInheritanceTestClass047.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass047.testMethod());
         }
         [TestMethod]
         public void MembersInheritance053_Test()
@@ -488,32 +488,32 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If a new modifier is included in a declaration");
             OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
             OutputHelper.WriteLine(" is issued to that effect.");
-            Assert.True(MembersInheritanceTestClass053.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass053.testMethod());
         }
         [TestMethod]
         public void MembersInheritance054_Test()
         {
             OutputHelper.WriteLine("Testing that protected members can be passed to a grandchild class");
-            Assert.True(MembersInheritanceTestClass054.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass054.testMethod());
         }
         [TestMethod]
         public void MembersInheritance057_Test()
         {
             OutputHelper.WriteLine("Testing that you can inherit from a member class");
 
-            Assert.True(MembersInheritanceTestClass057.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass057.testMethod());
         }
         [TestMethod]
         public void MembersInheritance058_Test()
         {
             OutputHelper.WriteLine("Testing that you can inherit from a class declared later in the file");
-            Assert.True(MembersInheritanceTestClass058.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass058.testMethod());
         }
         [TestMethod]
         public void MembersInheritance059_Test()
         {
             OutputHelper.WriteLine("Testing that an inner class inherit from another class");
-            Assert.True(MembersInheritanceTestClass059.testMethod());
+            Assert.IsTrue(MembersInheritanceTestClass059.testMethod());
         }
 
         //Test Case Calls 
@@ -527,7 +527,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
             OutputHelper.WriteLine(" does not include an access modifier, the declaration");
             OutputHelper.WriteLine(" defaults to private.");
-            Assert.True(MembersModifiersTestClass01.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass01.testMethod());
         }
         [TestMethod]
         public void MembersModifiers02_Test()
@@ -539,7 +539,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
             OutputHelper.WriteLine(" does not include an access modifier, the declaration");
             OutputHelper.WriteLine(" defaults to private.");
-            Assert.True(MembersModifiersTestClass02.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass02.testMethod());
         }
         [TestMethod]
         public void MembersModifiers03_Test()
@@ -551,7 +551,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
             OutputHelper.WriteLine(" does not include an access modifier, the declaration");
             OutputHelper.WriteLine(" defaults to private.");
-            Assert.True(MembersModifiersTestClass03.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass03.testMethod());
         }
         [TestMethod]
         public void MembersModifiers04_Test()
@@ -563,7 +563,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
             OutputHelper.WriteLine(" does not include an access modifier, the declaration");
             OutputHelper.WriteLine(" defaults to private.");
-            Assert.True(MembersModifiersTestClass04.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass04.testMethod());
         }
         [TestMethod]
         public void MembersModifiers05_Test()
@@ -575,7 +575,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
             OutputHelper.WriteLine(" does not include an access modifier, the declaration");
             OutputHelper.WriteLine(" defaults to private.");
-            Assert.True(MembersModifiersTestClass05.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass05.testMethod());
         }
         [TestMethod]
         public void MembersModifiers06_Test()
@@ -587,7 +587,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
             OutputHelper.WriteLine(" does not include an access modifier, the declaration");
             OutputHelper.WriteLine(" defaults to private.");
-            Assert.True(MembersModifiersTestClass06.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass06.testMethod());
         }
         [TestMethod]
         public void MembersModifiers07_Test()
@@ -599,7 +599,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
             OutputHelper.WriteLine(" does not include an access modifier, the declaration");
             OutputHelper.WriteLine(" defaults to private.");
-            Assert.True(MembersModifiersTestClass07.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass07.testMethod());
         }
         [TestMethod]
         public void MembersModifiers08_Test()
@@ -611,7 +611,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
             OutputHelper.WriteLine(" does not include an access modifier, the declaration");
             OutputHelper.WriteLine(" defaults to private.");
-            Assert.True(MembersModifiersTestClass08.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass08.testMethod());
         }
         [TestMethod]
         public void MembersModifiers12_Test()
@@ -623,32 +623,32 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
             OutputHelper.WriteLine(" does not include an access modifier, the declaration");
             OutputHelper.WriteLine(" defaults to private.");
-            Assert.True(MembersModifiersTestClass12.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass12.testMethod());
         }
         [TestMethod]
         public void MembersModifiers23_Test()
         {
-            Assert.True(MembersModifiersTestClass23.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass23.testMethod());
         }
         [TestMethod]
         public void MembersModifiers24_Test()
         {
-            Assert.True(MembersModifiersTestClass24.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass24.testMethod());
         }
         [TestMethod]
         public void MembersModifiers25_Test()
         {
-            Assert.True(MembersModifiersTestClass25.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass25.testMethod());
         }
         [TestMethod]
         public void MembersModifiers26_Test()
         {
-            Assert.True(MembersModifiersTestClass26.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass26.testMethod());
         }
         [TestMethod]
         public void MembersModifiers27_Test()
         {
-            Assert.True(MembersModifiersTestClass27.testMethod());
+            Assert.IsTrue(MembersModifiersTestClass27.testMethod());
         }
 
         //Compiled Test Cases 

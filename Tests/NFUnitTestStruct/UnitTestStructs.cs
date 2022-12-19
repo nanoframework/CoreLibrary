@@ -17,25 +17,25 @@ namespace NFUnitTestStruct
         public void Structs01_Test()
         {
             StructsTestClass_01_Notes.Note();
-            Assert.True(StructsTestClass_01.testMethod());
+            Assert.IsTrue(StructsTestClass_01.testMethod());
         }
         [TestMethod]
         public void Structs04_Test()
         {
             StructsTestClass_04_Notes.Note();
-            Assert.True(StructsTestClass_04.testMethod());
+            Assert.IsTrue(StructsTestClass_04.testMethod());
         }
         [TestMethod]
         public void Structs11_Test()
         {
             StructsTestClass_11_Notes.Note();
-            Assert.True(StructsTestClass_11.testMethod());
+            Assert.IsTrue(StructsTestClass_11.testMethod());
         }
         [TestMethod]
         public void Structs12_Test()
         {
             StructsTestClass_12_Notes.Note();
-            Assert.True(StructsTestClass_12.testMethod());
+            Assert.IsTrue(StructsTestClass_12.testMethod());
         }
         [TestMethod]
         public void Structs13_Test()
@@ -43,139 +43,139 @@ namespace NFUnitTestStruct
             OutputHelper.WriteLine("Expected failure, see 16852 for more details");
 
             StructsTestClass_13_Notes.Note();
-            Assert.True(StructsTestClass_13.testMethod());
+            Assert.IsTrue(StructsTestClass_13.testMethod());
         }
         [TestMethod]
         public void Structs14_Test()
         {
             StructsTestClass_14_Notes.Note();
-            Assert.True(StructsTestClass_14.testMethod());
+            Assert.IsTrue(StructsTestClass_14.testMethod());
         }
         [TestMethod]
         public void Structs15_Test()
         {
             StructsTestClass_15_Notes.Note();
-            Assert.True(StructsTestClass_15.testMethod());
+            Assert.IsTrue(StructsTestClass_15.testMethod());
         }
         [TestMethod]
         public void Structs19_Test()
         {
             StructsTestClass_19_Notes.Note();
-            Assert.True(StructsTestClass_19.testMethod());
+            Assert.IsTrue(StructsTestClass_19.testMethod());
         }
         [TestMethod]
         public void Structs21_Test()
         {
             StructsTestClass_21_Notes.Note();
-            Assert.True(StructsTestClass_21.testMethod());
+            Assert.IsTrue(StructsTestClass_21.testMethod());
         }
         [TestMethod]
         public void Structs23_Test()
         {
             StructsTestClass_23_Notes.Note();
-            Assert.True(StructsTestClass_23.testMethod());
+            Assert.IsTrue(StructsTestClass_23.testMethod());
         }
         [TestMethod]
         public void Structs24_Test()
         {
             StructsTestClass_24_Notes.Note();
-            Assert.True(StructsTestClass_24.testMethod());
+            Assert.IsTrue(StructsTestClass_24.testMethod());
         }
         [TestMethod]
         public void Structs26_Test()
         {
             StructsTestClass_26_Notes.Note();
-            Assert.True(StructsTestClass_26.testMethod());
+            Assert.IsTrue(StructsTestClass_26.testMethod());
         }
         [TestMethod]
         public void Structs28_Test()
         {
             StructsTestClass_28_Notes.Note();
-            Assert.True(StructsTestClass_28.testMethod());
+            Assert.IsTrue(StructsTestClass_28.testMethod());
         }
         [TestMethod]
         public void Structs29_Test()
         {
             StructsTestClass_29_Notes.Note();
-            Assert.True(StructsTestClass_29.testMethod());
+            Assert.IsTrue(StructsTestClass_29.testMethod());
         }
         [TestMethod]
         public void Structs32_Test()
         {
             StructsTestClass_32_Notes.Note();
-            Assert.True(StructsTestClass_32.testMethod());
+            Assert.IsTrue(StructsTestClass_32.testMethod());
         }
         [TestMethod]
         public void Structs33_Test()
         {
             StructsTestClass_33_Notes.Note();
-            Assert.True(StructsTestClass_33.testMethod());
+            Assert.IsTrue(StructsTestClass_33.testMethod());
         }
         [TestMethod]
         public void Structs34_Test()
         {
             StructsTestClass_34_Notes.Note();
-            Assert.True(StructsTestClass_34.testMethod());
+            Assert.IsTrue(StructsTestClass_34.testMethod());
         }
         [TestMethod]
         public void Structs35_Test()
         {
             StructsTestClass_35_Notes.Note();
-            Assert.True(StructsTestClass_35.testMethod());
+            Assert.IsTrue(StructsTestClass_35.testMethod());
         }
         [TestMethod]
         public void Structs36_Test()
         {
             StructsTestClass_36_Notes.Note();
-            Assert.True(StructsTestClass_36.testMethod());
+            Assert.IsTrue(StructsTestClass_36.testMethod());
         }
         [TestMethod]
         public void Structs37_Test()
         {
             StructsTestClass_37_Notes.Note();
-            Assert.True(StructsTestClass_37.testMethod());
+            Assert.IsTrue(StructsTestClass_37.testMethod());
         }
         [TestMethod]
         public void Structs38_Test()
         {
             StructsTestClass_38_Notes.Note();
-            Assert.True(StructsTestClass_38.testMethod());
+            Assert.IsTrue(StructsTestClass_38.testMethod());
         }
         [TestMethod]
         public void Structs40_Test()
         {
             StructsTestClass_40_Notes.Note();
-            Assert.True(StructsTestClass_40.testMethod());
+            Assert.IsTrue(StructsTestClass_40.testMethod());
         }
         [TestMethod]
         public void Structs41_Test()
         {
             StructsTestClass_41_Notes.Note();
-            Assert.True(StructsTestClass_41.testMethod());
+            Assert.IsTrue(StructsTestClass_41.testMethod());
         }
         [TestMethod]
         public void Structs42_Test()
         {
             StructsTestClass_42_Notes.Note();
-            Assert.True(StructsTestClass_42.testMethod());
+            Assert.IsTrue(StructsTestClass_42.testMethod());
         }
         [TestMethod]
         public void Structs43_Test()
         {
             StructsTestClass_43_Notes.Note();
-            Assert.True(StructsTestClass_43.testMethod());
+            Assert.IsTrue(StructsTestClass_43.testMethod());
         }
         [TestMethod]
         public void Structs44_Test()
         {
             StructsTestClass_44_Notes.Note();
-            Assert.True(StructsTestClass_44.testMethod());
+            Assert.IsTrue(StructsTestClass_44.testMethod());
         }
         [TestMethod]
         public void Structs55_Test()
         {
             StructsTestClass_55_Notes.Note();
-            Assert.True(StructsTestClass_55.testMethod());
+            Assert.IsTrue(StructsTestClass_55.testMethod());
         }
 
         [TestMethod]
@@ -184,14 +184,14 @@ namespace NFUnitTestStruct
             AStruct s1 = new AStruct() { a = 1 };
             AStruct s2 = new AStruct() { a = 2 };
 
-            Assert.True(s1.Equals(s1), "Comparing struct failed: s1.Equals(s1)");
-            Assert.False(s1.Equals(s2), "Comparing struct failed: s1.Equals(s2)");
-            Assert.True(s1.a.Equals(s1.a), "Comparing struct failed: s1.a.Equals(s1.a)");
-            Assert.False(s1.a.Equals(s2.a), "Comparing struct failed: s1.a.Equals(s2.a)");
+            Assert.IsTrue(s1.Equals(s1), "Comparing struct failed: s1.Equals(s1)");
+            Assert.IsFalse(s1.Equals(s2), "Comparing struct failed: s1.Equals(s2)");
+            Assert.IsTrue(s1.a.Equals(s1.a), "Comparing struct failed: s1.a.Equals(s1.a)");
+            Assert.IsFalse(s1.a.Equals(s2.a), "Comparing struct failed: s1.a.Equals(s2.a)");
             // TODO
             // these are failing: need to fix the comparer at CLR
-            //Assert.False(s1.Equals(null), "Comparing struct failed: s1.Equals(null)");
-            //Assert.False(s1.Equals(null), "Comparing struct failed: s1.Equals(null)");
+            //Assert.IsFalse(s1.Equals(null), "Comparing struct failed: s1.Equals(null)");
+            //Assert.IsFalse(s1.Equals(null), "Comparing struct failed: s1.Equals(null)");
         }
 
         //Compiled Test Cases 

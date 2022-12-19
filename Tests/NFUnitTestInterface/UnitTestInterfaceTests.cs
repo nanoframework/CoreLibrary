@@ -20,14 +20,14 @@ namespace NFUnitTestInterface
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("If effective visibility is internal, public iface may have an internal base iface ");
             OutputHelper.WriteLine("(Bug 86453: has some details on this.  But it has to do with class  internal)");
-            Assert.True(Interface_TestClass_base_06.testMethod());
+            Assert.IsTrue(Interface_TestClass_base_06.testMethod());
         }
         [TestMethod]
         public void Interface_decl_01_Test()
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest interface declared in global namespace");
-            Assert.True(Interface_TestClass_decl_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_decl_01.testMethod());
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest interface declared in class in default global namespace");
-            Assert.True(Interface_TestClass_decl_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_decl_03.testMethod());
         }
 
         [TestMethod]
@@ -43,7 +43,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simple interface declaration with diff types of methods, args, and properties");
-            Assert.True(Interface_TestClass_decl_05.testMethod());
+            Assert.IsTrue(Interface_TestClass_decl_05.testMethod());
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simple interface declaration properties with only gets");
-            Assert.True(Interface_TestClass_decl_06.testMethod());
+            Assert.IsTrue(Interface_TestClass_decl_06.testMethod());
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simple interface declaration properties with only sets");
-            Assert.True(Interface_TestClass_decl_07.testMethod());
+            Assert.IsTrue(Interface_TestClass_decl_07.testMethod());
         }
 
         [TestMethod]
@@ -67,7 +67,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify that an interface can be hidden by 'new' member in derived class");
-            Assert.True(Interface_TestClass_inherit_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_inherit_01.testMethod());
         }
 
         [TestMethod]
@@ -75,7 +75,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest form of interface inheritance");
-            Assert.True(Interface_TestClass_inherit_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_inherit_02.testMethod());
         }
 
         [TestMethod]
@@ -83,7 +83,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest form of interface inheritance, inheriting multiple interfaces");
-            Assert.True(Interface_TestClass_inherit_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_inherit_03.testMethod());
         }
 
         [TestMethod]
@@ -91,7 +91,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest form of interface inheritance, inheriting multiple interfaces");
-            Assert.True(Interface_TestClass_inherit_04.testMethod());
+            Assert.IsTrue(Interface_TestClass_inherit_04.testMethod());
         }
 
         [TestMethod]
@@ -99,7 +99,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify that an interface hidden without using new results in warning");
-            Assert.True(Interface_TestClass_inherit_08.testMethod());
+            Assert.IsTrue(Interface_TestClass_inherit_08.testMethod());
         }
 
         [TestMethod]
@@ -107,7 +107,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify public and internal interfaces declared in global namespace are valid");
-            Assert.True(Interface_TestClass_modifier_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_modifier_01.testMethod());
         }
 
         [TestMethod]
@@ -115,7 +115,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify public and internal interfaces are valid inside classes");
-            Assert.True(Interface_TestClass_modifier_05.testMethod());
+            Assert.IsTrue(Interface_TestClass_modifier_05.testMethod());
         }
 
         [TestMethod]
@@ -123,7 +123,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify private and protected interfaces are valid inside classes");
-            Assert.True(Interface_TestClass_modifier_06.testMethod());
+            Assert.IsTrue(Interface_TestClass_modifier_06.testMethod());
         }
 
         [TestMethod]
@@ -131,7 +131,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify new interface gens warning if not hiding anything");
-            Assert.True(Interface_TestClass_modifier_07.testMethod());
+            Assert.IsTrue(Interface_TestClass_modifier_07.testMethod());
         }
 
         [TestMethod]
@@ -139,7 +139,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify new interface is valid inside classes when properly hiding an inherited member");
-            Assert.True(Interface_TestClass_modifier_08.testMethod());
+            Assert.IsTrue(Interface_TestClass_modifier_08.testMethod());
         }
 
         [TestMethod]
@@ -147,7 +147,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify protected internal interfaces are valid inside classes");
-            Assert.True(Interface_TestClass_modifier_10.testMethod());
+            Assert.IsTrue(Interface_TestClass_modifier_10.testMethod());
         }
 
         [TestMethod]
@@ -155,7 +155,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest interface declared (with semi-colon) in global namespace");
-            Assert.True(Interface_TestClass_semicolon_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_semicolon_01.testMethod());
         }
 
         [TestMethod]
@@ -163,7 +163,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest interface declared (with semi-colon) in  class in default global namespace");
-            Assert.True(Interface_TestClass_semicolon_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_semicolon_03.testMethod());
         }
 
         [TestMethod]
@@ -171,7 +171,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("A member of an interface-type can be assigned an instance of class that implements it");
-            Assert.True(Interface_TestClass_impl_04.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_04.testMethod());
         }
 
         [TestMethod]
@@ -179,7 +179,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Warning gets generated when two methods implement an inherited method");
-            Assert.True(Interface_TestClass_impl_05.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_05.testMethod());
         }
 
         [TestMethod]
@@ -187,7 +187,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Using the 'override' keyword allows you to hide previous method implementation");
-            Assert.True(Interface_TestClass_impl_06.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_06.testMethod());
         }
 
         [TestMethod]
@@ -195,7 +195,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("A class that implements an interface with method, property, event, and indexer");
-            Assert.True(Interface_TestClass_impl_07.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_07.testMethod());
         }
 
         [TestMethod]
@@ -203,7 +203,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Implementing method that was defined identically by two different base-interfaces should work");
-            Assert.True(Interface_TestClass_impl_08.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_08.testMethod());
         }
 
         [TestMethod]
@@ -211,7 +211,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Implementing property that was defined identically by two different base-interfaces should work");
-            Assert.True(Interface_TestClass_impl_09.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_09.testMethod());
         }
 
         [TestMethod]
@@ -219,7 +219,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Implementing an event that was defined identically by two different base-interfaces should work");
-            Assert.True(Interface_TestClass_impl_10.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_10.testMethod());
         }
 
         [TestMethod]
@@ -227,7 +227,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Implementing an indexer that was defined identically by two different base-interfaces should work");
-            Assert.True(Interface_TestClass_impl_11.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_11.testMethod());
         }
 
         [TestMethod]
@@ -235,7 +235,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("The members of base class participate in interface mapping");
-            Assert.True(Interface_TestClass_impl_12.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_12.testMethod());
         }
 
         [TestMethod]
@@ -243,7 +243,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Two interfaces on the same object must resolve to the same reference");
-            Assert.True(Interface_TestClass_impl_13.testMethod());
+            Assert.IsTrue(Interface_TestClass_impl_13.testMethod());
         }
 
         [TestMethod]
@@ -251,7 +251,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Interface methods implementation inheritance map as expected (1st/2nd example in 13.4.3)");
-            Assert.True(Interface_TestClass_implinherit_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_implinherit_01.testMethod());
         }
 
         [TestMethod]
@@ -259,7 +259,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Interface methods implementation inheritance (w/virtual) map as expected (3rd/4th example in 13.4.3)");
-            Assert.True(Interface_TestClass_implinherit_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_implinherit_02.testMethod());
         }
 
         [TestMethod]
@@ -267,7 +267,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementation of a method");
-            Assert.True(Interface_TestClass_explicit_04.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_04.testMethod());
         }
 
         [TestMethod]
@@ -275,7 +275,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementation of a property");
-            Assert.True(Interface_TestClass_explicit_05.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_05.testMethod());
         }
 
         [TestMethod]
@@ -283,7 +283,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementation of an event (Bug 89766)");
-            Assert.True(Interface_TestClass_explicit_06.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_06.testMethod());
         }
 
         [TestMethod]
@@ -291,7 +291,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementation of an indexer");
-            Assert.True(Interface_TestClass_explicit_07.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_07.testMethod());
         }
 
         [TestMethod]
@@ -299,7 +299,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implemented members (method) can be called through interface instances");
-            Assert.True(Interface_TestClass_explicit_10.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_10.testMethod());
         }
 
         [TestMethod]
@@ -307,7 +307,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implemented members (property) can be called through interface instances");
-            Assert.True(Interface_TestClass_explicit_11.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_11.testMethod());
         }
 
         [TestMethod]
@@ -315,7 +315,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implemented members (indexer) can be called through interface instances");
-            Assert.True(Interface_TestClass_explicit_12.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_12.testMethod());
         }
 
         [TestMethod]
@@ -323,7 +323,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implemented members (event) can be called through interface instances  (Bug 89766)");
-            Assert.True(Interface_TestClass_explicit_13.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_13.testMethod());
         }
 
         [TestMethod]
@@ -331,7 +331,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Hidden base interface members may be implemented in all of the ways used in this");
-            Assert.True(Interface_TestClass_explicit_21.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_21.testMethod());
         }
 
         [TestMethod]
@@ -339,7 +339,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implementing overloaded methods should work ");
-            Assert.True(Interface_TestClass_explicit_25.testMethod());
+            Assert.IsTrue(Interface_TestClass_explicit_25.testMethod());
         }
 
         [TestMethod]
@@ -347,7 +347,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("An abstract class can implement an interface's methods as abstract");
-            Assert.True(Interface_TestClass_mdfrmeth_09.testMethod());
+            Assert.IsTrue(Interface_TestClass_mdfrmeth_09.testMethod());
         }
 
         [TestMethod]
@@ -356,7 +356,7 @@ namespace NFUnitTestInterface
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("A class that inherits an interface implementation is permitted to re-implement the interface by including it in the base class list");
             // Known failure
-            Assert.False(Interface_TestClass_ifreimp_01.testMethod());
+            Assert.IsFalse(Interface_TestClass_ifreimp_01.testMethod());
         }
 
         [TestMethod]
@@ -365,7 +365,7 @@ namespace NFUnitTestInterface
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Inherited public member declarations and inherited explicit interface member declarations participate in the interface mapping process for re-implemented interfaces (Bug 90165)");
             // Known failure
-            Assert.False(Interface_TestClass_ifreimp_02.testMethod());
+            Assert.IsFalse(Interface_TestClass_ifreimp_02.testMethod());
         }
 
         [TestMethod]
@@ -374,7 +374,7 @@ namespace NFUnitTestInterface
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Interface reimplementation also reimplements the interface's base interfaces.  Verify mapping is done correctly. (90165)");
             OutputHelper.WriteLine("This Test is an expected fail in the baseline, but has passed in recent testing");
-            Assert.True(Interface_TestClass_ifreimp_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_ifreimp_03.testMethod());
         }
 
         [TestMethod]
@@ -382,7 +382,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("An abstract class is permitted to map base-interface methods onto abstract methods");
-            Assert.True(Interface_TestClass_abstract_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_abstract_01.testMethod());
         }
 
         [TestMethod]
@@ -390,7 +390,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("The abstract methods implementing interface methods must be overridden by inheriting classes");
-            Assert.True(Interface_TestClass_abstract_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_abstract_02.testMethod());
         }
 
         [TestMethod]
@@ -398,7 +398,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementations are permitted to call abstract methods");
-            Assert.True(Interface_TestClass_abstract_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_abstract_03.testMethod());
         }
 
         [TestMethod]
@@ -406,7 +406,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Simplest interface indexer declaration (int)");
-            Assert.True(Interface_TestClass_indexer_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_indexer_02.testMethod());
         }
 
         [TestMethod]
@@ -414,7 +414,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Simplest interface indexer declaration (String)");
-            Assert.True(Interface_TestClass_indexer_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_indexer_03.testMethod());
         }
 
         [TestMethod]
@@ -422,7 +422,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Simplest interface indexer declaration (user-defined struct)");
-            Assert.True(Interface_TestClass_indexer_04.testMethod());
+            Assert.IsTrue(Interface_TestClass_indexer_04.testMethod());
         }
 
         [TestMethod]
@@ -430,7 +430,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Interface indexer with multiple parameters in formal-index-parameter-list");
-            Assert.True(Interface_TestClass_indexer_05.testMethod());
+            Assert.IsTrue(Interface_TestClass_indexer_05.testMethod());
         }
 
         [TestMethod]
@@ -438,7 +438,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Interface indexer with just get accessor");
-            Assert.True(Interface_TestClass_indexer_06.testMethod());
+            Assert.IsTrue(Interface_TestClass_indexer_06.testMethod());
         }
 
         [TestMethod]
@@ -446,7 +446,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Interface indexer with just set accessor");
-            Assert.True(Interface_TestClass_indexer_07.testMethod());
+            Assert.IsTrue(Interface_TestClass_indexer_07.testMethod());
         }
 
         [TestMethod]
@@ -455,7 +455,7 @@ namespace NFUnitTestInterface
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Using 'new' on an interface member (indexer) that doesn't hide an inherited member should gen warning ");
             OutputHelper.WriteLine("(Related Bug: 86609)");
-            Assert.True(Interface_TestClass_indexer_18.testMethod());
+            Assert.IsTrue(Interface_TestClass_indexer_18.testMethod());
         }
 
         [TestMethod]
@@ -463,7 +463,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Using 'new' on an interface member (method) that doesn't hide an inherited member should gen warning (Bug: 86609)");
-            Assert.True(Interface_TestClass_meth_09.testMethod());
+            Assert.IsTrue(Interface_TestClass_meth_09.testMethod());
         }
 
         [TestMethod]
@@ -471,7 +471,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Using 'new' on an interface member (property) that doesn't hide an inherited member should gen warning (Bug: 86609)");
-            Assert.True(Interface_TestClass_prop_09.testMethod());
+            Assert.IsTrue(Interface_TestClass_prop_09.testMethod());
         }
 
         [TestMethod]
@@ -479,7 +479,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Member functions of an interface may have same name if they have diff args");
-            Assert.True(Interface_TestClass_namesig_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_namesig_02.testMethod());
         }
 
         [TestMethod]
@@ -487,7 +487,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Interface member that is hidden by an inheriting interface (without using new) gens warning");
-            Assert.True(Interface_TestClass_namesig_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_namesig_03.testMethod());
         }
 
         [TestMethod]
@@ -495,7 +495,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Interface that inherits 2 other interfaces that have a member with same sig");
-            Assert.True(Interface_TestClass_namesig_04.testMethod());
+            Assert.IsTrue(Interface_TestClass_namesig_04.testMethod());
         }
 
         [TestMethod]
@@ -503,7 +503,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Interface member that is hidden by an inheriting interface (using new) works correctly");
-            Assert.True(Interface_TestClass_namesig_05.testMethod());
+            Assert.IsTrue(Interface_TestClass_namesig_05.testMethod());
         }
 
         [TestMethod]
@@ -511,7 +511,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Using 'new' on an interface member (event) that doesn't hide an inherited member should gen warning (Bug: 118831)");
-            Assert.True(Interface_TestClass_events_08.testMethod());
+            Assert.IsTrue(Interface_TestClass_events_08.testMethod());
         }
 
         [TestMethod]
@@ -519,7 +519,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Simple Event declaration within an interface");
-            Assert.True(Interface_TestClass_events_09.testMethod());
+            Assert.IsTrue(Interface_TestClass_events_09.testMethod());
         }
 
         [TestMethod]
@@ -527,7 +527,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Inherited members with same sig, from diff interfaces, can be accessed through casting");
-            Assert.True(Interface_TestClass_maccess_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_maccess_01.testMethod());
         }
 
         [TestMethod]
@@ -535,7 +535,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Inherited members with same method names but diff args can be accessed by casting");
-            Assert.True(Interface_TestClass_maccess_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_maccess_03.testMethod());
         }
 
         [TestMethod]
@@ -543,7 +543,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.2 Interface members");
             OutputHelper.WriteLine("Inherited members with same method names but diff args should work if arg passed is not ambiguous (Regression bug: 90867)");
-            Assert.True(Interface_TestClass_maccess_04.testMethod());
+            Assert.IsTrue(Interface_TestClass_maccess_04.testMethod());
         }
 
         [TestMethod]
@@ -551,7 +551,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify private interfaces gen error when declared in global namespace");
-            Assert.True(Interface_TestClass_modifier_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_modifier_02.testMethod());
         }
 
         [TestMethod]
@@ -559,7 +559,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify protected interfaces gen error when declared in global namespace");
-            Assert.True(Interface_TestClass_modifier_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_modifier_03.testMethod());
         }
 
         [TestMethod]
@@ -567,7 +567,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Simple struct implementation of two interfaces");
-            Assert.True(Interface_TestClass_struct_impl_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_impl_01.testMethod());
         }
 
         [TestMethod]
@@ -575,7 +575,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("A struct that implements an interface also implicitly implements all of the interface's base interfaces");
-            Assert.True(Interface_TestClass_struct_impl_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_impl_02.testMethod());
         }
 
         [TestMethod]
@@ -583,7 +583,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("A member of an interface-type can be assigned an instance of a struct that implements it");
-            Assert.True(Interface_TestClass_struct_impl_04.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_impl_04.testMethod());
         }
 
         [TestMethod]
@@ -591,7 +591,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("A struct that implements an interface with a method, property, event, and indexer");
-            Assert.True(Interface_TestClass_struct_impl_05.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_impl_05.testMethod());
         }
 
         [TestMethod]
@@ -599,7 +599,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Implementing a method that was defined identically by two different base-interfaces should work");
-            Assert.True(Interface_TestClass_struct_impl_06.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_impl_06.testMethod());
         }
 
         [TestMethod]
@@ -607,7 +607,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Implementing a property that was defined identically by two different base-interfaces should work");
-            Assert.True(Interface_TestClass_struct_impl_07.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_impl_07.testMethod());
         }
 
         [TestMethod]
@@ -615,7 +615,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Implementing an event that was defined identically by two different base-interfaces should work");
-            Assert.True(Interface_TestClass_struct_impl_08.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_impl_08.testMethod());
         }
 
         [TestMethod]
@@ -623,7 +623,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Implementing an indexer that was defined identically by two different base-interfaces should work");
-            Assert.True(Interface_TestClass_struct_impl_09.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_impl_09.testMethod());
         }
 
         [TestMethod]
@@ -631,7 +631,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementations");
-            Assert.True(Interface_TestClass_struct_explicit_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_01.testMethod());
         }
 
         [TestMethod]
@@ -639,7 +639,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Implementing an iface method in a struct that doesn't list the iface as a base iface but does list a iface that inherits the iface should work");
-            Assert.True(Interface_TestClass_struct_explicit_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_03.testMethod());
         }
 
         [TestMethod]
@@ -647,7 +647,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementation of a method");
-            Assert.True(Interface_TestClass_struct_explicit_04.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_04.testMethod());
         }
 
         [TestMethod]
@@ -655,7 +655,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementation of a property");
-            Assert.True(Interface_TestClass_struct_explicit_05.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_05.testMethod());
         }
 
         [TestMethod]
@@ -663,7 +663,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementation of an event (Bug: 89766)");
-            Assert.True(Interface_TestClass_struct_explicit_06.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_06.testMethod());
         }
 
         [TestMethod]
@@ -671,7 +671,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicit interface member implementation of an indexer");
-            Assert.True(Interface_TestClass_struct_explicit_07.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_07.testMethod());
         }
 
         [TestMethod]
@@ -679,7 +679,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Multiple base interfaces and explicit interface member implementations work");
-            Assert.True(Interface_TestClass_struct_explicit_09.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_09.testMethod());
         }
 
         [TestMethod]
@@ -687,7 +687,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implemented members (method) can be called through interface instances");
-            Assert.True(Interface_TestClass_struct_explicit_10.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_10.testMethod());
         }
 
         [TestMethod]
@@ -695,7 +695,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implemented members (property) can be called through interface instances (Bug 90570)");
-            Assert.True(Interface_TestClass_struct_explicit_11.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_11.testMethod());
         }
 
         [TestMethod]
@@ -703,7 +703,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implemented members (indexer) can be called through interface instances (Bug 90570)");
-            Assert.True(Interface_TestClass_struct_explicit_12.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_12.testMethod());
         }
 
         [TestMethod]
@@ -711,7 +711,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implemented members (event) can be called through interface instances (89766)");
-            Assert.True(Interface_TestClass_struct_explicit_13.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_13.testMethod());
         }
 
         [TestMethod]
@@ -719,7 +719,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Explicitly implementing member from interface not in base-list (but in base-list of a base interface) should work");
-            Assert.True(Interface_TestClass_struct_explicit_19.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_19.testMethod());
         }
 
         [TestMethod]
@@ -727,7 +727,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.4 Interface implementations");
             OutputHelper.WriteLine("Hidden base interface members may be implemented in all of the ways used in this");
-            Assert.True(Interface_TestClass_struct_explicit_20.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_explicit_20.testMethod());
         }
 
         [TestMethod]
@@ -735,7 +735,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest interface declared in a struct in default global namespace");
-            Assert.True(Interface_TestClass_struct_decl_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_decl_01.testMethod());
         }
 
         [TestMethod]
@@ -743,7 +743,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest interface declared in a struct in a declared namespace");
-            Assert.True(Interface_TestClass_decl_02_NS.Interface_TestClass_decl_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_decl_02_NS.Interface_TestClass_decl_02.testMethod());
         }
 
         [TestMethod]
@@ -751,7 +751,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest form of interface inheritance, inheriting multiple interfaces");
-            Assert.True(Interface_TestClass_struct_inherit_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_inherit_01.testMethod());
         }
 
         [TestMethod]
@@ -759,7 +759,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify public and internal interfaces are valid inside structs");
-            Assert.True(Interface_TestClass_struct_modifier_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_modifier_01.testMethod());
         }
 
         [TestMethod]
@@ -767,7 +767,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify private interfaces are valid inside structs");
-            Assert.True(Interface_TestClass_struct_modifier_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_modifier_02.testMethod());
         }
 
         [TestMethod]
@@ -775,7 +775,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Verify new interface gens warning if not hiding anything");
-            Assert.True(Interface_TestClass_struct_modifier_03.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_modifier_03.testMethod());
         }
 
         [TestMethod]
@@ -783,7 +783,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest interface declared (with semi-colon) in a struct in default global namespace");
-            Assert.True(Interface_TestClass_struct_semicolon_01.testMethod());
+            Assert.IsTrue(Interface_TestClass_struct_semicolon_01.testMethod());
         }
 
         [TestMethod]
@@ -791,7 +791,7 @@ namespace NFUnitTestInterface
         {
             OutputHelper.WriteLine("Section 13.1 Interface declarations ");
             OutputHelper.WriteLine("Simplest interface declared (with semi-colon) in a struct in a declared namespace");
-            Assert.True(Interface_TestClass_semicolon_02_NS.Interface_TestClass_semicolon_02.testMethod());
+            Assert.IsTrue(Interface_TestClass_semicolon_02_NS.Interface_TestClass_semicolon_02.testMethod());
         }
 
         //Compiled Test Cases 
@@ -3444,14 +3444,14 @@ namespace NFUnitTestInterface
         //         OutputHelper.WriteLine($"Order on {order.Purchased} for {order.Cost}");
         //     }
 
-        //     Assert.Equal(c.Reminders.Count, 2, "Reminders count is wrong");
-        //     Assert.Equal((c.Reminders[0] as Reminder).Date, reminder00Date, "Reminder 1 date is wrong");
-        //     Assert.Equal((c.Reminders[1] as Reminder).Subject, reminder01Subject, "Reminder 2 subject is wrong");
+        //     Assert.AreEqual(c.Reminders.Count, 2, "Reminders count is wrong");
+        //     Assert.AreEqual((c.Reminders[0] as Reminder).Date, reminder00Date, "Reminder 1 date is wrong");
+        //     Assert.AreEqual((c.Reminders[1] as Reminder).Subject, reminder01Subject, "Reminder 2 subject is wrong");
 
-        //     Assert.Equal(c.PreviousOrders.Count, 2, "Previous Orders count is wrong");
-        //     Assert.Equal(c.LastOrder.Ticks, newOrder01Date.Ticks, "Last order Previous Orders count is wrong");
-        //     Assert.Equal((c.PreviousOrders[0] as IOrder).Cost, newOrder00Cost, "Last order cost is wrong");
-        //     Assert.Equal((c.PreviousOrders[1] as IOrder).Purchased, newOrder01Date, "Last order cost is wrong");
+        //     Assert.AreEqual(c.PreviousOrders.Count, 2, "Previous Orders count is wrong");
+        //     Assert.AreEqual(c.LastOrder.Ticks, newOrder01Date.Ticks, "Last order Previous Orders count is wrong");
+        //     Assert.AreEqual((c.PreviousOrders[0] as IOrder).Cost, newOrder00Cost, "Last order cost is wrong");
+        //     Assert.AreEqual((c.PreviousOrders[1] as IOrder).Purchased, newOrder01Date, "Last order cost is wrong");
         // }
     }
 

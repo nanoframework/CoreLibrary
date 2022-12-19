@@ -915,7 +915,7 @@ namespace NFUnitTestThread
 
             Thread newThread1 = new Thread(Work.DoWork);
             newThread1.Start();
-            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { newThread1.Join(-77); });
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { newThread1.Join(-77); });
         }
 
         [TestMethod]
@@ -929,7 +929,7 @@ namespace NFUnitTestThread
 
             OutputHelper.WriteLine("Verify ArgumentOutOfRangeException exception is thrown");
             OutputHelper.WriteLine("Why not for -1 ?");
-            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { Thread.Sleep(-2); });
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { Thread.Sleep(-2); });
         }
 
         [TestMethod]
@@ -943,7 +943,7 @@ namespace NFUnitTestThread
 
             OutputHelper.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
-            Assert.Throws(typeof(Exception), () => { newThread1.Join(); });
+            Assert.ThrowsException(typeof(Exception), () => { newThread1.Join(); });
         }
 
         [TestMethod]
@@ -957,7 +957,7 @@ namespace NFUnitTestThread
 
             OutputHelper.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
-            Assert.Throws(typeof(Exception), () => { newThread1.Suspend(); });
+            Assert.ThrowsException(typeof(Exception), () => { newThread1.Suspend(); });
         }
 
         [TestMethod]
@@ -972,7 +972,7 @@ namespace NFUnitTestThread
 
             OutputHelper.WriteLine("The type of exception thrown should be ThreadStateException");
             Thread newThread1 = new Thread(Work.DoWork);
-            Assert.Throws(typeof(Exception), () => { newThread1.Resume(); });
+            Assert.ThrowsException(typeof(Exception), () => { newThread1.Resume(); });
         }
 
         static bool sleepZero = false;

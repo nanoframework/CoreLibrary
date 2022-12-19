@@ -20,7 +20,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" When a static member is referenced in a member-access");
             OutputHelper.WriteLine(" of the form E.M, E must denote a type. It is an error for");
             OutputHelper.WriteLine(" E to denote an instance.");
-            Assert.True(Static_InstTestClass01.testMethod());
+            Assert.IsTrue(Static_InstTestClass01.testMethod());
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" A static field identifies exactly one storage location.");
             OutputHelper.WriteLine(" No matter how many instances of a class are created,");
             OutputHelper.WriteLine(" there is only ever one copy of a static field.");
-            Assert.True(Static_InstTestClass07.testMethod());
+            Assert.IsTrue(Static_InstTestClass07.testMethod());
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" When an instance member is referenced in a member-access");
             OutputHelper.WriteLine(" of the form E.M, E must denote an instance. It is an error ");
             OutputHelper.WriteLine(" for E to denote a type.");
-            Assert.True(Static_InstTestClass14.testMethod());
+            Assert.IsTrue(Static_InstTestClass14.testMethod());
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.2 ");
             OutputHelper.WriteLine(" Every instance of a class contains a separate copy ");
             OutputHelper.WriteLine(" of all instance fields of the class.");
-            Assert.True(Static_InstTestClass18.testMethod());
+            Assert.IsTrue(Static_InstTestClass18.testMethod());
         }
 
         [TestMethod]
@@ -61,7 +61,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" destructor) operates on a given instance of ");
             OutputHelper.WriteLine(" the class, and this instance can be accessed as");
             OutputHelper.WriteLine(" this.");
-            Assert.True(Static_InstTestClass19.testMethod());
+            Assert.IsTrue(Static_InstTestClass19.testMethod());
         }
 
         [TestMethod]
@@ -73,7 +73,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" destructor) operates on a given instance of ");
             OutputHelper.WriteLine(" the class, and this instance can be accessed as");
             OutputHelper.WriteLine(" this.");
-            Assert.True(Static_InstTestClass20.testMethod());
+            Assert.IsTrue(Static_InstTestClass20.testMethod());
         }
 
         [TestMethod]
@@ -85,7 +85,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" destructor) operates on a given instance of ");
             OutputHelper.WriteLine(" the class, and this instance can be accessed as");
             OutputHelper.WriteLine(" this.");
-            Assert.True(Static_InstTestClass21.testMethod());
+            Assert.IsTrue(Static_InstTestClass21.testMethod());
         }
 
         [TestMethod]
@@ -97,7 +97,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" destructor) operates on a given instance of ");
             OutputHelper.WriteLine(" the class, and this instance can be accessed as");
             OutputHelper.WriteLine(" this.");
-            Assert.True(Static_InstTestClass22.testMethod());
+            Assert.IsTrue(Static_InstTestClass22.testMethod());
         }
 
         [TestMethod]
@@ -109,7 +109,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" destructor) operates on a given instance of ");
             OutputHelper.WriteLine(" the class, and this instance can be accessed as");
             OutputHelper.WriteLine(" this.");
-            Assert.True(Static_InstTestClass23.testMethod());
+            Assert.IsTrue(Static_InstTestClass23.testMethod());
         }
 
         //Compiled Test Cases 

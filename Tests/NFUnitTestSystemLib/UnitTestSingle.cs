@@ -15,35 +15,35 @@ namespace NFUnitTestSystemLib
         public void Ctor_Empty()
         {
             var f = new float();
-            Assert.Equal(0, f);
+            Assert.AreEqual(0, f);
         }
 
         [TestMethod]
         public void Ctor_Value()
         {
             float f = 41;
-            Assert.Equal(41, f);
+            Assert.AreEqual(41, f);
 
             f = 41.3f;
-            Assert.Equal(41.3f, f);
+            Assert.AreEqual(41.3f, f);
         }
 
         [TestMethod]
         public void MaxValue()
         {
-            Assert.Equal((float)3.40282346638528859e+38, float.MaxValue);
+            Assert.AreEqual((float)3.40282346638528859e+38, float.MaxValue);
         }
 
         [TestMethod]
         public void MinValue()
         {
-            Assert.Equal((float)-3.40282346638528859e+38, float.MinValue);
+            Assert.AreEqual((float)-3.40282346638528859e+38, float.MinValue);
         }
 
         [TestMethod]
         public void Epsilon()
         {
-            Assert.Equal((float)1.4e-45, float.Epsilon);
+            Assert.AreEqual((float)1.4e-45, float.Epsilon);
         }
 
         [TestMethod]
@@ -64,23 +64,23 @@ namespace NFUnitTestSystemLib
             {
                 if (test.Value is float f2)
                 {
-                    Assert.Equal(test.Expected, test.F1.Equals(f2));
+                    Assert.AreEqual(test.Expected, test.F1.Equals(f2));
 
                     if (float.IsNaN((float)test.F1) && float.IsNaN(f2))
                     {
-                        Assert.Equal(!test.Expected, (float)test.F1 == f2);
-                        Assert.Equal(test.Expected, (float)test.F1 != f2);
+                        Assert.AreEqual(!test.Expected, (float)test.F1 == f2);
+                        Assert.AreEqual(test.Expected, (float)test.F1 != f2);
                     }
                     else
                     {
-                        Assert.Equal(test.Expected, (float)test.F1 == f2);
-                        Assert.Equal(!test.Expected, (float)test.F1 != f2);
+                        Assert.AreEqual(test.Expected, (float)test.F1 == f2);
+                        Assert.AreEqual(!test.Expected, (float)test.F1 != f2);
                     }
 
-                    Assert.Equal(test.Expected, test.F1.GetHashCode().Equals(f2.GetHashCode()));
+                    Assert.AreEqual(test.Expected, test.F1.GetHashCode().Equals(f2.GetHashCode()));
                 }
 
-                Assert.Equal(test.Expected, test.F1.Equals(test.Value));
+                Assert.AreEqual(test.Expected, test.F1.Equals(test.Value));
             }
         }
 

@@ -202,10 +202,10 @@ namespace NFUnitTestVariables
                 int one_is_one = one;
                 int two_is_two = two;
 
-                Assert.True(one_is_one.Equals(one), "one_is_one should be equal one");
-                Assert.True(two_is_two.Equals(two), "two_is_two should be equal two");
-                Assert.False(two_is_two.Equals(one), "two_is_two should NOT be equal one");
-                Assert.False(one_is_one.Equals(two), "one_is_one should NOT be equal two");
+                Assert.IsTrue(one_is_one.Equals(one), "one_is_one should be equal one");
+                Assert.IsTrue(two_is_two.Equals(two), "two_is_two should be equal two");
+                Assert.IsFalse(two_is_two.Equals(one), "two_is_two should NOT be equal one");
+                Assert.IsFalse(one_is_one.Equals(two), "one_is_one should NOT be equal two");
             }
 
             {
@@ -216,10 +216,10 @@ namespace NFUnitTestVariables
                 uint one_is_one = one;
                 uint two_is_two = two;
 
-                Assert.True(one_is_one.Equals(one), "one_is_one should be equal one");
-                Assert.True(two_is_two.Equals(two), "two_is_two should be equal two");
-                Assert.False(two_is_two.Equals(one), "two_is_two should NOT be equal one");
-                Assert.False(one_is_one.Equals(two), "one_is_one should NOT be equal two");
+                Assert.IsTrue(one_is_one.Equals(one), "one_is_one should be equal one");
+                Assert.IsTrue(two_is_two.Equals(two), "two_is_two should be equal two");
+                Assert.IsFalse(two_is_two.Equals(one), "two_is_two should NOT be equal one");
+                Assert.IsFalse(one_is_one.Equals(two), "one_is_one should NOT be equal two");
             }
 
             {
@@ -230,10 +230,10 @@ namespace NFUnitTestVariables
                 float one_is_one = one;
                 float two_is_two = two;
 
-                Assert.True(one_is_one.Equals(one), "one_is_one should be equal one");
-                Assert.True(two_is_two.Equals(two), "two_is_two should be equal two");
-                Assert.False(two_is_two.Equals(one), "two_is_two should NOT be equal one");
-                Assert.False(one_is_one.Equals(two), "one_is_one should NOT be equal two");
+                Assert.IsTrue(one_is_one.Equals(one), "one_is_one should be equal one");
+                Assert.IsTrue(two_is_two.Equals(two), "two_is_two should be equal two");
+                Assert.IsFalse(two_is_two.Equals(one), "two_is_two should NOT be equal one");
+                Assert.IsFalse(one_is_one.Equals(two), "one_is_one should NOT be equal two");
             }
 
             {
@@ -244,10 +244,10 @@ namespace NFUnitTestVariables
                 double one_is_one = one;
                 double two_is_two = two;
 
-                Assert.True(one_is_one.Equals(one), "one_is_one should be equal one");
-                Assert.True(two_is_two.Equals(two), "two_is_two should be equal two");
-                Assert.False(two_is_two.Equals(one), "two_is_two should NOT be equal one");
-                Assert.False(one_is_one.Equals(two), "one_is_one should NOT be equal two");
+                Assert.IsTrue(one_is_one.Equals(one), "one_is_one should be equal one");
+                Assert.IsTrue(two_is_two.Equals(two), "two_is_two should be equal two");
+                Assert.IsFalse(two_is_two.Equals(one), "two_is_two should NOT be equal one");
+                Assert.IsFalse(one_is_one.Equals(two), "one_is_one should NOT be equal two");
             }
         }
 

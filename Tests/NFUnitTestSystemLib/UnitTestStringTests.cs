@@ -22,36 +22,36 @@ namespace NFUnitTestSystemLib
 
             OutputHelper.WriteLine("Char [], start, number");
             string str = new string(car, 1, 2);
-            Assert.Equal(str, "bc");
+            Assert.AreEqual(str, "bc");
 
             str = new string(car, 0, 4);
-            Assert.Equal(str, "abcd");
+            Assert.AreEqual(str, "abcd");
 
             OutputHelper.WriteLine("Char []");
             str = new string(car);
-            Assert.Equal(str, "abcd");
+            Assert.AreEqual(str, "abcd");
 
             OutputHelper.WriteLine("Char, number");
             str = new string('\n', 33);
-            Assert.Equal(str.Length, 33);
+            Assert.AreEqual(str.Length, 33);
             for (int i = 0; i < str.Length; i++)
             {
-                Assert.Equal(str[i], '\n');
+                Assert.AreEqual(str[i], '\n');
             }
 
             OutputHelper.WriteLine("Char, string terminator known failure. ");
             char[] car2 = new char[] { (char)0, (char)65 };
             string s = new string(car2);
-            Assert.Equal(s, "\0A");
+            Assert.AreEqual(s, "\0A");
             OutputHelper.WriteLine("This was previously bug 20620");
 
             OutputHelper.WriteLine("new char[0]");
             str = new string(new char[0]);
-            Assert.Equal(str, string.Empty);
+            Assert.AreEqual(str, string.Empty);
 
             OutputHelper.WriteLine("null");
             str = new string(null);
-            Assert.Equal(str, string.Empty);
+            Assert.AreEqual(str, string.Empty);
         }
 
         [TestMethod]
@@ -61,11 +61,11 @@ namespace NFUnitTestSystemLib
             string str = "hello";
             object ob = "Hello";
             OutputHelper.WriteLine("NormalCompareTo");
-            Assert.Equal(str.CompareTo((object)"hello"), 0);
-            Assert.True(str.CompareTo(ob) > 0);
-            Assert.True(str.CompareTo((object)"zello") < 0);
+            Assert.AreEqual(str.CompareTo((object)"hello"), 0);
+            Assert.IsTrue(str.CompareTo(ob) > 0);
+            Assert.IsTrue(str.CompareTo((object)"zello") < 0);
             OutputHelper.WriteLine("CompareTo null");
-            Assert.True(str.CompareTo((object)null) > 0);
+            Assert.IsTrue(str.CompareTo((object)null) > 0);
         }
 
         [TestMethod]
@@ -82,11 +82,11 @@ namespace NFUnitTestSystemLib
                         strs[j].GetHashCode().ToString());
                     if (i == j)
                     {
-                        Assert.Equal(strs[i].GetHashCode(), strs[j].GetHashCode());
+                        Assert.AreEqual(strs[i].GetHashCode(), strs[j].GetHashCode());
                     }
                     else
                     {
-                        Assert.NotEqual(strs[i].GetHashCode(), strs[j].GetHashCode());
+                        Assert.AreNotEqual(strs[i].GetHashCode(), strs[j].GetHashCode());
                     }
                 }
             }
@@ -103,19 +103,19 @@ namespace NFUnitTestSystemLib
             object ob2 = "bcd";
             object ob = str as object;
 
-            Assert.True(str.Equals(ob));
-            Assert.False(str.Equals((object)123));
-            Assert.True(str.Equals((object)"abcd"));
-            Assert.False(str.Equals((object)"bcd"));
-            Assert.False(str.Equals(ob2));
+            Assert.IsTrue(str.Equals(ob));
+            Assert.IsFalse(str.Equals((object)123));
+            Assert.IsTrue(str.Equals((object)"abcd"));
+            Assert.IsFalse(str.Equals((object)"bcd"));
+            Assert.IsFalse(str.Equals(ob2));
             string str1 = "abc\n";
             string str2 = "abcd";
             string str3 = "abc\n";
-            Assert.True(str1.Equals(str3));
-            Assert.False(str1.Equals(str2));
-            Assert.True(str3.Equals(str1));
-            Assert.True(str3.Equals("abc" + "\n"));
-            Assert.True(str2.Equals("a" + "b" + 'c' + "d"));
+            Assert.IsTrue(str1.Equals(str3));
+            Assert.IsFalse(str1.Equals(str2));
+            Assert.IsTrue(str3.Equals(str1));
+            Assert.IsTrue(str3.Equals("abc" + "\n"));
+            Assert.IsTrue(str2.Equals("a" + "b" + 'c' + "d"));
         }
 
         [TestMethod]
@@ -123,9 +123,9 @@ namespace NFUnitTestSystemLib
         {
             OutputHelper.WriteLine("Test of the ToString method");
             string str = "abc";
-            Assert.Equal(str, str.ToString());
-            Assert.Equal(str, str.ToString().ToString().ToString());
-            Assert.Equal(str.ToString(), "abc");
+            Assert.AreEqual(str, str.ToString());
+            Assert.AreEqual(str, str.ToString().ToString().ToString());
+            Assert.AreEqual(str.ToString(), "abc");
         }
 
         [TestMethod]
@@ -162,17 +162,17 @@ namespace NFUnitTestSystemLib
             string str1 = "ab@cd";
             string str2 = "abcd@";
 
-            Assert.Equal(str1.Split(car1)[0], "ab");
-            Assert.Equal(str1.Split(car1)[1], "cd");
-            Assert.Equal(str2.Split(car1)[0], "abcd");
-            Assert.Equal(str2.Split(car1)[1], "");
-            Assert.Equal(str1.Split(car2)[0], "ab@cd");
+            Assert.AreEqual(str1.Split(car1)[0], "ab");
+            Assert.AreEqual(str1.Split(car1)[1], "cd");
+            Assert.AreEqual(str2.Split(car1)[0], "abcd");
+            Assert.AreEqual(str2.Split(car1)[1], "");
+            Assert.AreEqual(str1.Split(car2)[0], "ab@cd");
 
             OutputHelper.WriteLine("Verify split with a count");
             OutputHelper.WriteLine("This is currently a known issue");
             OutputHelper.WriteLine("20659	String.Split with a count parameter always returns the whole string.");
             string[] oneTwoThree = "1 2 3".Split(new char[] { ' ' }, 1);
-            Assert.True(oneTwoThree.Length <= 1);
+            Assert.IsTrue(oneTwoThree.Length <= 1);
         }
 
         [TestMethod]
@@ -181,10 +181,10 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Testing the Substring method");
             string str1 = "abcde";
 
-            Assert.Equal(str1.Substring(0), str1);
-            Assert.Equal(str1.Substring(0, 5), str1);
-            Assert.Equal(str1.Substring(2), "cde");
-            Assert.Equal(str1.Substring(2, 1), "c");
+            Assert.AreEqual(str1.Substring(0), str1);
+            Assert.AreEqual(str1.Substring(0, 5), str1);
+            Assert.AreEqual(str1.Substring(2), "cde");
+            Assert.AreEqual(str1.Substring(2, 1), "c");
         }
 
         [TestMethod]
@@ -195,10 +195,10 @@ namespace NFUnitTestSystemLib
             char[] car1 = new Char[] { '@', 'q' };
             string str1 = " abc@de ";
             string str2 = "@abc  @  de@";
-            Assert.Equal(str1.Trim(), "abc@de");
-            Assert.Equal(str1.Trim(car1), " abc@de ");
-            Assert.Equal(str2.Trim(), "@abc  @  de@");
-            Assert.Equal(str2.Trim(car1), "abc  @  de");
+            Assert.AreEqual(str1.Trim(), "abc@de");
+            Assert.AreEqual(str1.Trim(car1), " abc@de ");
+            Assert.AreEqual(str2.Trim(), "@abc  @  de@");
+            Assert.AreEqual(str2.Trim(car1), "abc  @  de");
         }
 
         [TestMethod]
@@ -209,10 +209,10 @@ namespace NFUnitTestSystemLib
             char[] car1 = new Char[] { '@', 'q' };
             string str1 = " abc@de ";
             string str2 = "@abc  @  de@";
-            Assert.Equal(str1.TrimStart(), "abc@de ");
-            Assert.Equal(str1.TrimStart(car1), " abc@de ");
-            Assert.Equal(str2.TrimStart(), "@abc  @  de@");
-            Assert.Equal(str2.TrimStart(car1), "abc  @  de@");
+            Assert.AreEqual(str1.TrimStart(), "abc@de ");
+            Assert.AreEqual(str1.TrimStart(car1), " abc@de ");
+            Assert.AreEqual(str2.TrimStart(), "@abc  @  de@");
+            Assert.AreEqual(str2.TrimStart(car1), "abc  @  de@");
         }
 
         [TestMethod]
@@ -223,10 +223,10 @@ namespace NFUnitTestSystemLib
             char[] car1 = new Char[] { '@', 'q' };
             string str1 = " abc@de ";
             string str2 = "@abc  @  de@";
-            Assert.Equal(str1.TrimEnd(), " abc@de");
-            Assert.Equal(str1.TrimEnd(car1), " abc@de ");
-            Assert.Equal(str2.TrimEnd(), "@abc  @  de@");
-            Assert.Equal(str2.TrimEnd(car1), "@abc  @  de");
+            Assert.AreEqual(str1.TrimEnd(), " abc@de");
+            Assert.AreEqual(str1.TrimEnd(car1), " abc@de ");
+            Assert.AreEqual(str2.TrimEnd(), "@abc  @  de@");
+            Assert.AreEqual(str2.TrimEnd(car1), "@abc  @  de");
         }
 
         [TestMethod]
@@ -235,12 +235,12 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Testing the IndexOf method");
 
             string str1 = "@ abc@de ";
-            Assert.Equal(str1.IndexOf('@'), 0);
-            Assert.Equal(str1.IndexOf("abc"), 2);
-            Assert.Equal(str1.IndexOf('@', 1), 5);
-            Assert.Equal(str1.IndexOf('@', 1, 1), -1);
-            Assert.Equal(str1.IndexOf("abc", 2), 2);
-            Assert.Equal(str1.IndexOf("abc", 1, 1), -1);
+            Assert.AreEqual(str1.IndexOf('@'), 0);
+            Assert.AreEqual(str1.IndexOf("abc"), 2);
+            Assert.AreEqual(str1.IndexOf('@', 1), 5);
+            Assert.AreEqual(str1.IndexOf('@', 1, 1), -1);
+            Assert.AreEqual(str1.IndexOf("abc", 2), 2);
+            Assert.AreEqual(str1.IndexOf("abc", 1, 1), -1);
         }
 
         [TestMethod]
@@ -251,8 +251,8 @@ namespace NFUnitTestSystemLib
             string str1 = "@ abc@de ";
             char[] car1 = new Char[] { '@', 'b' };
 
-            Assert.Equal(str1.IndexOfAny(car1), 0);
-            Assert.Equal(str1.IndexOfAny(car1, 1), 3);
+            Assert.AreEqual(str1.IndexOfAny(car1), 0);
+            Assert.AreEqual(str1.IndexOfAny(car1, 1), 3);
         }
 
         [TestMethod]
@@ -261,12 +261,12 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Testing the LastIndexOf method");
 
             string str1 = "@ abc@de ";
-            Assert.Equal(str1.LastIndexOf('@'), 5);
-            Assert.Equal(str1.LastIndexOf("abc"), 2);
-            Assert.Equal(str1.LastIndexOf('@', 1), 0);
-            Assert.Equal(str1.LastIndexOf('@', 1, 1), -1);
-            Assert.Equal(str1.LastIndexOf("abc", 2), -1);
-            Assert.Equal(str1.LastIndexOf("@", 6, 1), -1);
+            Assert.AreEqual(str1.LastIndexOf('@'), 5);
+            Assert.AreEqual(str1.LastIndexOf("abc"), 2);
+            Assert.AreEqual(str1.LastIndexOf('@', 1), 0);
+            Assert.AreEqual(str1.LastIndexOf('@', 1, 1), -1);
+            Assert.AreEqual(str1.LastIndexOf("abc", 2), -1);
+            Assert.AreEqual(str1.LastIndexOf("@", 6, 1), -1);
         }
 
         [TestMethod]
@@ -277,9 +277,9 @@ namespace NFUnitTestSystemLib
             string str1 = "@ abc@de ";
             char[] car1 = new Char[] { '@', 'b' };
 
-            Assert.Equal(str1.LastIndexOfAny(car1), 5);
-            Assert.Equal(str1.LastIndexOfAny(car1, 1), 0);
-            Assert.Equal(str1.LastIndexOfAny(car1, 4, 1), -1);
+            Assert.AreEqual(str1.LastIndexOfAny(car1), 5);
+            Assert.AreEqual(str1.LastIndexOfAny(car1, 1), 0);
+            Assert.AreEqual(str1.LastIndexOfAny(car1, 4, 1), -1);
         }
 
         [TestMethod]
@@ -288,7 +288,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Testing the ToLower method");
 
             string str1 = "@ ABC@de ";
-            Assert.Equal(str1.ToLower(), "@ abc@de ");
+            Assert.AreEqual(str1.ToLower(), "@ abc@de ");
         }
 
         [TestMethod]
@@ -297,7 +297,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Testing the ToUpper method"); ;
 
             string str1 = "@ ABC@de ";
-            Assert.Equal(str1.ToUpper(), "@ ABC@DE ");
+            Assert.AreEqual(str1.ToUpper(), "@ ABC@DE ");
         }
 
         [TestMethod]
@@ -306,22 +306,22 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Testing the Length property"); ;
 
             string str1 = "@ ABC@de ";
-            Assert.Equal(str1.Length, 9);
+            Assert.AreEqual(str1.Length, 9);
         }
 
         [TestMethod]
         public void Concat_Test1()
         {
             string str = "a" + 1 + "b" + new ToStringReturnsNull();
-            Assert.Equal(str, "a1b");
+            Assert.AreEqual(str, "a1b");
         }
 
         [TestMethod]
         public void Format()
         {
-            Assert.Equal(String.Format("The value is {0}", 32), "The value is 32",
+            Assert.AreEqual(String.Format("The value is {0}", 32), "The value is 32",
                 "String.Format with a single variable");
-            Assert.Equal(String.Format("The value with formatter is {0:d3}", 32), "The value with formatter is 032",
+            Assert.AreEqual(String.Format("The value with formatter is {0:d3}", 32), "The value with formatter is 032",
                 "String.Format with a decimal formatter.");
         }
 
@@ -329,13 +329,13 @@ namespace NFUnitTestSystemLib
         public void FormatWithNull()
         {
             object nullObject = null;
-            Assert.Equal(String.Format("The value is {0}", nullObject), "The value is ",
+            Assert.AreEqual(String.Format("The value is {0}", nullObject), "The value is ",
                 "String.Format should treat a null argument as an empty string");
-            Assert.Equal(String.Format("The value with formatter is {0:d}", nullObject), "The value with formatter is ",
+            Assert.AreEqual(String.Format("The value with formatter is {0:d}", nullObject), "The value with formatter is ",
                 "String.Format should treat a null argument as an empty string when used with formatters.");
-            Assert.Equal(String.Format("First parm: '{0}' second parm: '{1}'", new object[] { nullObject, 32 }), "First parm: '' second parm: '32'",
+            Assert.AreEqual(String.Format("First parm: '{0}' second parm: '{1}'", new object[] { nullObject, 32 }), "First parm: '' second parm: '32'",
                 "Formatting with two parms should also work");
-            Assert.Equal($"the value is {nullObject}", "the value is ", "Interpolated strings should use string.format and work correctly");
+            Assert.AreEqual($"the value is {nullObject}", "the value is ", "Interpolated strings should use string.format and work correctly");
         }
 
         [TestMethod]
@@ -345,28 +345,28 @@ namespace NFUnitTestSystemLib
 
             string s = "Hello";
             string value = "ello";
-            Assert.True(s.Contains(value));
+            Assert.IsTrue(s.Contains(value));
 
             value = "";
-            Assert.True(s.Contains(value));
+            Assert.IsTrue(s.Contains(value));
 
             value = "hello";
-            Assert.False(s.Contains(value));
+            Assert.IsFalse(s.Contains(value));
 
             value = "ELL";
-            Assert.False(s.Contains(value));
+            Assert.IsFalse(s.Contains(value));
 
             value = "Larger Hello";
-            Assert.False(s.Contains(value));
+            Assert.IsFalse(s.Contains(value));
 
             value = "Goodbye";
-            Assert.False(s.Contains(value));
+            Assert.IsFalse(s.Contains(value));
 
             value = "";
-            Assert.True(value.Contains(value));
+            Assert.IsTrue(value.Contains(value));
 
             string s1 = "456";
-            Assert.True(s1.Contains(s1));
+            Assert.IsTrue(s1.Contains(s1));
         }
 
         [TestMethod]
@@ -378,19 +378,19 @@ namespace NFUnitTestSystemLib
 
             string s1 = new string(a);
             string s2 = new string(a, 2, 0);
-            Assert.True(s1.Contains(s2));
+            Assert.IsTrue(s1.Contains(s2));
 
             s1 = string.Empty;
-            Assert.True(s1.Contains(s2));
+            Assert.IsTrue(s1.Contains(s2));
 
             var span = new string(a);
             var emptySlice = new string(a, 2, 0);
-            Assert.True(span.Contains(emptySlice));
+            Assert.IsTrue(span.Contains(emptySlice));
 
-            Assert.True(span.Contains(emptySlice));
+            Assert.IsTrue(span.Contains(emptySlice));
 
             span = string.Empty;
-            Assert.True(span.Contains(emptySlice));
+            Assert.IsTrue(span.Contains(emptySlice));
         }
 
         [TestMethod]
@@ -402,7 +402,7 @@ namespace NFUnitTestSystemLib
 
             string s1 = value.Substring(0, 3);
             string s2 = value.Substring(0, 2);
-            Assert.True(s1.Contains(s2));
+            Assert.IsTrue(s1.Contains(s2));
         }
 
         [TestMethod]
@@ -415,7 +415,7 @@ namespace NFUnitTestSystemLib
 
             string s1 = value1.Substring(0, 3);
             string s2 = value2.Substring(0, 3);
-            Assert.True(s1.Contains(s2));
+            Assert.IsTrue(s1.Contains(s2));
         }
 
         [TestMethod]
@@ -438,9 +438,9 @@ namespace NFUnitTestSystemLib
 
                     string s1 = new(first);
                     string s2 = new(second);
-                    Assert.False(s1.Contains(s2));
+                    Assert.IsFalse(s1.Contains(s2));
 
-                    Assert.Equal(
+                    Assert.AreEqual(
                         s1.StartsWith(s2),
                         s1.Contains(s2));
                 }
@@ -467,12 +467,12 @@ namespace NFUnitTestSystemLib
                 // Contains either works or throws ArgumentOutOfRangeException
                 try
                 {
-                    Assert.True(s1.Contains(s2));
+                    Assert.IsTrue(s1.Contains(s2));
                 }
                 catch(ArgumentOutOfRangeException)
                 {
                     // this is the intended outcome at some point
-                    Assert.True(true);
+                    Assert.IsTrue(true);
                 }
             }
         }
@@ -485,54 +485,54 @@ namespace NFUnitTestSystemLib
             string s = "Hello";
             string value = "H";
 
-            Assert.True(s.StartsWith(value));
+            Assert.IsTrue(s.StartsWith(value));
 
             value = "Hel";
-            Assert.True(s.StartsWith(value));
+            Assert.IsTrue(s.StartsWith(value));
 
             value = "Hello";
-            Assert.True(s.StartsWith(value));
+            Assert.IsTrue(s.StartsWith(value));
 
             value = "";
-            Assert.True(s.StartsWith(value));
+            Assert.IsTrue(s.StartsWith(value));
 
             value = "Hello Larger";
-            Assert.False(s.StartsWith(value));
+            Assert.IsFalse(s.StartsWith(value));
 
             value = "HEL";
-            Assert.False(s.StartsWith(value));
+            Assert.IsFalse(s.StartsWith(value));
 
             value = "Abc";
-            Assert.False(s.StartsWith(value));
+            Assert.IsFalse(s.StartsWith(value));
 
             s = "";
             value = "Hello";
-            Assert.False(s.StartsWith(value));
+            Assert.IsFalse(s.StartsWith(value));
 
             s = "abcdefghijklmnopqrstuvwxyz";
             value = "abcdefghijklmnopqrstuvwxyz";
-            Assert.True(s.StartsWith(value));
+            Assert.IsTrue(s.StartsWith(value));
 
             value = "abcdefghijklmnopqrstuvwx";
-            Assert.True(s.StartsWith(value));
+            Assert.IsTrue(s.StartsWith(value));
 
             value = "abcdefghijklm";
-            Assert.True(s.StartsWith(value));
+            Assert.IsTrue(s.StartsWith(value));
 
             value = "ab_defghijklmnopqrstu";
-            Assert.False(s.StartsWith(value));
+            Assert.IsFalse(s.StartsWith(value));
 
             value = "abcdef_hijklmn";
-            Assert.False(s.StartsWith(value));
+            Assert.IsFalse(s.StartsWith(value));
 
             value = "abcdefghij_lmn";
-            Assert.False(s.StartsWith(value));
+            Assert.IsFalse(s.StartsWith(value));
 
             value = "a";
-            Assert.True(s.StartsWith(value));
+            Assert.IsTrue(s.StartsWith(value));
 
             value = "abcdefghijklmnopqrstuvwxyza";
-            Assert.False(s.StartsWith(value));
+            Assert.IsFalse(s.StartsWith(value));
         }
 
         [TestMethod]
@@ -540,11 +540,11 @@ namespace NFUnitTestSystemLib
         {
             OutputHelper.WriteLine("Test of StartsWith with null strings");
 
-            Assert.False("\0test".StartsWith("test"));
-            Assert.False("te\0st".StartsWith("test"));
-            Assert.True("te\0st".StartsWith("te\0s"));
-            Assert.True("test\0".StartsWith("test"));
-            Assert.True("test".StartsWith("te\0"));
+            Assert.IsFalse("\0test".StartsWith("test"));
+            Assert.IsFalse("te\0st".StartsWith("test"));
+            Assert.IsTrue("te\0st".StartsWith("te\0s"));
+            Assert.IsTrue("test\0".StartsWith("test"));
+            Assert.IsTrue("test".StartsWith("te\0"));
         }
 
         [TestMethod]
@@ -555,7 +555,7 @@ namespace NFUnitTestSystemLib
             string s = "Hello";
 
             // Value is null
-            Assert.Throws(typeof(ArgumentNullException), () => { s.StartsWith(null); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { s.StartsWith(null); });
         }
 
         [TestMethod]
@@ -568,7 +568,7 @@ namespace NFUnitTestSystemLib
             string s1 = new(a);
             string s2 = new(a, 2, 0);
             bool b = s1.StartsWith(s2);
-            Assert.True(b);
+            Assert.IsTrue(b);
         }
 
         [TestMethod]
@@ -579,7 +579,7 @@ namespace NFUnitTestSystemLib
             string s = "Hello";
 
             // Value is null
-            Assert.Throws(typeof(ArgumentNullException), () => { s.EndsWith(null); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { s.EndsWith(null); });
         }
 
         [TestMethod]
@@ -589,7 +589,7 @@ namespace NFUnitTestSystemLib
 
             string s1 = "456";
 
-            Assert.True(s1.StartsWith(s1));
+            Assert.IsTrue(s1.StartsWith(s1));
         }
 
         [TestMethod]
@@ -602,7 +602,7 @@ namespace NFUnitTestSystemLib
             string s1 = new string(a, 0, 2);
             string s2 = new string(a, 0, 3);
             bool b = s1.StartsWith(s2);
-            Assert.False(b);
+            Assert.IsFalse(b);
         }
 
         [TestMethod]
@@ -615,7 +615,7 @@ namespace NFUnitTestSystemLib
             string s1 = new(a, 0, 3);
             string s2 = new(a, 0, 2);
             bool b = s1.StartsWith(s2);
-            Assert.True(b);
+            Assert.IsTrue(b);
         }
 
         [TestMethod]
@@ -639,7 +639,7 @@ namespace NFUnitTestSystemLib
                     string s1 = new(first);
                     string s2 = new(second);
                     bool b = s1.StartsWith(s2);
-                    Assert.False(b);
+                    Assert.IsFalse(b);
                 }
             }
         }
@@ -661,7 +661,7 @@ namespace NFUnitTestSystemLib
                 string s1 = new(first, 1, length);
                 string s2 = new(second, 1, length);
                 bool b = s1.StartsWith(s2);
-                Assert.True(b);
+                Assert.IsTrue(b);
             }
         }
 
@@ -674,10 +674,10 @@ namespace NFUnitTestSystemLib
 
             string s1 = new string(a);
             string s2 = new string(a, 2, 0);
-            Assert.True(s1.StartsWith(s2));
+            Assert.IsTrue(s1.StartsWith(s2));
 
             s1 = string.Empty;
-            Assert.True(s1.StartsWith(s2));
+            Assert.IsTrue(s1.StartsWith(s2));
         }
 
         [TestMethod]
@@ -686,7 +686,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Test of StartsWith with self");
 
             string s1 = "456";
-            Assert.True(s1.StartsWith(s1));
+            Assert.IsTrue(s1.StartsWith(s1));
         }
 
         [TestMethod]
@@ -698,7 +698,7 @@ namespace NFUnitTestSystemLib
 
             string s1 = value.Substring(0, 2);
             string s2 = value.Substring(0, 3);
-            Assert.False(s1.StartsWith(s2));
+            Assert.IsFalse(s1.StartsWith(s2));
         }
 
         [TestMethod]
@@ -710,7 +710,7 @@ namespace NFUnitTestSystemLib
 
             string s1 = value.Substring(0, 3);
             string s2 = value.Substring(0, 2);
-            Assert.True(s1.StartsWith(s2));
+            Assert.IsTrue(s1.StartsWith(s2));
         }
 
         [TestMethod]
@@ -721,35 +721,35 @@ namespace NFUnitTestSystemLib
             string s = "Hello";
             string value = "o";
 
-            Assert.True(s.EndsWith(value));
+            Assert.IsTrue(s.EndsWith(value));
 
             value = "llo";
-            Assert.True(s.EndsWith(value));
+            Assert.IsTrue(s.EndsWith(value));
 
             value = "Hello";
-            Assert.True(s.EndsWith(value));
+            Assert.IsTrue(s.EndsWith(value));
 
             value = "";
-            Assert.True(s.EndsWith(value));
+            Assert.IsTrue(s.EndsWith(value));
 
             value = "Larger Hello";
-            Assert.False(s.EndsWith(value));
+            Assert.IsFalse(s.EndsWith(value));
 
             value = "LLO";
-            Assert.False(s.EndsWith(value));
+            Assert.IsFalse(s.EndsWith(value));
 
             value = "Abc";
-            Assert.False(s.EndsWith(value));
+            Assert.IsFalse(s.EndsWith(value));
 
             value = "a";
-            Assert.False(s.EndsWith(value));
+            Assert.IsFalse(s.EndsWith(value));
 
             s = "";
             value = "";
-            Assert.True(s.EndsWith(value));
+            Assert.IsTrue(s.EndsWith(value));
 
             value = "a";
-            Assert.False(s.EndsWith(value));
+            Assert.IsFalse(s.EndsWith(value));
         }
 
         [TestMethod]
@@ -757,10 +757,10 @@ namespace NFUnitTestSystemLib
         {
             OutputHelper.WriteLine("Test of EndsWith with null strings");
 
-            Assert.True("te\0st".EndsWith("e\0st"));
-            Assert.False("te\0st".EndsWith("test"));
-            Assert.True("test\0".EndsWith("test"));
-            Assert.True("test".EndsWith("\0st"));
+            Assert.IsTrue("te\0st".EndsWith("e\0st"));
+            Assert.IsFalse("te\0st".EndsWith("test"));
+            Assert.IsTrue("test\0".EndsWith("test"));
+            Assert.IsTrue("test".EndsWith("\0st"));
         }
 
         [TestMethod]
@@ -773,7 +773,7 @@ namespace NFUnitTestSystemLib
             string s1 = new string(a);
             string s2 = new string(a, 2, 0);
             bool b = s1.EndsWith(s2);
-            Assert.True(b);
+            Assert.IsTrue(b);
         }
 
         [TestMethod]
@@ -783,7 +783,7 @@ namespace NFUnitTestSystemLib
 
             string s = "456";
             bool b = s.EndsWith(s);
-            Assert.True(b);
+            Assert.IsTrue(b);
         }
 
         [TestMethod]
@@ -796,7 +796,7 @@ namespace NFUnitTestSystemLib
             string s1 = value.Substring(0, 2);
             string s2 = value.Substring(0, 3);
             bool b = s1.EndsWith(s2);
-            Assert.False(b);
+            Assert.IsFalse(b);
         }
 
         [TestMethod]
@@ -809,7 +809,7 @@ namespace NFUnitTestSystemLib
             string s1 = value.Substring(0, 3);
             string s2 = value.Substring(1, 2);
             bool b = s1.EndsWith(s2);
-            Assert.True(b);
+            Assert.IsTrue(b);
         }
 
         [TestMethod]
@@ -834,7 +834,7 @@ namespace NFUnitTestSystemLib
                     string s2 = new(second);
 
                     bool b = s1.EndsWith(s2);
-                    Assert.False(b);
+                    Assert.IsFalse(b);
                 }
             }
         }
@@ -848,10 +848,10 @@ namespace NFUnitTestSystemLib
 
             string s1 = new(a);
             string s2 = new(a, 2, 0);
-            Assert.True(s1.EndsWith(s2));
+            Assert.IsTrue(s1.EndsWith(s2));
 
             s1 = string.Empty;
-            Assert.True(s1.EndsWith(s2));
+            Assert.IsTrue(s1.EndsWith(s2));
         }
 
         [TestMethod]
@@ -871,7 +871,7 @@ namespace NFUnitTestSystemLib
                 string s1 = new(first, 1, length);
                 string s2 = new(second, 1, length);
                 bool b = s1.EndsWith(s2);
-                Assert.True(b);
+                Assert.IsTrue(b);
             }
         }
 
@@ -884,7 +884,7 @@ namespace NFUnitTestSystemLib
 
             string s1 = value.Substring(0, 2);
             string s2 = value.Substring(0, 3);
-            Assert.False(s1.EndsWith(s2));
+            Assert.IsFalse(s1.EndsWith(s2));
         }
 
         [TestMethod]
@@ -896,7 +896,7 @@ namespace NFUnitTestSystemLib
 
             string s1 = value.Substring(0, 3);
             string s2 = value.Substring(1, 2);
-            Assert.True(s1.EndsWith(s2));
+            Assert.IsTrue(s1.EndsWith(s2));
         }
 
         [TestMethod]
@@ -909,7 +909,7 @@ namespace NFUnitTestSystemLib
 
             string s1 = value1.Substring(1, 3);
             string s2 = value2.Substring(0, 3);
-            Assert.True(s1.EndsWith(s2));
+            Assert.IsTrue(s1.EndsWith(s2));
         }
 
         [TestMethod]
@@ -932,7 +932,7 @@ namespace NFUnitTestSystemLib
 
                     string s1 = new(first);
                     string s2 = new(second);
-                    Assert.False(s1.EndsWith(s2));
+                    Assert.IsFalse(s1.EndsWith(s2));
                 }
             }
         }
@@ -953,7 +953,7 @@ namespace NFUnitTestSystemLib
 
                 string s1 = new string(first, 1, length);
                 string s2 = new string(second, 1, length);
-                Assert.True(s1.EndsWith(s2));
+                Assert.IsTrue(s1.EndsWith(s2));
             }
         }
 
@@ -964,7 +964,7 @@ namespace NFUnitTestSystemLib
 
             string s = "dabc";
             string value = "aDc";
-            Assert.False(s.EndsWith(value));
+            Assert.IsFalse(s.EndsWith(value));
         }
 
         /// <summary>

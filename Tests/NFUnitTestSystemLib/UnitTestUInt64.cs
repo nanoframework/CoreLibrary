@@ -15,26 +15,26 @@ namespace NFUnitTestSystemLib
         public void Ctor_Empty()
         {
             var i = new ulong();
-            Assert.Equal((ulong)0, i);
+            Assert.AreEqual((ulong)0, i);
         }
 
         [TestMethod]
         public void Ctor_Value()
         {
             ulong i = 41;
-            Assert.Equal((ulong)41, i);
+            Assert.AreEqual((ulong)41, i);
         }
 
         [TestMethod]
         public void MaxValue()
         {
-            Assert.Equal(0xFFFFFFFFFFFFFFFF, ulong.MaxValue);
+            Assert.AreEqual(0xFFFFFFFFFFFFFFFF, ulong.MaxValue);
         }
 
         [TestMethod]
         public void MinValue()
         {
-            Assert.Equal((ulong)0, ulong.MinValue);
+            Assert.AreEqual((ulong)0, ulong.MinValue);
         }
 
         [TestMethod]
@@ -56,12 +56,12 @@ namespace NFUnitTestSystemLib
 
                 if (test.Obj is ulong i2)
                 {
-                    Assert.Equal(test.Expected, test.I1.Equals(i2));
-                    Assert.Equal(test.Expected, test.I1.GetHashCode().Equals(i2.GetHashCode()));
-                    Assert.Equal((ulong)test.I1, test.I1.GetHashCode());
+                    Assert.AreEqual(test.Expected, test.I1.Equals(i2));
+                    Assert.AreEqual(test.Expected, test.I1.GetHashCode().Equals(i2.GetHashCode()));
+                    Assert.AreEqual((ulong)test.I1, test.I1.GetHashCode());
                 }
 
-                Assert.Equal(test.Expected, test.I1.Equals(test.Obj), $"Equality test between {test.I1} and {test.Obj} failed");
+                Assert.AreEqual(test.Expected, test.I1.Equals(test.Obj), $"Equality test between {test.I1} and {test.Obj} failed");
             }
         }
 

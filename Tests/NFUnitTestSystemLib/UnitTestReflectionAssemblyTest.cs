@@ -27,13 +27,13 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Assembly FullNme from AssemblyName type is: \"" + fullNameFromAssemblyName + "\"");
 
             string nameParsedFromFullName = fullNameFromAssemblyName.Substring(0, fullNameFromAssemblyName.IndexOf(','));
-            Assert.Equal(nameParsedFromFullName, name);
+            Assert.AreEqual(nameParsedFromFullName, name);
 
             // we will check that the FullName from Assembly and FullName from the AssemblyName class do match
             string fullName = assm.FullName;
             OutputHelper.WriteLine("Assembly FullName from Assembly type: \"" + fullName + "\"");
 
-            Assert.Equal(fullName, (name + ", Version=" + assm.GetName().Version.ToString()));
+            Assert.AreEqual(fullName, (name + ", Version=" + assm.GetName().Version.ToString()));
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace NFUnitTestSystemLib
         {
             // get the version
             Version ver = Assembly.GetExecutingAssembly().GetName().Version;
-            Assert.NotNull(ver);
+            Assert.IsNotNull(ver);
         }
 
         [TestMethod]
@@ -51,19 +51,19 @@ namespace NFUnitTestSystemLib
 
             // get the version
             Assembly assm = Assembly.Load("mscorlib");
-            Assert.NotNull(assm);
+            Assert.IsNotNull(assm);
 
             string v = assm.GetName().Version.ToString();
 
             Assembly assm1 = Assembly.Load("mscorlib, Version=" + v);
-            Assert.NotNull(assm1);
+            Assert.IsNotNull(assm1);
 
-            Assert.Throws(typeof(ArgumentException), () => { Assembly assm2 = Assembly.Load("mscorlib, <THIS SHOULD NOT BE HERE>,Version=" + v); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { Assembly assm2 = Assembly.Load("mscorlib, <THIS SHOULD NOT BE HERE>,Version=" + v); });
 
             // Test for extra parameters after assembly version.  The assembly version parser needs to handle this
             // because the VS debugger will identify in CultureInfo and PublicKeyToken when debugging.
             assm = Assembly.Load("mscorlib, Version=" + v + ", CultureInfo=en, PublicKeyToken=null");
-            Assert.NotNull(assm);
+            Assert.IsNotNull(assm);
         }
 
         [TestMethod]
@@ -73,18 +73,18 @@ namespace NFUnitTestSystemLib
 
             // Make sure satellite assembly can be retrieved
             Assembly res = asm.GetSatelliteAssembly(new System.Globalization.CultureInfo("en"));
-            Assert.NotNull(res);
+            Assert.IsNotNull(res);
 
             // Make sure we can get a known type from the target assembly
             Type t = asm.GetType("System.Int32");
-            Assert.True(t.IsValueType);
+            Assert.IsTrue(t.IsValueType);
 
             // make sure all types from the assembly have proper
             // assembly property
             Type[] ts = asm.GetTypes();
             for (int i = 0; i < ts.Length; i++)
             {
-                Assert.Equal(ts[i].Assembly.FullName, asm.FullName);
+                Assert.AreEqual(ts[i].Assembly.FullName, asm.FullName);
             }
         }
 

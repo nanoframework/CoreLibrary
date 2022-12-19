@@ -83,7 +83,7 @@ namespace NFUnitTestSystemLib
 
             OutputHelper.WriteLine("Creating Maximum DateTime and verifying");
             DateTime maxDateTime = new DateTime(946708127999999999);
-            Assert.True(DateTime.MaxValue.Equals(maxDateTime));
+            Assert.IsTrue(DateTime.MaxValue.Equals(maxDateTime));
         }
 
         [TestMethod]
@@ -99,11 +99,11 @@ namespace NFUnitTestSystemLib
             DateTime dt1 = DateTime_btwn_1801_And_2801();
             DateTime dt2 = new DateTime(year, month, day, hour, minute, second, millisec);
             OutputHelper.WriteLine("Comparing two equal DateTimes");
-            Assert.Equal(dt1.CompareTo(dt2), 0);
+            Assert.AreEqual(dt1.CompareTo(dt2), 0);
             OutputHelper.WriteLine("Comparing Unequal DateTimes and Verifying");
             dt2 = dt1.Add(new TimeSpan(1));
-            Assert.False(dt1.CompareTo(dt2) >= 0);
-            Assert.False(dt2.CompareTo(dt1) <= 0);
+            Assert.IsFalse(dt1.CompareTo(dt2) >= 0);
+            Assert.IsFalse(dt2.CompareTo(dt1) <= 0);
         }
 
         [TestMethod]
@@ -117,7 +117,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Generating random DateTime");
             DateTime dt1 = GetRandomDateTime();
             DateTime dt2 = new DateTime(ticks);
-            Assert.True(dt1.Equals(dt2));
+            Assert.IsTrue(dt1.Equals(dt2));
         }
 
         [TestMethod]
@@ -154,7 +154,7 @@ namespace NFUnitTestSystemLib
                 }
             }
             string str = strArr[0] + "/" + strArr[1] + "/" + strArr[2] + " " + strArr[3] + ":" + strArr[4] + ":" + strArr[5];
-            Assert.Equal(dt.ToString(), str);
+            Assert.AreEqual(dt.ToString(), str);
         }
 
         [TestMethod]
@@ -188,18 +188,18 @@ namespace NFUnitTestSystemLib
                 int length = 10;
 
                 // check length
-                Assert.True(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.IsTrue(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
 
                 // check 'MM'
-                Assert.Equal(dt.Month, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'MM'");
+                Assert.AreEqual(dt.Month, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'MM'");
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'dd'");
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(6, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(6, 4)), "Wrong output1 for 'yyyy'");
                 
                 // check '/'
-                Assert.Equal("/", dtOutput1.Substring(2, 1), "Wrong output1 in for '-'");
-                Assert.Equal("/", dtOutput1.Substring(5, 1), "Wrong output1 in for '-'");
+                Assert.AreEqual("/", dtOutput1.Substring(2, 1), "Wrong output1 in for '-'");
+                Assert.AreEqual("/", dtOutput1.Substring(5, 1), "Wrong output1 in for '-'");
             }
             catch (Exception ex)
             {
@@ -236,39 +236,39 @@ namespace NFUnitTestSystemLib
                 int minLength = 19;
 
                 // check length
-                Assert.True(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
 
                 // check 'dddd'
                 int endIndex = dtOutput1.IndexOf(',');
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.DayNames[(int)dt.DayOfWeek],
                     dtOutput1.Substring(0, endIndex),
                     "Wrong output1 for 'dddd'");
 
                 // check ','
-                Assert.Equal(",", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ','");
+                Assert.AreEqual(",", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ','");
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 1, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 1, 1), "Wrong output1 in for ' '");
                 
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 2, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 2, 2)), "Wrong output1 in for 'dd'");
                 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 4, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 4, 1), "Wrong output1 in for ' '");
 
                 // check 'MMMM'
                 var startIndex = dtOutput1.IndexOf(' ', endIndex + 2);
                 endIndex = dtOutput1.IndexOf(' ', startIndex + 1);
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.MonthNames[dt.Month - 1],
                     dtOutput1.Substring(startIndex + 1, endIndex - 1 - startIndex),
                     "Wrong output1 in for 'MMMM'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 1, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 1, 4)), "Wrong output1 for 'yyyy'");
             }
             catch (Exception ex)
             {
@@ -307,54 +307,54 @@ namespace NFUnitTestSystemLib
                 int actualLength = dtOutput1.Length;
 
                 // check length
-                Assert.True(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
 
 
                 // check 'dddd'
                 int endIndex = dtOutput1.IndexOf(',');
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.DayNames[(int)dt.DayOfWeek],
                     dtOutput1.Substring(0, endIndex),
                     "Wrong output1 for 'dddd'");
 
                 // check ','
-                Assert.Equal(",", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ','");
+                Assert.AreEqual(",", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ','");
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 1, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 1, 1), "Wrong output1 in for ' '");
 
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 2, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 2, 2)), "Wrong output1 in for 'dd'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 4, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 4, 1), "Wrong output1 in for ' '");
 
                 // check 'MMMM'
                 var startIndex = dtOutput1.IndexOf(' ', endIndex + 2);
                 endIndex = dtOutput1.IndexOf(' ', startIndex + 1);
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.MonthNames[dt.Month - 1],
                     dtOutput1.Substring(startIndex + 1, endIndex - 1 - startIndex),
                     "Wrong output1 in for 'MMMM'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 1, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 1, 4)), "Wrong output1 for 'yyyy'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 5, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 5, 1), "Wrong output1 in for ' '");
 
                 startIndex = endIndex + 6;
 
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(startIndex, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(startIndex, 2)), "Wrong output1 in for 'HH'");
 
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(startIndex + 3, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(startIndex + 3, 2)), "Wrong output1 in for 'mm'");
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(startIndex + 2, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(startIndex + 2, 1), "Wrong output1 in for ':'");
             }
             catch (Exception ex)
             {
@@ -392,57 +392,57 @@ namespace NFUnitTestSystemLib
                 int actualLength = dtOutput1.Length;
 
                 // check length
-                Assert.True(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
 
                 // check 'dddd'
                 int endIndex = dtOutput1.IndexOf(',');
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.DayNames[(int)dt.DayOfWeek],
                     dtOutput1.Substring(0, endIndex),
                     "Wrong output1 for 'dddd'");
 
                 // check ','
-                Assert.Equal(",", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ','");
+                Assert.AreEqual(",", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ','");
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 1, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 1, 1), "Wrong output1 in for ' '");
 
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 2, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 2, 2)), "Wrong output1 in for 'dd'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 4, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 4, 1), "Wrong output1 in for ' '");
 
                 // check 'MMMM'
                 var startIndex = dtOutput1.IndexOf(' ', endIndex + 2);
                 endIndex = dtOutput1.IndexOf(' ', startIndex + 1);
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.MonthNames[dt.Month - 1],
                     dtOutput1.Substring(startIndex + 1, endIndex - 1 - startIndex),
                     "Wrong output1 in for 'MMMM'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 1, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 1, 4)), "Wrong output1 for 'yyyy'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 5, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 5, 1), "Wrong output1 in for ' '");
 
                 startIndex = endIndex + 6;
 
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(startIndex, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(startIndex, 2)), "Wrong output1 in for 'HH'");
 
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(startIndex + 3, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(startIndex + 3, 2)), "Wrong output1 in for 'mm'");
 
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(startIndex + 6, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(startIndex + 6, 2)), "Wrong output1 in for 'ss'");
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(startIndex + 2, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(startIndex + 5, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(startIndex + 2, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(startIndex + 5, 1), "Wrong output1 in for ':'");
             }
             catch (Exception ex)
             {
@@ -479,26 +479,26 @@ namespace NFUnitTestSystemLib
                 int length = 16;
 
                 // check length
-                Assert.True(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.IsTrue(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
 
                 // check 'MM'
-                Assert.Equal(dt.Month, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'MM'");
+                Assert.AreEqual(dt.Month, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'MM'");
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'dd'");
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(6, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(6, 4)), "Wrong output1 for 'yyyy'");
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
 
                 // check '/'
-                Assert.Equal("/", dtOutput1.Substring(2, 1), "Wrong output1 in for '/'");
-                Assert.Equal("/", dtOutput1.Substring(5, 1), "Wrong output1 in for '/'");
+                Assert.AreEqual("/", dtOutput1.Substring(2, 1), "Wrong output1 in for '/'");
+                Assert.AreEqual("/", dtOutput1.Substring(5, 1), "Wrong output1 in for '/'");
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(10, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(10, 1), "Wrong output1 in for ' '");
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
             }
             catch (Exception ex)
             {
@@ -536,29 +536,29 @@ namespace NFUnitTestSystemLib
                 int length = 19;
 
                 // check length
-                Assert.True(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.IsTrue(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
 
                 // check 'MM'
-                Assert.Equal(dt.Month, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'MM'");
+                Assert.AreEqual(dt.Month, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'MM'");
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'dd'");
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(6, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(6, 4)), "Wrong output1 for 'yyyy'");
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'ss'");
 
                 // check '/'
-                Assert.Equal("/", dtOutput1.Substring(2, 1), "Wrong output1 in for '/'");
-                Assert.Equal("/", dtOutput1.Substring(5, 1), "Wrong output1 in for '/'");
+                Assert.AreEqual("/", dtOutput1.Substring(2, 1), "Wrong output1 in for '/'");
+                Assert.AreEqual("/", dtOutput1.Substring(5, 1), "Wrong output1 in for '/'");
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(10, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(10, 1), "Wrong output1 in for ' '");
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(16, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(16, 1), "Wrong output1 in for ':'");
             }
             catch (Exception ex)
             {
@@ -597,34 +597,34 @@ namespace NFUnitTestSystemLib
                 int minLength = 6;
 
                 // check length
-                Assert.True(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
-                Assert.True(dtOutput2.Length >= minLength, $"Wrong output1 length: {dtOutput2.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput2.Length >= minLength, $"Wrong output1 length: {dtOutput2.Length}, should have been at least {minLength}");
 
                 // check 'MMMM'
                 var endIndex = dtOutput1.IndexOf(' ');
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.MonthNames[dt.Month - 1],
                     dtOutput1.Substring(0, endIndex),
                     "Wrong output1 in for 'MMMM'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
 
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 1, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 1, 2)), "Wrong output1 in for 'dd'");
 
                 // check 'MMMM'
                 endIndex = dtOutput2.IndexOf(' ');
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.MonthNames[dt.Month - 1],
                     dtOutput2.Substring(0, endIndex),
                     "Wrong output1 in for 'MMMM'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput2.Substring(endIndex, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput2.Substring(endIndex, 1), "Wrong output1 in for ' '");
 
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput2.Substring(endIndex + 1, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput2.Substring(endIndex + 1, 2)), "Wrong output1 in for 'dd'");
 
             }
             catch (Exception ex)
@@ -665,53 +665,53 @@ namespace NFUnitTestSystemLib
                 int length = 28;
 
                 // check length
-                Assert.True(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
-                Assert.True(length == dtOutput2.Length, $"Wrong output1 length: {dtOutput2.Length}, should have been {length}");
+                Assert.IsTrue(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.IsTrue(length == dtOutput2.Length, $"Wrong output1 length: {dtOutput2.Length}, should have been {length}");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(0, 4)), "Wrong output1 for 'yyyy'");
-                Assert.Equal(dt.Year, int.Parse(dtOutput2.Substring(0, 4)), "Wrong output2 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(0, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput2.Substring(0, 4)), "Wrong output2 for 'yyyy'");
                 // check 'MM'
-                Assert.Equal(dt.Month, int.Parse(dtOutput1.Substring(5, 2)), "Wrong output1 in for 'MM'");
-                Assert.Equal(dt.Month, int.Parse(dtOutput2.Substring(5, 2)), "Wrong output2 in for 'MM'");
+                Assert.AreEqual(dt.Month, int.Parse(dtOutput1.Substring(5, 2)), "Wrong output1 in for 'MM'");
+                Assert.AreEqual(dt.Month, int.Parse(dtOutput2.Substring(5, 2)), "Wrong output2 in for 'MM'");
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(8, 2)), "Wrong output1 in for 'dd'");
-                Assert.Equal(dt.Day, int.Parse(dtOutput2.Substring(8, 2)), "Wrong output2 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(8, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput2.Substring(8, 2)), "Wrong output2 in for 'dd'");
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
-                Assert.Equal(dt.Hour, int.Parse(dtOutput2.Substring(11, 2)), "Wrong output2 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput2.Substring(11, 2)), "Wrong output2 in for 'HH'");
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
-                Assert.Equal(dt.Minute, int.Parse(dtOutput2.Substring(14, 2)), "Wrong output2 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput2.Substring(14, 2)), "Wrong output2 in for 'mm'");
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'ss'");
-                Assert.Equal(dt.Second, int.Parse(dtOutput2.Substring(17, 2)), "Wrong output2 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput2.Substring(17, 2)), "Wrong output2 in for 'ss'");
 
                 // check 'fffffff'
                 // need to do the math to get the fraction part from ticks
                 var fraction = dt.Ticks % _TicksPerSecond;
-                Assert.Equal(fraction, int.Parse(dtOutput1.Substring(20, 7)), "Wrong output1 in for 'fffffff'");
-                Assert.Equal(fraction, int.Parse(dtOutput2.Substring(20, 7)), "Wrong output2 in for 'fffffff'");
+                Assert.AreEqual(fraction, int.Parse(dtOutput1.Substring(20, 7)), "Wrong output1 in for 'fffffff'");
+                Assert.AreEqual(fraction, int.Parse(dtOutput2.Substring(20, 7)), "Wrong output2 in for 'fffffff'");
 
                 // check '-'
-                Assert.Equal("-", dtOutput1.Substring(4, 1), "Wrong output1 in for '-'");
-                Assert.Equal("-", dtOutput2.Substring(4, 1), "Wrong output2 in for '-'");
-                Assert.Equal("-", dtOutput1.Substring(7, 1), "Wrong output1 in for '-'");
-                Assert.Equal("-", dtOutput2.Substring(7, 1), "Wrong output2 in for '-'");
+                Assert.AreEqual("-", dtOutput1.Substring(4, 1), "Wrong output1 in for '-'");
+                Assert.AreEqual("-", dtOutput2.Substring(4, 1), "Wrong output2 in for '-'");
+                Assert.AreEqual("-", dtOutput1.Substring(7, 1), "Wrong output1 in for '-'");
+                Assert.AreEqual("-", dtOutput2.Substring(7, 1), "Wrong output2 in for '-'");
                 // check 'T'
-                Assert.Equal("T", dtOutput1.Substring(10, 1), "Wrong output1 in for 'T'");
-                Assert.Equal("T", dtOutput2.Substring(10, 1), "Wrong output2 in for 'T'");
+                Assert.AreEqual("T", dtOutput1.Substring(10, 1), "Wrong output1 in for 'T'");
+                Assert.AreEqual("T", dtOutput2.Substring(10, 1), "Wrong output2 in for 'T'");
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput2.Substring(13, 1), "Wrong output2 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(16, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput2.Substring(16, 1), "Wrong output2 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput2.Substring(13, 1), "Wrong output2 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(16, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput2.Substring(16, 1), "Wrong output2 in for ':'");
                 // check '.'
-                Assert.Equal(".", dtOutput1.Substring(19, 1), "Wrong output1 in for '.'");
-                Assert.Equal(".", dtOutput2.Substring(19, 1), "Wrong output2 in for '.'");
+                Assert.AreEqual(".", dtOutput1.Substring(19, 1), "Wrong output1 in for '.'");
+                Assert.AreEqual(".", dtOutput2.Substring(19, 1), "Wrong output2 in for '.'");
                 // check 'Z'
-                Assert.Equal("Z", dtOutput1.Substring(27, 1), "Wrong output1 in for 'Z'");
-                Assert.Equal("Z", dtOutput2.Substring(27, 1), "Wrong output2 in for 'Z'");
+                Assert.AreEqual("Z", dtOutput1.Substring(27, 1), "Wrong output1 in for 'Z'");
+                Assert.AreEqual("Z", dtOutput2.Substring(27, 1), "Wrong output2 in for 'Z'");
             }
             catch (Exception ex)
             {
@@ -751,70 +751,70 @@ namespace NFUnitTestSystemLib
                 int length = 29;
 
                 // check length
-                Assert.True(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
-                Assert.True(length == dtOutput2.Length, $"Wrong output1 length: {dtOutput2.Length}, should have been {length}");
+                Assert.IsTrue(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.IsTrue(length == dtOutput2.Length, $"Wrong output1 length: {dtOutput2.Length}, should have been {length}");
 
                 // check 'ddd'
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.AbbreviatedDayNames[(int)dt.DayOfWeek],
                     dtOutput1.Substring(0, 3), "Wrong output1 in for 'ddd'");
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.AbbreviatedDayNames[(int)dt.DayOfWeek],
                     dtOutput2.Substring(0, 3), "Wrong output1 in for 'ddd'");
 
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(5, 2)), "Wrong output1 in for 'dd'");
-                Assert.Equal(dt.Day, int.Parse(dtOutput2.Substring(5, 2)), "Wrong output2 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(5, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput2.Substring(5, 2)), "Wrong output2 in for 'dd'");
 
                 // check 'MMM'
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[dt.Month -1],
                     dtOutput1.Substring(8, 3), "Wrong output1 in for 'MMM'");
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[dt.Month - 1],
                     dtOutput2.Substring(8, 3), "Wrong output1 in for 'MMM'");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(12, 4)), "Wrong output1 for 'yyyy'");
-                Assert.Equal(dt.Year, int.Parse(dtOutput2.Substring(12, 4)), "Wrong output2 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(12, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput2.Substring(12, 4)), "Wrong output2 for 'yyyy'");
 
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'HH'");
-                Assert.Equal(dt.Hour, int.Parse(dtOutput2.Substring(17, 2)), "Wrong output2 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput2.Substring(17, 2)), "Wrong output2 in for 'HH'");
 
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(20, 2)), "Wrong output1 in for 'mm'");
-                Assert.Equal(dt.Minute, int.Parse(dtOutput2.Substring(20, 2)), "Wrong output2 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(20, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput2.Substring(20, 2)), "Wrong output2 in for 'mm'");
 
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(23, 2)), "Wrong output1 in for 'ss'");
-                Assert.Equal(dt.Second, int.Parse(dtOutput2.Substring(23, 2)), "Wrong output2 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(23, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput2.Substring(23, 2)), "Wrong output2 in for 'ss'");
 
                 // check ','
-                Assert.Equal(",", dtOutput1.Substring(3, 1), "Wrong output1 in for ','");
-                Assert.Equal(",", dtOutput2.Substring(3, 1), "Wrong output1 in for ','");
+                Assert.AreEqual(",", dtOutput1.Substring(3, 1), "Wrong output1 in for ','");
+                Assert.AreEqual(",", dtOutput2.Substring(3, 1), "Wrong output1 in for ','");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(4, 1), "Wrong output1 in for ' '");
-                Assert.Equal(" ", dtOutput2.Substring(4, 1), "Wrong output2 in for ' '");
-                Assert.Equal(" ", dtOutput1.Substring(7, 1), "Wrong output1 in for ' '");
-                Assert.Equal(" ", dtOutput2.Substring(7, 1), "Wrong output2 in for ' '");
-                Assert.Equal(" ", dtOutput1.Substring(11, 1), "Wrong output1 in for ' '");
-                Assert.Equal(" ", dtOutput2.Substring(11, 1), "Wrong output2 in for ' '");
-                Assert.Equal(" ", dtOutput1.Substring(16, 1), "Wrong output1 in for ' '");
-                Assert.Equal(" ", dtOutput2.Substring(16, 1), "Wrong output2 in for ' '");
-                Assert.Equal(" ", dtOutput1.Substring(25, 1), "Wrong output1 in for ' '");
-                Assert.Equal(" ", dtOutput2.Substring(25, 1), "Wrong output2 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(4, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput2.Substring(4, 1), "Wrong output2 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(7, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput2.Substring(7, 1), "Wrong output2 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(11, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput2.Substring(11, 1), "Wrong output2 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(16, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput2.Substring(16, 1), "Wrong output2 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(25, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput2.Substring(25, 1), "Wrong output2 in for ' '");
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(19, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput2.Substring(19, 1), "Wrong output2 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(22, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput2.Substring(22, 1), "Wrong output2 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(19, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput2.Substring(19, 1), "Wrong output2 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(22, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput2.Substring(22, 1), "Wrong output2 in for ':'");
 
                 // check 'GMT'
-                Assert.Equal("GMT", dtOutput1.Substring(26, 3), "Wrong output1 in for 'GMT'");
-                Assert.Equal("GMT", dtOutput2.Substring(26, 3), "Wrong output2 in for 'GMT'");
+                Assert.AreEqual("GMT", dtOutput1.Substring(26, 3), "Wrong output1 in for 'GMT'");
+                Assert.AreEqual("GMT", dtOutput2.Substring(26, 3), "Wrong output2 in for 'GMT'");
             }
             catch (Exception ex)
             {
@@ -851,31 +851,31 @@ namespace NFUnitTestSystemLib
                 int length = 19;
 
                 // check length
-                Assert.True(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.IsTrue(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(0, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(0, 4)), "Wrong output1 for 'yyyy'");
                 // check 'MM'
-                Assert.Equal(dt.Month, int.Parse(dtOutput1.Substring(5, 2)), "Wrong output1 in for 'MM'");
+                Assert.AreEqual(dt.Month, int.Parse(dtOutput1.Substring(5, 2)), "Wrong output1 in for 'MM'");
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(8, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(8, 2)), "Wrong output1 in for 'dd'");
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'ss'");
 
                 // check '-'
-                Assert.Equal("-", dtOutput1.Substring(4, 1), "Wrong output1 in for '-'");
-                Assert.Equal("-", dtOutput1.Substring(7, 1), "Wrong output1 in for '-'");
+                Assert.AreEqual("-", dtOutput1.Substring(4, 1), "Wrong output1 in for '-'");
+                Assert.AreEqual("-", dtOutput1.Substring(7, 1), "Wrong output1 in for '-'");
 
                 // check 'T'
-                Assert.Equal("T", dtOutput1.Substring(10, 1), "Wrong output1 in for 'T'");
+                Assert.AreEqual("T", dtOutput1.Substring(10, 1), "Wrong output1 in for 'T'");
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(16, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(16, 1), "Wrong output1 in for ':'");
             }
             catch (Exception ex)
             {
@@ -912,18 +912,18 @@ namespace NFUnitTestSystemLib
                 int length = 8;
         
                 // check length
-                Assert.True(dtOutput1.Length >= length, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {length}");
+                Assert.IsTrue(dtOutput1.Length >= length, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {length}");
 
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'HH'");
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'mm'");
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(6, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(6, 2)), "Wrong output1 in for 'ss'");
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(2, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(5, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(2, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(5, 1), "Wrong output1 in for ':'");
             }
             catch (Exception ex)
             {
@@ -960,15 +960,15 @@ namespace NFUnitTestSystemLib
                 int length = 5;
 
                 // check length
-                Assert.True(dtOutput1.Length >= length, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {length}");
+                Assert.IsTrue(dtOutput1.Length >= length, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {length}");
 
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'HH'");
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'mm'");
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(2, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(2, 1), "Wrong output1 in for ':'");
             }
             catch (Exception ex)
             {
@@ -1005,31 +1005,31 @@ namespace NFUnitTestSystemLib
                 int length = 20;
 
                 // check length
-                Assert.True(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.IsTrue(length == dtOutput1.Length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(0, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(0, 4)), "Wrong output1 for 'yyyy'");
                 // check 'MM'
-                Assert.Equal(dt.Month, int.Parse(dtOutput1.Substring(5, 2)), "Wrong output1 in for 'MM'");
+                Assert.AreEqual(dt.Month, int.Parse(dtOutput1.Substring(5, 2)), "Wrong output1 in for 'MM'");
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(8, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(8, 2)), "Wrong output1 in for 'dd'");
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(11, 2)), "Wrong output1 in for 'HH'");
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(14, 2)), "Wrong output1 in for 'mm'");
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(17, 2)), "Wrong output1 in for 'ss'");
 
                 // check '-'
-                Assert.Equal("-", dtOutput1.Substring(4, 1), "Wrong output1 in for '-'");
-                Assert.Equal("-", dtOutput1.Substring(7, 1), "Wrong output1 in for '-'");
+                Assert.AreEqual("-", dtOutput1.Substring(4, 1), "Wrong output1 in for '-'");
+                Assert.AreEqual("-", dtOutput1.Substring(7, 1), "Wrong output1 in for '-'");
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(10, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(10, 1), "Wrong output1 in for ' '");
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(16, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(13, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(16, 1), "Wrong output1 in for ':'");
                 // check 'Z'
-                Assert.Equal("Z", dtOutput1.Substring(19, 1), "Wrong output1 in for 'Z'");
+                Assert.AreEqual("Z", dtOutput1.Substring(19, 1), "Wrong output1 in for 'Z'");
             }
             catch (Exception ex)
             {
@@ -1066,55 +1066,55 @@ namespace NFUnitTestSystemLib
                 int minLength = 19;
 
                 // check length
-                Assert.True(dtOutput1.Length > minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput1.Length > minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
 
                 // check 'dddd'
                 int endIndex = dtOutput1.IndexOf(',');
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.DayNames[(int)dt.DayOfWeek],
                     dtOutput1.Substring(0, endIndex),
                     "Wrong output1 for 'dddd'");
 
                 // check ','
-                Assert.Equal(",", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ','");
+                Assert.AreEqual(",", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ','");
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 1, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 1, 1), "Wrong output1 in for ' '");
 
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 2, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 2, 2)), "Wrong output1 in for 'dd'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 4, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 4, 1), "Wrong output1 in for ' '");
 
                 // check 'MMMM'
                 var startIndex = dtOutput1.IndexOf(' ', endIndex + 2);
                 endIndex = dtOutput1.IndexOf(' ', startIndex + 1);
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.MonthNames[dt.Month - 1],
                     dtOutput1.Substring(startIndex + 1, endIndex - 1 - startIndex),
                     "Wrong output1 in for 'MMMM'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ' '");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 1, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 1, 4)), "Wrong output1 for 'yyyy'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(endIndex + 5, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 5, 1), "Wrong output1 in for ' '");
 
                 startIndex = endIndex + 6;
 
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(startIndex, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(startIndex, 2)), "Wrong output1 in for 'HH'");
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(startIndex + 3, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(startIndex + 3, 2)), "Wrong output1 in for 'mm'");
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(startIndex + 6, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(startIndex + 6, 2)), "Wrong output1 in for 'ss'");
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(startIndex + 2, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(startIndex + 5, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(startIndex + 2, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(startIndex + 5, 1), "Wrong output1 in for ':'");
             }
             catch (Exception ex)
             {
@@ -1154,26 +1154,26 @@ namespace NFUnitTestSystemLib
                 int minLength = 6;
 
                 // check length
-                Assert.True(dtOutput1.Length > minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
-                Assert.True(dtOutput2.Length > minLength, $"Wrong output1 length: {dtOutput2.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput1.Length > minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput2.Length > minLength, $"Wrong output1 length: {dtOutput2.Length}, should have been at least {minLength}");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(0, 4)), "Wrong output1 for 'yyyy'");
-                Assert.Equal(dt.Year, int.Parse(dtOutput2.Substring(0, 4)), "Wrong output2 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(0, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput2.Substring(0, 4)), "Wrong output2 for 'yyyy'");
 
                 // check 'MMMM'
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.MonthNames[dt.Month - 1],
                     dtOutput1.Substring(5, dtOutput1.Length - 5),
                     "Wrong output1 in for 'MMMM'");
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.MonthNames[dt.Month - 1],
                     dtOutput1.Substring(5, dtOutput2.Length - 5),
                     "Wrong output1 in for 'MMMM'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(4, 1), "Wrong output1 in for ' '");
-                Assert.Equal(" ", dtOutput2.Substring(4, 1), "Wrong output2 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(4, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput2.Substring(4, 1), "Wrong output2 in for ' '");
             }
             catch (Exception ex)
             {
@@ -1207,7 +1207,7 @@ namespace NFUnitTestSystemLib
                 int minLength = 12;
 
                 // check length
-                Assert.True(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
 
                 // check 'h'
                 var endIndex = dtOutput1.IndexOf(':');
@@ -1217,38 +1217,38 @@ namespace NFUnitTestSystemLib
                 {
                     hour12 = 12;
                 }
-                Assert.Equal(hour12, int.Parse(dtOutput1.Substring(0, endIndex)), "Wrong output1 for 'h'");
+                Assert.AreEqual(hour12, int.Parse(dtOutput1.Substring(0, endIndex)), "Wrong output1 for 'h'");
 
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(endIndex + 1, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(endIndex + 1, 2)), "Wrong output1 in for 'mm'");
 
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(endIndex + 4, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(endIndex + 4, 2)), "Wrong output1 in for 'ss'");
 
                 // check 'ff'
                 // need to do the math to get the fraction part from ticks
                 var fraction = dt.Ticks % _TicksPerSecond;
-                Assert.Equal(fraction.ToString("D7").Substring(0, 2), dtOutput1.Substring(endIndex + 7, 2), "Wrong output1 in for 'ff'");
+                Assert.AreEqual(fraction.ToString("D7").Substring(0, 2), dtOutput1.Substring(endIndex + 7, 2), "Wrong output1 in for 'ff'");
 
                 // check 't'
                 if (dt.Hour < 12)
                 {
                     if (CultureInfo.CurrentUICulture.DateTimeFormat.AMDesignator.Length >= 1)
                     {
-                        Assert.Equal(CultureInfo.CurrentUICulture.DateTimeFormat.AMDesignator[0].ToString(), dtOutput1.Substring(dtOutput1.Length - 1, 1), "Wrong output1 in for 't'");
+                        Assert.AreEqual(CultureInfo.CurrentUICulture.DateTimeFormat.AMDesignator[0].ToString(), dtOutput1.Substring(dtOutput1.Length - 1, 1), "Wrong output1 in for 't'");
                     }
                 }
                 else
                 {
-                    Assert.Equal(CultureInfo.CurrentUICulture.DateTimeFormat.PMDesignator[0].ToString(), dtOutput1.Substring(dtOutput1.Length - 1, 1), "Wrong output1 in for 't'");
+                    Assert.AreEqual(CultureInfo.CurrentUICulture.DateTimeFormat.PMDesignator[0].ToString(), dtOutput1.Substring(dtOutput1.Length - 1, 1), "Wrong output1 in for 't'");
                 }
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(endIndex + 3, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(endIndex + 3, 1), "Wrong output1 in for ':'");
 
                 // check '.'
-                Assert.Equal(".", dtOutput1.Substring(endIndex + 6, 1), "Wrong output1 in for '.'");
+                Assert.AreEqual(".", dtOutput1.Substring(endIndex + 6, 1), "Wrong output1 in for '.'");
             }
             catch (Exception ex)
             {
@@ -1282,19 +1282,19 @@ namespace NFUnitTestSystemLib
                 int minLength = 10;
 
                 // check length
-                Assert.True(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
 
                 // check 'd'
                 var endIndex = dtOutput1.IndexOf(' ');
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(0, endIndex)), "Wrong output1 in for 'd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(0, endIndex)), "Wrong output1 in for 'd'");
 
                 // check 'MMM'
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[dt.Month - 1],
                     dtOutput1.Substring(endIndex + 1, 3), "Wrong output1 in for 'MMM'");
 
                 // check 'yyyy'
-                Assert.Equal(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 5, 4)), "Wrong output1 for 'yyyy'");
+                Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(endIndex + 5, 4)), "Wrong output1 for 'yyyy'");
             }
             catch (Exception ex)
             {
@@ -1328,28 +1328,28 @@ namespace NFUnitTestSystemLib
                 int length = 10;
 
                 // check length
-                Assert.True(dtOutput1.Length == length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.IsTrue(dtOutput1.Length == length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
 
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'HH'");
 
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'mm'");
 
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(6, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(6, 2)), "Wrong output1 in for 'ss'");
 
                 // check 'f'
                 // need to do the math to get the fraction part from ticks
                 var fraction = dt.Ticks % _TicksPerSecond;
-                Assert.Equal(fraction.ToString("D7").Substring(0, 1), dtOutput1.Substring(9, 1), "Wrong output1 in for 'f'");
+                Assert.AreEqual(fraction.ToString("D7").Substring(0, 1), dtOutput1.Substring(9, 1), "Wrong output1 in for 'f'");
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(2, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(5, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(2, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(5, 1), "Wrong output1 in for ':'");
 
                 // check '.'
-                Assert.Equal(".", dtOutput1.Substring(8, 1), "Wrong output1 in for '.'");
+                Assert.AreEqual(".", dtOutput1.Substring(8, 1), "Wrong output1 in for '.'");
             }
             catch (Exception ex)
             {
@@ -1383,33 +1383,33 @@ namespace NFUnitTestSystemLib
                 int length = 15;
 
                 // check length
-                Assert.True(dtOutput1.Length == length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
+                Assert.IsTrue(dtOutput1.Length == length, $"Wrong output1 length: {dtOutput1.Length}, should have been {length}");
 
                 // check 'dd'
-                Assert.Equal(dt.Day, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'dd'");
+                Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(0, 2)), "Wrong output1 in for 'dd'");
 
                 // check 'MMM'
-                Assert.Equal(
+                Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[dt.Month - 1],
                     dtOutput1.Substring(3, 3),
                     "Wrong output1 in for 'MMM'");
 
                 // check 'HH'
-                Assert.Equal(dt.Hour, int.Parse(dtOutput1.Substring(7, 2)), "Wrong output1 in for 'HH'");
+                Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(7, 2)), "Wrong output1 in for 'HH'");
 
                 // check 'mm'
-                Assert.Equal(dt.Minute, int.Parse(dtOutput1.Substring(7+3, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(7+3, 2)), "Wrong output1 in for 'mm'");
 
                 // check 'ss'
-                Assert.Equal(dt.Second, int.Parse(dtOutput1.Substring(7+6, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(7+6, 2)), "Wrong output1 in for 'ss'");
 
                 // check ':'
-                Assert.Equal(":", dtOutput1.Substring(7+2, 1), "Wrong output1 in for ':'");
-                Assert.Equal(":", dtOutput1.Substring(7+5, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(7+2, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(7+5, 1), "Wrong output1 in for ':'");
 
                 // check ' '
-                Assert.Equal(" ", dtOutput1.Substring(2, 1), "Wrong output1 in for ' '");
-                Assert.Equal(" ", dtOutput1.Substring(6, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(2, 1), "Wrong output1 in for ' '");
+                Assert.AreEqual(" ", dtOutput1.Substring(6, 1), "Wrong output1 in for ' '");
             }
             catch (Exception ex)
             {
@@ -1443,13 +1443,13 @@ namespace NFUnitTestSystemLib
                 int minLength = 8;
 
                 // check length
-                Assert.True(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
+                Assert.IsTrue(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
 
                 // check 'M'
-                Assert.Equal(dt.Month, int.Parse(dtOutput1.Substring(7)), "Wrong output1 in for 'M'");
+                Assert.AreEqual(dt.Month, int.Parse(dtOutput1.Substring(7)), "Wrong output1 in for 'M'");
 
                 // check 'Month: '
-                Assert.Equal("Month: ", dtOutput1.Substring(0, 7), "Wrong output1 in for 'Month: '");
+                Assert.AreEqual("Month: ", dtOutput1.Substring(0, 7), "Wrong output1 in for 'Month: '");
             }
             catch (Exception ex)
             {
@@ -1482,7 +1482,7 @@ namespace NFUnitTestSystemLib
                 }
                 OutputHelper.WriteLine("Adding '" + ts.ToString() + "' Timespan to '" + dt1.ToString() + "'");
                 DateTime dt2 = dt1.Add(ts);
-                Assert.Equal(dt2.Ticks, (dt1.Ticks + ts.Ticks));
+                Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ts.Ticks));
             }
         }
 
@@ -1780,7 +1780,7 @@ namespace NFUnitTestSystemLib
                 long ticks = (long)random.Next(1000);
                 OutputHelper.WriteLine("Adding '" + ticks + "' ticks to '" + dt1.ToString() + "'");
                 DateTime dt2 = dt1.AddTicks(ticks);
-                Assert.Equal(dt2.Ticks, (dt1.Ticks + ticks));
+                Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ticks));
             }
         }
 
@@ -1801,7 +1801,7 @@ namespace NFUnitTestSystemLib
                 long ticks = -(long)random.Next(1000);
                 OutputHelper.WriteLine("Adding '" + ticks + "' ticks to '" + dt1.ToString() + "'");
                 DateTime dt2 = dt1.AddTicks(ticks);
-                Assert.Equal(dt2.Ticks, (dt1.Ticks + ticks));
+                Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ticks));
             }
         }
 
@@ -1866,10 +1866,10 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("And Verifying they are equal");
             DateTime dt1 = DateTime_btwn_1801_And_2801();
             DateTime dt2 = new DateTime(year, month, day, hour, minute, second, millisec);
-            Assert.True(DateTime.Equals(dt1, dt2));
+            Assert.IsTrue(DateTime.Equals(dt1, dt2));
             object obj1 = (object)dt1, obj2 = (object)dt2;
-            Assert.True(object.Equals(obj1, obj2));
-            Assert.True(dt1.Equals(obj2));
+            Assert.IsTrue(object.Equals(obj1, obj2));
+            Assert.IsTrue(dt1.Equals(obj2));
         }
 
         [TestMethod]
@@ -1882,7 +1882,7 @@ namespace NFUnitTestSystemLib
             TimeSpan ts1 = dt1.Subtract(dt2);
             TimeSpan ts2 = new TimeSpan(dt1.Ticks - dt2.Ticks);
 
-            Assert.True(ts1 == ts2);
+            Assert.IsTrue(ts1 == ts2);
         }
 
         [TestMethod]
@@ -1911,7 +1911,7 @@ namespace NFUnitTestSystemLib
                 OutputHelper.WriteLine(dt2.ToString());
                 DateTime dt3 = new DateTime(dt1.Ticks - ts.Ticks);
                 OutputHelper.WriteLine(dt3.ToString());
-                Assert.Equal(DateTime.Compare(dt2, dt3), 0);
+                Assert.AreEqual(DateTime.Compare(dt2, dt3), 0);
             }
         }
 
@@ -1937,7 +1937,7 @@ namespace NFUnitTestSystemLib
                 }
                 DateTime dt2 = dt1 + ts;
                 DateTime dt3 = new DateTime(dt1.Ticks + ts.Ticks);
-                Assert.Equal(DateTime.Compare(dt2, dt3), 0);
+                Assert.AreEqual(DateTime.Compare(dt2, dt3), 0);
             }
         }
 
@@ -1953,7 +1953,7 @@ namespace NFUnitTestSystemLib
                 DateTime dt1 = dtArr[i];
                 DateTime dt2 = new DateTime(504911232000000000 + random.Next(1000) + 1);
                 TimeSpan ts = dt1 - dt2;
-                Assert.Equal(ts.Ticks, (dt1.Ticks - dt2.Ticks));
+                Assert.AreEqual(ts.Ticks, (dt1.Ticks - dt2.Ticks));
             }
         }
 
@@ -1970,7 +1970,7 @@ namespace NFUnitTestSystemLib
                 TimeSpan ts = new TimeSpan(random.Next(10000));
                 DateTime dt2 = dt1 - ts;
 
-                Assert.Equal(dt2.Ticks, (dt1.Ticks - ts.Ticks));
+                Assert.AreEqual(dt2.Ticks, (dt1.Ticks - ts.Ticks));
             }
         }
 
@@ -2091,7 +2091,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Getting the Min. DateTime and Verifying");
             DateTime field = DateTime.MinValue;
             OutputHelper.WriteLine(field.Ticks.ToString());
-            Assert.Equal(field.Ticks, 504911232000000000);
+            Assert.AreEqual(field.Ticks, 504911232000000000);
         }
 
         [TestMethod]
@@ -2103,7 +2103,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Getting the Max. DateTime and Verifying");
             DateTime field = DateTime.MaxValue;
             OutputHelper.WriteLine(field.Ticks.ToString());
-            Assert.Equal(field.Ticks, 946708127999999999);
+            Assert.AreEqual(field.Ticks, 946708127999999999);
         }
 
         [TestMethod]
@@ -2133,7 +2133,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Creating a DateTime, getting the Day and Verifying");
             DateTime testDateTime = GetRandomDateTime();
             Int32 _day = testDateTime.Day;
-            Assert.Equal(_day, day);
+            Assert.AreEqual(_day, day);
         }
 
         [TestMethod]
@@ -2145,7 +2145,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Creating a DateTime, getting the DayOfWeek and Verifying");
             DateTime testDateTime = new DateTime(2005, 1, 28);
             DayOfWeek prop = testDateTime.DayOfWeek;
-            Assert.Equal((int)prop, (int)DayOfWeek.Friday);
+            Assert.AreEqual((int)prop, (int)DayOfWeek.Friday);
         }
 
         [TestMethod]
@@ -2158,7 +2158,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("DateTime::DayOfYear - Normal ");
             DateTime testDateTime = new DateTime(2005, 1, 1);
             int _dayOfYear = testDateTime.DayOfYear;
-            Assert.Equal(_dayOfYear, 1);
+            Assert.AreEqual(_dayOfYear, 1);
         }
 
         [TestMethod]
@@ -2170,7 +2170,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Creating a DateTime, getting the Hour and Verifying");
             DateTime testDateTime = GetRandomDateTime();
             Int32 _hour = testDateTime.Hour;
-            Assert.Equal(_hour, hour);
+            Assert.AreEqual(_hour, hour);
         }
 
         [TestMethod]
@@ -2182,7 +2182,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Creating a DateTime, getting the Milliseconds and Verifying");
             DateTime testDateTime = GetRandomDateTime();
             Int32 _mSec = testDateTime.Millisecond;
-            Assert.Equal(_mSec, millisec);
+            Assert.AreEqual(_mSec, millisec);
         }
 
         [TestMethod]
@@ -2194,7 +2194,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Creating a DateTime, getting the Minute and Verifying");
             DateTime testDateTime = GetRandomDateTime();
             Int32 _minute = testDateTime.Minute;
-            Assert.Equal(_minute, minute);
+            Assert.AreEqual(_minute, minute);
         }
 
         [TestMethod]
@@ -2206,7 +2206,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Creating a DateTime, getting the Month and Verifying");
             DateTime testDateTime = GetRandomDateTime();
             Int32 _month = testDateTime.Month;
-            Assert.Equal(_month, month);
+            Assert.AreEqual(_month, month);
         }
 
         [TestMethod]
@@ -2238,7 +2238,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Creating a DateTime, getting the Second and Verifying");
             DateTime testDateTime = GetRandomDateTime();
             Int32 _sec = testDateTime.Second;
-            Assert.Equal(_sec, second);
+            Assert.AreEqual(_sec, second);
         }
 
         [TestMethod]
@@ -2250,7 +2250,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Creating a DateTime, getting the Ticks and Verifying");
             DateTime testDateTime = new System.DateTime(504911232000000000);
             long _ticks = testDateTime.Ticks;
-            Assert.Equal(_ticks, 504911232000000000);
+            Assert.AreEqual(_ticks, 504911232000000000);
         }
 
         [TestMethod]
@@ -2262,7 +2262,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("Creating a DateTime.Today, getting the year and Verifying");
             DateTime testDateTime = GetRandomDateTime();
             Int32 _year = testDateTime.Year;
-            Assert.Equal(_year, year);
+            Assert.AreEqual(_year, year);
         }
 
         //===================================================================================
@@ -2275,7 +2275,7 @@ namespace NFUnitTestSystemLib
         {
             OutputHelper.WriteLine("Creating a DateTime with -ve Ticks and,");
             OutputHelper.WriteLine("verifying ArgumentOutOfRangeException is thrown");
-            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { DateTime dt = new DateTime(-(new Random().Next(10) + 1)); });
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { DateTime dt = new DateTime(-(new Random().Next(10) + 1)); });
         }
 
         [TestMethod]
@@ -2283,8 +2283,8 @@ namespace NFUnitTestSystemLib
         {
             OutputHelper.WriteLine("Creating a DateTime later than DateTime.MaxValue and,");
             OutputHelper.WriteLine("verifying ArgumentOutOfRangeException is thrown");
-            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { DateTime dt1 = new DateTime(DateTime.MaxValue.Ticks + 1); });
-            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { DateTime dt2 = new DateTime(10000, 1, 1, 0, 0, 0, 0); });
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { DateTime dt1 = new DateTime(DateTime.MaxValue.Ticks + 1); });
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { DateTime dt2 = new DateTime(10000, 1, 1, 0, 0, 0, 0); });
         }
 
         [TestMethod]
@@ -2300,10 +2300,10 @@ namespace NFUnitTestSystemLib
 
                 string dtOutput1 = dt.ToString(specifier1);
 
-                Assert.Equal(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"DateTime.Parse '{dt}' failed");
+                Assert.AreEqual(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"DateTime.Parse '{dt}' failed");
 
-                Assert.True(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
-                Assert.Equal(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
+                Assert.IsTrue(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
+                Assert.AreEqual(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
             }
         }
 
@@ -2321,10 +2321,10 @@ namespace NFUnitTestSystemLib
                 string dtOutput1 = dt.ToString(specifier1);
 
                 // expected format is yyyy-MM-ddTHH:mm:ss.fffffffK
-                Assert.Equal(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"Parsing DateTime '{dt}' failed");
+                Assert.AreEqual(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"Parsing DateTime '{dt}' failed");
 
-                Assert.True(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
-                Assert.Equal(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
+                Assert.IsTrue(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
+                Assert.AreEqual(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
             }
         }
 
@@ -2342,10 +2342,10 @@ namespace NFUnitTestSystemLib
                 string dtOutput1 = dt.ToString(specifier1);
 
                 // expected format is ddd, dd MMM yyyy HH':'mm':'ss 'GMT'
-                Assert.Equal(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"Parsing DateTime '{dt}' failed");
+                Assert.AreEqual(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"Parsing DateTime '{dt}' failed");
 
-                Assert.True(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
-                Assert.Equal(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
+                Assert.IsTrue(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
+                Assert.AreEqual(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
             }
         }
 
@@ -2487,7 +2487,7 @@ namespace NFUnitTestSystemLib
                 {
                     OutputHelper.WriteLine("Year '" + yr + "' is a LeapYear, expected '29' days but got '" +
                         daysInMonth + "' in Month '" + mnth + "'");
-                    Assert.Equal(daysInMonth, 29);
+                    Assert.AreEqual(daysInMonth, 29);
                 }
                 else if (daysInMonth != 28)
                 {
@@ -2500,13 +2500,13 @@ namespace NFUnitTestSystemLib
             {
                 OutputHelper.WriteLine("Year '" + yr + "' Month '" + mnth +
                     "', expected '31' days but got '" + daysInMonth + "'");
-                Assert.Equal(daysInMonth, 31);
+                Assert.AreEqual(daysInMonth, 31);
             }
             else
             {
                 OutputHelper.WriteLine("Year '" + yr + "' Month '" + mnth +
                     "', expected '30' days but got '" + daysInMonth + "'");
-                Assert.Equal(daysInMonth, 30);
+                Assert.AreEqual(daysInMonth, 30);
             }
         }
     }

@@ -23,7 +23,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
             OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
             OutputHelper.WriteLine("declared by the constant declaration.");
-            Assert.True(ConstTestClass1.test());
+            Assert.IsTrue(ConstTestClass1.test());
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
             OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
             OutputHelper.WriteLine("declared by the constant declaration.");
-            Assert.True(ConstTestClass2.test());
+            Assert.IsTrue(ConstTestClass2.test());
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
             OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
             OutputHelper.WriteLine("declared by the constant declaration.");
-            Assert.True(ConstTestClass3.test());
+            Assert.IsTrue(ConstTestClass3.test());
 
         }
 
@@ -60,7 +60,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
             OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
             OutputHelper.WriteLine("declared by the constant declaration.");
-            Assert.True(ConstTestClass4.test());
+            Assert.IsTrue(ConstTestClass4.test());
         }
 
         [TestMethod]
@@ -72,7 +72,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
             OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
             OutputHelper.WriteLine("declared by the constant declaration.");
-            Assert.True(ConstTestClass5.test());
+            Assert.IsTrue(ConstTestClass5.test());
         }
 
         [TestMethod]
@@ -84,7 +84,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
             OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
             OutputHelper.WriteLine("declared by the constant declaration.");
-            Assert.True(ConstTestClass6.test());
+            Assert.IsTrue(ConstTestClass6.test());
         }
 
 
@@ -97,7 +97,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a new modifier, and one of four access modifiers.  The");
             OutputHelper.WriteLine("attributes and modifiers apply to all of the members ");
             OutputHelper.WriteLine("declared by the constant declaration.");
-            Assert.True(ConstTestClass9.test());
+            Assert.IsTrue(ConstTestClass9.test());
         }
 
 
@@ -113,7 +113,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
             //Ported from const11.cs
-            Assert.True(ConstTestClass11.test());
+            Assert.IsTrue(ConstTestClass11.test());
         }
 
         [TestMethod]
@@ -128,7 +128,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass12.test());
+            Assert.IsTrue(ConstTestClass12.test());
         }
 
         [TestMethod]
@@ -143,7 +143,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass13.test());
+            Assert.IsTrue(ConstTestClass13.test());
         }
 
         [TestMethod]
@@ -158,7 +158,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass14.test());
+            Assert.IsTrue(ConstTestClass14.test());
         }
 
         [TestMethod]
@@ -173,7 +173,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass15.test());
+            Assert.IsTrue(ConstTestClass15.test());
         }
 
         [TestMethod]
@@ -188,7 +188,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass16.test());
+            Assert.IsTrue(ConstTestClass16.test());
         }
 
         [TestMethod]
@@ -203,7 +203,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass17.test());
+            Assert.IsTrue(ConstTestClass17.test());
         }
 
         [TestMethod]
@@ -218,7 +218,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass18.test());
+            Assert.IsTrue(ConstTestClass18.test());
         }
 
         [TestMethod]
@@ -233,7 +233,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass19.test());
+            Assert.IsTrue(ConstTestClass19.test());
         }
 
         [TestMethod]
@@ -248,7 +248,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass20.test());
+            Assert.IsTrue(ConstTestClass20.test());
         }
 
         [TestMethod]
@@ -263,7 +263,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass21.test());
+            Assert.IsTrue(ConstTestClass21.test());
         }
 
         [TestMethod]
@@ -278,7 +278,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass24.test());
+            Assert.IsTrue(ConstTestClass24.test());
         }
 
         [TestMethod]
@@ -291,7 +291,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a constant-expression.  Examples of such constructs include");
             OutputHelper.WriteLine("case labels, goto case statements, enum member declarations,");
             OutputHelper.WriteLine("attributes, and other constant declarations.");
-            Assert.True(ConstTestClass25.test());
+            Assert.IsTrue(ConstTestClass25.test());
         }
 
         [TestMethod]
@@ -304,7 +304,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a constant-expression.  Examples of such constructs include");
             OutputHelper.WriteLine("case labels, goto case statements, enum member declarations,");
             OutputHelper.WriteLine("attributes, and other constant declarations.");
-            Assert.True(ConstTestClass26.test());
+            Assert.IsTrue(ConstTestClass26.test());
         }
 
         [TestMethod]
@@ -317,7 +317,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a constant-expression.  Examples of such constructs include");
             OutputHelper.WriteLine("case labels, goto case statements, enum member declarations,");
             OutputHelper.WriteLine("attributes, and other constant declarations.");
-            Assert.True(ConstTestClass27.test());
+            Assert.IsTrue(ConstTestClass27.test());
         }
 
         [TestMethod]
@@ -330,7 +330,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("a constant-expression.  Examples of such constructs include");
             OutputHelper.WriteLine("case labels, goto case statements, enum member declarations,");
             OutputHelper.WriteLine("attributes, and other constant declarations.");
-            Assert.True(ConstTestClass28.test());
+            Assert.IsTrue(ConstTestClass28.test());
         }
 
         [TestMethod]
@@ -343,7 +343,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("are not of a circular nature.  The compiler automatically");
             OutputHelper.WriteLine("arranges to evaluate the constant declarations in the");
             OutputHelper.WriteLine("appropriate order.");
-            Assert.True(ConstTestClass30.test());
+            Assert.IsTrue(ConstTestClass30.test());
         }
 
         [TestMethod]
@@ -358,7 +358,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass32.test());
+            Assert.IsTrue(ConstTestClass32.test());
         }
 
         [TestMethod]
@@ -373,7 +373,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass33.test());
+            Assert.IsTrue(ConstTestClass33.test());
         }
 
         [TestMethod]
@@ -388,7 +388,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass34.test());
+            Assert.IsTrue(ConstTestClass34.test());
         }
 
         [TestMethod]
@@ -403,7 +403,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("must yield a value of the target type or of a ");
             OutputHelper.WriteLine("type that can be converted to the target type");
             OutputHelper.WriteLine("by implicit conversion.");
-            Assert.True(ConstTestClass35.test());
+            Assert.IsTrue(ConstTestClass35.test());
         }
 
         [TestMethod]
@@ -413,7 +413,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("Section 10.3");
             OutputHelper.WriteLine("A constant declarator introduces a new member");
             OutputHelper.WriteLine("This test is expected to fail");
-            Assert.False(ConstTestClass42.test());
+            Assert.IsFalse(ConstTestClass42.test());
             {
                 OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
                 OutputHelper.WriteLine("It previously marked as known failure because of bug # 17246");
@@ -428,7 +428,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("Section 10.3");
             OutputHelper.WriteLine("A constant declarator introduces a new member");
             OutputHelper.WriteLine("This test is expected to fail");
-            Assert.False(ConstTestClass43.test());
+            Assert.IsFalse(ConstTestClass43.test());
             {
                 OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
                 OutputHelper.WriteLine("It previously marked as known failure because of bug # 17246");
@@ -442,7 +442,7 @@ namespace NFUnitTestClasses
             //Ported from const44.cs
             OutputHelper.WriteLine("Section 10.3");
             OutputHelper.WriteLine("The type of a constant must be at least as acccessible as the constant itself.");
-            Assert.True(ConstTestClass44.test());
+            Assert.IsTrue(ConstTestClass44.test());
         }
 
 
@@ -453,7 +453,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("Section 10.3");
             OutputHelper.WriteLine("...the only possible value for constants of reference-types other than ");
             OutputHelper.WriteLine("string is null");
-            Assert.True(ConstTestClass56.test());
+            Assert.IsTrue(ConstTestClass56.test());
         }
 
         [TestMethod]
@@ -464,7 +464,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine("A constant declaration that declares multiple constants is equivalent to ");
             OutputHelper.WriteLine("multiple declarations of single constants with the same attributes, ");
             OutputHelper.WriteLine("modifiers, and type. ");
-            Assert.True(ConstTestClass57.test());
+            Assert.IsTrue(ConstTestClass57.test());
         }
 
         //Const test classes

@@ -24,7 +24,7 @@ namespace NFUnitTestClasses
         //    OutputHelper.WriteLine(" destruct the instances of a class.");
         //    OutputHelper.WriteLine("");
         //    OutputHelper.WriteLine("Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs");
-        //    Assert.True(DestructorsTestClass3.testMethod());
+        //    Assert.IsTrue(DestructorsTestClass3.testMethod());
         //}
 
         //[TestMethod]
@@ -36,7 +36,7 @@ namespace NFUnitTestClasses
         //    OutputHelper.WriteLine(" destruct the instances of a class.");
         //    OutputHelper.WriteLine("");
         //    OutputHelper.WriteLine("Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs");
-        //    Assert.True(DestructorsTestClass4.testMethod());
+        //    Assert.IsTrue(DestructorsTestClass4.testMethod());
         //}
 
         // Removed as using a class out of mscorlib
@@ -50,7 +50,7 @@ namespace NFUnitTestClasses
         //    OutputHelper.WriteLine(" actually declared in the class.");
         //    OutputHelper.WriteLine("");
         //    OutputHelper.WriteLine("Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs");
-        //    Assert.True(DestructorsTestClass7.testMethod());
+        //    Assert.IsTrue(DestructorsTestClass7.testMethod());
         //}
 
         //class DestructorsTestClass3

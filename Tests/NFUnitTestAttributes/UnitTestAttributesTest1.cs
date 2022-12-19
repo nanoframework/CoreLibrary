@@ -18,28 +18,28 @@ namespace NFUnitTestAttributes
         public void Attrib_attrib000_Test()
         {
             OutputHelper.WriteLine("Declare a basic attribute class, example from C# Language reference, 1.1");
-            Assert.True(Attrib_TestClass_attrib000.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib000.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib000_2_Test()
         {
             OutputHelper.WriteLine("17.1 - A non-abstract attribute class must have public accessibility.");
-            Assert.True(Attrib_TestClass_attrib000_2.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib000_2.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib001_Test()
         {
             OutputHelper.WriteLine("Declare a basic attribute class, example from C# Language reference, 1.1");
-            Assert.True(Attrib_TestClass_attrib001.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib001.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib002_Test()
         {
             OutputHelper.WriteLine("Declare a basic attribute class, example from C# Language reference, 1.1");
-            Assert.True(Attrib_TestClass_attrib002.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib002.testMethod());
         }
 
         // Removing this test as not supported scenario in nano
@@ -47,7 +47,7 @@ namespace NFUnitTestAttributes
         //public void Attrib_attrib017_7a_Test()
         //{
         //    OutputHelper.WriteLine("17.4.5 test of conditional when DEBUG is undefined");
-        //    Assert.True(Attrib_TestClass_attrib017_7a.testMethod());
+        //    Assert.IsTrue(Attrib_TestClass_attrib017_7a.testMethod());
         //}
 
         [TestMethod]
@@ -55,21 +55,21 @@ namespace NFUnitTestAttributes
         {
             OutputHelper.WriteLine("17.4.5 - Example from CLR");
 
-            Assert.True(Attrib_TestClass_attrib017_8c.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib017_8c.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib021_2_Test()
         {
             OutputHelper.WriteLine("CLR 17.4.9 - guid Attribute");
-            Assert.True(Attrib_TestClass_attrib021_2.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib021_2.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib021_4_Test()
         {
             OutputHelper.WriteLine("CLR 17.4.9 - guid Attribute");
-            Assert.True(Attrib_TestClass_attrib021_4.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib021_4.testMethod());
         }
 
         [TestMethod]
@@ -78,7 +78,7 @@ namespace NFUnitTestAttributes
             OutputHelper.WriteLine("CLR 17.4.19 - obsolete");
             OutputHelper.WriteLine("obsolete can be used on any declaration, but should be able to call");
             OutputHelper.WriteLine("obsolete methods");
-            Assert.True(Attrib_TestClass_attrib029_8.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib029_8.testMethod());
         }
 
         [TestMethod]
@@ -87,7 +87,7 @@ namespace NFUnitTestAttributes
             OutputHelper.WriteLine("CLR 17.4.19 - obsolete");
             OutputHelper.WriteLine("obsolete can be used on any declaration, but should be able to call");
             OutputHelper.WriteLine("obsolete methods");
-            Assert.True(Attrib_TestClass_attrib029_9.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib029_9.testMethod());
         }
 
         [TestMethod]
@@ -96,7 +96,7 @@ namespace NFUnitTestAttributes
             OutputHelper.WriteLine("CLR 17.4.19 - obsolete");
             OutputHelper.WriteLine("obsolete can be used on any declaration, but should be able to call");
             OutputHelper.WriteLine("obsolete methods");
-            Assert.True(Attrib_TestClass_attrib029_a.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib029_a.testMethod());
         }
 
         [TestMethod]
@@ -104,28 +104,28 @@ namespace NFUnitTestAttributes
         {
             OutputHelper.WriteLine("CLR 17.4.19 - obsolete");
             OutputHelper.WriteLine("obsolete can be used on any declaration, but overrides should generate warning");
-            Assert.True(Attrib_TestClass_attrib029_b.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib029_b.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib031_4_Test()
         {
             OutputHelper.WriteLine("CLR 17.4.22 - serializable Attribute");
-            Assert.True(Attrib_TestClass_attrib031_4.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib031_4.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib032_2_Test()
         {
             OutputHelper.WriteLine("CLR 17.4.23 - structlayout Attribute");
-            Assert.True(Attrib_TestClass_attrib032_2.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib032_2.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib033_2_Test()
         {
             OutputHelper.WriteLine("Attribute usage is inherited.");
-            Assert.True(Attrib_TestClass_attrib033_2.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib033_2.testMethod());
         }
 
         /*
@@ -135,7 +135,7 @@ namespace NFUnitTestAttributes
         public void Attrib_attrib035_12_Test()
         {
             OutputHelper.WriteLine("Make sure that assembly level GuidAttribute appears in assembly");
-            Assert.True(Attrib_TestClass_attrib035_12.testMethod())
+            Assert.IsTrue(Attrib_TestClass_attrib035_12.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -145,7 +145,7 @@ namespace NFUnitTestAttributes
         public void Attrib_attrib035_22_Test()
         {
             OutputHelper.WriteLine("Make sure that assembly level GuidAttribute appears in assembly");
-            Assert.True(Attrib_TestClass_attrib035_22.testMethod())
+            Assert.IsTrue(Attrib_TestClass_attrib035_22.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -159,14 +159,14 @@ namespace NFUnitTestAttributes
             OutputHelper.WriteLine("17.1 - A top-level, non-abstract attribute class must have public or");
             OutputHelper.WriteLine("internal accessibility. Nested attribute classes may also be private,");
             OutputHelper.WriteLine("protected, or protected internal.");
-            Assert.True(Attrib_TestClass_attrib036_1.testMethod());            
+            Assert.IsTrue(Attrib_TestClass_attrib036_1.testMethod());            
         }
 
         [TestMethod]
         public void Attrib_attrib038_1_Test()
         {
             OutputHelper.WriteLine("Verify params keyword");
-                Assert.True(Attrib_TestClass_attrib038_1.testMethod());
+                Assert.IsTrue(Attrib_TestClass_attrib038_1.testMethod());
         }
 
         [TestMethod]
@@ -178,7 +178,7 @@ namespace NFUnitTestAttributes
             OutputHelper.WriteLine("	AttributeTargets.Method | AttributeTargets.Property |");
             OutputHelper.WriteLine("	AttributeTargets.Field | AttributeTargets.Event |");
             OutputHelper.WriteLine("	AttributeTargets.Interface | AttributeTargets.Delegate)]");
-            Assert.True(Attrib_TestClass_attrib047_4.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib047_4.testMethod());
         }
 
         [TestMethod]
@@ -190,14 +190,14 @@ namespace NFUnitTestAttributes
             OutputHelper.WriteLine("	AttributeTargets.Method | AttributeTargets.Property |");
             OutputHelper.WriteLine("	AttributeTargets.Field | AttributeTargets.Event |");
             OutputHelper.WriteLine("	AttributeTargets.Interface | AttributeTargets.Delegate)]");
-            Assert.True(Attrib_TestClass_attrib047_5.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib047_5.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib049_4_Test()
         {
             OutputHelper.WriteLine("Bad named attribute argumements should be an error");
-            Assert.True(Attrib_TestClass_attrib049_4.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib049_4.testMethod());
         }
 
         [TestMethod]
@@ -205,7 +205,7 @@ namespace NFUnitTestAttributes
         {
             OutputHelper.WriteLine("ECMA complaince: support special attribute name binding rules with @ identifier");
             OutputHelper.WriteLine("explictly specify attribute location with @");
-            Assert.True(Attrib_TestClass_attrib054.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib054.testMethod());
         }
 
         [TestMethod]
@@ -214,7 +214,7 @@ namespace NFUnitTestAttributes
             OutputHelper.WriteLine("Declare a derived attribute after declaring its base.");
             OutputHelper.WriteLine("Attributes can inherit from other attirubtes that have not yet been declared as long as there are no");
             OutputHelper.WriteLine("circular dependencies.");
-            Assert.True(Attrib_TestClass_attrib062.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib062.testMethod());
         }
 
         //Compiled Test Cases 
