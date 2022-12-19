@@ -141,16 +141,16 @@ namespace NFUnitTestSystemLib
             string str3 = "ABCD";
 
             OutputHelper.WriteLine("With 0 args");
-            Assert.Equal(str1.ToCharArray(), car1);
-            Assert.NotEqual(str2.ToCharArray(), car1);
-            Assert.NotEqual(str3.ToCharArray(), car1);
-            Assert.NotEqual(str1.ToCharArray(), car2);
+            CollectionAssert.AreEqual(str1.ToCharArray(), car1);
+            CollectionAssert.AreNotEqual(str2.ToCharArray(), car1);
+            CollectionAssert.AreNotEqual(str3.ToCharArray(), car1);
+            CollectionAssert.AreNotEqual(str1.ToCharArray(), car2);
 
             OutputHelper.WriteLine("With 1 args");
-            Assert.NotEqual(str1.ToCharArray(0, 3), car1);
-            Assert.Equal(str2.ToCharArray(0, 4), car1);
-            Assert.NotEqual(str3.ToCharArray(0, 3), car1);
-            Assert.NotEqual(str1.ToCharArray(1, 3), car2);
+            CollectionAssert.AreNotEqual(str1.ToCharArray(0, 3), car1);
+            CollectionAssert.AreEqual(str2.ToCharArray(0, 4), car1);
+            CollectionAssert.AreNotEqual(str3.ToCharArray(0, 3), car1);
+            CollectionAssert.AreNotEqual(str1.ToCharArray(1, 3), car2);
         }
 
         [TestMethod]
