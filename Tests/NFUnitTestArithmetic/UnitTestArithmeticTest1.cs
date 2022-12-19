@@ -16,7 +16,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.4 ");
             OutputHelper.WriteLine("This code tests basic literal integral arthimetic additive expressions.");
-            Assert.True(Arith_TestClass_arith001.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith001.testMethod());
         }
 
         [TestMethod]
@@ -24,7 +24,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.4 ");
             OutputHelper.WriteLine("This code tests basic literal integral arthimetic multiplicative expressions.");
-            Assert.True(Arith_TestClass_arith003.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith003.testMethod());
         }
 
         [TestMethod]
@@ -32,7 +32,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.4 ");
             OutputHelper.WriteLine("This code tests basic integral arthimetic additive expressions using variables.");
-            Assert.True(Arith_TestClass_arith005.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith005.testMethod());
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.4 ");
             OutputHelper.WriteLine("This code tests basic integral arthimetic multiplicative expressions with variables.");
-            Assert.True(Arith_TestClass_arith007.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith007.testMethod());
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.4 ");
             OutputHelper.WriteLine("This code tests enum additive expressions.");
-            Assert.True(Arith_TestClass_arith023.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith023.testMethod());
         }
 
         [TestMethod]
@@ -56,266 +56,266 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.4 ");
             OutputHelper.WriteLine("This code tests enum additive expressions.");
-            Assert.True(Arith_TestClass_arith024.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith024.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith028_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith028.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith028.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith029_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith029.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith029.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith030_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith030.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith030.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith031_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith031.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith031.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith032_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith032.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith032.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith033_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith033.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith033.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith034_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith034.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith034.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith035_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith035.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith035.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith036_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith036.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith036.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith037_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith037.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith037.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith038_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith038.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith038.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith039_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith039.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith039.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith040_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith040.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith040.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith041_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith041.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith041.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith042_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith042.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith042.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith043_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith043.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith043.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith044_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith044.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith044.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith045_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith045.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith045.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith046_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith046.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith046.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith047_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith047.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith047.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith048_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith048.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith048.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith049_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith049.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith049.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith050_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith050.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith050.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith051_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith051.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith051.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith052_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith052.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith052.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith053_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith053.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith053.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith054_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith054.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith054.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith055_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith055.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith055.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith056_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith056.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith056.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith057_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith057.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith057.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith058_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith058.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith058.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith059_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith059.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith059.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith060_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith060.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith060.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith061_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith061.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith061.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith062_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith062.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith062.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith064_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith064.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith064.testMethod());
         }
 
         [TestMethod]
         public void Arith_arith065_Test()
         {
             OutputHelper.WriteLine("Section 7.7");
-            Assert.True(Arith_TestClass_arith065.testMethod());
+            Assert.IsTrue(Arith_TestClass_arith065.testMethod());
         }
 
         //Compiled Test Cases 

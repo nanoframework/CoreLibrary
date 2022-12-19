@@ -15,26 +15,26 @@ namespace NFUnitTestSystemLib
         public void Ctor_Empty()
         {
             var i = new long();
-            Assert.Equal(0, i);
+            Assert.AreEqual(0, i);
         }
 
         [TestMethod]
         public void Ctor_Value()
         {
             long i = 41;
-            Assert.Equal(41, i);
+            Assert.AreEqual(41, i);
         }
 
         [TestMethod]
         public void MaxValue()
         {
-            Assert.Equal(0x7FFFFFFFFFFFFFFF, long.MaxValue);
+            Assert.AreEqual(0x7FFFFFFFFFFFFFFF, long.MaxValue);
         }
 
         [TestMethod]
         public void MinValue()
         {
-            Assert.Equal(unchecked((long)0x8000000000000000), long.MinValue);
+            Assert.AreEqual(unchecked((long)0x8000000000000000), long.MinValue);
         }
 
         [TestMethod]
@@ -57,11 +57,11 @@ namespace NFUnitTestSystemLib
                 if (test.Obj is long)
                 {
                     long i2 = (long)test.Obj;
-                    Assert.Equal(test.Expected, test.I1.Equals(i2));
-                    Assert.Equal(test.Expected, test.I1.GetHashCode().Equals(i2.GetHashCode()));
+                    Assert.AreEqual(test.Expected, test.I1.Equals(i2));
+                    Assert.AreEqual(test.Expected, test.I1.GetHashCode().Equals(i2.GetHashCode()));
                 }
 
-                Assert.Equal(test.Expected, test.I1.Equals(test.Obj));
+                Assert.AreEqual(test.Expected, test.I1.Equals(test.Obj));
             }
         }
 

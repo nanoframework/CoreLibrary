@@ -458,14 +458,14 @@ namespace NFUnitTestTypes
                 char c1 = (char)6;
                 int c2 = -c1;
 
-                Assert.Equal(s2, (short)-2);
-                Assert.Equal(b2, -3);
-                Assert.Equal(i2, -4);
-                Assert.Equal(l2, -5L);
-                Assert.Equal(c2, -6);
-                Assert.Equal(i2, -4);
-                Assert.Equal(l2, -5L);
-                Assert.Equal(c2, -6);
+                Assert.AreEqual(s2, (short)-2);
+                Assert.AreEqual(b2, -3);
+                Assert.AreEqual(i2, -4);
+                Assert.AreEqual(l2, -5L);
+                Assert.AreEqual(c2, -6);
+                Assert.AreEqual(i2, -4);
+                Assert.AreEqual(l2, -5L);
+                Assert.AreEqual(c2, -6);
             }
         }
         public class ValueIntegralTestClass05
@@ -483,11 +483,11 @@ namespace NFUnitTestTypes
                 char c1 = (char)6;
                 int c2 = +c1;
 
-                Assert.Equal(s2, (short)2);
-                Assert.Equal(b2, 3);
-                Assert.Equal(i2, 4);
-                Assert.Equal(l2, 5L);
-                Assert.Equal(c2, 6);
+                Assert.AreEqual(s2, (short)2);
+                Assert.AreEqual(b2, 3);
+                Assert.AreEqual(i2, 4);
+                Assert.AreEqual(l2, 5L);
+                Assert.AreEqual(c2, 6);
             }
         }
         public class ValueIntegralTestClass09
@@ -505,11 +505,11 @@ namespace NFUnitTestTypes
                 char c1 = (char)6;
                 int c2 = ~c1;
 
-                Assert.Equal(s2, (short)-3);
-                Assert.Equal(b2, -4);
-                Assert.Equal(i2, -5);
-                Assert.Equal(l2, -6L);
-                Assert.Equal(c2, -7);
+                Assert.AreEqual(s2, (short)-3);
+                Assert.AreEqual(b2, -4);
+                Assert.AreEqual(i2, -5);
+                Assert.AreEqual(l2, -6L);
+                Assert.AreEqual(c2, -7);
             }
         }
         public class ValueIntegralTestClass13
@@ -944,7 +944,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 char c = '\x000A';
-                Assert.Equal(c, (char)10);
+                Assert.AreEqual(c, (char)10);
             }
         }
         public class ValueIntegralTestClass39
@@ -960,10 +960,10 @@ namespace NFUnitTestTypes
                 ulong l1 = 5ul;
                 ulong l2 = +l1;
 
-                Assert.Equal(s2, (ushort)2);
-                Assert.Equal(b2, 3);
-                Assert.Equal(i2, 4);
-                Assert.Equal(l2, 5ul);
+                Assert.AreEqual(s2, (ushort)2);
+                Assert.AreEqual(b2, 3);
+                Assert.AreEqual(i2, 4);
+                Assert.AreEqual(l2, 5ul);
             }
         }
         public class ValueIntegralTestClass42
@@ -981,10 +981,10 @@ namespace NFUnitTestTypes
                     ulong l1 = 5ul;
                     ulong l2 = ~l1;
 
-                    Assert.Equal(s2, -3);
-                    Assert.Equal(b2, -4);
-                    Assert.Equal(i2, 4294967291u);
-                    Assert.Equal(l2, 18446744073709551610ul);
+                    Assert.AreEqual(s2, -3);
+                    Assert.AreEqual(b2, -4);
+                    Assert.AreEqual(i2, 4294967291u);
+                    Assert.AreEqual(l2, 18446744073709551610ul);
                 }
             }
         }
@@ -999,9 +999,9 @@ namespace NFUnitTestTypes
                 uint i1 = 4;
                 long i2 = -i1;
 
-                Assert.Equal(s2, -2);
-                Assert.Equal(b2, -3);
-                Assert.Equal(i2, -4);
+                Assert.AreEqual(s2, -2);
+                Assert.AreEqual(b2, -3);
+                Assert.AreEqual(i2, -4);
             }
         }
         public class ValueIntegralTestClass49
@@ -1704,7 +1704,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 char c = (char)10;
-                Assert.Equal(c, '\x000a');
+                Assert.AreEqual(c, '\x000a');
             }
         }
 

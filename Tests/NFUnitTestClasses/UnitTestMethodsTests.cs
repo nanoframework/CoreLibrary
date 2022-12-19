@@ -15,7 +15,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass1.testMethod());
+            Assert.IsTrue(MethodsTestClass1.testMethod());
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass2.testMethod());
+            Assert.IsTrue(MethodsTestClass2.testMethod());
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass3.testMethod());
+            Assert.IsTrue(MethodsTestClass3.testMethod());
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass4.testMethod());
+            Assert.IsTrue(MethodsTestClass4.testMethod());
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass6.testMethod());
+            Assert.IsTrue(MethodsTestClass6.testMethod());
         }
 
         [TestMethod]
@@ -70,7 +70,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass7.testMethod());
+            Assert.IsTrue(MethodsTestClass7.testMethod());
         }
 
         [TestMethod]
@@ -81,7 +81,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass9.testMethod());
+            Assert.IsTrue(MethodsTestClass9.testMethod());
         }
 
         [TestMethod]
@@ -92,7 +92,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass10.testMethod());
+            Assert.IsTrue(MethodsTestClass10.testMethod());
         }
 
         [TestMethod]
@@ -103,7 +103,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.False(MethodsTestClass11.testMethod());
+            Assert.IsFalse(MethodsTestClass11.testMethod());
             OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
             OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
             OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
@@ -118,7 +118,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass13.testMethod());
+            Assert.IsTrue(MethodsTestClass13.testMethod());
         }
 
         [TestMethod]
@@ -129,7 +129,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass17.testMethod());
+            Assert.IsTrue(MethodsTestClass17.testMethod());
         }
 
         [TestMethod]
@@ -139,7 +139,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the type of the value computed and returned by the");
             OutputHelper.WriteLine(" method. The return type is void if the method does");
             OutputHelper.WriteLine(" not return a value.");
-            Assert.True(MethodsTestClass19.testMethod());
+            Assert.IsTrue(MethodsTestClass19.testMethod());
         }
 
         [TestMethod]
@@ -149,7 +149,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the type of the value computed and returned by the");
             OutputHelper.WriteLine(" method. The return type is void if the method does");
             OutputHelper.WriteLine(" not return a value.");
-            Assert.True(MethodsTestClass20.testMethod());
+            Assert.IsTrue(MethodsTestClass20.testMethod());
         }
 
         [TestMethod]
@@ -159,7 +159,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the type of the value computed and returned by the");
             OutputHelper.WriteLine(" method. The return type is void if the method does");
             OutputHelper.WriteLine(" not return a value.");
-            Assert.True(MethodsTestClass22.testMethod());
+            Assert.IsTrue(MethodsTestClass22.testMethod());
         }
 
         [TestMethod]
@@ -169,7 +169,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the type of the value computed and returned by the");
             OutputHelper.WriteLine(" method. The return type is void if the method does");
             OutputHelper.WriteLine(" not return a value.");
-            Assert.True(MethodsTestClass23.testMethod());
+            Assert.IsTrue(MethodsTestClass23.testMethod());
         }
 
         [TestMethod]
@@ -179,7 +179,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the type of the value computed and returned by the");
             OutputHelper.WriteLine(" method. The return type is void if the method does");
             OutputHelper.WriteLine(" not return a value.");
-            Assert.True(MethodsTestClass24.testMethod());
+            Assert.IsTrue(MethodsTestClass24.testMethod());
         }
 
         [TestMethod]
@@ -189,7 +189,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the type of the value computed and returned by the");
             OutputHelper.WriteLine(" method. The return type is void if the method does");
             OutputHelper.WriteLine(" not return a value.");
-            Assert.True(MethodsTestClass25.testMethod());
+            Assert.IsTrue(MethodsTestClass25.testMethod());
         }
 
         [TestMethod]
@@ -199,7 +199,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the type of the value computed and returned by the");
             OutputHelper.WriteLine(" method. The return type is void if the method does");
             OutputHelper.WriteLine(" not return a value.");
-            Assert.True(MethodsTestClass26.testMethod());
+            Assert.IsTrue(MethodsTestClass26.testMethod());
         }
 
         [TestMethod]
@@ -212,7 +212,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" identifier.  For an explicit interface member ");
             OutputHelper.WriteLine(" implementation, the member-name consists of an");
             OutputHelper.WriteLine(" interface-type followed by a . and an identifier.");
-            Assert.True(MethodsTestClass29.testMethod());
+            Assert.IsTrue(MethodsTestClass29.testMethod());
         }
 
         [TestMethod]
@@ -225,7 +225,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" identifier.  For an explicit interface member ");
             OutputHelper.WriteLine(" implementation, the member-name consists of an");
             OutputHelper.WriteLine(" interface-type followed by a . and an identifier.");
-            Assert.True(MethodsTestClass30.testMethod());
+            Assert.IsTrue(MethodsTestClass30.testMethod());
         }
 
         [TestMethod]
@@ -234,7 +234,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" The optional formal-parameter-list specifies");
             OutputHelper.WriteLine(" the parameters of the method.");
-            Assert.True(MethodsTestClass33.testMethod());
+            Assert.IsTrue(MethodsTestClass33.testMethod());
         }
 
         [TestMethod]
@@ -243,14 +243,14 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" The optional formal-parameter-list specifies");
             OutputHelper.WriteLine(" the parameters of the method.");
-            Assert.True(MethodsTestClass34.testMethod());
+            Assert.IsTrue(MethodsTestClass34.testMethod());
         }
 
         [TestMethod]
         public void Methods35_Test()
         {
             OutputHelper.WriteLine("Testing method call with 10 parameters");
-            Assert.True(MethodsTestClass35.testMethod());
+            Assert.IsTrue(MethodsTestClass35.testMethod());
         }
 
         [TestMethod]
@@ -265,7 +265,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" space of a method must be unique.  Thus it is an error");
             OutputHelper.WriteLine(" for a parameter or local variable to have the same name");
             OutputHelper.WriteLine(" as another parameter or local variable.");
-            Assert.True(MethodsTestClass56.testMethod());
+            Assert.IsTrue(MethodsTestClass56.testMethod());
         }
 
         [TestMethod]
@@ -280,7 +280,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" space of a method must be unique.  Thus it is an error");
             OutputHelper.WriteLine(" for a parameter or local variable to have the same name");
             OutputHelper.WriteLine(" as another parameter or local variable.");
-            Assert.True(MethodsTestClass57.testMethod());
+            Assert.IsTrue(MethodsTestClass57.testMethod());
         }
 
         [TestMethod]
@@ -291,7 +291,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the corresponding argument in the method invocation");
             OutputHelper.WriteLine(" must be an expression of a type that is implicitly");
             OutputHelper.WriteLine(" convertible to the formal parameter type.");
-            Assert.True(MethodsTestClass58.testMethod());
+            Assert.IsTrue(MethodsTestClass58.testMethod());
         }
 
         [TestMethod]
@@ -302,7 +302,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the corresponding argument in the method invocation");
             OutputHelper.WriteLine(" must be an expression of a type that is implicitly");
             OutputHelper.WriteLine(" convertible to the formal parameter type.");
-            Assert.True(MethodsTestClass59.testMethod());
+            Assert.IsTrue(MethodsTestClass59.testMethod());
         }
 
         [TestMethod]
@@ -313,7 +313,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the corresponding argument in the method invocation");
             OutputHelper.WriteLine(" must be an expression of a type that is implicitly");
             OutputHelper.WriteLine(" convertible to the formal parameter type.");
-            Assert.True(MethodsTestClass60.testMethod());
+            Assert.IsTrue(MethodsTestClass60.testMethod());
         }
 
         [TestMethod]
@@ -324,7 +324,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the corresponding argument in the method invocation");
             OutputHelper.WriteLine(" must be an expression of a type that is implicitly");
             OutputHelper.WriteLine(" convertible to the formal parameter type.");
-            Assert.True(MethodsTestClass61.testMethod());
+            Assert.IsTrue(MethodsTestClass61.testMethod());
         }
 
         [TestMethod]
@@ -336,7 +336,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the local storage location represented by the ");
             OutputHelper.WriteLine(" value parameter--they have no effect on the actual ");
             OutputHelper.WriteLine(" argument given in the method invocation.");
-            Assert.True(MethodsTestClass66.testMethod());
+            Assert.IsTrue(MethodsTestClass66.testMethod());
         }
 
         [TestMethod]
@@ -348,7 +348,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the local storage location represented by the ");
             OutputHelper.WriteLine(" value parameter--they have no effect on the actual ");
             OutputHelper.WriteLine(" argument given in the method invocation.");
-            Assert.True(MethodsTestClass67.testMethod());
+            Assert.IsTrue(MethodsTestClass67.testMethod());
         }
 
         [TestMethod]
@@ -360,7 +360,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the local storage location represented by the ");
             OutputHelper.WriteLine(" value parameter--they have no effect on the actual ");
             OutputHelper.WriteLine(" argument given in the method invocation.");
-            Assert.True(MethodsTestClass68.testMethod());
+            Assert.IsTrue(MethodsTestClass68.testMethod());
         }
 
         [TestMethod]
@@ -374,7 +374,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" represents the same storage location as the");
             OutputHelper.WriteLine(" variable given as the argument in the method");
             OutputHelper.WriteLine(" invocation.");
-            Assert.True(MethodsTestClass69.testMethod());
+            Assert.IsTrue(MethodsTestClass69.testMethod());
         }
 
         [TestMethod]
@@ -388,7 +388,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" represents the same storage location as the");
             OutputHelper.WriteLine(" variable given as the argument in the method");
             OutputHelper.WriteLine(" invocation.");
-            Assert.True(MethodsTestClass70.testMethod());
+            Assert.IsTrue(MethodsTestClass70.testMethod());
         }
 
         [TestMethod]
@@ -402,7 +402,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" represents the same storage location as the");
             OutputHelper.WriteLine(" variable given as the argument in the method");
             OutputHelper.WriteLine(" invocation.");
-            Assert.True(MethodsTestClass71.testMethod());
+            Assert.IsTrue(MethodsTestClass71.testMethod());
         }
 
         [TestMethod]
@@ -415,7 +415,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" variable-reference of the same type as the formal");
             OutputHelper.WriteLine(" parameter.  A variable must be definitely assigned");
             OutputHelper.WriteLine(" before it can be passed as a reference parameter.");
-            Assert.True(MethodsTestClass75.testMethod());
+            Assert.IsTrue(MethodsTestClass75.testMethod());
         }
 
         [TestMethod]
@@ -427,7 +427,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" parameter does not create a new storage location.  Instead,");
             OutputHelper.WriteLine(" an output parameter represents the same storage location");
             OutputHelper.WriteLine(" as the variable given as the argument in the method invocation.");
-            Assert.True(MethodsTestClass78.testMethod());
+            Assert.IsTrue(MethodsTestClass78.testMethod());
         }
 
         [TestMethod]
@@ -439,7 +439,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" parameter does not create a new storage location.  Instead,");
             OutputHelper.WriteLine(" an output parameter represents the same storage location");
             OutputHelper.WriteLine(" as the variable given as the argument in the method invocation.");
-            Assert.True(MethodsTestClass79.testMethod());
+            Assert.IsTrue(MethodsTestClass79.testMethod());
         }
 
         [TestMethod]
@@ -451,7 +451,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" parameter does not create a new storage location.  Instead,");
             OutputHelper.WriteLine(" an output parameter represents the same storage location");
             OutputHelper.WriteLine(" as the variable given as the argument in the method invocation.");
-            Assert.True(MethodsTestClass80.testMethod());
+            Assert.IsTrue(MethodsTestClass80.testMethod());
         }
 
         [TestMethod]
@@ -467,7 +467,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" parameter, but following an invocation where a ");
             OutputHelper.WriteLine(" variable was passed as an output parameter, the");
             OutputHelper.WriteLine(" variable is considered definitely assigned.");
-            Assert.True(MethodsTestClass84.testMethod());
+            Assert.IsTrue(MethodsTestClass84.testMethod());
         }
 
         [TestMethod]
@@ -483,7 +483,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" parameter, but following an invocation where a ");
             OutputHelper.WriteLine(" variable was passed as an output parameter, the");
             OutputHelper.WriteLine(" variable is considered definitely assigned.");
-            Assert.True(MethodsTestClass85.testMethod());
+            Assert.IsTrue(MethodsTestClass85.testMethod());
         }
 
         [TestMethod]
@@ -492,7 +492,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" Every output parameter of a method must be");
             OutputHelper.WriteLine(" definitely assigned before the method returns.");
-            Assert.True(MethodsTestClass92.testMethod());
+            Assert.IsTrue(MethodsTestClass92.testMethod());
         }
 
         [TestMethod]
@@ -501,7 +501,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" Every output parameter of a method must be");
             OutputHelper.WriteLine(" definitely assigned before the method returns.");
-            Assert.True(MethodsTestClass93.testMethod());
+            Assert.IsTrue(MethodsTestClass93.testMethod());
         }
 
         [TestMethod]
@@ -510,7 +510,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" Every output parameter of a method must be");
             OutputHelper.WriteLine(" definitely assigned before the method returns.");
-            Assert.True(MethodsTestClass94.testMethod());
+            Assert.IsTrue(MethodsTestClass94.testMethod());
         }
 
         [TestMethod]
@@ -519,7 +519,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" Every output parameter of a method must be");
             OutputHelper.WriteLine(" definitely assigned before the method returns.");
-            Assert.True(MethodsTestClass95.testMethod());
+            Assert.IsTrue(MethodsTestClass95.testMethod());
         }
 
         [TestMethod]
@@ -531,7 +531,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" whether the method is invoked on an instance");
             OutputHelper.WriteLine(" of the class in which it is declared or an ");
             OutputHelper.WriteLine(" instance of the derived class.");
-            Assert.True(MethodsTestClass103.testMethod());
+            Assert.IsTrue(MethodsTestClass103.testMethod());
 
         }
 
@@ -544,7 +544,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" whether the method is invoked on an instance");
             OutputHelper.WriteLine(" of the class in which it is declared or an ");
             OutputHelper.WriteLine(" instance of the derived class.");
-            Assert.False(MethodsTestClass104.testMethod());
+            Assert.IsFalse(MethodsTestClass104.testMethod());
 
             OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
             OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
@@ -562,7 +562,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" whether the method is invoked on an instance");
             OutputHelper.WriteLine(" of the class in which it is declared or an ");
             OutputHelper.WriteLine(" instance of the derived class.");
-            Assert.True(MethodsTestClass105.testMethod());
+            Assert.IsTrue(MethodsTestClass105.testMethod());
         }
 
         [TestMethod]
@@ -579,7 +579,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If R contains the introducing virtual");
             OutputHelper.WriteLine(" declaration of M, then this is the most");
             OutputHelper.WriteLine(" derived implementation of M.");
-            Assert.True(MethodsTestClass106.testMethod());
+            Assert.IsTrue(MethodsTestClass106.testMethod());
         }
 
         [TestMethod]
@@ -596,7 +596,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" If R contains the introducing virtual");
             OutputHelper.WriteLine(" declaration of M, then this is the most");
             OutputHelper.WriteLine(" derived implementation of M.");
-            Assert.False(MethodsTestClass107.testMethod());
+            Assert.IsFalse(MethodsTestClass107.testMethod());
             OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
             OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
             OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
@@ -620,7 +620,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Otherwise, if R contains an override of M,");
             OutputHelper.WriteLine(" then this is the most derived implementation");
             OutputHelper.WriteLine(" of M.");
-            Assert.True(MethodsTestClass108.testMethod());
+            Assert.IsTrue(MethodsTestClass108.testMethod());
         }
 
         [TestMethod]
@@ -641,7 +641,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Otherwise, if R contains an override of M,");
             OutputHelper.WriteLine(" then this is the most derived implementation");
             OutputHelper.WriteLine(" of M.");
-            Assert.True(MethodsTestClass109.testMethod());
+            Assert.IsTrue(MethodsTestClass109.testMethod());
         }
 
         [TestMethod]
@@ -662,7 +662,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Otherwise, if R contains an override of M,");
             OutputHelper.WriteLine(" then this is the most derived implementation");
             OutputHelper.WriteLine(" of M.");
-            Assert.False(MethodsTestClass110.testMethod());
+            Assert.IsFalse(MethodsTestClass110.testMethod());
             OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
             OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
             OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
@@ -686,7 +686,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Otherwise, if R contains an override of M,");
             OutputHelper.WriteLine(" then this is the most derived implementation");
             OutputHelper.WriteLine(" of M.");
-            Assert.True(MethodsTestClass111.testMethod());
+            Assert.IsTrue(MethodsTestClass111.testMethod());
         }
 
         [TestMethod]
@@ -698,7 +698,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" several virtual methods with the same signature.");
             OutputHelper.WriteLine(" This does not provide an ambiguity problem, since");
             OutputHelper.WriteLine(" all but the most derived method are hidden.");
-            Assert.False(MethodsTestClass112.testMethod());
+            Assert.IsFalse(MethodsTestClass112.testMethod());
             OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
             OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
             OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
@@ -711,7 +711,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" It is an error for an override method declaration");
             OutputHelper.WriteLine(" to include any one of the new, static, virtual, or ");
             OutputHelper.WriteLine(" abstract modifiers.");
-            Assert.True(MethodsTestClass116.testMethod());
+            Assert.IsTrue(MethodsTestClass116.testMethod());
         }
 
         [TestMethod]
@@ -724,7 +724,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" internal and declared in the same project as ");
             OutputHelper.WriteLine(" C, or if it is private and declared in a class");
             OutputHelper.WriteLine(" containing the declaration of C.");
-            Assert.True(MethodsTestClass117.testMethod());
+            Assert.IsTrue(MethodsTestClass117.testMethod());
         }
 
         [TestMethod]
@@ -737,7 +737,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" internal and declared in the same project as ");
             OutputHelper.WriteLine(" C, or if it is private and declared in a class");
             OutputHelper.WriteLine(" containing the declaration of C.");
-            Assert.True(MethodsTestClass119.testMethod());
+            Assert.IsTrue(MethodsTestClass119.testMethod());
         }
 
         [TestMethod]
@@ -750,7 +750,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" internal and declared in the same project as ");
             OutputHelper.WriteLine(" C, or if it is private and declared in a class");
             OutputHelper.WriteLine(" containing the declaration of C.");
-            Assert.True(MethodsTestClass120.testMethod());
+            Assert.IsTrue(MethodsTestClass120.testMethod());
         }
 
         [TestMethod]
@@ -763,7 +763,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" internal and declared in the same project as ");
             OutputHelper.WriteLine(" C, or if it is private and declared in a class");
             OutputHelper.WriteLine(" containing the declaration of C.");
-            Assert.True(MethodsTestClass121.testMethod());
+            Assert.IsTrue(MethodsTestClass121.testMethod());
         }
 
         [TestMethod]
@@ -781,7 +781,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" abstract, or override method.  In other");
             OutputHelper.WriteLine(" words, the overridden base method cannot");
             OutputHelper.WriteLine(" be static or non-virtual.");
-            Assert.True(MethodsTestClass124.testMethod());
+            Assert.IsTrue(MethodsTestClass124.testMethod());
         }
 
         [TestMethod]
@@ -799,7 +799,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" abstract, or override method.  In other");
             OutputHelper.WriteLine(" words, the overridden base method cannot");
             OutputHelper.WriteLine(" be static or non-virtual.");
-            Assert.True(MethodsTestClass125.testMethod());
+            Assert.IsTrue(MethodsTestClass125.testMethod());
         }
 
         [TestMethod]
@@ -808,7 +808,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" An override declaration can access the overridden ");
             OutputHelper.WriteLine(" base method using a base-access.");
-            Assert.True(MethodsTestClass132.testMethod());
+            Assert.IsTrue(MethodsTestClass132.testMethod());
         }
 
         [TestMethod]
@@ -817,7 +817,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" An override declaration can access the overridden ");
             OutputHelper.WriteLine(" base method using a base-access.");
-            Assert.True(MethodsTestClass133.testMethod());
+            Assert.IsTrue(MethodsTestClass133.testMethod());
         }
 
         [TestMethod]
@@ -829,7 +829,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" cases, a method with the same signature as an");
             OutputHelper.WriteLine(" inherited method simply hides the inherited ");
             OutputHelper.WriteLine(" member.");
-            Assert.False(MethodsTestClass134.testMethod());
+            Assert.IsFalse(MethodsTestClass134.testMethod());
                 OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
                 OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
                 OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure."); 
@@ -838,7 +838,7 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Methods142_Test()
         {
-            Assert.True(MethodsTestClass142.testMethod());
+            Assert.IsTrue(MethodsTestClass142.testMethod());
         }
 
         [TestMethod]
@@ -849,7 +849,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" method completes normally (that is, if control");
             OutputHelper.WriteLine(" flows off the end of the method body), the ");
             OutputHelper.WriteLine(" method simply returns to the caller.");
-            Assert.True(MethodsTestClass148.testMethod());
+            Assert.IsTrue(MethodsTestClass148.testMethod());
         }
 
         [TestMethod]
@@ -860,7 +860,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" each return statement in the method body must");
             OutputHelper.WriteLine(" specify an expression of a type that is implicitly");
             OutputHelper.WriteLine(" covertable to the return type.");
-            Assert.True(MethodsTestClass149.testMethod());
+            Assert.IsTrue(MethodsTestClass149.testMethod());
         }
 
         [TestMethod]
@@ -871,7 +871,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" each return statement in the method body must");
             OutputHelper.WriteLine(" specify an expression of a type that is implicitly");
             OutputHelper.WriteLine(" covertable to the return type.");
-            Assert.True(MethodsTestClass150.testMethod());
+            Assert.IsTrue(MethodsTestClass150.testMethod());
         }
 
         [TestMethod]
@@ -882,7 +882,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" each return statement in the method body must");
             OutputHelper.WriteLine(" specify an expression of a type that is implicitly");
             OutputHelper.WriteLine(" covertable to the return type.");
-            Assert.True(MethodsTestClass154.testMethod());
+            Assert.IsTrue(MethodsTestClass154.testMethod());
         }
 
         [TestMethod]
@@ -897,7 +897,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" to terminate in a return statement that specifies");
             OutputHelper.WriteLine(" an expression or in a throw statement that throws");
             OutputHelper.WriteLine(" an System.Exception.");
-            Assert.True(MethodsTestClass159.testMethod());
+            Assert.IsTrue(MethodsTestClass159.testMethod());
         }
 
         [TestMethod]
@@ -912,7 +912,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" to terminate in a return statement that specifies");
             OutputHelper.WriteLine(" an expression or in a throw statement that throws");
             OutputHelper.WriteLine(" an System.Exception.");
-            Assert.True(MethodsTestClass160.testMethod());
+            Assert.IsTrue(MethodsTestClass160.testMethod());
         }
 
         [TestMethod]
@@ -927,7 +927,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" to terminate in a return statement that specifies");
             OutputHelper.WriteLine(" an expression or in a throw statement that throws");
             OutputHelper.WriteLine(" an System.Exception.");
-            Assert.True(MethodsTestClass161.testMethod());
+            Assert.IsTrue(MethodsTestClass161.testMethod());
         }
 
         [TestMethod]
@@ -942,7 +942,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" types int[] and int[][] can be used as the type of");
             OutputHelper.WriteLine(" a params parameter, but the type int[,] cannot be");
             OutputHelper.WriteLine(" used in this way.");
-            Assert.True(MethodsTestClass163.testMethod());
+            Assert.IsTrue(MethodsTestClass163.testMethod());
         }
 
         [TestMethod]
@@ -957,7 +957,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" types int[] and int[][] can be used as the type of");
             OutputHelper.WriteLine(" a params parameter, but the type int[,] cannot be");
             OutputHelper.WriteLine(" used in this way.");
-            Assert.True(MethodsTestClass164.testMethod());
+            Assert.IsTrue(MethodsTestClass164.testMethod());
         }
 
         [TestMethod]
@@ -970,7 +970,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" is implicitly convertible to the formal parameter type.");
             OutputHelper.WriteLine(" In this case, the params parameter acts precisely like");
             OutputHelper.WriteLine(" a value parameter.");
-            Assert.True(MethodsTestClass169.testMethod());
+            Assert.IsTrue(MethodsTestClass169.testMethod());
         }
 
         [TestMethod]
@@ -985,7 +985,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass172.testMethod());
+            Assert.IsTrue(MethodsTestClass172.testMethod());
         }
 
         [TestMethod]
@@ -1000,7 +1000,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass173.testMethod());
+            Assert.IsTrue(MethodsTestClass173.testMethod());
         }
 
         [TestMethod]
@@ -1015,7 +1015,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass174.testMethod());
+            Assert.IsTrue(MethodsTestClass174.testMethod());
         }
 
         [TestMethod]
@@ -1030,7 +1030,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass175.testMethod());
+            Assert.IsTrue(MethodsTestClass175.testMethod());
         }
 
         [TestMethod]
@@ -1045,7 +1045,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass179.testMethod());
+            Assert.IsTrue(MethodsTestClass179.testMethod());
         }
 
         [TestMethod]
@@ -1060,7 +1060,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass180.testMethod());
+            Assert.IsTrue(MethodsTestClass180.testMethod());
         }
 
         [TestMethod]
@@ -1075,7 +1075,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass181.testMethod());
+            Assert.IsTrue(MethodsTestClass181.testMethod());
         }
 
         [TestMethod]
@@ -1090,7 +1090,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass182.testMethod());
+            Assert.IsTrue(MethodsTestClass182.testMethod());
         }
 
         [TestMethod]
@@ -1105,7 +1105,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass183.testMethod());
+            Assert.IsTrue(MethodsTestClass183.testMethod());
         }
 
         [TestMethod]
@@ -1120,7 +1120,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
             OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
             OutputHelper.WriteLine(" the caller.");
-            Assert.True(MethodsTestClass184.testMethod());
+            Assert.IsTrue(MethodsTestClass184.testMethod());
         }
 
         [TestMethod]
@@ -1131,7 +1131,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" to a params parameter. Such assignments only");
             OutputHelper.WriteLine(" affect the local storage location represented");
             OutputHelper.WriteLine(" by the params parameter.");
-            Assert.True(MethodsTestClass185.testMethod());
+            Assert.IsTrue(MethodsTestClass185.testMethod());
         }
 
         [TestMethod]
@@ -1140,7 +1140,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" A params parameter can be passed along to another");
             OutputHelper.WriteLine(" params parameter.");
-            Assert.True(MethodsTestClass186.testMethod());
+            Assert.IsTrue(MethodsTestClass186.testMethod());
         }
 
         [TestMethod]
@@ -1149,56 +1149,56 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" Section 10.5");
             OutputHelper.WriteLine(" A params parameter can be passed along to another");
             OutputHelper.WriteLine(" params parameter.");
-            Assert.True(MethodsTestClass187.testMethod());
+            Assert.IsTrue(MethodsTestClass187.testMethod());
         }
 
         [TestMethod]
         public void Methods188_Test()
         {
             OutputHelper.WriteLine("Testing explicit base method call to a child class whose parent implements");
-            Assert.True(MethodsTestClass188.testMethod());
+            Assert.IsTrue(MethodsTestClass188.testMethod());
         }
 
         [TestMethod]
         public void Methods190_Test()
         {
             OutputHelper.WriteLine("Testing implicit base method calls to protected methods in parent class");
-            Assert.True(MethodsTestClass190.testMethod());
+            Assert.IsTrue(MethodsTestClass190.testMethod());
         }
 
         [TestMethod]
         public void Methods191_Test()
         {
             OutputHelper.WriteLine("Testing implicit base method calls to internal methods in parent class");
-            Assert.True(MethodsTestClass191.testMethod());
+            Assert.IsTrue(MethodsTestClass191.testMethod());
         }
 
         [TestMethod]
         public void Methods192_Test()
         {
             OutputHelper.WriteLine("Testing implicit base method calls to protected internal methods in parent class");
-            Assert.True(MethodsTestClass192.testMethod());
+            Assert.IsTrue(MethodsTestClass192.testMethod());
         }
 
         [TestMethod]
         public void Methods193_Test()
         {
             OutputHelper.WriteLine("Testing implicit base method calls to private methods in parent class");
-            Assert.True(MethodsTestClass193.testMethod());
+            Assert.IsTrue(MethodsTestClass193.testMethod());
         }
 
         [TestMethod]
         public void Methods194_Test()
         {
             OutputHelper.WriteLine("Testing implicit base method calls to public virtual methods in parent class");
-            Assert.True(MethodsTestClass194.testMethod());
+            Assert.IsTrue(MethodsTestClass194.testMethod());
         }
 
         [TestMethod]
         public void Methods195_Test()
         {
             OutputHelper.WriteLine("Tests if a new method does not overwrite a virtual method in a base class");
-            Assert.False(MethodsTestClass195.testMethod());
+            Assert.IsFalse(MethodsTestClass195.testMethod());
                 OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
                 OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
                 OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure."); 
@@ -1208,63 +1208,63 @@ namespace NFUnitTestClasses
         public void Methods196_Test()
         {
             OutputHelper.WriteLine("Tests if a new method does overwrite an abstract method in a base class");
-            Assert.True(MethodsTestClass196.testMethod());
+            Assert.IsTrue(MethodsTestClass196.testMethod());
         }
 
         [TestMethod]
         public void Methods197_Test()
         {
             OutputHelper.WriteLine("Tests the calling of an empty delegate");
-            Assert.True(MethodsTestClass197.testMethod());
+            Assert.IsTrue(MethodsTestClass197.testMethod());
         }
 
         [TestMethod]
         public void Methods199_Test()
         {
             OutputHelper.WriteLine("Tests if a sealed method overwrites a virtual method in a base class");
-            Assert.True(MethodsTestClass199.testMethod());
+            Assert.IsTrue(MethodsTestClass199.testMethod());
         }
 
         [TestMethod]
         public void Methods200_Test()
         {
             OutputHelper.WriteLine("Tests large number of assignments inside a public method");
-            Assert.True(MethodsTestClass200.testMethod());
+            Assert.IsTrue(MethodsTestClass200.testMethod());
         }
 
         [TestMethod]
         public void Methods201_Test()
         {
             OutputHelper.WriteLine("Tests large number of assignments inside a public static method");
-            Assert.True(MethodsTestClass201.testMethod());
+            Assert.IsTrue(MethodsTestClass201.testMethod());
         }
 
         [TestMethod]
         public void Methods204_Test()
         {
             OutputHelper.WriteLine("Tests a method with explicit, params signature");
-            Assert.True(MethodsTestClass204.testMethod());
+            Assert.IsTrue(MethodsTestClass204.testMethod());
         }
 
         [TestMethod]
         public void Methods205_Test()
         {
             OutputHelper.WriteLine("Tests a method with a mixed explicit and params signature");
-            Assert.True(MethodsTestClass205.testMethod());
+            Assert.IsTrue(MethodsTestClass205.testMethod());
         }
 
         [TestMethod]
         public void Methods206_Test()
         {
             OutputHelper.WriteLine("Tests method overloading between params and explicit signatures (static)");
-            Assert.True(MethodsTestClass206.testMethod());
+            Assert.IsTrue(MethodsTestClass206.testMethod());
         }
 
         [TestMethod]
         public void Methods207_Test()
         {
             OutputHelper.WriteLine("Tests method overloading between params and explicit signatures");
-            Assert.True(MethodsTestClass207.testMethod());
+            Assert.IsTrue(MethodsTestClass207.testMethod());
         }
 
         [TestMethod]
@@ -1272,20 +1272,20 @@ namespace NFUnitTestClasses
         {
             OutputHelper.WriteLine(" Section 10.5 If the declaration includes the sealed modifier, then the ");
             OutputHelper.WriteLine(" declaration must also include the override modifier.");
-            Assert.True(MethodsTestClass210.testMethod());
+            Assert.IsTrue(MethodsTestClass210.testMethod());
         }
 
         [TestMethod]
         public void Methods223_Test()
         {
             OutputHelper.WriteLine(" Section 10.5 The ref and out parameters are part of a method's signature, but the params modifier is not.");
-            Assert.True(MethodsTestClass223.testMethod());
+            Assert.IsTrue(MethodsTestClass223.testMethod());
         }
         [TestMethod]
         public void Methods224_Test()
         {
             OutputHelper.WriteLine(" Section 10.5 The ref and out parameters are part of a method's signature, but the params modifier is not.");
-            Assert.True(MethodsTestClass224.testMethod());
+            Assert.IsTrue(MethodsTestClass224.testMethod());
         }
         [TestMethod]
         public void Methods229_Test()
@@ -1293,7 +1293,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" error CS0114: 'function1' hides inherited member 'function2'.");
             OutputHelper.WriteLine(" To make the current method override that implementation, add ");
             OutputHelper.WriteLine(" the override keyword. Otherwise add the new keyword.");
-            Assert.True(MethodsTestClass229.testMethod());
+            Assert.IsTrue(MethodsTestClass229.testMethod());
         }
         [TestMethod]
         public void Methods230_Test()
@@ -1301,7 +1301,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" error CS0114: 'function1' hides inherited member 'function2'.");
             OutputHelper.WriteLine(" To make the current method override that implementation, add ");
             OutputHelper.WriteLine(" the override keyword. Otherwise add the new keyword.");
-            Assert.True(MethodsTestClass230.testMethod());
+            Assert.IsTrue(MethodsTestClass230.testMethod());
         }
         [TestMethod]
         public void Methods231_Test()
@@ -1309,7 +1309,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" error CS0114: 'function1' hides inherited member 'function2'.");
             OutputHelper.WriteLine(" To make the current method override that implementation, add ");
             OutputHelper.WriteLine(" the override keyword. Otherwise add the new keyword.");
-            Assert.True(MethodsTestClass231.testMethod());
+            Assert.IsTrue(MethodsTestClass231.testMethod());
         }
         [TestMethod]
         public void Methods232_Test()
@@ -1317,7 +1317,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" error CS0114: 'function1' hides inherited member 'function2'.");
             OutputHelper.WriteLine(" To make the current method override that implementation, add ");
             OutputHelper.WriteLine(" the override keyword. Otherwise add the new keyword.");
-            Assert.True(MethodsTestClass232.testMethod());
+            Assert.IsTrue(MethodsTestClass232.testMethod());
         }
         [TestMethod]
         public void Methods233_Test()
@@ -1327,7 +1327,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
             OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
             OutputHelper.WriteLine(" modifiers, and an extern modifier.");
-            Assert.True(MethodsTestClass233.testMethod());
+            Assert.IsTrue(MethodsTestClass233.testMethod());
         }
 
         public class MethodsTestClass_Base1

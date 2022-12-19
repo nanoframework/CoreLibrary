@@ -17,355 +17,355 @@ namespace NFUnitTestEnum
         public void Enum_enum01_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
-            Assert.True(Enum_TestClass_enum01.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum01.testMethod());
         }
         [TestMethod]
         public void Enum_enum02_Test()
         {
             OutputHelper.WriteLine("Make sure that basic enum-with-base-type declarations, definitions, and assignments work.");
-            Assert.True(Enum_TestClass_enum02.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum02.testMethod());
         }
         [TestMethod]
         public void Enum_enum07_Test()
         {
             OutputHelper.WriteLine("Make sure that basic enum-with-base-type declarations, definitions, and assignments work.");
-            Assert.True(Enum_TestClass_enum07.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum07.testMethod());
         }
         [TestMethod]
         public void Enum_enum09_Test()
         {
             OutputHelper.WriteLine("Make sure that basic enum-with-base-type declarations, definitions, and assignments work.");
-            Assert.True(Enum_TestClass_enum09.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum09.testMethod());
         }
         [TestMethod]
         public void Enum_enum10_Test()
         {
             OutputHelper.WriteLine("Make sure that basic enum-with-base-type declarations, definitions, and assignments work.");
-            Assert.True(Enum_TestClass_enum10.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum10.testMethod());
         }
         [TestMethod]
         public void Enum_enum11_Test()
         {
             OutputHelper.WriteLine("Make sure that basic enum-with-base-type declarations, definitions, and assignments work.");
-            Assert.True(Enum_TestClass_enum11.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum11.testMethod());
         }
         [TestMethod]
         public void Enum_enum27_Test()
         {
             OutputHelper.WriteLine("Check that enumerator values are initialized as expected");
-            Assert.True(Enum_TestClass_enum27.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum27.testMethod());
         }
         [TestMethod]
         public void Enum_enum28_Test()
         {
             OutputHelper.WriteLine("Check that enumerator values are initialized as expected");
-            Assert.True(Enum_TestClass_enum28.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum28.testMethod());
         }
         [TestMethod]
         public void Enum_enum29_Test()
         {
             OutputHelper.WriteLine("The values of the enumerators need not be distinct");
-            Assert.True(Enum_TestClass_enum29.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum29.testMethod());
         }
         [TestMethod]
         public void Enum_enum30_Test()
         {
             OutputHelper.WriteLine("Check the point of definition of an enumerator");
-            Assert.True(Enum_TestClass_enum30.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum30.testMethod());
         }
         [TestMethod]
         public void Enum_enum31_Test()
         {
             OutputHelper.WriteLine("Check the point of definition of an enumerator");
-            Assert.True(Enum_TestClass_enum31.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum31.testMethod());
         }
         [TestMethod]
         public void Enum_enum33_Test()
         {
             OutputHelper.WriteLine("Enums obey local scope rules.  An enum of the same name may be defined in an inner scope.");
-            Assert.True(Enum_TestClass_enum33.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum33.testMethod());
         }
         [TestMethod]
         public void Enum_enum34_Test()
         {
             OutputHelper.WriteLine("Enums can be converted to int.");
-            Assert.True(Enum_TestClass_enum34.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum34.testMethod());
         }
         [TestMethod]
         public void Enum_enum35_Test()
         {
             OutputHelper.WriteLine("If no enumerator-definitions with = appear, then the");
             OutputHelper.WriteLine(" values of the corresponding constants begin at zero and");
-            Assert.True(Enum_TestClass_enum35.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum35.testMethod());
         }
         [TestMethod]
         public void Enum_enum36_Test()
         {
             OutputHelper.WriteLine("If no enumerator-definitions with = appear, then the");
             OutputHelper.WriteLine(" values of the corresponding constants begin at zero and");
-            Assert.True(Enum_TestClass_enum36.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum36.testMethod());
         }
         [TestMethod]
         public void Enum_enum37_Test()
         {
             OutputHelper.WriteLine("If no enumerator-definitions with = appear, then the");
             OutputHelper.WriteLine(" values of the corresponding constants begin at zero and");
-            Assert.True(Enum_TestClass_enum37.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum37.testMethod());
         }
         [TestMethod]
         public void Enum_enum38_Test()
         {
             OutputHelper.WriteLine("Enums can be declared in any scopt that a class can be declared in.");
-            Assert.True(Enum_TestClass_enum38.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum38.testMethod());
         }
         [TestMethod]
         public void Enum_enum39_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum39.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum39.testMethod());
         }
         [TestMethod]
         public void Enum_enum40_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum40.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum40.testMethod());
         }
         [TestMethod]
         public void Enum_enum41_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum41.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum41.testMethod());
         }
         [TestMethod]
         public void Enum_enum42_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum42.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum42.testMethod());
         }
         [TestMethod]
         public void Enum_enum43_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum43.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum43.testMethod());
         }
         [TestMethod]
         public void Enum_enum43u_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum43u.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum43u.testMethod());
         }
         [TestMethod]
         public void Enum_enum44_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum44.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum44.testMethod());
         }
         [TestMethod]
         public void Enum_enum45_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum45.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum45.testMethod());
         }
         [TestMethod]
         public void Enum_enum46_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum46.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum46.testMethod());
         }
         [TestMethod]
         public void Enum_enum46u_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum46u.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum46u.testMethod());
         }
         [TestMethod]
         public void Enum_enum47_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum47.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum47.testMethod());
         }
         [TestMethod]
         public void Enum_enum47u_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum47u.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum47u.testMethod());
         }
         [TestMethod]
         public void Enum_enum48_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum48.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum48.testMethod());
         }
         [TestMethod]
         public void Enum_enum48u_Test()
         {
             OutputHelper.WriteLine("If the constant-expression initilizing an enumerator is of integral type,");
             OutputHelper.WriteLine("it must be within the range of values that can be represented by the underlying type.");
-            Assert.True(Enum_TestClass_enum48u.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum48u.testMethod());
         }
         [TestMethod]
         public void Enum_enum54_Test()
         {
             OutputHelper.WriteLine("++ and -- operators can be used with objects of enumeration type.  Check postfix form.");
-            Assert.True(Enum_TestClass_enum54.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum54.testMethod());
         }
         [TestMethod]
         public void Enum_enum55_Test()
         {
             OutputHelper.WriteLine("++ and -- operators can be used with objects of enumeration type.  Check postfix form.");
-            Assert.True(Enum_TestClass_enum55.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum55.testMethod());
         }
         [TestMethod]
         public void Enum_enum56_Test()
         {
             OutputHelper.WriteLine("++ and -- operators can be used with objects of enumeration type.  Check postfix form.");
-            Assert.True(Enum_TestClass_enum56.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum56.testMethod());
         }
         [TestMethod]
         public void Enum_enum57_Test()
         {
             OutputHelper.WriteLine("++ and -- operators can be used with objects of enumeration type.  Check postfix form.");
-            Assert.True(Enum_TestClass_enum57.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum57.testMethod());
         }
         [TestMethod]
         public void Enum_enum58_Test()
         {
             OutputHelper.WriteLine("Bitwise operators AND, OR, XOR, and NOT can be used with objects of enumeration type.");
 
-            Assert.True(Enum_TestClass_enum58.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum58.testMethod());
         }
         [TestMethod]
         public void Enum_enum62_Test()
         {
-            Assert.True(Enum_TestClass_enum62.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum62.testMethod());
         }
         [TestMethod]
         public void Enum_enum63_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
-            Assert.True(Enum_TestClass_enum63.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum63.testMethod());
         }
         [TestMethod]
         public void Enum_enum64_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
-            Assert.True(Enum_TestClass_enum64.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum64.testMethod());
         }
         [TestMethod]
         public void Enum_enum65_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
-            Assert.True(Enum_TestClass_enum65.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum65.testMethod());
         }
         [TestMethod]
         public void Enum_enum66_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
-            Assert.True(Enum_TestClass_enum66.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum66.testMethod());
         }
         [TestMethod]
         public void Enum_enum67_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
-            Assert.True(Enum_TestClass_enum67.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum67.testMethod());
         }
         [TestMethod]
         public void Enum_enum68_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
-            Assert.True(Enum_TestClass_enum68.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum68.testMethod());
         }
         [TestMethod]
         public void Enum_enum69_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
-            Assert.True(Enum_TestClass_enum69.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum69.testMethod());
         }
         [TestMethod]
         public void Enum_enum70_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
-            Assert.True(Enum_TestClass_enum70.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum70.testMethod());
         }
         [TestMethod]
         public void Enum_enum71_Test()
         {
             OutputHelper.WriteLine("Make sure that a basic enum declaration, definition, and assignment work.");
             OutputHelper.WriteLine("This test is expeced to fail");
-            Assert.False(Enum_TestClass_enum71.testMethod());
+            Assert.IsFalse(Enum_TestClass_enum71.testMethod());
         }
         [TestMethod]
         public void Enum_enum72_Test()
         {
             OutputHelper.WriteLine("Enum_TestClass_? bitwise and on enums");
-            Assert.True(Enum_TestClass_enum72.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum72.testMethod());
         }
         [TestMethod]
         public void Enum_enum73_Test()
         {
             OutputHelper.WriteLine("Enum_TestClass_? bitwise or on enums");
-            Assert.True(Enum_TestClass_enum73.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum73.testMethod());
         }
         [TestMethod]
         public void Enum_enum74_Test()
         {
             OutputHelper.WriteLine("Enum_TestClass_? bitwise xor on enums");
-            Assert.True(Enum_TestClass_enum74.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum74.testMethod());
         }
         [TestMethod]
         public void Enum_enum75_Test()
         {
             OutputHelper.WriteLine("Enum_TestClass_? bitwise not on enums");
-            Assert.True(Enum_TestClass_enum75.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum75.testMethod());
         }
         [TestMethod]
         public void Enum_enum77_Test()
         {
             OutputHelper.WriteLine("Enum_TestClass_? bitwise not on enums");
-            Assert.True(Enum_TestClass_enum77.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum77.testMethod());
         }
         [TestMethod]
         public void Enum_enum78_Test()
         {
-            Assert.True(Enum_TestClass_enum78.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum78.testMethod());
         }
         [TestMethod]
         public void Enum_enum83_Test()
         {
             OutputHelper.WriteLine("Enum member list can end with a comma");
-            Assert.True(Enum_TestClass_enum83.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum83.testMethod());
         }
         [TestMethod]
         public void Enum_enum86_Test()
         {
             OutputHelper.WriteLine("[Access] modifiers of an enum declaration have the same meaning");
             OutputHelper.WriteLine("as those of a class declaration.");
-            Assert.True(Enum_TestClass_enum86.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum86.testMethod());
         }
         [TestMethod]
         public void Enum_enum93_Test()
         {
             OutputHelper.WriteLine("Example from Enums chapter in CLS");
-            Assert.True(Enum_TestClass_enum93.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum93.testMethod());
         }
         [TestMethod]
         public void Enum_enum94_Test()
         {
             OutputHelper.WriteLine("...any value of the underlying type of an enum can be cast to the enum type.");
-            Assert.True(Enum_TestClass_enum94.testMethod());
+            Assert.IsTrue(Enum_TestClass_enum94.testMethod());
         }
         [TestMethod]
         public void EnumFlags01_Test()
@@ -425,17 +425,17 @@ namespace NFUnitTestEnum
                 var e1_one_clone = e1_one;
                 var e1_two_clone = e1_two;
 
-                Assert.True(e1_one.Equals(e1.one), "e1_one should be equal to e1.one");
-                Assert.True(e1_two.Equals(e1.two), "e1_two should be equal to e1.two");
+                Assert.IsTrue(e1_one.Equals(e1.one), "e1_one should be equal to e1.one");
+                Assert.IsTrue(e1_two.Equals(e1.two), "e1_two should be equal to e1.two");
 
-                Assert.True(e1_one_clone.Equals(e1_one), "e1_one_clone should be equal to e1_one");
-                Assert.True(e1_two_clone.Equals(e1_two), "e1_two_clone should be equal to e1_two");
+                Assert.IsTrue(e1_one_clone.Equals(e1_one), "e1_one_clone should be equal to e1_one");
+                Assert.IsTrue(e1_two_clone.Equals(e1_two), "e1_two_clone should be equal to e1_two");
 
-                Assert.False(e1_three.Equals(e1.two), "e1_three should NOT be equal to e1.two");
-                Assert.False(e1_two.Equals(e1.one), "e1_two should NOT be equal to e1.one");
+                Assert.IsFalse(e1_three.Equals(e1.two), "e1_three should NOT be equal to e1.two");
+                Assert.IsFalse(e1_two.Equals(e1.one), "e1_two should NOT be equal to e1.one");
 
-                Assert.False(e1_one_clone.Equals(e1_two), "e1_one_clone should NOT be equal to e1_two");
-                Assert.False(e1_two_clone.Equals(e1_one), "e1_two_clone should NOT be equal to e1_one");
+                Assert.IsFalse(e1_one_clone.Equals(e1_two), "e1_one_clone should NOT be equal to e1_two");
+                Assert.IsFalse(e1_two_clone.Equals(e1_one), "e1_two_clone should NOT be equal to e1_one");
             }
         };
 
@@ -2641,7 +2641,7 @@ namespace NFUnitTestEnum
                 r = r | TestClassEnumFlags.Second | TestClassEnumFlags.Third;
 
                 OutputHelper.WriteLine(r.ToString());
-                Assert.Equal((int)r, 0x000f);
+                Assert.AreEqual((int)r, 0x000f);
             }
         }
 
@@ -2652,7 +2652,7 @@ namespace NFUnitTestEnum
                 TestClassEnumFlags r = TestClassEnumFlags.First | TestClassEnumFlags.Fourth;
                 r += 0x00f; // out of range
                 OutputHelper.WriteLine(r.ToString());
-                Assert.Equal((int)r, 24);
+                Assert.AreEqual((int)r, 24);
             }
         }
 
@@ -2663,7 +2663,7 @@ namespace NFUnitTestEnum
                 int i = 0x0f;
                 TestClassEnumFlags r = (TestClassEnumFlags)i;
                 OutputHelper.WriteLine(r.ToString());
-                Assert.Equal((int)r, 0x000f);
+                Assert.AreEqual((int)r, 0x000f);
             }
         }       
         
@@ -2672,12 +2672,12 @@ namespace NFUnitTestEnum
             public static void TestMethod()
             {
                 TestClassEnumFlags e1 = TestClassEnumFlags.First;
-                Assert.False(e1.HasFlag(TestClassEnumFlags.Second));
-                Assert.True(e1.HasFlag(TestClassEnumFlags.First));
+                Assert.IsFalse(e1.HasFlag(TestClassEnumFlags.Second));
+                Assert.IsTrue(e1.HasFlag(TestClassEnumFlags.First));
 
                 TestClassEnumFlags e2 = TestClassEnumFlags.Third;
-                Assert.False(e2.HasFlag(TestClassEnumFlags.Fourth));
-                Assert.True(e2.HasFlag(TestClassEnumFlags.Third));
+                Assert.IsFalse(e2.HasFlag(TestClassEnumFlags.Fourth));
+                Assert.IsTrue(e2.HasFlag(TestClassEnumFlags.Third));
             }
         }
 
@@ -2693,7 +2693,7 @@ namespace NFUnitTestEnum
                 try
                 {
                     e1.HasFlag(e2);
-                    Assert.False(true, "No exception thrown!");
+                    Assert.IsFalse(true, "No exception thrown!");
                 }
                 catch (ArgumentException)
                 {

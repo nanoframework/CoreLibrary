@@ -47,7 +47,7 @@ namespace NFUnitTestTypes
                 MS2 = MS;
                 MS.MyInt = 4;
 
-                Assert.Equal(MS2.MyInt, 3);
+                Assert.AreEqual(MS2.MyInt, 3);
             }
         }
 
@@ -61,7 +61,7 @@ namespace NFUnitTestTypes
                 MyInt = 3;
                 MyInt2 = MyInt;
                 MyInt = 4;
-                Assert.Equal(MyInt2, 3);
+                Assert.AreEqual(MyInt2, 3);
             }
         }
 
@@ -76,7 +76,7 @@ namespace NFUnitTestTypes
                 Enum1 = ValueTestClass9_Enum.a;
                 Enum2 = Enum1;
                 Enum1 = ValueTestClass9_Enum.b;
-                Assert.Equal((int)Enum2, (int)ValueTestClass9_Enum.a);
+                Assert.AreEqual((int)Enum2, (int)ValueTestClass9_Enum.a);
             }
         }
 

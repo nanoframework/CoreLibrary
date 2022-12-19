@@ -16,7 +16,7 @@ namespace NFUnitTestException
         [TestMethod]
         public void TestTimeoutException()
         {
-            Assert.Throws(typeof(TimeoutException), () =>
+            Assert.ThrowsException(typeof(TimeoutException), () =>
             {
                 throw new TimeoutException();
             });
@@ -26,92 +26,92 @@ namespace NFUnitTestException
         public void Exc_excep01_Test()
         {
             OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the matching catch");
-            Assert.True(Exc_TestClass_excep01.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep01.testMethod());
         }
         [TestMethod]
         public void Exc_excep02_Test()
         {
             OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the matching catch, not the base class catch blocks");
-            Assert.True(Exc_TestClass_excep02.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep02.testMethod());
         }
         [TestMethod]
         public void Exc_excep04_Test()
         {
             OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught and the error code can be set");
-            Assert.True(Exc_TestClass_excep04.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep04.testMethod());
         }
         [TestMethod]
         public void Exc_excep05_Test()
         {
             OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the matching catch, not the base class catch");
-            Assert.True(Exc_TestClass_excep05.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep05.testMethod());
         }
         [TestMethod]
         public void Exc_excep06_Test()
         {
             OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the base class catch");
-            Assert.True(Exc_TestClass_excep06.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep06.testMethod());
         }
         [TestMethod]
         public void Exc_excep07_Test()
         {
             OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the base class catch()");
-            Assert.True(Exc_TestClass_excep07.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep07.testMethod());
         }
         [TestMethod]
         public void Exc_excep09_Test()
         {
             OutputHelper.WriteLine("This test will confirm that the catch() functions.");
-            Assert.True(Exc_TestClass_excep09.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep09.testMethod());
         }
         [TestMethod]
         public void Exc_excep10_Test()
         {
             OutputHelper.WriteLine("This test will confirm that the thrown exception is handled in the catch()");
             OutputHelper.WriteLine("when no matching catch is available.");
-            Assert.True(Exc_TestClass_excep10.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep10.testMethod());
         }
         [TestMethod]
         public void Exc_excep11_Test()
         {
             OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the matching catch, not the catch()");
-            Assert.True(Exc_TestClass_excep11.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep11.testMethod());
         }
         [TestMethod]
         public void Exc_excep27_Test()
         {
             OutputHelper.WriteLine("Throwing an exception transfers control to a handler.");
-            Assert.True(Exc_TestClass_excep27.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep27.testMethod());
         }
         [TestMethod]
         public void Exc_excep28_Test()
         {
             OutputHelper.WriteLine("When an exception is thrown, control is transferred to a handler");
-            Assert.True(Exc_TestClass_excep28.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep28.testMethod());
         }
         [TestMethod]
         public void Exc_excep30_Test()
         {
             OutputHelper.WriteLine("A throw-expression with no operand rethrows the exception being handled.");
-            Assert.True(Exc_TestClass_excep30.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep30.testMethod());
         }
         [TestMethod]
         public void Exc_excep31_Test()
         {
             OutputHelper.WriteLine("A throw-expression with no operand does not copy the exception being handled.");
-            Assert.True(Exc_TestClass_excep31.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep31.testMethod());
         }
         [TestMethod]
         public void Exc_excep33_Test()
         {
             OutputHelper.WriteLine("The exception thrown by a rethrow is the one most recently caught and not finished.");
-            Assert.True(Exc_TestClass_excep33.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep33.testMethod());
         }
         [TestMethod]
         public void Exc_excep34_Test()
         {
             OutputHelper.WriteLine("When initialization is complete for the formal parameter of a catch clause, an exception is considered caught.");
-            Assert.True(Exc_TestClass_excep34.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep34.testMethod());
         }
         [TestMethod]
         public void Exc_excep35_Test()
@@ -119,7 +119,7 @@ namespace NFUnitTestException
             OutputHelper.WriteLine("A handler is not allowed to catch an expression thrown outside");
             OutputHelper.WriteLine("its function-try-block and any function called from its function-");
             OutputHelper.WriteLine("try-block.");
-            Assert.True(Exc_TestClass_excep35.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep35.testMethod());
         }
         [TestMethod]
         public void Exc_excep40_Test()
@@ -127,7 +127,7 @@ namespace NFUnitTestException
             OutputHelper.WriteLine("If no match is found among the handlers for a try-block, the");
             OutputHelper.WriteLine("search for a matching handler continues in a dynamically");
             OutputHelper.WriteLine("surrounding try-block.");
-            Assert.True(Exc_TestClass_excep40.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep40.testMethod());
         }
         [TestMethod]
         public void Exc_excep41_Test()
@@ -135,7 +135,7 @@ namespace NFUnitTestException
             OutputHelper.WriteLine("If no match is found among the handlers for a try-block, the");
             OutputHelper.WriteLine("search for a matching handler continues in a dynamically");
             OutputHelper.WriteLine("surrounding try-block.");
-            Assert.True(Exc_TestClass_excep41.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep41.testMethod());
         }
 
         // TODO: check this
@@ -146,7 +146,7 @@ namespace NFUnitTestException
         public void Exc_excep42_Test()
         {
             OutputHelper.WriteLine("Handle throws up to 255 levels deep.");
-            Assert.True(Exc_TestClass_excep42.testMethod())
+            Assert.IsTrue(Exc_TestClass_excep42.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -157,7 +157,7 @@ namespace NFUnitTestException
         public void Exc_excep42b_Test()
         {
             OutputHelper.WriteLine("Handle throws up to 33 levels deep.");
-            Assert.True(Exc_TestClass_excep42b.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep42b.testMethod());
         }
 
         // TODO: Check this
@@ -168,7 +168,7 @@ namespace NFUnitTestException
         public void Exc_excep43_Test()
         {
             OutputHelper.WriteLine("Handle throws up to 255 levels deep, but don't catch.  VM should not die.");
-            Assert.True(Exc_TestClass_excep43.testMethod())
+            Assert.IsTrue(Exc_TestClass_excep43.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -179,43 +179,43 @@ namespace NFUnitTestException
         public void Exc_excep56_Test()
         {
             OutputHelper.WriteLine("Should get unreachable code warning, but nothing more.");
-            Assert.True(Exc_TestClass_excep56.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep56.testMethod());
         }
         [TestMethod]
         public void Exc_excep57_Test()
         {
             OutputHelper.WriteLine("Should get unreachable code warning, but nothing more.");
-            Assert.True(Exc_TestClass_excep57.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep57.testMethod());
         }
         [TestMethod]
         public void Exc_excep58_Test()
         {
             OutputHelper.WriteLine("Any finally clauses associated with try statements will be executed before catch clause execution");
-            Assert.True(Exc_TestClass_excep58.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep58.testMethod());
         }
         [TestMethod]
         public void Exc_excep59_Test()
         {
             OutputHelper.WriteLine("Any finally clauses associated with try statements will be executed before catch clause execution");
-            Assert.True(Exc_TestClass_excep59.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep59.testMethod());
         }
         [TestMethod]
         public void Exc_excep60_Test()
         {
             OutputHelper.WriteLine("Inner exceptions can be chained");
-            Assert.True(Exc_TestClass_excep60.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep60.testMethod());
         }
         [TestMethod]
         public void Exc_excep61_Test()
         {
             OutputHelper.WriteLine("Inner exceptions can be chained to arbitrary length");
-            Assert.True(Exc_TestClass_excep61.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep61.testMethod());
         }
         [TestMethod]
         public void Exc_excep62_Test()
         {
             OutputHelper.WriteLine("Any finally clauses associated with try statements will be executed before catch clause execution");
-            Assert.True(Exc_TestClass_excep62.testMethod());
+            Assert.IsTrue(Exc_TestClass_excep62.testMethod());
         }
         //[TestMethod]
         //public void Exc_excep63_Test()
@@ -227,7 +227,7 @@ namespace NFUnitTestException
         //    OutputHelper.WriteLine("Disable this test so that it doesn't hose VS until it is fixed.");
 
         //    // TODO: check this
-        //    Assert.True(Exc_TestClass_excep63.testMethod());
+        //    Assert.IsTrue(Exc_TestClass_excep63.testMethod());
         //    {
         //        OutputHelper.WriteLine("This is bug number: 21724	Resolved By Design.");
         //        OutputHelper.WriteLine("This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. ");
@@ -244,7 +244,7 @@ namespace NFUnitTestException
         //    OutputHelper.WriteLine("Disable this test so that it doesn't hose VS until it is fixed.");
 
         //    // TODO: check this
-        //    Assert.True(Exc_TestClass_excep64.testMethod());
+        //    Assert.IsTrue(Exc_TestClass_excep64.testMethod());
         //    {
         //        OutputHelper.WriteLine("This is bug number: 21724	Resolved By Design.");
         //        OutputHelper.WriteLine("This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. ");
@@ -263,7 +263,7 @@ namespace NFUnitTestException
             OutputHelper.WriteLine("If a catch search reaches a static ctor then a Exception is thrown,");
             OutputHelper.WriteLine("at the point of static ctor invocation. The inner exception is the original exception.");
 
-            Assert.True(Exc_TestClass_excep65.testMethod())
+            Assert.IsTrue(Exc_TestClass_excep65.testMethod())
             {
                 return MFTestResults.Pass;
             }

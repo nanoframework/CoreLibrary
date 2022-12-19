@@ -366,7 +366,7 @@ namespace NFUnitTestThread
             statusChecker.m_result = false;
             OutputHelper.WriteLine("Changing period to -ve");
             OutputHelper.WriteLine("period is negative and is not equal to Infinite (or -1) should throw an exception");
-            Assert.Throws(typeof(ArgumentOutOfRangeException), () =>
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () =>
             {
                 stateTimer.Change(0, -2);
                 OutputHelper.WriteLine("Waiting and verifying");
@@ -407,7 +407,7 @@ namespace NFUnitTestThread
             statusChecker.m_result = false;
             OutputHelper.WriteLine("Changing period -ve");
             OutputHelper.WriteLine("duetime is negative and is not equal to Infinite(or -1) should throw an exception");
-            Assert.Throws(typeof(ArgumentOutOfRangeException), () =>
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () =>
             {
                 stateTimer.Change(-2, 500);
                 OutputHelper.WriteLine("Waiting and verifying");
@@ -433,7 +433,7 @@ namespace NFUnitTestThread
 
             OutputHelper.WriteLine("Creating timer: " +
                 DateTime.UtcNow.ToString());
-            Assert.Throws(typeof(ArgumentNullException), () =>
+            Assert.ThrowsException(typeof(ArgumentNullException), () =>
             {
                 OutputHelper.WriteLine("Passing a 'null' callback parameter to a timer should throw exception");
                 Timer stateTimer = new Timer(null, autoEvent, 1000, 250);

@@ -56,7 +56,7 @@ namespace NFUnitTestSystemLib
             Type type = typeof(int);
             list.Add(type);
             string name = ((Type)list[i]).Name;            
-            Assert.Equal(name, "Int32");
+            Assert.AreEqual(name, "Int32");
             i++;
 
             // No ApDomain in nano
@@ -75,35 +75,35 @@ namespace NFUnitTestSystemLib
             type = Type.GetType("NFUnitTestSystemLib.UnitTestInitLocalTests+TestObj");
             list.Add(type);
             name = ((Type)list[i]).Name;
-            Assert.Equal(name, "TestObj");
+            Assert.AreEqual(name, "TestObj");
             i++;
 
             Type iface = type.GetInterfaces()[0];
             list.Add(iface);
             name = ((Type)list[i]).Name;
-            Assert.Equal(name, "IEmptyInterface");
-            Assert.Equal(iface.Name, "IEmptyInterface");
+            Assert.AreEqual(name, "IEmptyInterface");
+            Assert.AreEqual(iface.Name, "IEmptyInterface");
             i++;
 
             FieldInfo fi = type.GetField("Field1");
             list.Add(fi);
             name = ((FieldInfo)list[i]).Name;
-            Assert.Equal(name, "Field1");
-            Assert.Equal(fi.Name, "Field1");
+            Assert.AreEqual(name, "Field1");
+            Assert.AreEqual(fi.Name, "Field1");
             i++;
 
             MethodInfo mi = type.GetMethod("Method1");
             list.Add(mi);
             name = ((MethodInfo)list[i]).Name;
-            Assert.Equal(name, "Method1");
-            Assert.Equal(mi.Name, "Method1");
+            Assert.AreEqual(name, "Method1");
+            Assert.AreEqual(mi.Name, "Method1");
             i++;
 
             ConstructorInfo ci = type.GetConstructor(new Type[] { });
             list.Add(ci);
             name = ((ConstructorInfo)list[i]).Name;
-            Assert.Equal(name, ".ctor");
-            Assert.Equal(ci.Name, ".ctor");
+            Assert.AreEqual(name, ".ctor");
+            Assert.AreEqual(ci.Name, ".ctor");
             i++;
 
             // 
@@ -112,8 +112,8 @@ namespace NFUnitTestSystemLib
             Type[] types = new Type[] { typeof(int), typeof(bool), Type.GetType("NFUnitTestSystemLib.UnitTestInitLocalTests+TestObj") };
             list.Add(types[2]);
             name = ((Type)list[i]).Name;
-            Assert.Equal(name, "TestObj");
-            Assert.Equal(types[2].Name, "TestObj");
+            Assert.AreEqual(name, "TestObj");
+            Assert.AreEqual(types[2].Name, "TestObj");
             i++;
 
             //AppDomain[] domains = new AppDomain[] { AppDomain.CurrentDomain, AppDomain.CreateDomain("blah") };
@@ -134,22 +134,22 @@ namespace NFUnitTestSystemLib
             FieldInfo[] fis = new FieldInfo[] { types[2].GetField("Field1"), type.GetFields()[0] };
             list.Add(fis[0]);
             name = ((FieldInfo)list[i]).Name;
-            Assert.Equal(name, "Field1");
-            Assert.Equal(fis[0].Name, "Field1");
+            Assert.AreEqual(name, "Field1");
+            Assert.AreEqual(fis[0].Name, "Field1");
             i++;
 
             MethodInfo[] mis = new MethodInfo[] { type.GetMethods()[2], types[2].GetMethod("Method2", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public) };
             list.Add(mis[1]);
             name = ((MethodInfo)list[i]).Name;
-            Assert.Equal(name, "Method2");
-            Assert.Equal(mis[1].Name, "Method2");
+            Assert.AreEqual(name, "Method2");
+            Assert.AreEqual(mis[1].Name, "Method2");
             i++;
 
             ConstructorInfo[] cis = new ConstructorInfo[] { types[2].GetConstructor(new Type[] { }), typeof(TestObj).GetConstructor(new Type[] { typeof(int) }) };
             list.Add(cis[0]);
             name = ((ConstructorInfo)list[i]).Name;
-            Assert.Equal(name, ".ctor");
-            Assert.Equal(cis[0].Name, ".ctor");
+            Assert.AreEqual(name, ".ctor");
+            Assert.AreEqual(cis[0].Name, ".ctor");
             i++;
 
             Array ar = Array.CreateInstance(typeof(Type), 3);
@@ -158,9 +158,9 @@ namespace NFUnitTestSystemLib
 
             list.Add(ar.GetValue(1));
             name = ((Type)list[i]).Name;
-            Assert.Equal(name, "ArrayList");
-            Assert.Equal(((Type)((IList)ar)[0]).Name, "Type");
-            Assert.Equal(((Type)ar.GetValue(1)).Name, "ArrayList");
+            Assert.AreEqual(name, "ArrayList");
+            Assert.AreEqual(((Type)((IList)ar)[0]).Name, "Type");
+            Assert.AreEqual(((Type)ar.GetValue(1)).Name, "ArrayList");
             i++;
 
             list.Clear();
@@ -180,13 +180,13 @@ namespace NFUnitTestSystemLib
             {
                 // test to make sure boxing (to call struct method)
                 // still works properly
-                Assert.True(Guid.Empty.Equals(g2));
+                Assert.IsTrue(Guid.Empty.Equals(g2));
             }
 
             data = new Guid[] { ReturnGuid(), Guid.NewGuid(), new Guid(344, 45, 24, 24, 4, 42, 42, 4, 44, 22, 4) };
             foreach (Guid g2 in data)
             {
-                Assert.False(Guid.Empty.Equals(g2));
+                Assert.IsFalse(Guid.Empty.Equals(g2));
             }
         }
 

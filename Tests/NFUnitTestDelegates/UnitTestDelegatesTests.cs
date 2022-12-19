@@ -17,163 +17,163 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate01_Test()
         {
             OutputHelper.WriteLine(" Verify that both static and instance methods can be called from delegates.");
-            Assert.True(Delegate_TestClass_delegate01.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate01.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate02_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
-            Assert.True(Delegate_TestClass_delegate02.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate02.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate03_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
-            Assert.True(Delegate_TestClass_delegate03.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate03.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate04_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.");
-            Assert.True(Delegate_TestClass_delegate04.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate04.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate05_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.");
-            Assert.True(Delegate_TestClass_delegate05.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate05.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate06_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.  Assign null instead of usable value.");
-            Assert.True(Delegate_TestClass_delegate06.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate06.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate07_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.  Use null instead of a usable value.");
-            Assert.True(Delegate_TestClass_delegate07.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate07.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate08_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.  Assign null instead of usable value.");
-            Assert.True(Delegate_TestClass_delegate08.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate08.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate09_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be compared for equality.");
-            Assert.True(Delegate_TestClass_delegate09.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate09.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate10_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be aggregated in arrays and compared for equality.");
-            Assert.True(Delegate_TestClass_delegate10.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate10.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate11_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be members of classes.");
-            Assert.True(Delegate_TestClass_delegate11.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate11.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate12_Test()
         {
             OutputHelper.WriteLine(" Verify that both static and instance methods can be called from delegates.");
-            Assert.True(Delegate_TestClass_delegate12.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate12.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate13_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
-            Assert.True(Delegate_TestClass_delegate13.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate13.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate14_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
-            Assert.True(Delegate_TestClass_delegate14.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate14.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate14a_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
-            Assert.True(Delegate_TestClass_delegate14a.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate14a.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate14b_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
-            Assert.True(Delegate_TestClass_delegate14b.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate14b.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate14c_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
-            Assert.True(Delegate_TestClass_delegate14c.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate14c.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate15_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.");
-            Assert.True(Delegate_TestClass_delegate15.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate15.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate16_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.");
-            Assert.True(Delegate_TestClass_delegate16.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate16.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate17_Test()
         {
             OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.  Assign null instead of usable value.");
-            Assert.True(Delegate_TestClass_delegate17.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate17.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate18_Test()
         {
             OutputHelper.WriteLine(" Make sure a delegate list filled with nulls is detectable as foo == null");
-            Assert.True(Delegate_TestClass_delegate18.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate18.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate19_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be aggregated in arrays and compared for equality.");
-            Assert.True(Delegate_TestClass_delegate19.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate19.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate20_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be compared for equality.");
-            Assert.True(Delegate_TestClass_delegate20.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate20.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate21_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be aggregated in arrays and compared for equality.");
-            Assert.True(Delegate_TestClass_delegate21.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate21.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate23_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be aggregated using the + operator;");
-            Assert.True(Delegate_TestClass_delegate23.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate23.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate24_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be aggregated using the + operator;");
-            Assert.True(Delegate_TestClass_delegate24.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate24.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate25_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be removed using the - operator;");
-            Assert.True(Delegate_TestClass_delegate25.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate25.testMethod());
         }
 
         [TestMethod]
@@ -181,7 +181,7 @@ namespace NFUnitTestDelegates
         {
             OutputHelper.WriteLine("Bug 214780 - async delegates to methods with out parameters don't work");
             OutputHelper.WriteLine("This test is expected to fail.");
-            Assert.False(Delegate_TestClass_delegate26.testMethod());
+            Assert.IsFalse(Delegate_TestClass_delegate26.testMethod());
         }
         /* This test is skipped because it causes a Metadat processor error, it fails in the baseline.
         [TestMethod]
@@ -189,7 +189,7 @@ namespace NFUnitTestDelegates
         {
             OutputHelper.WriteLine("Verify Delegate with 257 args.  This is because more than 257 causes the");
             OutputHelper.WriteLine("compiler to take a different code path.");
-            Assert.True(Delegate_TestClass_delegate28.testMethod())
+            Assert.IsTrue(Delegate_TestClass_delegate28.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -200,13 +200,13 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate30_Test()
         {
             OutputHelper.WriteLine(" Verify that both static and instance struct methods can be called from delegates.");
-            Assert.True(Delegate_TestClass_delegate30.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate30.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate31_Test()
         {
             OutputHelper.WriteLine(" Verify that virtual struct methods can be called from delegates.");
-            Assert.True(Delegate_TestClass_delegate31.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate31.testMethod());
         }
         /*These are skipped due to their use of Volatile variables which are not supported
          *         
@@ -214,7 +214,7 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate32_Test()
         {
             OutputHelper.WriteLine("Delegate Invocation using BeginInvoke");
-            Assert.True(Delegate_TestClass_delegate32.testMethod())
+            Assert.IsTrue(Delegate_TestClass_delegate32.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -224,7 +224,7 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate34_Test()
         {
             OutputHelper.WriteLine("Delegate Invocation using BeginInvoke");
-            Assert.True(Delegate_TestClass_delegate34.testMethod())
+            Assert.IsTrue(Delegate_TestClass_delegate34.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -235,31 +235,31 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate36_Test()
         {
             OutputHelper.WriteLine("params modifier should not be considered when matching a delegate with a method");
-            Assert.True(Delegate_TestClass_delegate36.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate36.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate60_Test()
         {
             OutputHelper.WriteLine("A delegate declaration defines a class that derives from System.Delegate");
-            Assert.True(Delegate_TestClass_delegate60.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate60.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate62_Test()
         {
             OutputHelper.WriteLine("The compiler is expected to warn that the new keyword id not rquired as we're not hiding an inherited member");
-            Assert.True(Delegate_TestClass_delegate62.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate62.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate64_Test()
         {
             OutputHelper.WriteLine("Compiler is expected to warn when new is not used when hiding a member delegate of the base class");
-            Assert.True(Delegate_TestClass_delegate64.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate64.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate65_Test()
         {
             OutputHelper.WriteLine("Make sure delegates can be hidden.");
-            Assert.True(Delegate_TestClass_delegate65.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate65.testMethod());
         }
         /*These tests are skipped because the use the == operator in an unsupported way
          * 
@@ -267,7 +267,7 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate66_Test()
         {
             OutputHelper.WriteLine("Two compatible delegate types can be compared for equality.");
-            Assert.True(Delegate_TestClass_delegate66.testMethod())
+            Assert.IsTrue(Delegate_TestClass_delegate66.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -277,7 +277,7 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate70_Test()
         {
             OutputHelper.WriteLine("Two compatible delegate types can be compared for equality (or inequality).");
-            Assert.True(Delegate_TestClass_delegate70.testMethod())
+            Assert.IsTrue(Delegate_TestClass_delegate70.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -288,13 +288,13 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate71_Test()
         {
             OutputHelper.WriteLine("Verify simple +=");
-            Assert.True(Delegate_TestClass_delegate71.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate71.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate72_Test()
         {
             OutputHelper.WriteLine(" Verify that delegates can be removed using the -= operator;");
-            Assert.True(Delegate_TestClass_delegate72.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate72.testMethod());
         }
         /* These tests are skipped because they use == in an unsupported way
          * 
@@ -302,7 +302,7 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate73_Test()
         {
             OutputHelper.WriteLine("Verify equality and inequality after using += and -= on delegates");
-            Assert.True(Delegate_TestClass_delegate73.testMethod())
+            Assert.IsTrue(Delegate_TestClass_delegate73.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -312,7 +312,7 @@ namespace NFUnitTestDelegates
         public void Delegate_delegate74_Test()
         {
             OutputHelper.WriteLine("Verify ability to call members of System.Delegate on delegate types");
-            Assert.True(Delegate_TestClass_delegate74.testMethod())
+            Assert.IsTrue(Delegate_TestClass_delegate74.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -323,7 +323,7 @@ namespace NFUnitTestDelegates
         {
             OutputHelper.WriteLine("Verify ability to call members of System.Delegate on delegate types");
             OutputHelper.WriteLine("and that ordinality is maintained in concatenated invocation lists");
-            Assert.True(Delegate_TestClass_delegate75.testMethod())
+            Assert.IsTrue(Delegate_TestClass_delegate75.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -334,7 +334,7 @@ namespace NFUnitTestDelegates
         {
             OutputHelper.WriteLine("Verify ability to call members of System.Delegate on delegate types");
             OutputHelper.WriteLine("and that ordinality is maintained in concatenated invocation lists");
-            Assert.True(Delegate_TestClass_delegate76.testMethod())
+            Assert.IsTrue(Delegate_TestClass_delegate76.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -346,7 +346,7 @@ namespace NFUnitTestDelegates
         {
             OutputHelper.WriteLine("Verify that ordinality is maintained in concatenated invocation lists");
             OutputHelper.WriteLine("and that the invocation list members are called synchronously");
-            Assert.True(Delegate_TestClass_delegate77.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate77.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate78_Test()
@@ -354,7 +354,7 @@ namespace NFUnitTestDelegates
             OutputHelper.WriteLine("Verify that ordinality is maintained in concatenated invocation lists");
             OutputHelper.WriteLine("and that the invocation list members are called synchronously and");
             OutputHelper.WriteLine("that ref parameters are modified through the invocation chain.");
-            Assert.True(Delegate_TestClass_delegate78.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate78.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate79_Test()
@@ -362,44 +362,44 @@ namespace NFUnitTestDelegates
             OutputHelper.WriteLine("Verify that ordinality is maintained in concatenated invocation lists");
             OutputHelper.WriteLine("and that the invocation list members are called synchronously and");
             OutputHelper.WriteLine("that out parameters are set by the last member in the invocation chain.");
-            Assert.True(Delegate_TestClass_delegate79.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate79.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate80_Test()
         {
             OutputHelper.WriteLine("Verify that System.Exceptions not caught in invoked method are bubbled up");
             OutputHelper.WriteLine("and the remaining methods in the invocation list are not invoked.");
-            Assert.True(Delegate_TestClass_delegate80.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate80.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate81_Test()
         {
             OutputHelper.WriteLine("Sample from section 15.3 of Delegate_TestClass_?_A#LS");
-            Assert.True(Delegate_TestClass_delegate81.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate81.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate_modifier09_Test()
         {
             OutputHelper.WriteLine("only new, public, private, protected and internal are allowed as modifiers");
-            Assert.True(Delegate_TestClass_delegate_modifier09.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate_modifier09.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate_modifier10_Test()
         {
             OutputHelper.WriteLine("only new, public, private, protected and internal are allowed as modifiers");
-            Assert.True(Delegate_TestClass_delegate_modifier10.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate_modifier10.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate_modifier11_Test()
         {
             OutputHelper.WriteLine("only new, public, private, protected and internal are allowed as modifiers");
-            Assert.True(Delegate_TestClass_delegate_modifier11.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate_modifier11.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate_modifier12_Test()
         {
             OutputHelper.WriteLine("only new, public, private, protected and internal are allowed as modifiers");
-            Assert.True(Delegate_TestClass_delegate_modifier12.testMethod());
+            Assert.IsTrue(Delegate_TestClass_delegate_modifier12.testMethod());
         }
 
 

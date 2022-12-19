@@ -587,9 +587,9 @@ CA-C0-F3-3F-52-D3-BB-BC-E8-7E-FF-FF-FF-F4-FF-EF-7F-01-00-00
         {
             var empty = new byte[] { };
 
-            Assert.Equal(BitConverter.ToString(empty), string.Empty);
-            Assert.Equal(BitConverter.ToString(empty, 0), string.Empty);
-            Assert.Equal(BitConverter.ToString(empty, 0, 0), string.Empty);
+            Assert.AreEqual(BitConverter.ToString(empty), string.Empty);
+            Assert.AreEqual(BitConverter.ToString(empty, 0), string.Empty);
+            Assert.AreEqual(BitConverter.ToString(empty, 0, 0), string.Empty);
         }
 
         [TestMethod]

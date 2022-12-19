@@ -117,7 +117,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 byte b = new byte();
-                Assert.Equal(b, (byte)0);
+                Assert.AreEqual(b, (byte)0);
             }
         }
 
@@ -126,7 +126,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 short s = new short();
-                Assert.Equal(s, (short)0);
+                Assert.AreEqual(s, (short)0);
             }
         }
 
@@ -135,7 +135,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 int i = new int();
-                Assert.Equal(i, 0);
+                Assert.AreEqual(i, 0);
             }
         }
 
@@ -144,7 +144,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 long l = new long();
-                Assert.Equal(l, 0L);
+                Assert.AreEqual(l, 0L);
             }
         }
 
@@ -153,7 +153,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 char c = new char();
-                Assert.Equal(c, '\x0000');
+                Assert.AreEqual(c, '\x0000');
             }
         }
 
@@ -162,7 +162,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 float f = new float();
-                Assert.Equal(f, 0.0f);
+                Assert.AreEqual(f, 0.0f);
             }
         }
 
@@ -171,7 +171,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 double d = new double();
-                Assert.Equal(d, 0.0d);
+                Assert.AreEqual(d, 0.0d);
             }
         }
 
@@ -180,7 +180,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 bool b = new bool();
-                Assert.Equal(b, false);
+                Assert.AreEqual(b, false);
             }
         }
 
@@ -224,7 +224,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 sbyte b = new sbyte();
-                Assert.Equal(b, (sbyte)0);
+                Assert.AreEqual(b, (sbyte)0);
             }
         }
 
@@ -233,7 +233,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 ushort b = new ushort();
-                Assert.Equal(b, (ushort)0);
+                Assert.AreEqual(b, (ushort)0);
             }
         }
 
@@ -242,7 +242,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 uint b = new uint();
-                Assert.Equal(b , (uint)0) ;
+                Assert.AreEqual(b , (uint)0) ;
             }
         }
 
@@ -251,7 +251,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 ulong b = new ulong();
-                Assert.Equal(b, (ulong)0);
+                Assert.AreEqual(b, (ulong)0);
             }
         }
 

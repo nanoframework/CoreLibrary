@@ -42,7 +42,7 @@ namespace NFUnitTestArithmetic
         {
             // Test a null string in String.Format - should be treated like an empty string.
             string nullArg = null;
-            Assert.Equal(string.Format("Value is {0}", nullArg), "Value is ", "");
+            Assert.AreEqual(string.Format("Value is {0}", nullArg), "Value is ", "");
         }
 
         [TestMethod]
@@ -50,7 +50,7 @@ namespace NFUnitTestArithmetic
         {
             // catch an exception if the format string is null
             string nullFormat = null;
-            Assert.Throws(typeof(NullReferenceException), () => { string.Format(nullFormat, 12345.67); });
+            Assert.ThrowsException(typeof(NullReferenceException), () => { string.Format(nullFormat, 12345.67); });
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace NFUnitTestArithmetic
         public void StringFormat_02(string formatString, double value, string outcomeMessage)
         {
             // Test alignment operator which is the "," and a number.  Negative is right aligned, positive left aligned 
-            Assert.Equal(string.Format(formatString, value), outcomeMessage);
+            Assert.AreEqual(string.Format(formatString, value), outcomeMessage);
         }
 
         [TestMethod]
@@ -73,7 +73,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("formatString is" + formatString);
             // invalid alignment cases
-            Assert.Throws(typeof(ArgumentException), () => { string.Format(formatString, value); }, outcomeMessage);
+            Assert.ThrowsException(typeof(ArgumentException), () => { string.Format(formatString, value); }, outcomeMessage);
         }
 
         [TestMethod]
@@ -249,7 +249,7 @@ namespace NFUnitTestArithmetic
                     TestFormatInner(valueStr, formatString.ToLower(), expectedResult.ToLower(), numType, isNegative);
                     break;
                 default:
-                    Assert.True(false, "Invalid format case used");
+                    Assert.IsTrue(false, "Invalid format case used");
                     break;
             }
         }
@@ -265,7 +265,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(sbyte.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.SByte, rowData);
 
-                Assert.True(sbyte.TryParse(valueStr, out sbyte result), $"TryParse failed for sbyte {valueStr}");
+                Assert.IsTrue(sbyte.TryParse(valueStr, out sbyte result), $"TryParse failed for sbyte {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.SByte, rowData);
             }
 
@@ -276,7 +276,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(short.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int16, rowData);
 
-                Assert.True(short.TryParse(valueStr, out short result), $"TryParse failed for short {valueStr}");
+                Assert.IsTrue(short.TryParse(valueStr, out short result), $"TryParse failed for short {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int16, rowData);
             }
 
@@ -287,7 +287,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(int.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int32, rowData);
 
-                Assert.True(int.TryParse(valueStr, out int result), $"TryParse failed for int {valueStr}");
+                Assert.IsTrue(int.TryParse(valueStr, out int result), $"TryParse failed for int {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int32, rowData);
             }
 
@@ -298,7 +298,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(long.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int64, rowData);
 
-                Assert.True(long.TryParse(valueStr, out long result), $"TryParse failed for long {valueStr}");
+                Assert.IsTrue(long.TryParse(valueStr, out long result), $"TryParse failed for long {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Int64, rowData);
             }
 
@@ -309,7 +309,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(byte.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Byte, rowData);
 
-                Assert.True(byte.TryParse(valueStr, out byte result), $"TryParse failed for byte {valueStr}");
+                Assert.IsTrue(byte.TryParse(valueStr, out byte result), $"TryParse failed for byte {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Byte, rowData);
             }
 
@@ -320,7 +320,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(ushort.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt16, rowData);
                 
-                Assert.True(ushort.TryParse(valueStr, out ushort result), $"TryParse failed for ushort {valueStr}");
+                Assert.IsTrue(ushort.TryParse(valueStr, out ushort result), $"TryParse failed for ushort {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt16, rowData);
             }
 
@@ -331,7 +331,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(uint.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt32, rowData);
 
-                Assert.True(uint.TryParse(valueStr, out uint result), $"TryParse failed for uint {valueStr}");
+                Assert.IsTrue(uint.TryParse(valueStr, out uint result), $"TryParse failed for uint {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt32, rowData);
             }
 
@@ -342,7 +342,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(ulong.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt64, rowData);
 
-                Assert.True(ulong.TryParse(valueStr, out ulong result), $"TryParse failed for ulong {valueStr}");
+                Assert.IsTrue(ulong.TryParse(valueStr, out ulong result), $"TryParse failed for ulong {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.UInt64, rowData);
             }
 
@@ -353,7 +353,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(float.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Single, rowData);
 
-                Assert.True(float.TryParse(valueStr, out float result), $"TryParse failed for float {valueStr}");
+                Assert.IsTrue(float.TryParse(valueStr, out float result), $"TryParse failed for float {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Single, rowData);
             }
 
@@ -364,7 +364,7 @@ namespace NFUnitTestArithmetic
             {
                 CheckValue(double.Parse(valueStr), valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Double, rowData);
 
-                Assert.True(double.TryParse(valueStr, out double result), $"TryParse failed for double {valueStr}");
+                Assert.IsTrue(double.TryParse(valueStr, out double result), $"TryParse failed for double {valueStr}");
                 CheckValue(result, valueStr, formatString, expectedResult, SampleDisplay.ColumnType.Double, rowData);
             }
         }
@@ -380,7 +380,7 @@ namespace NFUnitTestArithmetic
             }
             else
             {
-                Assert.Equal(result, expectedResult, $"The expected result for '{formatString}' on value {valueStr} for type {value.GetType().Name} is '{expectedResult}'");
+                Assert.AreEqual(result, expectedResult, $"The expected result for '{formatString}' on value {valueStr} for type {value.GetType().Name} is '{expectedResult}'");
             }
             rowData.SetResult(result, columnType);
         }

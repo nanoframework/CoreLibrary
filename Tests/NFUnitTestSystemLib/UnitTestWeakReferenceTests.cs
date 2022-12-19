@@ -64,12 +64,12 @@ namespace NFUnitTestSystemLib
         //    }
         //    OutputHelper.WriteLine("GC took " + slept);
 
-        //    Assert.False(hasFinalized1);
+        //    Assert.IsFalse(hasFinalized1);
 
         //    OutputHelper.WriteLine("Verify & Remove Strong reference");
-        //    Assert.Equal(((WeakRefClass)wr.Target).data, 5);
+        //    Assert.AreEqual(((WeakRefClass)wr.Target).data, 5);
         //    WRC1 = null;
-        //    Assert.Null(WRC1);
+        //    Assert.IsNull(WRC1);
 
         //    OutputHelper.WriteLine("Allow for GC");
         //    // We should force the finalizer somehow
@@ -83,12 +83,12 @@ namespace NFUnitTestSystemLib
         //        slept += 10;
         //    }
         //    OutputHelper.WriteLine("GC took " + slept);
-        //    Assert.True(hasFinalized1);
-        //    Assert.Null(WRC1 );
+        //    Assert.IsTrue(hasFinalized1);
+        //    Assert.IsNull(WRC1 );
 
         //    if (wr.IsAlive)
         //    {
-        //        Assert.Equal(((WeakRefClass)wr.Target).data, 5);
+        //        Assert.AreEqual(((WeakRefClass)wr.Target).data, 5);
         //        OutputHelper.WriteLine("Weak Reference survived.");
         //    }
         //    else

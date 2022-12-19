@@ -17,223 +17,223 @@ namespace NFUnitTestArithmetic
         public void Other_unary068_Test()
         {
             OutputHelper.WriteLine(" 7.6.5 Operator Overloading - Unary operator");
-            Assert.True(Other_TestClass_unary068.testMethod());
+            Assert.IsTrue(Other_TestClass_unary068.testMethod());
         }
         [TestMethod]
         public void Other_relat001_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat001.testMethod());
+            Assert.IsTrue(Other_TestClass_relat001.testMethod());
         }
         [TestMethod]
         public void Other_relat002_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat002.testMethod());
+            Assert.IsTrue(Other_TestClass_relat002.testMethod());
         }
         [TestMethod]
         public void Other_relat003_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat003.testMethod());
+            Assert.IsTrue(Other_TestClass_relat003.testMethod());
         }
         [TestMethod]
         public void Other_relat004_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat004.testMethod());
+            Assert.IsTrue(Other_TestClass_relat004.testMethod());
         }
         [TestMethod]
         public void Other_relat005_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat005.testMethod());
+            Assert.IsTrue(Other_TestClass_relat005.testMethod());
         }
         [TestMethod]
         public void Other_relat006_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat006.testMethod());
+            Assert.IsTrue(Other_TestClass_relat006.testMethod());
         }
         [TestMethod]
         public void Other_relat007_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat007.testMethod());
+            Assert.IsTrue(Other_TestClass_relat007.testMethod());
         }
         [TestMethod]
         public void Other_relat008_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat008.testMethod());
+            Assert.IsTrue(Other_TestClass_relat008.testMethod());
         }
         [TestMethod]
         public void Other_relat009_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat009.testMethod());
+            Assert.IsTrue(Other_TestClass_relat009.testMethod());
         }
         [TestMethod]
         public void Other_relat010_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat010.testMethod());
+            Assert.IsTrue(Other_TestClass_relat010.testMethod());
         }
         [TestMethod]
         public void Other_relat011_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat011.testMethod());
+            Assert.IsTrue(Other_TestClass_relat011.testMethod());
         }
         [TestMethod]
         public void Other_relat012_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat012.testMethod());
+            Assert.IsTrue(Other_TestClass_relat012.testMethod());
         }
         [TestMethod]
         public void Other_relat013_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat013.testMethod());
+            Assert.IsTrue(Other_TestClass_relat013.testMethod());
         }
         [TestMethod]
         public void Other_relat014_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat014.testMethod());
+            Assert.IsTrue(Other_TestClass_relat014.testMethod());
         }
         [TestMethod]
         public void Other_relat015_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat015.testMethod());
+            Assert.IsTrue(Other_TestClass_relat015.testMethod());
         }
         [TestMethod]
         public void Other_relat016_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat016.testMethod());
+            Assert.IsTrue(Other_TestClass_relat016.testMethod());
         }
         [TestMethod]
         public void Other_relat017_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat017.testMethod());
+            Assert.IsTrue(Other_TestClass_relat017.testMethod());
         }
         [TestMethod]
         public void Other_relat018_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat018.testMethod());
+            Assert.IsTrue(Other_TestClass_relat018.testMethod());
         }
         [TestMethod]
         public void Other_relat019_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat019.testMethod());
+            Assert.IsTrue(Other_TestClass_relat019.testMethod());
         }
         [TestMethod]
         public void Other_relat020_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat020.testMethod());
+            Assert.IsTrue(Other_TestClass_relat020.testMethod());
         }
         [TestMethod]
         public void Other_relat021_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat021.testMethod());
+            Assert.IsTrue(Other_TestClass_relat021.testMethod());
         }
         [TestMethod]
         public void Other_relat022_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat022.testMethod());
+            Assert.IsTrue(Other_TestClass_relat022.testMethod());
         }
         [TestMethod]
         public void Other_relat023_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat023.testMethod());
+            Assert.IsTrue(Other_TestClass_relat023.testMethod());
         }
         [TestMethod]
         public void Other_relat024_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat024.testMethod());
+            Assert.IsTrue(Other_TestClass_relat024.testMethod());
         }
         [TestMethod]
         public void Other_relat025_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat025.testMethod());
+            Assert.IsTrue(Other_TestClass_relat025.testMethod());
         }
         [TestMethod]
         public void Other_relat026_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat026.testMethod());
+            Assert.IsTrue(Other_TestClass_relat026.testMethod());
         }
         [TestMethod]
         public void Other_relat027_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat027.testMethod());
+            Assert.IsTrue(Other_TestClass_relat027.testMethod());
         }
         [TestMethod]
         public void Other_relat028_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat028.testMethod());
+            Assert.IsTrue(Other_TestClass_relat028.testMethod());
         }
         [TestMethod]
         public void Other_relat029_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat029.testMethod());
+            Assert.IsTrue(Other_TestClass_relat029.testMethod());
         }
         [TestMethod]
         public void Other_relat030_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat030.testMethod());
+            Assert.IsTrue(Other_TestClass_relat030.testMethod());
         }
         [TestMethod]
         public void Other_relat031_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat031.testMethod());
+            Assert.IsTrue(Other_TestClass_relat031.testMethod());
         }
         [TestMethod]
         public void Other_relat032_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat032.testMethod());
+            Assert.IsTrue(Other_TestClass_relat032.testMethod());
         }
         [TestMethod]
         public void Other_relat033_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat033.testMethod());
+            Assert.IsTrue(Other_TestClass_relat033.testMethod());
         }
         [TestMethod]
         public void Other_relat034_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat034.testMethod());
+            Assert.IsTrue(Other_TestClass_relat034.testMethod());
         }
         [TestMethod]
         public void Other_relat035_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat035.testMethod());
+            Assert.IsTrue(Other_TestClass_relat035.testMethod());
         }
         [TestMethod]
         public void Other_relat036_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat036.testMethod());
+            Assert.IsTrue(Other_TestClass_relat036.testMethod());
         }
 
 
@@ -245,7 +245,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("If either operand is NaN, the result is false");
             OutputHelper.WriteLine("for all operators except !=, and true for !=");
             OutputHelper.WriteLine("operator.");
-            Assert.True(Other_TestClass_relat037.testMethod())
+            Assert.IsTrue(Other_TestClass_relat037.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -258,7 +258,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("If either operand is NaN, the result is false");
             OutputHelper.WriteLine("for all operators except !=, and true for !=");
             OutputHelper.WriteLine("operator.");
-            Assert.True(Other_TestClass_relat038.testMethod())
+            Assert.IsTrue(Other_TestClass_relat038.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -271,7 +271,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("If either operand is NaN, the result is false");
             OutputHelper.WriteLine("for all operators except !=, and true for !=");
             OutputHelper.WriteLine("operator.");
-            Assert.True(Other_TestClass_relat039.testMethod())
+            Assert.IsTrue(Other_TestClass_relat039.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -284,7 +284,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("If either operand is NaN, the result is false");
             OutputHelper.WriteLine("for all operators except !=, and true for !=");
             OutputHelper.WriteLine("operator.");
-            Assert.True(Other_TestClass_relat040.testMethod())
+            Assert.IsTrue(Other_TestClass_relat040.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -297,7 +297,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("If either operand is NaN, the result is false");
             OutputHelper.WriteLine("for all operators except !=, and true for !=");
             OutputHelper.WriteLine("operator.");
-            Assert.True(Other_TestClass_relat041.testMethod())
+            Assert.IsTrue(Other_TestClass_relat041.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -310,7 +310,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("If either operand is NaN, the result is false");
             OutputHelper.WriteLine("for all operators except !=, and true for !=");
             OutputHelper.WriteLine("operator.");
-            Assert.True(Other_TestClass_relat042.testMethod())
+            Assert.IsTrue(Other_TestClass_relat042.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -322,7 +322,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.9");
             OutputHelper.WriteLine("Negative and positive zero is considered");
             OutputHelper.WriteLine("equal.");
-            Assert.True(Other_TestClass_relat043.testMethod())
+            Assert.IsTrue(Other_TestClass_relat043.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -334,7 +334,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.9");
             OutputHelper.WriteLine("Negative and positive zero is considered");
             OutputHelper.WriteLine("equal.");
-            Assert.True(Other_TestClass_relat044.testMethod())
+            Assert.IsTrue(Other_TestClass_relat044.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -347,7 +347,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Other_TestClass_?_A negative infinity is considered less than");
             OutputHelper.WriteLine("all other values, but equal to another negative");
             OutputHelper.WriteLine("infinity.");
-            Assert.True(Other_TestClass_relat045.testMethod())
+            Assert.IsTrue(Other_TestClass_relat045.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -360,7 +360,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Other_TestClass_?_A negative infinity is considered less than");
             OutputHelper.WriteLine("all other values, but equal to another negative");
             OutputHelper.WriteLine("infinity.");
-            Assert.True(Other_TestClass_relat046.testMethod())
+            Assert.IsTrue(Other_TestClass_relat046.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -372,7 +372,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.9");
             OutputHelper.WriteLine("Other_TestClass_?_A positive infinity is considered greater than all");
             OutputHelper.WriteLine("other values, but equal to positive infinity.");
-            Assert.True(Other_TestClass_relat047.testMethod())
+            Assert.IsTrue(Other_TestClass_relat047.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -384,7 +384,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.9");
             OutputHelper.WriteLine("Other_TestClass_?_A positive infinity is considered greater than all");
             OutputHelper.WriteLine("other values, but equal to positive infinity.");
-            Assert.True(Other_TestClass_relat048.testMethod())
+            Assert.IsTrue(Other_TestClass_relat048.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -395,49 +395,49 @@ namespace NFUnitTestArithmetic
         public void Other_relat055_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat055.testMethod());
+            Assert.IsTrue(Other_TestClass_relat055.testMethod());
         }
         [TestMethod]
         public void Other_relat056_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat056.testMethod());
+            Assert.IsTrue(Other_TestClass_relat056.testMethod());
         }
         [TestMethod]
         public void Other_relat057_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat057.testMethod());
+            Assert.IsTrue(Other_TestClass_relat057.testMethod());
         }
         [TestMethod]
         public void Other_relat058_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat058.testMethod());
+            Assert.IsTrue(Other_TestClass_relat058.testMethod());
         }
         [TestMethod]
         public void Other_relat059_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat059.testMethod());
+            Assert.IsTrue(Other_TestClass_relat059.testMethod());
         }
         [TestMethod]
         public void Other_relat060_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat060.testMethod());
+            Assert.IsTrue(Other_TestClass_relat060.testMethod());
         }
         [TestMethod]
         public void Other_relat061_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat061.testMethod());
+            Assert.IsTrue(Other_TestClass_relat061.testMethod());
         }
         [TestMethod]
         public void Other_relat062_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat062.testMethod());
+            Assert.IsTrue(Other_TestClass_relat062.testMethod());
         }
         [TestMethod]
         public void Other_relat063_Test()
@@ -450,7 +450,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("applicable user-defined equality operators");
             OutputHelper.WriteLine("effectively hide the predefined reference type");
             OutputHelper.WriteLine("equality operators.");
-            Assert.True(Other_TestClass_relat063.testMethod());
+            Assert.IsTrue(Other_TestClass_relat063.testMethod());
         }
         [TestMethod]
         public void Other_relat064_Test()
@@ -463,7 +463,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("applicable user-defined equality operators");
             OutputHelper.WriteLine("effectively hide the predefined reference type");
             OutputHelper.WriteLine("equality operators.");
-            Assert.True(Other_TestClass_relat064.testMethod());
+            Assert.IsTrue(Other_TestClass_relat064.testMethod());
         }
         [TestMethod]
         public void Other_relat065_Test()
@@ -476,7 +476,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("applicable user-defined equality operators");
             OutputHelper.WriteLine("effectively hide the predefined reference type");
             OutputHelper.WriteLine("equality operators.");
-            Assert.True(Other_TestClass_relat065.testMethod());
+            Assert.IsTrue(Other_TestClass_relat065.testMethod());
         }
         [TestMethod]
         public void Other_relat066_Test()
@@ -489,7 +489,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("applicable user-defined equality operators");
             OutputHelper.WriteLine("effectively hide the predefined reference type");
             OutputHelper.WriteLine("equality operators.");
-            Assert.True(Other_TestClass_relat066.testMethod());
+            Assert.IsTrue(Other_TestClass_relat066.testMethod());
         }
         [TestMethod]
         public void Other_relat069_Test()
@@ -498,7 +498,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("It is an error to use the predefined reference");
             OutputHelper.WriteLine("type equality operators to compare two references");
             OutputHelper.WriteLine("that are known to be different at compile-time.");
-            Assert.True(Other_TestClass_relat069.testMethod());
+            Assert.IsTrue(Other_TestClass_relat069.testMethod());
         }
         [TestMethod]
         public void Other_relat072_Test()
@@ -509,7 +509,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Therefore, unless a struct type declares its own");
             OutputHelper.WriteLine("equality operators, it is not possible to compare");
             OutputHelper.WriteLine("values of that struct type.");
-            Assert.True(Other_TestClass_relat072.testMethod());
+            Assert.IsTrue(Other_TestClass_relat072.testMethod());
         }
         [TestMethod]
         public void Other_relat073_Test()
@@ -523,7 +523,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("possible to select the reference type equality");
             OutputHelper.WriteLine("operator by explicitly casting one or both of");
             OutputHelper.WriteLine("the operands to type object.");
-            Assert.True(Other_TestClass_relat073.testMethod());
+            Assert.IsTrue(Other_TestClass_relat073.testMethod());
         }
         [TestMethod]
         public void Other_relat074_Test()
@@ -537,38 +537,38 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("possible to select the reference type equality");
             OutputHelper.WriteLine("operator by explicitly casting one or both of");
             OutputHelper.WriteLine("the operands to type object.");
-            Assert.True(Other_TestClass_relat074.testMethod());
+            Assert.IsTrue(Other_TestClass_relat074.testMethod());
         }
         [TestMethod]
         public void Other_relat075_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat075.testMethod());
+            Assert.IsTrue(Other_TestClass_relat075.testMethod());
         }
         [TestMethod]
         public void Other_relat076_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat076.testMethod());
+            Assert.IsTrue(Other_TestClass_relat076.testMethod());
         }
         [TestMethod]
         public void Other_relat077_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat077.testMethod());
+            Assert.IsTrue(Other_TestClass_relat077.testMethod());
         }
         [TestMethod]
         public void Other_relat078_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat078.testMethod());
+            Assert.IsTrue(Other_TestClass_relat078.testMethod());
         }
         /*
         [TestMethod]
         public void Other_relat079_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat079.testMethod())
+            Assert.IsTrue(Other_TestClass_relat079.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -579,143 +579,143 @@ namespace NFUnitTestArithmetic
         public void Other_relat080_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat080.testMethod());
+            Assert.IsTrue(Other_TestClass_relat080.testMethod());
         }
         [TestMethod]
         public void Other_relat081_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat081.testMethod());
+            Assert.IsTrue(Other_TestClass_relat081.testMethod());
         }
         [TestMethod]
         public void Other_relat083_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat083.testMethod());
+            Assert.IsTrue(Other_TestClass_relat083.testMethod());
         }
         [TestMethod]
         public void Other_relat084_Test()
         {
             OutputHelper.WriteLine("Section 7.9");
-            Assert.True(Other_TestClass_relat084.testMethod());
+            Assert.IsTrue(Other_TestClass_relat084.testMethod());
         }
         [TestMethod]
         public void Other_relat086_Test()
         {
             OutputHelper.WriteLine("Making sure floating point relational operators are working correctly for negative");
             OutputHelper.WriteLine("vs. positive values.");
-            Assert.True(Other_TestClass_relat086.testMethod());
+            Assert.IsTrue(Other_TestClass_relat086.testMethod());
         }
         [TestMethod]
         public void Other_relat087_Test()
         {
             OutputHelper.WriteLine("Making sure floating point relational operators are working correctly for negative");
             OutputHelper.WriteLine("vs. positive values.");
-            Assert.True(Other_TestClass_relat087.testMethod());
+            Assert.IsTrue(Other_TestClass_relat087.testMethod());
         }
         [TestMethod]
         public void Other_relat088_Test()
         {
             OutputHelper.WriteLine("Making sure floating point relational operators are working correctly for negative");
             OutputHelper.WriteLine("vs. positive values.");
-            Assert.True(Other_TestClass_relat088.testMethod());
+            Assert.IsTrue(Other_TestClass_relat088.testMethod());
         }
         [TestMethod]
         public void Other_relat089_Test()
         {
             OutputHelper.WriteLine("Making sure floating point relational operators are working correctly for negative");
             OutputHelper.WriteLine("vs. positive values.");
-            Assert.True(Other_TestClass_relat089.testMethod());
+            Assert.IsTrue(Other_TestClass_relat089.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic001_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic001.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic001.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic002_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic002.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic002.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic003_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic003.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic003.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic004_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic004.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic004.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic005_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic005.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic005.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic006_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic006.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic006.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic007_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic007.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic007.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic008_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic008.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic008.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic009_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic009.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic009.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic010_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic010.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic010.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic011_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic011.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic011.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic012_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic012.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic012.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic013_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic013.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic013.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic014_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic014.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic014.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic015_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_operators_logic015.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic015.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic016_Test()
@@ -724,7 +724,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("The operation x (double amp) y corresponds to the");
             OutputHelper.WriteLine("operation x (amp) y except that y is evaluated only");
             OutputHelper.WriteLine("if x is true.");
-            Assert.True(Other_TestClass_operators_logic016.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic016.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic017_Test()
@@ -733,7 +733,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("The operation x (double amp) y corresponds to the");
             OutputHelper.WriteLine("operation x (amp) y except that y is evaluated only");
             OutputHelper.WriteLine("if x is true.");
-            Assert.True(Other_TestClass_operators_logic017.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic017.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic018_Test()
@@ -742,7 +742,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("The operation x || y corresponds to the");
             OutputHelper.WriteLine("operation x (amp) y except that y is evaluated only");
             OutputHelper.WriteLine("if x is false.");
-            Assert.True(Other_TestClass_operators_logic018.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic018.testMethod());
         }
         [TestMethod]
         public void Other_operators_logic019_Test()
@@ -751,7 +751,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("The operation x || y corresponds to the");
             OutputHelper.WriteLine("operation x (amp) y except that y is evaluated only");
             OutputHelper.WriteLine("if x is false.");
-            Assert.True(Other_TestClass_operators_logic019.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic019.testMethod());
         }
         /*
         [TestMethod]
@@ -770,7 +770,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("return a result of type T.");
                         OutputHelper.WriteLine("T must contain declarations of operator true and");
             OutputHelper.WriteLine("operator false.");
-                        Assert.True(Other_TestClass_operators_logic022.testMethod())
+                        Assert.IsTrue(Other_TestClass_operators_logic022.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -792,7 +792,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("return a result of type T.");
                         OutputHelper.WriteLine("T must contain declarations of operator true and");
             OutputHelper.WriteLine("operator false.");
-                        Assert.True(Other_TestClass_operators_logic023.testMethod())
+                        Assert.IsTrue(Other_TestClass_operators_logic023.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -802,7 +802,7 @@ namespace NFUnitTestArithmetic
         public void Other_operators_logic032_Test()
         {
             OutputHelper.WriteLine("Section 7.11");
-            Assert.True(Other_TestClass_operators_logic032.testMethod())
+            Assert.IsTrue(Other_TestClass_operators_logic032.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -813,7 +813,7 @@ namespace NFUnitTestArithmetic
         public void Other_operators_logic033_Test()
         {
             OutputHelper.WriteLine("Section 7.11");
-            Assert.True(Other_TestClass_operators_logic033.testMethod());
+            Assert.IsTrue(Other_TestClass_operators_logic033.testMethod());
         }
         [TestMethod]
         public void Other_cond001_Test()
@@ -826,7 +826,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
             OutputHelper.WriteLine("conditional expression never evaluates both x");
             OutputHelper.WriteLine("and y.");
-            Assert.True(Other_TestClass_cond001.testMethod());
+            Assert.IsTrue(Other_TestClass_cond001.testMethod());
         }
         [TestMethod]
         public void Other_cond002_Test()
@@ -839,7 +839,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
             OutputHelper.WriteLine("conditional expression never evaluates both x");
             OutputHelper.WriteLine("and y.");
-            Assert.True(Other_TestClass_cond002.testMethod());
+            Assert.IsTrue(Other_TestClass_cond002.testMethod());
         }
         [TestMethod]
         public void Other_cond003_Test()
@@ -852,7 +852,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
             OutputHelper.WriteLine("conditional expression never evaluates both x");
             OutputHelper.WriteLine("and y.");
-            Assert.True(Other_TestClass_cond003.testMethod());
+            Assert.IsTrue(Other_TestClass_cond003.testMethod());
         }
         [TestMethod]
         public void Other_cond004_Test()
@@ -865,7 +865,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("and becomes the result of the operation.  Other_TestClass_?_A");
             OutputHelper.WriteLine("conditional expression never evaluates both x");
             OutputHelper.WriteLine("and y.");
-            Assert.True(Other_TestClass_cond004.testMethod());
+            Assert.IsTrue(Other_TestClass_cond004.testMethod());
         }
         [TestMethod]
         public void Other_cond005_Test()
@@ -874,7 +874,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("The conditional operator is right-associative, meaning");
             OutputHelper.WriteLine("that operations are grouped from right to left.  For example,");
             OutputHelper.WriteLine("an expression of the form a?b:c?d:e is evaluated as a?b:(c?d:e).");
-            Assert.True(Other_TestClass_cond005.testMethod());
+            Assert.IsTrue(Other_TestClass_cond005.testMethod());
         }
         [TestMethod]
         public void Other_cond006_Test()
@@ -886,7 +886,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("of a type that implements operator true.  If neither");
             OutputHelper.WriteLine("of these requirements are satisfied, a compile-time");
             OutputHelper.WriteLine("error occurs.");
-            Assert.True(Other_TestClass_cond006.testMethod());
+            Assert.IsTrue(Other_TestClass_cond006.testMethod());
         }
         [TestMethod]
         public void Other_cond008_Test()
@@ -898,7 +898,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("of a type that implements operator true.  If neither");
             OutputHelper.WriteLine("of these requirements are satisfied, a compile-time");
             OutputHelper.WriteLine("error occurs.");
-            Assert.True(Other_TestClass_cond008.testMethod());
+            Assert.IsTrue(Other_TestClass_cond008.testMethod());
         }
         [TestMethod]
         public void Other_cond010_Test()
@@ -916,7 +916,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is the type of the conditional expression.");
             OutputHelper.WriteLine("Otherwise, no expression type can be ");
             OutputHelper.WriteLine("determined, and a compile time error occurs. ");
-            Assert.True(Other_TestClass_cond010.testMethod());
+            Assert.IsTrue(Other_TestClass_cond010.testMethod());
         }
         [TestMethod]
         public void Other_cond011_Test()
@@ -934,7 +934,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is the type of the conditional expression.");
             OutputHelper.WriteLine("Otherwise, no expression type can be ");
             OutputHelper.WriteLine("determined, and a compile time error occurs. ");
-            Assert.True(Other_TestClass_cond011.testMethod());
+            Assert.IsTrue(Other_TestClass_cond011.testMethod());
         }
         [TestMethod]
         public void Other_cond014_Test()
@@ -947,7 +947,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("a bool value.");
             OutputHelper.WriteLine("Otherwise, the operator true defined by the type of");
             OutputHelper.WriteLine("b is invoked to produce a bool value.");
-            Assert.True(Other_TestClass_cond014.testMethod());
+            Assert.IsTrue(Other_TestClass_cond014.testMethod());
         }
         [TestMethod]
         public void Other_cond015_Test()
@@ -960,7 +960,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("a bool value.");
             OutputHelper.WriteLine("Otherwise, the operator true defined by the type of");
             OutputHelper.WriteLine("b is invoked to produce a bool value.");
-            Assert.True(Other_TestClass_cond015.testMethod());
+            Assert.IsTrue(Other_TestClass_cond015.testMethod());
         }
         [TestMethod]
         public void Other_is005_Test()
@@ -971,7 +971,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("of the form e is T, e must be an expression of a reference-type");
             OutputHelper.WriteLine("and T must be a reference-type.  If this is not the case, a compile");
             OutputHelper.WriteLine("time error occurs.");
-            Assert.True(Other_TestClass_is005.testMethod());
+            Assert.IsTrue(Other_TestClass_is005.testMethod());
         }
         [TestMethod]
         public void Other_is006_Test()
@@ -982,7 +982,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("of the form e is T, e must be an expression of a reference-type");
             OutputHelper.WriteLine("and T must be a reference-type.  If this is not the case, a compile");
             OutputHelper.WriteLine("time error occurs.");
-            Assert.True(Other_TestClass_is006.testMethod());
+            Assert.IsTrue(Other_TestClass_is006.testMethod());
         }
         [TestMethod]
         public void Other_is007_Test()
@@ -995,7 +995,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is007.testMethod());
+            Assert.IsTrue(Other_TestClass_is007.testMethod());
         }
         [TestMethod]
         public void Other_is008_Test()
@@ -1008,7 +1008,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is008.testMethod());
+            Assert.IsTrue(Other_TestClass_is008.testMethod());
         }
         [TestMethod]
         public void Other_is009_Test()
@@ -1021,7 +1021,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is009.testMethod());
+            Assert.IsTrue(Other_TestClass_is009.testMethod());
         }
         [TestMethod]
         public void Other_is010_Test()
@@ -1034,7 +1034,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is010.testMethod());
+            Assert.IsTrue(Other_TestClass_is010.testMethod());
         }
         [TestMethod]
         public void Other_is011_Test()
@@ -1047,7 +1047,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is011.testMethod());
+            Assert.IsTrue(Other_TestClass_is011.testMethod());
         }
         [TestMethod]
         public void Other_is012_Test()
@@ -1060,7 +1060,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is012.testMethod());
+            Assert.IsTrue(Other_TestClass_is012.testMethod());
         }
         [TestMethod]
         public void Other_is013_Test()
@@ -1073,7 +1073,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is013.testMethod());
+            Assert.IsTrue(Other_TestClass_is013.testMethod());
         }
         [TestMethod]
         public void Other_is014_Test()
@@ -1086,7 +1086,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is014.testMethod());
+            Assert.IsTrue(Other_TestClass_is014.testMethod());
         }
         [TestMethod]
         public void Other_is015_Test()
@@ -1099,7 +1099,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is015.testMethod());
+            Assert.IsTrue(Other_TestClass_is015.testMethod());
         }
         [TestMethod]
         public void Other_is016_Test()
@@ -1112,7 +1112,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is016.testMethod());
+            Assert.IsTrue(Other_TestClass_is016.testMethod());
         }
         [TestMethod]
         public void Other_is017_Test()
@@ -1125,7 +1125,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is017.testMethod());
+            Assert.IsTrue(Other_TestClass_is017.testMethod());
         }
         [TestMethod]
         public void Other_is018_Test()
@@ -1138,7 +1138,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is018.testMethod());
+            Assert.IsTrue(Other_TestClass_is018.testMethod());
         }
         [TestMethod]
         public void Other_is019_Test()
@@ -1151,7 +1151,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is019.testMethod());
+            Assert.IsTrue(Other_TestClass_is019.testMethod());
         }
         [TestMethod]
         public void Other_is020_Test()
@@ -1164,7 +1164,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is020.testMethod());
+            Assert.IsTrue(Other_TestClass_is020.testMethod());
         }
         [TestMethod]
         public void Other_is021_Test()
@@ -1177,7 +1177,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is021.testMethod());
+            Assert.IsTrue(Other_TestClass_is021.testMethod());
         }
         [TestMethod]
         public void Other_is022_Test()
@@ -1190,7 +1190,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("checks that e is not null and that a cast-expression");
             OutputHelper.WriteLine("of the form (T)(e) will complete without throwing an ");
             OutputHelper.WriteLine("System.Exception.");
-            Assert.True(Other_TestClass_is022.testMethod());
+            Assert.IsTrue(Other_TestClass_is022.testMethod());
         }
         [TestMethod]
         public void Other_is023_Test()
@@ -1203,7 +1203,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is023.testMethod());
+            Assert.IsTrue(Other_TestClass_is023.testMethod());
         }
         [TestMethod]
         public void Other_is024_Test()
@@ -1216,7 +1216,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is024.testMethod());
+            Assert.IsTrue(Other_TestClass_is024.testMethod());
         }
         [TestMethod]
         public void Other_is025_Test()
@@ -1229,7 +1229,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is025.testMethod());
+            Assert.IsTrue(Other_TestClass_is025.testMethod());
         }
         [TestMethod]
         public void Other_is026_Test()
@@ -1242,7 +1242,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is026.testMethod());
+            Assert.IsTrue(Other_TestClass_is026.testMethod());
         }
         [TestMethod]
         public void Other_is027_Test()
@@ -1255,7 +1255,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is027.testMethod());
+            Assert.IsTrue(Other_TestClass_is027.testMethod());
         }
 
         [TestMethod]
@@ -1269,7 +1269,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is028.testMethod());
+            Assert.IsTrue(Other_TestClass_is028.testMethod());
         }
 
         [TestMethod]
@@ -1283,7 +1283,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is029.testMethod());
+            Assert.IsTrue(Other_TestClass_is029.testMethod());
         }
 
         [TestMethod]
@@ -1297,7 +1297,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is030.testMethod());
+            Assert.IsTrue(Other_TestClass_is030.testMethod());
         }
 
         [TestMethod]
@@ -1311,7 +1311,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is031.testMethod());
+            Assert.IsTrue(Other_TestClass_is031.testMethod());
         }
 
         [TestMethod]
@@ -1325,7 +1325,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is032.testMethod());
+            Assert.IsTrue(Other_TestClass_is032.testMethod());
         }
 
         [TestMethod]
@@ -1339,7 +1339,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is033.testMethod());
+            Assert.IsTrue(Other_TestClass_is033.testMethod());
         }
 
         [TestMethod]
@@ -1353,21 +1353,21 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("the compile-time type of e to T.  The operation is known");
             OutputHelper.WriteLine("to always be false if no implicit or explicit reference");
             OutputHelper.WriteLine("conversion exists from the compile-time type of e to t.");
-            Assert.True(Other_TestClass_is034.testMethod());
+            Assert.IsTrue(Other_TestClass_is034.testMethod());
         }
 
         [TestMethod]
         public void Other_as001_Test()
         {
             OutputHelper.WriteLine("Section 7.9.10");
-            Assert.True(Other_TestClass_as001.testMethod());
+            Assert.IsTrue(Other_TestClass_as001.testMethod());
         }
 
         [TestMethod]
         public void Other_as002_Test()
         {
             OutputHelper.WriteLine("Section 7.9.10");
-            Assert.True(Other_TestClass_as002.testMethod());
+            Assert.IsTrue(Other_TestClass_as002.testMethod());
         }
 
         [TestMethod]
@@ -1375,7 +1375,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.9.10");
             OutputHelper.WriteLine("string->object->array  ");
-            Assert.True(Other_TestClass_as003.testMethod());
+            Assert.IsTrue(Other_TestClass_as003.testMethod());
         }
 
         [TestMethod]
@@ -1383,7 +1383,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.9.10");
             OutputHelper.WriteLine("string->object->array  ");
-            Assert.True(Other_TestClass_as004.testMethod());
+            Assert.IsTrue(Other_TestClass_as004.testMethod());
         }
 
         [TestMethod]
@@ -1391,7 +1391,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.9.10");
             OutputHelper.WriteLine("string->object->array  ");
-            Assert.True(Other_TestClass_as007.testMethod());
+            Assert.IsTrue(Other_TestClass_as007.testMethod());
         }
 
         [TestMethod]
@@ -1399,7 +1399,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.9.10");
             OutputHelper.WriteLine("exp as object  ");
-            Assert.True(Other_TestClass_as008.testMethod());
+            Assert.IsTrue(Other_TestClass_as008.testMethod());
         }
 
         [TestMethod]
@@ -1407,7 +1407,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.9.10");
             OutputHelper.WriteLine("expression as for a deep inheritance");
-            Assert.True(Other_TestClass_as011.testMethod());
+            Assert.IsTrue(Other_TestClass_as011.testMethod());
         }
 
         [TestMethod]
@@ -1415,7 +1415,7 @@ namespace NFUnitTestArithmetic
         {
             OutputHelper.WriteLine("Section 7.9.10");
             OutputHelper.WriteLine("expression as non-type through interface (check at runtime)");
-            Assert.True(Other_TestClass_as012.testMethod());
+            Assert.IsTrue(Other_TestClass_as012.testMethod());
         }
 
         [TestMethod]
@@ -1425,7 +1425,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("When one or both operands are of type string, the");
             OutputHelper.WriteLine("predefined addition operators concatenate the string");
             OutputHelper.WriteLine("representation of the operands.");
-            Assert.True(Other_TestClass_add001.testMethod());
+            Assert.IsTrue(Other_TestClass_add001.testMethod());
         }
 
         [TestMethod]
@@ -1435,7 +1435,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("When one or both operands are of type string, the");
             OutputHelper.WriteLine("predefined addition operators concatenate the string");
             OutputHelper.WriteLine("representation of the operands.");
-            Assert.True(Other_TestClass_add002.testMethod());
+            Assert.IsTrue(Other_TestClass_add002.testMethod());
         }
 
         [TestMethod]
@@ -1445,7 +1445,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("When one or both operands are of type string, the");
             OutputHelper.WriteLine("predefined addition operators concatenate the string");
             OutputHelper.WriteLine("representation of the operands.");
-            Assert.True(Other_TestClass_add003.testMethod());
+            Assert.IsTrue(Other_TestClass_add003.testMethod());
         }
 
         [TestMethod]
@@ -1455,7 +1455,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("When one or both operands are of type string, the");
             OutputHelper.WriteLine("predefined addition operators concatenate the string");
             OutputHelper.WriteLine("representation of the operands.");
-            Assert.True(Other_TestClass_add004.testMethod());
+            Assert.IsTrue(Other_TestClass_add004.testMethod());
         }
 
         [TestMethod]
@@ -1465,7 +1465,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("When one or both operands are of type string, the");
             OutputHelper.WriteLine("predefined addition operators concatenate the string");
             OutputHelper.WriteLine("representation of the operands.");
-            Assert.True(Other_TestClass_add005.testMethod());
+            Assert.IsTrue(Other_TestClass_add005.testMethod());
         }
 
         [TestMethod]
@@ -1475,224 +1475,224 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("When one or both operands are of type string, the");
             OutputHelper.WriteLine("predefined addition operators concatenate the string");
             OutputHelper.WriteLine("representation of the operands.");
-            Assert.True(Other_TestClass_add006.testMethod());
+            Assert.IsTrue(Other_TestClass_add006.testMethod());
         }
 
         [TestMethod]
         public void Other_logic001_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic001.testMethod());
+            Assert.IsTrue(Other_TestClass_logic001.testMethod());
         }
 
         [TestMethod]
         public void Other_logic002_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic002.testMethod());
+            Assert.IsTrue(Other_TestClass_logic002.testMethod());
         }
 
         [TestMethod]
         public void Other_logic003_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic003.testMethod());
+            Assert.IsTrue(Other_TestClass_logic003.testMethod());
         }
 
         [TestMethod]
         public void Other_logic004_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic004.testMethod());
+            Assert.IsTrue(Other_TestClass_logic004.testMethod());
         }
 
         [TestMethod]
         public void Other_logic005_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic005.testMethod());
+            Assert.IsTrue(Other_TestClass_logic005.testMethod());
         }
 
         [TestMethod]
         public void Other_logic006_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic006.testMethod());
+            Assert.IsTrue(Other_TestClass_logic006.testMethod());
         }
 
         [TestMethod]
         public void Other_logic007_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic007.testMethod());
+            Assert.IsTrue(Other_TestClass_logic007.testMethod());
         }
 
         [TestMethod]
         public void Other_logic008_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic008.testMethod());
+            Assert.IsTrue(Other_TestClass_logic008.testMethod());
         }
 
         [TestMethod]
         public void Other_logic009_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic009.testMethod());
+            Assert.IsTrue(Other_TestClass_logic009.testMethod());
         }
 
         [TestMethod]
         public void Other_logic010_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic010.testMethod());
+            Assert.IsTrue(Other_TestClass_logic010.testMethod());
         }
 
         [TestMethod]
         public void Other_logic011_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic011.testMethod());
+            Assert.IsTrue(Other_TestClass_logic011.testMethod());
         }
 
         [TestMethod]
         public void Other_logic012_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic012.testMethod());
+            Assert.IsTrue(Other_TestClass_logic012.testMethod());
         }
 
         [TestMethod]
         public void Other_logic013_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic013.testMethod());
+            Assert.IsTrue(Other_TestClass_logic013.testMethod());
         }
 
         [TestMethod]
         public void Other_logic014_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic014.testMethod());
+            Assert.IsTrue(Other_TestClass_logic014.testMethod());
         }
 
         [TestMethod]
         public void Other_logic015_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic015.testMethod());
+            Assert.IsTrue(Other_TestClass_logic015.testMethod());
         }
 
         [TestMethod]
         public void Other_logic016_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic016.testMethod());
+            Assert.IsTrue(Other_TestClass_logic016.testMethod());
         }
 
         [TestMethod]
         public void Other_logic017_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic017.testMethod());
+            Assert.IsTrue(Other_TestClass_logic017.testMethod());
         }
 
         [TestMethod]
         public void Other_logic018_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic018.testMethod());
+            Assert.IsTrue(Other_TestClass_logic018.testMethod());
         }
 
         [TestMethod]
         public void Other_logic019_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic019.testMethod());
+            Assert.IsTrue(Other_TestClass_logic019.testMethod());
         }
 
         [TestMethod]
         public void Other_logic020_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic020.testMethod());
+            Assert.IsTrue(Other_TestClass_logic020.testMethod());
         }
 
         [TestMethod]
         public void Other_logic021_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic021.testMethod());
+            Assert.IsTrue(Other_TestClass_logic021.testMethod());
         }
 
         [TestMethod]
         public void Other_logic022_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic022.testMethod());
+            Assert.IsTrue(Other_TestClass_logic022.testMethod());
         }
 
         [TestMethod]
         public void Other_logic023_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic023.testMethod());
+            Assert.IsTrue(Other_TestClass_logic023.testMethod());
         }
 
         [TestMethod]
         public void Other_logic024_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic024.testMethod());
+            Assert.IsTrue(Other_TestClass_logic024.testMethod());
         }
 
         [TestMethod]
         public void Other_logic025_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic025.testMethod());
+            Assert.IsTrue(Other_TestClass_logic025.testMethod());
         }
 
         [TestMethod]
         public void Other_logic026_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic026.testMethod());
+            Assert.IsTrue(Other_TestClass_logic026.testMethod());
         }
 
         [TestMethod]
         public void Other_logic027_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic027.testMethod());
+            Assert.IsTrue(Other_TestClass_logic027.testMethod());
         }
 
         [TestMethod]
         public void Other_logic028_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic028.testMethod());
+            Assert.IsTrue(Other_TestClass_logic028.testMethod());
         }
 
         [TestMethod]
         public void Other_logic029_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic029.testMethod());
+            Assert.IsTrue(Other_TestClass_logic029.testMethod());
         }
 
         [TestMethod]
         public void Other_logic030_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic030.testMethod());
+            Assert.IsTrue(Other_TestClass_logic030.testMethod());
         }
 
         [TestMethod]
         public void Other_logic032_Test()
         {
             OutputHelper.WriteLine("Section 7.10");
-            Assert.True(Other_TestClass_logic032.testMethod());
+            Assert.IsTrue(Other_TestClass_logic032.testMethod());
         }
 
         //Compiled Test Cases 

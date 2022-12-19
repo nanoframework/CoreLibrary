@@ -20,7 +20,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
             OutputHelper.WriteLine("is within a block, and the block contains a local variable or parameter with the ");
             OutputHelper.WriteLine("given name, then the primary-expression refers to that local variable.");
-            Assert.True(ident001.testMethod());
+            Assert.IsTrue(ident001.testMethod());
         }
         [TestMethod]
         public void Exp_ident002_Test()
@@ -29,7 +29,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
             OutputHelper.WriteLine("is within a block, and the block contains a local variable or parameter with the ");
             OutputHelper.WriteLine("given name, then the primary-expression refers to that local variable.");
-            Assert.True(ident002.testMethod());
+            Assert.IsTrue(ident002.testMethod());
         }
         [TestMethod]
         public void Exp_ident003_Test()
@@ -38,7 +38,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
             OutputHelper.WriteLine("is within a block, and the block contains a local variable or parameter with the ");
             OutputHelper.WriteLine("given name, then the primary-expression refers to that local variable.");
-            Assert.True(ident003.testMethod());
+            Assert.IsTrue(ident003.testMethod());
         }
         [TestMethod]
         public void Exp_ident004_Test()
@@ -47,7 +47,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
             OutputHelper.WriteLine("is within a block, and the block contains a local variable or parameter with the ");
             OutputHelper.WriteLine("given name, then the primary-expression refers to that local variable.");
-            Assert.True(ident004.testMethod());
+            Assert.IsTrue(ident004.testMethod());
         }
         [TestMethod]
         public void Exp_ident007_Test()
@@ -57,7 +57,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
             OutputHelper.WriteLine("and the name identifies one or more accessible methods of the immediately enclosing");
             OutputHelper.WriteLine("class, then the primary expression refers to that method.");
-            Assert.True(ident007.testMethod());
+            Assert.IsTrue(ident007.testMethod());
         }
         [TestMethod]
         public void Exp_ident008_Test()
@@ -67,7 +67,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
             OutputHelper.WriteLine("and the name identifies one or more accessible methods of the immediately enclosing");
             OutputHelper.WriteLine("class, then the primary expression refers to that method.");
-            Assert.True(ident008.testMethod());
+            Assert.IsTrue(ident008.testMethod());
         }
         [TestMethod]
         public void Exp_ident009_Test()
@@ -77,7 +77,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
             OutputHelper.WriteLine("and the name identifies one or more accessible methods of the immediately enclosing");
             OutputHelper.WriteLine("class, then the primary expression refers to that method.");
-            Assert.True(ident009.testMethod());
+            Assert.IsTrue(ident009.testMethod());
         }
         [TestMethod]
         public void Exp_ident010_Test()
@@ -87,7 +87,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
             OutputHelper.WriteLine("and the name identifies one or more accessible methods of the immediately enclosing");
             OutputHelper.WriteLine("class, then the primary expression refers to that method.");
-            Assert.True(ident010.testMethod());
+            Assert.IsTrue(ident010.testMethod());
         }
         [TestMethod]
         public void Exp_ident011_Test()
@@ -97,7 +97,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
             OutputHelper.WriteLine("and the name identifies an accessible, non-static field or property of the immediately");
             OutputHelper.WriteLine("enclosing class, then the primary expression refers to that field or property.");
-            Assert.True(ident011.testMethod());
+            Assert.IsTrue(ident011.testMethod());
         }
         [TestMethod]
         public void Exp_ident012_Test()
@@ -107,7 +107,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
             OutputHelper.WriteLine("and the name identifies an accessible, non-static field or property of the immediately");
             OutputHelper.WriteLine("enclosing class, then the primary expression refers to that field or property.");
-            Assert.True(ident012.testMethod());
+            Assert.IsTrue(ident012.testMethod());
         }
         [TestMethod]
         public void Exp_ident013_Test()
@@ -117,7 +117,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
             OutputHelper.WriteLine("and the name identifies an accessible, non-static field or property of the immediately");
             OutputHelper.WriteLine("enclosing class, then the primary expression refers to that field or property.");
-            Assert.True(ident013.testMethod());
+            Assert.IsTrue(ident013.testMethod());
         }
         [TestMethod]
         public void Exp_ident014_Test()
@@ -129,7 +129,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident014.testMethod());
+            Assert.IsTrue(ident014.testMethod());
         }
         [TestMethod]
         public void Exp_ident015_Test()
@@ -141,7 +141,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident015.testMethod());
+            Assert.IsTrue(ident015.testMethod());
         }
         [TestMethod]
         public void Exp_ident016_Test()
@@ -153,7 +153,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident016.testMethod());
+            Assert.IsTrue(ident016.testMethod());
         }
         [TestMethod]
         public void Exp_ident017_Test()
@@ -165,7 +165,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident017.testMethod());
+            Assert.IsTrue(ident017.testMethod());
         }
         [TestMethod]
         public void Exp_ident018_Test()
@@ -177,7 +177,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident018.testMethod());
+            Assert.IsTrue(ident018.testMethod());
         }
         [TestMethod]
         public void Exp_ident019_Test()
@@ -189,7 +189,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident019_Top.ident019.testMethod());
+            Assert.IsTrue(ident019_Top.ident019.testMethod());
         }
         [TestMethod]
         public void Exp_ident020_Test()
@@ -201,7 +201,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident020_Top.ident020.testMethod());
+            Assert.IsTrue(ident020_Top.ident020.testMethod());
         }
         [TestMethod]
         public void Exp_ident021_Test()
@@ -213,7 +213,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident021_Top.ident021.testMethod());
+            Assert.IsTrue(ident021_Top.ident021.testMethod());
         }
         [TestMethod]
         public void Exp_ident022_Test()
@@ -225,7 +225,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident022_Top.ident022.testMethod());
+            Assert.IsTrue(ident022_Top.ident022.testMethod());
         }
         [TestMethod]
         public void Exp_ident023_Test()
@@ -237,7 +237,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident023_Top.ident023.testMethod());
+            Assert.IsTrue(ident023_Top.ident023.testMethod());
         }
         [TestMethod]
         public void Exp_ident024_Test()
@@ -249,7 +249,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident024_Top.ident024.testMethod());
+            Assert.IsTrue(ident024_Top.ident024.testMethod());
         }
         [TestMethod]
         public void Exp_ident025_Test()
@@ -261,7 +261,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident025_Top.ident025_Next.ident025.testMethod());
+            Assert.IsTrue(ident025_Top.ident025_Next.ident025.testMethod());
         }
         [TestMethod]
         public void Exp_ident026_Test()
@@ -273,7 +273,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident026_Top.ident026_Next.ident026.testMethod());
+            Assert.IsTrue(ident026_Top.ident026_Next.ident026.testMethod());
         }
         [TestMethod]
         public void Exp_ident027_Test()
@@ -285,7 +285,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident027_Top.ident027_Next.ident027.testMethod());
+            Assert.IsTrue(ident027_Top.ident027_Next.ident027.testMethod());
         }
         [TestMethod]
         public void Exp_ident028_Test()
@@ -297,7 +297,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
             OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
             OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident028_Top.ident028_Next.ident028.testMethod());
+            Assert.IsTrue(ident028_Top.ident028_Next.ident028.testMethod());
         }
         [TestMethod]
         public void Exp_ident029_Test()
@@ -306,7 +306,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to a member in an enclosing namespace, then the primary expression is evaluated ");
             OutputHelper.WriteLine("to that member and classified as a namespace or a type.");
-            Assert.True(ident029.testMethod());
+            Assert.IsTrue(ident029.testMethod());
         }
         [TestMethod]
         public void Exp_ident030_Test()
@@ -315,7 +315,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to a member in an enclosing namespace, then the primary expression is evaluated ");
             OutputHelper.WriteLine("to that member and classified as a namespace or a type.");
-            Assert.True(ident030.testMethod());
+            Assert.IsTrue(ident030.testMethod());
         }
 
         [TestMethod]
@@ -325,7 +325,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to a member in an enclosing namespace, then the primary expression is evaluated ");
             OutputHelper.WriteLine("to that member and classified as a namespace or a type.");
-            Assert.True(NS_ident031_I.ident031.testMethod()) ;
+            Assert.IsTrue(NS_ident031_I.ident031.testMethod()) ;
         }
         [TestMethod]
         public void Exp_ident032_Test()
@@ -333,7 +333,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.2 ");
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident032_I.ident032.testMethod()) ;
+            Assert.IsTrue(NS_ident032_I.ident032.testMethod()) ;
         }
         [TestMethod]
         public void Exp_ident033_Test()
@@ -341,7 +341,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.2 ");
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident033_O.NS_ident033_I.ident033.testMethod()) ;
+            Assert.IsTrue(NS_ident033_O.NS_ident033_I.ident033.testMethod()) ;
         }
         [TestMethod]
         public void Exp_ident034_Test()
@@ -350,7 +350,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to a single type in an imported namespace, then the primary expression refers to that ");
             OutputHelper.WriteLine("type.");
-            Assert.True(NS_ident034_I.ident034.testMethod()) ;
+            Assert.IsTrue(NS_ident034_I.ident034.testMethod()) ;
         }
         [TestMethod]
         public void Exp_ident035_Test()
@@ -359,7 +359,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to a single type in an imported namespace, then the primary expression refers to that ");
             OutputHelper.WriteLine("type.");
-            Assert.True(NS_ident035_O.NS_ident035_I.ident035.testMethod()) ;
+            Assert.IsTrue(NS_ident035_O.NS_ident035_I.ident035.testMethod()) ;
         }
         [TestMethod]
         public void Exp_ident038_Test()
@@ -367,7 +367,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.2 ");
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident038_I.ident038.testMethod()) ;
+            Assert.IsTrue(NS_ident038_I.ident038.testMethod()) ;
         }
         [TestMethod]
         public void Exp_ident039_Test()
@@ -375,7 +375,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.2 ");
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident039_O.NS_ident039_I.ident039.testMethod()) ;
+            Assert.IsTrue(NS_ident039_O.NS_ident039_I.ident039.testMethod()) ;
         }
 
         [TestMethod]
@@ -384,7 +384,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.2 ");
             OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
             OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident040_I.ident040.testMethod()) ;
+            Assert.IsTrue(NS_ident040_I.ident040.testMethod()) ;
         }
 
         [TestMethod]
@@ -394,7 +394,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a namespace and I is the name of an accessible member of that namespace, then the ");
             OutputHelper.WriteLine("result is the member, either a namespace or a type.");
-            Assert.True(mem001.testMethod()) ;
+            Assert.IsTrue(mem001.testMethod()) ;
         }
         /*
         [TestMethod]
@@ -404,7 +404,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a namespace and I is the name of an accessible member of that namespace, then the ");
             OutputHelper.WriteLine("result is the member, either a namespace or a type.");
-            Assert.True(mem002.testMethod())
+            Assert.IsTrue(mem002.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -417,7 +417,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is also a type, then the result of the member is that type.");
-            Assert.True(mem003.testMethod()) ;
+            Assert.IsTrue(mem003.testMethod()) ;
         }
         [TestMethod]
         public void Exp_mem004_Test()
@@ -425,7 +425,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is also a type, then the result of the member is that type.");
-            Assert.True(mem004.testMethod()) ;
+            Assert.IsTrue(mem004.testMethod()) ;
         }
         [TestMethod]
         public void Exp_mem005_Test()
@@ -433,7 +433,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I identifies one or more methods, then the result is a method group.");
-            Assert.True(mem005.testMethod());
+            Assert.IsTrue(mem005.testMethod());
         }
         [TestMethod]
         public void Exp_mem006_Test()
@@ -441,7 +441,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I identifies one or more methods, then the result is a method group.");
-            Assert.True(mem006.testMethod());
+            Assert.IsTrue(mem006.testMethod());
         }
         [TestMethod]
         public void Exp_mem007_Test()
@@ -449,7 +449,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I identifies one or more methods, then the result is a method group.");
-            Assert.True(mem007.testMethod());
+            Assert.IsTrue(mem007.testMethod());
         }
         [TestMethod]
         public void Exp_mem008_Test()
@@ -457,7 +457,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I identifies one or more methods, then the result is a method group.");
-            Assert.True(mem008.testMethod());
+            Assert.IsTrue(mem008.testMethod());
         }
         [TestMethod]
         public void Exp_mem011_Test()
@@ -465,7 +465,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is a static property, then the result is that static property.");
-            Assert.True(mem011.testMethod());
+            Assert.IsTrue(mem011.testMethod());
         }
         [TestMethod]
         public void Exp_mem012_Test()
@@ -473,7 +473,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is a static property, then the result is that static property.");
-            Assert.True(mem012.testMethod());
+            Assert.IsTrue(mem012.testMethod());
         }
         [TestMethod]
         public void Exp_mem013_Test()
@@ -482,7 +482,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is a static read only field, then the result is a value of the ");
             OutputHelper.WriteLine("static field I.");
-            Assert.True(mem013.testMethod());
+            Assert.IsTrue(mem013.testMethod());
         }
         [TestMethod]
         public void Exp_mem014_Test()
@@ -491,7 +491,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is a static read only field, then the result is a value of the ");
             OutputHelper.WriteLine("static field I.");
-            Assert.True(mem014.testMethod());
+            Assert.IsTrue(mem014.testMethod());
         }
         [TestMethod]
         public void Exp_mem015_Test()
@@ -499,7 +499,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is a static field, then the result is the static field I.");
-            Assert.True(mem015.testMethod());
+            Assert.IsTrue(mem015.testMethod());
         }
         [TestMethod]
         public void Exp_mem016_Test()
@@ -507,7 +507,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is a static field, then the result is the static field I.");
-            Assert.True(mem016.testMethod());
+            Assert.IsTrue(mem016.testMethod());
         }
         [TestMethod]
         public void Exp_mem017_Test()
@@ -515,7 +515,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is a constant, then the result is the value of that constant.");
-            Assert.True(mem017.testMethod());
+            Assert.IsTrue(mem017.testMethod());
         }
         [TestMethod]
         public void Exp_mem018_Test()
@@ -523,7 +523,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.7 ");
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I is a constant, then the result is the value of that constant.");
-            Assert.True(mem018.testMethod());
+            Assert.IsTrue(mem018.testMethod());
         }
         [TestMethod]
         public void Exp_mem019_Test()
@@ -532,7 +532,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a type and I identifies an enumeration member, then the result is the value of");
             OutputHelper.WriteLine("that enumeration member.");
-            Assert.True(mem019.testMethod());
+            Assert.IsTrue(mem019.testMethod());
         }
         [TestMethod]
         public void Exp_mem021_Test()
@@ -541,7 +541,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
             OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem021.testMethod());
+            Assert.IsTrue(mem021.testMethod());
         }
         [TestMethod]
         public void Exp_mem022_Test()
@@ -550,7 +550,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
             OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem022.testMethod());
+            Assert.IsTrue(mem022.testMethod());
         }
         [TestMethod]
         public void Exp_mem023_Test()
@@ -559,7 +559,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
             OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem023.testMethod());
+            Assert.IsTrue(mem023.testMethod());
         }
         [TestMethod]
         public void Exp_mem025_Test()
@@ -568,7 +568,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
             OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem025.testMethod());
+            Assert.IsTrue(mem025.testMethod());
         }
         [TestMethod]
         public void Exp_mem026_Test()
@@ -577,7 +577,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
             OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem026.testMethod());
+            Assert.IsTrue(mem026.testMethod());
         }
         [TestMethod]
         public void Exp_mem027_Test()
@@ -586,7 +586,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
             OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem027.testMethod());
+            Assert.IsTrue(mem027.testMethod());
         }
         [TestMethod]
         public void Exp_mem028_Test()
@@ -595,7 +595,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
             OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem028.testMethod());
+            Assert.IsTrue(mem028.testMethod());
         }
         [TestMethod]
         public void Exp_mem029_Test()
@@ -604,7 +604,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
             OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem029.testMethod());
+            Assert.IsTrue(mem029.testMethod());
         }
         [TestMethod]
         public void Exp_mem031_Test()
@@ -613,7 +613,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
             OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem031.testMethod());
+            Assert.IsTrue(mem031.testMethod());
         }
         [TestMethod]
         public void Exp_mem032_Test()
@@ -622,7 +622,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
             OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem032.testMethod());
+            Assert.IsTrue(mem032.testMethod());
         }
         [TestMethod]
         public void Exp_mem034_Test()
@@ -632,7 +632,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field, then if the value of E is null, a System.Exception is ");
             OutputHelper.WriteLine("thrown.");
-            Assert.True(mem034.testMethod());
+            Assert.IsTrue(mem034.testMethod());
         }
         [TestMethod]
         public void Exp_mem035_Test()
@@ -642,7 +642,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field, then if the value of E is null, a System.Exception is ");
             OutputHelper.WriteLine("thrown.");
-            Assert.True(mem035.testMethod());
+            Assert.IsTrue(mem035.testMethod());
         }
         [TestMethod]
         public void Exp_mem036_Test()
@@ -652,7 +652,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
             OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem036.testMethod());
+            Assert.IsTrue(mem036.testMethod());
         }
         [TestMethod]
         public void Exp_mem038_Test()
@@ -662,7 +662,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
             OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem038.testMethod());
+            Assert.IsTrue(mem038.testMethod());
         }
         [TestMethod]
         public void Exp_mem040_Test()
@@ -672,7 +672,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
             OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem040.testMethod());
+            Assert.IsTrue(mem040.testMethod());
         }
         [TestMethod]
         public void Exp_mem042_Test()
@@ -681,7 +681,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem042.testMethod());
+            Assert.IsTrue(mem042.testMethod());
         }
         [TestMethod]
         public void Exp_mem043_Test()
@@ -690,7 +690,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem043.testMethod());
+            Assert.IsTrue(mem043.testMethod());
         }
         [TestMethod]
         public void Exp_mem044_Test()
@@ -699,7 +699,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem044.testMethod());
+            Assert.IsTrue(mem044.testMethod());
         }
         [TestMethod]
         public void Exp_mem045_Test()
@@ -708,7 +708,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem045.testMethod());
+            Assert.IsTrue(mem045.testMethod());
         }
         [TestMethod]
         public void Exp_mem046_Test()
@@ -717,7 +717,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem046.testMethod());
+            Assert.IsTrue(mem046.testMethod());
         }
         [TestMethod]
         public void Exp_mem047_Test()
@@ -726,7 +726,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem047.testMethod());
+            Assert.IsTrue(mem047.testMethod());
         }
         [TestMethod]
         public void Exp_mem048_Test()
@@ -736,7 +736,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
             OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
             OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem048.testMethod());
+            Assert.IsTrue(mem048.testMethod());
         }
         [TestMethod]
         public void Exp_mem050_Test()
@@ -746,7 +746,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
             OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
             OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem050.testMethod());
+            Assert.IsTrue(mem050.testMethod());
         }
         [TestMethod]
         public void Exp_mem052_Test()
@@ -756,7 +756,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
             OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
             OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem052.testMethod());
+            Assert.IsTrue(mem052.testMethod());
         }
         [TestMethod]
         public void Exp_mem054_Test()
@@ -765,7 +765,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem054.testMethod());
+            Assert.IsTrue(mem054.testMethod());
         }
         [TestMethod]
         public void Exp_mem055_Test()
@@ -774,7 +774,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem055.testMethod());
+            Assert.IsTrue(mem055.testMethod());
         }
         [TestMethod]
         public void Exp_mem056_Test()
@@ -783,7 +783,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem056.testMethod());
+            Assert.IsTrue(mem056.testMethod());
         }
         [TestMethod]
         public void Exp_mem058_Test()
@@ -792,70 +792,70 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
             OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
             OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem058.testMethod());
+            Assert.IsTrue(mem058.testMethod());
         }
         [TestMethod]
         public void Exp_lit001_Test()
         {
             OutputHelper.WriteLine("Section 7.2.1 ");
             OutputHelper.WriteLine("This code tests that a boolean-literal is of type bool.");
-            Assert.True(lit001.testMethod()) ;
+            Assert.IsTrue(lit001.testMethod()) ;
         }
         [TestMethod]
         public void Exp_lit004_Test()
         {
             OutputHelper.WriteLine("Section 7.2.1 ");
             OutputHelper.WriteLine("This code tests that an int-literal is of type int.");
-            Assert.True(lit004.testMethod()) ;
+            Assert.IsTrue(lit004.testMethod()) ;
         }
         [TestMethod]
         public void Exp_lit005_Test()
         {
             OutputHelper.WriteLine("Section 7.2.1 ");
             OutputHelper.WriteLine("This code tests that a long-literal is of type long.");
-            Assert.True(lit005.testMethod()) ;
+            Assert.IsTrue(lit005.testMethod()) ;
         }
         [TestMethod]
         public void Exp_lit006_Test()
         {
             OutputHelper.WriteLine("Section 7.2.1 ");
             OutputHelper.WriteLine("This code tests that a float-literal is of type float.");
-            Assert.True(lit006.testMethod()) ;
+            Assert.IsTrue(lit006.testMethod()) ;
         }
         [TestMethod]
         public void Exp_lit007_Test()
         {
             OutputHelper.WriteLine("Section 7.2.1 ");
             OutputHelper.WriteLine("This code tests that a double-literal is of type double.");
-            Assert.True(lit007.testMethod()) ;
+            Assert.IsTrue(lit007.testMethod()) ;
         }
         [TestMethod]
         public void Exp_lit008_Test()
         {
             OutputHelper.WriteLine("Section 7.2.1 ");
             OutputHelper.WriteLine("This code tests that a double-literal is of type double.");
-            Assert.True(lit008.testMethod());
+            Assert.IsTrue(lit008.testMethod());
         }
         [TestMethod]
         public void Exp_lit009_Test()
         {
             OutputHelper.WriteLine("Section 7.2.1 ");
             OutputHelper.WriteLine("This code tests that a character-literal is of type char.");
-            Assert.True(lit009.testMethod());
+            Assert.IsTrue(lit009.testMethod());
         }
         [TestMethod]
         public void Exp_lit010_Test()
         {
             OutputHelper.WriteLine("Section 7.2.1 ");
             OutputHelper.WriteLine("This code tests that a string-literal is of type string.");
-            Assert.True(lit010.testMethod());
+            Assert.IsTrue(lit010.testMethod());
         }
         [TestMethod]
         public void Exp_lit011_Test()
         {
             OutputHelper.WriteLine("Section 7.2.1 ");
             OutputHelper.WriteLine("string compare with with its base type.");
-            Assert.True(lit011.testMethod());
+            Assert.IsTrue(lit011.testMethod());
         }
         [TestMethod]
         public void Exp_base006_Test()
@@ -863,7 +863,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base006.testMethod()) ;
+            Assert.IsTrue(base006.testMethod()) ;
         }
         [TestMethod]
         public void Exp_base007_Test()
@@ -871,7 +871,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base007.testMethod()) ;
+            Assert.IsTrue(base007.testMethod()) ;
         }
         [TestMethod]
         public void Exp_base009_Test()
@@ -879,7 +879,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base009.testMethod()) ;
+            Assert.IsTrue(base009.testMethod()) ;
         }
         [TestMethod]
         public void Exp_base010_Test()
@@ -887,7 +887,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base010.testMethod()) ;
+            Assert.IsTrue(base010.testMethod()) ;
         }
         [TestMethod]
         public void Exp_base011_Test()
@@ -895,7 +895,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base011.testMethod());
+            Assert.IsTrue(base011.testMethod());
         }
         [TestMethod]
         public void Exp_base012_Test()
@@ -903,7 +903,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base012.testMethod());
+            Assert.IsTrue(base012.testMethod());
         }
         [TestMethod]
         public void Exp_base013_Test()
@@ -911,7 +911,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base013.testMethod());
+            Assert.IsTrue(base013.testMethod());
         }
         [TestMethod]
         public void Exp_base014_Test()
@@ -919,7 +919,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base014.testMethod());
+            Assert.IsTrue(base014.testMethod());
         }
         [TestMethod]
         public void Exp_base015_Test()
@@ -927,7 +927,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base015.testMethod());
+            Assert.IsTrue(base015.testMethod());
         }
         [TestMethod]
         public void Exp_base016_Test()
@@ -935,7 +935,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("Section 7.2.8 ");
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base016.testMethod());
+            Assert.IsTrue(base016.testMethod());
         }
         [TestMethod]
         public void Exp_base017_Test()
@@ -944,7 +944,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
             OutputHelper.WriteLine("Expected Fail");
-            Assert.True(base017.testMethod());
+            Assert.IsTrue(base017.testMethod());
         }
         [TestMethod]
         public void Exp_base018_Test()
@@ -953,7 +953,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
             OutputHelper.WriteLine("Expected Fail");
-            Assert.True(base018.testMethod());
+            Assert.IsTrue(base018.testMethod());
         }
         [TestMethod]
         public void Exp_base019_Test()
@@ -962,7 +962,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
             OutputHelper.WriteLine("Expected Fail");
-            Assert.True(base019.testMethod());
+            Assert.IsTrue(base019.testMethod());
         }
         [TestMethod]
         public void Exp_base020_Test()
@@ -971,7 +971,7 @@ namespace NFUnitTestArithmetic
             OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
             OutputHelper.WriteLine("an instance method, or an instance property accessor.");
             OutputHelper.WriteLine("Expected Fail");
-            Assert.True(base020.testMethod());
+            Assert.IsTrue(base020.testMethod());
         }
 
         //Compiled Test Cases 

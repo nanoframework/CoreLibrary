@@ -20,7 +20,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" An indexer-declaration may include set of");
             OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
             OutputHelper.WriteLine(" of the four access modifiers.");
-            Assert.True(IndexersTestClass1.testMethod());
+            Assert.IsTrue(IndexersTestClass1.testMethod());
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" An indexer-declaration may include set of");
             OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
             OutputHelper.WriteLine(" of the four access modifiers.");
-            Assert.True(IndexersTestClass2.testMethod());
+            Assert.IsTrue(IndexersTestClass2.testMethod());
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" An indexer-declaration may include set of");
             OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
             OutputHelper.WriteLine(" of the four access modifiers.");
-            Assert.True(IndexersTestClass3.testMethod());
+            Assert.IsTrue(IndexersTestClass3.testMethod());
 
         }
 
@@ -51,7 +51,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" An indexer-declaration may include set of");
             OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
             OutputHelper.WriteLine(" of the four access modifiers.");
-            Assert.True(IndexersTestClass4.testMethod());
+            Assert.IsTrue(IndexersTestClass4.testMethod());
         }
 
         [TestMethod]
@@ -61,7 +61,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" An indexer-declaration may include set of");
             OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
             OutputHelper.WriteLine(" of the four access modifiers.");
-            Assert.True(IndexersTestClass5.testMethod());
+            Assert.IsTrue(IndexersTestClass5.testMethod());
         }
 
         [TestMethod]
@@ -71,7 +71,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" An indexer-declaration may include set of");
             OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
             OutputHelper.WriteLine(" of the four access modifiers.");
-            Assert.True(IndexersTestClass6.testMethod());
+            Assert.IsTrue(IndexersTestClass6.testMethod());
         }
 
         [TestMethod]
@@ -81,7 +81,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" An indexer-declaration may include set of");
             OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
             OutputHelper.WriteLine(" of the four access modifiers.");
-            Assert.True(IndexersTestClass10.testMethod());
+            Assert.IsTrue(IndexersTestClass10.testMethod());
         }
 
         [TestMethod]
@@ -91,7 +91,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" An indexer-declaration may include set of");
             OutputHelper.WriteLine(" attributes, a new modifier, and a valid combination");
             OutputHelper.WriteLine(" of the four access modifiers.");
-            Assert.True(IndexersTestClass11.testMethod());
+            Assert.IsTrue(IndexersTestClass11.testMethod());
         }
 
         [TestMethod]
@@ -101,7 +101,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" The type on an indexer declaration specifies");
             OutputHelper.WriteLine(" the element type of the indexer introduced");
             OutputHelper.WriteLine(" by the declaration");
-            Assert.True(IndexersTestClass12.testMethod());
+            Assert.IsTrue(IndexersTestClass12.testMethod());
         }
 
         [TestMethod]
@@ -114,7 +114,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" followed by an interface-type, a . and the ");
             OutputHelper.WriteLine(" keyword this.");
             OutputHelper.WriteLine("This is currently an expected fail, but is resolved in 3.0 see Bug  16341 for details");
-            Assert.True(IndexersTestClass14.testMethod());
+            Assert.IsTrue(IndexersTestClass14.testMethod());
         }
 
         [TestMethod]
@@ -128,7 +128,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" one parameter must be specified, and that the");
             OutputHelper.WriteLine(" ref and out parameter modifiers are not");
             OutputHelper.WriteLine(" permitted.");
-            Assert.True(IndexersTestClass18.testMethod());
+            Assert.IsTrue(IndexersTestClass18.testMethod());
         }
 
         [TestMethod]
@@ -139,7 +139,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" of the types referenced in the formal-index");
             OutputHelper.WriteLine(" parameter list must be at least as accessible");
             OutputHelper.WriteLine(" as the indexer itself.");
-            Assert.True(IndexersTestClass23.testMethod());
+            Assert.IsTrue(IndexersTestClass23.testMethod());
         }
 
         [TestMethod]
@@ -152,7 +152,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" types of its formal parameters.  The element type");
             OutputHelper.WriteLine(" is not a part of an index signature, nor are the");
             OutputHelper.WriteLine(" names of the formal parameters.");
-            Assert.True(IndexersTestClass29.testMethod());
+            Assert.IsTrue(IndexersTestClass29.testMethod());
         }
 
         [TestMethod]
@@ -165,7 +165,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" types of its formal parameters.  The element type");
             OutputHelper.WriteLine(" is not a part of an index signature, nor are the");
             OutputHelper.WriteLine(" names of the formal parameters.");
-            Assert.True(IndexersTestClass32.testMethod());
+            Assert.IsTrue(IndexersTestClass32.testMethod());
         }
 
         [TestMethod]
@@ -178,7 +178,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" types of its formal parameters.  The element type");
             OutputHelper.WriteLine(" is not a part of an index signature, nor are the");
             OutputHelper.WriteLine(" names of the formal parameters.");
-            Assert.True(IndexersTestClass33.testMethod());
+            Assert.IsTrue(IndexersTestClass33.testMethod());
         }
 
         [TestMethod]
@@ -188,7 +188,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" With these differences in mind, all rules");
             OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
             OutputHelper.WriteLine(" accessors as well as property accessors.");
-            Assert.True(IndexersTestClass37.testMethod());
+            Assert.IsTrue(IndexersTestClass37.testMethod());
         }
 
         [TestMethod]
@@ -198,7 +198,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" With these differences in mind, all rules");
             OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
             OutputHelper.WriteLine(" accessors as well as property accessors.");
-            Assert.True(IndexersTestClass38.testMethod());
+            Assert.IsTrue(IndexersTestClass38.testMethod());
         }
         [TestMethod]
         public void Indexers39_Test()
@@ -207,7 +207,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" With these differences in mind, all rules");
             OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
             OutputHelper.WriteLine(" accessors as well as property accessors.");
-            Assert.True(IndexersTestClass39.testMethod());
+            Assert.IsTrue(IndexersTestClass39.testMethod());
         }
 
         [TestMethod]
@@ -217,7 +217,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" With these differences in mind, all rules");
             OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
             OutputHelper.WriteLine(" accessors as well as property accessors.");
-            Assert.True(IndexersTestClass42.testMethod());
+            Assert.IsTrue(IndexersTestClass42.testMethod());
         }
 
         [TestMethod]
@@ -227,49 +227,49 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" With these differences in mind, all rules");
             OutputHelper.WriteLine(" defined in 10.6.2 and 10.6.3 apply to indexer");
             OutputHelper.WriteLine(" accessors as well as property accessors.");
-            Assert.True(IndexersTestClass43.testMethod());
+            Assert.IsTrue(IndexersTestClass43.testMethod());
         }
 
         [TestMethod]
         public void Indexers46_Test()
         {
             OutputHelper.WriteLine("Testing multiple comma seperated indexers");
-            Assert.True(IndexersTestClass46.testMethod());
+            Assert.IsTrue(IndexersTestClass46.testMethod());
         }
 
         [TestMethod]
         public void Indexers47_Test()
         {
             OutputHelper.WriteLine("Testing multiple comma seperated indexers to a public variable");
-            Assert.True(IndexersTestClass47.testMethod());
+            Assert.IsTrue(IndexersTestClass47.testMethod());
         }
 
         [TestMethod]
         public void Indexers48_Test()
         {
             OutputHelper.WriteLine("Testing multiple comma seperated indexers with a protected internal get and set");
-            Assert.True(IndexersTestClass48.testMethod());
+            Assert.IsTrue(IndexersTestClass48.testMethod());
         }
 
         [TestMethod]
         public void Indexers49_Test()
         {
             OutputHelper.WriteLine("Testing multiple comma seperated indexers with an internal get and set");
-            Assert.True(IndexersTestClass49.testMethod());
+            Assert.IsTrue(IndexersTestClass49.testMethod());
         }
 
         [TestMethod]
         public void Indexers50_Test()
         {
             OutputHelper.WriteLine("Testing multiple comma seperated indexers with a private get and set");
-            Assert.True(IndexersTestClass50.testMethod());
+            Assert.IsTrue(IndexersTestClass50.testMethod());
         }
 
         [TestMethod]
         public void Indexers51_Test()
         {
             OutputHelper.WriteLine("Testing multiple comma seperated indexers with a public virtual get and set");
-            Assert.True(IndexersTestClass51.testMethod());
+            Assert.IsTrue(IndexersTestClass51.testMethod());
         }
 
         [TestMethod]
@@ -277,28 +277,28 @@ namespace NFUnitTestClasses
         {
             OutputHelper.WriteLine("Testing multiple comma seperated indexers with an overridden public virtual get and set");
             OutputHelper.WriteLine("This test is expected to fail");
-            Assert.False(IndexersTestClass52.testMethod());
+            Assert.IsFalse(IndexersTestClass52.testMethod());
         }
 
         [TestMethod]
         public void Indexers53_Test()
         {
             OutputHelper.WriteLine("Testing multiple comma seperated indexers with an overridden public abstract get and set");
-            Assert.True(IndexersTestClass53.testMethod());
+            Assert.IsTrue(IndexersTestClass53.testMethod());
         }
 
         [TestMethod]
         public void Indexers55_Test()
         {
             OutputHelper.WriteLine("Testing 10 explicitly specified indexers");
-            Assert.True(IndexersTestClass55.testMethod());
+            Assert.IsTrue(IndexersTestClass55.testMethod());
         }
 
         [TestMethod]
         public void Indexers56_Test()
         {
             OutputHelper.WriteLine("Testing a single indexers with an overridden public abstract get");
-            Assert.True(IndexersTestClass56.testMethod());
+            Assert.IsTrue(IndexersTestClass56.testMethod());
         }
 
 

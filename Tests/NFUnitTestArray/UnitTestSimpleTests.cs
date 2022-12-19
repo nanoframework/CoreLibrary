@@ -19,14 +19,14 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type int");
 
-            Assert.True(Simple_TestClass_decl_decl_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_01.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type byte");
-            Assert.True(Simple_TestClass_decl_decl_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_02.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_03_Test()
@@ -34,7 +34,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type short");
 
-            Assert.True(Simple_TestClass_decl_decl_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_03.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_04_Test()
@@ -42,7 +42,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type long");
 
-            Assert.True(Simple_TestClass_decl_decl_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_04.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_05_Test()
@@ -50,7 +50,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type char");
 
-            Assert.True(Simple_TestClass_decl_decl_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_05.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_06_Test()
@@ -58,7 +58,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type double");
 
-            Assert.True(Simple_TestClass_decl_decl_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_06.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_07_Test()
@@ -66,7 +66,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type float");
 
-            Assert.True(Simple_TestClass_decl_decl_07.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_07.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_08_Test()
@@ -74,7 +74,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type double");
 
-            Assert.True(Simple_TestClass_decl_decl_08.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_08.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_09_Test()
@@ -82,7 +82,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type bool");
 
-            Assert.True(Simple_TestClass_decl_decl_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_09.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_10_Test()
@@ -90,7 +90,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of a user-defined struct");
 
-            Assert.True(Simple_TestClass_decl_decl_10.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_10.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_11_Test()
@@ -98,7 +98,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of a user-defined class");
 
-            Assert.True(Simple_TestClass_decl_decl_11.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_11.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_12_Test()
@@ -106,7 +106,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of a user-defined interface");
 
-            Assert.True(Simple_TestClass_decl_decl_12.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_12.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_13_Test()
@@ -114,7 +114,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type object");
 
-            Assert.True(Simple_TestClass_decl_decl_13.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_13.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_14_Test()
@@ -122,7 +122,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of delegates");
 
-            Assert.True(Simple_TestClass_decl_decl_14.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_14.testMethod());
         }
         [TestMethod]
         public void Simple_decl_decl_15_Test()
@@ -130,7 +130,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Declare a simple array of type System.Array");
 
-            Assert.True(Simple_TestClass_decl_decl_15.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_decl_15.testMethod());
         }
         [TestMethod]
         public void Simple_decl_bounds_01_Test()
@@ -138,7 +138,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" An array created as array[0] compiles successfully");
 
-            Assert.True(Simple_TestClass_decl_bounds_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_bounds_01.testMethod());
         }
         [TestMethod]
         public void Simple_decl_bounds_02_Test()
@@ -147,7 +147,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" An array created as array[maxint] compiles successfully");
             OutputHelper.WriteLine("This test is expected to generate");
             OutputHelper.WriteLine("Out Of Memory System.Exception");
-            Assert.False(Simple_TestClass_decl_bounds_02.testMethod());
+            Assert.IsFalse(Simple_TestClass_decl_bounds_02.testMethod());
             OutputHelper.WriteLine(" This failure indicates a test is now passing that previously failed by design.");
             OutputHelper.WriteLine(" It previously marked as known failure because of bug # 16823");
             OutputHelper.WriteLine(" The Test owner needs to verify that the change was intentional and remove the known failure.");
@@ -158,7 +158,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" decl_bounds_03 ");
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" An array created as array[maxint+1] compiles successfully");
-            Assert.False(Simple_TestClass_decl_bounds_03.testMethod());
+            Assert.IsFalse(Simple_TestClass_decl_bounds_03.testMethod());
             OutputHelper.WriteLine(" This failure indicates a test is now passing that previously failed by design.");
             OutputHelper.WriteLine(" It previously marked as known failure because of bug # 16823");
             OutputHelper.WriteLine(" The Test owner needs to verify that the change was intentional and remove the known failure.");
@@ -170,21 +170,21 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A char variable as an array index should work");
 
-            Assert.True(Simple_TestClass_decl_index_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_01.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A byte variable as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_02.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A short variable as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_03.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_04_Test()
@@ -192,105 +192,105 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A short literal as an array index should work");
 
-            Assert.True(Simple_TestClass_decl_index_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_04.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_05_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A byte literal as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_05.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_06_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A char literal as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_06.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_07_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A uint variable as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_07.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_07.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_08_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A long variable as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_08.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_08.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_09_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A ulong variable as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_09.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_10_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A uint literal as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_10.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_10.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_11_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A long literal as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_11.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_11.testMethod());
         }
         [TestMethod]
         public void Simple_decl_index_12_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" A ulong literal as an array index should work");
-            Assert.True(Simple_TestClass_decl_index_12.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_index_12.testMethod());
         }
         [TestMethod]
         public void Simple_decl_syntax_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Declarations");
             OutputHelper.WriteLine(" Spaces after type and between brackets and comments do not affect arrays");
-            Assert.True(Simple_TestClass_decl_syntax_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_decl_syntax_03.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_a_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type int using new (longhand)");
-            Assert.True(Simple_TestClass_init_init_a_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_a_01.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_a_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type short using new (longhand)");
-            Assert.True(Simple_TestClass_init_init_a_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_a_02.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_a_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type byte using new (longhand)");
-            Assert.True(Simple_TestClass_init_init_a_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_a_03.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_a_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type long using new (longhand)");
-            Assert.True(Simple_TestClass_init_init_a_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_a_04.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_a_05_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type double using new (longhand)");
-            Assert.True(Simple_TestClass_init_init_a_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_a_05.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_a_06_Test()
@@ -298,84 +298,84 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type float using new (longhand)");
 
-            Assert.True(Simple_TestClass_init_init_a_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_a_06.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_a_08_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type String using new (longhand)");
-            Assert.True(Simple_TestClass_init_init_a_08.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_a_08.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_a_09_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type char using new (longhand)");
-            Assert.True(Simple_TestClass_init_init_a_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_a_09.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_a_10_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type bool using new (longhand)");
-            Assert.True(Simple_TestClass_init_init_a_10.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_a_10.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_b_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type int using new (shorthand)");
-            Assert.True(Simple_TestClass_init_init_b_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_b_01.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_b_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type short using new (shorthand)");
-            Assert.True(Simple_TestClass_init_init_b_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_b_02.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_b_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type byte using new (shorthand)");
-            Assert.True(Simple_TestClass_init_init_b_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_b_03.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_b_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type long using new (shorthand)");
-            Assert.True(Simple_TestClass_init_init_b_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_b_04.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_b_05_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type double using new (shorthand)");
-            Assert.True(Simple_TestClass_init_init_b_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_b_05.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_b_06_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type float using new (shorthand)");
-            Assert.True(Simple_TestClass_init_init_b_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_b_06.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_b_08_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type String using new (shorthand)");
-            Assert.True(Simple_TestClass_init_init_b_08.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_b_08.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_b_09_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type char using new (shorthand)");
-            Assert.True(Simple_TestClass_init_init_b_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_b_09.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_b_10_Test()
@@ -383,245 +383,245 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type bool using new (shorthand)");
 
-            Assert.True(Simple_TestClass_init_init_b_10.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_b_10.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_c_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type int using new (# init values sets array size)");
-            Assert.True(Simple_TestClass_init_init_c_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_c_01.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_c_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type short using new (# init values sets array size)");
-            Assert.True(Simple_TestClass_init_init_c_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_c_02.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_c_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type byte using new (# init values sets array size)");
-            Assert.True(Simple_TestClass_init_init_c_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_c_03.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_c_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type long using new (# init values sets array size)");
-            Assert.True(Simple_TestClass_init_init_c_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_c_04.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_c_05_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type double using new (# init values sets array size)");
-            Assert.True(Simple_TestClass_init_init_c_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_c_05.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_c_06_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type float using new (# init values sets array size)");
-            Assert.True(Simple_TestClass_init_init_c_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_c_06.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_c_08_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type String using new (# init values sets array size)");
-            Assert.True(Simple_TestClass_init_init_c_08.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_c_08.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_c_09_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type char using new (# init values sets array size)");
-            Assert.True(Simple_TestClass_init_init_c_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_c_09.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_c_10_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type bool using new (# init values sets array size)");
-            Assert.True(Simple_TestClass_init_init_c_10.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_c_10.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_d_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type int using new (longhand) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_d_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_d_01.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_d_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type short using new (longhand) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_d_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_d_02.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_d_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type byte using new (longhand) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_d_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_d_03.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_d_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type long using new (longhand) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_d_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_d_04.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_d_05_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type double using new (longhand) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_d_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_d_05.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_d_06_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type float using new (longhand) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_d_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_d_06.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_d_08_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type String using new (longhand) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_d_08.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_d_08.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_d_09_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type char using new (longhand) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_d_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_d_09.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_d_10_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type bool using new (longhand) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_d_10.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_d_10.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_e_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type int using new (# init values sets array size) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_e_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_e_01.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_e_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type short using new (# init values sets array size) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_e_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_e_02.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_e_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type byte using new (# init values sets array size) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_e_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_e_03.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_e_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type long using new (# init values sets array size) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_e_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_e_04.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_e_05_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type double using new (# init values sets array size) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_e_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_e_05.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_e_06_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type float using new (# init values sets array size) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_e_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_e_06.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_e_08_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type String using new (# init values sets array size) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_e_08.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_e_08.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_e_09_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type char using new (# init values sets array size) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_e_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_e_09.testMethod());
         }
         [TestMethod]
         public void Simple_init_init_e_10_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type bool using new (# init values sets array size) separate from decl statement");
-            Assert.True(Simple_TestClass_init_init_e_10.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_init_e_10.testMethod());
         }
         [TestMethod]
         public void Simple_init_syntax_09_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Syntax - Whitespace and comments in braces should not affect anything");
-            Assert.True(Simple_TestClass_init_syntax_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_syntax_09.testMethod());
         }
         [TestMethod]
         public void Simple_init_syntax_11_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Syntax - zero elements in initializer should create zero length array");
-            Assert.True(Simple_TestClass_init_syntax_11.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_syntax_11.testMethod());
         }
         [TestMethod]
         public void Simple_init_syntax_12_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Syntax - zero elements in initializer should be allowed for 0-length array");
-            Assert.True(Simple_TestClass_init_syntax_12.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_syntax_12.testMethod());
         }
         [TestMethod]
         public void Simple_init_decl_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Declaration - if initializer is used, a provided index can be a const");
-            Assert.True(Simple_TestClass_init_decl_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_decl_02.testMethod());
         }
         [TestMethod]
         public void Simple_init_decl_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Declaration - if initializer is used, a provided index can be a const short");
-            Assert.True(Simple_TestClass_init_decl_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_decl_03.testMethod());
         }
         [TestMethod]
         public void Simple_init_decl_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Declaration - if initializer is used, a provided index can be a const byte");
-            Assert.True(Simple_TestClass_init_decl_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_decl_04.testMethod());
         }
         [TestMethod]
         public void Simple_init_decl_05_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Declaration - if initializer is used, a provided index can be a const long casted to an int");
-            Assert.True(Simple_TestClass_init_decl_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_decl_05.testMethod());
         }
         [TestMethod]
         public void Simple_init_shorthand_01_Test()
@@ -629,14 +629,14 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Initialization of arrays of type int using new (shorthand)");
             OutputHelper.WriteLine(" This is to verify bug #52958 doesn't regress");
-            Assert.True(Simple_TestClass_init_shorthand_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_shorthand_01.testMethod());
         }
         [TestMethod]
         public void Simple_init_constinit_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Ensure all constant init optimization code paths are covered: all constants (VS7:124565 for more info)");
-            Assert.True(Simple_TestClass_init_constinit_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_constinit_01.testMethod());
         }
         [TestMethod]
         public void Simple_init_constinit_02_Test()
@@ -644,14 +644,14 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Ensure all constant init optimization code paths are covered: all variables (VS7:124565 for more info)");
 
-            Assert.True(Simple_TestClass_init_constinit_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_constinit_02.testMethod());
         }
         [TestMethod]
         public void Simple_init_constinit_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Initialization");
             OutputHelper.WriteLine(" Ensure all constant init optimization code paths are covered: half variables and half constants (VS7:124565 for more info)");
-            Assert.True(Simple_TestClass_init_constinit_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_init_constinit_03.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_length_01_Test()
@@ -659,49 +659,49 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" acc_iter_length_01 ");
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Declare simple arrays of various lengths and verify that array.Length is correct");
-            Assert.True(Simple_TestClass_acc_iter_length_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_length_01.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_bounds_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's 0th element should work fine");
-            Assert.True(Simple_TestClass_acc_iter_bounds_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_bounds_01.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_bounds_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's maxlength element should work fine");
-            Assert.True(Simple_TestClass_acc_iter_bounds_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_bounds_02.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_bounds_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's -1 element should throw an System.Exception");
-            Assert.True(Simple_TestClass_acc_iter_bounds_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_bounds_03.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_bounds_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's maxlength+1 element should throw an System.Exception");
-            Assert.True(Simple_TestClass_acc_iter_bounds_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_bounds_04.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_a_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with a variable of type int should work");
-            Assert.True(Simple_TestClass_acc_iter_idxtype_a_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_a_01.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_a_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with a variable of type short should work");
-            Assert.True(Simple_TestClass_acc_iter_idxtype_a_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_a_02.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_a_03_Test()
@@ -709,21 +709,21 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with a variable of type byte should work");
 
-            Assert.True(Simple_TestClass_acc_iter_idxtype_a_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_a_03.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_a_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with a variable of type char should work");
-            Assert.True(Simple_TestClass_acc_iter_idxtype_a_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_a_04.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_a_06_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with a variable of type long should work");
-            Assert.True(Simple_TestClass_acc_iter_idxtype_a_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_a_06.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_b_01_Test()
@@ -731,154 +731,154 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with an int literal should work");
 
-            Assert.True(Simple_TestClass_acc_iter_idxtype_b_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_b_01.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_b_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with a short literal should work");
-            Assert.True(Simple_TestClass_acc_iter_idxtype_b_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_b_02.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_b_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with a byte literal should work");
-            Assert.True(Simple_TestClass_acc_iter_idxtype_b_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_b_03.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_b_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with a char literal should work");
-            Assert.True(Simple_TestClass_acc_iter_idxtype_b_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_b_04.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_idxtype_b_06_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Accessing an array's index with a variable of type long should work");
-            Assert.True(Simple_TestClass_acc_iter_idxtype_b_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_idxtype_b_06.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_iter_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Declare simple array of int, init it through iteration, verify values are correct");
-            Assert.True(Simple_TestClass_acc_iter_iter_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_iter_01.testMethod());
         }
         [TestMethod]
         public void Simple_acc_iter_iter_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Access and Iteration");
             OutputHelper.WriteLine(" Declare simple array of char, init it through individual element assignments, verify correctness");
-            Assert.True(Simple_TestClass_acc_iter_iter_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_acc_iter_iter_02.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_a_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning int type literals into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_a_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_a_01.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_a_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning byte type literals into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_a_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_a_02.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_a_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning short type literals into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_a_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_a_03.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_a_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning long type literals into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_a_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_a_04.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_a_05_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning char type literals into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_a_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_a_05.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_a_06_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning double type literals into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_a_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_a_06.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_a_07_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning float type literals into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_a_07.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_a_07.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_a_08_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning double type literals into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_a_08.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_a_08.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_a_09_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning bool type literals into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_a_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_a_09.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_b_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning int type variables into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_b_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_b_01.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_b_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning byte type variables into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_b_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_b_02.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_b_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning short type variables into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_b_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_b_03.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_b_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning long type variables into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_b_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_b_04.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_b_05_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning char type variables into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_b_05.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_b_05.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_b_06_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning double type variables into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_b_06.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_b_06.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_b_07_Test()
@@ -886,7 +886,7 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning float type variables into array elements should work");
 
-            Assert.True(Simple_TestClass_assign_smpass_b_07.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_b_07.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_b_08_Test()
@@ -894,84 +894,84 @@ namespace NFUnitTestArray
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning double type variables into array elements should work");
 
-            Assert.True(Simple_TestClass_assign_smpass_b_08.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_b_08.testMethod());
         }
         [TestMethod]
         public void Simple_assign_smpass_b_09_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning bool type variables into array elements should work");
-            Assert.True(Simple_TestClass_assign_smpass_b_09.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_smpass_b_09.testMethod());
         }
         [TestMethod]
         public void Simple_assign_badass_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning null to an array variable should work");
-            Assert.True(Simple_TestClass_assign_badass_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_badass_01.testMethod());
         }
         [TestMethod]
         public void Simple_assign_badass_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning a smaller array to a bigger array should work");
-            Assert.True(Simple_TestClass_assign_badass_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_badass_03.testMethod());
         }
         [TestMethod]
         public void Simple_assign_badass_04_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning a bigger array to a smaller array should work");
-            Assert.True(Simple_TestClass_assign_badass_04.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_badass_04.testMethod());
         }
         [TestMethod]
         public void Simple_assign_element_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning one element to another element of the same array should work");
-            Assert.True(Simple_TestClass_assign_element_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_element_01.testMethod());
         }
         [TestMethod]
         public void Simple_assign_element_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments");
             OutputHelper.WriteLine(" Assigning one element to another element of a different array should work");
-            Assert.True(Simple_TestClass_assign_element_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_element_02.testMethod());
         }
         [TestMethod]
         public void Simple_assign_argpass_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments - Passing elements to methods");
             OutputHelper.WriteLine(" Passing an element to a function should work");
-            Assert.True(Simple_TestClass_assign_argpass_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_argpass_01.testMethod());
         }
         [TestMethod]
         public void Simple_assign_argpass_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments - Passing elements to methods");
             OutputHelper.WriteLine(" Passing an element to a function as a ref parameter should work");
-            Assert.True(Simple_TestClass_assign_argpass_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_argpass_02.testMethod());
         }
         [TestMethod]
         public void Simple_assign_argpass_03_Test()
         {
             OutputHelper.WriteLine(" Arrays - Assignments - Passing elements to methods");
             OutputHelper.WriteLine(" Passing an element to a function as an out parameter should work");
-            Assert.True(Simple_TestClass_assign_argpass_03.testMethod());
+            Assert.IsTrue(Simple_TestClass_assign_argpass_03.testMethod());
         }
         [TestMethod]
         public void Simple_object_sysarr_01_Test()
         {
             OutputHelper.WriteLine(" Arrays - As Object and System.Array");
             OutputHelper.WriteLine(" Testing the System.Array methods and Properties: System.Array.Clear()");
-            Assert.True(Simple_TestClass_object_sysarr_01.testMethod());
+            Assert.IsTrue(Simple_TestClass_object_sysarr_01.testMethod());
         }
         [TestMethod]
         public void Simple_object_sysarr_02_Test()
         {
             OutputHelper.WriteLine(" Arrays - As Object and System.Array");
             OutputHelper.WriteLine(" Testing the System.Array methods and Properties: Length property");
-            Assert.True(Simple_TestClass_object_sysarr_02.testMethod());
+            Assert.IsTrue(Simple_TestClass_object_sysarr_02.testMethod());
         }
 
         //Compiled Test Cases 

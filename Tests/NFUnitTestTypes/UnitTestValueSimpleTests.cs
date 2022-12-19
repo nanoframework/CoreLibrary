@@ -180,8 +180,8 @@ namespace NFUnitTestTypes
             {
                 System.Byte b = 2;
                 System.Int32 i = 2;
-                Assert.Equal(b, (System.Byte)2);
-                Assert.Equal(i, 2);
+                Assert.AreEqual(b, (System.Byte)2);
+                Assert.AreEqual(i, 2);
             }
         }
         public class ValueSimpleTestClass12
@@ -189,12 +189,12 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 int i = int.MaxValue;
-                Assert.Equal(i, Int32.MaxValue);
+                Assert.AreEqual(i, Int32.MaxValue);
                 string s = i.ToString();
-                Assert.True(s.Equals(Int32.MaxValue.ToString()));
+                Assert.IsTrue(s.Equals(Int32.MaxValue.ToString()));
                 i = 123;
                 string t = 123.ToString();
-                Assert.True(t.Equals(i.ToString()));
+                Assert.IsTrue(t.Equals(i.ToString()));
             }
         }
         public class ValueSimpleTestClass13

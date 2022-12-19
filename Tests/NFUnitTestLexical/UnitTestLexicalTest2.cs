@@ -75,7 +75,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3Preprocessing");
             OutputHelper.WriteLine("Verify #define and #undef");
-            Assert.True(Lexical_TestClass_pre_009.testMethod());
+            Assert.IsTrue(Lexical_TestClass_pre_009.testMethod());
         }
 
         [TestMethod]
@@ -83,7 +83,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3Preprocessing");
             OutputHelper.WriteLine("Verify #if operators and parens");
-            Assert.True(Lexical_TestClass_pre_012.testMethod());
+            Assert.IsTrue(Lexical_TestClass_pre_012.testMethod());
         }
 
         [TestMethod]
@@ -91,7 +91,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3Preprocessing");
             OutputHelper.WriteLine("Verify # commands with comments");
-            Assert.True(Lexical_TestClass_pre_013.testMethod());
+            Assert.IsTrue(Lexical_TestClass_pre_013.testMethod());
         }
 
         [TestMethod]
@@ -99,7 +99,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("#define/#undef - verify #define works");
-            Assert.True(Lexical_TestClass_preproc_03.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_03.testMethod());
         }
 
         [TestMethod]
@@ -107,7 +107,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("#define/#undef - verify #undef works");
-            Assert.True(Lexical_TestClass_preproc_04.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_04.testMethod());
         }
 
         [TestMethod]
@@ -115,7 +115,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Exact example used in spec definition - 2.3.1");
-            Assert.True(Lexical_TestClass_preproc_05.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_05.testMethod());
         }
 
         [TestMethod]
@@ -123,7 +123,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Using #undef on a non-existing identifier compiles fine");
-            Assert.True(Lexical_TestClass_preproc_06.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_06.testMethod());
         }
 
         [TestMethod]
@@ -131,7 +131,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Nested #if's");
-            Assert.True(Lexical_TestClass_preproc_07.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_07.testMethod());
         }
 
         [TestMethod]
@@ -139,7 +139,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify the ! operator on #identifiers");
-            Assert.True(Lexical_TestClass_preproc_15.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_15.testMethod());
         }
 
         [TestMethod]
@@ -147,7 +147,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify the ! operator on #identifiers with parenthesis");
-            Assert.True(Lexical_TestClass_preproc_16.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_16.testMethod());
         }
 
         [TestMethod]
@@ -155,7 +155,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify the double ampersand operator works");
-            Assert.True(Lexical_TestClass_preproc_17.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_17.testMethod());
         }
 
         [TestMethod]
@@ -163,7 +163,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify the double ampersand operator works with parentheses");
-            Assert.True(Lexical_TestClass_preproc_18.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_18.testMethod());
         }
 
         [TestMethod]
@@ -171,7 +171,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify the || operator works ");
-            Assert.True(Lexical_TestClass_preproc_19.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_19.testMethod());
         }
 
         [TestMethod]
@@ -179,7 +179,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify the || operator works with parentheses");
-            Assert.True(Lexical_TestClass_preproc_20.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_20.testMethod());
         }
 
         [TestMethod]
@@ -187,7 +187,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify the == operator works with/without parentheses");
-            Assert.True(Lexical_TestClass_preproc_21.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_21.testMethod());
         }
 
         [TestMethod]
@@ -195,14 +195,14 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify the != operator works with/without parentheses");
-            Assert.True(Lexical_TestClass_preproc_22.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_22.testMethod());
         }
         [TestMethod]
         public void Lexical_preproc_23_Test()
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Grouping operators: ! double ampersand || != == true false");
-            Assert.True(Lexical_TestClass_preproc_23.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_23.testMethod());
         }
 
         [TestMethod]
@@ -210,7 +210,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verifying comments and #preprocessor items");
-            Assert.True(Lexical_TestClass_preproc_24.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_24.testMethod());
         }
 
         [TestMethod]
@@ -218,7 +218,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verifying comments and #preprocessor items");
-            Assert.True(Lexical_TestClass_preproc_25.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_25.testMethod());
         }
 
         [TestMethod]
@@ -226,7 +226,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verifying comments and #preprocessor items");
-            Assert.True(Lexical_TestClass_preproc_31.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_31.testMethod());
         }
 
         [TestMethod]
@@ -234,7 +234,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify the usage of #elif");
-            Assert.True(Lexical_TestClass_preproc_32.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_32.testMethod());
         }
 
         [TestMethod]
@@ -242,7 +242,7 @@ namespace NFUnitTestLexical
         {
             OutputHelper.WriteLine("Section 2.3 Preprocessing");
             OutputHelper.WriteLine("Verify that a # keyword (i.e. for) can be used as a #preprocessor identifier");
-            Assert.True(Lexical_TestClass_preproc_39.testMethod());
+            Assert.IsTrue(Lexical_TestClass_preproc_39.testMethod());
         }
 
         //Compiled Test Cases 

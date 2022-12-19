@@ -809,10 +809,10 @@ namespace NFUnitTestTypes
             {
                 float f1 = float.Epsilon;
                 double d1 = double.Epsilon;
-                Assert.Equal((float)(f1 / 2.0f), 0.0f);
-                Assert.Equal((float)(f1 * 0.5f), 0.0f);
-                Assert.Equal((double)(d1 / 2.0d), (double)0.0d);
-                Assert.Equal((double)(d1 * 0.5d), (double)0.0d);
+                Assert.AreEqual((float)(f1 / 2.0f), 0.0f);
+                Assert.AreEqual((float)(f1 * 0.5f), 0.0f);
+                Assert.AreEqual((double)(d1 / 2.0d), (double)0.0d);
+                Assert.AreEqual((double)(d1 * 0.5d), (double)0.0d);
             }
         }
 

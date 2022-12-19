@@ -45,142 +45,142 @@ namespace NFUnitTestSystemLib
         {
             // if the negative number can not be truncated to the range specified it
             // will display its full hex value
-            Assert.Equal("fe", ((sbyte)-2).ToString("x02"));
-            Assert.Equal("36", ((byte)0x36).ToString("x02"));
-            Assert.Equal("FF", ((byte)255).ToString("X2"));
-            Assert.Equal("fffd", ((short)-3).ToString("x04"));
-            Assert.Equal("3049", ((ushort)0x3049).ToString("x4"));
-            Assert.Equal("fc00", ((short)-1024).ToString("x02"));
-            Assert.Equal("fffffffc", ((int)-4).ToString("x8"));
-            Assert.Equal("00004494", ((uint)0x4494).ToString("x8"));
-            Assert.Equal("fffffffc", ((int)-4).ToString("x04"));
-            Assert.Equal("fffffffffffffffb", ((long)-5).ToString("x016"));
-            Assert.Equal("1234567890123456", ((ulong)0x1234567890123456).ToString("x16"));
+            Assert.AreEqual("fe", ((sbyte)-2).ToString("x02"));
+            Assert.AreEqual("36", ((byte)0x36).ToString("x02"));
+            Assert.AreEqual("FF", ((byte)255).ToString("X2"));
+            Assert.AreEqual("fffd", ((short)-3).ToString("x04"));
+            Assert.AreEqual("3049", ((ushort)0x3049).ToString("x4"));
+            Assert.AreEqual("fc00", ((short)-1024).ToString("x02"));
+            Assert.AreEqual("fffffffc", ((int)-4).ToString("x8"));
+            Assert.AreEqual("00004494", ((uint)0x4494).ToString("x8"));
+            Assert.AreEqual("fffffffc", ((int)-4).ToString("x04"));
+            Assert.AreEqual("fffffffffffffffb", ((long)-5).ToString("x016"));
+            Assert.AreEqual("1234567890123456", ((ulong)0x1234567890123456).ToString("x16"));
             // you should not be able to truncate the value only leading zeros
-            Assert.Equal("1234567890123456", ((ulong)0x1234567890123456).ToString("x06"));
-            Assert.Equal("34567890123456", ((ulong)0x0034567890123456).ToString("x14"));
+            Assert.AreEqual("1234567890123456", ((ulong)0x1234567890123456).ToString("x06"));
+            Assert.AreEqual("34567890123456", ((ulong)0x0034567890123456).ToString("x14"));
 
             string tst = 3210.ToString("D");
             OutputHelper.WriteLine($"3210: {tst}");
-            Assert.Equal("3210", tst);
+            Assert.AreEqual("3210", tst);
 
             tst = (-3210).ToString("d");
             OutputHelper.WriteLine($"-3210: {tst}");
-            Assert.Equal("-3210", tst);
+            Assert.AreEqual("-3210", tst);
 
             tst = 3210.ToString("d06");
             OutputHelper.WriteLine($"003210: {tst}");
-            Assert.Equal("003210", tst);
+            Assert.AreEqual("003210", tst);
 
             tst = (-3210).ToString("d06");
             OutputHelper.WriteLine($"-003210: {tst}");
-            Assert.Equal("-003210", tst);
+            Assert.AreEqual("-003210", tst);
 
             tst = 3210.ToString("d1");
             OutputHelper.WriteLine($"3210: {tst}");
-            Assert.Equal("3210", tst);
+            Assert.AreEqual("3210", tst);
 
             tst = (-3210).ToString("d1");
             OutputHelper.WriteLine($"-3210: {tst}");
-            Assert.Equal("-3210", tst);
+            Assert.AreEqual("-3210", tst);
 
             tst = 3210.ToString("g");
             OutputHelper.WriteLine($"3210 {tst}");
-            Assert.Equal("3210", tst);
+            Assert.AreEqual("3210", tst);
 
             tst = (-3210).ToString("g");
             OutputHelper.WriteLine($"-3210 {tst}");
-            Assert.Equal("-3210", tst);
+            Assert.AreEqual("-3210", tst);
 
-            Assert.Equal("NaN", float.NaN.ToString());
-            Assert.Equal("Infinity", float.PositiveInfinity.ToString());
-            //Assert.Equal("-Infinity", float.NegativeInfinity.ToString(), "float negative infinity test");
+            Assert.AreEqual("NaN", float.NaN.ToString());
+            Assert.AreEqual("Infinity", float.PositiveInfinity.ToString());
+            //Assert.AreEqual("-Infinity", float.NegativeInfinity.ToString(), "float negative infinity test");
 
-            Assert.Equal("NaN", double.NaN.ToString());
-            Assert.Equal("Infinity", double.PositiveInfinity.ToString());
-            //Assert.Equal("-Infinity", double.NegativeInfinity.ToString(), "double negative infinity");
+            Assert.AreEqual("NaN", double.NaN.ToString());
+            Assert.AreEqual("Infinity", double.PositiveInfinity.ToString());
+            //Assert.AreEqual("-Infinity", double.NegativeInfinity.ToString(), "double negative infinity");
 
-            Assert.Equal("Da1x", (1).ToString("Da1x"));
-            Assert.Equal("1", (1).ToString("D"));
-            Assert.Equal("-1", (-1).ToString("D"));
-            Assert.Equal("1234", (1234).ToString("D"));
-            Assert.Equal("-1234", (-1234).ToString("D"));
-            Assert.Equal("001234", (1234).ToString("D6"));
-            Assert.Equal("-001234", (-1234).ToString("D6"));
-            Assert.Equal("2147483647", (Int32.MaxValue).ToString("D"));
-            Assert.Equal("-2147483648", (Int32.MinValue).ToString("D"));
-            Assert.Equal("000000000002147483647", (Int32.MaxValue).ToString("D21")); 
-            Assert.Equal("-000000000002147483648", (Int32.MinValue).ToString("D21"));
-            Assert.Equal("9223372036854775807", (Int64.MaxValue).ToString("D")); 
-            Assert.Equal("-9223372036854775808",    (Int64.MinValue).ToString("D")); 
-            Assert.Equal("009223372036854775807", (Int64.MaxValue).ToString("D21"));
-            Assert.Equal("-009223372036854775808",    (Int64.MinValue).ToString("D21")); 
-            Assert.Equal("2147483747",    ((Int64)Int32.MaxValue + 100).ToString("D")); 
-            Assert.Equal("-2147483748", ((Int64)Int32.MinValue - 100).ToString("D"));
-            Assert.Equal("000000000002147483747",    ((Int64)Int32.MaxValue + 100).ToString("D21")); 
-            Assert.Equal("-000000000002147483748", ((Int64)Int32.MinValue - 100).ToString("D21"));
+            Assert.AreEqual("Da1x", (1).ToString("Da1x"));
+            Assert.AreEqual("1", (1).ToString("D"));
+            Assert.AreEqual("-1", (-1).ToString("D"));
+            Assert.AreEqual("1234", (1234).ToString("D"));
+            Assert.AreEqual("-1234", (-1234).ToString("D"));
+            Assert.AreEqual("001234", (1234).ToString("D6"));
+            Assert.AreEqual("-001234", (-1234).ToString("D6"));
+            Assert.AreEqual("2147483647", (Int32.MaxValue).ToString("D"));
+            Assert.AreEqual("-2147483648", (Int32.MinValue).ToString("D"));
+            Assert.AreEqual("000000000002147483647", (Int32.MaxValue).ToString("D21")); 
+            Assert.AreEqual("-000000000002147483648", (Int32.MinValue).ToString("D21"));
+            Assert.AreEqual("9223372036854775807", (Int64.MaxValue).ToString("D")); 
+            Assert.AreEqual("-9223372036854775808",    (Int64.MinValue).ToString("D")); 
+            Assert.AreEqual("009223372036854775807", (Int64.MaxValue).ToString("D21"));
+            Assert.AreEqual("-009223372036854775808",    (Int64.MinValue).ToString("D21")); 
+            Assert.AreEqual("2147483747",    ((Int64)Int32.MaxValue + 100).ToString("D")); 
+            Assert.AreEqual("-2147483748", ((Int64)Int32.MinValue - 100).ToString("D"));
+            Assert.AreEqual("000000000002147483747",    ((Int64)Int32.MaxValue + 100).ToString("D21")); 
+            Assert.AreEqual("-000000000002147483748", ((Int64)Int32.MinValue - 100).ToString("D21"));
 
-            Assert.Equal("1234.57", (1234.567).ToString("F"));
-            Assert.Equal("-1234.57", (-1234.567).ToString("F"));
-            Assert.Equal("1235", (1234.567).ToString("F0"));
-            Assert.Equal("-1235", (-1234.567).ToString("F0"));
-            Assert.Equal("1234.0", (1234).ToString("F1"));
-            Assert.Equal("-1234.0", (-1234).ToString("F1"));
-            Assert.Equal("1234.5600", (1234.56).ToString("F4"));
-            Assert.Equal("-1234.5600", (-1234.56).ToString("F4"));
-            Assert.Equal("1234.6", (1234.56).ToString("F1"));
-            Assert.Equal("-1234.6", (-1234.56).ToString("F1"));
-            Assert.Equal("1234.0", (1234.0056).ToString("F1"));
-            Assert.Equal("-1234.0", (-1234.0056).ToString("F1"));
-            Assert.Equal("1", (1).ToString());
-            Assert.Equal("1", (1).ToString((string)null));
-            Assert.Equal("1", (1).ToString(String.Empty));
-            Assert.Equal("1234.567", (1234.567).ToString());
-            Assert.Equal("123.456", (123.456).ToString("G"));
-            Assert.Equal("-123.456", (-123.456).ToString("G"));
-            Assert.Equal("1.2E+02", (123.4546).ToString("G2"));
-            Assert.Equal("-1.2E+02", (-123.4546).ToString("G2"));
-            Assert.Equal("123.5", (123.4546).ToString("G4"));
-            Assert.Equal("-123.5", (-123.4546).ToString("G4"));
-            Assert.Equal("123.4546", (123.4546).ToString("G10"));
-            Assert.Equal("-123.4546", (-123.4546).ToString("G10"));
-            Assert.Equal("100", (99.9999).ToString("G4"));
-            Assert.Equal("-100", (-99.9999).ToString("G4"));
-            Assert.Equal("1234567890", (1234567890).ToString("G"));
-            Assert.Equal("-1234567890", (-1234567890).ToString("G"));
-            Assert.Equal("1.235E+09", (1234567890).ToString("G4"));
-            Assert.Equal("-1.235E+09", (-1234567890).ToString("G4"));
-            Assert.Equal("9.877E+09", (9876543210).ToString("G4"));
-            Assert.Equal("-9.877E+09", (-9876543210).ToString("G4"));
-            Assert.Equal("1234567890", (1234567890).ToString("G15"));
-            Assert.Equal("-1234567890", (-1234567890).ToString("G15"));
-            Assert.Equal("1,234.57", (1234.567).ToString("N"));
-            Assert.Equal("-1,234.57", (-1234.567).ToString("N"));
-            Assert.Equal("0", (0).ToString("N0"));
-            Assert.Equal("1,234", (1234).ToString("N0"));
-            Assert.Equal("-1,234", (-1234).ToString("N0"));
-            Assert.Equal("12.0", (12).ToString("N1"));
-            Assert.Equal("-12.0", (-12).ToString("N1"));
-            Assert.Equal("1,234.0", (1234).ToString("N1"));
-            Assert.Equal("-1,234.0", (-1234).ToString("N1"));
-            Assert.Equal("1,234.560", (1234.56).ToString("N3"));
-            Assert.Equal("-1,234.560", (-1234.56).ToString("N3"));
-            Assert.Equal("34,561,234.560", (34561234.56).ToString("N3"));
-            Assert.Equal("-34,561,234.560", (-34561234.56).ToString("N3"));
+            Assert.AreEqual("1234.57", (1234.567).ToString("F"));
+            Assert.AreEqual("-1234.57", (-1234.567).ToString("F"));
+            Assert.AreEqual("1235", (1234.567).ToString("F0"));
+            Assert.AreEqual("-1235", (-1234.567).ToString("F0"));
+            Assert.AreEqual("1234.0", (1234).ToString("F1"));
+            Assert.AreEqual("-1234.0", (-1234).ToString("F1"));
+            Assert.AreEqual("1234.5600", (1234.56).ToString("F4"));
+            Assert.AreEqual("-1234.5600", (-1234.56).ToString("F4"));
+            Assert.AreEqual("1234.6", (1234.56).ToString("F1"));
+            Assert.AreEqual("-1234.6", (-1234.56).ToString("F1"));
+            Assert.AreEqual("1234.0", (1234.0056).ToString("F1"));
+            Assert.AreEqual("-1234.0", (-1234.0056).ToString("F1"));
+            Assert.AreEqual("1", (1).ToString());
+            Assert.AreEqual("1", (1).ToString((string)null));
+            Assert.AreEqual("1", (1).ToString(String.Empty));
+            Assert.AreEqual("1234.567", (1234.567).ToString());
+            Assert.AreEqual("123.456", (123.456).ToString("G"));
+            Assert.AreEqual("-123.456", (-123.456).ToString("G"));
+            Assert.AreEqual("1.2E+02", (123.4546).ToString("G2"));
+            Assert.AreEqual("-1.2E+02", (-123.4546).ToString("G2"));
+            Assert.AreEqual("123.5", (123.4546).ToString("G4"));
+            Assert.AreEqual("-123.5", (-123.4546).ToString("G4"));
+            Assert.AreEqual("123.4546", (123.4546).ToString("G10"));
+            Assert.AreEqual("-123.4546", (-123.4546).ToString("G10"));
+            Assert.AreEqual("100", (99.9999).ToString("G4"));
+            Assert.AreEqual("-100", (-99.9999).ToString("G4"));
+            Assert.AreEqual("1234567890", (1234567890).ToString("G"));
+            Assert.AreEqual("-1234567890", (-1234567890).ToString("G"));
+            Assert.AreEqual("1.235E+09", (1234567890).ToString("G4"));
+            Assert.AreEqual("-1.235E+09", (-1234567890).ToString("G4"));
+            Assert.AreEqual("9.877E+09", (9876543210).ToString("G4"));
+            Assert.AreEqual("-9.877E+09", (-9876543210).ToString("G4"));
+            Assert.AreEqual("1234567890", (1234567890).ToString("G15"));
+            Assert.AreEqual("-1234567890", (-1234567890).ToString("G15"));
+            Assert.AreEqual("1,234.57", (1234.567).ToString("N"));
+            Assert.AreEqual("-1,234.57", (-1234.567).ToString("N"));
+            Assert.AreEqual("0", (0).ToString("N0"));
+            Assert.AreEqual("1,234", (1234).ToString("N0"));
+            Assert.AreEqual("-1,234", (-1234).ToString("N0"));
+            Assert.AreEqual("12.0", (12).ToString("N1"));
+            Assert.AreEqual("-12.0", (-12).ToString("N1"));
+            Assert.AreEqual("1,234.0", (1234).ToString("N1"));
+            Assert.AreEqual("-1,234.0", (-1234).ToString("N1"));
+            Assert.AreEqual("1,234.560", (1234.56).ToString("N3"));
+            Assert.AreEqual("-1,234.560", (-1234.56).ToString("N3"));
+            Assert.AreEqual("34,561,234.560", (34561234.56).ToString("N3"));
+            Assert.AreEqual("-34,561,234.560", (-34561234.56).ToString("N3"));
 
-            Assert.Equal("FF", (255).ToString("X"));
-            Assert.Equal("1", ((Int32)1).ToString("X"));
-            Assert.Equal("ffffffff", ((Int32)(-1)).ToString("x"));
-            Assert.Equal("1", (unchecked((byte)1)).ToString("x"));
-            Assert.Equal("ff", (unchecked((byte)(-1))).ToString("x"));
-            Assert.Equal("1", ((short)1).ToString("x"));
-            Assert.Equal("01", ((short)1).ToString("x2"));
-            Assert.Equal("ffff", ((short)(-1)).ToString("x"));
-            Assert.Equal("00ff", (255).ToString("x4"));
-            Assert.Equal("FFFFFFFF", ((Int32)(-1)).ToString("X4"));
-            Assert.Equal("7ffffffffffffff5", (Int64.MaxValue - 10).ToString("x")); 
-            Assert.Equal("a", ((Int64)10).ToString("x"));
-            Assert.Equal("0000a", ((Int64)10).ToString("x5"));
+            Assert.AreEqual("FF", (255).ToString("X"));
+            Assert.AreEqual("1", ((Int32)1).ToString("X"));
+            Assert.AreEqual("ffffffff", ((Int32)(-1)).ToString("x"));
+            Assert.AreEqual("1", (unchecked((byte)1)).ToString("x"));
+            Assert.AreEqual("ff", (unchecked((byte)(-1))).ToString("x"));
+            Assert.AreEqual("1", ((short)1).ToString("x"));
+            Assert.AreEqual("01", ((short)1).ToString("x2"));
+            Assert.AreEqual("ffff", ((short)(-1)).ToString("x"));
+            Assert.AreEqual("00ff", (255).ToString("x4"));
+            Assert.AreEqual("FFFFFFFF", ((Int32)(-1)).ToString("X4"));
+            Assert.AreEqual("7ffffffffffffff5", (Int64.MaxValue - 10).ToString("x")); 
+            Assert.AreEqual("a", ((Int64)10).ToString("x"));
+            Assert.AreEqual("0000a", ((Int64)10).ToString("x5"));
 
         }
 
@@ -222,7 +222,7 @@ namespace NFUnitTestSystemLib
 
             OutputHelper.WriteLine("Since NoneSuch does not exist in this assembly, ");
             OutputHelper.WriteLine("GetType throws a TypeLoadException.");
-            Assert.Throws(typeof(NullReferenceException), () =>
+            Assert.ThrowsException(typeof(NullReferenceException), () =>
             {
                 Type myType5 = Type.GetType("NoneSuch");
                 OutputHelper.WriteLine("The full name is " + myType5.FullName);
@@ -241,21 +241,21 @@ namespace NFUnitTestSystemLib
             Assert.IsType(myType0, myType1);
 
             // names must be compatible and composable
-            Assert.Equal(myType0.Name, myType1.Name);
+            Assert.AreEqual(myType0.Name, myType1.Name);
 
             // names must be compatible and composable
-            Assert.Equal(myType0.FullName, myType1.FullName);
+            Assert.AreEqual(myType0.FullName, myType1.FullName);
 
             // assembly must be the same
-            Assert.True(myType0.Assembly == myType1.Assembly);
+            Assert.IsTrue(myType0.Assembly == myType1.Assembly);
 
             // type must come from assembly it is supposed to come from
-            Assert.True(Int32Assm == myType0.Assembly);
+            Assert.IsTrue(Int32Assm == myType0.Assembly);
 
             // verify that the long name is corrent
             string fullAssmName = Int32Assm.FullName;
 
-            Assert.Equal(myType0.AssemblyQualifiedName, (myType0.FullName + ", " + fullAssmName));
+            Assert.AreEqual(myType0.AssemblyQualifiedName, (myType0.FullName + ", " + fullAssmName));
         }
 
         [TestMethod]
@@ -269,12 +269,12 @@ namespace NFUnitTestSystemLib
 
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.Assembly.FullName);
-            Assert.Equal(myType1.Assembly.FullName, "mscorlib, Version=" + myType1.Assembly.GetName().Version.ToString());
+            Assert.AreEqual(myType1.Assembly.FullName, "mscorlib, Version=" + myType1.Assembly.GetName().Version.ToString());
 
             TestObject1 testTestObject1 = new TestObject1();
             Type myType2 = testTestObject1.GetType();
             OutputHelper.WriteLine("The full name is " + myType2.Assembly.FullName);
-            Assert.Equal(myType2.Assembly.FullName, "NFUnitTest, Version=" + myType2.Assembly.GetName().Version.ToString());
+            Assert.AreEqual(myType2.Assembly.FullName, "NFUnitTest, Version=" + myType2.Assembly.GetName().Version.ToString());
         }
 
         [TestMethod]
@@ -306,7 +306,7 @@ namespace NFUnitTestSystemLib
 
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
-            Assert.True(myType1.DeclaringType == null);
+            Assert.IsTrue(myType1.DeclaringType == null);
 
             // As there is no instance of this, the test will fail, commenting it.
             //TestObject1 testTestObject1 = new TestObject1();
@@ -327,7 +327,7 @@ namespace NFUnitTestSystemLib
             object[] value5Arr = new object[] { 5 };
             TestObject2 testTestObject3 =
                 (TestObject2)myType2.GetConstructor(typeOfInt32Arr).Invoke(value5Arr);
-            Assert.Equal(testTestObject2.m_data, testTestObject3.m_data);
+            Assert.AreEqual(testTestObject2.m_data, testTestObject3.m_data);
         }
 
         [TestMethod]
@@ -345,7 +345,7 @@ namespace NFUnitTestSystemLib
             Type int32ArrType = int32Arr.GetType();
             Assert.IsType(myType1, int32ArrType.GetElementType());
 
-            Assert.True(myType1.GetElementType() == null);
+            Assert.IsTrue(myType1.GetElementType() == null);
         }
 
         [TestMethod]
@@ -357,7 +357,7 @@ namespace NFUnitTestSystemLib
 
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
-            Assert.True(myType1.GetField("m_data") == null);
+            Assert.IsTrue(myType1.GetField("m_data") == null);
 
             OutputHelper.WriteLine(" TestObject2 type has one data member \"m_data\" of type Int32.");
             TestObject2 testTestObject2 = new TestObject2(5);
@@ -369,33 +369,33 @@ namespace NFUnitTestSystemLib
                 BindingFlags.Public | BindingFlags.Instance).FieldType, myType1);
 
             OutputHelper.WriteLine(" Check that value in m_data is 5 ( becuase we called new TestObject2(5))");
-            Assert.Equal((int)myType2.GetField("m_data", BindingFlags.IgnoreCase |
+            Assert.AreEqual((int)myType2.GetField("m_data", BindingFlags.IgnoreCase |
                 BindingFlags.GetField | BindingFlags.Public |
                 BindingFlags.Instance).GetValue(testTestObject2), 5);
 
             OutputHelper.WriteLine(" Check that m_data  is a field");
-            Assert.True(myType2.GetField("m_data").MemberType == MemberTypes.Field);
+            Assert.IsTrue(myType2.GetField("m_data").MemberType == MemberTypes.Field);
 
             OutputHelper.WriteLine(" Check that field m_data has Name \"m_data\"");
-            Assert.Equal(myType2.GetField("m_data").Name, "m_data");
+            Assert.AreEqual(myType2.GetField("m_data").Name, "m_data");
 
             OutputHelper.WriteLine(" Check that  misspelling of m_data return NULL.");
-            Assert.True(null == myType2.GetField("data"));
+            Assert.IsTrue(null == myType2.GetField("data"));
 
             OutputHelper.WriteLine(" Checks that case misspelling of m_data return NULL if flag BindingFlags.IgnoreCase not specified.");
-            Assert.True(null == myType2.GetField("m_Data"));
+            Assert.IsTrue(null == myType2.GetField("m_Data"));
 
             OutputHelper.WriteLine("Check retrieval with BindingFlags.IgnoreCase. If flag BindingFlags.IgnoreCase is ised, then the case should be ignored. We should get the same type information.");
             FieldInfo fInfo_m_Data = myType2.GetField("m_Data", BindingFlags.IgnoreCase | BindingFlags.GetField | BindingFlags.Public | BindingFlags.Instance);
             FieldInfo fInfo_m_data = myType2.GetField("m_data");
-            Assert.NotNull(fInfo_m_Data);
-            Assert.NotNull(fInfo_m_data);
-            Assert.True(fInfo_m_Data.Name.Equals(fInfo_m_data.Name));
+            Assert.IsNotNull(fInfo_m_Data);
+            Assert.IsNotNull(fInfo_m_data);
+            Assert.IsTrue(fInfo_m_Data.Name.Equals(fInfo_m_data.Name));
 
             OutputHelper.WriteLine(" Indirectly set m_data in testTestObject2 to 6 and then check it.");
             myType2.GetField("m_data").SetValue(testTestObject2, 6);
-            Assert.Equal((int)myType2.GetField("m_data").GetValue(testTestObject2), 6);
-            Assert.Equal(testTestObject2.m_data, 6);
+            Assert.AreEqual((int)myType2.GetField("m_data").GetValue(testTestObject2), 6);
+            Assert.AreEqual(testTestObject2.m_data, 6);
         }
 
         [TestMethod]
@@ -408,16 +408,16 @@ namespace NFUnitTestSystemLib
 
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
-            Assert.Null(myType1.GetField("m_data"));
+            Assert.IsNull(myType1.GetField("m_data"));
             TestObject2 testTestObject2 = new TestObject2(5);
             Type myType2 = testTestObject2.GetType();
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
             Assert.IsType(myType2.GetField("m_data").FieldType, myType1);
-            Assert.Equal((int)myType2.GetField("m_data").GetValue(testTestObject2), 5);
-            Assert.True(myType2.GetField("m_data").MemberType == MemberTypes.Field);
-            Assert.Equal(myType2.GetField("m_data").Name, "m_data");
+            Assert.AreEqual((int)myType2.GetField("m_data").GetValue(testTestObject2), 5);
+            Assert.IsTrue(myType2.GetField("m_data").MemberType == MemberTypes.Field);
+            Assert.AreEqual(myType2.GetField("m_data").Name, "m_data");
             myType2.GetField("m_data").SetValue(testTestObject2, 6);
-            Assert.Equal((int)myType2.GetField("m_data").GetValue(testTestObject2), 6);
+            Assert.AreEqual((int)myType2.GetField("m_data").GetValue(testTestObject2), 6);
         }
 
         [TestMethod]
@@ -429,7 +429,7 @@ namespace NFUnitTestSystemLib
 
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
-            Assert.Equal(myType1.GetInterfaces().Length, 0);
+            Assert.AreEqual(myType1.GetInterfaces().Length, 0);
             TestObject2 testTestObject2 = new TestObject2(5);
             Type myType2 = testTestObject2.GetType();
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
@@ -451,16 +451,16 @@ namespace NFUnitTestSystemLib
             Type myType2 = testTestObject2.GetType();
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
             MethodInfo methodInfo1 = myType2.GetMethod("Method2");
-            Assert.Equal(methodInfo1.IsAbstract, false);
-            Assert.Equal(methodInfo1.IsFinal, false);
-            Assert.Equal(methodInfo1.IsPublic, true);
-            Assert.Equal(methodInfo1.IsStatic, false);
-            Assert.Equal(methodInfo1.IsVirtual, false);
-            Assert.True(methodInfo1.MemberType == MemberTypes.Method);
-            Assert.Equal(methodInfo1.Name, "Method2");
+            Assert.AreEqual(methodInfo1.IsAbstract, false);
+            Assert.AreEqual(methodInfo1.IsFinal, false);
+            Assert.AreEqual(methodInfo1.IsPublic, true);
+            Assert.AreEqual(methodInfo1.IsStatic, false);
+            Assert.AreEqual(methodInfo1.IsVirtual, false);
+            Assert.IsTrue(methodInfo1.MemberType == MemberTypes.Method);
+            Assert.AreEqual(methodInfo1.Name, "Method2");
             Assert.IsType(methodInfo1.ReturnType, I.GetType());
             Assert.IsType(methodInfo1.DeclaringType, myType2);
-            Assert.Equal((int)(methodInfo1.Invoke(testTestObject2, new object[] { 1 })), 1);
+            Assert.AreEqual((int)(methodInfo1.Invoke(testTestObject2, new object[] { 1 })), 1);
         }
 
         [TestMethod]
@@ -489,16 +489,16 @@ namespace NFUnitTestSystemLib
                 methodInfo1 = methodInfoArr1[1];
                 OutputHelper.WriteLine("Method2 found in position 1");
             }
-            Assert.Equal(methodInfo1.IsAbstract, false);
-            Assert.Equal(methodInfo1.IsFinal, false);
-            Assert.Equal(methodInfo1.IsPublic, true);
-            Assert.Equal(methodInfo1.IsStatic, false);
-            Assert.Equal(methodInfo1.IsVirtual, false);
-            Assert.True(methodInfo1.MemberType == MemberTypes.Method);
-            Assert.Equal(methodInfo1.Name, "Method2");
+            Assert.AreEqual(methodInfo1.IsAbstract, false);
+            Assert.AreEqual(methodInfo1.IsFinal, false);
+            Assert.AreEqual(methodInfo1.IsPublic, true);
+            Assert.AreEqual(methodInfo1.IsStatic, false);
+            Assert.AreEqual(methodInfo1.IsVirtual, false);
+            Assert.IsTrue(methodInfo1.MemberType == MemberTypes.Method);
+            Assert.AreEqual(methodInfo1.Name, "Method2");
             Assert.IsType(methodInfo1.ReturnType, I.GetType());
             Assert.IsType(methodInfo1.DeclaringType, myType2);
-            Assert.Equal((int)(methodInfo1.Invoke(testTestObject2, new object[] { 1 })), 1);
+            Assert.AreEqual((int)(methodInfo1.Invoke(testTestObject2, new object[] { 1 })), 1);
         }
 
         // Removing this one as not implemented scenario in nano
@@ -514,7 +514,7 @@ namespace NFUnitTestSystemLib
         //    TestObject2 testTestObject2 = new TestObject2(5);
         //    Type myType2 = testTestObject2.GetType();
         //    OutputHelper.WriteLine("The full name is " + myType2.FullName);
-        //    Assert.Equal((int)myType2.InvokeMember("Method2", BindingFlags.Default
+        //    Assert.AreEqual((int)myType2.InvokeMember("Method2", BindingFlags.Default
         //        | BindingFlags.InvokeMethod, null, testTestObject2,
         //        new object[] { -6 }), -6);
         //}

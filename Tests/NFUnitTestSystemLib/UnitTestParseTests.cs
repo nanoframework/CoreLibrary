@@ -76,7 +76,7 @@ namespace NFUnitTestSystemLib
             };
 
             // sanity check for when the test arrays above change
-            Assert.Equal(_intArr.Length, 2 * arr1.Length);
+            Assert.AreEqual(_intArr.Length, 2 * arr1.Length);
 
             for (int i = 0; i < arr2.Length; i++)
             {
@@ -115,10 +115,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(sbyte.Parse(strArr[i]), _sByte[i]);
+                Assert.AreEqual(sbyte.Parse(strArr[i]), _sByte[i]);
 
-                Assert.True(sbyte.TryParse(strArr[i], out sbyte result), $"TryParse failed for {strArr[i]} expecting: {_sByte[i]}");
-                Assert.Equal(_sByte[i], result);
+                Assert.IsTrue(sbyte.TryParse(strArr[i], out sbyte result), $"TryParse failed for {strArr[i]} expecting: {_sByte[i]}");
+                Assert.AreEqual(_sByte[i], result);
             }
         }
 
@@ -138,10 +138,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(byte.Parse(strArr[i]), _byte[i], $"Parse failed for {strArr[i]}, expecting: {_byte[i]}");
+                Assert.AreEqual(byte.Parse(strArr[i]), _byte[i], $"Parse failed for {strArr[i]}, expecting: {_byte[i]}");
 
-                Assert.True(byte.TryParse(strArr[i], out byte result), $"TryParse failed for {strArr[i]} expecting: {_byte[i]}");
-                Assert.Equal(_byte[i], result);
+                Assert.IsTrue(byte.TryParse(strArr[i], out byte result), $"TryParse failed for {strArr[i]} expecting: {_byte[i]}");
+                Assert.AreEqual(_byte[i], result);
             }
         }
 
@@ -160,10 +160,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(short.Parse(strArr[i]), _int16[i]);
+                Assert.AreEqual(short.Parse(strArr[i]), _int16[i]);
 
-                Assert.True(short.TryParse(strArr[i], out short result), $"TryParse failed for {strArr[i]} expecting: {_int16[i]}");
-                Assert.Equal(_int16[i], result);
+                Assert.IsTrue(short.TryParse(strArr[i], out short result), $"TryParse failed for {strArr[i]} expecting: {_int16[i]}");
+                Assert.AreEqual(_int16[i], result);
             }
         }
 
@@ -183,10 +183,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.True(ushort.TryParse(strArr[i], out ushort result), $"TryParse failed for {strArr[i]} expecting: {_uInt16[i]}");
-                Assert.Equal(_uInt16[i], result);
+                Assert.IsTrue(ushort.TryParse(strArr[i], out ushort result), $"TryParse failed for {strArr[i]} expecting: {_uInt16[i]}");
+                Assert.AreEqual(_uInt16[i], result);
 
-                Assert.Equal(ushort.Parse(strArr[i]), _uInt16[i]);
+                Assert.AreEqual(ushort.Parse(strArr[i]), _uInt16[i]);
             }
         }
 
@@ -205,10 +205,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(int.Parse(strArr[i]), _int32[i]);
+                Assert.AreEqual(int.Parse(strArr[i]), _int32[i]);
 
-                Assert.True(int.TryParse(strArr[i], out int result), $"TryParse failed for {strArr[i]} expecting: {_int32[i]}");
-                Assert.Equal(_int32[i], result);
+                Assert.IsTrue(int.TryParse(strArr[i], out int result), $"TryParse failed for {strArr[i]} expecting: {_int32[i]}");
+                Assert.AreEqual(_int32[i], result);
             }
         }
 
@@ -247,10 +247,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.True(uint.TryParse(strArr[i], out uint result), $"TryParse failed for {strArr[i]} expecting: {_uInt32[i]}");
-                Assert.Equal(_uInt32[i], result);
+                Assert.IsTrue(uint.TryParse(strArr[i], out uint result), $"TryParse failed for {strArr[i]} expecting: {_uInt32[i]}");
+                Assert.AreEqual(_uInt32[i], result);
 
-                Assert.Equal(uint.Parse(strArr[i]), _uInt32[i]);
+                Assert.AreEqual(uint.Parse(strArr[i]), _uInt32[i]);
             }
         }
 
@@ -284,10 +284,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(long.Parse(strArr[i]), _int64[i]);
+                Assert.AreEqual(long.Parse(strArr[i]), _int64[i]);
 
-                Assert.True(long.TryParse(strArr[i], out long result), $"TryParse failed for {strArr[i]} expecting: {_int64[i]}");
-                Assert.Equal(_int64[i], result);
+                Assert.IsTrue(long.TryParse(strArr[i], out long result), $"TryParse failed for {strArr[i]} expecting: {_int64[i]}");
+                Assert.AreEqual(_int64[i], result);
             }
 
             //Int32:  -2147483648 --> 2147483647
@@ -315,7 +315,7 @@ namespace NFUnitTestSystemLib
             {
                 temp = i.ToString();
                 newVal = long.Parse(temp);
-                Assert.Equal(i, newVal);
+                Assert.AreEqual(i, newVal);
             }
         }
 
@@ -342,11 +342,11 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.True(ulong.TryParse(strArr[i], out ulong result), $"TryParse failed for {strArr[i]} expecting: {_uInt64[i]}");
-                Assert.Equal(_uInt64[i], result);
+                Assert.IsTrue(ulong.TryParse(strArr[i], out ulong result), $"TryParse failed for {strArr[i]} expecting: {_uInt64[i]}");
+                Assert.AreEqual(_uInt64[i], result);
 
                 result = ulong.Parse(strArr[i]);
-                Assert.Equal(result, _uInt64[i]);
+                Assert.AreEqual(result, _uInt64[i]);
             }
 
             //Int32:  -2147483648 --> 2147483647
@@ -514,11 +514,11 @@ namespace NFUnitTestSystemLib
             {
                 OutputHelper.WriteLine($"parse {strArr[i]}");
 
-                Assert.Throws(typeof(FormatException),
+                Assert.ThrowsException(typeof(FormatException),
                               () => { double.Parse(strArr[i]); },
                               $"Should throw exception of type FormatExeception while parsing string: '{strArr[i]}'");
 
-                Assert.False(double.TryParse(strArr[i], out double _), $"TryParse should return false while parsing string: '{strArr[i]}'");
+                Assert.IsFalse(double.TryParse(strArr[i], out double _), $"TryParse should return false while parsing string: '{strArr[i]}'");
             }
         }
 
@@ -527,10 +527,10 @@ namespace NFUnitTestSystemLib
         {
             // Note we have to check hex values - again, the ToString() works over a subset of the range for double/float, and returns 'oor' or '-oor' for anything outside that range
             string t = "-1.7976931348623180E+320";
-            Assert.Equal(double.NegativeInfinity, double.Parse(t), "High negative values should return double.NegativeInfinity value when parsed");
+            Assert.AreEqual(double.NegativeInfinity, double.Parse(t), "High negative values should return double.NegativeInfinity value when parsed");
 
             t = "1.7976931348623180E+308";
-            Assert.Equal(double.PositiveInfinity, double.Parse(t), "High positive values should return double.PositiveInfinity value when parsed");
+            Assert.AreEqual(double.PositiveInfinity, double.Parse(t), "High positive values should return double.PositiveInfinity value when parsed");
         }
 
         [TestMethod]
@@ -606,51 +606,51 @@ namespace NFUnitTestSystemLib
                 Assert.AreEqual(float.Parse(strArr[i]), _float[i], $"Failed while parsing string: {strArr[i]} expecting: {_float[i]}");
 
                 Assert.IsTrue(float.TryParse(strArr[i], out result), $"TryParse failed for {strArr[i]} expecting: {_float[i]}");
-                Assert. Equal(_float[i], result);
+                Assert.AreEqual(_float[i], result);
             }
 
             float f = float.Parse("-0.1");
             Assert.AreEqual(f, -0.1f);
 
-            Assert.True(float.TryParse("-0.1", out result), $"TryParse failed for -0.1 expecting: {f}");
-            Assert. Equal(-0.1f, result);
+            Assert.IsTrue(float.TryParse("-0.1", out result), $"TryParse failed for -0.1 expecting: {f}");
+            Assert.AreEqual(-0.1f, result);
 
             f = float.Parse("0.1");
             Assert.AreEqual(f, 0.1f);
 
             Assert.IsTrue(float.TryParse("0.1", out result), $"TryParse failed for 0.1 expecting: {f}");
-            Assert. Equal(0.1f, result);
+            Assert.AreEqual(0.1f, result);
 
             f = float.Parse(" -1.1");
-            Assert.Equal(f, -1.1f);
+            Assert.AreEqual(f, -1.1f);
 
-            Assert.True(float.TryParse(" -1.1", out result), $"TryParse failed for -1.1 expecting: {f}");
-            Assert.Equal(-1.1f, result);
+            Assert.IsTrue(float.TryParse(" -1.1", out result), $"TryParse failed for -1.1 expecting: {f}");
+            Assert.AreEqual(-1.1f, result);
 
             f = float.Parse(" -0.0001");
             Assert.AreEqual(f, -0.0001f);
 
-            Assert. True(float.TryParse(" -0.0001", out result), $"TryParse failed for -0.0001 expecting: {f}");
-            Assert. Equal(-0.0001f, result);
+            Assert.IsTrue(float.TryParse(" -0.0001", out result), $"TryParse failed for -0.0001 expecting: {f}");
+            Assert.AreEqual(-0.0001f, result);
 
             f = float.Parse(" -10.0001");
-            Assert.Equal(f, -10.0001f);
+            Assert.AreEqual(f, -10.0001f);
 
             Assert.IsTrue(float.TryParse(" -10.0001", out result), $"TryParse failed for -10.0001 expecting: {f}");
-            Assert. Equal(-10.0001f, result);
+            Assert.AreEqual(-10.0001f, result);
 
             f = float.Parse("-0.01e-10");
             Assert.AreEqual(f, -0.01e-10f);
 
-            Assert. True(float.TryParse("-0.01e-10", out result), $"TryParse failed for -0.01e-10 expecting: {f}");
-            Assert. Equal(-0.01e-10f, result);
+            Assert.IsTrue(float.TryParse("-0.01e-10", out result), $"TryParse failed for -0.01e-10 expecting: {f}");
+            Assert.AreEqual(-0.01e-10f, result);
 
             // can't use Min/MaxValue.ToString() because the fast float-to-string routine only works in the range 2^64 to 2^-64 (there-about).
             string t = "-3.40282347E+38";  // float.MinValue
             Assert.AreEqual(float.MinValue, float.Parse(t), "Testing float min value parse");
 
             t = "3.40282347E+38"; // float.MaxValue
-            Assert. Equal(float.MaxValue, float.Parse(t), "Testing float max value parse");
+            Assert.AreEqual(float.MaxValue, float.Parse(t), "Testing float max value parse");
         }
 
         [TestMethod]
@@ -683,11 +683,11 @@ namespace NFUnitTestSystemLib
             {
                 OutputHelper.WriteLine($"parse {strArr[i]}");
 
-                Assert.Throws(typeof(FormatException),
+                Assert.ThrowsException(typeof(FormatException),
                               () => { float.Parse(strArr[i]); },
                               $"Should throw exception of type FormatExeception while parsing string: '{strArr[i]}'");
 
-                Assert.False(float.TryParse(strArr[i], out float _), $"TryParse should return false while parsing string: '{strArr[i]}'");
+                Assert.IsFalse(float.TryParse(strArr[i], out float _), $"TryParse should return false while parsing string: '{strArr[i]}'");
             }
         }
 
@@ -696,10 +696,10 @@ namespace NFUnitTestSystemLib
         {
             // Note we have to check hex values - again, the ToString() works over a subset of the range for double/float, and returns 'oor' or '-oor' for anything outside that range
             string t = "-3.40282380E+38";
-            Assert.Equal(float.NegativeInfinity, float.Parse(t), "High negative values should return float.NegativeInfinity value when parsed");
+            Assert.AreEqual(float.NegativeInfinity, float.Parse(t), "High negative values should return float.NegativeInfinity value when parsed");
 
             t = "3.40282380E+38";
-            Assert.Equal(float.PositiveInfinity, float.Parse(t), "High positive values should return float.PositiveInfinity value when parsed");
+            Assert.AreEqual(float.PositiveInfinity, float.Parse(t), "High positive values should return float.PositiveInfinity value when parsed");
         }
 
         private void CheckUValues(ulong start)
@@ -708,10 +708,10 @@ namespace NFUnitTestSystemLib
             {
                 ulong newVal = ulong.Parse(i.ToString());
 
-                Assert.True(ulong.TryParse(i.ToString(), out ulong result), $"TryParse failed for {i.ToString()} expecting: {newVal}");
-                Assert.Equal(newVal, result);
+                Assert.IsTrue(ulong.TryParse(i.ToString(), out ulong result), $"TryParse failed for {i.ToString()} expecting: {newVal}");
+                Assert.AreEqual(newVal, result);
 
-                Assert.Equal(i, newVal);
+                Assert.AreEqual(i, newVal);
             }
         }
 
@@ -727,10 +727,10 @@ namespace NFUnitTestSystemLib
             sbyte[] _SByte = new sbyte[] { 127, 127, -128, -128 };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(sbyte.Parse(strArr[i]), _SByte[i]);
+                Assert.AreEqual(sbyte.Parse(strArr[i]), _SByte[i]);
 
-                Assert.True(sbyte.TryParse(strArr[i], out sbyte result), $"TryParse failed for {strArr[i]} expecting: {_SByte[i]}");
-                Assert.Equal(_SByte[i], result);
+                Assert.IsTrue(sbyte.TryParse(strArr[i], out sbyte result), $"TryParse failed for {strArr[i]} expecting: {_SByte[i]}");
+                Assert.AreEqual(_SByte[i], result);
             }
         }
 
@@ -742,10 +742,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(byte.Parse(strArr[i]), _byte[i]);
+                Assert.AreEqual(byte.Parse(strArr[i]), _byte[i]);
 
-                Assert.True(byte.TryParse(strArr[i], out byte result), $"TryParse failed for {strArr[i]} expecting: {_byte[i]}");
-                Assert.Equal(_byte[i], result);
+                Assert.IsTrue(byte.TryParse(strArr[i], out byte result), $"TryParse failed for {strArr[i]} expecting: {_byte[i]}");
+                Assert.AreEqual(_byte[i], result);
             }
         }
 
@@ -757,10 +757,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(short.Parse(strArr[i]), _int16[i]);
+                Assert.AreEqual(short.Parse(strArr[i]), _int16[i]);
 
-                Assert.True(short.TryParse(strArr[i], out short result), $"TryParse failed for {strArr[i]} expecting: {_int16[i]}");
-                Assert.Equal(_int16[i], result);
+                Assert.IsTrue(short.TryParse(strArr[i], out short result), $"TryParse failed for {strArr[i]} expecting: {_int16[i]}");
+                Assert.AreEqual(_int16[i], result);
             }
         }
 
@@ -772,10 +772,10 @@ namespace NFUnitTestSystemLib
 
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.True(ushort.TryParse(strArr[i], out ushort result), $"TryParse failed for {strArr[i]} expecting: {_uInt16[i]}");
-                Assert.Equal(_uInt16[i], result);
+                Assert.IsTrue(ushort.TryParse(strArr[i], out ushort result), $"TryParse failed for {strArr[i]} expecting: {_uInt16[i]}");
+                Assert.AreEqual(_uInt16[i], result);
 
-                Assert.Equal(ushort.Parse(strArr[i]), _uInt16[i]);
+                Assert.AreEqual(ushort.Parse(strArr[i]), _uInt16[i]);
             }
         }
 
@@ -786,10 +786,10 @@ namespace NFUnitTestSystemLib
             int[] _int32 = new int[] { 2147483647, 2147483647, -2147483648, -2147483648 };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Equal(int.Parse(strArr[i]), _int32[i]);
+                Assert.AreEqual(int.Parse(strArr[i]), _int32[i]);
 
-                Assert.True(int.TryParse(strArr[i], out int result), $"TryParse failed for {strArr[i]} expecting: {_int32[i]}");
-                Assert.Equal(_int32[i], result);
+                Assert.IsTrue(int.TryParse(strArr[i], out int result), $"TryParse failed for {strArr[i]} expecting: {_int32[i]}");
+                Assert.AreEqual(_int32[i], result);
             }
         }
 
@@ -800,10 +800,10 @@ namespace NFUnitTestSystemLib
             uint[] _uInt32 = new uint[] { 4294967295, 4294967295, 0, 0 };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.True(uint.TryParse(strArr[i], out uint result), $"TryParse failed for {strArr[i]} expecting: {_uInt32[i]}");
-                Assert.Equal(_uInt32[i], result);
+                Assert.IsTrue(uint.TryParse(strArr[i], out uint result), $"TryParse failed for {strArr[i]} expecting: {_uInt32[i]}");
+                Assert.AreEqual(_uInt32[i], result);
 
-                Assert.Equal(uint.Parse(strArr[i]), _uInt32[i]);
+                Assert.AreEqual(uint.Parse(strArr[i]), _uInt32[i]);
             }
         }
 
@@ -816,7 +816,7 @@ namespace NFUnitTestSystemLib
             for (int i = 0; i < strArr.Length; i++)
             {
                 temp = long.Parse(strArr[i]);
-                Assert.Equal(temp, _int64[i]);
+                Assert.AreEqual(temp, _int64[i]);
             }
         }
 
@@ -829,7 +829,7 @@ namespace NFUnitTestSystemLib
             for (int i = 0; i < strArr.Length; i++)
             {
                 temp = ulong.Parse(strArr[i]);
-                Assert.Equal(temp, _uInt64[i]);
+                Assert.AreEqual(temp, _uInt64[i]);
             }
         }
 
@@ -841,97 +841,97 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SByte_ArgumentNullException_Test_17()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { sbyte.Parse(str); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { sbyte.Parse(str); });
         }
 
         [TestMethod]
         public void SByte_TryParse_Test()
         {
-            Assert.False(sbyte.TryParse(str, out sbyte _));
+            Assert.IsFalse(sbyte.TryParse(str, out sbyte _));
         }
 
         [TestMethod]
         public void Byte_ArgumentNullException_Test_18()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { byte.Parse(str); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { byte.Parse(str); });
         }
 
         [TestMethod]
         public void Byte_TryParse_Test()
         {
-            Assert.False(byte.TryParse(str, out byte _));
+            Assert.IsFalse(byte.TryParse(str, out byte _));
         }
 
         [TestMethod]
         public void Int16_ArgumentNullException_Test_19()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { short.Parse(str); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { short.Parse(str); });
         }
 
         [TestMethod]
         public void Int16_TryParse_Test()
         {
-            Assert.False(short.TryParse(str, out short _));
+            Assert.IsFalse(short.TryParse(str, out short _));
         }
 
         [TestMethod]
         public void UInt16_ArgumentNullException_Test_20()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { ushort.Parse(str); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { ushort.Parse(str); });
         }
 
         [TestMethod]
         public void UInt16_TryParse_Test()
         {
-            Assert.False(ushort.TryParse(str, out ushort _));
+            Assert.IsFalse(ushort.TryParse(str, out ushort _));
         }
 
         [TestMethod]
         public void Int32_ArgumentNullException_Test_21()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { int.Parse(str); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { int.Parse(str); });
         }
 
         [TestMethod]
         public void Int32_TryParse_Test()
         {
-            Assert.False(int.TryParse(str, out int _));
+            Assert.IsFalse(int.TryParse(str, out int _));
         }
 
         [TestMethod]
         public void UInt32_ArgumentNullException_Test_22()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { uint.Parse(str); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { uint.Parse(str); });
         }
 
         [TestMethod]
         public void UInt32_TryParse_Test()
         {
-            Assert.False(uint.TryParse(str, out uint _));
+            Assert.IsFalse(uint.TryParse(str, out uint _));
         }
 
         [TestMethod]
         public void Int64_ArgumentNullException_Test_23()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { long.Parse(str); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { long.Parse(str); });
         }
 
         [TestMethod]
         public void Int64_TryParse_Test()
         {
-            Assert.False(long.TryParse(str, out long _));
+            Assert.IsFalse(long.TryParse(str, out long _));
         }
 
         [TestMethod]
         public void UInt64_ArgumentNullException_Test_24()
         {
-            Assert.Throws(typeof(ArgumentNullException), () => { ulong.Parse(str); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { ulong.Parse(str); });
         }
 
         [TestMethod]
         public void UInt64_TryParse_Test()
         {
-            Assert.False(ulong.TryParse(str, out ulong _));
+            Assert.IsFalse(ulong.TryParse(str, out ulong _));
         }
 
         /// <summary>
@@ -978,17 +978,17 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { _ = sbyte.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = sbyte.Parse(strArr[i]); });
 
-                Assert.False(sbyte.TryParse(strArr[i], out _));
+                Assert.IsFalse(sbyte.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
                 string rdmString = GetRandomString();
 
-                Assert.Throws(typeof(FormatException), () => { _ = sbyte.Parse(rdmString); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = sbyte.Parse(rdmString); });
 
-                Assert.False(sbyte.TryParse(rdmString, out _));
+                Assert.IsFalse(sbyte.TryParse(rdmString, out _));
             }
         }
 
@@ -998,18 +998,18 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { _ = byte.Parse(strArr[i]); }, $"Value '{strArr[i]}' did not throw exception of type FormatException");
+                Assert.ThrowsException(typeof(FormatException), () => { _ = byte.Parse(strArr[i]); }, $"Value '{strArr[i]}' did not throw exception of type FormatException");
 
-                Assert.False(byte.TryParse(strArr[i], out _));
+                Assert.IsFalse(byte.TryParse(strArr[i], out _));
             }
 
             for (int i = 0; i < 5; i++)
             {
                 string rdmString = GetRandomString();
 
-                Assert.Throws(typeof(FormatException), () => { _ = byte.Parse(rdmString); }, $"Random string '{rdmString}' did not throw exception of FormatException");
+                Assert.ThrowsException(typeof(FormatException), () => { _ = byte.Parse(rdmString); }, $"Random string '{rdmString}' did not throw exception of FormatException");
 
-                Assert.False(byte.TryParse(rdmString, out _));
+                Assert.IsFalse(byte.TryParse(rdmString, out _));
             }
         }
 
@@ -1019,17 +1019,17 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { _ = short.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = short.Parse(strArr[i]); });
 
-                Assert.False(short.TryParse(strArr[i], out _));
+                Assert.IsFalse(short.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
                 string rdmString = GetRandomString();
 
-                Assert.Throws(typeof(FormatException), () => { _ = short.Parse(rdmString); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = short.Parse(rdmString); });
 
-                Assert.False(short.TryParse(rdmString, out _));
+                Assert.IsFalse(short.TryParse(rdmString, out _));
             }
         }
 
@@ -1039,17 +1039,17 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { _ = ushort.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = ushort.Parse(strArr[i]); });
 
-                Assert.False(ushort.TryParse(strArr[i], out _));
+                Assert.IsFalse(ushort.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
                 string rdmString = GetRandomString();
 
-                Assert.Throws(typeof(FormatException), () => { _ = ushort.Parse(rdmString); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = ushort.Parse(rdmString); });
 
-                Assert.False(ushort.TryParse(rdmString, out _));
+                Assert.IsFalse(ushort.TryParse(rdmString, out _));
             }
         }
 
@@ -1059,17 +1059,17 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { _ = int.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = int.Parse(strArr[i]); });
 
-                Assert.False(int.TryParse(strArr[i], out _));
+                Assert.IsFalse(int.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
                 string rdmString = GetRandomString();
 
-                Assert.Throws(typeof(FormatException), () => { _ = int.Parse(rdmString); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = int.Parse(rdmString); });
 
-                Assert.False(int.TryParse(rdmString, out _));
+                Assert.IsFalse(int.TryParse(rdmString, out _));
             }
         }
 
@@ -1079,17 +1079,17 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { _ = uint.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = uint.Parse(strArr[i]); });
 
-                Assert.False(uint.TryParse(strArr[i], out _));
+                Assert.IsFalse(uint.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
                 string rdmString = GetRandomString();
 
-                Assert.Throws(typeof(FormatException), () => { _ = uint.Parse(rdmString); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = uint.Parse(rdmString); });
 
-                Assert.False(uint.TryParse(rdmString, out _));
+                Assert.IsFalse(uint.TryParse(rdmString, out _));
             }
         }
 
@@ -1099,17 +1099,17 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { _ = long.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = long.Parse(strArr[i]); });
 
-                Assert.False(long.TryParse(strArr[i], out _));
+                Assert.IsFalse(long.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
                 string rdmString = GetRandomString();
 
-                Assert.Throws(typeof(FormatException), () => { _ = long.Parse(rdmString); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = long.Parse(rdmString); });
 
-                Assert.False(long.TryParse(rdmString, out _));
+                Assert.IsFalse(long.TryParse(rdmString, out _));
             }
         }
 
@@ -1119,17 +1119,17 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "", "1,234", "123e5", "a", "3.14159265358979" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(FormatException), () => { _ = ulong.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = ulong.Parse(strArr[i]); });
 
-                Assert.False(ulong.TryParse(strArr[i], out _));
+                Assert.IsFalse(ulong.TryParse(strArr[i], out _));
             }
             for (int i = 0; i < 5; i++)
             {
                 string rdmString = GetRandomString();
 
-                Assert.Throws(typeof(FormatException), () => { _ = ulong.Parse(rdmString); });
+                Assert.ThrowsException(typeof(FormatException), () => { _ = ulong.Parse(rdmString); });
 
-                Assert.False(ulong.TryParse(rdmString, out _));
+                Assert.IsFalse(ulong.TryParse(rdmString, out _));
             }
         }
 
@@ -1145,9 +1145,9 @@ namespace NFUnitTestSystemLib
                                              ((long)sbyte.MaxValue + 1).ToString(), ((long)sbyte.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = sbyte.Parse(strArr[i]); }, $"The value '{strArr[i]}' did not produce an exception type of ArgumentOutOfRange");
+                Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = sbyte.Parse(strArr[i]); }, $"The value '{strArr[i]}' did not produce an exception type of ArgumentOutOfRange");
 
-                Assert.False(sbyte.TryParse(strArr[i], out _));
+                Assert.IsFalse(sbyte.TryParse(strArr[i], out _));
             }
         }
 
@@ -1158,9 +1158,9 @@ namespace NFUnitTestSystemLib
                                              ((long)byte.MaxValue + 1).ToString(), ((long)byte.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = byte.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = byte.Parse(strArr[i]); });
 
-                Assert.False(byte.TryParse(strArr[i], out _));
+                Assert.IsFalse(byte.TryParse(strArr[i], out _));
             }
         }
 
@@ -1171,9 +1171,9 @@ namespace NFUnitTestSystemLib
                                              ((long)short.MaxValue + 1).ToString(), ((long)short.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = short.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = short.Parse(strArr[i]); });
 
-                Assert.False(short.TryParse(strArr[i], out _));
+                Assert.IsFalse(short.TryParse(strArr[i], out _));
             }
         }
 
@@ -1184,9 +1184,9 @@ namespace NFUnitTestSystemLib
                                              ((long)ushort.MaxValue + 1).ToString(), ((long)ushort.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = ushort.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = ushort.Parse(strArr[i]); });
 
-                Assert.False(ushort.TryParse(strArr[i], out _));
+                Assert.IsFalse(ushort.TryParse(strArr[i], out _));
             }
         }
 
@@ -1197,9 +1197,9 @@ namespace NFUnitTestSystemLib
                                              ((long)int.MaxValue + 1).ToString(), ((long)int.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = int.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = int.Parse(strArr[i]); });
 
-                Assert.False(int.TryParse(strArr[i], out _));
+                Assert.IsFalse(int.TryParse(strArr[i], out _));
             }
         }
 
@@ -1210,9 +1210,9 @@ namespace NFUnitTestSystemLib
                                              ((long)uint.MaxValue + 1).ToString(), ((long)uint.MaxValue + 100).ToString() };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = uint.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = uint.Parse(strArr[i]); });
 
-                Assert.False(uint.TryParse(strArr[i], out _));
+                Assert.IsFalse(uint.TryParse(strArr[i], out _));
             }
         }
 
@@ -1224,9 +1224,9 @@ namespace NFUnitTestSystemLib
                                              "9223372036854775808", "9223372036854775900" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = long.Parse(strArr[i]); }, $"An exception of type ArgumentOutOfRangeException was not thrown when values was {strArr[i]}");
+                Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = long.Parse(strArr[i]); }, $"An exception of type ArgumentOutOfRangeException was not thrown when values was {strArr[i]}");
 
-                Assert.False(long.TryParse(strArr[i], out _));
+                Assert.IsFalse(long.TryParse(strArr[i], out _));
             }
         }
 
@@ -1236,9 +1236,9 @@ namespace NFUnitTestSystemLib
             string[] strArr = new string[] { "-1", "-100", "18446744073709551616", "18446744073709551700" };
             for (int i = 0; i < strArr.Length; i++)
             {
-                Assert.Throws(typeof(ArgumentOutOfRangeException), () => { _ = ulong.Parse(strArr[i]); });
+                Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = ulong.Parse(strArr[i]); });
 
-                Assert.False(ulong.TryParse(strArr[i], out _));
+                Assert.IsFalse(ulong.TryParse(strArr[i], out _));
             }
         }
 
@@ -1249,20 +1249,20 @@ namespace NFUnitTestSystemLib
 
             // Convert to int and uint should keep the value
             long l_val = (long)dbVal;
-            Assert.Equal(l_val, dbVal);
+            Assert.AreEqual(l_val, dbVal);
 
             ulong ul_val = (ulong)dbVal;
-            Assert.Equal(ul_val, dbVal);
+            Assert.AreEqual(ul_val, dbVal);
 
             // Change sign to negative
             dbVal = -dbVal;
 
             l_val = (long)dbVal;
-            Assert.Equal(l_val, dbVal);
+            Assert.AreEqual(l_val, dbVal);
 
             ul_val = (ulong)dbVal;
             long ul_val_cast = (long)ul_val;
-            Assert.Equal(ul_val_cast, dbVal);
+            Assert.AreEqual(ul_val_cast, dbVal);
         }
 
 
@@ -1292,42 +1292,42 @@ namespace NFUnitTestSystemLib
             MyEnum2 e2 = (MyEnum2)o_enum; // line 2
                                           // Cast from enum to primitive type that enum is based on
             short sv = (short)o_enum;
-            Assert.Equal(sv, (short)MyEnum.Value);
+            Assert.AreEqual(sv, (short)MyEnum.Value);
 
             // Cast from enum to primitive type that enum is based on
             int iv = (int)o_enum1;
-            Assert.Equal(iv, (short)MyEnum1.Value);
+            Assert.AreEqual(iv, (short)MyEnum1.Value);
 
             int i_long = (int)(long)o_long;
             CastTestClass cls = (CastTestClass)o_class;
             Guid guid = (Guid)o_guid;
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Throws(typeof(InvalidCastException), () =>
+            Assert.ThrowsException(typeof(InvalidCastException), () =>
             {
                 MyEnum1 e1 = (MyEnum1)o_enum;
             }, "Trying to cast incompatible enums - should throw InvalidCastException");
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Throws(typeof(InvalidCastException), () =>
+            Assert.ThrowsException(typeof(InvalidCastException), () =>
             {
                 int i = (int)o_long;
             }, "Trying to cast long to int - should throw InvalidCastException");
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Throws(typeof(InvalidCastException), () =>
+            Assert.ThrowsException(typeof(InvalidCastException), () =>
             {
                 int i = (int)o_class;
             }, "Trying to cast object to int - should throw InvalidCastException");
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Throws(typeof(InvalidCastException), () =>
+            Assert.ThrowsException(typeof(InvalidCastException), () =>
             {
                 int i = (int)o_enum;
             }, "Trying to cast enum to int - should throw InvalidCastException");
 
             // Now casts that should throw exception. Any cast that does not throw - means error.
-            Assert.Throws(typeof(InvalidCastException), () =>
+            Assert.ThrowsException(typeof(InvalidCastException), () =>
             {
                 int i = (int)o_guid;
             }, "Trying to cast Guid to int - should throw InvalidCastException");

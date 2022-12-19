@@ -22,7 +22,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
             OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
             OutputHelper.WriteLine(" members declared by the field-declaration.");
-            Assert.True(FieldsTestClass1.testMethod());
+            Assert.IsTrue(FieldsTestClass1.testMethod());
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
             OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
             OutputHelper.WriteLine(" members declared by the field-declaration.");
-            Assert.True(FieldsTestClass2.testMethod());
+            Assert.IsTrue(FieldsTestClass2.testMethod());
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
             OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
             OutputHelper.WriteLine(" members declared by the field-declaration.");
-            Assert.True(FieldsTestClass3.testMethod());
+            Assert.IsTrue(FieldsTestClass3.testMethod());
         }
 
         [TestMethod]
@@ -58,7 +58,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
             OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
             OutputHelper.WriteLine(" members declared by the field-declaration.");
-            Assert.True(FieldsTestClass4.testMethod());
+            Assert.IsTrue(FieldsTestClass4.testMethod());
         }
 
         [TestMethod]
@@ -70,7 +70,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
             OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
             OutputHelper.WriteLine(" members declared by the field-declaration.");
-            Assert.True(FieldsTestClass5.testMethod());
+            Assert.IsTrue(FieldsTestClass5.testMethod());
         }
 
         [TestMethod]
@@ -82,7 +82,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
             OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
             OutputHelper.WriteLine(" members declared by the field-declaration.");
-            Assert.True(FieldsTestClass6.testMethod());
+            Assert.IsTrue(FieldsTestClass6.testMethod());
         }
 
         [TestMethod]
@@ -94,7 +94,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
             OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
             OutputHelper.WriteLine(" members declared by the field-declaration.");
-            Assert.True(FieldsTestClass7.testMethod());
+            Assert.IsTrue(FieldsTestClass7.testMethod());
         }
 
         [TestMethod]
@@ -106,7 +106,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" static modifier, and a readonly modifier.  The ");
             OutputHelper.WriteLine(" attributes and modifiers apply to all of the ");
             OutputHelper.WriteLine(" members declared by the field-declaration.");
-            Assert.True(FieldsTestClass8.testMethod());
+            Assert.IsTrue(FieldsTestClass8.testMethod());
         }
 
         [TestMethod]
@@ -122,7 +122,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" A field declaration that declares multiple fields");
             OutputHelper.WriteLine(" is equivalent to multiple declarations of single ");
             OutputHelper.WriteLine(" fields with the same attributes, modifiers, and type.");
-            Assert.True(FieldsTestClass13.testMethod());
+            Assert.IsTrue(FieldsTestClass13.testMethod());
         }
 
         [TestMethod]
@@ -132,7 +132,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" A static field identifies exactly on storage location.");
             OutputHelper.WriteLine(" No matter how many instances of a class are created,");
             OutputHelper.WriteLine(" there is only ever one copy of a static field.");
-            Assert.True(FieldsTestClass14.testMethod());
+            Assert.IsTrue(FieldsTestClass14.testMethod());
         }
 
         [TestMethod]
@@ -143,7 +143,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" type in which it is declared is loaded, and ");
             OutputHelper.WriteLine(" ceases to exist when the type in which it ");
             OutputHelper.WriteLine(" is declared in unloaded.");
-            Assert.True(FieldsTestClass15.testMethod());
+            Assert.IsTrue(FieldsTestClass15.testMethod());
         }
 
         [TestMethod]
@@ -156,7 +156,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" its class is created, and ceases to exist when there ");
             OutputHelper.WriteLine(" are no references to that instance and the destructor");
             OutputHelper.WriteLine(" of the instance has executed.");
-            Assert.True(FieldsTestClass16.testMethod());
+            Assert.IsTrue(FieldsTestClass16.testMethod());
         }
 
         [TestMethod]
@@ -169,7 +169,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" its class is created, and ceases to exist when there ");
             OutputHelper.WriteLine(" are no references to that instance and the destructor");
             OutputHelper.WriteLine(" of the instance has executed.");
-            Assert.True(FieldsTestClass17.testMethod());
+            Assert.IsTrue(FieldsTestClass17.testMethod());
         }
 
         [TestMethod]
@@ -180,7 +180,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the form E.M, if M is a static field, E must denote");
             OutputHelper.WriteLine(" a type, and if M is an instance field, E must ");
             OutputHelper.WriteLine(" denote an instance.");
-            Assert.True(FieldsTestClass18.testMethod());
+            Assert.IsTrue(FieldsTestClass18.testMethod());
         }
 
         [TestMethod]
@@ -191,7 +191,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" the form E.M, if M is a static field, E must denote");
             OutputHelper.WriteLine(" a type, and if M is an instance field, E must ");
             OutputHelper.WriteLine(" denote an instance.");
-            Assert.True(FieldsTestClass20.testMethod());
+            Assert.IsTrue(FieldsTestClass20.testMethod());
         }
 
         [TestMethod]
@@ -203,7 +203,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" by the declaration can only occur as part of");
             OutputHelper.WriteLine(" the declaration or in a constructor in the");
             OutputHelper.WriteLine(" same class.");
-            Assert.True(FieldsTestClass22.testMethod());
+            Assert.IsTrue(FieldsTestClass22.testMethod());
         }
 
         [TestMethod]
@@ -215,7 +215,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" by the declaration can only occur as part of");
             OutputHelper.WriteLine(" the declaration or in a constructor in the");
             OutputHelper.WriteLine(" same class.");
-            Assert.True(FieldsTestClass23.testMethod());
+            Assert.IsTrue(FieldsTestClass23.testMethod());
         }
 
         [TestMethod]
@@ -227,7 +227,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" by the declaration can only occur as part of");
             OutputHelper.WriteLine(" the declaration or in a constructor in the");
             OutputHelper.WriteLine(" same class.");
-            Assert.True(FieldsTestClass24.testMethod());
+            Assert.IsTrue(FieldsTestClass24.testMethod());
         }
 
         [TestMethod]
@@ -239,7 +239,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" type of the value is not permitted in a const declaration");
             OutputHelper.WriteLine(" or when the value cannot be computed at compile-time");
             OutputHelper.WriteLine(" by a constant expression.");
-            Assert.True(FieldsTestClass41.testMethod());
+            Assert.IsTrue(FieldsTestClass41.testMethod());
         }
 
         [TestMethod]
@@ -253,7 +253,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" correspond to assignment statements that are executed");
             OutputHelper.WriteLine(" when an instance of the class is created.");
             OutputHelper.WriteLine("This test has been rewritten to avoid use of the Math.Abs function which the MF does not support");
-            Assert.True(FieldsTestClass42.testMethod());
+            Assert.IsTrue(FieldsTestClass42.testMethod());
         }
 
         [TestMethod]
@@ -266,7 +266,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" constructor of a class.  The variable initializers");
             OutputHelper.WriteLine(" are executed in the textual order they appear");
             OutputHelper.WriteLine(" in the class declaration.");
-            Assert.True(FieldsTestClass43.testMethod());
+            Assert.IsTrue(FieldsTestClass43.testMethod());
         }
 
         [TestMethod]
@@ -279,7 +279,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" constructor of a class.  The variable initializers");
             OutputHelper.WriteLine(" are executed in the textual order they appear");
             OutputHelper.WriteLine(" in the class declaration.");
-            Assert.True(FieldsTestClass44.testMethod());
+            Assert.IsTrue(FieldsTestClass44.testMethod());
         }
 
         [TestMethod]
@@ -292,7 +292,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" constructor of a class.  The variable initializers");
             OutputHelper.WriteLine(" are executed in the textual order they appear");
             OutputHelper.WriteLine(" in the class declaration.");
-            Assert.True(FieldsTestClass45.testMethod());
+            Assert.IsTrue(FieldsTestClass45.testMethod());
         }
 
         [TestMethod]
@@ -303,7 +303,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" correspond to a sequence of assignments that are ");
             OutputHelper.WriteLine(" executed immediately upon entry to one of the instance");
             OutputHelper.WriteLine(" constructors of the class.");
-            Assert.True(FieldsTestClass46.testMethod());
+            Assert.IsTrue(FieldsTestClass46.testMethod());
         }
 
         [TestMethod]
@@ -315,7 +315,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" variable initializer, as it is an error for");
             OutputHelper.WriteLine(" a variable initialzer to reference any instance");
             OutputHelper.WriteLine(" member through a simple-name.");
-            Assert.True(FieldsTestClass49.testMethod());
+            Assert.IsTrue(FieldsTestClass49.testMethod());
         }
 
         [TestMethod]
@@ -331,7 +331,7 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" class the contains the field declaration. These are also");
             OutputHelper.WriteLine(" contexts in which it is valid to pass a readonly field");
             OutputHelper.WriteLine(" as an out or ref parameter.");
-            Assert.True(FieldsTestClass51.testMethod());
+            Assert.IsTrue(FieldsTestClass51.testMethod());
         }
 
         [TestMethod]
@@ -347,49 +347,49 @@ namespace NFUnitTestClasses
             OutputHelper.WriteLine(" class the contains the field declaration. These are also");
             OutputHelper.WriteLine(" contexts in which it is valid to pass a readonly field");
             OutputHelper.WriteLine(" as an out or ref parameter.");
-            Assert.True(FieldsTestClass52.testMethod());
+            Assert.IsTrue(FieldsTestClass52.testMethod());
         }
 
         [TestMethod]
         public void Fields53_testMethod()
         {
             OutputHelper.WriteLine("Testing bools assigned with (x == y)");
-            Assert.True(FieldsTestClass53.testMethod());
+            Assert.IsTrue(FieldsTestClass53.testMethod());
         }
 
         [TestMethod]
         public void Fields54_testMethod()
         {
             OutputHelper.WriteLine("Testing bools assigned with function calls");
-            Assert.True(FieldsTestClass54.testMethod());
+            Assert.IsTrue(FieldsTestClass54.testMethod());
         }
 
         [TestMethod]
         public void Fields55_testMethod()
         {
             OutputHelper.WriteLine("Testing bools assigned with conditionals");
-            Assert.True(FieldsTestClass55.testMethod());
+            Assert.IsTrue(FieldsTestClass55.testMethod());
         }
 
         [TestMethod]
         public void Fields56_testMethod()
         {
             OutputHelper.WriteLine("Testing ints assigned with function calls");
-            Assert.True(FieldsTestClass56.testMethod());
+            Assert.IsTrue(FieldsTestClass56.testMethod());
         }
 
         [TestMethod]
         public void Fields57_testMethod()
         {
             OutputHelper.WriteLine("Testing strings assigned with \"x\" + \"y\"");
-            Assert.True(FieldsTestClass57.testMethod());
+            Assert.IsTrue(FieldsTestClass57.testMethod());
         }
 
         [TestMethod]
         public void Fields58_testMethod()
         {
             OutputHelper.WriteLine("Testing strings assigned with function calls");
-            Assert.True(FieldsTestClass58.testMethod());
+            Assert.IsTrue(FieldsTestClass58.testMethod());
         }
 
         class FieldsTestClass1
