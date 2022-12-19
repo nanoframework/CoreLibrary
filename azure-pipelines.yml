@@ -65,7 +65,7 @@ jobs:
       skipNuGetCache: true
 
   # rebuild CoreLibrary project to get the assembly checksum
-  - task: MSBuild@1
+  - task: VSBuild@1
     condition: >-
       and(
         succeeded(),
@@ -86,7 +86,7 @@ jobs:
       nugetPackageName: 'nanoFramework.CoreLibrary'
 
   # rebuild CoreLibrary.NoReflection project to get the assembly checksum
-  - task: MSBuild@1
+  - task: VSBuild@1
     condition: >-
       and(
         succeeded(),
@@ -205,8 +205,9 @@ jobs:
     vmImage: 'windows-latest'
 
   steps:
-
   - checkout: self
+    fetchDepth: 1
+    persistCredentials: true
 
   # step from template @ nf-tools repo
   # report error
