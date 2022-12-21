@@ -23,7 +23,8 @@ namespace System
 
         // this field is required in the native end
 #pragma warning disable 0649
-        private bool _value;
+        // Do not rename (binary serialization)
+        private bool m_value;
 #pragma warning restore 0649
 
         /// <summary>
@@ -32,7 +33,7 @@ namespace System
         /// <returns>TrueString if the value of this instance is true, or FalseString if the value of this instance is false.</returns>
         public override String ToString()
         {
-            return _value ? TrueString : FalseString;
+            return m_value ? TrueString : FalseString;
         }
 
     }

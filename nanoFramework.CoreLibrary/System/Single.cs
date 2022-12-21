@@ -17,7 +17,8 @@ namespace System
     {
         // this field is required in the native end
 #pragma warning disable 0649
-        internal float _value;
+        // Do not rename (binary serialization)
+        internal float m_value;
 #pragma warning restore 0649
 
         /// <summary>
@@ -159,7 +160,7 @@ namespace System
                 return double._naNSymbol;
             }
 
-            return Number.Format(_value, false, format, NumberFormatInfo.CurrentInfo);
+            return Number.Format(m_value, false, format, NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>

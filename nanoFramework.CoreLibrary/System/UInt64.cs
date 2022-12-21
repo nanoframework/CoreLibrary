@@ -14,7 +14,11 @@ namespace System
     [Serializable, CLSCompliant(false)]
     public struct UInt64
     {
-        private ulong _value;
+        // this field is required in the native end
+#pragma warning disable 0649        
+        // Do not rename (binary serialization)
+        private ulong m_value;
+#pragma warning restore 0649
 
         /// <summary>
         /// Represents the largest possible value of UInt64. This field is constant.
@@ -33,7 +37,7 @@ namespace System
         /// <returns>The string representation of the value of this instance, consisting of a sequence of digits ranging from 0 to 9, without a sign or leading zeroes.</returns>
         public override String ToString()
         {
-            return Number.Format(_value, true, "G", NumberFormatInfo.CurrentInfo);
+            return Number.Format(m_value, true, "G", NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>
@@ -43,7 +47,7 @@ namespace System
         /// <returns>The string representation of the value of this instance as specified by format.</returns>
         public String ToString(String format)
         {
-            return Number.Format(_value, true, format, NumberFormatInfo.CurrentInfo);
+            return Number.Format(m_value, true, format, NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>

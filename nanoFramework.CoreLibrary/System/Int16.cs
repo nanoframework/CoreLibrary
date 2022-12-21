@@ -16,7 +16,8 @@ namespace System
     {
         // this field is required in the native end
 #pragma warning disable 0649
-        internal short _value;
+        // Do not rename (binary serialization)
+        internal short m_value;
 #pragma warning restore 0649
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace System
         /// <returns>The string representation of the value of this instance, consisting of a minus sign if the value is negative, and a sequence of digits ranging from 0 to 9 with no leading zeroes.</returns>
         public override String ToString()
         {
-            return Number.Format(_value, true, "G", NumberFormatInfo.CurrentInfo);
+            return Number.Format(m_value, true, "G", NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>
@@ -46,7 +47,7 @@ namespace System
         /// <returns>The string representation of the value of this instance as specified by format.</returns>
         public String ToString(String format)
         {
-            return Number.Format(_value, true, format, NumberFormatInfo.CurrentInfo);
+            return Number.Format(m_value, true, format, NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>
