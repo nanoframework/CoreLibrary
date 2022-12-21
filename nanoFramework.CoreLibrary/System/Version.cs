@@ -9,9 +9,11 @@ namespace System
     /// <summary>
     /// Represents the version number of an assembly, operating system, or the common language runtime. This class cannot be inherited.
     /// </summary>
+    [Serializable]
     public sealed class Version // : ICloneable, IComparable, IComparable<Version>, IEquatable<Version>
     {
         // AssemblyName depends on the order staying the same
+        // Do not rename these (binary serialization)
         private readonly int _Major;
         private readonly int _Minor;
         private readonly int _Build = -1;
