@@ -112,7 +112,8 @@ jobs:
     condition: >-
       and(
         succeeded(),
-        startsWith(variables['Build.SourceBranch'], 'refs/tags/v'),
+        eq(variables['System.PullRequest.PullRequestId'], ''),
+        startsWith(variables['Build.SourceBranch'], 'refs/heads/main'),
         not(contains(variables['Build.SourceBranch'], 'preview')),
         eq(variables['StartReleaseCandidate'], false)
       )
@@ -141,7 +142,8 @@ jobs:
       ),
       and(
         succeeded(),
-        contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'),
+        eq(variables['System.PullRequest.PullRequestId'], ''),
+        contains(variables['Build.SourceVersionMessage'], '***UPDATE_DEPENDENTS***'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       eq(variables['UPDATE_DEPENDENTS'], 'true')
@@ -166,10 +168,10 @@ jobs:
   - template: azure-pipelines-templates/update-dependents.yml@templates  
     parameters:
       repositoriesToUpdate: |
+        nanoFramework.TestFramework
         nanoFramework.Device.OneWire
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
-        nanoFramework.TestFramework
         nanoFramework.Logging
         nanoFramework.Networking.Sntp
         nanoFramework.Hardware.Stm32
