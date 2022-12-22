@@ -137,7 +137,7 @@ jobs:
     or(
       and(
         succeeded(),
-        startsWith(variables['Build.SourceBranch'], 'refs/tags/v'),
+        startsWith(variables['Build.SourceBranch'], 'refs/heads/main'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       and(
@@ -148,9 +148,6 @@ jobs:
       ),
       eq(variables['UPDATE_DEPENDENTS'], 'true')
     )
-
-  dependsOn:
-  - Build_mscorlib
 
   pool:
     vmImage: 'windows-latest'
@@ -199,7 +196,6 @@ jobs:
   condition: >-
     or(
       failed('Build_mscorlib'),
-      failed('Build_mscorlib_no_reflection'),
       failed('Update_Dependents')
     )
 
@@ -209,6 +205,7 @@ jobs:
   steps:
 
   - checkout: self
+    fetchDepth: 1
 
   # step from template @ nf-tools repo
   # report error
