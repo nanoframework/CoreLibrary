@@ -15,7 +15,7 @@ namespace System
     public static class Console
     {
         /// <summary>
-        /// Writes the specified string value, followed by the current line terminator, to the standard output stream.
+        /// Writes the specified string value to the standard output stream.
         /// </summary>
         /// <param name="value">The value to write.</param>
         /// <remarks>
