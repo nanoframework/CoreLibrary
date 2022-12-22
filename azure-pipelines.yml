@@ -169,13 +169,11 @@ jobs:
         nanoFramework.Device.OneWire
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
-        nanoFramework.Logging
-        nanoFramework.Networking.Sntp
         nanoFramework.Hardware.Stm32
         nanoFramework.Hardware.TI
+        nanoFramework.Networking.Sntp
         nanoFramework.TI.EasyLink
         nanoFramework.ResourceManager
-        nanoFramework.Json
         System.Collections
         System.Device.Adc
         System.Device.Dac
@@ -184,6 +182,19 @@ jobs:
         System.Device.Spi
         System.Math
         System.Text
+  
+  # wait for 15min to allow the 1st batch to get updated
+  # only if this wasn't triggered by the pipeline
+  - powershell: Start-Sleep -Seconds (15*60)
+    displayName: Wait for 15min
+    condition: eq(variables['UPDATE_DEPENDENTS'], 'false')
+
+  # update dependents
+  - template: azure-pipelines-templates/update-dependents.yml@templates  
+    parameters:
+      repositoriesToUpdate: |
+        nanoFramework.Logging
+        nanoFramework.Json
         System.Threading
 
 ##################################
