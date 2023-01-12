@@ -164,11 +164,11 @@ jobs:
   # update dependents
   - template: azure-pipelines-templates/update-dependents.yml@templates  
     parameters:
-        ${{ if eq(variables['UPDATE_DEPENDENTS'], 'false') }}:
-          waitBeforeUpdate: false
-        ${{ else }}:
-          waitBeforeUpdate: true
-        repositoriesToUpdate: |
+      ${{ if eq(variables['UPDATE_DEPENDENTS'], 'false') }}:
+        waitBeforeUpdate: false
+      ${{ else }}:
+        waitBeforeUpdate: true
+      repositoriesToUpdate: |
         nanoFramework.TestFramework
         nanoFramework.Device.OneWire
         nanoFramework.Runtime.Events
@@ -178,7 +178,6 @@ jobs:
         nanoFramework.Networking.Sntp
         nanoFramework.TI.EasyLink
         nanoFramework.ResourceManager
-        System.Collections
         System.Device.Adc
         System.Device.Dac
         System.Device.I2c
@@ -197,6 +196,7 @@ jobs:
       repositoriesToUpdate: |
         nanoFramework.Logging
         nanoFramework.Json
+        System.Collections
         System.Threading
 
 ##################################
