@@ -225,7 +225,7 @@ namespace System
         public static extern ushort ToUInt16(byte[] value, int startIndex);
 
         /// <summary>
-        /// Returns a 32-bit unsigned integer converted from two bytes at a specified position in a byte array.
+        /// Returns a 32-bit unsigned integer converted from four bytes at a specified position in a byte array.
         /// </summary>
         /// <param name="value">The array of bytes.</param>
         /// <param name="startIndex">The starting position within value.</param>
@@ -235,7 +235,7 @@ namespace System
         public static extern uint ToUInt32(byte[] value, int startIndex);
 
         /// <summary>
-        /// Returns a 64-bit unsigned integer converted from two bytes at a specified position in a byte array.
+        /// Returns a 64-bit unsigned integer converted from eight bytes at a specified position in a byte array.
         /// </summary>
         /// <param name="value">The array of bytes.</param>
         /// <param name="startIndex">The starting position within value.</param>
