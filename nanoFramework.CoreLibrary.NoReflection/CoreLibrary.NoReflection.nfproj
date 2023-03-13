@@ -157,9 +157,6 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\FieldReflectionAttributes.cs" Link="System\Reflection\FieldReflectionAttributes.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\IReflect.cs" Link="System\Reflection\IReflect.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MemberInfo.cs" Link="System\Reflection\MemberInfo.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MemberTypes.cs" Link="System\.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MethodBase.cs" Link="System\.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MethodImplAttributes.cs" Link="System\.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\MethodInfo.cs" Link="System\Reflection\MethodInfo.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\PropertyInfo.cs" Link="System\Reflection\PropertyInfo.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Reflection\RuntimeConstructorInfo.cs" Link="System\Reflection\RuntimeConstructorInfo.cs" />
