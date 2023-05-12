@@ -7,9 +7,7 @@
 using nanoFramework.TestFramework;
 using System;
 using System.Collections;
-using System.Diagnostics;
-using System.Globalization;
-
+using static NFUnitTestArithmetic.SampleDisplay;
 
 namespace NFUnitTestArithmetic
 {
@@ -81,34 +79,38 @@ namespace NFUnitTestArithmetic
         public void DecimalFormat()
         {
             sampleDisplay = new SampleDisplay();
-             
-            TestFormat("  123", "D",     "123");
-            TestFormat("  129", "D",     "129");
-            TestFormat(" -129", "D",    "-129");
-            TestFormat("  128", "D",     "128");
-            TestFormat(" -128", "D",    "-128");
-            TestFormat(" -128", "D2",   "-128");
-            TestFormat(" 1234", "D2",   "1234");
-            TestFormat("-1234", "D",   "-1234");  
+
+            TestFormat("  123", "D", "123");
+            TestFormat("  129", "D", "129");
+            TestFormat(" -129", "D", "-129");
+            TestFormat("  128", "D", "128");
+            TestFormat(" -128", "D", "-128");
+            TestFormat(" -128", "D2", "-128");
+            TestFormat(" 1234", "D2", "1234");
+            TestFormat("-1234", "D", "-1234");
             TestFormat(" 1234", "D6", "001234");
-            TestFormat("-1234", "D6","-001234");
+            TestFormat("-1234", "D6", "-001234");
 
             sampleDisplay.WriteOutput();
 
         }
 
-        
+
         [TestMethod]
         // the F format can be used with all number types
         public void FixedFormat()
         {
             sampleDisplay = new SampleDisplay();
 
-            TestFormat("123", "F", "123.00");    // default for CultureInvariant is 2 decimal places
+            // default for CultureInvariant is 2 decimal places
+
+            TestFormat("0", "F", "0.00");
+            TestFormat("0", "F4", "0.0000");
+            TestFormat("123", "F", "123.00");
             TestFormat("129", "F", "129.00");
             TestFormat("-129", "F", "-129.00");
             TestFormat("128", "F", "128.00");
-            TestFormat("128", "F4", "128.0000");  // bug - int gets different value than float/double
+            TestFormat("128", "F4", "128.0000");
             TestFormat("-128", "F", "-128.00");
             TestFormat("-128", "F2", "-128.00");
             TestFormat("1234", "F2", "1234.00");
@@ -117,10 +119,59 @@ namespace NFUnitTestArithmetic
             TestFormat("-1234", "F6", "-1234.000000");
             TestFormat("123.78", "F3", "123.780");
             TestFormat("123.78", "F1", "123.8");
-            TestFormat("1234.8999", "F3", "1234.900");  
+            TestFormat("1234.8999", "F3", "1234.900");
 
             sampleDisplay.WriteOutput();
 
+        }
+
+        // the E format can be used with all number types
+        [DataRow("0", "E", "0.000000E+000", true, true, true)]
+        [DataRow("0", "E4", "0.0000E+000", true, true, true)]
+        [DataRow("12345.6789", "E", "1.234567E+004", true, true, false)]
+        [DataRow("12345.678", "E6", "1.234567E+004", true, true, false)]
+        [DataRow("12345.6789", "e4", "1.2345e+004", true, true, false)]
+        [DataRow("123", "E", "1.230000E+002", true, true, true)]
+        [DataRow("-123", "E", "-1.230000E+002", true, true, true)]
+        [DataRow("1.2345e-9", "E", "1.234500E-009", true, false, false)]
+        [DataRow("1.2345e-9", "E5", "1.23450E-009", true, false, false)]
+        [TestMethod]
+        public void ExponentialFormat(string valueStr, string formatString, string expectedResult, bool testDouble, bool testSingle, bool testIntegers)
+        {
+            double value = double.Parse(valueStr);
+
+            if (testDouble)
+            {
+                CheckValue(double.Parse(valueStr), valueStr, formatString, expectedResult, ColumnType.Single, null);
+                Assert.IsTrue(double.TryParse(valueStr, out double result), $"TryParse failed for double {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, ColumnType.Double, null);
+            }
+
+            if (testSingle)
+            {
+                CheckValue(float.Parse(valueStr), valueStr, formatString, expectedResult, ColumnType.Single, null);
+                Assert.IsTrue(float.TryParse(valueStr, out float result), $"TryParse failed for float {valueStr}");
+                CheckValue(result, valueStr, formatString, expectedResult, ColumnType.Single, null);
+            }
+
+            if (testIntegers)
+            {
+                // can't test negative values with UInt64
+                if (value > 0)
+                {
+                    CheckValue(ulong.Parse(valueStr), valueStr, formatString, expectedResult, ColumnType.UInt64, null);
+                    Assert.IsTrue(ulong.TryParse(valueStr, out ulong result), $"TryParse failed for ulong {valueStr}");
+                    CheckValue(result, valueStr, formatString, expectedResult, ColumnType.UInt64, null);
+                }
+
+                CheckValue(long.Parse(valueStr), valueStr, formatString, expectedResult, ColumnType.Int64, null);
+                Assert.IsTrue(long.TryParse(valueStr, out long result1), $"TryParse failed for long {valueStr}");
+                CheckValue(result1, valueStr, formatString, expectedResult, ColumnType.Int64, null);
+            }
+
+            //;
+
+            sampleDisplay.WriteOutput();
         }
 
         [TestMethod]
@@ -129,6 +180,8 @@ namespace NFUnitTestArithmetic
         {
             sampleDisplay = new SampleDisplay();
 
+            TestFormat("0", "G", "0");
+            TestFormat("0", "G4", "0");
             TestFormat("123", "G", "123");
             TestFormat("129", "G", "129");
             TestFormat("-129", "G", "-129");
@@ -149,10 +202,12 @@ namespace NFUnitTestArithmetic
             TestFormat("1234.8999", "G6", "1234.9");
             TestFormat("1234.8999", "G7", "1234.9");
             TestFormat("-1234.901", "G7", "-1234.901");
+            TestFormat("1.2345E-9", "G", "1.2345E-09");
 
             sampleDisplay.WriteOutput();
 
         }
+
         [TestMethod]
         // the N format can be used with all number types
         public void NumberFormat()
@@ -163,12 +218,12 @@ namespace NFUnitTestArithmetic
             TestFormat("129", "N", "129.00");
             TestFormat("-129", "N", "-129.00");
             TestFormat("128", "N", "128.00");
-            TestFormat("128", "N4", "128.0000");  
+            TestFormat("128", "N4", "128.0000");
             TestFormat("-128", "N", "-128.00");
             TestFormat("-128", "N2", "-128.00");
             TestFormat("1234", "N2", "1,234.00");
             TestFormat("-1234", "N", "-1,234.00");
-            TestFormat("1234", "N6", "1,234.000000");  
+            TestFormat("1234", "N6", "1,234.000000");
             TestFormat("-1234", "N6", "-1,234.000000");
             TestFormat("1234.567", "N2", "1,234.57");
             TestFormat("-1234.567", "N2", "-1,234.57");
@@ -208,7 +263,7 @@ namespace NFUnitTestArithmetic
 
 
         #region Helper functions
-        private void TestFormat(string valueStr, string formatString, string expectedResult, Case formatCase=Case.Both)
+        private void TestFormat(string valueStr, string formatString, string expectedResult, Case formatCase = Case.Both)
         {
             double value = Double.Parse(valueStr);  // !!! does not return a negative number when parsed if string value does not contain a decimal point
             bool isNegative = false;
@@ -371,7 +426,7 @@ namespace NFUnitTestArithmetic
 
         private void CheckValue(object value, string valueStr, string formatString, string expectedResult, SampleDisplay.ColumnType columnType, SampleDisplay.RowData rowData)
         {
-            string result = String.Format($"{{0:{formatString}}}", new object[] { value });
+            string result = string.Format($"{{0:{formatString}}}", new object[] { value });
             // for format of X if the number is negative there will be extra F's in the front depending on integer size.  
             // because of this we will only check the ending characters for format X types
             if (formatString.ToUpper()[0] == 'X')
@@ -382,7 +437,11 @@ namespace NFUnitTestArithmetic
             {
                 Assert.AreEqual(result, expectedResult, $"The expected result for '{formatString}' on value {valueStr} for type {value.GetType().Name} is '{expectedResult}'");
             }
-            rowData.SetResult(result, columnType);
+
+            if (rowData != null)
+            {
+                rowData.SetResult(result, columnType);
+            }
         }
 
         #endregion
@@ -470,18 +529,18 @@ namespace NFUnitTestArithmetic
 
             public void SetResult(string result, ColumnType column)
             {
-            int i = (int)column;
-            ColumnData[i] = result;
-            if (((ColumnInfo)ColumnInfos[i]).LargestLength < result.Length)
-            {
-                ((ColumnInfo)ColumnInfos[i]).LargestLength = result.Length;
-            }
-            if (result != NotApplicable)
-            {
-                ((ColumnInfo)ColumnInfos[i]).DefaultOnly = false;
+                int i = (int)column;
+                ColumnData[i] = result;
+                if (((ColumnInfo)ColumnInfos[i]).LargestLength < result.Length)
+                {
+                    ((ColumnInfo)ColumnInfos[i]).LargestLength = result.Length;
+                }
+                if (result != NotApplicable)
+                {
+                    ((ColumnInfo)ColumnInfos[i]).DefaultOnly = false;
 
+                }
             }
-        }
         }
 
         public RowData AddRow(string value, string formatString)
@@ -510,7 +569,7 @@ namespace NFUnitTestArithmetic
                 for (int j = 0; j < (int)ColumnType.MaxColumns; j++)
                 {
                     // don't print columns that only have default (n/a) in them
-                    if (GetColumnInfo((ColumnType)j).DefaultOnly)  
+                    if (GetColumnInfo((ColumnType)j).DefaultOnly)
                     {
                         continue;
                     }
@@ -530,5 +589,5 @@ namespace NFUnitTestArithmetic
         }
 
     }
-        #endregion
+    #endregion
 }
