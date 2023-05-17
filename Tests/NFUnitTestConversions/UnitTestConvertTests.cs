@@ -29,15 +29,15 @@ namespace NFUnitTestConversions
             {
                 u1 = (uint)rand.Next();
 
-                d1 = (double)u1; // Does not work correctly (d1 is close to 0)
+                d1 = u1; // Does not work correctly (d1 is close to 0)
                 u2 = (uint)d1;
                 Assert.AreEqual(d1, u1);
                 Assert.AreEqual(u2, u1);
 
-                f1 = (float)u1; // Same problem
+                f1 = u1; // Same problem
                 Assert.AreEqual(f1, u1);
 
-                l1 = (long)u1;
+                l1 = u1;
                 u2 = (uint)l1;
                 Assert.AreEqual(l1, u1);
                 Assert.AreEqual(u2, u1);
@@ -53,44 +53,44 @@ namespace NFUnitTestConversions
         public void Convert_Positive()
         {
             string number = "12";
-            SByte value_sb = Convert.ToSByte(number);
+            sbyte value_sb = Convert.ToSByte(number);
             Assert.AreEqual(value_sb, (byte)12);
-            Byte value_b = Convert.ToByte(number);
+            byte value_b = Convert.ToByte(number);
             Assert.AreEqual(value_b, (byte)12);
-            Int16 value_s16 = Convert.ToInt16(number);
+            short value_s16 = Convert.ToInt16(number);
             Assert.AreEqual(value_s16, (short)12);
-            UInt16 value_u16 = Convert.ToUInt16(number);
+            ushort value_u16 = Convert.ToUInt16(number);
             Assert.AreEqual(value_u16, (ushort)12);
-            Int32 value_s32 = Convert.ToInt32(number);
-            Assert.AreEqual(value_s32, (int)12);
-            UInt32 value_u32 = Convert.ToUInt32(number);
-            Assert.AreEqual(value_u32, (uint)12);
-            Int64 value_s64 = Convert.ToInt32(number);
-            Assert.AreEqual(value_s64, (long)12);
-            UInt64 value_u64 = Convert.ToUInt64(number);
-            Assert.AreEqual(value_u64, (ulong)12);
+            int value_s32 = Convert.ToInt32(number);
+            Assert.AreEqual(value_s32, 12);
+            uint value_u32 = Convert.ToUInt32(number);
+            Assert.AreEqual(value_u32, 12);
+            long value_s64 = Convert.ToInt32(number);
+            Assert.AreEqual(value_s64, 12);
+            ulong value_u64 = Convert.ToUInt64(number);
+            Assert.AreEqual(value_u64, 12);
         }
 
         [TestMethod]
         public void Convert_PositivePlus()
         {
             string number = "+12";
-            SByte value_sb = Convert.ToSByte(number);
+            sbyte value_sb = Convert.ToSByte(number);
             Assert.AreEqual(value_sb, (byte)12);
-            Byte value_b = Convert.ToByte(number);
+            byte value_b = Convert.ToByte(number);
             Assert.AreEqual(value_b, (byte)12);
-            Int16 value_s16 = Convert.ToInt16(number);
+            short value_s16 = Convert.ToInt16(number);
             Assert.AreEqual(value_s16, (short)12);
-            UInt16 value_u16 = Convert.ToUInt16(number);
+            ushort value_u16 = Convert.ToUInt16(number);
             Assert.AreEqual(value_u16, (ushort)12);
-            Int32 value_s32 = Convert.ToInt32(number);
-            Assert.AreEqual(value_s32, (int)12);
-            UInt32 value_u32 = Convert.ToUInt32(number);
-            Assert.AreEqual(value_u32, (uint)12);
-            Int64 value_s64 = Convert.ToInt32(number);
-            Assert.AreEqual(value_s64, (long)12);
-            UInt64 value_u64 = Convert.ToUInt64(number);
-            Assert.AreEqual(value_u64, (ulong)12);
+            int value_s32 = Convert.ToInt32(number);
+            Assert.AreEqual(value_s32, 12);
+            uint value_u32 = Convert.ToUInt32(number);
+            Assert.AreEqual(value_u32, 12);
+            long value_s64 = Convert.ToInt32(number);
+            Assert.AreEqual(value_s64, 12);
+            ulong value_u64 = Convert.ToUInt64(number);
+            Assert.AreEqual(value_u64, 12);
         }
 
 
@@ -99,18 +99,18 @@ namespace NFUnitTestConversions
         {
             string number = "-12";
             int actualNumber = -12;
-            SByte value_sb = Convert.ToSByte(number);
+            sbyte value_sb = Convert.ToSByte(number);
             Assert.AreEqual(value_sb, (sbyte)actualNumber, "Test1");
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { Byte value_b = Convert.ToByte(number); }, "Test2");
-            Int16 value_s16 = Convert.ToInt16(number);
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { byte value_b = Convert.ToByte(number); }, "Test2");
+            short value_s16 = Convert.ToInt16(number);
             Assert.AreEqual(value_s16, (short)actualNumber, "Test3");
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { UInt16 value_u16 = Convert.ToUInt16(number); }, "Test4");
-            Int32 value_s32 = Convert.ToInt32(number);
-            Assert.AreEqual(value_s32, (int)actualNumber, "Test5");
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { UInt32 value_u32 = Convert.ToUInt32(number); }, "Test6");
-            Int64 value_s64 = Convert.ToInt32(number);
-            Assert.AreEqual(value_s64, (long)actualNumber, "Test7");
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { UInt64 value_u64 = Convert.ToUInt64(number); }, "Test8");
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { ushort value_u16 = Convert.ToUInt16(number); }, "Test4");
+            int value_s32 = Convert.ToInt32(number);
+            Assert.AreEqual(value_s32, actualNumber, "Test5");
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { uint value_u32 = Convert.ToUInt32(number); }, "Test6");
+            long value_s64 = Convert.ToInt32(number);
+            Assert.AreEqual(value_s64, actualNumber, "Test7");
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { ulong value_u64 = Convert.ToUInt64(number); }, "Test8");
         }
 
         [TestMethod]
@@ -179,7 +179,7 @@ namespace NFUnitTestConversions
 
             // Examples of how we can get differences due to differences between the compiler parser, and the native parser
             // And differences caused by the native parsers "fast speed" causing rounding errors
-            string num1 = "+0.000000004848747585e-3"; 
+            string num1 = "+0.000000004848747585e-3";
             string num2 = "4.848747585e-12";  // same number as above, but we've moved the digits over a bit and adjusted the exponent
             double dnum1Roslyn = +0.000000004848747585e-3;  // Roslyn compiler will parse the value and put it into the double at compile time
             double dnum1Native = Convert.ToDouble(num1);    // Native code will parse the value and put it into the double at run time
@@ -224,101 +224,66 @@ namespace NFUnitTestConversions
 
         public void Convert_BoundaryValues()
         {
-            //***
-            //* Boundary tests - tests of the min and max values for double, float and int's.  
-            //* Note for double/float - the ToString() function is limited to a range around 2^64 and 2^-64 - otherwise you get a string of 'oor' or '-oor' (oor = out-of-range)
-            //  Boundary tests for double/float include the numbers that are around the edge of where out-of-range is produced.
-            //***
+            const string OUT_OF_RANGE = "1.7976931348623157E+308";
+            const string OUT_OF_RANGE_NEG = "-1.7976931348623157E+308";
 
-            const string OUT_OF_RANGE = "oor";            // nanoPrintf can only print up to 2^64-2 as a max value for double/floating
-            const string OUT_OF_RANGE_NEG = "-oor";       // nanoPrintf can only print down to -2^64+2 as a min value for double/floating
-
-            const string DOUBLE_MAX_VAL  = "1.7976931348623157E+308";  // will get 'oor' when printed
-            const string DOUBLE_MAX_HEX  = "0x7FEFFFFFFFFFFFFF";       // value from IEEE 574
-            const string DOUBLE_MIN_VAL  = "-1.7976931348623157E+308"; // will get '-oor' when printed
-            const string DOUBLE_MIN_HEX  = "0xFFEFFFFFFFFFFFFF";       // value from IEEE 574
+            const string DOUBLE_MAX_VAL = "1.7976931348623157E+308";
+            const string DOUBLE_MAX_HEX = "0x7FEFFFFFFFFFFFFF";       // value from IEEE 574
+            const string DOUBLE_MIN_VAL = "-1.7976931348623157E+308";
+            const string DOUBLE_MIN_HEX = "0xFFEFFFFFFFFFFFFF";       // value from IEEE 574
             const string DOUBLE_ZERO_HEX = "0x0000000000000000";
-            const string DOUBLE_LARGEST_PRINT = "1.84467440737095E+19";  // this is the largest number you can ask for ToString() and get a response
-            const string DOUBLE_LARGESTINVALID_PRINT = "1.8446744073709552E+19";  // first positive value that will get the response 'oor' when printed
-            const string DOUBLE_SMALLEST_PRINT = "-1.32585973029787E+19";  // this is the smallest number you can ask for ToString() and get a response
-            const string DOUBLE_SMALLESTINVALID_PRINT = "-1.8446744073709552E+19"; // first negative value that will get the response '-oor' when printed
 
             const string FLOAT_MAX_VAL = "3.40282347E+38";
-            const string FLOAT_MAX_HEX = "0x7F7FFFFF";  // will get 'oor' when printed
+            const string FLOAT_MAX_HEX = "0x7F7FFFFF";
             const string FLOAT_MIN_VAL = "-3.40282347E+38";
-            const string FLOAT_MIN_HEX = "0xFF7FFFFF";  // will get '-oor' when printed
+            const string FLOAT_MIN_HEX = "0xFF7FFFFF";
             const string FLOAT_ZERO_HEX = "0x00000000";
-            const string FLOAT_LARGEST_PRINT = "1.844674E+19";  // this is the largest number you can ask for ToString() and get a response
-            const string FLOAT_LARGESTINVALID_PRINT = "1.8446744E+19";  // first positive value that will get the response 'oor' when printed
-            const string FLOAT_SMALLEST_PRINT = "-1.844674E+19";       // this is the smallest number you can ask for ToString() and get a response 
-            const string FLOAT_SMALLESTINVALID_PRINT = "-1.8446744E+19"; // first negative value that will get the response '-oor' when printed
 
             // boundary: double max
-            string time = DateTime.UtcNow.ToString("hh:mm:ss");
             double doubleMax = double.MaxValue;
-            Assert.AreEqual(doubleMax.ToString(), OUT_OF_RANGE, "nanoPrintf returns oor for double > 2^64-2");
-            Assert.AreEqual(DoubleToHex(doubleMax), DOUBLE_MAX_HEX, "Hex value to double max value does not match");
-            Assert.AreEqual(DoubleToHex(Convert.ToDouble(DOUBLE_MAX_VAL)), DOUBLE_MAX_HEX, "Parsing double max value does not return correct hex value");
+            Assert.AreEqual(OUT_OF_RANGE, doubleMax.ToString(), "double.MaxValue value failed");
+            Assert.AreEqual(DOUBLE_MAX_HEX, DoubleToHex(doubleMax), "Hex value to double max value does not match");
+            Assert.AreEqual(DOUBLE_MAX_HEX, DoubleToHex(Convert.ToDouble(DOUBLE_MAX_VAL)), "Parsing double max value does not return correct hex value");
+
+            doubleMax = Convert.ToDouble(DOUBLE_MAX_VAL);
+            Assert.AreEqual(doubleMax.ToString(), OUT_OF_RANGE, "Double.ToString did not return 'oor' for first out-of-range value");
 
             // boundary: double min
             double doubleMin = double.MinValue;
-            Assert.AreEqual(doubleMin.ToString(), OUT_OF_RANGE_NEG, "nanoPrintf returns oor for double < -2^64+2");
-            Assert.AreEqual(DoubleToHex(doubleMin), DOUBLE_MIN_HEX,"Hex value to double min value does not match");
-            Assert.AreEqual(DoubleToHex(Convert.ToDouble(DOUBLE_MIN_VAL)), DOUBLE_MIN_HEX, "Parsing double min value does not return correct hex value");
+            Assert.AreEqual(OUT_OF_RANGE_NEG, doubleMin.ToString());
+            Assert.AreEqual(DOUBLE_MIN_HEX, DoubleToHex(doubleMin), "Hex value to double min value does not match");
+            Assert.AreEqual(DOUBLE_MIN_HEX, DoubleToHex(Convert.ToDouble(DOUBLE_MIN_VAL)), "Parsing double min value does not return correct hex value");
+
+            doubleMin = Convert.ToDouble(DOUBLE_MIN_VAL);
+            Assert.AreEqual(doubleMin.ToString(), doubleMin.ToString(), "Double.ToString did not return the correct value for smallest in range value");
 
             // boundary: double zero
             double doubleZero = 0;   // test that zero gets a zero exponent and a value like 1023 the exponent bias used in floating point math
             Assert.AreEqual(doubleZero.ToString(), "0", "ToString of a double with zero value formats incorrectly");
-            Assert.AreEqual(DoubleToHex(doubleZero), DOUBLE_ZERO_HEX, "Double with zero value returns the wrong hex value");
-
-            // boundary: double largest-in-range
-            double doubleInRange = Convert.ToDouble(DOUBLE_LARGEST_PRINT);
-            Assert.AreEqual(doubleInRange.ToString(), DOUBLE_LARGEST_PRINT, "Double.ToString did not return the correct value for largest in range value");
-
-            // boundary: double largest-out-of-range
-            double doubleOutRange = Convert.ToDouble(DOUBLE_LARGESTINVALID_PRINT);
-            Assert.AreEqual(doubleOutRange.ToString(), OUT_OF_RANGE, "Double.ToString did not return 'oor' for first out-of-range value");
-
-            // boundary: double smallest-in-range
-            double doubleInRangeNeg = Convert.ToDouble(DOUBLE_SMALLEST_PRINT);
-            Assert.AreEqual(doubleInRangeNeg.ToString(), DOUBLE_SMALLEST_PRINT, "Double.ToString did not return the correct value for smallest in range value");
-
-            // boundary: double smallest-out-of-range
-            double doubleOutRangeNeg = Convert.ToDouble(DOUBLE_SMALLESTINVALID_PRINT);
-            Assert.AreEqual(doubleOutRangeNeg.ToString(), OUT_OF_RANGE_NEG, "Double.ToString did not return 'oor' for smallest out-of-range value");
+            Assert.AreEqual(DOUBLE_ZERO_HEX, DoubleToHex(doubleZero), "Double with zero value returns the wrong hex value");
 
             // boundary: float max
             float floatMax = float.MaxValue;
-            Assert.AreEqual(floatMax.ToString(), OUT_OF_RANGE, "nanoPrintf return oor for float > 2^64-2");
-            Assert.AreEqual(FloatToHex(floatMax), FLOAT_MAX_HEX, "Hex value to float max values does not match");
-            Assert.AreEqual(FloatToHex((float)Convert.ToDouble(FLOAT_MAX_VAL)), FLOAT_MAX_HEX, "Parsing float max value does not return correct hex value");
+            Assert.AreEqual(FLOAT_MAX_VAL, floatMax.ToString(), "floatMax.ToString()");
+            Assert.AreEqual(FLOAT_MAX_HEX, FloatToHex(floatMax), "Hex value to float max values does not match");
+            Assert.AreEqual(FLOAT_MAX_HEX, FloatToHex((float)Convert.ToDouble(FLOAT_MAX_VAL)), "Parsing float max value does not return correct hex value");
+
+            floatMax = Convert.ToSingle(FLOAT_MAX_VAL);
+            Assert.AreEqual(FLOAT_MAX_VAL, floatMax.ToString(), "floatOutRange.ToString() did not return 'oor' for first out-of-range value");
 
             // boundary: float min
             float floatMin = float.MinValue;
-            Assert.AreEqual(floatMin.ToString(), OUT_OF_RANGE_NEG, "nanoPrintf returns oor for float < -2^64+2");
-            Assert.AreEqual(FloatToHex(floatMin), FLOAT_MIN_HEX, "Hex value to double min value does not match");
-            Assert.AreEqual(FloatToHex((float)Convert.ToDouble(FLOAT_MIN_VAL)), FLOAT_MIN_HEX, "Parsing float min value does not return correct hex value");
+            Assert.AreEqual(FLOAT_MIN_VAL, floatMin.ToString(), "floatMin.ToString()");
+            Assert.AreEqual(FLOAT_MIN_HEX, FloatToHex(floatMin), "Hex value to double min value does not match");
+            Assert.AreEqual(FLOAT_MIN_HEX, FloatToHex((float)Convert.ToDouble(FLOAT_MIN_VAL)), "Parsing float min value does not return correct hex value");
+
+            floatMin = Convert.ToSingle(FLOAT_MIN_VAL);
+            Assert.AreEqual(FLOAT_MIN_VAL, floatMin.ToString(), "Float.ToString did not return 'oor' for smallest out-of-range value");
 
             //boundary: float zero
             float floatZero = 0;   // test that zero gets a zero exponent and not a value like 1023 the exponent bias used in floating point math
-            Assert.AreEqual(floatZero.ToString(), "0", "ToString of a string with zero value formats incorrectly");
-            Assert.AreEqual(FloatToHex(floatZero), FLOAT_ZERO_HEX, "Float with zero value returns the wrong hex value");
-
-            // boundary: float largest-in-range
-            float floatInRange = (float)Convert.ToDouble(FLOAT_LARGEST_PRINT);
-            Assert.AreEqual(floatInRange.ToString(), FLOAT_LARGEST_PRINT, "Float.ToString did not return the correct value for largest in range value");
-
-            // boundary: float largest-out-of-range
-            float floatOutRange = (float)Convert.ToDouble(FLOAT_LARGESTINVALID_PRINT);
-            Assert.AreEqual(floatOutRange.ToString(), OUT_OF_RANGE, "Float.ToString did not return 'oor' for first out-of-range value");
-
-            // boundary: float smallest-in-range
-            float floatInRangeNeg = (float)Convert.ToDouble(FLOAT_SMALLEST_PRINT);
-            Assert.AreEqual(floatInRangeNeg.ToString(), FLOAT_SMALLEST_PRINT, "Float.ToString did not return the correct value for smallest in range value");
-
-            // boundary: float smallest-out-of-range
-            float floatOutRangeNeg = (float)Convert.ToDouble(FLOAT_SMALLESTINVALID_PRINT);
-            Assert.AreEqual(floatOutRangeNeg.ToString(), OUT_OF_RANGE_NEG, "Float.ToString did not return 'oor' for smallest out-of-range value");
+            Assert.AreEqual("0", floatZero.ToString(), "ToString of a string with zero value formats incorrectly");
+            Assert.AreEqual(FLOAT_ZERO_HEX, FloatToHex(floatZero), "Float with zero value returns the wrong hex value");
 
             long lMax = long.MaxValue;
             string numMax = lMax.ToString();
@@ -387,7 +352,7 @@ namespace NFUnitTestConversions
 
             Assert.AreEqual(bMax, Convert.ToByte(numMax));
             Assert.AreEqual(bMin, Convert.ToByte(numMin));
-            
+
         }
 
 
@@ -511,7 +476,7 @@ namespace NFUnitTestConversions
                 return "-Infinity";
             if (float.IsNaN(f))
                 return "NaN";
-            string returnValue = string.Format("0x{0:X8}", BitConverter.ToInt32(BitConverter.GetBytes(f),0));  // CoreLibrary/mscorlib does not implement SingleToInt32Bits
+            string returnValue = string.Format("0x{0:X8}", BitConverter.ToInt32(BitConverter.GetBytes(f), 0));  // CoreLibrary/mscorlib does not implement SingleToInt32Bits
             return returnValue;
         }
 
@@ -564,7 +529,7 @@ OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3Bx
 cnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmq
 q6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj
 5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w==";
-            
+
             string base64EncodedString_WithoutLineBreaks = "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w==";
 
             string base64string1 = Convert.ToBase64String(
