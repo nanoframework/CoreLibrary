@@ -98,7 +98,14 @@ namespace NFUnitTestSystemLib
                     Assert.AreEqual(test.Expected, test.D1.GetHashCode().Equals(d2.GetHashCode()));
                 }
 
-                Assert.AreEqual(test.Expected, test.D1.Equals(test.Value));
+                if(test.Expected)
+                {
+                    Assert.IsTrue(test.D1.Equals(test.Value));
+                }
+                else
+                {
+                    Assert.IsFalse(test.D1.Equals(test.Value));
+                }
             }
         }
 

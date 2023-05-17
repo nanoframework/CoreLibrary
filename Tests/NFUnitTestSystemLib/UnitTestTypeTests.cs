@@ -21,9 +21,9 @@ namespace NFUnitTestSystemLib
 
         class TestObject2 : iEmpty
         {
-            public TestObject2(Int32 i)
+            public TestObject2(int i)
             {
-                m_data = (int)i;
+                m_data = i;
             }
             public int m_data;
             class m_subTestObject
@@ -34,7 +34,7 @@ namespace NFUnitTestSystemLib
             {
 
             }
-            public Int32 Method2(Int32 I)
+            public int Method2(int I)
             {
                 return I;
             }
@@ -51,9 +51,9 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual("fffd", ((short)-3).ToString("x04"));
             Assert.AreEqual("3049", ((ushort)0x3049).ToString("x4"));
             Assert.AreEqual("fc00", ((short)-1024).ToString("x02"));
-            Assert.AreEqual("fffffffc", ((int)-4).ToString("x8"));
+            Assert.AreEqual("fffffffc", (-4).ToString("x8"));
             Assert.AreEqual("00004494", ((uint)0x4494).ToString("x8"));
-            Assert.AreEqual("fffffffc", ((int)-4).ToString("x04"));
+            Assert.AreEqual("fffffffc", (-4).ToString("x04"));
             Assert.AreEqual("fffffffffffffffb", ((long)-5).ToString("x016"));
             Assert.AreEqual("1234567890123456", ((ulong)0x1234567890123456).ToString("x16"));
             // you should not be able to truncate the value only leading zeros
@@ -94,11 +94,11 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual("NaN", float.NaN.ToString());
             Assert.AreEqual("Infinity", float.PositiveInfinity.ToString());
-            //Assert.AreEqual("-Infinity", float.NegativeInfinity.ToString(), "float negative infinity test");
+            Assert.AreEqual("-Infinity", float.NegativeInfinity.ToString(), "float negative infinity test");
 
             Assert.AreEqual("NaN", double.NaN.ToString());
             Assert.AreEqual("Infinity", double.PositiveInfinity.ToString());
-            //Assert.AreEqual("-Infinity", double.NegativeInfinity.ToString(), "double negative infinity");
+            Assert.AreEqual("-Infinity", double.NegativeInfinity.ToString(), "double negative infinity");
 
             Assert.AreEqual("Da1x", (1).ToString("Da1x"));
             Assert.AreEqual("1", (1).ToString("D"));
@@ -107,18 +107,18 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual("-1234", (-1234).ToString("D"));
             Assert.AreEqual("001234", (1234).ToString("D6"));
             Assert.AreEqual("-001234", (-1234).ToString("D6"));
-            Assert.AreEqual("2147483647", (Int32.MaxValue).ToString("D"));
-            Assert.AreEqual("-2147483648", (Int32.MinValue).ToString("D"));
-            Assert.AreEqual("000000000002147483647", (Int32.MaxValue).ToString("D21")); 
-            Assert.AreEqual("-000000000002147483648", (Int32.MinValue).ToString("D21"));
-            Assert.AreEqual("9223372036854775807", (Int64.MaxValue).ToString("D")); 
-            Assert.AreEqual("-9223372036854775808",    (Int64.MinValue).ToString("D")); 
-            Assert.AreEqual("009223372036854775807", (Int64.MaxValue).ToString("D21"));
-            Assert.AreEqual("-009223372036854775808",    (Int64.MinValue).ToString("D21")); 
-            Assert.AreEqual("2147483747",    ((Int64)Int32.MaxValue + 100).ToString("D")); 
-            Assert.AreEqual("-2147483748", ((Int64)Int32.MinValue - 100).ToString("D"));
-            Assert.AreEqual("000000000002147483747",    ((Int64)Int32.MaxValue + 100).ToString("D21")); 
-            Assert.AreEqual("-000000000002147483748", ((Int64)Int32.MinValue - 100).ToString("D21"));
+            Assert.AreEqual("2147483647", (int.MaxValue).ToString("D"));
+            Assert.AreEqual("-2147483648", (int.MinValue).ToString("D"));
+            Assert.AreEqual("000000000002147483647", (int.MaxValue).ToString("D21"));
+            Assert.AreEqual("-000000000002147483648", (int.MinValue).ToString("D21"));
+            Assert.AreEqual("9223372036854775807", (long.MaxValue).ToString("D"));
+            Assert.AreEqual("-9223372036854775808", (long.MinValue).ToString("D"));
+            Assert.AreEqual("009223372036854775807", (long.MaxValue).ToString("D21"));
+            Assert.AreEqual("-009223372036854775808", (long.MinValue).ToString("D21"));
+            Assert.AreEqual("2147483747", ((long)int.MaxValue + 100).ToString("D"));
+            Assert.AreEqual("-2147483748", ((long)int.MinValue - 100).ToString("D"));
+            Assert.AreEqual("000000000002147483747", ((long)int.MaxValue + 100).ToString("D21"));
+            Assert.AreEqual("-000000000002147483748", ((long)int.MinValue - 100).ToString("D21"));
 
             Assert.AreEqual("1234.57", (1234.567).ToString("F"));
             Assert.AreEqual("-1234.57", (-1234.567).ToString("F"));
@@ -133,12 +133,12 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual("1234.0", (1234.0056).ToString("F1"));
             Assert.AreEqual("-1234.0", (-1234.0056).ToString("F1"));
             Assert.AreEqual("1", (1).ToString());
-            Assert.AreEqual("1", (1).ToString((string)null));
-            Assert.AreEqual("1", (1).ToString(String.Empty));
+            Assert.AreEqual("1", (1).ToString(null));
+            Assert.AreEqual("1", (1).ToString(string.Empty));
             Assert.AreEqual("1234.567", (1234.567).ToString());
-            Assert.AreEqual("123.456", (123.456).ToString("G"));
+            Assert.AreEqual("123.456", (123.456).ToString("G"), "123.456 (G)");
             Assert.AreEqual("-123.456", (-123.456).ToString("G"));
-            Assert.AreEqual("1.2E+02", (123.4546).ToString("G2"));
+            Assert.AreEqual("1.2E+02", (123.4546).ToString("G2"), "1.2E+02 (G2)");
             Assert.AreEqual("-1.2E+02", (-123.4546).ToString("G2"));
             Assert.AreEqual("123.5", (123.4546).ToString("G4"));
             Assert.AreEqual("-123.5", (-123.4546).ToString("G4"));
@@ -169,25 +169,25 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual("-34,561,234.560", (-34561234.56).ToString("N3"));
 
             Assert.AreEqual("FF", (255).ToString("X"));
-            Assert.AreEqual("1", ((Int32)1).ToString("X"));
-            Assert.AreEqual("ffffffff", ((Int32)(-1)).ToString("x"));
+            Assert.AreEqual("1", 1.ToString("X"));
+            Assert.AreEqual("ffffffff", (-1).ToString("x"));
             Assert.AreEqual("1", (unchecked((byte)1)).ToString("x"));
             Assert.AreEqual("ff", (unchecked((byte)(-1))).ToString("x"));
             Assert.AreEqual("1", ((short)1).ToString("x"));
             Assert.AreEqual("01", ((short)1).ToString("x2"));
             Assert.AreEqual("ffff", ((short)(-1)).ToString("x"));
             Assert.AreEqual("00ff", (255).ToString("x4"));
-            Assert.AreEqual("FFFFFFFF", ((Int32)(-1)).ToString("X4"));
-            Assert.AreEqual("7ffffffffffffff5", (Int64.MaxValue - 10).ToString("x")); 
-            Assert.AreEqual("a", ((Int64)10).ToString("x"));
-            Assert.AreEqual("0000a", ((Int64)10).ToString("x5"));
+            Assert.AreEqual("FFFFFFFF", (-1).ToString("X4"));
+            Assert.AreEqual("7ffffffffffffff5", (long.MaxValue - 10).ToString("x"));
+            Assert.AreEqual("a", ((long)10).ToString("x"));
+            Assert.AreEqual("0000a", ((long)10).ToString("x5"));
 
         }
 
         [TestMethod]
         public void SystemType1_GetTypeNew_Test()
         {
-            Int32 testInt32 = 0;
+            int testInt32 = 0;
 
             Assembly Int32Assm = Assembly.Load("mscorlib");
 
@@ -264,7 +264,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("This tests the Assembly property");
 
             //Assigned and manipulated to avoid compiler warning
-            Int32 testInt32 = -1;
+            int testInt32 = -1;
             testInt32++;
 
             Type myType1 = Type.GetType("System.Int32");
@@ -283,7 +283,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("This tests the BaseType() method");
 
             //Assigned and manipulated to avoid compiler warning
-            Int32 testInt32 = -1;
+            int testInt32 = -1;
             testInt32++;
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
@@ -301,7 +301,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("This tests the DeclaringType property");
 
             //Assigned and manipulated to avoid compiler warning
-            Int32 testInt32 = -1;
+            int testInt32 = -1;
             testInt32++;
 
             Type myType1 = Type.GetType("System.Int32");
@@ -336,12 +336,12 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("This tests the GetElementType() method");
 
             //Assigned and manipulated to avoid compiler warning
-            Int32 testInt32 = -1;
+            int testInt32 = -1;
             testInt32++;
 
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
-            Int32[] int32Arr = new Int32[] { };
+            int[] int32Arr = new int[] { };
             Type int32ArrType = int32Arr.GetType();
             Assert.IsType(myType1, int32ArrType.GetElementType());
 
@@ -445,7 +445,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("This test must be re-written once BindingFlags is working, ");
             OutputHelper.WriteLine("see 17246 for more details.");
 
-            Int32 I = 0;
+            int I = 0;
             I++;
             TestObject2 testTestObject2 = new TestObject2(5);
             Type myType2 = testTestObject2.GetType();
@@ -471,7 +471,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("see 17246 for more details.");
 
             //Assigned and manipulated to avoid compiler warning
-            Int32 I = 0;
+            int I = 0;
             I++;
 
             TestObject2 testTestObject2 = new TestObject2(5);
