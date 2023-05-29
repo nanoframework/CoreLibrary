@@ -303,7 +303,7 @@ namespace NFUnitTestSystemLib
 
                 // expected format is dddd, dd MMMM yyyy HH:mm
 
-                int minLength = 26;
+                int minLength = 25;
                 int actualLength = dtOutput1.Length;
 
                 // check length
