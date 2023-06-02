@@ -33,6 +33,7 @@
     <Compile Include="UnitTestValueFloatTests.cs" />
     <Compile Include="UnitTestValueIntegralTests.cs" />
     <Compile Include="UnitTestValueSimpleTests.cs" />
+    <Compile Include="UnitTestTypes.cs" />
     <Compile Include="UnitTestValueTests.cs" />
   </ItemGroup>
   <ItemGroup>
