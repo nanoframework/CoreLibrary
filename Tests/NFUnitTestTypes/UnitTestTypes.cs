@@ -17,35 +17,35 @@ namespace NFUnitTestTypes
         {
             ushort[] array = new ushort[10];
             var ushortArrayType = array.GetType();
-            Assert.AreEqual(ushortArrayType.Name, "System.UInt16[]");
+            Assert.AreEqual(ushortArrayType.FullName, "System.UInt16[]");
 
             short[] array2 = new short[10];
             var shortArrayType = array2.GetType();
-            Assert.AreEqual(shortArrayType.Name, "System.Int16[]");
+            Assert.AreEqual(shortArrayType.FullName, "System.Int16[]");
 
             int[] array3 = new int[10];
             var intArrayType = array3.GetType();
-            Assert.AreEqual(intArrayType.Name, "System.Int32[]");
+            Assert.AreEqual(intArrayType.FullName, "System.Int32[]");
 
             uint[] array4 = new uint[10];
             var uintArrayType = array4.GetType();
-            Assert.AreEqual(uintArrayType.Name, "System.UInt32[]");
+            Assert.AreEqual(uintArrayType.FullName, "System.UInt32[]");
 
             ulong[] array5 = new ulong[10];
             var ulongArrayType = array5.GetType();
-            Assert.AreEqual(ulongArrayType.Name, "System.UInt64[]");
+            Assert.AreEqual(ulongArrayType.FullName, "System.UInt64[]");
 
             long[] array6 = new long[10];
             var longArrayType = array6.GetType();
-            Assert.AreEqual(longArrayType.Name, "System.Int64[]");
+            Assert.AreEqual(longArrayType.FullName, "System.Int64[]");
 
             float[] array7 = new float[10];
             var floatArrayType = array7.GetType();
-            Assert.AreEqual(floatArrayType.Name, "System.Single[]");
+            Assert.AreEqual(floatArrayType.FullName, "System.Single[]");
 
             double[] array8 = new double[10];
             var doubleArrayType = array8.GetType();
-            Assert.AreEqual(doubleArrayType.Name, "System.Double[]");
+            Assert.AreEqual(doubleArrayType.FullName, "System.Double[]");
         }
 
         [DataRow(typeof(short[]), "System.Int16[]")]
@@ -66,7 +66,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TypeTestsArrays_01(Type type, string typeName)
         {
-            Assert.AreEqual(type.Name, typeName);
+            Assert.AreEqual(type.FullName, typeName);
         }
 
         [DataRow(typeof(short), "System.Int16")]
@@ -86,7 +86,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TypeTestsBaseTypes(Type type, string typeName)
         {
-            Assert.AreEqual(type.Name, typeName);
+            Assert.AreEqual(type.FullName, typeName);
         }
     }
 }
