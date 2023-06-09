@@ -48,45 +48,42 @@ namespace NFUnitTestTypes
             Assert.AreEqual(doubleArrayType.FullName, "System.Double[]");
         }
 
-        [DataRow(typeof(short[]), "System.Int16[]")]
-        [DataRow(typeof(ushort[]), "System.UInt16[]")]
-        [DataRow(typeof(int[]), "System.Int32[]")]
-        [DataRow(typeof(uint[]), "System.UInt32[]")]
-        [DataRow(typeof(long[]), "System.Int64[]")]
-        [DataRow(typeof(ulong[]), "System.UInt64[]")]
-        [DataRow(typeof(float[]), "System.Single[]")]
-        [DataRow(typeof(double[]), "System.Double[]")]
-        [DataRow(typeof(char[]), "System.Char[]")]
-        [DataRow(typeof(byte[]), "System.Byte[]")]
-        [DataRow(typeof(sbyte[]), "System.SByte[]")]
-        [DataRow(typeof(bool[]), "System.Boolean[]")]
-        [DataRow(typeof(string[]), "System.String[]")]
-        [DataRow(typeof(object[]), "System.Object[]")]
-        [DataRow(typeof(short), "System.Int16")]
         [TestMethod]
-        public void TypeTestsArrays_01(Type type, string typeName)
+        public void TypeTestsArrays_01()
         {
-            Assert.AreEqual(type.FullName, typeName);
+            Assert.AreEqual(typeof(short[]).FullName, "System.Int16[]");
+            Assert.AreEqual(typeof(ushort[]).FullName, "System.UInt16[]");
+            Assert.AreEqual(typeof(int[]).FullName, "System.Int32[]");
+            Assert.AreEqual(typeof(uint[]).FullName, "System.UInt32[]");
+            Assert.AreEqual(typeof(long[]).FullName, "System.Int64[]");
+            Assert.AreEqual(typeof(ulong[]).FullName, "System.UInt64[]");
+            Assert.AreEqual(typeof(float[]).FullName, "System.Single[]");
+            Assert.AreEqual(typeof(double[]).FullName, "System.Double[]");
+            Assert.AreEqual(typeof(char[]).FullName, "System.Char[]");
+            Assert.AreEqual(typeof(byte[]).FullName, "System.Byte[]");
+            Assert.AreEqual(typeof(sbyte[]).FullName, "System.SByte[]");
+            Assert.AreEqual(typeof(bool[]).FullName, "System.Boolean[]");
+            Assert.AreEqual(typeof(string[]).FullName, "System.String[]");
+            Assert.AreEqual(typeof(object[]).FullName, "System.Object[]");
         }
 
-        [DataRow(typeof(short), "System.Int16")]
-        [DataRow(typeof(ushort), "System.UInt16")]
-        [DataRow(typeof(int), "System.Int32")]
-        [DataRow(typeof(uint), "System.UInt32")]
-        [DataRow(typeof(long), "System.Int64")]
-        [DataRow(typeof(ulong), "System.UInt64")]
-        [DataRow(typeof(float), "System.Single")]
-        [DataRow(typeof(double), "System.Double")]
-        [DataRow(typeof(char), "System.Char")]
-        [DataRow(typeof(byte), "System.Byte")]
-        [DataRow(typeof(sbyte), "System.SByte")]
-        [DataRow(typeof(bool), "System.Boolean")]
-        [DataRow(typeof(string), "System.String")]
-        [DataRow(typeof(object), "System.Object")]
         [TestMethod]
-        public void TypeTestsBaseTypes(Type type, string typeName)
+        public void TypeTestsBaseTypes()
         {
-            Assert.AreEqual(type.FullName, typeName);
+            Assert.AreEqual(typeof(short).FullName, "System.Int16");
+            Assert.AreEqual(typeof(ushort).FullName, "System.UInt16");
+            Assert.AreEqual(typeof(int).FullName, "System.Int32");
+            Assert.AreEqual(typeof(uint).FullName, "System.UInt32");
+            Assert.AreEqual(typeof(long).FullName, "System.Int64");
+            Assert.AreEqual(typeof(ulong).FullName, "System.UInt64");
+            Assert.AreEqual(typeof(float).FullName, "System.Single");
+            Assert.AreEqual(typeof(double).FullName, "System.Double");
+            Assert.AreEqual(typeof(char).FullName, "System.Char");
+            Assert.AreEqual(typeof(byte).FullName, "System.Byte");
+            Assert.AreEqual(typeof(sbyte).FullName, "System.SByte");
+            Assert.AreEqual(typeof(bool).FullName, "System.Boolean");
+            Assert.AreEqual(typeof(string).FullName, "System.String");
+            Assert.AreEqual(typeof(object).FullName, "System.Object");
         }
     }
 }
