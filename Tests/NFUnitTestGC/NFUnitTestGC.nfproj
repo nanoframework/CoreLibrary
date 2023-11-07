@@ -25,6 +25,7 @@
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
     <Compile Include="TestGCWithByteArrays.cs" />
+    <Compile Include="TestGCWithStringArrays.cs" />
     <Compile Include="TestGCWithTimeSpanArrays.cs" />
     <Compile Include="TestGCWithDateTimeArrays.cs" />
     <Compile Include="TestGCWithObjectArrays.cs" />
