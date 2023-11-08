@@ -178,9 +178,11 @@ jobs:
         nanoFramework.Networking.Sntp
         nanoFramework.TI.EasyLink
         nanoFramework.ResourceManager
+        nanoframework.System.Runtime
         System.Device.Adc
         System.Device.Dac
         System.Device.I2c
+        System.Device.I2c.Slave
         System.Device.Pwm
         System.Device.Spi
         System.IO.Hashing
