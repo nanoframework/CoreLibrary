@@ -136,12 +136,12 @@ jobs:
   condition: >-
     or(
       and(
-        not(or(failed(), canceled()),
+        not(or(failed(), canceled())),
         startsWith(variables['Build.SourceBranch'], 'refs/heads/main'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       and(
-        not(or(failed(), canceled()),
+        not(or(failed(), canceled())),
         eq(variables['System.PullRequest.PullRequestId'], ''),
         contains(variables['Build.SourceVersionMessage'], '***UPDATE_DEPENDENTS***'),
         eq(variables['StartReleaseCandidate'], 'false')
