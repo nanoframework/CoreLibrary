@@ -33,18 +33,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib">
-      <HintPath>..\..\packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="nanoFramework.TestFramework">
-      <HintPath>..\..\packages\nanoFramework.TestFramework.2.1.85\lib\nanoFramework.TestFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="nanoFramework.UnitTestLauncher">
-      <HintPath>..\..\packages\nanoFramework.TestFramework.2.1.85\lib\nanoFramework.UnitTestLauncher.exe</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />
+    <ProjectReference Include="..\TestFramework\TestFramework.nfproj" />
+    <ProjectReference Include="..\UnitTestLauncher\UnitTestLauncher.nfproj" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
 </Project>
