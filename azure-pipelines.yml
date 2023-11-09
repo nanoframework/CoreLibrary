@@ -136,18 +136,21 @@ jobs:
   condition: >-
     or(
       and(
-        succeeded(),
+        not(or(failed(), canceled()),
         startsWith(variables['Build.SourceBranch'], 'refs/heads/main'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       and(
-        succeeded(),
+        not(or(failed(), canceled()),
         eq(variables['System.PullRequest.PullRequestId'], ''),
         contains(variables['Build.SourceVersionMessage'], '***UPDATE_DEPENDENTS***'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       eq(variables['UPDATE_DEPENDENTS'], 'true')
     )
+
+  dependsOn:
+    - Build_mscorlib
 
   pool:
     vmImage: 'windows-latest'
