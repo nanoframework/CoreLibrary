@@ -36,6 +36,7 @@
     <Compile Include="UnitTestMethodsTests.cs" />
     <Compile Include="UnitTestOperatorTests.cs" />
     <Compile Include="UnitTestPropertiesTests.cs" />
+    <Compile Include="UnitTestHashCodeTests.cs" />
     <Compile Include="UnitTestStaticTests.cs" />
   </ItemGroup>
   <ItemGroup>
