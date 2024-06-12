@@ -16,95 +16,95 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void ValueSimple01_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" byte is an alias for System.Byte");
+            //  Section 4.1
+            //  byte is an alias for System.Byte
             ValueSimpleTestClass01.testMethod();
         }
         [TestMethod]
         public void ValueSimple02_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" char is an alias for System.Char");
+            //  Section 4.1
+            //  char is an alias for System.Char
             ValueSimpleTestClass02.testMethod();
         }
         [TestMethod]
         public void ValueSimple03_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" short is an alias for System.Int16");
+            //  Section 4.1
+            //  short is an alias for System.Int16
             ValueSimpleTestClass03.testMethod();
         }
         [TestMethod]
         public void ValueSimple04_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" int is an alias for System.Int32");
+            //  Section 4.1
+            //  int is an alias for System.Int32
             ValueSimpleTestClass04.testMethod();
         }
         [TestMethod]
         public void ValueSimple05_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" long is an alias for System.Int64");
+            //  Section 4.1
+            //  long is an alias for System.Int64
             ValueSimpleTestClass05.testMethod();
         }
         [TestMethod]
         public void ValueSimple06_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" float is an alias for System.Single");
+            //  Section 4.1
+            //  float is an alias for System.Single
             ValueSimpleTestClass06.testMethod();
         }
         [TestMethod]
         public void ValueSimple07_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" double is an alias for System.Double");
+            //  Section 4.1
+            //  double is an alias for System.Double
             ValueSimpleTestClass07.testMethod();
         }
         [TestMethod]
         public void ValueSimple09_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" bool is an alias for System.Boolean");
+            //  Section 4.1
+            //  bool is an alias for System.Boolean
             ValueSimpleTestClass09.testMethod();
         }
         [TestMethod]
         public void ValueSimple11_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" A simple type and the structure type it aliases are completely indistinguishable.");
-            OutputHelper.WriteLine(" In other words, writing the reserved work byte is exactly the same as writing ");
-            OutputHelper.WriteLine(" System.Byte, and writing System.Int32 is exactly the same as writing the reserved");
-            OutputHelper.WriteLine(" word int.");
+            //  Section 4.1
+            //  A simple type and the structure type it aliases are completely indistinguishable.
+            //  In other words, writing the reserved work byte is exactly the same as writing 
+            //  System.Byte, and writing System.Int32 is exactly the same as writing the reserved
+            //  word int.
             ValueSimpleTestClass11.testMethod();
         }
         [TestMethod]
         public void ValueSimple12_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" Because a simple type aliases a struct type, every simple type has members.");
+            //  Section 4.1
+            //  Because a simple type aliases a struct type, every simple type has members.
             ValueSimpleTestClass12.testMethod();
         }
         [TestMethod]
         public void ValueSimple13_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" sbyte is an alias for System.SByte");
+            //  Section 4.1
+            //  sbyte is an alias for System.SByte
             ValueSimpleTestClass13.testMethod();
         }
         [TestMethod]
         public void ValueSimple14_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" ushort is an alias for System.UInt16");
+            //  Section 4.1
+            //  ushort is an alias for System.UInt16
             ValueSimpleTestClass14.testMethod();
         }
         [TestMethod]
         public void ValueSimple15_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" uint is an alias for System.UInt32");
+            //  Section 4.1
+            //  uint is an alias for System.UInt32
             ValueSimpleTestClass15.testMethod();
         }
 

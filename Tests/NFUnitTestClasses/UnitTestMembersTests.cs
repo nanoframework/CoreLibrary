@@ -10,72 +10,72 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Members23_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" The inherited members of a class are specifically");
-            OutputHelper.WriteLine(" not part of the declaration space of a class.  Thus, a ");
-            OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
-            OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
-            OutputHelper.WriteLine(" hides the inherited member).");
+            //  Section 10.2
+            //  The inherited members of a class are specifically
+            //  not part of the declaration space of a class.  Thus, a 
+            //  derived class is allowed to declare a member with the same 
+            //  name or signature as an inherited member (which in effect
+            //  hides the inherited member).
             Assert.IsTrue(MembersTestClass023.testMethod());
         }
 
         [TestMethod]
         public void Members24_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" The inherited members of a class are specifically");
-            OutputHelper.WriteLine(" not part of the declaration space of a class.  Thus, a ");
-            OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
-            OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
-            OutputHelper.WriteLine(" hides the inherited member).");
+            //  Section 10.2
+            //  The inherited members of a class are specifically
+            //  not part of the declaration space of a class.  Thus, a 
+            //  derived class is allowed to declare a member with the same 
+            //  name or signature as an inherited member (which in effect
+            //  hides the inherited member).
             Assert.IsTrue(MembersTestClass024.testMethod());
         }
 
         [TestMethod]
         public void Members25_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" The inherited members of a class are specifically");
-            OutputHelper.WriteLine(" not part of the declaration space of a class.  Thus, a ");
-            OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
-            OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
-            OutputHelper.WriteLine(" hides the inherited member).");
+            //  Section 10.2
+            //  The inherited members of a class are specifically
+            //  not part of the declaration space of a class.  Thus, a 
+            //  derived class is allowed to declare a member with the same 
+            //  name or signature as an inherited member (which in effect
+            //  hides the inherited member).
             Assert.IsTrue(MembersTestClass025.testMethod());
         }
 
         [TestMethod]
         public void Members26_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" The inherited members of a class are specifically");
-            OutputHelper.WriteLine(" not part of the declaration space of a class.  Thus, a ");
-            OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
-            OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
-            OutputHelper.WriteLine(" hides the inherited member).");
+            //  Section 10.2
+            //  The inherited members of a class are specifically
+            //  not part of the declaration space of a class.  Thus, a 
+            //  derived class is allowed to declare a member with the same 
+            //  name or signature as an inherited member (which in effect
+            //  hides the inherited member).
             Assert.IsTrue(MembersTestClass026.testMethod());
         }
 
         [TestMethod]
         public void Members27_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" The inherited members of a class are specifically");
-            OutputHelper.WriteLine(" not part of the declaration space of a class.  Thus, a ");
-            OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
-            OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
-            OutputHelper.WriteLine(" hides the inherited member).");
+            //  Section 10.2
+            //  The inherited members of a class are specifically
+            //  not part of the declaration space of a class.  Thus, a 
+            //  derived class is allowed to declare a member with the same 
+            //  name or signature as an inherited member (which in effect
+            //  hides the inherited member).
             Assert.IsTrue(MembersTestClass027.testMethod());
         }
 
         [TestMethod]
         public void Members28_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" The inherited members of a class are specifically");
-            OutputHelper.WriteLine(" not part of the declaration space of a class.  Thus, a ");
-            OutputHelper.WriteLine(" derived class is allowed to declare a member with the same ");
-            OutputHelper.WriteLine(" name or signature as an inherited member (which in effect");
-            OutputHelper.WriteLine(" hides the inherited member).");
+            //  Section 10.2
+            //  The inherited members of a class are specifically
+            //  not part of the declaration space of a class.  Thus, a 
+            //  derived class is allowed to declare a member with the same 
+            //  name or signature as an inherited member (which in effect
+            //  hides the inherited member).
             Assert.IsTrue(MembersTestClass028.testMethod());
         }
 
@@ -83,436 +83,436 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void MembersInheritance001_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
-            OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
-            OutputHelper.WriteLine(" members declared in B as well as the members");
+            //  Section 10.2
+            //  Inheritance is transitive. If C is derived from
+            //  B, and B is derived from A, then C inherits the
+            //  members declared in B as well as the members
             Assert.IsTrue(MembersInheritanceTestClass001.testMethod());
         }
         [TestMethod]
         public void MembersInheritance002_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
-            OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
-            OutputHelper.WriteLine(" members declared in B as well as the members");
+            //  Section 10.2
+            //  Inheritance is transitive. If C is derived from
+            //  B, and B is derived from A, then C inherits the
+            //  members declared in B as well as the members
             Assert.IsTrue(MembersInheritanceTestClass002.testMethod());
         }
         [TestMethod]
         public void MembersInheritance003_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
-            OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
-            OutputHelper.WriteLine(" members declared in B as well as the members");
+            //  Section 10.2
+            //  Inheritance is transitive. If C is derived from
+            //  B, and B is derived from A, then C inherits the
+            //  members declared in B as well as the members
             Assert.IsTrue(MembersInheritanceTestClass003.testMethod());
         }
         [TestMethod]
         public void MembersInheritance004_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
-            OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
-            OutputHelper.WriteLine(" members declared in B as well as the members");
+            //  Section 10.2
+            //  Inheritance is transitive. If C is derived from
+            //  B, and B is derived from A, then C inherits the
+            //  members declared in B as well as the members
             Assert.IsTrue(MembersInheritanceTestClass004.testMethod());
         }
         [TestMethod]
         public void MembersInheritance005_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
-            OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
-            OutputHelper.WriteLine(" members declared in B as well as the members");
+            //  Section 10.2
+            //  Inheritance is transitive. If C is derived from
+            //  B, and B is derived from A, then C inherits the
+            //  members declared in B as well as the members
             Assert.IsTrue(MembersInheritanceTestClass005.testMethod());
         }
         [TestMethod]
         public void MembersInheritance006_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
-            OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
-            OutputHelper.WriteLine(" members declared in B as well as the members");
+            //  Section 10.2
+            //  Inheritance is transitive. If C is derived from
+            //  B, and B is derived from A, then C inherits the
+            //  members declared in B as well as the members
             Assert.IsTrue(MembersInheritanceTestClass006.testMethod());
         }
         [TestMethod]
         public void MembersInheritance007_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
-            OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
-            OutputHelper.WriteLine(" members declared in B as well as the members");
+            //  Section 10.2
+            //  Inheritance is transitive. If C is derived from
+            //  B, and B is derived from A, then C inherits the
+            //  members declared in B as well as the members
             Assert.IsTrue(MembersInheritanceTestClass007.testMethod());
         }
         [TestMethod]
         public void MembersInheritance008_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Inheritance is transitive. If C is derived from");
-            OutputHelper.WriteLine(" B, and B is derived from A, then C inherits the");
-            OutputHelper.WriteLine(" members declared in B as well as the members");
+            //  Section 10.2
+            //  Inheritance is transitive. If C is derived from
+            //  B, and B is derived from A, then C inherits the
+            //  members declared in B as well as the members
             Assert.IsTrue(MembersInheritanceTestClass008.testMethod());
         }
         [TestMethod]
         public void MembersInheritance018_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Constructors and destructors are not inherited, but all");
-            OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
-            OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
-            OutputHelper.WriteLine(" members may not be accessible in the derived class.");
+            //  Section 10.2
+            //  Constructors and destructors are not inherited, but all
+            //  other members are, regardless of their declared accessibility.
+            //  However, depending on their declared accessibility, inherited
+            //  members may not be accessible in the derived class.
             Assert.IsTrue(MembersInheritanceTestClass018.testMethod());
         }
         [TestMethod]
         public void MembersInheritance019_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Constructors and destructors are not inherited, but all");
-            OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
-            OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
-            OutputHelper.WriteLine(" members may not be accessible in the derived class.");
+            //  Section 10.2
+            //  Constructors and destructors are not inherited, but all
+            //  other members are, regardless of their declared accessibility.
+            //  However, depending on their declared accessibility, inherited
+            //  members may not be accessible in the derived class.
             Assert.IsTrue(MembersInheritanceTestClass019.testMethod());
         }
         [TestMethod]
         public void MembersInheritance020_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Constructors and destructors are not inherited, but all");
-            OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
-            OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
-            OutputHelper.WriteLine(" members may not be accessible in the derived class.");
+            //  Section 10.2
+            //  Constructors and destructors are not inherited, but all
+            //  other members are, regardless of their declared accessibility.
+            //  However, depending on their declared accessibility, inherited
+            //  members may not be accessible in the derived class.
             Assert.IsTrue(MembersInheritanceTestClass020.testMethod());
         }
         [TestMethod]
         public void MembersInheritance021_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Constructors and destructors are not inherited, but all");
-            OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
-            OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
-            OutputHelper.WriteLine(" members may not be accessible in the derived class.");
+            //  Section 10.2
+            //  Constructors and destructors are not inherited, but all
+            //  other members are, regardless of their declared accessibility.
+            //  However, depending on their declared accessibility, inherited
+            //  members may not be accessible in the derived class.
             Assert.IsTrue(MembersInheritanceTestClass021.testMethod());
         }
         [TestMethod]
         public void MembersInheritance022_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Constructors and destructors are not inherited, but all");
-            OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
-            OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
-            OutputHelper.WriteLine(" members may not be accessible in the derived class.");
+            //  Section 10.2
+            //  Constructors and destructors are not inherited, but all
+            //  other members are, regardless of their declared accessibility.
+            //  However, depending on their declared accessibility, inherited
+            //  members may not be accessible in the derived class.
             Assert.IsTrue(MembersInheritanceTestClass022.testMethod());
         }
         [TestMethod]
         public void MembersInheritance023_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Constructors and destructors are not inherited, but all");
-            OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
-            OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
-            OutputHelper.WriteLine(" members may not be accessible in the derived class.");
+            //  Section 10.2
+            //  Constructors and destructors are not inherited, but all
+            //  other members are, regardless of their declared accessibility.
+            //  However, depending on their declared accessibility, inherited
+            //  members may not be accessible in the derived class.
             Assert.IsTrue(MembersInheritanceTestClass023.testMethod());
         }
         [TestMethod]
         public void MembersInheritance024_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Constructors and destructors are not inherited, but all");
-            OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
-            OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
-            OutputHelper.WriteLine(" members may not be accessible in the derived class.");
+            //  Section 10.2
+            //  Constructors and destructors are not inherited, but all
+            //  other members are, regardless of their declared accessibility.
+            //  However, depending on their declared accessibility, inherited
+            //  members may not be accessible in the derived class.
             Assert.IsTrue(MembersInheritanceTestClass024.testMethod());
         }
         [TestMethod]
         public void MembersInheritance025_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" Constructors and destructors are not inherited, but all");
-            OutputHelper.WriteLine(" other members are, regardless of their declared accessibility.");
-            OutputHelper.WriteLine(" However, depending on their declared accessibility, inherited");
-            OutputHelper.WriteLine(" members may not be accessible in the derived class.");
+            //  Section 10.2
+            //  Constructors and destructors are not inherited, but all
+            //  other members are, regardless of their declared accessibility.
+            //  However, depending on their declared accessibility, inherited
+            //  members may not be accessible in the derived class.
             Assert.IsTrue(MembersInheritanceTestClass025.testMethod());
         }
         [TestMethod]
         public void MembersInheritance026_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" An instance of a class contains a copy of all instance fields");
-            OutputHelper.WriteLine(" declared in the class and its base classes, and an implicit");
-            OutputHelper.WriteLine(" conversion exists from a derived class type to any of its base ");
-            OutputHelper.WriteLine(" class types.  Thus, a reference to a derived class instance");
-            OutputHelper.WriteLine(" can be treated as a reference to a base class instance.");
+            //  Section 10.2
+            //  An instance of a class contains a copy of all instance fields
+            //  declared in the class and its base classes, and an implicit
+            //  conversion exists from a derived class type to any of its base 
+            //  class types.  Thus, a reference to a derived class instance
+            //  can be treated as a reference to a base class instance.
             Assert.IsTrue(MembersInheritanceTestClass026.testMethod());
         }
         [TestMethod]
         public void MembersInheritance027_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" An instance of a class contains a copy of all instance fields");
-            OutputHelper.WriteLine(" declared in the class and its base classes, and an implicit");
-            OutputHelper.WriteLine(" conversion exists from a derived class type to any of its base ");
-            OutputHelper.WriteLine(" class types.  Thus, a reference to a derived class instance");
-            OutputHelper.WriteLine(" can be treated as a reference to a base class instance.");
+            //  Section 10.2
+            //  An instance of a class contains a copy of all instance fields
+            //  declared in the class and its base classes, and an implicit
+            //  conversion exists from a derived class type to any of its base 
+            //  class types.  Thus, a reference to a derived class instance
+            //  can be treated as a reference to a base class instance.
             Assert.IsTrue(MembersInheritanceTestClass027.testMethod());
         }
         [TestMethod]
         public void MembersInheritance028_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class can declare virtual methods, properties,");
-            OutputHelper.WriteLine(" and indexers, and derived classes can override the ");
-            OutputHelper.WriteLine(" implementation of these function members.  This enables");
-            OutputHelper.WriteLine(" classes to exhibit polymorphic behavior wherein the ");
-            OutputHelper.WriteLine(" actions performed by a function member invocation");
-            OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
-            OutputHelper.WriteLine(" through which the member is invoked.");
+            //  Section 10.2
+            //  A class can declare virtual methods, properties,
+            //  and indexers, and derived classes can override the 
+            //  implementation of these function members.  This enables
+            //  classes to exhibit polymorphic behavior wherein the 
+            //  actions performed by a function member invocation
+            //  varies depending on the run-time type of the instance
+            //  through which the member is invoked.
             Assert.IsTrue(MembersInheritanceTestClass028.testMethod());
         }
         [TestMethod]
         public void MembersInheritance029_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class can declare virtual methods, properties,");
-            OutputHelper.WriteLine(" and indexers, and derived classes can override the ");
-            OutputHelper.WriteLine(" implementation of these function members.  This enables");
-            OutputHelper.WriteLine(" classes to exhibit polymorphic behavior wherein the ");
-            OutputHelper.WriteLine(" actions performed by a function member invocation");
-            OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
-            OutputHelper.WriteLine(" through which the member is invoked.");
+            //  Section 10.2
+            //  A class can declare virtual methods, properties,
+            //  and indexers, and derived classes can override the 
+            //  implementation of these function members.  This enables
+            //  classes to exhibit polymorphic behavior wherein the 
+            //  actions performed by a function member invocation
+            //  varies depending on the run-time type of the instance
+            //  through which the member is invoked.
             Assert.IsTrue(MembersInheritanceTestClass029.testMethod());
         }
         [TestMethod]
         public void MembersInheritance030_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class can declare virtual methods, properties,");
-            OutputHelper.WriteLine(" and indexers, and derived classes can override the ");
-            OutputHelper.WriteLine(" implementation of these function members.  This enables");
-            OutputHelper.WriteLine(" classes to exhibit polymorphic behavior wherein the ");
-            OutputHelper.WriteLine(" actions performed by a function member invocation");
-            OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
-            OutputHelper.WriteLine(" through which the member is invoked.");
+            //  Section 10.2
+            //  A class can declare virtual methods, properties,
+            //  and indexers, and derived classes can override the 
+            //  implementation of these function members.  This enables
+            //  classes to exhibit polymorphic behavior wherein the 
+            //  actions performed by a function member invocation
+            //  varies depending on the run-time type of the instance
+            //  through which the member is invoked.
             Assert.IsTrue(MembersInheritanceTestClass030.testMethod());
         }
         [TestMethod]
         public void MembersInheritance031_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class can declare virtual methods, properties,");
-            OutputHelper.WriteLine(" and indexers, and derived classes can override the ");
-            OutputHelper.WriteLine(" implementation of these function members.  This enables");
-            OutputHelper.WriteLine(" classes to exhibit polymorphic behavior wherein the ");
-            OutputHelper.WriteLine(" actions performed by a function member invocation");
-            OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
-            OutputHelper.WriteLine(" through which the member is invoked.");
+            //  Section 10.2
+            //  A class can declare virtual methods, properties,
+            //  and indexers, and derived classes can override the 
+            //  implementation of these function members.  This enables
+            //  classes to exhibit polymorphic behavior wherein the 
+            //  actions performed by a function member invocation
+            //  varies depending on the run-time type of the instance
+            //  through which the member is invoked.
             Assert.IsTrue(MembersInheritanceTestClass031.testMethod());
         }
         [TestMethod]
         public void MembersInheritance032_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class can declare virtual methods, properties,");
-            OutputHelper.WriteLine(" and indexers, and derived classes can override the ");
-            OutputHelper.WriteLine(" implementation of these function members.  This enables");
-            OutputHelper.WriteLine(" classes to exhibit polymorphic behavior wherein the ");
-            OutputHelper.WriteLine(" actions performed by a function member invocation");
-            OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
-            OutputHelper.WriteLine(" through which the member is invoked.");
+            //  Section 10.2
+            //  A class can declare virtual methods, properties,
+            //  and indexers, and derived classes can override the 
+            //  implementation of these function members.  This enables
+            //  classes to exhibit polymorphic behavior wherein the 
+            //  actions performed by a function member invocation
+            //  varies depending on the run-time type of the instance
+            //  through which the member is invoked.
             Assert.IsFalse(MembersInheritanceTestClass032.testMethod());
-            OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-            OutputHelper.WriteLine("It previously marked as known failure because of bug # 21562");
-            OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
+            // This failure indicates a test is now passing that previously failed by design.
+            // It previously marked as known failure because of bug # 21562
+            // The Test owner needs to verify that the change was intentional and remove the known failure.
 
         }
         [TestMethod]
         public void MembersInheritance033_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class can declare virtual methods, properties,");
-            OutputHelper.WriteLine(" and indexers, and derived classes can override the ");
-            OutputHelper.WriteLine(" implementation of these function members.  This enables");
-            OutputHelper.WriteLine(" classes to exhibit polymorphic behavior wherein the ");
-            OutputHelper.WriteLine(" actions performed by a function member invocation");
-            OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
-            OutputHelper.WriteLine(" through which the member is invoked.");
+            //  Section 10.2
+            //  A class can declare virtual methods, properties,
+            //  and indexers, and derived classes can override the 
+            //  implementation of these function members.  This enables
+            //  classes to exhibit polymorphic behavior wherein the 
+            //  actions performed by a function member invocation
+            //  varies depending on the run-time type of the instance
+            //  through which the member is invoked.
             Assert.IsTrue(MembersInheritanceTestClass033.testMethod());
         }
         [TestMethod]
         public void MembersInheritance034_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class can declare virtual methods, properties,");
-            OutputHelper.WriteLine(" and indexers, and derived classes can override the ");
-            OutputHelper.WriteLine(" implementation of these function members.  This enables");
-            OutputHelper.WriteLine(" classes to exhibit polymorphic behavior wherein the ");
-            OutputHelper.WriteLine(" actions performed by a function member invocation");
-            OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
-            OutputHelper.WriteLine(" through which the member is invoked.");
+            //  Section 10.2
+            //  A class can declare virtual methods, properties,
+            //  and indexers, and derived classes can override the 
+            //  implementation of these function members.  This enables
+            //  classes to exhibit polymorphic behavior wherein the 
+            //  actions performed by a function member invocation
+            //  varies depending on the run-time type of the instance
+            //  through which the member is invoked.
             Assert.IsTrue(MembersInheritanceTestClass034.testMethod());
         }
         [TestMethod]
         public void MembersInheritance035_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class can declare virtual methods, properties,");
-            OutputHelper.WriteLine(" and indexers, and derived classes can override the ");
-            OutputHelper.WriteLine(" implementation of these function members.  This enables");
-            OutputHelper.WriteLine(" classes to exhibit polymorphic behavior wherein the ");
-            OutputHelper.WriteLine(" actions performed by a function member invocation");
-            OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
-            OutputHelper.WriteLine(" through which the member is invoked.");
+            //  Section 10.2
+            //  A class can declare virtual methods, properties,
+            //  and indexers, and derived classes can override the 
+            //  implementation of these function members.  This enables
+            //  classes to exhibit polymorphic behavior wherein the 
+            //  actions performed by a function member invocation
+            //  varies depending on the run-time type of the instance
+            //  through which the member is invoked.
             Assert.IsTrue(MembersInheritanceTestClass035.testMethod());
         }
         [TestMethod]
         public void MembersInheritance036_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class can declare virtual methods, properties,");
-            OutputHelper.WriteLine(" and indexers, and derived classes can override the ");
-            OutputHelper.WriteLine(" implementation of these function members.  This enables");
-            OutputHelper.WriteLine(" classes to exhibit polymorphic behavior wherein the ");
-            OutputHelper.WriteLine(" actions performed by a function member invocation");
-            OutputHelper.WriteLine(" varies depending on the run-time type of the instance");
-            OutputHelper.WriteLine(" through which the member is invoked.");
+            //  Section 10.2
+            //  A class can declare virtual methods, properties,
+            //  and indexers, and derived classes can override the 
+            //  implementation of these function members.  This enables
+            //  classes to exhibit polymorphic behavior wherein the 
+            //  actions performed by a function member invocation
+            //  varies depending on the run-time type of the instance
+            //  through which the member is invoked.
             Assert.IsFalse(MembersInheritanceTestClass036.testMethod());
-            OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-            OutputHelper.WriteLine("It previously marked as known failure because of bug # 21562");
-            OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
+            // This failure indicates a test is now passing that previously failed by design.
+            // It previously marked as known failure because of bug # 21562
+            // The Test owner needs to verify that the change was intentional and remove the known failure.
         }
         [TestMethod]
         public void MembersInheritance037_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration is permitted to declare");
-            OutputHelper.WriteLine(" a member with the same name or signature as an ");
-            OutputHelper.WriteLine(" inherited member.  When this occurs, the derived");
-            OutputHelper.WriteLine(" class member is said to hide the base class member.");
+            //  Section 10.2
+            //  A class-member-declaration is permitted to declare
+            //  a member with the same name or signature as an 
+            //  inherited member.  When this occurs, the derived
+            //  class member is said to hide the base class member.
             Assert.IsTrue(MembersInheritanceTestClass037.testMethod());
         }
         [TestMethod]
         public void MembersInheritance038_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration is permitted to declare");
-            OutputHelper.WriteLine(" a member with the same name or signature as an ");
-            OutputHelper.WriteLine(" inherited member.  When this occurs, the derived");
-            OutputHelper.WriteLine(" class member is said to hide the base class member.");
+            //  Section 10.2
+            //  A class-member-declaration is permitted to declare
+            //  a member with the same name or signature as an 
+            //  inherited member.  When this occurs, the derived
+            //  class member is said to hide the base class member.
             Assert.IsTrue(MembersInheritanceTestClass038.testMethod());
         }
         [TestMethod]
         public void MembersInheritance039_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration is permitted to declare");
-            OutputHelper.WriteLine(" a member with the same name or signature as an ");
-            OutputHelper.WriteLine(" inherited member.  When this occurs, the derived");
-            OutputHelper.WriteLine(" class member is said to hide the base class member.");
+            //  Section 10.2
+            //  A class-member-declaration is permitted to declare
+            //  a member with the same name or signature as an 
+            //  inherited member.  When this occurs, the derived
+            //  class member is said to hide the base class member.
             Assert.IsTrue(MembersInheritanceTestClass039.testMethod());
         }
         [TestMethod]
         public void MembersInheritance040_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration is permitted to declare");
-            OutputHelper.WriteLine(" a member with the same name or signature as an ");
-            OutputHelper.WriteLine(" inherited member.  When this occurs, the derived");
-            OutputHelper.WriteLine(" class member is said to hide the base class member.");
+            //  Section 10.2
+            //  A class-member-declaration is permitted to declare
+            //  a member with the same name or signature as an 
+            //  inherited member.  When this occurs, the derived
+            //  class member is said to hide the base class member.
             Assert.IsTrue(MembersInheritanceTestClass040.testMethod());
         }
         [TestMethod]
         public void MembersInheritance041_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" If a new modifier is included in a declaration");
-            OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
-            OutputHelper.WriteLine(" is issued to that effect.");
+            //  Section 10.2
+            //  If a new modifier is included in a declaration
+            //  that doesn't hide an inherited member, a warning 
+            //  is issued to that effect.
             Assert.IsTrue(MembersInheritanceTestClass041.testMethod());
         }
         [TestMethod]
         public void MembersInheritance042_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" If a new modifier is included in a declaration");
-            OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
-            OutputHelper.WriteLine(" is issued to that effect.");
+            //  Section 10.2
+            //  If a new modifier is included in a declaration
+            //  that doesn't hide an inherited member, a warning 
+            //  is issued to that effect.
             Assert.IsTrue(MembersInheritanceTestClass042.testMethod());
         }
         [TestMethod]
         public void MembersInheritance043_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" If a new modifier is included in a declaration");
-            OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
-            OutputHelper.WriteLine(" is issued to that effect.");
+            //  Section 10.2
+            //  If a new modifier is included in a declaration
+            //  that doesn't hide an inherited member, a warning 
+            //  is issued to that effect.
             Assert.IsTrue(MembersInheritanceTestClass043.testMethod());
         }
         [TestMethod]
         public void MembersInheritance044_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" If a new modifier is included in a declaration");
-            OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
-            OutputHelper.WriteLine(" is issued to that effect.");
+            //  Section 10.2
+            //  If a new modifier is included in a declaration
+            //  that doesn't hide an inherited member, a warning 
+            //  is issued to that effect.
             Assert.IsTrue(MembersInheritanceTestClass044.testMethod());
         }
         [TestMethod]
         public void MembersInheritance045_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" If a new modifier is included in a declaration");
-            OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
-            OutputHelper.WriteLine(" is issued to that effect.");
+            //  Section 10.2
+            //  If a new modifier is included in a declaration
+            //  that doesn't hide an inherited member, a warning 
+            //  is issued to that effect.
             Assert.IsTrue(MembersInheritanceTestClass045.testMethod());
         }
         [TestMethod]
         public void MembersInheritance046_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" If a new modifier is included in a declaration");
-            OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
-            OutputHelper.WriteLine(" is issued to that effect.");
+            //  Section 10.2
+            //  If a new modifier is included in a declaration
+            //  that doesn't hide an inherited member, a warning 
+            //  is issued to that effect.
             Assert.IsTrue(MembersInheritanceTestClass046.testMethod());
         }
         [TestMethod]
         public void MembersInheritance047_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" If a new modifier is included in a declaration");
-            OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
-            OutputHelper.WriteLine(" is issued to that effect.");
+            //  Section 10.2
+            //  If a new modifier is included in a declaration
+            //  that doesn't hide an inherited member, a warning 
+            //  is issued to that effect.
             Assert.IsTrue(MembersInheritanceTestClass047.testMethod());
         }
         [TestMethod]
         public void MembersInheritance053_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" If a new modifier is included in a declaration");
-            OutputHelper.WriteLine(" that doesn't hide an inherited member, a warning ");
-            OutputHelper.WriteLine(" is issued to that effect.");
+            //  Section 10.2
+            //  If a new modifier is included in a declaration
+            //  that doesn't hide an inherited member, a warning 
+            //  is issued to that effect.
             Assert.IsTrue(MembersInheritanceTestClass053.testMethod());
         }
         [TestMethod]
         public void MembersInheritance054_Test()
         {
-            OutputHelper.WriteLine("Testing that protected members can be passed to a grandchild class");
+            // Testing that protected members can be passed to a grandchild class
             Assert.IsTrue(MembersInheritanceTestClass054.testMethod());
         }
         [TestMethod]
         public void MembersInheritance057_Test()
         {
-            OutputHelper.WriteLine("Testing that you can inherit from a member class");
+            // Testing that you can inherit from a member class
 
             Assert.IsTrue(MembersInheritanceTestClass057.testMethod());
         }
         [TestMethod]
         public void MembersInheritance058_Test()
         {
-            OutputHelper.WriteLine("Testing that you can inherit from a class declared later in the file");
+            // Testing that you can inherit from a class declared later in the file
             Assert.IsTrue(MembersInheritanceTestClass058.testMethod());
         }
         [TestMethod]
         public void MembersInheritance059_Test()
         {
-            OutputHelper.WriteLine("Testing that an inner class inherit from another class");
+            // Testing that an inner class inherit from another class
             Assert.IsTrue(MembersInheritanceTestClass059.testMethod());
         }
 
@@ -520,109 +520,109 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void MembersModifiers01_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration may include one of the ");
-            OutputHelper.WriteLine(" four access modifiers: public, protected, internal,");
-            OutputHelper.WriteLine(" or private. It is an error to specify more than one");
-            OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
-            OutputHelper.WriteLine(" does not include an access modifier, the declaration");
-            OutputHelper.WriteLine(" defaults to private.");
+            //  Section 10.2
+            //  A class-member-declaration may include one of the 
+            //  four access modifiers: public, protected, internal,
+            //  or private. It is an error to specify more than one
+            //  access modifier. When a class-member-declaration 
+            //  does not include an access modifier, the declaration
+            //  defaults to private.
             Assert.IsTrue(MembersModifiersTestClass01.testMethod());
         }
         [TestMethod]
         public void MembersModifiers02_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration may include one of the ");
-            OutputHelper.WriteLine(" four access modifiers: public, protected, internal,");
-            OutputHelper.WriteLine(" or private. It is an error to specify more than one");
-            OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
-            OutputHelper.WriteLine(" does not include an access modifier, the declaration");
-            OutputHelper.WriteLine(" defaults to private.");
+            //  Section 10.2
+            //  A class-member-declaration may include one of the 
+            //  four access modifiers: public, protected, internal,
+            //  or private. It is an error to specify more than one
+            //  access modifier. When a class-member-declaration 
+            //  does not include an access modifier, the declaration
+            //  defaults to private.
             Assert.IsTrue(MembersModifiersTestClass02.testMethod());
         }
         [TestMethod]
         public void MembersModifiers03_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration may include one of the ");
-            OutputHelper.WriteLine(" four access modifiers: public, protected, internal,");
-            OutputHelper.WriteLine(" or private. It is an error to specify more than one");
-            OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
-            OutputHelper.WriteLine(" does not include an access modifier, the declaration");
-            OutputHelper.WriteLine(" defaults to private.");
+            //  Section 10.2
+            //  A class-member-declaration may include one of the 
+            //  four access modifiers: public, protected, internal,
+            //  or private. It is an error to specify more than one
+            //  access modifier. When a class-member-declaration 
+            //  does not include an access modifier, the declaration
+            //  defaults to private.
             Assert.IsTrue(MembersModifiersTestClass03.testMethod());
         }
         [TestMethod]
         public void MembersModifiers04_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration may include one of the ");
-            OutputHelper.WriteLine(" four access modifiers: public, protected, internal,");
-            OutputHelper.WriteLine(" or private. It is an error to specify more than one");
-            OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
-            OutputHelper.WriteLine(" does not include an access modifier, the declaration");
-            OutputHelper.WriteLine(" defaults to private.");
+            //  Section 10.2
+            //  A class-member-declaration may include one of the 
+            //  four access modifiers: public, protected, internal,
+            //  or private. It is an error to specify more than one
+            //  access modifier. When a class-member-declaration 
+            //  does not include an access modifier, the declaration
+            //  defaults to private.
             Assert.IsTrue(MembersModifiersTestClass04.testMethod());
         }
         [TestMethod]
         public void MembersModifiers05_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration may include one of the ");
-            OutputHelper.WriteLine(" four access modifiers: public, protected, internal,");
-            OutputHelper.WriteLine(" or private. It is an error to specify more than one");
-            OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
-            OutputHelper.WriteLine(" does not include an access modifier, the declaration");
-            OutputHelper.WriteLine(" defaults to private.");
+            //  Section 10.2
+            //  A class-member-declaration may include one of the 
+            //  four access modifiers: public, protected, internal,
+            //  or private. It is an error to specify more than one
+            //  access modifier. When a class-member-declaration 
+            //  does not include an access modifier, the declaration
+            //  defaults to private.
             Assert.IsTrue(MembersModifiersTestClass05.testMethod());
         }
         [TestMethod]
         public void MembersModifiers06_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration may include one of the ");
-            OutputHelper.WriteLine(" four access modifiers: public, protected, internal,");
-            OutputHelper.WriteLine(" or private. It is an error to specify more than one");
-            OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
-            OutputHelper.WriteLine(" does not include an access modifier, the declaration");
-            OutputHelper.WriteLine(" defaults to private.");
+            //  Section 10.2
+            //  A class-member-declaration may include one of the 
+            //  four access modifiers: public, protected, internal,
+            //  or private. It is an error to specify more than one
+            //  access modifier. When a class-member-declaration 
+            //  does not include an access modifier, the declaration
+            //  defaults to private.
             Assert.IsTrue(MembersModifiersTestClass06.testMethod());
         }
         [TestMethod]
         public void MembersModifiers07_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration may include one of the ");
-            OutputHelper.WriteLine(" four access modifiers: public, protected, internal,");
-            OutputHelper.WriteLine(" or private. It is an error to specify more than one");
-            OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
-            OutputHelper.WriteLine(" does not include an access modifier, the declaration");
-            OutputHelper.WriteLine(" defaults to private.");
+            //  Section 10.2
+            //  A class-member-declaration may include one of the 
+            //  four access modifiers: public, protected, internal,
+            //  or private. It is an error to specify more than one
+            //  access modifier. When a class-member-declaration 
+            //  does not include an access modifier, the declaration
+            //  defaults to private.
             Assert.IsTrue(MembersModifiersTestClass07.testMethod());
         }
         [TestMethod]
         public void MembersModifiers08_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration may include one of the ");
-            OutputHelper.WriteLine(" four access modifiers: public, protected, internal,");
-            OutputHelper.WriteLine(" or private. It is an error to specify more than one");
-            OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
-            OutputHelper.WriteLine(" does not include an access modifier, the declaration");
-            OutputHelper.WriteLine(" defaults to private.");
+            //  Section 10.2
+            //  A class-member-declaration may include one of the 
+            //  four access modifiers: public, protected, internal,
+            //  or private. It is an error to specify more than one
+            //  access modifier. When a class-member-declaration 
+            //  does not include an access modifier, the declaration
+            //  defaults to private.
             Assert.IsTrue(MembersModifiersTestClass08.testMethod());
         }
         [TestMethod]
         public void MembersModifiers12_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2");
-            OutputHelper.WriteLine(" A class-member-declaration may include one of the ");
-            OutputHelper.WriteLine(" four access modifiers: public, protected, internal,");
-            OutputHelper.WriteLine(" or private. It is an error to specify more than one");
-            OutputHelper.WriteLine(" access modifier. When a class-member-declaration ");
-            OutputHelper.WriteLine(" does not include an access modifier, the declaration");
-            OutputHelper.WriteLine(" defaults to private.");
+            //  Section 10.2
+            //  A class-member-declaration may include one of the 
+            //  four access modifiers: public, protected, internal,
+            //  or private. It is an error to specify more than one
+            //  access modifier. When a class-member-declaration 
+            //  does not include an access modifier, the declaration
+            //  defaults to private.
             Assert.IsTrue(MembersModifiersTestClass12.testMethod());
         }
         [TestMethod]

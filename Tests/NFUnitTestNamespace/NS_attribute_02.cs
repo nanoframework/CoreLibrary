@@ -13,7 +13,7 @@ class NS_TestClass_attribute_02
 {
     public void printClassName()
     {
-        OutputHelper.WriteLine("Class A");
+        // Class A
     }
 
     static void Main_old() { }

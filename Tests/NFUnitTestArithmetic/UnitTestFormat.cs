@@ -593,7 +593,7 @@ namespace NFUnitTestArithmetic
                     OutputHelper.Write(GetColumnInfo((ColumnType)i).ColumnHeader.PadLeft(GetColumnInfo((ColumnType)i).LargestLength + 1));  // +1 for an extra space between columns    
                 }
             }
-            OutputHelper.WriteLine("");  // complete the line
+            //   // complete the line
 
             // now write out the row data
             for (int i = 0; i < m_rows.Count; i++)
@@ -616,7 +616,7 @@ namespace NFUnitTestArithmetic
                         OutputHelper.Write(rd.ColumnData[j].PadLeft(GetColumnInfo((ColumnType)j).LargestLength + 1));  // +1 for an extra space between columns    
                     }
                 }
-                OutputHelper.WriteLine("");  // complete the line
+                //   // complete the line
             }
 
         }

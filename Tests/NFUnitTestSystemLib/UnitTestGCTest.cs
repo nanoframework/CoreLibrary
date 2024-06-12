@@ -21,7 +21,7 @@ namespace NFUnitTestSystemLib
             {
                 if (m_hasFinalized1 == false)
                 {
-                    OutputHelper.WriteLine("First finalization");
+                    // First finalization
 
                     // Put this object back into a root by creating
                     // a reference to it.
@@ -36,7 +36,7 @@ namespace NFUnitTestSystemLib
                 }
                 else
                 {
-                    OutputHelper.WriteLine("Second finalization");
+                    // Second finalization
                     m_hasFinalized2 = true;
                 }
             }
@@ -58,16 +58,16 @@ namespace NFUnitTestSystemLib
         //    /// 6. Verify that object has been collected
         //    /// </summary>
         //    ///
-        //    OutputHelper.WriteLine("Tests ReRegisterForFinalize");
-        //    OutputHelper.WriteLine("Create a FinalizeObject.");
+        //    // Tests ReRegisterForFinalize
+        //    // Create a FinalizeObject.
         //    FinalizeObject mfo = new FinalizeObject();
         //    m_hasFinalized1 = false;
         //    m_hasFinalized2 = false;
 
-        //    OutputHelper.WriteLine("Release reference");
+        //    // Release reference
         //    mfo = null;
 
-        //    OutputHelper.WriteLine("Allow GC");
+        //    // Allow GC
         //    GC.WaitForPendingFinalizers();
         //    int sleepTime = 1000;
         //    int slept = 0;
@@ -83,7 +83,7 @@ namespace NFUnitTestSystemLib
         //    // FinalizeObject.m_currentInstance field.  Setting this value
         //    // to null and forcing another garbage collection will now
         //    // cause the object to Finalize permanently.
-        //    OutputHelper.WriteLine("Reregister and allow for GC");
+        //    // Reregister and allow for GC
         //    FinalizeObject.m_currentInstance = null;
         //    GC.WaitForPendingFinalizers();
         //    sleepTime = 1000;
@@ -110,17 +110,17 @@ namespace NFUnitTestSystemLib
         //    /// 6. Verify that object has not been collected
         //    /// </summary>
         //    ///
-        //    OutputHelper.WriteLine("Tests SuppressFinalize");
-        //    OutputHelper.WriteLine("Create a FinalizeObject.");
+        //    // Tests SuppressFinalize
+        //    // Create a FinalizeObject.
         //    FinalizeObject mfo = new FinalizeObject();
         //    m_hasFinalized1 = false;
         //    m_hasFinalized2 = false;
 
-        //    OutputHelper.WriteLine("Releasing");
+        //    // Releasing
         //    System.GC.SuppressFinalize(mfo);
         //    mfo = null;
 
-        //    OutputHelper.WriteLine("Allow GC");
+        //    // Allow GC
         //    GC.WaitForPendingFinalizers();
         //    int sleepTime = 1000;
         //    int slept = 0;
@@ -145,26 +145,26 @@ namespace NFUnitTestSystemLib
         //    /// 6. Verify that object has not been collected
         //    /// </summary>
         //    ///
-        //    OutputHelper.WriteLine("Tests WaitForPendingFinalizers, dependant on test 1");
-        //    OutputHelper.WriteLine("will auto-fail if test 1 fails.");
+        //    // Tests WaitForPendingFinalizers, dependant on test 1
+        //    // will auto-fail if test 1 fails.
         //    Assert.IsTrue(m_Test1Result);
 
-        //    OutputHelper.WriteLine("Create a FinalizeObject.");
+        //    // Create a FinalizeObject.
         //    FinalizeObject mfo = new FinalizeObject();
         //    m_hasFinalized1 = false;
         //    m_hasFinalized2 = false;
 
-        //    OutputHelper.WriteLine("Releasing");
+        //    // Releasing
         //    mfo = null;
 
-        //    OutputHelper.WriteLine("Wait for GC");
+        //    // Wait for GC
         //    GC.WaitForPendingFinalizers();
         //    System.GC.WaitForPendingFinalizers();
 
-        //    OutputHelper.WriteLine("Releasing again");
+        //    // Releasing again
         //    FinalizeObject.m_currentInstance = null;
 
-        //    OutputHelper.WriteLine("Wait for GC");
+        //    // Wait for GC
         //    GC.WaitForPendingFinalizers();
         //    System.GC.WaitForPendingFinalizers();
 

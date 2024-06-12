@@ -24,758 +24,758 @@ namespace NFUnitTestLexical
         [TestMethod]
         public void Lexical_comments_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.4 Test");
-            OutputHelper.WriteLine("Verifies valid/invalid comment");
+            // Section 2.4.4 Test
+            // Verifies valid/invalid comment
             Assert.IsTrue(Lexical_TestClass_comments_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_comments_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.4 Test");
-            OutputHelper.WriteLine("Verifies valid/invalid comment");
+            // Section 2.4.4 Test
+            // Verifies valid/invalid comment
             Assert.IsTrue(Lexical_TestClass_comments_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_comments_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.4 Test");
-            OutputHelper.WriteLine("Verifies valid/invalid comment");
+            // Section 2.4.4 Test
+            // Verifies valid/invalid comment
             Assert.IsTrue(Lexical_TestClass_comments_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_comments_04_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.4 Test");
-            OutputHelper.WriteLine("Verifies valid/invalid comment");
+            // Section 2.4.4 Test
+            // Verifies valid/invalid comment
             Assert.IsTrue(Lexical_TestClass_comments_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_comments_05_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.4 Test");
-            OutputHelper.WriteLine("Verifies valid/invalid comment");
+            // Section 2.4.4 Test
+            // Verifies valid/invalid comment
             Assert.IsTrue(Lexical_TestClass_comments_05.testMethod());
         }
 
         [TestMethod]
         public void Lexical_comments_06_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.4 Test");
-            OutputHelper.WriteLine("Verifies valid/invalid comment");
+            // Section 2.4.4 Test
+            // Verifies valid/invalid comment
             Assert.IsTrue(Lexical_TestClass_comments_06.testMethod());
         }
 
         [TestMethod]
         public void Lexical_comments_07_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.4 Test");
-            OutputHelper.WriteLine("Verifies valid/invalid comment");
+            // Section 2.4.4 Test
+            // Verifies valid/invalid comment
             Assert.IsTrue(Lexical_TestClass_comments_07.testMethod());
         }
 
         [TestMethod]
         public void Lexical_comments_10_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.4 Test");
-            OutputHelper.WriteLine("Verifies valid/invalid comment");
+            // Section 2.4.4 Test
+            // Verifies valid/invalid comment
             Assert.IsTrue(Lexical_TestClass_comments_10.testMethod());
         }
 
         [TestMethod]
         public void Lexical_bool_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify true works on bools");
+            // Section 2.4.9 Test
+            // verify true works on bools
             Assert.IsTrue(Lexical_TestClass_bool_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_bool_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify false works on bools");
+            // Section 2.4.9 Test
+            // verify false works on bools
             Assert.IsTrue(Lexical_TestClass_bool_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_int_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify 0 as int literal");
+            // Section 2.4.9 Test
+            // verify 0 as int literal
             Assert.IsTrue(Lexical_TestClass_int_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_int_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify positive int literals");
+            // Section 2.4.9 Test
+            // verify positive int literals
             Assert.IsTrue(Lexical_TestClass_int_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_int_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify negative int literals");
+            // Section 2.4.9 Test
+            // verify negative int literals
             Assert.IsTrue(Lexical_TestClass_int_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_int_04_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify negative hex literals");
+            // Section 2.4.9 Test
+            // verify negative hex literals
             Assert.IsTrue(Lexical_TestClass_int_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_int_05_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify positive hex literals");
+            // Section 2.4.9 Test
+            // verify positive hex literals
             Assert.IsTrue(Lexical_TestClass_int_05.testMethod());
         }
 
         [TestMethod]
         public void Lexical_int_06_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify 0 as hex int literal");
+            // Section 2.4.9 Test
+            // verify 0 as hex int literal
             Assert.IsTrue(Lexical_TestClass_int_06.testMethod());
         }
 
         [TestMethod]
         public void Lexical_intsuffix_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("L/l suffix on longs");
+            // Section 2.4.9 Test
+            // L/l suffix on longs
             Assert.IsTrue(Lexical_TestClass_intsuffix_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_intsuffix_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("LU, Ul,uL,ul,LU,Lu,lU,lu suffix on ulongs");
+            // Section 2.4.9 Test
+            // LU, Ul,uL,ul,LU,Lu,lU,lu suffix on ulongs
             Assert.IsTrue(Lexical_TestClass_intsuffix_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_intsuffix_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("LU, Ul,uL,ul,LU,Lu,lU,lu suffix on ulongs");
+            // Section 2.4.9 Test
+            // LU, Ul,uL,ul,LU,Lu,lU,lu suffix on ulongs
             Assert.IsTrue(Lexical_TestClass_intsuffix_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_intsuffix_04_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("Verify UL,Ul,uL,ul,LU,Lu,lU,lu suffix are of type ulong");
+            // Section 2.4.9 Test
+            // Verify UL,Ul,uL,ul,LU,Lu,lU,lu suffix are of type ulong
             Assert.IsTrue(Lexical_TestClass_intsuffix_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_intsuffix_06_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("Verify L, l suffixes are of type uint");
+            // Section 2.4.9 Test
+            // Verify L, l suffixes are of type uint
             Assert.IsTrue(Lexical_TestClass_intsuffix_06.testMethod());
         }
 
         [TestMethod]
         public void Lexical_intsuffix_07_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("Using the lowercase 'l' suffix should generate a level 4 warning (VS7:86407)");
+            // Section 2.4.9 Test
+            // Using the lowercase 'l' suffix should generate a level 4 warning (VS7:86407)
             Assert.IsTrue(Lexical_TestClass_intsuffix_07.testMethod());
         }
 
         [TestMethod]
         public void Lexical_suff_typepick_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("Verify that literals with l, L suffixes are typed according to spec");
+            // Section 2.4.9 Test
+            // Verify that literals with l, L suffixes are typed according to spec
             Assert.IsTrue(Lexical_TestClass_suff_typepick_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_real_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify (+/-) double double literals");
+            // Section 2.4.9 Test
+            // verify (+/-) double double literals
             Assert.IsTrue(Lexical_TestClass_real_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_real_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
+            // Section 2.4.9 Test
             Assert.IsTrue(Lexical_TestClass_real_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_real_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify (-/+) non-double double literals");
+            // Section 2.4.9 Test
+            // verify (-/+) non-double double literals
             Assert.IsTrue(Lexical_TestClass_real_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_real_04_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify E and e (-/+) as double literals");
+            // Section 2.4.9 Test
+            // verify E and e (-/+) as double literals
             Assert.IsTrue(Lexical_TestClass_real_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_real_05_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify E and e (-/+) as double literals");
+            // Section 2.4.9 Test
+            // verify E and e (-/+) as double literals
             Assert.IsTrue(Lexical_TestClass_real_05.testMethod());
         }
 
         [TestMethod]
         public void Lexical_real_06_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify E and e (-/+) as double literals");
+            // Section 2.4.9 Test
+            // verify E and e (-/+) as double literals
             Assert.IsTrue(Lexical_TestClass_real_06.testMethod());
         }
 
         [TestMethod]
         public void Lexical_char_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify keyboard symbols as chars");
+            // Section 2.4.9 Test
+            // verify keyboard symbols as chars
             Assert.IsTrue(Lexical_TestClass_char_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_char_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify all escape sequences in section 2.4.9.4");
+            // Section 2.4.9 Test
+            // verify all escape sequences in section 2.4.9.4
             Assert.IsTrue(Lexical_TestClass_char_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_char_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("Hex encoded Unicode characters");
+            // Section 2.4.9 Test
+            // Hex encoded Unicode characters
             Assert.IsTrue(Lexical_TestClass_char_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_realsuffix_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("D/d suffix on double literals");
-            OutputHelper.WriteLine("Real suffixes");
+            // Section 2.4.9 Test
+            // D/d suffix on double literals
+            // Real suffixes
             Assert.IsTrue(Lexical_TestClass_realsuffix_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_realsuffix_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("F/f suffix on float literals");
-            OutputHelper.WriteLine("Real suffixes");
+            // Section 2.4.9 Test
+            // F/f suffix on float literals
+            // Real suffixes
             Assert.IsTrue(Lexical_TestClass_realsuffix_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_string_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify escape sequences in string literals");
+            // Section 2.4.9 Test
+            // verify escape sequences in string literals
             Assert.IsTrue(Lexical_TestClass_string_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_string_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify hex escape sequences in string literals");
+            // Section 2.4.9 Test
+            // verify hex escape sequences in string literals
             Assert.IsTrue(Lexical_TestClass_string_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_string_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.9 Test");
-            OutputHelper.WriteLine("verify null strings work");
+            // Section 2.4.9 Test
+            // verify null strings work
             Assert.IsTrue(Lexical_TestClass_string_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_pre_001_Test()
         {
-            OutputHelper.WriteLine("Section 2.3Preprocessing");
-            OutputHelper.WriteLine("simple pre processor");
+            // Section 2.3Preprocessing
+            // simple pre processor
             Assert.IsTrue(Lexical_TestClass_pre_001.testMethod());
         }
 
         [TestMethod]
         public void Lexical_pre_004_Test()
         {
-            OutputHelper.WriteLine("Section 2.3Preprocessing");
-            OutputHelper.WriteLine("Verify that class name namespace isn't searched");
+            // Section 2.3Preprocessing
+            // Verify that class name namespace isn't searched
             Assert.IsTrue(Lexical_TestClass_pre_004.testMethod());
         }
 
         [TestMethod]
         public void Lexical_pre_005_Test()
         {
-            OutputHelper.WriteLine("Section 2.3Preprocessing");
-            OutputHelper.WriteLine("Verify that invalid syntax doesn't mess up compiler in non-ifdef sections");
+            // Section 2.3Preprocessing
+            // Verify that invalid syntax doesn't mess up compiler in non-ifdef sections
             Assert.IsTrue(Lexical_TestClass_pre_005.testMethod());
         }
 
         [TestMethod]
         public void Lexical_pre_008_Test()
         {
-            OutputHelper.WriteLine("Section 2.3Preprocessing");
-            OutputHelper.WriteLine("Verify #elif and #else");
+            // Section 2.3Preprocessing
+            // Verify #elif and #else
             Assert.IsTrue(Lexical_TestClass_pre_008.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_09_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("#warning verification");
+            // Section 2.3 Preprocessing
+            // #warning verification
             Assert.IsTrue(Lexical_TestClass_preproc_09.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_30_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("Verifying comments and #preprocessor items");
-            OutputHelper.WriteLine("This define should not be included	#define TEST ");
+            // Section 2.3 Preprocessing
+            // Verifying comments and #preprocessor items
+            // This define should not be included	#define TEST 
             Assert.IsTrue(Lexical_TestClass_preproc_30.testMethod());
         }
 
         [TestMethod]
         public void Lexical_preproc_38_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("Verify the code that is skipped because of an #if is not checked by compiler at all");
+            // Section 2.3 Preprocessing
+            // Verify the code that is skipped because of an #if is not checked by compiler at all
             Assert.IsTrue(Lexical_TestClass_preproc_38.testMethod());
         }
 
         [TestMethod]
         public void Lexical_line_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("#line: Valid integer-literal passed to #line should work correctly with a real warning");
+            // Section 2.3 Preprocessing
+            // #line: Valid integer-literal passed to #line should work correctly with a real warning
             Assert.IsTrue(Lexical_TestClass_line_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_line_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("#line: Valid integer-literal passed to #line should work correctly with a #warning directive");
+            // Section 2.3 Preprocessing
+            // #line: Valid integer-literal passed to #line should work correctly with a #warning directive
             Assert.IsTrue(Lexical_TestClass_line_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_line_06_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("#line: Valid integer-literal/string-literal passed to #line should work correctly with a real warning");
+            // Section 2.3 Preprocessing
+            // #line: Valid integer-literal/string-literal passed to #line should work correctly with a real warning
             Assert.IsTrue(Lexical_TestClass_line_06.testMethod());
         }
 
         [TestMethod]
         public void Lexical_line_07_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("#line: Valid integer-literal/string-literal passed to #line should work correctly with a #warning directive");
+            // Section 2.3 Preprocessing
+            // #line: Valid integer-literal/string-literal passed to #line should work correctly with a #warning directive
             Assert.IsTrue(Lexical_TestClass_line_07.testMethod());
         }
 
         [TestMethod]
         public void Lexical_line_26_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("#line: Should work cleanly inside an #if-#endif block that evaluates to false");
+            // Section 2.3 Preprocessing
+            // #line: Should work cleanly inside an #if-#endif block that evaluates to false
             Assert.IsTrue(Lexical_TestClass_line_26.testMethod());
         }
 
         [TestMethod]
         public void Lexical_line_35_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("#line: #line default in a false #if block should compile cleanly");
+            // Section 2.3 Preprocessing
+            // #line: #line default in a false #if block should compile cleanly
             Assert.IsTrue(Lexical_TestClass_line_35.testMethod());
         }
 
         [TestMethod]
         public void Lexical_region_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("Make sure #region works without banner text");
+            // Section 2.3 Preprocessing
+            // Make sure #region works without banner text
             Assert.IsTrue(Lexical_TestClass_region_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_region_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("Make sure #region works with banner text");
+            // Section 2.3 Preprocessing
+            // Make sure #region works with banner text
             Assert.IsTrue(Lexical_TestClass_region_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_region_05_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("Nesting a #region inside another should work ");
+            // Section 2.3 Preprocessing
+            // Nesting a #region inside another should work 
             Assert.IsTrue(Lexical_TestClass_region_05.testMethod());
         }
 
         [TestMethod]
         public void Lexical_region_06_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("Nesting five #region blocks should compile successfully ");
+            // Section 2.3 Preprocessing
+            // Nesting five #region blocks should compile successfully 
             Assert.IsTrue(Lexical_TestClass_region_06.testMethod());
         }
 
         [TestMethod]
         public void Lexical_region_07_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("Nesting two #region blocks within a single #region block should compile successfully ");
+            // Section 2.3 Preprocessing
+            // Nesting two #region blocks within a single #region block should compile successfully 
             Assert.IsTrue(Lexical_TestClass_region_07.testMethod());
         }
 
         [TestMethod]
         public void Lexical_region_10_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("Make sure #region works with banner text enclosed in double-quotes");
+            // Section 2.3 Preprocessing
+            // Make sure #region works with banner text enclosed in double-quotes
             Assert.IsTrue(Lexical_TestClass_region_10.testMethod());
         }
 
         [TestMethod]
         public void Lexical_region_11_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("A single-line comment following a #region should compile successfully");
+            // Section 2.3 Preprocessing
+            // A single-line comment following a #region should compile successfully
             Assert.IsTrue(Lexical_TestClass_region_11.testMethod());
         }
 
         [TestMethod]
         public void Lexical_region_12_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("A single-line comment following an #endregion should compile successfully");
+            // Section 2.3 Preprocessing
+            // A single-line comment following an #endregion should compile successfully
             Assert.IsTrue(Lexical_TestClass_region_12.testMethod());
         }
 
         [TestMethod]
         public void Lexical_region_15_Test()
         {
-            OutputHelper.WriteLine("Section 2.3 Preprocessing");
-            OutputHelper.WriteLine("Any text following the #endregion directive should be ignored");
+            // Section 2.3 Preprocessing
+            // Any text following the #endregion directive should be ignored
             Assert.IsTrue(Lexical_TestClass_region_15.testMethod());
         }
 
         [TestMethod]
         public void Lexical_lineterm_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4 Lexical Analysis");
-            OutputHelper.WriteLine("Test different ways to end a line with semi-colon");
+            // Section 2.4 Lexical Analysis
+            // Test different ways to end a line with semi-colon
             Assert.IsTrue(Lexical_TestClass_lineterm_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_atkeyword_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.4 Lexical Analysis - Keywords");
-            OutputHelper.WriteLine("The identifiers @test and test should refer to the same variable");
+            // Section 2.4 Lexical Analysis - Keywords
+            // The identifiers @test and test should refer to the same variable
             Assert.IsTrue(Lexical_TestClass_atkeyword_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_atkeyword_04_Test()
         {
-            OutputHelper.WriteLine("Section 2.4 Lexical Analysis - Keywords");
-            OutputHelper.WriteLine("Verify that 'if' can be an identifier using unicode escape sequences as well as an @keyword");
+            // Section 2.4 Lexical Analysis - Keywords
+            // Verify that 'if' can be an identifier using unicode escape sequences as well as an @keyword
             Assert.IsTrue(Lexical_TestClass_atkeyword_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_atkeyword_05_Test()
         {
-            OutputHelper.WriteLine("Section 2.4 Lexical Analysis - Keywords");
-            OutputHelper.WriteLine("Verify that prefixing an identifer that is prefixed by a double underscore does not generate warning");
+            // Section 2.4 Lexical Analysis - Keywords
+            // Verify that prefixing an identifer that is prefixed by a double underscore does not generate warning
             Assert.IsTrue(Lexical_TestClass_atkeyword_05.testMethod());
         }
 
         [TestMethod]
         public void Lexical_ident_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.7 Identifiers");
-            OutputHelper.WriteLine("identifier-start-character can be alphabetic");
+            // Section 2.4.7 Identifiers
+            // identifier-start-character can be alphabetic
             Assert.IsTrue(Lexical_TestClass_ident_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_ident_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.7 Identifiers");
-            OutputHelper.WriteLine("identifier-start-character can be an underscore");
+            // Section 2.4.7 Identifiers
+            // identifier-start-character can be an underscore
             Assert.IsTrue(Lexical_TestClass_ident_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_ident_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.7 Identifiers");
-            OutputHelper.WriteLine("identifier-part-character can be a number");
+            // Section 2.4.7 Identifiers
+            // identifier-part-character can be a number
             Assert.IsTrue(Lexical_TestClass_ident_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_ident_04_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.7 Identifiers");
-            OutputHelper.WriteLine("identifier-part-character can be a number (in the middle)");
+            // Section 2.4.7 Identifiers
+            // identifier-part-character can be a number (in the middle)
             Assert.IsTrue(Lexical_TestClass_ident_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_ident_05_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.2 Identifiers");
-            OutputHelper.WriteLine("Identifiers that start with double underscores (__) should not generate a warning/error though it used to");
+            // Section 2.4.2 Identifiers
+            // Identifiers that start with double underscores (__) should not generate a warning/error though it used to
             Assert.IsTrue(Lexical_TestClass_ident_05.testMethod());
         }
 
         [TestMethod]
         public void Lexical_ident_06_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.2 Identifiers");
-            OutputHelper.WriteLine("Identifiers that have embedded double underscores (__) should generate a warning/error though it used to");
+            // Section 2.4.2 Identifiers
+            // Identifiers that have embedded double underscores (__) should generate a warning/error though it used to
             Assert.IsTrue(Lexical_TestClass_ident_06.testMethod());
         }
 
         [TestMethod]
         public void Lexical_ident_07_Test()
         {
-            OutputHelper.WriteLine("Section 2.4.2 Identifiers");
-            OutputHelper.WriteLine("Identifiers that end with double underscores (__) should generate a warning/error though it used to");
+            // Section 2.4.2 Identifiers
+            // Identifiers that end with double underscores (__) should generate a warning/error though it used to
             Assert.IsTrue(Lexical_TestClass_ident_07.testMethod());
         }
         [TestMethod]
         public void Lexical_nullunicode_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("A \\u0000 within comments should not stop compiler from reading to EOF");
+            // Section 2.5 Lexical Analysis
+            // A \\u0000 within comments should not stop compiler from reading to EOF
             Assert.IsTrue(Lexical_TestClass_nullunicode_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_nullunicode_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("A \\u0000 in a string should be equal to \x0000 and \0");
+            // Section 2.5 Lexical Analysis
+            // A \\u0000 in a string should be equal to \x0000 and \0
             Assert.IsTrue(Lexical_TestClass_nullunicode_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_nullunicode_04_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("A \\u0000 is ignored if within preprocessor-excluded code");
+            // Section 2.5 Lexical Analysis
+            // A \\u0000 is ignored if within preprocessor-excluded code
             Assert.IsTrue(Lexical_TestClass_nullunicode_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("A simple program that is saved as utf-8 with Notepad compiles and runs correctly.");
+            // Section 2.5 Lexical Analysis
+            // A simple program that is saved as utf-8 with Notepad compiles and runs correctly.
             Assert.IsTrue(Lexical_TestClass_unicode_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_04_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Displaying a unicode character with OutputHelper.WriteLine(().ToString())");
+            // Section 2.5 Lexical Analysis
+            // Displaying a unicode character with OutputHelper.WriteLine(().ToString())
             Assert.IsTrue(Lexical_TestClass_unicode_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_05_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Displaying a unicode character with OutputHelper.WriteLine(().ToString())");
-            OutputHelper.WriteLine("Since the correct language is not installed on my machine, should get a 'QQQ' as output");
+            // Section 2.5 Lexical Analysis
+            // Displaying a unicode character with OutputHelper.WriteLine(().ToString())
+            // Since the correct language is not installed on my machine, should get a 'QQQ' as output
             Assert.IsTrue(Lexical_TestClass_unicode_05.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_06_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Identifier whose name is defined with \\uXXXX works correctly (Bug 111180)");
+            // Section 2.5 Lexical Analysis
+            // Identifier whose name is defined with \\uXXXX works correctly (Bug 111180)
             Assert.IsTrue(Lexical_TestClass_unicode_06.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_07_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Identifier whose name starts with \\uXXXX works correctly");
+            // Section 2.5 Lexical Analysis
+            // Identifier whose name starts with \\uXXXX works correctly
             Assert.IsTrue(Lexical_TestClass_unicode_07.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_08_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Identifier whose name has a \\uXXXX in the middle of it works correctly");
+            // Section 2.5 Lexical Analysis
+            // Identifier whose name has a \\uXXXX in the middle of it works correctly
             Assert.IsTrue(Lexical_TestClass_unicode_08.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_09_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Identifier whose name ends with a \\uXXXX works correctly ");
+            // Section 2.5 Lexical Analysis
+            // Identifier whose name ends with a \\uXXXX works correctly 
             Assert.IsTrue(Lexical_TestClass_unicode_09.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_10_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Unicode escape sequence to start preprocessor identifier");
-            OutputHelper.WriteLine("Bug #33538 - Fixed");
+            // Section 2.5 Lexical Analysis
+            // Unicode escape sequence to start preprocessor identifier
+            // Bug #33538 - Fixed
             Assert.IsTrue(Lexical_TestClass_unicode_10.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_11_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Unicode escape sequence to start preprocessor identifier");
-            OutputHelper.WriteLine("Bug #33538 - Fixed");
+            // Section 2.5 Lexical Analysis
+            // Unicode escape sequence to start preprocessor identifier
+            // Bug #33538 - Fixed
             Assert.IsTrue(Lexical_TestClass_unicode_11.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_12_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Unicode escape sequence to start preprocessor identifier");
-            OutputHelper.WriteLine("Bug #33538 - Fixed");
+            // Section 2.5 Lexical Analysis
+            // Unicode escape sequence to start preprocessor identifier
+            // Bug #33538 - Fixed
             Assert.IsTrue(Lexical_TestClass_unicode_12.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_13_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Unicode escape sequence in middle of a #define (#de\\u0066ine)");
-            OutputHelper.WriteLine("Bug #33538 - Fixed");
+            // Section 2.5 Lexical Analysis
+            // Unicode escape sequence in middle of a #define (#de\\u0066ine)
+            // Bug #33538 - Fixed
             Assert.IsTrue(Lexical_TestClass_unicode_13.testMethod());
         }
 
         [TestMethod]
         public void Lexical_unicode_17_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("The literal \\u0000 should not be interpreted as a unicode escape sequence");
+            // Section 2.5 Lexical Analysis
+            // The literal \\u0000 should not be interpreted as a unicode escape sequence
             Assert.IsTrue(Lexical_TestClass_unicode_17.testMethod());
         }
 
         [TestMethod]
         public void Lexical_uni8digit_01_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Identifier whose name is defined with \\uXXXXXXXX works correctly");
+            // Section 2.5 Lexical Analysis
+            // Identifier whose name is defined with \\uXXXXXXXX works correctly
             Assert.IsTrue(Lexical_TestClass_uni8digit_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_uni8digit_02_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Using OutputHelper.WriteLine with \\uXXXXXXXX works correctly");
+            // Section 2.5 Lexical Analysis
+            // Using OutputHelper.WriteLine with \\uXXXXXXXX works correctly
             Assert.IsTrue(Lexical_TestClass_uni8digit_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_uni8digit_03_Test()
         {
-            OutputHelper.WriteLine("Section 2.5 Lexical Analysis");
-            OutputHelper.WriteLine("Verify valid boundaries of values for \\uXXXXXXXX work correctly");
+            // Section 2.5 Lexical Analysis
+            // Verify valid boundaries of values for \\uXXXXXXXX work correctly
             Assert.IsTrue(Lexical_TestClass_uni8digit_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_atstrings_01_Test()
         {
-            OutputHelper.WriteLine("Back-Quoted String Test");
-            OutputHelper.WriteLine("Newlines should be valid within @-quoted string literals");
+            // Back-Quoted String Test
+            // Newlines should be valid within @-quoted string literals
             Assert.IsTrue(Lexical_TestClass_atstrings_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_atstrings_02_Test()
         {
-            OutputHelper.WriteLine("Back-Quoted String Test");
-            OutputHelper.WriteLine("Unicode escape sequences are not processed within @-quoted string literals");
+            // Back-Quoted String Test
+            // Unicode escape sequences are not processed within @-quoted string literals
             Assert.IsTrue(Lexical_TestClass_atstrings_02.testMethod());
         }
 
         [TestMethod]
         public void Lexical_atstrings_03_Test()
         {
-            OutputHelper.WriteLine("Back-Quoted String Test");
-            OutputHelper.WriteLine("Slash escape sequences are not processed within @-quoted string literals");
+            // Back-Quoted String Test
+            // Slash escape sequences are not processed within @-quoted string literals
             Assert.IsTrue(Lexical_TestClass_atstrings_03.testMethod());
         }
 
         [TestMethod]
         public void Lexical_atstrings_04_Test()
         {
-            OutputHelper.WriteLine("Back-Quoted String Test");
-            OutputHelper.WriteLine("Passing @-quoted strings to OutputHelper.WriteLine(().ToString()) should work");
+            // Back-Quoted String Test
+            // Passing @-quoted strings to OutputHelper.WriteLine(().ToString()) should work
             Assert.IsTrue(Lexical_TestClass_atstrings_04.testMethod());
         }
 
         [TestMethod]
         public void Lexical_mscombo_01_Test()
         {
-            OutputHelper.WriteLine("XML Doc Test (Just lexical tests, no output validation)");
-            OutputHelper.WriteLine("Combination of multi and single line xml doc comments");
+            // XML Doc Test (Just lexical tests, no output validation)
+            // Combination of multi and single line xml doc comments
             Assert.IsTrue(Lexical_TestClass_mscombo_01.testMethod());
         }
 
         [TestMethod]
         public void Lexical_mscombo_05_Test()
         {
-            OutputHelper.WriteLine("XML Doc Test (Just lexical tests, no output validation)");
-            OutputHelper.WriteLine("Combination of multi and single line xml doc comments");
+            // XML Doc Test (Just lexical tests, no output validation)
+            // Combination of multi and single line xml doc comments
             Assert.IsTrue(Lexical_TestClass_mscombo_05.testMethod());
         }
 
@@ -1560,9 +1560,9 @@ namespace NFUnitTestLexical
             public static void Main_old(String[] args)
             {
 #if TEST
-			OutputHelper.WriteLine("Bad");
+			// Bad
 #else
-                OutputHelper.WriteLine("Good");
+                // Good
 #endif
             }
             public static bool testMethod()
@@ -1578,7 +1578,7 @@ namespace NFUnitTestLexical
 #if foo
 			this code should be completely skipped
 #else
-                OutputHelper.WriteLine("Else triggered");
+                // Else triggered
 #endif
             }
             public static bool testMethod()
@@ -1679,7 +1679,7 @@ namespace NFUnitTestLexical
             public static void Main_old()
             {
                 #region
-                OutputHelper.WriteLine("This works!");
+                // This works!
                 #endregion
             }
             public static bool testMethod()
@@ -1693,7 +1693,7 @@ namespace NFUnitTestLexical
             public static void Main_old()
             {
                 #region This is the banner text
-                OutputHelper.WriteLine("This works!");
+                // This works!
                 #endregion
             }
             public static bool testMethod()
@@ -1707,11 +1707,11 @@ namespace NFUnitTestLexical
             public static void Main_old()
             {
                 #region
-                OutputHelper.WriteLine("1");
+                // 1
                 #region
-                OutputHelper.WriteLine("2");
+                // 2
                 #endregion
-                OutputHelper.WriteLine("3");
+                // 3
                 #endregion
             }
             public static bool testMethod()
@@ -1725,23 +1725,23 @@ namespace NFUnitTestLexical
             public static void Main_old()
             {
                 #region
-                OutputHelper.WriteLine("1");
+                // 1
                 #region
-                OutputHelper.WriteLine("2");
+                // 2
                 #region
-                OutputHelper.WriteLine("3");
+                // 3
                 #region
-                OutputHelper.WriteLine("4");
+                // 4
                 #region
-                OutputHelper.WriteLine("5");
+                // 5
                 #endregion
-                OutputHelper.WriteLine("6");
+                // 6
                 #endregion
-                OutputHelper.WriteLine("7");
+                // 7
                 #endregion
-                OutputHelper.WriteLine("8");
+                // 8
                 #endregion
-                OutputHelper.WriteLine("9");
+                // 9
                 #endregion
             }
             public static bool testMethod()
@@ -1755,15 +1755,15 @@ namespace NFUnitTestLexical
             public static void Main_old()
             {
                 #region
-                OutputHelper.WriteLine("1");
+                // 1
                 #region
-                OutputHelper.WriteLine("2");
+                // 2
                 #endregion
-                OutputHelper.WriteLine("3");
+                // 3
                 #region
-                OutputHelper.WriteLine("4");
+                // 4
                 #endregion
-                OutputHelper.WriteLine("5");
+                // 5
                 #endregion
             }
             public static bool testMethod()
@@ -1777,7 +1777,7 @@ namespace NFUnitTestLexical
             public static void Main_old()
             {
                 #region "This is the banner text"
-                OutputHelper.WriteLine("This works!");
+                // This works!
                 #endregion
             }
             public static bool testMethod()
@@ -1791,7 +1791,7 @@ namespace NFUnitTestLexical
             public static void Main_old()
             {
                 #region // This is a single-line comment
-                OutputHelper.WriteLine("This works!");
+                // This works!
                 #endregion
             }
             public static bool testMethod()
@@ -1805,7 +1805,7 @@ namespace NFUnitTestLexical
             public static void Main_old()
             {
                 #region
-                OutputHelper.WriteLine("This works!");
+                // This works!
                 #endregion // This is a single-line comment
             }
             public static bool testMethod()
@@ -1823,7 +1823,7 @@ namespace NFUnitTestLexical
             public static void Main_old()
             {
                 #region
-                OutputHelper.WriteLine("This works!");
+                // This works!
                 #endregion This text should be ignored
             }
             public static bool testMethod()
@@ -1836,8 +1836,8 @@ namespace NFUnitTestLexical
         {
             public static void Main_old(String[] args)
             {
-                OutputHelper.WriteLine("1");			// normal
-                OutputHelper.WriteLine("2");		// space between
+                // 1			// normal
+                // 2		// space between
                 OutputHelper.WriteLine("3")
                 ;								// ; on the next line
                 OutputHelper.WriteLine("4")
@@ -2003,7 +2003,7 @@ namespace NFUnitTestLexical
             {
                 // This should not stop the compiler from moving on \u0000
 
-                OutputHelper.WriteLine("Worked");
+                // Worked
             }
             public static bool testMethod()
             {
@@ -2053,7 +2053,7 @@ namespace NFUnitTestLexical
         {
             public static void Main_old()
             {
-                OutputHelper.WriteLine("Worked!");
+                // Worked!
             }
             public static bool testMethod()
             {
@@ -2069,7 +2069,7 @@ namespace NFUnitTestLexical
         {
             public static void Main_old()
             {
-                OutputHelper.WriteLine("\u0057");
+                // \u0057
             }
             public static bool testMethod()
             {
@@ -2081,7 +2081,7 @@ namespace NFUnitTestLexical
         {
             public static void Main_old()
             {
-                OutputHelper.WriteLine("\u0701");
+                // \u0701
             }
             public static bool testMethod()
             {
@@ -2182,7 +2182,7 @@ namespace NFUnitTestLexical
         {
             static void Main_old()
             {
-                OutputHelper.WriteLine("\U00000057ash");
+                // \U00000057ash
             }
             public static bool testMethod()
             {
@@ -2293,7 +2293,7 @@ lo";
             public static void Main_old()
             {
 #if foobar2
-                OutputHelper.WriteLine("Worked!");
+                // Worked!
 #endif
             }
             public static bool testMethod()
@@ -2307,7 +2307,7 @@ lo";
             public static void Main_old()
             {
 #if middlefoobar
-                OutputHelper.WriteLine("Worked!");
+                // Worked!
 #endif
             }
             public static bool testMethod()
@@ -2321,7 +2321,7 @@ lo";
             public static void Main_old()
             {
 #if endf
-                OutputHelper.WriteLine("Worked!");
+                // Worked!
 #endif
             }
             public static bool testMethod()
@@ -2335,7 +2335,7 @@ lo";
             public static void Main_old()
             {
 #if endf2
-                OutputHelper.WriteLine("Worked!");
+                // Worked!
 #endif
             }
             public static bool testMethod()

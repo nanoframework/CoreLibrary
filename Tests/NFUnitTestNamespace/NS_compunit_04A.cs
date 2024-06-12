@@ -12,7 +12,7 @@ namespace NS_TestClass_compunit_04_first
     {
         public void printClassName()
         {
-            OutputHelper.WriteLine("Class A");
+            // Class A
         }
     }
 

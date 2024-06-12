@@ -15,13 +15,13 @@ namespace NFUnitTestBitConverter
         [Setup]
         public void Initialize()
         {
-            OutputHelper.WriteLine("BitConverter tests initialized.");
+            // BitConverter tests initialized.
         }
 
         [Cleanup]
         public void CleanUp()
         {
-            OutputHelper.WriteLine("Cleaning up after BitConverter tests.");
+            // Cleaning up after BitConverter tests.
         }
 
         //Test Case Calls

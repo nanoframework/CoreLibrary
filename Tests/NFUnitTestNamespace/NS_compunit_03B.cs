@@ -15,6 +15,6 @@ class NS_TestClass_compunit_03B
 
     public void showName()
     {
-        OutputHelper.WriteLine("Class B");
+        // Class B
     }
 }

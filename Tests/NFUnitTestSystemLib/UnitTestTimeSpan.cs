@@ -37,7 +37,7 @@ namespace NFUnitTestSystemLib
             }
             catch
             {
-                OutputHelper.WriteLine("Exception Caught");
+                // Exception Caught
                 testResult = false;
             }
             OutputHelper.WriteLine((testResult ? "PASS" : "FAIL"));
@@ -51,7 +51,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test copy constructor
             /// </summary>
             ///
-            OutputHelper.WriteLine("Copy Constructor test");
+            // Copy Constructor test
             TimeSpan ts = new TimeSpan();
             OutputHelper.WriteLine(ts.ToString());
             Assert.IsTrue(CCtorHelper(ref ts));
@@ -88,7 +88,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test constructor
             /// </summary>
             ///
-            OutputHelper.WriteLine("Constructor test");
+            // Constructor test
 
             TimeSpan ts = new TimeSpan(i64);
             long days = i64 / m_TicksPerDay;
@@ -116,10 +116,10 @@ namespace NFUnitTestSystemLib
             /// 1. Test constructor with Int64
             /// </summary>
             ///
-            OutputHelper.WriteLine("Constructor test for 64 bit int");
+            // Constructor test for 64 bit int
 
             Int64 i64 = 0;
-            OutputHelper.WriteLine("Normal");
+            // Normal
             Random random = new Random();
 
             for (int i = 0; i < 5; i++)
@@ -129,7 +129,7 @@ namespace NFUnitTestSystemLib
                 Ctor64Helper(i64);
             }
 
-            OutputHelper.WriteLine("Max and Min values");
+            // Max and Min values
             i64 = 0x7fffffffffffffff;
             Ctor64Helper(i64);
             Ctor64Helper(TimeSpan.MaxValue.Ticks);
@@ -175,7 +175,7 @@ namespace NFUnitTestSystemLib
                         m_TicksPerMinute + vals[3] * m_TicksPerSecond + vals[4] * m_TicksPerMillisecond;
                     break;
                 default:
-                    OutputHelper.WriteLine("Invalid parameter!");
+                    // Invalid parameter!
                     throw new Exception("Invalid parameter!");
                     break;
             }
@@ -202,7 +202,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test constructor with Hour Minute Second
             /// </summary>
             ///
-            OutputHelper.WriteLine("Constructor test H:M:S");
+            // Constructor test H:M:S
 
 
             OutputHelper.WriteLine(m_TicksPerDay.ToString() + " == " + TimeSpan.TicksPerDay.ToString());
@@ -233,7 +233,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test constructor with Day Hour Minute Second
             /// </summary>
             ///
-            OutputHelper.WriteLine("Constructor test D:H:M:S");
+            // Constructor test D:H:M:S
             int[] vals = new int[4];
             Random random = new Random();
 
@@ -254,9 +254,9 @@ namespace NFUnitTestSystemLib
             /// 1. Test constructor with Day Hour Minute Second Millisecond
             /// </summary>
             ///
-            OutputHelper.WriteLine("Constructor test D:H:M:S:MS");
+            // Constructor test D:H:M:S:MS
 
-            OutputHelper.WriteLine("TimeSpan::Ctor - Normal ");
+            // TimeSpan::Ctor - Normal 
 
             int[] vals = new int[5];
             Random random = new Random();
@@ -280,10 +280,10 @@ namespace NFUnitTestSystemLib
             /// 2. Test the CompareTo method
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the CompareTo method");
+            // Testing the CompareTo method
 
             Random random = new Random();
-            OutputHelper.WriteLine("Creating TimeSpan");
+            // Creating TimeSpan
             int day = random.Next(10 * 365) + 1;  //days
             int hour = random.Next(23);  //hours
             int minute = random.Next(59);  //minutes
@@ -291,7 +291,7 @@ namespace NFUnitTestSystemLib
             int msec = random.Next(999);  //milliseconds
             TimeSpan ts1 = new TimeSpan(day, hour, minute, second, msec);
 
-            OutputHelper.WriteLine("Testing CompareTo");
+            // Testing CompareTo
             Assert.AreEqual(-1, ts1.CompareTo(new TimeSpan(day + 1, hour, minute, second, msec)));
             OutputHelper.WriteLine(ts1.CompareTo(new TimeSpan(day + 1, hour, minute, second, msec)).ToString());
             Assert.AreEqual(1, ts1.CompareTo(new TimeSpan(day, hour - 1, minute, second, msec)));
@@ -308,10 +308,10 @@ namespace NFUnitTestSystemLib
             /// 2. Test that GetHashCode returns differently for different TimeSpans
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the GetHashCode method");
+            // Testing the GetHashCode method
 
             Random random = new Random();
-            OutputHelper.WriteLine("Test that GetHashCode returns the same for the same TimeSpan");
+            // Test that GetHashCode returns the same for the same TimeSpan
             for (int i = 0; i < 30; i++)
             {
                 int hours = random.Next(23);
@@ -325,10 +325,10 @@ namespace NFUnitTestSystemLib
             }
 
             TimeSpan ts1 = new TimeSpan(1, 1, 1);
-            OutputHelper.WriteLine("Test that GetHashCode returns differently for different TimeSpans");
-            OutputHelper.WriteLine("This may fail erroneously.");
-            OutputHelper.WriteLine("From the docs two different TimeSpans may have same hashcode");
-            OutputHelper.WriteLine("But, for the most part the values should be different.");
+            // Test that GetHashCode returns differently for different TimeSpans
+            // This may fail erroneously.
+            // From the docs two different TimeSpans may have same hashcode
+            // But, for the most part the values should be different.
             for (int i = 0; i < 5; i++)
             {
                 TimeSpan ts2 = new TimeSpan(random.Next(23),
@@ -353,7 +353,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test the Equals method
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the Equals method");
+            // Testing the Equals method
             Random random = new Random();
             // verify same timespan computes to same hash
             for (int i = 0; i < 5; i++)
@@ -364,11 +364,11 @@ namespace NFUnitTestSystemLib
                 TimeSpan ts01 = new TimeSpan(hours, minutes, seconds);
                 TimeSpan ts02 = new TimeSpan(hours, minutes, seconds);
                 OutputHelper.WriteLine(ts01.ToString() + " == " + ts02.ToString());
-                OutputHelper.WriteLine("Expected true");
+                // Expected true
                 Assert.IsTrue(ts01.Equals(ts02));
                 TimeSpan ts03 = new TimeSpan(hours, minutes, seconds);
                 TimeSpan ts04 = new TimeSpan(hours + 1, minutes - 1, seconds + 1);
-                OutputHelper.WriteLine("Expected false");
+                // Expected false
                 Assert.IsFalse(ts03.Equals(ts04));
             }
         }
@@ -380,7 +380,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test the ToString method
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing ToString method");
+            // Testing ToString method
             Random random = new Random();
             for (int i = 0; i < 5; i++)
             {
@@ -416,9 +416,9 @@ namespace NFUnitTestSystemLib
             /// 1. Test the binary + operator
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the + operator");
+            // Testing the + operator
 
-            OutputHelper.WriteLine("TimeSpan::Add - Normal ");
+            // TimeSpan::Add - Normal 
             Random random = new Random();
             for (int i = 0; i < 5; i++)
             {
@@ -482,7 +482,7 @@ namespace NFUnitTestSystemLib
             /// </summary>
             ///
 
-            OutputHelper.WriteLine("Testing the Compare method");
+            // Testing the Compare method
 
             Random random = new Random();
             int day = random.Next(10 * 365) + 1;  //days
@@ -515,7 +515,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test the Duration property with several random TimeSpans
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing Duration property");
+            // Testing Duration property
             Random random = new Random();
             for (int i = 0; i < 5; i++)
             {
@@ -537,7 +537,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test the Negate method
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the Negate method");
+            // Testing the Negate method
             Random random = new Random();
             for (int i = 0; i < 5; i++)
             {
@@ -561,7 +561,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test subtraction, the binary - operator
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the binary - operator");
+            // Testing the binary - operator
 
             Random random = new Random();
             for (int i = 0; i < 5; i++)
@@ -666,8 +666,8 @@ namespace NFUnitTestSystemLib
             /// 1. Testing the use of ticks in constructors
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the use of ticks, ticks per increment specified in this file");
-            OutputHelper.WriteLine("TimeSpan::FromTicks - Normal ");
+            // Testing the use of ticks, ticks per increment specified in this file
+            // TimeSpan::FromTicks - Normal 
             Random random = new Random();
             int max = 5000;
             int maxOthers = 200;
@@ -724,7 +724,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test negation, the unary - operator
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the unary - operator");
+            // Testing the unary - operator
 
             Random random = new Random();
             int mxd = 24000;
@@ -797,7 +797,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test subtraction, the binary - operator with non TimeSpan args
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the binary - operator with non TimeSpan args");
+            // Testing the binary - operator with non TimeSpan args
             Random random = new Random();
             int mxd = 24000;
             int mx = 10000;
@@ -824,7 +824,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test the unary + operator
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the unary + operator");
+            // Testing the unary + operator
             Random random = new Random();
             int mxd = 24000;
             int mx = 10000;
@@ -849,7 +849,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test the binary + operator with non-TimeSpan args
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the binary + operator with non-TimeSpan args");
+            // Testing the binary + operator with non-TimeSpan args
             Random random = new Random();
             int mxd = 24000;
             int mx = 10000;
@@ -885,7 +885,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test  equality, the binary == operator 
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the == operator");
+            // Testing the == operator
             Random random = new Random();
             int mxd = 24000;
             int mx = 10000;
@@ -926,7 +926,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test  inequality, the binary != operator 
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the != operator");
+            // Testing the != operator
             Random random = new Random();
             int mxd = 24000;
             int mx = 10000;
@@ -969,13 +969,13 @@ namespace NFUnitTestSystemLib
                     testResult &= ((ts1 >= ts2) == expected);
                 else
                 {
-                    OutputHelper.WriteLine("Test Error: Invalid opcode");
+                    // Test Error: Invalid opcode
                     testResult = false;
                 }
             }
             catch
             {
-                OutputHelper.WriteLine("Exception Caught");
+                // Exception Caught
                 testResult = false;
             }
             return testResult;
@@ -988,7 +988,7 @@ namespace NFUnitTestSystemLib
             /// 1. Testing the binary Less Than operator
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the Less Than operator");
+            // Testing the Less Than operator
             Random random = new Random();
             int mxd = 24000;
             int mx = 10000;
@@ -1020,7 +1020,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test the binary Less Than Equals operator 
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the Less Than Equals operator");
+            // Testing the Less Than Equals operator
             Random random = new Random();
             int mxd = 24000;
             int mx = 10000;
@@ -1052,7 +1052,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test the binary Greater Than operator 
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the Greater Than operator");
+            // Testing the Greater Than operator
             Random random = new Random();
             int mxd = 24000;
             int mx = 10000;
@@ -1084,7 +1084,7 @@ namespace NFUnitTestSystemLib
             /// 1. Test the binary Greater Than Equals operator 
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the Greater Than Equals operator");
+            // Testing the Greater Than Equals operator
             Random random = new Random();
             int mxd = 24000;
             int mx = 10000;
@@ -1128,9 +1128,9 @@ namespace NFUnitTestSystemLib
             /// 1. Test the Ticks Property
             /// </summary>
             ///
-            OutputHelper.WriteLine("Testing the Ticks Property");
+            // Testing the Ticks Property
 
-            OutputHelper.WriteLine("TimeSpan::Ticks - Normal ");
+            // TimeSpan::Ticks - Normal 
             Random random = new Random();
             int max = 24000;
             int maxOthers = 10000;

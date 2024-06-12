@@ -21,7 +21,7 @@ namespace NFUnitTestSystemLib
             public WeakRefClass() { }
             ~WeakRefClass()
             {
-                OutputHelper.WriteLine("Finalized.");
+                // Finalized.
                 hasFinalized1 = true;
             }
             void MakeSomeGarbage()
@@ -46,14 +46,14 @@ namespace NFUnitTestSystemLib
         //    //  4. Verify & Remove Strong reference
         //    //  5. Allow for GC
         //    //  6. If weak ref surivived verify its data
-        //    OutputHelper.WriteLine("Create an object with strong ref");
+        //    // Create an object with strong ref
         //    WeakRefClass WRC1 = new WeakRefClass();
 
-        //    OutputHelper.WriteLine("Create a short weak ref to the onject");
+        //    // Create a short weak ref to the onject
         //    WeakReference wr = new WeakReference(WRC1);
         //    wr.Target = WRC1;
 
-        //    OutputHelper.WriteLine("Allow for GC");
+        //    // Allow for GC
         //    nanoFramework.Runtime.Native.GC.Run(true);
         //    int sleepTime = 2000;
         //    int slept = 0;
@@ -66,12 +66,12 @@ namespace NFUnitTestSystemLib
 
         //    Assert.IsFalse(hasFinalized1);
 
-        //    OutputHelper.WriteLine("Verify & Remove Strong reference");
+        //    // Verify & Remove Strong reference
         //    Assert.AreEqual(((WeakRefClass)wr.Target).data, 5);
         //    WRC1 = null;
         //    Assert.IsNull(WRC1);
 
-        //    OutputHelper.WriteLine("Allow for GC");
+        //    // Allow for GC
         //    // We should force the finalizer somehow
         //    nanoFramework.Runtime.Native.GC.Run(true);
         //    GC.WaitForPendingFinalizers();
@@ -89,11 +89,11 @@ namespace NFUnitTestSystemLib
         //    if (wr.IsAlive)
         //    {
         //        Assert.AreEqual(((WeakRefClass)wr.Target).data, 5);
-        //        OutputHelper.WriteLine("Weak Reference survived.");
+        //        // Weak Reference survived.
         //    }
         //    else
         //    {
-        //        OutputHelper.WriteLine("Weak Reference has been collected");
+        //        // Weak Reference has been collected
         //    }
         //}
     }
