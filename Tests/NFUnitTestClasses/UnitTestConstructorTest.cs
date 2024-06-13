@@ -17,7 +17,7 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Constructors1_Test()
         {
-            OutputHelper.WriteLine("Tests if assignments in a constructor function.");
+            // Tests if assignments in a constructor function.
             Assert.IsTrue(ConstructorsTestClass1.testMethod());
         }
 
@@ -25,7 +25,7 @@ namespace NFUnitTestClasses
         public void Constructors2_Test()
         {
             //Ported from Const2.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when constructor is public.");
+            // Tests if assignments in a constructor function, when constructor is public.
             Assert.IsTrue(ConstructorsTestClass2.testMethod());
         }
 
@@ -33,7 +33,7 @@ namespace NFUnitTestClasses
         public void Constructors3_Test()
         {
             //Ported from Const3.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when constructor is protected.");
+            // Tests if assignments in a constructor function, when constructor is protected.
             Assert.IsTrue(ConstructorsTestClass3.testMethod());
         }
 
@@ -41,7 +41,7 @@ namespace NFUnitTestClasses
         public void Constructors5_Test()
         {
             //Ported from Const5.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when constructor is internal.");
+            // Tests if assignments in a constructor function, when constructor is internal.
             Assert.IsTrue(ConstructorsTestClass5.testMethod());
         }
 
@@ -49,7 +49,7 @@ namespace NFUnitTestClasses
         public void Constructors6_Test()
         {
             //Ported from Const6.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when constructor is private.");
+            // Tests if assignments in a constructor function, when constructor is private.
             Assert.IsTrue(ConstructorsTestClass6.testMethod());
         }
 
@@ -57,7 +57,7 @@ namespace NFUnitTestClasses
         public void Constructors8_Test()
         {
             //Ported from Const8.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when constructor has one parameter.");
+            // Tests if assignments in a constructor function, when constructor has one parameter.
             Assert.IsTrue(ConstructorsTestClass8.testMethod());
         }
 
@@ -66,8 +66,8 @@ namespace NFUnitTestClasses
         {
             //Ported from Const10.cs
 
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when constructor is called with one parameter");
-            OutputHelper.WriteLine("and is overloaded with an un-called zero parameter version");
+            // Tests if assignments in a constructor function, when constructor is called with one parameter
+            // and is overloaded with an un-called zero parameter version
             Assert.IsTrue(ConstructorsTestClass10.testMethod());
         }
 
@@ -75,7 +75,7 @@ namespace NFUnitTestClasses
         public void Constructors11_Test()
         {
             //Ported from Const11.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when constructor has two parameters.");
+            // Tests if assignments in a constructor function, when constructor has two parameters.
             Assert.IsTrue(ConstructorsTestClass11.testMethod());
         }
 
@@ -83,7 +83,7 @@ namespace NFUnitTestClasses
         public void Constructors13_Test()
         {
             //Ported from Const13.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when constructor has ten parameters.");
+            // Tests if assignments in a constructor function, when constructor has ten parameters.
             Assert.IsTrue(ConstructorsTestClass13.testMethod());
         }
 
@@ -91,9 +91,9 @@ namespace NFUnitTestClasses
         public void Constructors16_Test()
         {
             //Ported from Const16.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when test class inherits constructor");
+            // Tests if assignments in a constructor function, when test class inherits constructor
 
-            OutputHelper.WriteLine("and extends it with base");
+            // and extends it with base
             Assert.IsTrue(ConstructorsTestClass16.testMethod());
         }
 
@@ -101,8 +101,8 @@ namespace NFUnitTestClasses
         public void Constructors17_Test()
         {
             //Ported from Const17.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor function, when test class inherits 2 constructors");
-            OutputHelper.WriteLine("and extends one of them with base");
+            // Tests if assignments in a constructor function, when test class inherits 2 constructors
+            // and extends one of them with base
             Assert.IsTrue(ConstructorsTestClass17.testMethod());
         }
 
@@ -110,7 +110,7 @@ namespace NFUnitTestClasses
         public void Constructors20_Test()
         {
             //Ported from Const20.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor and its base are both functional");
+            // Tests if assignments in a constructor and its base are both functional
             Assert.IsTrue(ConstructorsTestClass20.testMethod());
         }
 
@@ -118,7 +118,7 @@ namespace NFUnitTestClasses
         public void Constructors21_Test()
         {
             //Ported from Const21.cs
-            OutputHelper.WriteLine("Tests if assignments in a constructor and its base, and its base's base are all functional");
+            // Tests if assignments in a constructor and its base, and its base's base are all functional
             Assert.IsTrue(ConstructorsTestClass21.testMethod());
         }
 
@@ -126,8 +126,8 @@ namespace NFUnitTestClasses
         public void Constructors22_Test()
         {
             //Ported from Const22.cs
-            OutputHelper.WriteLine("Tests if assignments in both a class' constructors are functional when a parametered constructor extends");
-            OutputHelper.WriteLine("a not-parametered one with 'this'");
+            // Tests if assignments in both a class' constructors are functional when a parametered constructor extends
+            // a not-parametered one with 'this'
             Assert.IsTrue(ConstructorsTestClass22.testMethod());
         }
 
@@ -135,8 +135,8 @@ namespace NFUnitTestClasses
         public void Constructors23_Test()
         {
             //Ported from Const23.cs
-            OutputHelper.WriteLine("Tests if assignments in both a class' constructors are functional when a not-parametered constructor extends");
-            OutputHelper.WriteLine("a parametered one with 'this'");
+            // Tests if assignments in both a class' constructors are functional when a not-parametered constructor extends
+            // a parametered one with 'this'
             Assert.IsTrue(ConstructorsTestClass23.testMethod());
         }
 
@@ -144,7 +144,7 @@ namespace NFUnitTestClasses
         public void Constructors24_Test()
         {
             //Ported from Const24.cs
-            OutputHelper.WriteLine("Tests if assignments in all a class' constructors are functional in a chain of extension using 'this'");
+            // Tests if assignments in all a class' constructors are functional in a chain of extension using 'this'
             Assert.IsTrue(ConstructorsTestClass24.testMethod());
         }
 
@@ -153,8 +153,8 @@ namespace NFUnitTestClasses
         {
             //Ported from Const25.cs
 
-            OutputHelper.WriteLine("Tests if assignments in all a class' constructors are functional when a parametered one extends a");
-            OutputHelper.WriteLine("not-parametered one, which in turn extends the class' base class constructor");
+            // Tests if assignments in all a class' constructors are functional when a parametered one extends a
+            // not-parametered one, which in turn extends the class' base class constructor
             Assert.IsTrue(ConstructorsTestClass25.testMethod());
         }
 
@@ -162,8 +162,8 @@ namespace NFUnitTestClasses
         public void Constructors26_Test()
         {
             //Ported from Const26.cs            
-            OutputHelper.WriteLine("Tests if assignments in all a class' constructors are functional when a not-parametered one extends a");
-            OutputHelper.WriteLine("not-parametered one in its base class, which in turn extends a parametered one in the base class");
+            // Tests if assignments in all a class' constructors are functional when a not-parametered one extends a
+            // not-parametered one in its base class, which in turn extends a parametered one in the base class
             Assert.IsTrue(ConstructorsTestClass26.testMethod());
         }
 
@@ -171,8 +171,8 @@ namespace NFUnitTestClasses
         public void Constructors27_Test()
         {
             //Ported from Const27.cs
-            OutputHelper.WriteLine("Tests if assignments in both a class' constructors are functional when a two-parametered constructor extends");
-            OutputHelper.WriteLine("a one-parametered one with 'this'");
+            // Tests if assignments in both a class' constructors are functional when a two-parametered constructor extends
+            // a one-parametered one with 'this'
             Assert.IsTrue(ConstructorsTestClass27.testMethod());
         }
 
@@ -180,8 +180,8 @@ namespace NFUnitTestClasses
         public void Constructors28_Test()
         {
             //Ported from Const28.cs
-            OutputHelper.WriteLine("Tests if assignments in both a class' constructors are functional when a two-parametered constructor extends");
-            OutputHelper.WriteLine("a one-parametered one with 'this' and calls that constructor with a static arg");
+            // Tests if assignments in both a class' constructors are functional when a two-parametered constructor extends
+            // a one-parametered one with 'this' and calls that constructor with a static arg
             Assert.IsTrue(ConstructorsTestClass28.testMethod());
         }
 
@@ -189,8 +189,8 @@ namespace NFUnitTestClasses
         public void Constructors31_Test()
         {
             //Ported from Const31.cs
-            OutputHelper.WriteLine("Tests if assignments in both a class' constructors are functional when a not-parametered constructor extends");
-            OutputHelper.WriteLine("a two-parametered one with 'this'");
+            // Tests if assignments in both a class' constructors are functional when a not-parametered constructor extends
+            // a two-parametered one with 'this'
             Assert.IsTrue(ConstructorsTestClass31.testMethod());
         }
 
@@ -199,8 +199,8 @@ namespace NFUnitTestClasses
         {
             //Ported from Const32.cs
 
-            OutputHelper.WriteLine("Tests if assignments in both a class' constructors are functional when a parametered constructor extends");
-            OutputHelper.WriteLine("a not-parametered one that is private with 'this'");
+            // Tests if assignments in both a class' constructors are functional when a parametered constructor extends
+            // a not-parametered one that is private with 'this'
             Assert.IsTrue(ConstructorsTestClass32.testMethod());
         }
 
@@ -209,7 +209,7 @@ namespace NFUnitTestClasses
         {
             //Ported from Const33.cs
 
-            OutputHelper.WriteLine("Tests if assignments in a class' constructor are functional when the constructor is static");
+            // Tests if assignments in a class' constructor are functional when the constructor is static
             Assert.IsTrue(ConstructorsTestClass33.testMethod());
         }
 
@@ -217,8 +217,8 @@ namespace NFUnitTestClasses
         public void Constructors34_Test()
         {
             //Ported from Const34.cs
-            OutputHelper.WriteLine("Tests if assignments in a class' constructor are functional when one constructor is static");
-            OutputHelper.WriteLine("and the other isn't");
+            // Tests if assignments in a class' constructor are functional when one constructor is static
+            // and the other isn't
             Assert.IsTrue(ConstructorsTestClass34.testMethod());
         }
 
@@ -226,7 +226,7 @@ namespace NFUnitTestClasses
         public void Constructors35_Test()
         {
             //From Bug# 16354/16719
-            OutputHelper.WriteLine("Tests if handled exceptions in constructors continues execution");
+            // Tests if handled exceptions in constructors continues execution
             Assert.IsTrue(ConstructorsTestClass35.testMethod());
         }
 
@@ -234,11 +234,11 @@ namespace NFUnitTestClasses
         public void Constructors44_Test()
         {
             //Ported from Const44.cs
-            OutputHelper.WriteLine("Section 10.9.5");
-            OutputHelper.WriteLine("When a class declares only private constructors it ");
-            OutputHelper.WriteLine("is not possible for other classes to derive from");
-            OutputHelper.WriteLine("the class or create instances of the class (an System.Exception");
-            OutputHelper.WriteLine("being classes nested within the class).");
+            // Section 10.9.5
+            // When a class declares only private constructors it 
+            // is not possible for other classes to derive from
+            // the class or create instances of the class (an System.Exception
+            // being classes nested within the class).
             Assert.IsTrue(ConstructorsTestClass44.testMethod());
         }
 
@@ -246,10 +246,10 @@ namespace NFUnitTestClasses
         public void Constructors45_Test()
         {
             //Ported from Const45.cs
-            OutputHelper.WriteLine("Section 10.11.");
-            OutputHelper.WriteLine("It is possible to construct circular dependencies that");
-            OutputHelper.WriteLine("allow static fields with variable initializers to be");
-            OutputHelper.WriteLine("observed in their default value state.");
+            // Section 10.11.
+            // It is possible to construct circular dependencies that
+            // allow static fields with variable initializers to be
+            // observed in their default value state.
             Assert.IsTrue(ConstructorsTestClass45.testMethod());
         }
 
@@ -259,10 +259,10 @@ namespace NFUnitTestClasses
         //public void Constructors46_Test()
         //{
         //    //Ported from Const46.cs
-        //    OutputHelper.WriteLine("Section 10.11.");
-        //    OutputHelper.WriteLine("It is possible to construct circular dependencies that");
-        //    OutputHelper.WriteLine("allow static fields with variable initializers to be");
-        //    OutputHelper.WriteLine("observed in their default value state.");
+        //    // Section 10.11.
+        //    // It is possible to construct circular dependencies that
+        //    // allow static fields with variable initializers to be
+        //    // observed in their default value state.
         //    Assert.IsTrue(ConstructorsTestClass46.testMethod())
         //    {
         //        return MFTestResults.Pass;
@@ -274,11 +274,11 @@ namespace NFUnitTestClasses
         //public void Constructors47_Test()
         //{
         //    //Ported from Const47.cs
-        //    OutputHelper.WriteLine("Section 10.11.");
-        //    OutputHelper.WriteLine("It is possible to construct circular dependencies that");
-        //    OutputHelper.WriteLine("allow static fields with variable initializers to be");
-        //    OutputHelper.WriteLine("observed in their default value state.");
-        //    OutputHelper.WriteLine("This test is expected to fail.");
+        //    // Section 10.11.
+        //    // It is possible to construct circular dependencies that
+        //    // allow static fields with variable initializers to be
+        //    // observed in their default value state.
+        //    // This test is expected to fail.
         //    Assert.IsTrue(ConstructorsTestClass47.testMethod())
         //    {
         //        return MFTestResults.Fail;
@@ -290,11 +290,11 @@ namespace NFUnitTestClasses
         public void Constructors50_Test()
         {
             //Ported from Const50.cs
-            OutputHelper.WriteLine("The scope of the parameters given by the formal");
-            OutputHelper.WriteLine("parameter list of a constructor includes the");
-            OutputHelper.WriteLine("constructor initializer of that declaration.");
-            OutputHelper.WriteLine("Thus, a constructor initializer is permitted to");
-            OutputHelper.WriteLine("access the parameters of the constructor.");
+            // The scope of the parameters given by the formal
+            // parameter list of a constructor includes the
+            // constructor initializer of that declaration.
+            // Thus, a constructor initializer is permitted to
+            // access the parameters of the constructor.
             Assert.IsTrue(ConstructorsTestClass50.testMethod());
         }
 
@@ -302,19 +302,19 @@ namespace NFUnitTestClasses
         public void Constructors51_Test()
         {
             //Ported from Const51.cs
-            OutputHelper.WriteLine("Section 10.9");
-            OutputHelper.WriteLine("The scope of the parameters given by the formal");
-            OutputHelper.WriteLine("parameter list of a constructor includes the");
-            OutputHelper.WriteLine("constructor initializer of that declaration.");
-            OutputHelper.WriteLine("Thus, a constructor initializer is permitted to");
-            OutputHelper.WriteLine("access the parameters of the constructor.");
+            // Section 10.9
+            // The scope of the parameters given by the formal
+            // parameter list of a constructor includes the
+            // constructor initializer of that declaration.
+            // Thus, a constructor initializer is permitted to
+            // access the parameters of the constructor.
             Assert.IsTrue(ConstructorsTestClass51.testMethod());
         }
 
         [TestMethod]
         public void Constructors52_Test()
         {
-            OutputHelper.WriteLine("Testing a constructor with a '(params int[] values)' prototype, called with 3 ints");
+            // Testing a constructor with a '(params int[] values)' prototype, called with 3 ints
             //Ported from Const52.cs
             Assert.IsTrue(ConstructorsTestClass52.testMethod());
         }
@@ -323,7 +323,7 @@ namespace NFUnitTestClasses
         public void Constructors54_Test()
         {
             //Ported from Const54.cs
-            OutputHelper.WriteLine("Testing a constructor with a '(params int[] values)' prototype, called with 3 ints from its derived class");
+            // Testing a constructor with a '(params int[] values)' prototype, called with 3 ints from its derived class
             Assert.IsTrue(ConstructorsTestClass54.testMethod());
         }
 
@@ -332,16 +332,16 @@ namespace NFUnitTestClasses
         {
             //Ported from Const55.cs
 
-            OutputHelper.WriteLine("Testing a constructor with a '(params int[] values)' prototype, called with 3 ints");
-            OutputHelper.WriteLine(" from its derived class, and both constructors are 'protected internal'");
+            // Testing a constructor with a '(params int[] values)' prototype, called with 3 ints
+            //  from its derived class, and both constructors are 'protected internal'
             Assert.IsTrue(ConstructorsTestClass55.testMethod());
         }
 
         [TestMethod]
         public void Constructors56_Test()
         {
-            OutputHelper.WriteLine("Testing a constructor with a '(params int[] values)' prototype, called with 3 ints");
-            OutputHelper.WriteLine(" from its derived class implicitly, and both constructors are 'internal'");
+            // Testing a constructor with a '(params int[] values)' prototype, called with 3 ints
+            //  from its derived class implicitly, and both constructors are 'internal'
             //Ported from Const56.cs
             Assert.IsTrue(ConstructorsTestClass56.testMethod());
         }
@@ -350,7 +350,7 @@ namespace NFUnitTestClasses
         public void Constructors57_Test()
         {
             //Ported from Const57.cs
-            OutputHelper.WriteLine("Testing a 'private' constructor with a '(params int[] values)' prototype, called with 3 ints");
+            // Testing a 'private' constructor with a '(params int[] values)' prototype, called with 3 ints
             Assert.IsTrue(ConstructorsTestClass57.testMethod());
         }
 
@@ -358,7 +358,7 @@ namespace NFUnitTestClasses
         public void Constructors64_Test()
         {
             //Ported from Const64.cs
-            OutputHelper.WriteLine("Instance constructors, destructors, and static constructors are not inherited");
+            // Instance constructors, destructors, and static constructors are not inherited
             Assert.IsTrue(ConstructorsTestClass64.testMethod());
         }
 
@@ -483,7 +483,7 @@ namespace NFUnitTestClasses
             // get ParameterInfo for 1st constructor
             ParameterInfo[] constructorParameters = constructors[0].GetParameters();
 
-            OutputHelper.WriteLine("Checking parameters for 1st constructor of ClassWith3Constructors");
+            // Checking parameters for 1st constructor of ClassWith3Constructors
             Assert.AreEqual(0, constructorParameters.Length, $"Expecting no parameters, got {constructorParameters.Length}.");
 
             // get ParameterInfo for 2nd constructor
@@ -491,7 +491,7 @@ namespace NFUnitTestClasses
 
             Assert.AreEqual(1, constructorParameters.Length, $"Expecting 1 parameter, got {constructorParameters.Length}.");
 
-            OutputHelper.WriteLine("Checking parameters for 2nd constructor of ClassWith3Constructors");
+            // Checking parameters for 2nd constructor of ClassWith3Constructors
             Assert.AreEqual(constructorParameters[0].ParameterType.ToString(), $"{typeof(int)}", $"Expecting parameter of type {typeof(int)}, got {constructorParameters[0].ParameterType}.");
 
             // get ParameterInfo for 3rd constructor
@@ -499,7 +499,7 @@ namespace NFUnitTestClasses
 
             Assert.AreEqual(2, constructorParameters.Length, $"Expecting 2 parameters, got {constructorParameters.Length}.");
 
-            OutputHelper.WriteLine("Checking parameters for 3rd constructor of ClassWith3Constructors");
+            // Checking parameters for 3rd constructor of ClassWith3Constructors
             Assert.AreEqual(constructorParameters[0].ParameterType.ToString(), $"{typeof(int)}", $"Expecting parameter of type {typeof(int)}, got {constructorParameters[0].ParameterType}.");
             Assert.AreEqual(constructorParameters[1].ParameterType.ToString(), $"{typeof(string)}", $"Expecting parameter of type {typeof(string)}, got {constructorParameters[0].ParameterType}.");
         }

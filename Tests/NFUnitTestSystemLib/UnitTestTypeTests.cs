@@ -191,37 +191,37 @@ namespace NFUnitTestSystemLib
 
             Assembly Int32Assm = Assembly.Load("mscorlib");
 
-            OutputHelper.WriteLine("This tests the Assembly.GetType(String) by passing \"Namespace.Class\"");
+            // This tests the Assembly.GetType(String) by passing \"Namespace.Class\"
             Type myType0 = Int32Assm.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType0.FullName);
             Assert.IsType(myType0, testInt32.GetType());
 
-            OutputHelper.WriteLine("This tests the Type.GetType(String) by passing \"Namespace.Class\"");
+            // This tests the Type.GetType(String) by passing \"Namespace.Class\"
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
             Assert.IsType(myType1, testInt32.GetType());
 
-            OutputHelper.WriteLine("This tests the Type.GetType(String) by passing \"Namespace.Class, assembly\"");
+            // This tests the Type.GetType(String) by passing \"Namespace.Class, assembly\"
             Type myType2 = Type.GetType("System.Int32, mscorlib");
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
             Assert.IsType(myType2, testInt32.GetType());
 
-            OutputHelper.WriteLine("This tests the Type.GetType(String) by passing \"Namespace.Class, assembly, Version=\"a.b.c.d\"\"");
+            // This tests the Type.GetType(String) by passing \"Namespace.Class, assembly, Version=\"a.b.c.d\"\"
             string typeName3 = "System.Int32, mscorlib, Version=" + Int32Assm.GetName().Version.ToString();
             Type myType3 = Type.GetType(typeName3);
             OutputHelper.WriteLine("The full name is " + myType3.FullName);
             Assert.IsType(myType3, testInt32.GetType());
 
 
-            OutputHelper.WriteLine("This tests the Type.GetType() method for nested classes");
+            // This tests the Type.GetType() method for nested classes
             TestObject1 testTestObject1 = new TestObject1();
             Type myType4 = testTestObject1.GetType();
             OutputHelper.WriteLine("The full name is " + myType4.FullName);
             Assert.IsType(myType4, Type.GetType("NFUnitTestSystemLib.UnitTestTypeTests+TestObject1"));
 
 
-            OutputHelper.WriteLine("Since NoneSuch does not exist in this assembly, ");
-            OutputHelper.WriteLine("GetType throws a TypeLoadException.");
+            // Since NoneSuch does not exist in this assembly, 
+            // GetType throws a TypeLoadException.
             Assert.ThrowsException(typeof(NullReferenceException), () =>
             {
                 Type myType5 = Type.GetType("NoneSuch");
@@ -261,7 +261,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType2_Assembly_Test()
         {
-            OutputHelper.WriteLine("This tests the Assembly property");
+            // This tests the Assembly property
 
             //Assigned and manipulated to avoid compiler warning
             int testInt32 = -1;
@@ -280,7 +280,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType3_BaseType_Test()
         {
-            OutputHelper.WriteLine("This tests the BaseType() method");
+            // This tests the BaseType() method
 
             //Assigned and manipulated to avoid compiler warning
             int testInt32 = -1;
@@ -298,7 +298,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType4_DeclaringType_Test()
         {
-            OutputHelper.WriteLine("This tests the DeclaringType property");
+            // This tests the DeclaringType property
 
             //Assigned and manipulated to avoid compiler warning
             int testInt32 = -1;
@@ -319,7 +319,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType5_GetConstructor_Test()
         {
-            OutputHelper.WriteLine("This tests the GetConstructor(Type[]) method");
+            // This tests the GetConstructor(Type[]) method
             TestObject2 testTestObject2 = new TestObject2(5);
             Type myType2 = testTestObject2.GetType();
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
@@ -333,7 +333,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType6_GetElementType_Test()
         {
-            OutputHelper.WriteLine("This tests the GetElementType() method");
+            // This tests the GetElementType() method
 
             //Assigned and manipulated to avoid compiler warning
             int testInt32 = -1;
@@ -351,48 +351,48 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType7_GetField_Test()
         {
-            OutputHelper.WriteLine("This tests the GetField(String) ");
-            OutputHelper.WriteLine("and the GetField(String,BindingFlags) methods)");
-            OutputHelper.WriteLine("Currently this test fails, see 17246 for more details.");
+            // This tests the GetField(String) 
+            // and the GetField(String,BindingFlags) methods)
+            // Currently this test fails, see 17246 for more details.
 
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
             Assert.IsTrue(myType1.GetField("m_data") == null);
 
-            OutputHelper.WriteLine(" TestObject2 type has one data member \"m_data\" of type Int32.");
+            //  TestObject2 type has one data member \"m_data\" of type Int32.
             TestObject2 testTestObject2 = new TestObject2(5);
             Type myType2 = testTestObject2.GetType();
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
 
-            OutputHelper.WriteLine(" Check that type of m_data is Int32");
+            //  Check that type of m_data is Int32
             Assert.IsType(myType2.GetField("m_data", BindingFlags.GetField |
                 BindingFlags.Public | BindingFlags.Instance).FieldType, myType1);
 
-            OutputHelper.WriteLine(" Check that value in m_data is 5 ( becuase we called new TestObject2(5))");
+            //  Check that value in m_data is 5 ( becuase we called new TestObject2(5))
             Assert.AreEqual((int)myType2.GetField("m_data", BindingFlags.IgnoreCase |
                 BindingFlags.GetField | BindingFlags.Public |
                 BindingFlags.Instance).GetValue(testTestObject2), 5);
 
-            OutputHelper.WriteLine(" Check that m_data  is a field");
+            //  Check that m_data  is a field
             Assert.IsTrue(myType2.GetField("m_data").MemberType == MemberTypes.Field);
 
-            OutputHelper.WriteLine(" Check that field m_data has Name \"m_data\"");
+            //  Check that field m_data has Name \"m_data\"
             Assert.AreEqual(myType2.GetField("m_data").Name, "m_data");
 
-            OutputHelper.WriteLine(" Check that  misspelling of m_data return NULL.");
+            //  Check that  misspelling of m_data return NULL.
             Assert.IsTrue(null == myType2.GetField("data"));
 
-            OutputHelper.WriteLine(" Checks that case misspelling of m_data return NULL if flag BindingFlags.IgnoreCase not specified.");
+            //  Checks that case misspelling of m_data return NULL if flag BindingFlags.IgnoreCase not specified.
             Assert.IsTrue(null == myType2.GetField("m_Data"));
 
-            OutputHelper.WriteLine("Check retrieval with BindingFlags.IgnoreCase. If flag BindingFlags.IgnoreCase is ised, then the case should be ignored. We should get the same type information.");
+            // Check retrieval with BindingFlags.IgnoreCase. If flag BindingFlags.IgnoreCase is ised, then the case should be ignored. We should get the same type information.
             FieldInfo fInfo_m_Data = myType2.GetField("m_Data", BindingFlags.IgnoreCase | BindingFlags.GetField | BindingFlags.Public | BindingFlags.Instance);
             FieldInfo fInfo_m_data = myType2.GetField("m_data");
             Assert.IsNotNull(fInfo_m_Data);
             Assert.IsNotNull(fInfo_m_data);
             Assert.IsTrue(fInfo_m_Data.Name.Equals(fInfo_m_data.Name));
 
-            OutputHelper.WriteLine(" Indirectly set m_data in testTestObject2 to 6 and then check it.");
+            //  Indirectly set m_data in testTestObject2 to 6 and then check it.
             myType2.GetField("m_data").SetValue(testTestObject2, 6);
             Assert.AreEqual((int)myType2.GetField("m_data").GetValue(testTestObject2), 6);
             Assert.AreEqual(testTestObject2.m_data, 6);
@@ -402,9 +402,9 @@ namespace NFUnitTestSystemLib
         public void SystemType8_GetFields_Test()
         {
 
-            OutputHelper.WriteLine("This tests the GetFields(String) method");
-            OutputHelper.WriteLine("This test must be re-written once BindingFlags is working, ");
-            OutputHelper.WriteLine("see 17246 for more details.");
+            // This tests the GetFields(String) method
+            // This test must be re-written once BindingFlags is working, 
+            // see 17246 for more details.
 
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
@@ -423,9 +423,9 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType9_GetInterfaces_Test()
         {
-            OutputHelper.WriteLine("This tests the GetInterfaces() method");
-            OutputHelper.WriteLine("This test must be re-written once BindingFlags is working, ");
-            OutputHelper.WriteLine("see 17246 for more details.");
+            // This tests the GetInterfaces() method
+            // This test must be re-written once BindingFlags is working, 
+            // see 17246 for more details.
 
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
@@ -441,9 +441,9 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType10_GetMethod_Test()
         {
-            OutputHelper.WriteLine("This tests the GetMethod(String) method");
-            OutputHelper.WriteLine("This test must be re-written once BindingFlags is working, ");
-            OutputHelper.WriteLine("see 17246 for more details.");
+            // This tests the GetMethod(String) method
+            // This test must be re-written once BindingFlags is working, 
+            // see 17246 for more details.
 
             int I = 0;
             I++;
@@ -466,9 +466,9 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void SystemType11_GetMethods_Test()
         {
-            OutputHelper.WriteLine("This tests the GetMethods() method");
-            OutputHelper.WriteLine("This test must be re-written once BindingFlags is working, ");
-            OutputHelper.WriteLine("see 17246 for more details.");
+            // This tests the GetMethods() method
+            // This test must be re-written once BindingFlags is working, 
+            // see 17246 for more details.
 
             //Assigned and manipulated to avoid compiler warning
             int I = 0;
@@ -482,12 +482,12 @@ namespace NFUnitTestSystemLib
             if (methodInfoArr1[0].Name == "Method2")
             {
                 methodInfo1 = methodInfoArr1[0];
-                OutputHelper.WriteLine("Method2 found in position 0");
+                // Method2 found in position 0
             }
             else if (methodInfoArr1[1].Name == "Method2")
             {
                 methodInfo1 = methodInfoArr1[1];
-                OutputHelper.WriteLine("Method2 found in position 1");
+                // Method2 found in position 1
             }
             Assert.AreEqual(methodInfo1.IsAbstract, false);
             Assert.AreEqual(methodInfo1.IsFinal, false);
@@ -505,9 +505,9 @@ namespace NFUnitTestSystemLib
         //[TestMethod]
         //public void SystemType12_InvokeMember_Test()
         //{
-        //    OutputHelper.WriteLine("This tests the InvokeMember(String,BindingFlags) method");
-        //    OutputHelper.WriteLine("This test must be re-written once BindingFlags is working, ");
-        //    OutputHelper.WriteLine("see 17246 for more details.");
+        //    // This tests the InvokeMember(String,BindingFlags) method
+        //    // This test must be re-written once BindingFlags is working, 
+        //    // see 17246 for more details.
         //    //Assigned and manipulated to avoid compiler warning
         //    Int32 I = 0;
         //    I++;

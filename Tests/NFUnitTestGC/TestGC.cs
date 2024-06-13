@@ -19,7 +19,7 @@ namespace NFUnitTestGC
             int maxArraySize = 1024 * 32;
             object[] arrays = new object[600];
 
-            OutputHelper.WriteLine("Starting TestGCStress");
+            // Starting TestGCStress
 
             for (int loop = 0; loop < 100; loop++)
             {
@@ -42,7 +42,7 @@ namespace NFUnitTestGC
                 }
             }
 
-            OutputHelper.WriteLine("Completed TestGCStress");
+            // Completed TestGCStress
         }
     }
 }

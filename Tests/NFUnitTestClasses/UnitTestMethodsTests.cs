@@ -10,527 +10,527 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Methods1_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass1.testMethod());
         }
 
         [TestMethod]
         public void Methods2_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass2.testMethod());
         }
 
         [TestMethod]
         public void Methods3_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass3.testMethod());
         }
 
         [TestMethod]
         public void Methods4_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass4.testMethod());
         }
 
         [TestMethod]
         public void Methods6_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass6.testMethod());
         }
 
         [TestMethod]
         public void Methods7_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass7.testMethod());
         }
 
         [TestMethod]
         public void Methods9_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass9.testMethod());
         }
 
         [TestMethod]
         public void Methods10_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass10.testMethod());
         }
 
         [TestMethod]
         public void Methods11_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsFalse(MethodsTestClass11.testMethod());
-            OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-            OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
-            OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
+            // This failure indicates a test is now passing that previously failed by design.
+            // It previously marked as known failure because of bug # 21563
+            // The Test owner needs to verify that the change was intentional and remove the known failure.
 
         }
 
         [TestMethod]
         public void Methods13_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass13.testMethod());
         }
 
         [TestMethod]
         public void Methods17_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass17.testMethod());
         }
 
         [TestMethod]
         public void Methods19_Test()
         {
-            OutputHelper.WriteLine(" The return-type of a method declaration specifies");
-            OutputHelper.WriteLine(" the type of the value computed and returned by the");
-            OutputHelper.WriteLine(" method. The return type is void if the method does");
-            OutputHelper.WriteLine(" not return a value.");
+            //  The return-type of a method declaration specifies
+            //  the type of the value computed and returned by the
+            //  method. The return type is void if the method does
+            //  not return a value.
             Assert.IsTrue(MethodsTestClass19.testMethod());
         }
 
         [TestMethod]
         public void Methods20_Test()
         {
-            OutputHelper.WriteLine(" The return-type of a method declaration specifies");
-            OutputHelper.WriteLine(" the type of the value computed and returned by the");
-            OutputHelper.WriteLine(" method. The return type is void if the method does");
-            OutputHelper.WriteLine(" not return a value.");
+            //  The return-type of a method declaration specifies
+            //  the type of the value computed and returned by the
+            //  method. The return type is void if the method does
+            //  not return a value.
             Assert.IsTrue(MethodsTestClass20.testMethod());
         }
 
         [TestMethod]
         public void Methods22_Test()
         {
-            OutputHelper.WriteLine(" The return-type of a method declaration specifies");
-            OutputHelper.WriteLine(" the type of the value computed and returned by the");
-            OutputHelper.WriteLine(" method. The return type is void if the method does");
-            OutputHelper.WriteLine(" not return a value.");
+            //  The return-type of a method declaration specifies
+            //  the type of the value computed and returned by the
+            //  method. The return type is void if the method does
+            //  not return a value.
             Assert.IsTrue(MethodsTestClass22.testMethod());
         }
 
         [TestMethod]
         public void Methods23_Test()
         {
-            OutputHelper.WriteLine(" The return-type of a method declaration specifies");
-            OutputHelper.WriteLine(" the type of the value computed and returned by the");
-            OutputHelper.WriteLine(" method. The return type is void if the method does");
-            OutputHelper.WriteLine(" not return a value.");
+            //  The return-type of a method declaration specifies
+            //  the type of the value computed and returned by the
+            //  method. The return type is void if the method does
+            //  not return a value.
             Assert.IsTrue(MethodsTestClass23.testMethod());
         }
 
         [TestMethod]
         public void Methods24_Test()
         {
-            OutputHelper.WriteLine(" The return-type of a method declaration specifies");
-            OutputHelper.WriteLine(" the type of the value computed and returned by the");
-            OutputHelper.WriteLine(" method. The return type is void if the method does");
-            OutputHelper.WriteLine(" not return a value.");
+            //  The return-type of a method declaration specifies
+            //  the type of the value computed and returned by the
+            //  method. The return type is void if the method does
+            //  not return a value.
             Assert.IsTrue(MethodsTestClass24.testMethod());
         }
 
         [TestMethod]
         public void Methods25_Test()
         {
-            OutputHelper.WriteLine(" The return-type of a method declaration specifies");
-            OutputHelper.WriteLine(" the type of the value computed and returned by the");
-            OutputHelper.WriteLine(" method. The return type is void if the method does");
-            OutputHelper.WriteLine(" not return a value.");
+            //  The return-type of a method declaration specifies
+            //  the type of the value computed and returned by the
+            //  method. The return type is void if the method does
+            //  not return a value.
             Assert.IsTrue(MethodsTestClass25.testMethod());
         }
 
         [TestMethod]
         public void Methods26_Test()
         {
-            OutputHelper.WriteLine(" The return-type of a method declaration specifies");
-            OutputHelper.WriteLine(" the type of the value computed and returned by the");
-            OutputHelper.WriteLine(" method. The return type is void if the method does");
-            OutputHelper.WriteLine(" not return a value.");
+            //  The return-type of a method declaration specifies
+            //  the type of the value computed and returned by the
+            //  method. The return type is void if the method does
+            //  not return a value.
             Assert.IsTrue(MethodsTestClass26.testMethod());
         }
 
         [TestMethod]
         public void Methods29_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" The member-name specifies the name of the method.");
-            OutputHelper.WriteLine(" Unless the method is an explicit interface member");
-            OutputHelper.WriteLine(" implementation, the member-name is simply an ");
-            OutputHelper.WriteLine(" identifier.  For an explicit interface member ");
-            OutputHelper.WriteLine(" implementation, the member-name consists of an");
-            OutputHelper.WriteLine(" interface-type followed by a . and an identifier.");
+            //  Section 10.5
+            //  The member-name specifies the name of the method.
+            //  Unless the method is an explicit interface member
+            //  implementation, the member-name is simply an 
+            //  identifier.  For an explicit interface member 
+            //  implementation, the member-name consists of an
+            //  interface-type followed by a . and an identifier.
             Assert.IsTrue(MethodsTestClass29.testMethod());
         }
 
         [TestMethod]
         public void Methods30_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" The member-name specifies the name of the method.");
-            OutputHelper.WriteLine(" Unless the method is an explicit interface member");
-            OutputHelper.WriteLine(" implementation, the member-name is simply an ");
-            OutputHelper.WriteLine(" identifier.  For an explicit interface member ");
-            OutputHelper.WriteLine(" implementation, the member-name consists of an");
-            OutputHelper.WriteLine(" interface-type followed by a . and an identifier.");
+            //  Section 10.5
+            //  The member-name specifies the name of the method.
+            //  Unless the method is an explicit interface member
+            //  implementation, the member-name is simply an 
+            //  identifier.  For an explicit interface member 
+            //  implementation, the member-name consists of an
+            //  interface-type followed by a . and an identifier.
             Assert.IsTrue(MethodsTestClass30.testMethod());
         }
 
         [TestMethod]
         public void Methods33_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" The optional formal-parameter-list specifies");
-            OutputHelper.WriteLine(" the parameters of the method.");
+            //  Section 10.5
+            //  The optional formal-parameter-list specifies
+            //  the parameters of the method.
             Assert.IsTrue(MethodsTestClass33.testMethod());
         }
 
         [TestMethod]
         public void Methods34_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" The optional formal-parameter-list specifies");
-            OutputHelper.WriteLine(" the parameters of the method.");
+            //  Section 10.5
+            //  The optional formal-parameter-list specifies
+            //  the parameters of the method.
             Assert.IsTrue(MethodsTestClass34.testMethod());
         }
 
         [TestMethod]
         public void Methods35_Test()
         {
-            OutputHelper.WriteLine("Testing method call with 10 parameters");
+            // Testing method call with 10 parameters
             Assert.IsTrue(MethodsTestClass35.testMethod());
         }
 
         [TestMethod]
         public void Methods56_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method declaration creates a separate space");
-            OutputHelper.WriteLine(" for parameters and local variables.  Names are introduced");
-            OutputHelper.WriteLine(" into this declaration space by the formal parameter");
-            OutputHelper.WriteLine(" list of the method and by the local variable declarations");
-            OutputHelper.WriteLine(" in the block of the method.  All names in the declaration");
-            OutputHelper.WriteLine(" space of a method must be unique.  Thus it is an error");
-            OutputHelper.WriteLine(" for a parameter or local variable to have the same name");
-            OutputHelper.WriteLine(" as another parameter or local variable.");
+            //  Section 10.5
+            //  A method declaration creates a separate space
+            //  for parameters and local variables.  Names are introduced
+            //  into this declaration space by the formal parameter
+            //  list of the method and by the local variable declarations
+            //  in the block of the method.  All names in the declaration
+            //  space of a method must be unique.  Thus it is an error
+            //  for a parameter or local variable to have the same name
+            //  as another parameter or local variable.
             Assert.IsTrue(MethodsTestClass56.testMethod());
         }
 
         [TestMethod]
         public void Methods57_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method declaration creates a separate space");
-            OutputHelper.WriteLine(" for parameters and local variables.  Names are introduced");
-            OutputHelper.WriteLine(" into this declaration space by the formal parameter");
-            OutputHelper.WriteLine(" list of the method and by the local variable declarations");
-            OutputHelper.WriteLine(" in the block of the method.  All names in the declaration");
-            OutputHelper.WriteLine(" space of a method must be unique.  Thus it is an error");
-            OutputHelper.WriteLine(" for a parameter or local variable to have the same name");
-            OutputHelper.WriteLine(" as another parameter or local variable.");
+            //  Section 10.5
+            //  A method declaration creates a separate space
+            //  for parameters and local variables.  Names are introduced
+            //  into this declaration space by the formal parameter
+            //  list of the method and by the local variable declarations
+            //  in the block of the method.  All names in the declaration
+            //  space of a method must be unique.  Thus it is an error
+            //  for a parameter or local variable to have the same name
+            //  as another parameter or local variable.
             Assert.IsTrue(MethodsTestClass57.testMethod());
         }
 
         [TestMethod]
         public void Methods58_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When a formal parameter is a value parameter,");
-            OutputHelper.WriteLine(" the corresponding argument in the method invocation");
-            OutputHelper.WriteLine(" must be an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" convertible to the formal parameter type.");
+            //  Section 10.5
+            //  When a formal parameter is a value parameter,
+            //  the corresponding argument in the method invocation
+            //  must be an expression of a type that is implicitly
+            //  convertible to the formal parameter type.
             Assert.IsTrue(MethodsTestClass58.testMethod());
         }
 
         [TestMethod]
         public void Methods59_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When a formal parameter is a value parameter,");
-            OutputHelper.WriteLine(" the corresponding argument in the method invocation");
-            OutputHelper.WriteLine(" must be an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" convertible to the formal parameter type.");
+            //  Section 10.5
+            //  When a formal parameter is a value parameter,
+            //  the corresponding argument in the method invocation
+            //  must be an expression of a type that is implicitly
+            //  convertible to the formal parameter type.
             Assert.IsTrue(MethodsTestClass59.testMethod());
         }
 
         [TestMethod]
         public void Methods60_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When a formal parameter is a value parameter,");
-            OutputHelper.WriteLine(" the corresponding argument in the method invocation");
-            OutputHelper.WriteLine(" must be an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" convertible to the formal parameter type.");
+            //  Section 10.5
+            //  When a formal parameter is a value parameter,
+            //  the corresponding argument in the method invocation
+            //  must be an expression of a type that is implicitly
+            //  convertible to the formal parameter type.
             Assert.IsTrue(MethodsTestClass60.testMethod());
         }
 
         [TestMethod]
         public void Methods61_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When a formal parameter is a value parameter,");
-            OutputHelper.WriteLine(" the corresponding argument in the method invocation");
-            OutputHelper.WriteLine(" must be an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" convertible to the formal parameter type.");
+            //  Section 10.5
+            //  When a formal parameter is a value parameter,
+            //  the corresponding argument in the method invocation
+            //  must be an expression of a type that is implicitly
+            //  convertible to the formal parameter type.
             Assert.IsTrue(MethodsTestClass61.testMethod());
         }
 
         [TestMethod]
         public void Methods66_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method is permitted to assign new values to ");
-            OutputHelper.WriteLine(" a value parameter.  Such assignments only affect");
-            OutputHelper.WriteLine(" the local storage location represented by the ");
-            OutputHelper.WriteLine(" value parameter--they have no effect on the actual ");
-            OutputHelper.WriteLine(" argument given in the method invocation.");
+            //  Section 10.5
+            //  A method is permitted to assign new values to 
+            //  a value parameter.  Such assignments only affect
+            //  the local storage location represented by the 
+            //  value parameter--they have no effect on the actual 
+            //  argument given in the method invocation.
             Assert.IsTrue(MethodsTestClass66.testMethod());
         }
 
         [TestMethod]
         public void Methods67_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method is permitted to assign new values to ");
-            OutputHelper.WriteLine(" a value parameter.  Such assignments only affect");
-            OutputHelper.WriteLine(" the local storage location represented by the ");
-            OutputHelper.WriteLine(" value parameter--they have no effect on the actual ");
-            OutputHelper.WriteLine(" argument given in the method invocation.");
+            //  Section 10.5
+            //  A method is permitted to assign new values to 
+            //  a value parameter.  Such assignments only affect
+            //  the local storage location represented by the 
+            //  value parameter--they have no effect on the actual 
+            //  argument given in the method invocation.
             Assert.IsTrue(MethodsTestClass67.testMethod());
         }
 
         [TestMethod]
         public void Methods68_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method is permitted to assign new values to ");
-            OutputHelper.WriteLine(" a value parameter.  Such assignments only affect");
-            OutputHelper.WriteLine(" the local storage location represented by the ");
-            OutputHelper.WriteLine(" value parameter--they have no effect on the actual ");
-            OutputHelper.WriteLine(" argument given in the method invocation.");
+            //  Section 10.5
+            //  A method is permitted to assign new values to 
+            //  a value parameter.  Such assignments only affect
+            //  the local storage location represented by the 
+            //  value parameter--they have no effect on the actual 
+            //  argument given in the method invocation.
             Assert.IsTrue(MethodsTestClass68.testMethod());
         }
 
         [TestMethod]
         public void Methods69_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A parameter declared with a ref modifier is a ");
-            OutputHelper.WriteLine(" reference parameter.  Unlike a value parameter,");
-            OutputHelper.WriteLine(" a reference parameter does not create a new ");
-            OutputHelper.WriteLine(" storage location.  Instead, a reference parameter");
-            OutputHelper.WriteLine(" represents the same storage location as the");
-            OutputHelper.WriteLine(" variable given as the argument in the method");
-            OutputHelper.WriteLine(" invocation.");
+            //  Section 10.5
+            //  A parameter declared with a ref modifier is a 
+            //  reference parameter.  Unlike a value parameter,
+            //  a reference parameter does not create a new 
+            //  storage location.  Instead, a reference parameter
+            //  represents the same storage location as the
+            //  variable given as the argument in the method
+            //  invocation.
             Assert.IsTrue(MethodsTestClass69.testMethod());
         }
 
         [TestMethod]
         public void Methods70_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A parameter declared with a ref modifier is a ");
-            OutputHelper.WriteLine(" reference parameter.  Unlike a value parameter,");
-            OutputHelper.WriteLine(" a reference parameter does not create a new ");
-            OutputHelper.WriteLine(" storage location.  Instead, a reference parameter");
-            OutputHelper.WriteLine(" represents the same storage location as the");
-            OutputHelper.WriteLine(" variable given as the argument in the method");
-            OutputHelper.WriteLine(" invocation.");
+            //  Section 10.5
+            //  A parameter declared with a ref modifier is a 
+            //  reference parameter.  Unlike a value parameter,
+            //  a reference parameter does not create a new 
+            //  storage location.  Instead, a reference parameter
+            //  represents the same storage location as the
+            //  variable given as the argument in the method
+            //  invocation.
             Assert.IsTrue(MethodsTestClass70.testMethod());
         }
 
         [TestMethod]
         public void Methods71_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A parameter declared with a ref modifier is a ");
-            OutputHelper.WriteLine(" reference parameter.  Unlike a value parameter,");
-            OutputHelper.WriteLine(" a reference parameter does not create a new ");
-            OutputHelper.WriteLine(" storage location.  Instead, a reference parameter");
-            OutputHelper.WriteLine(" represents the same storage location as the");
-            OutputHelper.WriteLine(" variable given as the argument in the method");
-            OutputHelper.WriteLine(" invocation.");
+            //  Section 10.5
+            //  A parameter declared with a ref modifier is a 
+            //  reference parameter.  Unlike a value parameter,
+            //  a reference parameter does not create a new 
+            //  storage location.  Instead, a reference parameter
+            //  represents the same storage location as the
+            //  variable given as the argument in the method
+            //  invocation.
             Assert.IsTrue(MethodsTestClass71.testMethod());
         }
 
         [TestMethod]
         public void Methods75_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When a formal parameter is a reference parameter,");
-            OutputHelper.WriteLine(" the corresponding argument in a method invocation");
-            OutputHelper.WriteLine(" must consist of the keyword ref followed by a ");
-            OutputHelper.WriteLine(" variable-reference of the same type as the formal");
-            OutputHelper.WriteLine(" parameter.  A variable must be definitely assigned");
-            OutputHelper.WriteLine(" before it can be passed as a reference parameter.");
+            //  Section 10.5
+            //  When a formal parameter is a reference parameter,
+            //  the corresponding argument in a method invocation
+            //  must consist of the keyword ref followed by a 
+            //  variable-reference of the same type as the formal
+            //  parameter.  A variable must be definitely assigned
+            //  before it can be passed as a reference parameter.
             Assert.IsTrue(MethodsTestClass75.testMethod());
         }
 
         [TestMethod]
         public void Methods78_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A parameter declared with an out modifier is an output");
-            OutputHelper.WriteLine(" parameter.  Similar to a reference parameter, an output");
-            OutputHelper.WriteLine(" parameter does not create a new storage location.  Instead,");
-            OutputHelper.WriteLine(" an output parameter represents the same storage location");
-            OutputHelper.WriteLine(" as the variable given as the argument in the method invocation.");
+            //  Section 10.5
+            //  A parameter declared with an out modifier is an output
+            //  parameter.  Similar to a reference parameter, an output
+            //  parameter does not create a new storage location.  Instead,
+            //  an output parameter represents the same storage location
+            //  as the variable given as the argument in the method invocation.
             Assert.IsTrue(MethodsTestClass78.testMethod());
         }
 
         [TestMethod]
         public void Methods79_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A parameter declared with an out modifier is an output");
-            OutputHelper.WriteLine(" parameter.  Similar to a reference parameter, an output");
-            OutputHelper.WriteLine(" parameter does not create a new storage location.  Instead,");
-            OutputHelper.WriteLine(" an output parameter represents the same storage location");
-            OutputHelper.WriteLine(" as the variable given as the argument in the method invocation.");
+            //  Section 10.5
+            //  A parameter declared with an out modifier is an output
+            //  parameter.  Similar to a reference parameter, an output
+            //  parameter does not create a new storage location.  Instead,
+            //  an output parameter represents the same storage location
+            //  as the variable given as the argument in the method invocation.
             Assert.IsTrue(MethodsTestClass79.testMethod());
         }
 
         [TestMethod]
         public void Methods80_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A parameter declared with an out modifier is an output");
-            OutputHelper.WriteLine(" parameter.  Similar to a reference parameter, an output");
-            OutputHelper.WriteLine(" parameter does not create a new storage location.  Instead,");
-            OutputHelper.WriteLine(" an output parameter represents the same storage location");
-            OutputHelper.WriteLine(" as the variable given as the argument in the method invocation.");
+            //  Section 10.5
+            //  A parameter declared with an out modifier is an output
+            //  parameter.  Similar to a reference parameter, an output
+            //  parameter does not create a new storage location.  Instead,
+            //  an output parameter represents the same storage location
+            //  as the variable given as the argument in the method invocation.
             Assert.IsTrue(MethodsTestClass80.testMethod());
         }
 
         [TestMethod]
         public void Methods84_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When a formal parameter is an output parameter,");
-            OutputHelper.WriteLine(" the corresponding argument in a method invocation");
-            OutputHelper.WriteLine(" must consist of the keyword out followed by a ");
-            OutputHelper.WriteLine(" variable-reference of the same type as the formal ");
-            OutputHelper.WriteLine(" parameter.  A variable need not be definitely");
-            OutputHelper.WriteLine(" assigned before it can be passed as an output");
-            OutputHelper.WriteLine(" parameter, but following an invocation where a ");
-            OutputHelper.WriteLine(" variable was passed as an output parameter, the");
-            OutputHelper.WriteLine(" variable is considered definitely assigned.");
+            //  Section 10.5
+            //  When a formal parameter is an output parameter,
+            //  the corresponding argument in a method invocation
+            //  must consist of the keyword out followed by a 
+            //  variable-reference of the same type as the formal 
+            //  parameter.  A variable need not be definitely
+            //  assigned before it can be passed as an output
+            //  parameter, but following an invocation where a 
+            //  variable was passed as an output parameter, the
+            //  variable is considered definitely assigned.
             Assert.IsTrue(MethodsTestClass84.testMethod());
         }
 
         [TestMethod]
         public void Methods85_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When a formal parameter is an output parameter,");
-            OutputHelper.WriteLine(" the corresponding argument in a method invocation");
-            OutputHelper.WriteLine(" must consist of the keyword out followed by a ");
-            OutputHelper.WriteLine(" variable-reference of the same type as the formal ");
-            OutputHelper.WriteLine(" parameter.  A variable need not be definitely");
-            OutputHelper.WriteLine(" assigned before it can be passed as an output");
-            OutputHelper.WriteLine(" parameter, but following an invocation where a ");
-            OutputHelper.WriteLine(" variable was passed as an output parameter, the");
-            OutputHelper.WriteLine(" variable is considered definitely assigned.");
+            //  Section 10.5
+            //  When a formal parameter is an output parameter,
+            //  the corresponding argument in a method invocation
+            //  must consist of the keyword out followed by a 
+            //  variable-reference of the same type as the formal 
+            //  parameter.  A variable need not be definitely
+            //  assigned before it can be passed as an output
+            //  parameter, but following an invocation where a 
+            //  variable was passed as an output parameter, the
+            //  variable is considered definitely assigned.
             Assert.IsTrue(MethodsTestClass85.testMethod());
         }
 
         [TestMethod]
         public void Methods92_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" Every output parameter of a method must be");
-            OutputHelper.WriteLine(" definitely assigned before the method returns.");
+            //  Section 10.5
+            //  Every output parameter of a method must be
+            //  definitely assigned before the method returns.
             Assert.IsTrue(MethodsTestClass92.testMethod());
         }
 
         [TestMethod]
         public void Methods93_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" Every output parameter of a method must be");
-            OutputHelper.WriteLine(" definitely assigned before the method returns.");
+            //  Section 10.5
+            //  Every output parameter of a method must be
+            //  definitely assigned before the method returns.
             Assert.IsTrue(MethodsTestClass93.testMethod());
         }
 
         [TestMethod]
         public void Methods94_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" Every output parameter of a method must be");
-            OutputHelper.WriteLine(" definitely assigned before the method returns.");
+            //  Section 10.5
+            //  Every output parameter of a method must be
+            //  definitely assigned before the method returns.
             Assert.IsTrue(MethodsTestClass94.testMethod());
         }
 
         [TestMethod]
         public void Methods95_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" Every output parameter of a method must be");
-            OutputHelper.WriteLine(" definitely assigned before the method returns.");
+            //  Section 10.5
+            //  Every output parameter of a method must be
+            //  definitely assigned before the method returns.
             Assert.IsTrue(MethodsTestClass95.testMethod());
         }
 
         [TestMethod]
         public void Methods103_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" The implementation of a non-virtual method");
-            OutputHelper.WriteLine(" is invariant: The implementation is the same ");
-            OutputHelper.WriteLine(" whether the method is invoked on an instance");
-            OutputHelper.WriteLine(" of the class in which it is declared or an ");
-            OutputHelper.WriteLine(" instance of the derived class.");
+            //  Section 10.5
+            //  The implementation of a non-virtual method
+            //  is invariant: The implementation is the same 
+            //  whether the method is invoked on an instance
+            //  of the class in which it is declared or an 
+            //  instance of the derived class.
             Assert.IsTrue(MethodsTestClass103.testMethod());
 
         }
@@ -538,17 +538,17 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Methods104_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" The implementation of a non-virtual method");
-            OutputHelper.WriteLine(" is invariant: The implementation is the same ");
-            OutputHelper.WriteLine(" whether the method is invoked on an instance");
-            OutputHelper.WriteLine(" of the class in which it is declared or an ");
-            OutputHelper.WriteLine(" instance of the derived class.");
+            //  Section 10.5
+            //  The implementation of a non-virtual method
+            //  is invariant: The implementation is the same 
+            //  whether the method is invoked on an instance
+            //  of the class in which it is declared or an 
+            //  instance of the derived class.
             Assert.IsFalse(MethodsTestClass104.testMethod());
 
-            OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-            OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
-            OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
+            // This failure indicates a test is now passing that previously failed by design.
+            // It previously marked as known failure because of bug # 21563
+            // The Test owner needs to verify that the change was intentional and remove the known failure.
 
 
         }
@@ -556,283 +556,283 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Methods105_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" The implementation of a non-virtual method");
-            OutputHelper.WriteLine(" is invariant: The implementation is the same ");
-            OutputHelper.WriteLine(" whether the method is invoked on an instance");
-            OutputHelper.WriteLine(" of the class in which it is declared or an ");
-            OutputHelper.WriteLine(" instance of the derived class.");
+            //  Section 10.5
+            //  The implementation of a non-virtual method
+            //  is invariant: The implementation is the same 
+            //  whether the method is invoked on an instance
+            //  of the class in which it is declared or an 
+            //  instance of the derived class.
             Assert.IsTrue(MethodsTestClass105.testMethod());
         }
 
         [TestMethod]
         public void Methods106_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For every virtual method declaration of M,");
-            OutputHelper.WriteLine(" there exists a most derived implementation");
-            OutputHelper.WriteLine(" of the method with respect to the class.");
-            OutputHelper.WriteLine(" The most derived implementation of a ");
-            OutputHelper.WriteLine(" virtual method M with respectto a class");
-            OutputHelper.WriteLine(" R is determined as follows:");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" If R contains the introducing virtual");
-            OutputHelper.WriteLine(" declaration of M, then this is the most");
-            OutputHelper.WriteLine(" derived implementation of M.");
+            //  Section 10.5
+            //  For every virtual method declaration of M,
+            //  there exists a most derived implementation
+            //  of the method with respect to the class.
+            //  The most derived implementation of a 
+            //  virtual method M with respectto a class
+            //  R is determined as follows:
+            // 
+            //  If R contains the introducing virtual
+            //  declaration of M, then this is the most
+            //  derived implementation of M.
             Assert.IsTrue(MethodsTestClass106.testMethod());
         }
 
         [TestMethod]
         public void Methods107_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For every virtual method declaration of M,");
-            OutputHelper.WriteLine(" there exists a most derived implementation");
-            OutputHelper.WriteLine(" of the method with respect to the class.");
-            OutputHelper.WriteLine(" The most derived implementation of a ");
-            OutputHelper.WriteLine(" virtual method M with respectto a class");
-            OutputHelper.WriteLine(" R is determined as follows:");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" If R contains the introducing virtual");
-            OutputHelper.WriteLine(" declaration of M, then this is the most");
-            OutputHelper.WriteLine(" derived implementation of M.");
+            //  Section 10.5
+            //  For every virtual method declaration of M,
+            //  there exists a most derived implementation
+            //  of the method with respect to the class.
+            //  The most derived implementation of a 
+            //  virtual method M with respectto a class
+            //  R is determined as follows:
+            // 
+            //  If R contains the introducing virtual
+            //  declaration of M, then this is the most
+            //  derived implementation of M.
             Assert.IsFalse(MethodsTestClass107.testMethod());
-            OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-            OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
-            OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
+            // This failure indicates a test is now passing that previously failed by design.
+            // It previously marked as known failure because of bug # 21563
+            // The Test owner needs to verify that the change was intentional and remove the known failure.
         }
 
         [TestMethod]
         public void Methods108_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For every virtual method declaration of M,");
-            OutputHelper.WriteLine(" there exists a most derived implementation");
-            OutputHelper.WriteLine(" of the method with respect to the class.");
-            OutputHelper.WriteLine(" The most derived implementation of a ");
-            OutputHelper.WriteLine(" virtual method M with respectto a class");
-            OutputHelper.WriteLine(" R is determined as follows:");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" If R contains the introducing virtual");
-            OutputHelper.WriteLine(" declaration of M, then this is the most");
-            OutputHelper.WriteLine(" derived implementation of M.");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" Otherwise, if R contains an override of M,");
-            OutputHelper.WriteLine(" then this is the most derived implementation");
-            OutputHelper.WriteLine(" of M.");
+            //  Section 10.5
+            //  For every virtual method declaration of M,
+            //  there exists a most derived implementation
+            //  of the method with respect to the class.
+            //  The most derived implementation of a 
+            //  virtual method M with respectto a class
+            //  R is determined as follows:
+            // 
+            //  If R contains the introducing virtual
+            //  declaration of M, then this is the most
+            //  derived implementation of M.
+            // 
+            //  Otherwise, if R contains an override of M,
+            //  then this is the most derived implementation
+            //  of M.
             Assert.IsTrue(MethodsTestClass108.testMethod());
         }
 
         [TestMethod]
         public void Methods109_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For every virtual method declaration of M,");
-            OutputHelper.WriteLine(" there exists a most derived implementation");
-            OutputHelper.WriteLine(" of the method with respect to the class.");
-            OutputHelper.WriteLine(" The most derived implementation of a ");
-            OutputHelper.WriteLine(" virtual method M with respectto a class");
-            OutputHelper.WriteLine(" R is determined as follows:");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" If R contains the introducing virtual");
-            OutputHelper.WriteLine(" declaration of M, then this is the most");
-            OutputHelper.WriteLine(" derived implementation of M.");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" Otherwise, if R contains an override of M,");
-            OutputHelper.WriteLine(" then this is the most derived implementation");
-            OutputHelper.WriteLine(" of M.");
+            //  Section 10.5
+            //  For every virtual method declaration of M,
+            //  there exists a most derived implementation
+            //  of the method with respect to the class.
+            //  The most derived implementation of a 
+            //  virtual method M with respectto a class
+            //  R is determined as follows:
+            // 
+            //  If R contains the introducing virtual
+            //  declaration of M, then this is the most
+            //  derived implementation of M.
+            // 
+            //  Otherwise, if R contains an override of M,
+            //  then this is the most derived implementation
+            //  of M.
             Assert.IsTrue(MethodsTestClass109.testMethod());
         }
 
         [TestMethod]
         public void Methods110_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For every virtual method declaration of M,");
-            OutputHelper.WriteLine(" there exists a most derived implementation");
-            OutputHelper.WriteLine(" of the method with respect to the class.");
-            OutputHelper.WriteLine(" The most derived implementation of a ");
-            OutputHelper.WriteLine(" virtual method M with respectto a class");
-            OutputHelper.WriteLine(" R is determined as follows:");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" If R contains the introducing virtual");
-            OutputHelper.WriteLine(" declaration of M, then this is the most");
-            OutputHelper.WriteLine(" derived implementation of M.");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" Otherwise, if R contains an override of M,");
-            OutputHelper.WriteLine(" then this is the most derived implementation");
-            OutputHelper.WriteLine(" of M.");
+            //  Section 10.5
+            //  For every virtual method declaration of M,
+            //  there exists a most derived implementation
+            //  of the method with respect to the class.
+            //  The most derived implementation of a 
+            //  virtual method M with respectto a class
+            //  R is determined as follows:
+            // 
+            //  If R contains the introducing virtual
+            //  declaration of M, then this is the most
+            //  derived implementation of M.
+            // 
+            //  Otherwise, if R contains an override of M,
+            //  then this is the most derived implementation
+            //  of M.
             Assert.IsFalse(MethodsTestClass110.testMethod());
-            OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-            OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
-            OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
+            // This failure indicates a test is now passing that previously failed by design.
+            // It previously marked as known failure because of bug # 21563
+            // The Test owner needs to verify that the change was intentional and remove the known failure.
         }
 
         [TestMethod]
         public void Methods111_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For every virtual method declaration of M,");
-            OutputHelper.WriteLine(" there exists a most derived implementation");
-            OutputHelper.WriteLine(" of the method with respect to the class.");
-            OutputHelper.WriteLine(" The most derived implementation of a ");
-            OutputHelper.WriteLine(" virtual method M with respectto a class");
-            OutputHelper.WriteLine(" R is determined as follows:");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" If R contains the introducing virtual");
-            OutputHelper.WriteLine(" declaration of M, then this is the most");
-            OutputHelper.WriteLine(" derived implementation of M.");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" Otherwise, if R contains an override of M,");
-            OutputHelper.WriteLine(" then this is the most derived implementation");
-            OutputHelper.WriteLine(" of M.");
+            //  Section 10.5
+            //  For every virtual method declaration of M,
+            //  there exists a most derived implementation
+            //  of the method with respect to the class.
+            //  The most derived implementation of a 
+            //  virtual method M with respectto a class
+            //  R is determined as follows:
+            // 
+            //  If R contains the introducing virtual
+            //  declaration of M, then this is the most
+            //  derived implementation of M.
+            // 
+            //  Otherwise, if R contains an override of M,
+            //  then this is the most derived implementation
+            //  of M.
             Assert.IsTrue(MethodsTestClass111.testMethod());
         }
 
         [TestMethod]
         public void Methods112_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" Because methods are allowed to hide inherited");
-            OutputHelper.WriteLine(" methods, it is possible for a class to contain");
-            OutputHelper.WriteLine(" several virtual methods with the same signature.");
-            OutputHelper.WriteLine(" This does not provide an ambiguity problem, since");
-            OutputHelper.WriteLine(" all but the most derived method are hidden.");
+            //  Section 10.5
+            //  Because methods are allowed to hide inherited
+            //  methods, it is possible for a class to contain
+            //  several virtual methods with the same signature.
+            //  This does not provide an ambiguity problem, since
+            //  all but the most derived method are hidden.
             Assert.IsFalse(MethodsTestClass112.testMethod());
-            OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-            OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
-            OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure.");
+            // This failure indicates a test is now passing that previously failed by design.
+            // It previously marked as known failure because of bug # 21563
+            // The Test owner needs to verify that the change was intentional and remove the known failure.
         }
 
         [TestMethod]
         public void Methods116_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" It is an error for an override method declaration");
-            OutputHelper.WriteLine(" to include any one of the new, static, virtual, or ");
-            OutputHelper.WriteLine(" abstract modifiers.");
+            //  Section 10.5
+            //  It is an error for an override method declaration
+            //  to include any one of the new, static, virtual, or 
+            //  abstract modifiers.
             Assert.IsTrue(MethodsTestClass116.testMethod());
         }
 
         [TestMethod]
         public void Methods117_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For purposes of locating the overridden base");
-            OutputHelper.WriteLine(" method, a method is considered accessible if ");
-            OutputHelper.WriteLine(" it is public, if it is protected, if it is ");
-            OutputHelper.WriteLine(" internal and declared in the same project as ");
-            OutputHelper.WriteLine(" C, or if it is private and declared in a class");
-            OutputHelper.WriteLine(" containing the declaration of C.");
+            //  Section 10.5
+            //  For purposes of locating the overridden base
+            //  method, a method is considered accessible if 
+            //  it is public, if it is protected, if it is 
+            //  internal and declared in the same project as 
+            //  C, or if it is private and declared in a class
+            //  containing the declaration of C.
             Assert.IsTrue(MethodsTestClass117.testMethod());
         }
 
         [TestMethod]
         public void Methods119_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For purposes of locating the overridden base");
-            OutputHelper.WriteLine(" method, a method is considered accessible if ");
-            OutputHelper.WriteLine(" it is public, if it is protected, if it is ");
-            OutputHelper.WriteLine(" internal and declared in the same project as ");
-            OutputHelper.WriteLine(" C, or if it is private and declared in a class");
-            OutputHelper.WriteLine(" containing the declaration of C.");
+            //  Section 10.5
+            //  For purposes of locating the overridden base
+            //  method, a method is considered accessible if 
+            //  it is public, if it is protected, if it is 
+            //  internal and declared in the same project as 
+            //  C, or if it is private and declared in a class
+            //  containing the declaration of C.
             Assert.IsTrue(MethodsTestClass119.testMethod());
         }
 
         [TestMethod]
         public void Methods120_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For purposes of locating the overridden base");
-            OutputHelper.WriteLine(" method, a method is considered accessible if ");
-            OutputHelper.WriteLine(" it is public, if it is protected, if it is ");
-            OutputHelper.WriteLine(" internal and declared in the same project as ");
-            OutputHelper.WriteLine(" C, or if it is private and declared in a class");
-            OutputHelper.WriteLine(" containing the declaration of C.");
+            //  Section 10.5
+            //  For purposes of locating the overridden base
+            //  method, a method is considered accessible if 
+            //  it is public, if it is protected, if it is 
+            //  internal and declared in the same project as 
+            //  C, or if it is private and declared in a class
+            //  containing the declaration of C.
             Assert.IsTrue(MethodsTestClass120.testMethod());
         }
 
         [TestMethod]
         public void Methods121_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" For purposes of locating the overridden base");
-            OutputHelper.WriteLine(" method, a method is considered accessible if ");
-            OutputHelper.WriteLine(" it is public, if it is protected, if it is ");
-            OutputHelper.WriteLine(" internal and declared in the same project as ");
-            OutputHelper.WriteLine(" C, or if it is private and declared in a class");
-            OutputHelper.WriteLine(" containing the declaration of C.");
+            //  Section 10.5
+            //  For purposes of locating the overridden base
+            //  method, a method is considered accessible if 
+            //  it is public, if it is protected, if it is 
+            //  internal and declared in the same project as 
+            //  C, or if it is private and declared in a class
+            //  containing the declaration of C.
             Assert.IsTrue(MethodsTestClass121.testMethod());
         }
 
         [TestMethod]
         public void Methods124_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A compile time-error occurs unless all");
-            OutputHelper.WriteLine(" of the following are true for an override");
-            OutputHelper.WriteLine(" declaration:");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" An overriddden base method can be located");
-            OutputHelper.WriteLine(" as described above.");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" The overridden base method is virtual,");
-            OutputHelper.WriteLine(" abstract, or override method.  In other");
-            OutputHelper.WriteLine(" words, the overridden base method cannot");
-            OutputHelper.WriteLine(" be static or non-virtual.");
+            //  Section 10.5
+            //  A compile time-error occurs unless all
+            //  of the following are true for an override
+            //  declaration:
+            // 
+            //  An overriddden base method can be located
+            //  as described above.
+            // 
+            //  The overridden base method is virtual,
+            //  abstract, or override method.  In other
+            //  words, the overridden base method cannot
+            //  be static or non-virtual.
             Assert.IsTrue(MethodsTestClass124.testMethod());
         }
 
         [TestMethod]
         public void Methods125_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A compile time-error occurs unless all");
-            OutputHelper.WriteLine(" of the following are true for an override");
-            OutputHelper.WriteLine(" declaration:");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" An overriddden base method can be located");
-            OutputHelper.WriteLine(" as described above.");
-            OutputHelper.WriteLine("");
-            OutputHelper.WriteLine(" The overridden base method is virtual,");
-            OutputHelper.WriteLine(" abstract, or override method.  In other");
-            OutputHelper.WriteLine(" words, the overridden base method cannot");
-            OutputHelper.WriteLine(" be static or non-virtual.");
+            //  Section 10.5
+            //  A compile time-error occurs unless all
+            //  of the following are true for an override
+            //  declaration:
+            // 
+            //  An overriddden base method can be located
+            //  as described above.
+            // 
+            //  The overridden base method is virtual,
+            //  abstract, or override method.  In other
+            //  words, the overridden base method cannot
+            //  be static or non-virtual.
             Assert.IsTrue(MethodsTestClass125.testMethod());
         }
 
         [TestMethod]
         public void Methods132_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" An override declaration can access the overridden ");
-            OutputHelper.WriteLine(" base method using a base-access.");
+            //  Section 10.5
+            //  An override declaration can access the overridden 
+            //  base method using a base-access.
             Assert.IsTrue(MethodsTestClass132.testMethod());
         }
 
         [TestMethod]
         public void Methods133_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" An override declaration can access the overridden ");
-            OutputHelper.WriteLine(" base method using a base-access.");
+            //  Section 10.5
+            //  An override declaration can access the overridden 
+            //  base method using a base-access.
             Assert.IsTrue(MethodsTestClass133.testMethod());
         }
 
         [TestMethod]
         public void Methods134_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" Only by including an override modifier can");
-            OutputHelper.WriteLine(" a method override another method.  In all other");
-            OutputHelper.WriteLine(" cases, a method with the same signature as an");
-            OutputHelper.WriteLine(" inherited method simply hides the inherited ");
-            OutputHelper.WriteLine(" member.");
+            //  Section 10.5
+            //  Only by including an override modifier can
+            //  a method override another method.  In all other
+            //  cases, a method with the same signature as an
+            //  inherited method simply hides the inherited 
+            //  member.
             Assert.IsFalse(MethodsTestClass134.testMethod());
-                OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-                OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
-                OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure."); 
+                // This failure indicates a test is now passing that previously failed by design.
+                // It previously marked as known failure because of bug # 21563
+                // The Test owner needs to verify that the change was intentional and remove the known failure. 
         }
 
         [TestMethod]
@@ -844,489 +844,489 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Methods148_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" If execution of the method body of a void");
-            OutputHelper.WriteLine(" method completes normally (that is, if control");
-            OutputHelper.WriteLine(" flows off the end of the method body), the ");
-            OutputHelper.WriteLine(" method simply returns to the caller.");
+            //  Section 10.5
+            //  If execution of the method body of a void
+            //  method completes normally (that is, if control
+            //  flows off the end of the method body), the 
+            //  method simply returns to the caller.
             Assert.IsTrue(MethodsTestClass148.testMethod());
         }
 
         [TestMethod]
         public void Methods149_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When the return type of a method is not void,");
-            OutputHelper.WriteLine(" each return statement in the method body must");
-            OutputHelper.WriteLine(" specify an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" covertable to the return type.");
+            //  Section 10.5
+            //  When the return type of a method is not void,
+            //  each return statement in the method body must
+            //  specify an expression of a type that is implicitly
+            //  covertable to the return type.
             Assert.IsTrue(MethodsTestClass149.testMethod());
         }
 
         [TestMethod]
         public void Methods150_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When the return type of a method is not void,");
-            OutputHelper.WriteLine(" each return statement in the method body must");
-            OutputHelper.WriteLine(" specify an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" covertable to the return type.");
+            //  Section 10.5
+            //  When the return type of a method is not void,
+            //  each return statement in the method body must
+            //  specify an expression of a type that is implicitly
+            //  covertable to the return type.
             Assert.IsTrue(MethodsTestClass150.testMethod());
         }
 
         [TestMethod]
         public void Methods154_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When the return type of a method is not void,");
-            OutputHelper.WriteLine(" each return statement in the method body must");
-            OutputHelper.WriteLine(" specify an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" covertable to the return type.");
+            //  Section 10.5
+            //  When the return type of a method is not void,
+            //  each return statement in the method body must
+            //  specify an expression of a type that is implicitly
+            //  covertable to the return type.
             Assert.IsTrue(MethodsTestClass154.testMethod());
         }
 
         [TestMethod]
         public void Methods159_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When the return type of a method is not void,");
-            OutputHelper.WriteLine(" each return statement in the method body must");
-            OutputHelper.WriteLine(" specify an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" covertable to the return type.  Execution of the ");
-            OutputHelper.WriteLine(" method body of a value returning method is required");
-            OutputHelper.WriteLine(" to terminate in a return statement that specifies");
-            OutputHelper.WriteLine(" an expression or in a throw statement that throws");
-            OutputHelper.WriteLine(" an System.Exception.");
+            //  Section 10.5
+            //  When the return type of a method is not void,
+            //  each return statement in the method body must
+            //  specify an expression of a type that is implicitly
+            //  covertable to the return type.  Execution of the 
+            //  method body of a value returning method is required
+            //  to terminate in a return statement that specifies
+            //  an expression or in a throw statement that throws
+            //  an System.Exception.
             Assert.IsTrue(MethodsTestClass159.testMethod());
         }
 
         [TestMethod]
         public void Methods160_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When the return type of a method is not void,");
-            OutputHelper.WriteLine(" each return statement in the method body must");
-            OutputHelper.WriteLine(" specify an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" covertable to the return type.  Execution of the ");
-            OutputHelper.WriteLine(" method body of a value returning method is required");
-            OutputHelper.WriteLine(" to terminate in a return statement that specifies");
-            OutputHelper.WriteLine(" an expression or in a throw statement that throws");
-            OutputHelper.WriteLine(" an System.Exception.");
+            //  Section 10.5
+            //  When the return type of a method is not void,
+            //  each return statement in the method body must
+            //  specify an expression of a type that is implicitly
+            //  covertable to the return type.  Execution of the 
+            //  method body of a value returning method is required
+            //  to terminate in a return statement that specifies
+            //  an expression or in a throw statement that throws
+            //  an System.Exception.
             Assert.IsTrue(MethodsTestClass160.testMethod());
         }
 
         [TestMethod]
         public void Methods161_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" When the return type of a method is not void,");
-            OutputHelper.WriteLine(" each return statement in the method body must");
-            OutputHelper.WriteLine(" specify an expression of a type that is implicitly");
-            OutputHelper.WriteLine(" covertable to the return type.  Execution of the ");
-            OutputHelper.WriteLine(" method body of a value returning method is required");
-            OutputHelper.WriteLine(" to terminate in a return statement that specifies");
-            OutputHelper.WriteLine(" an expression or in a throw statement that throws");
-            OutputHelper.WriteLine(" an System.Exception.");
+            //  Section 10.5
+            //  When the return type of a method is not void,
+            //  each return statement in the method body must
+            //  specify an expression of a type that is implicitly
+            //  covertable to the return type.  Execution of the 
+            //  method body of a value returning method is required
+            //  to terminate in a return statement that specifies
+            //  an expression or in a throw statement that throws
+            //  an System.Exception.
             Assert.IsTrue(MethodsTestClass161.testMethod());
         }
 
         [TestMethod]
         public void Methods163_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A parameter declared with a params modifier is");
-            OutputHelper.WriteLine(" a params parameter. A params parameter must be");
-            OutputHelper.WriteLine(" the last parameter in the formal parameter list,");
-            OutputHelper.WriteLine(" and the type of a params parameter must be a ");
-            OutputHelper.WriteLine(" single-dimension array type. For example, the");
-            OutputHelper.WriteLine(" types int[] and int[][] can be used as the type of");
-            OutputHelper.WriteLine(" a params parameter, but the type int[,] cannot be");
-            OutputHelper.WriteLine(" used in this way.");
+            //  Section 10.5
+            //  A parameter declared with a params modifier is
+            //  a params parameter. A params parameter must be
+            //  the last parameter in the formal parameter list,
+            //  and the type of a params parameter must be a 
+            //  single-dimension array type. For example, the
+            //  types int[] and int[][] can be used as the type of
+            //  a params parameter, but the type int[,] cannot be
+            //  used in this way.
             Assert.IsTrue(MethodsTestClass163.testMethod());
         }
 
         [TestMethod]
         public void Methods164_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A parameter declared with a params modifier is");
-            OutputHelper.WriteLine(" a params parameter. A params parameter must be");
-            OutputHelper.WriteLine(" the last parameter in the formal parameter list,");
-            OutputHelper.WriteLine(" and the type of a params parameter must be a ");
-            OutputHelper.WriteLine(" single-dimension array type. For example, the");
-            OutputHelper.WriteLine(" types int[] and int[][] can be used as the type of");
-            OutputHelper.WriteLine(" a params parameter, but the type int[,] cannot be");
-            OutputHelper.WriteLine(" used in this way.");
+            //  Section 10.5
+            //  A parameter declared with a params modifier is
+            //  a params parameter. A params parameter must be
+            //  the last parameter in the formal parameter list,
+            //  and the type of a params parameter must be a 
+            //  single-dimension array type. For example, the
+            //  types int[] and int[][] can be used as the type of
+            //  a params parameter, but the type int[,] cannot be
+            //  used in this way.
             Assert.IsTrue(MethodsTestClass164.testMethod());
         }
 
         [TestMethod]
         public void Methods169_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" The caller may specify an expression of a type that");
-            OutputHelper.WriteLine(" is implicitly convertible to the formal parameter type.");
-            OutputHelper.WriteLine(" In this case, the params parameter acts precisely like");
-            OutputHelper.WriteLine(" a value parameter.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  The caller may specify an expression of a type that
+            //  is implicitly convertible to the formal parameter type.
+            //  In this case, the params parameter acts precisely like
+            //  a value parameter.
             Assert.IsTrue(MethodsTestClass169.testMethod());
         }
 
         [TestMethod]
         public void Methods172_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass172.testMethod());
         }
 
         [TestMethod]
         public void Methods173_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass173.testMethod());
         }
 
         [TestMethod]
         public void Methods174_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass174.testMethod());
         }
 
         [TestMethod]
         public void Methods175_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass175.testMethod());
         }
 
         [TestMethod]
         public void Methods179_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass179.testMethod());
         }
 
         [TestMethod]
         public void Methods180_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass180.testMethod());
         }
 
         [TestMethod]
         public void Methods181_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass181.testMethod());
         }
 
         [TestMethod]
         public void Methods182_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass182.testMethod());
         }
 
         [TestMethod]
         public void Methods183_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass183.testMethod());
         }
 
         [TestMethod]
         public void Methods184_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter enables a caller to supply values");
-            OutputHelper.WriteLine(" in one of two ways.");
-            OutputHelper.WriteLine(" Alternately, the caller may specify zero or more expressions,");
-            OutputHelper.WriteLine(" where the type of each expression is implicitly convertible");
-            OutputHelper.WriteLine(" to the element type of the formal parameter type. In this case,");
-            OutputHelper.WriteLine(" params parameter is initialized with an array fo the formal");
-            OutputHelper.WriteLine(" parameter type that contains the value or values provided by");
-            OutputHelper.WriteLine(" the caller.");
+            //  Section 10.5
+            //  A params parameter enables a caller to supply values
+            //  in one of two ways.
+            //  Alternately, the caller may specify zero or more expressions,
+            //  where the type of each expression is implicitly convertible
+            //  to the element type of the formal parameter type. In this case,
+            //  params parameter is initialized with an array fo the formal
+            //  parameter type that contains the value or values provided by
+            //  the caller.
             Assert.IsTrue(MethodsTestClass184.testMethod());
         }
 
         [TestMethod]
         public void Methods185_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method is permitted to assign new values");
-            OutputHelper.WriteLine(" to a params parameter. Such assignments only");
-            OutputHelper.WriteLine(" affect the local storage location represented");
-            OutputHelper.WriteLine(" by the params parameter.");
+            //  Section 10.5
+            //  A method is permitted to assign new values
+            //  to a params parameter. Such assignments only
+            //  affect the local storage location represented
+            //  by the params parameter.
             Assert.IsTrue(MethodsTestClass185.testMethod());
         }
 
         [TestMethod]
         public void Methods186_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter can be passed along to another");
-            OutputHelper.WriteLine(" params parameter.");
+            //  Section 10.5
+            //  A params parameter can be passed along to another
+            //  params parameter.
             Assert.IsTrue(MethodsTestClass186.testMethod());
         }
 
         [TestMethod]
         public void Methods187_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A params parameter can be passed along to another");
-            OutputHelper.WriteLine(" params parameter.");
+            //  Section 10.5
+            //  A params parameter can be passed along to another
+            //  params parameter.
             Assert.IsTrue(MethodsTestClass187.testMethod());
         }
 
         [TestMethod]
         public void Methods188_Test()
         {
-            OutputHelper.WriteLine("Testing explicit base method call to a child class whose parent implements");
+            // Testing explicit base method call to a child class whose parent implements
             Assert.IsTrue(MethodsTestClass188.testMethod());
         }
 
         [TestMethod]
         public void Methods190_Test()
         {
-            OutputHelper.WriteLine("Testing implicit base method calls to protected methods in parent class");
+            // Testing implicit base method calls to protected methods in parent class
             Assert.IsTrue(MethodsTestClass190.testMethod());
         }
 
         [TestMethod]
         public void Methods191_Test()
         {
-            OutputHelper.WriteLine("Testing implicit base method calls to internal methods in parent class");
+            // Testing implicit base method calls to internal methods in parent class
             Assert.IsTrue(MethodsTestClass191.testMethod());
         }
 
         [TestMethod]
         public void Methods192_Test()
         {
-            OutputHelper.WriteLine("Testing implicit base method calls to protected internal methods in parent class");
+            // Testing implicit base method calls to protected internal methods in parent class
             Assert.IsTrue(MethodsTestClass192.testMethod());
         }
 
         [TestMethod]
         public void Methods193_Test()
         {
-            OutputHelper.WriteLine("Testing implicit base method calls to private methods in parent class");
+            // Testing implicit base method calls to private methods in parent class
             Assert.IsTrue(MethodsTestClass193.testMethod());
         }
 
         [TestMethod]
         public void Methods194_Test()
         {
-            OutputHelper.WriteLine("Testing implicit base method calls to public virtual methods in parent class");
+            // Testing implicit base method calls to public virtual methods in parent class
             Assert.IsTrue(MethodsTestClass194.testMethod());
         }
 
         [TestMethod]
         public void Methods195_Test()
         {
-            OutputHelper.WriteLine("Tests if a new method does not overwrite a virtual method in a base class");
+            // Tests if a new method does not overwrite a virtual method in a base class
             Assert.IsFalse(MethodsTestClass195.testMethod());
-                OutputHelper.WriteLine("This failure indicates a test is now passing that previously failed by design.");
-                OutputHelper.WriteLine("It previously marked as known failure because of bug # 21563");
-                OutputHelper.WriteLine("The Test owner needs to verify that the change was intentional and remove the known failure."); 
+                // This failure indicates a test is now passing that previously failed by design.
+                // It previously marked as known failure because of bug # 21563
+                // The Test owner needs to verify that the change was intentional and remove the known failure. 
         }
 
         [TestMethod]
         public void Methods196_Test()
         {
-            OutputHelper.WriteLine("Tests if a new method does overwrite an abstract method in a base class");
+            // Tests if a new method does overwrite an abstract method in a base class
             Assert.IsTrue(MethodsTestClass196.testMethod());
         }
 
         [TestMethod]
         public void Methods197_Test()
         {
-            OutputHelper.WriteLine("Tests the calling of an empty delegate");
+            // Tests the calling of an empty delegate
             Assert.IsTrue(MethodsTestClass197.testMethod());
         }
 
         [TestMethod]
         public void Methods199_Test()
         {
-            OutputHelper.WriteLine("Tests if a sealed method overwrites a virtual method in a base class");
+            // Tests if a sealed method overwrites a virtual method in a base class
             Assert.IsTrue(MethodsTestClass199.testMethod());
         }
 
         [TestMethod]
         public void Methods200_Test()
         {
-            OutputHelper.WriteLine("Tests large number of assignments inside a public method");
+            // Tests large number of assignments inside a public method
             Assert.IsTrue(MethodsTestClass200.testMethod());
         }
 
         [TestMethod]
         public void Methods201_Test()
         {
-            OutputHelper.WriteLine("Tests large number of assignments inside a public static method");
+            // Tests large number of assignments inside a public static method
             Assert.IsTrue(MethodsTestClass201.testMethod());
         }
 
         [TestMethod]
         public void Methods204_Test()
         {
-            OutputHelper.WriteLine("Tests a method with explicit, params signature");
+            // Tests a method with explicit, params signature
             Assert.IsTrue(MethodsTestClass204.testMethod());
         }
 
         [TestMethod]
         public void Methods205_Test()
         {
-            OutputHelper.WriteLine("Tests a method with a mixed explicit and params signature");
+            // Tests a method with a mixed explicit and params signature
             Assert.IsTrue(MethodsTestClass205.testMethod());
         }
 
         [TestMethod]
         public void Methods206_Test()
         {
-            OutputHelper.WriteLine("Tests method overloading between params and explicit signatures (static)");
+            // Tests method overloading between params and explicit signatures (static)
             Assert.IsTrue(MethodsTestClass206.testMethod());
         }
 
         [TestMethod]
         public void Methods207_Test()
         {
-            OutputHelper.WriteLine("Tests method overloading between params and explicit signatures");
+            // Tests method overloading between params and explicit signatures
             Assert.IsTrue(MethodsTestClass207.testMethod());
         }
 
         [TestMethod]
         public void Methods210_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5 If the declaration includes the sealed modifier, then the ");
-            OutputHelper.WriteLine(" declaration must also include the override modifier.");
+            //  Section 10.5 If the declaration includes the sealed modifier, then the 
+            //  declaration must also include the override modifier.
             Assert.IsTrue(MethodsTestClass210.testMethod());
         }
 
         [TestMethod]
         public void Methods223_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5 The ref and out parameters are part of a method's signature, but the params modifier is not.");
+            //  Section 10.5 The ref and out parameters are part of a method's signature, but the params modifier is not.
             Assert.IsTrue(MethodsTestClass223.testMethod());
         }
         [TestMethod]
         public void Methods224_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5 The ref and out parameters are part of a method's signature, but the params modifier is not.");
+            //  Section 10.5 The ref and out parameters are part of a method's signature, but the params modifier is not.
             Assert.IsTrue(MethodsTestClass224.testMethod());
         }
         [TestMethod]
         public void Methods229_Test()
         {
-            OutputHelper.WriteLine(" error CS0114: 'function1' hides inherited member 'function2'.");
-            OutputHelper.WriteLine(" To make the current method override that implementation, add ");
-            OutputHelper.WriteLine(" the override keyword. Otherwise add the new keyword.");
+            //  error CS0114: 'function1' hides inherited member 'function2'.
+            //  To make the current method override that implementation, add 
+            //  the override keyword. Otherwise add the new keyword.
             Assert.IsTrue(MethodsTestClass229.testMethod());
         }
         [TestMethod]
         public void Methods230_Test()
         {
-            OutputHelper.WriteLine(" error CS0114: 'function1' hides inherited member 'function2'.");
-            OutputHelper.WriteLine(" To make the current method override that implementation, add ");
-            OutputHelper.WriteLine(" the override keyword. Otherwise add the new keyword.");
+            //  error CS0114: 'function1' hides inherited member 'function2'.
+            //  To make the current method override that implementation, add 
+            //  the override keyword. Otherwise add the new keyword.
             Assert.IsTrue(MethodsTestClass230.testMethod());
         }
         [TestMethod]
         public void Methods231_Test()
         {
-            OutputHelper.WriteLine(" error CS0114: 'function1' hides inherited member 'function2'.");
-            OutputHelper.WriteLine(" To make the current method override that implementation, add ");
-            OutputHelper.WriteLine(" the override keyword. Otherwise add the new keyword.");
+            //  error CS0114: 'function1' hides inherited member 'function2'.
+            //  To make the current method override that implementation, add 
+            //  the override keyword. Otherwise add the new keyword.
             Assert.IsTrue(MethodsTestClass231.testMethod());
         }
         [TestMethod]
         public void Methods232_Test()
         {
-            OutputHelper.WriteLine(" error CS0114: 'function1' hides inherited member 'function2'.");
-            OutputHelper.WriteLine(" To make the current method override that implementation, add ");
-            OutputHelper.WriteLine(" the override keyword. Otherwise add the new keyword.");
+            //  error CS0114: 'function1' hides inherited member 'function2'.
+            //  To make the current method override that implementation, add 
+            //  the override keyword. Otherwise add the new keyword.
             Assert.IsTrue(MethodsTestClass232.testMethod());
         }
         [TestMethod]
         public void Methods233_Test()
         {
-            OutputHelper.WriteLine(" Section 10.5");
-            OutputHelper.WriteLine(" A method-declaration may include set of attributes,");
-            OutputHelper.WriteLine(" a new modifier, one of four access modifiers,");
-            OutputHelper.WriteLine(" one of the static, virtual, override, or abstract ");
-            OutputHelper.WriteLine(" modifiers, and an extern modifier.");
+            //  Section 10.5
+            //  A method-declaration may include set of attributes,
+            //  a new modifier, one of four access modifiers,
+            //  one of the static, virtual, override, or abstract 
+            //  modifiers, and an extern modifier.
             Assert.IsTrue(MethodsTestClass233.testMethod());
         }
 

@@ -16,7 +16,7 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void BaseClass1_Test()
         {
-            OutputHelper.WriteLine("Tests an int declaration with assignment in a base class");
+            // Tests an int declaration with assignment in a base class
             Assert.IsTrue(BaseClassTestClass1.testMethod());
         }
 
@@ -24,8 +24,8 @@ namespace NFUnitTestClasses
         public void BaseClass2_Test()
         {
 
-            OutputHelper.WriteLine("Tests a function declaration in a implementing class still");
-            OutputHelper.WriteLine("works after child is cast as an implemented interface");
+            // Tests a function declaration in a implementing class still
+            // works after child is cast as an implemented interface
             Assert.IsTrue(BaseClassTestClass2.testMethod());
         }
 
@@ -33,52 +33,52 @@ namespace NFUnitTestClasses
         public void BaseClass3_Test()
         {
 
-            OutputHelper.WriteLine("Tests a function declaration in an implementing class still works after child is cast as");
-            OutputHelper.WriteLine("each of two implemented interfaces");
+            // Tests a function declaration in an implementing class still works after child is cast as
+            // each of two implemented interfaces
             Assert.IsTrue(BaseClassTestClass3.testMethod());
         }
 
         [TestMethod]
         public void BaseClass4_Test()
         {
-            OutputHelper.WriteLine("Tests a function declaration in a child class still works after child is cast as");
-            OutputHelper.WriteLine("its parent class and an interface it implements");
+            // Tests a function declaration in a child class still works after child is cast as
+            // its parent class and an interface it implements
             Assert.IsTrue(BaseClassTestClass4.testMethod());
         }
 
         [TestMethod]
         public void BaseClass10_Test()
         {
-            OutputHelper.WriteLine("Section 10.1");
-            OutputHelper.WriteLine("The base classes of a class are the direct base");
-            OutputHelper.WriteLine("class and its base classes.  In other words, the");
-            OutputHelper.WriteLine("set of base classes is the transitive closure of the ");
-            OutputHelper.WriteLine("direct base class relatationship.");
+            // Section 10.1
+            // The base classes of a class are the direct base
+            // class and its base classes.  In other words, the
+            // set of base classes is the transitive closure of the 
+            // direct base class relatationship.
             Assert.IsTrue(BaseClassTestClass10.testMethod());
         }
 
         [TestMethod]
         public void BaseClass13_Test()
         {
-            OutputHelper.WriteLine("Section 10.1");
-            OutputHelper.WriteLine("Note that a class does not depend on the");
-            OutputHelper.WriteLine("classes that are nested within it. ");
+            // Section 10.1
+            // Note that a class does not depend on the
+            // classes that are nested within it. 
             Assert.IsTrue(BaseClassTestClass13.testMethod());
         }
 
         [TestMethod]
         public void BaseClass25_Test()
         {
-            OutputHelper.WriteLine("10.1.2.1 ");
-            OutputHelper.WriteLine("inheriting from nested types");
+            // 10.1.2.1 
+            // inheriting from nested types
             Assert.IsTrue(BaseClassTestClass25.testMethod());
         }
 
         [TestMethod]
         public void BaseClass29_Test()
         {
-            OutputHelper.WriteLine("10.1.2.1 ");
-            OutputHelper.WriteLine("inheriting from nested types");
+            // 10.1.2.1 
+            // inheriting from nested types
 
             Assert.IsTrue(BaseClassTestClass29.testMethod());
         }
@@ -86,7 +86,7 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Modifiers2_Test()
         {
-            OutputHelper.WriteLine("Testing  a public int inside an inner class with modifier 'new' ");
+            // Testing  a public int inside an inner class with modifier 'new' 
 
             Assert.IsTrue(ModifiersTestClass2.testMethod());
         }
@@ -95,7 +95,7 @@ namespace NFUnitTestClasses
         public void Modifiers3_Test()
         {
 
-            OutputHelper.WriteLine("Testing  a public int directly inside a public class");
+            // Testing  a public int directly inside a public class
             Assert.IsTrue(ModifiersTestClass3.testMethod());
         }
 
@@ -103,7 +103,7 @@ namespace NFUnitTestClasses
         public void Modifiers4_Test()
         {
 
-            OutputHelper.WriteLine("Testing  a public int inside an inner class with modifier 'public' ");
+            // Testing  a public int inside an inner class with modifier 'public' 
             Assert.IsTrue(ModifiersTestClass4.testMethod());
         }
 
@@ -111,7 +111,7 @@ namespace NFUnitTestClasses
         public void Modifiers6_Test()
         {
 
-            OutputHelper.WriteLine("Testing  a public int inside an inner class with modifier 'protected' ");
+            // Testing  a public int inside an inner class with modifier 'protected' 
             Assert.IsTrue(ModifiersTestClass6.testMethod());
         }
 
@@ -119,14 +119,14 @@ namespace NFUnitTestClasses
         public void Modifiers7_Test()
         {
 
-            OutputHelper.WriteLine("Testing  a public int directly inside an internal class");
+            // Testing  a public int directly inside an internal class
             Assert.IsTrue(ModifiersTestClass7.testMethod());
         }
 
         [TestMethod]
         public void Modifiers8_Test()
         {
-            OutputHelper.WriteLine("Testing  a public int inside an inner class with modifier 'internal' ");
+            // Testing  a public int inside an inner class with modifier 'internal' 
             Assert.IsTrue(ModifiersTestClass8.testMethod());
         }
 
@@ -134,7 +134,7 @@ namespace NFUnitTestClasses
         public void Modifiers10_Test()
         {
 
-            OutputHelper.WriteLine("Testing  a public int inside an inner class with modifier 'private' ");
+            // Testing  a public int inside an inner class with modifier 'private' 
             Assert.IsTrue(ModifiersTestClass10.testMethod());
         }
 
@@ -142,7 +142,7 @@ namespace NFUnitTestClasses
         public void Modifiers11_Test()
         {
 
-            OutputHelper.WriteLine("Testing  a public int inside an abstract class that is implemented");
+            // Testing  a public int inside an abstract class that is implemented
             Assert.IsTrue(ModifiersTestClass11.testMethod());
         }
 
@@ -150,14 +150,14 @@ namespace NFUnitTestClasses
         public void Modifiers12_Test()
         {
 
-            OutputHelper.WriteLine("Testing  a public int inside an inner abstract class that is implemented");
+            // Testing  a public int inside an inner abstract class that is implemented
             Assert.IsTrue(ModifiersTestClass12.testMethod());
         }
 
         [TestMethod]
         public void Modifiers13_Test()
         {
-            OutputHelper.WriteLine("Testing  a public int directly inside a sealed class");
+            // Testing  a public int directly inside a sealed class
             Assert.IsTrue(ModifiersTestClass13.testMethod());
         }
 
@@ -165,51 +165,51 @@ namespace NFUnitTestClasses
         public void Modifiers14_Test()
         {
 
-            OutputHelper.WriteLine("Testing  a public int inside an inner sealed class");
+            // Testing  a public int inside an inner sealed class
             Assert.IsTrue(ModifiersTestClass14.testMethod());
         }
 
         [TestMethod]
         public void Modifiers23_Test()
         {
-            OutputHelper.WriteLine("An abstract class cannot be instantiated, and it is");
-            OutputHelper.WriteLine("an error to use the new operator on an abstract class.");
-            OutputHelper.WriteLine("While it is possible to have variables and values whose");
-            OutputHelper.WriteLine("compile-time types are abstract, such variables and values");
-            OutputHelper.WriteLine("will necessarily either be null or contain references");
-            OutputHelper.WriteLine("to instances of non-abstract classes derived from the ");
-            OutputHelper.WriteLine("abstract types.");
+            // An abstract class cannot be instantiated, and it is
+            // an error to use the new operator on an abstract class.
+            // While it is possible to have variables and values whose
+            // compile-time types are abstract, such variables and values
+            // will necessarily either be null or contain references
+            // to instances of non-abstract classes derived from the 
+            // abstract types.
             Assert.IsTrue(ModifiersTestClass23.testMethod());
         }
 
         [TestMethod]
         public void Modifiers24_Test()
         {
-            OutputHelper.WriteLine("An abstract class cannot be instantiated, and it is");
-            OutputHelper.WriteLine("an error to use the new operator on an abstract class.");
-            OutputHelper.WriteLine("While it is possible to have variables and values whose");
-            OutputHelper.WriteLine("compile-time types are abstract, such variables and values");
-            OutputHelper.WriteLine("will necessarily either be null or contain references");
-            OutputHelper.WriteLine("to instances of non-abstract classes derived from the ");
-            OutputHelper.WriteLine("abstract types.");
+            // An abstract class cannot be instantiated, and it is
+            // an error to use the new operator on an abstract class.
+            // While it is possible to have variables and values whose
+            // compile-time types are abstract, such variables and values
+            // will necessarily either be null or contain references
+            // to instances of non-abstract classes derived from the 
+            // abstract types.
             Assert.IsTrue(ModifiersTestClass24.testMethod());
         }
 
         [TestMethod]
         public void Modifiers25_Test()
         {
-            OutputHelper.WriteLine("Section 10.1");
-            OutputHelper.WriteLine("An abstract class is permitted (but not required)");
-            OutputHelper.WriteLine("to contain abstract methods and accessors.");
+            // Section 10.1
+            // An abstract class is permitted (but not required)
+            // to contain abstract methods and accessors.
             Assert.IsTrue(ModifiersTestClass25.testMethod());
         }
 
         [TestMethod]
         public void Modifiers26_Test()
         {
-            OutputHelper.WriteLine("Section 10.1");
-            OutputHelper.WriteLine("An abstract class is permitted (but not required)");
-            OutputHelper.WriteLine("to contain abstract methods and accessors.");
+            // Section 10.1
+            // An abstract class is permitted (but not required)
+            // to contain abstract methods and accessors.
             Assert.IsTrue(ModifiersTestClass26.testMethod());
         }
 
@@ -217,13 +217,13 @@ namespace NFUnitTestClasses
         public void Modifiers31_Test()
         {
 
-            OutputHelper.WriteLine("Section 10.1");
-            OutputHelper.WriteLine("When a non-abstract class is derived from");
-            OutputHelper.WriteLine("an abstract class, the non-abstract class must");
-            OutputHelper.WriteLine("be include actual implementations of all inherited ");
-            OutputHelper.WriteLine("abstract methods and accessors.  Such implementations");
-            OutputHelper.WriteLine("are provided by overriding the abstract methods");
-            OutputHelper.WriteLine("and accessors.");
+            // Section 10.1
+            // When a non-abstract class is derived from
+            // an abstract class, the non-abstract class must
+            // be include actual implementations of all inherited 
+            // abstract methods and accessors.  Such implementations
+            // are provided by overriding the abstract methods
+            // and accessors.
             Assert.IsTrue(ModifiersTestClass31.testMethod());
         }
 

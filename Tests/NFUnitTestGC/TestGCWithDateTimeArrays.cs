@@ -15,7 +15,7 @@ namespace NFUnitTestGC
         [TestMethod]
         public void TestCompactionForNotFixedDateTimeArray()
         {
-            OutputHelper.WriteLine("Starting TestCompactionForNotFixedDateTimeArray");
+            // Starting TestCompactionForNotFixedDateTimeArray
 
             for (int loop = 0; loop < 10; loop++)
             {
@@ -33,14 +33,14 @@ namespace NFUnitTestGC
                     testNativeBuffer[i] = new HolderForDateTime(GetRandomDateTime());
                 }
 
-                OutputHelper.WriteLine("Large HolderForDateTime array created");
-                OutputHelper.WriteLine("Forcing compaction to occurr");
+                // Large HolderForDateTime array created
+                // Forcing compaction to occurr
 
                 // Causes compaction
                 InitiateDateTimeCompaction();
 
-                OutputHelper.WriteLine("Compaction occurred");
-                OutputHelper.WriteLine("Checking arrays for corrupted data...");
+                // Compaction occurred
+                // Checking arrays for corrupted data...
 
                 int index = 0;
 
@@ -51,10 +51,10 @@ namespace NFUnitTestGC
                     index++;
                 }
 
-                OutputHelper.WriteLine("No corruption detected in array");
+                // No corruption detected in array
             }
 
-            OutputHelper.WriteLine("Completed TestCompactionForNotFixedArray");
+            // Completed TestCompactionForNotFixedArray
         }
 
         // This function cause compaction to occur.

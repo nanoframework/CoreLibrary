@@ -88,12 +88,12 @@ namespace NFUnitTestThread
             /// 3. Waits for execution and then verifies that all expected operations completed
             /// </summary>
             ///
-            OutputHelper.WriteLine("Starts several async threads that call interlocked ");
-            OutputHelper.WriteLine("Increment and Decrement, this may erroneously pass.");
-            OutputHelper.WriteLine("This may erroneously fail for extremely slow devices.");
+            // Starts several async threads that call interlocked 
+            // Increment and Decrement, this may erroneously pass.
+            // This may erroneously fail for extremely slow devices.
 
-            OutputHelper.WriteLine("Starting several threads, incrementing, decrementing,");
-            OutputHelper.WriteLine("waiting till all threads finish and verifying");
+            // Starting several threads, incrementing, decrementing,
+            // waiting till all threads finish and verifying
             Thread incThread = new Thread(ThreadIncrementorStarter);
             incThread.Start();
             Thread.Sleep(1);
@@ -110,7 +110,7 @@ namespace NFUnitTestThread
             lastThread.Start();
             Thread.Sleep(1);
 
-            OutputHelper.WriteLine("Waiting for execution");
+            // Waiting for execution
             int slept = 0;
             while ((incThread.IsAlive || decThread.IsAlive ||
                 inc2Thread.IsAlive || lastThread.IsAlive) && slept < 5000)
@@ -119,16 +119,16 @@ namespace NFUnitTestThread
                 slept += 100;
             }
 
-            OutputHelper.WriteLine("Verifying all increment/decrement operations done correctly");
+            // Verifying all increment/decrement operations done correctly
             if (interCount != 4)
             {
-                OutputHelper.WriteLine("expected final increment/decrement result = '4' but got '" + interCount + "'");
+                // expected final increment/decrement result = '4' but got '" + interCount + "'
                 throw new Exception("expected final increment/decrement result = '4' but got '" + interCount + "'");
             }
-            OutputHelper.WriteLine("Verifying all threads are finished");
+            // Verifying all threads are finished
             if (slept >= 5000)
             {
-                OutputHelper.WriteLine("Expcted all threads be done in '5000' msec but took '" + slept + "'");
+                // Expcted all threads be done in '5000' msec but took '" + slept + "'
                 throw new Exception("Expcted all threads be done in '5000' msec but took '" + slept + "'");
             }
         }
@@ -143,11 +143,11 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            OutputHelper.WriteLine("Starts 4 async threads that call interlocked Compare, CompareExchange");
-            OutputHelper.WriteLine("This may erroneously pass.");
-            OutputHelper.WriteLine("this may erroneously fail for extremely slow devices.");
+            // Starts 4 async threads that call interlocked Compare, CompareExchange
+            // This may erroneously pass.
+            // this may erroneously fail for extremely slow devices.
 
-            OutputHelper.WriteLine("Starting the 4 threads");
+            // Starting the 4 threads
             Thread incThread = new Thread(ThreadIncrementorStarter);
             incThread.Start();
 
@@ -161,7 +161,7 @@ namespace NFUnitTestThread
             lastThread.Start();
             Thread.Sleep(1);
             int comp = 10;
-            OutputHelper.WriteLine("Waiting for execution");
+            // Waiting for execution
             while ((0 != Interlocked.CompareExchange(ref interCount, 0, comp)) ||
                 (incThread.IsAlive || decThread.IsAlive || inc2Thread.IsAlive ||
                 lastThread.IsAlive))
@@ -172,7 +172,7 @@ namespace NFUnitTestThread
                     decThread.IsAlive.ToString() + " " +
                         inc2Thread.IsAlive.ToString() + " " +
                             lastThread.IsAlive.ToString());
-                OutputHelper.WriteLine("Setting Count to 0");
+                // Setting Count to 0
                 Interlocked.Exchange(ref interCount, 0);
                 Thread.Sleep(10);
             }
@@ -183,16 +183,16 @@ namespace NFUnitTestThread
                 Thread.Sleep(100);
                 slept += 100;
             }
-            OutputHelper.WriteLine("Verifying all Interlocked.Compare/CompareExchange operations done correctly");
+            // Verifying all Interlocked.Compare/CompareExchange operations done correctly
             if (interCount != 0)
             {
-                OutputHelper.WriteLine("expected final Compare/CompareExchange result = '0' but got '" + interCount + "'");
+                // expected final Compare/CompareExchange result = '0' but got '" + interCount + "'
                 throw new Exception("expected final Compare/CompareExchange result = '0' but got '" + interCount + "'");
             }
-            OutputHelper.WriteLine("Verifying all threads are finished");
+            // Verifying all threads are finished
             if (slept >= 5000)
             {
-                OutputHelper.WriteLine("Expcted all threads be done in '5000' msec but took '" + slept + "'");
+                // Expcted all threads be done in '5000' msec but took '" + slept + "'
                 throw new Exception("Expcted all threads be done in '5000' msec but took '" + slept + "'");
             }
         }
@@ -209,8 +209,8 @@ namespace NFUnitTestThread
 
             int[] value = new int[] { -2147483648, 0, 2147483647 };
             int temp1, temp2;
-            OutputHelper.WriteLine("Verification of original value returned needs temp1 = temp2");
-            OutputHelper.WriteLine("Verifies Exchange ");
+            // Verification of original value returned needs temp1 = temp2
+            // Verifies Exchange 
 
             for (int i = 0; i < 3; i++)
             {
@@ -226,7 +226,7 @@ namespace NFUnitTestThread
                     }
                     if (value[i] != value[j])
                     {
-                        OutputHelper.WriteLine("Failure : ");
+                        // Failure : 
                         OutputHelper.WriteLine(value[j] + " is not stored at location1");
                         break;
                     }
@@ -248,8 +248,8 @@ namespace NFUnitTestThread
             int[] value = new int[] { -2147483648, 0, 2147483647 };
             int temp1, temp2;
 
-            OutputHelper.WriteLine("Verifies the original value is returned at all time");
-            OutputHelper.WriteLine("Verifies value is stored in location1 upon equality");
+            // Verifies the original value is returned at all time
+            // Verifies value is stored in location1 upon equality
             for (int r = 0; r < 3; r++)
             {
                 for (int p = 0; p < 3; p++)

@@ -16,7 +16,7 @@ namespace NFUnitTestConversions
 		[TestMethod]
 		public void Expref_obj_ref_Test()
 		{
-			OutputHelper.WriteLine(" Converting from 'object' to a reference object. ");
+			//  Converting from 'object' to a reference object. 
 			Assert.IsTrue(ExprefTestClass_obj_ref.testMethod());
 		}
 
@@ -24,7 +24,7 @@ namespace NFUnitTestConversions
 		public void Expref_obj_ref_exc_Test()
 		{
 
-			OutputHelper.WriteLine(" Converting from 'object' to a reference object. ");
+			//  Converting from 'object' to a reference object. 
 			Assert.IsTrue(ExprefTestClass_obj_ref_exc.testMethod());
 		}
 
@@ -32,7 +32,7 @@ namespace NFUnitTestConversions
 		public void Expref_class_class_Test()
 		{
 
-			OutputHelper.WriteLine(" Tests that you can convert from a base class to a derived class");
+			//  Tests that you can convert from a base class to a derived class
 			Assert.IsTrue(ExprefTestClass_class_class.testMethod());
 		}
 
@@ -40,7 +40,7 @@ namespace NFUnitTestConversions
 		public void Expref_class_class_exc_Test()
 		{
 
-			OutputHelper.WriteLine(" Tests that you can convert from a base class to a derived class");
+			//  Tests that you can convert from a base class to a derived class
 			Assert.IsTrue(ExprefTestClass_class_class_exc.testMethod());
 		}
 
@@ -48,44 +48,44 @@ namespace NFUnitTestConversions
 		public void Expref_inter_struct_exc_Test()
 		{
 
-			OutputHelper.WriteLine(" Tests that you can convert from an interface to a struct that implements it.");
+			//  Tests that you can convert from an interface to a struct that implements it.
 			Assert.IsTrue(ExprefTestClass_inter_struct_exc.testMethod());
 		}
 
 		[TestMethod]
 		public void Expref_class_inter_Test()
 		{
-			OutputHelper.WriteLine(" Tests converting from a class to an interface that the class does not implement (but a derived class might).");
+			//  Tests converting from a class to an interface that the class does not implement (but a derived class might).
 			Assert.IsTrue(ExprefTestClass_class_inter.testMethod());
 		}
 
 		[TestMethod]
 		public void Expref_class_inter_exc_Test()
 		{
-			OutputHelper.WriteLine(" Tests converting from a class to an interface that the class does not implement (but a derived class might).");
+			//  Tests converting from a class to an interface that the class does not implement (but a derived class might).
 			Assert.IsTrue(ExprefTestClass_class_inter_exc.testMethod());
 		}
 
 		[TestMethod]
 		public void Expref_inter_class_Test()
 		{
-			OutputHelper.WriteLine(" Tests converting from an interface to a class");
-			OutputHelper.WriteLine("From any interface-type S to any class-type T, provided T is not sealed, or provided T implements S.");
-			OutputHelper.WriteLine("If T implements S:");
+			//  Tests converting from an interface to a class
+			// From any interface-type S to any class-type T, provided T is not sealed, or provided T implements S.
+			// If T implements S:
 			Assert.IsTrue(ExprefTestClass_inter_class.testMethod());
 		}
 
 		[TestMethod]
 		public void Expref_inter_class2_Test()
 		{
-			OutputHelper.WriteLine(" Tests converting from an interface to a class");
+			//  Tests converting from an interface to a class
 			Assert.IsTrue(ExprefTestClass_inter_class2.testMethod());
 		}
 
 		[TestMethod]
 		public void Expref_inter_class2_exc1_Test()
 		{
-			OutputHelper.WriteLine(" Tests converting from an interface to a class");
+			//  Tests converting from an interface to a class
 			Assert.IsTrue(ExprefTestClass_inter_class2_exc1.testMethod());
 		}
 
@@ -93,7 +93,7 @@ namespace NFUnitTestConversions
 		public void Expref_inter_class2_exc2_Test()
 		{
 
-			OutputHelper.WriteLine(" Tests converting from an interface to a class");
+			//  Tests converting from an interface to a class
 			Assert.IsTrue(ExprefTestClass_inter_class2_exc2.testMethod());
 		}
 
@@ -101,98 +101,98 @@ namespace NFUnitTestConversions
 		public void Expref_inter_class_exc_Test()
 		{
 
-			OutputHelper.WriteLine(" Tests converting from an interface to a class");
+			//  Tests converting from an interface to a class
 			Assert.IsTrue(ExprefTestClass_inter_class_exc.testMethod());
 		}
 
 		[TestMethod]
 		public void Expref_inter_class_sealed_Test()
 		{
-			OutputHelper.WriteLine(" Tests converting from an interface to a class");
+			//  Tests converting from an interface to a class
 			Assert.IsTrue(ExprefTestClass_inter_class_sealed.testMethod());
 		}
 
 		[TestMethod]
 		public void Expref_inter_class_sealed_exc_Test()
 		{
-			OutputHelper.WriteLine(" Tests converting from an interface to a class");
+			//  Tests converting from an interface to a class
 			Assert.IsTrue(ExprefTestClass_inter_class_sealed_exc.testMethod());
 		}
 
 		[TestMethod]
 		public void Expref_inter_inter_Test()
 		{
-			OutputHelper.WriteLine(" Tests converting from an interface to an interface");
+			//  Tests converting from an interface to an interface
 			Assert.IsTrue(ExprefTestClass_inter_inter.testMethod());
 		}
 
 		[TestMethod]
 		public void Expref_inter_inter_exc_Test()
 		{
-			OutputHelper.WriteLine(" Tests converting from an interface to an interface");
+			//  Tests converting from an interface to an interface
 			Assert.IsTrue(ExprefTestClass_inter_inter_exc.testMethod());
 		}
 
 		[TestMethod]
 		public void Impenum_zero_Test()
 		{
-			OutputHelper.WriteLine("Tests whether 0 can be converted to various enum types...");
+			// Tests whether 0 can be converted to various enum types...
 			Assert.IsTrue(ImpenumTestClass_zero.testMethod());
 		}
 
 		[TestMethod]
 		public void Impref_ref_obj_Test()
 		{
-			OutputHelper.WriteLine(" Converting from a reference object to 'object'");
+			//  Converting from a reference object to 'object'
 			Assert.IsTrue(ImprefTestClass_ref_obj.testMethod());
 		}
 
 		[TestMethod]
 		public void Impref_class_class_Test()
 		{
-			OutputHelper.WriteLine(" Tests that you can convert from a class to a base class. ");
+			//  Tests that you can convert from a class to a base class. 
 			Assert.IsTrue(ImprefTestClass_class_class.testMethod());
 		}
 
 		[TestMethod]
 		public void Impref_class_inter_Test()
 		{
-			OutputHelper.WriteLine(" Tests that you can convert from a class to an interface that it implements. ");
+			//  Tests that you can convert from a class to an interface that it implements. 
 			Assert.IsTrue(ImprefTestClass_class_inter.testMethod());
 		}
 
 		[TestMethod]
 		public void Impref_struct_inter_Test()
 		{
-			OutputHelper.WriteLine(" Tests that you can convert from a struct to an interface that it implements. ");
+			//  Tests that you can convert from a struct to an interface that it implements. 
 			Assert.IsTrue(ImprefTestClass_struct_inter.testMethod());
 		}
 
 		[TestMethod]
 		public void Impref_array_array_Test()
 		{
-			OutputHelper.WriteLine(" Tests that you can convert from an array of one class to an array of another class...");
+			//  Tests that you can convert from an array of one class to an array of another class...
 			Assert.IsTrue(ImprefTestClass_array_array.testMethod());
 		}
 
 		[TestMethod]
 		public void Impref_array_cloneable_Test()
 		{
-			OutputHelper.WriteLine(" Tests that you can convert from an array to System.ICloneable;");
+			//  Tests that you can convert from an array to System.ICloneable;
 			Assert.IsTrue(ImprefTestClass_array_cloneable.testMethod());
 		}
 
 		[TestMethod]
 		public void Impref_null_ref_Test()
 		{
-			OutputHelper.WriteLine(" Tests that you can convert from null to several reference types");
+			//  Tests that you can convert from null to several reference types
 			Assert.IsTrue(ImprefTestClass_null_ref.testMethod());
 		}
 
 		[TestMethod]
 		public void Impref_delegate_to_SystemDotDelegate_Test()
 		{
-			OutputHelper.WriteLine(" Tests that you can convert from a delegate type to System.Delegate");
+			//  Tests that you can convert from a delegate type to System.Delegate
 			Assert.IsTrue(ImprefTestClass_delegate_to_SystemDotDelegate.testMethod());
 		}
 
