@@ -21,11 +21,11 @@ namespace NFUnitTestSystemLib
             ///  2. Verifies that the created object is a DateTime
             /// </summary>
 
-            OutputHelper.WriteLine("Creating new DateTime Object");
+            // Creating new DateTime Object
             DateTime dt = new DateTime();
             OutputHelper.WriteLine(dt.ToString());
             Type type = dt.GetType();
-            OutputHelper.WriteLine("Verifying its type");
+            // Verifying its type
             Assert.IsType(type, Type.GetType("System.DateTime"));
         }
 
@@ -38,7 +38,7 @@ namespace NFUnitTestSystemLib
             /// </summary>
             /// 
 
-            OutputHelper.WriteLine("Generating 10 random DateTime and Verifying");
+            // Generating 10 random DateTime and Verifying
             for (int i = 0; i < 10; i++)
             {
                 DateTime dt = GetRandomDateTime();
@@ -64,7 +64,7 @@ namespace NFUnitTestSystemLib
             ///  2. Verifies the DateTimes are equal to DateTime.MinValue, DateTime.MaxValue
             /// </summary>
             /// 
-            OutputHelper.WriteLine("Creating Minimum DateTime and verifying");
+            // Creating Minimum DateTime and verifying
             DateTime minDT1 = DateTime.MinValue;
             DateTime minDT2 = new DateTime();
             DateTime minDT3 = new DateTime(504911232000000000);
@@ -74,14 +74,14 @@ namespace NFUnitTestSystemLib
                 (DateTime.Compare(minDT2, minDT3) != 0) ||
                 (DateTime.Compare(minDT3, minDT4) != 0))
             {
-                OutputHelper.WriteLine("DateTime.MinValue = '" + minDT1.Ticks + "'ticks,");
-                OutputHelper.WriteLine(" new DateTime() = '" + minDT2.Ticks + "'ticks,");
-                OutputHelper.WriteLine("new DateTime(0) = '" + minDT3.Ticks + "'ticks.");
+                // DateTime.MinValue = '" + minDT1.Ticks + "'ticks,
+                //  new DateTime() = '" + minDT2.Ticks + "'ticks,
+                // new DateTime(0) = '" + minDT3.Ticks + "'ticks.
                 throw new Exception("Expected 'DateTime.MinValue' is equal to 'new DateTime()', " +
                     "equal to 'new DateTime(0)', equal to 'new DateTime(1, 1, 1, 0, 0, 0, 0)' but got ");
             }
 
-            OutputHelper.WriteLine("Creating Maximum DateTime and verifying");
+            // Creating Maximum DateTime and verifying
             DateTime maxDateTime = new DateTime(946708127999999999);
             Assert.IsTrue(DateTime.MaxValue.Equals(maxDateTime));
         }
@@ -94,13 +94,13 @@ namespace NFUnitTestSystemLib
             ///  2. Verifies that they CompareTo each other
             /// </summary>
             /// 
-            OutputHelper.WriteLine("Generating random DateTimes b/n 1000 - 9000");
-            OutputHelper.WriteLine("comparing eachother with DateTime.CompareTo and verifying");
+            // Generating random DateTimes b/n 1000 - 9000
+            // comparing eachother with DateTime.CompareTo and verifying
             DateTime dt1 = DateTime_btwn_1801_And_2801();
             DateTime dt2 = new DateTime(year, month, day, hour, minute, second, millisec);
-            OutputHelper.WriteLine("Comparing two equal DateTimes");
+            // Comparing two equal DateTimes
             Assert.AreEqual(dt1.CompareTo(dt2), 0);
-            OutputHelper.WriteLine("Comparing Unequal DateTimes and Verifying");
+            // Comparing Unequal DateTimes and Verifying
             dt2 = dt1.Add(new TimeSpan(1));
             Assert.IsFalse(dt1.CompareTo(dt2) >= 0);
             Assert.IsFalse(dt2.CompareTo(dt1) <= 0);
@@ -114,7 +114,7 @@ namespace NFUnitTestSystemLib
             ///  2. Verifies that they Equals each other
             /// </summary>
             /// 
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
             DateTime dt1 = GetRandomDateTime();
             DateTime dt2 = new DateTime(ticks);
             Assert.IsTrue(dt1.Equals(dt2));
@@ -128,7 +128,7 @@ namespace NFUnitTestSystemLib
             ///  2. Verifies that it correctly returns a string from ToString
             /// </summary>
             /// 
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
             DateTime dt = GetRandomDateTime();
             int[] intArr = new int[] { dt.Month, dt.Day, dt.Year, dt.Hour, dt.Minute, dt.Second };
             string[] strArr = new string[] { "", "", "", "", "", "" };
@@ -164,13 +164,13 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
             OutputHelper.WriteLine($"Test DateTime is: {dt}");
 
-            OutputHelper.WriteLine("DateTime.ToString(String) using specified formats and Verifying");
+            // DateTime.ToString(String) using specified formats and Verifying
 
             // ShortDatePattern
             string specifier1 = "d";
@@ -214,7 +214,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -284,7 +284,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -369,7 +369,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -457,7 +457,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -514,7 +514,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -573,7 +573,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -640,7 +640,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -726,7 +726,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -829,7 +829,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -890,7 +890,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -938,7 +938,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -983,7 +983,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -1044,7 +1044,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -1129,7 +1129,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -1188,7 +1188,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -1263,7 +1263,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -1309,7 +1309,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -1364,7 +1364,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -1424,7 +1424,7 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Verifies DateTime.ToString (String) returns correct String using a specified format
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
 
             DateTime dt = GetRandomDateTime();
 
@@ -1465,7 +1465,7 @@ namespace NFUnitTestSystemLib
             ///  2. Runs the Add function and verifies output
             /// </summary>
             ///                       
-            OutputHelper.WriteLine("Generating random DateTimes ");
+            // Generating random DateTimes 
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             TimeSpan ts;
             Random random = new Random();
@@ -1480,7 +1480,7 @@ namespace NFUnitTestSystemLib
                 {
                     ts = new TimeSpan(random.Next(1000));
                 }
-                OutputHelper.WriteLine("Adding '" + ts.ToString() + "' Timespan to '" + dt1.ToString() + "'");
+                // Adding '" + ts.ToString() + "' Timespan to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.Add(ts);
                 Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ts.Ticks));
             }
@@ -1494,15 +1494,15 @@ namespace NFUnitTestSystemLib
             ///  2. Runs the AddDays function and verifies output
             /// </summary>
             /// 
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random +ve Days and verifying");
+            // Adding Random +ve Days and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double dy = random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + dy + "' days to '" + dt1.ToString() + "'");
+                // Adding '" + dy + "' days to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddDays(dy);
                 if (!CheckDeviation((long)(dt1.Ticks + (dy * TimeSpan.TicksPerDay)), dt2.Ticks))
                 {
@@ -1522,17 +1522,17 @@ namespace NFUnitTestSystemLib
             /// </summary>
             /// 
 
-            OutputHelper.WriteLine("This is fixed, DateTime.AddXXXX methods do not handle negative");
-            OutputHelper.WriteLine("values correctly on Device, see 22728 for details");
-            OutputHelper.WriteLine("Generating random DateTime");
+            // This is fixed, DateTime.AddXXXX methods do not handle negative
+            // values correctly on Device, see 22728 for details
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random -ve Days and verifying");
+            // Adding Random -ve Days and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double dy = -random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + dy + "' days to '" + dt1.ToString() + "'");
+                // Adding '" + dy + "' days to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddDays(dy);
                 if (!CheckDeviation((long)(dt1.Ticks + (dy * TimeSpan.TicksPerDay)), dt2.Ticks))
                 {
@@ -1552,15 +1552,15 @@ namespace NFUnitTestSystemLib
             /// </summary>
             /// 
 
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random +ve Hours and verifying");
+            // Adding Random +ve Hours and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double hr = random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + hr + "' hours to '" + dt1.ToString() + "'");
+                // Adding '" + hr + "' hours to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddHours(hr);
                 if (!CheckDeviation((long)(dt1.Ticks + (hr * TimeSpan.TicksPerHour)), dt2.Ticks))
                 {
@@ -1580,17 +1580,17 @@ namespace NFUnitTestSystemLib
             /// </summary>
             /// 
 
-            OutputHelper.WriteLine("This is fixed, DateTime.AddXXXX methods do not handle negative");
-            OutputHelper.WriteLine("values correctly on Device, see 22728 for details");
-            OutputHelper.WriteLine("Generating random DateTime");
+            // This is fixed, DateTime.AddXXXX methods do not handle negative
+            // values correctly on Device, see 22728 for details
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random -ve Hours and verifying");
+            // Adding Random -ve Hours and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double hr = -random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + hr + "' hours to '" + dt1.ToString() + "'");
+                // Adding '" + hr + "' hours to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddHours(hr);
                 if (!CheckDeviation((long)(dt1.Ticks + (hr * TimeSpan.TicksPerHour)), dt2.Ticks))
                 {
@@ -1608,15 +1608,15 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Runs the AddMilliseconds function and verifies output
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random +ve Milliseconds and verifying");
+            // Adding Random +ve Milliseconds and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double msec = random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + msec + "' milliseconds to '" + dt1.ToString() + "'");
+                // Adding '" + msec + "' milliseconds to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddMilliseconds(msec);
                 if (!CheckDeviation((long)(dt1.Ticks + (msec * TimeSpan.TicksPerMillisecond)), dt2.Ticks))
                 {
@@ -1634,17 +1634,17 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Runs the AddMilliseconds function and verifies output
             /// </summary>
-            OutputHelper.WriteLine("This is fixed, DateTime.AddXXXX methods do not handle negative");
-            OutputHelper.WriteLine("values correctly on Device, see 22728 for details");
-            OutputHelper.WriteLine("Generating random DateTime");
+            // This is fixed, DateTime.AddXXXX methods do not handle negative
+            // values correctly on Device, see 22728 for details
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random -ve Milliseconds and verifying");
+            // Adding Random -ve Milliseconds and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double msec = -random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + msec + "' milliseconds to '" + dt1.ToString() + "'");
+                // Adding '" + msec + "' milliseconds to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddMilliseconds(msec);
                 if (!CheckDeviation((long)(dt1.Ticks + (msec * TimeSpan.TicksPerMillisecond)), dt2.Ticks))
                 {
@@ -1662,15 +1662,15 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Runs the AddMinutes function and verifies output
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random +ve Minutes and verifying");
+            // Adding Random +ve Minutes and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double mnts = random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + mnts + "' minutes to '" + dt1.ToString() + "'");
+                // Adding '" + mnts + "' minutes to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddMinutes(mnts);
                 if (!CheckDeviation((long)(dt1.Ticks + (mnts * TimeSpan.TicksPerMinute)), dt2.Ticks))
                 {
@@ -1688,17 +1688,17 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Runs the AddMinutes function and verifies output
             /// </summary>
-            OutputHelper.WriteLine("This is fixed, DateTime.AddXXXX methods do not handle negative");
-            OutputHelper.WriteLine("values correctly on Device, see 22728 for details");
-            OutputHelper.WriteLine("Generating random DateTime");
+            // This is fixed, DateTime.AddXXXX methods do not handle negative
+            // values correctly on Device, see 22728 for details
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random -ve Minutes and verifying");
+            // Adding Random -ve Minutes and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double mnts = -random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + mnts + "' minutes to '" + dt1.ToString() + "'");
+                // Adding '" + mnts + "' minutes to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddMinutes(mnts);
                 if (!CheckDeviation((long)(dt1.Ticks + (mnts * TimeSpan.TicksPerMinute)), dt2.Ticks))
                 {
@@ -1716,15 +1716,15 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Runs the AddSeconds function and verifies output
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random +ve Seconds and verifying");
+            // Adding Random +ve Seconds and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double sec = random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + sec + "' seconds to '" + dt1.ToString() + "'");
+                // Adding '" + sec + "' seconds to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddSeconds(sec);
                 if (!CheckDeviation((long)(dt1.Ticks + (sec * TimeSpan.TicksPerSecond)), dt2.Ticks))
                 {
@@ -1742,17 +1742,17 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Runs the AddSeconds function and verifies output
             /// </summary>
-            OutputHelper.WriteLine("This is fixed, DateTime.AddXXXX methods do not handle negative");
-            OutputHelper.WriteLine("values correctly on Device, see 22728 for details");
-            OutputHelper.WriteLine("Generating random DateTime");
+            // This is fixed, DateTime.AddXXXX methods do not handle negative
+            // values correctly on Device, see 22728 for details
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random -ve Seconds and verifying");
+            // Adding Random -ve Seconds and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 double sec = -random.Next(1000) * rdmFraction[random.Next(rdmFraction.Length)];
-                OutputHelper.WriteLine("Adding '" + sec + "' seconds to '" + dt1.ToString() + "'");
+                // Adding '" + sec + "' seconds to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddSeconds(sec);
                 if (!CheckDeviation((long)(dt1.Ticks + (sec * TimeSpan.TicksPerSecond)), dt2.Ticks))
                 {
@@ -1770,15 +1770,15 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Runs the AddTicks function and verifies output
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random +ve Ticks and verifying");
+            // Adding Random +ve Ticks and verifying
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 long ticks = (long)random.Next(1000);
-                OutputHelper.WriteLine("Adding '" + ticks + "' ticks to '" + dt1.ToString() + "'");
+                // Adding '" + ticks + "' ticks to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddTicks(ticks);
                 Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ticks));
             }
@@ -1791,15 +1791,15 @@ namespace NFUnitTestSystemLib
             ///  1. Creates a DateTime
             ///  2. Runs the AddTicks function and verifies output
             /// </summary>
-            OutputHelper.WriteLine("Generating random DateTime");
+            // Generating random DateTime
             DateTime[] dt1Arr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
-            OutputHelper.WriteLine("Adding Random -ve Ticks and verifying");
+            // Adding Random -ve Ticks and verifying
             for (int i = 0; i < 10; i++)
             {
                 DateTime dt1 = dt1Arr[i];
                 long ticks = -(long)random.Next(1000);
-                OutputHelper.WriteLine("Adding '" + ticks + "' ticks to '" + dt1.ToString() + "'");
+                // Adding '" + ticks + "' ticks to '" + dt1.ToString() + "'
                 DateTime dt2 = dt1.AddTicks(ticks);
                 Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ticks));
             }
@@ -1812,17 +1812,17 @@ namespace NFUnitTestSystemLib
             ///  1. Creates two DateTimes
             ///  2. Verifies that they Compare with each other
             /// </summary>
-            OutputHelper.WriteLine("Creating two Random but equal DateTime b/n 1000 - 9000");
-            OutputHelper.WriteLine("Comparing eachother with DateTime.Compare and Verifying");
+            // Creating two Random but equal DateTime b/n 1000 - 9000
+            // Comparing eachother with DateTime.Compare and Verifying
             DateTime dt1 = DateTime_btwn_1801_And_2801();
             DateTime dt2 = new DateTime(year, month, day, hour, minute, second, millisec);
-            OutputHelper.WriteLine("Comparing equal DateTimes and Verifying");
+            // Comparing equal DateTimes and Verifying
             if (DateTime.Compare(dt1, dt2) != 0)
             {
                 throw new Exception("Expected DateTime.Compare(" + dt1.ToString() + ", " + dt2.ToString() +
                     ") returns '0' but got '" + DateTime.Compare(dt1, dt2) + "'");
             }
-            OutputHelper.WriteLine("Comparing Unequal DateTimes and Verifying");
+            // Comparing Unequal DateTimes and Verifying
             dt2 = dt1.Add(new TimeSpan(1));
             if (DateTime.Compare(dt1, dt2) >= 0)
             {
@@ -1843,16 +1843,16 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the accuracy of the DaysInMonth method
             /// </summary>        
-            OutputHelper.WriteLine("Generates a random year and month, and");
+            // Generates a random year and month, and
             Random random = new Random();
-            OutputHelper.WriteLine("Verifies the number of days in the specific month/year");
+            // Verifies the number of days in the specific month/year
             for (int i = 0; i < 100; i++)
             {
                 int yr = random.Next(9999) + 1;
                 int mnth = random.Next(12) + 1;
                 DaysInMonthTest(yr, mnth);
             }
-            OutputHelper.WriteLine("Verifying no. of days in Feb, for 20th and 21st centuries");
+            // Verifying no. of days in Feb, for 20th and 21st centuries
             for (int yr = 1900; yr < 2100; yr += 4)
             {
                 DaysInMonthTest(yr, 2);
@@ -1862,8 +1862,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_EqualsTest25()
         {
-            OutputHelper.WriteLine("Creating random-equal DateTimes");
-            OutputHelper.WriteLine("And Verifying they are equal");
+            // Creating random-equal DateTimes
+            // And Verifying they are equal
             DateTime dt1 = DateTime_btwn_1801_And_2801();
             DateTime dt2 = new DateTime(year, month, day, hour, minute, second, millisec);
             Assert.IsTrue(DateTime.Equals(dt1, dt2));
@@ -1875,8 +1875,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_Subtract_DateTimeTest26()
         {
-            OutputHelper.WriteLine("Creating two Random DateTimes,");
-            OutputHelper.WriteLine("dt1.Subtract(dt2) and verifying");
+            // Creating two Random DateTimes,
+            // dt1.Subtract(dt2) and verifying
             DateTime dt1 = GetRandomDateTime();
             DateTime dt2 = GetRandomDateTime();
             TimeSpan ts1 = dt1.Subtract(dt2);
@@ -1888,8 +1888,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_Subtract_TimeSpanTest27()
         {
-            OutputHelper.WriteLine("Creating now DateTime");
-            OutputHelper.WriteLine("Subtracting random timespans and ");
+            // Creating now DateTime
+            // Subtracting random timespans and 
             DateTime[] dtArr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
             TimeSpan ts;
@@ -1918,8 +1918,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_op_AdditionTest30()
         {
-            OutputHelper.WriteLine("Creating Random DateTimes,");
-            OutputHelper.WriteLine("Adds a specified period of time and verifying");
+            // Creating Random DateTimes,
+            // Adds a specified period of time and verifying
 
             DateTime[] dtArr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
@@ -1944,8 +1944,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_op_Subtraction_DateTimeTest31()
         {
-            OutputHelper.WriteLine("Creating Random DateTimes,");
-            OutputHelper.WriteLine("Subtracting one from the other and verifying");
+            // Creating Random DateTimes,
+            // Subtracting one from the other and verifying
             DateTime[] dtArr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
             for (int i = 0; i < dtArr.Length; i++)
@@ -1960,8 +1960,8 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_op_Subtraction_TimeSpanTest32()
         {
-            OutputHelper.WriteLine("Creating Random DateTime,");
-            OutputHelper.WriteLine("Subtracting random TimeSpan and verifying");
+            // Creating Random DateTime,
+            // Subtracting random TimeSpan and verifying
             DateTime[] dtArr = Get_ArrayOfRandomDateTimes();
             Random random = new Random();
             for (int i = 0; i < dtArr.Length; i++)
@@ -1977,9 +1977,9 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_op_EqualityTest33()
         {
-            OutputHelper.WriteLine("Creating Random DateTime,");
-            OutputHelper.WriteLine("Creating another DateTime equal to previous one");
-            OutputHelper.WriteLine("Verifying the two DateTimes are equal using '=='");
+            // Creating Random DateTime,
+            // Creating another DateTime equal to previous one
+            // Verifying the two DateTimes are equal using '=='
             DateTime dt1 = GetRandomDateTime();
             DateTime dt2 = new DateTime(dt1.Ticks);
 
@@ -1993,9 +1993,9 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_op_InequalityTest34()
         {
-            OutputHelper.WriteLine("Creating Random DateTime,");
-            OutputHelper.WriteLine("Creating another Different DateTime");
-            OutputHelper.WriteLine("Verifying the two DateTimes are not equal using '!='");
+            // Creating Random DateTime,
+            // Creating another Different DateTime
+            // Verifying the two DateTimes are not equal using '!='
             DateTime dt1 = GetRandomDateTime();
             DateTime dt2 = new DateTime(dt1.Ticks + 100);
 
@@ -2009,9 +2009,9 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_op_LessThanTest35()
         {
-            OutputHelper.WriteLine("Creating Random DateTime,");
-            OutputHelper.WriteLine("Creating another Different DateTime greater than previous one");
-            OutputHelper.WriteLine("Verifying 1st DateTime is less than 2nd using '<'");
+            // Creating Random DateTime,
+            // Creating another Different DateTime greater than previous one
+            // Verifying 1st DateTime is less than 2nd using '<'
             DateTime dt1 = GetRandomDateTime();
             DateTime dt2 = new DateTime(year + 1, month, day, hour, minute, second, millisec);
 
@@ -2025,10 +2025,10 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_op_LessThanOrEqualTest36()
         {
-            OutputHelper.WriteLine("Creating Random DateTime, Creaing 2nd equal DateTime");
-            OutputHelper.WriteLine("Creating 3rd Different DateTime greater than previous two");
-            OutputHelper.WriteLine("Verifying 1st DateTime is less than or equal to 2nd DateTime using '<='");
-            OutputHelper.WriteLine("Verifying 1st DateTime is less than or equal to 3rd DateTime using '<='");
+            // Creating Random DateTime, Creaing 2nd equal DateTime
+            // Creating 3rd Different DateTime greater than previous two
+            // Verifying 1st DateTime is less than or equal to 2nd DateTime using '<='
+            // Verifying 1st DateTime is less than or equal to 3rd DateTime using '<='
             DateTime dt1 = GetRandomDateTime();
             DateTime dt2 = new DateTime(year, month, day, hour, minute, second, millisec);
             DateTime dt3 = new DateTime(year + 1, month, day, hour, minute, second, millisec);
@@ -2047,9 +2047,9 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_op_GreaterThanTest37()
         {
-            OutputHelper.WriteLine("Creating Random DateTime,");
-            OutputHelper.WriteLine("Creating another Different DateTime greater than previous one");
-            OutputHelper.WriteLine("Verifying 2nd DateTime is greater than 1st using '>'");
+            // Creating Random DateTime,
+            // Creating another Different DateTime greater than previous one
+            // Verifying 2nd DateTime is greater than 1st using '>'
             DateTime dt1 = GetRandomDateTime();
             DateTime dt2 = new DateTime(year + 1, month, day, hour, minute, second, millisec);
 
@@ -2063,10 +2063,10 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_op_GreaterThanOrEqualTest38()
         {
-            OutputHelper.WriteLine("Creating Random DateTime, Creaing 2nd equal DateTime");
-            OutputHelper.WriteLine("Creating 3rd Different DateTime greater than previous two");
-            OutputHelper.WriteLine("Verifying 1st DateTime is greater than or equal to 2nd DateTime using '>='");
-            OutputHelper.WriteLine("Verifying 3rd DateTime is greater than or equal to 1st DateTime using '>='");
+            // Creating Random DateTime, Creaing 2nd equal DateTime
+            // Creating 3rd Different DateTime greater than previous two
+            // Verifying 1st DateTime is greater than or equal to 2nd DateTime using '>='
+            // Verifying 3rd DateTime is greater than or equal to 1st DateTime using '>='
             DateTime dt1 = GetRandomDateTime();
             DateTime dt2 = new DateTime(year, month, day, hour, minute, second, millisec);
             DateTime dt3 = new DateTime(year + 1, month, day, hour, minute, second, millisec);
@@ -2088,7 +2088,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the MinValue property
             /// </summary>
-            OutputHelper.WriteLine("Getting the Min. DateTime and Verifying");
+            // Getting the Min. DateTime and Verifying
             DateTime field = DateTime.MinValue;
             OutputHelper.WriteLine(field.Ticks.ToString());
             Assert.AreEqual(field.Ticks, 504911232000000000);
@@ -2100,7 +2100,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the MinValue property
             /// </summary>
-            OutputHelper.WriteLine("Getting the Max. DateTime and Verifying");
+            // Getting the Max. DateTime and Verifying
             DateTime field = DateTime.MaxValue;
             OutputHelper.WriteLine(field.Ticks.ToString());
             Assert.AreEqual(field.Ticks, 946708127999999999);
@@ -2112,7 +2112,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the Date property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the Date and Verifying");
+            // Creating a DateTime, getting the Date and Verifying
             DateTime dt = GetRandomDateTime();
             DateTime _date = dt.Date;
             if ((_date.Year != dt.Year) || (_date.Month != dt.Month) || (_date.Day != dt.Day) ||
@@ -2130,7 +2130,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the Day property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the Day and Verifying");
+            // Creating a DateTime, getting the Day and Verifying
             DateTime testDateTime = GetRandomDateTime();
             Int32 _day = testDateTime.Day;
             Assert.AreEqual(_day, day);
@@ -2142,7 +2142,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the DayOfWeek property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the DayOfWeek and Verifying");
+            // Creating a DateTime, getting the DayOfWeek and Verifying
             DateTime testDateTime = new DateTime(2005, 1, 28);
             DayOfWeek prop = testDateTime.DayOfWeek;
             Assert.AreEqual((int)prop, (int)DayOfWeek.Friday);
@@ -2154,8 +2154,8 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the DayOfYear property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the DayOfYear and Verifying");
-            OutputHelper.WriteLine("DateTime::DayOfYear - Normal ");
+            // Creating a DateTime, getting the DayOfYear and Verifying
+            // DateTime::DayOfYear - Normal 
             DateTime testDateTime = new DateTime(2005, 1, 1);
             int _dayOfYear = testDateTime.DayOfYear;
             Assert.AreEqual(_dayOfYear, 1);
@@ -2167,7 +2167,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the Hour property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the Hour and Verifying");
+            // Creating a DateTime, getting the Hour and Verifying
             DateTime testDateTime = GetRandomDateTime();
             Int32 _hour = testDateTime.Hour;
             Assert.AreEqual(_hour, hour);
@@ -2179,7 +2179,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the Millisecond property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the Milliseconds and Verifying");
+            // Creating a DateTime, getting the Milliseconds and Verifying
             DateTime testDateTime = GetRandomDateTime();
             Int32 _mSec = testDateTime.Millisecond;
             Assert.AreEqual(_mSec, millisec);
@@ -2191,7 +2191,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the Minute property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the Minute and Verifying");
+            // Creating a DateTime, getting the Minute and Verifying
             DateTime testDateTime = GetRandomDateTime();
             Int32 _minute = testDateTime.Minute;
             Assert.AreEqual(_minute, minute);
@@ -2203,7 +2203,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the Month property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the Month and Verifying");
+            // Creating a DateTime, getting the Month and Verifying
             DateTime testDateTime = GetRandomDateTime();
             Int32 _month = testDateTime.Month;
             Assert.AreEqual(_month, month);
@@ -2216,10 +2216,10 @@ namespace NFUnitTestSystemLib
             /// 1. Creates 2 DateTimes
             /// 2. Verifies they are equal in all but Seconds and Millisecond
             /// </summary>
-            OutputHelper.WriteLine("Creating 2 DateTimes and verifying they are equal in yy/mm/dd/hr/mn");
+            // Creating 2 DateTimes and verifying they are equal in yy/mm/dd/hr/mn
             DateTime test0 = DateTime.UtcNow;
             DateTime test1 = DateTime.UtcNow;
-            OutputHelper.WriteLine("Verifying");
+            // Verifying
             if ((test0.Year != test1.Year) || (test0.Month != test1.Month) ||
                 (test0.Day != test1.Day) || (test0.Hour != test1.Hour) ||
                 (test0.Minute != test1.Minute))
@@ -2235,7 +2235,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the Second property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the Second and Verifying");
+            // Creating a DateTime, getting the Second and Verifying
             DateTime testDateTime = GetRandomDateTime();
             Int32 _sec = testDateTime.Second;
             Assert.AreEqual(_sec, second);
@@ -2247,7 +2247,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the Ticks property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime, getting the Ticks and Verifying");
+            // Creating a DateTime, getting the Ticks and Verifying
             DateTime testDateTime = new System.DateTime(504911232000000000);
             long _ticks = testDateTime.Ticks;
             Assert.AreEqual(_ticks, 504911232000000000);
@@ -2259,7 +2259,7 @@ namespace NFUnitTestSystemLib
             /// <summary>
             ///  1. Verifies the Year property
             /// </summary>
-            OutputHelper.WriteLine("Creating a DateTime.Today, getting the year and Verifying");
+            // Creating a DateTime.Today, getting the year and Verifying
             DateTime testDateTime = GetRandomDateTime();
             Int32 _year = testDateTime.Year;
             Assert.AreEqual(_year, year);
@@ -2273,16 +2273,16 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void DateTime_BelowMinDateTime_ArgumentOutOfRangeExceptionTest58()
         {
-            OutputHelper.WriteLine("Creating a DateTime with -ve Ticks and,");
-            OutputHelper.WriteLine("verifying ArgumentOutOfRangeException is thrown");
+            // Creating a DateTime with -ve Ticks and,
+            // verifying ArgumentOutOfRangeException is thrown
             Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { DateTime dt = new DateTime(-(new Random().Next(10) + 1)); });
         }
 
         [TestMethod]
         public void DateTime_AboveMaxDatTime_ArgumentOutOfRangeExceptionTest59()
         {
-            OutputHelper.WriteLine("Creating a DateTime later than DateTime.MaxValue and,");
-            OutputHelper.WriteLine("verifying ArgumentOutOfRangeException is thrown");
+            // Creating a DateTime later than DateTime.MaxValue and,
+            // verifying ArgumentOutOfRangeException is thrown
             Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { DateTime dt1 = new DateTime(DateTime.MaxValue.Ticks + 1); });
             Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { DateTime dt2 = new DateTime(10000, 1, 1, 0, 0, 0, 0); });
         }
@@ -2471,7 +2471,7 @@ namespace NFUnitTestSystemLib
             //fail if deviates by more than 0.05ms (500 ticks)
             if (diff > 500)
             {
-                OutputHelper.WriteLine("Difference ticks = '" + diff.ToString() + "'");
+                // Difference ticks = '" + diff.ToString() + "'
                 return false;
             }
             return true;
@@ -2480,7 +2480,7 @@ namespace NFUnitTestSystemLib
         public void DaysInMonthTest(int yr, int mnth)
         {
             int daysInMonth = DateTime.DaysInMonth(yr, mnth);
-            OutputHelper.WriteLine("Got " + daysInMonth + " number of days in " + mnth + "/" + yr + " mm/yr");
+            // Got " + daysInMonth + " number of days in " + mnth + "/" + yr + " mm/yr
             if (mnth == 2)
             {
                 if (IsLeapYear(yr))

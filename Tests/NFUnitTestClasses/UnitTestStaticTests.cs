@@ -16,99 +16,99 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Static_Inst01_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2 ");
-            OutputHelper.WriteLine(" When a static member is referenced in a member-access");
-            OutputHelper.WriteLine(" of the form E.M, E must denote a type. It is an error for");
-            OutputHelper.WriteLine(" E to denote an instance.");
+            //  Section 10.2 
+            //  When a static member is referenced in a member-access
+            //  of the form E.M, E must denote a type. It is an error for
+            //  E to denote an instance.
             Assert.IsTrue(Static_InstTestClass01.testMethod());
         }
 
         [TestMethod]
         public void Static_Inst07_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2 ");
-            OutputHelper.WriteLine(" A static field identifies exactly one storage location.");
-            OutputHelper.WriteLine(" No matter how many instances of a class are created,");
-            OutputHelper.WriteLine(" there is only ever one copy of a static field.");
+            //  Section 10.2 
+            //  A static field identifies exactly one storage location.
+            //  No matter how many instances of a class are created,
+            //  there is only ever one copy of a static field.
             Assert.IsTrue(Static_InstTestClass07.testMethod());
         }
 
         [TestMethod]
         public void Static_Inst14_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2 ");
-            OutputHelper.WriteLine(" When an instance member is referenced in a member-access");
-            OutputHelper.WriteLine(" of the form E.M, E must denote an instance. It is an error ");
-            OutputHelper.WriteLine(" for E to denote a type.");
+            //  Section 10.2 
+            //  When an instance member is referenced in a member-access
+            //  of the form E.M, E must denote an instance. It is an error 
+            //  for E to denote a type.
             Assert.IsTrue(Static_InstTestClass14.testMethod());
         }
 
         [TestMethod]
         public void Static_Inst18_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2 ");
-            OutputHelper.WriteLine(" Every instance of a class contains a separate copy ");
-            OutputHelper.WriteLine(" of all instance fields of the class.");
+            //  Section 10.2 
+            //  Every instance of a class contains a separate copy 
+            //  of all instance fields of the class.
             Assert.IsTrue(Static_InstTestClass18.testMethod());
         }
 
         [TestMethod]
         public void Static_Inst19_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2 ");
-            OutputHelper.WriteLine(" An instance function member (method, property ");
-            OutputHelper.WriteLine(" accessor, indexer accessor, constructor, or ");
-            OutputHelper.WriteLine(" destructor) operates on a given instance of ");
-            OutputHelper.WriteLine(" the class, and this instance can be accessed as");
-            OutputHelper.WriteLine(" this.");
+            //  Section 10.2 
+            //  An instance function member (method, property 
+            //  accessor, indexer accessor, constructor, or 
+            //  destructor) operates on a given instance of 
+            //  the class, and this instance can be accessed as
+            //  this.
             Assert.IsTrue(Static_InstTestClass19.testMethod());
         }
 
         [TestMethod]
         public void Static_Inst20_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2 ");
-            OutputHelper.WriteLine(" An instance function member (method, property ");
-            OutputHelper.WriteLine(" accessor, indexer accessor, constructor, or ");
-            OutputHelper.WriteLine(" destructor) operates on a given instance of ");
-            OutputHelper.WriteLine(" the class, and this instance can be accessed as");
-            OutputHelper.WriteLine(" this.");
+            //  Section 10.2 
+            //  An instance function member (method, property 
+            //  accessor, indexer accessor, constructor, or 
+            //  destructor) operates on a given instance of 
+            //  the class, and this instance can be accessed as
+            //  this.
             Assert.IsTrue(Static_InstTestClass20.testMethod());
         }
 
         [TestMethod]
         public void Static_Inst21_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2 ");
-            OutputHelper.WriteLine(" An instance function member (method, property ");
-            OutputHelper.WriteLine(" accessor, indexer accessor, constructor, or ");
-            OutputHelper.WriteLine(" destructor) operates on a given instance of ");
-            OutputHelper.WriteLine(" the class, and this instance can be accessed as");
-            OutputHelper.WriteLine(" this.");
+            //  Section 10.2 
+            //  An instance function member (method, property 
+            //  accessor, indexer accessor, constructor, or 
+            //  destructor) operates on a given instance of 
+            //  the class, and this instance can be accessed as
+            //  this.
             Assert.IsTrue(Static_InstTestClass21.testMethod());
         }
 
         [TestMethod]
         public void Static_Inst22_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2 ");
-            OutputHelper.WriteLine(" An instance function member (method, property ");
-            OutputHelper.WriteLine(" accessor, indexer accessor, constructor, or ");
-            OutputHelper.WriteLine(" destructor) operates on a given instance of ");
-            OutputHelper.WriteLine(" the class, and this instance can be accessed as");
-            OutputHelper.WriteLine(" this.");
+            //  Section 10.2 
+            //  An instance function member (method, property 
+            //  accessor, indexer accessor, constructor, or 
+            //  destructor) operates on a given instance of 
+            //  the class, and this instance can be accessed as
+            //  this.
             Assert.IsTrue(Static_InstTestClass22.testMethod());
         }
 
         [TestMethod]
         public void Static_Inst23_Test()
         {
-            OutputHelper.WriteLine(" Section 10.2 ");
-            OutputHelper.WriteLine(" An instance function member (method, property ");
-            OutputHelper.WriteLine(" accessor, indexer accessor, constructor, or ");
-            OutputHelper.WriteLine(" destructor) operates on a given instance of ");
-            OutputHelper.WriteLine(" the class, and this instance can be accessed as");
-            OutputHelper.WriteLine(" this.");
+            //  Section 10.2 
+            //  An instance function member (method, property 
+            //  accessor, indexer accessor, constructor, or 
+            //  destructor) operates on a given instance of 
+            //  the class, and this instance can be accessed as
+            //  this.
             Assert.IsTrue(Static_InstTestClass23.testMethod());
         }
 

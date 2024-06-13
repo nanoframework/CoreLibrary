@@ -40,7 +40,7 @@ namespace NFUnitTestStruct
         [TestMethod]
         public void Structs13_Test()
         {
-            OutputHelper.WriteLine("Expected failure, see 16852 for more details");
+            // Expected failure, see 16852 for more details
 
             StructsTestClass_13_Notes.Note();
             Assert.IsTrue(StructsTestClass_13.testMethod());
@@ -199,7 +199,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Declaring a struct with and without a trailing semicolon. ");
+                //  Declaring a struct with and without a trailing semicolon. 
             }
         }
         struct StructsTestClass_01_Struct1
@@ -226,7 +226,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify all valid protection levels for members and methods");
+                //  Verify all valid protection levels for members and methods
             }
         }
         struct StructsTestClass_04_Struct1
@@ -273,7 +273,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify struct can implement an interface.");
+                //  Verify struct can implement an interface.
             }
         }
         interface Inter1
@@ -297,7 +297,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify struct can implement multiple interfaces.");
+                //  Verify struct can implement multiple interfaces.
             }
         }
         interface StructsTestClass_12_Inter1
@@ -331,7 +331,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify struct can implement multiple interfaces that contain methods with identical signatures.");
+                //  Verify struct can implement multiple interfaces that contain methods with identical signatures.
             }
         }
         interface StructsTestClass_13_Inter1
@@ -375,7 +375,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify that a struct can contain a class");
+                //  Verify that a struct can contain a class
             }
         }
         class StructsTestClass_14_Class1
@@ -402,7 +402,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify that a struct can contain another sruct");
+                //  Verify that a struct can contain another sruct
             }
         }
         struct StructsTestClass_15_Struct1
@@ -430,7 +430,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("Attempt to use an empty StructsTestClass_19_Struct");
+                // Attempt to use an empty StructsTestClass_19_Struct
             }
         }
         struct StructsTestClass_19_Struct1
@@ -454,7 +454,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("attempt to return a struct");
+                // attempt to return a struct
             }
         }
         public struct StructsTestClass_21_Struct1
@@ -490,7 +490,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("struct like an object");
+                // struct like an object
             }
         }
         struct StructsTestClass_23_Struct1
@@ -515,7 +515,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("  struct values aren't changed when boxed and passed as interfaces.");
+                //   struct values aren't changed when boxed and passed as interfaces.
             }
         }
         public interface Interface1
@@ -557,7 +557,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("  StructsTestClass_26_A ttempt to make a parameterized conStructsTestClass_26_Structor for a StructsTestClass_?_Struct.");
+                //   StructsTestClass_26_A ttempt to make a parameterized conStructsTestClass_26_Structor for a StructsTestClass_?_Struct.
             }
         }
         struct StructsTestClass_26_Struct1
@@ -581,7 +581,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Explicit test of object boxing conversions to and from a StructsTestClass_28_Struct.");
+                //  Explicit test of object boxing conversions to and from a StructsTestClass_28_Struct.
             }
         }
         struct StructsTestClass_28_Struct1
@@ -606,7 +606,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" StructsTestClass_29 conStructsTestClass_29_Structor forwarding works for StructsTestClass_?_Structs");
+                //  StructsTestClass_29 conStructsTestClass_29_Structor forwarding works for StructsTestClass_?_Structs
             }
         }
         struct Foo
@@ -642,7 +642,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" nested struct should work");
+                //  nested struct should work
             }
         }
         public struct StructsTestClass_32_Struct
@@ -672,7 +672,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" nested class inside struct should work");
+                //  nested class inside struct should work
             }
         }
         public struct StructsTestClass_33_Struct
@@ -702,7 +702,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" nested struct should work");
+                //  nested struct should work
             }
         }
         public struct StructsTestClass_34_Struct
@@ -742,7 +742,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" cast struct to inherited interface type");
+                //  cast struct to inherited interface type
             }
         }
         public interface StructsTestClass_35_Interface
@@ -772,7 +772,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" cast struct to inherited interface type");
+                //  cast struct to inherited interface type
             }
         }
         public interface StructsTestClass_36_Interface
@@ -802,7 +802,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" cast struct to inherited interface type");
+                //  cast struct to inherited interface type
             }
         }
         public interface StructsTestClass_37_Interface
@@ -838,7 +838,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" cast struct to inherited interface type through function");
+                //  cast struct to inherited interface type through function
             }
         }
         public interface StructsTestClass_38_Interface
@@ -880,7 +880,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" property in struct");
+                //  property in struct
             }
         }
         public struct StructsTestClass_40_Struct
@@ -908,7 +908,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" indexer in struct");
+                //  indexer in struct
             }
         }
         public struct StructsTestClass_41_Struct
@@ -936,7 +936,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" interface indexer in StructsTestClass_42_Struct");
+                //  interface indexer in StructsTestClass_42_Struct
             }
         }
         public interface StructsTestClass_42_Interface
@@ -968,7 +968,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" delegate in struct");
+                //  delegate in struct
             }
         }
         public struct StructsTestClass_43_Struct
@@ -995,7 +995,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" delegate in struct assing interface as a delegate argument");
+                //  delegate in struct assing interface as a delegate argument
             }
         }
         public interface StructsTestClass_44_Interface
@@ -1026,7 +1026,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("The this object cannot be used before all of its fields are assigned to");
+                // The this object cannot be used before all of its fields are assigned to
             }
         }
         public struct StructsTestClass_55

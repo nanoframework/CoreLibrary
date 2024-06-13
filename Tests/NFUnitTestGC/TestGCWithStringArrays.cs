@@ -15,7 +15,7 @@ namespace NFUnitTestGC
         [TestMethod]
         public void TestCompactionForNotFixedStringArray()
         {
-            OutputHelper.WriteLine("Starting TestCompactionForNotFixedStringArray");
+            // Starting TestCompactionForNotFixedStringArray
 
             for (int loop = 0; loop < 10; loop++)
             {
@@ -35,14 +35,14 @@ namespace NFUnitTestGC
                     testNativeBuffer[i] = new HolderForString(Guid.NewGuid().ToString());
                 }
 
-                OutputHelper.WriteLine("Large HolderForString array created");
-                OutputHelper.WriteLine("Forcing compaction to occurr");
+                // Large HolderForString array created
+                // Forcing compaction to occurr
 
                 // Causes compaction
                 InitiateStringCompaction();
 
-                OutputHelper.WriteLine("Compaction occurred");
-                OutputHelper.WriteLine("Checking arrays for corrupted data...");
+                // Compaction occurred
+                // Checking arrays for corrupted data...
 
                 int index = 0;
 
@@ -57,10 +57,10 @@ namespace NFUnitTestGC
                     index++;
                 }
 
-                OutputHelper.WriteLine("No corruption detected in array");
+                // No corruption detected in array
             }
 
-            OutputHelper.WriteLine("Completed TestCompactionForNotFixedArray");
+            // Completed TestCompactionForNotFixedArray
         }
 
         // This function cause compaction to occur.

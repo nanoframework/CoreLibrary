@@ -214,10 +214,10 @@ namespace NFUnitTestSystemLib
             ///
 
             Guid guid1 = Guid.Empty;
-            OutputHelper.WriteLine("Verifing any instance of Guid, regardless of its value, is greater than null");
+            // Verifing any instance of Guid, regardless of its value, is greater than null
             Assert.AreEqual(guid1.CompareTo(null), 1);
             Byte[] _bArr = new Byte[16];
-            OutputHelper.WriteLine("Creating a Guid with all bytes zero");
+            // Creating a Guid with all bytes zero
             Guid guid2 = new Guid(_bArr);
             Assert.AreEqual(guid1.CompareTo(guid2), 0);
             Guid guid3 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
@@ -278,13 +278,13 @@ namespace NFUnitTestSystemLib
             /// </summary>
             ///
 
-            OutputHelper.WriteLine("Creating 3 Guids with Guid.Empty and hex values");
+            // Creating 3 Guids with Guid.Empty and hex values
             Guid guid11 = Guid.Empty;
             Guid guid12 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
             Guid guid13 = new Guid(0x7FFFFFFF, 0x7FFF, 0x7FFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
             Guid[] gArr1 = new Guid[] { guid11, guid12, guid13 };
 
-            OutputHelper.WriteLine("Creating Guids with 16 bytes constructor");
+            // Creating Guids with 16 bytes constructor
             Byte[] _bArr1 = new Byte[16];
             Guid guid21 = new Guid(_bArr1);
             Byte[] _bArr2 = new Byte[] { 181, 54, 255, 77, 222, 157, 118, 79, 154, 42, 150, 67, 80, 71, 6, 61 };
@@ -293,7 +293,7 @@ namespace NFUnitTestSystemLib
             Guid guid23 = new Guid(_bArr3);
             Guid[] gArr2 = new Guid[] { guid21, guid22, guid23 };
 
-            OutputHelper.WriteLine("Creating 3 Guids with Guid(int, short, short, byte ....) constructor");
+            // Creating 3 Guids with Guid(int, short, short, byte ....) constructor
             Guid guid31 = new Guid(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             Guid guid32 = new Guid(1308571317, 40414, 20342, 154, 42, 150, 67, 80, 71, 6, 61);
             Guid guid33 = new Guid(int.MaxValue, short.MaxValue, short.MaxValue, byte.MaxValue, byte.MaxValue,

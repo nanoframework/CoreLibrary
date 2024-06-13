@@ -16,95 +16,95 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void ValueArray01_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" byte is an alias for System.Byte");
+            //  Section 4.1
+            //  byte is an alias for System.Byte
             ValueArrayTestClass01.testMethod();
         }
 
         [TestMethod]
         public void ValueArray02_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" char is an alias for System.Char");
+            //  Section 4.1
+            //  char is an alias for System.Char
             ValueArrayTestClass02.testMethod();
         }
 
         [TestMethod]
         public void ValueArray03_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" short is an alias for System.Int16");
+            //  Section 4.1
+            //  short is an alias for System.Int16
             ValueArrayTestClass03.testMethod();
         }
 
         [TestMethod]
         public void ValueArray04_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" int is an alias for System.Int32");
+            //  Section 4.1
+            //  int is an alias for System.Int32
             ValueArrayTestClass04.testMethod();
         }
 
         [TestMethod]
         public void ValueArray05_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" long is an alias for System.Int64");
+            //  Section 4.1
+            //  long is an alias for System.Int64
             ValueArrayTestClass05.testMethod();
         }
 
         [TestMethod]
         public void ValueArray06_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" float is an alias for System.Single");
+            //  Section 4.1
+            //  float is an alias for System.Single
             ValueArrayTestClass06.testMethod();
         }
 
         [TestMethod]
         public void ValueArray07_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" double is an alias for System.Double");
+            //  Section 4.1
+            //  double is an alias for System.Double
             ValueArrayTestClass07.testMethod();
         }
         [TestMethod]
         public void ValueArray09_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" bool is an alias for System.Boolean");
+            //  Section 4.1
+            //  bool is an alias for System.Boolean
             ValueArrayTestClass09.testMethod();
         }
 
         [TestMethod]
         public void ValueArray12_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" Because a simple type aliases a struct type, every simple type has members.");
-            OutputHelper.WriteLine("This test is expected to fail");
+            //  Section 4.1
+            //  Because a simple type aliases a struct type, every simple type has members.
+            // This test is expected to fail
             ValueArrayTestClass12.testMethod();
         }
 
         [TestMethod]
         public void ValueArray13_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" sbyte is an alias for System.SByte");
+            //  Section 4.1
+            //  sbyte is an alias for System.SByte
             ValueArrayTestClass13.testMethod();
         }
 
         [TestMethod]
         public void ValueArray14_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" ushort is an alias for System.UInt16");
+            //  Section 4.1
+            //  ushort is an alias for System.UInt16
             ValueArrayTestClass14.testMethod();
         }
         [TestMethod]
         public void ValueArray15_Test()
         {
-            OutputHelper.WriteLine(" Section 4.1");
-            OutputHelper.WriteLine(" uint is an alias for System.UInt32");
+            //  Section 4.1
+            //  uint is an alias for System.UInt32
             ValueArrayTestClass15.testMethod();
         }
 

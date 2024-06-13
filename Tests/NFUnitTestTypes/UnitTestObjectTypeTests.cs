@@ -14,7 +14,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TestCtor()
         {
-            OutputHelper.WriteLine("Test of Object constructor");
+            // Test of Object constructor
 
             object o = new();
             Assert.IsNotNull(o, "failed to create an Object");
@@ -23,7 +23,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TestEquals_01()
         {
-            OutputHelper.WriteLine("Test01 of Object Equals");
+            // Test01 of Object Equals
 
             object objectX = new();
             object objectY = new();
@@ -41,7 +41,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TestEquals_02()
         {
-            OutputHelper.WriteLine("Test02 of Object Equals overload");
+            // Test02 of Object Equals overload
 
             object objectX = new();
             object objectY = new();
@@ -62,7 +62,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TestGetHashCode()
         {
-            OutputHelper.WriteLine("Test Object HashCode");
+            // Test Object HashCode
 
             object objectX = new();
             Assert.AreEqual(objectX.GetHashCode(), objectX.GetHashCode(), "Object's hash code should not change");
@@ -71,7 +71,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TestGetType()
         {
-            OutputHelper.WriteLine("Test getting Object type");
+            // Test getting Object type
 
             object objectX = new();
 
@@ -82,7 +82,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TestReferenceEquals()
         {
-            OutputHelper.WriteLine("Test Object ReferenceEquals");
+            // Test Object ReferenceEquals
 
             object objectX = new();
             object objectY = new();
@@ -98,7 +98,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TestToString()
         {
-            OutputHelper.WriteLine("Test Object ToString");
+            // Test Object ToString
 
             object objectX = new();
             object objectY = new();

@@ -15,7 +15,7 @@ namespace NFUnitTestGC
         [TestMethod]
         public void TestCompactionForNotFixedTimeSpanArray()
         {
-            OutputHelper.WriteLine("Starting TestCompactionForNotFixedTimeSpanArray");
+            // Starting TestCompactionForNotFixedTimeSpanArray
 
             for (int loop = 0; loop < 10; loop++)
             {
@@ -34,14 +34,14 @@ namespace NFUnitTestGC
                     testNativeBuffer[i] = new HolderForTimeSpan(GetRandomTimeSpan());
                 }
 
-                OutputHelper.WriteLine("Large HolderForTimeSpan array created");
-                OutputHelper.WriteLine("Forcing compaction to occurr");
+                // Large HolderForTimeSpan array created
+                // Forcing compaction to occurr
 
                 // Causes compaction
                 InitiateTimeSpanCompaction();
 
-                OutputHelper.WriteLine("Compaction occurred");
-                OutputHelper.WriteLine("Checking arrays for corrupted data...");
+                // Compaction occurred
+                // Checking arrays for corrupted data...
 
                 int index = 0;
 
@@ -52,10 +52,10 @@ namespace NFUnitTestGC
                     index++;
                 }
 
-                OutputHelper.WriteLine("No corruption detected in array");
+                // No corruption detected in array
             }
 
-            OutputHelper.WriteLine("Completed TestCompactionForNotFixedArray");
+            // Completed TestCompactionForNotFixedArray
         }
 
         private TimeSpan GetRandomTimeSpan()

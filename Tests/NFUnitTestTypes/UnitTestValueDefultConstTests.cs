@@ -16,98 +16,98 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void ValueDefault_Const01_Test()
         {
-            OutputHelper.WriteLine("Testing byte == 0");
+            // Testing byte == 0
             ValueDefault_ConstTestClass01.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const02_Test()
         {
-            OutputHelper.WriteLine("Testing short == 0");
+            // Testing short == 0
             ValueDefault_ConstTestClass02.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const03_Test()
         {
-            OutputHelper.WriteLine("Testing int == 0");
+            // Testing int == 0
             ValueDefault_ConstTestClass03.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const04_Test()
         {
-            OutputHelper.WriteLine("Testing long == 0L");
+            // Testing long == 0L
             ValueDefault_ConstTestClass04.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const05_Test()
         {
-            OutputHelper.WriteLine("Testing char == \x0000");
+            // Testing char == \x0000
             ValueDefault_ConstTestClass05.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const06_Test()
         {
-            OutputHelper.WriteLine("Testing float == 0.0f");
+            // Testing float == 0.0f
             ValueDefault_ConstTestClass06.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const07_Test()
         {
-            OutputHelper.WriteLine("Testing double == 0.0d");
+            // Testing double == 0.0d
             ValueDefault_ConstTestClass07.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const09_Test()
         {
-            OutputHelper.WriteLine("Testing bool == false");
+            // Testing bool == false
             ValueDefault_ConstTestClass09.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const11_Test()
         {
-            OutputHelper.WriteLine("Testing enum");
+            // Testing enum
             ValueDefault_ConstTestClass11.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const12_Test()
         {
-            OutputHelper.WriteLine("Testing struct");
+            // Testing struct
             ValueDefault_ConstTestClass12.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const14_Test()
         {
-            OutputHelper.WriteLine("Testing sbyte == 0");
+            // Testing sbyte == 0
             ValueDefault_ConstTestClass14.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const15_Test()
         {
-            OutputHelper.WriteLine("Testing ushort == 0");
+            // Testing ushort == 0
             ValueDefault_ConstTestClass15.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const16_Test()
         {
-            OutputHelper.WriteLine("Testing uint == 0");
+            // Testing uint == 0
             ValueDefault_ConstTestClass16.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const17_Test()
         {
-            OutputHelper.WriteLine("Testing ulong == 0");
+            // Testing ulong == 0
             ValueDefault_ConstTestClass17.testMethod();
         }
 

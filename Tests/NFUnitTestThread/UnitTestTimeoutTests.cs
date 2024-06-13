@@ -19,13 +19,13 @@ namespace NFUnitTestThread
             public void DoWorkInfinite()
             {
                 Thread.Sleep(300);
-                OutputHelper.WriteLine("Instance thread procedure DoWorkInfinite.");
+                // Instance thread procedure DoWorkInfinite.
                 Thread.Sleep(Timeout.Infinite);
             }
             public static void DoWorkInfiniteStatic()
             {
                 Thread.Sleep(300);
-                OutputHelper.WriteLine("Static thread procedure DoWorkInfiniteStatic.");
+                // Static thread procedure DoWorkInfiniteStatic.
                 Thread.Sleep(Timeout.Infinite);
             }
         }
@@ -40,10 +40,10 @@ namespace NFUnitTestThread
             /// </summary>
             ///
 
-            OutputHelper.WriteLine("Starts two threads one infinitely long, aborts one and passes.");
-            OutputHelper.WriteLine("This may erroneously fail for extremely slow devices.");
+            // Starts two threads one infinitely long, aborts one and passes.
+            // This may erroneously fail for extremely slow devices.
 
-            OutputHelper.WriteLine("Starting the two threads");
+            // Starting the two threads
             Thread newThread1 = new Thread(Work.DoWorkInfiniteStatic);
             newThread1.Start();
             Work w = new Work();
@@ -51,7 +51,7 @@ namespace NFUnitTestThread
             newThread2.Start();
             Thread.Sleep(1);
 
-            OutputHelper.WriteLine("Waiting for 1000msec and verifying both threads are alive");
+            // Waiting for 1000msec and verifying both threads are alive
             int slept = 0;
             while ((newThread1.IsAlive || newThread2.IsAlive) && slept < 1000)
             {
@@ -60,19 +60,19 @@ namespace NFUnitTestThread
             }
             if (!newThread1.IsAlive || !newThread2.IsAlive)
             {
-                OutputHelper.WriteLine("Failure : Both threads were suppose to be sleeping for Timeout.Infinite");
-                OutputHelper.WriteLine("IsAlive ? Thread1 = '" + newThread1.IsAlive + "' and Thread2 = '" + newThread2.IsAlive + "'");
+                // Failure : Both threads were suppose to be sleeping for Timeout.Infinite
+                // IsAlive ? Thread1 = '" + newThread1.IsAlive + "' and Thread2 = '" + newThread2.IsAlive + "'
                 throw new Exception("IsAlive ? Thread1 = '" + newThread1.IsAlive + "' and Thread2 = '" + newThread2.IsAlive + "'");
             }
 
-            OutputHelper.WriteLine("Aborting both threds and Verifying abort.");
+            // Aborting both threds and Verifying abort.
             newThread2.Abort();
             newThread1.Abort();
             Thread.Sleep(10);
             if (newThread1.IsAlive || newThread2.IsAlive)
             {
-                OutputHelper.WriteLine("Upon Abort both thread should be dead but");
-                OutputHelper.WriteLine("IsAlive ? Thread1 = '" + newThread1.IsAlive + "' and Thread2 = '" + newThread2.IsAlive + "'");
+                // Upon Abort both thread should be dead but
+                // IsAlive ? Thread1 = '" + newThread1.IsAlive + "' and Thread2 = '" + newThread2.IsAlive + "'
                 throw new Exception("IsAlive ? Thread1 = '" + newThread1.IsAlive + "' and Thread2 = '" + newThread2.IsAlive + "'");
             }
         }

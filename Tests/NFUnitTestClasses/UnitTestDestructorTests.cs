@@ -19,11 +19,11 @@ namespace NFUnitTestClasses
         //public void Destructors3_Test()
         //{
         //    //Ported from Destructors3.cs
-        //    OutputHelper.WriteLine(" Section 10.11");
-        //    OutputHelper.WriteLine(" Destructors implement the actions required to ");
-        //    OutputHelper.WriteLine(" destruct the instances of a class.");
-        //    OutputHelper.WriteLine("");
-        //    OutputHelper.WriteLine("Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs");
+        //    //  Section 10.11
+        //    //  Destructors implement the actions required to 
+        //    //  destruct the instances of a class.
+        //    // 
+        //    // Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs
         //    Assert.IsTrue(DestructorsTestClass3.testMethod());
         //}
 
@@ -31,11 +31,11 @@ namespace NFUnitTestClasses
         //public void Destructors4_Test()
         //{
         //    //Ported from Destructors4.cs
-        //    OutputHelper.WriteLine(" Section 10.11");
-        //    OutputHelper.WriteLine(" Destructors implement the actions required to ");
-        //    OutputHelper.WriteLine(" destruct the instances of a class.");
-        //    OutputHelper.WriteLine("");
-        //    OutputHelper.WriteLine("Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs");
+        //    //  Section 10.11
+        //    //  Destructors implement the actions required to 
+        //    //  destruct the instances of a class.
+        //    // 
+        //    // Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs
         //    Assert.IsTrue(DestructorsTestClass4.testMethod());
         //}
 
@@ -44,12 +44,12 @@ namespace NFUnitTestClasses
         //public void Destructors7_Test()
         //{
         //    //Ported from Destructors7.cs
-        //    OutputHelper.WriteLine(" Section 10.12");
-        //    OutputHelper.WriteLine(" Destructors are not inherited. Thus, a class");
-        //    OutputHelper.WriteLine(" has no other destructors than those that are ");
-        //    OutputHelper.WriteLine(" actually declared in the class.");
-        //    OutputHelper.WriteLine("");
-        //    OutputHelper.WriteLine("Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs");
+        //    //  Section 10.12
+        //    //  Destructors are not inherited. Thus, a class
+        //    //  has no other destructors than those that are 
+        //    //  actually declared in the class.
+        //    // 
+        //    // Note: This test may fail due to lengthy garbage collection, look for Destructor messages in later logs
         //    Assert.IsTrue(DestructorsTestClass7.testMethod());
         //}
 
@@ -60,7 +60,7 @@ namespace NFUnitTestClasses
 
         //    ~DestructorsTestClass3()
         //    {
-        //        //OutputHelper.WriteLine("Calling Destructor for Test Class 3");
+        //        // Calling Destructor for Test Class 3
         //        intI = 2;
         //    }
 
@@ -76,7 +76,7 @@ namespace NFUnitTestClasses
         //            System.Threading.Thread.Sleep(10);
         //            slept += 10;
         //        }
-        //        OutputHelper.WriteLine("Thread has slept for");
+        //        // Thread has slept for
         //        OutputHelper.WriteLine(slept.ToString());
         //        if (intI == 2)
         //        {
@@ -96,7 +96,7 @@ namespace NFUnitTestClasses
             ~DestructorsTestClass4_Base()
             {
                 intI = intI * 2;
-                //OutputHelper.WriteLine("Calling Destructor for Test Class 4 Base");
+                // Calling Destructor for Test Class 4 Base
             }
         }
 
@@ -106,7 +106,7 @@ namespace NFUnitTestClasses
             ~DestructorsTestClass4()
             {
                 intI = intI + 2;
-                //OutputHelper.WriteLine("Calling Destructor for Test Class 4");
+                // Calling Destructor for Test Class 4
             }
 
             public static bool testMethod()
@@ -121,7 +121,7 @@ namespace NFUnitTestClasses
                     System.Threading.Thread.Sleep(10);
                     slept += 10;
                 }
-                OutputHelper.WriteLine("Thread has slept for");
+                // Thread has slept for
                 OutputHelper.WriteLine(slept.ToString());
                 if (intI == 8)
                 {
@@ -145,7 +145,7 @@ namespace NFUnitTestClasses
             ~DestructorsTestClass7()
             {
                 intI = 3;
-                //OutputHelper.WriteLine("Calling Destructor for Test Class 7");
+                // Calling Destructor for Test Class 7
             }
 
             public static bool testMethod()
@@ -160,7 +160,7 @@ namespace NFUnitTestClasses
                     System.Threading.Thread.Sleep(10);
                     slept += 10;
                 }
-                OutputHelper.WriteLine("Thread has slept for");
+                // Thread has slept for
                 OutputHelper.WriteLine(slept.ToString());
                 if (intI == 3)
                 {

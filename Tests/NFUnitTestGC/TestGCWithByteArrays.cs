@@ -15,7 +15,7 @@ namespace NFUnitTestGC
         [TestMethod]
         public void TestCompactionForNotFixedArray()
         {
-            OutputHelper.WriteLine("Starting TestCompactionForNotFixedArray");
+            // Starting TestCompactionForNotFixedArray
 
             for (int loop = 0; loop < 10; loop++)
             {
@@ -52,10 +52,10 @@ namespace NFUnitTestGC
                     index++;
                 }
 
-                OutputHelper.WriteLine("No corruption detected in array");
+                // No corruption detected in array
             }
 
-            OutputHelper.WriteLine("Completed TestCompactionForNotFixedArray");
+            // Completed TestCompactionForNotFixedArray
         }
 
         void RunAllocations(byte[] arrObj)

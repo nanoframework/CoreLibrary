@@ -16,179 +16,179 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate01_Test()
         {
-            OutputHelper.WriteLine(" Verify that both static and instance methods can be called from delegates.");
+            //  Verify that both static and instance methods can be called from delegates.
             Assert.IsTrue(Delegate_TestClass_delegate01.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate02_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
+            //  Verify that delegate can be initialized to null.
             Assert.IsTrue(Delegate_TestClass_delegate02.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate03_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
+            //  Verify that delegate can be initialized to null.
             Assert.IsTrue(Delegate_TestClass_delegate03.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate04_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.");
+            //  Verify that delegate can be assigned by ternary operator.
             Assert.IsTrue(Delegate_TestClass_delegate04.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate05_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.");
+            //  Verify that delegate can be assigned by ternary operator.
             Assert.IsTrue(Delegate_TestClass_delegate05.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate06_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.  Assign null instead of usable value.");
+            //  Verify that delegate can be assigned by ternary operator.  Assign null instead of usable value.
             Assert.IsTrue(Delegate_TestClass_delegate06.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate07_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.  Use null instead of a usable value.");
+            //  Verify that delegate can be assigned by ternary operator.  Use null instead of a usable value.
             Assert.IsTrue(Delegate_TestClass_delegate07.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate08_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.  Assign null instead of usable value.");
+            //  Verify that delegate can be assigned by ternary operator.  Assign null instead of usable value.
             Assert.IsTrue(Delegate_TestClass_delegate08.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate09_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be compared for equality.");
+            //  Verify that delegates can be compared for equality.
             Assert.IsTrue(Delegate_TestClass_delegate09.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate10_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be aggregated in arrays and compared for equality.");
+            //  Verify that delegates can be aggregated in arrays and compared for equality.
             Assert.IsTrue(Delegate_TestClass_delegate10.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate11_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be members of classes.");
+            //  Verify that delegates can be members of classes.
             Assert.IsTrue(Delegate_TestClass_delegate11.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate12_Test()
         {
-            OutputHelper.WriteLine(" Verify that both static and instance methods can be called from delegates.");
+            //  Verify that both static and instance methods can be called from delegates.
             Assert.IsTrue(Delegate_TestClass_delegate12.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate13_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
+            //  Verify that delegate can be initialized to null.
             Assert.IsTrue(Delegate_TestClass_delegate13.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate14_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
+            //  Verify that delegate can be initialized to null.
             Assert.IsTrue(Delegate_TestClass_delegate14.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate14a_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
+            //  Verify that delegate can be initialized to null.
             Assert.IsTrue(Delegate_TestClass_delegate14a.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate14b_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
+            //  Verify that delegate can be initialized to null.
             Assert.IsTrue(Delegate_TestClass_delegate14b.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate14c_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be initialized to null.");
+            //  Verify that delegate can be initialized to null.
             Assert.IsTrue(Delegate_TestClass_delegate14c.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate15_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.");
+            //  Verify that delegate can be assigned by ternary operator.
             Assert.IsTrue(Delegate_TestClass_delegate15.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate16_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.");
+            //  Verify that delegate can be assigned by ternary operator.
             Assert.IsTrue(Delegate_TestClass_delegate16.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate17_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegate can be assigned by ternary operator.  Assign null instead of usable value.");
+            //  Verify that delegate can be assigned by ternary operator.  Assign null instead of usable value.
             Assert.IsTrue(Delegate_TestClass_delegate17.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate18_Test()
         {
-            OutputHelper.WriteLine(" Make sure a delegate list filled with nulls is detectable as foo == null");
+            //  Make sure a delegate list filled with nulls is detectable as foo == null
             Assert.IsTrue(Delegate_TestClass_delegate18.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate19_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be aggregated in arrays and compared for equality.");
+            //  Verify that delegates can be aggregated in arrays and compared for equality.
             Assert.IsTrue(Delegate_TestClass_delegate19.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate20_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be compared for equality.");
+            //  Verify that delegates can be compared for equality.
             Assert.IsTrue(Delegate_TestClass_delegate20.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate21_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be aggregated in arrays and compared for equality.");
+            //  Verify that delegates can be aggregated in arrays and compared for equality.
             Assert.IsTrue(Delegate_TestClass_delegate21.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate23_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be aggregated using the + operator;");
+            //  Verify that delegates can be aggregated using the + operator;
             Assert.IsTrue(Delegate_TestClass_delegate23.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate24_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be aggregated using the + operator;");
+            //  Verify that delegates can be aggregated using the + operator;
             Assert.IsTrue(Delegate_TestClass_delegate24.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate25_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be removed using the - operator;");
+            //  Verify that delegates can be removed using the - operator;
             Assert.IsTrue(Delegate_TestClass_delegate25.testMethod());
         }
 
         [TestMethod]
         public void Delegate_delegate26_Test()
         {
-            OutputHelper.WriteLine("Bug 214780 - async delegates to methods with out parameters don't work");
-            OutputHelper.WriteLine("This test is expected to fail.");
+            // Bug 214780 - async delegates to methods with out parameters don't work
+            // This test is expected to fail.
             Assert.IsFalse(Delegate_TestClass_delegate26.testMethod());
         }
         /* This test is skipped because it causes a Metadat processor error, it fails in the baseline.
         [TestMethod]
         public void Delegate_delegate28_Test()
         {
-            OutputHelper.WriteLine("Verify Delegate with 257 args.  This is because more than 257 causes the");
-            OutputHelper.WriteLine("compiler to take a different code path.");
+            // Verify Delegate with 257 args.  This is because more than 257 causes the
+            // compiler to take a different code path.
             Assert.IsTrue(Delegate_TestClass_delegate28.testMethod())
             {
                 return MFTestResults.Pass;
@@ -199,13 +199,13 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate30_Test()
         {
-            OutputHelper.WriteLine(" Verify that both static and instance struct methods can be called from delegates.");
+            //  Verify that both static and instance struct methods can be called from delegates.
             Assert.IsTrue(Delegate_TestClass_delegate30.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate31_Test()
         {
-            OutputHelper.WriteLine(" Verify that virtual struct methods can be called from delegates.");
+            //  Verify that virtual struct methods can be called from delegates.
             Assert.IsTrue(Delegate_TestClass_delegate31.testMethod());
         }
         /*These are skipped due to their use of Volatile variables which are not supported
@@ -213,7 +213,7 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate32_Test()
         {
-            OutputHelper.WriteLine("Delegate Invocation using BeginInvoke");
+            // Delegate Invocation using BeginInvoke
             Assert.IsTrue(Delegate_TestClass_delegate32.testMethod())
             {
                 return MFTestResults.Pass;
@@ -223,7 +223,7 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate34_Test()
         {
-            OutputHelper.WriteLine("Delegate Invocation using BeginInvoke");
+            // Delegate Invocation using BeginInvoke
             Assert.IsTrue(Delegate_TestClass_delegate34.testMethod())
             {
                 return MFTestResults.Pass;
@@ -234,31 +234,31 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate36_Test()
         {
-            OutputHelper.WriteLine("params modifier should not be considered when matching a delegate with a method");
+            // params modifier should not be considered when matching a delegate with a method
             Assert.IsTrue(Delegate_TestClass_delegate36.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate60_Test()
         {
-            OutputHelper.WriteLine("A delegate declaration defines a class that derives from System.Delegate");
+            // A delegate declaration defines a class that derives from System.Delegate
             Assert.IsTrue(Delegate_TestClass_delegate60.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate62_Test()
         {
-            OutputHelper.WriteLine("The compiler is expected to warn that the new keyword id not rquired as we're not hiding an inherited member");
+            // The compiler is expected to warn that the new keyword id not rquired as we're not hiding an inherited member
             Assert.IsTrue(Delegate_TestClass_delegate62.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate64_Test()
         {
-            OutputHelper.WriteLine("Compiler is expected to warn when new is not used when hiding a member delegate of the base class");
+            // Compiler is expected to warn when new is not used when hiding a member delegate of the base class
             Assert.IsTrue(Delegate_TestClass_delegate64.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate65_Test()
         {
-            OutputHelper.WriteLine("Make sure delegates can be hidden.");
+            // Make sure delegates can be hidden.
             Assert.IsTrue(Delegate_TestClass_delegate65.testMethod());
         }
         /*These tests are skipped because the use the == operator in an unsupported way
@@ -266,7 +266,7 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate66_Test()
         {
-            OutputHelper.WriteLine("Two compatible delegate types can be compared for equality.");
+            // Two compatible delegate types can be compared for equality.
             Assert.IsTrue(Delegate_TestClass_delegate66.testMethod())
             {
                 return MFTestResults.Pass;
@@ -276,7 +276,7 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate70_Test()
         {
-            OutputHelper.WriteLine("Two compatible delegate types can be compared for equality (or inequality).");
+            // Two compatible delegate types can be compared for equality (or inequality).
             Assert.IsTrue(Delegate_TestClass_delegate70.testMethod())
             {
                 return MFTestResults.Pass;
@@ -287,13 +287,13 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate71_Test()
         {
-            OutputHelper.WriteLine("Verify simple +=");
+            // Verify simple +=
             Assert.IsTrue(Delegate_TestClass_delegate71.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate72_Test()
         {
-            OutputHelper.WriteLine(" Verify that delegates can be removed using the -= operator;");
+            //  Verify that delegates can be removed using the -= operator;
             Assert.IsTrue(Delegate_TestClass_delegate72.testMethod());
         }
         /* These tests are skipped because they use == in an unsupported way
@@ -301,7 +301,7 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate73_Test()
         {
-            OutputHelper.WriteLine("Verify equality and inequality after using += and -= on delegates");
+            // Verify equality and inequality after using += and -= on delegates
             Assert.IsTrue(Delegate_TestClass_delegate73.testMethod())
             {
                 return MFTestResults.Pass;
@@ -311,7 +311,7 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate74_Test()
         {
-            OutputHelper.WriteLine("Verify ability to call members of System.Delegate on delegate types");
+            // Verify ability to call members of System.Delegate on delegate types
             Assert.IsTrue(Delegate_TestClass_delegate74.testMethod())
             {
                 return MFTestResults.Pass;
@@ -321,8 +321,8 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate75_Test()
         {
-            OutputHelper.WriteLine("Verify ability to call members of System.Delegate on delegate types");
-            OutputHelper.WriteLine("and that ordinality is maintained in concatenated invocation lists");
+            // Verify ability to call members of System.Delegate on delegate types
+            // and that ordinality is maintained in concatenated invocation lists
             Assert.IsTrue(Delegate_TestClass_delegate75.testMethod())
             {
                 return MFTestResults.Pass;
@@ -332,8 +332,8 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate76_Test()
         {
-            OutputHelper.WriteLine("Verify ability to call members of System.Delegate on delegate types");
-            OutputHelper.WriteLine("and that ordinality is maintained in concatenated invocation lists");
+            // Verify ability to call members of System.Delegate on delegate types
+            // and that ordinality is maintained in concatenated invocation lists
             Assert.IsTrue(Delegate_TestClass_delegate76.testMethod())
             {
                 return MFTestResults.Pass;
@@ -344,61 +344,61 @@ namespace NFUnitTestDelegates
         [TestMethod]
         public void Delegate_delegate77_Test()
         {
-            OutputHelper.WriteLine("Verify that ordinality is maintained in concatenated invocation lists");
-            OutputHelper.WriteLine("and that the invocation list members are called synchronously");
+            // Verify that ordinality is maintained in concatenated invocation lists
+            // and that the invocation list members are called synchronously
             Assert.IsTrue(Delegate_TestClass_delegate77.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate78_Test()
         {
-            OutputHelper.WriteLine("Verify that ordinality is maintained in concatenated invocation lists");
-            OutputHelper.WriteLine("and that the invocation list members are called synchronously and");
-            OutputHelper.WriteLine("that ref parameters are modified through the invocation chain.");
+            // Verify that ordinality is maintained in concatenated invocation lists
+            // and that the invocation list members are called synchronously and
+            // that ref parameters are modified through the invocation chain.
             Assert.IsTrue(Delegate_TestClass_delegate78.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate79_Test()
         {
-            OutputHelper.WriteLine("Verify that ordinality is maintained in concatenated invocation lists");
-            OutputHelper.WriteLine("and that the invocation list members are called synchronously and");
-            OutputHelper.WriteLine("that out parameters are set by the last member in the invocation chain.");
+            // Verify that ordinality is maintained in concatenated invocation lists
+            // and that the invocation list members are called synchronously and
+            // that out parameters are set by the last member in the invocation chain.
             Assert.IsTrue(Delegate_TestClass_delegate79.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate80_Test()
         {
-            OutputHelper.WriteLine("Verify that System.Exceptions not caught in invoked method are bubbled up");
-            OutputHelper.WriteLine("and the remaining methods in the invocation list are not invoked.");
+            // Verify that System.Exceptions not caught in invoked method are bubbled up
+            // and the remaining methods in the invocation list are not invoked.
             Assert.IsTrue(Delegate_TestClass_delegate80.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate81_Test()
         {
-            OutputHelper.WriteLine("Sample from section 15.3 of Delegate_TestClass_?_A#LS");
+            // Sample from section 15.3 of Delegate_TestClass_?_A#LS
             Assert.IsTrue(Delegate_TestClass_delegate81.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate_modifier09_Test()
         {
-            OutputHelper.WriteLine("only new, public, private, protected and internal are allowed as modifiers");
+            // only new, public, private, protected and internal are allowed as modifiers
             Assert.IsTrue(Delegate_TestClass_delegate_modifier09.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate_modifier10_Test()
         {
-            OutputHelper.WriteLine("only new, public, private, protected and internal are allowed as modifiers");
+            // only new, public, private, protected and internal are allowed as modifiers
             Assert.IsTrue(Delegate_TestClass_delegate_modifier10.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate_modifier11_Test()
         {
-            OutputHelper.WriteLine("only new, public, private, protected and internal are allowed as modifiers");
+            // only new, public, private, protected and internal are allowed as modifiers
             Assert.IsTrue(Delegate_TestClass_delegate_modifier11.testMethod());
         }
         [TestMethod]
         public void Delegate_delegate_modifier12_Test()
         {
-            OutputHelper.WriteLine("only new, public, private, protected and internal are allowed as modifiers");
+            // only new, public, private, protected and internal are allowed as modifiers
             Assert.IsTrue(Delegate_TestClass_delegate_modifier12.testMethod());
         }
 
@@ -408,10 +408,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate01_1();
         public class Delegate_TestClass_delegate01_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -426,8 +426,7 @@ namespace NFUnitTestDelegates
                 retval -= foo();
                 foo = new Delegate_TestClass_delegate01_1(Delegate_TestClass_delegate01_2.far);
                 retval -= foo();
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -438,10 +437,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate02_1();
         public class Delegate_TestClass_delegate02_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -458,8 +457,7 @@ namespace NFUnitTestDelegates
                 foo = null;
                 foo = new Delegate_TestClass_delegate02_1(Delegate_TestClass_delegate02_2.far);
                 retval -= foo();
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -471,10 +469,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate03_2
         {
             public static int retval = 0x03;
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -491,8 +489,7 @@ namespace NFUnitTestDelegates
                 {
                     Delegate_TestClass_delegate03_2.retval -= 0x03;
                 }
-               if(Delegate_TestClass_delegate03_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate03_2.retval;
             }
             public static bool testMethod()
@@ -503,10 +500,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate04_1();
         public class Delegate_TestClass_delegate04_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -523,8 +520,7 @@ namespace NFUnitTestDelegates
                 retval -= foo();
                 foo = !loo() ? new Delegate_TestClass_delegate04_1(p.bar) : new Delegate_TestClass_delegate04_1(Delegate_TestClass_delegate04_2.far);
                 retval -= foo();
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -535,10 +531,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate05_1();
         public class Delegate_TestClass_delegate05_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -555,8 +551,7 @@ namespace NFUnitTestDelegates
                 retval -= foo();
                 foo = !loo() ? null : new Delegate_TestClass_delegate05_1(Delegate_TestClass_delegate05_2.far);
                 retval -= foo();
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -567,10 +562,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate06_1();
         public class Delegate_TestClass_delegate06_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -601,8 +596,7 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x02;
                 }
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -613,10 +607,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate07_1();
         public class Delegate_TestClass_delegate07_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -640,8 +634,7 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x02;
                 }
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -652,10 +645,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate08_1();
         public class Delegate_TestClass_delegate08_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -676,8 +669,7 @@ namespace NFUnitTestDelegates
                 if (foo == null)
                     foo = new Delegate_TestClass_delegate08_1(Delegate_TestClass_delegate08_2.far);
                 retval -= foo();
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -688,10 +680,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate09_1();
         public class Delegate_TestClass_delegate09_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -716,8 +708,7 @@ namespace NFUnitTestDelegates
                     retval -= 0x08;
                 retval -= foo2();
                 OutputHelper.WriteLine(retval.ToString());
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -728,10 +719,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate10_1();
         public class Delegate_TestClass_delegate10_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -753,8 +744,7 @@ namespace NFUnitTestDelegates
                     retval -= 0x08;
                 retval -= foo[0]();
                 OutputHelper.WriteLine(retval.ToString());
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -765,10 +755,10 @@ namespace NFUnitTestDelegates
         public delegate int Delegate_TestClass_delegate11_1();
         public class Delegate_TestClass_delegate11_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
             public Delegate_TestClass_delegate11_1 foo = null;
@@ -786,8 +776,7 @@ namespace NFUnitTestDelegates
                 p.foo = new Delegate_TestClass_delegate11_1(p.bar);
                 retval -= p.foo();
                 OutputHelper.WriteLine(retval.ToString());
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return retval;
             }
             public static bool testMethod()
@@ -799,10 +788,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate12_2
         {
             public static int retval = 0x06;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 0x01; }
+            public void bar() { retval -= 0x01; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 0x02;
             }
         }
@@ -820,8 +809,7 @@ namespace NFUnitTestDelegates
                 multifoo = new Delegate_TestClass_delegate12_1(Delegate_TestClass_delegate12_2.far);
                 multifoo += foo;
                 multifoo();
-                if(Delegate_TestClass_delegate12_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate12_2.retval;
             }
             public static bool testMethod()
@@ -833,10 +821,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate13_2
         {
             public static int retval = 0x04;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 0x01; }
+            public void bar() { retval -= 0x01; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 0x02;
             }
         }
@@ -852,8 +840,7 @@ namespace NFUnitTestDelegates
                 foo = new Delegate_TestClass_delegate13_1(Delegate_TestClass_delegate13_2.far);
                 foo += new Delegate_TestClass_delegate13_1(p.bar);
                 foo();
-                if(Delegate_TestClass_delegate13_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate13_2.retval;
             }
             public static bool testMethod()
@@ -865,10 +852,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate14_2
         {
             public static int retval = 0x03;
-            public void bar() { OutputHelper.WriteLine("bar"); retval += 0x10; }
+            public void bar() { retval += 0x10; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval += 0x20;
             }
         }
@@ -885,8 +872,7 @@ namespace NFUnitTestDelegates
                 {
                     Delegate_TestClass_delegate14_2.retval -= 0x03;
                 }
-                if(Delegate_TestClass_delegate14_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate14_2.retval;
             }
             public static bool testMethod()
@@ -898,10 +884,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate14a_2
         {
             public static int retval = 0x02;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 0x01; }
+            public void bar() { retval -= 0x01; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 0x02;
             }
         }
@@ -912,8 +898,7 @@ namespace NFUnitTestDelegates
                 Delegate_TestClass_delegate14a_1 foo = new Delegate_TestClass_delegate14a_1(Delegate_TestClass_delegate14a_2.far);
                 foo += (Delegate_TestClass_delegate14a_1)null;
                 foo();
-                if(Delegate_TestClass_delegate14a_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate14a_2.retval;
             }
             public static bool testMethod()
@@ -925,10 +910,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate14b_2
         {
             public static int retval = 0x02;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 0x01; }
+            public void bar() { retval -= 0x01; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 0x02;
             }
         }
@@ -939,8 +924,7 @@ namespace NFUnitTestDelegates
                 Delegate_TestClass_delegate14b_1 foo = null;
                 foo += new Delegate_TestClass_delegate14b_1(Delegate_TestClass_delegate14b_2.far);
                 foo();
-                if(Delegate_TestClass_delegate14b_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate14b_2.retval;
             }
             public static bool testMethod()
@@ -952,10 +936,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate14c_2
         {
             public static int retval = 0x03;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 0x01; }
+            public void bar() { retval -= 0x01; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 0x02;
             }
         }
@@ -968,8 +952,7 @@ namespace NFUnitTestDelegates
                 foo += (Delegate_TestClass_delegate14c_1)null;
                 foo += new Delegate_TestClass_delegate14c_1(Delegate_TestClass_delegate14c_2.far);
                 foo();
-                if(Delegate_TestClass_delegate14c_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate14c_2.retval;
             }
             public static bool testMethod()
@@ -981,16 +964,16 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate15_2
         {
             public static int retval = 63;
-            public void bar1() { OutputHelper.WriteLine("bar1"); retval -= 0x01; }
+            public void bar1() { retval -= 0x01; }
             static public void far1()
             {
-                OutputHelper.WriteLine("far1");
+                // far1
                 retval -= 0x02;
             }
-            public void bar2() { OutputHelper.WriteLine("bar2"); retval -= 10; }
+            public void bar2() { retval -= 10; }
             static public void far2()
             {
-                OutputHelper.WriteLine("far2");
+                // far2
                 retval -= 20;
             }
         }
@@ -1016,8 +999,7 @@ namespace NFUnitTestDelegates
                 left = new Delegate_TestClass_delegate15_1(Delegate_TestClass_delegate15_2.far2);
                 foo = loo() ? left += new Delegate_TestClass_delegate15_1(p.bar2) : right += new Delegate_TestClass_delegate15_1(Delegate_TestClass_delegate15_2.far1);
                 foo();
-                if(Delegate_TestClass_delegate15_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate15_2.retval;
             }
             public static bool testMethod()
@@ -1029,10 +1011,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate16_2
         {
             public static int retval = 0x09;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 0x01; }
+            public void bar() { retval -= 0x01; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 0x02;
             }
         }
@@ -1056,8 +1038,7 @@ namespace NFUnitTestDelegates
                 right = new Delegate_TestClass_delegate16_1(Delegate_TestClass_delegate16_2.far);
                 foo = !loo() ? null : right += new Delegate_TestClass_delegate16_1(p.bar);
                 foo();
-                if(Delegate_TestClass_delegate16_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate16_2.retval;
             }
             public static bool testMethod()
@@ -1069,16 +1050,16 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate17_2
         {
             public static int retval = 13;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 0x01; }
+            public void bar() { retval -= 0x01; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 0x02;
             }
-            public void bar2() { OutputHelper.WriteLine("bar2"); retval -= 10; }
+            public void bar2() { retval -= 10; }
             static public void far2()
             {
-                OutputHelper.WriteLine("far2");
+                // far2
                 retval -= 20;
             }
         }
@@ -1118,8 +1099,7 @@ namespace NFUnitTestDelegates
                 {
                     Delegate_TestClass_delegate17_2.retval -= 10;
                 }
-                if(Delegate_TestClass_delegate17_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate17_2.retval;
             }
             public static bool testMethod()
@@ -1131,16 +1111,16 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate18_2
         {
             public static int retval = 23;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 0x01; }
+            public void bar() { retval -= 0x01; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 0x02;
             }
-            public void bar1() { OutputHelper.WriteLine("bar1"); retval -= 10; }
+            public void bar1() { retval -= 10; }
             static public void far1()
             {
-                OutputHelper.WriteLine("far1");
+                // far1
                 retval -= 20;
             }
         }
@@ -1167,8 +1147,7 @@ namespace NFUnitTestDelegates
                 }
 
                 foo();
-                if(Delegate_TestClass_delegate18_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate18_2.retval;
             }
             public static bool testMethod()
@@ -1180,10 +1159,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate19_2
         {
             public static int retval = 33;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 1; }
+            public void bar() { retval -= 1; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 2;
             }
         }
@@ -1211,8 +1190,7 @@ namespace NFUnitTestDelegates
                 if (foo[1] == foo[2])
                     Delegate_TestClass_delegate19_2.retval -= 20;
                 foo[1]();
-                if(Delegate_TestClass_delegate19_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate19_2.retval;
             }
             public static bool testMethod()
@@ -1224,16 +1202,16 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate20_2
         {
             public static int retval = 1333;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 1; }
+            public void bar() { retval -= 1; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 2;
             }
-            public void bar1() { OutputHelper.WriteLine("bar1"); retval -= 10; }
+            public void bar1() { retval -= 10; }
             static public void far1()
             {
-                OutputHelper.WriteLine("far1");
+                // far1
                 retval -= 20;
             }
         }
@@ -1265,8 +1243,7 @@ namespace NFUnitTestDelegates
                 if (foo3 == foo4)
                     Delegate_TestClass_delegate20_2.retval -= 1000;
                 foo3();
-                if(Delegate_TestClass_delegate20_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate20_2.retval;
             }
             public static bool testMethod()
@@ -1278,10 +1255,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate21_2
         {
             public static int retval = 33;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 1; }
+            public void bar() { retval -= 1; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 2;
             }
         }
@@ -1307,8 +1284,7 @@ namespace NFUnitTestDelegates
                 if (foo[0] == foo[1])
                     Delegate_TestClass_delegate21_2.retval -= 20;
                 foo[0]();
-                if(Delegate_TestClass_delegate21_2.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
+
                 return Delegate_TestClass_delegate21_2.retval;
             }
             public static bool testMethod()
@@ -1320,10 +1296,10 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate23_A
         {
             public static int retval = 3;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 1; }
+            public void bar() { retval -= 1; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 2;
             }
         }
@@ -1337,8 +1313,7 @@ namespace NFUnitTestDelegates
                 Delegate_TestClass_delegate23_Del foo2 = new Delegate_TestClass_delegate23_Del(p.bar);
                 Delegate_TestClass_delegate23_Del foo3 = foo1 + foo2;
                 foo3();
-                if(Delegate_TestClass_delegate23_A.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval==" + Delegate_TestClass_delegate23_A.retval.ToString());
+
                 return Delegate_TestClass_delegate23_A.retval;
             }
             public static bool testMethod()
@@ -1350,16 +1325,16 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate24_A
         {
             public static int retval = 0x0F;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 1; }
+            public void bar() { retval -= 1; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 2;
             }
-            public void bar2() { OutputHelper.WriteLine("bar2"); retval -= 4; }
+            public void bar2() { retval -= 4; }
             static public void far2()
             {
-                OutputHelper.WriteLine("far2");
+                // far2
                 retval -= 8;
             }
         }
@@ -1373,8 +1348,7 @@ namespace NFUnitTestDelegates
                 Delegate_TestClass_delegate24_Del foo2 = new Delegate_TestClass_delegate24_Del(p.bar2) + new Delegate_TestClass_delegate24_Del(Delegate_TestClass_delegate24_A.far2);
                 Delegate_TestClass_delegate24_Del foo3 = foo1 + foo2;
                 foo3();
-                if(Delegate_TestClass_delegate24_A.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval==" + Delegate_TestClass_delegate24_A.retval.ToString());
+
                 return Delegate_TestClass_delegate24_A.retval;
             }
             public static bool testMethod()
@@ -1386,16 +1360,16 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate25_A
         {
             public static int retval = 0x3F;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 1; }
+            public void bar() { retval -= 1; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 2;
             }
-            public void bar2() { OutputHelper.WriteLine("bar2"); retval -= 4; }
+            public void bar2() { retval -= 4; }
             static public void far2()
             {
-                OutputHelper.WriteLine("far2");
+                // far2
                 retval -= 8;
             }
         }
@@ -1419,8 +1393,7 @@ namespace NFUnitTestDelegates
                     Delegate_TestClass_delegate25_A.retval -= 0x20;
                 Delegate_TestClass_delegate25_A.retval += 0x0C;
                 foo4();
-                if(Delegate_TestClass_delegate25_A.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval==" + Delegate_TestClass_delegate25_A.retval.ToString());
+
                 return Delegate_TestClass_delegate25_A.retval;
             }
             public static bool testMethod()
@@ -1440,8 +1413,7 @@ namespace NFUnitTestDelegates
                     IAsyncResult ar = hd.BeginInvoke(out i, null, null);
                     i = 1;
                     hd.EndInvoke(out i, ar);
-                    if (0 == i) OutputHelper.WriteLine("PASS");
-                    else OutputHelper.WriteLine("FAIL, i==" + i.ToString());
+
                     return i;
                 }
                 catch (System.Exception)
@@ -1471,7 +1443,7 @@ namespace NFUnitTestDelegates
                 HD hd = new HD(Delegate_TestClass_delegate28.Hello);
                 int i = 1;
                 i = hd(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257);
-                if (0 == i) OutputHelper.WriteLine("PASS");
+                if (0 == i) // PASS
                 else OutputHelper.WriteLine("FAIL, i==" + i.ToString());
                 return i;
             }
@@ -1494,10 +1466,10 @@ namespace NFUnitTestDelegates
         delegate int Delegate_TestClass_delegate30_1();
         public struct Delegate_TestClass_delegate30_2
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
             static public int far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 return 0x02;
             }
         }
@@ -1534,7 +1506,7 @@ namespace NFUnitTestDelegates
         }
         public struct Delegate_TestClass_delegate31_2 : I
         {
-            public int bar() { OutputHelper.WriteLine("bar"); return 0x01; }
+            public int bar() { return 0x01; }
         }
         public class Delegate_TestClass_delegate31
         {
@@ -1547,11 +1519,11 @@ namespace NFUnitTestDelegates
                 retval -= foo();
                 if (retval == 0)
                 {
-                    OutputHelper.WriteLine("PASS");
+                    // PASS
                 }
                 else
                 {
-                    OutputHelper.WriteLine("FAIL");
+                    // FAIL
                 }
                 return retval;
             }
@@ -1657,12 +1629,7 @@ namespace NFUnitTestDelegates
                     retval -= 0x04;
                 if (cd is System.MulticastDelegate)
                     retval -= 0x08;
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else
-                {
-                    OutputHelper.WriteLine("FAIL, 0x{0:X}");
-                    OutputHelper.WriteLine(retval.ToString());
-                }
+
                 return retval;
             }
             public static bool testMethod()
@@ -1748,12 +1715,7 @@ namespace NFUnitTestDelegates
                 bmd = new Delegate_TestClass_delegate65_1.Delegate_TestClass_delegate65_Del(bc.DelegatedMethod);
                 if (bmd(2, 0.5f) == 2.5)
                     retval -= 0x04;
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else
-                {
-                    OutputHelper.WriteLine("FAIL, 0x{0:X}");
-                    OutputHelper.WriteLine(retval.ToString());
-                }
+
                 return retval;
             }
             public static bool testMethod()
@@ -1784,8 +1746,8 @@ namespace NFUnitTestDelegates
                     retval -= 0x01;
                 if (md2 == md1)
                     retval -= 0x02;
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else {OutputHelper.WriteLine("FAIL, 0x{0:X}");
+                if (0 == retval) // PASS
+                else {// FAIL, 0x{0:X}
                 return retval;
             }
             public static bool testMethod()
@@ -1819,8 +1781,8 @@ namespace NFUnitTestDelegates
                     retval -= 0x01;
                 if (md2 != md1)
                     retval -= 0x02;
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else {OutputHelper.WriteLine("FAIL, 0x{0:X}");
+                if (0 == retval) // PASS
+                else {// FAIL, 0x{0:X}
                 return retval;
             }
             public static bool testMethod()
@@ -1862,12 +1824,7 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else
-                {
-                    OutputHelper.WriteLine("FAIL, 0x{0:X}");
-                    OutputHelper.WriteLine(retval.ToString());
-                }
+
                 return retval;
             }
             public static bool testMethod()
@@ -1882,16 +1839,16 @@ namespace NFUnitTestDelegates
         public class Delegate_TestClass_delegate72_A
         {
             public static int retval = 0x3F;
-            public void bar() { OutputHelper.WriteLine("bar"); retval -= 1; }
+            public void bar() { retval -= 1; }
             static public void far()
             {
-                OutputHelper.WriteLine("far");
+                // far
                 retval -= 2;
             }
-            public void bar2() { OutputHelper.WriteLine("bar2"); retval -= 4; }
+            public void bar2() { retval -= 4; }
             static public void far2()
             {
-                OutputHelper.WriteLine("far2");
+                // far2
                 retval -= 8;
             }
         }
@@ -1916,8 +1873,7 @@ namespace NFUnitTestDelegates
                     Delegate_TestClass_delegate72_A.retval -= 0x20;
                 Delegate_TestClass_delegate72_A.retval += 0x0C;
                 foo4();
-                if(Delegate_TestClass_delegate72_A.retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval==" + Delegate_TestClass_delegate72_A.retval.ToString());
+
                 return Delegate_TestClass_delegate72_A.retval;
             }
             public static bool testMethod()
@@ -1964,8 +1920,8 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else {OutputHelper.WriteLine("FAIL, 0x{0:X}");
+                if (0 == retval) // PASS
+                else {// FAIL, 0x{0:X}
                 return retval;
             }
             public static bool testMethod()
@@ -2010,8 +1966,8 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else {OutputHelper.WriteLine("FAIL, 0x{0:X}");
+                if (0 == retval) // PASS
+                else {// FAIL, 0x{0:X}
                 return retval;
             }
             public static bool testMethod()
@@ -2077,8 +2033,8 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else {OutputHelper.WriteLine("FAIL, 0x{0:X}");
+                if (0 == retval) // PASS
+                else {// FAIL, 0x{0:X}
                 return retval;
             }
             public static bool testMethod()
@@ -2095,22 +2051,22 @@ namespace NFUnitTestDelegates
             public delegate double MyDelegate2(int integerPortion, float fraction);
             public double DelegatedMethod1(int intPart, float frac)
             {
-                OutputHelper.WriteLine("DelegatedMethod1");
+                // DelegatedMethod1
                 return intPart + frac + 5;
             }
             public double DelegatedMethod2(int intPart, float frac)
             {
-                OutputHelper.WriteLine("DelegatedMethod2");
+                // DelegatedMethod2
                 return intPart + frac + 10;
             }
             public double DelegatedMethod3(int intPart, float frac)
             {
-                OutputHelper.WriteLine("DelegatedMethod3");
+                // DelegatedMethod3
                 return intPart + frac + 15;
             }
             public double DelegatedMethod4(int intPart, float frac)
             {
-                OutputHelper.WriteLine("DelegatedMethod4");
+                // DelegatedMethod4
                 return intPart + frac + 20;
             }
             public static int Main_old(String[] args)
@@ -2146,8 +2102,8 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else {OutputHelper.WriteLine("FAIL, 0x{0:X}");
+                if (0 == retval) // PASS
+                else {// FAIL, 0x{0:X}
                 return retval;
             }
             public static bool testMethod()
@@ -2218,12 +2174,7 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else
-                {
-                    OutputHelper.WriteLine("FAIL, 0x{0:X}");
-                    OutputHelper.WriteLine(retval.ToString());
-                }
+
                 return retval;
             }
             public static bool testMethod()
@@ -2296,12 +2247,7 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else
-                {
-                    OutputHelper.WriteLine("FAIL, 0x{0:X}");
-                    OutputHelper.WriteLine(retval.ToString());
-                }
+
                 return retval;
             }
             public static bool testMethod()
@@ -2378,12 +2324,7 @@ namespace NFUnitTestDelegates
                 {
                     retval -= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else
-                {
-                    OutputHelper.WriteLine("FAIL, 0x{0:X}");
-                    OutputHelper.WriteLine(retval.ToString());
-                }
+
                 return retval;
             }
             public static bool testMethod()
@@ -2461,12 +2402,7 @@ namespace NFUnitTestDelegates
                 {
                     retval ^= 0x20;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else
-                {
-                    OutputHelper.WriteLine("FAIL, 0x{0:X}");
-                    OutputHelper.WriteLine(retval.ToString());
-                }
+
                 return retval;
             }
             public static bool testMethod()
