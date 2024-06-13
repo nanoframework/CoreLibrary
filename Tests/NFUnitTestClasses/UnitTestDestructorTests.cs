@@ -60,7 +60,7 @@ namespace NFUnitTestClasses
 
         //    ~DestructorsTestClass3()
         //    {
-        //        //// Calling Destructor for Test Class 3
+        //        // Calling Destructor for Test Class 3
         //        intI = 2;
         //    }
 
@@ -96,7 +96,7 @@ namespace NFUnitTestClasses
             ~DestructorsTestClass4_Base()
             {
                 intI = intI * 2;
-                //// Calling Destructor for Test Class 4 Base
+                // Calling Destructor for Test Class 4 Base
             }
         }
 
@@ -106,7 +106,7 @@ namespace NFUnitTestClasses
             ~DestructorsTestClass4()
             {
                 intI = intI + 2;
-                //// Calling Destructor for Test Class 4
+                // Calling Destructor for Test Class 4
             }
 
             public static bool testMethod()
@@ -145,7 +145,7 @@ namespace NFUnitTestClasses
             ~DestructorsTestClass7()
             {
                 intI = 3;
-                //// Calling Destructor for Test Class 7
+                // Calling Destructor for Test Class 7
             }
 
             public static bool testMethod()

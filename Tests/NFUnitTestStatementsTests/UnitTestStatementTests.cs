@@ -2908,7 +2908,7 @@ namespace NFUnitTestStatementsTests
                 int ret = 1;
                 do
                 {
-                    // Hello World
+                    OutputHelper.WriteLine("Hello World");
                     ret--;
                 } while (bFalse);
                 return (ret);
@@ -2926,7 +2926,7 @@ namespace NFUnitTestStatementsTests
                 bool bTrue = true;
                 do
                 {
-                    // Hello World
+                    OutputHelper.WriteLine("Hello World");
                     return (0);
                 } while (bTrue);
                 return (1);

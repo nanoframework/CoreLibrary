@@ -437,8 +437,17 @@ namespace NFUnitTestAttributes
                     retval -= 2;
                 Attrib_TestClass_attrib029_8_S1 s1 = new Attrib_TestClass_attrib029_8_S1();
                 s1.j = 10;
+                
                 if (10 == s1.j)
+                {
                     retval -= 4;
+                }
+                
+                if (0 != retval)
+                {
+                    OutputHelper.WriteLine("FAIL, retval==" + retval.ToString());
+                }
+
                 return retval;
             }
             public static bool testMethod()
@@ -476,8 +485,17 @@ namespace NFUnitTestAttributes
                 if (anInt == 5)
                     retval -= 2;
                 Attrib_TestClass_attrib029_9_S1 s1 = new Attrib_TestClass_attrib029_9_S1();
+                
                 if (10 == s1.S1Method(10))
+                {
                     retval -= 4;
+                }
+
+                if (0 != retval)
+                {
+                    OutputHelper.WriteLine("FAIL, retval==" + retval.ToString());
+                }
+
                 return retval;
             }
             public static bool testMethod()
@@ -515,8 +533,16 @@ namespace NFUnitTestAttributes
                     retval -= 1;
                 Attrib_TestClass_attrib029_a_S1 s1 = new Attrib_TestClass_attrib029_a_S1();
                 s1.j = 10;
+
                 if (10 == s1.j)
+                {
                     retval -= 2;
+                }
+
+                if (0 != retval) 
+                {
+                    OutputHelper.WriteLine("FAIL, retval==" + retval.ToString());
+                }
 
                 return retval;
             }
@@ -549,8 +575,16 @@ namespace NFUnitTestAttributes
             {
                 Attrib_TestClass_attrib029_b_C1 c1 = new Attrib_TestClass_attrib029_b_C1();
                 int anInt = c1.C1Method(5);
+
                 if (anInt == 5)
+                {
                     retval -= 2;
+                }
+
+                if (0 == retval)
+                {
+                    OutputHelper.WriteLine("FAIL, retval==" + retval.ToString());
+                }
 
                 return retval;
             }

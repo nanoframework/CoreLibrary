@@ -598,7 +598,7 @@ class NS_TestClass_compunit_03
 
     public void showName()
     {
-        // Class C
+        OutputHelper.WriteLine("Class C");
     }
 
     public static void Main_old(String[] args)
@@ -992,7 +992,7 @@ namespace NS_TestClass_decl_17_Foo
     {
         public void print()
         {
-            // Test
+            OutputHelper.WriteLine("Test");
         }
     }
 }
@@ -1051,7 +1051,7 @@ namespace NS_TestClass_decl_21_test
                                         {
                                             public void SayHello()
                                             {
-                                                // Hello
+                                                OutputHelper.WriteLine("Hello");
                                             }
                                         }
                                     }
@@ -1305,7 +1305,7 @@ namespace NS_TestClass_direct_02_Foo.Bar
     {
         public void showMessage()
         {
-            // Foo.Bar.A
+            OutputHelper.WriteLine("Foo.Bar.A");
         }
     }
 }
@@ -1319,7 +1319,7 @@ namespace NS_TestClass_direct_02
     {
         public void showMessage()
         {
-            // testns.A
+            OutputHelper.WriteLine("testns.A");
         }
     }
 

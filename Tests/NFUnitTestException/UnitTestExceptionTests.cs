@@ -1366,9 +1366,6 @@ namespace NFUnitTestException
                         // Did not catch Exc_TestClass_excep42_E1
                         retval = -1;
                     }
-                    OutputHelper.WriteLine(retval.ToString());
-                    if (retval == 0) // PASS
-                    else // FAIL
                     return retval;
                 }
                 public static bool testMethod()

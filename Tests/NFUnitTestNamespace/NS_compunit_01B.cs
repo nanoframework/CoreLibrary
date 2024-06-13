@@ -10,6 +10,6 @@ class NS_TestClass_compunit_01B
 {
     public void printClassName()
     {
-        // Class B
+        OutputHelper.WriteLine("Class B");
     }
 }
