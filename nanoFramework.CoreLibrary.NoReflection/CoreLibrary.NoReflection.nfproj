@@ -170,16 +170,18 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeTypeHandle.cs" Link="System\RuntimeTypeHandle.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" Link="System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\ExtensionAttribute.cs" Link="System\Runtime\CompilerServices\ExtensionAttribute.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IndexerNameAttribute.cs" Link="System\CompilerServices\IndexerNameAttribute.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" Link="System\CompilerServices\InternalsVisibleToAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IndexerNameAttribute.cs" Link="System\Runtime\CompilerServices\IndexerNameAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" Link="System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IsExternalInit.cs">
       <Link>System\Runtime\CompilerServices\IsExternalInit.cs</Link>
     </Compile>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\MethodImplAttribute.cs" Link="System\CompilerServices\MethodImplAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\MethodCodeType.cs" Link="System\Runtime\CompilerServices\MethodCodeType.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\MethodImplAttribute.cs" Link="System\Runtime\CompilerServices\MethodImplAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\MethodImplOptions.cs" Link="System\Runtime\CompilerServices\MethodImplOptions.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\RuntimeFeature.cs">
       <Link>System\Runtime\CompilerServices\RuntimeFeature.cs</Link>
     </Compile>
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\RuntimeHelpers.cs" Link="System\CompilerServices\RuntimeHelpers.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\RuntimeHelpers.cs" Link="System\Runtime\CompilerServices\RuntimeHelpers.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\Attributes.cs" Link="System\InteropServices\Attributes.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\CharSet.cs" Link="System\InteropServices\CharSet.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\InteropServices\LayoutKind.cs" Link="System\InteropServices\LayoutKind.cs" />
@@ -395,9 +397,6 @@
   <ItemGroup>
     <None Include="..\nanoFramework.CoreLibrary\key.snk" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="System\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.lock.json" />
