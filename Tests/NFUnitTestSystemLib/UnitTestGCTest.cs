@@ -6,20 +6,19 @@
 
 using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
 
 namespace NFUnitTestSystemLib
 {
     [TestClass]
-    class UnitTestGCTest
+    public class UnitTestGCTest
     {
-        class FinalizeObject
+        internal class FinalizeObject
         {
             public static FinalizeObject m_currentInstance = null;
 
             ~FinalizeObject()
             {
-                if (m_hasFinalized1 == false)
+                if (!m_hasFinalized1)
                 {
                     // First finalization
 
@@ -46,130 +45,178 @@ namespace NFUnitTestSystemLib
         static bool m_hasFinalized2 = false;
         static bool m_Test1Result = false;
 
-        //[TestMethod]
-        //public void SystemGC1_Test()
-        //{
-        //    /// <summary>
-        //    /// 1. Create a FinalizeObject.
-        //    /// 2. Release the reference
-        //    /// 3. Allow for GC
-        //    /// 4. Run ReRegisterForFinalize
-        //    /// 5. Allow for GC
-        //    /// 6. Verify that object has been collected
-        //    /// </summary>
-        //    ///
-        //    // Tests ReRegisterForFinalize
-        //    // Create a FinalizeObject.
-        //    FinalizeObject mfo = new FinalizeObject();
-        //    m_hasFinalized1 = false;
-        //    m_hasFinalized2 = false;
+        [TestMethod]
+        public void SystemGC1_Test()
+        {
+            /// <summary>
+            /// 1. Create a FinalizeObject.
+            /// 2. Release the reference
+            /// 3. Allow for GC
+            /// 4. Run ReRegisterForFinalize
+            /// 5. Allow for GC
+            /// 6. Verify that object has been collected
+            /// </summary>
+            ///
+            // Tests ReRegisterForFinalize
+            // Create a FinalizeObject.
+            FinalizeObject mfo = new FinalizeObject();
+            m_hasFinalized1 = false;
+            m_hasFinalized2 = false;
 
-        //    // Release reference
-        //    mfo = null;
+            // Release reference
+            mfo = null;
 
-        //    // Allow GC
-        //    GC.WaitForPendingFinalizers();
-        //    int sleepTime = 1000;
-        //    int slept = 0;
-        //    while (m_hasFinalized1 == false && slept < sleepTime)
-        //    {
-        //        System.Threading.Thread.Sleep(10);
-        //        slept += 10;
-        //    }
-        //    OutputHelper.WriteLine("GC took " + slept);
+            // Allow GC
+            GC.WaitForPendingFinalizers();
 
-        //    // At this point mfo will have gone through the first Finalize.
-        //    // There should now be a reference to mfo in the static
-        //    // FinalizeObject.m_currentInstance field.  Setting this value
-        //    // to null and forcing another garbage collection will now
-        //    // cause the object to Finalize permanently.
-        //    // Reregister and allow for GC
-        //    FinalizeObject.m_currentInstance = null;
-        //    GC.WaitForPendingFinalizers();
-        //    sleepTime = 1000;
-        //    slept = 0;
-        //    while (m_hasFinalized2 == false && slept < sleepTime)
-        //    {
-        //        System.Threading.Thread.Sleep(10);
-        //        slept += 10;
-        //    }
-        //    OutputHelper.WriteLine("GC took " + slept);
+            int sleepTime = 1000;
+            int slept = 0;
 
-        //    m_Test1Result = m_hasFinalized2;
-        //    Assert.IsTrue(m_hasFinalized2);
-        //}
+            while (!m_hasFinalized1 && slept < sleepTime)
+            {
+                // force GC run caused by memory allocation
+                var dummyArray = new byte[1024 * 1024 * 1];
 
-        //[TestMethod]
-        //public void SystemGC2_Test()
-        //{
-        //    /// <summary>
-        //    /// 1. Create a FinalizeObject.
-        //    /// 2. Release the reference
-        //    /// 3. SupressFinalize
-        //    /// 3. Allow for GC
-        //    /// 6. Verify that object has not been collected
-        //    /// </summary>
-        //    ///
-        //    // Tests SuppressFinalize
-        //    // Create a FinalizeObject.
-        //    FinalizeObject mfo = new FinalizeObject();
-        //    m_hasFinalized1 = false;
-        //    m_hasFinalized2 = false;
+                System.Threading.Thread.Sleep(10);
+                slept += 10;
+            }
 
-        //    // Releasing
-        //    System.GC.SuppressFinalize(mfo);
-        //    mfo = null;
+            OutputHelper.WriteLine($"GC took {slept}");
 
-        //    // Allow GC
-        //    GC.WaitForPendingFinalizers();
-        //    int sleepTime = 1000;
-        //    int slept = 0;
-        //    while (m_hasFinalized1 == false && slept < sleepTime)
-        //    {
-        //        System.Threading.Thread.Sleep(10);
-        //        slept += 10;
-        //    }
-        //    OutputHelper.WriteLine("GC took " + slept);
+            // At this point mfo will have gone through the first Finalize.
+            // There should now be a reference to mfo in the static
+            // FinalizeObject.m_currentInstance field.  Setting this value
+            // to null and forcing another garbage collection will now
+            // cause the object to Finalize permanently.
+            // Reregister and allow for GC
+            FinalizeObject.m_currentInstance = null;
 
-        //    Assert.IsFalse(m_hasFinalized1);
-        //}
+            GC.WaitForPendingFinalizers();
 
-        //[TestMethod]
-        //public void SystemGC3_Test()
-        //{
-        //    /// <summary>
-        //    /// 1. Create a FinalizeObject.
-        //    /// 2. Release the reference
-        //    /// 3. SupressFinalize
-        //    /// 3. Allow for GC
-        //    /// 6. Verify that object has not been collected
-        //    /// </summary>
-        //    ///
-        //    // Tests WaitForPendingFinalizers, dependant on test 1
-        //    // will auto-fail if test 1 fails.
-        //    Assert.IsTrue(m_Test1Result);
+            sleepTime = 1000;
+            slept = 0;
 
-        //    // Create a FinalizeObject.
-        //    FinalizeObject mfo = new FinalizeObject();
-        //    m_hasFinalized1 = false;
-        //    m_hasFinalized2 = false;
+            while (!m_hasFinalized2 && slept < sleepTime)
+            {
+                // force GC run caused by memory allocation
+                var dummyArray = new byte[1024 * 1024 * 1];
 
-        //    // Releasing
-        //    mfo = null;
+                System.Threading.Thread.Sleep(10);
+                slept += 10;
+            }
 
-        //    // Wait for GC
-        //    GC.WaitForPendingFinalizers();
-        //    System.GC.WaitForPendingFinalizers();
+            OutputHelper.WriteLine($"GC took {slept}");
 
-        //    // Releasing again
-        //    FinalizeObject.m_currentInstance = null;
+            m_Test1Result = m_hasFinalized2;
+            Assert.IsTrue(m_hasFinalized2);
+        }
 
-        //    // Wait for GC
-        //    GC.WaitForPendingFinalizers();
-        //    System.GC.WaitForPendingFinalizers();
+        [TestMethod]
+        public void SystemGC2_Test()
+        {
+            /// <summary>
+            /// 1. Create a FinalizeObject.
+            /// 2. Release the reference
+            /// 3. SupressFinalize
+            /// 3. Allow for GC
+            /// 6. Verify that object has not been collected
+            /// </summary>
+            ///
+            // Tests SuppressFinalize
+            // Create a FinalizeObject.
+            FinalizeObject mfo = new FinalizeObject();
+            m_hasFinalized1 = false;
+            m_hasFinalized2 = false;
 
-        //    Assert.IsTrue(m_hasFinalized2);
-        //}
+            // Releasing
+            GC.SuppressFinalize(mfo);
+            mfo = null;
 
+            // Allow GC
+            GC.WaitForPendingFinalizers();
+
+            int sleepTime = 1000;
+            int slept = 0;
+
+            while (!m_hasFinalized1 && slept < sleepTime)
+            {
+                // force GC run caused by memory allocation
+                var dummyArray = new byte[1024 * 1024 * 1];
+
+                System.Threading.Thread.Sleep(10);
+                slept += 10;
+            }
+
+            OutputHelper.WriteLine($"GC took {slept}");
+
+            Assert.IsFalse(m_hasFinalized1);
+        }
+
+        [TestMethod]
+        public void SystemGC3_Test()
+        {
+            /// <summary>
+            /// 1. Create a FinalizeObject.
+            /// 2. Release the reference
+            /// 3. SupressFinalize
+            /// 3. Allow for GC
+            /// 6. Verify that object has not been collected
+            /// </summary>
+            ///
+
+            // Tests WaitForPendingFinalizers, dependant on test 1
+            // will auto-fail if test 1 fails.
+            OutputHelper.Write("Tests WaitForPendingFinalizers, dependant on test 1");
+            OutputHelper.WriteLine("will auto-fail if test 1 fails.");
+
+            Assert.IsTrue(m_Test1Result);
+
+            // Create a FinalizeObject.
+            FinalizeObject mfo = new FinalizeObject();
+            m_hasFinalized1 = false;
+            m_hasFinalized2 = false;
+
+            // Releasing
+            mfo = null;
+
+            int sleepTime = 1000;
+            int slept = 0;
+
+            while (!m_hasFinalized1 && slept < sleepTime)
+            {
+                // force GC run caused by memory allocation
+                var dummyArray = new byte[1024 * 1024 * 1];
+
+                System.Threading.Thread.Sleep(10);
+                slept += 10;
+            }
+
+            OutputHelper.WriteLine($"GC took {slept}");
+
+            // Wait for GC
+            GC.WaitForPendingFinalizers();
+
+            // Releasing again
+            FinalizeObject.m_currentInstance = null;
+
+            sleepTime = 1000;
+            slept = 0;
+
+            while (!m_hasFinalized2 && slept < sleepTime)
+            {
+                // force GC run caused by memory allocation
+                var dummyArray = new byte[1024 * 1024 * 1];
+
+                System.Threading.Thread.Sleep(10);
+                slept += 10;
+            }
+
+            OutputHelper.WriteLine($"GC took {slept}");
+
+            // Wait for GC
+            GC.WaitForPendingFinalizers();
+
+            Assert.IsTrue(m_hasFinalized2);
+        }
     }
 }
