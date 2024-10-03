@@ -346,7 +346,7 @@ namespace NFUnitTestSystemLib
                 Assert.AreEqual(_uInt64[i], result);
 
                 result = ulong.Parse(strArr[i]);
-                Assert.AreEqual(result, _uInt64[i]);
+                Assert.AreEqual(_uInt64[i], result);
             }
 
             //Int32:  -2147483648 --> 2147483647
