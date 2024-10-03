@@ -468,7 +468,7 @@ namespace NFUnitTestArithmetic
             }
             else
             {
-                Assert.AreEqual(result, expectedResult, $"The expected result for '{formatString}' on value {valueStr} for type {value.GetType().Name} is '{expectedResult}'");
+                Assert.AreEqual(expectedResult, result, $"The expected result for '{formatString}' on value {valueStr} for type {value.GetType().Name} is '{expectedResult}'");
             }
 
             if (rowData != null)
