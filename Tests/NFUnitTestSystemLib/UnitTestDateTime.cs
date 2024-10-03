@@ -2303,7 +2303,7 @@ namespace NFUnitTestSystemLib
                 Assert.AreEqual(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"DateTime.Parse '{dt}' failed");
 
                 Assert.IsTrue(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
-                Assert.AreEqual(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
+                Assert.AreEqual(dt.ToString(specifier1), result.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
             }
         }
 
@@ -2324,7 +2324,7 @@ namespace NFUnitTestSystemLib
                 Assert.AreEqual(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"Parsing DateTime '{dt}' failed");
 
                 Assert.IsTrue(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
-                Assert.AreEqual(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
+                Assert.AreEqual(dt.ToString(specifier1), result.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
             }
         }
 
@@ -2345,7 +2345,7 @@ namespace NFUnitTestSystemLib
                 Assert.AreEqual(DateTime.Parse(dtOutput1).ToString(specifier1), dt.ToString(specifier1), $"Parsing DateTime '{dt}' failed");
 
                 Assert.IsTrue(DateTime.TryParse(dtOutput1, out DateTime result), $"DateTime.TryParse '{dt}' failed");
-                Assert.AreEqual(result.ToString(specifier1), dt.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
+                Assert.AreEqual(dt.ToString(specifier1), result.ToString(specifier1), $"DateTime.TryParse '{dt}' returning wrong value: '{result}'");
             }
         }
 
