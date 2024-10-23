@@ -1041,6 +1041,146 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(-1, source.LastIndexOf(".", 1, 2), "Case 6");
         }
 
+        [TestMethod]
+        public void Concat_should_work_with_nulls()
+        {
+            const string baseContent = "Hello";
+            string[] dispOut = new string[4];
+            dispOut[0] = baseContent;
+
+            string test = string.Concat(dispOut);
+
+            Console.WriteLine(test);
+
+            Assert.AreSame(baseContent, test);
+        }
+
+        [TestMethod]
+        public void Concat_Should_Concatenate_Two_Strings()
+        {
+            // Arrange
+            string str1 = "Hello";
+            string str2 = "World";
+
+            // Act
+            string result = string.Concat(str1, str2);
+
+            // Assert
+            Assert.AreEqual("HelloWorld", result);
+        }
+
+        [TestMethod]
+        public void Concat_Should_Concatenate_Multiple_Strings()
+        {
+            // Arrange
+            string str1 = "Hello";
+            string str2 = " ";
+            string str3 = "World";
+            string str4 = "!";
+
+            // Act
+            string result = string.Concat(str1, str2, str3, str4);
+
+            // Assert
+            Assert.AreEqual("Hello World!", result);
+        }
+
+        [TestMethod]
+        public void Concat_Should_Handle_Null_Strings()
+        {
+            // Arrange
+            string str1 = null;
+            string str2 = "World";
+
+            // Act
+            string result = string.Concat(str1, str2);
+
+            // Assert
+            Assert.AreEqual("World", result);
+        }
+
+        [TestMethod]
+        public void Concat_Should_Handle_Empty_Strings()
+        {
+            // Arrange
+            string str1 = "";
+            string str2 = "World";
+
+            // Act
+            string result = string.Concat(str1, str2);
+
+            // Assert
+            Assert.AreEqual("World", result);
+        }
+
+        [TestMethod]
+        public void Concat_Should_Handle_Null_And_Empty_Strings()
+        {
+            // Arrange
+            string str1 = null;
+            string str2 = "";
+            string str3 = "Hello";
+            string str4 = null;
+
+            // Act
+            string result = string.Concat(str1, str2, str3, str4);
+
+            // Assert
+            Assert.AreEqual("Hello", result);
+        }
+
+        [TestMethod]
+        public void Concat_Should_Concatenate_String_Array()
+        {
+            // Arrange
+            string[] strings = { "Hello", " ", "World", "!" };
+
+            // Act
+            string result = string.Concat(strings);
+
+            // Assert
+            Assert.AreEqual("Hello World!", result);
+        }
+
+        [TestMethod]
+        public void Concat_Should_Handle_Null_Elements_In_Array()
+        {
+            // Arrange
+            string[] strings = { "Hello", null, "World", "!" };
+
+            // Act
+            string result = string.Concat(strings);
+
+            // Assert
+            Assert.AreEqual("HelloWorld!", result);
+        }
+
+        [TestMethod]
+        public void Concat_Should_Handle_Empty_Elements_In_Array()
+        {
+            // Arrange
+            string[] strings = { "Hello", "", "World", "!" };
+
+            // Act
+            string result = string.Concat(strings);
+
+            // Assert
+            Assert.AreEqual("HelloWorld!", result);
+        }
+
+        [TestMethod]
+        public void Concat_Should_Handle_Null_And_Empty_Elements_In_Array()
+        {
+            // Arrange
+            string[] strings = { null, "", "Hello", null, "", "World", "!" };
+
+            // Act
+            string result = string.Concat(strings);
+
+            // Assert
+            Assert.AreEqual("HelloWorld!", result);
+        }
+
         /// <summary>
         /// A class whose ToString method return null
         /// </summary>
@@ -1053,4 +1193,3 @@ namespace NFUnitTestSystemLib
         }
     }
 }
-
