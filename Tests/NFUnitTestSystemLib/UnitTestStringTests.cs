@@ -469,7 +469,7 @@ namespace NFUnitTestSystemLib
                 {
                     Assert.IsTrue(s1.Contains(s2));
                 }
-                catch(ArgumentOutOfRangeException)
+                catch (ArgumentOutOfRangeException)
                 {
                     // this is the intended outcome at some point
                     Assert.IsTrue(true);
@@ -767,7 +767,6 @@ namespace NFUnitTestSystemLib
         public static void ZeroLengthEndsWith_Char()
         {
             // Test of EndsWith with chars
-            
             var a = new char[3];
 
             string s1 = new string(a);
