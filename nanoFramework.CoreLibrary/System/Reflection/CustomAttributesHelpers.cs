@@ -3,85 +3,102 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Collections;
+
 namespace System.Reflection
 {
     internal class CustomAttributesHelpers
     {
-        public static object[] GetCustomAttributesInternal(object[] rawAttributes)
+        /// <summary>
+        /// Creates an array of <see cref="Attribute"/> from a set of attribute definitions.
+        /// </summary>
+        /// <param name="attributeDefinitions">An array of attribute definitions returned from a call to GetCustomAttributesNative.</param>
+        /// <returns>An array of <see cref="Attribute"/>s</returns>
+        /// <remarks>
+        /// <para>
+        /// The attribute definitions are "encoded" into an object array with two positions for each attribute.
+        /// </para>
+        /// 
+        /// <para>
+        /// 1st position - The type of the <see cref="Attribute"/><br/>
+        /// 2nd position - The type(s) of the constructor parameters
+        /// </para>
+        ///
+        /// <para>
+        /// Current limitations:<br/>
+        /// </para>
+        /// 
+        /// <para>
+        /// - The parameter(s) have to be a string or numeric type
+        /// - Properties and fields are not supported
+        /// </para>
+        /// </remarks>
+        public static object[] GetCustomAttributesInternal(object[] attributeDefinitions)
         {
-            // get the custom attributes data for the field
-            // these are returned "encoded" in an object array with 2 positions for each attribute
-            // 1st the attribute type
-            // 2nd the constructor parameter or null, if the attribute has no constructor parameters
-            // 
-            // current limitations: 
-            // - works only for constructors with a single parameter
-            // - the parameter has to be a string or numeric type
-            //
-            // both limitations above can be relatively easily overcome by adding the appropriate code at the native handler
-
-            if (rawAttributes is null)
+            if (attributeDefinitions is null)
             {
                 return new object[0];
             }
 
-            var attributes = new object[rawAttributes.Length / 2];
+            var attributes = new ArrayList();
 
-            for (var i = 0; i < rawAttributes.Length; i += 2)
+            for (var i = 0; i < attributeDefinitions.Length; i += 2)
             {
-                var objectType = rawAttributes[i].GetType();
+                var objectType = attributeDefinitions[i].GetType();
+                var parameterType = attributeDefinitions[i + 1]?.GetType();
 
-                // peek next element to determine if it's null
-                if (rawAttributes[i + 1] == null)
+                ConstructorInfo constructorInfo;
+                var constructorParameters = new object[0];
+
+                if (parameterType is null)
                 {
-                    var ctor = objectType.GetConstructor(new Type[0]);
+                    // If the parameter type is null we'll use the parameterless constructor
+                    constructorInfo = objectType.GetConstructor(new Type[0]);
+                }
+                else if (parameterType.IsArray)
+                {
+                    // Check for a constructor with a single parameter of the correct array type
+                    constructorInfo = objectType.GetConstructor(new[] { parameterType });
+                    constructorParameters = new[] { attributeDefinitions[i + 1] };
 
-                    if (ctor is null)
+                    if (constructorInfo is null)
                     {
-                        throw new InvalidOperationException();
-                    }
+                        // Check for a constructor with multiple parameters of the correct types
+                        constructorParameters = (object[])attributeDefinitions[i + 1];
 
-                    // has default constructor, invoke it
-                    attributes[i / 2] = ctor.Invoke(new object[0]);
+                        var parameterTypes = new Type[constructorParameters.Length];
+
+                        for (var p = 0; p < constructorParameters.Length; p++)
+                        {
+                            parameterTypes[p] = constructorParameters[p].GetType();
+                        }
+
+                        constructorInfo = objectType.GetConstructor(parameterTypes);
+                    }
                 }
                 else
                 {
-                    // get the parameter types
-                    var paramType = rawAttributes[i + 1].GetType();
-
-                    // get constructor
-                    var ctor = objectType.GetConstructor(new Type[] { paramType });
-
-                    // get params
-                    var ctorParams = new[] { rawAttributes[i + 1] };
-
-                    if (ctor is null)
-                    {
-                        // give it another try, this time with an array of the parameters types
-                        // rebuild params list 
-                        ctorParams = (object[])rawAttributes[i + 1];
-
-                        var paramsTypes = new Type[ctorParams.Length];
-
-                        for (var p = 0; p < ctorParams.Length; p++)
-                        {
-                            paramsTypes[p] = ctorParams[p].GetType();
-                        }
-
-                        ctor = objectType.GetConstructor(paramsTypes);
-
-                        if (ctor is null)
-                        {
-                            throw new InvalidOperationException();
-                        }
-                    }
-
-                    // invoke constructor with the parameter
-                    attributes[i / 2] = ctor.Invoke(ctorParams);
+                    // Get a constructor with a single parameter of the correct type
+                    constructorInfo = objectType.GetConstructor(new[] { parameterType });
+                    constructorParameters = new[] { attributeDefinitions[i + 1] };
                 }
+
+                // If we found a constructor invoke it with the parameters
+                if (constructorInfo is not null)
+                {
+                    attributes.Add(constructorInfo.Invoke(constructorParameters));
+                }
+#if DEBUG
+                else
+                {
+                    // If a constructor was not found we're assuming it's a type that hasn't been implemented in nanoFramework
+                    // eg: System.Runtime.CompilerServices.NullableContextAttribute
+                    Console.WriteLine($"Attribute type is not found: {attributeDefinitions[i]}");
+                }
+#endif
             }
 
-            return attributes;
+            return (object[])attributes.ToArray(typeof(object));
         }
     }
 }

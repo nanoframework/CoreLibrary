@@ -1,13 +1,29 @@
 ﻿using System;
 using nanoFramework.TestFramework;
+// ReSharper disable InconsistentNaming
 
+// Enabling nullable here tests the use case where the compiler adds an attribute the isn't implemented in nanoFramework
+// This is currently System.Runtime.CompilerServices.NullableContextAttribute
+#nullable enable
 namespace NFUnitTestAttributes
 {
-    [TestClass]
     public class ConstructorTests
     {
         public const int ExpectedIntParameter = 69_420;
         public const string ExpectedStringParameter = "A string parameter";
+
+        private static void AssertArrayConstructorIsCalled(object[] attributes)
+        {
+            Assert.IsNotNull(attributes);
+            Assert.AreEqual(1, attributes.Length);
+            Assert.IsInstanceOfType(attributes[0], typeof(SingleParameterConstructorTestAttribute));
+
+            var testAttribute = (SingleParameterConstructorTestAttribute)attributes[0];
+
+            Assert.IsTrue(testAttribute.ConstructorCalled);
+            Assert.AreEqual(ExpectedIntParameter, testAttribute.IntProperty);
+            Assert.AreEqual(ExpectedStringParameter, testAttribute.StringProperty);
+        }
 
         private static void AssertDefaultConstructorIsCalled(object[] attributes)
         {
@@ -21,15 +37,28 @@ namespace NFUnitTestAttributes
             Assert.AreEqual(ExpectedStringParameter, testAttribute.StringProperty);
         }
 
+        private static void AssertMultiParameterConstructorIsCalled(object[] attributes)
+        {
+            Assert.IsNotNull(attributes);
+            Assert.AreEqual(1, attributes.Length);
+            Assert.IsInstanceOfType(attributes[0], typeof(MultiParameterConstructorTestAttribute));
+
+            var testAttribute = (MultiParameterConstructorTestAttribute)attributes[0];
+
+            Assert.IsTrue(testAttribute.ConstructorCalled);
+            Assert.AreEqual(ExpectedIntParameter, testAttribute.IntProperty);
+            Assert.AreEqual(ExpectedStringParameter, testAttribute.StringProperty);
+        }
+
         private static void AssertSingleParameterConstructorIsCalledWithIntValue(object[] attributes)
         {
             Assert.IsNotNull(attributes);
             Assert.AreEqual(1, attributes.Length);
-            Assert.IsInstanceOfType(attributes[0], typeof(ConstructorParameterTestAttribute));
+            Assert.IsInstanceOfType(attributes[0], typeof(SingleParameterConstructorTestAttribute));
 
-            var testAttribute = (ConstructorParameterTestAttribute)attributes[0];
+            var testAttribute = (SingleParameterConstructorTestAttribute)attributes[0];
 
-            Assert.IsTrue(testAttribute.SingleParameterConstructorCalled);
+            Assert.IsTrue(testAttribute.ConstructorCalled);
             Assert.AreEqual(ExpectedIntParameter, testAttribute.IntProperty);
             Assert.IsNull(testAttribute.StringProperty);
         }
@@ -38,11 +67,11 @@ namespace NFUnitTestAttributes
         {
             Assert.IsNotNull(attributes);
             Assert.AreEqual(1, attributes.Length);
-            Assert.IsInstanceOfType(attributes[0], typeof(ConstructorParameterTestAttribute));
+            Assert.IsInstanceOfType(attributes[0], typeof(SingleParameterConstructorTestAttribute));
 
-            var testAttribute = (ConstructorParameterTestAttribute)attributes[0];
+            var testAttribute = (SingleParameterConstructorTestAttribute)attributes[0];
 
-            Assert.IsTrue(testAttribute.SingleParameterConstructorCalled);
+            Assert.IsTrue(testAttribute.ConstructorCalled);
             Assert.AreEqual(0, testAttribute.IntProperty);
             Assert.AreEqual(ExpectedStringParameter, testAttribute.StringProperty);
         }
@@ -51,166 +80,304 @@ namespace NFUnitTestAttributes
         {
             Assert.IsNotNull(attributes);
             Assert.AreEqual(1, attributes.Length);
-            Assert.IsInstanceOfType(attributes[0], typeof(ConstructorParameterTestAttribute));
+            Assert.IsInstanceOfType(attributes[0], typeof(SingleParameterConstructorTestAttribute));
 
-            var testAttribute = (ConstructorParameterTestAttribute)attributes[0];
+            var testAttribute = (SingleParameterConstructorTestAttribute)attributes[0];
 
-            Assert.IsTrue(testAttribute.ZeroParameterConstructorCalled);
+            Assert.IsTrue(testAttribute.ConstructorCalled);
             Assert.AreEqual(0, testAttribute.IntProperty);
             Assert.IsNull(testAttribute.StringProperty);
         }
 
-        [TestMethod]
-        public void When_Attribute_is_on_a_class_default_constructor_is_called()
+        [TestClass]
+        public class When_Attribute_is_on_a_class: ConstructorTests
         {
-            var attributes = typeof(DefaultConstructorTestCases).GetCustomAttributes(true);
+            private static object[] GetAttributes(Type testCases)
+            {
+                return testCases.GetCustomAttributes(true);
+            }
 
-            AssertDefaultConstructorIsCalled(attributes);
+            [TestMethod]
+            public void Default_constructor_is_called()
+            {
+                AssertDefaultConstructorIsCalled(GetAttributes(typeof(DefaultConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Multi_parameter_constructor_is_called_with_array_value()
+            {
+                AssertMultiParameterConstructorIsCalled(GetAttributes(typeof(MultiParameterConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Single_parameter_constructor_is_called_with_array_value()
+            {
+                AssertArrayConstructorIsCalled(GetAttributes(typeof(ArrayParameterConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Single_parameter_constructor_is_called_with_int_value()
+            {
+                AssertSingleParameterConstructorIsCalledWithIntValue(GetAttributes(typeof(IntParameterConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Single_parameter_constructor_is_called_with_string_value()
+            {
+                AssertSingleParameterConstructorIsCalledWithStringValue(GetAttributes(typeof(StringParameterConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Zero_parameter_constructor_is_called()
+            {
+                AssertZeroParameterConstructorIsCalled(GetAttributes(typeof(ZeroParameterConstructorTestCases)));
+            }
         }
 
-        [TestMethod]
-        public void When_Attribute_is_on_a_class_single_parameter_constructor_is_called_with_int_value()
+        [TestClass]
+        public class When_Attribute_is_on_a_field : ConstructorTests
         {
-            var attributes = typeof(IntParameterConstructorTestCases).GetCustomAttributes(true);
+            private static object[] GetAttributes(Type testCases)
+            {
+                return testCases.GetField("TestField")!.GetCustomAttributes(true);
+            }
 
-            AssertSingleParameterConstructorIsCalledWithIntValue(attributes);
+            [TestMethod]
+            public void Default_constructor_is_called()
+            {
+                AssertDefaultConstructorIsCalled(GetAttributes(typeof(DefaultConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Multi_parameter_constructor_is_called_with_array_value()
+            {
+                AssertMultiParameterConstructorIsCalled(GetAttributes(typeof(MultiParameterConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Single_parameter_constructor_is_called_with_array_value()
+            {
+                AssertArrayConstructorIsCalled(GetAttributes(typeof(ArrayParameterConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Single_parameter_constructor_is_called_with_int_value()
+            {
+                AssertSingleParameterConstructorIsCalledWithIntValue(GetAttributes(typeof(IntParameterConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Single_parameter_constructor_is_called_with_string_value()
+            {
+                AssertSingleParameterConstructorIsCalledWithStringValue(GetAttributes(typeof(StringParameterConstructorTestCases)));
+            }
+
+            [TestMethod]
+            public void Zero_parameter_constructor_is_called()
+            {
+                AssertZeroParameterConstructorIsCalled(GetAttributes(typeof(ZeroParameterConstructorTestCases)));
+            }
         }
 
-        [TestMethod]
-        public void When_Attribute_is_on_a_class_single_parameter_constructor_is_called_with_string_value()
+        [TestClass]
+        public class When_Attribute_is_on_a_method : ConstructorTests
         {
-            var attributes = typeof(StringParameterConstructorTestCases).GetCustomAttributes(true);
- 
-            AssertSingleParameterConstructorIsCalledWithStringValue(attributes);
-        }
+            private static object[] GetAttributes(Type testCases)
+            {
+                return testCases.GetMethod("TestMethod")!.GetCustomAttributes(true);
+            }
 
-        [TestMethod]
-        public void When_Attribute_is_on_a_class_zero_parameter_constructor_is_called()
-        {
-            var attributes = typeof(ZeroParameterConstructorClass).GetCustomAttributes(true);
+            [TestMethod]
+            public void Default_constructor_is_called()
+            {
+                AssertDefaultConstructorIsCalled(GetAttributes(typeof(DefaultConstructorTestCases)));
+            }
 
-            AssertZeroParameterConstructorIsCalled(attributes);
-        }
+            [TestMethod]
+            public void Multi_parameter_constructor_is_called_with_array_value()
+            {
+                AssertMultiParameterConstructorIsCalled(GetAttributes(typeof(MultiParameterConstructorTestCases)));
+            }
 
-        [TestMethod]
-        public void When_Attribute_is_on_a_method_default_constructor_is_called()
-        {
-            var attributes = typeof(DefaultConstructorTestCases).GetMethod("TestMethod").GetCustomAttributes(true);
+            [TestMethod]
+            public void Single_parameter_constructor_is_called_with_array_value()
+            {
+                AssertArrayConstructorIsCalled(GetAttributes(typeof(ArrayParameterConstructorTestCases)));
+            }
 
-            AssertDefaultConstructorIsCalled(attributes);
-        }
+            [TestMethod]
+            public void Single_parameter_constructor_is_called_with_int_value()
+            {
+                AssertSingleParameterConstructorIsCalledWithIntValue(GetAttributes(typeof(IntParameterConstructorTestCases)));
+            }
 
-        [TestMethod]
-        public void When_Attribute_is_on_a_method_single_parameter_constructor_is_called_with_int_value()
-        {
-            var attributes = typeof(IntParameterConstructorTestCases).GetMethod("TestMethod").GetCustomAttributes(true);
+            [TestMethod]
+            public void Single_parameter_constructor_is_called_with_string_value()
+            {
+                AssertSingleParameterConstructorIsCalledWithStringValue(GetAttributes(typeof(StringParameterConstructorTestCases)));
+            }
 
-            AssertSingleParameterConstructorIsCalledWithIntValue(attributes);
-        }
-
-        [TestMethod]
-        public void When_Attribute_is_on_a_method_single_parameter_constructor_is_called_with_string_value()
-        {
-            var attributes = typeof(StringParameterConstructorTestCases).GetMethod("TestMethod").GetCustomAttributes(true);
-
-            AssertSingleParameterConstructorIsCalledWithStringValue(attributes);
-
-        }
-
-        [TestMethod]
-        public void When_Attribute_is_on_a_method_zero_parameter_constructor_is_called()
-        {
-            var attributes = typeof(ZeroParameterConstructorClass).GetMethod("TestMethod").GetCustomAttributes(true);
-
-            AssertZeroParameterConstructorIsCalled(attributes);
+            [TestMethod]
+            public void Zero_parameter_constructor_is_called()
+            {
+                AssertZeroParameterConstructorIsCalled(GetAttributes(typeof(ZeroParameterConstructorTestCases)));
+            }
         }
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
+    #region Test Attributes
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Field | AttributeTargets.Method | AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
     public class DefaultConstructorTestAttribute : Attribute
     {
         public int IntProperty { get; set; } = ConstructorTests.ExpectedIntParameter;
         public string StringProperty { get; set; } = ConstructorTests.ExpectedStringParameter;
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
-    public class ConstructorParameterTestAttribute: Attribute 
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Field | AttributeTargets.Method | AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
+    public class MultiParameterConstructorTestAttribute : Attribute
     {
-        public ConstructorParameterTestAttribute()
+        public MultiParameterConstructorTestAttribute()
         {
-            ZeroParameterConstructorCalled = true;
+            
         }
 
-        public ConstructorParameterTestAttribute(int value)
+        public MultiParameterConstructorTestAttribute(int intValue, string stringValue)
         {
-            SingleParameterConstructorCalled = true;
-            IntProperty = value;
+            ConstructorCalled = true;
+            IntProperty = intValue;
+            StringProperty = stringValue;
         }
 
-        public ConstructorParameterTestAttribute(string parameter)
-        {
-            SingleParameterConstructorCalled = true;
-            StringProperty = parameter;
-        }
-
-        public bool ZeroParameterConstructorCalled { get; }
+        public bool ConstructorCalled { get; }
 
         public int IntProperty { get; set; }
 
-        public bool SingleParameterConstructorCalled { get; set; }
+        public string? StringProperty { get; set; }
+    }
 
-        public string StringProperty { get; set; }
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Field | AttributeTargets.Method | AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
+    public class SingleParameterConstructorTestAttribute: Attribute 
+    {
+        public SingleParameterConstructorTestAttribute()
+        {
+            ConstructorCalled = true;
+        }
+
+        public SingleParameterConstructorTestAttribute(int value)
+        {
+            ConstructorCalled = true;
+            IntProperty = value;
+        }
+
+        public SingleParameterConstructorTestAttribute(string parameter)
+        {
+            ConstructorCalled = true;
+            StringProperty = parameter;
+        }
+
+        public SingleParameterConstructorTestAttribute(params object[] parameters)
+        {
+            ConstructorCalled = true;
+
+            foreach (var parameter in parameters)
+            {
+                switch (parameter)
+                {
+                    case int intParameter:
+                        IntProperty = intParameter;
+                        break;
+                    case string stringParameter:
+                        StringProperty = stringParameter;
+                        break;
+                }
+            }
+        }
+
+        public bool ConstructorCalled { get; }
+
+        public int IntProperty { get; set; }
+
+        public string? StringProperty { get; set; }
+    }
+    #endregion
+
+    #region Test Cases
+    [SingleParameterConstructorTest(ConstructorTests.ExpectedIntParameter, ConstructorTests.ExpectedStringParameter)]
+    public class ArrayParameterConstructorTestCases
+    {
+        [SingleParameterConstructorTest(ConstructorTests.ExpectedIntParameter, ConstructorTests.ExpectedStringParameter)]
+        public object? TestField;
+
+        [SingleParameterConstructorTest(ConstructorTests.ExpectedIntParameter, ConstructorTests.ExpectedStringParameter)]
+        public void TestMethod(string? value = null)
+        {
+
+        }
     }
 
     [DefaultConstructorTest]
     public class DefaultConstructorTestCases
     {
         [DefaultConstructorTest]
-        public object TestProperty { get; set; }
+        public object? TestField;
 
         [DefaultConstructorTest]
-        public void TestMethod()
+        public void TestMethod(string? value = null)
         {
 
         }
     }
 
-    [ConstructorParameterTest(ConstructorTests.ExpectedIntParameter)]
+    [SingleParameterConstructorTest(ConstructorTests.ExpectedIntParameter)]
     public class IntParameterConstructorTestCases
     {
-        [ConstructorParameterTest(ConstructorTests.ExpectedIntParameter)]
-        public object TestProperty { get; set; }
+        [SingleParameterConstructorTest(ConstructorTests.ExpectedIntParameter)]
+        public object? TestField;
 
-        [ConstructorParameterTest(ConstructorTests.ExpectedIntParameter)]
-        public void TestMethod()
+        [SingleParameterConstructorTest(ConstructorTests.ExpectedIntParameter)]
+        public void TestMethod(string? value = null)
         {
 
         }
     }
 
-    [ConstructorParameterTest(ConstructorTests.ExpectedStringParameter)]
+    [MultiParameterConstructorTest(ConstructorTests.ExpectedIntParameter, ConstructorTests.ExpectedStringParameter)]
+    public class MultiParameterConstructorTestCases
+    {
+        [MultiParameterConstructorTest(ConstructorTests.ExpectedIntParameter, ConstructorTests.ExpectedStringParameter)]
+        public object? TestField;
+
+        [MultiParameterConstructorTest(ConstructorTests.ExpectedIntParameter, ConstructorTests.ExpectedStringParameter)]
+        public void TestMethod(string? value = null)
+        {
+
+        }
+    }
+
+    [SingleParameterConstructorTest(ConstructorTests.ExpectedStringParameter)]
     public class StringParameterConstructorTestCases
     {
-        [ConstructorParameterTest(ConstructorTests.ExpectedStringParameter)]
-        public object TestProperty { get; set; }
+        [SingleParameterConstructorTest(ConstructorTests.ExpectedStringParameter)]
+        public object? TestField;
 
-        [ConstructorParameterTest(ConstructorTests.ExpectedStringParameter)]
-        public void TestMethod()
+        [SingleParameterConstructorTest(ConstructorTests.ExpectedStringParameter)]
+        public void TestMethod(string? value = null)
         {
 
         }
     }
 
-    [ConstructorParameterTest]
-    public class ZeroParameterConstructorClass
+    [SingleParameterConstructorTest]
+    public class ZeroParameterConstructorTestCases
     {
-        [ConstructorParameterTest]
-        public object TestProperty { get; set; }
+        [SingleParameterConstructorTest]
+        public object? TestField;
 
-        [ConstructorParameterTest]
-        public void TestMethod()
+        [SingleParameterConstructorTest]
+        public void TestMethod(string? value = null)
         {
 
         }
     }
+    #endregion
 }
