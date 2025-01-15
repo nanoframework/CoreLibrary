@@ -46,15 +46,14 @@ namespace System.Reflection
                 }
                 else
                 {
-
-                    // get the types
-                    Type paramType = rawAttributes[i + 1].GetType();
+                    // get the parameter types
+                    var paramType = rawAttributes[i + 1].GetType();
 
                     // get constructor
-                    ConstructorInfo ctor = objectType.GetConstructor(new Type[] { paramType });
+                    var ctor = objectType.GetConstructor(new Type[] { paramType });
 
                     // get params
-                    object[] ctorParams = new object[] { rawAttributes[i + 1] };
+                    var ctorParams = new[] { rawAttributes[i + 1] };
 
                     if (ctor is null)
                     {
@@ -62,9 +61,9 @@ namespace System.Reflection
                         // rebuild params list 
                         ctorParams = (object[])rawAttributes[i + 1];
 
-                        Type[] paramsTypes = new Type[ctorParams.Length];
+                        var paramsTypes = new Type[ctorParams.Length];
 
-                        for (int p = 0; p < ctorParams.Length; p++)
+                        for (var p = 0; p < ctorParams.Length; p++)
                         {
                             paramsTypes[p] = ctorParams[p].GetType();
                         }
