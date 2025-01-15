@@ -12,7 +12,7 @@ namespace System.Reflection
             // get the custom attributes data for the field
             // these are returned "encoded" in an object array with 2 positions for each attribute
             // 1st the attribute type
-            // 2nd the constructor parameter or null, if the attribute has no constructor
+            // 2nd the constructor parameter or null, if the attribute has no constructor parameters
             // 
             // current limitations: 
             // - works only for constructors with a single parameter
@@ -20,22 +20,34 @@ namespace System.Reflection
             //
             // both limitations above can be relatively easily overcome by adding the appropriate code at the native handler
 
-            object[] attributes = new object[rawAttributes.Length / 2];
-
-            for (int i = 0; i < rawAttributes.Length; i += 2)
+            if (rawAttributes is null)
             {
+                return new object[0];
+            }
+
+            var attributes = new object[rawAttributes.Length / 2];
+
+            for (var i = 0; i < rawAttributes.Length; i += 2)
+            {
+                var objectType = rawAttributes[i].GetType();
+
                 // peek next element to determine if it's null
                 if (rawAttributes[i + 1] == null)
                 {
-                    // attribute without default constructor, just copy it
-                    attributes[i / 2] = rawAttributes[i];
+                    var ctor = objectType.GetConstructor(new Type[0]);
+
+                    if (ctor is null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+
+                    // has default constructor, invoke it
+                    attributes[i / 2] = ctor.Invoke(new object[0]);
                 }
                 else
                 {
-                    // has default constructor, invoke it
 
                     // get the types
-                    Type objectType = rawAttributes[i].GetType();
                     Type paramType = rawAttributes[i + 1].GetType();
 
                     // get constructor
