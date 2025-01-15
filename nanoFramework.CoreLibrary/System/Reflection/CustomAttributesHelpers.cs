@@ -21,7 +21,7 @@ namespace System.Reflection
         /// 
         /// <para>
         /// 1st position - The type of the <see cref="Attribute"/><br/>
-        /// 2nd position - The type(s) of the constructor parameters
+        /// 2nd position - The constructor parameter(s) or null
         /// </para>
         ///
         /// <para>
