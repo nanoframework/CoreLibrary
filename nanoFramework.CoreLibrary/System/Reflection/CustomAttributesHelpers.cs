@@ -4,7 +4,11 @@
 //
 
 using System.Collections;
+using System.Diagnostics;
 
+// ReSharper disable SuggestVarOrType_Elsewhere
+// ReSharper disable SuggestVarOrType_SimpleTypes
+// ReSharper disable SuggestVarOrType_BuiltInTypes
 namespace System.Reflection
 {
     internal class CustomAttributesHelpers
@@ -40,15 +44,15 @@ namespace System.Reflection
                 return new object[0];
             }
 
-            var attributes = new ArrayList();
+            ArrayList attributes = new ArrayList();
 
             for (var i = 0; i < attributeDefinitions.Length; i += 2)
             {
-                var objectType = attributeDefinitions[i].GetType();
-                var parameterType = attributeDefinitions[i + 1]?.GetType();
+                Type objectType = attributeDefinitions[i].GetType();
+                Type parameterType = attributeDefinitions[i + 1]?.GetType();
 
                 ConstructorInfo constructorInfo;
-                var constructorParameters = new object[0];
+                object[] constructorParameters = new object[0];
 
                 if (parameterType is null)
                 {
@@ -66,7 +70,7 @@ namespace System.Reflection
                         // Check for a constructor with multiple parameters of the correct types
                         constructorParameters = (object[])attributeDefinitions[i + 1];
 
-                        var parameterTypes = new Type[constructorParameters.Length];
+                        Type[] parameterTypes = new Type[constructorParameters.Length];
 
                         for (var p = 0; p < constructorParameters.Length; p++)
                         {
@@ -88,14 +92,12 @@ namespace System.Reflection
                 {
                     attributes.Add(constructorInfo.Invoke(constructorParameters));
                 }
-#if DEBUG
                 else
                 {
                     // If a constructor was not found we're assuming it's a type that hasn't been implemented in nanoFramework
                     // eg: System.Runtime.CompilerServices.NullableContextAttribute
-                    Console.WriteLine($"Attribute type is not found: {attributeDefinitions[i]}");
+                    Debug.WriteLine($"Constructor for Attribute type not found: {attributeDefinitions[i]}");
                 }
-#endif
             }
 
             return (object[])attributes.ToArray(typeof(object));
