@@ -92,6 +92,7 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\DayOfWeek.cs" Link="System\DayOfWeek.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\DBNull.cs" Link="System\DBNull.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Delegate.cs" Link="System\v.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\CodeAnalysis\NullableAttributes.cs" Link="System\Diagnostics\CodeAnalysis\NullableAttributes.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\ConditionalAttribute.cs" Link="System\Diagnostics\ConditionalAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debug.cs" Link="System\Diagnostics\Debug.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debugger.cs" Link="System\Diagnostics\Debugger.cs" />
@@ -170,6 +171,8 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeTypeHandle.cs" Link="System\RuntimeTypeHandle.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" Link="System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\ExcludeFromStubsAttribute.cs" Link="System\Runtime\CompilerServices\ExcludeFromStubsAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\CallerArgumentExpressionAttribute.cs" Link="System\Runtime\CompilerServices\CallerArgumentExpressionAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\CallerMemberNameAttribute.cs" Link="System\Runtime\CompilerServices\CallerMemberNameAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\ExtensionAttribute.cs" Link="System\Runtime\CompilerServices\ExtensionAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IndexerNameAttribute.cs" Link="System\CompilerServices\IndexerNameAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" Link="System\CompilerServices\InternalsVisibleToAttribute.cs" />
@@ -398,7 +401,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="System\" />
+    <Folder Include="System\Diagnostics\CodeAnalysis\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.lock.json" />
