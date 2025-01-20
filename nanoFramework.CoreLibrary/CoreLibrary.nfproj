@@ -166,6 +166,8 @@
     <Compile Include="System\RuntimeMethodHandle.cs" />
     <Compile Include="System\RuntimeType.cs" />
     <Compile Include="System\RuntimeTypeHandle.cs" />
+    <Compile Include="System\Runtime\CompilerServices\CallerArgumentExpressionAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\CallerMemberNameAttribute.cs" />
     <Compile Include="System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" />
     <Compile Include="System\Runtime\CompilerServices\ExcludeFromStubsAttribute.cs" />
     <Compile Include="System\Runtime\CompilerServices\ExtensionAttribute.cs" />
@@ -178,6 +180,7 @@
     <Compile Include="System\Runtime\InteropServices\Attributes.cs" />
     <Compile Include="System\Runtime\InteropServices\CharSet.cs" />
     <Compile Include="System\Runtime\InteropServices\LayoutKind.cs" />
+    <Compile Include="System\Diagnostics\CodeAnalysis\NullableAttributes.cs" />
     <Compile Include="System\Runtime\Remoting\RemotingServices.cs" />
     <Compile Include="System\Runtime\Remoting\__TransparentProxy.cs" />
     <Compile Include="System\SByte.cs" />
