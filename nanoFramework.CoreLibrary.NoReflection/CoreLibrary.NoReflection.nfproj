@@ -92,7 +92,6 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\DayOfWeek.cs" Link="System\DayOfWeek.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\DBNull.cs" Link="System\DBNull.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Delegate.cs" Link="System\v.cs" />
-    <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\CodeAnalysis\NullableAttributes.cs" Link="System\Diagnostics\CodeAnalysis\NullableAttributes.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\ConditionalAttribute.cs" Link="System\Diagnostics\ConditionalAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debug.cs" Link="System\Diagnostics\Debug.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Diagnostics\Debugger.cs" Link="System\Diagnostics\Debugger.cs" />
@@ -401,7 +400,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="System\Diagnostics\CodeAnalysis\" />
+    <Folder Include="System\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.lock.json" />
