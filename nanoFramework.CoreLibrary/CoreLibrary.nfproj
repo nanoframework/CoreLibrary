@@ -237,6 +237,39 @@
     <NFMDP_PE_ExcludeClassByName Include="System.Decimal">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.DisallowNullAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.MaybeNullAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.MemberNotNullAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.NotNullAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.ConditionalAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
@@ -339,7 +372,13 @@
     <NFMDP_PE_ExcludeClassByName Include="System.Reflection.MethodImplAttributes">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
-    <NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.IndexerNameAttribute">
+	<NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.CallerArgumentExpressionAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.CallerMemberNameAttribute">
+	  <InProject>false</InProject>
+	</NFMDP_PE_ExcludeClassByName>
+	<NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.IndexerNameAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
