@@ -4,12 +4,16 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System
 {
     /// <summary>
     /// Indicates whether a program element is compliant with the Common Language Specification (CLS). This class cannot be inherited.
     /// </summary>
-    [AttributeUsage(AttributeTargets.All), Serializable]
+    [AttributeUsage(AttributeTargets.All)]
+    [ExcludeClass]
+    [Serializable]
     public sealed class CLSCompliantAttribute : Attribute
     {
         private bool _compliant;

@@ -4,12 +4,15 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System
 {
     /// <summary>
     /// Indicates that the COM threading model for an application is single-threaded apartment (STA).
     /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
+    [ExcludeClass]
     public sealed class STAThreadAttribute : Attribute
     {
         /// <summary>
@@ -24,6 +27,7 @@ namespace System
     /// Indicates that the COM threading model for an application is multithreaded apartment (MTA).
     /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
+    [ExcludeClass]
     public sealed class MTAThreadAttribute : Attribute
     {
         /// <summary>

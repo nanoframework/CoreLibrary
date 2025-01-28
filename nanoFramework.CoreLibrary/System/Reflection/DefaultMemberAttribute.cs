@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 #if NANOCLR_REFLECTION
 
 namespace System.Reflection
@@ -14,7 +16,9 @@ namespace System.Reflection
     /// Defines the member of a type that is the default member used by InvokeMember.
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface), Serializable]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface)]
+    [ExcludeClass]
+    [Serializable]
     public sealed class DefaultMemberAttribute : Attribute
     {
         private readonly String _memberName;

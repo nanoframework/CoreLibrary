@@ -9,7 +9,9 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Indicates the name by which an indexer is known in programming languages that do not support indexers directly.
     /// </summary>
-    [Serializable, AttributeUsage(AttributeTargets.Property)]
+    [AttributeUsage(AttributeTargets.Property)]
+    [ExcludeClass]
+    [Serializable]
     public sealed class IndexerNameAttribute : Attribute
     {
         /// <summary>

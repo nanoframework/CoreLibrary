@@ -4,12 +4,16 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System.Diagnostics
 {
     /// <summary>
     /// Indicates to compilers that a method call or attribute should be ignored unless a specified conditional compilation symbol is defined.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true), Serializable]
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+    [ExcludeClass]
+    [Serializable]
     public sealed class ConditionalAttribute : Attribute
     {
         private readonly String _conditionString;

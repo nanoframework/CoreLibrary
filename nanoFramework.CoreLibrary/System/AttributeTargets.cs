@@ -4,12 +4,16 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System
 {
     /// <summary>
     /// Specifies the application elements on which it is valid to apply an attribute.
     /// </summary>
-    [Flags, Serializable]
+    [ExcludeClass]
+    [Flags]
+    [Serializable]
     public enum AttributeTargets
     {
         /// <summary>

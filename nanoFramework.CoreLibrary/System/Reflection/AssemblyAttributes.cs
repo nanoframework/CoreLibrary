@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System.Reflection
 {
     using System;
@@ -12,6 +14,7 @@ namespace System.Reflection
     /// Specifies which culture the assembly supports.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeClass]
     public sealed class AssemblyCultureAttribute : Attribute
     {
         private readonly String _culture;
@@ -41,6 +44,7 @@ namespace System.Reflection
     /// Specifies the version of the assembly being attributed.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeClass]
     public sealed class AssemblyVersionAttribute : Attribute
     {
         private readonly String _version;
@@ -70,6 +74,7 @@ namespace System.Reflection
     /// Specifies the name of a file containing the key pair used to generate a strong name.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeClass]
     public sealed class AssemblyKeyFileAttribute : Attribute
     {
         private readonly String _keyFile;
@@ -99,6 +104,7 @@ namespace System.Reflection
     /// Specifies the name of a key container within the CSP containing the key pair used to generate a strong name.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeClass]
     public sealed class AssemblyKeyNameAttribute : Attribute
     {
         private readonly String _keyName;
@@ -128,6 +134,7 @@ namespace System.Reflection
     /// Specifies that the assembly is not fully signed when created.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeClass]
     public sealed class AssemblyDelaySignAttribute : Attribute
     {
         private readonly bool _delaySign;
@@ -160,6 +167,7 @@ namespace System.Reflection
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeClass]
     public sealed class AssemblyFlagsAttribute : Attribute
     {
         private readonly AssemblyNameFlags _flags;
@@ -203,6 +211,7 @@ namespace System.Reflection
     /// Instructs a compiler to use a specific version number for the Win32 file version resource. The Win32 file version is not required to be the same as the assembly's version number.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeClass]
     public sealed class AssemblyFileVersionAttribute : Attribute
     {
         private readonly String _version;
@@ -238,6 +247,7 @@ namespace System.Reflection
     /// This attribute is specific of nanoFramework.
     /// </remarks>
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class, Inherited = false)]
+    [ExcludeClass]
     public sealed class AssemblyNativeVersionAttribute : Attribute
     {
         private readonly String _nativeVersion;

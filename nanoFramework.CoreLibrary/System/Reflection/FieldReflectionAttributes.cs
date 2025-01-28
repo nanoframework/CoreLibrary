@@ -4,9 +4,12 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System.Reflection
 {
     [AttributeUsage(AttributeTargets.Field)]
+    [ExcludeClass]
     internal sealed class FieldNoReflectionAttribute : Attribute
     {
     }
