@@ -13,7 +13,7 @@ namespace System
     /// A platform-specific type that is used to represent a pointer or a handle.
     /// </summary>
     [EditorBrowsable(EditorBrowsableState.Never)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public struct UIntPtr
     {

@@ -12,7 +12,7 @@ namespace System
     /// Indicates that a method will allow a variable number of arguments in its invocation. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     public sealed class ParamArrayAttribute : Attribute
     {
         /// <summary>

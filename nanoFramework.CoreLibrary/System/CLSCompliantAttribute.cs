@@ -12,7 +12,7 @@ namespace System
     /// Indicates whether a program element is compliant with the Common Language Specification (CLS). This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.All)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public sealed class CLSCompliantAttribute : Attribute
     {

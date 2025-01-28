@@ -12,7 +12,7 @@ namespace System
     /// Specifies the usage of another attribute class. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public sealed class AttributeUsageAttribute : Attribute
     {

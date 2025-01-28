@@ -16,7 +16,7 @@ namespace System.Reflection
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Flags]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public enum BindingFlags
     {

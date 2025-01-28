@@ -9,7 +9,7 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Defines the details of how a method is implemented.
     /// </summary>
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public enum MethodImplOptions
     {
@@ -43,7 +43,7 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Defines how a method is implemented.
     /// </summary>
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public enum MethodCodeType
     {

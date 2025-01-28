@@ -18,7 +18,7 @@ namespace System.Diagnostics
     /// The debugger behaviour when the <see cref="DebuggerNonUserCodeAttribute"/> is present is similar to using a combination of the <see cref="DebuggerHiddenAttribute"/> attribute, which hides the code from the debugger, and the <see cref="DebuggerStepThroughAttribute"/> attribute, which tells the debugger to step through, rather than into, the code it is applied to.
     /// </remarks>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method | AttributeTargets.Constructor, Inherited = false)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public sealed class DebuggerStepThroughAttribute : Attribute
     {
@@ -35,7 +35,7 @@ namespace System.Diagnostics
     /// The <see cref="DebuggerStepperBoundaryAttribute"/> attribute is used as an escape from the effect of a <see cref="DebuggerNonUserCodeAttribute"/>. When executing within the boundaries of the <see cref="DebuggerNonUserCodeAttribute"/>, designer-provided code is executed as a step-through until the next user supplied code is encountered. When context switches are made on a thread, the next user-supplied code module stepped into may not relate to the code that was in the process of being debugged. To avoid this debugging experience, use the <see cref="DebuggerStepperBoundaryAttribute"/> to escape from stepping through code to running code. For example, in Visual Studio 2005, encountering a <see cref="DebuggerStepperBoundaryAttribute"/> while stepping through code using the F10 key (or Step Over command) has the same effect as pressing the F5 key or using the Start Debugging command.
     /// </remarks>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor, Inherited = false)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public sealed class DebuggerStepperBoundaryAttribute : Attribute
     {
@@ -52,7 +52,7 @@ namespace System.Diagnostics
     /// The common language runtime attaches no semantics to this attribute. It is provided for use by source code debuggers. For example, the Visual Studio 2005 debugger does not stop in a method marked with this attribute and does not allow a breakpoint to be set in the method. Other debugger attributes recognized by the Visual Studio 2005 debugger are the <see cref="DebuggerNonUserCodeAttribute"/> and the <see cref="DebuggerStepThroughAttribute"/>. 
     /// </remarks>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Constructor, Inherited = false)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public sealed class DebuggerHiddenAttribute : Attribute
     {
@@ -70,7 +70,7 @@ namespace System.Diagnostics
     /// The debugger behaviour when the <see cref="DebuggerNonUserCodeAttribute"/> is present is similar to using a combination of the <see cref="DebuggerHiddenAttribute"/> attribute, which hides the code from the debugger, and the <see cref="DebuggerStepThroughAttribute"/> attribute, which tells the debugger to step through, rather than into, the code it is applied to.
     /// </remarks>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Constructor | AttributeTargets.Struct, Inherited = false)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public sealed class DebuggerNonUserCodeAttribute : Attribute
     {
@@ -243,7 +243,7 @@ namespace System.Diagnostics
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [AttributeUsage(AttributeTargets.Struct | AttributeTargets.Class | AttributeTargets.Assembly, AllowMultiple = true)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     public sealed class DebuggerTypeProxyAttribute : Attribute
     {
         private readonly string _typeName;
@@ -329,7 +329,7 @@ namespace System.Diagnostics
     /// Determines how a class or field is displayed in the debugger variable windows.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Assembly, AllowMultiple = true)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     public sealed class DebuggerDisplayAttribute : Attribute
     {
         private string _name;

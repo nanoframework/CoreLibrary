@@ -17,7 +17,7 @@ namespace System.Reflection
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public sealed class DefaultMemberAttribute : Attribute
     {

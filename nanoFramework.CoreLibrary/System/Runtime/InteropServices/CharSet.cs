@@ -11,7 +11,7 @@ namespace System.Runtime.InteropServices
     /// <summary>
     /// Dictates which character set marshaled strings should use.
     /// </summary>
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public enum CharSet
     {

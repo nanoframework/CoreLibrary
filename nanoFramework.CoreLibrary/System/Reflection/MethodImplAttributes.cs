@@ -13,7 +13,7 @@ namespace System.Reflection
     /// <summary>
     /// Specifies flags for the attributes of a method implementation.
     /// </summary>
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public enum MethodImplAttributes
     {

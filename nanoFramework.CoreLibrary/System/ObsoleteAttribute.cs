@@ -12,7 +12,7 @@ namespace System
     /// Marks the program elements that are no longer in use. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Constructor | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Event |AttributeTargets.Field | AttributeTargets.Interface | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Struct, Inherited = false)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     [Serializable]
     public sealed class ObsoleteAttribute : Attribute
     {

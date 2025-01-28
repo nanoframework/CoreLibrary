@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 namespace System.Reflection
 {
     [AttributeUsage(AttributeTargets.Field)]
-    [ExcludeClass]
+    [ExcludeFromStubs]
     internal sealed class FieldNoReflectionAttribute : Attribute
     {
     }
