@@ -169,6 +169,7 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeType.cs" Link="System\RuntimeType.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeTypeHandle.cs" Link="System\RuntimeTypeHandle.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" Link="System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\ExcludeClassAttribute.cs" Link="System\Runtime\CompilerServices\ExcludeClassAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\ExtensionAttribute.cs" Link="System\Runtime\CompilerServices\ExtensionAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IndexerNameAttribute.cs" Link="System\CompilerServices\IndexerNameAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" Link="System\CompilerServices\InternalsVisibleToAttribute.cs" />

@@ -167,6 +167,7 @@
     <Compile Include="System\RuntimeType.cs" />
     <Compile Include="System\RuntimeTypeHandle.cs" />
     <Compile Include="System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\ExcludeClassAttribute.cs" />
     <Compile Include="System\Runtime\CompilerServices\ExtensionAttribute.cs" />
     <Compile Include="System\Runtime\CompilerServices\IndexerNameAttribute.cs" />
     <Compile Include="System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" />
