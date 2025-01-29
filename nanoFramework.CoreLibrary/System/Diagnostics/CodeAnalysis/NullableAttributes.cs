@@ -1,6 +1,8 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Runtime.CompilerServices;
+
 namespace System.Diagnostics.CodeAnalysis
 {
     /// <summary>
@@ -10,6 +12,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// To override a method that has a parameter annotated with this attribute, use the ? operator. For more information, see Nullable static analysis in the C# guide.
     /// </remarks>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Property, Inherited = false)]
+    [ExcludeFromStubs]
     public sealed class AllowNullAttribute : Attribute
     { }
 
@@ -17,6 +20,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// Specifies that null is disallowed as an input even if the corresponding type allows it.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Property, Inherited = false)]
+    [ExcludeFromStubs]
     public sealed class DisallowNullAttribute : Attribute
     { }
 
@@ -24,6 +28,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// Specifies that an output may be null even if the corresponding type disallows it.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Property | AttributeTargets.ReturnValue, Inherited = false)]
+    [ExcludeFromStubs]
     public sealed class MaybeNullAttribute : Attribute
     { }
 
@@ -31,6 +36,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// Specifies that an output will not be null even if the corresponding type allows it. Specifies that an input argument was not null when the call returns.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Property | AttributeTargets.ReturnValue, Inherited = false)]
+    [ExcludeFromStubs]
     public sealed class NotNullAttribute : Attribute
     { }
 
@@ -38,6 +44,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// Specifies that when a method returns <see cref="ReturnValue"/>, the parameter may be null even if the corresponding type disallows it.
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
+    [ExcludeFromStubs]
     public sealed class MaybeNullWhenAttribute : Attribute
     {
         /// <summary>
@@ -57,6 +64,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// <summary>
     /// Specifies that when a method returns <see cref="ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.
     /// </summary>
+    [ExcludeFromStubs]
     public sealed class NotNullWhenAttribute : Attribute
     {
         /// <summary>Initializes the attribute with the specified return value condition.</summary>
@@ -73,6 +81,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// Specifies that the output will be non-null if the named parameter is non-null.
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter | AttributeTargets.Property | AttributeTargets.ReturnValue, AllowMultiple = true, Inherited = false)]
+    [ExcludeFromStubs]
     public sealed class NotNullIfNotNullAttribute : Attribute
     {
         /// <summary>Initializes the attribute with the associated parameter name.</summary>
@@ -89,6 +98,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// Applied to a method that will never return under any circumstance.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method, Inherited = false)]
+    [ExcludeFromStubs]
     public sealed class DoesNotReturnAttribute : Attribute
     { }
 
@@ -96,6 +106,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// Specifies that the method will not return if the associated Boolean parameter is passed the specified value.
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
+    [ExcludeFromStubs]
     public sealed class DoesNotReturnIfAttribute : Attribute
     {
         /// <summary>Initializes the attribute with the specified parameter value.</summary>
@@ -115,6 +126,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// Specifies that the method or property will ensure that the listed field and property members have not-null values.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Property, Inherited = false, AllowMultiple = true)]
+    [ExcludeFromStubs]
     public sealed class MemberNotNullAttribute : Attribute
     {
         /// <summary>Initializes the attribute with a field or property member.</summary>
@@ -139,6 +151,7 @@ namespace System.Diagnostics.CodeAnalysis
     /// Specifies that the method or property will ensure that the listed field and property members have not-null values when returning with the specified return value condition.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Property, Inherited = false, AllowMultiple = true)]
+    [ExcludeFromStubs]
     public sealed class MemberNotNullWhenAttribute : Attribute
     {
         /// <summary>Initializes the attribute with the specified return value condition and a field or property member.</summary>
