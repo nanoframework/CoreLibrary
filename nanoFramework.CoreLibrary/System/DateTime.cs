@@ -82,9 +82,12 @@ namespace System
 #endif // NANOCLR_REFLECTION
     public struct DateTime
     {
-        /// Our origin is at 1601/01/01:00:00:00.000
-        /// While desktop CLR's origin is at 0001/01/01:00:00:00.000.
-        /// There are 504911232000000000 ticks between them which we are subtracting.
+        // Our origin is at 1601/01/01:00:00:00.000
+        // While desktop CLR's origin is at 0001/01/01:00:00:00.000.
+        // There are 504911232000000000 ticks between them which we are subtracting.
+        //////////////////////////////////////////////////////////////////////////////////////////
+        /// Keep in sync with native define TICKS_AT_ORIGIN @ corlib_native_System_DateTime.cpp //
+        //////////////////////////////////////////////////////////////////////////////////////////
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private const long _ticksAtOrigin = 504911232000000000;
 
@@ -195,7 +198,7 @@ namespace System
         /// nanoFramework doesn't support local time, only  UTC, so it's not possible to specify <see cref="DateTimeKind.Local"/>.
         /// </remarks>
         public DateTime(long ticks, DateTimeKind kind)
-            :this(ticks)
+            : this(ticks)
         {
             // it's OK to check kind parameter only here 
             // if it's invalid the exception will be thrown anyway and allows the constructor to be reused
@@ -505,8 +508,7 @@ namespace System
         /// </value>
         public static DateTime UtcNow
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get => new DateTime();
+            get => new DateTime(GetUtcNowAsTicks(), DateTimeKind.Utc);
         }
 
         /// <summary>
@@ -556,8 +558,7 @@ namespace System
         /// </value>
         public static DateTime Today
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get => new DateTime();
+            get => new DateTime(GetTodayAsTicks(), DateTimeKind.Utc);
         }
 
         /// <summary>
@@ -826,10 +827,10 @@ namespace System
             string s,
             out DateTime result)
         {
-            result = Convert.NativeToDateTime(
-                s,
+            Convert.NativeToDateTime(s,
                 false,
-                out bool success);
+                out bool success,
+                out result);
 
             return success;
         }
@@ -839,5 +840,11 @@ namespace System
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern int GetDateTimePart(DateTimePart part);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern static long GetUtcNowAsTicks();
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern static long GetTodayAsTicks();
     }
 }
