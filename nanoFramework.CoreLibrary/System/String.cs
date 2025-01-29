@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace System
 {
     using Runtime.CompilerServices;
@@ -825,7 +827,7 @@ namespace System
         /// </summary>
         /// <param name="value">The string to test.</param>
         /// <returns><see langword="true"/> if the value parameter is <see langword="null"/> or an empty string (""); otherwise, <see langword="false"/>.</returns>
-        public static bool IsNullOrEmpty(string value)
+        public static bool IsNullOrEmpty([NotNullWhen(false)] string value)
         {
             return value == null || value.Length == 0;
         }
