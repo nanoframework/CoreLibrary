@@ -4,11 +4,14 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System.Runtime.InteropServices
 {
     /// <summary>
     /// Controls the layout of an object when exported to unmanaged code.
     /// </summary>
+    [ExcludeFromStubs]
     [Serializable]
     public enum LayoutKind
     {

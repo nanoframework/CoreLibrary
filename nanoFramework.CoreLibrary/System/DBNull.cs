@@ -4,12 +4,16 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 namespace System
 {
     /// <summary>
     /// Represents a nonexistent value. This class cannot be inherited.
     /// </summary>
-    [ComponentModel.EditorBrowsableAttribute(ComponentModel.EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [ExcludeFromStubs]
     public sealed class DBNull
     {
 

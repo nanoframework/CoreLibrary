@@ -4,12 +4,16 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System
 {
     /// <summary>
     /// Specifies the usage of another attribute class. This class cannot be inherited.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class), Serializable]
+    [AttributeUsage(AttributeTargets.Class)]
+    [ExcludeFromStubs]
+    [Serializable]
     public sealed class AttributeUsageAttribute : Attribute
     {
         internal AttributeTargets _attributeTarget;

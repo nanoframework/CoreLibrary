@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 #if NANOCLR_REFLECTION
 
 namespace System.Reflection
@@ -13,7 +15,9 @@ namespace System.Reflection
     /// Specifies flags that control binding and the way in which the search for members and types is conducted by reflection.
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
-    [Flags, Serializable]
+    [Flags]
+    [ExcludeFromStubs]
+    [Serializable]
     public enum BindingFlags
     {
         /// <summary>

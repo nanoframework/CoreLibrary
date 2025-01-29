@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System.Reflection
 {
     using System;
@@ -11,6 +13,7 @@ namespace System.Reflection
     /// <summary>
     /// Specifies flags for the attributes of a method implementation.
     /// </summary>
+    [ExcludeFromStubs]
     [Serializable]
     public enum MethodImplAttributes
     {
