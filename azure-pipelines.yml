@@ -11,17 +11,16 @@ trigger:
     exclude:
       - .github_changelog_generator
       - .gitignore
+      - .gitattributes
+      - .gitmodules
+      - .github/*
       - CHANGELOG.md
-      - CODE_OF_CONDUCT.md
       - LICENSE.md
       - README.md
       - NuGet.Config
       - assets/*
       - config/*
-      - .github/*
-  tags:
-    include: 
-      - v*
+      - nanoFramework.TestFramework/*
 
 # PR always trigger build
 pr:
