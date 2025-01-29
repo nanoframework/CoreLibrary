@@ -38,7 +38,7 @@ namespace System
         internal static extern double NativeToDouble(string value, bool throwException, out bool success);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        internal static extern DateTime NativeToDateTime(string value, bool throwException, out bool success);
+        internal static extern void NativeToDateTime(string value, bool throwException, out bool success, out DateTime result);
 
         /// <summary>
         /// Converts the value of the specified 8-bit unsigned integer to an equivalent Boolean value.
@@ -177,10 +177,13 @@ namespace System
         /// </remarks>
         public static DateTime ToDateTime(string value)
         {
-            return NativeToDateTime(
+            NativeToDateTime(
                 value,
                 true,
-                out _);
+                out _,
+                out DateTime result);
+
+            return result;
         }
 
         /// <summary>
