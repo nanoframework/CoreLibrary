@@ -21,9 +21,12 @@
     <IsTestProject>true</IsTestProject>
     <TestProjectType>UnitTest</TestProjectType>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+	<LangVersion>default</LangVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
+    <Compile Include="CallerArgumentExpressionAttributeTests.cs" />
+    <Compile Include="CallerMemberNameAttributeTests.cs" />
     <Compile Include="ConstructorTests.cs" />
     <Compile Include="UnitTestAttributesTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
