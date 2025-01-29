@@ -4,12 +4,15 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System
 {
     /// <summary>
     /// Indicates that a method will allow a variable number of arguments in its invocation. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter)]
+    [ExcludeFromStubs]
     public sealed class ParamArrayAttribute : Attribute
     {
         /// <summary>

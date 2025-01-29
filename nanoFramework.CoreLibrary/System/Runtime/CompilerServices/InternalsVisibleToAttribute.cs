@@ -10,6 +10,7 @@ namespace System.Runtime.CompilerServices
     /// Specifies that types that are ordinarily visible only within the current assembly are visible to a specified assembly.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+    [ExcludeFromStubs]
     public sealed class InternalsVisibleToAttribute : Attribute
     {
         private readonly string _assemblyName;

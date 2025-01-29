@@ -4,9 +4,13 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 namespace System.Runtime.Remoting.Proxies
 {
-    [ComponentModel.EditorBrowsableAttribute(ComponentModel.EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [ExcludeFromStubs]
     internal sealed class __TransparentProxy
     {
     }

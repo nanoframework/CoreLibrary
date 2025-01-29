@@ -4,6 +4,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace System
 {
 
@@ -11,6 +13,7 @@ namespace System
     /// Indicates that a field of a serializable class should not be serialized. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field)]
+    [ExcludeFromStubs]
     public sealed class NonSerializedAttribute : Attribute
     {
 
