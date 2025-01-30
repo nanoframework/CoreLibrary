@@ -9,7 +9,6 @@ trigger:
       - release-*
   paths:
     exclude:
-      - .github_changelog_generator
       - .gitignore
       - .gitattributes
       - .gitmodules
@@ -19,7 +18,6 @@ trigger:
       - README.md
       - NuGet.Config
       - assets/*
-      - config/*
       - nanoFramework.TestFramework/*
 
 # PR always trigger build
