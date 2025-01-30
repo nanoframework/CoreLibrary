@@ -20,6 +20,10 @@ trigger:
       - assets/*
       - nanoFramework.TestFramework/*
 
+  tags:
+    include:
+      - v*
+
 # PR always trigger build
 pr:
   autoCancel: true
@@ -37,10 +41,14 @@ jobs:
 ##############################
 - job: Build_mscorlib
   condition: >-
-    or(
-      eq(variables['UPDATE_DEPENDENTS'], 'false'),
-      eq(variables['StartReleaseCandidate'], 'true')
+    and(
+      not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v')),
+      or(
+        eq(variables['UPDATE_DEPENDENTS'], 'false'),
+        eq(variables['StartReleaseCandidate'], 'true')
+      )
     )
+
   pool:
     vmImage: 'windows-latest'
 
@@ -139,21 +147,15 @@ jobs:
   condition: >-
     or(
       and(
-        not(or(failed(), canceled())),
-        startsWith(variables['Build.SourceBranch'], 'refs/heads/main'),
+        startsWith(variables['Build.SourceBranch'], 'refs/tags/v'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       and(
-        not(or(failed(), canceled())),
-        eq(variables['System.PullRequest.PullRequestId'], ''),
-        contains(variables['Build.SourceVersionMessage'], '***UPDATE_DEPENDENTS***'),
+        contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       eq(variables['UPDATE_DEPENDENTS'], 'true')
     )
-
-  dependsOn:
-    - Build_mscorlib
 
   pool:
     vmImage: 'windows-latest'
@@ -170,21 +172,21 @@ jobs:
   # update dependents
   - template: azure-pipelines-templates/update-dependents.yml@templates  
     parameters:
-      ${{ if eq(variables['UPDATE_DEPENDENTS'], 'false') }}:
-        waitBeforeUpdate: false
-      ${{ else }}:
-        waitBeforeUpdate: true
+      waitBeforeUpdate: false
       repositoriesToUpdate: |
         nanoFramework.TestFramework
         nanoFramework.Device.OneWire
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
+        nanoFramework.Hardware.GiantGecko
         nanoFramework.Hardware.Stm32
         nanoFramework.Hardware.TI
         nanoFramework.Networking.Sntp
         nanoFramework.TI.EasyLink
         nanoFramework.ResourceManager
         nanoframework.System.Runtime
+        nanoFramework.DependencyInjection
+        System.Collections
         System.Device.Adc
         System.Device.Dac
         System.Device.I2c
@@ -194,20 +196,8 @@ jobs:
         System.IO.Hashing
         System.Math
         System.Text
-        System.Security.Cryptography
-
-  # update dependents
-  - template: azure-pipelines-templates/update-dependents.yml@templates  
-    parameters:
-      ${{ if eq(variables['UPDATE_DEPENDENTS'], 'true') }}:
-        waitBeforeUpdate: false
-      ${{ else }}:
-        waitBeforeUpdate: true    
-      repositoriesToUpdate: |
-        nanoFramework.Logging
-        nanoFramework.Json
-        System.Collections
         System.Threading
+        System.Security.Cryptography
 
 ##################################
 # report build failure to Discord
