@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System;
 using nanoFramework.TestFramework;
 
 #nullable enable
@@ -27,9 +30,9 @@ namespace NFUnitTestException
 
             var ex1 = new ArgumentException();
             var ex2 = new ArgumentException(null);
-            var ex3 = new ArgumentException(null, (Exception?) null);
-            var ex4 = new ArgumentException(null, (string?) null);
-            var ex5 = new ArgumentException(null, (string?) null, (Exception?)null);
+            var ex3 = new ArgumentException(null, (Exception?)null);
+            var ex4 = new ArgumentException(null, (string?)null);
+            var ex5 = new ArgumentException(null, (string?)null, (Exception?)null);
 
             Assert.AreEqual(expected, ex1.Message);
             Assert.AreEqual(expected, ex2.Message);

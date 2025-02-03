@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System;
 using System.Diagnostics.CodeAnalysis;
 using nanoFramework.TestFramework;
 
@@ -152,7 +155,7 @@ namespace NFUnitTestAttributes.Diagnostics.CodeAnalysis
         [DisallowNull]
         public string? Field = null!;
 
-        [DisallowNull] 
+        [DisallowNull]
         public string? Property { get; set; } = null!;
 
         public void Method([DisallowNull] string value)
@@ -186,7 +189,7 @@ namespace NFUnitTestAttributes.Diagnostics.CodeAnalysis
         [MaybeNull]
         public string? Field = null!;
 
-        [MaybeNull] 
+        [MaybeNull]
         public string? Property { get; set; } = null!;
 
         [MaybeNull]
@@ -214,7 +217,7 @@ namespace NFUnitTestAttributes.Diagnostics.CodeAnalysis
         public string Property { get; set; } = null!;
 
         [MemberNotNull(nameof(Field))]
-        public void Method( string value)
+        public void Method(string value)
         {
             Field = value;
         }
@@ -224,7 +227,7 @@ namespace NFUnitTestAttributes.Diagnostics.CodeAnalysis
     {
         public string? Field = null!;
 
-        [MemberNotNullWhen( true,nameof(Field))]
+        [MemberNotNullWhen(true, nameof(Field))]
         public bool Property { get; set; } = true;
 
         [MemberNotNullWhen(true, nameof(Field))]
