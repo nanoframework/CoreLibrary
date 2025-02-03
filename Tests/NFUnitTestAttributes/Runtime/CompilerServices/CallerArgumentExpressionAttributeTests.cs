@@ -4,7 +4,8 @@
 using System.Runtime.CompilerServices;
 using nanoFramework.TestFramework;
 
-namespace NFUnitTestAttributes
+#nullable enable
+namespace NFUnitTestAttributes.Runtime.CompilerServices
 {
     [TestClass]
     public class CallerArgumentExpressionAttributeTests
