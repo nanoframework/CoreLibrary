@@ -1186,7 +1186,7 @@ namespace NFUnitTestArray
                 {//bug 16823
                     //int[] arr = new int[2147483647];
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     // Out Of Memory System.Exception
                 }
@@ -1205,7 +1205,7 @@ namespace NFUnitTestArray
                 {//bug 16823
                     //int[] arr = new int[2147483648];
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 0;
                 }
@@ -2764,7 +2764,7 @@ namespace NFUnitTestArray
                 {
                     arr[-1] = 5;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 0;
                 }
@@ -2784,7 +2784,7 @@ namespace NFUnitTestArray
                 {
                     arr[10] = 5;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 0;
                 }
@@ -3269,7 +3269,7 @@ namespace NFUnitTestArray
                     if (arr[2] == 3)
                         return 1;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 0;
                 }

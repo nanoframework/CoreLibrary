@@ -9,7 +9,7 @@ namespace System
     /// Indicates that an enumeration can be treated as a bit field; that is, a set of flags.
     /// </summary>
     [AttributeUsage(AttributeTargets.Enum)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     [Serializable]
     public class FlagsAttribute : Attribute
     {

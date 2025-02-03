@@ -10,7 +10,7 @@ namespace System.Reflection
     /// Provides information about an Assembly reference.
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
-    [Serializable, FlagsAttribute]
+    [Serializable, Flags]
     public enum AssemblyNameFlags
     {
         /// <summary>

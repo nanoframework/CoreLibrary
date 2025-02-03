@@ -8,7 +8,7 @@ namespace System.Runtime.CompilerServices
     /// Indicates that a parameter captures the expression passed for another parameter as a string.
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class CallerArgumentExpressionAttribute : Attribute
     {
         /// <summary>

@@ -6,7 +6,7 @@ namespace System
     /// <summary>
     /// Represents the base class for custom attributes.
     /// </summary>
-    [Serializable, AttributeUsageAttribute(AttributeTargets.All)] // Base class for all attributes
+    [Serializable, AttributeUsage(AttributeTargets.All)] // Base class for all attributes
     public abstract class Attribute
     {
         /// <summary>

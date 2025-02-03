@@ -167,7 +167,7 @@ namespace NFUnitTestArray
                 MyClass[] a = new MyClass[] { new MyClass(5), new MyClass(6), new MyClass(7) };
 
 
-                System.Array SystemArray;
+                Array SystemArray;
                 int[] StaticArray = new int[] { 10, 20, 30, 40 };
                 // There exists an implicit reference conversion for this
                 SystemArray = StaticArray;
@@ -187,7 +187,7 @@ namespace NFUnitTestArray
         {
             public static int Main_old()
             {
-                System.Array SystemArray;
+                Array SystemArray;
                 int[] StaticArray = new int[] { 10, 20, 30, 40 };
                 int[] StaticArray2 = new int[] { 1, 2, 3, 4 };
                 SystemArray = StaticArray;
@@ -211,7 +211,7 @@ namespace NFUnitTestArray
         {
             public static int Main_old()
             {
-                System.Array SystemArray;
+                Array SystemArray;
                 SystemArray = null;
                 return 0;
             }
@@ -237,7 +237,7 @@ namespace NFUnitTestArray
                 {
                     Fill(strings, 90, 10, 0);
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 0;
                 }
@@ -265,7 +265,7 @@ namespace NFUnitTestArray
                 {
                     objectArr[1] = new Queue();
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 0;
                 }

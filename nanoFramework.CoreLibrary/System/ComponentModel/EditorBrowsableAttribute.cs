@@ -30,7 +30,7 @@ namespace System.ComponentModel
     /// Specifies that a property or method is viewable in an editor. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Interface | AttributeTargets.Delegate)]
-    [ExcludeFromStubs]
+    [ExcludeType]
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
     // GetHashCode() implementation is provided by general native function CLR_RT_HeapBlock::GetHashCode //

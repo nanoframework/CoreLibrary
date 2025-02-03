@@ -1715,7 +1715,7 @@ namespace NFUnitTestInterface
                 {
                     Main_old();
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
 
                     return false;
@@ -1759,7 +1759,7 @@ namespace NFUnitTestInterface
                     else
                         return 1;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
 
                     return 1;
@@ -1812,7 +1812,7 @@ namespace NFUnitTestInterface
                     else
                         return 1;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 1;
                 }
@@ -1859,7 +1859,7 @@ namespace NFUnitTestInterface
                 {
                     Main_old();
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return false;
 
@@ -1957,7 +1957,7 @@ namespace NFUnitTestInterface
                         return 1;
                     return 0;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 1;
 
@@ -2133,7 +2133,7 @@ namespace NFUnitTestInterface
                 {
                     Main_old();
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return false;
                 }
@@ -3003,7 +3003,7 @@ namespace NFUnitTestInterface
                 {
                     Main_old();
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return false;
                 }
@@ -3052,7 +3052,7 @@ namespace NFUnitTestInterface
                     OutputHelper.WriteLine((((Interface_TestClass_struct_explicit_11_I1)le).Value).ToString());
                     return 0;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 1;
                 }
@@ -3104,7 +3104,7 @@ namespace NFUnitTestInterface
                     else
                         return 1;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 1;
                 }
@@ -3150,7 +3150,7 @@ namespace NFUnitTestInterface
                 {
                     Main_old();
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return false;
                 }

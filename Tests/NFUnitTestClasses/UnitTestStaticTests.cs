@@ -133,7 +133,7 @@ namespace NFUnitTestClasses
                 if (Static_InstTestClass01.intJ() != 2) return false;
                 if (Static_InstTestClass01.intK != 3) return false;
                 if (Static_InstTestClass01.intL != 4) return false;
-                if (new Static_InstTestClass01.MyInner().intM != 5) return false;
+                if (new MyInner().intM != 5) return false;
                 return true;
             }
         }

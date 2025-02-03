@@ -2488,7 +2488,7 @@ public static bool testMethod()
                 {
                     int MyInt = TC.IntI;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     RetInt = 0;
                 }
@@ -2520,7 +2520,7 @@ public static bool testMethod()
                 {
                     int TempInt = getTC.IntI;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     RetInt = 0;
                 }

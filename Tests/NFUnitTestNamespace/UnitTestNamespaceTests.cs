@@ -1595,7 +1595,7 @@ namespace NS_TestClass_contexts_025
         /// <System.Exception cref="::System.Exception"></System.Exception>
         public static void M1()
         {
-            throw new System.Exception();
+            throw new Exception();
         }
 
         static int Main_old()

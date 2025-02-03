@@ -412,10 +412,10 @@ namespace NFUnitTestClasses
             public static bool testMethod()
             {
                 BaseClassTestClass25 m = new BaseClassTestClass25();
-                if ((BaseClassTestClass25_Base1.BaseClassTestClass25_Sub2)m == null)
+                if ((BaseClassTestClass25_Sub2)m == null)
                     return false;
 
-                if ((BaseClassTestClass25_Base1.BaseClassTestClass25_Interface1)m == null)
+                if ((BaseClassTestClass25_Interface1)m == null)
                     return false;
                 return true;
             }

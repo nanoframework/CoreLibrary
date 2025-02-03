@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 namespace System.Reflection
 {
     [AttributeUsage(AttributeTargets.Field)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     internal sealed class FieldNoReflectionAttribute : Attribute
     {
     }

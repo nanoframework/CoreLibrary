@@ -10,7 +10,7 @@ namespace System.Reflection
     /// <summary>
     /// Specifies flags for the attributes of a method implementation.
     /// </summary>
-    [ExcludeFromStubs]
+    [ExcludeType]
     [Serializable]
     public enum MethodImplAttributes
     {
