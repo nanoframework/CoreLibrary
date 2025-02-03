@@ -481,7 +481,7 @@ namespace NFUnitTestDelegates
                 {
                     foo();
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     Delegate_TestClass_delegate03_2.retval -= 0x03;
                 }
@@ -579,7 +579,7 @@ namespace NFUnitTestDelegates
                     foo = loo() ? null : new Delegate_TestClass_delegate06_1(Delegate_TestClass_delegate06_2.far);
                     retval -= foo();
                 }
-                catch (System.Exception n)
+                catch (Exception n)
                 {
                     retval -= 0x01;
                 }
@@ -588,7 +588,7 @@ namespace NFUnitTestDelegates
                     foo = !loo() ? new Delegate_TestClass_delegate06_1(p.bar) : null;
                     retval -= foo();
                 }
-                catch (System.Exception n)
+                catch (Exception n)
                 {
                     retval -= 0x02;
                 }
@@ -626,7 +626,7 @@ namespace NFUnitTestDelegates
                     foo = !loo() ? new Delegate_TestClass_delegate07_1(p.bar) : null;
                     retval -= foo();
                 }
-                catch (System.Exception n)
+                catch (Exception n)
                 {
                     retval -= 0x02;
                 }
@@ -864,7 +864,7 @@ namespace NFUnitTestDelegates
                 {
                     foo();
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     Delegate_TestClass_delegate14_2.retval -= 0x03;
                 }
@@ -1072,7 +1072,7 @@ namespace NFUnitTestDelegates
                     foo = loo() ? null : new Delegate_TestClass_delegate17_1(Delegate_TestClass_delegate17_2.far);
                     foo();
                 }
-                catch (System.Exception n)
+                catch (Exception n)
                 {
                     Delegate_TestClass_delegate17_2.retval -= 0x01;
                 }
@@ -1081,7 +1081,7 @@ namespace NFUnitTestDelegates
                     foo = !loo() ? new Delegate_TestClass_delegate17_1(p.bar) : null;
                     foo();
                 }
-                catch (System.Exception n)
+                catch (Exception n)
                 {
                     Delegate_TestClass_delegate17_2.retval -= 0x02;
                 }
@@ -1091,7 +1091,7 @@ namespace NFUnitTestDelegates
                     foo += (Delegate_TestClass_delegate17_1)null;
                     foo();
                 }
-                catch (System.Exception n)
+                catch (Exception n)
                 {
                     Delegate_TestClass_delegate17_2.retval -= 10;
                 }
@@ -1412,7 +1412,7 @@ namespace NFUnitTestDelegates
 
                     return i;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 1;
                 }
@@ -1616,14 +1616,14 @@ namespace NFUnitTestDelegates
 
                 Delegate_TestClass_delegate60 c = new Delegate_TestClass_delegate60();
                 Delegate_TestClass_delegate60_Del nsd = new Delegate_TestClass_delegate60_Del(c.DelegatedMethod);
-                if (nsd is System.Delegate)
+                if (nsd is Delegate)
                     retval -= 0x01;
-                if (nsd is System.MulticastDelegate)
+                if (nsd is MulticastDelegate)
                     retval -= 0x02;
                 ClassDelegate cd = new ClassDelegate(c.DelegatedMethod);
-                if (cd is System.Delegate)
+                if (cd is Delegate)
                     retval -= 0x04;
-                if (cd is System.MulticastDelegate)
+                if (cd is MulticastDelegate)
                     retval -= 0x08;
 
                 return retval;
@@ -1797,7 +1797,7 @@ namespace NFUnitTestDelegates
             public double DelegatedMethod1(int intPart, float frac)
             {
                 if (5 == intPart)
-                    throw new System.Exception("My System.Exception");
+                    throw new Exception("My System.Exception");
                 return intPart + frac + 5;
             }
             public double DelegatedMethod2(int intPart, float frac)
@@ -1816,7 +1816,7 @@ namespace NFUnitTestDelegates
                     double d = md1(5, .5f);
                     retval ^= 0x02;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     retval -= 0x01;
                 }
@@ -2166,7 +2166,7 @@ namespace NFUnitTestDelegates
                     Delegate_TestClass_delegate77_Del md4 = new Delegate_TestClass_delegate77_Del(md1) + md3;
                     md4(5, .25f);
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     retval -= 0x01;
                 }
@@ -2239,7 +2239,7 @@ namespace NFUnitTestDelegates
                     if (9 == i)
                         retval ^= 0x10;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     retval -= 0x01;
                 }
@@ -2316,7 +2316,7 @@ namespace NFUnitTestDelegates
                     if (8 == i)
                         retval ^= 0x10;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     retval -= 0x01;
                 }
@@ -2353,7 +2353,7 @@ namespace NFUnitTestDelegates
                 if ((32 == synchro++) && (.25 == frac))
                 {
                     retval ^= 0x02;
-                    throw new System.Exception();
+                    throw new Exception();
                     return true;
                 }
                 return false;
@@ -2394,7 +2394,7 @@ namespace NFUnitTestDelegates
                     if (8 == i)
                         retval ^= 0x10;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     retval ^= 0x20;
                 }

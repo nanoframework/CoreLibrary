@@ -31,7 +31,7 @@ namespace System
         /// <param name="array">The source array.</param>
         /// <param name="start">The index of the first element to include in the new System.Span</param>
         /// <param name="length">The number of elements to include in the new System.Span</param>
-        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// <exception cref="ArgumentOutOfRangeException">
         /// <para>
         /// array is null, but start or length is non-zero
         /// </para>
@@ -83,7 +83,7 @@ namespace System
         /// </summary>
         /// <param name="index">The zero-based index of the element.</param>
         /// <returns>The element at the specified index.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// <exception cref="ArgumentOutOfRangeException">
         /// <paramref name="index"/> is out of range.
         /// </exception>
         public byte this[int index]
@@ -133,7 +133,7 @@ namespace System
         /// Copies the contents of this System.Span into a destination System.Span.
         /// </summary>
         /// <param name="destination"> The destination System.Span object.</param>
-        /// <exception cref="System.ArgumentException">
+        /// <exception cref="ArgumentException">
         /// destination is shorter than the source <see cref="SpanByte"/>.
         /// </exception>
         public void CopyTo(SpanByte destination)
@@ -156,7 +156,7 @@ namespace System
         /// </summary>
         /// <param name="start">The index at which to begin the slice.</param>
         /// <returns>A span that consists of all elements of the current span from start to the end of the span.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="start"/> is &lt; zero or &gt; <see cref="Length"/>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="start"/> is &lt; zero or &gt; <see cref="Length"/>.</exception>
         public SpanByte Slice(int start)
         {
             return Slice(start, _length - start);
@@ -168,7 +168,7 @@ namespace System
         /// <param name="start">The index at which to begin this slice.</param>
         /// <param name="length">The desired length for the slice.</param>
         /// <returns>A <see cref="SpanByte"/> that consists of <paramref name="length"/> number of elements from the current <see cref="SpanByte"/> starting at <paramref name="start"/>.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="start"/> or <paramref name="start"/> + <paramref name="length"/> is &lt; zero or &gt; <see cref="Length"/>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="start"/> or <paramref name="start"/> + <paramref name="length"/> is &lt; zero or &gt; <see cref="Length"/>.</exception>
         public SpanByte Slice(int start, int length)
         {
             if ((start < 0) || (length < 0) || (start + length > _length))

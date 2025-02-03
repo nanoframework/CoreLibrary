@@ -8,7 +8,7 @@ namespace System
     /// <summary>
     /// Specifies the application elements on which it is valid to apply an attribute.
     /// </summary>
-    [ExcludeFromStubs]
+    [ExcludeType]
     [Flags]
     [Serializable]
     public enum AttributeTargets

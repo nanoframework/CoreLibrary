@@ -9,7 +9,7 @@ namespace System
     /// Indicates that a class can be serialized. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Delegate, Inherited = false)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class SerializableAttribute : Attribute
     {
     }

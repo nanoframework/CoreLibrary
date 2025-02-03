@@ -14,7 +14,7 @@ namespace System
     /// Specifies whether a <see cref="DateTime"/> object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
     /// </summary>
     /// <remarks>
-    /// nanoFramework doesn't support local time, only  UTC, so it's not possible to specify <see cref="DateTimeKind.Local"/>.
+    /// nanoFramework doesn't support local time, only  UTC, so it's not possible to specify <see cref="Local"/>.
     /// </remarks>
     [Serializable]
     public enum DateTimeKind
@@ -28,7 +28,7 @@ namespace System
         /// The time represented is local time.
         /// </summary>
         /// <remarks>
-        /// nanoFramework doesn't support local time, so <see cref="DateTimeKind.Local"/> is provided to allow code reuse and keep consistency with full .NET framework.
+        /// nanoFramework doesn't support local time, so <see cref="Local"/> is provided to allow code reuse and keep consistency with full .NET framework.
         /// </remarks>
         [Obsolete("nanoFramework doesn't support local time, so DateTimeKind.Local is provided to allow code reuse and keep consistency with full .NET framework", true)]
         Local = 2,
@@ -169,7 +169,7 @@ namespace System
         /// Initializes a new instance of the <see cref="DateTime"/> structure to a specified number of ticks.
         /// </summary>
         /// <param name="ticks">A date and time expressed in the number of 100-nanosecond intervals. </param>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="DateTime.MinValue"/> and <see cref="DateTime.MaxValue"/>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="MinValue"/> and <see cref="MaxValue"/>.</exception>
         public DateTime(long ticks)
         {
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 

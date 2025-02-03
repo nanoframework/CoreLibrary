@@ -2258,7 +2258,7 @@ namespace NFUnitTestEnum
 
                     f = (Enum_TestClass_enum78_Enum)v[0];
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     // Caught System.Exception: Failed
                     OutputHelper.WriteLine(e.ToString());

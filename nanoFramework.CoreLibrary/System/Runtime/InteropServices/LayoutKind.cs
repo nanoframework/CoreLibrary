@@ -8,7 +8,7 @@ namespace System.Runtime.InteropServices
     /// <summary>
     /// Controls the layout of an object when exported to unmanaged code.
     /// </summary>
-    [ExcludeFromStubs]
+    [ExcludeType]
     [Serializable]
     public enum LayoutKind
     {

@@ -11,7 +11,7 @@ namespace System.Reflection
     /// Defines a copyright custom attribute for an assembly manifest.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class AssemblyCopyrightAttribute : Attribute
     {
         private readonly String _copyright;
@@ -41,7 +41,7 @@ namespace System.Reflection
     /// Defines a trademark custom attribute for an assembly manifest.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class AssemblyTrademarkAttribute : Attribute
     {
         private readonly String _trademark;
@@ -71,7 +71,7 @@ namespace System.Reflection
     /// Defines a product name custom attribute for an assembly manifest.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class AssemblyProductAttribute : Attribute
     {
         private readonly String _product;
@@ -101,7 +101,7 @@ namespace System.Reflection
     /// Defines a company name custom attribute for an assembly manifest.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class AssemblyCompanyAttribute : Attribute
     {
         private readonly String _company;
@@ -131,7 +131,7 @@ namespace System.Reflection
     /// Provides a text description for an assembly.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class AssemblyDescriptionAttribute : Attribute
     {
         private readonly String _description;
@@ -161,7 +161,7 @@ namespace System.Reflection
     /// Specifies a description for an assembly.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class AssemblyTitleAttribute : Attribute
     {
         private readonly String _title;
@@ -191,7 +191,7 @@ namespace System.Reflection
     /// Specifies the build configuration, such as retail or debug, for an assembly.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class AssemblyConfigurationAttribute : Attribute
     {
         private readonly String _configuration;
@@ -221,7 +221,7 @@ namespace System.Reflection
     /// Defines a friendly default alias for an assembly manifest.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class AssemblyDefaultAliasAttribute : Attribute
     {
         private readonly String _defaultAlias;
@@ -251,7 +251,7 @@ namespace System.Reflection
     /// Defines additional version information for an assembly manifest.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class AssemblyInformationalVersionAttribute : Attribute
     {
         private readonly String _informationalVersion;

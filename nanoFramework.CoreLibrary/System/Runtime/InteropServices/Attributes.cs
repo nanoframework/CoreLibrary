@@ -9,7 +9,7 @@ namespace System.Runtime.InteropServices
     /// Controls accessibility of an individual managed type or member, or of all types within an assembly, to COM.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Interface | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Field | AttributeTargets.Method | AttributeTargets.Property, Inherited = false)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class ComVisibleAttribute : Attribute
     {
         internal bool _val;
@@ -36,7 +36,7 @@ namespace System.Runtime.InteropServices
     /// Supplies an explicit System.Guid when an automatic GUID is undesirable.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Interface | AttributeTargets.Class | AttributeTargets.Enum | AttributeTargets.Struct | AttributeTargets.Delegate, Inherited = false)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class GuidAttribute : Attribute
     {
         internal String Val;
@@ -63,7 +63,7 @@ namespace System.Runtime.InteropServices
     /// Indicates that data should be marshaled from callee back to caller.
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class OutAttribute : Attribute
     {
     }
@@ -72,7 +72,7 @@ namespace System.Runtime.InteropServices
     /// Lets you control the physical layout of the data fields of a class or structure in memory.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited = false)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class StructLayoutAttribute : Attribute
     {
         internal LayoutKind Val;

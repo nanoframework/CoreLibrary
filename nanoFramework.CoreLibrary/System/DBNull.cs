@@ -10,7 +10,7 @@ namespace System
     /// Represents a nonexistent value. This class cannot be inherited.
     /// </summary>
     [EditorBrowsable(EditorBrowsableState.Never)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class DBNull
     {
 

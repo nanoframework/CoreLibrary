@@ -117,7 +117,7 @@ namespace System.Threading
         /// of equal priority that are ready to run, execution of the current thread is not suspended.</param>
         /// <remarks>
         /// The thread will not be scheduled for execution by the operating system for the amount of time specified. 
-        /// You can specify Timeout.Infinite for the <paramref name="millisecondsTimeout"/> parameter to suspend the thread indefinitely. However, we recommend that you use other <see cref="System.Threading"/> classes such as <see cref="AutoResetEvent"/>, <see cref="ManualResetEvent"/>, <see cref="Monitor"/> or <see cref="WaitHandle"/> instead to synchronize threads or manage resources.
+        /// You can specify Timeout.Infinite for the <paramref name="millisecondsTimeout"/> parameter to suspend the thread indefinitely. However, we recommend that you use other <see cref="Threading"/> classes such as <see cref="AutoResetEvent"/>, <see cref="ManualResetEvent"/>, <see cref="Monitor"/> or <see cref="WaitHandle"/> instead to synchronize threads or manage resources.
         /// The system clock ticks at a specific rate called the clock resolution. The actual timeout might not be exactly the specified timeout, because the specified timeout will be adjusted to coincide with clock ticks. 
         /// </remarks>
         [MethodImpl(MethodImplOptions.InternalCall)]
@@ -132,7 +132,7 @@ namespace System.Threading
         /// of equal priority that are ready to run, execution of the current thread is not suspended.</param>
         /// <remarks>
         /// The thread will not be scheduled for execution by the operating system for the amount of time specified. 
-        /// You can specify <see cref="Timeout.Infinite"/> for the <paramref name="timeout"/> parameter to suspend the thread indefinitely. However, we recommend that you use other <see cref="System.Threading"/> classes such as <see cref="AutoResetEvent"/>, <see cref="ManualResetEvent"/>, <see cref="Monitor"/> or <see cref="WaitHandle"/> instead to synchronize threads or manage resources.
+        /// You can specify <see cref="Timeout.Infinite"/> for the <paramref name="timeout"/> parameter to suspend the thread indefinitely. However, we recommend that you use other <see cref="Threading"/> classes such as <see cref="AutoResetEvent"/>, <see cref="ManualResetEvent"/>, <see cref="Monitor"/> or <see cref="WaitHandle"/> instead to synchronize threads or manage resources.
         /// The system clock ticks at a specific rate called the clock resolution. The actual timeout might not be exactly the specified timeout, because the specified timeout will be adjusted to coincide with clock ticks. 
         /// </remarks>
         public static void Sleep(TimeSpan timeout)

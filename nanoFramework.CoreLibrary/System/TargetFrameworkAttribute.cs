@@ -6,7 +6,7 @@ namespace System.Runtime.Versioning
     /// <summary>
     /// Identifies the version of the .NET Framework that a particular assembly was compiled against.
     /// </summary>
-    [AttributeUsageAttribute(AttributeTargets.Assembly)]
+    [AttributeUsage(AttributeTargets.Assembly)]
     public sealed class TargetFrameworkAttribute : Attribute
     {
         private String _frameworkName;
@@ -16,7 +16,7 @@ namespace System.Runtime.Versioning
         /// Initializes an instance of the TargetFrameworkAttribute class by specifying the .NET Framework version against which an assembly was built.
         /// </summary>
         /// <param name="frameworkName">The version of the .NET Framework against which the assembly was built.</param>
-        /// <exception cref="System.ArgumentNullException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public TargetFrameworkAttribute(String frameworkName)
         {
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 

@@ -1,6 +1,7 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using nanoFramework.TestFramework;
 
 namespace NFUnitTestConversions
@@ -290,7 +291,7 @@ namespace NFUnitTestConversions
             public static bool testMethod()
             {
                 BoxingTestClassStruct_to_ValTypeTest_struct src = new BoxingTestClassStruct_to_ValTypeTest_struct();
-                System.ValueType dst = src;
+                ValueType dst = src;
                 return true;
             }
         }
@@ -300,7 +301,7 @@ namespace NFUnitTestConversions
         {
             public static bool testMethod()
             {
-                System.ValueType src = new BoxingTestClassValType_to_struct_struct();
+                ValueType src = new BoxingTestClassValType_to_struct_struct();
                 BoxingTestClassValType_to_struct_struct dst = (BoxingTestClassValType_to_struct_struct)src;
                 return true;
             }
