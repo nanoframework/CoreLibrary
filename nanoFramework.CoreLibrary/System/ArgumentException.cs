@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 #nullable enable
@@ -15,7 +15,7 @@ namespace System
     {
         // ReSharper disable InconsistentNaming
         private static readonly string Arg_ArgumentException = "Value does not fall within the expected range.";
-        private static readonly string Arg_ParamName_Name = "(Parameter '%s')";
+        private static readonly string Arg_ParamName_Name = "(Parameter '{0}')";
         private static readonly string Argument_EmptyString = "The value cannot be an empty string.";
         // ReSharper restore InconsistentNaming
 
