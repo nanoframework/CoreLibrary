@@ -2245,7 +2245,7 @@ namespace NFUnitTestSystemLib
             ///  1. Verifies the Ticks property
             /// </summary>
             // Creating a DateTime, getting the Ticks and Verifying
-            DateTime testDateTime = new System.DateTime(504911232000000000);
+            DateTime testDateTime = new DateTime(504911232000000000);
             long _ticks = testDateTime.Ticks;
             Assert.AreEqual(_ticks, 504911232000000000);
         }

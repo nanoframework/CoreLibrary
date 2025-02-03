@@ -10,7 +10,7 @@ namespace System
     /// Indicates that a field of a serializable class should not be serialized. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class NonSerializedAttribute : Attribute
     {
 

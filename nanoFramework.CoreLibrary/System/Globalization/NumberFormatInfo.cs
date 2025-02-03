@@ -58,7 +58,7 @@ namespace System.Globalization
         /// Gets the number of digits in each group to the left of the decimal in numeric values.
         /// </summary>
         /// <value>The number of digits in each group to the left of the decimal in numeric values. The default for InvariantInfo is a one-dimensional array with only one element, which is set to 3.</value>
-        /// <exception cref="System.InvalidOperationException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         public int[] NumberGroupSizes
         {
             get

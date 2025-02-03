@@ -11,7 +11,7 @@ namespace System
     /// Describes objects that contain both a managed pointer to a location and a runtime representation of the type that may be stored at that location.
     /// </summary>
     [EditorBrowsable(EditorBrowsableState.Never)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public struct TypedReference { }
 
 }

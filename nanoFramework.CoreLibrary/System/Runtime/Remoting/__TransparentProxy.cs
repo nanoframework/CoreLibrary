@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 namespace System.Runtime.Remoting.Proxies
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     internal sealed class __TransparentProxy
     {
     }

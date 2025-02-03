@@ -9,7 +9,7 @@ namespace System.Diagnostics
     /// Indicates to compilers that a method call or attribute should be ignored unless a specified conditional compilation symbol is defined.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     [Serializable]
     public sealed class ConditionalAttribute : Attribute
     {

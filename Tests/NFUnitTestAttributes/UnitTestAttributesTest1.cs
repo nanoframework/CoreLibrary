@@ -372,7 +372,7 @@ namespace NFUnitTestAttributes
             }
         }
 
-        [GuidAttribute("00020810-0000-0000-C000-000000000046")]
+        [Guid("00020810-0000-0000-C000-000000000046")]
         struct Attrib_TestClass_attrib021_4_C1 { }
         public class Attrib_TestClass_attrib021_4
         {

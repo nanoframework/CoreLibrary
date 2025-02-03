@@ -8,7 +8,7 @@ namespace System.Runtime.CompilerServices
     /// Allows you to obtain the method or property name of the caller to the method.
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
-    [ExcludeFromStubs]
+    [ExcludeType]
     public sealed class CallerMemberNameAttribute : Attribute
     {
         /// <summary>

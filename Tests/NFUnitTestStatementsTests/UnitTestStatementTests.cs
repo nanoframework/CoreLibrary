@@ -1202,7 +1202,7 @@ namespace NFUnitTestStatementsTests
             }
             public void Throw()
             {
-                throw (new System.Exception("Res1"));
+                throw (new Exception("Res1"));
             }
         }
 
@@ -1218,7 +1218,7 @@ namespace NFUnitTestStatementsTests
             }
             public void Throw()
             {
-                throw (new System.Exception("Res2"));
+                throw (new Exception("Res2"));
             }
         }
 
@@ -1235,7 +1235,7 @@ namespace NFUnitTestStatementsTests
             }
             public void Throw()
             {
-                throw (new System.Exception("ResExplicit"));
+                throw (new Exception("ResExplicit"));
             }
         }
 
@@ -1252,7 +1252,7 @@ namespace NFUnitTestStatementsTests
             }
             public void Throw()
             {
-                throw (new System.Exception("NonRes1"));
+                throw (new Exception("NonRes1"));
             }
         }
 
@@ -1269,7 +1269,7 @@ namespace NFUnitTestStatementsTests
             }
             public void Throw()
             {
-                throw (new System.Exception("NonRes2"));
+                throw (new Exception("NonRes2"));
             }
         }
 
@@ -1370,7 +1370,7 @@ namespace NFUnitTestStatementsTests
         {
             public static int Main_old(string[] args)
             {
-                System.Exception r;
+                Exception r;
                 return (0);
             }
             public static bool testMethod()
@@ -3206,7 +3206,7 @@ namespace NFUnitTestStatementsTests
                         // Fail
                     }
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 0;
                 }
@@ -4068,7 +4068,7 @@ namespace NFUnitTestStatementsTests
             {
                 if (i > 0)
                     return (1);
-                throw new System.Exception();
+                throw new Exception();
             }
             private int Method(int i)
             {
@@ -4093,7 +4093,7 @@ namespace NFUnitTestStatementsTests
                                 {
                                     return (1);
                                 }
-                                throw new System.Exception();
+                                throw new Exception();
                             default:
                                 return (0);
                         }
@@ -4128,9 +4128,9 @@ namespace NFUnitTestStatementsTests
             {
                 try
                 {
-                    throw new System.Exception();
+                    throw new Exception();
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     return (0);
                 }
@@ -4140,9 +4140,9 @@ namespace NFUnitTestStatementsTests
             {
                 try
                 {
-                    throw new System.Exception();
+                    throw new Exception();
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     return (0);
                 }
@@ -4167,10 +4167,10 @@ namespace NFUnitTestStatementsTests
                 int i = 1;
                 try
                 {
-                    System.Exception e = new System.Exception();
+                    Exception e = new Exception();
                     throw (e);
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     OutputHelper.WriteLine(e.ToString());
                     return (0);
@@ -4196,9 +4196,9 @@ namespace NFUnitTestStatementsTests
             {
                 try
                 {
-                    throw new System.Exception();
+                    throw new Exception();
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     return (0);
                 }
@@ -4226,7 +4226,7 @@ namespace NFUnitTestStatementsTests
                     int x = 1 / i;
                     OutputHelper.WriteLine(x.ToString()); // prevent it being optimized away
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     return (0);
                 }
@@ -4258,13 +4258,13 @@ namespace NFUnitTestStatementsTests
                         Thrower();
                         //throw new System.Exception();
                     }
-                    catch (System.Exception e)
+                    catch (Exception e)
                     {
                         // Rethrow
                         throw;
                     }
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     // Recatch
                     return (0);
@@ -4273,7 +4273,7 @@ namespace NFUnitTestStatementsTests
             }
             private void Thrower()
             {
-                throw new System.Exception();
+                throw new Exception();
             }
             public static bool testMethod()
             {
@@ -4324,7 +4324,7 @@ namespace NFUnitTestStatementsTests
                 {
                     try
                     {
-                        throw new System.Exception();
+                        throw new Exception();
                     }
                     finally
                     {
@@ -4358,7 +4358,7 @@ namespace NFUnitTestStatementsTests
                 {
                     try
                     {
-                        throw new System.Exception();
+                        throw new Exception();
                     }
                     catch
                     {
@@ -4421,7 +4421,7 @@ namespace NFUnitTestStatementsTests
             {
                 try
                 {
-                    throw new System.Exception();
+                    throw new Exception();
                 }
                 finally
                 {
@@ -4462,7 +4462,7 @@ namespace NFUnitTestStatementsTests
             }
             private int DeepMethod(int i)
             {
-                throw new System.Exception();
+                throw new Exception();
             }
             public static bool testMethod()
             {

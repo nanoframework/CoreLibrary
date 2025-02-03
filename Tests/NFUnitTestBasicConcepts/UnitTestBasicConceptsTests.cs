@@ -4585,7 +4585,7 @@ namespace NFUnitTestBasicConcepts
         {
             public static int Main_old()
             {
-                Basic_TestClass_memac025_O.Basic_TestClass_memac025_C1 tc = new Basic_TestClass_memac025_O.Basic_TestClass_memac025_C1();
+                Basic_TestClass_memac025_C1 tc = new Basic_TestClass_memac025_C1();
                 if (tc.intI == 2)
                 {
                     return 0;

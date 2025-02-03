@@ -10,7 +10,7 @@ namespace System
     /// </summary>
     /// <remarks>
     /// A <see cref="TimeSpan "/> object represents a time interval (duration of time or elapsed time) that is measured as a positive or negative number of days, hours, minutes, seconds, and fractions of a second. The <see cref="TimeSpan "/> structure can also be used to represent the time of day, but only if the time is unrelated to a particular date. Otherwise, the <see cref="DateTime "/> structure should be used instead.
-    /// The value of a <see cref="TimeSpan"/> object is the number of ticks that equal the represented time interval. A tick is equal to 100 nanoseconds, or one ten-millionth of a second. The value of a <see cref="TimeSpan"/> object can range from <see cref="TimeSpan.MinValue"/> to <see cref="TimeSpan.MaxValue"/>. 
+    /// The value of a <see cref="TimeSpan"/> object is the number of ticks that equal the represented time interval. A tick is equal to 100 nanoseconds, or one ten-millionth of a second. The value of a <see cref="TimeSpan"/> object can range from <see cref="MinValue"/> to <see cref="MaxValue"/>. 
     /// </remarks>
     [Serializable]
     public struct TimeSpan

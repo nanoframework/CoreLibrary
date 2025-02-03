@@ -20,7 +20,7 @@ namespace System.Threading
     /// <see cref="SpinWait"/> is a value type, which means that low-level code can utilize SpinWait without
     /// fear of unnecessary allocation overheads. SpinWait is not generally useful for ordinary applications.
     /// In most cases, you should use the synchronization classes provided by the .NET Framework, such as
-    /// <see cref="System.Threading.Monitor"/>. For most purposes where spin waiting is required, however,
+    /// <see cref="Monitor"/>. For most purposes where spin waiting is required, however,
     /// the <see cref="SpinWait"/> type should be preferred over the <see
     /// cref="Thread.SpinWait"/> method.
     /// </para>

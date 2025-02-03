@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using nanoFramework.TestFramework;
 
 namespace NFUnitTestArithmetic
@@ -7086,7 +7087,7 @@ namespace NFUnitTestArithmetic
             {
                 string s = "hello";
                 object o = s;
-                if ((o as System.Array) == null)
+                if ((o as Array) == null)
                 {
                     return 0;
                 }
@@ -7106,7 +7107,7 @@ namespace NFUnitTestArithmetic
             {
                 string[] s = new string[] { "hello" };
                 object o = s;
-                if ((o as System.Array) != null)
+                if ((o as Array) != null)
                 {
                     return 0;
                 }
@@ -7126,7 +7127,7 @@ namespace NFUnitTestArithmetic
             {
                 string[] s = new string[] { "hello" };
                 object o = s;
-                if ((o as System.Array) as System.Array != null)
+                if ((o as Array) as Array != null)
                 {
                     return 0;
                 }
@@ -7146,7 +7147,7 @@ namespace NFUnitTestArithmetic
             {
                 string[] s = new string[] { "hello" };
                 object o = s;
-                if ((o as System.Array) as object != null)
+                if ((o as Array) as object != null)
                 {
                     return 0;
                 }

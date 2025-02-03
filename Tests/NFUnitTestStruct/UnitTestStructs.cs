@@ -538,8 +538,8 @@ namespace NFUnitTestStruct
             {
                 if (iface.GetInt() != 42)
                 {
-                    throw new System.Exception();
-                    throw new System.Exception("expected i == 42");
+                    throw new Exception();
+                    throw new Exception("expected i == 42");
                 }
                 iface.SetInt(99);
             }
