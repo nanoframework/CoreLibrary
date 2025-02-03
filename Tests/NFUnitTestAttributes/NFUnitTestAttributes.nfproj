@@ -21,13 +21,14 @@
     <IsTestProject>true</IsTestProject>
     <TestProjectType>UnitTest</TestProjectType>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
-	<LangVersion>default</LangVersion>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="CallerArgumentExpressionAttributeTests.cs" />
-    <Compile Include="CallerMemberNameAttributeTests.cs" />
     <Compile Include="ConstructorTests.cs" />
+    <Compile Include="Diagnostics\CodeAnalysis\NullableAttributesTests.cs" />
+    <Compile Include="Runtime\CompilerServices\CallerArgumentExpressionAttributeTests.cs" />
+    <Compile Include="Runtime\CompilerServices\CallerMemberNameAttributeTests.cs" />
     <Compile Include="UnitTestAttributesTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
