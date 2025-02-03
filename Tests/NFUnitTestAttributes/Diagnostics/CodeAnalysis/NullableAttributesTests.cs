@@ -2,8 +2,9 @@
 using System.Diagnostics.CodeAnalysis;
 using nanoFramework.TestFramework;
 
+#nullable enable
 // ReSharper disable RedundantNullableFlowAttribute
-namespace CoreLibrary.UnitTests.Diagnostics.CodeAnalysis
+namespace NFUnitTestAttributes.Diagnostics.CodeAnalysis
 {
     [TestClass]
     public class NullableAttributesTests

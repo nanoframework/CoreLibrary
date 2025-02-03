@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using nanoFramework.TestFramework;
 
-namespace CoreLibrary.UnitTests.Runtime.CompilerServices
+namespace NFUnitTestAttributes.Runtime.CompilerServices
 {
     [TestClass]
     public class CallerMemberNameAttributeTests

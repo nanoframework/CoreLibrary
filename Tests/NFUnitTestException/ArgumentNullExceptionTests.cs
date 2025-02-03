@@ -1,7 +1,8 @@
 ﻿using System;
 using nanoFramework.TestFramework;
 
-namespace CoreLibrary.UnitTests
+#nullable enable
+namespace NFUnitTestException
 {
     [TestClass]
     public class ArgumentNullExceptionTests
