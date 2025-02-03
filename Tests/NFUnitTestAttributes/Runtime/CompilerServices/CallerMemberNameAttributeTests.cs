@@ -4,11 +4,7 @@
 using System.Runtime.CompilerServices;
 using nanoFramework.TestFramework;
 
-<<<<<<<< HEAD:Tests/NFUnitTestAttributes/Runtime/CompilerServices/CallerMemberNameAttributeTests.cs
 namespace NFUnitTestAttributes.Runtime.CompilerServices
-========
-namespace CoreLibrary.UnitTests.Runtime.CompilerServices
->>>>>>>> 5a6a39b (Add unit tests for new nullable attributes):Tests/CoreLibrary.UnitTests/Runtime/CompilerServices/CallerMemberNameAttributeTests.cs
 {
     [TestClass]
     public class CallerMemberNameAttributeTests
