@@ -1,12 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestEnum
 {
@@ -415,7 +411,7 @@ namespace NFUnitTestEnum
         public class Enum_TestClass_Equals
         {
             public enum e1 { one = 1, two = 2, three = 3 };
-            
+
             public static void TestMethod()
             {
                 var e1_one = e1.one;
@@ -2528,8 +2524,8 @@ namespace NFUnitTestEnum
                 OutputHelper.WriteLine(r.ToString());
                 Assert.AreEqual((int)r, 0x000f);
             }
-        }       
-        
+        }
+
         public class TestClassEnumFlags05
         {
             public static void TestMethod()

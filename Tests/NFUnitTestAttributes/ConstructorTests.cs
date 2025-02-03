@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System;
 using nanoFramework.TestFramework;
 // ReSharper disable InconsistentNaming
 
@@ -90,7 +93,7 @@ namespace NFUnitTestAttributes
         }
 
         [TestClass]
-        public class When_Attribute_is_on_a_class: ConstructorTests
+        public class When_Attribute_is_on_a_class : ConstructorTests
         {
             private static object[] GetAttributes(Type testCases)
             {
@@ -238,7 +241,7 @@ namespace NFUnitTestAttributes
     {
         public MultiParameterConstructorTestAttribute()
         {
-            
+
         }
 
         public MultiParameterConstructorTestAttribute(int intValue, string stringValue)
@@ -256,7 +259,7 @@ namespace NFUnitTestAttributes
     }
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Field | AttributeTargets.Method | AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
-    public class SingleParameterConstructorTestAttribute: Attribute 
+    public class SingleParameterConstructorTestAttribute : Attribute
     {
         public SingleParameterConstructorTestAttribute()
         {

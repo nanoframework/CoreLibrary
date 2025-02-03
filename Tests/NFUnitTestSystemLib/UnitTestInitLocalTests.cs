@@ -1,14 +1,10 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
 using System.Collections;
-using System.Diagnostics;
 using System.Reflection;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestSystemLib
 {
@@ -55,7 +51,7 @@ namespace NFUnitTestSystemLib
             // assigned to a object container (this used to lead to a access violation)
             Type type = typeof(int);
             list.Add(type);
-            string name = ((Type)list[i]).Name;            
+            string name = ((Type)list[i]).Name;
             Assert.AreEqual(name, "Int32");
             i++;
 

@@ -1,13 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
-
+using nanoFramework.TestFramework;
 using NS_TestClass_alias_10_F = NS_TestClass_alias_10_Foo.Bar;
 
 namespace NFUnitTestNamespace
@@ -29,7 +24,7 @@ namespace NFUnitTestNamespace
         {
             // Section 9.1 Compilation Units
             // Verify that the CLSCompliant attribute is allowed at the module level in a comp. unit (cause a warning)
-            Assert.IsTrue(NS_TestClass_attribute_02.testMethod()) ;
+            Assert.IsTrue(NS_TestClass_attribute_02.testMethod());
         }
 
         [TestMethod]
@@ -37,7 +32,7 @@ namespace NFUnitTestNamespace
         {
             // Section 9.1 Compilation Units
             // Verify that a program with multiple files depending on each other works
-            Assert.IsTrue(NS_TestClass_compunit_01.testMethod()) ;
+            Assert.IsTrue(NS_TestClass_compunit_01.testMethod());
         }
 
         [TestMethod]
@@ -1184,8 +1179,8 @@ namespace NS_TestClass_alias_04_Foo.Bar
 
 namespace NS_TestClass_alias_04
 {
-    using F = NS_TestClass_alias_04_Foo.Bar;
     using System;
+    using F = NS_TestClass_alias_04_Foo.Bar;
 
     class B : F.A
     {
@@ -1216,8 +1211,6 @@ namespace NS_TestClass_alias_10_Baz
 
 namespace NS_TestClass_alias_10
 {
-    using System;
-
     class C : NS_TestClass_alias_10_F.A { }
 
     class main
@@ -1236,9 +1229,6 @@ namespace NS_TestClass_alias_10
 
 namespace NS_TestClass_alias_13
 {
-    using tns = NS_TestClass_alias_13;
-    using System;
-
     class main
     {
         public static int Main_old()
@@ -1255,9 +1245,6 @@ namespace NS_TestClass_alias_13
 
 namespace NS_TestClass_alias_14
 {
-    using tns = NS_TestClass_alias_14.main;
-    using System;
-
     class main
     {
         public static int Main_old()
@@ -1280,7 +1267,6 @@ namespace NS_TestClass_direct_01_Foo.Bar
 namespace NS_TestClass_direct_01
 {
     using NS_TestClass_direct_01_Foo.Bar;
-    using System;
 
     class B : A { }
 
@@ -1312,9 +1298,6 @@ namespace NS_TestClass_direct_02_Foo.Bar
 
 namespace NS_TestClass_direct_02
 {
-    using NS_TestClass_direct_02_Foo.Bar;
-    using System;
-
     class A
     {
         public void showMessage()
@@ -1346,9 +1329,6 @@ namespace NS_TestClass_direct_03_Foo.Bar
 
 namespace NS_TestClass_direct_03
 {
-    using NS_TestClass_direct_03_Foo.Bar;
-    using System;
-
     class A
     {
         public int i;
@@ -1386,10 +1366,7 @@ namespace NS_TestClass_direct_05_Bar
 
 namespace NS_TestClass_direct_05
 {
-    using NS_TestClass_direct_05_Foo;
-    using NS_TestClass_direct_05_Bar;
     using A = NS_TestClass_direct_05_Foo.A;
-    using System;
 
     class main
     {

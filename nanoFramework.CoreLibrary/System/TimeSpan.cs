@@ -1,8 +1,6 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 namespace System
 {
     using Runtime.CompilerServices;
@@ -258,13 +256,13 @@ namespace System
         /// <param name="value">A number of ticks that represent a time.</param>
         /// <returns>An object that represents value.</returns>
         public static TimeSpan FromTicks(long value) => new TimeSpan(value);
-        
+
         /// <summary>
         /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of milliseconds.
         /// </summary>
         /// <param name="value">A number of milliseconds that represent a time.</param>
         /// <returns>An object that represents value.</returns>
-        public static TimeSpan FromMilliseconds(long value) => new TimeSpan(TimeSpan.TicksPerMillisecond  * value);
+        public static TimeSpan FromMilliseconds(long value) => new TimeSpan(TimeSpan.TicksPerMillisecond * value);
 
         /// <summary>
         /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of seconds.
@@ -293,7 +291,7 @@ namespace System
         /// <param name="value">A number of days that represent a time.</param>
         /// <returns>An object that represents value.</returns>
         public static TimeSpan FromDays(long value) => new TimeSpan(TimeSpan.TicksPerDay * value);
-        
+
         /// <summary>
         /// Converts the value of the current <see cref="TimeSpan"/> object to its equivalent string representation.
         /// </summary>

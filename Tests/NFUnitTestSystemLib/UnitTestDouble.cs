@@ -1,8 +1,5 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
 
@@ -94,11 +91,11 @@ namespace NFUnitTestSystemLib
                         Assert.AreEqual(test.Expected, (double)test.D1 == d2);
                         Assert.AreEqual(!test.Expected, (double)test.D1 != d2);
                     }
-                    
+
                     Assert.AreEqual(test.Expected, test.D1.GetHashCode().Equals(d2.GetHashCode()));
                 }
 
-                if(test.Expected)
+                if (test.Expected)
                 {
                     Assert.IsTrue(test.D1.Equals(test.Value));
                 }

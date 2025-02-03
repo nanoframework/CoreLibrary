@@ -1,12 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestArray
 {
@@ -112,7 +108,7 @@ namespace NFUnitTestArray
         {
             // Array Covariance
             // Verify covariance from any class-type S to any interface-type T, provided S implements T
-            Assert.IsTrue(Other_TestClass_covariance_implicit_04.testMethod()); 
+            Assert.IsTrue(Other_TestClass_covariance_implicit_04.testMethod());
         }
 
         [TestMethod]

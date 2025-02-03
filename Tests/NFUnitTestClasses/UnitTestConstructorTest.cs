@@ -1,13 +1,9 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
 using System.Reflection;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestClasses
 {
@@ -370,7 +366,7 @@ namespace NFUnitTestClasses
             ConstructorInfo[] constructors = classToTest.GetConstructors();
 
             Assert.AreEqual(3, constructors.Length, $"Expecting 3 constructors, got {constructors.Length}.");
-            
+
             foreach (ConstructorInfo constructorInfo in constructors)
             {
                 Assert.AreEqual(constructorInfo.Name, ".ctor", $"Expecting '.ctor' as constructor name, but got: {constructorInfo.Name}");

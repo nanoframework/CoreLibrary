@@ -1,6 +1,7 @@
-﻿using nanoFramework.TestFramework;
-using System;
-using System.Diagnostics;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestClasses
 {
@@ -830,9 +831,9 @@ namespace NFUnitTestClasses
             //  inherited method simply hides the inherited 
             //  member.
             Assert.IsFalse(MethodsTestClass134.testMethod());
-                // This failure indicates a test is now passing that previously failed by design.
-                // It previously marked as known failure because of bug # 21563
-                // The Test owner needs to verify that the change was intentional and remove the known failure. 
+            // This failure indicates a test is now passing that previously failed by design.
+            // It previously marked as known failure because of bug # 21563
+            // The Test owner needs to verify that the change was intentional and remove the known failure. 
         }
 
         [TestMethod]
@@ -1199,9 +1200,9 @@ namespace NFUnitTestClasses
         {
             // Tests if a new method does not overwrite a virtual method in a base class
             Assert.IsFalse(MethodsTestClass195.testMethod());
-                // This failure indicates a test is now passing that previously failed by design.
-                // It previously marked as known failure because of bug # 21563
-                // The Test owner needs to verify that the change was intentional and remove the known failure. 
+            // This failure indicates a test is now passing that previously failed by design.
+            // It previously marked as known failure because of bug # 21563
+            // The Test owner needs to verify that the change was intentional and remove the known failure. 
         }
 
         [TestMethod]
@@ -4163,7 +4164,7 @@ namespace NFUnitTestClasses
         {
             public static bool testMethod()
             {
-                if(MethodsTestClass_Sub206.MyMeth(201) == 202)
+                if (MethodsTestClass_Sub206.MyMeth(201) == 202)
                 {
                     return true;
                 }

@@ -1,13 +1,10 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestAttributes
 {
@@ -159,14 +156,14 @@ namespace NFUnitTestAttributes
             // 17.1 - A top-level, non-abstract attribute class must have public or
             // internal accessibility. Nested attribute classes may also be private,
             // protected, or protected internal.
-            Assert.IsTrue(Attrib_TestClass_attrib036_1.testMethod());            
+            Assert.IsTrue(Attrib_TestClass_attrib036_1.testMethod());
         }
 
         [TestMethod]
         public void Attrib_attrib038_1_Test()
         {
             // Verify params keyword
-                Assert.IsTrue(Attrib_TestClass_attrib038_1.testMethod());
+            Assert.IsTrue(Attrib_TestClass_attrib038_1.testMethod());
         }
 
         [TestMethod]
@@ -437,12 +434,12 @@ namespace NFUnitTestAttributes
                     retval -= 2;
                 Attrib_TestClass_attrib029_8_S1 s1 = new Attrib_TestClass_attrib029_8_S1();
                 s1.j = 10;
-                
+
                 if (10 == s1.j)
                 {
                     retval -= 4;
                 }
-                
+
                 if (0 != retval)
                 {
                     OutputHelper.WriteLine("FAIL, retval==" + retval.ToString());
@@ -485,7 +482,7 @@ namespace NFUnitTestAttributes
                 if (anInt == 5)
                     retval -= 2;
                 Attrib_TestClass_attrib029_9_S1 s1 = new Attrib_TestClass_attrib029_9_S1();
-                
+
                 if (10 == s1.S1Method(10))
                 {
                     retval -= 4;
@@ -539,7 +536,7 @@ namespace NFUnitTestAttributes
                     retval -= 2;
                 }
 
-                if (0 != retval) 
+                if (0 != retval)
                 {
                     OutputHelper.WriteLine("FAIL, retval==" + retval.ToString());
                 }

@@ -1,12 +1,9 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
 using System.Globalization;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestSystemLib
 {
@@ -196,7 +193,7 @@ namespace NFUnitTestSystemLib
                 Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(3, 2)), "Wrong output1 in for 'dd'");
                 // check 'yyyy'
                 Assert.AreEqual(dt.Year, int.Parse(dtOutput1.Substring(6, 4)), "Wrong output1 for 'yyyy'");
-                
+
                 // check '/'
                 Assert.AreEqual("/", dtOutput1.Substring(2, 1), "Wrong output1 in for '-'");
                 Assert.AreEqual("/", dtOutput1.Substring(5, 1), "Wrong output1 in for '-'");
@@ -249,10 +246,10 @@ namespace NFUnitTestSystemLib
                 Assert.AreEqual(",", dtOutput1.Substring(endIndex, 1), "Wrong output1 in for ','");
                 // check ' '
                 Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 1, 1), "Wrong output1 in for ' '");
-                
+
                 // check 'dd'
                 Assert.AreEqual(dt.Day, int.Parse(dtOutput1.Substring(endIndex + 2, 2)), "Wrong output1 in for 'dd'");
-                
+
                 // check ' '
                 Assert.AreEqual(" ", dtOutput1.Substring(endIndex + 4, 1), "Wrong output1 in for ' '");
 
@@ -449,7 +446,7 @@ namespace NFUnitTestSystemLib
                 throw new Exception($"Caught {ex.Message} when Trying DateTime.ToString(\"{specifier1}\")");
             }
         }
-        
+
         [TestMethod]
         public void DateTime_ToStringTest12()
         {
@@ -768,7 +765,7 @@ namespace NFUnitTestSystemLib
 
                 // check 'MMM'
                 Assert.AreEqual(
-                    DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[dt.Month -1],
+                    DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[dt.Month - 1],
                     dtOutput1.Substring(8, 3), "Wrong output1 in for 'MMM'");
                 Assert.AreEqual(
                     DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[dt.Month - 1],
@@ -910,7 +907,7 @@ namespace NFUnitTestSystemLib
                 // expected format is HH:mm:ss
 
                 int length = 8;
-        
+
                 // check length
                 Assert.IsTrue(dtOutput1.Length >= length, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {length}");
 
@@ -1398,14 +1395,14 @@ namespace NFUnitTestSystemLib
                 Assert.AreEqual(dt.Hour, int.Parse(dtOutput1.Substring(7, 2)), "Wrong output1 in for 'HH'");
 
                 // check 'mm'
-                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(7+3, 2)), "Wrong output1 in for 'mm'");
+                Assert.AreEqual(dt.Minute, int.Parse(dtOutput1.Substring(7 + 3, 2)), "Wrong output1 in for 'mm'");
 
                 // check 'ss'
-                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(7+6, 2)), "Wrong output1 in for 'ss'");
+                Assert.AreEqual(dt.Second, int.Parse(dtOutput1.Substring(7 + 6, 2)), "Wrong output1 in for 'ss'");
 
                 // check ':'
-                Assert.AreEqual(":", dtOutput1.Substring(7+2, 1), "Wrong output1 in for ':'");
-                Assert.AreEqual(":", dtOutput1.Substring(7+5, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(7 + 2, 1), "Wrong output1 in for ':'");
+                Assert.AreEqual(":", dtOutput1.Substring(7 + 5, 1), "Wrong output1 in for ':'");
 
                 // check ' '
                 Assert.AreEqual(" ", dtOutput1.Substring(2, 1), "Wrong output1 in for ' '");
