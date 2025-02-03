@@ -1,11 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestGC
 {
@@ -22,7 +19,7 @@ namespace NFUnitTestGC
                 OutputHelper.WriteLine($"Starting iteration {loop}");
 
                 // First we create objects and holes that keeps some space that could be used by compaction.
-                   
+
                 // Small count so compaction does not happen. 
                 HolderForString[] arrayOfStrings = new HolderForString[10];
                 RunStringAllocations(arrayOfStrings);

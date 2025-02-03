@@ -1,8 +1,5 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 #define while //Lexical_TestClass_pre_009
 
@@ -61,9 +58,8 @@
 #define for //Lexical_TestClass_preproc_39
 
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestLexical
 {
@@ -253,8 +249,8 @@ namespace NFUnitTestLexical
             {
                 int i = 2;
 #if while
-		while (--i > 0)
-			;
+                while (--i > 0)
+                    ;
 #endif
                 return (i > 0 ? 1 : 0);
             }
@@ -270,7 +266,7 @@ namespace NFUnitTestLexical
             {
                 int i = 6;
 #if True1 == true
-		i--;
+                i--;
 #endif
 #if False1 == false
                 i--;
@@ -283,12 +279,12 @@ namespace NFUnitTestLexical
 #error #else #elif True2 == True1
 #endif
 #if (True1 != false) && ((False1) == False2) && (true || false)
-		i--;
+                i--;
 #else
 #error #if (True != false) && ((False1) == False2) && (true || false)
 #endif
 #if ((true == True1) != (false && true))
-		i--;
+                i--;
 #else
 #error ((true == True1) != (false && true))
 #endif

@@ -1,14 +1,10 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
 using System.Collections;
-using System.Diagnostics;
 using System.Reflection;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestSystemLib
 {
@@ -135,7 +131,7 @@ namespace NFUnitTestSystemLib
             TestEnum en = TestEnum.Item1;
             t = en.GetType();
             Assert.IsType(t.DeclaringType, typeof(UnitTestReflectionTypeTest));
-            Assert.IsTrue( t.IsEnum);
+            Assert.IsTrue(t.IsEnum);
             Assert.IsFalse(t.IsAbstract);
             Assert.IsFalse(t.IsClass);
             Assert.IsFalse(t.IsPublic);
@@ -152,7 +148,7 @@ namespace NFUnitTestSystemLib
             Assert.IsFalse(typeof(Array).IsValueType);
             Assert.IsTrue(typeof(TestStruct).IsValueType);
             Assert.IsTrue(typeof(Type).IsSubclassOf(typeof(MemberInfo)));
-            Assert.AreEqual(typeof(Type).GetInterfaces()[0].Name , "IReflect");
+            Assert.AreEqual(typeof(Type).GetInterfaces()[0].Name, "IReflect");
             Assert.IsTrue(typeof(MyDelegate).IsInstanceOfType(new MyDelegate(MyDelegateImpl)));
 
             // Get known type from assembly qualified type name Culture and PublicKeyToken are used by debugger to identify types

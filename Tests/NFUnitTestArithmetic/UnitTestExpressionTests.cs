@@ -1,12 +1,8 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestArithmetic
 {
@@ -325,7 +321,7 @@ namespace NFUnitTestArithmetic
             // This code tests that if a primary expression consisting of a single identifier refers 
             // to a member in an enclosing namespace, then the primary expression is evaluated 
             // to that member and classified as a namespace or a type.
-            Assert.IsTrue(NS_ident031_I.ident031.testMethod()) ;
+            Assert.IsTrue(NS_ident031_I.ident031.testMethod());
         }
         [TestMethod]
         public void Exp_ident032_Test()
@@ -333,7 +329,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.2 
             // This code tests that if a primary expression consisting of a single identifier refers 
             // to an imported type, then the primary expression refers to that type.
-            Assert.IsTrue(NS_ident032_I.ident032.testMethod()) ;
+            Assert.IsTrue(NS_ident032_I.ident032.testMethod());
         }
         [TestMethod]
         public void Exp_ident033_Test()
@@ -341,7 +337,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.2 
             // This code tests that if a primary expression consisting of a single identifier refers 
             // to an imported type, then the primary expression refers to that type.
-            Assert.IsTrue(NS_ident033_O.NS_ident033_I.ident033.testMethod()) ;
+            Assert.IsTrue(NS_ident033_O.NS_ident033_I.ident033.testMethod());
         }
         [TestMethod]
         public void Exp_ident034_Test()
@@ -350,7 +346,7 @@ namespace NFUnitTestArithmetic
             // This code tests that if a primary expression consisting of a single identifier refers 
             // to a single type in an imported namespace, then the primary expression refers to that 
             // type.
-            Assert.IsTrue(NS_ident034_I.ident034.testMethod()) ;
+            Assert.IsTrue(NS_ident034_I.ident034.testMethod());
         }
         [TestMethod]
         public void Exp_ident035_Test()
@@ -359,7 +355,7 @@ namespace NFUnitTestArithmetic
             // This code tests that if a primary expression consisting of a single identifier refers 
             // to a single type in an imported namespace, then the primary expression refers to that 
             // type.
-            Assert.IsTrue(NS_ident035_O.NS_ident035_I.ident035.testMethod()) ;
+            Assert.IsTrue(NS_ident035_O.NS_ident035_I.ident035.testMethod());
         }
         [TestMethod]
         public void Exp_ident038_Test()
@@ -367,7 +363,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.2 
             // This code tests that if a primary expression consisting of a single identifier refers 
             // to an imported type, then the primary expression refers to that type.
-            Assert.IsTrue(NS_ident038_I.ident038.testMethod()) ;
+            Assert.IsTrue(NS_ident038_I.ident038.testMethod());
         }
         [TestMethod]
         public void Exp_ident039_Test()
@@ -375,7 +371,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.2 
             // This code tests that if a primary expression consisting of a single identifier refers 
             // to an imported type, then the primary expression refers to that type.
-            Assert.IsTrue(NS_ident039_O.NS_ident039_I.ident039.testMethod()) ;
+            Assert.IsTrue(NS_ident039_O.NS_ident039_I.ident039.testMethod());
         }
 
         [TestMethod]
@@ -384,7 +380,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.2 
             // This code tests that if a primary expression consisting of a single identifier refers 
             // to an imported type, then the primary expression refers to that type.
-            Assert.IsTrue(NS_ident040_I.ident040.testMethod()) ;
+            Assert.IsTrue(NS_ident040_I.ident040.testMethod());
         }
 
         [TestMethod]
@@ -394,7 +390,7 @@ namespace NFUnitTestArithmetic
             // This code tests that if the primary expression consisting of the form E.I, where E 
             // is a namespace and I is the name of an accessible member of that namespace, then the 
             // result is the member, either a namespace or a type.
-            Assert.IsTrue(mem001.testMethod()) ;
+            Assert.IsTrue(mem001.testMethod());
         }
         /*
         [TestMethod]
@@ -417,7 +413,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.7 
             // This code tests that if the primary expression consisting of the form E.I, where E 
             // is a type and I is also a type, then the result of the member is that type.
-            Assert.IsTrue(mem003.testMethod()) ;
+            Assert.IsTrue(mem003.testMethod());
         }
         [TestMethod]
         public void Exp_mem004_Test()
@@ -425,7 +421,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.7 
             // This code tests that if the primary expression consisting of the form E.I, where E 
             // is a type and I is also a type, then the result of the member is that type.
-            Assert.IsTrue(mem004.testMethod()) ;
+            Assert.IsTrue(mem004.testMethod());
         }
         [TestMethod]
         public void Exp_mem005_Test()
@@ -799,35 +795,35 @@ namespace NFUnitTestArithmetic
         {
             // Section 7.2.1 
             // This code tests that a boolean-literal is of type bool.
-            Assert.IsTrue(lit001.testMethod()) ;
+            Assert.IsTrue(lit001.testMethod());
         }
         [TestMethod]
         public void Exp_lit004_Test()
         {
             // Section 7.2.1 
             // This code tests that an int-literal is of type int.
-            Assert.IsTrue(lit004.testMethod()) ;
+            Assert.IsTrue(lit004.testMethod());
         }
         [TestMethod]
         public void Exp_lit005_Test()
         {
             // Section 7.2.1 
             // This code tests that a long-literal is of type long.
-            Assert.IsTrue(lit005.testMethod()) ;
+            Assert.IsTrue(lit005.testMethod());
         }
         [TestMethod]
         public void Exp_lit006_Test()
         {
             // Section 7.2.1 
             // This code tests that a float-literal is of type float.
-            Assert.IsTrue(lit006.testMethod()) ;
+            Assert.IsTrue(lit006.testMethod());
         }
         [TestMethod]
         public void Exp_lit007_Test()
         {
             // Section 7.2.1 
             // This code tests that a double-literal is of type double.
-            Assert.IsTrue(lit007.testMethod()) ;
+            Assert.IsTrue(lit007.testMethod());
         }
         [TestMethod]
         public void Exp_lit008_Test()
@@ -863,7 +859,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.8 
             // A base class access is permitted only in the block of a constructor,
             // an instance method, or an instance property accessor.
-            Assert.IsTrue(base006.testMethod()) ;
+            Assert.IsTrue(base006.testMethod());
         }
         [TestMethod]
         public void Exp_base007_Test()
@@ -871,7 +867,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.8 
             // A base class access is permitted only in the block of a constructor,
             // an instance method, or an instance property accessor.
-            Assert.IsTrue(base007.testMethod()) ;
+            Assert.IsTrue(base007.testMethod());
         }
         [TestMethod]
         public void Exp_base009_Test()
@@ -879,7 +875,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.8 
             // A base class access is permitted only in the block of a constructor,
             // an instance method, or an instance property accessor.
-            Assert.IsTrue(base009.testMethod()) ;
+            Assert.IsTrue(base009.testMethod());
         }
         [TestMethod]
         public void Exp_base010_Test()
@@ -887,7 +883,7 @@ namespace NFUnitTestArithmetic
             // Section 7.2.8 
             // A base class access is permitted only in the block of a constructor,
             // an instance method, or an instance property accessor.
-            Assert.IsTrue(base010.testMethod()) ;
+            Assert.IsTrue(base010.testMethod());
         }
         [TestMethod]
         public void Exp_base011_Test()
@@ -3797,7 +3793,6 @@ namespace Exp_TestClass_ident038_T2
 }
 namespace NS_ident038_I
 {
-    using Exp_TestClass_ident038_T;
     using Exp_TestClass_ident038_TC = Exp_TestClass_ident038_T2.Exp_TestClass_ident038_TC;
     public class ident038
     {
@@ -3836,7 +3831,6 @@ namespace Exp_TestClass_ident039_T2
 namespace NS_ident039_O
 {
     using Exp_TestClass_ident039_TC = Exp_TestClass_ident039_T2.Exp_TestClass_ident039_TC;
-    using Exp_TestClass_ident039_T;
     namespace NS_ident039_I
     {
         public class ident039
@@ -3869,7 +3863,6 @@ namespace Exp_TestClass_ident040_T
 }
 namespace NS_ident040_I
 {
-    using Exp_TestClass_ident040_T;
     using Exp_TestClass_ident040_TC = Exp_TestClass_ident040_T.Exp_TestClass_ident040_TC;
     public class ident040
     {
