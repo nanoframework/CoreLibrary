@@ -303,6 +303,9 @@
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerTypeProxyAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.NativeProfiledAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="System.FlagsAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>

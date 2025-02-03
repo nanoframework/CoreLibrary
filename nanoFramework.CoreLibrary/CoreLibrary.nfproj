@@ -66,6 +66,7 @@
     <Compile Include="System\AppDomainUnloadedException.cs" />
     <Compile Include="System\ApplicationException.cs" />
     <Compile Include="System\ArgumentException.cs" />
+    <Compile Include="System\Diagnostics\NativeProfiledAttribute.cs" />
     <Compile Include="System\PlatformNotSupportedException.cs" />
     <Compile Include="System\ArgumentNullException.cs" />
     <Compile Include="System\ArgumentOutOfRangeException.cs" />
@@ -246,7 +247,7 @@
     </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
       <InProject>false</InProject>
-    </NFMDP_PE_ExcludeClassByName>    
+    </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
@@ -293,6 +294,9 @@
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.DebuggerTypeProxyAttribute">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+    <NFMDP_PE_ExcludeClassByName Include="System.Diagnostics.NativeProfiledAttribute">
       <InProject>false</InProject>
     </NFMDP_PE_ExcludeClassByName>
     <NFMDP_PE_ExcludeClassByName Include="System.FlagsAttribute">
