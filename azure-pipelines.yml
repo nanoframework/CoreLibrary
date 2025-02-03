@@ -169,6 +169,9 @@ jobs:
     persistCredentials: true
 
   # update dependents
+  ##########################################################################################################
+  # dependent libraries that include unit tests should be added to the list in nanoFramework.TestFramework #
+  ##########################################################################################################
   - template: azure-pipelines-templates/update-dependents.yml@templates  
     parameters:
       packageName: '$(nugetPackageName)'
@@ -178,25 +181,24 @@ jobs:
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
         nanoFramework.Hardware.GiantGecko
-        nanoFramework.Hardware.Stm32
         nanoFramework.Hardware.TI
         nanoFramework.Networking.Sntp
         nanoFramework.TI.EasyLink
         nanoFramework.ResourceManager
-        nanoframework.System.Runtime
-        nanoFramework.DependencyInjection
-        System.Collections
         System.Device.Adc
         System.Device.Dac
         System.Device.I2c
         System.Device.I2c.Slave
         System.Device.Pwm
-        System.Device.Spi
-        System.IO.Hashing
-        System.Math
-        System.Text
-        System.Threading
-        System.Security.Cryptography
+
+  # update Visual Studio extension
+  - task: PowerShell@2
+    displayName: Update VS extension
+    inputs:
+      targetType: filePath
+      filePath: azure-pipelines/update-vs-extension.ps1
+    env:
+      MY_GITHUB_TOKEN: $(GitHubToken)
 
 ##################################
 # report build failure to Discord
