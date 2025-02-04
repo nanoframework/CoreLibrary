@@ -44,9 +44,13 @@ $auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.G
 $commitMessage = ""
 $prTitle = ""
 $newBranchName = "develop-nfbot/update-dependencies/" + [guid]::NewGuid().ToString()
-$packageTargetVersion = $env:NBGV_NuGetPackageVersion
 $packageName = "nanoframework.corelibrary"
 $repoMainBranch = "main"
+
+# get the target version from the branch name
+$packageTargetVersion = $env:Build_SourceBranch
+$packageTargetVersion = $packageTargetVersion -replace "refs/tags/", ""
+$packageTargetVersion = $packageTargetVersion.Substring(1)
 
 # working directory is agent temp directory
 Write-Debug "Changing working directory to $env:Agent_TempDirectory"
