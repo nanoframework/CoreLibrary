@@ -100,7 +100,13 @@ namespace NFUnitTestSystemLib
                 new DoubleTestData(
                     (double)789,
                     "789",
-                    false)
+                    false),
+                new DoubleTestData(
+                    (0.0d),
+                    (-0.0d),
+                    true,
+                    "0.0d should be equal to -0.0d")
+
             };
 
             // Floating point numbers should not be tested for equality
@@ -113,7 +119,8 @@ namespace NFUnitTestSystemLib
                 {
                     Assert.AreEqual(
                         test.Expected,
-                        test.D1.Equals(d2));
+                        test.D1.Equals(d2),
+                        test.AssertMessage);
 
                     if (double.IsNaN((double)test.D1) && double.IsNaN(d2))
                     {
@@ -158,12 +165,18 @@ namespace NFUnitTestSystemLib
             public object D1 { get; }
             public object Value { get; }
             public bool Expected { get; }
+            public string AssertMessage { get; }
 
-            public DoubleTestData(object d1, object value, bool expected)
+            public DoubleTestData(
+                object d1,
+                object value,
+                bool expected,
+                string assertMessage = "")
             {
                 D1 = d1;
                 Value = value;
                 Expected = expected;
+                AssertMessage = assertMessage;
             }
         }
     }
