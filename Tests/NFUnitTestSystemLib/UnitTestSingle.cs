@@ -73,30 +73,68 @@ namespace NFUnitTestSystemLib
         {
             SingleTestData[] testData = new SingleTestData[]
             {
-                new SingleTestData((float)789, (float)789, true),
-                new SingleTestData((float)789, (float)-789, false),
-                new SingleTestData((float)789, (float)0, false),
-                new SingleTestData((float)float.NaN, float.NaN, true),
-                new SingleTestData((float)float.NaN, -float.NaN, true),
-                new SingleTestData((float)789, (double)789, false),
-                new SingleTestData((float)789, "789", false),
+                new SingleTestData(
+                    (float)789,
+                    (float)789,
+                    true),
+                new SingleTestData(
+                    (float)789,
+                    (float)-789,
+                    false),
+                new SingleTestData(
+                    (float)789,
+                    (float)0,
+                    false),
+                new SingleTestData(
+                    float.NaN,
+                    float.NaN,
+                    true),
+                new SingleTestData(
+                    float.NaN,
+                    -float.NaN,
+                    true),
+                new SingleTestData(
+                    (float)789,
+                    (double)789,
+                    false),
+                new SingleTestData(
+                    (float)789,
+                    "789",
+                    false),
             };
+
+            // Floating point numbers should not be tested for equality
+            // intended as this is a unit test
+#pragma warning disable S1244
+
 
             foreach (var test in testData)
             {
                 if (test.Value is float f2)
                 {
-                    Assert.AreEqual(test.Expected, test.F1.Equals(f2));
+                    Assert.AreEqual(
+                        test.Expected,
+                        test.F1.Equals(f2));
 
                     if (float.IsNaN((float)test.F1) && float.IsNaN(f2))
                     {
-                        Assert.AreEqual(!test.Expected, (float)test.F1 == f2);
-                        Assert.AreEqual(test.Expected, (float)test.F1 != f2);
+                        Assert.AreEqual(
+                            !test.Expected,
+                            (float)test.F1 == f2);
+
+                        Assert.AreEqual(
+                            test.Expected,
+                            (float)test.F1 != f2);
                     }
                     else
                     {
-                        Assert.AreEqual(test.Expected, (float)test.F1 == f2);
-                        Assert.AreEqual(!test.Expected, (float)test.F1 != f2);
+                        Assert.AreEqual(
+                            test.Expected,
+                            (float)test.F1 == f2);
+
+                        Assert.AreEqual(
+                            !test.Expected,
+                            (float)test.F1 != f2);
                     }
 
                     Assert.AreEqual(test.Expected, test.F1.GetHashCode().Equals(f2.GetHashCode()));
@@ -104,6 +142,9 @@ namespace NFUnitTestSystemLib
 
                 Assert.AreEqual(test.Expected, test.F1.Equals(test.Value));
             }
+
+#pragma warning restore S1244
+
         }
 
         private sealed class SingleTestData

@@ -73,33 +73,70 @@ namespace NFUnitTestSystemLib
         {
             DoubleTestData[] testData = new DoubleTestData[]
             {
-                new DoubleTestData((double)789, (double)789, true),
-                new DoubleTestData((double)789, (double)-789, false),
-                new DoubleTestData((double)789, (double)0, false),
-                new DoubleTestData(double.NaN, double.NaN, true),
-                new DoubleTestData(double.NaN, -double.NaN, true),
-                new DoubleTestData((double)789, (float)789, false),
-                new DoubleTestData((double)789, "789", false)
+                new DoubleTestData(
+                    (double)789,
+                    (double)789,
+                    true),
+                new DoubleTestData(
+                    (double)789,
+                    (double)-789,
+                    false),
+                new DoubleTestData(
+                    (double)789,
+                    (double)0,
+                    false),
+                new DoubleTestData(
+                    double.NaN,
+                    double.NaN,
+                    true),
+                new DoubleTestData(
+                    double.NaN,
+                    -double.NaN,
+                    true),
+                new DoubleTestData(
+                    (double)789,
+                    (float)789,
+                    false),
+                new DoubleTestData(
+                    (double)789,
+                    "789",
+                    false)
             };
+
+            // Floating point numbers should not be tested for equality
+            // intended as this is a unit test
+#pragma warning disable S1244
 
             foreach (var test in testData)
             {
                 if (test.Value is double d2)
                 {
-                    Assert.AreEqual(test.Expected, test.D1.Equals(d2));
+                    Assert.AreEqual(
+                        test.Expected,
+                        test.D1.Equals(d2));
 
                     if (double.IsNaN((double)test.D1) && double.IsNaN(d2))
                     {
-                        Assert.AreEqual(!test.Expected, (double)test.D1 == d2);
-                        Assert.AreEqual(test.Expected, (double)test.D1 != d2);
+                        Assert.AreEqual(
+                            !test.Expected,
+                            (double)test.D1 == d2);
+                        Assert.AreEqual(
+                            test.Expected,
+                            (double)test.D1 != d2);
                     }
                     else
                     {
-                        Assert.AreEqual(test.Expected, (double)test.D1 == d2);
-                        Assert.AreEqual(!test.Expected, (double)test.D1 != d2);
+                        Assert.AreEqual(
+                            test.Expected,
+                            (double)test.D1 == d2);
+                        Assert.AreEqual(
+                            !test.Expected,
+                            (double)test.D1 != d2);
                     }
 
-                    Assert.AreEqual(test.Expected, test.D1.GetHashCode().Equals(d2.GetHashCode()));
+                    Assert.AreEqual(
+                        test.Expected,
+                        test.D1.GetHashCode().Equals(d2.GetHashCode()));
                 }
 
                 if (test.Expected)
@@ -111,6 +148,9 @@ namespace NFUnitTestSystemLib
                     Assert.IsFalse(test.D1.Equals(test.Value));
                 }
             }
+
+#pragma warning restore S1244
+
         }
 
         private sealed class DoubleTestData
