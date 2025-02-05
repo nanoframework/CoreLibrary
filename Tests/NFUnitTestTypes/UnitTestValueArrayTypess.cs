@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -112,7 +112,7 @@ namespace NFUnitTestTypes
             {
                 byte[] b = { 0 };
                 Type compareType = Type.GetType("System.Byte[]");
-                Assert.IsType(compareType, b, $"The type {compareType.Name} is not equal to {b.GetType().Name}");
+                Assert.IsInstanceOfType(b, compareType, $"The type {compareType.Name} is not equal to {b.GetType().Name}");
             }
         }
         public class ValueArrayTestClass02
@@ -120,7 +120,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 char[] c = { 'a' };
-                Assert.IsType(Type.GetType("System.Char[]"), c);
+                Assert.IsInstanceOfType(c, Type.GetType("System.Char[]"));
             }
         }
         public class ValueArrayTestClass03
@@ -128,7 +128,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 short[] s = { 0 };
-                Assert.IsType(Type.GetType("System.Int16[]"), s);
+                Assert.IsInstanceOfType(s, Type.GetType("System.Int16[]"));
             }
         }
         public class ValueArrayTestClass04
@@ -136,7 +136,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 int[] i = { 0 };
-                Assert.IsType(Type.GetType("System.Int32[]"), i);
+                Assert.IsInstanceOfType(i, Type.GetType("System.Int32[]"));
             }
         }
         public class ValueArrayTestClass05
@@ -144,7 +144,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 long[] l = { 0L };
-                Assert.IsType(Type.GetType("System.Int64[]"), l);
+                Assert.IsInstanceOfType(l, Type.GetType("System.Int64[]"));
             }
         }
         public class ValueArrayTestClass06
@@ -152,7 +152,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 float[] f = { 0.0f };
-                Assert.IsType(Type.GetType("System.Single[]"), f);
+                Assert.IsInstanceOfType(f, Type.GetType("System.Single[]"));
             }
         }
         public class ValueArrayTestClass07
@@ -160,7 +160,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 double[] d = { 0.0d };
-                Assert.IsType(Type.GetType("System.Double[]"), d);
+                Assert.IsInstanceOfType(d, Type.GetType("System.Double[]"));
             }
         }
         public class ValueArrayTestClass09
@@ -168,7 +168,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 bool[] b = { true };
-                Assert.IsType(Type.GetType("System.Boolean[]"), b);
+                Assert.IsInstanceOfType(b, Type.GetType("System.Boolean[]"));
             }
         }
 
@@ -177,7 +177,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 string[] strArray = { "string" };
-                Assert.IsType(Type.GetType("System.String[]"), strArray);
+                Assert.IsInstanceOfType(strArray, Type.GetType("System.String[]"));
             }
         }
         public class ValueArrayTestClass13
@@ -185,7 +185,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 sbyte[] sb = { 0 };
-                Assert.IsType(Type.GetType("System.SByte[]"), sb);
+                Assert.IsInstanceOfType(sb, Type.GetType("System.SByte[]"));
             }
         }
         public class ValueArrayTestClass14
@@ -193,7 +193,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 ushort[] us = { 0 };
-                Assert.IsType(Type.GetType("System.UInt16[]"), us);
+                Assert.IsInstanceOfType(us, Type.GetType("System.UInt16[]"));
             }
         }
         public class ValueArrayTestClass15
@@ -201,8 +201,9 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 uint[] ui = { 0 };
-                Assert.IsType(Type.GetType("System.UInt32[]"), ui);
+                Assert.IsInstanceOfType(ui, Type.GetType("System.UInt32[]"));
             }
         }
+
     }
 }
