@@ -49,7 +49,7 @@ namespace NFUnitTestSystemLib
             // Identical expressions should not be used on both sides of operators
             // on purpose to test the NaN value
 #pragma warning disable S1764 
-            Assert.IsTrue(float.NaN.Equals(0.0d / 0.0d));
+            Assert.IsTrue(float.NaN.Equals(0.0f / 0.0f));
             Assert.IsTrue(float.IsNaN(0.0f / 0.0f));
 #pragma warning restore S1764 // Identical expressions should not be used on both sides of operators
         }
