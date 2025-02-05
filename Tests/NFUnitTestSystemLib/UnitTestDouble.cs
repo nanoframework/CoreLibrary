@@ -46,19 +46,26 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void NaN()
         {
+            // Identical expressions should not be used on both sides of operators
+            // on purpose to test the NaN value
+#pragma warning disable S1764 
             Assert.IsTrue(double.NaN.Equals(0.0d / 0.0d));
+            Assert.IsTrue(double.IsNaN(0.0d / 0.0d));
+#pragma warning restore S1764 // Identical expressions should not be used on both sides of operators
         }
 
         [TestMethod]
         public void NegativeInfinity()
         {
             Assert.AreEqual(-1.0 / 0.0, double.NegativeInfinity);
+            Assert.IsTrue(double.IsNegativeInfinity(-1.0 / 0.0));
         }
 
         [TestMethod]
         public void PositiveInfinity()
         {
             Assert.AreEqual(1.0 / 0.0, double.PositiveInfinity);
+            Assert.IsTrue(double.IsPositiveInfinity(1.0 / 0.0));
         }
 
         [TestMethod]
