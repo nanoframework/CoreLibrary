@@ -76,31 +76,38 @@ namespace NFUnitTestSystemLib
                 new SingleTestData(
                     (float)789,
                     (float)789,
-                    true),
+                    true,
+                    "789 should be equal to 789"),
                 new SingleTestData(
                     (float)789,
                     (float)-789,
-                    false),
+                    false,
+                    "789 should not be equal to -789"),
                 new SingleTestData(
                     (float)789,
                     (float)0,
-                    false),
+                    false,
+                    "789 should not be equal to 0"),
                 new SingleTestData(
                     float.NaN,
                     float.NaN,
-                    true),
+                    true,
+                    "NaN should be equal to NaN"),
                 new SingleTestData(
                     float.NaN,
                     -float.NaN,
-                    true),
+                    true,
+                    "NaN should be equal to -NaN"),
                 new SingleTestData(
                     (float)789,
                     (double)789,
-                    false),
+                    false,
+                    "789(float) should not be equal to 789(double)"),
                 new SingleTestData(
                     (float)789,
                     "789",
-                    false),
+                    false,
+                    "789(float) should not be equal to '789' (string)"),
                 new SingleTestData(
                     (0.0F),
                     (-0.0F),

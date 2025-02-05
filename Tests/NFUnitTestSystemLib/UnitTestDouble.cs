@@ -76,31 +76,38 @@ namespace NFUnitTestSystemLib
                 new DoubleTestData(
                     (double)789,
                     (double)789,
-                    true),
+                    true,
+                    "789 should be equal to 789"),
                 new DoubleTestData(
                     (double)789,
                     (double)-789,
-                    false),
+                    false,
+                    "789 should not be equal to -789"),
                 new DoubleTestData(
                     (double)789,
                     (double)0,
-                    false),
+                    false,
+                    "789 should not be equal to 0"),
                 new DoubleTestData(
                     double.NaN,
                     double.NaN,
-                    true),
+                    true,
+                    "NaN should be equal to NaN"),
                 new DoubleTestData(
                     double.NaN,
                     -double.NaN,
-                    true),
+                    true,
+                    "NaN should be equal to -NaN"),
                 new DoubleTestData(
                     (double)789,
                     (float)789,
-                    false),
+                    false,
+                    "789 should not be equal to 789f"),
                 new DoubleTestData(
                     (double)789,
                     "789",
-                    false),
+                    false,
+                    "789(double) should not be equal to '789' (string)"),
                 new DoubleTestData(
                     (0.0d),
                     (-0.0d),
