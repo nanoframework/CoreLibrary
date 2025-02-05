@@ -145,12 +145,22 @@ namespace NFUnitTestSystemLib
             Int64 i64 = 0;
 
             string str = "";
+
             if (vals.Length == 3)
+            {
                 str = "0 : ";
+            }
+
             for (int i = 0; i < vals.Length; i++)
+            {
                 str += vals[i].ToString() + " : ";
+            }
+
             for (int i = vals.Length; i < 5; i++)
+            {
                 str += "0 : ";
+            }
+
             OutputHelper.WriteLine(str);
 
             switch (vals.Length)
@@ -380,7 +390,6 @@ namespace NFUnitTestSystemLib
             Random random = new Random();
             for (int i = 0; i < 5; i++)
             {
-                bool b = true;
                 int hours = random.Next(23);
                 int minutes = random.Next(59);
                 int seconds = random.Next(59);
