@@ -101,6 +101,11 @@ namespace NFUnitTestSystemLib
                     (float)789,
                     "789",
                     false),
+                new SingleTestData(
+                    (0.0F),
+                    (-0.0F),
+                    true,
+                    "0.0F should be equal to -0.0F")
             };
 
             // Floating point numbers should not be tested for equality
@@ -114,7 +119,8 @@ namespace NFUnitTestSystemLib
                 {
                     Assert.AreEqual(
                         test.Expected,
-                        test.F1.Equals(f2));
+                        test.F1.Equals(f2),
+                        test.AssertMessage);
 
                     if (float.IsNaN((float)test.F1) && float.IsNaN(f2))
                     {
@@ -152,12 +158,18 @@ namespace NFUnitTestSystemLib
             public object F1 { get; }
             public object Value { get; }
             public bool Expected { get; }
+            public string AssertMessage { get; }
 
-            public SingleTestData(object f1, object value, bool expected)
+            public SingleTestData(
+                object f1,
+                object value,
+                bool expected,
+                string assertMessage = "")
             {
                 F1 = f1;
                 Value = value;
                 Expected = expected;
+                AssertMessage = assertMessage;
             }
         }
     }
