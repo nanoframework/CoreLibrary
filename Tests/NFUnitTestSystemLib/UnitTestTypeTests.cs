@@ -190,30 +190,30 @@ namespace NFUnitTestSystemLib
             // This tests the Assembly.GetType(String) by passing \"Namespace.Class\"
             Type myType0 = Int32Assm.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType0.FullName);
-            Assert.IsType(myType0, testInt32.GetType());
+            Assert.IsInstanceOfType(myType0, testInt32.GetType());
 
             // This tests the Type.GetType(String) by passing \"Namespace.Class\"
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
-            Assert.IsType(myType1, testInt32.GetType());
+            Assert.IsInstanceOfType(myType1, testInt32.GetType());
 
             // This tests the Type.GetType(String) by passing \"Namespace.Class, assembly\"
             Type myType2 = Type.GetType("System.Int32, mscorlib");
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
-            Assert.IsType(myType2, testInt32.GetType());
+            Assert.IsInstanceOfType(myType2, testInt32.GetType());
 
             // This tests the Type.GetType(String) by passing \"Namespace.Class, assembly, Version=\"a.b.c.d\"\"
             string typeName3 = "System.Int32, mscorlib, Version=" + Int32Assm.GetName().Version.ToString();
             Type myType3 = Type.GetType(typeName3);
             OutputHelper.WriteLine("The full name is " + myType3.FullName);
-            Assert.IsType(myType3, testInt32.GetType());
+            Assert.IsInstanceOfType(myType3, testInt32.GetType());
 
 
             // This tests the Type.GetType() method for nested classes
             TestObject1 testTestObject1 = new TestObject1();
             Type myType4 = testTestObject1.GetType();
             OutputHelper.WriteLine("The full name is " + myType4.FullName);
-            Assert.IsType(myType4, Type.GetType("NFUnitTestSystemLib.UnitTestTypeTests+TestObject1"));
+            Assert.IsInstanceOfType(myType4, Type.GetType("NFUnitTestSystemLib.UnitTestTypeTests+TestObject1"));
 
 
             // Since NoneSuch does not exist in this assembly, 
@@ -234,7 +234,7 @@ namespace NFUnitTestSystemLib
             Type myType0 = Int32Assm.GetType("System.Int32");
             Type myType1 = Type.GetType("System.Int32");
 
-            Assert.IsType(myType0, myType1);
+            Assert.IsInstanceOfType(myType0, myType1);
 
             // names must be compatible and composable
             Assert.AreEqual(myType0.Name, myType1.Name);
@@ -283,12 +283,12 @@ namespace NFUnitTestSystemLib
             testInt32++;
             Type myType1 = Type.GetType("System.Int32");
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
-            Assert.IsType(myType1.BaseType, Type.GetType("System.ValueType"));
+            Assert.IsInstanceOfType(myType1.BaseType, Type.GetType("System.ValueType"));
 
             TestObject1 testTestObject1 = new TestObject1();
             Type myType2 = testTestObject1.GetType();
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
-            Assert.IsType(myType2.BaseType, Type.GetType("System.Object"));
+            Assert.IsInstanceOfType(myType2.BaseType, Type.GetType("System.Object"));
         }
 
         [TestMethod]
@@ -309,7 +309,7 @@ namespace NFUnitTestSystemLib
             //Type myType2 = testTestObject1.GetType();
             //OutputHelper.WriteLine("The full name is " + myType2.FullName);
             //Type myType3 = this.GetType();
-            //Assert.IsType(myType2.DeclaringType , myType3);
+            //Assert.IsInstanceOfType(myType2.DeclaringType , myType3);
         }
 
         [TestMethod]
@@ -339,7 +339,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("The full name is " + myType1.FullName);
             int[] int32Arr = new int[] { };
             Type int32ArrType = int32Arr.GetType();
-            Assert.IsType(myType1, int32ArrType.GetElementType());
+            Assert.IsInstanceOfType(myType1, int32ArrType.GetElementType());
 
             Assert.IsTrue(myType1.GetElementType() == null);
         }
@@ -361,7 +361,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
 
             //  Check that type of m_data is Int32
-            Assert.IsType(myType2.GetField("m_data", BindingFlags.GetField |
+            Assert.IsInstanceOfType(myType2.GetField("m_data", BindingFlags.GetField |
                 BindingFlags.Public | BindingFlags.Instance).FieldType, myType1);
 
             //  Check that value in m_data is 5 ( becuase we called new TestObject2(5))
@@ -408,7 +408,7 @@ namespace NFUnitTestSystemLib
             TestObject2 testTestObject2 = new TestObject2(5);
             Type myType2 = testTestObject2.GetType();
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
-            Assert.IsType(myType2.GetField("m_data").FieldType, myType1);
+            Assert.IsInstanceOfType(myType2.GetField("m_data").FieldType, myType1);
             Assert.AreEqual((int)myType2.GetField("m_data").GetValue(testTestObject2), 5);
             Assert.IsTrue(myType2.GetField("m_data").MemberType == MemberTypes.Field);
             Assert.AreEqual(myType2.GetField("m_data").Name, "m_data");
@@ -431,7 +431,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine("The full name is " + myType2.FullName);
             Type myType3 =
                 Type.GetType("NFUnitTestSystemLib.UnitTestTypeTests+iEmpty");
-            Assert.IsType(myType2.GetInterfaces()[0], myType3);
+            Assert.IsInstanceOfType(myType2.GetInterfaces()[0], myType3);
         }
 
         [TestMethod]
@@ -454,8 +454,8 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(methodInfo1.IsVirtual, false);
             Assert.IsTrue(methodInfo1.MemberType == MemberTypes.Method);
             Assert.AreEqual(methodInfo1.Name, "Method2");
-            Assert.IsType(methodInfo1.ReturnType, I.GetType());
-            Assert.IsType(methodInfo1.DeclaringType, myType2);
+            Assert.IsInstanceOfType(methodInfo1.ReturnType, I.GetType());
+            Assert.IsInstanceOfType(methodInfo1.DeclaringType, myType2);
             Assert.AreEqual((int)(methodInfo1.Invoke(testTestObject2, new object[] { 1 })), 1);
         }
 
@@ -492,8 +492,8 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(methodInfo1.IsVirtual, false);
             Assert.IsTrue(methodInfo1.MemberType == MemberTypes.Method);
             Assert.AreEqual(methodInfo1.Name, "Method2");
-            Assert.IsType(methodInfo1.ReturnType, I.GetType());
-            Assert.IsType(methodInfo1.DeclaringType, myType2);
+            Assert.IsInstanceOfType(methodInfo1.ReturnType, I.GetType());
+            Assert.IsInstanceOfType(methodInfo1.DeclaringType, myType2);
             Assert.AreEqual((int)(methodInfo1.Invoke(testTestObject2, new object[] { 1 })), 1);
         }
 

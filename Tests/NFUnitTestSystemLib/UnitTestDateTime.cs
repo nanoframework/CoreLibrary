@@ -23,7 +23,7 @@ namespace NFUnitTestSystemLib
             OutputHelper.WriteLine(dt.ToString());
             Type type = dt.GetType();
             // Verifying its type
-            Assert.IsType(type, Type.GetType("System.DateTime"));
+            Assert.IsInstanceOfType(type, Type.GetType("System.DateTime"));
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace NFUnitTestSystemLib
                         dt.Hour + ":" + dt.Minute + ":" + dt.Second + ":" + dt.Millisecond + "'");
                 }
                 Type t = dt.GetType();
-                Assert.IsType(t, Type.GetType("System.DateTime"));
+                Assert.IsInstanceOfType(t, Type.GetType("System.DateTime"));
             }
         }
 
@@ -301,7 +301,6 @@ namespace NFUnitTestSystemLib
                 // expected format is dddd, dd MMMM yyyy HH:mm
 
                 int minLength = 25;
-                int actualLength = dtOutput1.Length;
 
                 // check length
                 Assert.IsTrue(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
@@ -386,7 +385,6 @@ namespace NFUnitTestSystemLib
                 // expected format is dddd, dd MMMM yyyy HH:mm:ss
 
                 int minLength = 26;
-                int actualLength = dtOutput1.Length;
 
                 // check length
                 Assert.IsTrue(dtOutput1.Length >= minLength, $"Wrong output1 length: {dtOutput1.Length}, should have been at least {minLength}");
@@ -1774,10 +1772,10 @@ namespace NFUnitTestSystemLib
             for (int i = 0; i < dt1Arr.Length; i++)
             {
                 DateTime dt1 = dt1Arr[i];
-                long ticks = (long)random.Next(1000);
+                long ticksVAlue = random.Next(1000);
                 // Adding '" + ticks + "' ticks to '" + dt1.ToString() + "'
-                DateTime dt2 = dt1.AddTicks(ticks);
-                Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ticks));
+                DateTime dt2 = dt1.AddTicks(ticksVAlue);
+                Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ticksVAlue));
             }
         }
 
@@ -1795,10 +1793,10 @@ namespace NFUnitTestSystemLib
             for (int i = 0; i < 10; i++)
             {
                 DateTime dt1 = dt1Arr[i];
-                long ticks = -(long)random.Next(1000);
+                long ticksValue = -(long)random.Next(1000);
                 // Adding '" + ticks + "' ticks to '" + dt1.ToString() + "'
-                DateTime dt2 = dt1.AddTicks(ticks);
-                Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ticks));
+                DateTime dt2 = dt1.AddTicks(ticksValue);
+                Assert.AreEqual(dt2.Ticks, (dt1.Ticks + ticksValue));
             }
         }
 
@@ -2113,7 +2111,7 @@ namespace NFUnitTestSystemLib
             DateTime dt = GetRandomDateTime();
             DateTime _date = dt.Date;
             if ((_date.Year != dt.Year) || (_date.Month != dt.Month) || (_date.Day != dt.Day) ||
-                (_date.Hour != 0) || (_date.Minute != 0) | (_date.Second != 0) || (_date.Millisecond != 0))
+                (_date.Hour != 0) || (_date.Minute != 0) || (_date.Second != 0) || (_date.Millisecond != 0))
             {
                 throw new Exception("Failure : expected Date(mm/dd/yr/hr/mn/sec/msec) = '" + dt.Month + "/" + dt.Day +
                     "/" + dt.Year + "/0:0:0:0' but got '" + _date.Month + "/" + _date.Day + "/" +
@@ -2272,7 +2270,7 @@ namespace NFUnitTestSystemLib
         {
             // Creating a DateTime with -ve Ticks and,
             // verifying ArgumentOutOfRangeException is thrown
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { DateTime dt = new DateTime(-(new Random().Next(10) + 1)); });
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = new DateTime(-(new Random().Next(10) + 1)); });
         }
 
         [TestMethod]
@@ -2280,8 +2278,8 @@ namespace NFUnitTestSystemLib
         {
             // Creating a DateTime later than DateTime.MaxValue and,
             // verifying ArgumentOutOfRangeException is thrown
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { DateTime dt1 = new DateTime(DateTime.MaxValue.Ticks + 1); });
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { DateTime dt2 = new DateTime(10000, 1, 1, 0, 0, 0, 0); });
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = new DateTime(DateTime.MaxValue.Ticks + 1); });
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { _ = new DateTime(10000, 1, 1, 0, 0, 0, 0); });
         }
 
         [TestMethod]
