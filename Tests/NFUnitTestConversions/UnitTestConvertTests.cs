@@ -96,17 +96,17 @@ namespace NFUnitTestConversions
             string number = "-12";
             int actualNumber = -12;
             sbyte value_sb = Convert.ToSByte(number);
-            Assert.AreEqual(value_sb, (sbyte)actualNumber, "Test1");
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { byte value_b = Convert.ToByte(number); }, "Test2");
+            Assert.AreEqual(value_sb, (sbyte)actualNumber);
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { Convert.ToByte(number); });
             short value_s16 = Convert.ToInt16(number);
-            Assert.AreEqual(value_s16, (short)actualNumber, "Test3");
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { ushort value_u16 = Convert.ToUInt16(number); }, "Test4");
+            Assert.AreEqual(value_s16, (short)actualNumber);
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { Convert.ToUInt16(number); });
             int value_s32 = Convert.ToInt32(number);
-            Assert.AreEqual(value_s32, actualNumber, "Test5");
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { uint value_u32 = Convert.ToUInt32(number); }, "Test6");
+            Assert.AreEqual(value_s32, actualNumber);
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { Convert.ToUInt32(number); });
             long value_s64 = Convert.ToInt32(number);
-            Assert.AreEqual(value_s64, actualNumber, "Test7");
-            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { ulong value_u64 = Convert.ToUInt64(number); }, "Test8");
+            Assert.AreEqual(value_s64, actualNumber);
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () => { Convert.ToUInt64(number); });
         }
 
         [TestMethod]
@@ -118,8 +118,8 @@ namespace NFUnitTestConversions
             double value_dd = Convert.ToDouble(number);
             Assert.AreEqual(value_dd, actualNumber);
 
-            Assert.AreEqual(-129, Convert.ToDouble("-129"), "The value '-129' did not parse to -129");  // can't handle not having a decimal point!
-            Assert.AreEqual(-123.456, Convert.ToDouble("-123.456"), "The value -123.456 did not parse to -123.456");
+            Assert.AreEqual(-129, Convert.ToDouble("-129"));  // can't handle not having a decimal point!
+            Assert.AreEqual(-123.456, Convert.ToDouble("-123.456"));
         }
 
         [TestMethod]

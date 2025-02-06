@@ -17,27 +17,27 @@ namespace NFUnitTestSystemLib
         public void SystemReflectionType_ObjectGetType_Test0()
         {
             object o = (object)1;
-            Assert.IsType(o.GetType(), typeof(int));
+            Assert.IsInstanceOfType(o.GetType(), typeof(int));
 
             o = (object)typeof(Type);
-            Assert.IsType(o.GetType(), typeof(Type).GetType());
+            Assert.IsInstanceOfType(o.GetType(), typeof(Type).GetType());
 
             //o = AppDomain.CurrentDomain.GetAssemblies();
             //fRes &= o.GetType() == typeof(Assembly[]);
 
             o = new TestClass();
-            Assert.IsType(o.GetType(), typeof(TestClass));
+            Assert.IsInstanceOfType(o.GetType(), typeof(TestClass));
 
             o = new TestStruct();
-            Assert.IsType(o.GetType(), typeof(TestStruct));
+            Assert.IsInstanceOfType(o.GetType(), typeof(TestStruct));
 
             o = new MyDelegate(MyDelegateImpl);
-            Assert.IsType(o.GetType(), typeof(MyDelegate));
+            Assert.IsInstanceOfType(o.GetType(), typeof(MyDelegate));
 
             o = (new MyDelegate(MyDelegateImpl)).Method;
 
             MethodInfo mi = typeof(UnitTestReflectionTypeTest).GetMethod("MyDelegateImpl", BindingFlags.Static | BindingFlags.NonPublic);
-            Assert.IsType(o.GetType(), mi.GetType());
+            Assert.IsInstanceOfType(o.GetType(), mi.GetType());
         }
 
 
@@ -60,7 +60,7 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(asm.GetName().Name, "NFUnitTest");
             Assert.AreEqual(t.Name, "TestClass");
             Assert.AreEqual(t.FullName, "NFUnitTestSystemLib.UnitTestReflectionTypeTest+TestClass");
-            Assert.IsType(t.BaseType, typeof(object));
+            Assert.IsInstanceOfType(t.BaseType, typeof(object));
             Assert.IsNull(t.GetElementType());
 
             MethodInfo[] mis = t.GetMethods();
@@ -94,7 +94,7 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(asm.GetName().Name, "NFUnitTest");
             Assert.AreEqual(t.Name, "TestStruct");
             Assert.AreEqual(t.FullName, "NFUnitTestSystemLib.UnitTestReflectionTypeTest+TestStruct");
-            Assert.IsType(t.BaseType, typeof(ValueType));
+            Assert.IsInstanceOfType(t.BaseType, typeof(ValueType));
             Assert.AreEqual(t.GetInterfaces().Length, 0);
             Assert.IsNull(t.GetElementType());
             i++;
@@ -108,7 +108,7 @@ namespace NFUnitTestSystemLib
             //Assert.AreEqual(asm.GetName().Name, "mscorlib");
             //Assert.AreEqual(t.Name, "Assembly");
             //Assert.AreEqual(t.FullName, "System.Reflection.Assembly");
-            //Assert.IsType(t.BaseType, typeof(Object));
+            //Assert.IsInstanceOfType(t.BaseType, typeof(Object));
             //Assert.AreEqual(t.GetInterfaces().Length, 0);
             //Assert.IsNull(t.GetElementType());
 
@@ -116,7 +116,7 @@ namespace NFUnitTestSystemLib
             t = mis.GetType();
             Assert.AreEqual(t.Name, "RuntimeMethodInfo[]");
             Assert.AreEqual(t.FullName, "System.Reflection.RuntimeMethodInfo[]");
-            Assert.IsType(t.BaseType, typeof(Array));
+            Assert.IsInstanceOfType(t.BaseType, typeof(Array));
             Assert.IsTrue(t.GetInterfaces().Length > 0);
             Assert.AreEqual(t.GetElementType().Name, "RuntimeMethodInfo");
 
@@ -125,12 +125,12 @@ namespace NFUnitTestSystemLib
             t = del.GetType();
             Assert.IsNotNull(t.DeclaringType);
             Assert.AreEqual(t.Name, "MyDelegate");
-            Assert.IsType(t.BaseType, typeof(MulticastDelegate));
+            Assert.IsInstanceOfType(t.BaseType, typeof(MulticastDelegate));
 
             // test Type members for an enum
             TestEnum en = TestEnum.Item1;
             t = en.GetType();
-            Assert.IsType(t.DeclaringType, typeof(UnitTestReflectionTypeTest));
+            Assert.IsInstanceOfType(t.DeclaringType, typeof(UnitTestReflectionTypeTest));
             Assert.IsTrue(t.IsEnum);
             Assert.IsFalse(t.IsAbstract);
             Assert.IsFalse(t.IsClass);

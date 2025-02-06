@@ -517,25 +517,25 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 + s1).GetType(), i1.GetType());
-                Assert.IsType((s1 + b1).GetType(), i1.GetType());
-                Assert.IsType((s1 + i1).GetType(), i1.GetType());
-                Assert.IsType((s1 + l1).GetType(), l1.GetType());
-                Assert.IsType((s1 + c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 + s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 + b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 + i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 + l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 + c1).GetType(), i1.GetType());
                 //byte
-                Assert.IsType((b1 + b1).GetType(), i1.GetType());
-                Assert.IsType((b1 + i1).GetType(), i1.GetType());
-                Assert.IsType((b1 + l1).GetType(), l1.GetType());
-                Assert.IsType((b1 + c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 + b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 + i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 + l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b1 + c1).GetType(), i1.GetType());
                 //int
-                Assert.IsType((i1 + i1).GetType(), i1.GetType());
-                Assert.IsType((i1 + l1).GetType(), l1.GetType());
-                Assert.IsType((i1 + c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 + i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 + l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i1 + c1).GetType(), i1.GetType());
                 //long
-                Assert.IsType((l1 + l1).GetType(), l1.GetType());
-                Assert.IsType((l1 + c1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 + l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 + c1).GetType(), l1.GetType());
                 //char
-                Assert.IsType((c1 + c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((c1 + c1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass14
@@ -548,25 +548,25 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 - s1).GetType(), i1.GetType());
-                Assert.IsType((s1 - b1).GetType(), i1.GetType());
-                Assert.IsType((s1 - i1).GetType(), i1.GetType());
-                Assert.IsType((s1 - l1).GetType(), l1.GetType());
-                Assert.IsType((s1 - c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 - s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 - b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 - i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 - l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 - c1).GetType(), i1.GetType());
                 //byte
-                Assert.IsType((b1 - b1).GetType(), i1.GetType());
-                Assert.IsType((b1 - i1).GetType(), i1.GetType());
-                Assert.IsType((b1 - l1).GetType(), l1.GetType());
-                Assert.IsType((b1 - c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 - b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 - i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 - l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b1 - c1).GetType(), i1.GetType());
                 //int
-                Assert.IsType((i1 - i1).GetType(), i1.GetType());
-                Assert.IsType((i1 - l1).GetType(), l1.GetType());
-                Assert.IsType((i1 - c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 - i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 - l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i1 - c1).GetType(), i1.GetType());
                 //long
-                Assert.IsType((l1 - l1).GetType(), l1.GetType());
-                Assert.IsType((l1 - c1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 - l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 - c1).GetType(), l1.GetType());
                 //char
-                Assert.IsType((c1 - c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((c1 - c1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass15
@@ -579,25 +579,25 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 * s1).GetType(), i1.GetType());
-                Assert.IsType((s1 * b1).GetType(), i1.GetType());
-                Assert.IsType((s1 * i1).GetType(), i1.GetType());
-                Assert.IsType((s1 * l1).GetType(), l1.GetType());
-                Assert.IsType((s1 * c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 * s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 * b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 * i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 * l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 * c1).GetType(), i1.GetType());
                 //byte                                            
-                Assert.IsType((b1 * b1).GetType(), i1.GetType());
-                Assert.IsType((b1 * i1).GetType(), i1.GetType());
-                Assert.IsType((b1 * l1).GetType(), l1.GetType());
-                Assert.IsType((b1 * c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 * b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 * i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 * l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b1 * c1).GetType(), i1.GetType());
                 //int                                             
-                Assert.IsType((i1 * i1).GetType(), i1.GetType());
-                Assert.IsType((i1 * l1).GetType(), l1.GetType());
-                Assert.IsType((i1 * c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 * i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 * l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i1 * c1).GetType(), i1.GetType());
                 //long
-                Assert.IsType((l1 * l1).GetType(), l1.GetType());
-                Assert.IsType((l1 * c1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 * l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 * c1).GetType(), l1.GetType());
                 //char
-                Assert.IsType((c1 * c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((c1 * c1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass16
@@ -609,21 +609,21 @@ namespace NFUnitTestTypes
                 int i1 = 4;
                 long l1 = 5L;
                 char c1 = (char)6;
-                Assert.IsType((s1 / s1).GetType(), i1.GetType());
-                Assert.IsType((s1 / b1).GetType(), i1.GetType());
-                Assert.IsType((s1 / i1).GetType(), i1.GetType());
-                Assert.IsType((s1 / l1).GetType(), l1.GetType());
-                Assert.IsType((s1 / c1).GetType(), i1.GetType());
-                Assert.IsType((b1 / b1).GetType(), i1.GetType());
-                Assert.IsType((b1 / i1).GetType(), i1.GetType());
-                Assert.IsType((b1 / l1).GetType(), l1.GetType());
-                Assert.IsType((b1 / c1).GetType(), i1.GetType());
-                Assert.IsType((i1 / i1).GetType(), i1.GetType());
-                Assert.IsType((i1 / l1).GetType(), l1.GetType());
-                Assert.IsType((i1 / c1).GetType(), i1.GetType());
-                Assert.IsType((l1 / l1).GetType(), l1.GetType());
-                Assert.IsType((l1 / c1).GetType(), l1.GetType());
-                Assert.IsType((c1 / c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 / s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 / b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 / i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 / l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 / c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 / b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 / i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 / l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b1 / c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 / i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 / l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i1 / c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((l1 / l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 / c1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((c1 / c1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass17
@@ -636,21 +636,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 % s1).GetType(), i1.GetType());
-                Assert.IsType((s1 % b1).GetType(), i1.GetType());
-                Assert.IsType((s1 % i1).GetType(), i1.GetType());
-                Assert.IsType((s1 % l1).GetType(), l1.GetType());
-                Assert.IsType((s1 % c1).GetType(), i1.GetType());
-                Assert.IsType((b1 % b1).GetType(), i1.GetType());
-                Assert.IsType((b1 % i1).GetType(), i1.GetType());
-                Assert.IsType((b1 % l1).GetType(), l1.GetType());
-                Assert.IsType((b1 % c1).GetType(), i1.GetType());
-                Assert.IsType((i1 % i1).GetType(), i1.GetType());
-                Assert.IsType((i1 % l1).GetType(), l1.GetType());
-                Assert.IsType((i1 % c1).GetType(), i1.GetType());
-                Assert.IsType((l1 % l1).GetType(), l1.GetType());
-                Assert.IsType((l1 % c1).GetType(), l1.GetType());
-                Assert.IsType((c1 % c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 % s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 % b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 % i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 % l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 % c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 % b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 % i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 % l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b1 % c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 % i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 % l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i1 % c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((l1 % l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 % c1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((c1 % c1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass18
@@ -663,21 +663,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 & s1).GetType(), i1.GetType());
-                Assert.IsType((s1 & b1).GetType(), i1.GetType());
-                Assert.IsType((s1 & i1).GetType(), i1.GetType());
-                Assert.IsType((s1 & l1).GetType(), l1.GetType());
-                Assert.IsType((s1 & c1).GetType(), i1.GetType());
-                Assert.IsType((b1 & b1).GetType(), i1.GetType());
-                Assert.IsType((b1 & i1).GetType(), i1.GetType());
-                Assert.IsType((b1 & l1).GetType(), l1.GetType());
-                Assert.IsType((b1 & c1).GetType(), i1.GetType());
-                Assert.IsType((i1 & i1).GetType(), i1.GetType());
-                Assert.IsType((i1 & l1).GetType(), l1.GetType());
-                Assert.IsType((i1 & c1).GetType(), i1.GetType());
-                Assert.IsType((l1 & l1).GetType(), l1.GetType());
-                Assert.IsType((l1 & c1).GetType(), l1.GetType());
-                Assert.IsType((c1 & c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 & s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 & b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 & i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 & l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 & c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 & b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 & i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 & l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b1 & c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 & i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 & l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i1 & c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((l1 & l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 & c1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((c1 & c1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass19
@@ -690,21 +690,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 ^ s1).GetType(), i1.GetType());
-                Assert.IsType((s1 ^ b1).GetType(), i1.GetType());
-                Assert.IsType((s1 ^ i1).GetType(), i1.GetType());
-                Assert.IsType((s1 ^ l1).GetType(), l1.GetType());
-                Assert.IsType((s1 ^ c1).GetType(), i1.GetType());
-                Assert.IsType((b1 ^ b1).GetType(), i1.GetType());
-                Assert.IsType((b1 ^ i1).GetType(), i1.GetType());
-                Assert.IsType((b1 ^ l1).GetType(), l1.GetType());
-                Assert.IsType((b1 ^ c1).GetType(), i1.GetType());
-                Assert.IsType((i1 ^ i1).GetType(), i1.GetType());
-                Assert.IsType((i1 ^ l1).GetType(), l1.GetType());
-                Assert.IsType((i1 ^ c1).GetType(), i1.GetType());
-                Assert.IsType((l1 ^ l1).GetType(), l1.GetType());
-                Assert.IsType((l1 ^ c1).GetType(), l1.GetType());
-                Assert.IsType((c1 ^ c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 ^ s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 ^ b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 ^ i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 ^ l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 ^ c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 ^ b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 ^ i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 ^ l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b1 ^ c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 ^ i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 ^ l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i1 ^ c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((l1 ^ l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 ^ c1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((c1 ^ c1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass20
@@ -717,21 +717,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 | s1).GetType(), i1.GetType());
-                Assert.IsType((s1 | b1).GetType(), i1.GetType());
-                Assert.IsType((s1 | i1).GetType(), i1.GetType());
-                Assert.IsType((s1 | l1).GetType(), l1.GetType());
-                Assert.IsType((s1 | c1).GetType(), i1.GetType());
-                Assert.IsType((b1 | b1).GetType(), i1.GetType());
-                Assert.IsType((b1 | i1).GetType(), i1.GetType());
-                Assert.IsType((b1 | l1).GetType(), l1.GetType());
-                Assert.IsType((b1 | c1).GetType(), i1.GetType());
-                Assert.IsType((i1 | i1).GetType(), i1.GetType());
-                Assert.IsType((i1 | l1).GetType(), l1.GetType());
-                Assert.IsType((i1 | c1).GetType(), i1.GetType());
-                Assert.IsType((l1 | l1).GetType(), l1.GetType());
-                Assert.IsType((l1 | c1).GetType(), l1.GetType());
-                Assert.IsType((c1 | c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 | s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 | b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 | i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 | l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 | c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 | b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 | i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 | l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b1 | c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 | i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 | l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i1 | c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((l1 | l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((l1 | c1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((c1 | c1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass21
@@ -745,21 +745,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 == s1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 == b1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 == i1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 == l1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 == c1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 == b1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 == i1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 == l1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 == c1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 == i1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 == l1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 == c1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 == l1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 == c1).GetType(), TestBool.GetType());
-                Assert.IsType((c1 == c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 == s1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 == b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 == i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 == l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 == c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 == b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 == i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 == l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 == c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 == i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 == l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 == c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 == l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 == c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((c1 == c1).GetType(), TestBool.GetType());
             }
         }
         public class ValueIntegralTestClass22
@@ -773,21 +773,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 != s1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 != b1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 != i1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 != l1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 != c1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 != b1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 != i1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 != l1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 != c1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 != i1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 != l1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 != c1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 != l1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 != c1).GetType(), TestBool.GetType());
-                Assert.IsType((c1 != c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 != s1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 != b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 != i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 != l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 != c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 != b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 != i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 != l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 != c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 != i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 != l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 != c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 != l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 != c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((c1 != c1).GetType(), TestBool.GetType());
             }
         }
         public class ValueIntegralTestClass23
@@ -801,21 +801,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 > s1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 > b1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 > i1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 > l1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 > c1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 > b1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 > i1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 > l1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 > c1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 > i1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 > l1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 > c1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 > l1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 > c1).GetType(), TestBool.GetType());
-                Assert.IsType((c1 > c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 > s1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 > b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 > i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 > l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 > c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 > b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 > i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 > l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 > c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 > i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 > l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 > c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 > l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 > c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((c1 > c1).GetType(), TestBool.GetType());
             }
         }
         public class ValueIntegralTestClass24
@@ -829,21 +829,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 < s1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 < b1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 < i1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 < l1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 < c1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 < b1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 < i1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 < l1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 < c1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 < i1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 < l1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 < c1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 < l1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 < c1).GetType(), TestBool.GetType());
-                Assert.IsType((c1 < c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 < s1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 < b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 < i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 < l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 < c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 < b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 < i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 < l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 < c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 < i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 < l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 < c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 < l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 < c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((c1 < c1).GetType(), TestBool.GetType());
             }
         }
         public class ValueIntegralTestClass25
@@ -857,21 +857,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 >= s1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 >= b1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 >= i1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 >= l1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 >= c1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 >= b1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 >= i1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 >= l1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 >= c1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 >= i1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 >= l1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 >= c1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 >= l1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 >= c1).GetType(), TestBool.GetType());
-                Assert.IsType((c1 >= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 >= s1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 >= b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 >= i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 >= l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 >= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 >= b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 >= i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 >= l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 >= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 >= i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 >= l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 >= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 >= l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 >= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((c1 >= c1).GetType(), TestBool.GetType());
             }
         }
         public class ValueIntegralTestClass26
@@ -885,21 +885,21 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
                 //short
-                Assert.IsType((s1 <= s1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 <= b1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 <= i1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 <= l1).GetType(), TestBool.GetType());
-                Assert.IsType((s1 <= c1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 <= b1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 <= i1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 <= l1).GetType(), TestBool.GetType());
-                Assert.IsType((b1 <= c1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 <= i1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 <= l1).GetType(), TestBool.GetType());
-                Assert.IsType((i1 <= c1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 <= l1).GetType(), TestBool.GetType());
-                Assert.IsType((l1 <= c1).GetType(), TestBool.GetType());
-                Assert.IsType((c1 <= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 <= s1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 <= b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 <= i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 <= l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((s1 <= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 <= b1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 <= i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 <= l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((b1 <= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 <= i1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 <= l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((i1 <= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 <= l1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((l1 <= c1).GetType(), TestBool.GetType());
+                Assert.IsInstanceOfType((c1 <= c1).GetType(), TestBool.GetType());
             }
         }
         public class ValueIntegralTestClass27
@@ -911,11 +911,11 @@ namespace NFUnitTestTypes
                 int i1 = 4;
                 long l1 = 5L;
                 char c1 = (char)6;
-                Assert.IsType((s1 << 1).GetType(), i1.GetType());
-                Assert.IsType((b1 << 1).GetType(), i1.GetType());
-                Assert.IsType((i1 << 1).GetType(), i1.GetType());
-                Assert.IsType((l1 << 1).GetType(), l1.GetType());
-                Assert.IsType((c1 << 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 << 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 << 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 << 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((l1 << 1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((c1 << 1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass28
@@ -927,11 +927,11 @@ namespace NFUnitTestTypes
                 int i1 = 4;
                 long l1 = 5L;
                 char c1 = (char)6;
-                Assert.IsType((s1 >> 1).GetType(), i1.GetType());
-                Assert.IsType((b1 >> 1).GetType(), i1.GetType());
-                Assert.IsType((i1 >> 1).GetType(), i1.GetType());
-                Assert.IsType((l1 >> 1).GetType(), l1.GetType());
-                Assert.IsType((c1 >> 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s1 >> 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b1 >> 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((i1 >> 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((l1 >> 1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((c1 >> 1).GetType(), i1.GetType());
             }
         }
         public class ValueIntegralTestClass38
@@ -1013,37 +1013,37 @@ namespace NFUnitTestTypes
                 uint i2 = 9;
                 ulong l2 = 10;
                 //ushort
-                Assert.IsType((s2 + s1).GetType(), i1.GetType());
-                Assert.IsType((s2 + b1).GetType(), i1.GetType());
-                Assert.IsType((s2 + i1).GetType(), i1.GetType());
-                Assert.IsType((s2 + l1).GetType(), l1.GetType());
-                Assert.IsType((s2 + c1).GetType(), i1.GetType());
-                Assert.IsType((s2 + s2).GetType(), i1.GetType());
-                Assert.IsType((s2 + b2).GetType(), i1.GetType());
-                Assert.IsType((s2 + i2).GetType(), i2.GetType());
-                Assert.IsType((s2 + l2).GetType(), l2.GetType());
-                Assert.IsType((b2 + s1).GetType(), i1.GetType());
-                Assert.IsType((b2 + b1).GetType(), i1.GetType());
-                Assert.IsType((b2 + i1).GetType(), i1.GetType());
-                Assert.IsType((b2 + l1).GetType(), l1.GetType());
-                Assert.IsType((b2 + c1).GetType(), i1.GetType());
-                Assert.IsType((b2 + s2).GetType(), i1.GetType());
-                Assert.IsType((b2 + b2).GetType(), i1.GetType());
-                Assert.IsType((b2 + i2).GetType(), l1.GetType());
-                Assert.IsType((i2 + s1).GetType(), l1.GetType());
-                Assert.IsType((i2 + b1).GetType(), i2.GetType());
-                Assert.IsType((i2 + i1).GetType(), l1.GetType());
-                Assert.IsType((i2 + l1).GetType(), l1.GetType());
-                Assert.IsType((i2 + c1).GetType(), i2.GetType());
-                Assert.IsType((i2 + s2).GetType(), i2.GetType());
-                Assert.IsType((i2 + b2).GetType(), l1.GetType());
-                Assert.IsType((i2 + i2).GetType(), i2.GetType());
-                Assert.IsType((i2 + l2).GetType(), l2.GetType());
-                Assert.IsType((l2 + b1).GetType(), l2.GetType());
-                Assert.IsType((l2 + c1).GetType(), l2.GetType());
-                Assert.IsType((l2 + s2).GetType(), l2.GetType());
-                Assert.IsType((l2 + i2).GetType(), l2.GetType());
-                Assert.IsType((l2 + l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((s2 + s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 + b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 + i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 + l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s2 + c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 + s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 + b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 + i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((s2 + l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((b2 + s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 + b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 + i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 + l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b2 + c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 + s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 + b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 + i2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 + s1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 + b1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 + i1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 + l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 + c1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 + s2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 + b2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 + i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 + l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 + b1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 + c1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 + s2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 + i2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 + l2).GetType(), l2.GetType());
             }
         }
         public class ValueIntegralTestClass50
@@ -1060,36 +1060,36 @@ namespace NFUnitTestTypes
                 uint i2 = 9;
                 ulong l2 = 10;
                 //ushort
-                Assert.IsType((s2 - s1).GetType(), i1.GetType());
-                Assert.IsType((s2 - i1).GetType(), i1.GetType());
-                Assert.IsType((s2 - l1).GetType(), l1.GetType());
-                Assert.IsType((s2 - c1).GetType(), i1.GetType());
-                Assert.IsType((s2 - s2).GetType(), i1.GetType());
-                Assert.IsType((s2 - b2).GetType(), i1.GetType());
-                Assert.IsType((s2 - i2).GetType(), i2.GetType());
-                Assert.IsType((s2 - l2).GetType(), l2.GetType());
-                Assert.IsType((b2 - s1).GetType(), i1.GetType());
-                Assert.IsType((b2 - b1).GetType(), i1.GetType());
-                Assert.IsType((b2 - i1).GetType(), i1.GetType());
-                Assert.IsType((b2 - l1).GetType(), l1.GetType());
-                Assert.IsType((b2 - c1).GetType(), i1.GetType());
-                Assert.IsType((b2 - s2).GetType(), i1.GetType());
-                Assert.IsType((b2 - b2).GetType(), i1.GetType());
-                Assert.IsType((b2 - i2).GetType(), l1.GetType());
-                Assert.IsType((i2 - s1).GetType(), l1.GetType());
-                Assert.IsType((i2 - b1).GetType(), i2.GetType());
-                Assert.IsType((i2 - i1).GetType(), l1.GetType());
-                Assert.IsType((i2 - l1).GetType(), l1.GetType());
-                Assert.IsType((i2 - c1).GetType(), i2.GetType());
-                Assert.IsType((i2 - s2).GetType(), i2.GetType());
-                Assert.IsType((i2 - b2).GetType(), l1.GetType());
-                Assert.IsType((i2 - i2).GetType(), i2.GetType());
-                Assert.IsType((i2 - l2).GetType(), l2.GetType());
-                Assert.IsType((l2 - b1).GetType(), l2.GetType());
-                Assert.IsType((l2 - c1).GetType(), l2.GetType());
-                Assert.IsType((l2 - s2).GetType(), l2.GetType());
-                Assert.IsType((l2 - i2).GetType(), l2.GetType());
-                Assert.IsType((l2 - l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((s2 - s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 - i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 - l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s2 - c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 - s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 - b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 - i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((s2 - l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((b2 - s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 - b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 - i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 - l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b2 - c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 - s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 - b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 - i2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 - s1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 - b1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 - i1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 - l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 - c1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 - s2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 - b2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 - i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 - l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 - b1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 - c1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 - s2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 - i2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 - l2).GetType(), l2.GetType());
             }
         }
         public class ValueIntegralTestClass51
@@ -1106,37 +1106,37 @@ namespace NFUnitTestTypes
                 uint i2 = 9;
                 ulong l2 = 10;
                 //ushort
-                Assert.IsType((s2 * s1).GetType(), i1.GetType());
-                Assert.IsType((s2 * b1).GetType(), i1.GetType());
-                Assert.IsType((s2 * i1).GetType(), i1.GetType());
-                Assert.IsType((s2 * l1).GetType(), l1.GetType());
-                Assert.IsType((s2 * c1).GetType(), i1.GetType());
-                Assert.IsType((s2 * s2).GetType(), i1.GetType());
-                Assert.IsType((s2 * b2).GetType(), i1.GetType());
-                Assert.IsType((s2 * i2).GetType(), i2.GetType());
-                Assert.IsType((s2 * l2).GetType(), l2.GetType());
-                Assert.IsType((b2 * s1).GetType(), i1.GetType());
-                Assert.IsType((b2 * b1).GetType(), i1.GetType());
-                Assert.IsType((b2 * i1).GetType(), i1.GetType());
-                Assert.IsType((b2 * l1).GetType(), l1.GetType());
-                Assert.IsType((b2 * c1).GetType(), i1.GetType());
-                Assert.IsType((b2 * s2).GetType(), i1.GetType());
-                Assert.IsType((b2 * b2).GetType(), i1.GetType());
-                Assert.IsType((b2 * i2).GetType(), l1.GetType());
-                Assert.IsType((i2 * s1).GetType(), l1.GetType());
-                Assert.IsType((i2 * b1).GetType(), i2.GetType());
-                Assert.IsType((i2 * i1).GetType(), l1.GetType());
-                Assert.IsType((i2 * l1).GetType(), l1.GetType());
-                Assert.IsType((i2 * c1).GetType(), i2.GetType());
-                Assert.IsType((i2 * s2).GetType(), i2.GetType());
-                Assert.IsType((i2 * b2).GetType(), l1.GetType());
-                Assert.IsType((i2 * i2).GetType(), i2.GetType());
-                Assert.IsType((i2 * l2).GetType(), l2.GetType());
-                Assert.IsType((l2 * b1).GetType(), l2.GetType());
-                Assert.IsType((l2 * c1).GetType(), l2.GetType());
-                Assert.IsType((l2 * s2).GetType(), l2.GetType());
-                Assert.IsType((l2 * i2).GetType(), l2.GetType());
-                Assert.IsType((l2 * l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((s2 * s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 * b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 * i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 * l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s2 * c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 * s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 * b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 * i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((s2 * l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((b2 * s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 * b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 * i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 * l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b2 * c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 * s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 * b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 * i2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 * s1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 * b1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 * i1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 * l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 * c1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 * s2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 * b2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 * i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 * l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 * b1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 * c1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 * s2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 * i2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 * l2).GetType(), l2.GetType());
             }
         }
         public class ValueIntegralTestClass52
@@ -1153,37 +1153,37 @@ namespace NFUnitTestTypes
                 uint i2 = 9;
                 ulong l2 = 10;
                 //ushort
-                Assert.IsType((s2 / s1).GetType(), i1.GetType());
-                Assert.IsType((s2 / b1).GetType(), i1.GetType());
-                Assert.IsType((s2 / i1).GetType(), i1.GetType());
-                Assert.IsType((s2 / l1).GetType(), l1.GetType());
-                Assert.IsType((s2 / c1).GetType(), i1.GetType());
-                Assert.IsType((s2 / s2).GetType(), i1.GetType());
-                Assert.IsType((s2 / b2).GetType(), i1.GetType());
-                Assert.IsType((s2 / i2).GetType(), i2.GetType());
-                Assert.IsType((s2 / l2).GetType(), l2.GetType());
-                Assert.IsType((b2 / s1).GetType(), i1.GetType());
-                Assert.IsType((b2 / b1).GetType(), i1.GetType());
-                Assert.IsType((b2 / i1).GetType(), i1.GetType());
-                Assert.IsType((b2 / l1).GetType(), l1.GetType());
-                Assert.IsType((b2 / c1).GetType(), i1.GetType());
-                Assert.IsType((b2 / s2).GetType(), i1.GetType());
-                Assert.IsType((b2 / b2).GetType(), i1.GetType());
-                Assert.IsType((b2 / i2).GetType(), l1.GetType());
-                Assert.IsType((i2 / s1).GetType(), l1.GetType());
-                Assert.IsType((i2 / b1).GetType(), i2.GetType());
-                Assert.IsType((i2 / i1).GetType(), l1.GetType());
-                Assert.IsType((i2 / l1).GetType(), l1.GetType());
-                Assert.IsType((i2 / c1).GetType(), i2.GetType());
-                Assert.IsType((i2 / s2).GetType(), i2.GetType());
-                Assert.IsType((i2 / b2).GetType(), l1.GetType());
-                Assert.IsType((i2 / i2).GetType(), i2.GetType());
-                Assert.IsType((i2 / l2).GetType(), l2.GetType());
-                Assert.IsType((l2 / b1).GetType(), l2.GetType());
-                Assert.IsType((l2 / c1).GetType(), l2.GetType());
-                Assert.IsType((l2 / s2).GetType(), l2.GetType());
-                Assert.IsType((l2 / i2).GetType(), l2.GetType());
-                Assert.IsType((l2 / l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((s2 / s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 / b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 / i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 / l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s2 / c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 / s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 / b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 / i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((s2 / l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((b2 / s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 / b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 / i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 / l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b2 / c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 / s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 / b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 / i2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 / s1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 / b1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 / i1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 / l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 / c1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 / s2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 / b2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 / i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 / l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 / b1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 / c1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 / s2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 / i2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 / l2).GetType(), l2.GetType());
             }
         }
         public class ValueIntegralTestClass53
@@ -1200,37 +1200,37 @@ namespace NFUnitTestTypes
                 uint i2 = 9;
                 ulong l2 = 10;
                 //ushort
-                Assert.IsType((s2 % s1).GetType(), i1.GetType());
-                Assert.IsType((s2 % b1).GetType(), i1.GetType());
-                Assert.IsType((s2 % i1).GetType(), i1.GetType());
-                Assert.IsType((s2 % l1).GetType(), l1.GetType());
-                Assert.IsType((s2 % c1).GetType(), i1.GetType());
-                Assert.IsType((s2 % s2).GetType(), i1.GetType());
-                Assert.IsType((s2 % b2).GetType(), i1.GetType());
-                Assert.IsType((s2 % i2).GetType(), i2.GetType());
-                Assert.IsType((s2 % l2).GetType(), l2.GetType());
-                Assert.IsType((b2 % s1).GetType(), i1.GetType());
-                Assert.IsType((b2 % b1).GetType(), i1.GetType());
-                Assert.IsType((b2 % i1).GetType(), i1.GetType());
-                Assert.IsType((b2 % l1).GetType(), l1.GetType());
-                Assert.IsType((b2 % c1).GetType(), i1.GetType());
-                Assert.IsType((b2 % s2).GetType(), i1.GetType());
-                Assert.IsType((b2 % b2).GetType(), i1.GetType());
-                Assert.IsType((b2 % i2).GetType(), l1.GetType());
-                Assert.IsType((i2 % s1).GetType(), l1.GetType());
-                Assert.IsType((i2 % b1).GetType(), i2.GetType());
-                Assert.IsType((i2 % i1).GetType(), l1.GetType());
-                Assert.IsType((i2 % l1).GetType(), l1.GetType());
-                Assert.IsType((i2 % c1).GetType(), i2.GetType());
-                Assert.IsType((i2 % s2).GetType(), i2.GetType());
-                Assert.IsType((i2 % b2).GetType(), l1.GetType());
-                Assert.IsType((i2 % i2).GetType(), i2.GetType());
-                Assert.IsType((i2 % l2).GetType(), l2.GetType());
-                Assert.IsType((l2 % b1).GetType(), l2.GetType());
-                Assert.IsType((l2 % c1).GetType(), l2.GetType());
-                Assert.IsType((l2 % s2).GetType(), l2.GetType());
-                Assert.IsType((l2 % i2).GetType(), l2.GetType());
-                Assert.IsType((l2 % l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((s2 % s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 % b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 % i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 % l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s2 % c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 % s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 % b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 % i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((s2 % l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((b2 % s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 % b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 % i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 % l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b2 % c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 % s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 % b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 % i2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 % s1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 % b1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 % i1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 % l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 % c1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 % s2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 % b2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 % i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 % l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 % b1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 % c1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 % s2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 % i2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 % l2).GetType(), l2.GetType());
             }
         }
         public class ValueIntegralTestClass54
@@ -1247,37 +1247,37 @@ namespace NFUnitTestTypes
                 uint i2 = 9;
                 ulong l2 = 10;
                 //ushort
-                Assert.IsType((s2 & s1).GetType(), i1.GetType());
-                Assert.IsType((s2 & b1).GetType(), i1.GetType());
-                Assert.IsType((s2 & i1).GetType(), i1.GetType());
-                Assert.IsType((s2 & l1).GetType(), l1.GetType());
-                Assert.IsType((s2 & c1).GetType(), i1.GetType());
-                Assert.IsType((s2 & s2).GetType(), i1.GetType());
-                Assert.IsType((s2 & b2).GetType(), i1.GetType());
-                Assert.IsType((s2 & i2).GetType(), i2.GetType());
-                Assert.IsType((s2 & l2).GetType(), l2.GetType());
-                Assert.IsType((b2 & s1).GetType(), i1.GetType());
-                Assert.IsType((b2 & b1).GetType(), i1.GetType());
-                Assert.IsType((b2 & i1).GetType(), i1.GetType());
-                Assert.IsType((b2 & l1).GetType(), l1.GetType());
-                Assert.IsType((b2 & c1).GetType(), i1.GetType());
-                Assert.IsType((b2 & s2).GetType(), i1.GetType());
-                Assert.IsType((b2 & b2).GetType(), i1.GetType());
-                Assert.IsType((b2 & i2).GetType(), l1.GetType());
-                Assert.IsType((i2 & s1).GetType(), l1.GetType());
-                Assert.IsType((i2 & b1).GetType(), i2.GetType());
-                Assert.IsType((i2 & i1).GetType(), l1.GetType());
-                Assert.IsType((i2 & l1).GetType(), l1.GetType());
-                Assert.IsType((i2 & c1).GetType(), i2.GetType());
-                Assert.IsType((i2 & s2).GetType(), i2.GetType());
-                Assert.IsType((i2 & b2).GetType(), l1.GetType());
-                Assert.IsType((i2 & i2).GetType(), i2.GetType());
-                Assert.IsType((i2 & l2).GetType(), l2.GetType());
-                Assert.IsType((l2 & b1).GetType(), l2.GetType());
-                Assert.IsType((l2 & c1).GetType(), l2.GetType());
-                Assert.IsType((l2 & s2).GetType(), l2.GetType());
-                Assert.IsType((l2 & i2).GetType(), l2.GetType());
-                Assert.IsType((l2 & l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((s2 & s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 & b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 & i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 & l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s2 & c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 & s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 & b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 & i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((s2 & l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((b2 & s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 & b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 & i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 & l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b2 & c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 & s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 & b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 & i2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 & s1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 & b1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 & i1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 & l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 & c1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 & s2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 & b2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 & i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 & l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 & b1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 & c1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 & s2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 & i2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 & l2).GetType(), l2.GetType());
             }
         }
         public class ValueIntegralTestClass55
@@ -1294,37 +1294,37 @@ namespace NFUnitTestTypes
                 uint i2 = 9;
                 ulong l2 = 10;
                 //ushort
-                Assert.IsType((s2 ^ s1).GetType(), i1.GetType());
-                Assert.IsType((s2 ^ b1).GetType(), i1.GetType());
-                Assert.IsType((s2 ^ i1).GetType(), i1.GetType());
-                Assert.IsType((s2 ^ l1).GetType(), l1.GetType());
-                Assert.IsType((s2 ^ c1).GetType(), i1.GetType());
-                Assert.IsType((s2 ^ s2).GetType(), i1.GetType());
-                Assert.IsType((s2 ^ b2).GetType(), i1.GetType());
-                Assert.IsType((s2 ^ i2).GetType(), i2.GetType());
-                Assert.IsType((s2 ^ l2).GetType(), l2.GetType());
-                Assert.IsType((b2 ^ s1).GetType(), i1.GetType());
-                Assert.IsType((b2 ^ b1).GetType(), i1.GetType());
-                Assert.IsType((b2 ^ i1).GetType(), i1.GetType());
-                Assert.IsType((b2 ^ l1).GetType(), l1.GetType());
-                Assert.IsType((b2 ^ c1).GetType(), i1.GetType());
-                Assert.IsType((b2 ^ s2).GetType(), i1.GetType());
-                Assert.IsType((b2 ^ b2).GetType(), i1.GetType());
-                Assert.IsType((b2 ^ i2).GetType(), l1.GetType());
-                Assert.IsType((i2 ^ s1).GetType(), l1.GetType());
-                Assert.IsType((i2 ^ b1).GetType(), i2.GetType());
-                Assert.IsType((i2 ^ i1).GetType(), l1.GetType());
-                Assert.IsType((i2 ^ l1).GetType(), l1.GetType());
-                Assert.IsType((i2 ^ c1).GetType(), i2.GetType());
-                Assert.IsType((i2 ^ s2).GetType(), i2.GetType());
-                Assert.IsType((i2 ^ b2).GetType(), l1.GetType());
-                Assert.IsType((i2 ^ i2).GetType(), i2.GetType());
-                Assert.IsType((i2 ^ l2).GetType(), l2.GetType());
-                Assert.IsType((l2 ^ b1).GetType(), l2.GetType());
-                Assert.IsType((l2 ^ c1).GetType(), l2.GetType());
-                Assert.IsType((l2 ^ s2).GetType(), l2.GetType());
-                Assert.IsType((l2 ^ i2).GetType(), l2.GetType());
-                Assert.IsType((l2 ^ l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((s2 ^ s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 ^ b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 ^ i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 ^ l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s2 ^ c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 ^ s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 ^ b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 ^ i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((s2 ^ l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((b2 ^ s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 ^ b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 ^ i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 ^ l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b2 ^ c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 ^ s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 ^ b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 ^ i2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 ^ s1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 ^ b1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 ^ i1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 ^ l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 ^ c1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 ^ s2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 ^ b2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 ^ i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 ^ l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 ^ b1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 ^ c1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 ^ s2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 ^ i2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 ^ l2).GetType(), l2.GetType());
             }
         }
         public class ValueIntegralTestClass56
@@ -1341,37 +1341,37 @@ namespace NFUnitTestTypes
                 uint i2 = 9;
                 ulong l2 = 10;
                 //ushort
-                Assert.IsType((s2 | s1).GetType(), i1.GetType());
-                Assert.IsType((s2 | b1).GetType(), i1.GetType());
-                Assert.IsType((s2 | i1).GetType(), i1.GetType());
-                Assert.IsType((s2 | l1).GetType(), l1.GetType());
-                Assert.IsType((s2 | c1).GetType(), i1.GetType());
-                Assert.IsType((s2 | s2).GetType(), i1.GetType());
-                Assert.IsType((s2 | b2).GetType(), i1.GetType());
-                Assert.IsType((s2 | i2).GetType(), i2.GetType());
-                Assert.IsType((s2 | l2).GetType(), l2.GetType());
-                Assert.IsType((b2 | s1).GetType(), i1.GetType());
-                Assert.IsType((b2 | b1).GetType(), i1.GetType());
-                Assert.IsType((b2 | i1).GetType(), i1.GetType());
-                Assert.IsType((b2 | l1).GetType(), l1.GetType());
-                Assert.IsType((b2 | c1).GetType(), i1.GetType());
-                Assert.IsType((b2 | s2).GetType(), i1.GetType());
-                Assert.IsType((b2 | b2).GetType(), i1.GetType());
-                Assert.IsType((b2 | i2).GetType(), l1.GetType());
-                Assert.IsType((i2 | s1).GetType(), l1.GetType());
-                Assert.IsType((i2 | b1).GetType(), i2.GetType());
-                Assert.IsType((i2 | i1).GetType(), l1.GetType());
-                Assert.IsType((i2 | l1).GetType(), l1.GetType());
-                Assert.IsType((i2 | c1).GetType(), i2.GetType());
-                Assert.IsType((i2 | s2).GetType(), i2.GetType());
-                Assert.IsType((i2 | b2).GetType(), l1.GetType());
-                Assert.IsType((i2 | i2).GetType(), i2.GetType());
-                Assert.IsType((i2 | l2).GetType(), l2.GetType());
-                Assert.IsType((l2 | b1).GetType(), l2.GetType());
-                Assert.IsType((l2 | c1).GetType(), l2.GetType());
-                Assert.IsType((l2 | s2).GetType(), l2.GetType());
-                Assert.IsType((l2 | i2).GetType(), l2.GetType());
-                Assert.IsType((l2 | l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((s2 | s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 | b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 | i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 | l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s2 | c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 | s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 | b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((s2 | i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((s2 | l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((b2 | s1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 | b1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 | i1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 | l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((b2 | c1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 | s2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 | b2).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((b2 | i2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 | s1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 | b1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 | i1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 | l1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 | c1).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 | s2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 | b2).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((i2 | i2).GetType(), i2.GetType());
+                Assert.IsInstanceOfType((i2 | l2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 | b1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 | c1).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 | s2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 | i2).GetType(), l2.GetType());
+                Assert.IsInstanceOfType((l2 | l2).GetType(), l2.GetType());
             }
         }
         public class ValueIntegralTestClass57
@@ -1389,37 +1389,37 @@ namespace NFUnitTestTypes
                 ulong l2 = 10;
                 bool b = true;
                 //ushort
-                Assert.IsType((s2 == s1).GetType(), b.GetType());
-                Assert.IsType((s2 == b1).GetType(), b.GetType());
-                Assert.IsType((s2 == i1).GetType(), b.GetType());
-                Assert.IsType((s2 == l1).GetType(), b.GetType());
-                Assert.IsType((s2 == c1).GetType(), b.GetType());
-                Assert.IsType((s2 == s2).GetType(), b.GetType());
-                Assert.IsType((s2 == b2).GetType(), b.GetType());
-                Assert.IsType((s2 == i2).GetType(), b.GetType());
-                Assert.IsType((s2 == l2).GetType(), b.GetType());
-                Assert.IsType((b2 == s1).GetType(), b.GetType());
-                Assert.IsType((b2 == b1).GetType(), b.GetType());
-                Assert.IsType((b2 == i1).GetType(), b.GetType());
-                Assert.IsType((b2 == l1).GetType(), b.GetType());
-                Assert.IsType((b2 == c1).GetType(), b.GetType());
-                Assert.IsType((b2 == s2).GetType(), b.GetType());
-                Assert.IsType((b2 == b2).GetType(), b.GetType());
-                Assert.IsType((b2 == i2).GetType(), b.GetType());
-                Assert.IsType((i2 == s1).GetType(), b.GetType());
-                Assert.IsType((i2 == b1).GetType(), b.GetType());
-                Assert.IsType((i2 == i1).GetType(), b.GetType());
-                Assert.IsType((i2 == l1).GetType(), b.GetType());
-                Assert.IsType((i2 == c1).GetType(), b.GetType());
-                Assert.IsType((i2 == s2).GetType(), b.GetType());
-                Assert.IsType((i2 == b2).GetType(), b.GetType());
-                Assert.IsType((i2 == i2).GetType(), b.GetType());
-                Assert.IsType((i2 == l2).GetType(), b.GetType());
-                Assert.IsType((l2 == b1).GetType(), b.GetType());
-                Assert.IsType((l2 == c1).GetType(), b.GetType());
-                Assert.IsType((l2 == s2).GetType(), b.GetType());
-                Assert.IsType((l2 == i2).GetType(), b.GetType());
-                Assert.IsType((l2 == l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 == s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 == b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 == i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 == l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 == c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 == s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 == b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 == i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 == l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 == s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 == b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 == i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 == l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 == c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 == s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 == b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 == i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 == s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 == b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 == i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 == l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 == c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 == s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 == b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 == i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 == l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 == b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 == c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 == s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 == i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 == l2).GetType(), b.GetType());
             }
         }
         public class ValueIntegralTestClass58
@@ -1437,37 +1437,37 @@ namespace NFUnitTestTypes
                 ulong l2 = 10;
                 bool b = true;
                 //ushort
-                Assert.IsType((s2 != s1).GetType(), b.GetType());
-                Assert.IsType((s2 != b1).GetType(), b.GetType());
-                Assert.IsType((s2 != i1).GetType(), b.GetType());
-                Assert.IsType((s2 != l1).GetType(), b.GetType());
-                Assert.IsType((s2 != c1).GetType(), b.GetType());
-                Assert.IsType((s2 != s2).GetType(), b.GetType());
-                Assert.IsType((s2 != b2).GetType(), b.GetType());
-                Assert.IsType((s2 != i2).GetType(), b.GetType());
-                Assert.IsType((s2 != l2).GetType(), b.GetType());
-                Assert.IsType((b2 != s1).GetType(), b.GetType());
-                Assert.IsType((b2 != b1).GetType(), b.GetType());
-                Assert.IsType((b2 != i1).GetType(), b.GetType());
-                Assert.IsType((b2 != l1).GetType(), b.GetType());
-                Assert.IsType((b2 != c1).GetType(), b.GetType());
-                Assert.IsType((b2 != s2).GetType(), b.GetType());
-                Assert.IsType((b2 != b2).GetType(), b.GetType());
-                Assert.IsType((b2 != i2).GetType(), b.GetType());
-                Assert.IsType((i2 != s1).GetType(), b.GetType());
-                Assert.IsType((i2 != b1).GetType(), b.GetType());
-                Assert.IsType((i2 != i1).GetType(), b.GetType());
-                Assert.IsType((i2 != l1).GetType(), b.GetType());
-                Assert.IsType((i2 != c1).GetType(), b.GetType());
-                Assert.IsType((i2 != s2).GetType(), b.GetType());
-                Assert.IsType((i2 != b2).GetType(), b.GetType());
-                Assert.IsType((i2 != i2).GetType(), b.GetType());
-                Assert.IsType((i2 != l2).GetType(), b.GetType());
-                Assert.IsType((l2 != b1).GetType(), b.GetType());
-                Assert.IsType((l2 != c1).GetType(), b.GetType());
-                Assert.IsType((l2 != s2).GetType(), b.GetType());
-                Assert.IsType((l2 != i2).GetType(), b.GetType());
-                Assert.IsType((l2 != l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 != s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 != b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 != i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 != l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 != c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 != s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 != b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 != i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 != l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 != s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 != b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 != i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 != l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 != c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 != s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 != b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 != i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 != s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 != b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 != i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 != l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 != c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 != s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 != b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 != i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 != l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 != b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 != c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 != s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 != i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 != l2).GetType(), b.GetType());
             }
         }
         public class ValueIntegralTestClass59
@@ -1485,37 +1485,37 @@ namespace NFUnitTestTypes
                 ulong l2 = 10;
                 bool b = true;
                 //ushort
-                Assert.IsType((s2 > s1).GetType(), b.GetType());
-                Assert.IsType((s2 > b1).GetType(), b.GetType());
-                Assert.IsType((s2 > i1).GetType(), b.GetType());
-                Assert.IsType((s2 > l1).GetType(), b.GetType());
-                Assert.IsType((s2 > c1).GetType(), b.GetType());
-                Assert.IsType((s2 > s2).GetType(), b.GetType());
-                Assert.IsType((s2 > b2).GetType(), b.GetType());
-                Assert.IsType((s2 > i2).GetType(), b.GetType());
-                Assert.IsType((s2 > l2).GetType(), b.GetType());
-                Assert.IsType((b2 > s1).GetType(), b.GetType());
-                Assert.IsType((b2 > b1).GetType(), b.GetType());
-                Assert.IsType((b2 > i1).GetType(), b.GetType());
-                Assert.IsType((b2 > l1).GetType(), b.GetType());
-                Assert.IsType((b2 > c1).GetType(), b.GetType());
-                Assert.IsType((b2 > s2).GetType(), b.GetType());
-                Assert.IsType((b2 > b2).GetType(), b.GetType());
-                Assert.IsType((b2 > i2).GetType(), b.GetType());
-                Assert.IsType((i2 > s1).GetType(), b.GetType());
-                Assert.IsType((i2 > b1).GetType(), b.GetType());
-                Assert.IsType((i2 > i1).GetType(), b.GetType());
-                Assert.IsType((i2 > l1).GetType(), b.GetType());
-                Assert.IsType((i2 > c1).GetType(), b.GetType());
-                Assert.IsType((i2 > s2).GetType(), b.GetType());
-                Assert.IsType((i2 > b2).GetType(), b.GetType());
-                Assert.IsType((i2 > i2).GetType(), b.GetType());
-                Assert.IsType((i2 > l2).GetType(), b.GetType());
-                Assert.IsType((l2 > b1).GetType(), b.GetType());
-                Assert.IsType((l2 > c1).GetType(), b.GetType());
-                Assert.IsType((l2 > s2).GetType(), b.GetType());
-                Assert.IsType((l2 > i2).GetType(), b.GetType());
-                Assert.IsType((l2 > l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 > s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 > b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 > i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 > l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 > c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 > s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 > b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 > i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 > l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 > s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 > b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 > i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 > l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 > c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 > s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 > b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 > i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 > s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 > b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 > i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 > l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 > c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 > s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 > b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 > i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 > l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 > b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 > c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 > s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 > i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 > l2).GetType(), b.GetType());
             }
         }
         public class ValueIntegralTestClass60
@@ -1533,37 +1533,37 @@ namespace NFUnitTestTypes
                 ulong l2 = 10;
                 bool b = true;
                 //ushort
-                Assert.IsType((s2 < s1).GetType(), b.GetType());
-                Assert.IsType((s2 < b1).GetType(), b.GetType());
-                Assert.IsType((s2 < i1).GetType(), b.GetType());
-                Assert.IsType((s2 < l1).GetType(), b.GetType());
-                Assert.IsType((s2 < c1).GetType(), b.GetType());
-                Assert.IsType((s2 < s2).GetType(), b.GetType());
-                Assert.IsType((s2 < b2).GetType(), b.GetType());
-                Assert.IsType((s2 < i2).GetType(), b.GetType());
-                Assert.IsType((s2 < l2).GetType(), b.GetType());
-                Assert.IsType((b2 < s1).GetType(), b.GetType());
-                Assert.IsType((b2 < b1).GetType(), b.GetType());
-                Assert.IsType((b2 < i1).GetType(), b.GetType());
-                Assert.IsType((b2 < l1).GetType(), b.GetType());
-                Assert.IsType((b2 < c1).GetType(), b.GetType());
-                Assert.IsType((b2 < s2).GetType(), b.GetType());
-                Assert.IsType((b2 < b2).GetType(), b.GetType());
-                Assert.IsType((b2 < i2).GetType(), b.GetType());
-                Assert.IsType((i2 < s1).GetType(), b.GetType());
-                Assert.IsType((i2 < b1).GetType(), b.GetType());
-                Assert.IsType((i2 < i1).GetType(), b.GetType());
-                Assert.IsType((i2 < l1).GetType(), b.GetType());
-                Assert.IsType((i2 < c1).GetType(), b.GetType());
-                Assert.IsType((i2 < s2).GetType(), b.GetType());
-                Assert.IsType((i2 < b2).GetType(), b.GetType());
-                Assert.IsType((i2 < i2).GetType(), b.GetType());
-                Assert.IsType((i2 < l2).GetType(), b.GetType());
-                Assert.IsType((l2 < b1).GetType(), b.GetType());
-                Assert.IsType((l2 < c1).GetType(), b.GetType());
-                Assert.IsType((l2 < s2).GetType(), b.GetType());
-                Assert.IsType((l2 < i2).GetType(), b.GetType());
-                Assert.IsType((l2 < l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 < s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 < b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 < i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 < l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 < c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 < s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 < b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 < i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 < l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 < s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 < b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 < i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 < l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 < c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 < s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 < b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 < i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 < s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 < b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 < i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 < l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 < c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 < s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 < b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 < i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 < l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 < b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 < c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 < s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 < i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 < l2).GetType(), b.GetType());
             }
         }
         public class ValueIntegralTestClass61
@@ -1581,37 +1581,37 @@ namespace NFUnitTestTypes
                 ulong l2 = 10;
                 bool b = true;
                 //ushort
-                Assert.IsType((s2 >= s1).GetType(), b.GetType());
-                Assert.IsType((s2 >= b1).GetType(), b.GetType());
-                Assert.IsType((s2 >= i1).GetType(), b.GetType());
-                Assert.IsType((s2 >= l1).GetType(), b.GetType());
-                Assert.IsType((s2 >= c1).GetType(), b.GetType());
-                Assert.IsType((s2 >= s2).GetType(), b.GetType());
-                Assert.IsType((s2 >= b2).GetType(), b.GetType());
-                Assert.IsType((s2 >= i2).GetType(), b.GetType());
-                Assert.IsType((s2 >= l2).GetType(), b.GetType());
-                Assert.IsType((b2 >= s1).GetType(), b.GetType());
-                Assert.IsType((b2 >= b1).GetType(), b.GetType());
-                Assert.IsType((b2 >= i1).GetType(), b.GetType());
-                Assert.IsType((b2 >= l1).GetType(), b.GetType());
-                Assert.IsType((b2 >= c1).GetType(), b.GetType());
-                Assert.IsType((b2 >= s2).GetType(), b.GetType());
-                Assert.IsType((b2 >= b2).GetType(), b.GetType());
-                Assert.IsType((b2 >= i2).GetType(), b.GetType());
-                Assert.IsType((i2 >= s1).GetType(), b.GetType());
-                Assert.IsType((i2 >= b1).GetType(), b.GetType());
-                Assert.IsType((i2 >= i1).GetType(), b.GetType());
-                Assert.IsType((i2 >= l1).GetType(), b.GetType());
-                Assert.IsType((i2 >= c1).GetType(), b.GetType());
-                Assert.IsType((i2 >= s2).GetType(), b.GetType());
-                Assert.IsType((i2 >= b2).GetType(), b.GetType());
-                Assert.IsType((i2 >= i2).GetType(), b.GetType());
-                Assert.IsType((i2 >= l2).GetType(), b.GetType());
-                Assert.IsType((l2 >= b1).GetType(), b.GetType());
-                Assert.IsType((l2 >= c1).GetType(), b.GetType());
-                Assert.IsType((l2 >= s2).GetType(), b.GetType());
-                Assert.IsType((l2 >= i2).GetType(), b.GetType());
-                Assert.IsType((l2 >= l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 >= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 >= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 >= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 >= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 >= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 >= s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 >= b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 >= i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 >= l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 >= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 >= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 >= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 >= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 >= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 >= s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 >= b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 >= i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 >= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 >= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 >= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 >= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 >= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 >= s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 >= b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 >= i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 >= l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 >= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 >= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 >= s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 >= i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 >= l2).GetType(), b.GetType());
             }
         }
         public class ValueIntegralTestClass62
@@ -1629,37 +1629,37 @@ namespace NFUnitTestTypes
                 ulong l2 = 10;
                 bool b = true;
                 //ushort
-                Assert.IsType((s2 <= s1).GetType(), b.GetType());
-                Assert.IsType((s2 <= b1).GetType(), b.GetType());
-                Assert.IsType((s2 <= i1).GetType(), b.GetType());
-                Assert.IsType((s2 <= l1).GetType(), b.GetType());
-                Assert.IsType((s2 <= c1).GetType(), b.GetType());
-                Assert.IsType((s2 <= s2).GetType(), b.GetType());
-                Assert.IsType((s2 <= b2).GetType(), b.GetType());
-                Assert.IsType((s2 <= i2).GetType(), b.GetType());
-                Assert.IsType((s2 <= l2).GetType(), b.GetType());
-                Assert.IsType((b2 <= s1).GetType(), b.GetType());
-                Assert.IsType((b2 <= b1).GetType(), b.GetType());
-                Assert.IsType((b2 <= i1).GetType(), b.GetType());
-                Assert.IsType((b2 <= l1).GetType(), b.GetType());
-                Assert.IsType((b2 <= c1).GetType(), b.GetType());
-                Assert.IsType((b2 <= s2).GetType(), b.GetType());
-                Assert.IsType((b2 <= b2).GetType(), b.GetType());
-                Assert.IsType((b2 <= i2).GetType(), b.GetType());
-                Assert.IsType((i2 <= s1).GetType(), b.GetType());
-                Assert.IsType((i2 <= b1).GetType(), b.GetType());
-                Assert.IsType((i2 <= i1).GetType(), b.GetType());
-                Assert.IsType((i2 <= l1).GetType(), b.GetType());
-                Assert.IsType((i2 <= c1).GetType(), b.GetType());
-                Assert.IsType((i2 <= s2).GetType(), b.GetType());
-                Assert.IsType((i2 <= b2).GetType(), b.GetType());
-                Assert.IsType((i2 <= i2).GetType(), b.GetType());
-                Assert.IsType((i2 <= l2).GetType(), b.GetType());
-                Assert.IsType((l2 <= b1).GetType(), b.GetType());
-                Assert.IsType((l2 <= c1).GetType(), b.GetType());
-                Assert.IsType((l2 <= s2).GetType(), b.GetType());
-                Assert.IsType((l2 <= i2).GetType(), b.GetType());
-                Assert.IsType((l2 <= l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 <= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 <= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 <= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 <= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 <= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 <= s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 <= b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 <= i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s2 <= l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 <= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 <= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 <= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 <= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 <= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 <= s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 <= b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b2 <= i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 <= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 <= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 <= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 <= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 <= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 <= s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 <= b2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 <= i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i2 <= l2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 <= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 <= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 <= s2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 <= i2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l2 <= l2).GetType(), b.GetType());
             }
         }
         public class ValueIntegralTestClass63
@@ -1672,10 +1672,10 @@ namespace NFUnitTestTypes
                 ulong l1 = 5L;
                 int i = 1;
 
-                Assert.IsType((s1 << 1).GetType(), i.GetType());
-                Assert.IsType((b1 << 1).GetType(), i.GetType());
-                Assert.IsType((i1 << 1).GetType(), i1.GetType());
-                Assert.IsType((l1 << 1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 << 1).GetType(), i.GetType());
+                Assert.IsInstanceOfType((b1 << 1).GetType(), i.GetType());
+                Assert.IsInstanceOfType((i1 << 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((l1 << 1).GetType(), l1.GetType());
             }
         }
         public class ValueIntegralTestClass64
@@ -1688,10 +1688,10 @@ namespace NFUnitTestTypes
                 ulong l1 = 5L;
                 int i = 1;
 
-                Assert.IsType((s1 >> 1).GetType(), i.GetType());
-                Assert.IsType((b1 >> 1).GetType(), i.GetType());
-                Assert.IsType((i1 >> 1).GetType(), i1.GetType());
-                Assert.IsType((l1 >> 1).GetType(), l1.GetType());
+                Assert.IsInstanceOfType((s1 >> 1).GetType(), i.GetType());
+                Assert.IsInstanceOfType((b1 >> 1).GetType(), i.GetType());
+                Assert.IsInstanceOfType((i1 >> 1).GetType(), i1.GetType());
+                Assert.IsInstanceOfType((l1 >> 1).GetType(), l1.GetType());
             }
         }
         public class ValueIntegralTestClass70

@@ -110,64 +110,56 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                byte b = 0;
-                Assert.IsType(Type.GetType("System.Byte"), b);
+                Assert.IsInstanceOfType(Type.GetType("System.Byte"), typeof(byte));
             }
         }
         public class ValueSimpleTestClass02
         {
             public static void testMethod()
             {
-                char c = 'a';
-                Assert.IsType(Type.GetType("System.Char"), c);
+                Assert.IsInstanceOfType(Type.GetType("System.Char"), typeof(char));
             }
         }
         public class ValueSimpleTestClass03
         {
             public static void testMethod()
             {
-                short s = 0;
-                Assert.IsType(Type.GetType("System.Int16"), s);
+                Assert.IsInstanceOfType(Type.GetType("System.Int16"), typeof(short));
             }
         }
         public class ValueSimpleTestClass04
         {
             public static void testMethod()
             {
-                int i = 0;
-                Assert.IsType(Type.GetType("System.Int32"), i);
+                Assert.IsInstanceOfType(Type.GetType("System.Int32"), typeof(int));
             }
         }
         public class ValueSimpleTestClass05
         {
             public static void testMethod()
             {
-                long l = 0L;
-                Assert.IsType(Type.GetType("System.Int64"), l);
+                Assert.IsInstanceOfType(Type.GetType("System.Int64"), typeof(long));
             }
         }
         public class ValueSimpleTestClass06
         {
             public static void testMethod()
             {
-                float f = 0.0f;
-                Assert.IsType(Type.GetType("System.Single"), f);
+                Assert.IsInstanceOfType(Type.GetType("System.Single"), typeof(float));
             }
         }
         public class ValueSimpleTestClass07
         {
             public static void testMethod()
             {
-                double d = 0.0d;
-                Assert.IsType(Type.GetType("System.Double"), d);
+                Assert.IsInstanceOfType(Type.GetType("System.Double"), typeof(double));
             }
         }
         public class ValueSimpleTestClass09
         {
             public static void testMethod()
             {
-                bool b = true;
-                Assert.IsType(Type.GetType("System.Boolean"), b);
+                Assert.IsInstanceOfType(Type.GetType("System.Boolean"), typeof(bool));
             }
         }
         public class ValueSimpleTestClass11
@@ -197,24 +189,21 @@ namespace NFUnitTestTypes
         {
             public static void testMethod()
             {
-                sbyte sb = 0;
-                Assert.IsType(Type.GetType("System.SByte"), sb);
+                Assert.IsInstanceOfType(Type.GetType("System.SByte"), typeof(sbyte));
             }
         }
         public class ValueSimpleTestClass14
         {
             public static void testMethod()
             {
-                ushort us = 0;
-                Assert.IsType(Type.GetType("System.UInt16"), us);
+                Assert.IsInstanceOfType(Type.GetType("System.UInt16"), typeof(ushort));
             }
         }
         public class ValueSimpleTestClass15
         {
             public static void testMethod()
             {
-                uint ui = 0;
-                Assert.IsType(Type.GetType("System.UInt32"), ui);
+                Assert.IsInstanceOfType(Type.GetType("System.UInt32"), typeof(uint));
             }
         }
 
