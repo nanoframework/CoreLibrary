@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 #if NANOCLR_REFLECTION
@@ -6,11 +6,14 @@
 namespace System.Reflection
 {
     using System;
+    using System.Runtime.CompilerServices;
+
     /// <summary>
     /// Provides information about an Assembly reference.
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable, Flags]
+    [ExcludeType]
     public enum AssemblyNameFlags
     {
         /// <summary>
@@ -40,6 +43,7 @@ namespace System.Reflection
     /// Identifies the processor and bits-per-word of the platform targeted by an executable.
     /// </summary>
     [Serializable]
+    [ExcludeType]
     public enum ProcessorArchitecture
     {
         /// <summary>

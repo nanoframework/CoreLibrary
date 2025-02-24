@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 #if NANOCLR_REFLECTION
@@ -6,12 +6,14 @@
 namespace System.Reflection
 {
     using System;
+    using System.Runtime.CompilerServices;
 
     /// <summary>
     /// Marks each type of member that is defined as a derived class of MemberInfo.
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
+    [ExcludeType]
     public enum MemberTypes
     {
         /// <summary>

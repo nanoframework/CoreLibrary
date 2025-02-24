@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 #if NANOCLR_REFLECTION
@@ -97,7 +97,7 @@ namespace System
         /// <param name="handle">The object that refers to the type.</param>
         /// <returns>The type referenced by the specified RuntimeTypeHandle, or null if the Value property of handle is null.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern Type GetTypeFromHandle(RuntimeTypeHandle handle);
+        public extern static Type GetTypeFromHandle(RuntimeTypeHandle handle);
 
         /// <summary>
         /// Gets the fully qualified name of the type, including its namespace but not its assembly.
