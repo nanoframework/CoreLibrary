@@ -89,12 +89,14 @@ namespace System.Diagnostics
     /// Modifies code generation for runtime just-in-time (JIT) debugging. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Module)]
+    [ExcludeType]
     public sealed class DebuggableAttribute : Attribute
     {
         /// <summary>
         /// Specifies the debugging mode for the just-in-time (JIT) compiler.
         /// </summary>
         [Flags]
+        [ExcludeType]
         public enum DebuggingModes
         {
             /// <summary>
@@ -187,6 +189,7 @@ namespace System.Diagnostics
     /// <summary>
     /// Provides display instructions for the debugger.
     /// </summary>
+    [ExcludeType]
     public enum DebuggerBrowsableState
     {
         /// <summary>
@@ -207,6 +210,7 @@ namespace System.Diagnostics
     /// Determines if and how a member is displayed in the debugger variable windows. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
+    [ExcludeType]
     public sealed class DebuggerBrowsableAttribute : Attribute
     {
         private readonly DebuggerBrowsableState _state;

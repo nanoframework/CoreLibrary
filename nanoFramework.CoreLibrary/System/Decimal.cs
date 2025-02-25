@@ -12,6 +12,7 @@ namespace System
     /// <summary>
     /// Represents a decimal number.
     /// </summary>
+    [ExcludeType]
     [ComponentModel.EditorBrowsableAttribute(ComponentModel.EditorBrowsableState.Never)]
     public struct Decimal
     {
