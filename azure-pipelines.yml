@@ -69,11 +69,13 @@ jobs:
 
   steps:
 
+  - template: azure-pipelines-templates/process-pr-labels.yml@templates
+
   # build steps only
   - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
     parameters:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
-      runUnitTests: true
+      runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
       skipNuGetCache: true
 
