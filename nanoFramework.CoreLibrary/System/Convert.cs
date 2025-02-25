@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Runtime.CompilerServices;
@@ -479,9 +479,7 @@ namespace System
         /// <returns>The String representation, in base 64, of the contents of <paramref name="inArray"/>.</returns>
         public static string ToBase64String(byte[] inArray)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (inArray == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            ArgumentNullException.ThrowIfNull(inArray);
 
             return ToBase64String(inArray, 0, inArray.Length, Base64FormattingOptions.None);
         }
@@ -494,9 +492,7 @@ namespace System
         /// <returns>The string representation in base 64 of the elements in <paramref name="inArray"/>.</returns>
         public static String ToBase64String(byte[] inArray, Base64FormattingOptions options)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (inArray == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            ArgumentNullException.ThrowIfNull(inArray);
 
             return ToBase64String(inArray, 0, inArray.Length, options);
         }
@@ -523,10 +519,9 @@ namespace System
         /// <returns>The string representation in base 64 of <paramref name="length"/> elements of <paramref name="inArray"/>, starting at position <paramref name="offset"/>.</returns>
         public static string ToBase64String(byte[] inArray, int offset, int length, Base64FormattingOptions options)
         {
-            //Do data verfication
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (inArray == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            // Do data verfication
+            ArgumentNullException.ThrowIfNull(inArray);
+
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (length < 0) throw new ArgumentOutOfRangeException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
@@ -564,9 +559,8 @@ namespace System
         /// <returns>An array of 8-bit unsigned integers equivalent to <paramref name="length"/> elements at position <paramref name="offset"/> in <paramref name="inArray"/>.</returns>
         public static byte[] FromBase64CharArray(char[] inArray, int offset, int length)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (inArray == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            ArgumentNullException.ThrowIfNull(inArray);
+
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (length < 0) throw new ArgumentOutOfRangeException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
