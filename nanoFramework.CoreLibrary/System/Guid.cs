@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Runtime.CompilerServices;
@@ -11,25 +11,23 @@ namespace System
     [Serializable]
     public struct Guid
     {
-        ////////////////////////////////////////////////////////////////////////////////
-        //  Member variables
-        ////////////////////////////////////////////////////////////////////////////////
-        private int _a;
-        private short _b;
-        private short _c;
-        private byte _d;
-        private byte _e;
-        private byte _f;
-        private byte _g;
-        private byte _h;
-        private byte _i;
-        private byte _j;
-        private byte _k;
+        private int[] _data;
 
         /// <summary>
         /// A read-only instance of the Guid class which consists of all zeros.
         /// </summary>
-        public static readonly Guid Empty = new Guid(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        public static readonly Guid Empty = new Guid(
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Guid"/> structure by using the specified integers and bytes.
@@ -46,19 +44,24 @@ namespace System
         /// <param name="j">The next byte of the GUID.</param>
         /// <param name="k">The next byte of the GUID.</param>
         /// <remarks>Specifying individual bytes in this manner can be used to circumvent byte order restrictions (big-endian or little-endian byte order) on particular types of computers.</remarks>
-        public Guid(int a, short b, short c, byte d, byte e, byte f, byte g, byte h, byte i, byte j, byte k)
+        public Guid(int a,
+                    short b,
+                    short c,
+                    byte d,
+                    byte e,
+                    byte f,
+                    byte g,
+                    byte h,
+                    byte i,
+                    byte j,
+                    byte k)
         {
-            _a = a;
-            _b = b;
-            _c = c;
-            _d = d;
-            _e = e;
-            _f = f;
-            _g = g;
-            _h = h;
-            _i = i;
-            _j = j;
-            _k = k;
+            _data = new int[4];
+
+            _data[0] = a;
+            _data[1] = (ushort)b | (ushort)c << 16;
+            _data[2] = d | (e | (f | g << 8) << 8) << 8;
+            _data[3] = h | (i | (j | k << 8) << 8) << 8;
         }
 
         /// <summary>
@@ -77,141 +80,135 @@ namespace System
         /// <param name="k">The next byte of the GUID.</param>
         /// <remarks>Specifying the bytes in this manner avoids endianness issues.</remarks>
         [CLSCompliant(false)]
-        public Guid(uint a, ushort b, ushort c, byte d, byte e, byte f, byte g, byte h, byte i, byte j, byte k)
+        public Guid(
+            uint a,
+            ushort b,
+            ushort c,
+            byte d,
+            byte e,
+            byte f,
+            byte g,
+            byte h,
+            byte i,
+            byte j,
+            byte k)
         {
-            _a = (int)a;
-            _b = (short)b;
-            _c = (short)c;
-            _d = d;
-            _e = e;
-            _f = f;
-            _g = g;
-            _h = h;
-            _i = i;
-            _j = j;
-            _k = k;
+            _data = new int[4];
+
+            _data[0] = (int)a;
+            _data[1] = b | c << 16;
+            _data[2] = d | (e | (f | g << 8) << 8) << 8;
+            _data[3] = h | (i | (j | k << 8) << 8) << 8;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Guid"/> structure by using the specified array of bytes.
         /// </summary>
         /// <param name="b">A 16-element byte array containing values with which to initialize the GUID.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="b"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException"><paramref name="b"/> is not 16 bytes long.</exception>"
         public Guid(byte[] b)
         {
-            if (b == null)
+            ArgumentNullException.ThrowIfNull(b);
+
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-                throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (b.Length != 16)
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            {
                 throw new ArgumentException();
+            }
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
-            _a = b[3] << 24 | b[2] << 16 | b[1] << 8 | b[0];
-            _b = (short)(b[5] << 8 | b[4]);
-            _c = (short)(b[7] << 8 | b[6]);
-            _d = b[8];
-            _e = b[9];
-            _f = b[10];
-            _g = b[11];
-            _h = b[12];
-            _i = b[13];
-            _j = b[14];
-            _k = b[15];
+            _data = new int[4];
+
+            int i = 0;
+
+            for (int j = 0; j < 4; j++)
+            {
+                _data[j] = b[i] | (b[i + 1] | (b[i + 2] | b[i + 3] << 8) << 8) << 8;
+                i += 4;
+            }
         }
 
         /// <summary>
-        ///   Creates a new <see cref="Guid"/> based on the value in the string.  The value is made up
-        ///   of hex digits speared by the dash ("-"). The string may begin and end with
-        ///   brackets ("{", "}").
-        ///   
-        ///   The string must be of the form dddddddd-dddd-dddd-dddd-dddddddddddd. where
-        ///   d is a hex digit. (That is 8 hex digits, followed by 4, then 4, then 4,
-        ///   then 12) such as: "CA761232-ED42-11CE-BACD-00AA0057B223"
+        /// Initializes a new instance of the <see cref="Guid"/> structure by using the value represented by the specified string.
         /// </summary>
-        /// <param name="g">String representation of new <see cref="Guid"/>.</param>
-        /// <exception cref="ArgumentException"></exception>
+        /// <param name="g">
+        /// A string that contains a GUID in one of the following formats ("d" represents a hexadecimal digit whose case is ignored):
+        ///
+        /// 32 contiguous hexadecimal digits:
+        ///
+        /// dddddddddddddddddddddddddddddddd
+        ///
+        /// -or-
+        ///
+        /// Groups of 8, 4, 4, 4, and 12 hexadecimal digits with hyphens between the groups. The entire GUID can optionally be enclosed in matching braces or parentheses:
+        ///
+        /// dddddddd-dddd-dddd-dddd-dddddddddddd
+        ///
+        /// -or-
+        ///
+        /// {dddddddd-dddd-dddd-dddd-dddddddddddd}
+        ///
+        /// -or-
+        ///
+        /// (dddddddd-dddd-dddd-dddd-dddddddddddd)
+        ///
+        /// -or-
+        ///
+        /// Groups of 8, 4, and 4 hexadecimal digits, and a subset of eight groups of 2 hexadecimal digits, with each group prefixed by "0x" or "0X", and separated by commas. The entire GUID, as well as the subset, is enclosed in matching braces:
+        ///
+        /// {0xdddddddd, 0xdddd, 0xdddd,{0xdd,0xdd,0xdd,0xdd,0xdd,0xdd,0xdd,0xdd}}
+        ///
+        /// All braces, commas, and "0x" prefixes are required. All embedded spaces are ignored. All leading zeros in a group are ignored.
+        ///
+        /// The hexadecimal digits shown in a group are the maximum number of meaningful hexadecimal digits that can appear in that group. You can specify from 1 to the number of hexadecimal digits shown for a group. The specified digits are assumed to be the low-order digits of the group.
+        /// </param>
+        /// <exception cref="ArgumentNullException"><paramref name="g"/> is <see langword="null"/>.</exception>"
+        /// <exception cref="ArgumentException"><paramref name="g"/> is not in a recognized format.</exception>
         public Guid(string g)
         {
-            if (!TryParseGuidWithDashes(g, out this))
+            ArgumentNullException.ThrowIfNull(g);
+
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            if (!TryParseGuidWithDashes(
+                g,
+                out this))
             {
-                throw new ArgumentException("Guid string not in expected format: [{]dddddddd-dddd-dddd-dddd-dddddddddddd[}]");
+                throw new ArgumentException();
             }
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one
         }
 
         /// <summary>
         /// Compares this instance to a specified object and returns an indication of their relative values.
         /// </summary>
-        /// <param name="value">Guid instance to compare, or null.</param>
-        /// <returns>Indication of the relative values (0 = equal, -1 = this instance less, +1 = this instance greater)</returns>
-        public int CompareTo(Object value)
+        /// <param name="value">An object to compare, or <see langword="null"/>.</param>
+        /// <returns>A signed number indicating the relative values of this instance and value.
+        /// (0 = This instance is equal to <paramref name="value"/>., -1 = This instance is less than <paramref name="value"/>., +1 = This instance is greater than <paramref name="value"/>, or <paramref name="value"/> is <see langword="null"/>.)</returns>
+        /// <exception cref="ArgumentException"><paramref name="value"/> is not a <see cref="Guid"/>.</exception>
+        public int CompareTo(object value)
         {
             if (value == null)
             {
                 return 1;
             }
-            if (!(value is Guid))
-            {
+
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            if (value is not Guid)
+            {
                 throw new ArgumentException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one
 
-            Guid g = (Guid)value;
+            int[] other = ((Guid)value)._data;
+            other ??= new int[4];
 
-            if (g._a != _a)
+            for (int i = 0; i < 4; i++)
             {
-                return GetResult((uint)_a, (uint)g._a);
-            }
-
-            if (g._b != _b)
-            {
-                return GetResult((uint)_b, (uint)g._b);
-            }
-
-            if (g._c != _c)
-            {
-                return GetResult((uint)_c, (uint)g._c);
-            }
-
-            if (g._d != _d)
-            {
-                return GetResult((uint)_d, (uint)g._d);
-            }
-
-            if (g._e != _e)
-            {
-                return GetResult((uint)_e, (uint)g._e);
-            }
-
-            if (g._f != _f)
-            {
-                return GetResult((uint)_f, (uint)g._f);
-            }
-
-            if (g._g != _g)
-            {
-                return GetResult((uint)_g, (uint)g._g);
-            }
-
-            if (g._h != _h)
-            {
-                return GetResult((uint)_h, (uint)g._h);
-            }
-
-            if (g._i != _i)
-            {
-                return GetResult((uint)_i, (uint)g._i);
-            }
-
-            if (g._j != _j)
-            {
-                return GetResult((uint)_j, (uint)g._j);
-            }
-
-            if (g._k != _k)
-            {
-                return GetResult((uint)_k, (uint)g._k);
+                if (_data[i] != other[i])
+                {
+                    return _data[i] - other[i];
+                }
             }
 
             return 0;
@@ -223,30 +220,26 @@ namespace System
         /// <returns>A 16-element byte array.</returns>
         public byte[] ToByteArray()
         {
-            byte[] g = new byte[16];
+            byte[] buffer = new byte[16];
 
-            g[0] = (byte)(_a);
-            g[1] = (byte)(_a >> 8);
-            g[2] = (byte)(_a >> 16);
-            g[3] = (byte)(_a >> 24);
-            g[4] = (byte)(_b);
-            g[5] = (byte)(_b >> 8);
-            g[6] = (byte)(_c);
-            g[7] = (byte)(_c >> 8);
-            g[8] = _d;
-            g[9] = _e;
-            g[10] = _f;
-            g[11] = _g;
-            g[12] = _h;
-            g[13] = _i;
-            g[14] = _j;
-            g[15] = _k;
+            int index = 0;
 
-            return g;
+            for (int i = 0; i < 4; i++)
+            {
+                int value = _data[i];
+
+                for (int j = 0; j < 4; j++)
+                {
+                    buffer[index++] = (byte)(value & 0xFF);
+                    value = value >> 8;
+                }
+            }
+
+            return buffer;
         }
 
         /// <summary>
-        /// Returns a string representation of the value of this instance of the <see cref="Guid"/> structure.
+        /// Returns a string representation of the value of this instance in registry format.
         /// </summary>
         /// <returns>The value of this Guid, formatted by using the "D" format specifier as follows: 
         ///
@@ -256,7 +249,7 @@ namespace System
         /// </returns>
         public override string ToString()
         {
-            // default format is dddddddd-dddd-dddd-dddd-dddddddddddd
+            _data ??= new int[4];
 
             byte[] bytes = ToByteArray();
 
@@ -305,41 +298,20 @@ namespace System
         /// <summary>
         /// Returns a value that indicates whether this instance is equal to a specified object.
         /// </summary>
-        /// <param name="obj">The object to compare with this instance. </param>
-        /// <returns></returns>
-        public override bool Equals(Object obj)
+        /// <param name="o">The object to compare with this instance. </param>
+        /// <returns><see langword="true"/> if <paramref name="o"/> is a <see cref="Guid"/> that has the same value as this instance; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>Two <see cref="Guid"/> objects are equal if they have identical byte values.</remarks>
+        public override bool Equals(object o)
         {
-            Guid g;
-            // Check that o is a Guid first
-            if (obj == null || !(obj is Guid))
+            if (o is not Guid)
+            {
                 return false;
-            else g = (Guid)obj;
+            }
 
-            // Now compare each of the elements
-            if (g._a != _a)
-                return false;
-            if (g._b != _b)
-                return false;
-            if (g._c != _c)
-                return false;
-            if (g._d != _d)
-                return false;
-            if (g._e != _e)
-                return false;
-            if (g._f != _f)
-                return false;
-            if (g._g != _g)
-                return false;
-            if (g._h != _h)
-                return false;
-            if (g._i != _i)
-                return false;
-            if (g._j != _j)
-                return false;
-            if (g._k != _k)
-                return false;
+            int[] other = ((Guid)o)._data;
+            other ??= new int[4];
 
-            return true;
+            return (_data[0] == other[0]) && (_data[1] == other[1]) && (_data[2] == other[2]) && (_data[3] == other[3]);
         }
 
         /// <summary>
@@ -348,7 +320,7 @@ namespace System
         /// <returns>The hash code for this instance.</returns>
         public override int GetHashCode()
         {
-            return _a ^ (((int)_b << 16) | (int)(ushort)_c) ^ (((int)_f << 24) | _k);
+            return _data[0] ^ _data[1] ^ _data[2] ^ _data[3];
         }
 
         /// <summary>
@@ -369,20 +341,6 @@ namespace System
             return (char)((a > 9) ? a - 10 + 0x61 : a + 0x30);
         }
 
-        private int GetResult(uint me, uint them)
-        {
-            if (me < them)
-            {
-                return -1;
-            }
-            else if (me > them)
-            {
-                return 1;
-            }
-
-            return 0;
-        }
-
         /// <summary>
         ///   Creates a new <see cref="Guid"/> based on the value in the string.  The value is made up
         ///   of hex digits speared by the dash ("-"). The string may begin and end with
@@ -392,16 +350,17 @@ namespace System
         ///   d is a hex digit. (That is 8 hex digits, followed by 4, then 4, then 4,
         ///   then 12) such as: "CA761232-ED42-11CE-BACD-00AA0057B223"
         /// </summary>
-        /// <param name="guidString">Guid string to parse.</param>
-        /// <param name="result">Resulting Guid.</param>
-        /// <returns></returns>
-        public static bool TryParseGuidWithDashes(String guidString, out Guid result)
+        /// <param name="guidString">A string containing the GUID to convert.</param>
+        /// <param name="result">When this method returns, contains the parsed value. If the method returns <see langword="true"/>, result contains a valid <see cref="Guid"/>. If the method returns <see langword="false"/>, result equals <see cref="Empty"/>.</param>
+        /// <returns><see langword="true"/> if the parse operation was successful; otherwise, <see langword="false"/>.</returns>
+        public static bool TryParseGuidWithDashes(
+            string guidString,
+            out Guid result)
         {
             int startPos = 0;
             int temp;
             long templ;
-            int currentPos = 0;
-            result = Guid.Empty;
+            result = Empty;
 
             // check to see that it's the proper length
             if (guidString[0] == '{')
@@ -425,35 +384,35 @@ namespace System
                 return false;
             }
 
-            currentPos = startPos;
+            int currentPos = startPos;
             try
             {
-                result._a = (int)HexStringToLong(guidString, ref currentPos, 8);
-                ++currentPos; // Increment past the '-'
-                result._b = (short)HexStringToLong(guidString, ref currentPos, 4);
-                ++currentPos; // Increment past the '-'
-                result._c = (short)HexStringToLong(guidString, ref currentPos, 4);
-                ++currentPos; // Increment past the '-'
+                result._data[0] = (int)HexStringToLong(guidString, ref currentPos, 8);
+
+                // Increment past the '-'
+                ++currentPos;
+
+                result._data[1] = (ushort)HexStringToLong(guidString, ref currentPos, 4)
+                                  | ((ushort)HexStringToLong(guidString, ref currentPos, 4) << 16);
+
+                // Increment past the '-'
+                ++currentPos;
+
                 temp = (int)HexStringToLong(guidString, ref currentPos, 4);
-                ++currentPos; // Increment past the '-'
+
+                // Increment past the '-'
+                ++currentPos;
+
                 templ = HexStringToLong(guidString, ref currentPos, 12);
             }
             catch
             {
-                result = Guid.Empty;
+                result = Empty;
                 return false;
             }
 
-            result._d = (byte)(temp >> 8);
-            result._e = (byte)(temp);
-            temp = (int)(templ >> 32);
-            result._f = (byte)(temp >> 8);
-            result._g = (byte)(temp);
-            temp = (int)(templ);
-            result._h = (byte)(temp >> 24);
-            result._i = (byte)(temp >> 16);
-            result._j = (byte)(temp >> 8);
-            result._k = (byte)(temp);
+            result._data[2] = temp | (int)(templ >> 32) << 16;
+            result._data[3] = (int)templ;
 
             return true;
         }
@@ -465,7 +424,7 @@ namespace System
         /// <param name="parsePos">The position of the hex sub-string within str.</param>
         /// <param name="requiredLength">The length of the hex sub-string.</param>
         /// <returns>False if any character is not a hex digit or string is shorter than needed for the requiredLength. Otherwise true.</returns>
-        private static long HexStringToLong(String str, ref int parsePos, int requiredLength)
+        private static long HexStringToLong(string str, ref int parsePos, int requiredLength)
         {
             long result = Convert.ToInt64(str.Substring(parsePos, requiredLength), 16);
             parsePos += requiredLength;
