@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System.Runtime.Versioning
@@ -19,9 +19,8 @@ namespace System.Runtime.Versioning
         /// <exception cref="ArgumentNullException"></exception>
         public TargetFrameworkAttribute(String frameworkName)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (frameworkName == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            ArgumentNullException.ThrowIfNull(frameworkName);
+
             _frameworkName = frameworkName;
         }
 
