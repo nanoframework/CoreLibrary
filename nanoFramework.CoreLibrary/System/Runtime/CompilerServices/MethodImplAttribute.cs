@@ -66,6 +66,7 @@ namespace System.Runtime.CompilerServices
     /// Specifies the details of how a method is implemented. This class cannot be inherited.
     /// </summary>
     [Serializable, AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor, Inherited = false)]
+    [ExcludeType]
     public sealed class MethodImplAttribute : Attribute
     {
         internal MethodImplOptions _val;
@@ -107,5 +108,4 @@ namespace System.Runtime.CompilerServices
         /// </_value>
         public MethodImplOptions Value { get { return _val; } }
     }
-
 }

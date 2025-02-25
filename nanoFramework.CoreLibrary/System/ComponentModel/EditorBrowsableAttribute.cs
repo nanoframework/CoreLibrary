@@ -10,6 +10,7 @@ namespace System.ComponentModel
     /// <summary>
     /// Specifies the browsable state of a property or method from within an editor.
     /// </summary>
+    [ExcludeType]
     public enum EditorBrowsableState
     {
         /// <summary>
