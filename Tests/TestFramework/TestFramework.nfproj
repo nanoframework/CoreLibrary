@@ -30,15 +30,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.AreEqual.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.AreNotEqual.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.Obsolete.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\CallerArgumentExpressionAttribute.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\CollectionAssert.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\NullableAttributes.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\OutputHelper.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestExtensions.cs" />
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.cs" Link="Assert.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.AreEqual.cs" Link="Assert.AreEqual.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.AreNotEqual.cs" Link="Assert.AreNotEqual.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.Obsolete.cs" Link="\Assert.Obsolete.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\CollectionAssert.cs" Link="CollectionAssert.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\OutputHelper.cs" Link="OutputHelper.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestExtensions.cs" Link="TestExtensions.cs"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />
