@@ -135,12 +135,6 @@ namespace System
         /// <param name="g">
         /// A string that contains a GUID in one of the following formats ("d" represents a hexadecimal digit whose case is ignored):
         ///
-        /// 32 contiguous hexadecimal digits:
-        ///
-        /// dddddddddddddddddddddddddddddddd
-        ///
-        /// -or-
-        ///
         /// Groups of 8, 4, 4, 4, and 12 hexadecimal digits with hyphens between the groups. The entire GUID can optionally be enclosed in matching braces or parentheses:
         ///
         /// dddddddd-dddd-dddd-dddd-dddddddddddd
@@ -148,18 +142,6 @@ namespace System
         /// -or-
         ///
         /// {dddddddd-dddd-dddd-dddd-dddddddddddd}
-        ///
-        /// -or-
-        ///
-        /// (dddddddd-dddd-dddd-dddd-dddddddddddd)
-        ///
-        /// -or-
-        ///
-        /// Groups of 8, 4, and 4 hexadecimal digits, and a subset of eight groups of 2 hexadecimal digits, with each group prefixed by "0x" or "0X", and separated by commas. The entire GUID, as well as the subset, is enclosed in matching braces:
-        ///
-        /// {0xdddddddd, 0xdddd, 0xdddd,{0xdd,0xdd,0xdd,0xdd,0xdd,0xdd,0xdd,0xdd}}
-        ///
-        /// All braces, commas, and "0x" prefixes are required. All embedded spaces are ignored. All leading zeros in a group are ignored.
         ///
         /// The hexadecimal digits shown in a group are the maximum number of meaningful hexadecimal digits that can appear in that group. You can specify from 1 to the number of hexadecimal digits shown for a group. The specified digits are assumed to be the low-order digits of the group.
         /// </param>
@@ -172,11 +154,13 @@ namespace System
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (!TryParseGuidWithDashes(
                 g,
-                out this))
+                out Guid result))
             {
                 throw new ArgumentException();
             }
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one
+
+            this = result;
         }
 
         /// <summary>
@@ -342,77 +326,113 @@ namespace System
         }
 
         /// <summary>
-        ///   Creates a new <see cref="Guid"/> based on the value in the string.  The value is made up
-        ///   of hex digits speared by the dash ("-"). The string may begin and end with
-        ///   brackets ("{", "}").
-        ///   
-        ///   The string must be of the form dddddddd-dddd-dddd-dddd-dddddddddddd. where
-        ///   d is a hex digit. (That is 8 hex digits, followed by 4, then 4, then 4,
-        ///   then 12) such as: "CA761232-ED42-11CE-BACD-00AA0057B223"
+        /// Converts the string representation of a GUID to the equivalent <see cref="Guid"/> structure.
         /// </summary>
-        /// <param name="guidString">A string containing the GUID to convert.</param>
+        /// <param name="input">A string containing the GUID to convert.</param>
         /// <param name="result">When this method returns, contains the parsed value. If the method returns <see langword="true"/>, result contains a valid <see cref="Guid"/>. If the method returns <see langword="false"/>, result equals <see cref="Empty"/>.</param>
         /// <returns><see langword="true"/> if the parse operation was successful; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// The .NET nanoFramework implementation of this method only supports 'D' and 'N' format specifiers.
+        /// </remarks>
+        [Obsolete("This will be renamed to TryParse in a future version.")]
         public static bool TryParseGuidWithDashes(
-            string guidString,
+            string input,
             out Guid result)
         {
             int startPos = 0;
-            int temp;
-            long templ;
-            result = Empty;
 
-            // check to see that it's the proper length
-            if (guidString[0] == '{')
+            // because this is a struct we can't assign the Empty directly to result,
+            // otherwise it will overwrite the _data field of the struct, as this is a shallow copy
+            result = new Guid(Empty.ToByteArray());
+
+            // Check for optional surrounding braces
+            if (input[0] == '{')
             {
-                if (guidString.Length != 38 || guidString[37] != '}')
+                if (input.Length != 38 || input[37] != '}')
                 {
                     return false;
                 }
+
                 startPos = 1;
             }
-            else if (guidString.Length != 36)
+            else if (input.Length != 36)
             {
                 return false;
             }
 
-            if (guidString[8 + startPos] != '-' ||
-                guidString[13 + startPos] != '-' ||
-                guidString[18 + startPos] != '-' ||
-                guidString[23 + startPos] != '-')
+            // Verify hyphen positions
+            if (input[8 + startPos] != '-' ||
+                input[13 + startPos] != '-' ||
+                input[18 + startPos] != '-' ||
+                input[23 + startPos] != '-')
             {
                 return false;
             }
 
             int currentPos = startPos;
+
             try
             {
-                result._data[0] = (int)HexStringToLong(guidString, ref currentPos, 8);
+                // Data1: 8 hex digits
+                result._data[0] = (int)HexStringToLong(input, ref currentPos, 8);
 
-                // Increment past the '-'
+                // Skip dash
                 ++currentPos;
 
-                result._data[1] = (ushort)HexStringToLong(guidString, ref currentPos, 4)
-                                  | ((ushort)HexStringToLong(guidString, ref currentPos, 4) << 16);
+                // Data2: 4 hex digits
+                ushort data2 = (ushort)HexStringToLong(input, ref currentPos, 4);
 
-                // Increment past the '-'
+                // Skip dash
                 ++currentPos;
 
-                temp = (int)HexStringToLong(guidString, ref currentPos, 4);
+                // Data3: 4 hex digits
+                ushort data3 = (ushort)HexStringToLong(input, ref currentPos, 4);
 
-                // Increment past the '-'
+                // These values are already in big‑endian order as in the string
+                // They must be stored directly (without swapping) in the internal little‑endian representation
+                result._data[1] = data2 | (data3 << 16);
+
+                // Skip dash
                 ++currentPos;
 
-                templ = HexStringToLong(guidString, ref currentPos, 12);
+                // Data4 – first part: 4 hex digits (2 bytes)
+                ushort group4 = (ushort)HexStringToLong(input, ref currentPos, 4);
+
+                // Skip dash
+                ++currentPos;
+
+                // Data4 – second part: 12 hex digits (6 bytes)
+                long group5 = HexStringToLong(input, ref currentPos, 12);
+
+                // For Data4, we need to convert from big‑endian to little‑endian
+                // Swap the 2-byte group
+                ushort group4_le = (ushort)(((group4 & 0xFF) << 8) | (group4 >> 8));
+
+                // Split the 6-byte group into its high 2 bytes and low 4 bytes
+                // high 16 bits (big‑endian)
+                ushort group5High = (ushort)(group5 >> 32);
+
+                // low 32 bits (big‑endian)
+                uint group5Low = (uint)(group5 & 0xFFFFFFFF);
+
+                // Swap bytes for each
+                ushort group5High_le = (ushort)(((group5High & 0xFF) << 8) | (group5High >> 8));
+                uint group5Low_le = ((group5Low & 0xFF) << 24) |
+                                    (((group5Low >> 8) & 0xFF) << 16) |
+                                    (((group5Low >> 16) & 0xFF) << 8) |
+                                    ((group5Low >> 24) & 0xFF);
+
+                // Combine the converted Data4 parts into _data[2] and _data[3]
+                // _data[2]: lower 16 bits from swapped group4, upper 16 bits from swapped group5High
+                result._data[2] = group4_le | (group5High_le << 16);
+
+                // _data[3]: swapped group5Low
+                result._data[3] = (int)group5Low_le;
             }
             catch
             {
-                result = Empty;
                 return false;
             }
-
-            result._data[2] = temp | (int)(templ >> 32) << 16;
-            result._data[3] = (int)templ;
 
             return true;
         }
