@@ -34,7 +34,7 @@ function AddGeneratePathProperty {
 
 # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
 # 'encoded token' is the Base64 of the string "nfbot:personal-token"
-$auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:$env:MY_GITHUB_TOKEN")))"
+$auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:$env:GITHUB_TOKEN")))"
 
 # uncomment these for local debug
 # [Environment]::SetEnvironmentVariable('NBGV_NuGetPackageVersion', '2.0.42', 'Process')
@@ -141,10 +141,6 @@ if ($repoStatus -ne "")
     UpdateTCoreLibraryVersion -NewVersion $packageTargetVersion -FilePath 'CSharp.TestApplication/CS.TestApplication-vs2022.vstemplate'
     UpdateTCoreLibraryVersion -NewVersion $packageTargetVersion -FilePath 'CSharp.TestApplication/NFUnitTest.nfproj'
 
-    # update remaining project refs 
-    UpdateTCoreLibraryVersion -NewVersion $packageTargetVersion -FilePath 'VisualStudio.Extension-2019/VisualStudio.Extension-vs2019.csproj'
-    UpdateTCoreLibraryVersion -NewVersion $packageTargetVersion -FilePath 'VisualStudio.Extension-2022/VisualStudio.Extension-vs2022.csproj'
-
     # create branch to perform updates
     git branch $newBranchName
 
@@ -182,6 +178,12 @@ if ($repoStatus -ne "")
         $result = Invoke-RestMethod -Method Post -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -Uri  $githubApiEndpoint -Header $headers -ContentType "application/json" -Body $prRequestBody
         'Started PR with dependencies update...' | Write-Host -NoNewline
         'OK' | Write-Host -ForegroundColor Green
+
+        # add labels to PR
+        $prNumber = $result.number
+
+        gh pr edit $prNumber --add-label "VS2019"
+        gh pr edit $prNumber --add-label "VS2022"
     }
     catch 
     {

@@ -200,7 +200,7 @@ jobs:
       targetType: filePath
       filePath: azure-pipelines/update-vs-extension.ps1
     env:
-      MY_GITHUB_TOKEN: $(GitHubToken)
+      GITHUB_TOKEN: $(GitHubToken)
 
 ##################################
 # report build failure to Discord
