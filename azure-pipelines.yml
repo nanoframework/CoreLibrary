@@ -192,6 +192,7 @@ jobs:
         System.Device.I2c
         System.Device.I2c.Slave
         System.Device.Pwm
+        System.Device.I2s
 
   # update Visual Studio extension
   - task: PowerShell@2
