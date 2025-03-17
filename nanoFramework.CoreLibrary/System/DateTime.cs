@@ -17,7 +17,6 @@ namespace System
     /// nanoFramework doesn't support local time, only  UTC, so it's not possible to specify <see cref="Local"/>.
     /// </remarks>
     [Serializable]
-    [ExcludeType]
     public enum DateTimeKind
     {
         /// <summary>

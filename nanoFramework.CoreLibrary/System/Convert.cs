@@ -9,7 +9,6 @@ namespace System
     /// Specifies whether relevant Convert.ToBase64CharArray and Convert.ToBase64String methods insert line breaks in their output.
     /// </summary>
     [Flags]
-    [ExcludeType]
     public enum Base64FormattingOptions
     {
         /// <summary>
