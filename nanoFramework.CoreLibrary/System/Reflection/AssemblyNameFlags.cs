@@ -13,7 +13,6 @@ namespace System.Reflection
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable, Flags]
-    [ExcludeType]
     public enum AssemblyNameFlags
     {
         /// <summary>
