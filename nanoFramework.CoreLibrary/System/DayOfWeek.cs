@@ -9,6 +9,7 @@ namespace System
     /// Specifies the day of the week.
     /// </summary>
     [Serializable]
+    [ExcludeType]
     public enum DayOfWeek
     {
         /// <summary>

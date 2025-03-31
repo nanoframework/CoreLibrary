@@ -1,0 +1,45 @@
+{
+    "categories": [
+        {
+            "title": "## New Features and enhancements",
+            "labels": [
+                "Type: enhancement"
+            ],
+            "exhaustive": true
+        },
+        {
+            "title": "## Bug Fixes",
+            "labels": [
+                "Type: bug"
+            ],
+            "exhaustive": true
+        },
+        {
+            "title": "## Documentation",
+            "labels": [
+                "Type: documentation"
+            ],
+            "exhaustive": true
+        },
+        {
+            "title": "## ⚠️ Breaking Changes",
+            "labels": [
+                "Breaking-Change"
+            ],
+            "exhaustive": true
+        },
+        {
+            "title": "## Updated dependencies",
+            "labels": [
+                "Type: dependencies"
+            ],
+            "exhaustive": true
+        }
+    ],
+    "sort": "ASC",
+    "template": "${{CHANGELOG}}\n\n**Full Changelog:** ${{RELEASE_DIFF}}\n\nThe following NuGet packages are available from this release:\n\n:package: [Base Class Library](https://www.nuget.org/packages/nanoFramework.CoreLibrary/)\n:package: [Base Class Library w/o reflection](https://www.nuget.org/packages/nanoFramework.CoreLibrary.NoReflection/)",
+    "pr_template": "* ${{TITLE}} by @${{AUTHOR}} in #${{NUMBER}}",
+    "empty_template": "- no changes",
+    "max_tags_to_fetch": 200,
+    "max_pull_requests": 200
+}

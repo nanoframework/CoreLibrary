@@ -13,6 +13,7 @@ namespace System.Reflection
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [Serializable]
+    [ExcludeType]
     public enum MemberTypes
     {
         /// <summary>

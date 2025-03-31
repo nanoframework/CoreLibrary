@@ -9,7 +9,6 @@ trigger:
       - release-*
   paths:
     exclude:
-      - .github_changelog_generator
       - .gitignore
       - .gitattributes
       - .gitmodules
@@ -19,8 +18,11 @@ trigger:
       - README.md
       - NuGet.Config
       - assets/*
-      - config/*
       - nanoFramework.TestFramework/*
+
+  tags:
+    include:
+      - v*
 
 # PR always trigger build
 pr:
@@ -34,15 +36,25 @@ resources:
       name: nanoframework/nf-tools
       endpoint: nanoframework
 
+variables:
+  - name: DOTNET_NOLOGO
+    value: true  
+  - name: nugetPackageName
+    value: 'nanoFramework.CoreLibrary'
+    
 jobs:
 
 ##############################
 - job: Build_mscorlib
   condition: >-
-    or(
-      eq(variables['UPDATE_DEPENDENTS'], 'false'),
-      eq(variables['StartReleaseCandidate'], 'true')
+    and(
+      not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v')),
+      or(
+        eq(variables['UPDATE_DEPENDENTS'], 'false'),
+        eq(variables['StartReleaseCandidate'], 'true')
+      )
     )
+
   pool:
     vmImage: 'windows-latest'
 
@@ -56,16 +68,16 @@ jobs:
       value: 'Release'
     - name: solution
       value: 'nanoFramework.CoreLibrary.sln'
-    - name: nugetPackageName
-      value: 'nanoFramework.CoreLibrary'
 
   steps:
+
+  - template: azure-pipelines-templates/process-pr-labels.yml@templates
 
   # build steps only
   - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
     parameters:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
-      runUnitTests: true
+      runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
       skipNuGetCache: true
 
@@ -141,14 +153,11 @@ jobs:
   condition: >-
     or(
       and(
-        not(or(failed(), canceled())),
-        startsWith(variables['Build.SourceBranch'], 'refs/heads/main'),
+        startsWith(variables['Build.SourceBranch'], 'refs/tags/v'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       and(
-        not(or(failed(), canceled())),
-        eq(variables['System.PullRequest.PullRequestId'], ''),
-        contains(variables['Build.SourceVersionMessage'], '***UPDATE_DEPENDENTS***'),
+        contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       eq(variables['UPDATE_DEPENDENTS'], 'true')
@@ -160,9 +169,6 @@ jobs:
   pool:
     vmImage: 'windows-latest'
 
-  variables:
-    DOTNET_NOLOGO: true
-
   steps:
   # need this here in order to persist GitHub credentials 
   - checkout: self
@@ -170,18 +176,18 @@ jobs:
     persistCredentials: true
 
   # update dependents
+  ##########################################################################################################
+  # dependent libraries that include unit tests should be added to the list in nanoFramework.TestFramework #
+  ##########################################################################################################
   - template: azure-pipelines-templates/update-dependents.yml@templates  
     parameters:
-      ${{ if eq(variables['UPDATE_DEPENDENTS'], 'false') }}:
-        waitBeforeUpdate: false
-      ${{ else }}:
-        waitBeforeUpdate: true
+      packageName: '$(nugetPackageName)'
       repositoriesToUpdate: |
         nanoFramework.TestFramework
         nanoFramework.Device.OneWire
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
-        nanoFramework.Hardware.Stm32
+        nanoFramework.Hardware.GiantGecko
         nanoFramework.Hardware.TI
         nanoFramework.Networking.Sntp
         nanoFramework.TI.EasyLink
@@ -192,24 +198,16 @@ jobs:
         System.Device.I2c
         System.Device.I2c.Slave
         System.Device.Pwm
-        System.Device.Spi
-        System.IO.Hashing
-        System.Math
-        System.Text
-        System.Security.Cryptography
+        System.Device.I2s
 
-  # update dependents
-  - template: azure-pipelines-templates/update-dependents.yml@templates  
-    parameters:
-      ${{ if eq(variables['UPDATE_DEPENDENTS'], 'true') }}:
-        waitBeforeUpdate: false
-      ${{ else }}:
-        waitBeforeUpdate: true    
-      repositoriesToUpdate: |
-        nanoFramework.Logging
-        nanoFramework.Json
-        System.Collections
-        System.Threading
+  # update Visual Studio extension
+  - task: PowerShell@2
+    displayName: Update VS extension
+    inputs:
+      targetType: filePath
+      filePath: azure-pipelines/update-vs-extension.ps1
+    env:
+      GITHUB_TOKEN: $(GitHubToken)
 
 ##################################
 # report build failure to Discord

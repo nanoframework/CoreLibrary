@@ -14,6 +14,7 @@ namespace System.IO
         /// <summary>
         /// Provides values for error codes.
         /// </summary>
+        [ExcludeType]
         public enum IOExceptionErrorCode
         {
             /// <summary>
