@@ -163,9 +163,6 @@ jobs:
       eq(variables['UPDATE_DEPENDENTS'], 'true')
     )
 
-  dependsOn:
-    - Build_mscorlib
-
   pool:
     vmImage: 'windows-latest'
 
@@ -192,7 +189,6 @@ jobs:
         nanoFramework.Networking.Sntp
         nanoFramework.TI.EasyLink
         nanoFramework.ResourceManager
-        nanoframework.System.Runtime
         System.Device.Adc
         System.Device.Dac
         System.Device.I2c
