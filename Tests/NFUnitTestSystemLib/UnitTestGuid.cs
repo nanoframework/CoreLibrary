@@ -437,5 +437,24 @@ namespace NFUnitTestSystemLib
 
             CollectionAssert.AreEqual(new byte[] { 0xd5, 0x10, 0xa1, 0xa8, 0x49, 0xfc, 0xc5, 0x43, 0xbf, 0x46, 0x80, 0x2d, 0xb8, 0xf8, 0x43, 0xff }, myGuidAsArray);
         }
+
+        [TestMethod]
+        public void GuidAsStaticField()
+        {
+            var guid1 = ClassWithGuid.BaseUuid1;
+            var guid2 = ClassWithGuid.BaseUuid2;
+
+            Assert.AreEqual(new Guid("00000000-0000-1000-8000-00805f9b34fb"), guid1);
+            CollectionAssert.AreEqual(new byte[] { 0xfb, 0x34, 0x9b, 0x5f, 0x80, 0x00, 0x00, 0x80, 0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, guid2);
+        }
+
+        internal class ClassWithGuid
+        {
+            private static Guid baseUuid1 = new Guid("00000000-0000-1000-8000-00805f9b34fb");
+            private static byte[] baseUuid2 = new Guid("00000000-0000-1000-8000-00805f9b34fb").ToByteArray();
+
+            public static Guid BaseUuid1 => baseUuid1;
+            public static byte[] BaseUuid2 => baseUuid2;
+        }
     }
 }
