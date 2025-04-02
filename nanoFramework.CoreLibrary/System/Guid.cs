@@ -140,8 +140,6 @@ namespace System
         {
             ArgumentNullException.ThrowIfNull(g);
 
-            _data = new int[4];
-
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (!TryParseGuidWithDashes(
                 g,
@@ -333,7 +331,7 @@ namespace System
 
             // because this is a struct we can't assign the Empty directly to result,
             // otherwise it will overwrite the _data field of the struct, as this is a shallow copy
-            result = new Guid(0,0,0,0,0,0,0,0,0,0,0);
+            result = new Guid(new byte[16]);
 
             // Check for optional surrounding braces
             if (input[0] == '{')
