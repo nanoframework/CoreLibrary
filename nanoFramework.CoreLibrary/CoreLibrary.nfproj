@@ -191,7 +191,9 @@
     <Compile Include="System\SByte.cs" />
     <Compile Include="System\SerializableAttribute.cs" />
     <Compile Include="System\Single.cs" />
-    <Compile Include="System\SpanByte.cs" />
+    <Compile Include="System\ReadOnlySpan.cs" />
+    <Compile Include="System\SpanDebugView.cs" />
+    <Compile Include="System\Span.cs" />
     <Compile Include="System\String.cs" />
     <Compile Include="System\SystemException.cs" />
     <Compile Include="System\TargetFrameworkAttribute.cs" />
