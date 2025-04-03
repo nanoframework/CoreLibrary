@@ -16,18 +16,7 @@ namespace System
         /// <summary>
         /// A read-only instance of the Guid class which consists of all zeros.
         /// </summary>
-        public static readonly Guid Empty = new Guid(
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0);
+        public static readonly Guid Empty = new Guid(new byte[16]);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Guid"/> structure by using the specified integers and bytes.
@@ -154,13 +143,12 @@ namespace System
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (!TryParse(
                 g,
-                out Guid result))
+                out this))
             {
                 throw new ArgumentException();
             }
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one
 
-            this = result;
         }
 
         /// <summary>
@@ -342,7 +330,7 @@ namespace System
 
             // because this is a struct we can't assign the Empty directly to result,
             // otherwise it will overwrite the _data field of the struct, as this is a shallow copy
-            result = new Guid(Empty.ToByteArray());
+            result = new Guid(new byte[16]);
 
             // Check for optional surrounding braces
             if (input[0] == '{')
