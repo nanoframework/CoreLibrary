@@ -67,6 +67,7 @@
     <Compile Include="System\ApplicationException.cs" />
     <Compile Include="System\ArgumentException.cs" />
     <Compile Include="System\Diagnostics\StackTraceHiddenAttribute.cs" />
+    <Compile Include="System\Runtime\InteropServices\InAttribute .cs" />
     <Compile Include="System\Diagnostics\NativeProfiledAttribute.cs" />
     <Compile Include="System\PlatformNotSupportedException.cs" />
     <Compile Include="System\ArgumentNullException.cs" />
