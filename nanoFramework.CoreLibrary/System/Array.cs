@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections;
@@ -343,8 +343,27 @@ namespace System
             return -1;
         }
 
+#if NANOCLR_REFLECTION
+        /// <summary>
+        /// Creates and returns an empty array of the specified type.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T[] Empty<T>()
+        {
+            return EmptyArray<T>.Value;
+        }
+#endif
+
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern bool TrySzIndexOf(Array sourceArray, int sourceIndex, int count, Object value, out int retVal);
+
+        private static class EmptyArray<T>
+        {
+#pragma warning disable CA1825, IDE0300 // this is the implementation of Array.Empty<T>()
+            internal static readonly T[] Value = new T[0];
+#pragma warning restore CA1825, IDE0300
+        }
 
         // This is the underlying Enumerator for all of our array-based data structures (Array, ArrayList, Stack, and Queue)
         // It supports enumerating over an array, a part of an array, and also will wrap around when the endIndex
