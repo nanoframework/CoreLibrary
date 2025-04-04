@@ -141,7 +141,7 @@ namespace System
             ArgumentNullException.ThrowIfNull(g);
 
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (!TryParseGuidWithDashes(
+            if (!TryParse(
                 g,
                 out this))
             {
@@ -322,8 +322,7 @@ namespace System
         /// <remarks>
         /// The .NET nanoFramework implementation of this method only supports 'D' and 'N' format specifiers.
         /// </remarks>
-        [Obsolete("This will be renamed to TryParse in a future version.")]
-        public static bool TryParseGuidWithDashes(
+        public static bool TryParse(
             string input,
             out Guid result)
         {
