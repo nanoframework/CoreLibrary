@@ -11,6 +11,7 @@
   "publicReleaseRefSpec": [
     "^refs/heads/develop$",
     "^refs/heads/main$",
+    "^refs/heads/generics$",
     "^refs/heads/v\\d+(?:\\.\\d+)?$"
   ],
   "cloudBuild": {
