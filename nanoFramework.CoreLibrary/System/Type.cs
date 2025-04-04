@@ -51,6 +51,20 @@ namespace System
             return GetTypeInternal(name, assemblyName, fVersion, ver);
         }
 
+        /// <summary>
+        /// Returns a <see cref="Type"/> object that represents a generic type definition from which the current generic type can be constructed.
+        /// </summary>
+        /// <returns>A <see cref="Type"/> object representing a generic type from which the current type can be constructed.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public virtual extern Type GetGenericTypeDefinition();
+
+        /// <summary>
+        /// Returns an array of <see cref="Type"/> objects that represent the type arguments of a closed generic type or the type parameters of a generic type definition.
+        /// </summary>
+        /// <returns>An array of <see cref="Type"/> objects that represent the type arguments of a generic type. Returns an empty array if the current type is not a generic type.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern Type[] GetGenericArguments();
+
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern Type GetTypeInternal(String typeName, string assemblyName, bool fVersion, int[] ver);
@@ -356,6 +370,26 @@ namespace System
             [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
+
+        /// <summary>
+        /// Gets a value indicating whether the current type is a generic type.
+        /// </summary>
+        /// <value>
+        /// <see langword="true"/> if the current type is a generic type; otherwise, <see langword="false"/>.
+        /// </value>
+        public extern bool IsGenericType
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets a value that indicates whether the type is a generic type definition.
+        /// </summary>
+        /// <value>
+        /// <see langword="true"/> if the current type is a generic type definition; otherwise, <see langword="false"/>.
+        /// </value>
+        public virtual bool IsGenericTypeDefinition => false;
 
         /// <summary>
         /// When overridden in a derived class, returns the Type of the object encompassed or referred to by the current array, pointer or reference type.
