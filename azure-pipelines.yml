@@ -81,6 +81,7 @@ jobs:
       runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
       skipNuGetCache: true
+      buildComponentsUsePreview: true
 
   # rebuild CoreLibrary project to get the assembly checksum
   - task: MSBuild@1
