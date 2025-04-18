@@ -18,12 +18,7 @@
     <tags>nanoFramework C# csharp netmf netnf nanoFramework.CoreLibrary</tags>
   </metadata>
   <files>
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.dll" target="lib\mscorlib.dll" />
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pdb" target="lib\mscorlib.pdb" />
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pdbx" target="lib\mscorlib.pdbx" />
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.pe" target="lib\mscorlib.pe" />
-    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.xml" target="lib\mscorlib.xml" /> 
-
+    <file src="nanoFramework.CoreLibrary\bin\Release\mscorlib.*" target="lib\netnano1.0" />
     <file src="assets\readme.txt" target="" />
     <file src="README.md" target="docs\" />
     <file src="assets\nf-logo.png" target="images" />

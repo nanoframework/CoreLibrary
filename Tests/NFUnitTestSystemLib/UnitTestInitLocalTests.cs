@@ -49,6 +49,9 @@ namespace NFUnitTestSystemLib
             // ConstructorInfo)
             // NOTE: We add the reflection items to the ArrayList to assure that they can be properly 
             // assigned to a object container (this used to lead to a access violation)
+
+            OutputHelper.WriteLine("Testing Int32");
+
             Type type = typeof(int);
             list.Add(type);
             string name = ((Type)list[i]).Name;
@@ -68,11 +71,15 @@ namespace NFUnitTestSystemLib
             //fRes &= name.ToLower() == "mscorlib";
             //i++;
 
+            OutputHelper.WriteLine("Testing NFUnitTestSystemLib.UnitTestInitLocalTests+TestObj");
+
             type = Type.GetType("NFUnitTestSystemLib.UnitTestInitLocalTests+TestObj");
             list.Add(type);
             name = ((Type)list[i]).Name;
             Assert.AreEqual(name, "TestObj");
             i++;
+
+            OutputHelper.WriteLine("Testing IEmptyInterface");
 
             Type iface = type.GetInterfaces()[0];
             list.Add(iface);
@@ -81,6 +88,8 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(iface.Name, "IEmptyInterface");
             i++;
 
+            OutputHelper.WriteLine("Testing FieldInfo");
+
             FieldInfo fi = type.GetField("Field1");
             list.Add(fi);
             name = ((FieldInfo)list[i]).Name;
@@ -88,12 +97,16 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(fi.Name, "Field1");
             i++;
 
+            OutputHelper.WriteLine("Testing MethodInfo");
+
             MethodInfo mi = type.GetMethod("Method1");
             list.Add(mi);
             name = ((MethodInfo)list[i]).Name;
             Assert.AreEqual(name, "Method1");
             Assert.AreEqual(mi.Name, "Method1");
             i++;
+
+            OutputHelper.WriteLine("Testing ConstructorInfo");
 
             ConstructorInfo ci = type.GetConstructor(new Type[] { });
             list.Add(ci);
@@ -104,7 +117,10 @@ namespace NFUnitTestSystemLib
 
             // 
             // Now test arrays of reflection types
-            // 
+            //
+
+            OutputHelper.WriteLine("Testing Array of Type");
+
             Type[] types = new Type[] { typeof(int), typeof(bool), Type.GetType("NFUnitTestSystemLib.UnitTestInitLocalTests+TestObj") };
             list.Add(types[2]);
             name = ((Type)list[i]).Name;
@@ -127,12 +143,16 @@ namespace NFUnitTestSystemLib
             //fRes &= asms[0].GetName().Name == "Microsoft.SPOT.Platform.Tests.Systemlib2";
             //i++;
 
+            OutputHelper.WriteLine("Testing Array of FieldInfo");
+
             FieldInfo[] fis = new FieldInfo[] { types[2].GetField("Field1"), type.GetFields()[0] };
             list.Add(fis[0]);
             name = ((FieldInfo)list[i]).Name;
             Assert.AreEqual(name, "Field1");
             Assert.AreEqual(fis[0].Name, "Field1");
             i++;
+
+            OutputHelper.WriteLine("Testing Array of MethodInfo");
 
             MethodInfo[] mis = new MethodInfo[] { type.GetMethods()[2], types[2].GetMethod("Method2", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public) };
             list.Add(mis[1]);
@@ -141,12 +161,16 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(mis[1].Name, "Method2");
             i++;
 
+            OutputHelper.WriteLine("Testing Array of ConstructorInfo");
+
             ConstructorInfo[] cis = new ConstructorInfo[] { types[2].GetConstructor(new Type[] { }), typeof(TestObj).GetConstructor(new Type[] { typeof(int) }) };
             list.Add(cis[0]);
             name = ((ConstructorInfo)list[i]).Name;
             Assert.AreEqual(name, ".ctor");
             Assert.AreEqual(cis[0].Name, ".ctor");
             i++;
+
+            OutputHelper.WriteLine("Testing Array of System.Collections.ArrayList");
 
             Array ar = Array.CreateInstance(typeof(Type), 3);
             ((IList)ar)[0] = typeof(Type);
@@ -157,7 +181,6 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(name, "ArrayList");
             Assert.AreEqual(((Type)((IList)ar)[0]).Name, "Type");
             Assert.AreEqual(((Type)ar.GetValue(1)).Name, "ArrayList");
-            i++;
 
             list.Clear();
         }

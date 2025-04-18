@@ -60,6 +60,8 @@ jobs:
 
   variables:
     - group: sign-client-credentials
+    - name: DOTNET_NOLOGO
+      value: true  
     - name: buildPlatform
       value: 'Any CPU'  
     - name: buildConfiguration
@@ -78,6 +80,7 @@ jobs:
       runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
       skipNuGetCache: true
+      buildComponentsUsePreview: true
 
   # rebuild CoreLibrary project to get the assembly checksum
   - task: MSBuild@1
