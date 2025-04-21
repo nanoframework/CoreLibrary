@@ -76,7 +76,7 @@ jobs:
       runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
       skipNuGetCache: true
-      buildComponentsUsePreview: true
+      usePreviewBuild: true
 
   # rebuild CoreLibrary project to get the assembly checksum
   - task: MSBuild@1
@@ -119,7 +119,9 @@ jobs:
     parameters:
       nugetPackageName: 'nanoFramework.CoreLibrary.NoReflection'
       
-  - template: azure-pipelines-templates/class-lib-publish.yml@templates  
+  - template: azure-pipelines-templates/class-lib-publish.yml@templates
+    parameters:
+      baseBranchName: 'develop'
 
   # create or update GitHub release ON tags
   - task: GithubRelease@1
