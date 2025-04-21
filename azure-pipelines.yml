@@ -20,10 +20,6 @@ trigger:
       - assets/*
       - nanoFramework.TestFramework/*
 
-  tags:
-    include:
-      - v*
-
 # PR always trigger build
 pr:
   autoCancel: true
