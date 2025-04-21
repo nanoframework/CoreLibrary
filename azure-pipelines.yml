@@ -125,15 +125,17 @@ jobs:
       
   - template: azure-pipelines-templates/class-lib-publish.yml@templates  
 
-  # create or update GitHub release ON tags from release
+  # create or update GitHub release ON tags
   - task: GithubRelease@1
     condition: >-
       and(
         succeeded(),
         eq(variables['System.PullRequest.PullRequestId'], ''),
-        startsWith(variables['Build.SourceBranch'], 'refs/heads/main'),
-        not(contains(variables['Build.SourceBranch'], 'preview')),
-        eq(variables['StartReleaseCandidate'], false)
+        eq(variables['StartReleaseCandidate'], false),
+        or(
+          eq(variables['Build.SourceBranchName'], 'main'),
+          eq(variables['Build.SourceBranchName'], 'develop')
+        )
       )
     displayName: Create/Update GitHub stable release
     inputs:
