@@ -419,15 +419,29 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void NewGuid()
         {
+            // generate a new Guid
             Guid guid1 = Guid.NewGuid();
 
-            Assert.AreNotEqual(Guid.Empty, guid1);
-            Assert.IsTrue((guid1.ToByteArray()[7] & 0xF0) == 0x40);
+            OutputHelper.WriteLine($"Guid1: {guid1}");
 
+            // check that the guid is not empty
+            Assert.AreNotEqual(Guid.Empty, guid1);
+            // check version 4
+            Assert.IsTrue((guid1.ToByteArray()[7] & 0xF0) == 0x40);
+            // check variant
+            Assert.IsTrue((guid1.ToByteArray()[8] & 0xC0) == 0x80);
+
+            // go for another one
             Guid guid2 = Guid.NewGuid();
 
+            OutputHelper.WriteLine($"Guid2: {guid2}");
+
+            // check that the guid is not empty
             Assert.AreNotEqual(guid1, guid2);
+            // check version 4
             Assert.IsTrue((guid2.ToByteArray()[7] & 0xF0) == 0x40);
+            // check variant
+            Assert.IsTrue((guid2.ToByteArray()[8] & 0xC0) == 0x80);
         }
 
         [TestMethod]

@@ -190,6 +190,15 @@ namespace System
         /// Returns a 16-element byte array that contains the value of this instance.
         /// </summary>
         /// <returns>A 16-element byte array.</returns>
+        /// <remarks>
+        /// <para>
+        /// You can use the byte array returned by this method to round-trip a Guid value by calling the <see cref="Guid(byte[])"/> constructor.
+        /// </para>
+        /// <para>
+        /// Note that the order of bytes in the returned byte array is different from the string representation of a Guid value.
+        /// The order of the beginning four-byte group and the next two two-byte groups is reversed, whereas the order of the last two-byte group and the closing six-byte group is the same.
+        /// </para>
+        /// </remarks>
         public byte[] ToByteArray()
         {
             byte[] buffer = new byte[16];
