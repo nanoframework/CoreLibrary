@@ -52,85 +52,103 @@ namespace NFUnitTestSystemLib
             /// 
             TestClass cls = new TestClass();
 
+            OutputHelper.WriteLine("Testing  Type members for a class type");
+
             // Test Type members for a class type
             Type t = cls.GetType();
             Assembly asm = t.Assembly;
             list.Add(asm);
-            Assert.AreEqual(((Assembly)list[i]).GetName().Name, "NFUnitTest");
-            Assert.AreEqual(asm.GetName().Name, "NFUnitTest");
-            Assert.AreEqual(t.Name, "TestClass");
-            Assert.AreEqual(t.FullName, "NFUnitTestSystemLib.UnitTestReflectionTypeTest+TestClass");
+            Assert.AreEqual("NFUnitTest", ((Assembly)list[i]).GetName().Name);
+            Assert.AreEqual("NFUnitTest", asm.GetName().Name);
+            Assert.AreEqual("TestClass", t.Name);
+            Assert.AreEqual("NFUnitTestSystemLib.UnitTestReflectionTypeTest+TestClass", t.FullName);
             Assert.IsInstanceOfType(t.BaseType, typeof(object));
             Assert.IsNull(t.GetElementType());
 
+            OutputHelper.WriteLine("Testing methods of class type");
+
             MethodInfo[] mis = t.GetMethods();
-            Assert.AreEqual(mis[0].Name, "Method1");
+            Assert.AreEqual("Method1", mis[0].Name);
             mis = t.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic);
-            Assert.AreEqual(mis[0].Name, "Method2");
+            Assert.AreEqual("Method2", mis[0].Name);
             Assert.IsNotNull(t.GetMethod("Method1"));
             Assert.IsNotNull(t.GetMethod("Method2", BindingFlags.Instance | BindingFlags.NonPublic));
 
+            OutputHelper.WriteLine("Testing fields of class type");
+
             FieldInfo[] fis = t.GetFields();
-            Assert.AreEqual(fis[0].Name, "m_Field1");
+            Assert.AreEqual("m_Field1", fis[0].Name);
             fis = t.GetFields(BindingFlags.Instance | BindingFlags.NonPublic);
-            Assert.AreEqual(fis[0].Name, "m_Field2");
+            Assert.AreEqual("m_Field2", fis[0].Name);
             Assert.IsNotNull(t.GetField("m_Field1"));
             Assert.IsNotNull(t.GetField("m_Field2", BindingFlags.NonPublic | BindingFlags.Instance));
             Assert.IsNotNull(t.GetConstructor(new Type[] { }));
 
+            OutputHelper.WriteLine("Testing interfaces of class type");
+
             Type[] ifaces = t.GetInterfaces();
-            Assert.AreEqual(ifaces.Length, 2);
-            Assert.AreEqual(ifaces[0].Name, "IInterface1");
-            Assert.AreEqual(ifaces[1].Name, "IInterface2");
+            Assert.AreEqual(2, ifaces.Length);
+            Assert.AreEqual("IInterface1", ifaces[0].Name);
+            Assert.AreEqual("IInterface2", ifaces[1].Name);
             Assert.IsTrue(t.IsSubclassOf(typeof(object)));
             i++;
+
+            OutputHelper.WriteLine("Testing Type members for a struct valuetype");
 
             // test Type members for a struct valuetype
             TestStruct str = new TestStruct();
             t = str.GetType();
             asm = t.Assembly;
             list.Add(asm);
-            Assert.AreEqual(((Assembly)list[i]).GetName().Name, "NFUnitTest");
-            Assert.AreEqual(asm.GetName().Name, "NFUnitTest");
-            Assert.AreEqual(t.Name, "TestStruct");
-            Assert.AreEqual(t.FullName, "NFUnitTestSystemLib.UnitTestReflectionTypeTest+TestStruct");
+            Assert.AreEqual("NFUnitTest", ((Assembly)list[i]).GetName().Name);
+            Assert.AreEqual("NFUnitTest", asm.GetName().Name);
+            Assert.AreEqual("TestStruct", t.Name);
+            Assert.AreEqual("NFUnitTestSystemLib.UnitTestReflectionTypeTest+TestStruct", t.FullName);
             Assert.IsInstanceOfType(t.BaseType, typeof(ValueType));
-            Assert.AreEqual(t.GetInterfaces().Length, 0);
+            Assert.AreEqual(0, t.GetInterfaces().Length);
             Assert.IsNull(t.GetElementType());
             i++;
+
+            OutputHelper.WriteLine("Testing Type members for an Assembly reflection type");
 
             // test Type members for an Assembly reflection type
             //Assembly asmObj = typeof(TestClass).Assembly;
             //t = asmObj.GetType();
             //asm = t.Assembly;
             //list.Add(asm);
-            //Assert.AreEqual(((Assembly)list[i]).GetName().Name, "mscorlib");
-            //Assert.AreEqual(asm.GetName().Name, "mscorlib");
-            //Assert.AreEqual(t.Name, "Assembly");
-            //Assert.AreEqual(t.FullName, "System.Reflection.Assembly");
+            //Assert.AreEqual("mscorlib", ((Assembly)list[i]).GetName().Name);
+            //Assert.AreEqual("mscorlib", asm.GetName().Name);
+            //Assert.AreEqual("Assembly", t.Name);
+            //Assert.AreEqual("System.Reflection.Assembly", t.FullName);
             //Assert.IsInstanceOfType(t.BaseType, typeof(Object));
-            //Assert.AreEqual(t.GetInterfaces().Length, 0);
+            //Assert.AreEqual(0, t.GetInterfaces().Length);
             //Assert.IsNull(t.GetElementType());
+
+            OutputHelper.WriteLine("Testing Type members for a MethodInfo reflection type");
 
             mis = typeof(TestClass).GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
             t = mis.GetType();
-            Assert.AreEqual(t.Name, "RuntimeMethodInfo[]");
-            Assert.AreEqual(t.FullName, "System.Reflection.RuntimeMethodInfo[]");
+            Assert.AreEqual("RuntimeMethodInfo[]", t.Name);
+            Assert.AreEqual("System.Reflection.RuntimeMethodInfo[]", t.FullName);
             Assert.IsInstanceOfType(t.BaseType, typeof(Array));
             Assert.IsTrue(t.GetInterfaces().Length > 0);
-            Assert.AreEqual(t.GetElementType().Name, "RuntimeMethodInfo");
+            Assert.AreEqual("RuntimeMethodInfo", t.GetElementType().Name);
+
+            OutputHelper.WriteLine("Testing Type members for a delegate");
 
             // test Type members for a delegate
             Delegate del = new MyDelegate(MyDelegateImpl);
             t = del.GetType();
             Assert.IsNotNull(t.DeclaringType);
-            Assert.AreEqual(t.Name, "MyDelegate");
+            Assert.AreEqual("MyDelegate", t.Name);
             Assert.IsInstanceOfType(t.BaseType, typeof(MulticastDelegate));
+
+            OutputHelper.WriteLine("Testing Type members for an enum");
 
             // test Type members for an enum
             TestEnum en = TestEnum.Item1;
             t = en.GetType();
-            Assert.IsInstanceOfType(t.DeclaringType, typeof(UnitTestReflectionTypeTest));
+            Assert.IsInstanceOfType(typeof(UnitTestReflectionTypeTest), t.DeclaringType);
             Assert.IsTrue(t.IsEnum);
             Assert.IsFalse(t.IsAbstract);
             Assert.IsFalse(t.IsClass);
@@ -148,7 +166,7 @@ namespace NFUnitTestSystemLib
             Assert.IsFalse(typeof(Array).IsValueType);
             Assert.IsTrue(typeof(TestStruct).IsValueType);
             Assert.IsTrue(typeof(Type).IsSubclassOf(typeof(MemberInfo)));
-            Assert.AreEqual(typeof(Type).GetInterfaces()[0].Name, "IReflect");
+            Assert.AreEqual("IReflect", typeof(Type).GetInterfaces()[0].Name);
             Assert.IsTrue(typeof(MyDelegate).IsInstanceOfType(new MyDelegate(MyDelegateImpl)));
 
             // Get known type from assembly qualified type name Culture and PublicKeyToken are used by debugger to identify types
