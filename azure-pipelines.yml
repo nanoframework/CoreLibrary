@@ -20,10 +20,6 @@ trigger:
       - assets/*
       - nanoFramework.TestFramework/*
 
-  tags:
-    include:
-      - v*
-
 # PR always trigger build
 pr:
   autoCancel: true
@@ -80,6 +76,7 @@ jobs:
       runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
       skipNuGetCache: true
+      usePreviewBuild: true
 
   # rebuild CoreLibrary project to get the assembly checksum
   - task: MSBuild@1
@@ -122,17 +119,21 @@ jobs:
     parameters:
       nugetPackageName: 'nanoFramework.CoreLibrary.NoReflection'
       
-  - template: azure-pipelines-templates/class-lib-publish.yml@templates  
+  - template: azure-pipelines-templates/class-lib-publish.yml@templates
+    parameters:
+      baseBranchName: 'develop'
 
-  # create or update GitHub release ON tags from release
+  # create or update GitHub release ON tags
   - task: GithubRelease@1
     condition: >-
       and(
         succeeded(),
         eq(variables['System.PullRequest.PullRequestId'], ''),
-        startsWith(variables['Build.SourceBranch'], 'refs/heads/main'),
-        not(contains(variables['Build.SourceBranch'], 'preview')),
-        eq(variables['StartReleaseCandidate'], false)
+        eq(variables['StartReleaseCandidate'], false),
+        or(
+          eq(variables['Build.SourceBranchName'], 'main'),
+          eq(variables['Build.SourceBranchName'], 'develop')
+        )
       )
     displayName: Create/Update GitHub stable release
     inputs:
