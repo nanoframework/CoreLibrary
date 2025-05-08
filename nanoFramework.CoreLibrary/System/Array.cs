@@ -353,10 +353,6 @@ namespace System
         {
             return EmptyArray<T>.Value;
         }
-#endif
-
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern bool TrySzIndexOf(Array sourceArray, int sourceIndex, int count, Object value, out int retVal);
 
         private static class EmptyArray<T>
         {
@@ -364,6 +360,10 @@ namespace System
             internal static readonly T[] Value = new T[0];
 #pragma warning restore CA1825, IDE0300
         }
+#endif
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private static extern bool TrySzIndexOf(Array sourceArray, int sourceIndex, int count, Object value, out int retVal);
 
         // This is the underlying Enumerator for all of our array-based data structures (Array, ArrayList, Stack, and Queue)
         // It supports enumerating over an array, a part of an array, and also will wrap around when the endIndex
