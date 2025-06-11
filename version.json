@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/dotnet/Nerdbank.GitVersioning/master/src/NerdBank.GitVersioning/version.schema.json",
-  "version": "2.0",
+  "version": "2.0.0-preview.{height}",
   "assemblyVersion": {
     "precision": "build"
   },
@@ -11,6 +11,7 @@
   "publicReleaseRefSpec": [
     "^refs/heads/develop$",
     "^refs/heads/main$",
+    "^refs/heads/generics$",
     "^refs/heads/v\\d+(?:\\.\\d+)?$"
   ],
   "cloudBuild": {
