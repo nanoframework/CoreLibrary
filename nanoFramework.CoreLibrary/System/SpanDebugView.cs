@@ -2,9 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace System
 {
+    [ExcludeType]
     internal sealed class SpanDebugView<T>
     {
         private readonly T[] _array;
