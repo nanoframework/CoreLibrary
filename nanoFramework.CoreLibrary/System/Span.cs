@@ -213,9 +213,9 @@ namespace System
         public static bool operator ==(Span<T> left, Span<T> right) =>
            left._length == right._length && left._array == right._array && left._start == right._start;
 
-        ///// <summary>
-        ///// Defines an implicit conversion of a <see cref="Span{T}"/> to a <see cref="ReadOnlySpan{T}"/>
-        ///// </summary>
+        /// <summary>
+        /// Defines an implicit conversion of a <see cref="Span{T}"/> to a <see cref="ReadOnlySpan{T}"/>
+        /// </summary>
         public static implicit operator ReadOnlySpan<T>(Span<T> span) =>
              new ReadOnlySpan<T>(span._array, span._start, span._length);
 
