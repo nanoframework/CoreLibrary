@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
@@ -192,6 +193,18 @@ namespace System
                 _start,
                 _length);
         }
+
+        /// <summary>
+        /// Copies the contents of this span into destination span. If the source
+        /// and destinations overlap, this method behaves as if the original values in
+        /// a temporary location before the destination is overwritten.
+        /// </summary>
+        /// <param name="destination">The span to copy items into.</param>
+        /// <exception cref="ArgumentException">
+        /// Thrown when the destination Span is shorter than the source Span.
+        /// </exception>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern void CopyTo(Span<T> destination);
 
         /// <summary>
         /// Returns true if left and right point at the same memory and have the same length.  Note that
