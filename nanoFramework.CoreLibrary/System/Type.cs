@@ -389,7 +389,11 @@ namespace System
         /// <value>
         /// <see langword="true"/> if the current type is a generic type definition; otherwise, <see langword="false"/>.
         /// </value>
-        public virtual bool IsGenericTypeDefinition => false;
+        public extern bool IsGenericTypeDefinition
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
 
         /// <summary>
         /// When overridden in a derived class, returns the Type of the object encompassed or referred to by the current array, pointer or reference type.
