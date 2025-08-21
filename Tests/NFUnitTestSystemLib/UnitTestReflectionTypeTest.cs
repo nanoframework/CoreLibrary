@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Reflection;
 using nanoFramework.TestFramework;
+using static NFUnitTestSystemLib.UnitTestNullable;
 
 namespace NFUnitTestSystemLib
 {
@@ -163,6 +164,7 @@ namespace NFUnitTestSystemLib
 
             Assert.IsTrue(typeof(Array).IsInstanceOfType(blah));
             Assert.IsTrue(typeof(TestStruct[]).IsArray);
+            Assert.IsTrue(typeof(G<int>[]).IsArray);
             Assert.IsFalse(typeof(Array).IsValueType);
             Assert.IsTrue(typeof(TestStruct).IsValueType);
             Assert.IsTrue(typeof(Type).IsSubclassOf(typeof(MemberInfo)));
