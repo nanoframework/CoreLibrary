@@ -19,7 +19,6 @@ namespace System
     public readonly ref struct Span<T>
     {
         private readonly T[] _array;
-        private readonly int _start;
         private readonly int _length;
 
         /// <summary>
@@ -44,7 +43,6 @@ namespace System
             }
 
             _array = array ?? [];
-            _start = 0;
             _length = _array.Length;
         }
 
@@ -102,29 +100,7 @@ namespace System
                 throw new ArgumentOutOfRangeException();
             }
 
-            if (array == null)
-            {
-                if (start != 0 || length != 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-
-                _array = Array.Empty<T>();
-                _start = 0;
-                _length = 0;
-
-                return;
-            }
-
-            if ((uint)start > (uint)array.Length
-                || (uint)length > (uint)(array.Length - start))
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-
-            _array = array;
-            _start = start;
-            _length = length;
+            NativeSpanConstructor(array, start, length);
         }
 
         /// <summary>
@@ -144,7 +120,7 @@ namespace System
                     throw new ArgumentOutOfRangeException();
                 }
 
-                return ref _array[_start + index];
+                return ref _array[index];
             }
         }
 
@@ -228,10 +204,10 @@ namespace System
         /// </remarks>
         public void Clear()
         {
-            Array.Clear(
-                _array,
-                _start,
-                _length);
+            for (int i = 0; i < _length; i++)
+            {
+                _array[i] = default!;
+            }
         }
 
         /// <summary>
@@ -260,7 +236,7 @@ namespace System
         /// Note that the test for equality does *not* attempt to determine if the contents are equal.
         /// </remarks>
         public static bool operator ==(Span<T> left, Span<T> right) =>
-           left._length == right._length && left._array == right._array && left._start == right._start;
+           left._length == right._length && left._array == right._array;
 
         /// <summary>
         /// Defines an implicit conversion of a <see cref="Span{T}"/> to a <see cref="ReadOnlySpan{T}"/>
@@ -270,7 +246,7 @@ namespace System
         /// A read-only span that corresponds to the current instance.
         /// </returns>
         public static implicit operator ReadOnlySpan<T>(Span<T> span) =>
-             new ReadOnlySpan<T>(span._array, span._start, span._length);
+             new ReadOnlySpan<T>(span._array, 0, span._length);
 
         /// <summary>
         /// Forms a slice out of the current span that begins at a specified index.
@@ -287,7 +263,7 @@ namespace System
                 throw new ArgumentOutOfRangeException();
             }
 
-            return new Span<T>(_array, _start + start, _length - start);
+            return new Span<T>(_array, start, _length - start);
         }
 
         /// <summary>
@@ -307,7 +283,7 @@ namespace System
                 throw new ArgumentOutOfRangeException();
             }
 
-            return new Span<T>(_array, _start + start, length);
+            return new Span<T>(_array, start, length);
         }
 
         /// <summary>
@@ -322,9 +298,19 @@ namespace System
         public T[] ToArray()
         {
             T[] destination = new T[_length];
-            Array.Copy(_array, _start, destination, 0, _length);
+            Array.Copy(_array, 0, destination, 0, _length);
             return destination;
         }
+
+        #region native methods
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void NativeSpanConstructor(
+            T[] array,
+            int start,
+            int length);
+
+        #endregion
     }
 }
 
