@@ -100,7 +100,10 @@ namespace System
                 throw new ArgumentOutOfRangeException();
             }
 
-            NativeSpanConstructor(array, start, length);
+            NativeSpanConstructor(
+                array,
+                start,
+                length);
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace NFUnitTestTypes
             Assert.ThrowsException(typeof(IndexOutOfRangeException), () =>
             {
                 Span<byte> span = new Span<byte>(array);
-                var data = span[-1];
+                _ = span[-1];
             });
 
             // Copy to with too small destination
@@ -100,27 +100,32 @@ namespace NFUnitTestTypes
         {
             // Empty span
             Span<byte> span = new Span<byte>();
+
             Assert.AreEqual(span.Length, 0, "Empty SpanByte should have length of 0");
             Assert.IsTrue(span.IsEmpty, "Empty SpanByte should be IsEmpty");
 
             // Empty span
             span = new Span<byte>(null, 0, 0);
+
             Assert.AreEqual(span.Length, 0, "Empty SpanByte should have length of 0");
             Assert.IsTrue(span.IsEmpty, "Empty SpanByte should be IsEmpty");
 
             // Empty span
             span = Span<byte>.Empty;
+
             Assert.AreEqual(span.Length, 0, "Empty SpanByte should have length of 0");
             Assert.IsTrue(span.IsEmpty, "Empty SpanByte should be IsEmpty");
 
             // Span<byte>from normal array
             byte[] array = new byte[16] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F };
             span = new Span<byte>(array);
+
             Assert.AreEqual(span.Length, array.Length, $"SpanByte should have length of the array it takes: {array.Length}");
             Assert.IsFalse(span.IsEmpty, "SpanByte should NOT be IsEmpty");
 
             // Span<byte>from normal array with different start and length
             span = new Span<byte>(array, 2, 8);
+
             Assert.AreEqual(span.Length, 8, $"SpanByte should have length of 8");
             Assert.IsFalse(span.IsEmpty, "SpanByte should NOT be IsEmpty");
         }
@@ -131,14 +136,17 @@ namespace NFUnitTestTypes
             // Span<byte>from normal array
             byte[] array = new byte[16] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F };
             Span<byte> span = new Span<byte>(array);
+
             // Slice 2 elements and check
-            var sliced = span.Slice(0, 2);
+            Span<byte> sliced = span.Slice(0, 2);
+
             Assert.AreEqual(sliced.Length, 2, "Sliced span lenght must be 2");
             Assert.AreEqual(sliced[0], (byte)0x00, "Sliced first element must be value 0");
             Assert.AreEqual(sliced[1], (byte)0x01, "Sliced first element must be value 1");
 
             // Slide 4 elements starting at index 2 and check
             sliced = span.Slice(2, 4);
+
             Assert.AreEqual(sliced.Length, 4, "Sliced span lenght must be 4");
             Assert.AreEqual(sliced[0], (byte)0x02, "Sliced first element must be value 2");
             Assert.AreEqual(sliced[1], (byte)0x03, "Sliced first element must be value 3");
@@ -147,22 +155,27 @@ namespace NFUnitTestTypes
 
             // Slide starting 4 at element check
             sliced = span.Slice(4);
+
             Assert.AreEqual(sliced.Length, 12, "Sliced span lenght must be 12");
+
             for (int i = 0; i < sliced.Length; i++)
             {
                 Assert.AreEqual(sliced[i], span[i + 4], "SpanByte value should be the same as from the original span");
             }
 
             // Slice of slice
-            var secondSliced = sliced.Slice(2, 4);
+            Span<byte> secondSliced = sliced.Slice(2, 4);
+
             Assert.AreEqual(secondSliced.Length, 4, "Sliced span lenght must be 12");
+
             for (int i = 0; i < secondSliced.Length; i++)
             {
                 Assert.AreEqual(secondSliced[i], sliced[i + 2], "SpanByte value should be the same as from the original span");
             }
 
             // Should be an empty one
-            var empty = span.Slice(span.Length);
+            Span<byte> empty = span.Slice(span.Length);
+
             Assert.AreEqual(empty.Length, 0, "slicing all the span should result in an empty span");
             Assert.IsTrue(empty.IsEmpty, "Empty span should be empty");
         }
@@ -213,10 +226,12 @@ namespace NFUnitTestTypes
         {
             // Create a span, and set the data
             Span<byte> span = new Span<byte>(new byte[12]);
+
             // All should be 0
             for (int i = 0; i < span.Length; i++)
             {
                 Assert.AreEqual(span[i], (byte)0, "SpanByte value should be 0");
+
                 // Set a value
                 span[i] = (byte)i;
             }

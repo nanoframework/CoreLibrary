@@ -77,7 +77,10 @@ namespace System
                 throw new ArgumentOutOfRangeException();
             }
 
-            NativeReadOnlySpanConstructor(array, start, length);
+            NativeReadOnlySpanConstructor(
+                array,
+                start,
+                length);
         }
 
         /// <summary>
