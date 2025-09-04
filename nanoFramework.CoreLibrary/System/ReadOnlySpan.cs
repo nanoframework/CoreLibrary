@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 #nullable enable
@@ -17,7 +18,6 @@ namespace System
     public readonly ref struct ReadOnlySpan<T>
     {
         private readonly T[] _array;
-        private readonly int _start;
         private readonly int _length;
 
         /// <summary>
@@ -28,7 +28,6 @@ namespace System
         public ReadOnlySpan(T[]? array)
         {
             _array = array ?? Array.Empty<T>();
-            _start = 0;
             _length = _array.Length;
         }
 
@@ -67,7 +66,6 @@ namespace System
                 }
 
                 _array = Array.Empty<T>();
-                _start = 0;
                 _length = 0;
 
                 return;
@@ -79,9 +77,7 @@ namespace System
                 throw new ArgumentOutOfRangeException();
             }
 
-            _array = array;
-            _start = start;
-            _length = length;
+            NativeReadOnlySpanConstructor(array, start, length);
         }
 
         /// <summary>
@@ -101,7 +97,7 @@ namespace System
                     throw new ArgumentOutOfRangeException();
                 }
 
-                return ref _array[_start + index];
+                return ref _array[index];
             }
         }
 
@@ -175,9 +171,19 @@ namespace System
         public T[] ToArray()
         {
             T[] destination = new T[_length];
-            Array.Copy(_array, _start, destination, 0, _length);
+            Array.Copy(_array, 0, destination, 0, _length);
             return destination;
         }
+
+        #region native methods
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void NativeReadOnlySpanConstructor(
+            T[] array,
+            int start,
+            int length);
+
+        #endregion
     }
 }
 
