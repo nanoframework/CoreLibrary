@@ -42,7 +42,7 @@ namespace NFUnitTestTypes
                 _ = span[span.Length];
             });
 
-            Assert.ThrowsException(typeof(IndexOutOfRangeException), () =>
+            Assert.ThrowsException(typeof(ArgumentOutOfRangeException), () =>
             {
                 Span<byte> span = new Span<byte>(array);
                 _ = span[-1];
@@ -197,9 +197,14 @@ namespace NFUnitTestTypes
             toCopy = new Span<byte>(new byte[span.Length + 1]);
             span.CopyTo(toCopy);
 
-            CollectionAssert.AreEqual(array, toCopy.ToArray(), "Original array and SpanByte.CopyTo should be the same with larger destination");
+            Assert.AreEqual(toCopy.Length, span.Length + 1);
 
-            Assert.AreEqual(toCopy[span.Length], (byte)0, "Copied span and original array have different lenghts.");
+            byte[] tempArray = new byte[span.Length + 1];
+            Array.Copy(array, tempArray, array.Length);
+
+            CollectionAssert.AreEqual(tempArray, toCopy.ToArray(), "Original array and SpanByte.CopyTo should be the same with larger destination");
+
+            Assert.AreEqual(toCopy[toCopy.Length - 1], (byte)0, "Last byte should be 0 (byte default)");
         }
 
         [TestMethod]
