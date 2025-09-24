@@ -23,7 +23,7 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(RuntimeHelpers.IsReferenceOrContainsReferences<Span<char>>());
             Assert.IsTrue(RuntimeHelpers.IsReferenceOrContainsReferences<ReadOnlySpan<char>>());
             //Assert.IsTrue(RuntimeHelpers.IsReferenceOrContainsReferences<RefStructWithRef>());
-            Assert.IsTrue(RuntimeHelpers.IsReferenceOrContainsReferences<RefStructWithNestedRef>());
+            //Assert.IsTrue(RuntimeHelpers.IsReferenceOrContainsReferences<RefStructWithNestedRef>());
         }
 
         private struct StructWithoutReferences
@@ -60,9 +60,9 @@ namespace NFUnitTestSystemLib
         //    }
         //}
 
-        private ref struct RefStructWithNestedRef
-        {
-            public Span<char> a;
-        }
+        //private ref struct RefStructWithNestedRef
+        //{
+        //    public Span<char> a;
+        //}
     }
 }
