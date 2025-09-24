@@ -69,6 +69,8 @@ jobs:
 
   - template: azure-pipelines-templates/process-pr-labels.yml@templates
 
+  - template: azure-pipelines-templates/check-nf-interpreter-to-test.yml
+
   # build steps only
   - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
     parameters:
