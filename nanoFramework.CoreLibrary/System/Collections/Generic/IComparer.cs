@@ -1,22 +1,22 @@
-﻿//// Licensed to the .NET Foundation under one or more agreements.
-//// The .NET Foundation licenses this file to you under the MIT license.
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-//using System.Runtime.CompilerServices;
+#nullable enable
 
-//namespace System.Collections.Generic
-//{
-//    public abstract partial class Comparer<T> : IComparer, IComparer<T>
-//    {
-//        // To minimize generic instantiation overhead of creating the comparer per type, we keep the generic portion of the code as small
-//        // as possible and define most of the creation logic in a non-generic class.
-//        public static Comparer<T> Default { get; } = (Comparer<T>)ComparerHelpers.CreateDefaultComparer(typeof(T));
-//    }
-
-//    internal sealed partial class EnumComparer<T> : Comparer<T> where T : struct, Enum
-//    {
-//        public override int Compare(T x, T y)
-//        {
-//            return RuntimeHelpers.EnumCompareTo(x, y);
-//        }
-//    }
-//}
+namespace System.Collections.Generic
+{
+    /// <summary>
+    /// Defines a method that a type implements to compare two objects.
+    /// </summary>
+    /// <typeparam name="T">The type of objects to compare. This type parameter is contravariant. That is, you can use either the type you specified or any type that is less derived.</typeparam>
+    public interface IComparer<in T> where T : allows ref struct
+    {
+        /// <summary>
+        /// Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+        /// </summary>
+        /// <param name="x">The first object to compare.</param>
+        /// <param name="y">The second object to compare.</param>
+        /// <returns></returns>
+        int Compare(T? x, T? y);
+    }
+}
