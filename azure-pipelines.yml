@@ -148,7 +148,7 @@ jobs:
       releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
       assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
       assetUploadMode: replace
-      isPreRelease: false
+      isPreRelease: $[eq(variables['Build.SourceBranchName'], 'develop')]
       addChangeLog: false
 
 ##############################

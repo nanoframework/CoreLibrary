@@ -10,13 +10,19 @@ steps:
       targetType: "inline"
       script: |
 
-        # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
-        # 'encoded token' is the Base64 of the string "nfbot:personal-token"
-        $auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:$(GitHubToken)")))"
+        # prepare GitHub API headers using token auth
+        $headers = @{
+          Authorization = "token $env:GITHUB_TOKEN"
+          'User-Agent'  = 'azure-pipelines'
+          Accept        = 'application/vnd.github+json'
+        }
 
         # find PR
         "Getting PR #$env:System_PullRequest_PullRequestNumber details..." | Write-Host -ForegroundColor White -NoNewline
-        $pr = Invoke-RestMethod -Uri "https://api.github.com/repos/$env:Build_Repository_Name/pulls/$env:System_PullRequest_PullRequestNumber" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+        $pr = Invoke-RestMethod `
+          -Uri "https://api.github.com/repos/$env:Build_Repository_Name/pulls/$env:System_PullRequest_PullRequestNumber" `
+          -Headers $headers `
+          -Method GET
 
         if($($pr.number) -eq "$env:System_PullRequest_PullRequestNumber")
         {
@@ -56,7 +62,7 @@ steps:
       definition: '34'
       buildVersionToDownload: specific
       allowFailedBuilds: true
-      pipelineId: $(NFINTERPRETER_BUILDID)
+      buildId: $(NFINTERPRETER_BUILDID)
       artifactName: 'nanoclr_cli'
       targetPath: '$(Pipeline.Workspace)/nanoclr'
 
