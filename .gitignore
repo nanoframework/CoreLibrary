@@ -259,6 +259,3 @@ paket-files/
 # VS Code
 .vscode/settings.json
 
-
-# Exclude downloaded nuget.exe
-.nuget/nuget.exe

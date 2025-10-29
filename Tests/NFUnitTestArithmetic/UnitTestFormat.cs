@@ -103,20 +103,30 @@ namespace NFUnitTestArithmetic
 
             TestFormat("0", "F", "0.00");
             TestFormat("0", "F4", "0.0000");
+            TestFormat("0", "F0", "0");
             TestFormat("123", "F", "123.00");
+            TestFormat("123", "F0", "123");
             TestFormat("129", "F", "129.00");
             TestFormat("-129", "F", "-129.00");
+            TestFormat("-129", "F0", "-129");
             TestFormat("128", "F", "128.00");
             TestFormat("128", "F4", "128.0000");
+            TestFormat("128", "F0", "128");
             TestFormat("-128", "F", "-128.00");
             TestFormat("-128", "F2", "-128.00");
+            TestFormat("-128", "F0", "-128");
             TestFormat("1234", "F2", "1234.00");
+            TestFormat("1234", "F0", "1234");
             TestFormat("-1234", "F", "-1234.00");
+            TestFormat("-1234", "F0", "-1234");
             TestFormat("1234", "F6", "1234.000000");
             TestFormat("-1234", "F6", "-1234.000000");
             TestFormat("123.78", "F3", "123.780");
             TestFormat("123.78", "F1", "123.8");
+            TestFormat("123.78", "F0", "124");
             TestFormat("1234.8999", "F3", "1234.900");
+            TestFormat("1234.8999", "F0", "1235");
+            TestFormat("-1234.8999", "F0", "-1235");
 
             sampleDisplay.WriteOutput();
 
@@ -240,21 +250,33 @@ namespace NFUnitTestArithmetic
             sampleDisplay = new SampleDisplay();
 
             TestFormat("123", "N", "123.00");     // default for CultureInvariant is 2 decimal places  
+            TestFormat("123", "N0", "123");
             TestFormat("129", "N", "129.00");
+            TestFormat("129", "N0", "129");
             TestFormat("-129", "N", "-129.00");
+            TestFormat("-129", "N0", "-129");
             TestFormat("128", "N", "128.00");
             TestFormat("128", "N4", "128.0000");
+            TestFormat("128", "N0", "128");
             TestFormat("-128", "N", "-128.00");
             TestFormat("-128", "N2", "-128.00");
+            TestFormat("-128", "N0", "-128");
             TestFormat("1234", "N2", "1,234.00");
+            TestFormat("1234", "N0", "1,234");
             TestFormat("-1234", "N", "-1,234.00");
+            TestFormat("-1234", "N0", "-1,234");
             TestFormat("1234", "N6", "1,234.000000");
             TestFormat("-1234", "N6", "-1,234.000000");
             TestFormat("1234.567", "N2", "1,234.57");
+            TestFormat("1234.567", "N0", "1,235");
             TestFormat("-1234.567", "N2", "-1,234.57");
+            TestFormat("-1234.567", "N0", "-1,235");
             TestFormat("123456.78", "N2", "123,456.78");
+            TestFormat("123456.78", "N0", "123,457");
             TestFormat("1234567.1210", "N2", "1,234,567.12");
+            TestFormat("1234567.1210", "N0", "1,234,567");
             TestFormat("-0.099999999999999978", "N2", "-0.10");
+            TestFormat("-0.099999999999999978", "N0", "0");
             sampleDisplay.WriteOutput();
         }
 
