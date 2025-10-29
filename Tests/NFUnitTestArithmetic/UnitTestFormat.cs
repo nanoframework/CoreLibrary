@@ -127,6 +127,13 @@ namespace NFUnitTestArithmetic
             TestFormat("1234.8999", "F3", "1234.900");
             TestFormat("1234.8999", "F0", "1235");
             TestFormat("-1234.8999", "F0", "-1235");
+            // Test cases from issue #1650
+            TestFormat("9.8999", "F", "9.90");
+            TestFormat("9.8999", "F0", "10");
+            TestFormat("9.8999", "F1", "9.9");
+            TestFormat("99.8999", "F", "99.90");
+            TestFormat("99.8999", "F0", "100");
+            TestFormat("99.8999", "F1", "99.9");
 
             sampleDisplay.WriteOutput();
 
@@ -277,6 +284,13 @@ namespace NFUnitTestArithmetic
             TestFormat("1234567.1210", "N0", "1,234,567");
             TestFormat("-0.099999999999999978", "N2", "-0.10");
             TestFormat("-0.099999999999999978", "N0", "0");
+            // Test cases from issue #1650
+            TestFormat("9.8999", "N", "9.90");
+            TestFormat("9.8999", "N0", "10");
+            TestFormat("9.8999", "N1", "9.9");
+            TestFormat("99.8999", "N", "99.90");
+            TestFormat("99.8999", "N0", "100");
+            TestFormat("99.8999", "N1", "99.9");
             sampleDisplay.WriteOutput();
         }
 
