@@ -167,6 +167,134 @@ namespace NFUnitTestSystemLib
 
         }
 
+        [TestMethod]
+        public void ToString_NoFormatString()
+        {
+            // Test basic ToString() without format string (uses "G" format by default)
+            double value = 0;
+            Assert.AreEqual("0", value.ToString(), "0.ToString() failed");
+
+            value = 123;
+            Assert.AreEqual("123", value.ToString(), "123.ToString() failed");
+
+            value = -123;
+            Assert.AreEqual("-123", value.ToString(), "-123.ToString() failed");
+
+            value = 123.456;
+            Assert.AreEqual("123.456", value.ToString(), "123.456.ToString() failed");
+
+            value = -123.456;
+            Assert.AreEqual("-123.456", value.ToString(), "-123.456.ToString() failed");
+
+            value = 0.1;
+            Assert.AreEqual("0.1", value.ToString(), "0.1.ToString() failed");
+
+            value = -0.1;
+            Assert.AreEqual("-0.1", value.ToString(), "-0.1.ToString() failed");
+
+            value = 1234567.89;
+            Assert.AreEqual("1234567.89", value.ToString(), "1234567.89.ToString() failed");
+
+            value = -1234567.89;
+            Assert.AreEqual("-1234567.89", value.ToString(), "-1234567.89.ToString() failed");
+        }
+
+        [TestMethod]
+        public void ToString_SpecialValues()
+        {
+            // Test special values
+            Assert.AreEqual("NaN", double.NaN.ToString(), "NaN.ToString() failed");
+            Assert.AreEqual("Infinity", double.PositiveInfinity.ToString(), "PositiveInfinity.ToString() failed");
+            Assert.AreEqual("-Infinity", double.NegativeInfinity.ToString(), "NegativeInfinity.ToString() failed");
+        }
+
+        [TestMethod]
+        public void ToString_ZeroValues()
+        {
+            // Test zero and negative zero
+            double zero = 0.0;
+            Assert.AreEqual("0", zero.ToString(), "0.0.ToString() failed");
+
+            double negativeZero = -0.0;
+            Assert.AreEqual("0", negativeZero.ToString(), "-0.0.ToString() failed");
+        }
+
+        [TestMethod]
+        public void ToString_SmallValues()
+        {
+            // Test very small values
+            double value = 0.0001;
+            Assert.AreEqual("0.0001", value.ToString(), "0.0001.ToString() failed");
+
+            value = -0.0001;
+            Assert.AreEqual("-0.0001", value.ToString(), "-0.0001.ToString() failed");
+
+            value = 1e-10;
+            Assert.AreEqual("1E-10", value.ToString(), "1e-10.ToString() failed");
+
+            value = -1e-10;
+            Assert.AreEqual("-1E-10", value.ToString(), "-1e-10.ToString() failed");
+        }
+
+        [TestMethod]
+        public void ToString_LargeValues()
+        {
+            // Test large values
+            double value = 1e10;
+            Assert.AreEqual("10000000000", value.ToString(), "1e10.ToString() failed");
+
+            value = -1e10;
+            Assert.AreEqual("-10000000000", value.ToString(), "-1e10.ToString() failed");
+
+            value = 1.23456789e15;
+            Assert.AreEqual("1234567890000000", value.ToString(), "1.23456789e15.ToString() failed");
+        }
+
+        [TestMethod]
+        public void ToString_ScientificNotation()
+        {
+            // Test values that should use scientific notation in default format
+            double value = 1.23e20;
+            string result = value.ToString();
+            Assert.IsTrue(result.Contains("E") || result.Contains("e"), "1.23e20.ToString() should use scientific notation");
+
+            value = -1.23e20;
+            result = value.ToString();
+            Assert.IsTrue(result.Contains("E") || result.Contains("e"), "-1.23e20.ToString() should use scientific notation");
+
+            value = 1.23e-20;
+            result = value.ToString();
+            Assert.IsTrue(result.Contains("E") || result.Contains("e"), "1.23e-20.ToString() should use scientific notation");
+        }
+
+        [TestMethod]
+        public void ToString_RoundingBehavior()
+        {
+            // Test rounding behavior
+            double value = 1.234567890123456;
+            string result = value.ToString();
+            Assert.IsTrue(result.Length > 0, "ToString() should return a non-empty string");
+            Assert.IsTrue(result.Contains("."), "Decimal value ToString() should contain a decimal point");
+
+            value = 0.123456789012345678;
+            result = value.ToString();
+            Assert.IsTrue(result.StartsWith("0."), "Fractional value should start with '0.'");
+        }
+
+        [TestMethod]
+        public void ToString_WithFormatString()
+        {
+            // Test ToString() with format string
+            double value = 123.456;
+            Assert.AreEqual("123.46", value.ToString("F2"), "ToString('F2') failed");
+
+            value = 1234.5;
+            Assert.AreEqual("1,234.50", value.ToString("N2"), "ToString('N2') failed");
+
+            value = 1.23456e10;
+            Assert.AreEqual("1.234560E+010", value.ToString("E6"), "ToString('E6') failed");
+        }
+
         private sealed class DoubleTestData
         {
             public object D1 { get; }
