@@ -35,46 +35,40 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Equals()
+        [DataRow((short)789, (short)789, true)]
+        [DataRow((short)789, (short)-789, false)]
+        [DataRow((short)789, (short)0, false)]
+        [DataRow((short)0, (short)0, true)]
+        [DataRow((short)-789, (short)-789, true)]
+        [DataRow((short)-789, (short)789, false)]
+        public void Equals_Int16ToInt16(short i1, short obj, bool expected)
         {
-            Int16TestData[] testData = new Int16TestData[]
-            {
-                new Int16TestData((short)789, (short)789, true),
-                new Int16TestData((short)789, (short)-789, false),
-                new Int16TestData((short)789, (short)0, false),
-                new Int16TestData((short)0, (short)0, true),
-                new Int16TestData((short)-789, (short)-789, true),
-                new Int16TestData((short)-789, (short)789, false),
-                new Int16TestData((short)789, null, false),
-                new Int16TestData((short)789, "789", false),
-                new Int16TestData((short)789, 789, false)
-            };
-
-            foreach (var test in testData)
-            {
-                if (test.Obj is short)
-                {
-                    short i2 = (short)test.Obj;
-                    Assert.AreEqual(test.Expected, test.I1.Equals(i2));
-                    Assert.AreEqual(test.Expected, test.I1.GetHashCode().Equals(i2.GetHashCode()));
-                }
-
-                Assert.AreEqual(test.Expected, test.I1.Equals(test.Obj));
-            }
+            Assert.AreEqual(expected, i1.Equals(obj));
+            Assert.AreEqual(expected, i1.GetHashCode().Equals(obj.GetHashCode()));
         }
 
-        private sealed class Int16TestData
+        [TestMethod]
+        public void Equals_Int16ToNull()
         {
-            public object I1 { get; }
-            public object Obj { get; }
-            public bool Expected { get; }
+            short i1 = 789;
+            object obj = null;
+            Assert.AreEqual(false, i1.Equals(obj));
+        }
 
-            public Int16TestData(object i1, object obj, bool expected)
-            {
-                I1 = i1;
-                Obj = obj;
-                Expected = expected;
-            }
+        [TestMethod]
+        public void Equals_Int16ToString()
+        {
+            short i1 = 789;
+            object obj = "789";
+            Assert.AreEqual(false, i1.Equals(obj));
+        }
+
+        [TestMethod]
+        public void Equals_Int16ToInt()
+        {
+            short i1 = 789;
+            object obj = 789;
+            Assert.AreEqual(false, i1.Equals(obj));
         }
     }
 }
