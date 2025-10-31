@@ -110,15 +110,21 @@ namespace NFUnitTestBitConverter
         }
 
         [TestMethod]
-        public void BitConverterTest_GetBytesInt32()
+        [DataRow(0, new byte[] { 0x00, 0x00, 0x00, 0x00 })]
+        [DataRow(15, new byte[] { 0x0F, 0x00, 0x00, 0x00 })]
+        [DataRow(-15, new byte[] { 0xF1, 0xFF, 0xFF, 0xFF })]
+        [DataRow(1048576, new byte[] { 0x00, 0x00, 0x10, 0x00 })]
+        [DataRow(-1048576, new byte[] { 0x00, 0x00, 0xF0, 0xFF })]
+        [DataRow(1000000000, new byte[] { 0x00, 0xCA, 0x9A, 0x3B })]
+        [DataRow(-1000000000, new byte[] { 0x00, 0x36, 0x65, 0xC4 })]
+        public void BitConverterTest_GetBytesInt32(int value, byte[] expected)
         {
-            Helper.GetBytesInt32(0, new byte[] { 0x00, 0x00, 0x00, 0x00 });
-            Helper.GetBytesInt32(15, new byte[] { 0x0F, 0x00, 0x00, 0x00 });
-            Helper.GetBytesInt32(-15, new byte[] { 0xF1, 0xFF, 0xFF, 0xFF });
-            Helper.GetBytesInt32(1048576, new byte[] { 0x00, 0x00, 0x10, 0x00 });
-            Helper.GetBytesInt32(-1048576, new byte[] { 0x00, 0x00, 0xF0, 0xFF });
-            Helper.GetBytesInt32(1000000000, new byte[] { 0x00, 0xCA, 0x9A, 0x3B });
-            Helper.GetBytesInt32(-1000000000, new byte[] { 0x00, 0x36, 0x65, 0xC4 });
+            Helper.GetBytesInt32(value, expected);
+        }
+
+        [TestMethod]
+        public void BitConverterTest_GetBytesInt32_MinMax()
+        {
             Helper.GetBytesInt32(int.MinValue, new byte[] { 0x00, 0x00, 0x00, 0x80 });
             Helper.GetBytesInt32(int.MaxValue, new byte[] { 0xFF, 0xFF, 0xFF, 0x7F });
         }
