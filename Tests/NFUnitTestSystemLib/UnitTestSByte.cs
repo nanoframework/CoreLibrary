@@ -43,8 +43,17 @@ namespace NFUnitTestSystemLib
         [DataRow((sbyte)-78, (sbyte)78, false)]
         public void Equals_SByteToSByte(sbyte b, sbyte obj, bool expected)
         {
-            Assert.AreEqual(expected, b.Equals(obj));
-            Assert.AreEqual(expected, b.GetHashCode().Equals(obj.GetHashCode()));
+            if (expected)
+            {
+                Assert.AreEqual(b, obj);
+                Assert.IsTrue(b.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            else
+            {
+                Assert.AreNotEqual(b, obj);
+                Assert.IsFalse(b.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            Assert.AreEqual(b, b.GetHashCode());
         }
 
         [TestMethod]
@@ -52,7 +61,8 @@ namespace NFUnitTestSystemLib
         {
             sbyte b = 78;
             object obj = null;
-            Assert.AreEqual(false, b.Equals(obj));
+
+            Assert.AreNotEqual(b, obj);
         }
 
         [TestMethod]
@@ -60,7 +70,8 @@ namespace NFUnitTestSystemLib
         {
             sbyte b = 78;
             object obj = "78";
-            Assert.AreEqual(false, b.Equals(obj));
+
+            Assert.AreNotEqual(b, obj);
         }
 
         [TestMethod]
@@ -68,7 +79,8 @@ namespace NFUnitTestSystemLib
         {
             sbyte b = 78;
             object obj = 78;
-            Assert.AreEqual(false, b.Equals(obj));
+
+            Assert.AreNotEqual(b, obj);
         }
     }
 }

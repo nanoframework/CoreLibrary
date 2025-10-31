@@ -43,8 +43,17 @@ namespace NFUnitTestSystemLib
         [DataRow(-789, 789, false)]
         public void Equals_Int32ToInt32(int i1, int obj, bool expected)
         {
-            Assert.AreEqual(expected, i1.Equals(obj));
-            Assert.AreEqual(expected, i1.GetHashCode().Equals(obj.GetHashCode()));
+            if (expected)
+            {
+                Assert.AreEqual(i1, obj);
+                Assert.IsTrue(i1.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            else
+            {
+                Assert.AreNotEqual(i1, obj);
+                Assert.IsFalse(i1.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            Assert.AreEqual(i1, i1.GetHashCode());
         }
 
         [TestMethod]
@@ -52,7 +61,8 @@ namespace NFUnitTestSystemLib
         {
             int i1 = 789;
             object obj = null;
-            Assert.AreEqual(false, i1.Equals(obj));
+
+            Assert.AreNotEqual(i1, obj);
         }
 
         [TestMethod]
@@ -60,7 +70,8 @@ namespace NFUnitTestSystemLib
         {
             int i1 = 89;
             object obj = "789";
-            Assert.AreEqual(false, i1.Equals(obj));
+
+            Assert.AreNotEqual(i1, obj);
         }
     }
 }
