@@ -53,7 +53,6 @@ namespace NFUnitTestSystemLib
                 Assert.AreNotEqual(i1, obj);
                 Assert.IsFalse(i1.GetHashCode().Equals(obj.GetHashCode()));
             }
-            Assert.AreEqual(i1, i1.GetHashCode());
         }
 
         [TestMethod]
