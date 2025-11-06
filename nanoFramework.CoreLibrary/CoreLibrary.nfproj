@@ -74,6 +74,7 @@
     <Compile Include="System\Collections\Generic\IEnumerator.cs" />
     <Compile Include="System\Diagnostics\StackTraceHiddenAttribute.cs" />
     <Compile Include="System\Nullable.cs" />
+    <Compile Include="System\Runtime\CompilerServices\Unsafe.cs" />
     <Compile Include="System\Runtime\InteropServices\InAttribute .cs" />
     <Compile Include="System\Diagnostics\NativeProfiledAttribute.cs" />
     <Compile Include="System\PlatformNotSupportedException.cs" />
