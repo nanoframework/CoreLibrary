@@ -35,46 +35,52 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Equals()
+        [DataRow((sbyte)78, (sbyte)78, true)]
+        [DataRow((sbyte)78, (sbyte)-78, false)]
+        [DataRow((sbyte)78, (sbyte)0, false)]
+        [DataRow((sbyte)0, (sbyte)0, true)]
+        [DataRow((sbyte)-78, (sbyte)-78, true)]
+        [DataRow((sbyte)-78, (sbyte)78, false)]
+        public void Equals_SByteToSByte(sbyte b, sbyte obj, bool expected)
         {
-            SByteTestData[] testData = new SByteTestData[]
+            if (expected)
             {
-                new SByteTestData((sbyte)78, (sbyte)78, true),
-                new SByteTestData((sbyte)78, (sbyte)-78, false),
-                new SByteTestData((sbyte)78, (sbyte)0, false),
-                new SByteTestData((sbyte)0, (sbyte)0, true),
-                new SByteTestData((sbyte)-78, (sbyte)-78, true),
-                new SByteTestData((sbyte)-78, (sbyte)78, false),
-                new SByteTestData((sbyte)78, null, false),
-                new SByteTestData((sbyte)78, "78", false),
-                new SByteTestData((sbyte)78, 78, false)
-            };
-
-            foreach (var test in testData)
-            {
-                if (test.Obj is sbyte)
-                {
-                    sbyte i2 = (sbyte)test.Obj;
-                    Assert.AreEqual(test.Expected, test.B.Equals(i2));
-                    Assert.AreEqual(test.Expected, test.B.GetHashCode().Equals(i2.GetHashCode()));
-                }
-
-                Assert.AreEqual(test.Expected, test.B.Equals(test.Obj));
+                Assert.AreEqual(b, obj);
+                Assert.IsTrue(b.GetHashCode().Equals(obj.GetHashCode()));
             }
+            else
+            {
+                Assert.AreNotEqual(b, obj);
+                Assert.IsFalse(b.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            Assert.AreEqual(b, b.GetHashCode());
         }
 
-        private sealed class SByteTestData
+        [TestMethod]
+        public void Equals_SByteToNull()
         {
-            public object B { get; }
-            public object Obj { get; }
-            public bool Expected { get; }
+            sbyte b = 78;
+            object obj = null;
 
-            public SByteTestData(object b, object obj, bool expected)
-            {
-                B = b;
-                Obj = obj;
-                Expected = expected;
-            }
+            Assert.AreNotEqual(b, obj);
+        }
+
+        [TestMethod]
+        public void Equals_SByteToString()
+        {
+            sbyte b = 78;
+            object obj = "78";
+
+            Assert.AreNotEqual(b, obj);
+        }
+
+        [TestMethod]
+        public void Equals_SByteToInt()
+        {
+            sbyte b = 78;
+            object obj = 78;
+
+            Assert.AreNotEqual(b, obj);
         }
     }
 }

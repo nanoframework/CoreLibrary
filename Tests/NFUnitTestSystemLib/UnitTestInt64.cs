@@ -35,45 +35,42 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Equals()
+        [DataRow((long)789, (long)789, true)]
+        [DataRow((long)789, (long)-789, false)]
+        [DataRow((long)789, (long)0, false)]
+        [DataRow((long)0, (long)0, true)]
+        [DataRow((long)-789, (long)-789, true)]
+        [DataRow((long)-789, (long)789, false)]
+        public void Equals_LongToLong(long i1, long obj, bool expected)
         {
-            Int64TestData[] testData = new Int64TestData[]
+            if (expected)
             {
-                new Int64TestData((long)789, (long)789, true),
-                new Int64TestData((long)789, (long)-789, false),
-                new Int64TestData((long)789, (long)0, false),
-                new Int64TestData((long)0, (long)0, true),
-                new Int64TestData((long)-789, (long)-789, true),
-                new Int64TestData((long)-789, (long)789, false),
-                new Int64TestData((long)789, null, false),
-                new Int64TestData((long)789, "789", false),
-            };
-
-            foreach (var test in testData)
+                Assert.AreEqual(i1, obj);
+                Assert.IsTrue(i1.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            else
             {
-                if (test.Obj is long)
-                {
-                    long i2 = (long)test.Obj;
-                    Assert.AreEqual(test.Expected, test.I1.Equals(i2));
-                    Assert.AreEqual(test.Expected, test.I1.GetHashCode().Equals(i2.GetHashCode()));
-                }
-
-                Assert.AreEqual(test.Expected, test.I1.Equals(test.Obj));
+                Assert.AreNotEqual(i1, obj);
+                Assert.IsFalse(i1.GetHashCode().Equals(obj.GetHashCode()));
             }
         }
 
-        private sealed class Int64TestData
+        [TestMethod]
+        public void Equals_LongToNull()
         {
-            public object I1 { get; }
-            public object Obj { get; }
-            public bool Expected { get; }
+            long i1 = 789;
+            object obj = null;
 
-            public Int64TestData(object i1, object obj, bool expected)
-            {
-                I1 = i1;
-                Obj = obj;
-                Expected = expected;
-            }
+            Assert.AreNotEqual(i1, obj);
+        }
+
+        [TestMethod]
+        public void Equals_LongToString()
+        {
+            long i1 = 789;
+            object obj = "789";
+
+            Assert.AreNotEqual(i1, obj);
         }
     }
 }

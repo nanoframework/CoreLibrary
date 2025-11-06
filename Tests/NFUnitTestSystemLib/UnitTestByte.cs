@@ -35,45 +35,57 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Equals()
+        [DataRow((byte)78, (byte)78, true)]
+        [DataRow((byte)78, (byte)0, false)]
+        [DataRow((byte)0, (byte)0, true)]
+        public void Equals_ByteToByte(byte b, byte obj, bool expected)
         {
-            ByteTestData[] testData = new ByteTestData[]
+            OutputHelper.WriteLine($"Testing combination {b} and {obj}");
+
+            if (expected)
             {
-                new ByteTestData((byte)78, (byte)78, true),
-                new ByteTestData((byte)78, (byte)0, false),
-                new ByteTestData((byte)0, (byte)0, true),
-                new ByteTestData((byte)78, null, false),
-                new ByteTestData((byte)78, "78", false),
-                new ByteTestData((byte)78, 78, false)
-            };
-
-            foreach (var test in testData)
-            {
-                OutputHelper.WriteLine($"Testing combination {test.B} and {test.Obj}");
-
-                if (test.Obj is byte b2)
-                {
-                    Assert.AreEqual(test.Expected, test.B.Equals(b2), $"Casting Obj wasn't successful for {test.Obj}");
-                    Assert.AreEqual(test.Expected, test.B.GetHashCode().Equals(b2.GetHashCode()), $"HashCode of {test.B}({test.B.GetHashCode()}) differs from the one of {b2}(b2.GetHashCode())");
-                    Assert.AreEqual((byte)test.B, test.B.GetHashCode(), $"HashCode of {(byte)test.B} different from expected, is {test.B.GetHashCode()}");
-                }
-
-                Assert.AreEqual(test.Expected, test.B.Equals(test.Obj), $"Equality test between {test.B} and {test.Obj} failed");
+                Assert.AreEqual(b, obj);
+                Assert.IsTrue(b.GetHashCode().Equals(obj.GetHashCode()));
             }
+            else
+            {
+                Assert.AreNotEqual(b, obj);
+                Assert.IsFalse(b.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            Assert.AreEqual(b, b.GetHashCode());
         }
 
-        private sealed class ByteTestData
+        [TestMethod]
+        public void Equals_ByteToNull()
         {
-            public object B { get; }
-            public object Obj { get; }
-            public bool Expected { get; }
+            byte b = 78;
+            object obj = null;
 
-            public ByteTestData(object b, object obj, bool expected)
-            {
-                B = b;
-                Obj = obj;
-                Expected = expected;
-            }
+            OutputHelper.WriteLine($"Testing combination {b} and {obj}");
+
+            Assert.AreNotEqual(b, obj);
+        }
+
+        [TestMethod]
+        public void Equals_ByteToString()
+        {
+            byte b = 78;
+            object obj = "78";
+
+            OutputHelper.WriteLine($"Testing combination {b} and {obj}");
+
+            Assert.AreNotEqual(b, obj);
+        }
+
+        [TestMethod]
+        public void Equals_ByteToInt()
+        {
+            byte b = 78;
+            object obj = 78;
+
+            OutputHelper.WriteLine($"Testing combination {b} and {obj}");
+
+            Assert.AreNotEqual(b, obj);
         }
     }
 }
