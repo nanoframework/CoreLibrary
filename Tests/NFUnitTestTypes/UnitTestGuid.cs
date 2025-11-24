@@ -99,7 +99,7 @@ namespace NFUnitTestTypes
         {
             var g1 = Guid.NewGuid();
             var str = g1.ToString();
-            bool parsed = Guid.TryParseGuidWithDashes(str, out var g2);
+            bool parsed = Guid.TryParse(str, out var g2);
             Assert.IsTrue(parsed);
             Assert.AreEqual(g1, g2);
         }
@@ -107,7 +107,7 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void Guid_TryParseGuidWithDashes_Invalid()
         {
-            bool parsed = Guid.TryParseGuidWithDashes("invalid-guid", out var g2);
+            bool parsed = Guid.TryParse("invalid-guid", out var g2);
             Assert.IsFalse(parsed);
             Assert.AreEqual(Guid.Empty, g2);
         }

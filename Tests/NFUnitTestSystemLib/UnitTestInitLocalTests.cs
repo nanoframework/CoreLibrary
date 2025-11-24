@@ -215,14 +215,24 @@ namespace NFUnitTestSystemLib
             // make sure boxing of struct value type (Guid) is handled properly
             // this test was a result of a bug found by a customer.
             Guid ret = new Guid();
+
             ArrayList guidList = new ArrayList();
             guidList.Add(Guid.NewGuid());
             guidList.Add(Guid.NewGuid());
+
             Guid[] guidArray = (Guid[])guidList.ToArray(typeof(Guid));
 
+            // Verify the array has the correct length
+            Assert.AreEqual(2, guidArray.Length);
+
+            // Verify each element is not empty and matches the source list
+            int i = 0;
             foreach (Guid g in guidArray)
             {
+                Assert.IsFalse(Guid.Empty.Equals(g), "Guid should not be empty");
+                Assert.AreEqual(guidList[i], g, "Guid should match the source ArrayList element");
                 ret = g;
+                i++;
             }
         }
 
