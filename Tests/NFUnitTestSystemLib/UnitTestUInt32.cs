@@ -35,44 +35,49 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Equals()
+        [DataRow((uint)789, (uint)789, true)]
+        [DataRow((uint)788, (uint)0, false)]
+        [DataRow((uint)0, (uint)0, true)]
+        public void Equals_UInt32ToUInt32(uint i1, uint obj, bool expected)
         {
-            UInt32TestData[] testData = new UInt32TestData[]
+            if (expected)
             {
-                new UInt32TestData((uint)789, (uint)789, true),
-                new UInt32TestData((uint)788, (uint)0, false),
-                new UInt32TestData((uint)0, (uint)0, true),
-                new UInt32TestData((uint)789, null, false),
-                new UInt32TestData((uint)789, "789", false),
-                new UInt32TestData((uint)789, 789, false)
-            };
-
-            foreach (var test in testData)
-            {
-                if (test.Obj is uint)
-                {
-                    uint i2 = (uint)test.Obj;
-                    Assert.AreEqual(test.Expected, test.I1.Equals(i2));
-                    Assert.AreEqual(test.Expected, test.I1.GetHashCode().Equals(i2.GetHashCode()));
-                    Assert.AreEqual((uint)test.I1, test.I1.GetHashCode());
-                }
-
-                Assert.AreEqual(test.Expected, test.I1.Equals(test.Obj));
+                Assert.AreEqual(i1, obj);
+                Assert.IsTrue(i1.GetHashCode().Equals(obj.GetHashCode()));
             }
+            else
+            {
+                Assert.AreNotEqual(i1, obj);
+                Assert.IsFalse(i1.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            Assert.AreEqual(i1, i1.GetHashCode());
         }
 
-        private sealed class UInt32TestData
+        [TestMethod]
+        public void Equals_UInt32ToNull()
         {
-            public object I1 { get; }
-            public object Obj { get; }
-            public bool Expected { get; }
+            uint i1 = 789;
+            object obj = null;
 
-            public UInt32TestData(object i1, object obj, bool expected)
-            {
-                I1 = i1;
-                Obj = obj;
-                Expected = expected;
-            }
+            Assert.AreNotEqual(i1, obj);
+        }
+
+        [TestMethod]
+        public void Equals_UInt32ToString()
+        {
+            uint i1 = 789;
+            object obj = "789";
+
+            Assert.AreNotEqual(i1, obj);
+        }
+
+        [TestMethod]
+        public void Equals_UInt32ToInt()
+        {
+            uint i1 = 789;
+            object obj = 789;
+
+            Assert.AreNotEqual(i1, obj);
         }
     }
 }

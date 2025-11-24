@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
    <!-- Configurations that affect the Test Framework -->
    <RunConfiguration>
@@ -12,5 +12,6 @@
        <Logging>Verbose</Logging>
        <IsRealHardware>False</IsRealHardware>
 	   <RunnerExtraArguments> --forcegc </RunnerExtraArguments>
+       <UsePreviewClr>True</UsePreviewClr>
    </nanoFrameworkAdapter>
 </RunSettings>

@@ -21,13 +21,11 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void GetHashCode_Invoke_ReturnsExpected()
+        [DataRow(true, 1)]
+        [DataRow(false, 0)]
+        public void GetHashCode_Invoke_ReturnsExpected(bool value, int expected)
         {
-            bool _true = true;
-            bool _false = false;
-
-            Assert.AreEqual(_true.GetHashCode(), 1);
-            Assert.AreEqual(_false.GetHashCode(), 0);
+            Assert.AreEqual(value.GetHashCode(), expected);
         }
     }
 }

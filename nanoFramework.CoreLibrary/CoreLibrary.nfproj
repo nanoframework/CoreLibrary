@@ -38,7 +38,7 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     <RestoreLockedMode Condition="'$(TF_BUILD)' == 'True' or '$(ContinuousIntegrationBuild)' == 'True'">true</RestoreLockedMode>
-    <LangVersion>default</LangVersion>
+    <LangVersion>13.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -66,6 +66,16 @@
     <Compile Include="System\AppDomainUnloadedException.cs" />
     <Compile Include="System\ApplicationException.cs" />
     <Compile Include="System\ArgumentException.cs" />
+    <Compile Include="System\Array.Enumerators.cs" />
+    <Compile Include="System\ArrayTypeMismatchException.cs" />
+    <Compile Include="System\Collections\Generic\Comparer.cs" />
+    <Compile Include="System\Collections\Generic\IEnumerable.cs" />
+    <Compile Include="System\Collections\Generic\IComparer.cs" />
+    <Compile Include="System\Collections\Generic\IEnumerator.cs" />
+    <Compile Include="System\Diagnostics\StackTraceHiddenAttribute.cs" />
+    <Compile Include="System\Nullable.cs" />
+    <Compile Include="System\Runtime\CompilerServices\Unsafe.cs" />
+    <Compile Include="System\Runtime\InteropServices\InAttribute .cs" />
     <Compile Include="System\Diagnostics\NativeProfiledAttribute.cs" />
     <Compile Include="System\PlatformNotSupportedException.cs" />
     <Compile Include="System\ArgumentNullException.cs" />
@@ -188,7 +198,9 @@
     <Compile Include="System\SByte.cs" />
     <Compile Include="System\SerializableAttribute.cs" />
     <Compile Include="System\Single.cs" />
-    <Compile Include="System\SpanByte.cs" />
+    <Compile Include="System\ReadOnlySpan.cs" />
+    <Compile Include="System\SpanDebugView.cs" />
+    <Compile Include="System\Span.cs" />
     <Compile Include="System\String.cs" />
     <Compile Include="System\SystemException.cs" />
     <Compile Include="System\TargetFrameworkAttribute.cs" />

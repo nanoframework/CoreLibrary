@@ -47,24 +47,26 @@ namespace NFUnitTestBitConverter
         }
 
         [TestMethod]
-        public void BitConverterTest_GetBytesBool()
+        [DataRow(true, new byte[] { 1 })]
+        [DataRow(false, new byte[] { 0 })]
+        public void BitConverterTest_GetBytesBool(bool value, byte[] expected)
         {
-            Helper.GetBytesBool(true, new byte[] { 1 });
-            Helper.GetBytesBool(false, new byte[] { 0 });
+            Helper.GetBytesBool(value, expected);
         }
 
         [TestMethod]
-        public void BitConverterTest_GetBytesChar()
+        [DataRow('\0', new byte[] { 0x00, 0x00 })]
+        [DataRow(' ', new byte[] { 0x20, 0x00 })]
+        [DataRow('*', new byte[] { 0x2A, 0x00 })]
+        [DataRow('3', new byte[] { 0x33, 0x00 })]
+        [DataRow('A', new byte[] { 0x41, 0x00 })]
+        [DataRow('[', new byte[] { 0x5B, 0x00 })]
+        [DataRow('a', new byte[] { 0x61, 0x00 })]
+        [DataRow('{', new byte[] { 0x7B, 0x00 })]
+        [DataRow('测', new byte[] { 0x4B, 0x6D })]
+        public void BitConverterTest_GetBytesChar(char value, byte[] expected)
         {
-            Helper.GetBytesChar('\0', new byte[] { 0x00, 0x00 });
-            Helper.GetBytesChar(' ', new byte[] { 0x20, 0x00 });
-            Helper.GetBytesChar('*', new byte[] { 0x2A, 0x00 });
-            Helper.GetBytesChar('3', new byte[] { 0x33, 0x00 });
-            Helper.GetBytesChar('A', new byte[] { 0x41, 0x00 });
-            Helper.GetBytesChar('[', new byte[] { 0x5B, 0x00 });
-            Helper.GetBytesChar('a', new byte[] { 0x61, 0x00 });
-            Helper.GetBytesChar('{', new byte[] { 0x7B, 0x00 });
-            Helper.GetBytesChar('测', new byte[] { 0x4B, 0x6D });
+            Helper.GetBytesChar(value, expected);
         }
 
         [TestMethod]
@@ -90,27 +92,39 @@ namespace NFUnitTestBitConverter
         }
 
         [TestMethod]
-        public void BitConverterTest_GetBytesInt16()
+        [DataRow((short)0, new byte[] { 0x00, 0x00 })]
+        [DataRow((short)15, new byte[] { 0x0F, 0x00 })]
+        [DataRow((short)-15, new byte[] { 0xF1, 0xFF })]
+        [DataRow((short)10000, new byte[] { 0x10, 0x27 })]
+        [DataRow((short)-10000, new byte[] { 0xF0, 0xD8 })]
+        public void BitConverterTest_GetBytesInt16(short value, byte[] expected)
         {
-            Helper.GetBytesInt16(0, new byte[] { 0x00, 0x00 });
-            Helper.GetBytesInt16(15, new byte[] { 0x0F, 0x00 });
-            Helper.GetBytesInt16(-15, new byte[] { 0xF1, 0xFF });
-            Helper.GetBytesInt16(10000, new byte[] { 0x10, 0x27 });
-            Helper.GetBytesInt16(-10000, new byte[] { 0xF0, 0xD8 });
+            Helper.GetBytesInt16(value, expected);
+        }
+
+        [TestMethod]
+        public void BitConverterTest_GetBytesInt16_MinMax()
+        {
             Helper.GetBytesInt16(short.MinValue, new byte[] { 0x00, 0x80 });
             Helper.GetBytesInt16(short.MaxValue, new byte[] { 0xFF, 0x7F });
         }
 
         [TestMethod]
-        public void BitConverterTest_GetBytesInt32()
+        [DataRow(0, new byte[] { 0x00, 0x00, 0x00, 0x00 })]
+        [DataRow(15, new byte[] { 0x0F, 0x00, 0x00, 0x00 })]
+        [DataRow(-15, new byte[] { 0xF1, 0xFF, 0xFF, 0xFF })]
+        [DataRow(1048576, new byte[] { 0x00, 0x00, 0x10, 0x00 })]
+        [DataRow(-1048576, new byte[] { 0x00, 0x00, 0xF0, 0xFF })]
+        [DataRow(1000000000, new byte[] { 0x00, 0xCA, 0x9A, 0x3B })]
+        [DataRow(-1000000000, new byte[] { 0x00, 0x36, 0x65, 0xC4 })]
+        public void BitConverterTest_GetBytesInt32(int value, byte[] expected)
         {
-            Helper.GetBytesInt32(0, new byte[] { 0x00, 0x00, 0x00, 0x00 });
-            Helper.GetBytesInt32(15, new byte[] { 0x0F, 0x00, 0x00, 0x00 });
-            Helper.GetBytesInt32(-15, new byte[] { 0xF1, 0xFF, 0xFF, 0xFF });
-            Helper.GetBytesInt32(1048576, new byte[] { 0x00, 0x00, 0x10, 0x00 });
-            Helper.GetBytesInt32(-1048576, new byte[] { 0x00, 0x00, 0xF0, 0xFF });
-            Helper.GetBytesInt32(1000000000, new byte[] { 0x00, 0xCA, 0x9A, 0x3B });
-            Helper.GetBytesInt32(-1000000000, new byte[] { 0x00, 0x36, 0x65, 0xC4 });
+            Helper.GetBytesInt32(value, expected);
+        }
+
+        [TestMethod]
+        public void BitConverterTest_GetBytesInt32_MinMax()
+        {
             Helper.GetBytesInt32(int.MinValue, new byte[] { 0x00, 0x00, 0x00, 0x80 });
             Helper.GetBytesInt32(int.MaxValue, new byte[] { 0xFF, 0xFF, 0xFF, 0x7F });
         }

@@ -21,9 +21,12 @@
     <IsTestProject>true</IsTestProject>
     <TestProjectType>UnitTest</TestProjectType>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <LangVersion>13.0</LangVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
+    <Compile Include="RuntimeHelpersTests.cs" />
+    <Compile Include="UnitTestNullable.cs" />
     <Compile Include="UnitTestUInt64.cs" />
     <Compile Include="UnitTestUInt32.cs" />
     <Compile Include="UnitTestSingle.cs" />
