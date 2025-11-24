@@ -11,18 +11,12 @@ namespace System
     [Serializable]
     public struct Guid
     {
-        private int[] _data;
+        private int[] _data = new int[4];
 
         /// <summary>
         /// A read-only instance of the Guid class which consists of all zeros.
         /// </summary>
         public static readonly Guid Empty = new Guid(new byte[16]);
-
-        public Guid()
-        {
-            // All zeros
-            _data = new int[4]; 
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Guid"/> structure by using the specified integers and bytes.
