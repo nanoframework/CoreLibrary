@@ -18,6 +18,12 @@ namespace System
         /// </summary>
         public static readonly Guid Empty = new Guid(new byte[16]);
 
+        public Guid()
+        {
+            // All zeros
+            _data = new int[4]; 
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Guid"/> structure by using the specified integers and bytes.
         /// </summary>
@@ -163,26 +169,32 @@ namespace System
             if (value == null)
             {
                 return 1;
-            }
 
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (value is not Guid)
+            }
+            if (value is not Guid other)
             {
                 throw new ArgumentException();
             }
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one
 
-            int[] other = ((Guid)value)._data;
-            other ??= new int[4];
+            return CompareTo(other);
+        }
 
+        /// <summary>
+        /// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+        /// </summary>
+        /// <param name="other">An object to compare with this instance.</param>
+        /// <returns>A value that indicates the relative order of the objects being compared.</returns>
+        public int CompareTo(Guid other)
+        {
+            _data ??= new int[4];
+            other._data ??= new int[4];
             for (int i = 0; i < 4; i++)
             {
-                if (_data[i] != other[i])
+                if (_data[i] != other._data[i])
                 {
-                    return _data[i] - other[i];
+                    return _data[i] - other._data[i];
                 }
             }
-
             return 0;
         }
 
@@ -201,6 +213,9 @@ namespace System
         /// </remarks>
         public byte[] ToByteArray()
         {
+            // Initialize if null (treat as Empty)
+            _data ??= new int[4]; 
+
             byte[] buffer = new byte[16];
 
             int index = 0;
@@ -289,10 +304,19 @@ namespace System
                 return false;
             }
 
-            int[] other = ((Guid)o)._data;
-            other ??= new int[4];
+            return o is Guid other && Equals(other);
+        }
 
-            return (_data[0] == other[0]) && (_data[1] == other[1]) && (_data[2] == other[2]) && (_data[3] == other[3]);
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>true if the current object is equal to the other parameter; otherwise, false.</returns>
+        public bool Equals(Guid other)
+        {
+            _data ??= new int[4];
+            other._data ??= new int[4];
+            return (_data[0] == other._data[0]) && (_data[1] == other._data[1]) && (_data[2] == other._data[2]) && (_data[3] == other._data[3]);
         }
 
         /// <summary>
@@ -301,6 +325,8 @@ namespace System
         /// <returns>The hash code for this instance.</returns>
         public override int GetHashCode()
         {
+            // Initialize if null (treat as Empty)
+            _data ??= new int[4]; 
             return _data[0] ^ _data[1] ^ _data[2] ^ _data[3];
         }
 
@@ -445,6 +471,35 @@ namespace System
             long result = Convert.ToInt64(str.Substring(parsePos, requiredLength), 16);
             parsePos += requiredLength;
             return result;
+        }
+
+        /// <summary>
+        /// Determines whether two specified instances of <see cref="Guid"/> are equal.
+        /// </summary>
+        /// <param name="a">The first <see cref="Guid"/> to compare.</param>
+        /// <param name="b">The second <see cref="Guid"/> to compare.</param>
+        /// <returns><see langword="true"/> if <paramref name="a"/> equals <paramref name="b"/>; otherwise, <see langword="false"/>.</returns>
+        public static bool operator ==(Guid a, Guid b)
+        {
+            // Defensive null handling, though _data should always be initialized
+            a._data ??= new int[4];
+            b._data ??= new int[4];
+
+            return (a._data[0] == b._data[0]) &&
+                   (a._data[1] == b._data[1]) &&
+                   (a._data[2] == b._data[2]) &&
+                   (a._data[3] == b._data[3]);
+        }
+
+        /// <summary>
+        /// Determines whether two specified instances of <see cref="Guid"/> are not equal.
+        /// </summary>
+        /// <param name="a">The first <see cref="Guid"/> to compare.</param>
+        /// <param name="b">The second <see cref="Guid"/> to compare.</param>
+        /// <returns><see langword="true"/> if <paramref name="a"/> does not equal <paramref name="b"/>; otherwise, <see langword="false"/>.</returns>
+        public static bool operator !=(Guid a, Guid b)
+        {
+            return !(a == b);
         }
     }
 }
