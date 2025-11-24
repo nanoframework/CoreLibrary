@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "nanoFramework.CoreLibrary.Benchmarks", "nanoFramework.CoreLibrary.Benchmarks\nanoFramework.CoreLibrary.Benchmarks.nfproj", "{DFF849AB-F56C-4173-9E3C-5FD551914B0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFF849AB-F56C-4173-9E3C-5FD551914B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF849AB-F56C-4173-9E3C-5FD551914B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF849AB-F56C-4173-9E3C-5FD551914B0F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DFF849AB-F56C-4173-9E3C-5FD551914B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF849AB-F56C-4173-9E3C-5FD551914B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF849AB-F56C-4173-9E3C-5FD551914B0F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0D58340-A787-48A6-B53F-1678A4E57960}
+	EndGlobalSection
+EndGlobal
