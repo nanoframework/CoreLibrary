@@ -26,6 +26,7 @@
   <ItemGroup>
     <Compile Include="UnitTestGuid.cs" />
     <Compile Include="UnitTestObjectTypeTests.cs" />
+    <Compile Include="UnitTestsReadOnlySpanByte.cs" />
     <Compile Include="UnitTestsSpanByte.cs" />
     <Compile Include="UnitTestSubTypeTests.cs" />
     <Compile Include="UnitTestValueArrayTypess.cs" />

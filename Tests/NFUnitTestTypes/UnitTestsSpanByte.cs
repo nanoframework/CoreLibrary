@@ -247,5 +247,121 @@ namespace NFUnitTestTypes
                 Assert.AreEqual(span[i], (byte)i, "SpanByte value should be the same as setup in the set method");
             }
         }
+
+        [TestMethod]
+        public void StackAllocSpanTests()
+        {
+            // Create a span from stack-allocated memory
+            Span<byte> span = stackalloc byte[16];
+
+            Assert.AreEqual(16, span.Length, "Stack-allocated span should have length of 16");
+            Assert.IsFalse(span.IsEmpty, "Stack-allocated span should NOT be IsEmpty");
+
+            // Verify all elements are initialized to zero
+            for (int i = 0; i < span.Length; i++)
+            {
+                Assert.AreEqual((byte)0, span[i], "Stack-allocated span elements should be initialized to 0");
+            }
+
+            // Set values in the stack-allocated span
+            for (int i = 0; i < span.Length; i++)
+            {
+                span[i] = (byte)(i * 2);
+            }
+
+            // Verify the values were set correctly
+            for (int i = 0; i < span.Length; i++)
+            {
+                Assert.AreEqual((byte)(i * 2), span[i], $"Stack-allocated span element at index {i} should be {i * 2}");
+            }
+        }
+
+        [TestMethod]
+        public void StackAllocSpanWithInitializerTests()
+        {
+            // Create a span from stack-allocated memory with initializer
+            Span<byte> span = stackalloc byte[8] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
+
+            Assert.AreEqual(8, span.Length, "Stack-allocated span with initializer should have length of 8");
+            Assert.IsFalse(span.IsEmpty, "Stack-allocated span should NOT be IsEmpty");
+
+            // Verify the initialized values
+            for (int i = 0; i < span.Length; i++)
+            {
+                Assert.AreEqual((byte)(i + 1), span[i], $"Stack-allocated span element at index {i} should be {i + 1}");
+            }
+        }
+
+        [TestMethod]
+        public void StackAllocSpanSliceTests()
+        {
+            // Create a span from stack-allocated memory
+            Span<byte> span = stackalloc byte[16] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F };
+
+            // Slice the stack-allocated span
+            Span<byte> sliced = span.Slice(4, 8);
+
+            Assert.AreEqual(8, sliced.Length, "Sliced stack-allocated span should have length of 8");
+
+            for (int i = 0; i < sliced.Length; i++)
+            {
+                Assert.AreEqual((byte)(i + 4), sliced[i], $"Sliced element at index {i} should be {i + 4}");
+            }
+
+            // Modify the sliced span and verify it affects the original
+            sliced[0] = 0xFF;
+            Assert.AreEqual((byte)0xFF, span[4], "Modifying sliced span should affect the original stack-allocated span");
+        }
+
+        [TestMethod]
+        public void StackAllocSpanCopyToTests()
+        {
+            // Create a span from stack-allocated memory
+            Span<byte> source = stackalloc byte[8] { 0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70, 0x80 };
+
+            // Create a destination span (also stack-allocated)
+            Span<byte> destination = stackalloc byte[8];
+
+            // Copy from source to destination
+            source.CopyTo(destination);
+
+            // Verify the copy
+            for (int i = 0; i < destination.Length; i++)
+            {
+                Assert.AreEqual(source[i], destination[i], $"Copied element at index {i} should match source");
+            }
+
+            // Copy to a heap-allocated array
+            byte[] heapArray = new byte[8];
+            Span<byte> heapSpan = new Span<byte>(heapArray);
+            source.CopyTo(heapSpan);
+
+            CollectionAssert.AreEqual(source.ToArray(), heapArray, "Stack-allocated span should copy correctly to heap-allocated array");
+        }
+
+        [TestMethod]
+        public void StackAllocSpanToArrayTests()
+        {
+            // Create a span from stack-allocated memory
+            Span<byte> span = stackalloc byte[6] { 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF };
+
+            // Convert to array
+            byte[] array = span.ToArray();
+
+            Assert.AreEqual(6, array.Length, "ToArray should create an array with the same length");
+
+            byte[] expected = new byte[] { 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF };
+            CollectionAssert.AreEqual(expected, array, "Stack-allocated span ToArray should match expected values");
+        }
+
+        [TestMethod]
+        public void StackAllocEmptySpanTests()
+        {
+            // Create an empty stack-allocated span
+            Span<byte> span = stackalloc byte[0];
+
+            Assert.AreEqual(0, span.Length, "Empty stack-allocated span should have length of 0");
+            Assert.IsTrue(span.IsEmpty, "Empty stack-allocated span should be IsEmpty");
+        }
     }
 }
