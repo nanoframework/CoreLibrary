@@ -50,11 +50,7 @@ steps:
       GITHUB_TOKEN: $(GitHubToken)
 
   - task: DownloadPipelineArtifact@2
-    condition: >-
-      and(
-        eq(variables['DownloadNanoClrPreview'], true),
-        ne(variables['NFINTERPRETER_BUILDID'], '')
-      )
+    condition: ne(variables['NFINTERPRETER_BUILDID'], '')
     displayName: Download nanoCLR preview
     inputs:
       buildType: specific
@@ -67,12 +63,7 @@ steps:
       targetPath: '$(Pipeline.Workspace)/nanoclr'
 
   - task: PowerShell@2
-    condition: >-
-      and(
-        succeeded(),
-        eq(variables['DownloadNanoClrPreview'], true),
-        ne(variables['NFINTERPRETER_BUILDID'], '')
-      )
+    condition: ne(variables['NFINTERPRETER_BUILDID'], '')
     displayName: Set nanoCLR preview path
     inputs:
       targetType: 'inline'
