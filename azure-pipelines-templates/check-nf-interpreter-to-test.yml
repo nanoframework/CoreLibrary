@@ -60,12 +60,13 @@ steps:
       allowFailedBuilds: true
       buildId: $(NFINTERPRETER_BUILDID)
       artifactName: 'nanoclr_cli'
-      targetPath: '$(Pipeline.Workspace)/nanoclr'
+      targetPath: '$(Agent.TempDirectory)/nanoclr_cli'
 
   - task: PowerShell@2
     condition: ne(variables['NFINTERPRETER_BUILDID'], '')
-    displayName: Set nanoCLR preview path
+    displayName: Flag availability of local nanoCLR
+    name: NANOCLR_CHECK
     inputs:
       targetType: 'inline'
       script: |
-        Write-Host "##vso[task.setvariable variable=NF_MDP_NANOCLR_INSTANCE_PATH]$(Pipeline.Workspace)/nanoclr/nanoFramework.nanoCLR.dll"
+        Write-Host "##vso[task.setvariable variable=HAS_LOCAL_NANOCLR;isOutput=true]true"

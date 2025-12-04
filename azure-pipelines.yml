@@ -71,12 +71,26 @@ jobs:
 
   - template: azure-pipelines-templates/check-nf-interpreter-to-test.yml
 
+  - task: PowerShell@2
+    displayName: Set unit test runsettings path
+    inputs:
+      targetType: 'inline'
+      script: |
+        $hasLocalNanoClr = $env:NANOCLR_CHECK_HAS_LOCAL_NANOCLR
+        if ($hasLocalNanoClr -eq 'true') {
+          Write-Host "##vso[task.setvariable variable=UNIT_TEST_RUNSETTINGS]$(System.DefaultWorkingDirectory)\local_clr.runsettings"
+        } else {
+          Write-Host "##vso[task.setvariable variable=UNIT_TEST_RUNSETTINGS]$(System.DefaultWorkingDirectory)\.runsettings"
+        }
+    env:
+      HAS_LOCAL_NANOCLR: $[ dependencies['check-nf-interpreter-to-test'].outputs['Flag_availability_of_local_nanoCLR.HAS_LOCAL_NANOCLR'] ]
+
   # build steps only
   - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
     parameters:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
       runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
-      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
+      unitTestRunsettings: $(UNIT_TEST_RUNSETTINGS)
       skipNuGetCache: true
       usePreviewBuild: true
 
