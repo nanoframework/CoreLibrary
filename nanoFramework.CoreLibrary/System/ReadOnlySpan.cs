@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
@@ -27,9 +28,29 @@ namespace System
         /// <remarks>If the array is <see langword="null"/>, this constructor returns a null <see cref="ReadOnlySpan{T}"/>.</remarks>
         public ReadOnlySpan(T[]? array)
         {
-            _array = array ?? Array.Empty<T>();
-            _length = _array.Length;
+            if (array == null)
+            {
+                this = default;
+                return;
+            }
+
+            NativeReadOnlySpanConstructor(
+                array,
+                0,
+                array.Length);
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ReadOnlySpan{T}"/> object from a specified number of T elements starting at a specified memory address.
+        /// </summary>
+        /// <param name="pointer">A pointer to the starting address of a specified number of T elements in memory.</param>
+        /// <param name="length">The number of T elements to be included in the <see cref="ReadOnlySpan{T}"/>.</param>
+        /// <remarks>This constructor should be used with care, since it creates arbitrarily typed Ts from a <see langword="void"/>*-typed block of memory, and neither <paramref name="pointer"/> nor <paramref name="length"/> are validated by the constructor.</remarks>
+        /// <exception cref="ArgumentException">T is a reference type or contains pointers and therefore cannot be stored in unmanaged memory.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="length"/> is negative.</exception>
+        [CLSCompliant(false)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern unsafe ReadOnlySpan(void* pointer, int length);
 
         /// <summary>
         /// Creates a new <see cref="ReadOnlySpan{T}"/> that includes a specified number of elements of an array starting at a specified index.
@@ -65,8 +86,7 @@ namespace System
                     throw new ArgumentOutOfRangeException();
                 }
 
-                _array = Array.Empty<T>();
-                _length = 0;
+                _array = default;
 
                 return;
             }
@@ -116,6 +136,72 @@ namespace System
         public bool IsEmpty => _length == 0;
 
         /// <summary>
+        /// Returns an empty <see cref="ReadOnlySpan{T}"/> object.
+        /// </summary>
+        public static ReadOnlySpan<T> Empty => default;
+
+        /// <summary>Gets an enumerator for this <see cref="Span{T}"/>.</summary>
+        /// <returns>An enumerator for this span.</returns>
+        public Enumerator GetEnumerator() => new Enumerator(this);
+
+        /// <summary>
+        /// Provides an enumerator for the elements of a <see cref="ReadOnlySpan{T}"/>.
+        /// </summary>
+        public ref struct Enumerator : IEnumerator<T>
+        {
+            /// <summary>The span being enumerated.</summary>
+            private readonly ReadOnlySpan<T> _span;
+            /// <summary>The next index to yield.</summary>
+            private int _index;
+
+            /// <summary>Initialize the enumerator.</summary>
+            /// <param name="span">The span to enumerate.</param>
+            internal Enumerator(ReadOnlySpan<T> span)
+            {
+                _span = span;
+                _index = -1;
+            }
+
+            /// <summary>Advances the enumerator to the next item of the <see cref="ReadOnlySpan{T}"/>.</summary>
+            /// <returns>
+            /// <see langword="true"/> if the enumerator successfully advanced to the next item; <see langword="false"/> if the end of the span has been passed.
+            /// </returns>
+            public bool MoveNext()
+            {
+                int index = _index + 1;
+
+                if (index < _span.Length)
+                {
+                    _index = index;
+                    return true;
+                }
+
+                return false;
+            }
+
+            /// <summary>Gets the element at the current position of the enumerator.</summary>
+            public ref readonly T Current
+            {
+                get
+                {
+                    return ref _span[_index];
+                }
+            }
+
+            /// <inheritdoc />
+            T IEnumerator<T>.Current => Current;
+
+            /// <inheritdoc />
+            object Collections.IEnumerator.Current => Current!;
+
+            /// <inheritdoc />
+            void Collections.IEnumerator.Reset() => _index = -1;
+
+            /// <inheritdoc />
+            void IDisposable.Dispose() { }
+        }
+
+        /// <summary>
         /// Returns a value that indicates whether two <see cref="ReadOnlySpan{T}"/> instances are not equal.
         /// </summary>
         /// <param name="left">The first read-only span to compare.</param>
@@ -160,6 +246,44 @@ namespace System
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Forms a slice out of the current span that begins at a specified index.
+        /// </summary>
+        /// <param name="start">The zero-based index at which to begin the slice.</param>
+        /// <returns>A span that consists of all elements of the current span from <paramref name="start"/> to the end of the span.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="start"/> start is greater than the number of items in the read-only span.
+        /// </exception>
+        public ReadOnlySpan<T> Slice(int start)
+        {
+            if ((uint)start > (uint)_length)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            return new ReadOnlySpan<T>(_array, start, _length - start);
+        }
+
+        /// <summary>
+        /// Forms a slice out of the current read-only span starting at a specified index for a specified length.
+        /// </summary>
+        /// <param name="start">The zero-based index at which to begin the slice.</param>
+        /// <param name="length">The desired length for the slice.</param>
+        /// <returns>A span that consists of <paramref name="length"/> elements from the current span starting at <paramref name="start"/>.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="start"/> is less than zero or greater than <see cref="Length"/>.
+        /// </exception>
+        public ReadOnlySpan<T> Slice(int start, int length)
+        {
+            if ((uint)start > (uint)_length
+                || (uint)length > (uint)(_length - start))
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            return new ReadOnlySpan<T>(_array, start, length);
         }
 
         /// <summary>

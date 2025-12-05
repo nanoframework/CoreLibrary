@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
@@ -22,9 +23,7 @@ namespace System
         private readonly int _length;
 
         /// <summary>
-        /// <summary>
         /// Creates a new <see cref="Span{T}"/> object over the entirety of a specified array.
-        /// </summary>
         /// </summary>
         /// <param name="array">The array from which to create the <see cref="Span{T}"/> object.</param>
         /// <remarks>If array is <see langword="null"/>, this constructor returns a <see langword="null"/> <see cref="Span{T}"/>.</remarks>
@@ -42,9 +41,23 @@ namespace System
                 throw new ArrayTypeMismatchException();
             }
 
-            _array = array ?? [];
-            _length = _array.Length;
+            NativeSpanConstructor(
+                array,
+                0,
+                array.Length);
         }
+
+        /// <summary>
+        /// Creates a new <see cref="Span{T}"/> object from a specified number of T elements starting at a specified memory address.
+        /// </summary>
+        /// <param name="pointer">A pointer to the starting address of a specified number of T elements in memory.</param>
+        /// <param name="length">The number of T elements to be included in the <see cref="Span{T}"/>.</param>
+        /// <remarks>This constructor should be used with care, since it creates arbitrarily typed Ts from a <see langword="void"/>*-typed block of memory, and neither <paramref name="pointer"/> nor <paramref name="length"/> are validated by the constructor.</remarks>
+        /// <exception cref="ArgumentException">T is a reference type or contains pointers and therefore cannot be stored in unmanaged memory.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="length"/> is negative.</exception>
+        [CLSCompliant(false)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern unsafe Span(void* pointer, int length);
 
         /// <summary>
         /// Creates a new <see cref="Span{T}"/> object that includes a specified number of elements of an array starting at a specified index.
@@ -163,7 +176,7 @@ namespace System
         /// <summary>
         /// Provides an enumerator for the elements of a <see cref="Span{T}"/>.
         /// </summary>
-        public ref struct Enumerator
+        public ref struct Enumerator : IEnumerator<T>
         {
             /// <summary>The span being enumerated.</summary>
             private readonly Span<T> _span;
@@ -197,6 +210,18 @@ namespace System
 
             /// <summary>Gets a reference to the item at the current position of the enumerator.</summary>
             public ref T Current => ref _span[_index];
+
+            /// <inheritdoc />
+            T IEnumerator<T>.Current => Current;
+
+            /// <inheritdoc />
+            object Collections.IEnumerator.Current => Current!;
+
+            /// <inheritdoc />
+            void Collections.IEnumerator.Reset() => _index = -1;
+
+            /// <inheritdoc />
+            void IDisposable.Dispose() { }
         }
 
         /// <summary>
@@ -257,7 +282,7 @@ namespace System
         /// <param name="start">The zero-based index at which to begin the slice.</param>
         /// <returns>A span that consists of all elements of the current span from <paramref name="start"/> to the end of the span.</returns>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// <paramref name="start"/> is less than zero or greater than <see cref="Length"/>.
+        /// <paramref name="start"/> is less than zero or greater than the number of elements in the current span.
         /// </exception>
         public Span<T> Slice(int start)
         {
@@ -317,4 +342,4 @@ namespace System
     }
 }
 
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one
