@@ -91,7 +91,7 @@ jobs:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
       runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
       unitTestRunsettings: $(UNIT_TEST_RUNSETTINGS)
-      skipNuGetCache: true
+      skipNuGetCache: false
       usePreviewBuild: true
 
   # rebuild CoreLibrary project to get the assembly checksum
