@@ -19,7 +19,7 @@ namespace System
     [DebuggerDisplay("{ToString(),raw}")]
     public readonly ref struct Span<T>
     {
-        private readonly T[] _array;
+        private readonly T[]? _array;
         private readonly int _length;
 
         /// <summary>
@@ -133,10 +133,10 @@ namespace System
             {
                 if ((uint)index >= (uint)_length)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new IndexOutOfRangeException();
                 }
 
-                return ref _array[index];
+                return ref _array![index];
             }
         }
 
@@ -234,7 +234,7 @@ namespace System
         {
             for (int i = 0; i < _length; i++)
             {
-                _array[i] = default!;
+                _array![i] = default!;
             }
         }
 
