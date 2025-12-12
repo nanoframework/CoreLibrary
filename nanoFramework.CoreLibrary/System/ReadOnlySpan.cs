@@ -18,7 +18,7 @@ namespace System
     [DebuggerDisplay("{ToString(),raw}")]
     public readonly ref struct ReadOnlySpan<T>
     {
-        private readonly T[] _array;
+        private readonly T[]? _array;
         private readonly int _length;
 
         /// <summary>
@@ -50,7 +50,9 @@ namespace System
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="length"/> is negative.</exception>
         [CLSCompliant(false)]
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern unsafe ReadOnlySpan(void* pointer, int length);
+        public extern unsafe ReadOnlySpan(
+            void* pointer,
+            int length);
 
         /// <summary>
         /// Creates a new <see cref="ReadOnlySpan{T}"/> that includes a specified number of elements of an array starting at a specified index.
@@ -77,7 +79,10 @@ namespace System
         /// <paramref name="start"/> and <paramref name="length"/> exceeds the number of elements in the array.
         /// </para>
         /// </exception>
-        public ReadOnlySpan(T[]? array, int start, int length)
+        public ReadOnlySpan(
+            T[]? array,
+            int start,
+            int length)
         {
             if (array == null)
             {
@@ -108,8 +113,7 @@ namespace System
         /// </summary>
         /// <param name="index">The zero-based index.</param>
         /// <returns></returns>
-        /// <exception cref="IndexOutOfRangeException">
-        /// Thrown when index less than 0 or index greater than or equal to Length
+        /// <exception cref="IndexOutOfRangeException"><paramref name="index"/> less than zero or greater than or equal to <see cref="Length"/>.
         /// </exception>
         public ref readonly T this[int index]
         {
@@ -117,10 +121,10 @@ namespace System
             {
                 if ((uint)index >= (uint)_length)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new IndexOutOfRangeException();
                 }
 
-                return ref _array[index];
+                return ref _array![index];
             }
         }
 
@@ -249,12 +253,25 @@ namespace System
         }
 
         /// <summary>
+        /// Copies the contents of this <see cref="ReadOnlySpan{T}"/> into a destination <see cref="Span{T}"/>.
+        /// </summary>
+        /// <param name="destination">The span to copy items into.</param>
+        /// <exception cref="ArgumentException">
+        /// <paramref name="destination"/> is shorter than the source <see cref="ReadOnlySpan{T}"/>.
+        /// </exception>
+        /// <remarks>
+        /// If the source and <paramref name="destination"/> overlap, the entirety of source is handled as if it was copied to a temporary location before it is copied to <paramref name="destination"/>.
+        /// </remarks>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern void CopyTo(Span<T> destination);
+
+        /// <summary>
         /// Forms a slice out of the current span that begins at a specified index.
         /// </summary>
         /// <param name="start">The zero-based index at which to begin the slice.</param>
         /// <returns>A span that consists of all elements of the current span from <paramref name="start"/> to the end of the span.</returns>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// <paramref name="start"/> start is greater than the number of items in the read-only span.
+        /// <paramref name="start"/> is greater than the number of items in the read-only span.
         /// </exception>
         public ReadOnlySpan<T> Slice(int start)
         {
