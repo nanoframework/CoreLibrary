@@ -59,8 +59,8 @@ steps:
       buildVersionToDownload: specific
       allowFailedBuilds: true
       buildId: $(NFINTERPRETER_BUILDID)
-      artifactName: 'nanoclr_cli'
-      targetPath: '$(Agent.TempDirectory)/nanoclr_cli'
+      artifactName: 'nanoclr_dll'
+      targetPath: '$(Agent.TempDirectory)/nanoclr'
 
   - task: PowerShell@2
     condition: ne(variables['NFINTERPRETER_BUILDID'], '')
