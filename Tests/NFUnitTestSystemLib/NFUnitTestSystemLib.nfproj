@@ -26,6 +26,7 @@
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
     <Compile Include="RuntimeHelpersTests.cs" />
+    <Compile Include="UnitTestMemoryExtensions.cs" />
     <Compile Include="UnitTestNullable.cs" />
     <Compile Include="UnitTestUInt64.cs" />
     <Compile Include="UnitTestUInt32.cs" />
