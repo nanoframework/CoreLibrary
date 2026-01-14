@@ -365,6 +365,16 @@ namespace NFUnitTestTypes
 
             Assert.AreEqual(span.Length, 8, $"ReadOnlySpan should have length of 8");
             Assert.IsFalse(span.IsEmpty, "ReadOnlySpan should NOT be IsEmpty");
+
+            // ReadOnlySpan from array initializer
+            span = new byte[] { 0xAA, 0xBB, 0xCC, 0xDD };
+
+            Assert.AreEqual(span.Length, 4, "ReadOnlySpan from array initializer should have length of 4");
+            Assert.IsFalse(span.IsEmpty, "ReadOnlySpan from array initializer should NOT be IsEmpty");
+            Assert.AreEqual(span[0], (byte)0xAA, "First element should be 0xAA");
+            Assert.AreEqual(span[1], (byte)0xBB, "Second element should be 0xBB");
+            Assert.AreEqual(span[2], (byte)0xCC, "Third element should be 0xCC");
+            Assert.AreEqual(span[3], (byte)0xDD, "Fourth element should be 0xDD");
         }
 
         [TestMethod]
