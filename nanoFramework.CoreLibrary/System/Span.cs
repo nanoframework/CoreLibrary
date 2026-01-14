@@ -165,6 +165,12 @@ namespace System
         public static bool operator !=(Span<T> left, Span<T> right) => !(left == right);
 
         /// <summary>
+        /// Defines an implicit conversion of an array to a <see cref="Span{T}"/>
+        /// </summary>
+        /// <param name="array">The array to convert to a <see cref="Span{T}"/>.</param>
+        public static implicit operator Span<T>(T[]? array) => new Span<T>(array);
+
+        /// <summary>
         /// Returns an empty <see cref="Span{T}"/> object.
         /// </summary>
         public static Span<T> Empty => default;
