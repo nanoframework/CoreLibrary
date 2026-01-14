@@ -158,12 +158,19 @@ jobs:
       tagSource: userSpecifiedTag
       tag: v$(MY_NUGET_VERSION)
       title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
-      releaseNotesSource: inline
-      releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [.NET (without Reflection)](https://www.nuget.org/packages/$(nugetPackageName).NoReflection/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION)'
       assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
       assetUploadMode: replace
       isPreRelease: $[eq(variables['Build.SourceBranchName'], 'develop')]
-      addChangeLog: false
+      addChangeLog: true
+      changeLogType: issueBased
+      changeLogLabels: |
+        [
+          { "label" : "Type: enhancement", "displayName" : "Enhancements and new features", "state" : "closed" },
+          { "label" : "Type: bug", "displayName" : "Bugs fixed", "state" : "closed" },
+          { "label" : "Breaking-Change", "displayName" : "Breaking Changes", "state" : "closed" },
+          { "label" : "Type: dependencies", "displayName" : "Dependencies updated", "state" : "closed" },
+          { "label" : "Type: documentation", "displayName" : "Documentation", "state" : "closed" }
+        ]
 
 ##############################
 - job: Update_Dependents
