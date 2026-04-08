@@ -1,12 +1,9 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
 using System.Reflection;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestSystemLib
 {
@@ -22,86 +19,86 @@ namespace NFUnitTestSystemLib
             /// Test the PropertyInfo class members
             /// 
             MethodInfo mi = typeof(TestClass).GetMethod("BaseInternalProtectedMethod", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            Assert.False(mi.IsAbstract);
-            Assert.False(mi.IsFinal);
-            Assert.False(mi.IsPublic);
-            Assert.False(mi.IsStatic);
-            Assert.False(mi.IsVirtual);
-            Assert.IsType(mi.ReturnType, typeof(object));
-            Assert.True(mi.Invoke(tst, new object[] { 3 }) == null);
-            Assert.IsType(mi.DeclaringType, typeof(AbsTestClass));
+            Assert.IsFalse(mi.IsAbstract);
+            Assert.IsFalse(mi.IsFinal);
+            Assert.IsFalse(mi.IsPublic);
+            Assert.IsFalse(mi.IsStatic);
+            Assert.IsFalse(mi.IsVirtual);
+            Assert.IsInstanceOfType(mi.ReturnType, typeof(object));
+            Assert.IsTrue(mi.Invoke(tst, new object[] { 3 }) == null);
+            Assert.IsInstanceOfType(mi.DeclaringType, typeof(AbsTestClass));
 
             mi = typeof(AbsTestClass).GetMethod("AbstractPublicMethod", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            Assert.True(mi.IsAbstract);
-            Assert.False(mi.IsFinal);
-            Assert.True(mi.IsPublic);
-            Assert.False(mi.IsStatic);
-            Assert.True(mi.IsVirtual);
-            Assert.IsType(mi.ReturnType, typeof(float));
-            Assert.True((float)mi.Invoke(tst, new object[] { 3 }) == 38.4f);
-            Assert.IsType(mi.DeclaringType, typeof(AbsTestClass));
+            Assert.IsTrue(mi.IsAbstract);
+            Assert.IsFalse(mi.IsFinal);
+            Assert.IsTrue(mi.IsPublic);
+            Assert.IsFalse(mi.IsStatic);
+            Assert.IsTrue(mi.IsVirtual);
+            Assert.IsInstanceOfType(mi.ReturnType, typeof(float));
+            Assert.IsTrue((float)mi.Invoke(tst, new object[] { 3 }) == 38.4f);
+            Assert.IsInstanceOfType(mi.DeclaringType, typeof(AbsTestClass));
 
             mi = typeof(TestClass).GetMethod("VirtualInternalMethod", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            Assert.False(mi.IsAbstract);
-            Assert.False(mi.IsFinal);
-            Assert.False(mi.IsPublic);
-            Assert.False(mi.IsStatic);
-            Assert.True(mi.IsVirtual);
-            Assert.IsType(mi.ReturnType, typeof(int));
-            Assert.True((int)mi.Invoke(tst, new object[] { true }) == 34);
-            Assert.IsType(mi.DeclaringType, typeof(TestClass));
+            Assert.IsFalse(mi.IsAbstract);
+            Assert.IsFalse(mi.IsFinal);
+            Assert.IsFalse(mi.IsPublic);
+            Assert.IsFalse(mi.IsStatic);
+            Assert.IsTrue(mi.IsVirtual);
+            Assert.IsInstanceOfType(mi.ReturnType, typeof(int));
+            Assert.IsTrue((int)mi.Invoke(tst, new object[] { true }) == 34);
+            Assert.IsInstanceOfType(mi.DeclaringType, typeof(TestClass));
 
             mi = typeof(TestClass).GetMethod("SealedPublicMethod", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            Assert.False(mi.IsAbstract);
-            Assert.True(mi.IsFinal);
-            Assert.True(mi.IsPublic);
-            Assert.False(mi.IsStatic);
-            Assert.True(mi.IsVirtual);
-            Assert.IsType(mi.ReturnType, typeof(bool));
-            Assert.True((bool)mi.Invoke(tst, new object[] { }));
-            Assert.IsType(mi.DeclaringType, typeof(TestClass));
+            Assert.IsFalse(mi.IsAbstract);
+            Assert.IsTrue(mi.IsFinal);
+            Assert.IsTrue(mi.IsPublic);
+            Assert.IsFalse(mi.IsStatic);
+            Assert.IsTrue(mi.IsVirtual);
+            Assert.IsInstanceOfType(mi.ReturnType, typeof(bool));
+            Assert.IsTrue((bool)mi.Invoke(tst, new object[] { }));
+            Assert.IsInstanceOfType(mi.DeclaringType, typeof(TestClass));
 
             mi = typeof(TestClass).GetMethod("StaticPrivateAbsMethod", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-            Assert.False(mi.IsAbstract);
-            Assert.False(mi.IsFinal);
-            Assert.False(mi.IsPublic);
-            Assert.True(mi.IsStatic);
-            Assert.False(mi.IsVirtual);
-            Assert.IsType(mi.ReturnType, typeof(void));
+            Assert.IsFalse(mi.IsAbstract);
+            Assert.IsFalse(mi.IsFinal);
+            Assert.IsFalse(mi.IsPublic);
+            Assert.IsTrue(mi.IsStatic);
+            Assert.IsFalse(mi.IsVirtual);
+            Assert.IsInstanceOfType(mi.ReturnType, typeof(void));
             TestClass.s_WasStaticMethodCalled = false;
             mi.Invoke(tst, new object[] { });
-            Assert.True(TestClass.s_WasStaticMethodCalled);
-            Assert.IsType(mi.DeclaringType, typeof(AbsTestClass));
+            Assert.IsTrue(TestClass.s_WasStaticMethodCalled);
+            Assert.IsInstanceOfType(mi.DeclaringType, typeof(AbsTestClass));
 
             mi = typeof(TestClass).GetMethod("PublicMethod", BindingFlags.Instance | BindingFlags.Public);
-            Assert.False(mi.IsAbstract);
-            Assert.True(mi.IsFinal);
-            Assert.True(mi.IsPublic);
-            Assert.False(mi.IsStatic);
-            Assert.True(mi.IsVirtual);
-            Assert.IsType(mi.ReturnType, typeof(void));
+            Assert.IsFalse(mi.IsAbstract);
+            Assert.IsTrue(mi.IsFinal);
+            Assert.IsTrue(mi.IsPublic);
+            Assert.IsFalse(mi.IsStatic);
+            Assert.IsTrue(mi.IsVirtual);
+            Assert.IsInstanceOfType(mi.ReturnType, typeof(void));
             mi.Invoke(tst, new object[] { });
-            Assert.IsType(mi.DeclaringType, typeof(TestClass));
+            Assert.IsInstanceOfType(mi.DeclaringType, typeof(TestClass));
 
             mi = typeof(TestClass).GetMethod("InternalMethod", BindingFlags.Instance | BindingFlags.NonPublic);
-            Assert.False(mi.IsAbstract);
-            Assert.False(mi.IsFinal);
-            Assert.False(mi.IsPublic);
-            Assert.False(mi.IsStatic);
-            Assert.False(mi.IsVirtual);
-            Assert.IsType(mi.ReturnType, typeof(int));
-            Assert.True(1 == (int)mi.Invoke(tst, new object[] { 90.3f }));
-            Assert.IsType(mi.DeclaringType, typeof(TestClass));
+            Assert.IsFalse(mi.IsAbstract);
+            Assert.IsFalse(mi.IsFinal);
+            Assert.IsFalse(mi.IsPublic);
+            Assert.IsFalse(mi.IsStatic);
+            Assert.IsFalse(mi.IsVirtual);
+            Assert.IsInstanceOfType(mi.ReturnType, typeof(int));
+            Assert.IsTrue(1 == (int)mi.Invoke(tst, new object[] { 90.3f }));
+            Assert.IsInstanceOfType(mi.DeclaringType, typeof(TestClass));
 
             mi = typeof(TestClass).GetMethod("PrivateMethod", BindingFlags.Instance | BindingFlags.NonPublic);
-            Assert.False(mi.IsAbstract);
-            Assert.False(mi.IsFinal);
-            Assert.False(mi.IsPublic);
-            Assert.False(mi.IsStatic);
-            Assert.False(mi.IsVirtual);
-            Assert.IsType(mi.ReturnType, typeof(float));
-            Assert.True(3.3f == (float)mi.Invoke(tst, new object[] { 92 }));
-            Assert.IsType(mi.DeclaringType, typeof(TestClass));
+            Assert.IsFalse(mi.IsAbstract);
+            Assert.IsFalse(mi.IsFinal);
+            Assert.IsFalse(mi.IsPublic);
+            Assert.IsFalse(mi.IsStatic);
+            Assert.IsFalse(mi.IsVirtual);
+            Assert.IsInstanceOfType(mi.ReturnType, typeof(float));
+            Assert.IsTrue(3.3f == (float)mi.Invoke(tst, new object[] { 92 }));
+            Assert.IsInstanceOfType(mi.DeclaringType, typeof(TestClass));
         }
 
         [TestMethod]
@@ -114,15 +111,15 @@ namespace NFUnitTestSystemLib
             Delegate del = new MyDelegate(MyDelegateImpl);
             MethodInfo mi = del.Method;
 
-            Assert.False(mi.IsPublic);
-            Assert.True(mi.IsStatic);
-            Assert.False(mi.IsVirtual);
-            Assert.False(mi.IsAbstract);
-            Assert.False(mi.IsFinal);
-            Assert.Equal(mi.Name, "MyDelegateImpl");
-            Assert.IsType(mi.ReturnType, typeof(bool));
-            Assert.True((bool)mi.Invoke(null, new object[] { 1, 3.3f }));
-            Assert.IsType(mi.DeclaringType, typeof(UnitTestReflectionMemberTest));
+            Assert.IsFalse(mi.IsPublic);
+            Assert.IsTrue(mi.IsStatic);
+            Assert.IsFalse(mi.IsVirtual);
+            Assert.IsFalse(mi.IsAbstract);
+            Assert.IsFalse(mi.IsFinal);
+            Assert.AreEqual(mi.Name, "MyDelegateImpl");
+            Assert.IsInstanceOfType(mi.ReturnType, typeof(bool));
+            Assert.IsTrue((bool)mi.Invoke(null, new object[] { 1, 3.3f }));
+            Assert.IsInstanceOfType(mi.DeclaringType, typeof(UnitTestReflectionMemberTest));
         }
 
         [TestMethod]
@@ -134,26 +131,26 @@ namespace NFUnitTestSystemLib
             Type t = typeof(TestClass);
 
             ConstructorInfo ci = t.GetConstructor(new Type[] { });
-            Assert.True(ci.IsPublic);
-            Assert.False(ci.IsStatic);
-            Assert.True(ci.Invoke(new object[] { }) is TestClass);
+            Assert.IsTrue(ci.IsPublic);
+            Assert.IsFalse(ci.IsStatic);
+            Assert.IsTrue(ci.Invoke(new object[] { }) is TestClass);
 
             ci = typeof(AbsTestClass).GetConstructor(new Type[] { typeof(float) });
-            Assert.False(ci.IsPublic);
-            Assert.False(ci.IsStatic);
-            Assert.IsType(ci.DeclaringType, typeof(AbsTestClass));
+            Assert.IsFalse(ci.IsPublic);
+            Assert.IsFalse(ci.IsStatic);
+            Assert.IsInstanceOfType(ci.DeclaringType, typeof(AbsTestClass));
             AbsTestClass tst = ci.Invoke(new object[] { 1.2f }) as AbsTestClass;
-            Assert.NotNull(tst);
+            Assert.IsNotNull(tst);
 
             ci = t.GetConstructor(new Type[] { typeof(int) });
-            Assert.False(ci.IsStatic);
-            Assert.False(ci.IsPublic);
-            Assert.True(ci.Invoke(new object[] { 3 }) is TestClass);
+            Assert.IsFalse(ci.IsStatic);
+            Assert.IsFalse(ci.IsPublic);
+            Assert.IsTrue(ci.Invoke(new object[] { 3 }) is TestClass);
 
             ci = t.GetConstructor(new Type[] { typeof(bool) });
-            Assert.False(ci.IsStatic);
-            Assert.False(ci.IsPublic);
-            Assert.True(ci.Invoke(new object[] { true }) is TestClass);
+            Assert.IsFalse(ci.IsStatic);
+            Assert.IsFalse(ci.IsPublic);
+            Assert.IsTrue(ci.Invoke(new object[] { true }) is TestClass);
         }
 
         [TestMethod]
@@ -165,20 +162,20 @@ namespace NFUnitTestSystemLib
 
             Type t = typeof(TestClass);
             FieldInfo fi = t.GetField("AbsPrivateField", BindingFlags.Instance | BindingFlags.NonPublic);
-            Assert.IsType(fi.FieldType, typeof(int));
-            Assert.IsType(fi.DeclaringType, typeof(AbsTestClass));
+            Assert.IsInstanceOfType(fi.FieldType, typeof(int));
+            Assert.IsInstanceOfType(fi.DeclaringType, typeof(AbsTestClass));
 
             fi = t.GetField("PublicField");
-            Assert.IsType(fi.FieldType, typeof(int));
-            Assert.IsType(fi.DeclaringType, typeof(TestClass));
+            Assert.IsInstanceOfType(fi.FieldType, typeof(int));
+            Assert.IsInstanceOfType(fi.DeclaringType, typeof(TestClass));
 
             fi = t.GetField("IntProtectedField", BindingFlags.Instance | BindingFlags.NonPublic);
-            Assert.IsType(fi.FieldType, typeof(float));
-            Assert.IsType(fi.DeclaringType, t);
+            Assert.IsInstanceOfType(fi.FieldType, typeof(float));
+            Assert.IsInstanceOfType(fi.DeclaringType, t);
 
             fi = t.GetField("BoolPrivateField", BindingFlags.Static | BindingFlags.NonPublic);
-            Assert.IsType(fi.FieldType, typeof(bool));
-            Assert.IsType(fi.DeclaringType, t);
+            Assert.IsInstanceOfType(fi.FieldType, typeof(bool));
+            Assert.IsInstanceOfType(fi.DeclaringType, t);
 
         }
 

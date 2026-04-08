@@ -1,8 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Runtime.CompilerServices;
+
 namespace System.ComponentModel
 {
     using System;
@@ -10,6 +10,7 @@ namespace System.ComponentModel
     /// <summary>
     /// Specifies the browsable state of a property or method from within an editor.
     /// </summary>
+    [ExcludeType]
     public enum EditorBrowsableState
     {
         /// <summary>
@@ -30,6 +31,7 @@ namespace System.ComponentModel
     /// Specifies that a property or method is viewable in an editor. This class cannot be inherited.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Interface | AttributeTargets.Delegate)]
+    [ExcludeType]
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
     // GetHashCode() implementation is provided by general native function CLR_RT_HeapBlock::GetHashCode //

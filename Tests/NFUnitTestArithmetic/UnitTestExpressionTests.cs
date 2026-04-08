@@ -1,12 +1,8 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestArithmetic
 {
@@ -16,395 +12,395 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Exp_ident001_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within a block, and the block contains a local variable or parameter with the ");
-            OutputHelper.WriteLine("given name, then the primary-expression refers to that local variable.");
-            Assert.True(ident001.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within a block, and the block contains a local variable or parameter with the 
+            // given name, then the primary-expression refers to that local variable.
+            Assert.IsTrue(ident001.testMethod());
         }
         [TestMethod]
         public void Exp_ident002_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within a block, and the block contains a local variable or parameter with the ");
-            OutputHelper.WriteLine("given name, then the primary-expression refers to that local variable.");
-            Assert.True(ident002.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within a block, and the block contains a local variable or parameter with the 
+            // given name, then the primary-expression refers to that local variable.
+            Assert.IsTrue(ident002.testMethod());
         }
         [TestMethod]
         public void Exp_ident003_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within a block, and the block contains a local variable or parameter with the ");
-            OutputHelper.WriteLine("given name, then the primary-expression refers to that local variable.");
-            Assert.True(ident003.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within a block, and the block contains a local variable or parameter with the 
+            // given name, then the primary-expression refers to that local variable.
+            Assert.IsTrue(ident003.testMethod());
         }
         [TestMethod]
         public void Exp_ident004_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within a block, and the block contains a local variable or parameter with the ");
-            OutputHelper.WriteLine("given name, then the primary-expression refers to that local variable.");
-            Assert.True(ident004.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within a block, and the block contains a local variable or parameter with the 
+            // given name, then the primary-expression refers to that local variable.
+            Assert.IsTrue(ident004.testMethod());
         }
         [TestMethod]
         public void Exp_ident007_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
-            OutputHelper.WriteLine("and the name identifies one or more accessible methods of the immediately enclosing");
-            OutputHelper.WriteLine("class, then the primary expression refers to that method.");
-            Assert.True(ident007.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within the block of a constructor, instance method, or instance property accessor,
+            // and the name identifies one or more accessible methods of the immediately enclosing
+            // class, then the primary expression refers to that method.
+            Assert.IsTrue(ident007.testMethod());
         }
         [TestMethod]
         public void Exp_ident008_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
-            OutputHelper.WriteLine("and the name identifies one or more accessible methods of the immediately enclosing");
-            OutputHelper.WriteLine("class, then the primary expression refers to that method.");
-            Assert.True(ident008.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within the block of a constructor, instance method, or instance property accessor,
+            // and the name identifies one or more accessible methods of the immediately enclosing
+            // class, then the primary expression refers to that method.
+            Assert.IsTrue(ident008.testMethod());
         }
         [TestMethod]
         public void Exp_ident009_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
-            OutputHelper.WriteLine("and the name identifies one or more accessible methods of the immediately enclosing");
-            OutputHelper.WriteLine("class, then the primary expression refers to that method.");
-            Assert.True(ident009.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within the block of a constructor, instance method, or instance property accessor,
+            // and the name identifies one or more accessible methods of the immediately enclosing
+            // class, then the primary expression refers to that method.
+            Assert.IsTrue(ident009.testMethod());
         }
         [TestMethod]
         public void Exp_ident010_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
-            OutputHelper.WriteLine("and the name identifies one or more accessible methods of the immediately enclosing");
-            OutputHelper.WriteLine("class, then the primary expression refers to that method.");
-            Assert.True(ident010.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within the block of a constructor, instance method, or instance property accessor,
+            // and the name identifies one or more accessible methods of the immediately enclosing
+            // class, then the primary expression refers to that method.
+            Assert.IsTrue(ident010.testMethod());
         }
         [TestMethod]
         public void Exp_ident011_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
-            OutputHelper.WriteLine("and the name identifies an accessible, non-static field or property of the immediately");
-            OutputHelper.WriteLine("enclosing class, then the primary expression refers to that field or property.");
-            Assert.True(ident011.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within the block of a constructor, instance method, or instance property accessor,
+            // and the name identifies an accessible, non-static field or property of the immediately
+            // enclosing class, then the primary expression refers to that field or property.
+            Assert.IsTrue(ident011.testMethod());
         }
         [TestMethod]
         public void Exp_ident012_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
-            OutputHelper.WriteLine("and the name identifies an accessible, non-static field or property of the immediately");
-            OutputHelper.WriteLine("enclosing class, then the primary expression refers to that field or property.");
-            Assert.True(ident012.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within the block of a constructor, instance method, or instance property accessor,
+            // and the name identifies an accessible, non-static field or property of the immediately
+            // enclosing class, then the primary expression refers to that field or property.
+            Assert.IsTrue(ident012.testMethod());
         }
         [TestMethod]
         public void Exp_ident013_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of a single identifier ");
-            OutputHelper.WriteLine("is within the block of a constructor, instance method, or instance property accessor,");
-            OutputHelper.WriteLine("and the name identifies an accessible, non-static field or property of the immediately");
-            OutputHelper.WriteLine("enclosing class, then the primary expression refers to that field or property.");
-            Assert.True(ident013.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression consisting of a single identifier 
+            // is within the block of a constructor, instance method, or instance property accessor,
+            // and the name identifies an accessible, non-static field or property of the immediately
+            // enclosing class, then the primary expression refers to that field or property.
+            Assert.IsTrue(ident013.testMethod());
         }
         [TestMethod]
         public void Exp_ident014_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident014.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident014.testMethod());
         }
         [TestMethod]
         public void Exp_ident015_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident015.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident015.testMethod());
         }
         [TestMethod]
         public void Exp_ident016_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident016.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident016.testMethod());
         }
         [TestMethod]
         public void Exp_ident017_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident017.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident017.testMethod());
         }
         [TestMethod]
         public void Exp_ident018_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident018.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident018.testMethod());
         }
         [TestMethod]
         public void Exp_ident019_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident019_Top.ident019.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident019_Top.ident019.testMethod());
         }
         [TestMethod]
         public void Exp_ident020_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident020_Top.ident020.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident020_Top.ident020.testMethod());
         }
         [TestMethod]
         public void Exp_ident021_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident021_Top.ident021.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident021_Top.ident021.testMethod());
         }
         [TestMethod]
         public void Exp_ident022_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident022_Top.ident022.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident022_Top.ident022.testMethod());
         }
         [TestMethod]
         public void Exp_ident023_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident023_Top.ident023.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident023_Top.ident023.testMethod());
         }
         [TestMethod]
         public void Exp_ident024_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident024_Top.ident024.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident024_Top.ident024.testMethod());
         }
         [TestMethod]
         public void Exp_ident025_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident025_Top.ident025_Next.ident025.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident025_Top.ident025_Next.ident025.testMethod());
         }
         [TestMethod]
         public void Exp_ident026_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident026_Top.ident026_Next.ident026.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident026_Top.ident026_Next.ident026.testMethod());
         }
         [TestMethod]
         public void Exp_ident027_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident027_Top.ident027_Next.ident027.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident027_Top.ident027_Next.ident027.testMethod());
         }
         [TestMethod]
         public void Exp_ident028_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression appears within the body of a class, ");
-            OutputHelper.WriteLine("struct, or enumeration declaration, and continuing with each enclosing class or struct");
-            OutputHelper.WriteLine("declaration, if the name identifies one or more accessible members of that class, ");
-            OutputHelper.WriteLine("struct, or enumeration, then the primary expression is evaluated exactly as if it was ");
-            OutputHelper.WriteLine("a member access of the form T.E where T is the type in which the member was found and ");
-            OutputHelper.WriteLine("E is the primary expression.");
-            Assert.True(ident028_Top.ident028_Next.ident028.testMethod());
+            // Section 7.2.2 
+            // This code tests that if the primary expression appears within the body of a class, 
+            // struct, or enumeration declaration, and continuing with each enclosing class or struct
+            // declaration, if the name identifies one or more accessible members of that class, 
+            // struct, or enumeration, then the primary expression is evaluated exactly as if it was 
+            // a member access of the form T.E where T is the type in which the member was found and 
+            // E is the primary expression.
+            Assert.IsTrue(ident028_Top.ident028_Next.ident028.testMethod());
         }
         [TestMethod]
         public void Exp_ident029_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to a member in an enclosing namespace, then the primary expression is evaluated ");
-            OutputHelper.WriteLine("to that member and classified as a namespace or a type.");
-            Assert.True(ident029.testMethod());
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to a member in an enclosing namespace, then the primary expression is evaluated 
+            // to that member and classified as a namespace or a type.
+            Assert.IsTrue(ident029.testMethod());
         }
         [TestMethod]
         public void Exp_ident030_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to a member in an enclosing namespace, then the primary expression is evaluated ");
-            OutputHelper.WriteLine("to that member and classified as a namespace or a type.");
-            Assert.True(ident030.testMethod());
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to a member in an enclosing namespace, then the primary expression is evaluated 
+            // to that member and classified as a namespace or a type.
+            Assert.IsTrue(ident030.testMethod());
         }
 
         [TestMethod]
         public void Exp_ident031_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to a member in an enclosing namespace, then the primary expression is evaluated ");
-            OutputHelper.WriteLine("to that member and classified as a namespace or a type.");
-            Assert.True(NS_ident031_I.ident031.testMethod()) ;
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to a member in an enclosing namespace, then the primary expression is evaluated 
+            // to that member and classified as a namespace or a type.
+            Assert.IsTrue(NS_ident031_I.ident031.testMethod());
         }
         [TestMethod]
         public void Exp_ident032_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident032_I.ident032.testMethod()) ;
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to an imported type, then the primary expression refers to that type.
+            Assert.IsTrue(NS_ident032_I.ident032.testMethod());
         }
         [TestMethod]
         public void Exp_ident033_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident033_O.NS_ident033_I.ident033.testMethod()) ;
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to an imported type, then the primary expression refers to that type.
+            Assert.IsTrue(NS_ident033_O.NS_ident033_I.ident033.testMethod());
         }
         [TestMethod]
         public void Exp_ident034_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to a single type in an imported namespace, then the primary expression refers to that ");
-            OutputHelper.WriteLine("type.");
-            Assert.True(NS_ident034_I.ident034.testMethod()) ;
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to a single type in an imported namespace, then the primary expression refers to that 
+            // type.
+            Assert.IsTrue(NS_ident034_I.ident034.testMethod());
         }
         [TestMethod]
         public void Exp_ident035_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to a single type in an imported namespace, then the primary expression refers to that ");
-            OutputHelper.WriteLine("type.");
-            Assert.True(NS_ident035_O.NS_ident035_I.ident035.testMethod()) ;
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to a single type in an imported namespace, then the primary expression refers to that 
+            // type.
+            Assert.IsTrue(NS_ident035_O.NS_ident035_I.ident035.testMethod());
         }
         [TestMethod]
         public void Exp_ident038_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident038_I.ident038.testMethod()) ;
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to an imported type, then the primary expression refers to that type.
+            Assert.IsTrue(NS_ident038_I.ident038.testMethod());
         }
         [TestMethod]
         public void Exp_ident039_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident039_O.NS_ident039_I.ident039.testMethod()) ;
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to an imported type, then the primary expression refers to that type.
+            Assert.IsTrue(NS_ident039_O.NS_ident039_I.ident039.testMethod());
         }
 
         [TestMethod]
         public void Exp_ident040_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.2 ");
-            OutputHelper.WriteLine("This code tests that if a primary expression consisting of a single identifier refers ");
-            OutputHelper.WriteLine("to an imported type, then the primary expression refers to that type.");
-            Assert.True(NS_ident040_I.ident040.testMethod()) ;
+            // Section 7.2.2 
+            // This code tests that if a primary expression consisting of a single identifier refers 
+            // to an imported type, then the primary expression refers to that type.
+            Assert.IsTrue(NS_ident040_I.ident040.testMethod());
         }
 
         [TestMethod]
         public void Exp_mem001_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a namespace and I is the name of an accessible member of that namespace, then the ");
-            OutputHelper.WriteLine("result is the member, either a namespace or a type.");
-            Assert.True(mem001.testMethod()) ;
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a namespace and I is the name of an accessible member of that namespace, then the 
+            // result is the member, either a namespace or a type.
+            Assert.IsTrue(mem001.testMethod());
         }
         /*
         [TestMethod]
         public void Exp_mem002_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a namespace and I is the name of an accessible member of that namespace, then the ");
-            OutputHelper.WriteLine("result is the member, either a namespace or a type.");
-            Assert.True(mem002.testMethod())
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a namespace and I is the name of an accessible member of that namespace, then the 
+            // result is the member, either a namespace or a type.
+            Assert.IsTrue(mem002.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -414,564 +410,564 @@ namespace NFUnitTestArithmetic
         [TestMethod]
         public void Exp_mem003_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is also a type, then the result of the member is that type.");
-            Assert.True(mem003.testMethod()) ;
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is also a type, then the result of the member is that type.
+            Assert.IsTrue(mem003.testMethod());
         }
         [TestMethod]
         public void Exp_mem004_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is also a type, then the result of the member is that type.");
-            Assert.True(mem004.testMethod()) ;
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is also a type, then the result of the member is that type.
+            Assert.IsTrue(mem004.testMethod());
         }
         [TestMethod]
         public void Exp_mem005_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I identifies one or more methods, then the result is a method group.");
-            Assert.True(mem005.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I identifies one or more methods, then the result is a method group.
+            Assert.IsTrue(mem005.testMethod());
         }
         [TestMethod]
         public void Exp_mem006_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I identifies one or more methods, then the result is a method group.");
-            Assert.True(mem006.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I identifies one or more methods, then the result is a method group.
+            Assert.IsTrue(mem006.testMethod());
         }
         [TestMethod]
         public void Exp_mem007_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I identifies one or more methods, then the result is a method group.");
-            Assert.True(mem007.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I identifies one or more methods, then the result is a method group.
+            Assert.IsTrue(mem007.testMethod());
         }
         [TestMethod]
         public void Exp_mem008_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I identifies one or more methods, then the result is a method group.");
-            Assert.True(mem008.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I identifies one or more methods, then the result is a method group.
+            Assert.IsTrue(mem008.testMethod());
         }
         [TestMethod]
         public void Exp_mem011_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is a static property, then the result is that static property.");
-            Assert.True(mem011.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is a static property, then the result is that static property.
+            Assert.IsTrue(mem011.testMethod());
         }
         [TestMethod]
         public void Exp_mem012_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is a static property, then the result is that static property.");
-            Assert.True(mem012.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is a static property, then the result is that static property.
+            Assert.IsTrue(mem012.testMethod());
         }
         [TestMethod]
         public void Exp_mem013_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is a static read only field, then the result is a value of the ");
-            OutputHelper.WriteLine("static field I.");
-            Assert.True(mem013.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is a static read only field, then the result is a value of the 
+            // static field I.
+            Assert.IsTrue(mem013.testMethod());
         }
         [TestMethod]
         public void Exp_mem014_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is a static read only field, then the result is a value of the ");
-            OutputHelper.WriteLine("static field I.");
-            Assert.True(mem014.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is a static read only field, then the result is a value of the 
+            // static field I.
+            Assert.IsTrue(mem014.testMethod());
         }
         [TestMethod]
         public void Exp_mem015_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is a static field, then the result is the static field I.");
-            Assert.True(mem015.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is a static field, then the result is the static field I.
+            Assert.IsTrue(mem015.testMethod());
         }
         [TestMethod]
         public void Exp_mem016_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is a static field, then the result is the static field I.");
-            Assert.True(mem016.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is a static field, then the result is the static field I.
+            Assert.IsTrue(mem016.testMethod());
         }
         [TestMethod]
         public void Exp_mem017_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is a constant, then the result is the value of that constant.");
-            Assert.True(mem017.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is a constant, then the result is the value of that constant.
+            Assert.IsTrue(mem017.testMethod());
         }
         [TestMethod]
         public void Exp_mem018_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I is a constant, then the result is the value of that constant.");
-            Assert.True(mem018.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I is a constant, then the result is the value of that constant.
+            Assert.IsTrue(mem018.testMethod());
         }
         [TestMethod]
         public void Exp_mem019_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a type and I identifies an enumeration member, then the result is the value of");
-            OutputHelper.WriteLine("that enumeration member.");
-            Assert.True(mem019.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a type and I identifies an enumeration member, then the result is the value of
+            // that enumeration member.
+            Assert.IsTrue(mem019.testMethod());
         }
         [TestMethod]
         public void Exp_mem021_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
-            OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem021.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies one or 
+            // more method groups, then the result is the method group.
+            Assert.IsTrue(mem021.testMethod());
         }
         [TestMethod]
         public void Exp_mem022_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
-            OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem022.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies one or 
+            // more method groups, then the result is the method group.
+            Assert.IsTrue(mem022.testMethod());
         }
         [TestMethod]
         public void Exp_mem023_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
-            OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem023.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies one or 
+            // more method groups, then the result is the method group.
+            Assert.IsTrue(mem023.testMethod());
         }
         [TestMethod]
         public void Exp_mem025_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
-            OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem025.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies one or 
+            // more method groups, then the result is the method group.
+            Assert.IsTrue(mem025.testMethod());
         }
         [TestMethod]
         public void Exp_mem026_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies one or ");
-            OutputHelper.WriteLine("more method groups, then the result is the method group.");
-            Assert.True(mem026.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies one or 
+            // more method groups, then the result is the method group.
+            Assert.IsTrue(mem026.testMethod());
         }
         [TestMethod]
         public void Exp_mem027_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
-            OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem027.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies an 
+            // instance property, then the result is that instance property.
+            Assert.IsTrue(mem027.testMethod());
         }
         [TestMethod]
         public void Exp_mem028_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
-            OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem028.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies an 
+            // instance property, then the result is that instance property.
+            Assert.IsTrue(mem028.testMethod());
         }
         [TestMethod]
         public void Exp_mem029_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
-            OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem029.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies an 
+            // instance property, then the result is that instance property.
+            Assert.IsTrue(mem029.testMethod());
         }
         [TestMethod]
         public void Exp_mem031_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
-            OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem031.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies an 
+            // instance property, then the result is that instance property.
+            Assert.IsTrue(mem031.testMethod());
         }
         [TestMethod]
         public void Exp_mem032_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the type of which is T, and I identifies an ");
-            OutputHelper.WriteLine("instance property, then the result is that instance property.");
-            Assert.True(mem032.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the type of which is T, and I identifies an 
+            // instance property, then the result is that instance property.
+            Assert.IsTrue(mem032.testMethod());
         }
         [TestMethod]
         public void Exp_mem034_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field, then if the value of E is null, a System.Exception is ");
-            OutputHelper.WriteLine("thrown.");
-            Assert.True(mem034.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // an instance field, then if the value of E is null, a System.Exception is 
+            // thrown.
+            Assert.IsTrue(mem034.testMethod());
         }
         [TestMethod]
         public void Exp_mem035_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field, then if the value of E is null, a System.Exception is ");
-            OutputHelper.WriteLine("thrown.");
-            Assert.True(mem035.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // an instance field, then if the value of E is null, a System.Exception is 
+            // thrown.
+            Assert.IsTrue(mem035.testMethod());
         }
         [TestMethod]
         public void Exp_mem036_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
-            OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem036.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // a read only instance field outside the class declaration, then the result is a value
+            // of the field I.
+            Assert.IsTrue(mem036.testMethod());
         }
         [TestMethod]
         public void Exp_mem038_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
-            OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem038.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // a read only instance field outside the class declaration, then the result is a value
+            // of the field I.
+            Assert.IsTrue(mem038.testMethod());
         }
         [TestMethod]
         public void Exp_mem040_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
-            OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem040.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // a read only instance field outside the class declaration, then the result is a value
+            // of the field I.
+            Assert.IsTrue(mem040.testMethod());
         }
         [TestMethod]
         public void Exp_mem042_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem042.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem042.testMethod());
         }
         [TestMethod]
         public void Exp_mem043_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem043.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem043.testMethod());
         }
         [TestMethod]
         public void Exp_mem044_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem044.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem044.testMethod());
         }
         [TestMethod]
         public void Exp_mem045_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem045.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem045.testMethod());
         }
         [TestMethod]
         public void Exp_mem046_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem046.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem046.testMethod());
         }
         [TestMethod]
         public void Exp_mem047_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the class type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem047.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the class type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem047.testMethod());
         }
         [TestMethod]
         public void Exp_mem048_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
-            OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
-            OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem048.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the struct type of which is T, and I identifies
+            // a read only instance field outside the class declaration, then the result is a value
+            // of the field I.
+            Assert.IsTrue(mem048.testMethod());
         }
         [TestMethod]
         public void Exp_mem050_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
-            OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
-            OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem050.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the struct type of which is T, and I identifies
+            // a read only instance field outside the class declaration, then the result is a value
+            // of the field I.
+            Assert.IsTrue(mem050.testMethod());
         }
         [TestMethod]
         public void Exp_mem052_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests that if the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
-            OutputHelper.WriteLine("a read only instance field outside the class declaration, then the result is a value");
-            OutputHelper.WriteLine("of the field I.");
-            Assert.True(mem052.testMethod());
+            // Section 7.2.7 
+            // This code tests that if the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the struct type of which is T, and I identifies
+            // a read only instance field outside the class declaration, then the result is a value
+            // of the field I.
+            Assert.IsTrue(mem052.testMethod());
         }
         [TestMethod]
         public void Exp_mem054_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem054.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the struct type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem054.testMethod());
         }
         [TestMethod]
         public void Exp_mem055_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem055.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the struct type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem055.testMethod());
         }
         [TestMethod]
         public void Exp_mem056_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem056.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the struct type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem056.testMethod());
         }
         [TestMethod]
         public void Exp_mem058_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.7 ");
-            OutputHelper.WriteLine("This code tests the primary expression consisting of the form E.I, where E ");
-            OutputHelper.WriteLine("is a variable, property, or value, the struct type of which is T, and I identifies");
-            OutputHelper.WriteLine("an instance field of class type T.");
-            Assert.True(mem058.testMethod());
+            // Section 7.2.7 
+            // This code tests the primary expression consisting of the form E.I, where E 
+            // is a variable, property, or value, the struct type of which is T, and I identifies
+            // an instance field of class type T.
+            Assert.IsTrue(mem058.testMethod());
         }
         [TestMethod]
         public void Exp_lit001_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.1 ");
-            OutputHelper.WriteLine("This code tests that a boolean-literal is of type bool.");
-            Assert.True(lit001.testMethod()) ;
+            // Section 7.2.1 
+            // This code tests that a boolean-literal is of type bool.
+            Assert.IsTrue(lit001.testMethod());
         }
         [TestMethod]
         public void Exp_lit004_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.1 ");
-            OutputHelper.WriteLine("This code tests that an int-literal is of type int.");
-            Assert.True(lit004.testMethod()) ;
+            // Section 7.2.1 
+            // This code tests that an int-literal is of type int.
+            Assert.IsTrue(lit004.testMethod());
         }
         [TestMethod]
         public void Exp_lit005_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.1 ");
-            OutputHelper.WriteLine("This code tests that a long-literal is of type long.");
-            Assert.True(lit005.testMethod()) ;
+            // Section 7.2.1 
+            // This code tests that a long-literal is of type long.
+            Assert.IsTrue(lit005.testMethod());
         }
         [TestMethod]
         public void Exp_lit006_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.1 ");
-            OutputHelper.WriteLine("This code tests that a float-literal is of type float.");
-            Assert.True(lit006.testMethod()) ;
+            // Section 7.2.1 
+            // This code tests that a float-literal is of type float.
+            Assert.IsTrue(lit006.testMethod());
         }
         [TestMethod]
         public void Exp_lit007_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.1 ");
-            OutputHelper.WriteLine("This code tests that a double-literal is of type double.");
-            Assert.True(lit007.testMethod()) ;
+            // Section 7.2.1 
+            // This code tests that a double-literal is of type double.
+            Assert.IsTrue(lit007.testMethod());
         }
         [TestMethod]
         public void Exp_lit008_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.1 ");
-            OutputHelper.WriteLine("This code tests that a double-literal is of type double.");
-            Assert.True(lit008.testMethod());
+            // Section 7.2.1 
+            // This code tests that a double-literal is of type double.
+            Assert.IsTrue(lit008.testMethod());
         }
         [TestMethod]
         public void Exp_lit009_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.1 ");
-            OutputHelper.WriteLine("This code tests that a character-literal is of type char.");
-            Assert.True(lit009.testMethod());
+            // Section 7.2.1 
+            // This code tests that a character-literal is of type char.
+            Assert.IsTrue(lit009.testMethod());
         }
         [TestMethod]
         public void Exp_lit010_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.1 ");
-            OutputHelper.WriteLine("This code tests that a string-literal is of type string.");
-            Assert.True(lit010.testMethod());
+            // Section 7.2.1 
+            // This code tests that a string-literal is of type string.
+            Assert.IsTrue(lit010.testMethod());
         }
         [TestMethod]
         public void Exp_lit011_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.1 ");
-            OutputHelper.WriteLine("string compare with with its base type.");
-            Assert.True(lit011.testMethod());
+            // Section 7.2.1 
+            // string compare with with its base type.
+            Assert.IsTrue(lit011.testMethod());
         }
         [TestMethod]
         public void Exp_base006_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base006.testMethod()) ;
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base006.testMethod());
         }
         [TestMethod]
         public void Exp_base007_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base007.testMethod()) ;
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base007.testMethod());
         }
         [TestMethod]
         public void Exp_base009_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base009.testMethod()) ;
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base009.testMethod());
         }
         [TestMethod]
         public void Exp_base010_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base010.testMethod()) ;
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base010.testMethod());
         }
         [TestMethod]
         public void Exp_base011_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base011.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base011.testMethod());
         }
         [TestMethod]
         public void Exp_base012_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base012.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base012.testMethod());
         }
         [TestMethod]
         public void Exp_base013_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base013.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base013.testMethod());
         }
         [TestMethod]
         public void Exp_base014_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base014.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base014.testMethod());
         }
         [TestMethod]
         public void Exp_base015_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base015.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base015.testMethod());
         }
         [TestMethod]
         public void Exp_base016_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            Assert.True(base016.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            Assert.IsTrue(base016.testMethod());
         }
         [TestMethod]
         public void Exp_base017_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            OutputHelper.WriteLine("Expected Fail");
-            Assert.True(base017.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            // Expected Fail
+            Assert.IsTrue(base017.testMethod());
         }
         [TestMethod]
         public void Exp_base018_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            OutputHelper.WriteLine("Expected Fail");
-            Assert.True(base018.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            // Expected Fail
+            Assert.IsTrue(base018.testMethod());
         }
         [TestMethod]
         public void Exp_base019_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            OutputHelper.WriteLine("Expected Fail");
-            Assert.True(base019.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            // Expected Fail
+            Assert.IsTrue(base019.testMethod());
         }
         [TestMethod]
         public void Exp_base020_Test()
         {
-            OutputHelper.WriteLine("Section 7.2.8 ");
-            OutputHelper.WriteLine("A base class access is permitted only in the block of a constructor,");
-            OutputHelper.WriteLine("an instance method, or an instance property accessor.");
-            OutputHelper.WriteLine("Expected Fail");
-            Assert.True(base020.testMethod());
+            // Section 7.2.8 
+            // A base class access is permitted only in the block of a constructor,
+            // an instance method, or an instance property accessor.
+            // Expected Fail
+            Assert.IsTrue(base020.testMethod());
         }
 
         //Compiled Test Cases 
@@ -2492,7 +2488,7 @@ public static bool testMethod()
                 {
                     int MyInt = TC.IntI;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     RetInt = 0;
                 }
@@ -2524,7 +2520,7 @@ public static bool testMethod()
                 {
                     int TempInt = getTC.IntI;
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     RetInt = 0;
                 }
@@ -3797,7 +3793,6 @@ namespace Exp_TestClass_ident038_T2
 }
 namespace NS_ident038_I
 {
-    using Exp_TestClass_ident038_T;
     using Exp_TestClass_ident038_TC = Exp_TestClass_ident038_T2.Exp_TestClass_ident038_TC;
     public class ident038
     {
@@ -3836,7 +3831,6 @@ namespace Exp_TestClass_ident039_T2
 namespace NS_ident039_O
 {
     using Exp_TestClass_ident039_TC = Exp_TestClass_ident039_T2.Exp_TestClass_ident039_TC;
-    using Exp_TestClass_ident039_T;
     namespace NS_ident039_I
     {
         public class ident039
@@ -3869,7 +3863,6 @@ namespace Exp_TestClass_ident040_T
 }
 namespace NS_ident040_I
 {
-    using Exp_TestClass_ident040_T;
     using Exp_TestClass_ident040_TC = Exp_TestClass_ident040_T.Exp_TestClass_ident040_TC;
     public class ident040
     {

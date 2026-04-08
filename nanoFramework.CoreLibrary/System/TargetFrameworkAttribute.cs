@@ -1,15 +1,12 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System.Runtime.Versioning
 {
     /// <summary>
     /// Identifies the version of the .NET Framework that a particular assembly was compiled against.
     /// </summary>
-    [AttributeUsageAttribute(AttributeTargets.Assembly)]
+    [AttributeUsage(AttributeTargets.Assembly)]
     public sealed class TargetFrameworkAttribute : Attribute
     {
         private String _frameworkName;
@@ -19,12 +16,11 @@ namespace System.Runtime.Versioning
         /// Initializes an instance of the TargetFrameworkAttribute class by specifying the .NET Framework version against which an assembly was built.
         /// </summary>
         /// <param name="frameworkName">The version of the .NET Framework against which the assembly was built.</param>
-        /// <exception cref="System.ArgumentNullException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public TargetFrameworkAttribute(String frameworkName)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (frameworkName == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            ArgumentNullException.ThrowIfNull(frameworkName);
+
             _frameworkName = frameworkName;
         }
 

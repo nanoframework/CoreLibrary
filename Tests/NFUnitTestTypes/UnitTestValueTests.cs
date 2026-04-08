@@ -1,11 +1,7 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
-using System;
 
 namespace NFUnitTestTypes
 {
@@ -47,7 +43,7 @@ namespace NFUnitTestTypes
                 MS2 = MS;
                 MS.MyInt = 4;
 
-                Assert.Equal(MS2.MyInt, 3);
+                Assert.AreEqual(MS2.MyInt, 3);
             }
         }
 
@@ -61,7 +57,7 @@ namespace NFUnitTestTypes
                 MyInt = 3;
                 MyInt2 = MyInt;
                 MyInt = 4;
-                Assert.Equal(MyInt2, 3);
+                Assert.AreEqual(MyInt2, 3);
             }
         }
 
@@ -76,7 +72,7 @@ namespace NFUnitTestTypes
                 Enum1 = ValueTestClass9_Enum.a;
                 Enum2 = Enum1;
                 Enum1 = ValueTestClass9_Enum.b;
-                Assert.Equal((int)Enum2, (int)ValueTestClass9_Enum.a);
+                Assert.AreEqual((int)Enum2, (int)ValueTestClass9_Enum.a);
             }
         }
 

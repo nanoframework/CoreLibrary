@@ -1,12 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestStruct
 {
@@ -17,174 +13,189 @@ namespace NFUnitTestStruct
         public void Structs01_Test()
         {
             StructsTestClass_01_Notes.Note();
-            Assert.True(StructsTestClass_01.testMethod());
+            Assert.IsTrue(StructsTestClass_01.testMethod());
         }
         [TestMethod]
         public void Structs04_Test()
         {
             StructsTestClass_04_Notes.Note();
-            Assert.True(StructsTestClass_04.testMethod());
+            Assert.IsTrue(StructsTestClass_04.testMethod());
         }
         [TestMethod]
         public void Structs11_Test()
         {
             StructsTestClass_11_Notes.Note();
-            Assert.True(StructsTestClass_11.testMethod());
+            Assert.IsTrue(StructsTestClass_11.testMethod());
         }
         [TestMethod]
         public void Structs12_Test()
         {
             StructsTestClass_12_Notes.Note();
-            Assert.True(StructsTestClass_12.testMethod());
+            Assert.IsTrue(StructsTestClass_12.testMethod());
         }
         [TestMethod]
         public void Structs13_Test()
         {
-            OutputHelper.WriteLine("Expected failure, see 16852 for more details");
+            // Expected failure, see 16852 for more details
 
             StructsTestClass_13_Notes.Note();
-            Assert.True(StructsTestClass_13.testMethod());
+            Assert.IsTrue(StructsTestClass_13.testMethod());
         }
         [TestMethod]
         public void Structs14_Test()
         {
             StructsTestClass_14_Notes.Note();
-            Assert.True(StructsTestClass_14.testMethod());
+            Assert.IsTrue(StructsTestClass_14.testMethod());
         }
         [TestMethod]
         public void Structs15_Test()
         {
             StructsTestClass_15_Notes.Note();
-            Assert.True(StructsTestClass_15.testMethod());
+            Assert.IsTrue(StructsTestClass_15.testMethod());
         }
         [TestMethod]
         public void Structs19_Test()
         {
             StructsTestClass_19_Notes.Note();
-            Assert.True(StructsTestClass_19.testMethod());
+            Assert.IsTrue(StructsTestClass_19.testMethod());
         }
         [TestMethod]
         public void Structs21_Test()
         {
             StructsTestClass_21_Notes.Note();
-            Assert.True(StructsTestClass_21.testMethod());
+            Assert.IsTrue(StructsTestClass_21.testMethod());
         }
         [TestMethod]
         public void Structs23_Test()
         {
             StructsTestClass_23_Notes.Note();
-            Assert.True(StructsTestClass_23.testMethod());
+            Assert.IsTrue(StructsTestClass_23.testMethod());
         }
         [TestMethod]
         public void Structs24_Test()
         {
             StructsTestClass_24_Notes.Note();
-            Assert.True(StructsTestClass_24.testMethod());
+            Assert.IsTrue(StructsTestClass_24.testMethod());
         }
         [TestMethod]
         public void Structs26_Test()
         {
             StructsTestClass_26_Notes.Note();
-            Assert.True(StructsTestClass_26.testMethod());
+            Assert.IsTrue(StructsTestClass_26.testMethod());
         }
         [TestMethod]
         public void Structs28_Test()
         {
             StructsTestClass_28_Notes.Note();
-            Assert.True(StructsTestClass_28.testMethod());
+            Assert.IsTrue(StructsTestClass_28.testMethod());
         }
         [TestMethod]
         public void Structs29_Test()
         {
             StructsTestClass_29_Notes.Note();
-            Assert.True(StructsTestClass_29.testMethod());
+            Assert.IsTrue(StructsTestClass_29.testMethod());
         }
         [TestMethod]
         public void Structs32_Test()
         {
             StructsTestClass_32_Notes.Note();
-            Assert.True(StructsTestClass_32.testMethod());
+            Assert.IsTrue(StructsTestClass_32.testMethod());
         }
         [TestMethod]
         public void Structs33_Test()
         {
             StructsTestClass_33_Notes.Note();
-            Assert.True(StructsTestClass_33.testMethod());
+            Assert.IsTrue(StructsTestClass_33.testMethod());
         }
         [TestMethod]
         public void Structs34_Test()
         {
             StructsTestClass_34_Notes.Note();
-            Assert.True(StructsTestClass_34.testMethod());
+            Assert.IsTrue(StructsTestClass_34.testMethod());
         }
         [TestMethod]
         public void Structs35_Test()
         {
             StructsTestClass_35_Notes.Note();
-            Assert.True(StructsTestClass_35.testMethod());
+            Assert.IsTrue(StructsTestClass_35.testMethod());
         }
         [TestMethod]
         public void Structs36_Test()
         {
             StructsTestClass_36_Notes.Note();
-            Assert.True(StructsTestClass_36.testMethod());
+            Assert.IsTrue(StructsTestClass_36.testMethod());
         }
         [TestMethod]
         public void Structs37_Test()
         {
             StructsTestClass_37_Notes.Note();
-            Assert.True(StructsTestClass_37.testMethod());
+            Assert.IsTrue(StructsTestClass_37.testMethod());
         }
         [TestMethod]
         public void Structs38_Test()
         {
             StructsTestClass_38_Notes.Note();
-            Assert.True(StructsTestClass_38.testMethod());
+            Assert.IsTrue(StructsTestClass_38.testMethod());
         }
         [TestMethod]
         public void Structs40_Test()
         {
             StructsTestClass_40_Notes.Note();
-            Assert.True(StructsTestClass_40.testMethod());
+            Assert.IsTrue(StructsTestClass_40.testMethod());
         }
         [TestMethod]
         public void Structs41_Test()
         {
             StructsTestClass_41_Notes.Note();
-            Assert.True(StructsTestClass_41.testMethod());
+            Assert.IsTrue(StructsTestClass_41.testMethod());
         }
         [TestMethod]
         public void Structs42_Test()
         {
             StructsTestClass_42_Notes.Note();
-            Assert.True(StructsTestClass_42.testMethod());
+            Assert.IsTrue(StructsTestClass_42.testMethod());
         }
         [TestMethod]
         public void Structs43_Test()
         {
             StructsTestClass_43_Notes.Note();
-            Assert.True(StructsTestClass_43.testMethod());
+            Assert.IsTrue(StructsTestClass_43.testMethod());
         }
         [TestMethod]
         public void Structs44_Test()
         {
             StructsTestClass_44_Notes.Note();
-            Assert.True(StructsTestClass_44.testMethod());
+            Assert.IsTrue(StructsTestClass_44.testMethod());
         }
         [TestMethod]
         public void Structs55_Test()
         {
             StructsTestClass_55_Notes.Note();
-            Assert.True(StructsTestClass_55.testMethod());
+            Assert.IsTrue(StructsTestClass_55.testMethod());
         }
 
+        [TestMethod]
+        public void ValueTest_StructEquals_01()
+        {
+            AStruct s1 = new AStruct() { a = 1 };
+            AStruct s2 = new AStruct() { a = 2 };
+
+            Assert.IsTrue(s1.Equals(s1), "Comparing struct failed: s1.Equals(s1)");
+            Assert.IsFalse(s1.Equals(s2), "Comparing struct failed: s1.Equals(s2)");
+            Assert.IsTrue(s1.a.Equals(s1.a), "Comparing struct failed: s1.a.Equals(s1.a)");
+            Assert.IsFalse(s1.a.Equals(s2.a), "Comparing struct failed: s1.a.Equals(s2.a)");
+            // TODO
+            // these are failing: need to fix the comparer at CLR
+            //Assert.IsFalse(s1.Equals(null), "Comparing struct failed: s1.Equals(null)");
+            //Assert.IsFalse(s1.Equals(null), "Comparing struct failed: s1.Equals(null)");
+        }
 
         //Compiled Test Cases 
         class StructsTestClass_01_Notes
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Declaring a struct with and without a trailing semicolon. ");
+                //  Declaring a struct with and without a trailing semicolon. 
             }
         }
         struct StructsTestClass_01_Struct1
@@ -211,7 +222,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify all valid protection levels for members and methods");
+                //  Verify all valid protection levels for members and methods
             }
         }
         struct StructsTestClass_04_Struct1
@@ -258,7 +269,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify struct can implement an interface.");
+                //  Verify struct can implement an interface.
             }
         }
         interface Inter1
@@ -282,7 +293,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify struct can implement multiple interfaces.");
+                //  Verify struct can implement multiple interfaces.
             }
         }
         interface StructsTestClass_12_Inter1
@@ -316,7 +327,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify struct can implement multiple interfaces that contain methods with identical signatures.");
+                //  Verify struct can implement multiple interfaces that contain methods with identical signatures.
             }
         }
         interface StructsTestClass_13_Inter1
@@ -360,7 +371,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify that a struct can contain a class");
+                //  Verify that a struct can contain a class
             }
         }
         class StructsTestClass_14_Class1
@@ -387,7 +398,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Verify that a struct can contain another sruct");
+                //  Verify that a struct can contain another sruct
             }
         }
         struct StructsTestClass_15_Struct1
@@ -415,7 +426,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("Attempt to use an empty StructsTestClass_19_Struct");
+                // Attempt to use an empty StructsTestClass_19_Struct
             }
         }
         struct StructsTestClass_19_Struct1
@@ -439,7 +450,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("attempt to return a struct");
+                // attempt to return a struct
             }
         }
         public struct StructsTestClass_21_Struct1
@@ -475,7 +486,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("struct like an object");
+                // struct like an object
             }
         }
         struct StructsTestClass_23_Struct1
@@ -500,7 +511,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("  struct values aren't changed when boxed and passed as interfaces.");
+                //   struct values aren't changed when boxed and passed as interfaces.
             }
         }
         public interface Interface1
@@ -527,8 +538,8 @@ namespace NFUnitTestStruct
             {
                 if (iface.GetInt() != 42)
                 {
-                    throw new System.Exception();
-                    throw new System.Exception("expected i == 42");
+                    throw new Exception();
+                    throw new Exception("expected i == 42");
                 }
                 iface.SetInt(99);
             }
@@ -542,7 +553,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("  StructsTestClass_26_A ttempt to make a parameterized conStructsTestClass_26_Structor for a StructsTestClass_?_Struct.");
+                //   StructsTestClass_26_A ttempt to make a parameterized conStructsTestClass_26_Structor for a StructsTestClass_?_Struct.
             }
         }
         struct StructsTestClass_26_Struct1
@@ -566,7 +577,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" Explicit test of object boxing conversions to and from a StructsTestClass_28_Struct.");
+                //  Explicit test of object boxing conversions to and from a StructsTestClass_28_Struct.
             }
         }
         struct StructsTestClass_28_Struct1
@@ -591,7 +602,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" StructsTestClass_29 conStructsTestClass_29_Structor forwarding works for StructsTestClass_?_Structs");
+                //  StructsTestClass_29 conStructsTestClass_29_Structor forwarding works for StructsTestClass_?_Structs
             }
         }
         struct Foo
@@ -627,7 +638,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" nested struct should work");
+                //  nested struct should work
             }
         }
         public struct StructsTestClass_32_Struct
@@ -657,7 +668,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" nested class inside struct should work");
+                //  nested class inside struct should work
             }
         }
         public struct StructsTestClass_33_Struct
@@ -687,7 +698,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" nested struct should work");
+                //  nested struct should work
             }
         }
         public struct StructsTestClass_34_Struct
@@ -727,7 +738,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" cast struct to inherited interface type");
+                //  cast struct to inherited interface type
             }
         }
         public interface StructsTestClass_35_Interface
@@ -757,7 +768,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" cast struct to inherited interface type");
+                //  cast struct to inherited interface type
             }
         }
         public interface StructsTestClass_36_Interface
@@ -787,7 +798,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" cast struct to inherited interface type");
+                //  cast struct to inherited interface type
             }
         }
         public interface StructsTestClass_37_Interface
@@ -823,7 +834,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" cast struct to inherited interface type through function");
+                //  cast struct to inherited interface type through function
             }
         }
         public interface StructsTestClass_38_Interface
@@ -865,7 +876,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" property in struct");
+                //  property in struct
             }
         }
         public struct StructsTestClass_40_Struct
@@ -893,7 +904,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" indexer in struct");
+                //  indexer in struct
             }
         }
         public struct StructsTestClass_41_Struct
@@ -921,7 +932,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" interface indexer in StructsTestClass_42_Struct");
+                //  interface indexer in StructsTestClass_42_Struct
             }
         }
         public interface StructsTestClass_42_Interface
@@ -953,7 +964,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" delegate in struct");
+                //  delegate in struct
             }
         }
         public struct StructsTestClass_43_Struct
@@ -980,7 +991,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine(" delegate in struct assing interface as a delegate argument");
+                //  delegate in struct assing interface as a delegate argument
             }
         }
         public interface StructsTestClass_44_Interface
@@ -1011,7 +1022,7 @@ namespace NFUnitTestStruct
         {
             public static void Note()
             {
-                OutputHelper.WriteLine("The this object cannot be used before all of its fields are assigned to");
+                // The this object cannot be used before all of its fields are assigned to
             }
         }
         public struct StructsTestClass_55
@@ -1031,6 +1042,9 @@ namespace NFUnitTestStruct
             }
         }
 
-
+        public struct AStruct
+        {
+            public int a { get; set; }
+        }
     }
 }

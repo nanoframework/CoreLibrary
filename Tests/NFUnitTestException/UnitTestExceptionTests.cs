@@ -1,12 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestException
 {
@@ -16,7 +12,7 @@ namespace NFUnitTestException
         [TestMethod]
         public void TestTimeoutException()
         {
-            Assert.Throws(typeof(TimeoutException), () =>
+            Assert.ThrowsException(typeof(TimeoutException), () =>
             {
                 throw new TimeoutException();
             });
@@ -25,117 +21,117 @@ namespace NFUnitTestException
         [TestMethod]
         public void Exc_excep01_Test()
         {
-            OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the matching catch");
-            Assert.True(Exc_TestClass_excep01.testMethod());
+            // This test will confirm that the the thrown exception is caught by the matching catch
+            Assert.IsTrue(Exc_TestClass_excep01.testMethod());
         }
         [TestMethod]
         public void Exc_excep02_Test()
         {
-            OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the matching catch, not the base class catch blocks");
-            Assert.True(Exc_TestClass_excep02.testMethod());
+            // This test will confirm that the the thrown exception is caught by the matching catch, not the base class catch blocks
+            Assert.IsTrue(Exc_TestClass_excep02.testMethod());
         }
         [TestMethod]
         public void Exc_excep04_Test()
         {
-            OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught and the error code can be set");
-            Assert.True(Exc_TestClass_excep04.testMethod());
+            // This test will confirm that the the thrown exception is caught and the error code can be set
+            Assert.IsTrue(Exc_TestClass_excep04.testMethod());
         }
         [TestMethod]
         public void Exc_excep05_Test()
         {
-            OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the matching catch, not the base class catch");
-            Assert.True(Exc_TestClass_excep05.testMethod());
+            // This test will confirm that the the thrown exception is caught by the matching catch, not the base class catch
+            Assert.IsTrue(Exc_TestClass_excep05.testMethod());
         }
         [TestMethod]
         public void Exc_excep06_Test()
         {
-            OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the base class catch");
-            Assert.True(Exc_TestClass_excep06.testMethod());
+            // This test will confirm that the the thrown exception is caught by the base class catch
+            Assert.IsTrue(Exc_TestClass_excep06.testMethod());
         }
         [TestMethod]
         public void Exc_excep07_Test()
         {
-            OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the base class catch()");
-            Assert.True(Exc_TestClass_excep07.testMethod());
+            // This test will confirm that the the thrown exception is caught by the base class catch()
+            Assert.IsTrue(Exc_TestClass_excep07.testMethod());
         }
         [TestMethod]
         public void Exc_excep09_Test()
         {
-            OutputHelper.WriteLine("This test will confirm that the catch() functions.");
-            Assert.True(Exc_TestClass_excep09.testMethod());
+            // This test will confirm that the catch() functions.
+            Assert.IsTrue(Exc_TestClass_excep09.testMethod());
         }
         [TestMethod]
         public void Exc_excep10_Test()
         {
-            OutputHelper.WriteLine("This test will confirm that the thrown exception is handled in the catch()");
-            OutputHelper.WriteLine("when no matching catch is available.");
-            Assert.True(Exc_TestClass_excep10.testMethod());
+            // This test will confirm that the thrown exception is handled in the catch()
+            // when no matching catch is available.
+            Assert.IsTrue(Exc_TestClass_excep10.testMethod());
         }
         [TestMethod]
         public void Exc_excep11_Test()
         {
-            OutputHelper.WriteLine("This test will confirm that the the thrown exception is caught by the matching catch, not the catch()");
-            Assert.True(Exc_TestClass_excep11.testMethod());
+            // This test will confirm that the the thrown exception is caught by the matching catch, not the catch()
+            Assert.IsTrue(Exc_TestClass_excep11.testMethod());
         }
         [TestMethod]
         public void Exc_excep27_Test()
         {
-            OutputHelper.WriteLine("Throwing an exception transfers control to a handler.");
-            Assert.True(Exc_TestClass_excep27.testMethod());
+            // Throwing an exception transfers control to a handler.
+            Assert.IsTrue(Exc_TestClass_excep27.testMethod());
         }
         [TestMethod]
         public void Exc_excep28_Test()
         {
-            OutputHelper.WriteLine("When an exception is thrown, control is transferred to a handler");
-            Assert.True(Exc_TestClass_excep28.testMethod());
+            // When an exception is thrown, control is transferred to a handler
+            Assert.IsTrue(Exc_TestClass_excep28.testMethod());
         }
         [TestMethod]
         public void Exc_excep30_Test()
         {
-            OutputHelper.WriteLine("A throw-expression with no operand rethrows the exception being handled.");
-            Assert.True(Exc_TestClass_excep30.testMethod());
+            // A throw-expression with no operand rethrows the exception being handled.
+            Assert.IsTrue(Exc_TestClass_excep30.testMethod());
         }
         [TestMethod]
         public void Exc_excep31_Test()
         {
-            OutputHelper.WriteLine("A throw-expression with no operand does not copy the exception being handled.");
-            Assert.True(Exc_TestClass_excep31.testMethod());
+            // A throw-expression with no operand does not copy the exception being handled.
+            Assert.IsTrue(Exc_TestClass_excep31.testMethod());
         }
         [TestMethod]
         public void Exc_excep33_Test()
         {
-            OutputHelper.WriteLine("The exception thrown by a rethrow is the one most recently caught and not finished.");
-            Assert.True(Exc_TestClass_excep33.testMethod());
+            // The exception thrown by a rethrow is the one most recently caught and not finished.
+            Assert.IsTrue(Exc_TestClass_excep33.testMethod());
         }
         [TestMethod]
         public void Exc_excep34_Test()
         {
-            OutputHelper.WriteLine("When initialization is complete for the formal parameter of a catch clause, an exception is considered caught.");
-            Assert.True(Exc_TestClass_excep34.testMethod());
+            // When initialization is complete for the formal parameter of a catch clause, an exception is considered caught.
+            Assert.IsTrue(Exc_TestClass_excep34.testMethod());
         }
         [TestMethod]
         public void Exc_excep35_Test()
         {
-            OutputHelper.WriteLine("A handler is not allowed to catch an expression thrown outside");
-            OutputHelper.WriteLine("its function-try-block and any function called from its function-");
-            OutputHelper.WriteLine("try-block.");
-            Assert.True(Exc_TestClass_excep35.testMethod());
+            // A handler is not allowed to catch an expression thrown outside
+            // its function-try-block and any function called from its function-
+            // try-block.
+            Assert.IsTrue(Exc_TestClass_excep35.testMethod());
         }
         [TestMethod]
         public void Exc_excep40_Test()
         {
-            OutputHelper.WriteLine("If no match is found among the handlers for a try-block, the");
-            OutputHelper.WriteLine("search for a matching handler continues in a dynamically");
-            OutputHelper.WriteLine("surrounding try-block.");
-            Assert.True(Exc_TestClass_excep40.testMethod());
+            // If no match is found among the handlers for a try-block, the
+            // search for a matching handler continues in a dynamically
+            // surrounding try-block.
+            Assert.IsTrue(Exc_TestClass_excep40.testMethod());
         }
         [TestMethod]
         public void Exc_excep41_Test()
         {
-            OutputHelper.WriteLine("If no match is found among the handlers for a try-block, the");
-            OutputHelper.WriteLine("search for a matching handler continues in a dynamically");
-            OutputHelper.WriteLine("surrounding try-block.");
-            Assert.True(Exc_TestClass_excep41.testMethod());
+            // If no match is found among the handlers for a try-block, the
+            // search for a matching handler continues in a dynamically
+            // surrounding try-block.
+            Assert.IsTrue(Exc_TestClass_excep41.testMethod());
         }
 
         // TODO: check this
@@ -145,8 +141,8 @@ namespace NFUnitTestException
         [TestMethod]
         public void Exc_excep42_Test()
         {
-            OutputHelper.WriteLine("Handle throws up to 255 levels deep.");
-            Assert.True(Exc_TestClass_excep42.testMethod())
+            // Handle throws up to 255 levels deep.
+            Assert.IsTrue(Exc_TestClass_excep42.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -156,8 +152,8 @@ namespace NFUnitTestException
         [TestMethod]
         public void Exc_excep42b_Test()
         {
-            OutputHelper.WriteLine("Handle throws up to 33 levels deep.");
-            Assert.True(Exc_TestClass_excep42b.testMethod());
+            // Handle throws up to 33 levels deep.
+            Assert.IsTrue(Exc_TestClass_excep42b.testMethod());
         }
 
         // TODO: Check this
@@ -167,8 +163,8 @@ namespace NFUnitTestException
         [TestMethod]
         public void Exc_excep43_Test()
         {
-            OutputHelper.WriteLine("Handle throws up to 255 levels deep, but don't catch.  VM should not die.");
-            Assert.True(Exc_TestClass_excep43.testMethod())
+            // Handle throws up to 255 levels deep, but don't catch.  VM should not die.
+            Assert.IsTrue(Exc_TestClass_excep43.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -178,76 +174,76 @@ namespace NFUnitTestException
         [TestMethod]
         public void Exc_excep56_Test()
         {
-            OutputHelper.WriteLine("Should get unreachable code warning, but nothing more.");
-            Assert.True(Exc_TestClass_excep56.testMethod());
+            // Should get unreachable code warning, but nothing more.
+            Assert.IsTrue(Exc_TestClass_excep56.testMethod());
         }
         [TestMethod]
         public void Exc_excep57_Test()
         {
-            OutputHelper.WriteLine("Should get unreachable code warning, but nothing more.");
-            Assert.True(Exc_TestClass_excep57.testMethod());
+            // Should get unreachable code warning, but nothing more.
+            Assert.IsTrue(Exc_TestClass_excep57.testMethod());
         }
         [TestMethod]
         public void Exc_excep58_Test()
         {
-            OutputHelper.WriteLine("Any finally clauses associated with try statements will be executed before catch clause execution");
-            Assert.True(Exc_TestClass_excep58.testMethod());
+            // Any finally clauses associated with try statements will be executed before catch clause execution
+            Assert.IsTrue(Exc_TestClass_excep58.testMethod());
         }
         [TestMethod]
         public void Exc_excep59_Test()
         {
-            OutputHelper.WriteLine("Any finally clauses associated with try statements will be executed before catch clause execution");
-            Assert.True(Exc_TestClass_excep59.testMethod());
+            // Any finally clauses associated with try statements will be executed before catch clause execution
+            Assert.IsTrue(Exc_TestClass_excep59.testMethod());
         }
         [TestMethod]
         public void Exc_excep60_Test()
         {
-            OutputHelper.WriteLine("Inner exceptions can be chained");
-            Assert.True(Exc_TestClass_excep60.testMethod());
+            // Inner exceptions can be chained
+            Assert.IsTrue(Exc_TestClass_excep60.testMethod());
         }
         [TestMethod]
         public void Exc_excep61_Test()
         {
-            OutputHelper.WriteLine("Inner exceptions can be chained to arbitrary length");
-            Assert.True(Exc_TestClass_excep61.testMethod());
+            // Inner exceptions can be chained to arbitrary length
+            Assert.IsTrue(Exc_TestClass_excep61.testMethod());
         }
         [TestMethod]
         public void Exc_excep62_Test()
         {
-            OutputHelper.WriteLine("Any finally clauses associated with try statements will be executed before catch clause execution");
-            Assert.True(Exc_TestClass_excep62.testMethod());
+            // Any finally clauses associated with try statements will be executed before catch clause execution
+            Assert.IsTrue(Exc_TestClass_excep62.testMethod());
         }
         //[TestMethod]
         //public void Exc_excep63_Test()
         //{
-        //    OutputHelper.WriteLine("If a catch search reaches a static ctor then a Exception is thrown,");
-        //    OutputHelper.WriteLine("at the point of static ctor invocation. The inner exception is the original exception.");
+        //    // If a catch search reaches a static ctor then a Exception is thrown,
+        //    // at the point of static ctor invocation. The inner exception is the original exception.
 
-        //    OutputHelper.WriteLine("an exception thrown in a static constructor brings up a dialog box in Visual Studio.");
-        //    OutputHelper.WriteLine("Disable this test so that it doesn't hose VS until it is fixed.");
+        //    // an exception thrown in a static constructor brings up a dialog box in Visual Studio.
+        //    // Disable this test so that it doesn't hose VS until it is fixed.
 
         //    // TODO: check this
-        //    Assert.True(Exc_TestClass_excep63.testMethod());
+        //    Assert.IsTrue(Exc_TestClass_excep63.testMethod());
         //    {
-        //        OutputHelper.WriteLine("This is bug number: 21724	Resolved By Design.");
-        //        OutputHelper.WriteLine("This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. ");
-        //        OutputHelper.WriteLine("When this bug is fixed change this back to pass and chang eht known failure to fail");
+        //        // This is bug number: 21724	Resolved By Design.
+        //        // This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. 
+        //        // When this bug is fixed change this back to pass and chang eht known failure to fail
         //    }
         //}
         //[TestMethod]
         //public void Exc_excep64_Test()
         //{
-        //    OutputHelper.WriteLine("If a catch search reaches a static field initializer then a Exception is thrown,");
-        //    OutputHelper.WriteLine("at the point of static ctor invocation. The inner exception is the original exception.");
+        //    // If a catch search reaches a static field initializer then a Exception is thrown,
+        //    // at the point of static ctor invocation. The inner exception is the original exception.
 
-        //    OutputHelper.WriteLine("an exception thrown in a static constructor brings up a dialog box in Visual Studio.");
-        //    OutputHelper.WriteLine("Disable this test so that it doesn't hose VS until it is fixed.");
+        //    // an exception thrown in a static constructor brings up a dialog box in Visual Studio.
+        //    // Disable this test so that it doesn't hose VS until it is fixed.
 
         //    // TODO: check this
-        //    Assert.True(Exc_TestClass_excep64.testMethod());
+        //    Assert.IsTrue(Exc_TestClass_excep64.testMethod());
         //    {
-        //        OutputHelper.WriteLine("This is bug number: 21724	Resolved By Design.");
-        //        OutputHelper.WriteLine("This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. ");
+        //        // This is bug number: 21724	Resolved By Design.
+        //        // This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. 
 
         //    }
         //}
@@ -260,10 +256,10 @@ namespace NFUnitTestException
         [TestMethod]
         public void Exc_excep65_Test()
         {
-            OutputHelper.WriteLine("If a catch search reaches a static ctor then a Exception is thrown,");
-            OutputHelper.WriteLine("at the point of static ctor invocation. The inner exception is the original exception.");
+            // If a catch search reaches a static ctor then a Exception is thrown,
+            // at the point of static ctor invocation. The inner exception is the original exception.
 
-            Assert.True(Exc_TestClass_excep65.testMethod())
+            Assert.IsTrue(Exc_TestClass_excep65.testMethod())
             {
                 return MFTestResults.Pass;
             }
@@ -279,12 +275,12 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In try block, ready to throw.");
+                    // In try block, ready to throw.
                     throw new Exception("An exception has occurred");
                 }
                 catch (Exception s)
                 {
-                    OutputHelper.WriteLine("In catch block.");
+                    // In catch block.
                     OutputHelper.WriteLine(s.Message);
                     retval = 0;
                 }
@@ -308,18 +304,18 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In try block, ready to throw.");
+                    // In try block, ready to throw.
                     throw new Exc_TestClass_excep02_E1("An exception has occurred");
                 }
                 catch (Exc_TestClass_excep02_E1 s)
                 {
-                    OutputHelper.WriteLine("In Exc_TestClass_excep02_E1 catch block.");
+                    // In Exc_TestClass_excep02_E1 catch block.
                     OutputHelper.WriteLine(s.Message);
                     retval = 0;
                 }
                 catch (Exception)
                 {
-                    OutputHelper.WriteLine("FAIL - In Exception catch block.");
+                    // FAIL - In Exception catch block.
                     retval = 2;
                 }
                 //catch (Exception e)
@@ -343,24 +339,22 @@ namespace NFUnitTestException
                 {
                     try
                     {
-                        OutputHelper.WriteLine("In try block, ready to throw.");
+                        // In try block, ready to throw.
                         throw new Exception("An exception has occurred");
                     }
                     catch (Exception s)
                     {
-                        OutputHelper.WriteLine("In catch block.");
+                        // In catch block.
                         OutputHelper.WriteLine(s.Message);
                         retval -= 1;
                     }
                 }
                 finally
                 {
-                    OutputHelper.WriteLine("Entering finally block");
+                    // Entering finally block
                     retval -= 2;
                 }
-                OutputHelper.WriteLine("Ready to return.");
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval=={0} " + retval.ToString());
+                // Ready to return.
                 return retval;
             }
             public static bool testMethod()
@@ -383,24 +377,24 @@ namespace NFUnitTestException
                 {
                     try
                     {
-                        OutputHelper.WriteLine("In try block, ready to throw.");
+                        // In try block, ready to throw.
                         throw new Exc_TestClass_excep05_E1("An exception has occurred");
                     }
                     catch (Exc_TestClass_excep05_E1 s)
                     {
-                        OutputHelper.WriteLine("In catch block.");
+                        // In catch block.
                         OutputHelper.WriteLine(s.Message);
                         retval--;
                     }
                     catch (Exception)
                     {
-                        OutputHelper.WriteLine("FAIL -- Should not enter catch (Exception) block");
+                        // FAIL -- Should not enter catch (Exception) block
                         retval++;
                     }
                 }
                 finally
                 {
-                    OutputHelper.WriteLine("In finally block");
+                    // In finally block
                     --retval;
                 }
                 return retval;
@@ -423,12 +417,12 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In try block, ready to throw.");
+                    // In try block, ready to throw.
                     throw new Exc_TestClass_excep06_E1("An exception has occurred");
                 }
                 catch (Exception s)
                 {
-                    OutputHelper.WriteLine("In catch block.");
+                    // In catch block.
                     OutputHelper.WriteLine(s.Message);
                     retval = 0;
                 }
@@ -454,18 +448,18 @@ namespace NFUnitTestException
                 {
                     try
                     {
-                        OutputHelper.WriteLine("In try block, ready to throw.");
+                        // In try block, ready to throw.
                     }
                     catch (Exception s)
                     {
-                        OutputHelper.WriteLine("In catch block.");
+                        // In catch block.
                         OutputHelper.WriteLine(s.Message);
                         retval++;
                     }
                 }
                 finally
                 {
-                    OutputHelper.WriteLine("In finally block");
+                    // In finally block
                     retval--;
                 }
                 return retval;
@@ -482,12 +476,12 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In try block, ready to throw.");
+                    // In try block, ready to throw.
                     throw new Exception("An exception has occurred");
                 }
                 catch
                 {
-                    OutputHelper.WriteLine("In catch block.");
+                    // In catch block.
                     retval = 0;
                 }
                 return retval;
@@ -510,17 +504,17 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In try block, ready to throw.");
+                    // In try block, ready to throw.
                     throw new Exception("An exception has occurred");
                 }
                 catch (Exc_TestClass_excep10_E1)
                 {
-                    OutputHelper.WriteLine("FAIL -- Should not enter catch (Exception a) block.");
+                    // FAIL -- Should not enter catch (Exception a) block.
                     retval = 1;
                 }
                 catch
                 {
-                    OutputHelper.WriteLine("In catch block.");
+                    // In catch block.
                     retval -= 1;
                 }
                 return retval;
@@ -537,18 +531,18 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In try block, ready to throw.");
+                    // In try block, ready to throw.
                     throw new Exception("An exception has occurred");
                 }
                 catch (Exception r)
                 {
-                    OutputHelper.WriteLine("In catch (Exception r) block.");
+                    // In catch (Exception r) block.
                     OutputHelper.WriteLine(r.Message);
                     retval -= 1;
                 }
                 catch
                 {
-                    OutputHelper.WriteLine("FAIL -- Should not enter catch () block.");
+                    // FAIL -- Should not enter catch () block.
                     retval += 1;
                 }
                 return retval;
@@ -622,9 +616,9 @@ namespace NFUnitTestException
                 tossval = b.toss(0);
                 if (tossval != 0)
                 {
-                    OutputHelper.WriteLine("toss(0) returned ");
+                    // toss(0) returned 
                     OutputHelper.WriteLine(tossval.ToString());
-                    OutputHelper.WriteLine(" instead of 0.");
+                    //  instead of 0.
                 }
                 else
                 {
@@ -633,9 +627,9 @@ namespace NFUnitTestException
                 tossval = b.toss(1);
                 if (tossval != 1)
                 {
-                    OutputHelper.WriteLine("toss(1) returned ");
+                    // toss(1) returned 
                     OutputHelper.WriteLine(tossval.ToString());
-                    OutputHelper.WriteLine(" instead of 1.");
+                    //  instead of 1.
                 }
                 else
                 {
@@ -644,16 +638,14 @@ namespace NFUnitTestException
                 tossval = b.toss(2);
                 if (tossval != 2)
                 {
-                    OutputHelper.WriteLine("toss(2) returned ");
+                    // toss(2) returned 
                     OutputHelper.WriteLine(tossval.ToString());
-                    OutputHelper.WriteLine(" instead of 2.");
+                    //  instead of 2.
                 }
                 else
                 {
                     retval -= 1;
                 }
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
                 return retval;
             }
             public static bool testMethod()
@@ -702,8 +694,6 @@ namespace NFUnitTestException
                 Exc_TestClass_excep30_C1 t = new Exc_TestClass_excep30_C1();
                 if (t.f00() == 30)  //  If the throw was handled properly...
                     retval = 0;
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
                 return retval;
             }
             public static bool testMethod()
@@ -758,8 +748,6 @@ namespace NFUnitTestException
                 Exc_TestClass_excep31_C1 t = new Exc_TestClass_excep31_C1();
                 if (t.f00() == 0)  //  If the throw was handled properly...
                     retval = 0;
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
                 return retval;
             }
             public static bool testMethod()
@@ -811,23 +799,21 @@ namespace NFUnitTestException
                 }
                 catch (Exc_TestClass_excep33_E2)
                 {
-                    OutputHelper.WriteLine("Unexpected Exc_TestClass_excep33_E2 catch.");
+                    // Unexpected Exc_TestClass_excep33_E2 catch.
                 }
                 catch (Exc_TestClass_excep33_E3)
                 {
-                    OutputHelper.WriteLine("Unexpected Exc_TestClass_excep33_E3 catch.");
+                    // Unexpected Exc_TestClass_excep33_E3 catch.
                 }
                 catch (Exc_TestClass_excep33_E4)
                 {
-                    OutputHelper.WriteLine("Caught in Exc_TestClass_excep33_E4, as expected.");
+                    // Caught in Exc_TestClass_excep33_E4, as expected.
                     retval = 0;
                 }
                 catch
                 {
-                    OutputHelper.WriteLine("Unexpected ... catch.");
+                    // Unexpected ... catch.
                 }
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
                 return retval;
             }
             public static bool testMethod()
@@ -871,19 +857,17 @@ namespace NFUnitTestException
                 }
                 catch (Exc_TestClass_excep34_E2)
                 {
-                    OutputHelper.WriteLine("Unexpected Exc_TestClass_excep34_E2 catch.\n");
+                    // Unexpected Exc_TestClass_excep34_E2 catch.\n
                 }
                 catch (Exc_TestClass_excep34_E3)
                 {
-                    OutputHelper.WriteLine("Caught in Exc_TestClass_excep34_E3 as expected.\n");
+                    // Caught in Exc_TestClass_excep34_E3 as expected.\n
                     retval = 0;
                 }
                 catch
                 {
-                    OutputHelper.WriteLine("Unexpected ... catch.\n");
+                    // Unexpected ... catch.\n
                 }
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
                 return retval;
             }
             public static bool testMethod()
@@ -922,8 +906,6 @@ namespace NFUnitTestException
                 {
                 }
                 retval = Exc_TestClass_excep35_V.counter;
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
                 return retval;
             }
             public static bool testMethod()
@@ -1002,8 +984,6 @@ namespace NFUnitTestException
                 f.f03();
                 if (Exc_TestClass_excep40_F.xpath == 1)
                     retval -= 2;
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
                 return retval;
             }
             public static bool testMethod()
@@ -1028,13 +1008,13 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In f01(), throwing an Exc_TestClass_excep41_E3...");
+                    // In f01(), throwing an Exc_TestClass_excep41_E3...
                     throw new Exc_TestClass_excep41_E3();
-                    OutputHelper.WriteLine("After throw in f01().  SHOULD NOT BE HERE!");
+                    // After throw in f01().  SHOULD NOT BE HERE!
                 }
                 catch (Exc_TestClass_excep41_E1)
                 {
-                    OutputHelper.WriteLine("In catch in f01()");
+                    // In catch in f01()
                     xpath += 4;
                 }
             }
@@ -1042,13 +1022,13 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("Calling f01()...");
+                    // Calling f01()...
                     f01();
-                    OutputHelper.WriteLine("Returned from f01()");
+                    // Returned from f01()
                 }
                 catch (Exc_TestClass_excep41_E4)
                 {
-                    OutputHelper.WriteLine("In catch in f00()");
+                    // In catch in f00()
                     xpath += 2;
                 }
             }
@@ -1061,19 +1041,17 @@ namespace NFUnitTestException
                 Exc_TestClass_excep41_F f = new Exc_TestClass_excep41_F();
                 try
                 {
-                    OutputHelper.WriteLine("Calling f00()...");
+                    // Calling f00()...
                     f.f00();
-                    OutputHelper.WriteLine("Returned from f00()...");
+                    // Returned from f00()...
                 }
                 catch (Exc_TestClass_excep41_E3)
                 {
-                    OutputHelper.WriteLine("In catch in f00()");
+                    // In catch in f00()
                     Exc_TestClass_excep41_F.xpath += 1;
                 }
                 if (Exc_TestClass_excep41_F.xpath == 1)
                     retval--;
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, xpath=={0} " + (Exc_TestClass_excep41_F.xpath).ToString());
                 return retval;
             }
             public static bool testMethod()
@@ -1102,7 +1080,7 @@ namespace NFUnitTestException
                 OutputHelper.WriteLine("i==" + i.ToString());
                 if (i == 255)
                 {
-                    OutputHelper.WriteLine("Throwing Exc_TestClass_excep42_E1");
+                    // Throwing Exc_TestClass_excep42_E1
                     tb = 0;
                     throw s;
                 }
@@ -1376,17 +1354,14 @@ namespace NFUnitTestException
                     }
                     catch (Exc_TestClass_excep42_E1)
                     {
-                        OutputHelper.WriteLine("Caught Exc_TestClass_excep42_E1");
+                        // Caught Exc_TestClass_excep42_E1
                         retval = Exc_TestClass_excep42_F.tb;
                     }
                     catch
                     {
-                        OutputHelper.WriteLine("Did not catch Exc_TestClass_excep42_E1");
+                        // Did not catch Exc_TestClass_excep42_E1
                         retval = -1;
                     }
-                    OutputHelper.WriteLine(retval.ToString());
-                    if (retval == 0) OutputHelper.WriteLine("PASS");
-                    else OutputHelper.WriteLine("FAIL");
                     return retval;
                 }
                 public static bool testMethod()
@@ -1415,7 +1390,7 @@ namespace NFUnitTestException
                 OutputHelper.WriteLine("i==" + i.ToString());
                 if (i == 33)
                 {
-                    OutputHelper.WriteLine("Throwing Exc_TestClass_excep42b_E1");
+                    // Throwing Exc_TestClass_excep42b_E1
                     tb = 0;
                     throw s;
                 }
@@ -1467,17 +1442,14 @@ namespace NFUnitTestException
                 }
                 catch (Exc_TestClass_excep42b_E1)
                 {
-                    OutputHelper.WriteLine("Caught Exc_TestClass_excep42b_E1");
+                    // Caught Exc_TestClass_excep42b_E1
                     retval = Exc_TestClass_excep42b_F.tb;
                 }
                 catch
                 {
-                    OutputHelper.WriteLine("Did not catch Exc_TestClass_excep42b_E1");
+                    // Did not catch Exc_TestClass_excep42b_E1
                     retval = -1;
                 }
-                OutputHelper.WriteLine(retval.ToString());
-                if (retval == 0) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL");
                 return retval;
             }
             public static bool testMethod()
@@ -1781,7 +1753,7 @@ namespace NFUnitTestException
                         retval = 0;
                     }
 
-                    if (retval == 0) OutputHelper.WriteLine("PASS");
+                    if (retval == 0) // PASS
                     else OutputHelper.WriteLine("FAIL, retval=={0 }" + retval.ToString());
                     return retval;
                 }
@@ -1799,19 +1771,17 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In try block.");
+                    // In try block.
                 }
                 finally
                 {
                     goto lab1;  //This should cause an error
-                    OutputHelper.WriteLine("Entering finally block");
+                    // Entering finally block
                     retval -= 1;
                 lab1:
                     retval -= 2;
                 }
-                OutputHelper.WriteLine("Ready to return.");
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval=={0} " + retval.ToString());
+                // Ready to return.
                 return retval;
             }
             public static bool testMethod()
@@ -1826,12 +1796,12 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In try block.");
+                    // In try block.
                 }
                 finally
                 {
                     goto lab4;  //This should cause an error
-                    OutputHelper.WriteLine("Entering finally block");
+                    // Entering finally block
                     retval -= 1;
                 lab1:
                     retval -= 2;
@@ -1842,9 +1812,7 @@ namespace NFUnitTestException
                 lab4:
                     retval -= 5;
                 }
-                OutputHelper.WriteLine("Ready to return.");
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval=={0}" + retval.ToString());
+                // Ready to return.
                 return retval;
             }
             public static bool testMethod()
@@ -1867,7 +1835,7 @@ namespace NFUnitTestException
                 {
                     try
                     {
-                        OutputHelper.WriteLine("In try block, ready to throw.");
+                        // In try block, ready to throw.
                         throw new Exc_TestClass_excep58_E1("An exception has occurred");
                     }
                     //catch (Exception s){
@@ -1876,7 +1844,7 @@ namespace NFUnitTestException
                     //}
                     finally
                     {
-                        OutputHelper.WriteLine("In inner finally block");
+                        // In inner finally block
                         retval ^= 0x01;
                     }
                 }
@@ -1884,22 +1852,20 @@ namespace NFUnitTestException
                 {
                     if (0 == (retval & 0x01))
                         retval ^= 0x02;
-                    OutputHelper.WriteLine("In catch block.");
+                    // In catch block.
                     OutputHelper.WriteLine(s.Message);
                 }
                 catch (Exception)
                 {
-                    OutputHelper.WriteLine("FAIL -- Should not enter catch (Exception) block");
+                    // FAIL -- Should not enter catch (Exception) block
                     retval++;
                 }
                 finally
                 {
-                    OutputHelper.WriteLine("In outer finally block");
+                    // In outer finally block
                     if (0 == (retval & 0x03))
                         retval ^= 0x04;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval == " + retval.ToString());
                 return retval;
             }
             public static bool testMethod()
@@ -1924,7 +1890,7 @@ namespace NFUnitTestException
                     {
                         try
                         {
-                            OutputHelper.WriteLine("In try block, ready to throw.");
+                            // In try block, ready to throw.
                             throw new Exc_TestClass_excep59_E1("An exception has occurred");
                         }
                         //catch (Exception s)
@@ -1934,7 +1900,7 @@ namespace NFUnitTestException
                         //}
                         finally
                         {
-                            OutputHelper.WriteLine("In innermost finally block");
+                            // In innermost finally block
                             retval ^= 0x01;
                         }
                     }
@@ -1944,7 +1910,7 @@ namespace NFUnitTestException
                     //}
                     finally
                     {
-                        OutputHelper.WriteLine("In middle finally block");
+                        // In middle finally block
                         if (0 == (retval & 0x01))
                             retval ^= 0x02;
                     }
@@ -1953,22 +1919,20 @@ namespace NFUnitTestException
                 {
                     if (0 == (retval & 0x03))
                         retval ^= 0x04;
-                    OutputHelper.WriteLine("In catch block.");
+                    // In catch block.
                     OutputHelper.WriteLine(s.Message);
                 }
                 catch (Exception)
                 {
-                    OutputHelper.WriteLine("FAIL -- Should not enter catch (Exception) block");
+                    // FAIL -- Should not enter catch (Exception) block
                     retval++;
                 }
                 finally
                 {
-                    OutputHelper.WriteLine("In outer finally block");
+                    // In outer finally block
                     if (0 == (retval & 0x07))
                         retval ^= 0x08;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval == " + retval.ToString());
                 return retval;
             }
             public static bool testMethod()
@@ -1993,7 +1957,7 @@ namespace NFUnitTestException
                     {
                         try
                         {
-                            OutputHelper.WriteLine("In try block, ready to throw.");
+                            // In try block, ready to throw.
                             throw new Exc_TestClass_excep60_E1("An exception has occurred");
                         }
                         //catch (Exception s)
@@ -2003,13 +1967,13 @@ namespace NFUnitTestException
                         //}
                         finally
                         {
-                            OutputHelper.WriteLine("In innermost finally block");
+                            // In innermost finally block
                             retval ^= 0x01;
                         }
                     }
                     catch (Exc_TestClass_excep60_E1 s)
                     {
-                        OutputHelper.WriteLine("In catch block.");
+                        // In catch block.
                         OutputHelper.WriteLine(s.Message);
                         if (0 == (retval & 0x01))
                             retval ^= 0x02;
@@ -2017,7 +1981,7 @@ namespace NFUnitTestException
                     }
                     finally
                     {
-                        OutputHelper.WriteLine("In middle finally block");
+                        // In middle finally block
                         if (0 == (retval & 0x03))
                             retval ^= 0x04;
                     }
@@ -2026,7 +1990,7 @@ namespace NFUnitTestException
                 {
                     if (0 == (retval & 0x07))
                         retval ^= 0x08;
-                    OutputHelper.WriteLine("In outer catch block.");
+                    // In outer catch block.
                     if (typeof(Exc_TestClass_excep60_E1) == s.InnerException.GetType())
                         retval ^= 0x10;
                 }
@@ -2036,12 +2000,10 @@ namespace NFUnitTestException
                 //}
                 finally
                 {
-                    OutputHelper.WriteLine("In outer finally block");
+                    // In outer finally block
                     if (0 == (retval & 0x1F))
                         retval ^= 0x20;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval == 0x" + retval.ToString());
                 return retval;
             }
             public static bool testMethod()
@@ -2066,24 +2028,24 @@ namespace NFUnitTestException
                     {
                         try
                         {
-                            OutputHelper.WriteLine("In try block, ready to throw.");
+                            // In try block, ready to throw.
                             throw new Exc_TestClass_excep61_E1("An exception has occurred");
                         }
                         catch (Exc_TestClass_excep61_E1 s)
                         {
-                            OutputHelper.WriteLine("In catch block.");
+                            // In catch block.
                             OutputHelper.WriteLine(s.Message);
                             throw new Exception("Setting InnerException #1", s);
                         }
                         finally
                         {
-                            OutputHelper.WriteLine("In innermost finally block");
+                            // In innermost finally block
                             retval ^= 0x01;
                         }
                     }
                     catch (Exception s)
                     {
-                        OutputHelper.WriteLine("In catch block.");
+                        // In catch block.
                         OutputHelper.WriteLine(s.Message);
                         if (0 == (retval & 0x01))
                             retval ^= 0x02;
@@ -2091,7 +2053,7 @@ namespace NFUnitTestException
                     }
                     finally
                     {
-                        OutputHelper.WriteLine("In middle finally block");
+                        // In middle finally block
                         if (0 == (retval & 0x03))
                             retval ^= 0x04;
                     }
@@ -2100,7 +2062,7 @@ namespace NFUnitTestException
                 {
                     if (0 == (retval & 0x07))
                         retval ^= 0x08;
-                    OutputHelper.WriteLine("In outer catch block.");
+                    // In outer catch block.
                     if (typeof(Exception) == s.InnerException.GetType())
                         retval ^= 0x10;
                     if (typeof(Exc_TestClass_excep61_E1) == s.InnerException.InnerException.GetType())
@@ -2112,12 +2074,10 @@ namespace NFUnitTestException
                 //}
                 finally
                 {
-                    OutputHelper.WriteLine("In outer finally block");
+                    // In outer finally block
                     if (0 == (retval & 0x1F))
                         retval ^= 0x40;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval == 0x" + retval.ToString());
                 return retval;
             }
             public static bool testMethod()
@@ -2138,7 +2098,7 @@ namespace NFUnitTestException
             {
                 try
                 {
-                    OutputHelper.WriteLine("In try block, ready to throw.");
+                    // In try block, ready to throw.
                     throw new Exception("An exception has occurred");
                 }
                 catch (Exception s)
@@ -2152,12 +2112,10 @@ namespace NFUnitTestException
                 //}
                 finally
                 {
-                    OutputHelper.WriteLine("In outer finally block");
+                    // In outer finally block
                     if (0 == (retval & 0x01))
                         retval ^= 0x02;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval == 0x" + retval.ToString());
                 return retval;
             }
             public static bool testMethod()
@@ -2179,9 +2137,9 @@ namespace NFUnitTestException
             }
             public static void InitHelper()
             {
-                OutputHelper.WriteLine("This is bug number: 21724	Resolved By Design.");
-                OutputHelper.WriteLine("This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. ");
-                OutputHelper.WriteLine("When this bug is fixed change remove the comment below.");
+                // This is bug number: 21724	Resolved By Design.
+                // This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. 
+                // When this bug is fixed change remove the comment below.
 
                 throw new Exception("Exception in InitHelper");
             }
@@ -2200,8 +2158,6 @@ namespace NFUnitTestException
                     if (t.InnerException.GetType() == typeof(Exception))
                         retval ^= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval == 0x" + retval.ToString());
                 return retval;
             }
             public static bool testMethod()
@@ -2220,9 +2176,9 @@ namespace NFUnitTestException
             public static int StaticInt = InitHelper();
             public static int InitHelper()
             {
-                OutputHelper.WriteLine("This is bug number: 21724	Resolved By Design.");
-                OutputHelper.WriteLine("This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. ");
-                OutputHelper.WriteLine("When this bug is fixed change this back to pass and chang eht known failure to fail");
+                // This is bug number: 21724	Resolved By Design.
+                // This is bug number: 21724	If a catch search reaches a static ctor then a Exception is thrown at the point of static ctor invocation. The inner exception is the original exception. 
+                // When this bug is fixed change this back to pass and chang eht known failure to fail
 
                 throw new Exception("Exception in InitHelper");
                 return 0;
@@ -2242,8 +2198,6 @@ namespace NFUnitTestException
                     if (t.InnerException.GetType() == typeof(Exception))
                         retval ^= 0x01;
                 }
-                if (0 == retval) OutputHelper.WriteLine("PASS");
-                else OutputHelper.WriteLine("FAIL, retval == 0x" + retval.ToString());
                 return retval;
             }
             public static bool testMethod()
@@ -2265,7 +2219,7 @@ namespace NFUnitTestException
             {
                 retval ^= 0x01;
                 OutputHelper.WriteLine("retval == " + retval.ToString());
-                OutputHelper.WriteLine("In// Exc_TestClass_excep65_C1()");
+                // In// Exc_TestClass_excep65_C1()
             }
         }
         public class Exc_TestClass_excep65_C2 : Exc_TestClass_excep65_C1
@@ -2275,9 +2229,9 @@ namespace NFUnitTestException
         {
             ~Derived()
             {
-                OutputHelper.WriteLine("In ~Derived()");
+                // In ~Derived()
                 DtorHelper();
-                OutputHelper.WriteLine("FAIL, did not exit dtor when exception thrown");
+                // FAIL, did not exit dtor when exception thrown
                 Exc_TestClass_excep65_C1.retval |= 0x02;
             }
             public static void DtorHelper()

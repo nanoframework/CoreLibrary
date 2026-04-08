@@ -1,14 +1,12 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System.Runtime.CompilerServices
 {
     /// <summary>
     /// Defines the details of how a method is implemented.
     /// </summary>
+    [ExcludeType]
     [Serializable]
     public enum MethodImplOptions
     {
@@ -42,6 +40,7 @@ namespace System.Runtime.CompilerServices
     /// <summary>
     /// Defines how a method is implemented.
     /// </summary>
+    [ExcludeType]
     [Serializable]
     public enum MethodCodeType
     {
@@ -67,6 +66,7 @@ namespace System.Runtime.CompilerServices
     /// Specifies the details of how a method is implemented. This class cannot be inherited.
     /// </summary>
     [Serializable, AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor, Inherited = false)]
+    [ExcludeType]
     public sealed class MethodImplAttribute : Attribute
     {
         internal MethodImplOptions _val;
@@ -108,5 +108,4 @@ namespace System.Runtime.CompilerServices
         /// </_value>
         public MethodImplOptions Value { get { return _val; } }
     }
-
 }

@@ -1,12 +1,7 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
-using System;
-using System.Diagnostics;
 
 namespace NFUnitTestSystemLib
 {
@@ -21,7 +16,7 @@ namespace NFUnitTestSystemLib
             public WeakRefClass() { }
             ~WeakRefClass()
             {
-                OutputHelper.WriteLine("Finalized.");
+                // Finalized.
                 hasFinalized1 = true;
             }
             void MakeSomeGarbage()
@@ -46,14 +41,14 @@ namespace NFUnitTestSystemLib
         //    //  4. Verify & Remove Strong reference
         //    //  5. Allow for GC
         //    //  6. If weak ref surivived verify its data
-        //    OutputHelper.WriteLine("Create an object with strong ref");
+        //    // Create an object with strong ref
         //    WeakRefClass WRC1 = new WeakRefClass();
 
-        //    OutputHelper.WriteLine("Create a short weak ref to the onject");
+        //    // Create a short weak ref to the onject
         //    WeakReference wr = new WeakReference(WRC1);
         //    wr.Target = WRC1;
 
-        //    OutputHelper.WriteLine("Allow for GC");
+        //    // Allow for GC
         //    nanoFramework.Runtime.Native.GC.Run(true);
         //    int sleepTime = 2000;
         //    int slept = 0;
@@ -64,14 +59,14 @@ namespace NFUnitTestSystemLib
         //    }
         //    OutputHelper.WriteLine("GC took " + slept);
 
-        //    Assert.False(hasFinalized1);
+        //    Assert.IsFalse(hasFinalized1);
 
-        //    OutputHelper.WriteLine("Verify & Remove Strong reference");
-        //    Assert.Equal(((WeakRefClass)wr.Target).data, 5);
+        //    // Verify & Remove Strong reference
+        //    Assert.AreEqual(((WeakRefClass)wr.Target).data, 5);
         //    WRC1 = null;
-        //    Assert.Null(WRC1);
+        //    Assert.IsNull(WRC1);
 
-        //    OutputHelper.WriteLine("Allow for GC");
+        //    // Allow for GC
         //    // We should force the finalizer somehow
         //    nanoFramework.Runtime.Native.GC.Run(true);
         //    GC.WaitForPendingFinalizers();
@@ -83,17 +78,17 @@ namespace NFUnitTestSystemLib
         //        slept += 10;
         //    }
         //    OutputHelper.WriteLine("GC took " + slept);
-        //    Assert.True(hasFinalized1);
-        //    Assert.Null(WRC1 );
+        //    Assert.IsTrue(hasFinalized1);
+        //    Assert.IsNull(WRC1 );
 
         //    if (wr.IsAlive)
         //    {
-        //        Assert.Equal(((WeakRefClass)wr.Target).data, 5);
-        //        OutputHelper.WriteLine("Weak Reference survived.");
+        //        Assert.AreEqual(((WeakRefClass)wr.Target).data, 5);
+        //        // Weak Reference survived.
         //    }
         //    else
         //    {
-        //        OutputHelper.WriteLine("Weak Reference has been collected");
+        //        // Weak Reference has been collected
         //    }
         //}
     }

@@ -1,13 +1,23 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Diagnostics.CodeAnalysis;
 
 namespace System
 {
-    using Runtime.CompilerServices;
+
+    /* Unmerged change from project 'CoreLibrary'
+    Before:
+        using Runtime.CompilerServices;
+        using System.Collections;
+        /// <summary>
+    After:
+        using System.Collections;
+        using Runtime.CompilerServices;
+        /// <summary>
+    */
     using System.Collections;
+    using Runtime.CompilerServices;
     /// <summary>
     /// Represents text as a sequence of UTF-16 code units.
     /// </summary>
@@ -34,14 +44,14 @@ namespace System
             // Throw a NotSupportedException in compliance of .net practices 
             // (no message to preserve assembly size/memory consumption)
             // See https://docs.microsoft.com/en-us/dotnet/api/system.notsupportedexception 
-            throw new NotSupportedException(); 
+            throw new NotSupportedException();
         }
 
         /// <summary>
         /// Represents the empty string. This field is read-only.
         /// </summary>
         public static readonly String Empty = "";
-        
+
         /// <summary>
         /// Determines whether this instance and a specified object, which must also be a String object, have the same value.
         /// </summary>
@@ -709,10 +719,10 @@ namespace System
                     if (fmt.Length > 0)
                     {
 #if NANOCLR_REFLECTION
-                        
+
                         if (args[index] is null)
                         {
-                           token = "";
+                            token = "";
                         }
                         else
                         {
@@ -825,7 +835,7 @@ namespace System
         /// </summary>
         /// <param name="value">The string to test.</param>
         /// <returns><see langword="true"/> if the value parameter is <see langword="null"/> or an empty string (""); otherwise, <see langword="false"/>.</returns>
-        public static bool IsNullOrEmpty(string value)
+        public static bool IsNullOrEmpty([NotNullWhen(false)] string value)
         {
             return value == null || value.Length == 0;
         }
@@ -853,10 +863,7 @@ namespace System
         /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
         public bool StartsWith(string value)
         {
-            if ((object)value == null)
-            {
-                throw new ArgumentNullException();
-            }
+            ArgumentNullException.ThrowIfNull(value);
 
             if ((object)this == value)
             {
@@ -885,10 +892,7 @@ namespace System
         /// <returns><see langword="true"/> if <paramref name="value"/> matches the end of this instance; otherwise, <see langword="false"/>.</returns>
         public bool EndsWith(string value)
         {
-            if ((object)value == null)
-            {
-                throw new ArgumentNullException();
-            }
+            ArgumentNullException.ThrowIfNull(value);
 
             if ((object)this == value)
             {

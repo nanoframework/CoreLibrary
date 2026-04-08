@@ -1,8 +1,5 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System
 {
@@ -21,7 +18,8 @@ namespace System
 
         // this field is required in the native end
 #pragma warning disable 0649
-        internal double _value;
+        // Do not rename (binary serialization)
+        internal double m_value;
 #pragma warning restore 0649
 
         /// <summary>
@@ -158,7 +156,7 @@ namespace System
                 return _naNSymbol;
             }
 
-            return Number.Format(_value, false, format, NumberFormatInfo.CurrentInfo);
+            return Number.Format(m_value, false, format, NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>

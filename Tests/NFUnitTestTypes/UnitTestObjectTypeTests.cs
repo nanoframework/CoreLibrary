@@ -1,10 +1,7 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
-using System;
 
 namespace NFUnitTestTypes
 {
@@ -14,96 +11,126 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void TestCtor()
         {
-            OutputHelper.WriteLine("Test of Object constructor");
+            // Test of Object constructor
 
             object o = new();
-            Assert.NotNull(o, "failed to create an Object");
+#pragma warning disable S3236 // Caller information arguments should not be provided explicitly
+            Assert.IsNotNull(o, "failed to create an Object");
+#pragma warning restore S3236 // Caller information arguments should not be provided explicitly
         }
 
         [TestMethod]
         public void TestEquals_01()
         {
-            OutputHelper.WriteLine("Test01 of Object Equals");
+            // Test01 of Object Equals
 
             object objectX = new();
             object objectY = new();
 
-            Assert.True(objectX.Equals(objectX), "Object should equal itself");
-            Assert.True(!objectX.Equals(null), "object should not equal null");
-            Assert.True(!objectX.Equals(objectY), "Different objects should not equal 1");
-            Assert.True(!objectY.Equals(objectX), "Different objects should not equal 2");
+            // Caller information arguments should not be provided explicitly
+            // Identical expressions should not be used on both sides of operators
+            // on purpose to test the Equals overload
+#pragma warning disable S3236 
+#pragma warning disable S1764 
+            Assert.IsTrue(objectX.Equals(objectX), "Object should equal itself");
+            Assert.IsTrue(!objectX.Equals(null), "object should not equal null");
+            Assert.IsTrue(!objectX.Equals(objectY), "Different objects should not equal 1");
+            Assert.IsTrue(!objectY.Equals(objectX), "Different objects should not equal 2");
 
             double doubleX = double.NaN;
             double doubleY = double.NaN;
-            Assert.True(((object)doubleX).Equals(doubleY), "NaNs should always equal each other");
+            Assert.IsTrue(((object)doubleX).Equals(doubleY), "NaNs should always equal each other");
+#pragma warning restore S1764 // Identical expressions should not be used on both sides of operators
+#pragma warning restore S3236 // Caller information arguments should not be provided explicitly
         }
 
         [TestMethod]
         public void TestEquals_02()
         {
-            OutputHelper.WriteLine("Test02 of Object Equals overload");
+            // Test02 of Object Equals overload
 
             object objectX = new();
             object objectY = new();
 
-            Assert.True(Equals(objectX, objectX), "Object should equal itself");
-            Assert.True(!Equals(objectX, null), "object should not equal null");
-            Assert.True(!Equals(null, objectX), "null should not equal object");
-            Assert.True(!Equals(objectX, objectY), "Different objects should not equal 1");
-            Assert.True(!Equals(objectY, objectX), "Different objects should not equal 2");
-            Assert.True(Equals(null, null), "null should equal null");
+            // Caller information arguments should not be provided explicitly
+            // Identical expressions should not be used on both sides of operators
+            // on purpose to test the Equals overload
+#pragma warning disable S3236 
+#pragma warning disable S1764 
+            Assert.IsTrue(Equals(objectX, objectX), "Object should equal itself");
+            Assert.IsTrue(!Equals(objectX, null), "object should not equal null");
+            Assert.IsTrue(!Equals(null, objectX), "null should not equal object");
+            Assert.IsTrue(!Equals(objectX, objectY), "Different objects should not equal 1");
+            Assert.IsTrue(!Equals(objectY, objectX), "Different objects should not equal 2");
+            Assert.IsTrue(Equals(null, null), "null should equal null");
+#pragma warning restore S1764 // Identical expressions should not be used on both sides of operators
+#pragma warning restore S3236 // Caller information arguments should not be provided explicitly
 
 
             double doubleX = double.NaN;
             double doubleY = double.NaN;
-            Assert.True(Equals(doubleX, doubleY), "NaNs should always equal each other");
+#pragma warning disable S3236 // Caller information arguments should not be provided explicitly
+            Assert.IsTrue(Equals(doubleX, doubleY), "NaNs should always equal each other");
+#pragma warning restore S3236 // Caller information arguments should not be provided explicitly
         }
 
         [TestMethod]
         public void TestGetHashCode()
         {
-            OutputHelper.WriteLine("Test Object HashCode");
+            // Test Object HashCode
 
             object objectX = new();
-            Assert.Equal(objectX.GetHashCode(), objectX.GetHashCode(), "Object's hash code should not change");
+#pragma warning disable S3236 // Caller information arguments should not be provided explicitly
+            Assert.AreEqual(objectX.GetHashCode(), objectX.GetHashCode(), "Object's hash code should not change");
+#pragma warning restore S3236 // Caller information arguments should not be provided explicitly
         }
 
         [TestMethod]
         public void TestGetType()
         {
-            OutputHelper.WriteLine("Test getting Object type");
+            // Test getting Object type
 
             object objectX = new();
 
-            Assert.NotNull(objectX.GetType(), "Should get a type for Object");
-            Assert.Equal(objectX.GetType().ToString(), "System.Object", "Wrong ToString from Object type");
+#pragma warning disable S3236 // Caller information arguments should not be provided explicitly
+            Assert.IsNotNull(objectX.GetType(), "Should get a type for Object");
+#pragma warning restore S3236 // Caller information arguments should not be provided explicitly
+#pragma warning disable S3236 // Caller information arguments should not be provided explicitly
+            Assert.AreEqual(objectX.GetType().ToString(), "System.Object", "Wrong ToString from Object type");
+#pragma warning restore S3236 // Caller information arguments should not be provided explicitly
         }
 
         [TestMethod]
         public void TestReferenceEquals()
         {
-            OutputHelper.WriteLine("Test Object ReferenceEquals");
+            // Test Object ReferenceEquals
 
             object objectX = new();
             object objectY = new();
 
-            Assert.True(ReferenceEquals(objectX, objectX), "Object should equal itself");
-            Assert.True(!ReferenceEquals(objectX, null), "object should not equal null");
-            Assert.True(!ReferenceEquals(null, objectX), "null should not equal object");
-            Assert.True(!ReferenceEquals(objectX, objectY), "Different objects should not equal 1");
-            Assert.True(!ReferenceEquals(objectY, objectX), "Different objects should not equal 2");
-            Assert.True(ReferenceEquals(null, null), "null should not equal null");
+            // Caller information arguments should not be provided explicitly
+            // on purpose to test the ReferenceEquals overload
+#pragma warning disable S3236 
+            Assert.IsTrue(ReferenceEquals(objectX, objectX), "Object should equal itself");
+            Assert.IsTrue(!ReferenceEquals(objectX, null), "object should not equal null");
+            Assert.IsTrue(!ReferenceEquals(null, objectX), "null should not equal object");
+            Assert.IsTrue(!ReferenceEquals(objectX, objectY), "Different objects should not equal 1");
+            Assert.IsTrue(!ReferenceEquals(objectY, objectX), "Different objects should not equal 2");
+            Assert.IsTrue(ReferenceEquals(null, null), "null should not equal null");
+#pragma warning restore S3236 // Caller information arguments should not be provided explicitly
         }
 
         [TestMethod]
         public void TestToString()
         {
-            OutputHelper.WriteLine("Test Object ToString");
+            // Test Object ToString
 
             object objectX = new();
             object objectY = new();
 
-            Assert.Equal(objectX.ToString(), objectY.ToString(), "All Objects should have same string representation");
+#pragma warning disable S3236 // Caller information arguments should not be provided explicitly
+            Assert.AreEqual(objectX.ToString(), objectY.ToString(), "All Objects should have same string representation");
+#pragma warning restore S3236 // Caller information arguments should not be provided explicitly
         }
     }
 }

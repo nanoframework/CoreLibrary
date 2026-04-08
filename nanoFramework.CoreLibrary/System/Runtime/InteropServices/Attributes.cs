@@ -1,8 +1,7 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Runtime.CompilerServices;
 
 namespace System.Runtime.InteropServices
 {
@@ -10,6 +9,7 @@ namespace System.Runtime.InteropServices
     /// Controls accessibility of an individual managed type or member, or of all types within an assembly, to COM.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Interface | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Field | AttributeTargets.Method | AttributeTargets.Property, Inherited = false)]
+    [ExcludeType]
     public sealed class ComVisibleAttribute : Attribute
     {
         internal bool _val;
@@ -36,6 +36,7 @@ namespace System.Runtime.InteropServices
     /// Supplies an explicit System.Guid when an automatic GUID is undesirable.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Interface | AttributeTargets.Class | AttributeTargets.Enum | AttributeTargets.Struct | AttributeTargets.Delegate, Inherited = false)]
+    [ExcludeType]
     public sealed class GuidAttribute : Attribute
     {
         internal String Val;
@@ -62,6 +63,7 @@ namespace System.Runtime.InteropServices
     /// Indicates that data should be marshaled from callee back to caller.
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter)]
+    [ExcludeType]
     public sealed class OutAttribute : Attribute
     {
     }
@@ -70,6 +72,7 @@ namespace System.Runtime.InteropServices
     /// Lets you control the physical layout of the data fields of a class or structure in memory.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited = false)]
+    [ExcludeType]
     public sealed class StructLayoutAttribute : Attribute
     {
         internal LayoutKind Val;

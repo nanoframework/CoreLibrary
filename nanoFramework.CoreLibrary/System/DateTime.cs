@@ -1,12 +1,11 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 namespace System
 {
-    using Runtime.CompilerServices;
-    using Globalization;
     using System.Diagnostics;
+    using Globalization;
+    using Runtime.CompilerServices;
 
     // Summary:
     //     Specifies whether a System.DateTime object represents a local time, a Coordinated
@@ -15,7 +14,7 @@ namespace System
     /// Specifies whether a <see cref="DateTime"/> object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
     /// </summary>
     /// <remarks>
-    /// nanoFramework doesn't support local time, only  UTC, so it's not possible to specify <see cref="DateTimeKind.Local"/>.
+    /// nanoFramework doesn't support local time, only  UTC, so it's not possible to specify <see cref="Local"/>.
     /// </remarks>
     [Serializable]
     public enum DateTimeKind
@@ -29,7 +28,7 @@ namespace System
         /// The time represented is local time.
         /// </summary>
         /// <remarks>
-        /// nanoFramework doesn't support local time, so <see cref="DateTimeKind.Local"/> is provided to allow code reuse and keep consistency with full .NET framework.
+        /// nanoFramework doesn't support local time, so <see cref="Local"/> is provided to allow code reuse and keep consistency with full .NET framework.
         /// </remarks>
         [Obsolete("nanoFramework doesn't support local time, so DateTimeKind.Local is provided to allow code reuse and keep consistency with full .NET framework", true)]
         Local = 2,
@@ -82,9 +81,12 @@ namespace System
 #endif // NANOCLR_REFLECTION
     public struct DateTime
     {
-        /// Our origin is at 1601/01/01:00:00:00.000
-        /// While desktop CLR's origin is at 0001/01/01:00:00:00.000.
-        /// There are 504911232000000000 ticks between them which we are subtracting.
+        // Our origin is at 1601/01/01:00:00:00.000
+        // While desktop CLR's origin is at 0001/01/01:00:00:00.000.
+        // There are 504911232000000000 ticks between them which we are subtracting.
+        //////////////////////////////////////////////////////////////////////////////////////////
+        /// Keep in sync with native define TICKS_AT_ORIGIN @ corlib_native_System_DateTime.cpp //
+        //////////////////////////////////////////////////////////////////////////////////////////
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private const long _ticksAtOrigin = 504911232000000000;
 
@@ -150,6 +152,7 @@ namespace System
 
         // this enum is used to make the call to get date part
         // keep in sync with native 
+        [ExcludeType]
         private enum DateTimePart
         {
             Year,
@@ -167,7 +170,7 @@ namespace System
         /// Initializes a new instance of the <see cref="DateTime"/> structure to a specified number of ticks.
         /// </summary>
         /// <param name="ticks">A date and time expressed in the number of 100-nanosecond intervals. </param>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="DateTime.MinValue"/> and <see cref="DateTime.MaxValue"/>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="ticks"/> - Ticks must be between <see cref="MinValue"/> and <see cref="MaxValue"/>.</exception>
         public DateTime(long ticks)
         {
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
@@ -195,7 +198,7 @@ namespace System
         /// nanoFramework doesn't support local time, only  UTC, so it's not possible to specify <see cref="DateTimeKind.Local"/>.
         /// </remarks>
         public DateTime(long ticks, DateTimeKind kind)
-            :this(ticks)
+            : this(ticks)
         {
             // it's OK to check kind parameter only here 
             // if it's invalid the exception will be thrown anyway and allows the constructor to be reused
@@ -505,8 +508,7 @@ namespace System
         /// </value>
         public static DateTime UtcNow
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get => new DateTime();
+            get => new DateTime(GetUtcNowAsTicks(), DateTimeKind.Utc);
         }
 
         /// <summary>
@@ -556,8 +558,7 @@ namespace System
         /// </value>
         public static DateTime Today
         {
-            [MethodImpl(MethodImplOptions.InternalCall)]
-            get => new DateTime();
+            get => new DateTime(GetTodayAsTicks(), DateTimeKind.Utc);
         }
 
         /// <summary>
@@ -826,10 +827,10 @@ namespace System
             string s,
             out DateTime result)
         {
-            result = Convert.NativeToDateTime(
-                s,
+            Convert.NativeToDateTime(s,
                 false,
-                out bool success);
+                out bool success,
+                out result);
 
             return success;
         }
@@ -839,5 +840,11 @@ namespace System
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern int GetDateTimePart(DateTimePart part);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern static long GetUtcNowAsTicks();
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern static long GetTodayAsTicks();
     }
 }

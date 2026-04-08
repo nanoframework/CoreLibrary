@@ -1,8 +1,7 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Runtime.CompilerServices;
 
 namespace System.Reflection
 {
@@ -12,6 +11,7 @@ namespace System.Reflection
     /// Specifies which culture the assembly supports.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeType]
     public sealed class AssemblyCultureAttribute : Attribute
     {
         private readonly String _culture;
@@ -41,6 +41,7 @@ namespace System.Reflection
     /// Specifies the version of the assembly being attributed.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeType]
     public sealed class AssemblyVersionAttribute : Attribute
     {
         private readonly String _version;
@@ -70,6 +71,7 @@ namespace System.Reflection
     /// Specifies the name of a file containing the key pair used to generate a strong name.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeType]
     public sealed class AssemblyKeyFileAttribute : Attribute
     {
         private readonly String _keyFile;
@@ -99,6 +101,7 @@ namespace System.Reflection
     /// Specifies the name of a key container within the CSP containing the key pair used to generate a strong name.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeType]
     public sealed class AssemblyKeyNameAttribute : Attribute
     {
         private readonly String _keyName;
@@ -128,6 +131,7 @@ namespace System.Reflection
     /// Specifies that the assembly is not fully signed when created.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeType]
     public sealed class AssemblyDelaySignAttribute : Attribute
     {
         private readonly bool _delaySign;
@@ -160,6 +164,7 @@ namespace System.Reflection
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeType]
     public sealed class AssemblyFlagsAttribute : Attribute
     {
         private readonly AssemblyNameFlags _flags;
@@ -203,6 +208,7 @@ namespace System.Reflection
     /// Instructs a compiler to use a specific version number for the Win32 file version resource. The Win32 file version is not required to be the same as the assembly's version number.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly)]
+    [ExcludeType]
     public sealed class AssemblyFileVersionAttribute : Attribute
     {
         private readonly String _version;
@@ -238,6 +244,7 @@ namespace System.Reflection
     /// This attribute is specific of nanoFramework.
     /// </remarks>
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class, Inherited = false)]
+    [ExcludeType]
     public sealed class AssemblyNativeVersionAttribute : Attribute
     {
         private readonly String _nativeVersion;

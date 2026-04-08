@@ -1,8 +1,5 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System.Runtime.CompilerServices
 {
@@ -10,6 +7,7 @@ namespace System.Runtime.CompilerServices
     /// Specifies that types that are ordinarily visible only within the current assembly are visible to a specified assembly.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+    [ExcludeType]
     public sealed class InternalsVisibleToAttribute : Attribute
     {
         private readonly string _assemblyName;

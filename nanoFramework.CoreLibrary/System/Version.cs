@@ -1,17 +1,16 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System
 {
     /// <summary>
     /// Represents the version number of an assembly, operating system, or the common language runtime. This class cannot be inherited.
     /// </summary>
+    [Serializable]
     public sealed class Version // : ICloneable, IComparable, IComparable<Version>, IEquatable<Version>
     {
         // AssemblyName depends on the order staying the same
+        // Do not rename these (binary serialization)
         private readonly int _Major;
         private readonly int _Minor;
         private readonly int _Build = -1;

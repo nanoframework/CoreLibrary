@@ -1,15 +1,16 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Runtime.CompilerServices;
 
 namespace System.Diagnostics
 {
     /// <summary>
     /// Indicates to compilers that a method call or attribute should be ignored unless a specified conditional compilation symbol is defined.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true), Serializable]
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+    [ExcludeType]
+    [Serializable]
     public sealed class ConditionalAttribute : Attribute
     {
         private readonly String _conditionString;

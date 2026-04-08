@@ -1,17 +1,16 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Runtime.CompilerServices;
 
 namespace System
 {
     /// <summary>
     /// Marks the program elements that are no longer in use. This class cannot be inherited.
     /// </summary>
-    [Serializable, AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum |
-        AttributeTargets.Interface | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Delegate
-        , Inherited = false)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Constructor | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Event | AttributeTargets.Field | AttributeTargets.Interface | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Struct, Inherited = false)]
+    [ExcludeType]
+    [Serializable]
     public sealed class ObsoleteAttribute : Attribute
     {
         private readonly String _message;

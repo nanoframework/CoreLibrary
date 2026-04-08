@@ -1,8 +1,5 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
 
@@ -14,23 +11,21 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void TrueString_Get_ReturnsTrue()
         {
-            Assert.Equal("True", bool.TrueString);
+            Assert.AreEqual("True", bool.TrueString);
         }
 
         [TestMethod]
         public void FalseString_Get_ReturnsFalse()
         {
-            Assert.Equal("False", bool.FalseString);
+            Assert.AreEqual("False", bool.FalseString);
         }
 
         [TestMethod]
-        public void GetHashCode_Invoke_ReturnsExpected()
+        [DataRow(true, 1)]
+        [DataRow(false, 0)]
+        public void GetHashCode_Invoke_ReturnsExpected(bool value, int expected)
         {
-            bool _true = true;
-            bool _false = false;
-
-            Assert.Equal(_true.GetHashCode(), 1);
-            Assert.Equal(_false.GetHashCode(), 0);
+            Assert.AreEqual(value.GetHashCode(), expected);
         }
     }
 }

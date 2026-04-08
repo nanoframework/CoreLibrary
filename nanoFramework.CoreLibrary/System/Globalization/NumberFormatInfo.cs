@@ -1,8 +1,5 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System.Globalization
 {
@@ -61,7 +58,7 @@ namespace System.Globalization
         /// Gets the number of digits in each group to the left of the decimal in numeric values.
         /// </summary>
         /// <value>The number of digits in each group to the left of the decimal in numeric values. The default for InvariantInfo is a one-dimensional array with only one element, which is set to 3.</value>
-        /// <exception cref="System.InvalidOperationException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         public int[] NumberGroupSizes
         {
             get

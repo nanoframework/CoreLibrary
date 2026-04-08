@@ -1,12 +1,8 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestClasses
 {
@@ -16,8 +12,8 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Events1_Test()
         {
-            OutputHelper.WriteLine("This is testing an obsolete event structure, but should pass.");
-            Assert.True(EventsTestClass1.testMethod());
+            // This is testing an obsolete event structure, but should pass.
+            Assert.IsTrue(EventsTestClass1.testMethod());
         }
 
 

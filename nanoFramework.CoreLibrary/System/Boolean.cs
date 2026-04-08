@@ -1,8 +1,5 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System
 {
@@ -23,7 +20,8 @@ namespace System
 
         // this field is required in the native end
 #pragma warning disable 0649
-        private bool _value;
+        // Do not rename (binary serialization)
+        private bool m_value;
 #pragma warning restore 0649
 
         /// <summary>
@@ -32,7 +30,7 @@ namespace System
         /// <returns>TrueString if the value of this instance is true, or FalseString if the value of this instance is false.</returns>
         public override String ToString()
         {
-            return _value ? TrueString : FalseString;
+            return m_value ? TrueString : FalseString;
         }
 
     }

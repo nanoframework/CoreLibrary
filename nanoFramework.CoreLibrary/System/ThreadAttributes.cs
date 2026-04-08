@@ -1,8 +1,7 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Runtime.CompilerServices;
 
 namespace System
 {
@@ -10,6 +9,7 @@ namespace System
     /// Indicates that the COM threading model for an application is single-threaded apartment (STA).
     /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
+    [ExcludeType]
     public sealed class STAThreadAttribute : Attribute
     {
         /// <summary>
@@ -24,6 +24,7 @@ namespace System
     /// Indicates that the COM threading model for an application is multithreaded apartment (MTA).
     /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
+    [ExcludeType]
     public sealed class MTAThreadAttribute : Attribute
     {
         /// <summary>

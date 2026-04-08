@@ -1,8 +1,5 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System
 {
@@ -14,7 +11,8 @@ namespace System
     [Serializable]
     public struct Int32
     {
-        internal int _value;
+        // Do not rename (binary serialization)
+        internal int m_value;
 
         /// <summary>
         /// Represents the largest possible value of an Int32. This field is constant.
@@ -33,7 +31,7 @@ namespace System
         /// <returns>The string representation of the value of this instance, consisting of a negative sign if the value is negative, and a sequence of digits ranging from 0 to 9 with no leading zeroes.</returns>
         public override String ToString()
         {
-            return Number.Format(_value, true, "G", NumberFormatInfo.CurrentInfo);
+            return Number.Format(m_value, true, "G", NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>
@@ -43,7 +41,7 @@ namespace System
         /// <returns>he string representation of the value of this instance as specified by format.</returns>
         public String ToString(String format)
         {
-            return Number.Format(_value, true, format, NumberFormatInfo.CurrentInfo);
+            return Number.Format(m_value, true, format, NumberFormatInfo.CurrentInfo);
         }
 
         /// <summary>

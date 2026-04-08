@@ -1,13 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Collections;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestSystemLib
 {
@@ -31,16 +26,16 @@ namespace NFUnitTestSystemLib
             Guid theGuid = Guid.NewGuid();
 
             byte[] bGuid1 = theGuid.ToByteArray();
-            Assert.Equal(bGuid1.Length, 16);
+            Assert.AreEqual(bGuid1.Length, 16);
             Guid theSameGuid = new Guid(bGuid1);
             // must be the same
-            Assert.Equal(theGuid.CompareTo(theSameGuid), 0);
-            Assert.True(theGuid.Equals(theSameGuid));
+            Assert.AreEqual(theGuid.CompareTo(theSameGuid), 0);
+            Assert.IsTrue(theGuid.Equals(theSameGuid));
             Guid anotherGuid = Guid.NewGuid();
 
             // must be the different
-            Assert.NotEqual(theGuid.CompareTo(anotherGuid), 0);
-            Assert.False(theGuid.Equals(anotherGuid));
+            Assert.AreNotEqual(theGuid.CompareTo(anotherGuid), 0);
+            Assert.IsFalse(theGuid.Equals(anotherGuid));
         }
 
         /// <summary>
@@ -65,7 +60,7 @@ namespace NFUnitTestSystemLib
             /// </summary>
             ///
 
-            Byte[] guid16 = GetRandomBytes(16);
+            byte[] guid16 = GetRandomBytes(16);
             Guid myGuid1 = new Guid(guid16);
         }
 
@@ -87,8 +82,8 @@ namespace NFUnitTestSystemLib
             {
                 size = random.Next(100);
             }
-            Byte[] guidNot16 = GetRandomBytes(size);
-            Assert.Throws(typeof(ArgumentException), () => { Guid myGuid1 = new Guid(guidNot16); });
+            byte[] guidNot16 = GetRandomBytes(size);
+            Assert.ThrowsException(typeof(ArgumentException), () => { Guid myGuid1 = new Guid(guidNot16); });
         }
 
         [TestMethod]
@@ -100,8 +95,8 @@ namespace NFUnitTestSystemLib
             /// </summary>
             ///
 
-            Byte[] nullByte = null;
-            Assert.Throws(typeof(ArgumentNullException), () => { Guid myGuid1 = new Guid(nullByte); });
+            byte[] nullByte = null;
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { Guid myGuid1 = new Guid(nullByte); });
         }
 
         public static Guid GetGuid()
@@ -162,11 +157,11 @@ namespace NFUnitTestSystemLib
             ///
 
             Random random = new Random();
-            int _int = random.Next(Int32.MaxValue);
+            int _int = random.Next(int.MaxValue);
             short _short1 = (short)random.Next(32768);
             short _short2 = (short)random.Next(32768);
-            Byte[] _bArr = GetRandomBytes(8);
-            Guid _guid = new Guid(_int, _short1, _short2, _bArr[0], _bArr[1], _bArr[2], _bArr[3], _bArr[4], _bArr[5], _bArr[6], _bArr[7]);
+            byte[] _bArr = GetRandomBytes(8);
+            _ = new Guid(_int, _short1, _short2, _bArr[0], _bArr[1], _bArr[2], _bArr[3], _bArr[4], _bArr[5], _bArr[6], _bArr[7]);
         }
 
         [TestMethod]
@@ -179,11 +174,11 @@ namespace NFUnitTestSystemLib
             ///
 
             Random random = new Random();
-            int randoInt = random.Next(Int32.MaxValue);
+            int randoInt = random.Next(int.MaxValue);
             uint _uInt = (uint)(randoInt * 2);
             ushort _uShort1 = (ushort)random.Next(65536);
             ushort _uShort2 = (ushort)random.Next(65536);
-            Byte[] _bArr = GetRandomBytes(8);
+            byte[] _bArr = GetRandomBytes(8);
             Guid _guid = new Guid(_uInt, _uShort1, _uShort1, _bArr[0], _bArr[1], _bArr[2], _bArr[3], _bArr[4], _bArr[5], _bArr[6], _bArr[7]);
         }
 
@@ -197,10 +192,10 @@ namespace NFUnitTestSystemLib
             /// </summary>
             ///
             Guid guid = Guid.Empty;
-            Byte[] _bArr = guid.ToByteArray();
+            byte[] _bArr = guid.ToByteArray();
             for (int i = 0; i < 16; i++)
             {
-                Assert.Equal(_bArr[i], (byte)0);
+                Assert.AreEqual(_bArr[i], (byte)0);
             }
         }
 
@@ -214,28 +209,23 @@ namespace NFUnitTestSystemLib
             ///
 
             Guid guid1 = Guid.Empty;
-            OutputHelper.WriteLine("Verifing any instance of Guid, regardless of its value, is greater than null");
-            Assert.Equal(guid1.CompareTo(null), 1);
-            Byte[] _bArr = new Byte[16];
-            OutputHelper.WriteLine("Creating a Guid with all bytes zero");
+            // Verifing any instance of Guid, regardless of its value, is greater than null
+            Assert.AreEqual(guid1.CompareTo(null), 1);
+            byte[] _bArr = new byte[16];
+
+            // Creating a Guid with all bytes zero
             Guid guid2 = new Guid(_bArr);
-            Assert.Equal(guid1.CompareTo(guid2), 0);
+            Assert.AreEqual(guid1.CompareTo(guid2), 0);
+
             Guid guid3 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
-            if (guid3.CompareTo(guid1) <= 0)
-            {
-                throw new Exception("Expected : " + guid3.ToString() + " is greater than " + guid1.ToString());
-            }
+            Assert.IsTrue(guid3.CompareTo(guid1) > 0, "Expected : " + guid3.ToString() + " is greater than " + guid1.ToString());
+
             Guid guid4 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
-            Assert.Equal(guid4.CompareTo(guid3), 0);
+            Assert.AreEqual(guid4.CompareTo(guid3), 0);
+
             Guid guid5 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3e);
-            if (guid5.CompareTo(guid4) <= 0)
-            {
-                throw new Exception("Expected : " + guid5.ToString() + " is greater than " + guid4.ToString());
-            }
-            if (guid4.CompareTo(guid5) >= 0)
-            {
-                throw new Exception("Expected : " + guid4.ToString() + " is less than " + guid5.ToString());
-            }
+            Assert.IsTrue(guid5.CompareTo(guid4) > 0, "Expected : " + guid5.ToString() + " is greater than " + guid4.ToString());
+            Assert.IsTrue(guid4.CompareTo(guid5) < 0, "Expected : " + guid4.ToString() + " is less than " + guid5.ToString());
         }
 
         [TestMethod]
@@ -247,25 +237,34 @@ namespace NFUnitTestSystemLib
             /// </summary>
             ///
 
-            String[] strArr1 = new String[] { "00000000-0000-0000-0000-000000000000",
+            string[] strArr1 = new string[]
+            {
+                "00000000-0000-0000-0000-000000000000",
                 "00000000-0000-0000-0000-000000000000",
                 "4dff36b5-9dde-4f76-9a2a-96435047063d",
-                "ffffffff-ffff-ffff-ffff-ffffffffffff"};
+                "ffffffff-ffff-ffff-ffff-ffffffffffff"
+            };
+
             Guid guid1 = Guid.Empty;
-            Byte[] _byteArr1 = new Byte[16];
+            byte[] _byteArr1 = new byte[16];
             Guid guid2 = new Guid(_byteArr1);
             Guid guid3 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
-            Byte[] _byteArr2 = new Byte[16];
+
+            byte[] _byteArr2 = new byte[16];
+
             for (int i = 0; i < _byteArr2.Length; i++)
             {
-                _byteArr2[i] = Byte.MaxValue;
+                _byteArr2[i] = byte.MaxValue;
             }
+
             Guid guid4 = new Guid(_byteArr2);
-            String[] strArr2 = new String[] { guid1.ToString(), guid2.ToString(), guid3.ToString(), guid4.ToString() };
+
+            string[] strArr2 = new string[] { guid1.ToString(), guid2.ToString(), guid3.ToString(), guid4.ToString() };
+
             for (int i = 0; i < strArr1.Length; i++)
             {
                 OutputHelper.WriteLine(strArr1[i]);
-                Assert.Equal(String.Compare(strArr1[i], strArr2[i]), 0);
+                Assert.AreEqual(string.Compare(strArr1[i], strArr2[i]), 0);
             }
         }
 
@@ -278,22 +277,25 @@ namespace NFUnitTestSystemLib
             /// </summary>
             ///
 
-            OutputHelper.WriteLine("Creating 3 Guids with Guid.Empty and hex values");
+            // Creating 3 Guids with Guid.Empty and hex values
             Guid guid11 = Guid.Empty;
             Guid guid12 = new Guid(0x4dff36b5, 0x9dde, 0x4f76, 0x9a, 0x2a, 0x96, 0x43, 0x50, 0x47, 0x06, 0x3d);
             Guid guid13 = new Guid(0x7FFFFFFF, 0x7FFF, 0x7FFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
             Guid[] gArr1 = new Guid[] { guid11, guid12, guid13 };
 
-            OutputHelper.WriteLine("Creating Guids with 16 bytes constructor");
-            Byte[] _bArr1 = new Byte[16];
+            // Creating Guids with 16 bytes constructor
+            byte[] _bArr1 = new byte[16];
+
             Guid guid21 = new Guid(_bArr1);
-            Byte[] _bArr2 = new Byte[] { 181, 54, 255, 77, 222, 157, 118, 79, 154, 42, 150, 67, 80, 71, 6, 61 };
+            byte[] _bArr2 = new byte[] { 181, 54, 255, 77, 222, 157, 118, 79, 154, 42, 150, 67, 80, 71, 6, 61 };
+
             Guid guid22 = new Guid(_bArr2);
-            Byte[] _bArr3 = new Byte[] { 255, 255, 255, 127, 255, 127, 255, 127, 255, 255, 255, 255, 255, 255, 255, 255 };
+            byte[] _bArr3 = new byte[] { 255, 255, 255, 127, 255, 127, 255, 127, 255, 255, 255, 255, 255, 255, 255, 255 };
+
             Guid guid23 = new Guid(_bArr3);
             Guid[] gArr2 = new Guid[] { guid21, guid22, guid23 };
 
-            OutputHelper.WriteLine("Creating 3 Guids with Guid(int, short, short, byte ....) constructor");
+            // Creating 3 Guids with Guid(int, short, short, byte ....) constructor
             Guid guid31 = new Guid(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             Guid guid32 = new Guid(1308571317, 40414, 20342, 154, 42, 150, 67, 80, 71, 6, 61);
             Guid guid33 = new Guid(int.MaxValue, short.MaxValue, short.MaxValue, byte.MaxValue, byte.MaxValue,
@@ -320,5 +322,153 @@ namespace NFUnitTestSystemLib
             }
         }
 
+        [DataRow("00000000-0000-0000-0000-000000000000")]
+        [DataRow("4dff36b5-9dde-4f76-9a2a-96435047063d")]
+        [DataRow("ffffffff-ffff-ffff-ffff-ffffffffffff")]
+        [DataRow("a8a110d5-fc49-43c5-bf46-802db8f843ff")]
+        [DataRow("44332211-6655-8877-9900-aabbccddeeff")]
+        [DataRow("11223344-5566-7788-9900-aabbccddeeff")]
+        [TestMethod]
+        public void Ctor_FromString_Test00(string guidString)
+        {
+            /// <summary>
+            /// 1. Creates a Guid from a string
+            /// 2. Verifies the Guid is created correctly
+            /// </summary>
+
+            Guid guid = new Guid(guidString);
+
+            Assert.AreEqual(guidString, guid.ToString());
+        }
+        [DataRow("{00000000-0000-0000-0000-000000000000}")]
+        [DataRow("{4dff36b5-9dde-4f76-9a2a-96435047063d}")]
+        [DataRow("{ffffffff-ffff-ffff-ffff-ffffffffffff}")]
+        [DataRow("{a8a110d5-fc49-43c5-bf46-802db8f843ff}")]
+        [DataRow("{44332211-6655-8877-9900-aabbccddeeff}")]
+        [DataRow("{11223344-5566-7788-9900-aabbccddeeff}")]
+        [TestMethod]
+        public void Ctor_FromString_Test01(string guidString)
+        {
+            /// <summary>
+            /// 1. Creates a Guid from a string
+            /// 2. Verifies the Guid is created correctly
+            /// </summary>
+
+            Guid guid = new Guid(guidString);
+
+            Assert.AreEqual(guidString, $"{{{guid.ToString()}}}");
+        }
+
+        [TestMethod]
+        public void Ctor_FromString_Test02()
+        {
+            Guid testGuid = new Guid("a8a110d5-fc49-43c5-bf46-802db8f843ff");
+            Guid fullGuid = new Guid(uint.MaxValue, ushort.MaxValue, ushort.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
+
+            Assert.AreEqual(new Guid("ffffffff-ffff-ffff-ffff-ffffffffffff"), fullGuid);
+            Assert.AreEqual((new Guid("a8a110d5-fc49-43c5-bf46-802db8f843ff")).ToString(), testGuid.ToString());
+        }
+
+        [TestMethod]
+        public void Guid_ByteArray_Test()
+        {
+            object[][] testData = new object[][]
+            {
+                new object[] { Guid.Empty, new byte[16] },
+                new object[] { new Guid("44332211-6655-8877-9900-aabbccddeeff"), new byte[] { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0x00, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF } },
+                new object[] { new Guid("11223344-5566-7788-9900-aabbccddeeff"), new byte[] { 0x44, 0x33, 0x22, 0x11, 0x66, 0x55, 0x88, 0x77, 0x99, 0x00, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF } },
+                new object[] { new Guid("a8a110d5-fc49-43c5-bf46-802db8f843ff"), new byte[] { 0xd5, 0x10, 0xa1, 0xa8, 0x49, 0xfc, 0xc5, 0x43, 0xbf, 0x46, 0x80, 0x2d, 0xb8, 0xf8, 0x43, 0xff } }
+            };
+
+            foreach (object[] item in testData)
+            {
+                Guid guid = new Guid((byte[])item[1]);
+
+                OutputHelper.WriteLine($"Actual: {guid}");
+                OutputHelper.WriteLine($"Expected: {item[0]}");
+
+                Assert.AreEqual(item[0], guid);
+            }
+        }
+
+        [TestMethod]
+        public void Ctor_NullByteArray_ThrowsArgumentNullException()
+        {
+            Assert.ThrowsException(
+                typeof(ArgumentNullException),
+                () => new Guid((byte[])null));
+        }
+
+        [DataRow(15)]
+        [DataRow(17)]
+        [TestMethod]
+        public void Ctor_InvalidLengthByteArray_ThrowsArgumentException(int length)
+        {
+            Assert.ThrowsException(
+                typeof(ArgumentException),
+                () => new Guid(new byte[length]));
+        }
+
+        [TestMethod]
+        public void Ctor_UInt_UShort_UShort_Byte_Byte_Byte_Byte_Byte_Byte_Byte_Byte()
+        {
+            Guid guid = new Guid(0xa8a110d5, 0xfc49, 0x43c5, 0xbf, 0x46, 0x80, 0x2d, 0xb8, 0xf8, 0x43, 0xff);
+            Assert.AreEqual(new Guid("a8a110d5-fc49-43c5-bf46-802db8f843ff"), guid);
+        }
+
+        [TestMethod]
+        public void NewGuid()
+        {
+            // generate a new Guid
+            Guid guid1 = Guid.NewGuid();
+
+            OutputHelper.WriteLine($"Guid1: {guid1}");
+
+            // check that the guid is not empty
+            Assert.AreNotEqual(Guid.Empty, guid1);
+            // check version 4
+            Assert.IsTrue((guid1.ToByteArray()[7] & 0xF0) == 0x40);
+            // check variant
+            Assert.IsTrue((guid1.ToByteArray()[8] & 0xC0) == 0x80);
+
+            // go for another one
+            Guid guid2 = Guid.NewGuid();
+
+            OutputHelper.WriteLine($"Guid2: {guid2}");
+
+            // check that the guid is not empty
+            Assert.AreNotEqual(guid1, guid2);
+            // check version 4
+            Assert.IsTrue((guid2.ToByteArray()[7] & 0xF0) == 0x40);
+            // check variant
+            Assert.IsTrue((guid2.ToByteArray()[8] & 0xC0) == 0x80);
+        }
+
+        [TestMethod]
+        public void ToByteArray()
+        {
+            byte[] myGuidAsArray = new Guid("a8a110d5-fc49-43c5-bf46-802db8f843ff").ToByteArray();
+
+            CollectionAssert.AreEqual(new byte[] { 0xd5, 0x10, 0xa1, 0xa8, 0x49, 0xfc, 0xc5, 0x43, 0xbf, 0x46, 0x80, 0x2d, 0xb8, 0xf8, 0x43, 0xff }, myGuidAsArray);
+        }
+
+        [TestMethod]
+        public void GuidAsStaticField()
+        {
+            var guid1 = ClassWithGuid.BaseUuid1;
+            var guid2 = ClassWithGuid.BaseUuid2;
+
+            Assert.AreEqual(new Guid("00000000-0000-1000-8000-00805f9b34fb"), guid1);
+            CollectionAssert.AreEqual(new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x80, 0x00, 0x00, 0x80, 0x5F, 0x9B, 0x34, 0xFB }, guid2);
+        }
+
+        internal class ClassWithGuid
+        {
+            private static Guid baseUuid1 = new Guid("00000000-0000-1000-8000-00805f9b34fb");
+            private static byte[] baseUuid2 = new Guid("00000000-0000-1000-8000-00805f9b34fb").ToByteArray();
+
+            public static Guid BaseUuid1 => baseUuid1;
+            public static byte[] BaseUuid2 => baseUuid2;
+        }
     }
 }

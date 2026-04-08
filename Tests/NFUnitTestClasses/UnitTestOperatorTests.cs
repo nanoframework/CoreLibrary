@@ -1,12 +1,7 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
-using System;
-using System.Diagnostics;
 
 namespace NFUnitTestClasses
 {
@@ -16,281 +11,281 @@ namespace NFUnitTestClasses
         [TestMethod]
         public void Operators1_Test()
         {
-            OutputHelper.WriteLine("Tests overriding unary plus");
-            Assert.True(OperatorsTestClass1.testMethod());
+            // Tests overriding unary plus
+            Assert.IsTrue(OperatorsTestClass1.testMethod());
         }
 
         [TestMethod]
         public void Operators2_Test()
         {
-            OutputHelper.WriteLine("Tests overriding unary minus");
-            Assert.True(OperatorsTestClass2.testMethod());
+            // Tests overriding unary minus
+            Assert.IsTrue(OperatorsTestClass2.testMethod());
         }
 
         [TestMethod]
         public void Operators3_Test()
         {
-            OutputHelper.WriteLine("Tests overriding tilde");
-            Assert.True(OperatorsTestClass3.testMethod());
+            // Tests overriding tilde
+            Assert.IsTrue(OperatorsTestClass3.testMethod());
         }
 
         [TestMethod]
         public void Operators4_Test()
         {
-            OutputHelper.WriteLine("Tests overriding increment prefix");
-            Assert.True(OperatorsTestClass4.testMethod());
+            // Tests overriding increment prefix
+            Assert.IsTrue(OperatorsTestClass4.testMethod());
         }
 
         [TestMethod]
         public void Operators5_Test()
         {
-            OutputHelper.WriteLine("Tests overriding increment suffix");
-            Assert.True(OperatorsTestClass5.testMethod());
+            // Tests overriding increment suffix
+            Assert.IsTrue(OperatorsTestClass5.testMethod());
         }
 
         [TestMethod]
         public void Operators6_Test()
         {
-            OutputHelper.WriteLine("Tests overriding decrement prefix");
-            Assert.True(OperatorsTestClass6.testMethod());
+            // Tests overriding decrement prefix
+            Assert.IsTrue(OperatorsTestClass6.testMethod());
         }
 
         [TestMethod]
         public void Operators7_Test()
         {
-            OutputHelper.WriteLine("Tests overriding decrement suffix");
-            Assert.True(OperatorsTestClass7.testMethod());
+            // Tests overriding decrement suffix
+            Assert.IsTrue(OperatorsTestClass7.testMethod());
         }
 
         [TestMethod]
         public void Operators13_Test()
         {
-            OutputHelper.WriteLine("Tests overriding binary plus");
-            Assert.True(OperatorsTestClass13.testMethod());
+            // Tests overriding binary plus
+            Assert.IsTrue(OperatorsTestClass13.testMethod());
         }
 
         [TestMethod]
         public void Operators14_Test()
         {
-            OutputHelper.WriteLine("Tests overriding binary minus");
-            Assert.True(OperatorsTestClass14.testMethod());
+            // Tests overriding binary minus
+            Assert.IsTrue(OperatorsTestClass14.testMethod());
         }
 
         [TestMethod]
         public void Operators15_Test()
         {
-            OutputHelper.WriteLine("Tests overriding asterisk (multiply)");
-            Assert.True(OperatorsTestClass15.testMethod());
+            // Tests overriding asterisk (multiply)
+            Assert.IsTrue(OperatorsTestClass15.testMethod());
         }
 
         [TestMethod]
         public void Operators16_Test()
         {
-            OutputHelper.WriteLine("Tests overriding slash (division)");
-            Assert.True(OperatorsTestClass16.testMethod());
+            // Tests overriding slash (division)
+            Assert.IsTrue(OperatorsTestClass16.testMethod());
         }
 
         [TestMethod]
         public void Operators17_Test()
         {
-            OutputHelper.WriteLine("Tests overriding percent (modulus)");
-            Assert.True(OperatorsTestClass17.testMethod());
+            // Tests overriding percent (modulus)
+            Assert.IsTrue(OperatorsTestClass17.testMethod());
         }
 
         [TestMethod]
         public void Operators18_Test()
         {
-            OutputHelper.WriteLine("Tests overriding caret (xor)");
-            Assert.True(OperatorsTestClass18.testMethod());
+            // Tests overriding caret (xor)
+            Assert.IsTrue(OperatorsTestClass18.testMethod());
         }
         [TestMethod]
         public void Operators19_Test()
         {
-            OutputHelper.WriteLine("Tests overriding ampersand");
-            Assert.True(OperatorsTestClass19.testMethod());
+            // Tests overriding ampersand
+            Assert.IsTrue(OperatorsTestClass19.testMethod());
         }
 
         [TestMethod]
         public void Operators20_Test()
         {
-            OutputHelper.WriteLine("Tests overriding pipe (or)");
-            Assert.True(OperatorsTestClass20.testMethod());
+            // Tests overriding pipe (or)
+            Assert.IsTrue(OperatorsTestClass20.testMethod());
         }
 
         [TestMethod]
         public void Operators21_Test()
         {
-            OutputHelper.WriteLine("Tests overriding double less-than (left shift)");
-            Assert.True(OperatorsTestClass21.testMethod());
+            // Tests overriding double less-than (left shift)
+            Assert.IsTrue(OperatorsTestClass21.testMethod());
         }
 
         [TestMethod]
         public void Operators22_Test()
         {
-            OutputHelper.WriteLine("Tests overriding double greater-than (right shift)");
-            Assert.True(OperatorsTestClass22.testMethod());
+            // Tests overriding double greater-than (right shift)
+            Assert.IsTrue(OperatorsTestClass22.testMethod());
         }
 
         [TestMethod]
         public void Operators23_Test()
         {
-            OutputHelper.WriteLine("Tests overriding binary plus with 1 int parameter");
-            Assert.True(OperatorsTestClass23.testMethod());
+            // Tests overriding binary plus with 1 int parameter
+            Assert.IsTrue(OperatorsTestClass23.testMethod());
         }
 
         [TestMethod]
         public void Operators24_Test()
         {
-            OutputHelper.WriteLine("Tests overriding double equals (equality comparison) and exclamation-equals (non-equality comparison)");
-            Assert.True(OperatorsTestClass24.testMethod());
+            // Tests overriding double equals (equality comparison) and exclamation-equals (non-equality comparison)
+            Assert.IsTrue(OperatorsTestClass24.testMethod());
         }
 
         [TestMethod]
         public void Operators38_Test()
         {
-            OutputHelper.WriteLine("Tests overriding binary plus with 1 int parameter");
-            Assert.True(OperatorsTestClass38.testMethod());
+            // Tests overriding binary plus with 1 int parameter
+            Assert.IsTrue(OperatorsTestClass38.testMethod());
         }
 
         [TestMethod]
         public void Operators39_Test()
         {
-            OutputHelper.WriteLine("Tests overriding binary minus with 1 int parameter");
-            Assert.True(OperatorsTestClass39.testMethod());
+            // Tests overriding binary minus with 1 int parameter
+            Assert.IsTrue(OperatorsTestClass39.testMethod());
         }
 
         [TestMethod]
         public void Operators40_Test()
         {
-            OutputHelper.WriteLine("Tests overriding asterisk (multiply) with 1 int parameter");
-            Assert.True(OperatorsTestClass40.testMethod());
+            // Tests overriding asterisk (multiply) with 1 int parameter
+            Assert.IsTrue(OperatorsTestClass40.testMethod());
         }
 
         [TestMethod]
         public void Operators41_Test()
         {
-            OutputHelper.WriteLine("Tests overriding slash (divide) with 1 int parameter");
-            Assert.True(OperatorsTestClass41.testMethod());
+            // Tests overriding slash (divide) with 1 int parameter
+            Assert.IsTrue(OperatorsTestClass41.testMethod());
         }
 
         [TestMethod]
         public void Operators42_Test()
         {
-            OutputHelper.WriteLine("Tests overriding percent (modulus) with 1 int parameter");
-            Assert.True(OperatorsTestClass42.testMethod());
+            // Tests overriding percent (modulus) with 1 int parameter
+            Assert.IsTrue(OperatorsTestClass42.testMethod());
         }
 
         [TestMethod]
         public void Operators43_Test()
         {
-            OutputHelper.WriteLine("Tests overriding caret (xor) with 1 int parameter");
-            Assert.True(OperatorsTestClass43.testMethod());
+            // Tests overriding caret (xor) with 1 int parameter
+            Assert.IsTrue(OperatorsTestClass43.testMethod());
         }
 
         [TestMethod]
         public void Operators44_Test()
         {
-            OutputHelper.WriteLine("Tests overriding ampersand with 1 int parameter");
-            Assert.True(OperatorsTestClass44.testMethod());
+            // Tests overriding ampersand with 1 int parameter
+            Assert.IsTrue(OperatorsTestClass44.testMethod());
         }
 
         [TestMethod]
         public void Operators45_Test()
         {
-            OutputHelper.WriteLine("Tests overriding pipe (or) with 1 int parameter");
-            Assert.True(OperatorsTestClass45.testMethod());
+            // Tests overriding pipe (or) with 1 int parameter
+            Assert.IsTrue(OperatorsTestClass45.testMethod());
         }
 
         [TestMethod]
         public void Operators46_Test()
         {
-            OutputHelper.WriteLine("Tests overriding double equals (equality comparison) and exclamation-equals ");
-            OutputHelper.WriteLine("(non-equality comparison) with 1 int");
-            Assert.True(OperatorsTestClass46.testMethod());
+            // Tests overriding double equals (equality comparison) and exclamation-equals 
+            // (non-equality comparison) with 1 int
+            Assert.IsTrue(OperatorsTestClass46.testMethod());
         }
 
         [TestMethod]
         public void Operators67_Test()
         {
-            OutputHelper.WriteLine("Tests overriding unary exclamation (not)");
-            Assert.True(OperatorsTestClass67.testMethod());
+            // Tests overriding unary exclamation (not)
+            Assert.IsTrue(OperatorsTestClass67.testMethod());
         }
 
         [TestMethod]
         public void Operators68_Test()
         {
-            OutputHelper.WriteLine("Tests overriding true and false");
-            Assert.True(OperatorsTestClass68.testMethod());
+            // Tests overriding true and false
+            Assert.IsTrue(OperatorsTestClass68.testMethod());
         }
 
         [TestMethod]
         public void Operators69_Test()
         {
-            OutputHelper.WriteLine("Tests overriding true and false and ampersand");
-            Assert.True(OperatorsTestClass69.testMethod());
+            // Tests overriding true and false and ampersand
+            Assert.IsTrue(OperatorsTestClass69.testMethod());
         }
 
         [TestMethod]
         public void Operators88_Test()
         {
-            OutputHelper.WriteLine("Tests true and false with ampersand");
-            Assert.True(OperatorsTestClass88.testMethod());
+            // Tests true and false with ampersand
+            Assert.IsTrue(OperatorsTestClass88.testMethod());
         }
 
         [TestMethod]
         public void Operators89_Test()
         {
-            OutputHelper.WriteLine("Tests true and false with double ampersand");
-            Assert.True(OperatorsTestClass89.testMethod());
+            // Tests true and false with double ampersand
+            Assert.IsTrue(OperatorsTestClass89.testMethod());
         }
 
         [TestMethod]
         public void Operators90_Test()
         {
-            OutputHelper.WriteLine("Tests true and false with pipe (or)");
-            Assert.True(OperatorsTestClass90.testMethod());
+            // Tests true and false with pipe (or)
+            Assert.IsTrue(OperatorsTestClass90.testMethod());
         }
 
         [TestMethod]
         public void Operators91_Test()
         {
-            OutputHelper.WriteLine("Tests true and false with double pipe (or)");
-            Assert.True(OperatorsTestClass91.testMethod());
+            // Tests true and false with double pipe (or)
+            Assert.IsTrue(OperatorsTestClass91.testMethod());
         }
 
         [TestMethod]
         public void Operators92_Test()
         {
-            OutputHelper.WriteLine("Tests true and false with caret (xor)");
-            Assert.True(OperatorsTestClass92.testMethod());
+            // Tests true and false with caret (xor)
+            Assert.IsTrue(OperatorsTestClass92.testMethod());
         }
 
         [TestMethod]
         public void Operators93_Test()
         {
-            OutputHelper.WriteLine("Tests numerical types with plus");
-            Assert.True(OperatorsTestClass93.testMethod());
+            // Tests numerical types with plus
+            Assert.IsTrue(OperatorsTestClass93.testMethod());
         }
 
         [TestMethod]
         public void Operators94_Test()
         {
-            OutputHelper.WriteLine("Tests numerical types with minus");
-            Assert.True(OperatorsTestClass94.testMethod());
+            // Tests numerical types with minus
+            Assert.IsTrue(OperatorsTestClass94.testMethod());
         }
 
         [TestMethod]
         public void Operators95_Test()
         {
-            OutputHelper.WriteLine("Tests numerical types with asterisk (multiply)");
-            Assert.True(OperatorsTestClass95.testMethod());
+            // Tests numerical types with asterisk (multiply)
+            Assert.IsTrue(OperatorsTestClass95.testMethod());
         }
 
         [TestMethod]
         public void Operators96_Test()
         {
-            OutputHelper.WriteLine("Tests numerical types with slash (divide)");
-            Assert.True(OperatorsTestClass96.testMethod());
+            // Tests numerical types with slash (divide)
+            Assert.IsTrue(OperatorsTestClass96.testMethod());
         }
 
         class OperatorsTestClass1

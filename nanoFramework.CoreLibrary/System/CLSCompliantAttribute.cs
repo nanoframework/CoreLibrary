@@ -1,15 +1,16 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Runtime.CompilerServices;
 
 namespace System
 {
     /// <summary>
     /// Indicates whether a program element is compliant with the Common Language Specification (CLS). This class cannot be inherited.
     /// </summary>
-    [AttributeUsage(AttributeTargets.All), Serializable]
+    [AttributeUsage(AttributeTargets.All)]
+    [ExcludeType]
+    [Serializable]
     public sealed class CLSCompliantAttribute : Attribute
     {
         private bool _compliant;

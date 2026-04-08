@@ -1,12 +1,8 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestTypes
 {
@@ -16,98 +12,98 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void ValueDefault_Const01_Test()
         {
-            OutputHelper.WriteLine("Testing byte == 0");
+            // Testing byte == 0
             ValueDefault_ConstTestClass01.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const02_Test()
         {
-            OutputHelper.WriteLine("Testing short == 0");
+            // Testing short == 0
             ValueDefault_ConstTestClass02.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const03_Test()
         {
-            OutputHelper.WriteLine("Testing int == 0");
+            // Testing int == 0
             ValueDefault_ConstTestClass03.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const04_Test()
         {
-            OutputHelper.WriteLine("Testing long == 0L");
+            // Testing long == 0L
             ValueDefault_ConstTestClass04.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const05_Test()
         {
-            OutputHelper.WriteLine("Testing char == \x0000");
+            // Testing char == \x0000
             ValueDefault_ConstTestClass05.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const06_Test()
         {
-            OutputHelper.WriteLine("Testing float == 0.0f");
+            // Testing float == 0.0f
             ValueDefault_ConstTestClass06.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const07_Test()
         {
-            OutputHelper.WriteLine("Testing double == 0.0d");
+            // Testing double == 0.0d
             ValueDefault_ConstTestClass07.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const09_Test()
         {
-            OutputHelper.WriteLine("Testing bool == false");
+            // Testing bool == false
             ValueDefault_ConstTestClass09.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const11_Test()
         {
-            OutputHelper.WriteLine("Testing enum");
+            // Testing enum
             ValueDefault_ConstTestClass11.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const12_Test()
         {
-            OutputHelper.WriteLine("Testing struct");
+            // Testing struct
             ValueDefault_ConstTestClass12.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const14_Test()
         {
-            OutputHelper.WriteLine("Testing sbyte == 0");
+            // Testing sbyte == 0
             ValueDefault_ConstTestClass14.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const15_Test()
         {
-            OutputHelper.WriteLine("Testing ushort == 0");
+            // Testing ushort == 0
             ValueDefault_ConstTestClass15.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const16_Test()
         {
-            OutputHelper.WriteLine("Testing uint == 0");
+            // Testing uint == 0
             ValueDefault_ConstTestClass16.testMethod();
         }
 
         [TestMethod]
         public void ValueDefault_Const17_Test()
         {
-            OutputHelper.WriteLine("Testing ulong == 0");
+            // Testing ulong == 0
             ValueDefault_ConstTestClass17.testMethod();
         }
 
@@ -117,7 +113,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 byte b = new byte();
-                Assert.Equal(b, (byte)0);
+                Assert.AreEqual(b, (byte)0);
             }
         }
 
@@ -126,7 +122,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 short s = new short();
-                Assert.Equal(s, (short)0);
+                Assert.AreEqual(s, (short)0);
             }
         }
 
@@ -135,7 +131,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 int i = new int();
-                Assert.Equal(i, 0);
+                Assert.AreEqual(i, 0);
             }
         }
 
@@ -144,7 +140,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 long l = new long();
-                Assert.Equal(l, 0L);
+                Assert.AreEqual(l, 0L);
             }
         }
 
@@ -153,7 +149,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 char c = new char();
-                Assert.Equal(c, '\x0000');
+                Assert.AreEqual(c, '\x0000');
             }
         }
 
@@ -162,7 +158,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 float f = new float();
-                Assert.Equal(f, 0.0f);
+                Assert.AreEqual(f, 0.0f);
             }
         }
 
@@ -171,7 +167,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 double d = new double();
-                Assert.Equal(d, 0.0d);
+                Assert.AreEqual(d, 0.0d);
             }
         }
 
@@ -180,7 +176,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 bool b = new bool();
-                Assert.Equal(b, false);
+                Assert.AreEqual(b, false);
             }
         }
 
@@ -224,7 +220,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 sbyte b = new sbyte();
-                Assert.Equal(b, (sbyte)0);
+                Assert.AreEqual(b, (sbyte)0);
             }
         }
 
@@ -233,7 +229,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 ushort b = new ushort();
-                Assert.Equal(b, (ushort)0);
+                Assert.AreEqual(b, (ushort)0);
             }
         }
 
@@ -242,7 +238,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 uint b = new uint();
-                Assert.Equal(b , (uint)0) ;
+                Assert.AreEqual(b, (uint)0);
             }
         }
 
@@ -251,7 +247,7 @@ namespace NFUnitTestTypes
             public static void testMethod()
             {
                 ulong b = new ulong();
-                Assert.Equal(b, (ulong)0);
+                Assert.AreEqual(b, (ulong)0);
             }
         }
 

@@ -1,8 +1,5 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System
 {
@@ -14,7 +11,8 @@ namespace System
     {
         // this field is required in the native end
 #pragma warning disable 0649
-        private char _value;
+        // Do not rename (binary serialization)
+        private char m_value;
 #pragma warning restore 0649
 
         /// <summary>
@@ -32,7 +30,7 @@ namespace System
         /// <returns>The string representation of the value of this instance.</returns>
         public override String ToString()
         {
-            return new String(_value, 1);
+            return new String(m_value, 1);
         }
 
         /// <summary>
@@ -41,12 +39,12 @@ namespace System
         /// <returns>The lower case character.</returns>
         public char ToLower()
         {
-            if ('A' <= _value && _value <= 'Z')
+            if ('A' <= m_value && m_value <= 'Z')
             {
-                return (char)(_value - ('A' - 'a'));
+                return (char)(m_value - ('A' - 'a'));
             }
 
-            return _value;
+            return m_value;
         }
 
         /// <summary>
@@ -55,12 +53,12 @@ namespace System
         /// <returns>The upper case character.</returns>
         public char ToUpper()
         {
-            if ('a' <= _value && _value <= 'z')
+            if ('a' <= m_value && m_value <= 'z')
             {
-                return (char)(_value + ('A' - 'a'));
+                return (char)(m_value + ('A' - 'a'));
             }
 
-            return _value;
+            return m_value;
         }
     }
 }

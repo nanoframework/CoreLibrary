@@ -1,12 +1,8 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestTypes
 {
@@ -16,11 +12,11 @@ namespace NFUnitTestTypes
         // Class1 and SubClass1 used for testing type def of inherited classes
         class Class1
         {
-            public class SubClass1 
+            public class SubClass1
             {
                 void Method1()
                 {
-                
+
                 }
             }
 
@@ -34,11 +30,11 @@ namespace NFUnitTestTypes
             const string subClass1FullName = "NFUnitTestTypes.UnitTestSubTypeTests+Class1+SubClass1";
             Class1 c1 = new Class1();
             string className = c1.Sc1ClassRef.GetType().FullName;
-            Assert.Equal(className, subClass1FullName, "The object FullName was not correct");
+            Assert.AreEqual(className, subClass1FullName, "The object FullName was not correct");
             Type testType = Type.GetType(subClass1FullName);
-            Assert.NotNull(testType, $"The Type for {subClass1FullName} could not be parsed");
-            Assert.Equal(testType.Name, "SubClass1");
-            Assert.Equal(testType.FullName, subClass1FullName);
+            Assert.IsNotNull(testType, $"The Type for {subClass1FullName} could not be parsed");
+            Assert.AreEqual(testType.Name, "SubClass1");
+            Assert.AreEqual(testType.FullName, subClass1FullName);
 
         }
         [TestMethod]
@@ -47,7 +43,7 @@ namespace NFUnitTestTypes
         {
             Class1 c1 = new Class1();
             Type testType = Type.GetType("UnitTestSubTypeTests+Class1+SubClass1");   // test without the namespace.  This should NOT work
-            Assert.Null(testType, "The Type for UnitTestSubTypeTests+Class1+SubClass1 should not parse");
+            Assert.IsNull(testType, "The Type for UnitTestSubTypeTests+Class1+SubClass1 should not parse");
 
         }
 

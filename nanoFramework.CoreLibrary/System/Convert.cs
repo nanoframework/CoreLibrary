@@ -1,8 +1,5 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Runtime.CompilerServices;
 
@@ -38,7 +35,7 @@ namespace System
         internal static extern double NativeToDouble(string value, bool throwException, out bool success);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        internal static extern DateTime NativeToDateTime(string value, bool throwException, out bool success);
+        internal static extern void NativeToDateTime(string value, bool throwException, out bool success, out DateTime result);
 
         /// <summary>
         /// Converts the value of the specified 8-bit unsigned integer to an equivalent Boolean value.
@@ -62,17 +59,34 @@ namespace System
         }
 
         /// <summary>
-        /// Converts the specified string representation of a number to an equivalent 8-bit signed integer.
+        /// Converts the string representation of a number in a specified base to an equivalent 8-bit signed integer.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>An 8-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
+        /// <returns>A 8-bit signed integer that is equivalent to the number in <paramref name="value"/>, or 0 (zero) if <paramref name="value"/> is <see langword="null"/>.</returns>
         /// <remarks>
-        /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
-        /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
+        /// <para>
+        /// The .NET nanoFramework implementation of this method may provide only a subset of the equivalent .NET method.
+        /// </para>
+        /// <para>
+        /// Conversion will work with any base on most platforms. If a conversion is not supported, it will throw a <see cref="PlatformNotSupportedException"/>.
+        /// </para>
+        /// <para>
+        /// Note that base 10 and base 16 are always supported.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
-        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
+        /// <exception cref="ArgumentException">
+        /// <para>
+        /// <paramref name="fromBase"/> is not 2, 8, 10, or 16.
+        /// </para>
+        /// <para>
+        /// -or-
+        /// </para>
+        /// <para>
+        /// <paramref name="value"/>, which represents a non-base 10 signed number, is prefixed with a negative sign.
+        /// </para>
+        /// </exception>
+        /// <exception cref="PlatformNotSupportedException">If the platform doesn't support converting from bases other than 10 or 16.</exception>
         [CLSCompliant(false)]
         public static sbyte ToSByte(
             string value,
@@ -89,17 +103,34 @@ namespace System
         }
 
         /// <summary>
-        /// Converts the specified string representation of a number to an equivalent 8-bit unsigned integer.
+        /// Converts the string representation of a number in a specified base to an equivalent 8-bit unsigned integer.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>An 8-bit unsigned integer that is equivalent to value, or zero if value is <see langword="null"/>.</returns>
+        /// <returns>A 8-bit unsigned integer that is equivalent to the number in <paramref name="value"/>, or 0 (zero) if <paramref name="value"/> is <see langword="null"/>.</returns>
         /// <remarks>
-        /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
-        /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
+        /// <para>
+        /// The .NET nanoFramework implementation of this method may provide only a subset of the equivalent .NET method.
+        /// </para>
+        /// <para>
+        /// Conversion will work with any base on most platforms. If a conversion is not supported, it will throw a <see cref="PlatformNotSupportedException"/>.
+        /// </para>
+        /// <para>
+        /// Note that base 10 and base 16 are always supported.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
-        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
+        /// <exception cref="ArgumentException">
+        /// <para>
+        /// <paramref name="fromBase"/> is not 2, 8, 10, or 16.
+        /// </para>
+        /// <para>
+        /// -or-
+        /// </para>
+        /// <para>
+        /// <paramref name="value"/>, which represents a non-base 10 signed number, is prefixed with a negative sign.
+        /// </para>
+        /// </exception>
+        /// <exception cref="PlatformNotSupportedException">If the platform doesn't support converting from bases other than 10 or 16.</exception>
         public static byte ToByte(
             string value,
             int fromBase = 10)
@@ -143,24 +174,44 @@ namespace System
         /// </remarks>
         public static DateTime ToDateTime(string value)
         {
-            return NativeToDateTime(
+            NativeToDateTime(
                 value,
                 true,
-                out _);
+                out _,
+                out DateTime result);
+
+            return result;
         }
 
         /// <summary>
-        /// Converts the specified string representation of a number to an equivalent 16-bit signed integer.
+        /// Converts the string representation of a number in a specified base to an equivalent 16-bit signed integer.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 16-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
+        /// <returns>A 16-bit signed integer that is equivalent to the number in <paramref name="value"/>, or 0 (zero) if <paramref name="value"/> is <see langword="null"/>.</returns>
         /// <remarks>
-        /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
-        /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
+        /// <para>
+        /// The .NET nanoFramework implementation of this method may provide only a subset of the equivalent .NET method.
+        /// </para>
+        /// <para>
+        /// Conversion will work with any base on most platforms. If a conversion is not supported, it will throw a <see cref="PlatformNotSupportedException"/>.
+        /// </para>
+        /// <para>
+        /// Note that base 10 and base 16 are always supported.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
-        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
+        /// <exception cref="ArgumentException">
+        /// <para>
+        /// <paramref name="fromBase"/> is not 2, 8, 10, or 16.
+        /// </para>
+        /// <para>
+        /// -or-
+        /// </para>
+        /// <para>
+        /// <paramref name="value"/>, which represents a non-base 10 signed number, is prefixed with a negative sign.
+        /// </para>
+        /// </exception>
+        /// <exception cref="PlatformNotSupportedException">If the platform doesn't support converting from bases other than 10 or 16.</exception>
         public static short ToInt16(
             string value,
             int fromBase = 10)
@@ -176,17 +227,34 @@ namespace System
         }
 
         /// <summary>
-        /// Converts the specified string representation of a number to an equivalent 16-bit unsigned integer.
+        /// Converts the string representation of a number in a specified base to an equivalent 16-bit unsigned integer.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 16-bit unsigned integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
+        /// <returns>A 16-bit unsigned integer that is equivalent to the number in <paramref name="value"/>, or 0 (zero) if <paramref name="value"/> is <see langword="null"/>.</returns>
         /// <remarks>
-        /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
-        /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
+        /// <para>
+        /// The .NET nanoFramework implementation of this method may provide only a subset of the equivalent .NET method.
+        /// </para>
+        /// <para>
+        /// Conversion will work with any base on most platforms. If a conversion is not supported, it will throw a <see cref="PlatformNotSupportedException"/>.
+        /// </para>
+        /// <para>
+        /// Note that base 10 and base 16 are always supported.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
-        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
+        /// <exception cref="ArgumentException">
+        /// <para>
+        /// <paramref name="fromBase"/> is not 2, 8, 10, or 16.
+        /// </para>
+        /// <para>
+        /// -or-
+        /// </para>
+        /// <para>
+        /// <paramref name="value"/>, which represents a non-base 10 signed number, is prefixed with a negative sign.
+        /// </para>
+        /// </exception>
+        /// <exception cref="PlatformNotSupportedException">If the platform doesn't support converting from bases other than 10 or 16.</exception>
         [CLSCompliant(false)]
         public static ushort ToUInt16(
             string value,
@@ -203,17 +271,34 @@ namespace System
         }
 
         /// <summary>
-        /// Converts the specified string representation of a number to an equivalent 32-bit signed integer.
+        /// Converts the string representation of a number in a specified base to an equivalent 32-bit signed integer.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 32-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
+        /// <returns>A 32-bit signed integer that is equivalent to the number in <paramref name="value"/>, or 0 (zero) if <paramref name="value"/> is <see langword="null"/>.</returns>
         /// <remarks>
-        /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
-        /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
+        /// <para>
+        /// The .NET nanoFramework implementation of this method may provide only a subset of the equivalent .NET method.
+        /// </para>
+        /// <para>
+        /// Conversion will work with any base on most platforms. If a conversion is not supported, it will throw a <see cref="PlatformNotSupportedException"/>.
+        /// </para>
+        /// <para>
+        /// Note that base 10 and base 16 are always supported.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
-        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
+        /// <exception cref="ArgumentException">
+        /// <para>
+        /// <paramref name="fromBase"/> is not 2, 8, 10, or 16.
+        /// </para>
+        /// <para>
+        /// -or-
+        /// </para>
+        /// <para>
+        /// <paramref name="value"/>, which represents a non-base 10 signed number, is prefixed with a negative sign.
+        /// </para>
+        /// </exception>
+        /// <exception cref="PlatformNotSupportedException">If the platform doesn't support converting from bases other than 10 or 16.</exception>
         public static int ToInt32(
             string value,
             int fromBase = 10)
@@ -229,17 +314,34 @@ namespace System
         }
 
         /// <summary>
-        /// Converts the specified string representation of a number to an equivalent 32-bit unsigned integer.
+        /// Converts the string representation of a number in a specified base to an equivalent 32-bit unsigned integer.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 32-bit unsigned integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
+        /// <returns>A 32-bit unsigned integer that is equivalent to the number in <paramref name="value"/>, or 0 (zero) if <paramref name="value"/> is <see langword="null"/>.</returns>
         /// <remarks>
-        /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
-        /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
+        /// <para>
+        /// The .NET nanoFramework implementation of this method may provide only a subset of the equivalent .NET method.
+        /// </para>
+        /// <para>
+        /// Conversion will work with any base on most platforms. If a conversion is not supported, it will throw a <see cref="PlatformNotSupportedException"/>.
+        /// </para>
+        /// <para>
+        /// Note that base 10 and base 16 are always supported.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
-        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
+        /// <exception cref="ArgumentException">
+        /// <para>
+        /// <paramref name="fromBase"/> is not 2, 8, 10, or 16.
+        /// </para>
+        /// <para>
+        /// -or-
+        /// </para>
+        /// <para>
+        /// <paramref name="value"/>, which represents a non-base 10 signed number, is prefixed with a negative sign.
+        /// </para>
+        /// </exception>
+        /// <exception cref="PlatformNotSupportedException">If the platform doesn't support converting from bases other than 10 or 16.</exception>
         [CLSCompliant(false)]
         public static uint ToUInt32(
             string value,
@@ -256,17 +358,34 @@ namespace System
         }
 
         /// <summary>
-        /// Converts the specified string representation of a number to an equivalent 64-bit signed integer.
+        /// Converts the string representation of a number in a specified base to an equivalent 64-bit signed integer.
         /// </summary>
-        /// <param name="value">A string that contains a number to convert.</param>
+        /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 64-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
+        /// <returns>A 64-bit signed integer that is equivalent to the number in <paramref name="value"/>, or 0 (zero) if <paramref name="value"/> is <see langword="null"/>.</returns>
         /// <remarks>
-        /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
-        /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
+        /// <para>
+        /// The .NET nanoFramework implementation of this method may provide only a subset of the equivalent .NET method.
+        /// </para>
+        /// <para>
+        /// Conversion will work with any base on most platforms. If a conversion is not supported, it will throw a <see cref="PlatformNotSupportedException"/>.
+        /// </para>
+        /// <para>
+        /// Note that base 10 and base 16 are always supported.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
-        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
+        /// <exception cref="ArgumentException">
+        /// <para>
+        /// <paramref name="fromBase"/> is not 2, 8, 10, or 16.
+        /// </para>
+        /// <para>
+        /// -or-
+        /// </para>
+        /// <para>
+        /// <paramref name="value"/>, which represents a non-base 10 signed number, is prefixed with a negative sign.
+        /// </para>
+        /// </exception>
+        /// <exception cref="PlatformNotSupportedException">If the platform doesn't support converting from bases other than 10 or 16.</exception>
         public static long ToInt64(
             string value,
             int fromBase = 10)
@@ -282,17 +401,34 @@ namespace System
         }
 
         /// <summary>
-        /// Converts the specified string representation of a number to an equivalent 64-bit unsigned integer.
+        /// Converts the string representation of a number in a specified base to an equivalent 64-bit unsigned integer.
         /// </summary>
         /// <param name="value">A string that contains the number to convert.</param>
         /// <param name="fromBase">The base of the number in <paramref name="value"/>, which must be 2, 8, 10, or 16. See remark bellow about platform support.</param>
-        /// <returns>A 64-bit signed integer that is equivalent to the number in value, or 0 (zero) if value is <see langword="null"/>.</returns>
+        /// <returns>A 64-bit unsigned integer that is equivalent to the number in <paramref name="value"/>, or 0 (zero) if <paramref name="value"/> is <see langword="null"/>.</returns>
         /// <remarks>
-        /// The nanoFramework implementation of this method may provide only a subset of the equivalent .NET method, 
-        /// which is supporting only conversions for base 10 values. In that case, any call using a <paramref name="fromBase"/> with a value other than 10 will throw a <see cref="NotImplementedException"/>.
+        /// <para>
+        /// The .NET nanoFramework implementation of this method may provide only a subset of the equivalent .NET method.
+        /// </para>
+        /// <para>
+        /// Conversion will work with any base on most platforms. If a conversion is not supported, it will throw a <see cref="PlatformNotSupportedException"/>.
+        /// </para>
+        /// <para>
+        /// Note that base 10 and base 16 are always supported.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
-        /// <exception cref="NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
+        /// <exception cref="ArgumentException">
+        /// <para>
+        /// <paramref name="fromBase"/> is not 2, 8, 10, or 16.
+        /// </para>
+        /// <para>
+        /// -or-
+        /// </para>
+        /// <para>
+        /// <paramref name="value"/>, which represents a non-base 10 signed number, is prefixed with a negative sign.
+        /// </para>
+        /// </exception>
+        /// <exception cref="PlatformNotSupportedException">If the platform doesn't support converting from bases other than 10 or 16.</exception>
         [CLSCompliant(false)]
         public static ulong ToUInt64(
             string value,
@@ -306,7 +442,7 @@ namespace System
                 0,
                 fromBase,
                 true,
-                out _);  
+                out _);
         }
 
         /// <summary>
@@ -342,9 +478,7 @@ namespace System
         /// <returns>The String representation, in base 64, of the contents of <paramref name="inArray"/>.</returns>
         public static string ToBase64String(byte[] inArray)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (inArray == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            ArgumentNullException.ThrowIfNull(inArray);
 
             return ToBase64String(inArray, 0, inArray.Length, Base64FormattingOptions.None);
         }
@@ -357,9 +491,7 @@ namespace System
         /// <returns>The string representation in base 64 of the elements in <paramref name="inArray"/>.</returns>
         public static String ToBase64String(byte[] inArray, Base64FormattingOptions options)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (inArray == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            ArgumentNullException.ThrowIfNull(inArray);
 
             return ToBase64String(inArray, 0, inArray.Length, options);
         }
@@ -386,10 +518,9 @@ namespace System
         /// <returns>The string representation in base 64 of <paramref name="length"/> elements of <paramref name="inArray"/>, starting at position <paramref name="offset"/>.</returns>
         public static string ToBase64String(byte[] inArray, int offset, int length, Base64FormattingOptions options)
         {
-            //Do data verfication
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (inArray == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            // Do data verfication
+            ArgumentNullException.ThrowIfNull(inArray);
+
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (length < 0) throw new ArgumentOutOfRangeException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
@@ -427,9 +558,8 @@ namespace System
         /// <returns>An array of 8-bit unsigned integers equivalent to <paramref name="length"/> elements at position <paramref name="offset"/> in <paramref name="inArray"/>.</returns>
         public static byte[] FromBase64CharArray(char[] inArray, int offset, int length)
         {
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (inArray == null) throw new ArgumentNullException();
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+            ArgumentNullException.ThrowIfNull(inArray);
+
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             if (length < 0) throw new ArgumentOutOfRangeException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 

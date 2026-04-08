@@ -1,12 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
-using System.Diagnostics;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestArray
 {
@@ -16,117 +12,117 @@ namespace NFUnitTestArray
         [TestMethod]
         public void Othersystemarrays_conversion_01_Test()
         {
-            OutputHelper.WriteLine("System.Array Type - Conversions ");
-            OutputHelper.WriteLine("Verify that an implicit reference conversion from T[D] to System.Array exists");
-            Assert.True(Other_TestClass_systemarrays_conversion_01.testMethod());
+            // System.Array Type - Conversions 
+            // Verify that an implicit reference conversion from T[D] to System.Array exists
+            Assert.IsTrue(Other_TestClass_systemarrays_conversion_01.testMethod());
         }
 
         [TestMethod]
         public void Othersystemarrays_conversion_02_Test()
         {
-            OutputHelper.WriteLine("System.Array Type - Conversions ");
-            OutputHelper.WriteLine("Verify that an explicit reference conversion from System.Array to T[D] exists");
-            Assert.True(Other_TestClass_systemarrays_conversion_02.testMethod());
+            // System.Array Type - Conversions 
+            // Verify that an explicit reference conversion from System.Array to T[D] exists
+            Assert.IsTrue(Other_TestClass_systemarrays_conversion_02.testMethod());
         }
 
         [TestMethod]
         public void Othersystemarrays_nullvalue_01_Test()
         {
-            OutputHelper.WriteLine("System.Array Type - Null Values");
-            OutputHelper.WriteLine("Verify that a System.Array array can be set to null");
-            Assert.True(Other_TestClass_systemarrays_nullvalue_01.testMethod());
+            // System.Array Type - Null Values
+            // Verify that a System.Array array can be set to null
+            Assert.IsTrue(Other_TestClass_systemarrays_nullvalue_01.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_exception_01_Test()
         {
-            Assert.True(Other_TestClass_covariance_exception_01.testMethod());
+            Assert.IsTrue(Other_TestClass_covariance_exception_01.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_exception_02_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify an System.Exception is thrown when incompatible types are assigned to array elements");
-            Assert.True(Other_TestClass_covariance_exception_02.testMethod());
+            // Array Covariance
+            // Verify an System.Exception is thrown when incompatible types are assigned to array elements
+            Assert.IsTrue(Other_TestClass_covariance_exception_02.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_explicit_01_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify covariance from object to any reference-type (class)");
-            Assert.True(Other_TestClass_covariance_explicit_01.testMethod());
+            // Array Covariance
+            // Verify covariance from object to any reference-type (class)
+            Assert.IsTrue(Other_TestClass_covariance_explicit_01.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_explicit_02_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify covariance from any reference-type (interface) to object");
-            Assert.True(Other_TestClass_covariance_explicit_02.testMethod());
+            // Array Covariance
+            // Verify covariance from any reference-type (interface) to object
+            Assert.IsTrue(Other_TestClass_covariance_explicit_02.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_explicit_03_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify covariance from any class-type S to any class-type T, provided S is base class of T");
-            Assert.True(Other_TestClass_covariance_explicit_03.testMethod());
+            // Array Covariance
+            // Verify covariance from any class-type S to any class-type T, provided S is base class of T
+            Assert.IsTrue(Other_TestClass_covariance_explicit_03.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_explicit_04_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify covariance from any interface-type S to any interface-type T, provided S is not derived from T");
-            Assert.True(Other_TestClass_covariance_explicit_04.testMethod());
+            // Array Covariance
+            // Verify covariance from any interface-type S to any interface-type T, provided S is not derived from T
+            Assert.IsTrue(Other_TestClass_covariance_explicit_04.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_implicit_01_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify covariance from any reference-type (class) to object");
-            Assert.True(Other_TestClass_covariance_implicit_01.testMethod());
+            // Array Covariance
+            // Verify covariance from any reference-type (class) to object
+            Assert.IsTrue(Other_TestClass_covariance_implicit_01.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_implicit_02_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify covariance from any reference-type (interface) to object");
-            Assert.True(Other_TestClass_covariance_implicit_02.testMethod());
+            // Array Covariance
+            // Verify covariance from any reference-type (interface) to object
+            Assert.IsTrue(Other_TestClass_covariance_implicit_02.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_implicit_03_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify covariance from any class-type S to any class-type T, provided S is derived from T");
-            Assert.True(Other_TestClass_covariance_implicit_03.testMethod());
+            // Array Covariance
+            // Verify covariance from any class-type S to any class-type T, provided S is derived from T
+            Assert.IsTrue(Other_TestClass_covariance_implicit_03.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_implicit_04_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify covariance from any class-type S to any interface-type T, provided S implements T");
-            Assert.True(Other_TestClass_covariance_implicit_04.testMethod()); 
+            // Array Covariance
+            // Verify covariance from any class-type S to any interface-type T, provided S implements T
+            Assert.IsTrue(Other_TestClass_covariance_implicit_04.testMethod());
         }
 
         [TestMethod]
         public void Othercovariance_implicit_05_Test()
         {
-            OutputHelper.WriteLine("Array Covariance");
-            OutputHelper.WriteLine("Verify covariance from any interface-type S to any interface-type T, provided S is derived from T");
-            Assert.True(Other_TestClass_covariance_implicit_05.testMethod());
+            // Array Covariance
+            // Verify covariance from any interface-type S to any interface-type T, provided S is derived from T
+            Assert.IsTrue(Other_TestClass_covariance_implicit_05.testMethod());
         }
 
         [TestMethod]
         public void BinarySearch_Test()
         {
-            OutputHelper.WriteLine("Array.BinarySearch");
+            // Array.BinarySearch
 
             var objects = new MyClass[6];
             for (int i = 0; i < 6; i++)
@@ -135,7 +131,7 @@ namespace NFUnitTestArray
             }
 
             int y = Array.BinarySearch(objects, new MyClass(5), null);
-            Assert.Equal(y, 4);
+            Assert.AreEqual(y, 4);
         }
 
         class MyClass : IComparable
@@ -171,7 +167,7 @@ namespace NFUnitTestArray
                 MyClass[] a = new MyClass[] { new MyClass(5), new MyClass(6), new MyClass(7) };
 
 
-                System.Array SystemArray;
+                Array SystemArray;
                 int[] StaticArray = new int[] { 10, 20, 30, 40 };
                 // There exists an implicit reference conversion for this
                 SystemArray = StaticArray;
@@ -191,7 +187,7 @@ namespace NFUnitTestArray
         {
             public static int Main_old()
             {
-                System.Array SystemArray;
+                Array SystemArray;
                 int[] StaticArray = new int[] { 10, 20, 30, 40 };
                 int[] StaticArray2 = new int[] { 1, 2, 3, 4 };
                 SystemArray = StaticArray;
@@ -215,7 +211,7 @@ namespace NFUnitTestArray
         {
             public static int Main_old()
             {
-                System.Array SystemArray;
+                Array SystemArray;
                 SystemArray = null;
                 return 0;
             }
@@ -241,7 +237,7 @@ namespace NFUnitTestArray
                 {
                     Fill(strings, 90, 10, 0);
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 0;
                 }
@@ -269,7 +265,7 @@ namespace NFUnitTestArray
                 {
                     objectArr[1] = new Queue();
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     return 0;
                 }
@@ -312,7 +308,7 @@ namespace NFUnitTestArray
         {
             public int testmethod()
             {
-                OutputHelper.WriteLine("Other_TestClass_covariance_explicit_02_Imp::testmethod()");
+                // Other_TestClass_covariance_explicit_02_Imp::testmethod()
                 return 0;
             }
         }
@@ -437,7 +433,7 @@ namespace NFUnitTestArray
         {
             public int testmethod()
             {
-                OutputHelper.WriteLine("Other_TestClass_covariance_implicit_02_Imp::testmethod()");
+                // Other_TestClass_covariance_implicit_02_Imp::testmethod()
                 return 0;
             }
         }

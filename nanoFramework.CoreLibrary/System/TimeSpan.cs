@@ -1,8 +1,6 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 namespace System
 {
     using Runtime.CompilerServices;
@@ -12,7 +10,7 @@ namespace System
     /// </summary>
     /// <remarks>
     /// A <see cref="TimeSpan "/> object represents a time interval (duration of time or elapsed time) that is measured as a positive or negative number of days, hours, minutes, seconds, and fractions of a second. The <see cref="TimeSpan "/> structure can also be used to represent the time of day, but only if the time is unrelated to a particular date. Otherwise, the <see cref="DateTime "/> structure should be used instead.
-    /// The value of a <see cref="TimeSpan"/> object is the number of ticks that equal the represented time interval. A tick is equal to 100 nanoseconds, or one ten-millionth of a second. The value of a <see cref="TimeSpan"/> object can range from <see cref="TimeSpan.MinValue"/> to <see cref="TimeSpan.MaxValue"/>. 
+    /// The value of a <see cref="TimeSpan"/> object is the number of ticks that equal the represented time interval. A tick is equal to 100 nanoseconds, or one ten-millionth of a second. The value of a <see cref="TimeSpan"/> object can range from <see cref="MinValue"/> to <see cref="MaxValue"/>. 
     /// </remarks>
     [Serializable]
     public struct TimeSpan
@@ -258,13 +256,13 @@ namespace System
         /// <param name="value">A number of ticks that represent a time.</param>
         /// <returns>An object that represents value.</returns>
         public static TimeSpan FromTicks(long value) => new TimeSpan(value);
-        
+
         /// <summary>
         /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of milliseconds.
         /// </summary>
         /// <param name="value">A number of milliseconds that represent a time.</param>
         /// <returns>An object that represents value.</returns>
-        public static TimeSpan FromMilliseconds(long value) => new TimeSpan(TimeSpan.TicksPerMillisecond  * value);
+        public static TimeSpan FromMilliseconds(long value) => new TimeSpan(TimeSpan.TicksPerMillisecond * value);
 
         /// <summary>
         /// Returns a <see cref="TimeSpan"/> that represents a specified time, where the specification is in units of seconds.
@@ -293,7 +291,7 @@ namespace System
         /// <param name="value">A number of days that represent a time.</param>
         /// <returns>An object that represents value.</returns>
         public static TimeSpan FromDays(long value) => new TimeSpan(TimeSpan.TicksPerDay * value);
-        
+
         /// <summary>
         /// Converts the value of the current <see cref="TimeSpan"/> object to its equivalent string representation.
         /// </summary>

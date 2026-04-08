@@ -1,8 +1,5 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
 
@@ -15,68 +12,66 @@ namespace NFUnitTestSystemLib
         public void Ctor_Empty()
         {
             var i = new int();
-            Assert.Equal(0, i);
+            Assert.AreEqual(0, i);
         }
 
         [TestMethod]
         public void Ctor_Value()
         {
             int i = 41;
-            Assert.Equal(41, i);
+            Assert.AreEqual(41, i);
         }
 
         [TestMethod]
         public void MaxValue()
         {
-            Assert.Equal(0x7FFFFFFF, int.MaxValue);
+            Assert.AreEqual(0x7FFFFFFF, int.MaxValue);
         }
 
         [TestMethod]
         public void MinValue()
         {
-            Assert.Equal(unchecked((int)0x80000000), int.MinValue);
+            Assert.AreEqual(unchecked((int)0x80000000), int.MinValue);
         }
 
         [TestMethod]
-        public void Equals()
+        [DataRow(789, 789, true)]
+        [DataRow(789, -789, false)]
+        [DataRow(789, 0, false)]
+        [DataRow(0, 0, true)]
+        [DataRow(-789, -789, true)]
+        [DataRow(-789, 789, false)]
+        public void Equals_Int32ToInt32(int i1, int obj, bool expected)
         {
-            Int32TestData[] testData = new Int32TestData[]
+            if (expected)
             {
-                new Int32TestData((int)789, (int)789, true),
-                new Int32TestData((int)789, (int)-789, false),
-                new Int32TestData((int)789, (int)0, false),
-                new Int32TestData((int)0, (int)0, true),
-                new Int32TestData((int)-789, (int)-789, true),
-                new Int32TestData((int)-789, (int)789, false),
-                new Int32TestData((int)789, null, false),
-                new Int32TestData((int)89, "789", false),
-            };
-
-            foreach (var test in testData)
-            {
-                if (test.Obj is int)
-                {
-                    int i2 = (int)test.Obj;
-                    Assert.Equal(test.Expected, test.I1.Equals(i2));
-                    Assert.Equal(test.Expected, test.I1.GetHashCode().Equals(i2.GetHashCode()));
-                }
-
-                Assert.Equal(test.Expected, test.I1.Equals(test.Obj));
+                Assert.AreEqual(i1, obj);
+                Assert.IsTrue(i1.GetHashCode().Equals(obj.GetHashCode()));
             }
+            else
+            {
+                Assert.AreNotEqual(i1, obj);
+                Assert.IsFalse(i1.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            Assert.AreEqual(i1, i1.GetHashCode());
         }
 
-        private sealed class Int32TestData
+        [TestMethod]
+        public void Equals_Int32ToNull()
         {
-            public object I1 { get; }
-            public object Obj { get; }
-            public bool Expected { get; }
+            int i1 = 789;
+            object obj = null;
 
-            public Int32TestData(object i1, object obj, bool expected)
-            {
-                I1 = i1;
-                Obj = obj;
-                Expected = expected;
-            }
+            Assert.AreNotEqual(i1, obj);
+        }
+
+        [TestMethod]
+        public void Equals_Int32ToString()
+        {
+            int i1 = 89;
+            object obj = "789";
+
+            Assert.AreNotEqual(i1, obj);
         }
     }
 }

@@ -1,12 +1,7 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
-using System;
-using System.Diagnostics;
 
 // disable a number of warnings that we are intentionally going to test
 #pragma warning disable CS1718 // Comparison made to same variable
@@ -19,189 +14,189 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void ValueFloat04_Test()
         {
-            OutputHelper.WriteLine("Testing float type is kept after addition with other types");
+            // Testing float type is kept after addition with other types
             ValueFloatTestClass04.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat05_Test()
         {
-            OutputHelper.WriteLine("Testing double type is kept after addition with other types");
+            // Testing double type is kept after addition with other types
             ValueFloatTestClass05.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat06_Test()
         {
-            OutputHelper.WriteLine("Testing float type is kept after subtraction with other types");
+            // Testing float type is kept after subtraction with other types
             ValueFloatTestClass06.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat07_Test()
         {
-            OutputHelper.WriteLine("Testing double type is kept after subtraction with other types");
+            // Testing double type is kept after subtraction with other types
             ValueFloatTestClass07.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat08_Test()
         {
-            OutputHelper.WriteLine("Testing float type is kept after multiplication with other types");
+            // Testing float type is kept after multiplication with other types
             ValueFloatTestClass08.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat09_Test()
         {
-            OutputHelper.WriteLine("Testing double type is kept after maultiplication with other types");
+            // Testing double type is kept after maultiplication with other types
             ValueFloatTestClass09.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat10_Test()
         {
-            OutputHelper.WriteLine("Testing float type is kept after division with other types");
+            // Testing float type is kept after division with other types
             ValueFloatTestClass10.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat11_Test()
         {
-            OutputHelper.WriteLine("Testing double type is kept after division with other types");
+            // Testing double type is kept after division with other types
             ValueFloatTestClass11.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat12_Test()
         {
-            OutputHelper.WriteLine("Testing float type is kept after modulus with other types");
+            // Testing float type is kept after modulus with other types
             ValueFloatTestClass12.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat13_Test()
         {
-            OutputHelper.WriteLine("Testing double type is kept after modulus with other types");
+            // Testing double type is kept after modulus with other types
             ValueFloatTestClass13.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat14_Test()
         {
-            OutputHelper.WriteLine("Testing that equality operations return bool type objects");
+            // Testing that equality operations return bool type objects
             ValueFloatTestClass14.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat15_Test()
         {
-            OutputHelper.WriteLine("Testing that equality operations return bool type objects");
+            // Testing that equality operations return bool type objects
             ValueFloatTestClass15.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat16_Test()
         {
-            OutputHelper.WriteLine("Testing that non-equality operations return bool type objects");
+            // Testing that non-equality operations return bool type objects
             ValueFloatTestClass16.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat17_Test()
         {
-            OutputHelper.WriteLine("Testing that non-equality operations return bool type objects");
+            // Testing that non-equality operations return bool type objects
             ValueFloatTestClass17.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat18_Test()
         {
-            OutputHelper.WriteLine("Testing that greater than operations return bool type objects");
+            // Testing that greater than operations return bool type objects
             ValueFloatTestClass18.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat19_Test()
         {
-            OutputHelper.WriteLine("Testing that greater than operations return bool type objects");
+            // Testing that greater than operations return bool type objects
             ValueFloatTestClass19.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat20_Test()
         {
-            OutputHelper.WriteLine("Testing that less than operations return bool type objects");
+            // Testing that less than operations return bool type objects
             ValueFloatTestClass20.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat21_Test()
         {
-            OutputHelper.WriteLine("Testing that less than operations return bool type objects");
+            // Testing that less than operations return bool type objects
             ValueFloatTestClass21.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat22_Test()
         {
-            OutputHelper.WriteLine("Testing that greater than or equal operations return bool type objects");
+            // Testing that greater than or equal operations return bool type objects
             ValueFloatTestClass22.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat23_Test()
         {
-            OutputHelper.WriteLine("Testing that greater than or equal operations return bool type objects");
+            // Testing that greater than or equal operations return bool type objects
             ValueFloatTestClass23.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat24_Test()
         {
-            OutputHelper.WriteLine("Testing that less than or equal operations return bool type objects");
+            // Testing that less than or equal operations return bool type objects
             ValueFloatTestClass24.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat25_Test()
         {
-            OutputHelper.WriteLine("Testing that less than or equal operations return bool type objects");
+            // Testing that less than or equal operations return bool type objects
             ValueFloatTestClass25.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat26_Test()
         {
-            OutputHelper.WriteLine("Testing that double keeps its type in all operations with float");
+            // Testing that double keeps its type in all operations with float
             ValueFloatTestClass26.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat27_Test()
         {
-            OutputHelper.WriteLine("Testing that comparisons between floats and doubles return bools");
+            // Testing that comparisons between floats and doubles return bools
             ValueFloatTestClass27.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat28_Test()
         {
-            OutputHelper.WriteLine("Testing that float keeps its type after any operation with a float");
+            // Testing that float keeps its type after any operation with a float
             ValueFloatTestClass28.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat29_Test()
         {
-            OutputHelper.WriteLine("Testing that comparisons between floats return bools");
+            // Testing that comparisons between floats return bools
             ValueFloatTestClass29.testMethod();
         }
 
         [TestMethod]
         public void ValueFloat30_Test()
         {
-            OutputHelper.WriteLine("Testing float and double .epsilon values");
+            // Testing float and double .epsilon values
             ValueFloatTestClass30.testMethod();
         }
 
@@ -216,16 +211,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 + s1).GetType(), f1.GetType());
-                Assert.IsType((s1 + f1).GetType(), f1.GetType());
-                Assert.IsType((f1 + b1).GetType(), f1.GetType());
-                Assert.IsType((b1 + f1).GetType(), f1.GetType());
-                Assert.IsType((f1 + i1).GetType(), f1.GetType());
-                Assert.IsType((i1 + f1).GetType(), f1.GetType());
-                Assert.IsType((f1 + l1).GetType(), f1.GetType());
-                Assert.IsType((l1 + f1).GetType(), f1.GetType());
-                Assert.IsType((f1 + c1).GetType(), f1.GetType());
-                Assert.IsType((c1 + f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 + s1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((s1 + f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 + b1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((b1 + f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 + i1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((i1 + f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 + l1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((l1 + f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 + c1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((c1 + f1).GetType(), f1.GetType());
             }
         }
         public class ValueFloatTestClass05
@@ -239,16 +234,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 + s1).GetType(), d1.GetType());
-                Assert.IsType((s1 + d1).GetType(), d1.GetType());
-                Assert.IsType((d1 + b1).GetType(), d1.GetType());
-                Assert.IsType((b1 + d1).GetType(), d1.GetType());
-                Assert.IsType((d1 + i1).GetType(), d1.GetType());
-                Assert.IsType((i1 + d1).GetType(), d1.GetType());
-                Assert.IsType((d1 + l1).GetType(), d1.GetType());
-                Assert.IsType((l1 + d1).GetType(), d1.GetType());
-                Assert.IsType((d1 + c1).GetType(), d1.GetType());
-                Assert.IsType((c1 + d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 + s1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((s1 + d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 + b1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((b1 + d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 + i1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((i1 + d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 + l1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((l1 + d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 + c1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((c1 + d1).GetType(), d1.GetType());
             }
         }
         public class ValueFloatTestClass06
@@ -262,16 +257,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 - s1).GetType(), f1.GetType());
-                Assert.IsType((s1 - f1).GetType(), f1.GetType());
-                Assert.IsType((f1 - b1).GetType(), f1.GetType());
-                Assert.IsType((b1 - f1).GetType(), f1.GetType());
-                Assert.IsType((f1 - i1).GetType(), f1.GetType());
-                Assert.IsType((i1 - f1).GetType(), f1.GetType());
-                Assert.IsType((f1 - l1).GetType(), f1.GetType());
-                Assert.IsType((l1 - f1).GetType(), f1.GetType());
-                Assert.IsType((f1 - c1).GetType(), f1.GetType());
-                Assert.IsType((c1 - f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 - s1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((s1 - f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 - b1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((b1 - f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 - i1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((i1 - f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 - l1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((l1 - f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 - c1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((c1 - f1).GetType(), f1.GetType());
             }
         }
         public class ValueFloatTestClass07
@@ -285,16 +280,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 - s1).GetType(), d1.GetType());
-                Assert.IsType((s1 - d1).GetType(), d1.GetType());
-                Assert.IsType((d1 - b1).GetType(), d1.GetType());
-                Assert.IsType((b1 - d1).GetType(), d1.GetType());
-                Assert.IsType((d1 - i1).GetType(), d1.GetType());
-                Assert.IsType((i1 - d1).GetType(), d1.GetType());
-                Assert.IsType((d1 - l1).GetType(), d1.GetType());
-                Assert.IsType((l1 - d1).GetType(), d1.GetType());
-                Assert.IsType((d1 - c1).GetType(), d1.GetType());
-                Assert.IsType((c1 - d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 - s1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((s1 - d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 - b1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((b1 - d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 - i1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((i1 - d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 - l1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((l1 - d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 - c1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((c1 - d1).GetType(), d1.GetType());
             }
         }
         public class ValueFloatTestClass08
@@ -308,16 +303,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 * s1).GetType(), f1.GetType());
-                Assert.IsType((s1 * f1).GetType(), f1.GetType());
-                Assert.IsType((f1 * b1).GetType(), f1.GetType());
-                Assert.IsType((b1 * f1).GetType(), f1.GetType());
-                Assert.IsType((f1 * i1).GetType(), f1.GetType());
-                Assert.IsType((i1 * f1).GetType(), f1.GetType());
-                Assert.IsType((f1 * l1).GetType(), f1.GetType());
-                Assert.IsType((l1 * f1).GetType(), f1.GetType());
-                Assert.IsType((f1 * c1).GetType(), f1.GetType());
-                Assert.IsType((c1 * f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 * s1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((s1 * f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 * b1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((b1 * f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 * i1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((i1 * f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 * l1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((l1 * f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 * c1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((c1 * f1).GetType(), f1.GetType());
             }
         }
         public class ValueFloatTestClass09
@@ -331,16 +326,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 * s1).GetType(), d1.GetType());
-                Assert.IsType((s1 * d1).GetType(), d1.GetType());
-                Assert.IsType((d1 * b1).GetType(), d1.GetType());
-                Assert.IsType((b1 * d1).GetType(), d1.GetType());
-                Assert.IsType((d1 * i1).GetType(), d1.GetType());
-                Assert.IsType((i1 * d1).GetType(), d1.GetType());
-                Assert.IsType((d1 * l1).GetType(), d1.GetType());
-                Assert.IsType((l1 * d1).GetType(), d1.GetType());
-                Assert.IsType((d1 * c1).GetType(), d1.GetType());
-                Assert.IsType((c1 * d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 * s1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((s1 * d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 * b1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((b1 * d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 * i1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((i1 * d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 * l1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((l1 * d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 * c1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((c1 * d1).GetType(), d1.GetType());
             }
         }
         public class ValueFloatTestClass10
@@ -354,16 +349,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 / s1).GetType(), f1.GetType());
-                Assert.IsType((s1 / f1).GetType(), f1.GetType());
-                Assert.IsType((f1 / b1).GetType(), f1.GetType());
-                Assert.IsType((b1 / f1).GetType(), f1.GetType());
-                Assert.IsType((f1 / i1).GetType(), f1.GetType());
-                Assert.IsType((i1 / f1).GetType(), f1.GetType());
-                Assert.IsType((f1 / l1).GetType(), f1.GetType());
-                Assert.IsType((l1 / f1).GetType(), f1.GetType());
-                Assert.IsType((f1 / c1).GetType(), f1.GetType());
-                Assert.IsType((c1 / f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 / s1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((s1 / f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 / b1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((b1 / f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 / i1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((i1 / f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 / l1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((l1 / f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 / c1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((c1 / f1).GetType(), f1.GetType());
             }
         }
         public class ValueFloatTestClass11
@@ -377,16 +372,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 / s1).GetType(), d1.GetType());
-                Assert.IsType((s1 / d1).GetType(), d1.GetType());
-                Assert.IsType((d1 / b1).GetType(), d1.GetType());
-                Assert.IsType((b1 / d1).GetType(), d1.GetType());
-                Assert.IsType((d1 / i1).GetType(), d1.GetType());
-                Assert.IsType((i1 / d1).GetType(), d1.GetType());
-                Assert.IsType((d1 / l1).GetType(), d1.GetType());
-                Assert.IsType((l1 / d1).GetType(), d1.GetType());
-                Assert.IsType((d1 / c1).GetType(), d1.GetType());
-                Assert.IsType((c1 / d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 / s1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((s1 / d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 / b1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((b1 / d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 / i1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((i1 / d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 / l1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((l1 / d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 / c1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((c1 / d1).GetType(), d1.GetType());
             }
         }
         public class ValueFloatTestClass12
@@ -400,16 +395,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 % s1).GetType(), f1.GetType());
-                Assert.IsType((s1 % f1).GetType(), f1.GetType());
-                Assert.IsType((f1 % b1).GetType(), f1.GetType());
-                Assert.IsType((b1 % f1).GetType(), f1.GetType());
-                Assert.IsType((f1 % i1).GetType(), f1.GetType());
-                Assert.IsType((i1 % f1).GetType(), f1.GetType());
-                Assert.IsType((f1 % l1).GetType(), f1.GetType());
-                Assert.IsType((l1 % f1).GetType(), f1.GetType());
-                Assert.IsType((f1 % c1).GetType(), f1.GetType());
-                Assert.IsType((c1 % f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 % s1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((s1 % f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 % b1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((b1 % f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 % i1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((i1 % f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 % l1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((l1 % f1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 % c1).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((c1 % f1).GetType(), f1.GetType());
             }
         }
         public class ValueFloatTestClass13
@@ -423,16 +418,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 % s1).GetType(), d1.GetType());
-                Assert.IsType((s1 % d1).GetType(), d1.GetType());
-                Assert.IsType((d1 % b1).GetType(), d1.GetType());
-                Assert.IsType((b1 % d1).GetType(), d1.GetType());
-                Assert.IsType((d1 % i1).GetType(), d1.GetType());
-                Assert.IsType((i1 % d1).GetType(), d1.GetType());
-                Assert.IsType((d1 % l1).GetType(), d1.GetType());
-                Assert.IsType((l1 % d1).GetType(), d1.GetType());
-                Assert.IsType((d1 % c1).GetType(), d1.GetType());
-                Assert.IsType((c1 % d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 % s1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((s1 % d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 % b1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((b1 % d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 % i1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((i1 % d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 % l1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((l1 % d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 % c1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((c1 % d1).GetType(), d1.GetType());
             }
         }
         public class ValueFloatTestClass14
@@ -447,16 +442,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 == s1).GetType(), b.GetType());
-                Assert.IsType((s1 == f1).GetType(), b.GetType());
-                Assert.IsType((f1 == b1).GetType(), b.GetType());
-                Assert.IsType((b1 == f1).GetType(), b.GetType());
-                Assert.IsType((f1 == i1).GetType(), b.GetType());
-                Assert.IsType((i1 == f1).GetType(), b.GetType());
-                Assert.IsType((f1 == l1).GetType(), b.GetType());
-                Assert.IsType((l1 == f1).GetType(), b.GetType());
-                Assert.IsType((f1 == c1).GetType(), b.GetType());
-                Assert.IsType((c1 == f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 == s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 == f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 == b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 == f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 == i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 == f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 == l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 == f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 == c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 == f1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass15
@@ -471,16 +466,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 == s1).GetType(), b.GetType());
-                Assert.IsType((s1 == d1).GetType(), b.GetType());
-                Assert.IsType((d1 == b1).GetType(), b.GetType());
-                Assert.IsType((b1 == d1).GetType(), b.GetType());
-                Assert.IsType((d1 == i1).GetType(), b.GetType());
-                Assert.IsType((i1 == d1).GetType(), b.GetType());
-                Assert.IsType((d1 == l1).GetType(), b.GetType());
-                Assert.IsType((l1 == d1).GetType(), b.GetType());
-                Assert.IsType((d1 == c1).GetType(), b.GetType());
-                Assert.IsType((c1 == d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 == s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 == d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 == b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 == d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 == i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 == d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 == l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 == d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 == c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 == d1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass16
@@ -495,16 +490,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 != s1).GetType(), b.GetType());
-                Assert.IsType((s1 != f1).GetType(), b.GetType());
-                Assert.IsType((f1 != b1).GetType(), b.GetType());
-                Assert.IsType((b1 != f1).GetType(), b.GetType());
-                Assert.IsType((f1 != i1).GetType(), b.GetType());
-                Assert.IsType((i1 != f1).GetType(), b.GetType());
-                Assert.IsType((f1 != l1).GetType(), b.GetType());
-                Assert.IsType((l1 != f1).GetType(), b.GetType());
-                Assert.IsType((f1 != c1).GetType(), b.GetType());
-                Assert.IsType((c1 != f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 != s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 != f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 != b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 != f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 != i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 != f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 != l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 != f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 != c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 != f1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass17
@@ -519,16 +514,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 != s1).GetType(), b.GetType());
-                Assert.IsType((s1 != d1).GetType(), b.GetType());
-                Assert.IsType((d1 != b1).GetType(), b.GetType());
-                Assert.IsType((b1 != d1).GetType(), b.GetType());
-                Assert.IsType((d1 != i1).GetType(), b.GetType());
-                Assert.IsType((i1 != d1).GetType(), b.GetType());
-                Assert.IsType((d1 != l1).GetType(), b.GetType());
-                Assert.IsType((l1 != d1).GetType(), b.GetType());
-                Assert.IsType((d1 != c1).GetType(), b.GetType());
-                Assert.IsType((c1 != d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 != s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 != d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 != b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 != d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 != i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 != d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 != l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 != d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 != c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 != d1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass18
@@ -543,16 +538,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 > s1).GetType(), b.GetType());
-                Assert.IsType((s1 > f1).GetType(), b.GetType());
-                Assert.IsType((f1 > b1).GetType(), b.GetType());
-                Assert.IsType((b1 > f1).GetType(), b.GetType());
-                Assert.IsType((f1 > i1).GetType(), b.GetType());
-                Assert.IsType((i1 > f1).GetType(), b.GetType());
-                Assert.IsType((f1 > l1).GetType(), b.GetType());
-                Assert.IsType((l1 > f1).GetType(), b.GetType());
-                Assert.IsType((f1 > c1).GetType(), b.GetType());
-                Assert.IsType((c1 > f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 > s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 > f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 > b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 > f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 > i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 > f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 > l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 > f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 > c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 > f1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass19
@@ -567,16 +562,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 > s1).GetType(), b.GetType());
-                Assert.IsType((s1 > d1).GetType(), b.GetType());
-                Assert.IsType((d1 > b1).GetType(), b.GetType());
-                Assert.IsType((b1 > d1).GetType(), b.GetType());
-                Assert.IsType((d1 > i1).GetType(), b.GetType());
-                Assert.IsType((i1 > d1).GetType(), b.GetType());
-                Assert.IsType((d1 > l1).GetType(), b.GetType());
-                Assert.IsType((l1 > d1).GetType(), b.GetType());
-                Assert.IsType((d1 > c1).GetType(), b.GetType());
-                Assert.IsType((c1 > d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 > s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 > d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 > b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 > d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 > i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 > d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 > l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 > d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 > c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 > d1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass20
@@ -591,16 +586,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 < s1).GetType(), b.GetType());
-                Assert.IsType((s1 < f1).GetType(), b.GetType());
-                Assert.IsType((f1 < b1).GetType(), b.GetType());
-                Assert.IsType((b1 < f1).GetType(), b.GetType());
-                Assert.IsType((f1 < i1).GetType(), b.GetType());
-                Assert.IsType((i1 < f1).GetType(), b.GetType());
-                Assert.IsType((f1 < l1).GetType(), b.GetType());
-                Assert.IsType((l1 < f1).GetType(), b.GetType());
-                Assert.IsType((f1 < c1).GetType(), b.GetType());
-                Assert.IsType((c1 < f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 < s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 < f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 < b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 < f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 < i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 < f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 < l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 < f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 < c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 < f1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass21
@@ -615,16 +610,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 < s1).GetType(), b.GetType());
-                Assert.IsType((s1 < d1).GetType(), b.GetType());
-                Assert.IsType((d1 < b1).GetType(), b.GetType());
-                Assert.IsType((b1 < d1).GetType(), b.GetType());
-                Assert.IsType((d1 < i1).GetType(), b.GetType());
-                Assert.IsType((i1 < d1).GetType(), b.GetType());
-                Assert.IsType((d1 < l1).GetType(), b.GetType());
-                Assert.IsType((l1 < d1).GetType(), b.GetType());
-                Assert.IsType((d1 < c1).GetType(), b.GetType());
-                Assert.IsType((c1 < d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 < s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 < d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 < b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 < d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 < i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 < d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 < l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 < d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 < c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 < d1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass22
@@ -639,16 +634,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 >= s1).GetType(), b.GetType());
-                Assert.IsType((s1 >= f1).GetType(), b.GetType());
-                Assert.IsType((f1 >= b1).GetType(), b.GetType());
-                Assert.IsType((b1 >= f1).GetType(), b.GetType());
-                Assert.IsType((f1 >= i1).GetType(), b.GetType());
-                Assert.IsType((i1 >= f1).GetType(), b.GetType());
-                Assert.IsType((f1 >= l1).GetType(), b.GetType());
-                Assert.IsType((l1 >= f1).GetType(), b.GetType());
-                Assert.IsType((f1 >= c1).GetType(), b.GetType());
-                Assert.IsType((c1 >= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 >= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 >= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 >= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 >= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 >= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 >= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 >= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 >= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 >= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 >= f1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass23
@@ -663,16 +658,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 >= s1).GetType(), b.GetType());
-                Assert.IsType((s1 >= d1).GetType(), b.GetType());
-                Assert.IsType((d1 >= b1).GetType(), b.GetType());
-                Assert.IsType((b1 >= d1).GetType(), b.GetType());
-                Assert.IsType((d1 >= i1).GetType(), b.GetType());
-                Assert.IsType((i1 >= d1).GetType(), b.GetType());
-                Assert.IsType((d1 >= l1).GetType(), b.GetType());
-                Assert.IsType((l1 >= d1).GetType(), b.GetType());
-                Assert.IsType((d1 >= c1).GetType(), b.GetType());
-                Assert.IsType((c1 >= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 >= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 >= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 >= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 >= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 >= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 >= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 >= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 >= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 >= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 >= d1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass24
@@ -687,16 +682,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((f1 <= s1).GetType(), b.GetType());
-                Assert.IsType((s1 <= f1).GetType(), b.GetType());
-                Assert.IsType((f1 <= b1).GetType(), b.GetType());
-                Assert.IsType((b1 <= f1).GetType(), b.GetType());
-                Assert.IsType((f1 <= i1).GetType(), b.GetType());
-                Assert.IsType((i1 <= f1).GetType(), b.GetType());
-                Assert.IsType((f1 <= l1).GetType(), b.GetType());
-                Assert.IsType((l1 <= f1).GetType(), b.GetType());
-                Assert.IsType((f1 <= c1).GetType(), b.GetType());
-                Assert.IsType((c1 <= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 <= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 <= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 <= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 <= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 <= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 <= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 <= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 <= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 <= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 <= f1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass25
@@ -711,16 +706,16 @@ namespace NFUnitTestTypes
                 long l1 = 5L;
                 char c1 = (char)6;
 
-                Assert.IsType((d1 <= s1).GetType(), b.GetType());
-                Assert.IsType((s1 <= d1).GetType(), b.GetType());
-                Assert.IsType((d1 <= b1).GetType(), b.GetType());
-                Assert.IsType((b1 <= d1).GetType(), b.GetType());
-                Assert.IsType((d1 <= i1).GetType(), b.GetType());
-                Assert.IsType((i1 <= d1).GetType(), b.GetType());
-                Assert.IsType((d1 <= l1).GetType(), b.GetType());
-                Assert.IsType((l1 <= d1).GetType(), b.GetType());
-                Assert.IsType((d1 <= c1).GetType(), b.GetType());
-                Assert.IsType((c1 <= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 <= s1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((s1 <= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 <= b1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((b1 <= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 <= i1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((i1 <= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 <= l1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((l1 <= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 <= c1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((c1 <= d1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass26
@@ -730,21 +725,21 @@ namespace NFUnitTestTypes
                 double d1 = 11.0d;
                 float f1 = 12.0f;
 
-                Assert.IsType((d1 + f1).GetType(), d1.GetType());
-                Assert.IsType((f1 + d1).GetType(), d1.GetType());
-                Assert.IsType((d1 + d1).GetType(), d1.GetType());
-                Assert.IsType((d1 - f1).GetType(), d1.GetType());
-                Assert.IsType((f1 - d1).GetType(), d1.GetType());
-                Assert.IsType((d1 - d1).GetType(), d1.GetType());
-                Assert.IsType((d1 * f1).GetType(), d1.GetType());
-                Assert.IsType((f1 * d1).GetType(), d1.GetType());
-                Assert.IsType((d1 * d1).GetType(), d1.GetType());
-                Assert.IsType((d1 / f1).GetType(), d1.GetType());
-                Assert.IsType((f1 / d1).GetType(), d1.GetType());
-                Assert.IsType((d1 / d1).GetType(), d1.GetType());
-                Assert.IsType((d1 % f1).GetType(), d1.GetType());
-                Assert.IsType((f1 % d1).GetType(), d1.GetType());
-                Assert.IsType((d1 % d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 + f1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((f1 + d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 + d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 - f1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((f1 - d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 - d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 * f1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((f1 * d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 * d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 / f1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((f1 / d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 / d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 % f1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((f1 % d1).GetType(), d1.GetType());
+                Assert.IsInstanceOfType((d1 % d1).GetType(), d1.GetType());
             }
         }
         public class ValueFloatTestClass27
@@ -754,24 +749,24 @@ namespace NFUnitTestTypes
                 double d1 = 11.0d;
                 float f1 = 12.0f;
                 bool b = false;
-                Assert.IsType((d1 == f1).GetType(), b.GetType());
-                Assert.IsType((f1 == d1).GetType(), b.GetType());
-                Assert.IsType((d1 == d1).GetType(), b.GetType());
-                Assert.IsType((d1 != f1).GetType(), b.GetType());
-                Assert.IsType((f1 != d1).GetType(), b.GetType());
-                Assert.IsType((d1 != d1).GetType(), b.GetType());
-                Assert.IsType((d1 > f1).GetType(), b.GetType());
-                Assert.IsType((f1 > d1).GetType(), b.GetType());
-                Assert.IsType((d1 > d1).GetType(), b.GetType());
-                Assert.IsType((d1 < f1).GetType(), b.GetType());
-                Assert.IsType((f1 < d1).GetType(), b.GetType());
-                Assert.IsType((d1 < d1).GetType(), b.GetType());
-                Assert.IsType((d1 >= f1).GetType(), b.GetType());
-                Assert.IsType((f1 >= d1).GetType(), b.GetType());
-                Assert.IsType((d1 >= d1).GetType(), b.GetType());
-                Assert.IsType((d1 <= f1).GetType(), b.GetType());
-                Assert.IsType((f1 <= d1).GetType(), b.GetType());
-                Assert.IsType((d1 <= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 == f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 == d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 == d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 != f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 != d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 != d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 > f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 > d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 > d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 < f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 < d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 < d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 >= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 >= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 >= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 <= f1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 <= d1).GetType(), b.GetType());
+                Assert.IsInstanceOfType((d1 <= d1).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass28
@@ -781,11 +776,11 @@ namespace NFUnitTestTypes
                 float f1 = 11.0f;
                 float f2 = 12.0f;
 
-                Assert.IsType((f1 + f2).GetType(), f1.GetType());
-                Assert.IsType((f1 - f2).GetType(), f1.GetType());
-                Assert.IsType((f1 * f2).GetType(), f1.GetType());
-                Assert.IsType((f1 / f2).GetType(), f1.GetType());
-                Assert.IsType((f1 % f2).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 + f2).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 - f2).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 * f2).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 / f2).GetType(), f1.GetType());
+                Assert.IsInstanceOfType((f1 % f2).GetType(), f1.GetType());
             }
         }
         public class ValueFloatTestClass29
@@ -795,12 +790,12 @@ namespace NFUnitTestTypes
                 double f1 = 11.0d;
                 float f2 = 12.0f;
                 bool b = false;
-                Assert.IsType((f1 == f2).GetType(), b.GetType());
-                Assert.IsType((f1 != f2).GetType(), b.GetType());
-                Assert.IsType((f1 > f2).GetType(), b.GetType());
-                Assert.IsType((f1 < f2).GetType(), b.GetType());
-                Assert.IsType((f1 >= f2).GetType(), b.GetType());
-                Assert.IsType((f1 <= f2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 == f2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 != f2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 > f2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 < f2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 >= f2).GetType(), b.GetType());
+                Assert.IsInstanceOfType((f1 <= f2).GetType(), b.GetType());
             }
         }
         public class ValueFloatTestClass30
@@ -809,10 +804,10 @@ namespace NFUnitTestTypes
             {
                 float f1 = float.Epsilon;
                 double d1 = double.Epsilon;
-                Assert.Equal((float)(f1 / 2.0f), 0.0f);
-                Assert.Equal((float)(f1 * 0.5f), 0.0f);
-                Assert.Equal((double)(d1 / 2.0d), (double)0.0d);
-                Assert.Equal((double)(d1 * 0.5d), (double)0.0d);
+                Assert.AreEqual((float)(f1 / 2.0f), 0.0f);
+                Assert.AreEqual((float)(f1 * 0.5f), 0.0f);
+                Assert.AreEqual((double)(d1 / 2.0d), (double)0.0d);
+                Assert.AreEqual((double)(d1 * 0.5d), (double)0.0d);
             }
         }
 

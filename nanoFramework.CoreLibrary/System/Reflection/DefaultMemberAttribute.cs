@@ -1,10 +1,7 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-#if NANOCLR_REFLECTION
+using System.Runtime.CompilerServices;
 
 namespace System.Reflection
 {
@@ -14,20 +11,20 @@ namespace System.Reflection
     /// Defines the member of a type that is the default member used by InvokeMember.
     /// </summary>
     /// <remarks>Available only in mscorlib build with support for System.Reflection.</remarks>
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface), Serializable]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface)]
+    [ExcludeType]
+    [Serializable]
     public sealed class DefaultMemberAttribute : Attribute
     {
-        private readonly String _memberName;
-
         // You must provide the name of the member, this is required
         /// <summary>
         /// Initializes a new instance of the DefaultMemberAttribute class.
         /// </summary>
         /// <param name="memberName">A String containing the name of the member to invoke. This may be a constructor, method, property, or field. 
         /// A suitable invocation attribute must be specified when the member is invoked. The default member of a class can be specified by passing an empty String as the name of the member.</param>
-        public DefaultMemberAttribute(String memberName)
+        public DefaultMemberAttribute(string memberName)
         {
-            _memberName = memberName;
+            MemberName = memberName;
         }
 
         /// <summary>
@@ -36,11 +33,6 @@ namespace System.Reflection
         /// <value>
         /// A string representing the member name.
         /// </value>
-        public String MemberName
-        {
-            get { return _memberName; }
-        }
+        public string MemberName { get; }
     }
 }
-
-#endif // NANOCLR_REFLECTION

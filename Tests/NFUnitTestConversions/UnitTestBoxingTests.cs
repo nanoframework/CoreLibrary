@@ -1,11 +1,8 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-using nanoFramework.TestFramework;
 using System;
+using nanoFramework.TestFramework;
 
 namespace NFUnitTestConversions
 {
@@ -15,79 +12,79 @@ namespace NFUnitTestConversions
         [TestMethod]
         public void Boxingbyte_Test()
         {
-            Assert.True(BoxingTestClassbyte.testMethod());
+            Assert.IsTrue(BoxingTestClassbyte.testMethod());
         }
 
         [TestMethod]
         public void Boxingchar_Test()
         {
-            Assert.True(BoxingTestClasschar.testMethod());
+            Assert.IsTrue(BoxingTestClasschar.testMethod());
         }
 
         [TestMethod]
         public void Boxingdouble_Test()
         {
-            Assert.True(BoxingTestClassdouble.testMethod());
+            Assert.IsTrue(BoxingTestClassdouble.testMethod());
         }
 
         [TestMethod]
         public void Boxingfloat_Test()
         {
-            Assert.True(BoxingTestClassfloat.testMethod());
+            Assert.IsTrue(BoxingTestClassfloat.testMethod());
         }
 
         [TestMethod]
         public void Boxingint_Test()
         {
-            Assert.True(BoxingTestClassint.testMethod());
+            Assert.IsTrue(BoxingTestClassint.testMethod());
         }
 
         [TestMethod]
         public void Boxinglong_Test()
         {
-            Assert.True(BoxingTestClasslong.testMethod());
+            Assert.IsTrue(BoxingTestClasslong.testMethod());
         }
 
         [TestMethod]
         public void Boxingsbyte_Test()
         {
-            Assert.True(BoxingTestClasssbyte.testMethod());
+            Assert.IsTrue(BoxingTestClasssbyte.testMethod());
         }
 
         [TestMethod]
         public void Boxingshort_Test()
         {
-            Assert.True(BoxingTestClassshort.testMethod());
+            Assert.IsTrue(BoxingTestClassshort.testMethod());
         }
 
         [TestMethod]
         public void Boxinguint_Test()
         {
-            Assert.True(BoxingTestClassuint.testMethod());
+            Assert.IsTrue(BoxingTestClassuint.testMethod());
         }
 
         [TestMethod]
         public void Boxingulong_Test()
         {
-            Assert.True(BoxingTestClassulong.testMethod());
+            Assert.IsTrue(BoxingTestClassulong.testMethod());
         }
 
         [TestMethod]
         public void Boxingushort_Test()
         {
-            Assert.True(BoxingTestClassushort.testMethod());
+            Assert.IsTrue(BoxingTestClassushort.testMethod());
         }
 
         [TestMethod]
         public void Boxingstruct_to_ValType_Test()
         {
-            Assert.True(BoxingTestClassStruct_to_ValType.testMethod());
+            Assert.IsTrue(BoxingTestClassStruct_to_ValType.testMethod());
         }
 
         [TestMethod]
         public void BoxingValType_to_struct_Test()
         {
-            Assert.True(BoxingTestClassValType_to_struct.testMethod());
+            Assert.IsTrue(BoxingTestClassValType_to_struct.testMethod());
         }
 
 
@@ -294,7 +291,7 @@ namespace NFUnitTestConversions
             public static bool testMethod()
             {
                 BoxingTestClassStruct_to_ValTypeTest_struct src = new BoxingTestClassStruct_to_ValTypeTest_struct();
-                System.ValueType dst = src;
+                ValueType dst = src;
                 return true;
             }
         }
@@ -304,7 +301,7 @@ namespace NFUnitTestConversions
         {
             public static bool testMethod()
             {
-                System.ValueType src = new BoxingTestClassValType_to_struct_struct();
+                ValueType src = new BoxingTestClassValType_to_struct_struct();
                 BoxingTestClassValType_to_struct_struct dst = (BoxingTestClassValType_to_struct_struct)src;
                 return true;
             }

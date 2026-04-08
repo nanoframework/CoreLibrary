@@ -1,7 +1,5 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System
 {
@@ -15,7 +13,7 @@ namespace System
     public static class Console
     {
         /// <summary>
-        /// Writes the specified string value, followed by the current line terminator, to the standard output stream.
+        /// Writes the specified string value to the standard output stream.
         /// </summary>
         /// <param name="value">The value to write.</param>
         /// <remarks>

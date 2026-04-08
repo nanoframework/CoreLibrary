@@ -9,18 +9,19 @@ trigger:
       - release-*
   paths:
     exclude:
-      - .github_changelog_generator
       - .gitignore
+      - .gitattributes
+      - .gitmodules
+      - .github/*
       - CHANGELOG.md
-      - CODE_OF_CONDUCT.md
       - LICENSE.md
       - README.md
       - NuGet.Config
       - assets/*
-      - config/*
-      - .github/*
+      - nanoFramework.TestFramework/*
+
   tags:
-    include: 
+    include:
       - v*
 
 # PR always trigger build
@@ -35,33 +36,48 @@ resources:
       name: nanoframework/nf-tools
       endpoint: nanoframework
 
+variables:
+  - name: DOTNET_NOLOGO
+    value: true  
+  - name: nugetPackageName
+    value: 'nanoFramework.CoreLibrary'
+    
 jobs:
 
 ##############################
 - job: Build_mscorlib
   condition: >-
-    or(
-      eq(variables['UPDATE_DEPENDENTS'], 'false'),
-      eq(variables['StartReleaseCandidate'], 'true')
+    and(
+      not(startsWith(variables['Build.SourceBranch'], 'refs/tags/v')),
+      or(
+        eq(variables['UPDATE_DEPENDENTS'], 'false'),
+        eq(variables['StartReleaseCandidate'], 'true')
+      )
     )
+
   pool:
     vmImage: 'windows-latest'
 
   variables:
-    DOTNET_NOLOGO: true
-    solution: 'nanoFramework.CoreLibrary.sln'
-    buildPlatform: 'Any CPU'
-    buildConfiguration: 'Release'
-    nugetPackageName: 'nanoFramework.CoreLibrary'
+    - group: sign-client-credentials
+    - name: buildPlatform
+      value: 'Any CPU'  
+    - name: buildConfiguration
+      value: 'Release'
+    - name: solution
+      value: 'nanoFramework.CoreLibrary.sln'
 
   steps:
+
+  - template: azure-pipelines-templates/process-pr-labels.yml@templates
 
   # build steps only
   - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
     parameters:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
-      runUnitTests: true
-      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTest_DummyAdapter\nano.runsettings'
+      runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
+      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
+      skipNuGetCache: true
 
   # rebuild CoreLibrary project to get the assembly checksum
   - task: MSBuild@1
@@ -111,7 +127,8 @@ jobs:
     condition: >-
       and(
         succeeded(),
-        startsWith(variables['Build.SourceBranch'], 'refs/tags/v'),
+        eq(variables['System.PullRequest.PullRequestId'], ''),
+        startsWith(variables['Build.SourceBranch'], 'refs/heads/main'),
         not(contains(variables['Build.SourceBranch'], 'preview')),
         eq(variables['StartReleaseCandidate'], false)
       )
@@ -134,26 +151,18 @@ jobs:
   condition: >-
     or(
       and(
-        succeeded(),
         startsWith(variables['Build.SourceBranch'], 'refs/tags/v'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       and(
-        succeeded(),
         contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'),
         eq(variables['StartReleaseCandidate'], 'false')
       ),
       eq(variables['UPDATE_DEPENDENTS'], 'true')
     )
 
-  dependsOn:
-  - Build_mscorlib
-
   pool:
     vmImage: 'windows-latest'
-
-  variables:
-    DOTNET_NOLOGO: true
 
   steps:
   # need this here in order to persist GitHub credentials 
@@ -162,29 +171,37 @@ jobs:
     persistCredentials: true
 
   # update dependents
+  ##########################################################################################################
+  # dependent libraries that include unit tests should be added to the list in nanoFramework.TestFramework #
+  ##########################################################################################################
   - template: azure-pipelines-templates/update-dependents.yml@templates  
     parameters:
+      packageName: '$(nugetPackageName)'
       repositoriesToUpdate: |
+        nanoFramework.TestFramework
         nanoFramework.Device.OneWire
         nanoFramework.Runtime.Events
         nanoFramework.Runtime.Native
-        nanoFramework.TestFramework
-        nanoFramework.Logging
-        nanoFramework.Networking.Sntp
-        nanoFramework.Hardware.Stm32
+        nanoFramework.Hardware.GiantGecko
         nanoFramework.Hardware.TI
+        nanoFramework.Networking.Sntp
         nanoFramework.TI.EasyLink
         nanoFramework.ResourceManager
-        nanoFramework.Json
-        System.Collections
         System.Device.Adc
         System.Device.Dac
         System.Device.I2c
+        System.Device.I2c.Slave
         System.Device.Pwm
-        System.Device.Spi
-        System.Math
-        System.Text
-        System.Threading
+        System.Device.I2s
+
+  # update Visual Studio extension
+  - task: PowerShell@2
+    displayName: Update VS extension
+    inputs:
+      targetType: filePath
+      filePath: azure-pipelines/update-vs-extension.ps1
+    env:
+      GITHUB_TOKEN: $(GitHubToken)
 
 ##################################
 # report build failure to Discord
@@ -196,7 +213,6 @@ jobs:
   condition: >-
     or(
       failed('Build_mscorlib'),
-      failed('Build_mscorlib_no_reflection'),
       failed('Update_Dependents')
     )
 
@@ -206,6 +222,7 @@ jobs:
   steps:
 
   - checkout: self
+    fetchDepth: 1
 
   # step from template @ nf-tools repo
   # report error

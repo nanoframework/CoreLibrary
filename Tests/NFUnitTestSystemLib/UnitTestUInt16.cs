@@ -1,8 +1,5 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
 
@@ -15,66 +12,72 @@ namespace NFUnitTestSystemLib
         public void Ctor_Empty()
         {
             var i = new ushort();
-            Assert.Equal((ushort)0, i);
+            Assert.AreEqual((ushort)0, i);
         }
 
         [TestMethod]
         public void Ctor_Value()
         {
             ushort i = 41;
-            Assert.Equal((ushort)41, i);
+            Assert.AreEqual((ushort)41, i);
         }
 
         [TestMethod]
         public void MaxValue()
         {
-            Assert.Equal((ushort)0xFFFF, ushort.MaxValue);
+            Assert.AreEqual((ushort)0xFFFF, ushort.MaxValue);
         }
 
         [TestMethod]
         public void MinValue()
         {
-            Assert.Equal((ushort)0, ushort.MinValue);
+            Assert.AreEqual((ushort)0, ushort.MinValue);
         }
 
         [TestMethod]
-        public void Equals()
+        [DataRow((ushort)789, (ushort)789, true)]
+        [DataRow((ushort)788, (ushort)0, false)]
+        [DataRow((ushort)0, (ushort)0, true)]
+        public void Equals_UInt16ToUInt16(ushort i1, ushort obj, bool expected)
         {
-            UInt16TestData[] testData = new UInt16TestData[]
+            if (expected)
             {
-                new UInt16TestData((ushort)789, (ushort)789, true),
-                new UInt16TestData((ushort)788, (ushort)0, false),
-                new UInt16TestData((ushort)0, (ushort)0, true),
-                new UInt16TestData((ushort)789, null, false),
-                new UInt16TestData((ushort)789, "789", false),
-                new UInt16TestData((ushort)789, 789, false)
-            };
-
-            foreach (var test in testData)
-            {
-                if (test.Obj is ushort)
-                {
-                    Assert.Equal(test.Expected, test.I1.Equals((ushort)test.Obj));
-                    Assert.Equal(test.Expected, test.I1.GetHashCode().Equals(((ushort)test.Obj).GetHashCode()));
-                    Assert.Equal((ushort)test.I1, test.I1.GetHashCode());
-                }
-
-                Assert.Equal(test.Expected, test.I1.Equals(test.Obj));
+                Assert.AreEqual(i1, obj);
+                Assert.IsTrue(i1.GetHashCode().Equals(obj.GetHashCode()));
             }
+            else
+            {
+                Assert.AreNotEqual(i1, obj);
+                Assert.IsFalse(i1.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            Assert.AreEqual(i1, i1.GetHashCode());
         }
 
-        private sealed class UInt16TestData
+        [TestMethod]
+        public void Equals_UInt16ToNull()
         {
-            public object I1 { get; }
-            public object Obj { get; }
-            public bool Expected { get; }
+            ushort i1 = 789;
+            object obj = null;
 
-            public UInt16TestData(object i1, object obj, bool expected)
-            {
-                I1 = i1;
-                Obj = obj;
-                Expected = expected;
-            }
+            Assert.AreNotEqual(i1, obj);
+        }
+
+        [TestMethod]
+        public void Equals_UInt16ToString()
+        {
+            ushort i1 = 789;
+            object obj = "789";
+
+            Assert.AreNotEqual(i1, obj);
+        }
+
+        [TestMethod]
+        public void Equals_UInt16ToInt()
+        {
+            ushort i1 = 789;
+            object obj = 789;
+
+            Assert.AreNotEqual(i1, obj);
         }
     }
 }

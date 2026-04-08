@@ -1,8 +1,5 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
 
@@ -15,68 +12,80 @@ namespace NFUnitTestSystemLib
         public void Ctor_Empty()
         {
             var b = new byte();
-            Assert.Equal((byte)0, b);
+            Assert.AreEqual((byte)0, b);
         }
 
         [TestMethod]
         public void Ctor_Value()
         {
             byte b = 41;
-            Assert.Equal((byte)41, b);
+            Assert.AreEqual((byte)41, b);
         }
 
         [TestMethod]
         public void MaxValue()
         {
-            Assert.Equal((byte)0xFF, byte.MaxValue);
+            Assert.AreEqual((byte)0xFF, byte.MaxValue);
         }
 
         [TestMethod]
         public void MinValue()
         {
-            Assert.Equal((byte)0, byte.MinValue);
+            Assert.AreEqual((byte)0, byte.MinValue);
         }
 
         [TestMethod]
-        public void Equals()
+        [DataRow((byte)78, (byte)78, true)]
+        [DataRow((byte)78, (byte)0, false)]
+        [DataRow((byte)0, (byte)0, true)]
+        public void Equals_ByteToByte(byte b, byte obj, bool expected)
         {
-            ByteTestData[] testData = new ByteTestData[]
+            OutputHelper.WriteLine($"Testing combination {b} and {obj}");
+
+            if (expected)
             {
-                new ByteTestData((byte)78, (byte)78, true),
-                new ByteTestData((byte)78, (byte)0, false),
-                new ByteTestData((byte)0, (byte)0, true),
-                new ByteTestData((byte)78, null, false),
-                new ByteTestData((byte)78, "78", false),
-                new ByteTestData((byte)78, 78, false)
-            };
-
-            foreach (var test in testData)
-            {
-                OutputHelper.WriteLine($"Testing combination {test.B} and {test.Obj}");
-
-                if (test.Obj is byte b2)
-                {
-                    Assert.Equal(test.Expected, test.B.Equals(b2), $"Casting Obj wasn't successful for {test.Obj}");
-                    Assert.Equal(test.Expected, test.B.GetHashCode().Equals(b2.GetHashCode()), $"HashCode of {test.B}({test.B.GetHashCode()}) differs from the one of {b2}(b2.GetHashCode())");
-                    Assert.Equal((byte)test.B, test.B.GetHashCode(), $"HashCode of {(byte)test.B} different from expected, is {test.B.GetHashCode()}");
-                }
-
-                Assert.Equal(test.Expected, test.B.Equals(test.Obj), $"Equality test between {test.B} and {test.Obj} failed");
+                Assert.AreEqual(b, obj);
+                Assert.IsTrue(b.GetHashCode().Equals(obj.GetHashCode()));
             }
+            else
+            {
+                Assert.AreNotEqual(b, obj);
+                Assert.IsFalse(b.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            Assert.AreEqual(b, b.GetHashCode());
         }
 
-        private sealed class ByteTestData
+        [TestMethod]
+        public void Equals_ByteToNull()
         {
-            public object B { get; }
-            public object Obj { get; }
-            public bool Expected { get; }
+            byte b = 78;
+            object obj = null;
 
-            public ByteTestData(object b, object obj, bool expected)
-            {
-                B = b;
-                Obj = obj;
-                Expected = expected;
-            }
+            OutputHelper.WriteLine($"Testing combination {b} and {obj}");
+
+            Assert.AreNotEqual(b, obj);
+        }
+
+        [TestMethod]
+        public void Equals_ByteToString()
+        {
+            byte b = 78;
+            object obj = "78";
+
+            OutputHelper.WriteLine($"Testing combination {b} and {obj}");
+
+            Assert.AreNotEqual(b, obj);
+        }
+
+        [TestMethod]
+        public void Equals_ByteToInt()
+        {
+            byte b = 78;
+            object obj = 78;
+
+            OutputHelper.WriteLine($"Testing combination {b} and {obj}");
+
+            Assert.AreNotEqual(b, obj);
         }
     }
 }

@@ -1,8 +1,5 @@
-﻿//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using nanoFramework.TestFramework;
 
@@ -15,68 +12,65 @@ namespace NFUnitTestSystemLib
         public void Ctor_Empty()
         {
             var i = new long();
-            Assert.Equal(0, i);
+            Assert.AreEqual(0, i);
         }
 
         [TestMethod]
         public void Ctor_Value()
         {
             long i = 41;
-            Assert.Equal(41, i);
+            Assert.AreEqual(41, i);
         }
 
         [TestMethod]
         public void MaxValue()
         {
-            Assert.Equal(0x7FFFFFFFFFFFFFFF, long.MaxValue);
+            Assert.AreEqual(0x7FFFFFFFFFFFFFFF, long.MaxValue);
         }
 
         [TestMethod]
         public void MinValue()
         {
-            Assert.Equal(unchecked((long)0x8000000000000000), long.MinValue);
+            Assert.AreEqual(unchecked((long)0x8000000000000000), long.MinValue);
         }
 
         [TestMethod]
-        public void Equals()
+        [DataRow((long)789, (long)789, true)]
+        [DataRow((long)789, (long)-789, false)]
+        [DataRow((long)789, (long)0, false)]
+        [DataRow((long)0, (long)0, true)]
+        [DataRow((long)-789, (long)-789, true)]
+        [DataRow((long)-789, (long)789, false)]
+        public void Equals_LongToLong(long i1, long obj, bool expected)
         {
-            Int64TestData[] testData = new Int64TestData[]
+            if (expected)
             {
-                new Int64TestData((long)789, (long)789, true),
-                new Int64TestData((long)789, (long)-789, false),
-                new Int64TestData((long)789, (long)0, false),
-                new Int64TestData((long)0, (long)0, true),
-                new Int64TestData((long)-789, (long)-789, true),
-                new Int64TestData((long)-789, (long)789, false),
-                new Int64TestData((long)789, null, false),
-                new Int64TestData((long)789, "789", false),
-            };
-
-            foreach (var test in testData)
+                Assert.AreEqual(i1, obj);
+                Assert.IsTrue(i1.GetHashCode().Equals(obj.GetHashCode()));
+            }
+            else
             {
-                if (test.Obj is long)
-                {
-                    long i2 = (long)test.Obj;
-                    Assert.Equal(test.Expected, test.I1.Equals(i2));
-                    Assert.Equal(test.Expected, test.I1.GetHashCode().Equals(i2.GetHashCode()));
-                }
-
-                Assert.Equal(test.Expected, test.I1.Equals(test.Obj));
+                Assert.AreNotEqual(i1, obj);
+                Assert.IsFalse(i1.GetHashCode().Equals(obj.GetHashCode()));
             }
         }
 
-        private sealed class Int64TestData
+        [TestMethod]
+        public void Equals_LongToNull()
         {
-            public object I1 { get; }
-            public object Obj { get; }
-            public bool Expected { get; }
+            long i1 = 789;
+            object obj = null;
 
-            public Int64TestData(object i1, object obj, bool expected)
-            {
-                I1 = i1;
-                Obj = obj;
-                Expected = expected;
-            }
+            Assert.AreNotEqual(i1, obj);
+        }
+
+        [TestMethod]
+        public void Equals_LongToString()
+        {
+            long i1 = 789;
+            object obj = "789";
+
+            Assert.AreNotEqual(i1, obj);
         }
     }
 }

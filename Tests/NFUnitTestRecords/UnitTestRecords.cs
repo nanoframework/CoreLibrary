@@ -1,5 +1,5 @@
-using nanoFramework.TestFramework;
-using System;
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace NFUnitTestRecords
 {
@@ -14,7 +14,7 @@ namespace NFUnitTestRecords
     //        var dob = new DateTime(1998, 1, 31);
     //        var id = Guid.NewGuid();
     //        var emptyGuid = Guid.Empty;
-            
+
     //        var newPerson = new Person(firstName, lastName, dob)
     //        {
     //            Id = emptyGuid,

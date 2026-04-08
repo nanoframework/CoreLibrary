@@ -1,16 +1,13 @@
-//
-// Copyright (c) .NET Foundation and Contributors
-// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
-// See LICENSE file in the project root for full license information.
-//
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 #if NANOCLR_REFLECTION
 
 namespace System.Reflection
 {
     using System;
-    using CultureInfo = Globalization.CultureInfo;
     using Runtime.CompilerServices;
+    using CultureInfo = Globalization.CultureInfo;
 
     /// <summary>
     /// Describes an assembly's unique identity in full.
@@ -131,7 +128,7 @@ namespace System.Reflection
             var type = GetType(name);
 
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if ( (type == null) && (throwOnError) ) throw new ArgumentException();
+            if ((type == null) && (throwOnError)) throw new ArgumentException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
 
             return type;

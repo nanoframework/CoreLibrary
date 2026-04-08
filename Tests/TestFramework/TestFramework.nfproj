@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
     <NanoFrameworkProjectSystemPath>$(MSBuildExtensionsPath)\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
   </PropertyGroup>
@@ -30,9 +30,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestExtensions.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestFramework.cs" />
-    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\OutputHelper.cs" />
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.cs" Link="Assert.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.AreEqual.cs" Link="Assert.AreEqual.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.AreNotEqual.cs" Link="Assert.AreNotEqual.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\Assert.Obsolete.cs" Link="\Assert.Obsolete.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\CollectionAssert.cs" Link="CollectionAssert.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\OutputHelper.cs" Link="OutputHelper.cs"/>
+    <Compile Include="..\..\nanoFramework.TestFramework\source\TestFramework\TestExtensions.cs" Link="TestExtensions.cs"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />
