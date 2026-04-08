@@ -47,5 +47,11 @@
     <NanoGenerateStubsRootName Condition="'$(NanoGenerateStubsRootName)'==''">$(TargetName)</NanoGenerateStubsRootName>
     <NanoGenerateSkeletonFile>$(NanoGenerateStubsDirectory)\$(NanoGenerateStubsRootName)</NanoGenerateSkeletonFile>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.9.50">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
   
 </Project>
