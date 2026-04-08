@@ -41,6 +41,11 @@
     <NoStdLib>true</NoStdLib>
     <NoCompilerStandardLib>true</NoCompilerStandardLib>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+    <NanoGenerateStubsDirectory>bin\$(Configuration)\Stubs</NanoGenerateStubsDirectory>
+    <NanoGenerateSkeletonProjectName>corlib_native</NanoGenerateSkeletonProjectName>
+    <NanoGenerateStubsRootName Condition="'$(NanoGenerateStubsRootName)'==''">$(TargetName)</NanoGenerateStubsRootName>
+    <NanoGenerateSkeletonFile>$(NanoGenerateStubsDirectory)\$(NanoGenerateStubsRootName)</NanoGenerateSkeletonFile>
   </PropertyGroup>
   
 </Project>
