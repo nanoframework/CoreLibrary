@@ -20,7 +20,7 @@
     <!--<RestoreProjectStyle>NoRestore</RestoreProjectStyle>-->
     
     <!--This one maybe needed only for mscorlib-->
-    <SkipResolvePackageAssets>true</SkipResolvePackageAssets>
+    <!-- <SkipResolvePackageAssets>true</SkipResolvePackageAssets> -->
 
     <DefineConstants>$(DefineConstants);NANOCLR_REFLECTION</DefineConstants>
 
