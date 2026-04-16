@@ -515,5 +515,70 @@ namespace NFUnitTestSystemLib
         //        new object[] { -6 }), -6);
         //}
 
+        class TestObjectWithArrayFields
+        {
+            public byte[] ByteArrayField;
+            public int[] IntArrayField;
+            public string StringField;
+        }
+
+        [TestMethod]
+        public void SystemType13_FieldType_ArrayField_Test()
+        {
+            // Verifies that FieldInfo.FieldType returns the concrete array type (e.g. System.Byte[])
+            // and not the generic System.Array base class for array-typed fields.
+            // Regression test for https://github.com/nanoframework/Home/issues/1624
+
+            Type testType = typeof(TestObjectWithArrayFields);
+
+            // --- byte[] field ---
+            FieldInfo byteArrayField = testType.GetField("ByteArrayField");
+            Assert.IsNotNull(byteArrayField);
+
+            Type byteArrayFieldType = byteArrayField.FieldType;
+            OutputHelper.WriteLine($"ByteArrayField.FieldType.FullName: {byteArrayFieldType.FullName}");
+            Assert.AreEqual("System.Byte[]", byteArrayFieldType.FullName);
+            Assert.IsTrue(byteArrayFieldType.IsArray);
+
+            Type byteElementType = byteArrayFieldType.GetElementType();
+            Assert.IsNotNull(byteElementType);
+            OutputHelper.WriteLine($"ByteArrayField.FieldType.GetElementType().FullName: {byteElementType.FullName}");
+            Assert.AreEqual("System.Byte", byteElementType.FullName);
+
+            // --- int[] field ---
+            FieldInfo intArrayField = testType.GetField("IntArrayField");
+            Assert.IsNotNull(intArrayField);
+
+            Type intArrayFieldType = intArrayField.FieldType;
+            OutputHelper.WriteLine($"IntArrayField.FieldType.FullName: {intArrayFieldType.FullName}");
+            Assert.AreEqual("System.Int32[]", intArrayFieldType.FullName);
+            Assert.IsTrue(intArrayFieldType.IsArray);
+
+            Type intElementType = intArrayFieldType.GetElementType();
+            Assert.IsNotNull(intElementType);
+            OutputHelper.WriteLine($"IntArrayField.FieldType.GetElementType().FullName: {intElementType.FullName}");
+            Assert.AreEqual("System.Int32", intElementType.FullName);
+        }
+
+        [TestMethod]
+        public void SystemType14_FieldType_NonArrayField_Test()
+        {
+            // Verifies that FieldInfo.FieldType still works correctly for non-array fields
+            // and that GetElementType() returns null for non-array types.
+
+            Type testType = typeof(TestObjectWithArrayFields);
+
+            FieldInfo stringField = testType.GetField("StringField");
+            Assert.IsNotNull(stringField);
+
+            Type stringFieldType = stringField.FieldType;
+            OutputHelper.WriteLine($"StringField.FieldType.FullName: {stringFieldType.FullName}");
+            Assert.AreEqual("System.String", stringFieldType.FullName);
+            Assert.IsFalse(stringFieldType.IsArray);
+
+            Type stringElementType = stringFieldType.GetElementType();
+            Assert.IsNull(stringElementType);
+        }
+
     }
 }
