@@ -715,6 +715,7 @@ namespace System
         /// <param name="format">A composite format string</param>
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         /// <returns>A copy of <paramref name="format"/> in which the format items have been replaced by the string representation of the corresponding objects in <paramref name="args"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="format"/> or <paramref name="args"/> is <see langword="null"/>.</exception>
 #if NANOCLR_REFLECTION
 
 #nullable enable
