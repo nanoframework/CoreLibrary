@@ -45,7 +45,7 @@ namespace NFUnitTestArithmetic
         {
             // catch an exception if the format string is null
             string nullFormat = null;
-            Assert.ThrowsException(typeof(NullReferenceException), () => { string.Format(nullFormat, 12345.67); });
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { string.Format(nullFormat, 12345.67); });
         }
 
         [TestMethod]
