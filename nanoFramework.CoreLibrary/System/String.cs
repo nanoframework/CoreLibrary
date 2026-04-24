@@ -48,7 +48,7 @@ namespace System
         /// <returns>true if obj is a String and its value is the same as this instance; otherwise, false. If obj is null, the method returns false.</returns>
         public override bool Equals(object obj)
         {
-            var s = obj as string;
+            string s = obj as string;
             return s != null && Equals(this, s);
         }
 
@@ -62,7 +62,7 @@ namespace System
 
 #nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern bool Equals(string a, string b);
+        public static extern bool Equals(string? a, string? b);
 #nullable restore
 
 #else
@@ -215,17 +215,17 @@ namespace System
 #nullable enable
 
         /// <summary>
-        /// Removes all the leading occurrences of a set of characters specified in an array from the current string.
+        /// Removes all leading and trailing occurrences of a set of characters specified in an array from the current string.
         /// </summary>
         /// <param name="trimChars">An array of Unicode characters to remove, or <see langword="null"/>.</param>
-        /// <returns>The string that remains after all occurrences of characters in the <paramref name="trimChars"/> parameter are removed from the start of the current string. If <paramref name="trimChars"/> is <see langword="null"/> or an empty array, white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
+        /// <returns>The string that remains after all occurrences of characters in the <paramref name="trimChars"/> parameter are removed from the start and end of the current string. If <paramref name="trimChars"/> is <see langword="null"/> or an empty array, white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern string Trim(params char[]? trimChars);
 
         /// <summary>
-        /// Removes all the leading occurrences of a set of characters specified in an array from the current string.
+        /// Removes all leading white-space characters from the current string.
         /// </summary>
-        /// <returns>The string that remains after all occurrences of characters in the trimChars parameter are removed from the start of the current string. If trimChars is null or an empty array, white-space characters are removed instead.</returns>
+        /// <returns>The string that remains after all white-space characters are removed from the start of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern string TrimStart();
 
@@ -238,7 +238,7 @@ namespace System
         public extern string TrimStart(params char[]? trimChars);
 
         /// <summary>
-        /// Removes all the trailing occurrences of a set of characters specified in an array from the current string.
+        /// Removes all trailing white-space characters from the current string.
         /// </summary>
         /// <returns>The string that remains after all white-space characters are removed from the end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
