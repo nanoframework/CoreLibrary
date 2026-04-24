@@ -49,6 +49,13 @@ namespace NFUnitTestArithmetic
         }
 
         [TestMethod]
+        public void StringFormat_NullArgs()
+        {
+            // passing a null params array should throw ArgumentNullException
+            Assert.ThrowsException(typeof(ArgumentNullException), () => { string.Format("{0}", (object[])null); });
+        }
+
+        [TestMethod]
         [DataRow("Left align in 10 chars: {0,-10:N2}: and then more", 1234.5641, "Left align in 10 chars: 1,234.56  : and then more")]
         [DataRow("Right align in 10 chars: {0,10:N2}: and then more", 1234.5641, "Right align in 10 chars:   1,234.56: and then more")]
         public void StringFormat_02(string formatString, double value, string outcomeMessage)
