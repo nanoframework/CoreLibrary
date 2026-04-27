@@ -176,20 +176,55 @@ namespace System
         /// <summary>
         /// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
         /// </summary>
-        /// <param name="other">An object to compare with this instance.</param>
+        /// <param name="value">An object to compare with this instance.</param>
         /// <returns>A value that indicates the relative order of the objects being compared.</returns>
-        public int CompareTo(Guid other)
+        public int CompareTo(Guid value)
         {
             _data ??= new int[4];
-            other._data ??= new int[4];
-            for (int i = 0; i < 4; i++)
+            value._data ??= new int[4];
+
+            uint this0 = (uint)_data[0];
+            uint other0 = (uint)value._data[0];
+            if (this0 != other0)
             {
-                if (_data[i] != other._data[i])
-                {
-                    return _data[i] - other._data[i];
-                }
+                return this0 < other0 ? -1 : 1;
             }
+
+            uint this1 = SwapHalves((uint)_data[1]);
+            uint other1 = SwapHalves((uint)value._data[1]);
+            if (this1 != other1)
+            {
+                return this1 < other1 ? -1 : 1;
+            }
+
+            uint this2 = SwapBytes((uint)_data[2]);
+            uint other2 = SwapBytes((uint)value._data[2]);
+            if (this2 != other2)
+            {
+                return this2 < other2 ? -1 : 1;
+            }
+
+            uint this3 = SwapBytes((uint)_data[3]);
+            uint other3 = SwapBytes((uint)value._data[3]);
+            if (this3 != other3)
+            {
+                return this3 < other3 ? -1 : 1;
+            }
+
             return 0;
+        }
+
+        private static uint SwapHalves(uint value)
+        {
+            return (value << 16) | (value >> 16);
+        }
+
+        private static uint SwapBytes(uint value)
+        {
+            return ((value & 0x000000FFu) << 24) |
+                   ((value & 0x0000FF00u) << 8) |
+                   ((value & 0x00FF0000u) >> 8) |
+                   ((value & 0xFF000000u) >> 24);
         }
 
         /// <summary>
