@@ -10,4 +10,4 @@ using System.Reflection;
 [assembly: AssemblyProduct(".NET nanoFramework mscorlib")]
 [assembly: AssemblyCopyright("Copyright (c) .NET Foundation and Contributors")]
 
-[assembly: AssemblyNativeVersion("100.22.0.3")]
+[assembly: AssemblyNativeVersion("100.22.0.4")]
