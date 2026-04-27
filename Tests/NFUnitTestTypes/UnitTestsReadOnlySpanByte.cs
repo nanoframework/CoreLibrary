@@ -707,13 +707,13 @@ namespace NFUnitTestTypes
             ReadOnlySpan<byte> span2 = new ReadOnlySpan<byte>(array2);
             ReadOnlySpan<byte> span3 = new ReadOnlySpan<byte>(array3);
 
-            // Test equality with same content (content-based equality)
-            Assert.IsTrue(span1 == span2, "ReadOnlySpans with same content should be equal");
-            Assert.IsFalse(span1 != span2, "ReadOnlySpans with same content should not be not-equal");
+            // Different backing arrays → NOT equal under identity semantics.
+            Assert.IsFalse(span1 == span2, "ReadOnlySpans from different arrays are NOT equal under identity semantics");
+            Assert.IsTrue(span1 != span2, "ReadOnlySpans from different arrays should be not-equal");
 
-            // Test inequality with different content
-            Assert.IsTrue(span1 != span3, "ReadOnlySpans with different content should not be equal");
-            Assert.IsFalse(span1 == span3, "ReadOnlySpans with different content should not be equal");
+            // Different arrays and different content — also not equal.
+            Assert.IsTrue(span1 != span3, "ReadOnlySpans from different arrays with different content should be not-equal");
+            Assert.IsFalse(span1 == span3, "ReadOnlySpans from different arrays with different content should not be equal");
 
             // Test empty spans
             ReadOnlySpan<byte> empty1 = new ReadOnlySpan<byte>();
@@ -733,9 +733,9 @@ namespace NFUnitTestTypes
             ReadOnlySpan<byte> span1 = new ReadOnlySpan<byte>(array1, 2, 5);
             ReadOnlySpan<byte> span2 = new ReadOnlySpan<byte>(array2, 2, 5);
 
-            // They should be equal (content-based equality)
-            Assert.IsTrue(span1 == span2, "Partial spans with same content should be equal");
-            Assert.IsFalse(span1 != span2, "Partial spans with same content should not be not-equal");
+            // Different backing arrays → NOT equal under identity semantics.
+            Assert.IsFalse(span1 == span2, "Partial spans from different arrays are NOT equal under identity semantics");
+            Assert.IsTrue(span1 != span2, "Partial spans from different arrays should be not-equal");
 
             // Create span from different array with different content
             byte[] array3 = new byte[10] { 0, 1, 2, 3, 99, 5, 6, 7, 8, 9 };
@@ -762,9 +762,13 @@ namespace NFUnitTestTypes
             ReadOnlySpan<byte> slice1 = originalSpan1.Slice(2, 5);
             ReadOnlySpan<byte> slice2 = originalSpan2.Slice(2, 5);
 
-            // They should be equal (content-based equality)
-            Assert.IsTrue(slice1 == slice2, "Slices with same content should be equal");
-            Assert.IsFalse(slice1 != slice2, "Slices with same content should not be not-equal");
+            // Slices from different arrays → NOT equal under identity semantics.
+            Assert.IsFalse(slice1 == slice2, "Slices from different arrays are NOT equal under identity semantics");
+            Assert.IsTrue(slice1 != slice2, "Slices from different arrays should be not-equal");
+
+            // A struct copy of a slice shares the same internal heap block and must be equal.
+            ReadOnlySpan<byte> slice1Copy = slice1;
+            Assert.IsTrue(slice1 == slice1Copy, "Struct copy of a slice must equal the original");
 
             // Create a slice with different content
             byte[] array3 = new byte[10] { 0, 1, 2, 99, 4, 5, 6, 7, 8, 9 };
@@ -796,32 +800,27 @@ namespace NFUnitTestTypes
         }
 
         [TestMethod]
-        public void EqualityContentBasedTests()
+        public void EqualityIdentityNotContentBasedTests()
         {
-            // Create two arrays with identical content but different references
+            // Two spans from different arrays are NOT equal even with identical content
+            // because operator== uses identity (same internal heap block) not content comparison.
             byte[] array1 = new byte[5] { 10, 20, 30, 40, 50 };
             byte[] array2 = new byte[5] { 10, 20, 30, 40, 50 };
 
             ReadOnlySpan<byte> span1 = new ReadOnlySpan<byte>(array1);
             ReadOnlySpan<byte> span2 = new ReadOnlySpan<byte>(array2);
 
-            // ReadOnlySpans with same content should be equal (content-based equality)
-            Assert.IsTrue(span1 == span2, "ReadOnlySpans with same content should be equal");
-            Assert.IsFalse(span1 != span2, "ReadOnlySpans with same content should not be not-equal");
+            Assert.IsFalse(span1 == span2, "Spans from different arrays are NOT equal under identity semantics");
+            Assert.IsTrue(span1 != span2, "Spans from different arrays should be not-equal");
 
-            // Now create another span from array1
-            ReadOnlySpan<byte> span1Copy = new ReadOnlySpan<byte>(array1);
-            Assert.IsTrue(span1 == span1Copy, "ReadOnlySpans from same array should be equal");
+            // A struct copy shares the same internal heap block and must be equal.
+            ReadOnlySpan<byte> span1Copy = span1;
+            Assert.IsTrue(span1 == span1Copy, "Struct copy of a span must equal the original");
+            Assert.IsFalse(span1 != span1Copy, "Struct copy of a span should not be not-equal to the original");
 
-            // Modify array1 content
+            // Mutating the backing array does not change span identity.
             array1[2] = 99;
-
-            // Spans should no longer be equal because content changed
-            Assert.IsFalse(span1 == span2, "ReadOnlySpans should not be equal after content changes");
-            Assert.IsTrue(span1 != span2, "ReadOnlySpans should be not-equal after content changes");
-
-            // But span1 and span1Copy still reference the same array so should see same content
-            Assert.IsTrue(span1 == span1Copy, "ReadOnlySpans from same array should remain equal");
+            Assert.IsTrue(span1 == span1Copy, "Struct copy must still equal the original after backing array mutation");
         }
 
         [TestMethod]
@@ -831,9 +830,9 @@ namespace NFUnitTestTypes
             ReadOnlySpan<byte> stackSpan1 = stackalloc byte[5] { 1, 2, 3, 4, 5 };
             ReadOnlySpan<byte> stackSpan2 = stackalloc byte[5] { 1, 2, 3, 4, 5 };
 
-            // Stack-allocated spans with identical content should be equal (content-based)
-            Assert.IsTrue(stackSpan1 == stackSpan2, "Stack-allocated spans with same content should be equal");
-            Assert.IsFalse(stackSpan1 != stackSpan2, "Stack-allocated spans with same content should not be not-equal");
+            // Two separate stackalloc buffers are different memory → NOT equal under identity semantics.
+            Assert.IsFalse(stackSpan1 == stackSpan2, "Stack-allocated spans from different buffers are NOT equal under identity semantics");
+            Assert.IsTrue(stackSpan1 != stackSpan2, "Stack-allocated spans from different buffers should be not-equal");
 
             // Stack-allocated spans with different content should not be equal
             ReadOnlySpan<byte> stackSpan3 = stackalloc byte[5] { 1, 2, 99, 4, 5 };
@@ -848,17 +847,15 @@ namespace NFUnitTestTypes
         [TestMethod]
         public void EqualityTransitivityTests()
         {
-            byte[] array1 = new byte[5] { 1, 2, 3, 4, 5 };
-            byte[] array2 = new byte[5] { 1, 2, 3, 4, 5 };
-            byte[] array3 = new byte[5] { 1, 2, 3, 4, 5 };
+            // Transitivity: if span1 == span2 and span2 == span3, then span1 == span3.
+            // Uses struct copies, which share the same internal heap block.
+            byte[] array = new byte[5] { 1, 2, 3, 4, 5 };
+            ReadOnlySpan<byte> span1 = new ReadOnlySpan<byte>(array);
+            ReadOnlySpan<byte> span2 = span1;     // struct copy
+            ReadOnlySpan<byte> span3 = span2;     // struct copy of copy
 
-            ReadOnlySpan<byte> span1 = new ReadOnlySpan<byte>(array1);
-            ReadOnlySpan<byte> span2 = new ReadOnlySpan<byte>(array2);
-            ReadOnlySpan<byte> span3 = new ReadOnlySpan<byte>(array3);
-
-            // Test transitivity: if span1 == span2 and span2 == span3, then span1 == span3
-            Assert.IsTrue(span1 == span2, "span1 should equal span2");
-            Assert.IsTrue(span2 == span3, "span2 should equal span3");
+            Assert.IsTrue(span1 == span2, "span1 should equal span2 (struct copy)");
+            Assert.IsTrue(span2 == span3, "span2 should equal span3 (struct copy)");
             Assert.IsTrue(span1 == span3, "span1 should equal span3 (transitivity)");
         }
 
@@ -881,18 +878,17 @@ namespace NFUnitTestTypes
         public void EqualitySymmetryTests()
         {
             byte[] array1 = new byte[5] { 1, 2, 3, 4, 5 };
-            byte[] array2 = new byte[5] { 1, 2, 3, 4, 5 };
             byte[] array3 = new byte[5] { 1, 2, 99, 4, 5 };
 
             ReadOnlySpan<byte> span1 = new ReadOnlySpan<byte>(array1);
-            ReadOnlySpan<byte> span2 = new ReadOnlySpan<byte>(array2);
+            ReadOnlySpan<byte> span1Copy = span1;     // struct copy — same heap block
             ReadOnlySpan<byte> span3 = new ReadOnlySpan<byte>(array3);
 
-            // Test symmetry: if span1 == span2, then span2 == span1
-            Assert.IsTrue(span1 == span2, "span1 should equal span2");
-            Assert.IsTrue(span2 == span1, "span2 should equal span1 (symmetry)");
+            // Symmetry with equality: if span1 == span1Copy then span1Copy == span1.
+            Assert.IsTrue(span1 == span1Copy, "span1 should equal its struct copy");
+            Assert.IsTrue(span1Copy == span1, "span1Copy should equal span1 (symmetry)");
 
-            // Test symmetry with inequality
+            // Symmetry with inequality.
             Assert.IsFalse(span1 == span3, "span1 should not equal span3");
             Assert.IsFalse(span3 == span1, "span3 should not equal span1 (symmetry)");
         }
@@ -910,10 +906,11 @@ namespace NFUnitTestTypes
             Assert.IsFalse(span1 == span2, "ReadOnlySpans with different content should not be equal");
             Assert.IsTrue(span1 != span2, "ReadOnlySpans with different content should be not-equal");
 
-            // Create span with same content from different array
+            // Different backing array → NOT equal under identity semantics.
             byte[] array2 = new byte[10] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             ReadOnlySpan<byte> span3 = new ReadOnlySpan<byte>(array2, 2, 5);
-            Assert.IsTrue(span1 == span3, "ReadOnlySpans with same content should be equal");
+            Assert.IsFalse(span1 == span3, "ReadOnlySpans from different arrays are NOT equal under identity semantics");
+            Assert.IsTrue(span1 != span3, "ReadOnlySpans from different arrays should be not-equal");
         }
 
         [TestMethod]
@@ -922,21 +919,25 @@ namespace NFUnitTestTypes
             byte[] array1 = new byte[10];
             byte[] array2 = new byte[10];
 
-            // Create zero-length spans from different arrays
+            // Zero-length spans from different arrays each get a distinct internal heap block → NOT equal.
             ReadOnlySpan<byte> zeroSpan1 = new ReadOnlySpan<byte>(array1, 5, 0);
             ReadOnlySpan<byte> zeroSpan2 = new ReadOnlySpan<byte>(array2, 3, 0);
 
-            // Zero-length spans should be equal (both empty, content-based)
-            Assert.IsTrue(zeroSpan1 == zeroSpan2, "Zero-length spans should be equal");
-            Assert.IsFalse(zeroSpan1 != zeroSpan2, "Zero-length spans should not be not-equal");
+            Assert.IsFalse(zeroSpan1 == zeroSpan2, "Zero-length spans from different arrays are NOT equal under identity semantics");
+            Assert.IsTrue(zeroSpan1 != zeroSpan2, "Zero-length spans from different arrays should be not-equal");
 
-            // Zero-length span from same array with different offset
+            // Same array, different offset → still a distinct heap block → NOT equal.
             ReadOnlySpan<byte> zeroSpan3 = new ReadOnlySpan<byte>(array1, 7, 0);
-            Assert.IsTrue(zeroSpan1 == zeroSpan3, "Zero-length spans should be equal regardless of offset");
+            Assert.IsFalse(zeroSpan1 == zeroSpan3, "Zero-length spans at different offsets are NOT equal under identity semantics");
 
-            // Compare with Empty
+            // A struct copy shares the same heap block → equal.
+            ReadOnlySpan<byte> zeroSpan1Copy = zeroSpan1;
+            Assert.IsTrue(zeroSpan1 == zeroSpan1Copy, "Struct copy of a zero-length span must equal the original");
+
+            // Empty (default/null-backed) spans are all equal to each other.
             ReadOnlySpan<byte> emptySpan = ReadOnlySpan<byte>.Empty;
-            Assert.IsTrue(zeroSpan1 == emptySpan, "Zero-length span should equal Empty span");
+            ReadOnlySpan<byte> defaultSpan = new ReadOnlySpan<byte>();
+            Assert.IsTrue(emptySpan == defaultSpan, "Empty span and default span should be equal");
         }
 
         [TestMethod]
@@ -974,15 +975,67 @@ namespace NFUnitTestTypes
             Assert.IsFalse(span1 == span2, "ReadOnlySpans with partial content match should not be equal");
             Assert.IsTrue(span1 != span2, "ReadOnlySpans with partial content match should be not-equal");
 
-            // Test with matching prefix
+            // Slices from different backing arrays → NOT equal under identity semantics.
             ReadOnlySpan<byte> span1Prefix = span1.Slice(0, 2);
             ReadOnlySpan<byte> span2Prefix = span2.Slice(0, 2);
-            Assert.IsTrue(span1Prefix == span2Prefix, "ReadOnlySpans with matching prefix should be equal");
+            Assert.IsFalse(span1Prefix == span2Prefix, "Slices from different arrays are NOT equal under identity semantics");
 
-            // Test with matching suffix
+            // Struct copy of a slice must equal the original.
+            ReadOnlySpan<byte> span1PrefixCopy = span1Prefix;
+            Assert.IsTrue(span1Prefix == span1PrefixCopy, "Struct copy of a slice must equal the original");
+
+            // Test with matching suffix from different arrays → NOT equal.
             ReadOnlySpan<byte> span1Suffix = span1.Slice(3, 2);
             ReadOnlySpan<byte> span2Suffix = span2.Slice(3, 2);
-            Assert.IsTrue(span1Suffix == span2Suffix, "ReadOnlySpans with matching suffix should be equal");
+            Assert.IsFalse(span1Suffix == span2Suffix, "Suffix slices from different arrays are NOT equal under identity semantics");
+        }
+
+        [TestMethod]
+        public void EqualityIdentityTests()
+        {
+            // Two spans from DIFFERENT arrays with identical content must NOT be equal
+            // under identity semantics (per .NET spec).
+            byte[] array1 = new byte[] { 1, 2, 3, 4, 5 };
+            byte[] array2 = new byte[] { 1, 2, 3, 4, 5 };
+
+            ReadOnlySpan<byte> span1 = new ReadOnlySpan<byte>(array1);
+            ReadOnlySpan<byte> span2 = new ReadOnlySpan<byte>(array2);
+
+            Assert.IsFalse(span1 == span2, "Spans from different arrays should NOT be equal (identity semantics)");
+            Assert.IsTrue(span1 != span2, "Spans from different arrays should be not-equal (identity semantics)");
+
+            // A struct copy shares the same internal heap block and must be equal.
+            ReadOnlySpan<byte> span1Copy = span1;
+            Assert.IsTrue(span1 == span1Copy, "A struct copy of a span must equal the original");
+        }
+
+        [TestMethod]
+        public void ToArraySlicedSpanTest()
+        {
+            // A sliced span's ToArray() must return only the slice elements,
+            // starting from the slice offset, not from index 0 of the backing array.
+            byte[] array = new byte[] { 10, 20, 30, 40, 50 };
+            ReadOnlySpan<byte> slice = new ReadOnlySpan<byte>(array, 1, 3); // should be [20, 30, 40]
+
+            byte[] result = slice.ToArray();
+
+            Assert.AreEqual(3, result.Length, "ToArray length must match slice length");
+            Assert.AreEqual((byte)20, result[0], "result[0] must be array[1] = 20");
+            Assert.AreEqual((byte)30, result[1], "result[1] must be array[2] = 30");
+            Assert.AreEqual((byte)40, result[2], "result[2] must be array[3] = 40");
+        }
+
+        [TestMethod]
+        public void ToArrayEmptySpanTest()
+        {
+            // ToArray() on a null-backed (default) ReadOnlySpan must return an empty array
+            // without throwing.
+            ReadOnlySpan<byte> empty = new ReadOnlySpan<byte>(null);
+
+            byte[] result = empty.ToArray();
+
+            Assert.AreEqual(0, result.Length, "ToArray on a null-backed empty span must return an empty array");
         }
     }
 }
+

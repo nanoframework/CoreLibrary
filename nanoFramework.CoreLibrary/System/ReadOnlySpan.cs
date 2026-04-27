@@ -236,20 +236,7 @@ namespace System
         /// </remarks>
         public static bool operator ==(ReadOnlySpan<T> left, ReadOnlySpan<T> right)
         {
-            if (left.Length != right.Length)
-            {
-                return false;
-            }
-
-            for (int i = 0; i < left.Length; i++)
-            {
-                if (!Equals(left[i], right[i]))
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return left._length == right._length && left._array == right._array;
         }
 
         /// <summary>
