@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
    <!-- Configurations that affect the Test Framework -->
    <RunConfiguration>
@@ -11,7 +11,6 @@
    <nanoFrameworkAdapter>
        <Logging>Verbose</Logging>
        <IsRealHardware>False</IsRealHardware>
-	   <RunnerExtraArguments> --forcegc </RunnerExtraArguments>
-       <UsePreviewClr>True</UsePreviewClr>
+	   <PathToLocalCLRInstance>D:\a\_temp\nanoclr\nanoFramework.nanoCLR.dll</PathToLocalCLRInstance>	   
    </nanoFrameworkAdapter>
 </RunSettings>
