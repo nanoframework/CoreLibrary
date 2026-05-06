@@ -439,6 +439,57 @@ namespace NFUnitTestConversions
             Assert.AreEqual(convFalseIsZero, (byte)0);
         }
 
+        [TestMethod]
+        public void Cast_UnsignedToDouble()
+        {
+            // Regression test for https://github.com/nanoframework/Home/issues/1730
+            // Conversion from an unsigned integer expression to double should produce
+            // the correct (unsigned) result even when no intermediate uint local is used.
+
+            ushort[] us = { 0x0000, 0x8000 };
+
+            // DecodeNumber1: converts the expression directly to double (no intermediate uint local)
+            double d1 = DecodeNumber1(us);
+
+            // DecodeNumber2: stores in a uint local first, then converts to double
+            double d2 = DecodeNumber2(us);
+
+            Assert.AreEqual(2147483648d, d1, "Direct cast of (uint expression) to double should be 2147483648, not -2147483648");
+            Assert.AreEqual(2147483648d, d2, "Indirect cast via uint local to double should be 2147483648");
+            Assert.AreEqual(d2, d1, "Direct and indirect unsigned-to-double conversions should produce equal results");
+
+            // Additional values with the high bit set in the uint range
+            us = new ushort[] { 0xFFFF, 0xFFFF };
+            d1 = DecodeNumber1(us);
+            d2 = DecodeNumber2(us);
+            Assert.AreEqual(d2, d1, "Direct and indirect unsigned-to-double conversions should be equal for 0xFFFFFFFF");
+
+            us = new ushort[] { 0x1234, 0x8765 };
+            d1 = DecodeNumber1(us);
+            d2 = DecodeNumber2(us);
+            Assert.AreEqual(d2, d1, "Direct and indirect unsigned-to-double conversions should be equal for 0x87651234");
+
+            // Values without the high bit set should also be equal
+            us = new ushort[] { 0xABCD, 0x1234 };
+            d1 = DecodeNumber1(us);
+            d2 = DecodeNumber2(us);
+            Assert.AreEqual(d2, d1, "Direct and indirect unsigned-to-double conversions should be equal for 0x1234ABCD");
+        }
+
+        private static double DecodeNumber1(ushort[] us)
+        {
+            // Returns the expression directly as double without an intermediate uint local variable.
+            // This exercises the conv.r.un IL opcode on a stack value, which had a sign-interpretation bug.
+            return ((uint)us[1] << 16) + us[0];
+        }
+
+        private static double DecodeNumber2(ushort[] us)
+        {
+            // Stores in a uint local first, so conv.r.un sees a correctly typed local variable.
+            uint u = ((uint)us[1] << 16) + us[0];
+            return u;
+        }
+
         #region Double/Floating point number helpers
 
         /// <summary>
