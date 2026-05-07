@@ -1,4 +1,4 @@
-# Copyright (c) .NET Foundation and Contributors
+﻿# Copyright (c) .NET Foundation and Contributors
 # See LICENSE file in the project root for full license information.
 
 trigger:
@@ -76,14 +76,14 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        $hasLocalNanoClr = $env:NANOCLR_CHECK_HAS_LOCAL_NANOCLR
+        $hasLocalNanoClr = $env:HAS_LOCAL_NANOCLR
         if ($hasLocalNanoClr -eq 'true') {
           Write-Host "##vso[task.setvariable variable=UNIT_TEST_RUNSETTINGS]$(System.DefaultWorkingDirectory)\local_clr.runsettings"
         } else {
           Write-Host "##vso[task.setvariable variable=UNIT_TEST_RUNSETTINGS]$(System.DefaultWorkingDirectory)\.runsettings"
         }
     env:
-      HAS_LOCAL_NANOCLR: $[ dependencies['check-nf-interpreter-to-test'].outputs['Flag_availability_of_local_nanoCLR.HAS_LOCAL_NANOCLR'] ]
+      HAS_LOCAL_NANOCLR: $(NANOCLR_CHECK.HAS_LOCAL_NANOCLR)
 
   # build steps only
   - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
