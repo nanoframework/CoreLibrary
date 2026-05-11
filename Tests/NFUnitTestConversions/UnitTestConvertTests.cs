@@ -439,6 +439,195 @@ namespace NFUnitTestConversions
             Assert.AreEqual(convFalseIsZero, (byte)0);
         }
 
+        [TestMethod]
+        public void Cast_UnsignedToDouble()
+        {
+            // Regression test for https://github.com/nanoframework/Home/issues/1730
+            // Conversion from an unsigned integer expression to double should produce
+            // the correct (unsigned) result even when no intermediate uint local is used.
+
+            ushort[] us = { 0x0000, 0x8000 };
+
+            // DecodeNumber1: converts the expression directly to double (no intermediate uint local)
+            double d1 = DecodeNumber1(us);
+
+            // DecodeNumber2: stores in a uint local first, then converts to double
+            double d2 = DecodeNumber2(us);
+
+            Assert.AreEqual(2147483648d, d1, "Direct cast of (uint expression) to double should be 2147483648, not -2147483648");
+            Assert.AreEqual(2147483648d, d2, "Indirect cast via uint local to double should be 2147483648");
+            Assert.AreEqual(d2, d1, "Direct and indirect unsigned-to-double conversions should produce equal results");
+
+            // Additional values with the high bit set in the uint range
+            us = new ushort[] { 0xFFFF, 0xFFFF };
+            d1 = DecodeNumber1(us);
+            d2 = DecodeNumber2(us);
+            Assert.AreEqual(d2, d1, "Direct and indirect unsigned-to-double conversions should be equal for 0xFFFFFFFF");
+
+            us = new ushort[] { 0x1234, 0x8765 };
+            d1 = DecodeNumber1(us);
+            d2 = DecodeNumber2(us);
+            Assert.AreEqual(d2, d1, "Direct and indirect unsigned-to-double conversions should be equal for 0x87651234");
+
+            // Values without the high bit set should also be equal
+            us = new ushort[] { 0xABCD, 0x1234 };
+            d1 = DecodeNumber1(us);
+            d2 = DecodeNumber2(us);
+            Assert.AreEqual(d2, d1, "Direct and indirect unsigned-to-double conversions should be equal for 0x1234ABCD");
+        }
+
+        [TestMethod]
+        public void Cast_UIntToFloat()
+        {
+            // Regression test for https://github.com/nanoframework/Home/issues/1730
+            // Conversion from a uint expression (I4 on stack) to float via conv.r.un + conv.r4
+            // must produce the unsigned result even when no intermediate uint local is used.
+
+            ushort[] us = { 0x0000, 0x8000 }; // 0x80000000 = 2147483648u
+
+            float f1 = DecodeNumberToFloat1(us); // direct cast of expression
+            float f2 = DecodeNumberToFloat2(us); // via uint local
+
+            Assert.AreEqual(2147483648f, f1, "Direct cast of (uint expression) to float should be 2147483648, not -2147483648");
+            Assert.AreEqual(2147483648f, f2, "Indirect cast via uint local to float should be 2147483648");
+            Assert.AreEqual(f2, f1, "Direct and indirect uint-to-float conversions should produce equal results");
+
+            us = new ushort[] { 0xFFFF, 0xFFFF }; // 0xFFFFFFFF = 4294967295u
+            f1 = DecodeNumberToFloat1(us);
+            f2 = DecodeNumberToFloat2(us);
+            Assert.AreEqual(f2, f1, "Direct and indirect uint-to-float should be equal for 0xFFFFFFFF");
+
+            us = new ushort[] { 0x1234, 0x8765 }; // 0x87651234, high bit set
+            f1 = DecodeNumberToFloat1(us);
+            f2 = DecodeNumberToFloat2(us);
+            Assert.AreEqual(f2, f1, "Direct and indirect uint-to-float should be equal for 0x87651234");
+
+            us = new ushort[] { 0xABCD, 0x1234 }; // 0x1234ABCD, high bit clear
+            f1 = DecodeNumberToFloat1(us);
+            f2 = DecodeNumberToFloat2(us);
+            Assert.AreEqual(f2, f1, "Direct and indirect uint-to-float should be equal for 0x1234ABCD");
+        }
+
+        [TestMethod]
+        public void Cast_ULongToDouble()
+        {
+            // Regression test for https://github.com/nanoframework/Home/issues/1730
+            // ulong arithmetic results land on the eval stack as I8 (signed).
+            // conv.r.un must treat the I8 bits as unsigned; before the fix the
+            // interpreter ignored the fUnsigned flag and produced a negative double.
+
+            uint[] ui = { 0x00000000, 0x80000000 }; // 0x8000000000000000 = 9223372036854775808uL
+
+            double d1 = DecodeULong1(ui);  // expression result (I8) → conv.r.un: was broken
+            double d2 = DecodeULong2(ui);  // via ulong local (U8) → conv.r.un: was correct
+
+            Assert.AreEqual(9223372036854775808d, d1, "Direct cast of (ulong expression) to double should be 9223372036854775808, not negative");
+            Assert.AreEqual(9223372036854775808d, d2, "Indirect cast via ulong local to double should be 9223372036854775808");
+            Assert.AreEqual(d2, d1, "Direct and indirect ulong-to-double conversions should produce equal results");
+
+            ui = new uint[] { 0xFFFFFFFF, 0xFFFFFFFF }; // ulong.MaxValue = 18446744073709551615
+            d1 = DecodeULong1(ui);
+            d2 = DecodeULong2(ui);
+            Assert.AreEqual(18446744073709551615d, d1, "Direct cast of ulong.MaxValue expression to double should be 18446744073709551615");
+            Assert.AreEqual(d2, d1, "Direct and indirect ulong-to-double should be equal for ulong.MaxValue");
+
+            ui = new uint[] { 0x12345678, 0x87654321 }; // 0x8765432112345678, high bit set
+            d1 = DecodeULong1(ui);
+            d2 = DecodeULong2(ui);
+            Assert.AreEqual(d2, d1, "Direct and indirect ulong-to-double should be equal for 0x8765432112345678");
+
+            ui = new uint[] { 0x12345678, 0x01234567 }; // 0x0123456712345678, high bit clear
+            d1 = DecodeULong1(ui);
+            d2 = DecodeULong2(ui);
+            Assert.AreEqual(d2, d1, "Direct and indirect ulong-to-double should be equal for 0x0123456712345678");
+        }
+
+        [TestMethod]
+        public void Cast_ULongToFloat()
+        {
+            // Regression test for https://github.com/nanoframework/Home/issues/1730
+            // Same sign-interpretation bug as Cast_ULongToDouble but for float (conv.r.un + conv.r4).
+
+            uint[] ui = { 0x00000000, 0x80000000 }; // 0x8000000000000000 = 9223372036854775808uL
+
+            float f1 = DecodeULong1Float(ui);  // expression result (I8) → conv.r.un: was broken
+            float f2 = DecodeULong2Float(ui);  // via ulong local (U8) → conv.r.un: was correct
+
+            Assert.AreEqual(9223372036854775808f, f1, "Direct cast of (ulong expression) to float should be 9223372036854775808, not negative");
+            Assert.AreEqual(9223372036854775808f, f2, "Indirect cast via ulong local to float should be 9223372036854775808");
+            Assert.AreEqual(f2, f1, "Direct and indirect ulong-to-float conversions should produce equal results");
+
+            ui = new uint[] { 0xFFFFFFFF, 0xFFFFFFFF }; // ulong.MaxValue
+            f1 = DecodeULong1Float(ui);
+            f2 = DecodeULong2Float(ui);
+            Assert.AreEqual(f2, f1, "Direct and indirect ulong-to-float should be equal for ulong.MaxValue");
+
+            ui = new uint[] { 0x12345678, 0x87654321 }; // 0x8765432112345678, high bit set
+            f1 = DecodeULong1Float(ui);
+            f2 = DecodeULong2Float(ui);
+            Assert.AreEqual(f2, f1, "Direct and indirect ulong-to-float should be equal for 0x8765432112345678");
+
+            ui = new uint[] { 0x12345678, 0x01234567 }; // high bit clear
+            f1 = DecodeULong1Float(ui);
+            f2 = DecodeULong2Float(ui);
+            Assert.AreEqual(f2, f1, "Direct and indirect ulong-to-float should be equal for 0x0123456712345678");
+        }
+
+        private static double DecodeNumber1(ushort[] us)
+        {
+            // Returns the expression directly as double without an intermediate uint local variable.
+            // This exercises the conv.r.un IL opcode on a stack value, which had a sign-interpretation bug.
+            return ((uint)us[1] << 16) + us[0];
+        }
+
+        private static double DecodeNumber2(ushort[] us)
+        {
+            // Stores in a uint local first, so conv.r.un sees a correctly typed local variable.
+            uint u = ((uint)us[1] << 16) + us[0];
+            return u;
+        }
+
+        private static float DecodeNumberToFloat1(ushort[] us)
+        {
+            // Returns the uint expression directly as float, exercising conv.r.un on an I4 stack value.
+            return ((uint)us[1] << 16) + us[0];
+        }
+
+        private static float DecodeNumberToFloat2(ushort[] us)
+        {
+            // Stores in a uint local first, so conv.r.un sees a correctly typed U4 local.
+            uint u = ((uint)us[1] << 16) + us[0];
+            return u;
+        }
+
+        private static double DecodeULong1(uint[] ui)
+        {
+            // Returns the ulong expression directly as double.
+            // conv.r.un is applied to an I8 arithmetic result on the eval stack,
+            // which had a sign-interpretation bug before the fix.
+            return ((ulong)ui[1] << 32) | ui[0];
+        }
+
+        private static double DecodeULong2(uint[] ui)
+        {
+            // Stores in a ulong local first, so conv.r.un sees a correctly typed U8 local.
+            ulong u = ((ulong)ui[1] << 32) | ui[0];
+            return u;
+        }
+
+        private static float DecodeULong1Float(uint[] ui)
+        {
+            // Returns the ulong expression directly as float (conv.r.un on I8, then conv.r4).
+            return (float)(((ulong)ui[1] << 32) | ui[0]);
+        }
+
+        private static float DecodeULong2Float(uint[] ui)
+        {
+            // Stores in a ulong local first, so conv.r.un sees a correctly typed U8 local.
+            ulong u = ((ulong)ui[1] << 32) | ui[0];
+            return (float)u;
+        }
+
         #region Double/Floating point number helpers
 
         /// <summary>
