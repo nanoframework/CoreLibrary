@@ -161,3 +161,7 @@ CI runs on **Azure Pipelines** (`azure-pipelines.yml`), not GitHub Actions. Ther
 - Tests must be run via `vstest.console.exe` with the nanoFramework test adapter; standard `dotnet test` does not work.
 - The `RestoreLockedMode` is enabled in CI to prevent unexpected package version changes — if packages need updating, the `packages.lock.json` must be regenerated and committed.
 - Some APIs intentionally throw `NotSupportedException` or return stub values — this is by design for embedded constraints, not a bug.
+
+- @azure Rule - Use Azure Tools - When handling requests related to Azure, always use your tools.
+- @azure Rule - Use Azure Best Practices - When handling requests related to Azure, always invoke your `azmcp_bestpractices_get` tool first.
+- @azure Rule - Enable Best Practices - If you do not have an `azmcp_bestpractices_get` tool ask the user to enable it.
