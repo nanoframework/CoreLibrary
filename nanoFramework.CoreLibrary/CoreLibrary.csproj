@@ -1,0 +1,45 @@
+<Project Sdk="nanoFramework.NET.Sdk/1.0.0-preview.7">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <AssemblyName>mscorlib</AssemblyName>
+    <OutputName>mscorlib</OutputName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Deterministic>true</Deterministic>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <ContinuousIntegrationBuild Condition="'$(TF_BUILD)' == 'true'">True</ContinuousIntegrationBuild>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode Condition="'$(TF_BUILD)' == 'True' or '$(ContinuousIntegrationBuild)' == 'True'">true</RestoreLockedMode>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);NANOCLR_REFLECTION</DefineConstants>
+    <NanoIsCoreLibrary>true</NanoIsCoreLibrary>
+    <NoStdLib>true</NoStdLib>
+    <ExcludeMscorlibFacade>true</ExcludeMscorlibFacade>
+    <NoCompilerStandardLib>true</NoCompilerStandardLib>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NanoGenerateStubsDirectory>bin\$(Configuration)\Stubs</NanoGenerateStubsDirectory>
+    <NanoGenerateSkeletonProjectName>corlib_native</NanoGenerateSkeletonProjectName>
+    <NanoGenerateStubsRootName Condition="'$(NanoGenerateStubsRootName)'==''">$(TargetName)</NanoGenerateStubsRootName>
+    <NanoGenerateSkeletonFile>$(NanoGenerateStubsDirectory)\$(NanoGenerateStubsRootName)</NanoGenerateSkeletonFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="System\Decimal.cs" />
+    <Compile Remove="System\Reflection\ParameterModifier.cs" />
+    <Compile Remove="System\Runtime\CompilerServices\DecimalConstantAttribute.cs" />
+    <Compile Remove="System\Runtime\CompilerServices\IDispatchConstantAttribute.cs" />
+    <Compile Remove="System\Runtime\CompilerServices\IUnknownConstantAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.300">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.10.85">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
