@@ -15,7 +15,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);NANOCLR_REFLECTION</DefineConstants>
-    <NanoIsCoreLibrary>true</NanoIsCoreLibrary>
+    <NanoIsMscorlib>true</NanoIsMscorlib>
     <NoStdLib>true</NoStdLib>
     <ExcludeMscorlibFacade>true</ExcludeMscorlibFacade>
     <NoCompilerStandardLib>true</NoCompilerStandardLib>
