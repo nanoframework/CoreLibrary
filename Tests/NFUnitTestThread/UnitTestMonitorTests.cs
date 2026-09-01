@@ -374,18 +374,41 @@ namespace NFUnitTestThread
         public void Monitor13_Contention_Generic_Instance_Test()
         {
             // Two threads contending on a generic instance drive the ownership handover path, which is
-            // where the header lock slot is cleared as the last owner releases.
+            // where the header lock slot is cleared as the last owner releases. The handshake below
+            // proves the monitor actually excludes: without it a final count alone would also pass on a
+            // CLR that never blocked at all.
             s_contendedHolder = new GenericHolder<int>(0);
             s_contendedCount = 0;
+            s_waiterEnteredMonitor = false;
+            s_holderHasLock.Reset();
+            s_waiterIsReady.Reset();
+            s_holderMayRelease.Reset();
 
-            Thread first = new Thread(ContendOnGenericInstance);
-            Thread second = new Thread(ContendOnGenericInstance);
+            Thread first = new Thread(HoldThenContendOnGenericInstance);
+            Thread second = new Thread(WaitThenContendOnGenericInstance);
 
             first.Start();
+
+            // the holder owns the monitor before the waiter goes anywhere near it
+            Assert.IsTrue(s_holderHasLock.WaitOne(5000, false));
+
             second.Start();
+
+            // the waiter has reached its Monitor.Enter
+            Assert.IsTrue(s_waiterIsReady.WaitOne(5000, false));
+
+            // and has to still be blocked there, because the holder has not released yet
+            Thread.Sleep(200);
+
+            Assert.IsFalse(s_waiterEnteredMonitor);
+
+            // let the holder out; only now can the waiter get in and both run to completion
+            s_holderMayRelease.Set();
 
             first.Join();
             second.Join();
+
+            Assert.IsTrue(s_waiterEnteredMonitor);
 
             Assert.AreEqual(2 * ContendIterations, s_contendedHolder.Get());
             Assert.AreEqual(2 * ContendIterations, s_contendedCount);
@@ -481,6 +504,50 @@ namespace NFUnitTestThread
 
         private static GenericHolder<int> s_contendedHolder = new GenericHolder<int>(0);
         private static int s_contendedCount = 0;
+
+        private static readonly ManualResetEvent s_holderHasLock = new ManualResetEvent(false);
+        private static readonly ManualResetEvent s_waiterIsReady = new ManualResetEvent(false);
+        private static readonly ManualResetEvent s_holderMayRelease = new ManualResetEvent(false);
+        private static bool s_waiterEnteredMonitor = false;
+
+        // Takes the monitor, reports that it holds it, and keeps holding until the test releases it.
+        private static void HoldThenContendOnGenericInstance()
+        {
+            Monitor.Enter(s_contendedHolder);
+
+            try
+            {
+                s_holderHasLock.Set();
+
+                // bounded, so a failure here shows up as a failed assert rather than a hung run
+                s_holderMayRelease.WaitOne(5000, false);
+            }
+            finally
+            {
+                Monitor.Exit(s_contendedHolder);
+            }
+
+            ContendOnGenericInstance();
+        }
+
+        // Announces that it is about to block, then blocks on the monitor the holder owns.
+        private static void WaitThenContendOnGenericInstance()
+        {
+            s_waiterIsReady.Set();
+
+            Monitor.Enter(s_contendedHolder);
+
+            try
+            {
+                s_waiterEnteredMonitor = true;
+            }
+            finally
+            {
+                Monitor.Exit(s_contendedHolder);
+            }
+
+            ContendOnGenericInstance();
+        }
 
         private static void ContendOnGenericInstance()
         {
