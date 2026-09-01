@@ -27,6 +27,7 @@
   <ItemGroup>
     <Compile Include="ConstructorTests.cs" />
     <Compile Include="Diagnostics\CodeAnalysis\NullableAttributesTests.cs" />
+    <Compile Include="GetCustomAttributesGCTests.cs" />
     <Compile Include="Runtime\CompilerServices\CallerArgumentExpressionAttributeTests.cs" />
     <Compile Include="Runtime\CompilerServices\CallerMemberNameAttributeTests.cs" />
     <Compile Include="UnitTestAttributesTest1.cs" />
