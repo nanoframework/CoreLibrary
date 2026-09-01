@@ -460,7 +460,7 @@ namespace NFUnitTestAttributes
         private sealed class AllocationPressure
         {
             private readonly Thread _thread;
-            private volatile bool _running;
+            private bool _running;
 
             public AllocationPressure()
             {
