@@ -460,7 +460,10 @@ namespace NFUnitTestAttributes
         private sealed class AllocationPressure
         {
             private readonly Thread _thread;
-            private bool _running;
+            // 1 = running, 0 = stop requested.  Written by Stop() on one thread and read by
+            // Churn() on another; Interlocked.Exchange guarantees the write is visible
+            // cross-thread without needing volatile or a memory barrier.
+            private int _running;
 
             public AllocationPressure()
             {
@@ -469,14 +472,14 @@ namespace NFUnitTestAttributes
 
             public void Start()
             {
-                _running = true;
+                Interlocked.Exchange(ref _running, 1);
 
                 _thread.Start();
             }
 
             public void Stop()
             {
-                _running = false;
+                Interlocked.Exchange(ref _running, 0);
 
                 _thread.Join();
             }
@@ -485,7 +488,7 @@ namespace NFUnitTestAttributes
             {
                 int size = 16;
 
-                while (_running)
+                while (Interlocked.CompareExchange(ref _running, 1, 1) == 1)
                 {
                     // Discarded immediately: the point is to keep handing the collector work to do
                     // and to keep the heap from settling into a stable layout.
