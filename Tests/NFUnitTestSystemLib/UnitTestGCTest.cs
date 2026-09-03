@@ -9,6 +9,11 @@ namespace NFUnitTestSystemLib
     [TestClass]
     public class UnitTestGCTest
     {
+#pragma warning disable S1215 // this is intended to test the GC
+#pragma warning disable S1854 // this is intended to test the GC
+#pragma warning disable S2696 // this is intended to test the GC
+#pragma warning disable S3971 // this is intended to test the GC
+
         internal class FinalizeObject
         {
             public static FinalizeObject m_currentInstance = null;
@@ -54,17 +59,20 @@ namespace NFUnitTestSystemLib
             /// 6. Verify that object has been collected
             /// </summary>
             ///
-            // Tests ReRegisterForFinalize
-            // Create a FinalizeObject.
+
+            OutputHelper.WriteLine("Tests ReRegisterForFinalize");
+            OutputHelper.WriteLine("Create a FinalizeObject.");
+
             FinalizeObject mfo = new FinalizeObject();
             m_hasFinalized1 = false;
             m_hasFinalized2 = false;
 
             // Release reference
+            OutputHelper.WriteLine("Release reference");
             mfo = null;
 
-            // Allow GC
-            GC.WaitForPendingFinalizers();
+            OutputHelper.WriteLine("Allow GC");
+            GC.Collect();
 
             int sleepTime = 1000;
             int slept = 0;
@@ -85,10 +93,10 @@ namespace NFUnitTestSystemLib
             // FinalizeObject.m_currentInstance field.  Setting this value
             // to null and forcing another garbage collection will now
             // cause the object to Finalize permanently.
-            // Reregister and allow for GC
-            FinalizeObject.m_currentInstance = null;
 
-            GC.WaitForPendingFinalizers();
+            OutputHelper.WriteLine("Reregister and allow for GC");
+            FinalizeObject.m_currentInstance = null;
+            GC.Collect();
 
             sleepTime = 1000;
             slept = 0;
@@ -119,18 +127,19 @@ namespace NFUnitTestSystemLib
             /// 6. Verify that object has not been collected
             /// </summary>
             ///
-            // Tests SuppressFinalize
-            // Create a FinalizeObject.
+
+            OutputHelper.WriteLine("Tests SuppressFinalize");
+            OutputHelper.WriteLine("Create a FinalizeObject");
             FinalizeObject mfo = new FinalizeObject();
             m_hasFinalized1 = false;
             m_hasFinalized2 = false;
 
-            // Releasing
+            OutputHelper.WriteLine("Releasing");
             GC.SuppressFinalize(mfo);
             mfo = null;
 
-            // Allow GC
-            GC.WaitForPendingFinalizers();
+            OutputHelper.WriteLine("Allow GC");
+            GC.Collect();
 
             int sleepTime = 1000;
             int slept = 0;
@@ -138,7 +147,7 @@ namespace NFUnitTestSystemLib
             while (!m_hasFinalized1 && slept < sleepTime)
             {
                 // force GC run caused by memory allocation
-                var dummyArray = new byte[1024 * 1024 * 1];
+                _ = new byte[1024 * 1024 * 1];
 
                 System.Threading.Thread.Sleep(10);
                 slept += 10;
@@ -161,59 +170,35 @@ namespace NFUnitTestSystemLib
             /// </summary>
             ///
 
-            // Tests WaitForPendingFinalizers, dependant on test 1
-            // will auto-fail if test 1 fails.
             OutputHelper.Write("Tests WaitForPendingFinalizers, dependant on test 1");
-            OutputHelper.WriteLine("will auto-fail if test 1 fails.");
+            OutputHelper.WriteLine("will fail if test 1 fails.");
 
-            Assert.IsTrue(m_Test1Result);
+            Assert.IsTrue(m_Test1Result, "Can't run this test as SystemGC1_Test has failed.");
 
-            // Create a FinalizeObject.
+            OutputHelper.WriteLine("Create a FinalizeObject");
             FinalizeObject mfo = new FinalizeObject();
             m_hasFinalized1 = false;
             m_hasFinalized2 = false;
 
-            // Releasing
+            OutputHelper.WriteLine("Releasing");
             mfo = null;
 
-            int sleepTime = 1000;
-            int slept = 0;
-
-            while (!m_hasFinalized1 && slept < sleepTime)
-            {
-                // force GC run caused by memory allocation
-                var dummyArray = new byte[1024 * 1024 * 1];
-
-                System.Threading.Thread.Sleep(10);
-                slept += 10;
-            }
-
-            OutputHelper.WriteLine($"GC took {slept}");
-
-            // Wait for GC
+            OutputHelper.WriteLine("Wait for GC");
+            GC.Collect();
             GC.WaitForPendingFinalizers();
 
-            // Releasing again
+            OutputHelper.WriteLine("Releasing again");
             FinalizeObject.m_currentInstance = null;
 
-            sleepTime = 1000;
-            slept = 0;
-
-            while (!m_hasFinalized2 && slept < sleepTime)
-            {
-                // force GC run caused by memory allocation
-                var dummyArray = new byte[1024 * 1024 * 1];
-
-                System.Threading.Thread.Sleep(10);
-                slept += 10;
-            }
-
-            OutputHelper.WriteLine($"GC took {slept}");
-
-            // Wait for GC
+            OutputHelper.WriteLine("Wait for GC");
+            GC.Collect();
             GC.WaitForPendingFinalizers();
 
             Assert.IsTrue(m_hasFinalized2);
         }
     }
+#pragma warning restore S1215 // "GC.Collect" should not be called
+#pragma warning restore S1854 // Unused assignments should be removed
+#pragma warning restore S2696 // Instance members should not write to "static" fields
+#pragma warning restore S3971 // "GC.SuppressFinalize" should not be called
 }

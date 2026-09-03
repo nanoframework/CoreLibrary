@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
    <!-- Configurations that affect the Test Framework -->
    <RunConfiguration>
@@ -11,11 +11,6 @@
    <nanoFrameworkAdapter>
        <Logging>Verbose</Logging>
        <IsRealHardware>False</IsRealHardware>
-	   <!-- The forcegc argument makes the EE collect on every context switch, which decouples GC
-	        activity from heap pressure. The virtual device has plenty of the latter (its heap is
-	        compiled in at 10 MB), so this is what gives the GC-sensitive tests a chance to fail.
-	        See Tests/NFUnitTestAttributes/GetCustomAttributesGCTests.cs -->
-	   <RunnerExtraArguments> --forcegc </RunnerExtraArguments>
-       <UsePreviewClr>True</UsePreviewClr>
+	   <PathToLocalCLRInstance>D:\a\_temp\nanoclr\nanoFramework.nanoCLR.dll</PathToLocalCLRInstance>	   
    </nanoFrameworkAdapter>
 </RunSettings>

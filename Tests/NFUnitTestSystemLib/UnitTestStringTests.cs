@@ -226,6 +226,32 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
+        public void TrimNullOrEmpty_Test()
+        {
+            // null or empty trimChars should behave like the no-arg (whitespace-only) overloads
+            string withSpaces = "  hello  ";
+            string noSpaces = "hello";
+            char[] empty = new char[] { };
+
+            // Trim(null) / Trim(empty) → same as Trim()
+            Assert.AreEqual(withSpaces.Trim(null), "hello", "Trim(null) should remove whitespace");
+            Assert.AreEqual(withSpaces.Trim(empty), "hello", "Trim(empty) should remove whitespace");
+
+            // TrimStart(null) / TrimStart(empty) → same as TrimStart()
+            Assert.AreEqual(withSpaces.TrimStart(null), "hello  ", "TrimStart(null) should remove leading whitespace");
+            Assert.AreEqual(withSpaces.TrimStart(empty), "hello  ", "TrimStart(empty) should remove leading whitespace");
+
+            // TrimEnd(null) / TrimEnd(empty) → same as TrimEnd()
+            Assert.AreEqual(withSpaces.TrimEnd(null), "  hello", "TrimEnd(null) should remove trailing whitespace");
+            Assert.AreEqual(withSpaces.TrimEnd(empty), "  hello", "TrimEnd(empty) should remove trailing whitespace");
+
+            // Nothing to trim → original value returned
+            Assert.AreEqual(noSpaces.Trim(), "hello", "Trim() on string with no whitespace should return same value");
+            Assert.AreEqual(noSpaces.TrimStart(), "hello", "TrimStart() on string with no whitespace should return same value");
+            Assert.AreEqual(noSpaces.TrimEnd(), "hello", "TrimEnd() on string with no whitespace should return same value");
+        }
+
+        [TestMethod]
         public void IndexOf_Test28()
         {
             // Testing the IndexOf method
