@@ -56,6 +56,55 @@ namespace NFUnitTestClasses
         }
 
         [TestMethod]
+        public void Generic_StaticField_SurvivesHeapCompaction()
+        {
+            // The per-instantiation static storage is a heap block array indexed by pointer
+            // arithmetic, so heap compaction must neither move it, split it, nor collect it.
+            // Several slots per instantiation, and more than one instantiation, so that a
+            // wrong base pointer or a broken run shows up rather than accidentally landing
+            // on the right block.
+            GcCompactionStatics<int>.Number = 111;
+            GcCompactionStatics<int>.Text = "int instantiation";
+            GcCompactionStatics<int>.Values = new int[] { 1, 2, 3 };
+
+            GcCompactionStatics<string>.Number = 222;
+            GcCompactionStatics<string>.Text = "string instantiation";
+            GcCompactionStatics<string>.Values = new int[] { 4, 5, 6 };
+
+            for (int round = 0; round < 5; round++)
+            {
+                // churn the heap so compaction actually has something to move
+                object[] garbage = new object[64];
+
+                for (int i = 0; i < garbage.Length; i++)
+                {
+                    garbage[i] = new object();
+                }
+
+                garbage = null;
+
+                // forceFullCollection runs a garbage collection *and* a heap compaction
+                GC.GetTotalMemory(true);
+
+                Assert.AreEqual(111, GcCompactionStatics<int>.Number, "GcCompactionStatics<int>.Number");
+                Assert.AreEqual("int instantiation", GcCompactionStatics<int>.Text, "GcCompactionStatics<int>.Text");
+                Assert.AreEqual(3, GcCompactionStatics<int>.Values.Length, "GcCompactionStatics<int>.Values.Length");
+                Assert.AreEqual(2, GcCompactionStatics<int>.Values[1], "GcCompactionStatics<int>.Values[1]");
+
+                Assert.AreEqual(222, GcCompactionStatics<string>.Number, "GcCompactionStatics<string>.Number");
+                Assert.AreEqual(
+                    "string instantiation",
+                    GcCompactionStatics<string>.Text,
+                    "GcCompactionStatics<string>.Text");
+                Assert.AreEqual(
+                    3,
+                    GcCompactionStatics<string>.Values.Length,
+                    "GcCompactionStatics<string>.Values.Length");
+                Assert.AreEqual(5, GcCompactionStatics<string>.Values[1], "GcCompactionStatics<string>.Values[1]");
+            }
+        }
+
+        [TestMethod]
         public void Generic_SingleParam_ValueType()
         {
             var container = new GenericContainer<int>(42);
@@ -150,6 +199,13 @@ namespace NFUnitTestClasses
             {
                 InitCount = 1;
             }
+        }
+
+        internal class GcCompactionStatics<T>
+        {
+            internal static int Number;
+            internal static string Text;
+            internal static int[] Values;
         }
 
         internal class GenericWithStaticMethod<T>
