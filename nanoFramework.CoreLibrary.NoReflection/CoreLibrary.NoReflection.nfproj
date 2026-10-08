@@ -177,6 +177,7 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\CallerMemberNameAttribute.cs" Link="System\Runtime\CompilerServices\CallerMemberNameAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\ExtensionAttribute.cs" Link="System\Runtime\CompilerServices\ExtensionAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IndexerNameAttribute.cs" Link="System\CompilerServices\IndexerNameAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\InlineArrayAttribute.cs" Link="System\Runtime\CompilerServices\InlineArrayAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\InternalsVisibleToAttribute.cs" Link="System\CompilerServices\InternalsVisibleToAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\IsExternalInit.cs">
       <Link>System\Runtime\CompilerServices\IsExternalInit.cs</Link>
