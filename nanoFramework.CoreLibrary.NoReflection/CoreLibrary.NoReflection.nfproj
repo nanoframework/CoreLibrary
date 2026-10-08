@@ -18,7 +18,8 @@
     <ProjectGuid>d1dad305-bc77-4bdc-bcda-adaef1d93455</ProjectGuid>
     <OutputType>Library</OutputType>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>mscorlib</AssemblyName>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputName>mscorlib</OutputName>
@@ -170,6 +171,7 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeType.cs" Link="System\RuntimeType.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\RuntimeTypeHandle.cs" Link="System\RuntimeTypeHandle.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" Link="System\Runtime\CompilerServices\AccessedThroughPropertyAttribute.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\CompilerGeneratedAttribute.cs" Link="System\Runtime\CompilerServices\CompilerGeneratedAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\ExcludeTypeAttribute.cs" Link="System\Runtime\CompilerServices\ExcludeTypeAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\CallerArgumentExpressionAttribute.cs" Link="System\Runtime\CompilerServices\CallerArgumentExpressionAttribute.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Runtime\CompilerServices\CallerMemberNameAttribute.cs" Link="System\Runtime\CompilerServices\CallerMemberNameAttribute.cs" />

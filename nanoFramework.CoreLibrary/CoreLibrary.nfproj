@@ -18,7 +18,8 @@
     <ProjectGuid>be7b95d5-087c-45f8-8197-4b438bedfe11</ProjectGuid>
     <OutputType>Library</OutputType>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>mscorlib</AssemblyName>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputName>mscorlib</OutputName>
@@ -76,6 +77,7 @@
     <Compile Include="System\Diagnostics\StackTraceHiddenAttribute.cs" />
     <Compile Include="System\MemoryExtensions.cs" />
     <Compile Include="System\Nullable.cs" />
+    <Compile Include="System\Runtime\CompilerServices\CompilerGeneratedAttribute.cs" />
     <Compile Include="System\Runtime\CompilerServices\Unsafe.cs" />
     <Compile Include="System\Runtime\InteropServices\InAttribute.cs" />
     <Compile Include="System\Diagnostics\NativeProfiledAttribute.cs" />
