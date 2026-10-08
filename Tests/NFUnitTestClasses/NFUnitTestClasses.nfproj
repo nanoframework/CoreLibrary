@@ -38,6 +38,7 @@
     <Compile Include="UnitTestPropertiesTests.cs" />
     <Compile Include="UnitTestHashCodeTests.cs" />
     <Compile Include="UnitTestStaticTests.cs" />
+    <Compile Include="UnitTestGenericStaticTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />

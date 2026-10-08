@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
    <!-- Configurations that affect the Test Framework -->
    <RunConfiguration>
@@ -16,5 +16,6 @@
 	        compiled in at 10 MB), so this is what gives the GC-sensitive tests a chance to fail.
 	        See Tests/NFUnitTestAttributes/GetCustomAttributesGCTests.cs -->
 	   <RunnerExtraArguments> --forcegc </RunnerExtraArguments>
+       <UsePreviewClr>True</UsePreviewClr>
    </nanoFrameworkAdapter>
 </RunSettings>
