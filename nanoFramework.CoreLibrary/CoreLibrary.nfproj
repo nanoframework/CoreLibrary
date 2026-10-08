@@ -78,6 +78,7 @@
     <Compile Include="System\MemoryExtensions.cs" />
     <Compile Include="System\Nullable.cs" />
     <Compile Include="System\Runtime\CompilerServices\CompilerGeneratedAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\InlineArrayAttribute.cs" />
     <Compile Include="System\Runtime\CompilerServices\Unsafe.cs" />
     <Compile Include="System\Runtime\InteropServices\InAttribute.cs" />
     <Compile Include="System\Diagnostics\NativeProfiledAttribute.cs" />
