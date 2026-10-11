@@ -94,7 +94,7 @@ jobs:
       skipNuGetCache: false
       usePreviewBuild: true
 
-  # rebuild CoreLibrary project to get the assembly checksum
+  # rebuild CoreLibrary project to get the native contract hash
   - task: MSBuild@1
     condition: >-
       and(
@@ -115,7 +115,7 @@ jobs:
     parameters:
       nugetPackageName: 'nanoFramework.CoreLibrary'
 
-  # rebuild CoreLibrary.NoReflection project to get the assembly checksum
+  # rebuild CoreLibrary.NoReflection project to get the native contract hash
   - task: MSBuild@1
     condition: >-
       and(
