@@ -27,10 +27,11 @@
     <IsMscorlib>true</IsMscorlib>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <DocumentationFile>bin\$(Configuration)\mscorlib.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
     <Deterministic>true</Deterministic>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <Deterministic>true</Deterministic>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <DefineConstants>$(DefineConstants);NANOCLR_REFLECTION;</DefineConstants>
