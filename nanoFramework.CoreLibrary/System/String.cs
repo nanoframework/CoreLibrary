@@ -1,23 +1,12 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 namespace System
 {
-
-    /* Unmerged change from project 'CoreLibrary'
-    Before:
-        using Runtime.CompilerServices;
-        using System.Collections;
-        /// <summary>
-    After:
-        using System.Collections;
-        using Runtime.CompilerServices;
-        /// <summary>
-    */
-    using System.Collections;
-    using Runtime.CompilerServices;
     /// <summary>
     /// Represents text as a sequence of UTF-16 code units.
     /// </summary>
@@ -41,7 +30,7 @@ namespace System
         public IEnumerator GetEnumerator()
         {
             // Not implemented because of assembly size constraint
-            // Throw a NotSupportedException in compliance of .net practices 
+            // Throw a NotSupportedException in compliance with .NET practices 
             // (no message to preserve assembly size/memory consumption)
             // See https://docs.microsoft.com/en-us/dotnet/api/system.notsupportedexception 
             throw new NotSupportedException();
@@ -50,7 +39,7 @@ namespace System
         /// <summary>
         /// Represents the empty string. This field is read-only.
         /// </summary>
-        public static readonly String Empty = "";
+        public static readonly string Empty = "";
 
         /// <summary>
         /// Determines whether this instance and a specified object, which must also be a String object, have the same value.
@@ -59,7 +48,7 @@ namespace System
         /// <returns>true if obj is a String and its value is the same as this instance; otherwise, false. If obj is null, the method returns false.</returns>
         public override bool Equals(object obj)
         {
-            var s = obj as String;
+            string s = obj as string;
             return s != null && Equals(this, s);
         }
 
@@ -68,30 +57,57 @@ namespace System
         /// </summary>
         /// <param name="a">The first string to compare, or null.</param>
         /// <param name="b">The second string to compare, or null.</param>
-        /// <returns>true if the value of a is the same as the value of b; otherwise, false. If both a and b are null, the method returns true.</returns>
+        /// <returns><see langword="true"/> if the value of <paramref name="a"/> is the same as the value of <paramref name="b"/>; otherwise, false. If both <paramref name="a"/> and <paramref name="b"/> are <see langword="null"/>, the method returns <see langword="true"/>.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern bool Equals(String a, String b);
+        public static extern bool Equals(string? a, string? b);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern bool Equals(string a, string b);
+#endif
 
         /// <summary>
         /// Determines whether two specified strings have the same value.
         /// </summary>
         /// <param name="a">The first string to compare, or null.</param>
         /// <param name="b">The second string to compare, or null.</param>
-        /// <returns>true if the value of a is the same as the value of b; otherwise, false.</returns>
+        /// <returns><see langword="true"/> if the value of <paramref name="a"/> is the same as the value of <paramref name="b"/>; otherwise, <see langword="false"/>.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern bool operator ==(String a, String b);
+        public static extern bool operator ==(string? a, string? b);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern bool operator ==(string a, string b);
+#endif
 
         /// <summary>
         /// Determines whether two specified strings have different values.
         /// </summary>
         /// <param name="a">The first string to compare, or null.</param>
         /// <param name="b">The second string to compare, or null.</param>
-        /// <returns>true if the value of a is different from the value of b; otherwise, false.</returns>
+        /// <returns><see langword="true"/> if the value of <paramref name="a"/> is different from the value of <paramref name="b"/>; otherwise, <see langword="false"/>.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern bool operator !=(String a, String b);
+        public static extern bool operator !=(string? a, string? b);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern bool operator !=(string a, string b);
+#endif
 
         /// <summary>
-        /// Gets the Char object at a specified position in the current String object.
+        /// Gets the <see cref="char"/> object at a specified position in the current <see cref="string"/> object.
         /// </summary>
         /// <value>The object at position index.</value>
         /// <param name="index">A position in the current string.</param>
@@ -119,7 +135,7 @@ namespace System
         /// </summary>
         /// <param name="startIndex">The starting position of a substring in this instance.</param>
         /// <param name="length">The length of the substring in this instance.</param>
-        /// <returns>A Unicode character array whose elements are the length number of characters in this instance starting from character position startIndex.</returns>
+        /// <returns>A Unicode character array whose elements are the length number of characters in this instance starting from character position <paramref name="startIndex"/>.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern char[] ToCharArray(int startIndex, int length);
 
@@ -139,35 +155,106 @@ namespace System
         /// Splits a string into substrings that are based on the characters in an array.
         /// </summary>
         /// <param name="separator">A character array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</param>
-        /// <returns>An array whose elements contain the substrings from this instance that are delimited by one or more characters in separator. For more information, see the Remarks section.</returns>
+        /// <returns>An array whose elements contain the substrings from this instance that are delimited by one or more characters in <paramref name="separator"/>.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String[] Split(params char[] separator);
+        public extern string[] Split(params char[]? separator);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern string[] Split(params char[] separator);
+#endif
 
         /// <summary>
         /// Splits a string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
         /// </summary>
         /// <param name="separator">A character array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</param>
         /// <param name="count">The maximum number of substrings to return.</param>
-        /// <returns>An array whose elements contain the substrings in this instance that are delimited by one or more characters in separator. For more information, see the Remarks section.</returns>
+        /// <returns>An array whose elements contain the substrings in this instance that are delimited by one or more characters in <paramref name="separator"/></returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String[] Split(char[] separator, int count);
+        public extern string[] Split(char[]? separator, int count);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern string[] Split(char[] separator, int count);
+#endif
 
         /// <summary>
         /// Retrieves a substring from this instance. The substring starts at a specified character position and continues to the end of the string.
         /// </summary>
         /// <param name="startIndex">The zero-based starting character position of a substring in this instance.</param>
-        /// <returns>A string that is equivalent to the substring that begins at startIndex in this instance, or Empty if startIndex is equal to the length of this instance.</returns>
+        /// <returns>A string that is equivalent to the substring that begins at <paramref name="startIndex"/> in this instance, or <see cref="Empty"/> if <paramref name="startIndex"/> is equal to the length of this instance.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String Substring(int startIndex);
+        public extern string Substring(int startIndex);
 
         /// <summary>
         /// Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
         /// </summary>
         /// <param name="startIndex">The zero-based starting character position of a substring in this instance.</param>
         /// <param name="length">The number of characters in the substring.</param>
-        /// <returns>A string that is equivalent to the substring of length length that begins at startIndex in this instance, or Empty if startIndex is equal to the length of this instance and length is zero.</returns>
+        /// <returns>A string that is equivalent to the substring of length <paramref name="length"/> that begins at <paramref name="startIndex"/> in this instance, or <see cref="Empty"/> if <paramref name="startIndex"/> is equal to the length of this instance and length is zero.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String Substring(int startIndex, int length);
+        public extern string Substring(int startIndex, int length);
+
+        /// <summary>
+        /// Removes all leading and trailing white-space characters from the current string.
+        /// </summary>
+        /// <returns>The string that remains after all white-space characters are removed from the start and end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern string Trim();
+
+#if NANOCLR_REFLECTION
+
+#nullable enable
+
+        /// <summary>
+        /// Removes all leading and trailing occurrences of a set of characters specified in an array from the current string.
+        /// </summary>
+        /// <param name="trimChars">An array of Unicode characters to remove, or <see langword="null"/>.</param>
+        /// <returns>The string that remains after all occurrences of characters in the <paramref name="trimChars"/> parameter are removed from the start and end of the current string. If <paramref name="trimChars"/> is <see langword="null"/> or an empty array, white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern string Trim(params char[]? trimChars);
+
+        /// <summary>
+        /// Removes all leading white-space characters from the current string.
+        /// </summary>
+        /// <returns>The string that remains after all white-space characters are removed from the start of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern string TrimStart();
+
+        /// <summary>
+        /// Removes all the leading occurrences of a set of characters specified in an array from the current string.
+        /// </summary>
+        /// <param name="trimChars">An array of Unicode characters to remove, or <see langword="null"/>.</param>
+        /// <returns>The string that remains after all occurrences of characters in the <paramref name="trimChars"/> parameter are removed from the start of the current string. If <paramref name="trimChars"/> is <see langword="null"/> or an empty array, white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern string TrimStart(params char[]? trimChars);
+
+        /// <summary>
+        /// Removes all trailing white-space characters from the current string.
+        /// </summary>
+        /// <returns>The string that remains after all white-space characters are removed from the end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern string TrimEnd();
+
+        /// <summary>
+        /// Removes all the trailing occurrences of a set of characters specified in an array from the current string.
+        /// </summary>
+        /// <param name="trimChars">An array of Unicode characters to remove, or <see langword="null"/>.</param>
+        /// <returns>The string that remains after all occurrences of the characters in the <paramref name="trimChars"/> parameter are removed from the end of the current string. If <paramref name="trimChars"/> is <see langword="null"/> or an empty array, Unicode white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern string TrimEnd(params char[]? trimChars);
+
+#nullable restore
+
+#else
 
         /// <summary>
         /// Removes all leading and trailing occurrences of a set of characters specified in an array from the current String object.
@@ -177,23 +264,25 @@ namespace System
         /// If trimChars is null or an empty array, white-space characters are removed instead. If no characters can be trimmed from the current instance, 
         /// the method returns the current instance unchanged.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String Trim(params char[] trimChars);
+        public extern string Trim(params char[] trimChars);
 
         /// <summary>
-        /// Removes all leading occurrences of a set of characters specified in an array from the current String object.
+        /// Removes all the leading occurrences of a set of characters specified in an array from the current string.
         /// </summary>
-        /// <param name="trimChars">An array of Unicode characters to remove, or null.</param>
-        /// <returns>The string that remains after all occurrences of characters in the trimChars parameter are removed from the start of the current string. If trimChars is null or an empty array, white-space characters are removed instead.</returns>
+        /// <param name="trimChars">An array of Unicode characters to remove, or <see langword="null"/>.</param>
+        /// <returns>The string that remains after all occurrences of characters in the <paramref name="trimChars"/> parameter are removed from the start of the current string. If <paramref name="trimChars"/> is <see langword="null"/> or an empty array, white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String TrimStart(params char[] trimChars);
+        public extern string TrimStart(params char[] trimChars);
 
         /// <summary>
-        /// Removes all trailing occurrences of a set of characters specified in an array from the current String object.
+        /// Removes all the trailing occurrences of a set of characters specified in an array from the current string.
         /// </summary>
-        /// <param name="trimChars">An array of Unicode characters to remove, or null.</param>
-        /// <returns>The string that remains after all occurrences of the characters in the trimChars parameter are removed from the end of the current string. If trimChars is null or an empty array, Unicode white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
+        /// <param name="trimChars">An array of Unicode characters to remove, or <see langword="null"/>.</param>
+        /// <returns>The string that remains after all occurrences of the characters in the <paramref name="trimChars"/> parameter are removed from the end of the current string. If <paramref name="trimChars"/> is <see langword="null"/> or an empty array, Unicode white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String TrimEnd(params char[] trimChars);
+        public extern string TrimEnd(params char[] trimChars);
+
+#endif
 
         /// <summary>
         /// Initializes a new instance of the String class to the value indicated by an array of Unicode characters, a starting character position within that array, and a length.
@@ -224,31 +313,63 @@ namespace System
         /// </summary>
         /// <param name="strA">The first string to compare.</param>
         /// <param name="strB">The second string to compare.</param>
-        /// <returns>A 32-bit signed integer that indicates the lexical relationship between the two comparands.</returns>
+        /// <returns>
+        /// A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+        /// <para>Less than zero : <paramref name="strA"/> precedes <paramref name="strB"/> in the sort order.</para>
+        /// <para>Zero : <paramref name="strA"/> occurs in the same position as <paramref name="strB"/> in the sort order.</para>
+        /// <para>Greater than zero : <paramref name="strA"/> follows <paramref name="strB"/> in the sort order.</para>
+        /// </returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern int Compare(String strA, String strB);
+        public static extern int Compare(string? strA, string? strB);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern int Compare(string strA, string strB);
+#endif
 
         /// <summary>
-        /// Compares this instance with a specified Object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified Object.
+        /// Compares this instance with a specified <see cref="object"/> and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified <see cref="object"/>.
         /// </summary>
-        /// <param name="value">An object that evaluates to a String.</param>
-        /// <returns>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter.</returns>
+        /// <param name="value">An object that evaluates to a <see cref="string"/>.</param>
+        /// <returns>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the <paramref name="value"/> parameter.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern int CompareTo(Object value);
+        public extern int CompareTo(object? value);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern int CompareTo(object value);
+#endif
 
         /// <summary>
-        /// Compares this instance with a specified String object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified string.
+        /// Compares this instance with a specified <see cref="string"/> object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified string.
         /// </summary>
         /// <param name="strB">The string to compare with this instance.</param>
-        /// <returns>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the strB parameter.</returns>
+        /// <returns>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the <paramref name="strB"/> parameter.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern int CompareTo(String strB);
+        public extern int CompareTo(string? strB);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern int CompareTo(string strB);
+#endif
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence of the specified Unicode character in this string.
         /// </summary>
         /// <param name="value">A Unicode character to seek.</param>
-        /// <returns>The zero-based index position of value if that character is found, or -1 if it is not.</returns>
+        /// <returns>The zero-based index position of <paramref name="value"/> if that character is found, or -1 if it is not.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int IndexOf(char value);
 
@@ -257,7 +378,7 @@ namespace System
         /// </summary>
         /// <param name="value">A Unicode character to seek.</param>
         /// <param name="startIndex">The search starting position.</param>
-        /// <returns>The zero-based index position of value from the start of the string if that character is found, or -1 if it is not.</returns>
+        /// <returns>The zero-based index position of <paramref name="value"/> from the start of the string if that character is found, or -1 if it is not.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int IndexOf(char value, int startIndex);
 
@@ -267,15 +388,42 @@ namespace System
         /// <param name="value">A Unicode character to seek. </param>
         /// <param name="startIndex">The search starting position. </param>
         /// <param name="count">The number of character positions to examine.</param>
-        /// <returns>The zero-based index position of value if that character is found, or -1 if it is not.</returns>
+        /// <returns>The zero-based index position of <paramref name="value"/> if that character is found, or -1 if it is not.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int IndexOf(char value, int startIndex, int count);
+
+        /// <summary>
+        /// Reports the zero-based index of the first occurrence of the specified string in this instance.
+        /// </summary>
+        /// <param name="value">The string to seek.</param>
+        /// <returns>The zero-based index position of <paramref name="value"/> if that string is found, or -1 if it is not. If <paramref name="value"/> is <see cref="Empty"/>, the return value is 0.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern int IndexOf(string value);
+
+        /// <summary>
+        /// Reports the zero-based index of the first occurrence of the specified string in this instance. The search starts at a specified character position.
+        /// </summary>
+        /// <param name="value">The string to seek.</param>
+        /// <param name="startIndex">The search starting position.</param>
+        /// <returns>The zero-based index position of <paramref name="value"/> from the start of the current instance if that string is found, or -1 if it is not. If <paramref name="value"/> is <see cref="Empty"/>, the return value is <paramref name="startIndex"/>.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern int IndexOf(string value, int startIndex);
+
+        /// <summary>
+        /// Reports the zero-based index of the first occurrence of the specified string in this instance. The search starts at a specified character position and examines a specified number of character positions.
+        /// </summary>
+        /// <param name="value">The string to seek.</param>
+        /// <param name="startIndex">The search starting position.</param>
+        /// <param name="count">The number of character positions to examine.</param>
+        /// <returns>The zero-based index position of value from the start of the current instance if that string is found, or -1 if it is not. If value is String.Empty, the return value is startIndex.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern int IndexOf(string value, int startIndex, int count);
 
         /// <summary>
         /// Reports the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters.
         /// </summary>
         /// <param name="anyOf">A Unicode character array containing one or more characters to seek.</param>
-        /// <returns>The zero-based index position of the first occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found.</returns>
+        /// <returns>The zero-based index position of the first occurrence in this instance where any character in <paramref name="anyOf"/> was found; -1 if no character in <paramref name="anyOf"/> was found.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int IndexOfAny(char[] anyOf);
 
@@ -294,42 +442,15 @@ namespace System
         /// <param name="anyOf">A Unicode character array containing one or more characters to seek.</param>
         /// <param name="startIndex">The search starting position.</param>
         /// <param name="count">The number of character positions to examine.</param>
-        /// <returns>The zero-based index position of the first occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found.</returns>
+        /// <returns>The zero-based index position of the first occurrence in this instance where any character in <paramref name="anyOf"/> was found; -1 if no character in <paramref name="anyOf"/> was found.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int IndexOfAny(char[] anyOf, int startIndex, int count);
-
-        /// <summary>
-        /// Reports the zero-based index of the first occurrence of the specified string in this instance.
-        /// </summary>
-        /// <param name="value">The string to seek.</param>
-        /// <returns>The zero-based index position of value if that string is found, or -1 if it is not. If value is String.Empty, the return value is 0.</returns>
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern int IndexOf(String value);
-
-        /// <summary>
-        /// Reports the zero-based index of the first occurrence of the specified string in this instance. The search starts at a specified character position.
-        /// </summary>
-        /// <param name="value">The string to seek.</param>
-        /// <param name="startIndex">The search starting position.</param>
-        /// <returns>The zero-based index position of value from the start of the current instance if that string is found, or -1 if it is not. If value is String.Empty, the return value is startIndex.</returns>
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern int IndexOf(String value, int startIndex);
-
-        /// <summary>
-        /// Reports the zero-based index of the first occurrence of the specified string in this instance. The search starts at a specified character position and examines a specified number of character positions.
-        /// </summary>
-        /// <param name="value">The string to seek.</param>
-        /// <param name="startIndex">The search starting position.</param>
-        /// <param name="count">The number of character positions to examine.</param>
-        /// <returns>The zero-based index position of value from the start of the current instance if that string is found, or -1 if it is not. If value is String.Empty, the return value is startIndex.</returns>
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern int IndexOf(String value, int startIndex, int count);
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence of a specified Unicode character within this instance.
         /// </summary>
         /// <param name="value">The Unicode character to seek.</param>
-        /// <returns>The zero-based index position of value if that character is found, or -1 if it is not.</returns>
+        /// <returns>The zero-based index position of <paramref name="value"/> if that character is found, or -1 if it is not.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int LastIndexOf(char value);
 
@@ -337,8 +458,8 @@ namespace System
         /// Reports the zero-based index position of the last occurrence of a specified Unicode character within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string.
         /// </summary>
         /// <param name="value">The Unicode character to seek.</param>
-        /// <param name="startIndex">The starting position of the search. The search proceeds from startIndex toward the beginning of this instance.</param>
-        /// <returns>The zero-based index position of value if that character is found, or -1 if it is not found or if the current instance equals String.Empty.</returns>
+        /// <param name="startIndex">The starting position of the search. The search proceeds from <paramref name="startIndex"/> toward the beginning of this instance.</param>
+        /// <returns>The zero-based index position of <paramref name="value"/> if that character is found, or -1 if it is not found or if the current instance equals <see cref="Empty"/>.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int LastIndexOf(char value, int startIndex);
 
@@ -346,9 +467,9 @@ namespace System
         /// Reports the zero-based index position of the last occurrence of the specified Unicode character in a substring within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string for a specified number of character positions.
         /// </summary>
         /// <param name="value">The Unicode character to seek. </param>
-        /// <param name="startIndex">The starting position of the search. The search proceeds from startIndex toward the beginning of this instance.</param>
+        /// <param name="startIndex">The starting position of the search. The search proceeds from <paramref name="startIndex"/> toward the beginning of this instance.</param>
         /// <param name="count">The number of character positions to examine. </param>
-        /// <returns>The zero-based index position of value if that character is found, or -1 if it is not found or if the current instance equals String.Empty.</returns>
+        /// <returns>The zero-based index position of <paramref name="value"/> if that character is found, or -1 if it is not found or if the current instance equals <see cref="Empty"/>.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int LastIndexOf(char value, int startIndex, int count);
 
@@ -356,7 +477,7 @@ namespace System
         /// Reports the zero-based index position of the last occurrence in this instance of one or more characters specified in a Unicode array.
         /// </summary>
         /// <param name="anyOf">A Unicode character array containing one or more characters to seek.</param>
-        /// <returns>The index position of the last occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found.</returns>
+        /// <returns>The index position of the last occurrence in this instance where any character in <paramref name="anyOf"/> was found; -1 if no character in <paramref name="anyOf"/> was found.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int LastIndexOfAny(char[] anyOf);
 
@@ -365,7 +486,7 @@ namespace System
         /// </summary>
         /// <param name="anyOf">A Unicode character array containing one or more characters to seek.</param>
         /// <param name="startIndex">The search starting position. The search proceeds from startIndex toward the beginning of this instance.</param>
-        /// <returns>The index position of the last occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found or if the current instance equals String.Empty.</returns>
+        /// <returns>The index position of the last occurrence in this instance where any character in <paramref name="anyOf"/> was found; -1 if no character in <paramref name="anyOf"/> was found or if the current instance equals <see cref="Empty"/>.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int LastIndexOfAny(char[] anyOf, int startIndex);
 
@@ -375,7 +496,7 @@ namespace System
         /// <param name="anyOf">A Unicode character array containing one or more characters to seek.</param>
         /// <param name="startIndex">The search starting position. The search proceeds from startIndex toward the beginning of this instance.</param>
         /// <param name="count">The number of character positions to examine.</param>
-        /// <returns>The index position of the last occurrence in this instance where any character in anyOf was found; -1 if no character in anyOf was found or if the current instance equals String.Empty.</returns>
+        /// <returns>The index position of the last occurrence in this instance where any character in <paramref name="anyOf"/> was found; -1 if no character in <paramref name="anyOf"/> was found or if the current instance equals <see cref="Empty"/>.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern int LastIndexOfAny(char[] anyOf, int startIndex, int count);
 
@@ -383,18 +504,18 @@ namespace System
         /// Reports the zero-based index position of the last occurrence of a specified string within this instance.
         /// </summary>
         /// <param name="value">The string to seek.</param>
-        /// <returns>The zero-based starting index position of value if that string is found, or -1 if it is not. If value is String.Empty, the return value is the last index position in this instance.</returns>
+        /// <returns>The zero-based starting index position of <paramref name="value"/> if that string is found, or -1 if it is not. If <paramref name="value"/> is <see cref="Empty"/>, the return value is the last index position in this instance.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern int LastIndexOf(String value);
+        public extern int LastIndexOf(string value);
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence of a specified string within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string.
         /// </summary>
         /// <param name="value">The string to seek.</param>
         /// <param name="startIndex">The search starting position. The search proceeds from startIndex toward the beginning of this instance.</param>
-        /// <returns>The zero-based starting index position of value if that string is found, or -1 if it is not found or if the current instance equals String.Empty. If value is String.Empty, the return value is the smaller of startIndex and the last index position in this instance.</returns>
+        /// <returns>The zero-based starting index position of <paramref name="value"/> if that string is found, or -1 if it is not found or if the current instance equals <see cref="Empty"/>. If <paramref name="value"/> is <see cref="Empty"/>, the return value is the smaller of <paramref name="startIndex"/> and the last index position in this instance.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern int LastIndexOf(String value, int startIndex);
+        public extern int LastIndexOf(string value, int startIndex);
 
         /// <summary>
         /// Reports the zero-based index position of the last occurrence of a specified string within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string for a specified number of character positions.
@@ -402,45 +523,39 @@ namespace System
         /// <param name="value">The string to seek.</param>
         /// <param name="startIndex">The search starting position. The search proceeds from startIndex toward the beginning of this instance.</param>
         /// <param name="count">The number of character positions to examine.</param>
-        /// <returns>The zero-based starting index position of value if that string is found, or -1 if it is not found or if the current instance equals String.Empty. If value is Empty, the return value is the smaller of startIndex and the last index position in this instance.</returns>
+        /// <returns>The zero-based starting index position of <paramref name="value"/> if that string is found, or -1 if it is not found or if the current instance equals <see cref="Empty"/>. If <paramref name="value"/> is <see cref="Empty"/>, the return value is the smaller of <paramref name="startIndex"/> and the last index position in this instance.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern int LastIndexOf(String value, int startIndex, int count);
+        public extern int LastIndexOf(string value, int startIndex, int count);
 
         /// <summary>
         /// Returns a copy of this string converted to lowercase.
         /// </summary>
         /// <returns>A string in lowercase.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String ToLower();
+        public extern string ToLower();
 
         /// <summary>
         /// Returns a copy of this string converted to uppercase.
         /// </summary>
         /// <returns>The uppercase equivalent of the current string.</returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String ToUpper();
+        public extern string ToUpper();
 
         /// <summary>
         /// Returns this instance of String; no actual conversion is performed.
         /// </summary>
         /// <returns>The current string.</returns>
-        public override String ToString()
+        public override string ToString()
         {
             return this;
         }
 
         /// <summary>
-        /// Removes all leading and trailing white-space characters from the current String object.
-        /// </summary>
-        /// <returns>The string that remains after all white-space characters are removed from the start and end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</returns>
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern String Trim();
-        /// <summary>
         /// Creates the string representation of a specified object.
         /// </summary>
         /// <param name="arg0">The object to represent, or null.</param>
         /// <returns>The string representation of the value of arg0, or String.Empty if arg0 is null.</returns>
-        public static String Concat(Object arg0)
+        public static string Concat(object arg0)
         {
             return arg0 == null ? Empty : arg0.ToString();
         }
@@ -451,17 +566,11 @@ namespace System
         /// <param name="arg0">The first object to concatenate.</param>
         /// <param name="arg1">The second object to concatenate.</param>
         /// <returns>The concatenated string representations of the values of arg0 and arg1.</returns>
-        public static String Concat(Object arg0, Object arg1)
+        public static string Concat(object arg0, object arg1)
         {
-            if (arg0 == null)
-            {
-                arg0 = Empty;
-            }
+            arg0 ??= Empty;
 
-            if (arg1 == null)
-            {
-                arg1 = Empty;
-            }
+            arg1 ??= Empty;
 
             return Concat(arg0.ToString(), arg1.ToString());
         }
@@ -473,22 +582,11 @@ namespace System
         /// <param name="arg1">The second object to concatenate.</param>
         /// <param name="arg2">The third object to concatenate.</param>
         /// <returns>The concatenated string representations of the values of arg0, arg1 and arg2.</returns>
-        public static String Concat(Object arg0, Object arg1, Object arg2)
+        public static string Concat(object arg0, object arg1, object arg2)
         {
-            if (arg0 == null)
-            {
-                arg0 = Empty;
-            }
-
-            if (arg1 == null)
-            {
-                arg1 = Empty;
-            }
-
-            if (arg2 == null)
-            {
-                arg2 = Empty;
-            }
+            arg0 ??= Empty;
+            arg1 ??= Empty;
+            arg2 ??= Empty;
 
             return Concat(arg0.ToString(), arg1.ToString(), arg2.ToString());
         }
@@ -499,14 +597,17 @@ namespace System
         /// <param name="args">An object array that contains the elements to concatenate.</param>
         /// <returns>The concatenated string representations of the values of the elements in args.</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static String Concat(params Object[] args)
+        public static string Concat(params object[] args)
         {
-            if (args == null) throw new ArgumentNullException("args");
+            if (args == null)
+            {
+                throw new ArgumentNullException("args");
+            }
 
-            var length = args.Length;
-            var sArgs = new String[length];
+            int length = args.Length;
+            string[] sArgs = new string[length];
 
-            for (var i = 0; i < length; i++)
+            for (int i = 0; i < length; i++)
             {
                 sArgs[i] = args[i] == null ? Empty : args[i].ToString();
             }
@@ -515,59 +616,95 @@ namespace System
         }
 
         /// <summary>
-        /// Concatenates two specified instances of String.
+        /// Concatenates two specified instances of <see cref="string"/>.
         /// </summary>
         /// <param name="str0">The first string to concatenate.</param>
         /// <param name="str1">The second string to concatenate.</param>
-        /// <returns>The concatenation of str0 and str1.</returns>
+        /// <returns>The concatenation of <paramref name="str0"/> and <paramref name="str1"/>.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern String Concat(String str0, String str1);
+        public static extern string Concat(string? str0, string? str1);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern string Concat(string str0, string str1);
+#endif
 
         /// <summary>
-        /// Concatenates three specified instances of String.
+        /// Concatenates three specified instances of <see cref="string"/>.
         /// </summary>
         /// <param name="str0">The first string to concatenate.</param>
         /// <param name="str1">The second string to concatenate.</param>
         /// <param name="str2">The third string to concatenate.</param>
-        /// <returns>The concatenation of str0, str1 and str2.</returns>
+        /// <returns>The concatenation of <paramref name="str0"/>, <paramref name="str1"/> and <paramref name="str2"/>.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern String Concat(String str0, String str1, String str2);
+        public static extern string Concat(string? str0, string? str1, string? str2);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern string Concat(string str0, string str1, string str2);
+#endif
 
         /// <summary>
-        /// Concatenates four specified instances of String.
+        /// Concatenates four specified instances of <see cref="string"/>.
         /// </summary>
         /// <param name="str0">The first string to concatenate.</param>
         /// <param name="str1">The second string to concatenate.</param>
         /// <param name="str2">The third string to concatenate.</param>
         /// <param name="str3">The fourth string to concatenate.</param>
         /// <returns>The concatenation of str0, str1, str2 and str3.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern String Concat(String str0, String str1, String str2, String str3);
+        public static extern string Concat(string? str0, string? str1, string? str2, string? str3);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern string Concat(string str0, string str1, string str2, string str3);
+#endif
 
         /// <summary>
-        /// Concatenates the elements of a specified String array.
+        /// Concatenates the elements of a specified <see cref="string"/> array.
         /// </summary>
         /// <param name="values">An array of string instances.</param>
-        /// <returns>The concatenated elements of values.</returns>
+        /// <returns>The concatenated elements of <paramref name="values"/>.</returns>
+#if NANOCLR_REFLECTION
+
+#nullable enable
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern String Concat(params String[] values);
+        public static extern string Concat(params string?[] values);
+#nullable restore
+
+#else
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern string Concat(params string[] values);
+#endif
 
         /// <summary>
-        /// Retrieves the system's reference to the specified String.
+        /// Retrieves the system's reference to the specified <see cref="string"/>.
         /// </summary>
         /// <param name="str">A string to search for in the intern pool.</param>
-        /// <returns>The system's reference to str, if it is interned; otherwise, a new reference to a string with the value of str.</returns>
-        public static String Intern(String str)
+        /// <returns>The system's reference to <paramref name="str"/>, if it is interned; otherwise, a new reference to a string with the value of <paramref name="str"/>.</returns>
+        public static string Intern(string str)
         {
             return str;
         }
 
         /// <summary>
-        /// Retrieves a reference to a specified String.
+        /// Retrieves a reference to a specified <see cref="string"/>.
         /// </summary>
         /// <param name="str">The string to search for in the intern pool.</param>
-        /// <returns>A reference to str if it is in the common language runtime intern pool; otherwise, null.</returns>
-        public static String IsInterned(String str)
+        /// <returns>A reference to <paramref name="str"/> if it is in the common language runtime intern pool; otherwise, <see langword="null"/>.</returns>
+        public static string IsInterned(string str)
         {
             return str;
         }
@@ -577,221 +714,32 @@ namespace System
         /// </summary>
         /// <param name="format">A composite format string</param>
         /// <param name="args">An object array that contains zero or more objects to format.</param>
-        /// <returns>A copy of format in which the format items have been replaced by the string representation of the corresponding objects in args.</returns>
-        public static string Format(string format, params object[] args)
-        {
-            var index = 0;
-            var alignment = 0;
-            var chr = '\0';
-            var len = format.Length;
-            var fmt = Empty;
-            var token = Empty;
-            var output = Empty;
-
-            if (format is null)
-            {
-                throw new ArgumentNullException("format can't be null");
-            }
-
-            for (var i = 0; i < len; i++)
-            {
-                token = Empty;
-                chr = format[i];
-
-                if (chr == '{')
-                {
-                    if (i + 1 == len)
-                    {
-                        throw new ArgumentException("Format error: no closed brace, column " + i);
-                    }
-
-                    if (format[i + 1] == '{')
-                    {
-                        output += chr;
-                        i++;
-                        continue;
-                    }
-                    else
-                    {
-                        alignment = 0;
-                        fmt = Empty;
-
-                        for (i++; i < len; i++)
-                        {
-                            chr = format[i];
-
-                            if (chr >= '0' && chr <= '9')
-                            {
-                                token += chr;
-                            }
-                            else if (chr == ',' || chr == ':' || chr == '}')
-                            {
-                                break;
-                            }
-                            else
-                            {
-                                throw new ArgumentException("Format error: wrong symbol at {}, column " + i);
-                            }
-                        }
-
-                        if (token.Length > 0)
-                        {
-                            index = int.Parse(token);
-                        }
-                        else
-                        {
-                            throw new ArgumentException("Format error: empty {}, column " + i);
-                        }
-
-                        if (chr == ',')
-                        {
-                            if (format[i + 1] == '-')
-                            {
-                                token = "-";
-                                i++;
-                            }
-                            else
-                            {
-                                token = Empty;
-                            }
-
-                            for (i++; i < len; i++)
-                            {
-                                chr = format[i];
-
-                                if (chr >= '0' && chr <= '9')
-                                {
-                                    token += chr;
-                                }
-                                else if (chr == ':' || chr == '}')
-                                {
-                                    break;
-                                }
-                                else
-                                {
-                                    throw new ArgumentException("Format error: wrong symbol at alignment, column " + i);
-                                }
-                            }
-
-                            if (token.Length > 0)
-                            {
-                                alignment = int.Parse(token);
-                            }
-                            else
-                            {
-                                throw new ArgumentException("Format error: empty alignment, column " + i);
-                            }
-                        }
-
-                        if (chr == ':')
-                        {
-                            token = Empty;
-                            for (i++; i < len; i++)
-                            {
-                                chr = format[i];
-
-                                if (chr == '}')
-                                {
-                                    break;
-                                }
-                                else
-                                {
-                                    token += chr;
-                                }
-                            }
-
-                            if (token.Length > 0)
-                            {
-                                fmt = token;
-                            }
-                            else
-                            {
-                                throw new ArgumentException("Format error: empty format after ':', column " + i);
-                            }
-                        }
-                    }
-
-                    if (chr != '}')
-                    {
-                        throw new ArgumentException("Format error: no closed brace, column " + i);
-                    }
-
-                    if (fmt.Length > 0)
-                    {
+        /// <returns>A copy of <paramref name="format"/> in which the format items have been replaced by the string representation of the corresponding objects in <paramref name="args"/>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="format"/> or <paramref name="args"/> is <see langword="null"/>.</exception>
 #if NANOCLR_REFLECTION
 
-                        if (args[index] is null)
-                        {
-                            token = "";
-                        }
-                        else
-                        {
-                            var method = args[index].GetType().GetMethod("ToString", new Type[] { typeof(string) });
-                            token = (method is null)
-                                ? args[index].ToString()
-                                : method.Invoke(args[index], new object[] { token }).ToString();
-                        }
+#nullable enable
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern string Format(string format, params object?[] args);
+#nullable restore
+
 #else
-                        throw new NotImplementedException();
-#endif // NANOCLR_REFLECTION
-
-                    }
-                    else
-                    {
-                        token = args[index] == null ? "" : args[index].ToString();
-                    }
-
-                    if (alignment > 0)
-                    {
-                        output += token.PadLeft(alignment);
-                    }
-                    else if (alignment < 0)
-                    {
-                        output += token.PadRight(MathInternal.Abs(alignment));
-                    }
-                    else
-                    {
-                        output += token;
-                    }
-                }
-                else if (chr == '}')
-                {
-                    if (i + 1 == len)
-                    {
-                        throw new ArgumentException("Format error: no closed brace, column " + i);
-                    }
-
-                    if (format[i + 1] == '}')
-                    {
-                        output += chr;
-                        i++;
-                    }
-                    else
-                    {
-                        throw new ArgumentException("Format error: no closed brace, column " + i);
-                    }
-                }
-                else
-                {
-                    output += chr;
-                }
-            }
-
-            return output;
-        }
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern string Format(string format, params object[] args);
+#endif
 
         /// <summary>
         /// Returns a new string that right-aligns the characters in this instance by padding them on the left with a specified Unicode character, for a specified total length.
         /// </summary>
         /// <param name="totalWidth">The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.</param>
         /// <param name="paddingChar">A Unicode padding character.</param>
-        /// <returns></returns>
-        public String PadLeft(int totalWidth, char paddingChar = ' ')
+        /// <returns>A new string that is equivalent to this instance, but right-aligned and padded on the left with as many <paramref name="paddingChar"/> characters as needed to create a length of <paramref name="totalWidth"/>. However, if <paramref name="totalWidth"/> is less than the length of this instance, the method returns a reference to the existing instance. If <paramref name="totalWidth"/> is equal to the length of this instance, the method returns a new string that is identical to this instance.</returns>
+        public string PadLeft(int totalWidth, char paddingChar = ' ')
         {
             if (totalWidth < 0)
             {
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-                throw new ArgumentOutOfRangeException("totalWidth can't be less than 0");
+                throw new ArgumentOutOfRangeException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
 
@@ -801,7 +749,7 @@ namespace System
             }
             else
             {
-                return new String(paddingChar, totalWidth - Length) + this;
+                return new string(paddingChar, totalWidth - Length) + this;
             }
         }
 
@@ -810,13 +758,13 @@ namespace System
         /// </summary>
         /// <param name="totalWidth">The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.</param>
         /// <param name="paddingChar">A Unicode padding character.</param>
-        /// <returns></returns>
-        public String PadRight(int totalWidth, char paddingChar = ' ')
+        /// <returns>A new string that is equivalent to this instance, but left-aligned and padded on the right with as many <paramref name="paddingChar"/> characters as needed to create a length of <paramref name="totalWidth"/>. However, if <paramref name="totalWidth"/> is less than the length of this instance, the method returns a reference to the existing instance. If <paramref name="totalWidth"/> is equal to the length of this instance, the method returns a new string that is identical to this instance.</returns>
+        public string PadRight(int totalWidth, char paddingChar = ' ')
         {
             if (totalWidth < 0)
             {
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-                throw new ArgumentOutOfRangeException("totalWidth can't be less than 0");
+                throw new ArgumentOutOfRangeException();
 #pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
 
@@ -826,7 +774,7 @@ namespace System
             }
             else
             {
-                return this + new String(paddingChar, totalWidth - Length);
+                return this + new string(paddingChar, totalWidth - Length);
             }
         }
 
@@ -835,7 +783,15 @@ namespace System
         /// </summary>
         /// <param name="value">The string to test.</param>
         /// <returns><see langword="true"/> if the value parameter is <see langword="null"/> or an empty string (""); otherwise, <see langword="false"/>.</returns>
-        public static bool IsNullOrEmpty([NotNullWhen(false)] string value)
+#if NANOCLR_REFLECTION
+
+#nullable enable
+        public static bool IsNullOrEmpty([NotNullWhen(false)] string? value)
+#nullable restore
+
+#else
+        public static bool IsNullOrEmpty(string value)
+#endif
         {
             return value == null || value.Length == 0;
         }

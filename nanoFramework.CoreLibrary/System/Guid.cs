@@ -11,7 +11,7 @@ namespace System
     [Serializable]
     public struct Guid
     {
-        private int[] _data;
+        private int[] _data = new int[4];
 
         /// <summary>
         /// A read-only instance of the Guid class which consists of all zeros.
@@ -141,7 +141,7 @@ namespace System
             ArgumentNullException.ThrowIfNull(g);
 
 #pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (!TryParseGuidWithDashes(
+            if (!TryParse(
                 g,
                 out this))
             {
@@ -163,27 +163,68 @@ namespace System
             if (value == null)
             {
                 return 1;
-            }
 
-#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
-            if (value is not Guid)
+            }
+            if (value is not Guid other)
             {
                 throw new ArgumentException();
             }
-#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one
 
-            int[] other = ((Guid)value)._data;
-            other ??= new int[4];
+            return CompareTo(other);
+        }
 
-            for (int i = 0; i < 4; i++)
+        /// <summary>
+        /// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+        /// </summary>
+        /// <param name="value">An object to compare with this instance.</param>
+        /// <returns>A value that indicates the relative order of the objects being compared.</returns>
+        public int CompareTo(Guid value)
+        {
+            _data ??= new int[4];
+            value._data ??= new int[4];
+
+            uint this0 = (uint)_data[0];
+            uint other0 = (uint)value._data[0];
+            if (this0 != other0)
             {
-                if (_data[i] != other[i])
-                {
-                    return _data[i] - other[i];
-                }
+                return this0 < other0 ? -1 : 1;
+            }
+
+            uint this1 = SwapHalves((uint)_data[1]);
+            uint other1 = SwapHalves((uint)value._data[1]);
+            if (this1 != other1)
+            {
+                return this1 < other1 ? -1 : 1;
+            }
+
+            uint this2 = SwapBytes((uint)_data[2]);
+            uint other2 = SwapBytes((uint)value._data[2]);
+            if (this2 != other2)
+            {
+                return this2 < other2 ? -1 : 1;
+            }
+
+            uint this3 = SwapBytes((uint)_data[3]);
+            uint other3 = SwapBytes((uint)value._data[3]);
+            if (this3 != other3)
+            {
+                return this3 < other3 ? -1 : 1;
             }
 
             return 0;
+        }
+
+        private static uint SwapHalves(uint value)
+        {
+            return (value << 16) | (value >> 16);
+        }
+
+        private static uint SwapBytes(uint value)
+        {
+            return ((value & 0x000000FFu) << 24) |
+                   ((value & 0x0000FF00u) << 8) |
+                   ((value & 0x00FF0000u) >> 8) |
+                   ((value & 0xFF000000u) >> 24);
         }
 
         /// <summary>
@@ -201,6 +242,9 @@ namespace System
         /// </remarks>
         public byte[] ToByteArray()
         {
+            // Initialize if null (treat as Empty)
+            _data ??= new int[4]; 
+
             byte[] buffer = new byte[16];
 
             int index = 0;
@@ -289,10 +333,19 @@ namespace System
                 return false;
             }
 
-            int[] other = ((Guid)o)._data;
-            other ??= new int[4];
+            return o is Guid other && Equals(other);
+        }
 
-            return (_data[0] == other[0]) && (_data[1] == other[1]) && (_data[2] == other[2]) && (_data[3] == other[3]);
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>true if the current object is equal to the other parameter; otherwise, false.</returns>
+        public bool Equals(Guid other)
+        {
+            _data ??= new int[4];
+            other._data ??= new int[4];
+            return (_data[0] == other._data[0]) && (_data[1] == other._data[1]) && (_data[2] == other._data[2]) && (_data[3] == other._data[3]);
         }
 
         /// <summary>
@@ -301,6 +354,8 @@ namespace System
         /// <returns>The hash code for this instance.</returns>
         public override int GetHashCode()
         {
+            // Initialize if null (treat as Empty)
+            _data ??= new int[4]; 
             return _data[0] ^ _data[1] ^ _data[2] ^ _data[3];
         }
 
@@ -331,8 +386,7 @@ namespace System
         /// <remarks>
         /// The .NET nanoFramework implementation of this method only supports 'D' and 'N' format specifiers.
         /// </remarks>
-        [Obsolete("This will be renamed to TryParse in a future version.")]
-        public static bool TryParseGuidWithDashes(
+        public static bool TryParse(
             string input,
             out Guid result)
         {
@@ -446,6 +500,35 @@ namespace System
             long result = Convert.ToInt64(str.Substring(parsePos, requiredLength), 16);
             parsePos += requiredLength;
             return result;
+        }
+
+        /// <summary>
+        /// Determines whether two specified instances of <see cref="Guid"/> are equal.
+        /// </summary>
+        /// <param name="a">The first <see cref="Guid"/> to compare.</param>
+        /// <param name="b">The second <see cref="Guid"/> to compare.</param>
+        /// <returns><see langword="true"/> if <paramref name="a"/> equals <paramref name="b"/>; otherwise, <see langword="false"/>.</returns>
+        public static bool operator ==(Guid a, Guid b)
+        {
+            // Defensive null handling, though _data should always be initialized
+            a._data ??= new int[4];
+            b._data ??= new int[4];
+
+            return (a._data[0] == b._data[0]) &&
+                   (a._data[1] == b._data[1]) &&
+                   (a._data[2] == b._data[2]) &&
+                   (a._data[3] == b._data[3]);
+        }
+
+        /// <summary>
+        /// Determines whether two specified instances of <see cref="Guid"/> are not equal.
+        /// </summary>
+        /// <param name="a">The first <see cref="Guid"/> to compare.</param>
+        /// <param name="b">The second <see cref="Guid"/> to compare.</param>
+        /// <returns><see langword="true"/> if <paramref name="a"/> does not equal <paramref name="b"/>; otherwise, <see langword="false"/>.</returns>
+        public static bool operator !=(Guid a, Guid b)
+        {
+            return !(a == b);
         }
     }
 }
