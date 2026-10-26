@@ -265,6 +265,9 @@
     <Error Condition="!Exists('..\packages\Nerdbank.GitVersioning.3.10.85\build\Nerdbank.GitVersioning.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nerdbank.GitVersioning.3.10.85\build\Nerdbank.GitVersioning.props'))" />
     <Error Condition="!Exists('..\packages\Nerdbank.GitVersioning.3.10.85\build\Nerdbank.GitVersioning.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nerdbank.GitVersioning.3.10.85\build\Nerdbank.GitVersioning.targets'))" />
   </Target>
+  <!-- Keep task assembly properties available during NuGet's intermediate import removal. -->
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.*\build\Microsoft.Build.Tasks.Git.props" Condition="'$(MicrosoftBuildTasksGitAssemblyFile)' == ''" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.*\build\Microsoft.SourceLink.Common.props" Condition="'$(_MicrosoftSourceLinkCommonAssemblyFile)' == ''" />
   <Import Project="..\packages\Microsoft.Build.Tasks.Git.10.0.300\build\Microsoft.Build.Tasks.Git.targets" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.10.0.300\build\Microsoft.Build.Tasks.Git.targets')" />
   <Import Project="..\packages\Microsoft.SourceLink.Common.10.0.300\build\Microsoft.SourceLink.Common.targets" Condition="Exists('..\packages\Microsoft.SourceLink.Common.10.0.300\build\Microsoft.SourceLink.Common.targets')" />
   <Import Project="..\packages\Microsoft.SourceLink.GitHub.10.0.300\build\Microsoft.SourceLink.GitHub.targets" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.10.0.300\build\Microsoft.SourceLink.GitHub.targets')" />
