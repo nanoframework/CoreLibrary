@@ -107,6 +107,21 @@ namespace NFUnitTestClasses
             Assert.IsTrue(Static_InstTestClass23.testMethod());
         }
 
+        [TestMethod]
+        public void Static_Inst24_Test()
+        {
+            Assert.AreEqual("abc", Static_InstTestClass24.Instance.CapturedValue);
+            Assert.AreEqual(1, Static_InstTestClass25.InitializerCount);
+        }
+
+        [TestMethod]
+        public void Static_Inst26_Test()
+        {
+            Assert.AreEqual(42, Static_InstTestClass26.GetValue());
+            Assert.AreEqual(42, Static_InstTestClass26.GetValue());
+            Assert.AreEqual(1, Static_InstTestClass26.InitializerCount);
+        }
+
         //Compiled Test Cases 
         class Static_InstTestClass01
         {
@@ -316,6 +331,52 @@ namespace NFUnitTestClasses
                 {
                     return false;
                 }
+            }
+        }
+
+        // Keep the trigger before the target in metadata: its initializer must run first.
+        class Static_InstTestClass24
+        {
+            public static Static_InstTestClass25 Instance;
+
+            static Static_InstTestClass24()
+            {
+                Instance = new Static_InstTestClass25();
+            }
+        }
+
+        class Static_InstTestClass25
+        {
+            public static string InitializedValue;
+            public static int InitializerCount;
+            public string CapturedValue;
+
+            static Static_InstTestClass25()
+            {
+                InitializerCount++;
+                InitializedValue = "abc";
+            }
+
+            public Static_InstTestClass25()
+            {
+                CapturedValue = InitializedValue;
+            }
+        }
+
+        class Static_InstTestClass26
+        {
+            public static int InitializerCount;
+            private static int s_value;
+
+            static Static_InstTestClass26()
+            {
+                InitializerCount++;
+                s_value = 42;
+            }
+
+            public static int GetValue()
+            {
+                return s_value;
             }
         }
 
