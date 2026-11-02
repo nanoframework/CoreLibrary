@@ -122,6 +122,22 @@ namespace NFUnitTestClasses
             Assert.AreEqual(1, Static_InstTestClass26.InitializerCount);
         }
 
+        [TestMethod]
+        public void Static_NestedGenericConstructor_Test()
+        {
+            Assert.AreEqual(42, NestedGenericTrigger.ConstructorValue);
+            Assert.AreEqual(42, new NestedGenericOuter<int>.ConstructorTarget().CapturedValue);
+            Assert.AreEqual(1, NestedGenericInitializerCounts.ConstructorCount);
+        }
+
+        [TestMethod]
+        public void Static_NestedGenericMethod_Test()
+        {
+            Assert.AreEqual(42, NestedGenericTrigger.MethodValue);
+            Assert.AreEqual(42, NestedGenericOuter<int>.MethodTarget.GetValue());
+            Assert.AreEqual(1, NestedGenericInitializerCounts.MethodCount);
+        }
+
         //Compiled Test Cases 
         class Static_InstTestClass01
         {
@@ -377,6 +393,74 @@ namespace NFUnitTestClasses
             public static int GetValue()
             {
                 return s_value;
+            }
+        }
+
+        class NestedGenericInitializerCounts
+        {
+            public static int ConstructorCount;
+            public static int MethodCount;
+        }
+
+        // Run before the generic targets are eagerly initialized at startup.
+        class NestedGenericTrigger
+        {
+            public static int ConstructorValue;
+            public static int MethodValue;
+
+            static NestedGenericTrigger()
+            {
+                ConstructorValue = NestedGenericCaller<string>.Create().CapturedValue;
+                MethodValue = NestedGenericCaller<string>.GetValue();
+            }
+        }
+
+        class NestedGenericCaller<T>
+        {
+            public static NestedGenericOuter<int>.ConstructorTarget Create()
+            {
+                return new NestedGenericOuter<int>.ConstructorTarget();
+            }
+
+            public static int GetValue()
+            {
+                return NestedGenericOuter<int>.MethodTarget.GetValue();
+            }
+        }
+
+        class NestedGenericOuter<T>
+        {
+            public class ConstructorTarget
+            {
+                private static int s_value;
+                public int CapturedValue;
+
+                static ConstructorTarget()
+                {
+                    NestedGenericInitializerCounts.ConstructorCount++;
+                    s_value = 42;
+                }
+
+                public ConstructorTarget()
+                {
+                    CapturedValue = NestedGenericInitializerCounts.ConstructorCount == 1 ? s_value : -1;
+                }
+            }
+
+            public class MethodTarget
+            {
+                private static int s_value;
+
+                static MethodTarget()
+                {
+                    NestedGenericInitializerCounts.MethodCount++;
+                    s_value = 42;
+                }
+
+                public static int GetValue()
+                {
+                    return NestedGenericInitializerCounts.MethodCount == 1 ? s_value : -1;
+                }
             }
         }
 
