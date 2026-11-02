@@ -347,14 +347,14 @@ namespace NFUnitTestClasses
 
         class Static_InstTestClass25
         {
-            public static string InitializedValue;
+            public static string InitializedValue = InitializeValue();
             public static int InitializerCount;
             public string CapturedValue;
 
-            static Static_InstTestClass25()
+            private static string InitializeValue()
             {
                 InitializerCount++;
-                InitializedValue = "abc";
+                return "abc";
             }
 
             public Static_InstTestClass25()
