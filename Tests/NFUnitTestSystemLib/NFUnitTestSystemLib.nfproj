@@ -42,6 +42,7 @@
     <Compile Include="UnitTestInitLocalTests.cs" />
     <Compile Include="UnitTestParseTests.cs" />
     <Compile Include="UnitTestReflectionAssemblyTest.cs" />
+    <Compile Include="UnitTestReflectionInvokeTests.cs" />
     <Compile Include="UnitTestReflectionMemberTest.cs" />
     <Compile Include="UnitTestReflectionTypeTest.cs" />
     <Compile Include="UnitTestStringTests.cs" />
