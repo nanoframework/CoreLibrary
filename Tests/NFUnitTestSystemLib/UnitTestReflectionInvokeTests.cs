@@ -179,18 +179,8 @@ namespace NFUnitTestSystemLib
 
         private static void AssertSetValueRejected(FieldInfo field, object holder, object value)
         {
-            bool rejected = false;
-
-            try
-            {
-                field.SetValue(holder, value);
-            }
-            catch (Exception)
-            {
-                rejected = true;
-            }
-
-            Assert.IsTrue(rejected);
+            // The runtime has no specific exception for a wrong type, and ThrowsException requires an exact match.
+            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(holder, value); });
         }
 
         [TestMethod]
