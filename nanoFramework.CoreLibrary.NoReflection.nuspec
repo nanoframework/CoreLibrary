@@ -14,8 +14,8 @@
     <icon>images\nf-logo.png</icon>
     <repository type="git" url="https://github.com/nanoframework/CoreLibrary" commit="$commit$" />
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>    
-    <description>This package includes the CoreLibrary assembly for .NET nanoFramework C# projects **WITHOUT** the System.Reflection API.&#10;This package requires a target with mscorlib v$nativeVersion$ (checksum $checksum$).&#10;There is another version that includes the System.Reflection API.</description>
-    <tags>nanoFramework C# csharp netmf netnf nanoFramework.CoreLibrary</tags>
+    <description>This package includes the CoreLibrary assembly for .NET nanoFramework C# projects **WITHOUT** the System.Reflection API.&#10;This package requires a target with mscorlib native contract hash $nativeContractHash$.&#10;There is another version that includes the System.Reflection API.</description>
+    <tags>nanoFramework C# csharp netmf netnf nanoFramework.CoreLibrary nfnc-$nativeContractHash$</tags>
   </metadata>
   <files>
     <file src="nanoFramework.CoreLibrary.NoReflection\bin\Release\mscorlib.dll" target="lib\mscorlib.dll" />

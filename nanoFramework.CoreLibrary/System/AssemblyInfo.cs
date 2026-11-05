@@ -9,5 +9,3 @@ using System.Reflection;
 [assembly: AssemblyCompany(".NET nanoFramework Contributors")]
 [assembly: AssemblyProduct(".NET nanoFramework mscorlib")]
 [assembly: AssemblyCopyright("Copyright (c) .NET Foundation and Contributors")]
-
-[assembly: AssemblyNativeVersion("100.5.0.24")]
