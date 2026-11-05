@@ -110,12 +110,15 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Invoke_RefParameters_AreAccepted()
+        public void Invoke_RefParameters_AreNotSupported()
         {
-            AssertInvokeAccepted("TakesRefFoo", new Foo());
-            AssertInvokeAccepted("TakesRefInt", 1);
+            MethodInfo refFoo = Target("TakesRefFoo");
+            MethodInfo refInt = Target("TakesRefInt");
 
-            AssertInvokeRejected("TakesRefFoo", "not a Foo");
+            Assert.ThrowsException(typeof(NotSupportedException), () => { refFoo.Invoke(null, new object[] { new Foo() }); });
+            Assert.ThrowsException(typeof(NotSupportedException), () => { refFoo.Invoke(null, new object[] { "not a Foo" }); });
+            Assert.ThrowsException(typeof(NotSupportedException), () => { refFoo.Invoke(null, new object[] { null }); });
+            Assert.ThrowsException(typeof(NotSupportedException), () => { refInt.Invoke(null, new object[] { 1 }); });
         }
 
         [TestMethod]
@@ -483,6 +486,76 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new int[1] }));
         }
 
+        private static ParameterInfo[] GenericTargetParameters(string name)
+        {
+            return typeof(GenericTargets).GetMethod(name).GetParameters();
+        }
+
+        [TestMethod]
+        public void GetParameters_GenericParameter_CountsOneEntry()
+        {
+            ParameterInfo[] parameters = GenericTargetParameters("TakesGAndString");
+
+            Assert.AreEqual(2, parameters.Length);
+            Assert.AreEqual(typeof(G<int>).Name, parameters[0].ParameterType.Name);
+            Assert.AreEqual(typeof(string).FullName, parameters[1].ParameterType.FullName);
+        }
+
+        [TestMethod]
+        public void GetParameters_GenericReturnType_IsNotCounted()
+        {
+            ParameterInfo[] parameters = GenericTargetParameters("ReturnsG");
+
+            Assert.AreEqual(1, parameters.Length);
+            Assert.AreEqual(typeof(string).FullName, parameters[0].ParameterType.FullName);
+        }
+
+        [TestMethod]
+        public void GetParameters_NestedGenericParameter_CountsOneEntry()
+        {
+            ParameterInfo[] parameters = GenericTargetParameters("TakesGOfGAndString");
+
+            Assert.AreEqual(2, parameters.Length);
+            Assert.AreEqual(typeof(G<int>).Name, parameters[0].ParameterType.Name);
+            Assert.AreEqual(typeof(string).FullName, parameters[1].ParameterType.FullName);
+        }
+
+        [TestMethod]
+        public void GetParameters_GenericArrayParameter_IsArray()
+        {
+            ParameterInfo[] parameters = GenericTargetParameters("TakesGArray");
+
+            Assert.AreEqual(1, parameters.Length);
+            Assert.IsTrue(parameters[0].ParameterType.IsArray);
+            Assert.AreEqual(typeof(G<int>).Name, parameters[0].ParameterType.GetElementType().Name);
+        }
+
+        [TestMethod]
+        public void GetParameters_UnresolvedTypeParameter_HasNullType()
+        {
+            Assert.IsNull(typeof(G<int>).GetMethod("TakesT").GetParameters()[0].ParameterType);
+            Assert.IsNull(typeof(G<int>).GetMethod("TakesTArray").GetParameters()[0].ParameterType);
+            Assert.IsNull(GenericTargetParameters("TakesMethodT")[0].ParameterType);
+
+            ParameterInfo[] parameters = typeof(G<int>).GetMethod("TakesTAndString").GetParameters();
+
+            Assert.AreEqual(2, parameters.Length);
+            Assert.IsNull(parameters[0].ParameterType);
+            Assert.AreEqual(typeof(string).FullName, parameters[1].ParameterType.FullName);
+        }
+
+        [TestMethod]
+        public void GetParameters_NonGenericSignature_IsUnchanged()
+        {
+            ParameterInfo[] parameters = Target("TakesFooArray").GetParameters();
+
+            Assert.AreEqual(1, parameters.Length);
+            Assert.IsTrue(parameters[0].ParameterType.IsArray);
+            Assert.AreEqual(typeof(Foo).FullName, parameters[0].ParameterType.GetElementType().FullName);
+
+            Assert.AreEqual(typeof(Foo).FullName, Target("TakesRefFoo").GetParameters()[0].ParameterType.FullName);
+        }
+
         public interface IBase
         {
             int OnBase();
@@ -563,6 +636,8 @@ namespace NFUnitTestSystemLib
             public int TakesT(T value) => 1;
 
             public int TakesTArray(T[] value) => 1;
+
+            public int TakesTAndString(T value, string text) => 1;
         }
 
         public class GenericFieldHolder
