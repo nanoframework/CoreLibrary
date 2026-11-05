@@ -46,7 +46,11 @@ Tests/                           # Unit tests (one folder per test suite)
   NFUnitTestArithmetic/
   NFUnitTestArray/
   NFUnitTestBitConverter/
-  NFUnitTestSystemLib/           # Covers most primitive types, strings, DateTime, etc.
+  NFUnitTestSystemLib/           # Primitive numeric types and parsing
+  NFUnitTestSystemLibDateTime/   # DateTime, TimeSpan
+  NFUnitTestSystemLibReflection/ # Reflection, Type, Nullable
+  NFUnitTestSystemLibRuntime/    # GC, WeakReference, RuntimeHelpers, MemoryExtensions, init locals
+  NFUnitTestSystemLibText/       # String, Guid
   NFUnitTestThread/
   ... (21 test suites total)
 
