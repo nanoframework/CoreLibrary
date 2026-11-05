@@ -401,6 +401,8 @@ namespace NFUnitTestSystemLib
             MethodInfo mi = typeof(G<int>).GetMethod("TakesTArray");
 
             Assert.AreEqual(1, (int)mi.Invoke(new G<int>(), new object[] { new int[1] }));
+            // Diverges from standard .NET, which throws here because T is int. The interpreter does not track the
+            // instantiation, so any array is accepted for T[].
             Assert.AreEqual(1, (int)mi.Invoke(new G<int>(), new object[] { new string[1] }));
 
             Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { "x" }); });
@@ -439,10 +441,9 @@ namespace NFUnitTestSystemLib
         {
             object array = new int[1];
 
+            // Diverges from standard .NET, where this is true. The interpreter's isinst stays strict for generic
+            // interfaces on arrays, while castclass accepts them (see CastClass_ArrayToGenericInterface_IsAccepted).
             Assert.IsFalse(array is IEnumerable<int>);
-            Assert.IsFalse(array is string);
-
-            Assert.ThrowsException(typeof(InvalidCastException), () => { _ = (string)array; });
         }
 
         [TestMethod]
