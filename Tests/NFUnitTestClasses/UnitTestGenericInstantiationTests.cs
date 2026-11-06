@@ -127,6 +127,7 @@ namespace NFUnitTestClasses
         public void OtherInstantiation_StaticConstructor_ViaField()
         {
             Assert.IsTrue(new InstantiationHolder<int>().StringCctorArrayField() is string[]);
+            Assert.IsTrue(InstantiationHolder<int>.StaticCtorArray is int[]);
         }
 
         [TestMethod]
