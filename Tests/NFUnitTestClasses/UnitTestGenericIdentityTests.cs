@@ -207,6 +207,110 @@ namespace NFUnitTestClasses
         {
             Assert.IsTrue(IdentityMethods.NewSecondArray<IdentityInner<int>, string>() is string[]);
         }
+
+        [TestMethod]
+        public void BareT_NestedClassArg_NewObject()
+        {
+            IdentityStampA<IdentityStampA<int>> outer = new IdentityStampA<IdentityStampA<int>>();
+            outer.Value = new IdentityStampA<int>();
+            outer.Value.Value = 5;
+
+            Assert.AreEqual(5, outer.Get().Get());
+        }
+
+        [TestMethod]
+        public void BareT_DeepNestedClassArg_NewObject()
+        {
+            IdentityStampB<IdentityStampB<IdentityStampB<string>>> outer =
+                new IdentityStampB<IdentityStampB<IdentityStampB<string>>>();
+
+            Assert.IsNull(outer.Value);
+
+            outer.Value = new IdentityStampB<IdentityStampB<string>>();
+
+            Assert.IsNotNull(outer.Get());
+        }
+
+        [TestMethod]
+        public void BareT_ArrayArg_NewObject()
+        {
+            IdentityStampC<int[]> holder = new IdentityStampC<int[]>();
+
+            Assert.IsNull(holder.Value);
+
+            holder.Value = new int[2];
+
+            Assert.AreEqual(2, holder.Get().Length);
+        }
+
+        [TestMethod]
+        public void BareT_NestedValueArg_NewObject()
+        {
+            IdentityStampD<IdentityStampStruct<int>> holder = new IdentityStampD<IdentityStampStruct<int>>();
+            IdentityStampStruct<int> value = holder.Get();
+            value.Value = 7;
+            holder.Value = value;
+
+            Assert.AreEqual(7, holder.Get().Value);
+        }
+
+        [TestMethod]
+        public void StaticT_Closed_NestedArg()
+        {
+            IdentityStaticTA<IdentityStampE<int>>.Value = new IdentityStampE<int>();
+            IdentityStaticTA<IdentityStampE<int>>.Value.Value = 3;
+
+            Assert.AreEqual(3, IdentityStaticTA<IdentityStampE<int>>.Value.Value);
+        }
+
+        [TestMethod]
+        public void StaticT_OpenOwner_NestedMethodArg_AreSeparate()
+        {
+            object first = IdentityMethods.StoreStaticTB<int>();
+            object second = IdentityMethods.StoreStaticTB<string>();
+
+            Assert.AreSame(first, IdentityMethods.ReadStaticTB<int>());
+            Assert.AreSame(second, IdentityMethods.ReadStaticTB<string>());
+        }
+
+        [TestMethod]
+        public void StaticT_OpenOwner_NestedMethodArg_SharesStorageWithClosedRow()
+        {
+            IdentityStampG<long> value = new IdentityStampG<long>();
+            value.Value = 11;
+            IdentityStaticTC<IdentityStampG<long>>.Value = value;
+
+            Assert.AreEqual(11L, IdentityMethods.ReadStaticTC<long>());
+        }
+
+        [TestMethod]
+        public void StaticT_OpenOwner_BareMethodArg_AreSeparate()
+        {
+            IdentityMethods.StoreStaticTD<int>(4);
+            IdentityMethods.StoreStaticTD<long>(8);
+
+            Assert.AreEqual(4, IdentityMethods.ReadStaticTD<int>());
+            Assert.AreEqual(8L, IdentityMethods.ReadStaticTD<long>());
+        }
+
+        [TestMethod]
+        public void StaticT_OpenOwner_NestedTypeArg_AreSeparate()
+        {
+            IdentityStaticTOuter<int> first = new IdentityStaticTOuter<int>();
+            IdentityStaticTOuter<string> second = new IdentityStaticTOuter<string>();
+
+            object firstStored = first.Store();
+            object secondStored = second.Store();
+
+            Assert.AreSame(firstStored, first.Read());
+            Assert.AreSame(secondStored, second.Read());
+        }
+
+        [TestMethod]
+        public void StaticT_OpenOwner_NestedTypeArg_CctorInitializesStorage()
+        {
+            Assert.IsNotNull(new IdentityStaticTOuter<short>().ReadMarker());
+        }
     }
 
     class IdentityFoo
@@ -426,6 +530,120 @@ namespace NFUnitTestClasses
         }
     }
 
+    class IdentityStampA<T>
+    {
+        public T Value;
+
+        public T Get()
+        {
+            T value = Value;
+
+            return value;
+        }
+    }
+
+    class IdentityStampB<T>
+    {
+        public T Value;
+
+        public T Get()
+        {
+            return Value;
+        }
+    }
+
+    class IdentityStampC<T>
+    {
+        public T Value;
+
+        public T Get()
+        {
+            return Value;
+        }
+    }
+
+    class IdentityStampD<T>
+    {
+        public T Value;
+
+        public T Get()
+        {
+            return Value;
+        }
+    }
+
+    struct IdentityStampStruct<T>
+    {
+        public T Value;
+    }
+
+    class IdentityStampE<T>
+    {
+        public T Value;
+    }
+
+    class IdentityStampF<T>
+    {
+        public T Value;
+    }
+
+    class IdentityStampG<T>
+    {
+        public T Value;
+    }
+
+    class IdentityStampH<T>
+    {
+        public T Value;
+    }
+
+    class IdentityStaticTA<T>
+    {
+        public static T Value;
+    }
+
+    class IdentityStaticTB<T>
+    {
+        public static T Value;
+    }
+
+    class IdentityStaticTC<T>
+    {
+        public static T Value;
+    }
+
+    class IdentityStaticTD<T>
+    {
+        public static T Value;
+    }
+
+    class IdentityStaticTE<T>
+    {
+        public static T Value;
+        public static object Marker = new object();
+    }
+
+    class IdentityStaticTOuter<T>
+    {
+        public object Store()
+        {
+            IdentityStampH<T> stamp = new IdentityStampH<T>();
+            IdentityStaticTE<IdentityStampH<T>>.Value = stamp;
+
+            return stamp;
+        }
+
+        public object Read()
+        {
+            return IdentityStaticTE<IdentityStampH<T>>.Value;
+        }
+
+        public object ReadMarker()
+        {
+            return IdentityStaticTE<IdentityStampH<T>>.Marker;
+        }
+    }
+
     static class IdentityMethods
     {
         public static object TouchValueHolder<U>()
@@ -471,6 +689,34 @@ namespace NFUnitTestClasses
         public static object NewSecondArray<T1, T2>()
         {
             return new T2[1];
+        }
+
+        public static object StoreStaticTB<U>()
+        {
+            IdentityStampF<U> stamp = new IdentityStampF<U>();
+            IdentityStaticTB<IdentityStampF<U>>.Value = stamp;
+
+            return stamp;
+        }
+
+        public static object ReadStaticTB<U>()
+        {
+            return IdentityStaticTB<IdentityStampF<U>>.Value;
+        }
+
+        public static U ReadStaticTC<U>()
+        {
+            return IdentityStaticTC<IdentityStampG<U>>.Value.Value;
+        }
+
+        public static void StoreStaticTD<U>(U value)
+        {
+            IdentityStaticTD<U>.Value = value;
+        }
+
+        public static U ReadStaticTD<U>()
+        {
+            return IdentityStaticTD<U>.Value;
         }
     }
 }
