@@ -112,12 +112,20 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void CastClass_ReferenceArrayToGenericInterface_IsInvariant()
+        public void CastClass_ReferenceArrayToGenericInterface_IsCovariant()
         {
             object value = new string[1];
 
             Assert.IsNotNull((IEnumerable<string>)value);
-            // Diverges from standard .NET, where IEnumerable<out T> is covariant. Only an exact element type matches.
+            Assert.IsNotNull((IEnumerable<object>)value);
+            Assert.ThrowsException(typeof(InvalidCastException), () => { _ = (IEnumerable<Exception>)value; });
+        }
+
+        [TestMethod]
+        public void CastClass_ValueTypeArrayToGenericInterface_IsInvariant()
+        {
+            object value = new int[1];
+
             Assert.ThrowsException(typeof(InvalidCastException), () => { _ = (IEnumerable<object>)value; });
         }
 
@@ -131,12 +139,116 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void IsInst_DifferentArgument_StaysErased()
+        public void IsInst_DifferentArgument_IsFalse()
         {
             object value = new GaG<int>();
 
-            // Diverges from standard .NET, where this is false. isinst compares only the generic type definition.
-            Assert.IsTrue(value is GaG<string>);
+            Assert.IsFalse(value is GaG<string>);
+            Assert.IsTrue(value is GaG<int>);
+            Assert.IsNull(value as GaG<string>);
+            Assert.IsNotNull(value as GaG<int>);
+        }
+
+        [TestMethod]
+        public void IsInst_ThroughInterface_ComparesArgument()
+        {
+            object value = new GaIsImpl<int>();
+
+            Assert.IsTrue(value is IGaIs<int>);
+            Assert.IsFalse(value is IGaIs<string>);
+        }
+
+        [TestMethod]
+        public void IsInstanceOfType_ComparesGenericArgument()
+        {
+            Assert.IsTrue(typeof(GaIsHolder<int>).IsInstanceOfType(new GaIsHolder<int>()));
+            Assert.IsFalse(typeof(GaIsHolder<string>).IsInstanceOfType(new GaIsHolder<int>()));
+            Assert.IsTrue(typeof(IGaIs<int>).IsInstanceOfType(new GaIsImpl<int>()));
+            Assert.IsFalse(typeof(IGaIs<string>).IsInstanceOfType(new GaIsImpl<int>()));
+        }
+
+        [TestMethod]
+        public void IsInstanceOfType_Array_ComparesElementType()
+        {
+            Assert.IsTrue(typeof(IEnumerable<int>).IsInstanceOfType(new int[1]));
+            Assert.IsFalse(typeof(IEnumerable<string>).IsInstanceOfType(new int[1]));
+            Assert.IsFalse(typeof(IEnumerable<object>).IsInstanceOfType(new int[1]));
+            Assert.IsTrue(typeof(IEnumerable<object>).IsInstanceOfType(new string[1]));
+        }
+
+        [TestMethod]
+        public void IsInst_Null_IsFalse()
+        {
+            object value = null;
+
+            Assert.IsFalse(value is GaG<int>);
+            Assert.IsFalse(value is IEnumerable<int>);
+        }
+
+        [TestMethod]
+        public void IsInst_InGenericMethod_UsesTheMethodArgument()
+        {
+            Assert.IsTrue(GaCasts.IsGaIsHolder<int>(new GaIsHolder<int>()));
+            Assert.IsFalse(GaCasts.IsGaIsHolder<string>(new GaIsHolder<int>()));
+        }
+
+        [TestMethod]
+        public void IsInst_Array_ComparesElementType()
+        {
+            object ints = new int[1];
+
+            Assert.IsTrue(ints is IEnumerable<int>);
+            Assert.IsTrue(ints is ICollection<int>);
+            Assert.IsFalse(ints is IEnumerable<string>);
+            Assert.IsFalse(ints is IEnumerable<object>);
+            Assert.IsNull(ints as IEnumerable<string>);
+            Assert.IsNotNull(ints as IEnumerable<int>);
+        }
+
+        [TestMethod]
+        public void IsInst_ReferenceArray_IsCovariant()
+        {
+            object strings = new string[1];
+
+            Assert.IsTrue(strings is IEnumerable<string>);
+            Assert.IsTrue(strings is IEnumerable<object>);
+            Assert.IsFalse(strings is IEnumerable<Exception>);
+        }
+
+        [TestMethod]
+        public void IsInst_JaggedArray_ComparesLevels()
+        {
+            object value = new int[1][];
+
+            Assert.IsTrue(value is IEnumerable<int[]>);
+            Assert.IsFalse(value is IEnumerable<int>);
+        }
+
+        [TestMethod]
+        public void IsInst_ArrayToUnrelatedGenericInterface_IsFalse()
+        {
+            object value = new int[1];
+
+            Assert.IsFalse(value is IComparer<int>);
+        }
+
+        [TestMethod]
+        public void IsInst_TypeArray_IsNotACollection()
+        {
+            object value = typeof(int[]);
+
+            Assert.IsFalse(value is IEnumerable<int>);
+        }
+
+        [TestMethod]
+        public void ArrayThroughGenericInterface_ClearThrows()
+        {
+            int[] array = new int[] { 1, 2 };
+            ICollection<int> collection = (ICollection<int>)(object)array;
+
+            Assert.ThrowsException(typeof(NotSupportedException), () => { collection.Clear(); });
+            Assert.AreEqual(1, array[0]);
+            Assert.AreEqual(2, array[1]);
         }
 
         // no usable TypeSpec on the instance
@@ -438,6 +550,18 @@ namespace NFUnitTestSystemLib
         {
         }
 
+        public interface IGaIs<T>
+        {
+        }
+
+        public class GaIsImpl<T> : IGaIs<T>
+        {
+        }
+
+        public class GaIsHolder<T>
+        {
+        }
+
         public class GaImpl<T> : IGa<T>
         {
         }
@@ -468,6 +592,8 @@ namespace NFUnitTestSystemLib
         public static class GaCasts
         {
             public static GaF<T> CastToGaF<T>(object value) => (GaF<T>)value;
+
+            public static bool IsGaIsHolder<T>(object value) => value is GaIsHolder<T>;
 
             public static object CreateIntImpl<T>() => new GaIntImpl();
 
