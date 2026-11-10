@@ -387,13 +387,13 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Invoke_UnresolvedTypeParameter_IsNotSupported()
+        public void Invoke_UnresolvedMethodTypeParameter_IsNotSupported()
         {
             MethodInfo onType = typeof(G<int>).GetMethod("TakesT");
             MethodInfo onMethod = typeof(GenericTargets).GetMethod("TakesMethodT");
 
-            Assert.ThrowsException(typeof(NotSupportedException), () => { onType.Invoke(new G<int>(), new object[] { 5 }); });
-            Assert.ThrowsException(typeof(NotSupportedException), () => { onType.Invoke(new G<int>(), new object[] { null }); });
+            Assert.AreEqual(1, (int)onType.Invoke(new G<int>(), new object[] { 5 }));
+            Assert.ThrowsException(typeof(Exception), () => { onType.Invoke(new G<int>(), new object[] { "x" }); });
             Assert.ThrowsException(typeof(NotSupportedException), () => { onMethod.Invoke(null, new object[] { 5 }); });
             Assert.ThrowsException(typeof(NotSupportedException), () => { onMethod.Invoke(null, new object[] { null }); });
         }
@@ -404,9 +404,7 @@ namespace NFUnitTestSystemLib
             MethodInfo mi = typeof(G<int>).GetMethod("TakesTArray");
 
             Assert.AreEqual(1, (int)mi.Invoke(new G<int>(), new object[] { new int[1] }));
-            // Diverges from standard .NET, which throws here because T is int. The interpreter does not track the
-            // instantiation, so any array is accepted for T[].
-            Assert.AreEqual(1, (int)mi.Invoke(new G<int>(), new object[] { new string[1] }));
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { new string[1] }); });
 
             Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { "x" }); });
             Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { new Foo() }); });
@@ -529,16 +527,16 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void GetParameters_UnresolvedTypeParameter_HasNullType()
+        public void GetParameters_UnresolvedMethodTypeParameter_HasNullType()
         {
-            Assert.IsNull(typeof(G<int>).GetMethod("TakesT").GetParameters()[0].ParameterType);
-            Assert.IsNull(typeof(G<int>).GetMethod("TakesTArray").GetParameters()[0].ParameterType);
+            Assert.IsTrue(typeof(G<int>).GetMethod("TakesT").GetParameters()[0].ParameterType == typeof(int));
+            Assert.IsTrue(typeof(G<int>).GetMethod("TakesTArray").GetParameters()[0].ParameterType == typeof(int[]));
             Assert.IsNull(GenericTargetParameters("TakesMethodT")[0].ParameterType);
 
             ParameterInfo[] parameters = typeof(G<int>).GetMethod("TakesTAndString").GetParameters();
 
             Assert.AreEqual(2, parameters.Length);
-            Assert.IsNull(parameters[0].ParameterType);
+            Assert.IsTrue(parameters[0].ParameterType == typeof(int));
             Assert.AreEqual(typeof(string).FullName, parameters[1].ParameterType.FullName);
         }
 
