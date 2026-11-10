@@ -440,13 +440,11 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void IsInst_ArrayToGenericInterface_IsFalse()
+        public void IsInst_ArrayToGenericInterface_IsTrue()
         {
             object array = new int[1];
 
-            // Diverges from standard .NET, where this is true. The interpreter's isinst stays strict for generic
-            // interfaces on arrays, while castclass accepts them (see CastClass_ArrayToGenericInterface_IsAccepted).
-            Assert.IsFalse(array is IEnumerable<int>);
+            Assert.IsTrue(array is IEnumerable<int>);
         }
 
         [TestMethod]
