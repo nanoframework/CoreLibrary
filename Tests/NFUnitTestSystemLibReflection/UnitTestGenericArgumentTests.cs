@@ -303,6 +303,18 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
+        public void SetValue_InheritedFieldOverBaseArgument_IsNotResolvedAgainstTheDerivedOwner()
+        {
+            GaDerived<string> holder = new GaDerived<string>();
+            FieldInfo field = typeof(GaBase<int>).GetField("Value");
+            GaT<int> value = new GaT<int>();
+
+            field.SetValue(holder, value);
+
+            Assert.IsTrue((object)holder.Value == value);
+        }
+
+        [TestMethod]
         public void SetValue_Null_IsAccepted()
         {
             GaFields holder = new GaFields();
@@ -397,6 +409,19 @@ namespace NFUnitTestSystemLib
         }
 
         public class GaR<T>
+        {
+        }
+
+        public class GaT<T>
+        {
+        }
+
+        public class GaBase<T>
+        {
+            public GaT<T> Value;
+        }
+
+        public class GaDerived<U> : GaBase<int>
         {
         }
 
