@@ -353,12 +353,13 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Invoke_ParameterStillNamingT_IsNotSupported()
+        public void Invoke_ParameterNamingTheOwnerArgument_IsResolvedFromTheClosedType()
         {
             MethodInfo mi = typeof(GaO<int>).GetMethod("TakesSelf");
 
-            Assert.ThrowsException(typeof(NotSupportedException), () => { mi.Invoke(new GaO<int>(), new object[] { new GaO<int>() }); });
-            Assert.ThrowsException(typeof(NotSupportedException), () => { mi.Invoke(new GaO<int>(), new object[] { null }); });
+            Assert.AreEqual(1, (int)mi.Invoke(new GaO<int>(), new object[] { new GaO<int>() }));
+            Assert.AreEqual(1, (int)mi.Invoke(new GaO<int>(), new object[] { null }));
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new GaO<int>(), new object[] { new GaO<string>() }); });
         }
 
         // FieldInfo.SetValue
