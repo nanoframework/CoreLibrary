@@ -311,6 +311,113 @@ namespace NFUnitTestClasses
         {
             Assert.IsNotNull(new IdentityStaticTOuter<short>().ReadMarker());
         }
+
+        [TestMethod]
+        public void RuntimeClosed_NestedTypeArg_RunCctorOnce()
+        {
+            new IdentityRuntimeOuterA<int>().Touch();
+            new IdentityRuntimeOuterA<int>().Touch();
+            new IdentityRuntimeOuterA<string>().Touch();
+
+            Assert.AreEqual(2, IdentityCctorRuns.RuntimeNested);
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_BareTypeArg_RunCctorOnce()
+        {
+            new IdentityRuntimeOuterA<int>().TouchBare();
+            new IdentityRuntimeOuterA<int>().TouchBare();
+            new IdentityRuntimeOuterA<string>().TouchBare();
+
+            Assert.AreEqual(2, IdentityCctorRuns.RuntimeBare);
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_OwnMethods_SeparateState()
+        {
+            IdentityRuntimeOuterB<int> first = new IdentityRuntimeOuterB<int>();
+            IdentityRuntimeOuterB<string> second = new IdentityRuntimeOuterB<string>();
+            object firstValue = new object();
+            object secondValue = new object();
+
+            first.Store(firstValue);
+            second.Store(secondValue);
+
+            Assert.AreSame(firstValue, first.Read());
+            Assert.AreSame(secondValue, second.Read());
+            Assert.AreSame(firstValue, first.ReadNested());
+            Assert.AreSame(secondValue, second.ReadNested());
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_BareTField_IsTyped()
+        {
+            object value = new IdentityRuntimeOuterC<int>().ReadDefault();
+
+            Assert.IsNotNull(value);
+            Assert.IsTrue(value is int);
+            Assert.AreEqual(0, (int)value);
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_BareTField_StoresValue()
+        {
+            Assert.AreEqual(9L, new IdentityRuntimeOuterC<long>().RoundTrip(9L));
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_SwappedPair_BindsOwnArguments()
+        {
+            IdentityRuntimePair<int, string> pair = new IdentityRuntimePair<int, string>();
+
+            Assert.IsTrue(pair.SwappedFirst() is string[]);
+            Assert.IsTrue(pair.SwappedSecond() is int[]);
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_ArrayTypeArg_SeparateState()
+        {
+            IdentityRuntimeArrayOuter<int> first = new IdentityRuntimeArrayOuter<int>();
+            IdentityRuntimeArrayOuter<string> second = new IdentityRuntimeArrayOuter<string>();
+            object firstValue = new object();
+            object secondValue = new object();
+
+            first.Store(firstValue);
+            second.Store(secondValue);
+
+            Assert.AreSame(firstValue, first.Read());
+            Assert.AreSame(secondValue, second.Read());
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_ArrayTypeArg_SharesStorageWithClosedRow()
+        {
+            object value = new object();
+            IdentityRuntimeArrayRowState<long[]>.Value = value;
+
+            Assert.AreSame(value, new IdentityRuntimeArrayOuter<long>().ReadRow());
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_WithClosedRow_IsSameType()
+        {
+            Assert.IsTrue(new IdentityRuntimeOuterD<int>().Make() is IdentityRuntimeBox<int>);
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_AtLimit_CanCreateAndRunCctor()
+        {
+            Assert.IsNotNull(new IdentityRuntimeDeep<int>().Touch());
+            Assert.AreEqual(1, IdentityCctorRuns.RuntimeDeep);
+        }
+
+        [TestMethod]
+        public void RuntimeClosed_OverLimit_CreateThrows()
+        {
+            Assert.ThrowsException(
+                typeof(Exception),
+                () => new IdentityRuntimeOverLimit<IdentityInner<int>>().Touch());
+        }
     }
 
     class IdentityFoo
@@ -392,6 +499,9 @@ namespace NFUnitTestClasses
         public static int Array;
         public static int Deep;
         public static int OverLimit;
+        public static int RuntimeNested;
+        public static int RuntimeBare;
+        public static int RuntimeDeep;
     }
 
     class IdentityCounterI<T>
@@ -641,6 +751,252 @@ namespace NFUnitTestClasses
         public object ReadMarker()
         {
             return IdentityStaticTE<IdentityStampH<T>>.Marker;
+        }
+    }
+
+    class IdentityRuntimeNestedHolder<T>
+    {
+        public static object Items = Make();
+
+        private static object Make()
+        {
+            IdentityCctorRuns.RuntimeNested++;
+
+            return new object();
+        }
+
+        public object Get()
+        {
+            return Items;
+        }
+    }
+
+    class IdentityRuntimeBareHolder<T>
+    {
+        public static object Items = Make();
+
+        private static object Make()
+        {
+            IdentityCctorRuns.RuntimeBare++;
+
+            return new object();
+        }
+
+        public object Get()
+        {
+            return Items;
+        }
+    }
+
+    class IdentityRuntimeOuterA<T>
+    {
+        public object Touch()
+        {
+            return new IdentityRuntimeNestedHolder<IdentityInner<T>>().Get();
+        }
+
+        public object TouchBare()
+        {
+            return new IdentityRuntimeBareHolder<T>().Get();
+        }
+    }
+
+    class IdentityRuntimeState<T>
+    {
+        public static object Value;
+
+        public void Store(object value)
+        {
+            Value = value;
+        }
+
+        public object Read()
+        {
+            return Value;
+        }
+    }
+
+    class IdentityRuntimeNestedState<T>
+    {
+        public static object Value;
+
+        public void Store(object value)
+        {
+            Value = value;
+        }
+
+        public object Read()
+        {
+            return Value;
+        }
+    }
+
+    class IdentityRuntimeOuterB<T>
+    {
+        public void Store(object value)
+        {
+            new IdentityRuntimeState<T>().Store(value);
+            new IdentityRuntimeNestedState<IdentityInner<T>>().Store(value);
+        }
+
+        public object Read()
+        {
+            return new IdentityRuntimeState<T>().Read();
+        }
+
+        public object ReadNested()
+        {
+            return new IdentityRuntimeNestedState<IdentityInner<T>>().Read();
+        }
+    }
+
+    class IdentityRuntimeField<T>
+    {
+        public T Value;
+
+        public object Boxed()
+        {
+            return Value;
+        }
+
+        public T Get()
+        {
+            return Value;
+        }
+    }
+
+    class IdentityRuntimeOuterC<T>
+    {
+        public object ReadDefault()
+        {
+            return new IdentityRuntimeField<T>().Boxed();
+        }
+
+        public T RoundTrip(T value)
+        {
+            IdentityRuntimeField<T> field = new IdentityRuntimeField<T>();
+            field.Value = value;
+
+            return field.Get();
+        }
+    }
+
+    class IdentityRuntimePair<T1, T2>
+    {
+        public object NewFirstArray()
+        {
+            return new T1[1];
+        }
+
+        public object NewSecondArray()
+        {
+            return new T2[1];
+        }
+
+        public object SwappedFirst()
+        {
+            return new IdentityRuntimePair<T2, T1>().NewFirstArray();
+        }
+
+        public object SwappedSecond()
+        {
+            return new IdentityRuntimePair<T2, T1>().NewSecondArray();
+        }
+    }
+
+    class IdentityRuntimeArrayState<T>
+    {
+        public static object Value;
+
+        public void Store(object value)
+        {
+            Value = value;
+        }
+
+        public object Read()
+        {
+            return Value;
+        }
+    }
+
+    class IdentityRuntimeArrayRowState<T>
+    {
+        public static object Value;
+
+        public object Read()
+        {
+            return Value;
+        }
+    }
+
+    class IdentityRuntimeArrayOuter<T>
+    {
+        public void Store(object value)
+        {
+            new IdentityRuntimeArrayState<T[]>().Store(value);
+        }
+
+        public object Read()
+        {
+            return new IdentityRuntimeArrayState<T[]>().Read();
+        }
+
+        public object ReadRow()
+        {
+            return new IdentityRuntimeArrayRowState<T[]>().Read();
+        }
+    }
+
+    class IdentityRuntimeBox<T>
+    {
+    }
+
+    class IdentityRuntimeOuterD<T>
+    {
+        public object Make()
+        {
+            return new IdentityRuntimeBox<T>();
+        }
+    }
+
+    class IdentityRuntimeDeepHolder<T>
+    {
+        public static object Items = Make();
+
+        private static object Make()
+        {
+            IdentityCctorRuns.RuntimeDeep++;
+
+            return new object();
+        }
+
+        public object Get()
+        {
+            return Items;
+        }
+    }
+
+    class IdentityRuntimeDeep<T>
+    {
+        public object Touch()
+        {
+            return new IdentityRuntimeDeepHolder<IdentityInner<IdentityInner<IdentityInner<T>>>>().Get();
+        }
+    }
+
+    class IdentityRuntimeOverLimitHolder<T>
+    {
+        public object Get()
+        {
+            return this;
+        }
+    }
+
+    class IdentityRuntimeOverLimit<T>
+    {
+        public object Touch()
+        {
+            return new IdentityRuntimeOverLimitHolder<IdentityInner<IdentityInner<IdentityInner<T>>>>().Get();
         }
     }
 
