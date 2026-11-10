@@ -387,7 +387,7 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Invoke_UnresolvedMethodTypeParameter_IsNotSupported()
+        public void Invoke_TypeParameterOnClosedType_IsResolved_MethodTypeParameter_IsNotSupported()
         {
             MethodInfo onType = typeof(G<int>).GetMethod("TakesT");
             MethodInfo onMethod = typeof(GenericTargets).GetMethod("TakesMethodT");
@@ -527,7 +527,7 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void GetParameters_UnresolvedMethodTypeParameter_HasNullType()
+        public void GetParameters_TypeParameterOnClosedType_IsResolved_MethodTypeParameter_IsNull()
         {
             Assert.IsTrue(typeof(G<int>).GetMethod("TakesT").GetParameters()[0].ParameterType == typeof(int));
             Assert.IsTrue(typeof(G<int>).GetMethod("TakesTArray").GetParameters()[0].ParameterType == typeof(int[]));
