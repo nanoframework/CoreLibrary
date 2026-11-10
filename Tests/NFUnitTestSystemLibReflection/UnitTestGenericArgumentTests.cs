@@ -159,6 +159,24 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
+        public void IsInstanceOfType_ComparesGenericArgument()
+        {
+            Assert.IsTrue(typeof(GaIsHolder<int>).IsInstanceOfType(new GaIsHolder<int>()));
+            Assert.IsFalse(typeof(GaIsHolder<string>).IsInstanceOfType(new GaIsHolder<int>()));
+            Assert.IsTrue(typeof(IGaIs<int>).IsInstanceOfType(new GaIsImpl<int>()));
+            Assert.IsFalse(typeof(IGaIs<string>).IsInstanceOfType(new GaIsImpl<int>()));
+        }
+
+        [TestMethod]
+        public void IsInstanceOfType_Array_ComparesElementType()
+        {
+            Assert.IsTrue(typeof(IEnumerable<int>).IsInstanceOfType(new int[1]));
+            Assert.IsFalse(typeof(IEnumerable<string>).IsInstanceOfType(new int[1]));
+            Assert.IsFalse(typeof(IEnumerable<object>).IsInstanceOfType(new int[1]));
+            Assert.IsTrue(typeof(IEnumerable<object>).IsInstanceOfType(new string[1]));
+        }
+
+        [TestMethod]
         public void IsInst_Null_IsFalse()
         {
             object value = null;
