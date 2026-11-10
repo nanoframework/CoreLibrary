@@ -399,6 +399,14 @@ namespace NFUnitTestClasses
         }
 
         [TestMethod]
+        public void RuntimeClosed_ValueTypeArg_StampsItsOwnFields()
+        {
+            object boxed = new IdentityRuntimeValueOuter<int>().ReadBoxed();
+
+            Assert.IsTrue(((IIdentityRuntimeInner)boxed).Inner() is int);
+        }
+
+        [TestMethod]
         public void RuntimeClosed_WithClosedRow_IsSameType()
         {
             Assert.IsTrue(new IdentityRuntimeOuterD<int>().Make() is IdentityRuntimeBox<int>);
@@ -944,6 +952,39 @@ namespace NFUnitTestClasses
         public object ReadRow()
         {
             return new IdentityRuntimeArrayRowState<T[]>().Read();
+        }
+    }
+
+    interface IIdentityRuntimeInner
+    {
+        object Inner();
+    }
+
+    struct IdentityRuntimeStruct<T> : IIdentityRuntimeInner
+    {
+        public T Value;
+
+        public object Inner()
+        {
+            return Value;
+        }
+    }
+
+    class IdentityRuntimeValueHolder<T>
+    {
+        public T Value;
+
+        public object Boxed()
+        {
+            return Value;
+        }
+    }
+
+    class IdentityRuntimeValueOuter<T>
+    {
+        public object ReadBoxed()
+        {
+            return new IdentityRuntimeValueHolder<IdentityRuntimeStruct<T>>().Boxed();
         }
     }
 
