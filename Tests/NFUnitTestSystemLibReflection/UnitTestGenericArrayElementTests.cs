@@ -108,6 +108,54 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
+        public void ArrayCopy_JaggedArrays_ComparesTheElementArguments()
+        {
+            ElemJaggedCopyBox<int>[][] source = new ElemJaggedCopyBox<int>[][] { new ElemJaggedCopyBox<int>[1] };
+            ElemJaggedCopyBox<int>[][] same = new ElemJaggedCopyBox<int>[1][];
+            ElemJaggedCopyBox<string>[][] other = new ElemJaggedCopyBox<string>[1][];
+
+            Array.Copy(source, same, 1);
+
+            Assert.IsNotNull(same[0]);
+            Assert.ThrowsException(typeof(InvalidCastException), () => Array.Copy(source, other, 1));
+        }
+
+        [TestMethod]
+        public void StoreThroughObjectArray_JaggedArrays_RejectsAnotherInstantiation()
+        {
+            object[] jagged = new ElemJaggedStoreBox<string>[1][];
+
+            jagged[0] = new ElemJaggedStoreBox<string>[1];
+
+            Assert.ThrowsException(typeof(Exception), () => { jagged[0] = new ElemJaggedStoreBox<int>[1]; });
+        }
+
+        [TestMethod]
+        public void Covariance_GenericBaseClassOfTheElement_IsAccepted()
+        {
+            object value = new ElemDerivedBox<int>[1];
+
+            Assert.IsNotNull((ElemBaseBox<int>[])value);
+            Assert.IsTrue(value is ElemBaseBox<int>[]);
+            Assert.IsTrue(typeof(ElemBaseBox<int>[]).IsInstanceOfType(value));
+            Assert.IsFalse(value is ElemBaseBox<string>[]);
+            Assert.IsFalse(typeof(ElemBaseBox<string>[]).IsInstanceOfType(value));
+            Assert.ThrowsException(typeof(InvalidCastException), () => { _ = (ElemBaseBox<string>[])value; });
+        }
+
+        [TestMethod]
+        public void NewArrayInGenericMethod_UsesTheMethodArgument()
+        {
+            object forInt = ElemMethodHolder.Make<ElemMethodBox<int>>();
+            object forString = ElemMethodHolder.Make<ElemMethodBox<string>>();
+
+            Assert.IsTrue(forInt is ElemMethodBox<int>[]);
+            Assert.IsFalse(forInt is ElemMethodBox<string>[]);
+            Assert.IsTrue(forString is ElemMethodBox<string>[]);
+            Assert.IsFalse(forString is ElemMethodBox<int>[]);
+        }
+
+        [TestMethod]
         public void ArrayCopy_ComparesTheElementArguments()
         {
             ElemCopyBox<int>[] source = new ElemCopyBox<int>[] { new ElemCopyBox<int>(), new ElemCopyBox<int>() };
@@ -271,6 +319,24 @@ namespace NFUnitTestSystemLib
                 }
 
                 _items[Count++] = value;
+            }
+        }
+
+        private class ElemJaggedCopyBox<T> { public T Value; }
+
+        private class ElemJaggedStoreBox<T> { public T Value; }
+
+        private class ElemBaseBox<T> { public T Value; }
+
+        private class ElemDerivedBox<T> : ElemBaseBox<T> { }
+
+        private class ElemMethodBox<T> { public T Value; }
+
+        private static class ElemMethodHolder
+        {
+            public static object Make<T>()
+            {
+                return new T[1];
             }
         }
 

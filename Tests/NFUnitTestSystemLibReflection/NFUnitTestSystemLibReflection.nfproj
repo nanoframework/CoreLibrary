@@ -35,6 +35,7 @@
     <Compile Include="UnitTestReflectionAssemblyTest.cs" />
     <Compile Include="UnitTestReflectionMemberTest.cs" />
     <Compile Include="UnitTestReflectionTypeTest.cs" />
+    <Compile Include="UnitTestSZArrayHelperTests.cs" />
     <Compile Include="UnitTestTypeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
