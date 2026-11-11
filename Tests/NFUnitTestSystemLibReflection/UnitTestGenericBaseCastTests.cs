@@ -71,6 +71,17 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
+        public void CastClass_InterfaceOfAGenericParent_ComparesTheParentArguments()
+        {
+            object value = new ParentInterfaceDerived();
+
+            Assert.IsNotNull((IParentInterface<int>)value);
+            Assert.IsTrue(value is IParentInterface<int>);
+            Assert.IsFalse(value is IParentInterface<string>);
+            Assert.ThrowsException(typeof(InvalidCastException), () => { _ = (IParentInterface<string>)value; });
+        }
+
+        [TestMethod]
         public void Invoke_ArgumentDerivedFromClosedBase_IsChecked()
         {
             MethodInfo mi = typeof(InvokeTarget).GetMethod("Take");
@@ -143,6 +154,18 @@ namespace NFUnitTestSystemLib
         }
 
         public class PlainDerived : PlainBase
+        {
+        }
+
+        public interface IParentInterface<T>
+        {
+        }
+
+        public class ParentInterfaceBase<T> : IParentInterface<T>
+        {
+        }
+
+        public class ParentInterfaceDerived : ParentInterfaceBase<int>
         {
         }
 

@@ -209,6 +209,122 @@ namespace NFUnitTestSystemLib
             Assert.ThrowsException(typeof(Exception), () => { echo.Invoke(target, new object[] { "x" }); });
         }
 
+        [TestMethod]
+        public void InheritedFromClosedBase_DateTimeAndTimeSpanFields_AreSet()
+        {
+            DateTimeDerived dateTimeTarget = new DateTimeDerived();
+            TimeSpanDerived timeSpanTarget = new TimeSpanDerived();
+            DateTime moment = new DateTime(2026, 11, 11, 10, 30, 0);
+            TimeSpan span = new TimeSpan(1, 2, 3);
+
+            typeof(DateTimeDerived).GetField("Value").SetValue(dateTimeTarget, moment);
+            typeof(TimeSpanDerived).GetField("Value").SetValue(timeSpanTarget, span);
+
+            Assert.IsTrue(dateTimeTarget.Value == moment);
+            Assert.IsTrue(timeSpanTarget.Value == span);
+
+            Assert.ThrowsException(typeof(Exception), () => { typeof(DateTimeDerived).GetField("Value").SetValue(dateTimeTarget, 5); });
+        }
+
+        [TestMethod]
+        public void InheritedFromClosedBase_StructField_IsSetWithACopy()
+        {
+            StructFieldDerived target = new StructFieldDerived();
+            SamplePoint point = new SamplePoint { X = 3 };
+            FieldInfo field = typeof(StructFieldDerived).GetField("Value");
+
+            field.SetValue(target, point);
+            point.X = 9;
+
+            Assert.AreEqual(3, target.Value.X);
+
+            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(target, 5); });
+        }
+
+        [TestMethod]
+        public void GetConstructor_WithTypeParameter_MatchesTheClosedType()
+        {
+            ConstructorInfo found = typeof(LookupTarget<string>).GetConstructor(new Type[] { typeof(string) });
+
+            Assert.IsNotNull(found);
+            Assert.AreEqual("x", ((LookupTarget<string>)found.Invoke(new object[] { "x" })).Value);
+
+            Assert.IsNull(typeof(LookupTarget<string>).GetConstructor(new Type[] { typeof(int) }));
+            Assert.IsNotNull(typeof(LookupTarget<int>).GetConstructor(new Type[] { typeof(int) }));
+        }
+
+        [TestMethod]
+        public void GetMethod_InheritedWithTypeParameter_MatchesTheClosedType()
+        {
+            Assert.IsNotNull(typeof(LookupDerived).GetMethod("Take", new Type[] { typeof(int) }));
+            Assert.IsNull(typeof(LookupDerived).GetMethod("Take", new Type[] { typeof(string) }));
+            Assert.AreEqual(1, (int)typeof(LookupDerived).GetMethod("Take", new Type[] { typeof(int) }).Invoke(new LookupDerived(), new object[] { 5 }));
+        }
+
+        [TestMethod]
+        public void GetMethod_DerivedHidingTheInheritedOne_IsNotAmbiguous()
+        {
+            MethodInfo found = typeof(HidingDerived).GetMethod("Take");
+
+            Assert.AreEqual(2, (int)found.Invoke(new HidingDerived(), new object[] { 1 }));
+        }
+
+        public class DateTimeBase<T>
+        {
+            public T Value;
+        }
+
+        public class DateTimeDerived : DateTimeBase<DateTime>
+        {
+        }
+
+        public class TimeSpanBase<T>
+        {
+            public T Value;
+        }
+
+        public class TimeSpanDerived : TimeSpanBase<TimeSpan>
+        {
+        }
+
+        public class StructFieldBase<T>
+        {
+            public T Value;
+        }
+
+        public class StructFieldDerived : StructFieldBase<SamplePoint>
+        {
+        }
+
+        public class LookupTarget<T>
+        {
+            public T Value;
+
+            public LookupTarget(T value)
+            {
+                Value = value;
+            }
+        }
+
+        public class LookupBase<T>
+        {
+            public int Take(T value) => 1;
+        }
+
+        public class LookupDerived : LookupBase<int>
+        {
+        }
+
+        public class HidingBase<T>
+        {
+            public int Take(T value) => 1;
+        }
+
+        public class HidingDerived : HidingBase<int>
+        {
+            public new int Take(int value) => 2;
+        }
+
         public class RefParameterTarget<T>
         {
             public int Take(T value) => 1;
