@@ -26,6 +26,7 @@
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
     <Compile Include="UnitTestGenericArgumentTests.cs" />
+    <Compile Include="UnitTestGenericArrayElementTests.cs" />
     <Compile Include="UnitTestGenericBaseCastTests.cs" />
     <Compile Include="UnitTestGenericInvokeTests.cs" />
     <Compile Include="UnitTestGenericReflectionTests.cs" />
@@ -34,6 +35,7 @@
     <Compile Include="UnitTestReflectionAssemblyTest.cs" />
     <Compile Include="UnitTestReflectionMemberTest.cs" />
     <Compile Include="UnitTestReflectionTypeTest.cs" />
+    <Compile Include="UnitTestSZArrayHelperTests.cs" />
     <Compile Include="UnitTestTypeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
