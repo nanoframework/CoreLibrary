@@ -135,6 +135,17 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual("System.Int32", name);
         }
 
+        [TestMethod]
+        public void GenericVirtualMethod_CalledThroughBase_BindsTheArgument()
+        {
+            CallContextArrayMaker maker = new CallContextArrayMakerOverride();
+
+            object value = maker.Make<int>();
+
+            Assert.IsTrue(value is int[]);
+            Assert.IsFalse(value is string[]);
+        }
+
         // boxed struct of a generic instance
         [TestMethod]
         public void BoxedGenericStruct_VirtualCall_UsesT()
@@ -156,6 +167,10 @@ namespace NFUnitTestSystemLib
         public void BoxedGenericStruct_ConstrainedCall_UsesT()
         {
             Assert.AreEqual("System.Int32", CallContextFactory.DescribeConstrained(new CallContextStruct<int>()));
+
+            CallContextDescribe boxed = new CallContextStruct<int>();
+
+            Assert.AreEqual("System.Int32", CallContextFactory.DescribeConstrained(boxed));
         }
 
         [TestMethod]
@@ -180,6 +195,16 @@ namespace NFUnitTestSystemLib
     public interface CallContextDescribe
     {
         string Describe();
+    }
+
+    public abstract class CallContextArrayMaker
+    {
+        public abstract object Make<T>();
+    }
+
+    public class CallContextArrayMakerOverride : CallContextArrayMaker
+    {
+        public override object Make<T>() { return new T[1]; }
     }
 
     public class CallContextBox<T> { }
