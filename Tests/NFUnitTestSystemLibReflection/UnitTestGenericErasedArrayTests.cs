@@ -137,6 +137,15 @@ namespace NFUnitTestSystemLib
             Assert.IsFalse(value is string[][]);
         }
 
+        [TestMethod]
+        public void NewTJagged_GenericMethodArgumentOverClassParameter()
+        {
+            object value = new P2dHolder<int>().Make();
+
+            Assert.IsTrue(value.GetType() == typeof(P2dBox<int>[][]));
+            Assert.IsFalse(value is P2dBox<string>[][]);
+        }
+
         // new T[1] and closed rows in generic code
         [TestMethod]
         public void NewTArray_GenericClass_ArgumentGenericInstance()
@@ -304,6 +313,10 @@ namespace NFUnitTestSystemLib
     public class P2bBox<T> { }
     public class P2bHolder<T> { public object Make() { return new T[1][]; } }
     public class P2cHolder<T> { public object Make() { return new T[1][]; } }
+
+    public class P2dBox<T> { }
+    public static class P2dFactory { public static object Make<T>() { return new T[1][]; } }
+    public class P2dHolder<T> { public object Make() { return P2dFactory.Make<P2dBox<T>>(); } }
 
     public class P3aBox<T> { }
     public class P3aHolder<T> { public object Make() { return new T[1]; } }
