@@ -31,6 +31,7 @@
     <Compile Include="UnitTestGenericCastBindingTests.cs" />
     <Compile Include="UnitTestGenericErasedArrayTests.cs" />
     <Compile Include="UnitTestGenericInvokeTests.cs" />
+    <Compile Include="UnitTestGenericCallContextTests.cs" />
     <Compile Include="UnitTestGenericReflectionTests.cs" />
     <Compile Include="UnitTestNullable.cs" />
     <Compile Include="UnitTestReflectionInvokeTests.cs" />
