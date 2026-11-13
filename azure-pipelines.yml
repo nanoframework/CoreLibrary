@@ -52,7 +52,7 @@ jobs:
     )
 
   pool:
-    vmImage: 'windows-2025-vs2026'
+    vmImage: 'windows-latest'
 
   variables:
     - group: sign-client-credentials
