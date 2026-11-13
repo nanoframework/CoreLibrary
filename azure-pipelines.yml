@@ -157,7 +157,7 @@ jobs:
       gitHubConnection: 'github.com_nano-$(System.TeamProject)'
       tagSource: userSpecifiedTag
       tag: v$(MY_NUGET_VERSION)
-      title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
+      title: 'v$(MY_NUGET_VERSION)'
       assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
       assetUploadMode: replace
       isPreRelease: $[eq(variables['Build.SourceBranchName'], 'develop')]
