@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 using nanoFramework.TestFramework;
 
@@ -109,12 +110,15 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Invoke_RefParameters_AreAccepted()
+        public void Invoke_RefParameters_AreNotSupported()
         {
-            AssertInvokeAccepted("TakesRefFoo", new Foo());
-            AssertInvokeAccepted("TakesRefInt", 1);
+            MethodInfo refFoo = Target("TakesRefFoo");
+            MethodInfo refInt = Target("TakesRefInt");
 
-            AssertInvokeRejected("TakesRefFoo", "not a Foo");
+            Assert.ThrowsException(typeof(NotSupportedException), () => { refFoo.Invoke(null, new object[] { new Foo() }); });
+            Assert.ThrowsException(typeof(NotSupportedException), () => { refFoo.Invoke(null, new object[] { "not a Foo" }); });
+            Assert.ThrowsException(typeof(NotSupportedException), () => { refFoo.Invoke(null, new object[] { null }); });
+            Assert.ThrowsException(typeof(NotSupportedException), () => { refInt.Invoke(null, new object[] { 1 }); });
         }
 
         [TestMethod]
@@ -304,6 +308,250 @@ namespace NFUnitTestSystemLib
             Assert.ThrowsException(typeof(InvalidCastException), () => { Array.Copy(source, destination, 3); });
         }
 
+        [TestMethod]
+        public void Invoke_GenericParameter_ValidatesFollowingParameters()
+        {
+            MethodInfo mi = typeof(GenericTargets).GetMethod("TakesGAndString");
+
+            Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new G<int>(), "x" }));
+            Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { null, "x" }));
+
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new G<int>(), new Foo() }); });
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new G<int>(), new int[1] }); });
+        }
+
+        [TestMethod]
+        public void Invoke_GenericReturnType_KeepsParametersAligned()
+        {
+            MethodInfo mi = typeof(GenericTargets).GetMethod("ReturnsG");
+
+            Assert.IsNotNull(mi.Invoke(null, new object[] { "x" }));
+
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new Foo() }); });
+        }
+
+        [TestMethod]
+        public void Invoke_NestedGenericParameter_ValidatesFollowingParameters()
+        {
+            MethodInfo mi = typeof(GenericTargets).GetMethod("TakesGOfGAndString");
+
+            Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new G<G<int>>(), "x" }));
+
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new G<G<int>>(), new Foo() }); });
+        }
+
+        [TestMethod]
+        public void Invoke_GenericParameter_RejectsUnrelatedArguments()
+        {
+            MethodInfo mi = typeof(GenericTargets).GetMethod("TakesG");
+
+            Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new G<int>() }));
+            Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { null }));
+
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { "x" }); });
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new Foo() }); });
+        }
+
+        [TestMethod]
+        public void Invoke_GenericArrayParameter_ChecksArrayType()
+        {
+            MethodInfo mi = typeof(GenericTargets).GetMethod("TakesGArray");
+
+            Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new G<int>[1] }));
+            Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { null }));
+
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new int[1] }); });
+        }
+
+        [TestMethod]
+        public void FieldSetValue_GenericArrayField_ChecksArrayType()
+        {
+            GenericFieldHolder holder = new GenericFieldHolder();
+            FieldInfo field = typeof(GenericFieldHolder).GetField("Gs");
+
+            AssertSetValueRejected(field, holder, new int[1]);
+            Assert.IsNull(holder.Gs);
+
+            G<int>[] compatible = new G<int>[1];
+            field.SetValue(holder, compatible);
+            Assert.IsTrue((object)holder.Gs == compatible);
+        }
+
+        [TestMethod]
+        public void CastClass_GenericArray_IsAccepted()
+        {
+            object array = new G<int>[1];
+
+            Assert.IsNotNull((G<int>[])array);
+            Assert.IsTrue(array is G<int>[]);
+        }
+
+        [TestMethod]
+        public void Invoke_TypeParameterOnClosedType_IsResolved_MethodTypeParameter_IsNotSupported()
+        {
+            MethodInfo onType = typeof(G<int>).GetMethod("TakesT");
+            MethodInfo onMethod = typeof(GenericTargets).GetMethod("TakesMethodT");
+
+            Assert.AreEqual(1, (int)onType.Invoke(new G<int>(), new object[] { 5 }));
+            Assert.ThrowsException(typeof(Exception), () => { onType.Invoke(new G<int>(), new object[] { "x" }); });
+            Assert.ThrowsException(typeof(NotSupportedException), () => { onMethod.Invoke(null, new object[] { 5 }); });
+            Assert.ThrowsException(typeof(NotSupportedException), () => { onMethod.Invoke(null, new object[] { null }); });
+        }
+
+        [TestMethod]
+        public void Invoke_UnresolvedTypeParameterArray_RequiresArray()
+        {
+            MethodInfo mi = typeof(G<int>).GetMethod("TakesTArray");
+
+            Assert.AreEqual(1, (int)mi.Invoke(new G<int>(), new object[] { new int[1] }));
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { new string[1] }); });
+
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { "x" }); });
+            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { new Foo() }); });
+        }
+
+        [TestMethod]
+        public void Invoke_Receiver_OnGenericType_IsChecked()
+        {
+            MethodInfo instance = typeof(G<int>).GetMethod("Instance");
+
+            Assert.ThrowsException(typeof(InvalidCastException), () => { instance.Invoke("not a G", new object[0]); });
+            Assert.ThrowsException(typeof(InvalidCastException), () => { instance.Invoke(new Foo(), new object[0]); });
+
+            Assert.AreEqual(1, (int)instance.Invoke(new G<int>(), new object[0]));
+        }
+
+        [TestMethod]
+        public void CastClass_ArrayToGenericInterface_IsAccepted()
+        {
+            object array = new int[1];
+
+            Assert.IsNotNull((IEnumerable<int>)array);
+        }
+
+        [TestMethod]
+        public void CastClass_ArrayToUnrelatedGenericInterface_IsRejected()
+        {
+            object array = new int[1];
+
+            Assert.ThrowsException(typeof(InvalidCastException), () => { _ = (IComparer<int>)array; });
+        }
+
+        [TestMethod]
+        public void IsInst_ArrayToGenericInterface_IsTrue()
+        {
+            object array = new int[1];
+
+            Assert.IsTrue(array is IEnumerable<int>);
+        }
+
+        [TestMethod]
+        public void StoreElement_ArrayIntoGenericInterfaceArray_IsAccepted()
+        {
+            IEnumerable<int>[] target = new IEnumerable<int>[1];
+            int[] value = new int[1];
+
+            target[0] = value;
+
+            Assert.IsTrue((object)target[0] == value);
+        }
+
+        [TestMethod]
+        public void ArrayCopy_ArraysIntoGenericInterfaceArray_IsAccepted()
+        {
+            object[] source = new object[] { new int[1], new int[2] };
+            IEnumerable<int>[] destination = new IEnumerable<int>[2];
+
+            Array.Copy(source, destination, 2);
+
+            Assert.IsNotNull(destination[0]);
+            Assert.IsNotNull(destination[1]);
+        }
+
+        [TestMethod]
+        public void Reflection_GenericInterfaceTarget_AcceptsArray()
+        {
+            GenericFieldHolder holder = new GenericFieldHolder();
+            FieldInfo field = typeof(GenericFieldHolder).GetField("Items");
+            int[] value = new int[1];
+
+            field.SetValue(holder, value);
+            Assert.IsTrue((object)holder.Items == value);
+
+            MethodInfo mi = typeof(GenericTargets).GetMethod("TakesIEnumerableOfInt");
+            Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new int[1] }));
+        }
+
+        private static ParameterInfo[] GenericTargetParameters(string name)
+        {
+            return typeof(GenericTargets).GetMethod(name).GetParameters();
+        }
+
+        [TestMethod]
+        public void GetParameters_GenericParameter_CountsOneEntry()
+        {
+            ParameterInfo[] parameters = GenericTargetParameters("TakesGAndString");
+
+            Assert.AreEqual(2, parameters.Length);
+            Assert.AreEqual(typeof(G<int>).Name, parameters[0].ParameterType.Name);
+            Assert.AreEqual(typeof(string).FullName, parameters[1].ParameterType.FullName);
+        }
+
+        [TestMethod]
+        public void GetParameters_GenericReturnType_IsNotCounted()
+        {
+            ParameterInfo[] parameters = GenericTargetParameters("ReturnsG");
+
+            Assert.AreEqual(1, parameters.Length);
+            Assert.AreEqual(typeof(string).FullName, parameters[0].ParameterType.FullName);
+        }
+
+        [TestMethod]
+        public void GetParameters_NestedGenericParameter_CountsOneEntry()
+        {
+            ParameterInfo[] parameters = GenericTargetParameters("TakesGOfGAndString");
+
+            Assert.AreEqual(2, parameters.Length);
+            Assert.AreEqual(typeof(G<int>).Name, parameters[0].ParameterType.Name);
+            Assert.AreEqual(typeof(string).FullName, parameters[1].ParameterType.FullName);
+        }
+
+        [TestMethod]
+        public void GetParameters_GenericArrayParameter_IsArray()
+        {
+            ParameterInfo[] parameters = GenericTargetParameters("TakesGArray");
+
+            Assert.AreEqual(1, parameters.Length);
+            Assert.IsTrue(parameters[0].ParameterType.IsArray);
+            Assert.AreEqual(typeof(G<int>).Name, parameters[0].ParameterType.GetElementType().Name);
+        }
+
+        [TestMethod]
+        public void GetParameters_TypeParameterOnClosedType_IsResolved_MethodTypeParameter_IsNull()
+        {
+            Assert.IsTrue(typeof(G<int>).GetMethod("TakesT").GetParameters()[0].ParameterType == typeof(int));
+            Assert.IsTrue(typeof(G<int>).GetMethod("TakesTArray").GetParameters()[0].ParameterType == typeof(int[]));
+            Assert.IsNull(GenericTargetParameters("TakesMethodT")[0].ParameterType);
+
+            ParameterInfo[] parameters = typeof(G<int>).GetMethod("TakesTAndString").GetParameters();
+
+            Assert.AreEqual(2, parameters.Length);
+            Assert.IsTrue(parameters[0].ParameterType == typeof(int));
+            Assert.AreEqual(typeof(string).FullName, parameters[1].ParameterType.FullName);
+        }
+
+        [TestMethod]
+        public void GetParameters_NonGenericSignature_IsUnchanged()
+        {
+            ParameterInfo[] parameters = Target("TakesFooArray").GetParameters();
+
+            Assert.AreEqual(1, parameters.Length);
+            Assert.IsTrue(parameters[0].ParameterType.IsArray);
+            Assert.AreEqual(typeof(Foo).FullName, parameters[0].ParameterType.GetElementType().FullName);
+
+            Assert.AreEqual(typeof(Foo).FullName, Target("TakesRefFoo").GetParameters()[0].ParameterType.FullName);
+        }
+
         public interface IBase
         {
             int OnBase();
@@ -372,6 +620,43 @@ namespace NFUnitTestSystemLib
             public CtorTarget(Foo[] values)
             {
             }
+        }
+
+        public class G<T>
+        {
+            public int Instance()
+            {
+                return 1;
+            }
+
+            public int TakesT(T value) => 1;
+
+            public int TakesTArray(T[] value) => 1;
+
+            public int TakesTAndString(T value, string text) => 1;
+        }
+
+        public class GenericFieldHolder
+        {
+            public G<int>[] Gs;
+            public IEnumerable<int> Items;
+        }
+
+        public static class GenericTargets
+        {
+            public static int TakesG(G<int> value) => 1;
+
+            public static int TakesGAndString(G<int> value, string text) => 1;
+
+            public static int TakesGOfGAndString(G<G<int>> value, string text) => 1;
+
+            public static G<int> ReturnsG(string text) => new G<int>();
+
+            public static int TakesGArray(G<int>[] value) => 1;
+
+            public static int TakesMethodT<T>(T value) => 1;
+
+            public static int TakesIEnumerableOfInt(IEnumerable<int> value) => 1;
         }
 
         public static class InvokeTargets

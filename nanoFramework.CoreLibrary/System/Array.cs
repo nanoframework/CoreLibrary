@@ -1,8 +1,12 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections;
 using System.Runtime.CompilerServices;
+#if NANOCLR_REFLECTION
+using System.Collections.Generic;
+using System.Diagnostics;
+#endif // NANOCLR_REFLECTION
 
 namespace System
 {
@@ -343,6 +347,25 @@ namespace System
             return -1;
         }
 
+#if NANOCLR_REFLECTION
+        /// <summary>
+        /// Creates and returns an empty array of the specified type.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T[] Empty<T>()
+        {
+            return EmptyArray<T>.Value;
+        }
+
+        private static class EmptyArray<T>
+        {
+#pragma warning disable CA1825, IDE0300 // this is the implementation of Array.Empty<T>()
+            internal static readonly T[] Value = new T[0];
+#pragma warning restore CA1825, IDE0300
+        }
+#endif
+
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern bool TrySzIndexOf(Array sourceArray, int sourceIndex, int count, Object value, out int retVal);
 
@@ -410,5 +433,153 @@ namespace System
                 _index = _startIndex - 1;
             }
         }
+
+#if NANOCLR_REFLECTION
+#pragma warning disable CA1822 // Mark members as static
+        //----------------------------------------------------------------------------------------
+        // ! READ THIS BEFORE YOU WORK ON THIS CLASS.
+        //
+        // The methods on this class must be written VERY carefully to avoid introducing security holes.
+        // That's because they are invoked with special "this"! The "this" object
+        // for all of these methods are not SZArrayHelper objects. Rather, they are of type U[]
+        // where U[] is castable to T[]. No actual SZArrayHelper object is ever instantiated. Thus, you will
+        // see a lot of expressions that cast "this" "T[]".
+        //
+        // This class is needed to allow an SZ array of type T[] to expose IList<T>,
+        // IList<T.BaseType>, etc., etc. all the way up to IList<Object>. When the following call is
+        // made:
+        //
+        //   ((IList<T>) (new U[n])).SomeIListMethod()
+        //
+        // the interface stub dispatcher treats this as a special case, loads up SZArrayHelper,
+        // finds the corresponding generic method (matched simply by method name), instantiates
+        // it for type <T> and executes it.
+        //
+        // The "T" will reflect the interface used to invoke the method. The actual runtime "this" will be
+        // array that is castable to "T[]" (i.e. for primitives and valuetypes, it will be exactly
+        // "T[]" - for orefs, it may be a "U[]" where U derives from T.)
+        //----------------------------------------------------------------------------------------
+        internal sealed class SZArrayHelper
+        {
+            // It is never legal to instantiate this class.
+            private SZArrayHelper()
+            {
+                Debug.Assert(false, "Hey! How'd I get here?");
+            }
+
+            internal IEnumerator<T> GetEnumerator<T>()
+            {
+                // ! Warning: "this" is an array, not an SZArrayHelper. See comments above
+                // ! or you may introduce a security hole!
+                T[] @this = Unsafe.As<T[]>(this);
+                int length = @this.Length;
+                return length == 0 ? SZGenericArrayEnumerator<T>.Empty : new SZGenericArrayEnumerator<T>(@this, length);
+            }
+
+            private void CopyTo<T>(T[] array, int index)
+            {
+                // ! Warning: "this" is an array, not an SZArrayHelper. See comments above
+                // ! or you may introduce a security hole!
+
+                T[] @this = Unsafe.As<T[]>(this);
+                Array.Copy(@this, 0, array, index, @this.Length);
+            }
+
+            internal int get_Count<T>()
+            {
+                // ! Warning: "this" is an array, not an SZArrayHelper. See comments above
+                // ! or you may introduce a security hole!
+                T[] @this = Unsafe.As<T[]>(this);
+                return @this.Length;
+            }
+
+            internal T get_Item<T>(int index)
+            {
+                // ! Warning: "this" is an array, not an SZArrayHelper. See comments above
+                // ! or you may introduce a security hole!
+
+                T[] @this = Unsafe.As<T[]>(this);
+                if ((uint)index >= (uint)@this.Length)
+                {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                    throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                }
+
+                return @this[index];
+            }
+
+            internal void set_Item<T>(int index, T value)
+            {
+                // ! Warning: "this" is an array, not an SZArrayHelper. See comments above
+                // ! or you may introduce a security hole!
+                T[] @this = Unsafe.As<T[]>(this);
+                if ((uint)index >= (uint)@this.Length)
+                {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                    throw new ArgumentOutOfRangeException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
+                }
+
+                @this[index] = value;
+            }
+
+            private void Add<T>(T _)
+            {
+                // Not meaningful for arrays.
+                throw new NotSupportedException();
+            }
+
+            private bool Contains<T>(T value)
+            {
+                // ! Warning: "this" is an array, not an SZArrayHelper. See comments above
+                // ! or you may introduce a security hole!
+                T[] @this = Unsafe.As<T[]>(this);
+                return Array.IndexOf(@this, value, 0, @this.Length) >= 0;
+            }
+
+            private bool get_IsReadOnly<T>()
+            {
+                return true;
+            }
+
+            private void Clear<T>()
+            {
+                // ! Warning: "this" is an array, not an SZArrayHelper. See comments above
+                // ! or you may introduce a security hole!
+
+                throw new NotSupportedException();
+            }
+
+            private int IndexOf<T>(T value)
+            {
+                // ! Warning: "this" is an array, not an SZArrayHelper. See comments above
+                // ! or you may introduce a security hole!
+                T[] @this = Unsafe.As<T[]>(this);
+                return Array.IndexOf(@this, value, 0, @this.Length);
+            }
+
+            private void Insert<T>(int _, T _1)
+            {
+                // Not meaningful for arrays
+                throw new NotSupportedException();
+            }
+
+            private bool Remove<T>(T _)
+            {
+                // Not meaningful for arrays
+                throw new NotSupportedException();
+                return default;
+            }
+
+            private void RemoveAt<T>(int _)
+            {
+                // Not meaningful for arrays
+                throw new NotSupportedException();
+            }
+        }
+#pragma warning restore CA1822
+
+#endif
     }
 }
