@@ -61,7 +61,9 @@ namespace NFUnitTestSystemLib
         public static MpMake FromMethodSpec() { return Arr<int>; }
         public static MpMake FromGenericMethod<T>() { return Arr<T>; }
         public static Func<Type> TypeFromGenericMethod<T>() { return Ty<T>; }
+        public static string Order = string.Empty;
         public static Func<object> Lambda<T>() { return () => new T[1]; }
+        public static Func<object> Recording<T>(string name) { return () => { Order += name; return new T[1]; }; }
         public static Func<object> Closure<T>(T seed) { return () => new T[] { seed }; }
         public static Func<Type> LambdaType<T>() { return () => typeof(T); }
     }
@@ -170,13 +172,16 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Multicast()
         {
-            int calls = 0;
-            Func<object> f = MpDelegates.Lambda<int>();
-            Func<object> g = () => { calls++; return new string[1]; };
+            MpDelegates.Order = string.Empty;
+
+            Func<object> f = MpDelegates.Recording<int>("f");
+            Func<object> g = MpDelegates.Recording<string>("g");
             Func<object> m = (Func<object>)Delegate.Combine(f, g);
             object last = m();
-            Assert.AreEqual(1, calls);
+
+            Assert.AreEqual("fg", MpDelegates.Order);
             Assert.IsTrue(last is string[]);
+            Assert.IsFalse(last is int[]);
         }
         [TestMethod]
         public void InvokedAfterFrameGone()
