@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Threading;
 using nanoFramework.TestFramework;
 
 namespace NFUnitTestException
@@ -9,6 +10,170 @@ namespace NFUnitTestException
     [TestClass]
     public class UnitTestExceptionTests
     {
+        [TestMethod]
+        public void Exc_InlineFinallyNestedCatchCompletes_Test()
+        {
+            ExceptionUnwindRegression regression = new ExceptionUnwindRegression();
+            RunExceptionUnwindRegression(regression);
+
+            Assert.AreEqual(1, regression.InnerCatchCount);
+            Assert.AreEqual(1, regression.InnerCompletedCount);
+            Assert.AreEqual(1, regression.OuterCompletedCount);
+            Assert.AreEqual(1, regression.OuterFinallyCount);
+            Assert.IsTrue(object.ReferenceEquals(regression.Expected, regression.OuterCaught));
+            Assert.IsTrue(regression.Escaped == null);
+        }
+
+        [TestMethod]
+        public void Exc_InlineFinallyNestedCatchPreservesRethrow_Test()
+        {
+            ExceptionUnwindRegression regression = new ExceptionUnwindRegression();
+            regression.Rethrow = true;
+            RunExceptionUnwindRegression(regression);
+
+            Assert.AreEqual(1, regression.InnerCatchCount);
+            Assert.AreEqual(1, regression.InnerCompletedCount);
+            Assert.AreEqual(1, regression.OuterCompletedCount);
+            Assert.AreEqual(1, regression.OuterFinallyCount);
+            Assert.IsTrue(object.ReferenceEquals(regression.Expected, regression.OuterCaught));
+            Assert.IsTrue(object.ReferenceEquals(regression.Expected, regression.Escaped));
+        }
+
+        [TestMethod]
+        public void Exc_InlineThrowReachesCallerCatch_Test()
+        {
+            ExceptionUnwindRegression regression = new ExceptionUnwindRegression();
+            regression.OrdinaryThrow = true;
+            RunExceptionUnwindRegression(regression);
+
+            Assert.AreEqual(1, regression.OuterCompletedCount);
+            Assert.AreEqual(1, regression.OuterFinallyCount);
+            Assert.IsTrue(object.ReferenceEquals(regression.Expected, regression.OuterCaught));
+            Assert.IsTrue(regression.Escaped == null);
+        }
+
+        private static void RunExceptionUnwindRegression(ExceptionUnwindRegression regression)
+        {
+            Thread worker = new Thread(regression.Run);
+            worker.Start();
+            bool completed = worker.Join(5000);
+            if (!completed)
+            {
+                worker.Abort();
+            }
+
+            Assert.IsTrue(completed, "Exception unwinding did not complete.");
+        }
+
+        private class ExceptionUnwindRegression
+        {
+            public readonly Exception Expected = new InvalidOperationException();
+            public Exception OuterCaught;
+            public Exception Escaped;
+            public int InnerCatchCount;
+            public int InnerCompletedCount;
+            public int OuterCompletedCount;
+            public int OuterFinallyCount;
+            public bool Rethrow;
+            public bool OrdinaryThrow;
+
+            public void Run()
+            {
+                try
+                {
+                    if (OrdinaryThrow)
+                    {
+                        OrdinaryCaller(this);
+                    }
+                    else
+                    {
+                        Outer(this);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Escaped = exception;
+                }
+            }
+
+            private static void Outer(ExceptionUnwindRegression regression)
+            {
+                try
+                {
+                    throw regression.Expected;
+                }
+                catch (InvalidOperationException exception)
+                {
+                    regression.OuterCaught = exception;
+                    regression.Inner();
+                    regression.OuterCompletedCount++;
+                    if (regression.Rethrow)
+                    {
+                        throw;
+                    }
+                }
+                finally
+                {
+                    regression.OuterFinallyCount++;
+                }
+            }
+
+            private void Inner()
+            {
+                try
+                {
+                    Nop();
+                }
+                finally
+                {
+                    try
+                    {
+                        ThrowDisposed();
+                    }
+                    catch (ObjectDisposedException)
+                    {
+                        InnerCatchCount++;
+                    }
+                }
+
+                InnerCompletedCount++;
+            }
+
+            private static void Nop()
+            {
+            }
+
+            private static void ThrowDisposed()
+            {
+                throw new ObjectDisposedException();
+            }
+
+            private static void OrdinaryCaller(ExceptionUnwindRegression regression)
+            {
+                try
+                {
+                    regression.ThrowOrdinary();
+                }
+                catch (InvalidOperationException exception)
+                {
+                    regression.OuterCaught = exception;
+                    regression.OuterCompletedCount++;
+                }
+                finally
+                {
+                    regression.OuterFinallyCount++;
+                }
+            }
+
+            private void ThrowOrdinary()
+            {
+                // developer note: keep a local across a static call: a tiny IL header maxstack of 8 prevents inlining.
+                Exception exception = Expected;
+                Nop();
+                throw exception;
+            }
+        }
+
         [TestMethod]
         public void TestTimeoutException()
         {
