@@ -33,6 +33,7 @@
     <Compile Include="UnitTestGenericInvokeTests.cs" />
     <Compile Include="UnitTestGenericCallContextTests.cs" />
     <Compile Include="UnitTestGenericReflectionTests.cs" />
+    <Compile Include="UnitTestGenericMethodParameterTests.cs" />
     <Compile Include="UnitTestNullable.cs" />
     <Compile Include="UnitTestReflectionInvokeTests.cs" />
     <Compile Include="UnitTestReflectionAssemblyTest.cs" />
