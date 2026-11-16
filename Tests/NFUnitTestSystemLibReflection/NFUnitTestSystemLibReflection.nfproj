@@ -40,6 +40,8 @@
     <Compile Include="UnitTestReflectionMemberTest.cs" />
     <Compile Include="UnitTestReflectionTypeTest.cs" />
     <Compile Include="UnitTestSZArrayHelperTests.cs" />
+    <Compile Include="UnitTestSZArrayHelperBindingTests.cs" />
+    <Compile Include="UnitTestArrayIndexOfTests.cs" />
     <Compile Include="UnitTestTypeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
