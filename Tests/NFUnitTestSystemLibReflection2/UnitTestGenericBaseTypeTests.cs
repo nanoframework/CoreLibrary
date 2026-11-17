@@ -194,6 +194,17 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(typeof(BtMemberOwner<int>).GetMethod("Get").DeclaringType != typeof(BtMemberOwner<string>));
         }
 
+        [TestMethod]
+        public void Decl_StructOuter()
+        {
+            Type nested = typeof(BtStructOuter<int>.Inner);
+
+            Assert.IsTrue(nested.DeclaringType == typeof(BtStructOuter<int>));
+            Assert.IsTrue(nested.DeclaringType != typeof(BtStructOuter<string>));
+            Assert.IsTrue(nested.DeclaringType.IsValueType);
+            Assert.IsFalse(nested.IsValueType);
+        }
+
         // names of closed generics
 
         [TestMethod]
@@ -224,7 +235,20 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(typeof(BtList<int>[]).FullName.EndsWith("`1[System.Int32][]"));
         }
 
+        [TestMethod]
+        public void Name_ArrayArgument()
+        {
+            Assert.IsTrue(typeof(BtBaseNested<BtOther<int>[]>).FullName.EndsWith("BtOther`1[System.Int32][]]"));
+        }
+
         #region types
+
+        public struct BtStructOuter<T>
+        {
+            public class Inner
+            {
+            }
+        }
 
         public class BtBaseInt<T>
         {
