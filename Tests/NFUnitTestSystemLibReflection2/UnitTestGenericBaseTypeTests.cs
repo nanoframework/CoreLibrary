@@ -124,18 +124,10 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Base_Open()
         {
-            bool thrown = false;
+            Type baseType = typeof(BtDerivedOpen<>).BaseType;
 
-            try
-            {
-                Type unused = typeof(BtDerivedOpen<>).BaseType;
-            }
-            catch (Exception)
-            {
-                thrown = true;
-            }
-
-            Assert.IsTrue(thrown);
+            Assert.IsTrue(baseType.GetGenericTypeDefinition() == typeof(BtBaseOpen<>));
+            Assert.IsFalse(baseType.IsGenericTypeDefinition);
         }
 
         // nested types of generic types
