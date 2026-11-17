@@ -4,6 +4,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using NFUnitTestIdentityHelper;
 using nanoFramework.TestFramework;
 
@@ -63,17 +64,29 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void Identity_Lock()
         {
-            bool entered = false;
-
-            lock (typeof(IdBoxE<int>))
+            // a lock on one Type must exclude a lock on the Type of the same instantiation from another path
+            LockState state = new LockState
             {
-                lock (new IdBoxE<int>().GetType())
-                {
-                    entered = true;
-                }
-            }
+                First = typeof(IdBoxE<int>),
+                Second = new IdBoxE<int>().GetType()
+            };
 
-            Assert.IsTrue(entered);
+            Thread holder = new Thread(state.Hold);
+            Thread contender = new Thread(state.Contend);
+
+            holder.Start();
+            Assert.IsTrue(state.Holding.WaitOne(5000, false));
+
+            contender.Start();
+
+            // the second thread must be blocked while the first one holds the lock
+            Assert.IsFalse(state.Entered.WaitOne(500, false));
+
+            state.Release.Set();
+
+            Assert.IsTrue(state.Entered.WaitOne(5000, false));
+            Assert.IsTrue(holder.Join(5000));
+            Assert.IsTrue(contender.Join(5000));
         }
 
         #endregion
@@ -506,6 +519,32 @@ namespace NFUnitTestSystemLib
         }
 
         #region helper types
+
+        private class LockState
+        {
+            public Type First;
+            public Type Second;
+            public ManualResetEvent Holding = new ManualResetEvent(false);
+            public ManualResetEvent Release = new ManualResetEvent(false);
+            public ManualResetEvent Entered = new ManualResetEvent(false);
+
+            public void Hold()
+            {
+                lock (First)
+                {
+                    Holding.Set();
+                    Release.WaitOne(10000, false);
+                }
+            }
+
+            public void Contend()
+            {
+                lock (Second)
+                {
+                    Entered.Set();
+                }
+            }
+        }
 
         public class IdBoxA<T> { }
         public class IdBoxC<T> { }
