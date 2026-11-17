@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.10.12224.181 stable
+VisualStudioVersion = 18.10.12224.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "CoreLibrary", "nanoFramework.CoreLibrary\CoreLibrary.nfproj", "{BE7B95D5-087C-45F8-8197-4B438BEDFE11}"
 EndProject
@@ -76,6 +76,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nanoFramework.TestAdapter", "nanoFramework.TestFramework\source\TestAdapter\nanoFramework.TestAdapter.csproj", "{6D740F0A-D435-4ACF-AD27-D702A599F229}"
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestGC", "Tests\NFUnitTestGC\NFUnitTestGC.nfproj", "{768BE3B6-41C6-4DFB-8A2D-443B2113F5AD}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestSystemLibReflection2", "Tests\NFUnitTestSystemLibReflection2\NFUnitTestSystemLibReflection2.nfproj", "{0E2EA76C-8618-45F6-AEB2-A8C2E703E9E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -261,6 +263,12 @@ Global
 		{768BE3B6-41C6-4DFB-8A2D-443B2113F5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{768BE3B6-41C6-4DFB-8A2D-443B2113F5AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{768BE3B6-41C6-4DFB-8A2D-443B2113F5AD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0E2EA76C-8618-45F6-AEB2-A8C2E703E9E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E2EA76C-8618-45F6-AEB2-A8C2E703E9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E2EA76C-8618-45F6-AEB2-A8C2E703E9E9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0E2EA76C-8618-45F6-AEB2-A8C2E703E9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E2EA76C-8618-45F6-AEB2-A8C2E703E9E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E2EA76C-8618-45F6-AEB2-A8C2E703E9E9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -295,6 +303,7 @@ Global
 		{0BE498D1-CB3E-4D1E-BA4C-2C49AE30432D} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
 		{6D740F0A-D435-4ACF-AD27-D702A599F229} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
 		{768BE3B6-41C6-4DFB-8A2D-443B2113F5AD} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
+		{0E2EA76C-8618-45F6-AEB2-A8C2E703E9E9} = {0BAE286A-5434-4F56-A9F1-41B72056170E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8DE44407-9B41-4459-97D2-FCE54B1F4300}
