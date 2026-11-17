@@ -241,6 +241,22 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(typeof(IdOpenBase<int>).ToString().EndsWith("IdOpenBase`1[System.Int32]"));
         }
 
+        [TestMethod]
+        public void OpenBase_FullNameIsNull()
+        {
+            Assert.IsNull(typeof(IdOpenDerived<>).BaseType.FullName);
+            Assert.IsNotNull(typeof(IdOpenBase<int>).FullName);
+            Assert.IsNotNull(typeof(IdOpenBase<>).FullName);
+        }
+
+        [TestMethod]
+        public void MethodParameters_TypeParameterArraysUnsupported()
+        {
+            Assert.IsTrue(Throws(() => typeof(IdMethodParams).GetMethod("TakesArray").GetParameters()));
+            Assert.IsTrue(Throws(() => typeof(IdMethodParams).GetMethod("TakesList").GetParameters()));
+            Assert.AreEqual(1, typeof(IdMethodParams).GetMethod("TakesPlain").GetParameters().Length);
+        }
+
         #endregion
 
         #region interfaces
@@ -468,6 +484,15 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
+        public void Assignable_ExactMatchWinsOverVariance()
+        {
+            // both interfaces are implemented, the exact one is found whatever the order of the table
+            Assert.IsTrue(typeof(IEnumerable<string>).IsAssignableFrom(typeof(IdBothEnumerables)));
+            Assert.IsTrue(typeof(IEnumerable<object>).IsAssignableFrom(typeof(IdBothEnumerables)));
+            Assert.IsTrue(Throws(() => typeof(IEnumerable<IdBoxK<int>>).IsAssignableFrom(typeof(IdBothEnumerables))));
+        }
+
+        [TestMethod]
         public void Assignable_IntegralArraysUnsupported()
         {
             Assert.IsTrue(Throws(() => typeof(int[]).IsAssignableFrom(typeof(uint[]))));
@@ -578,6 +603,15 @@ namespace NFUnitTestSystemLib
             }
         }
 
+        public class IdMethodParams
+        {
+            public void TakesArray<T>(T[] values) { }
+
+            public void TakesList<T>(IdOpenBox<T> value) { }
+
+            public void TakesPlain(int[] values) { }
+        }
+
         public class IdWrap<T> { }
         public class IdChainC<T> { }
         public class IdChainB<U> : IdChainC<U> { }
@@ -619,6 +653,26 @@ namespace NFUnitTestSystemLib
         public interface IdIFaceE<T> { }
         public class IdImplE : IdIFaceE<int> { }
         public class IdImplEOf<T> : IdIFaceE<T> { }
+
+        public class IdBoxK<T> { }
+
+        public class IdBothEnumerables : IEnumerable<object>, IEnumerable<string>
+        {
+            IEnumerator<object> IEnumerable<object>.GetEnumerator()
+            {
+                return null;
+            }
+
+            IEnumerator<string> IEnumerable<string>.GetEnumerator()
+            {
+                return null;
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return null;
+            }
+        }
 
         public class IdEnumerable : IEnumerable<string>
         {
