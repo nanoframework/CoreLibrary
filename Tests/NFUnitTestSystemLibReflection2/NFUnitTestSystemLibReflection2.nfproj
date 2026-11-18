@@ -26,6 +26,7 @@
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
     <Compile Include="UnitTestGenericBaseTypeTests.cs" />
+    <Compile Include="UnitTestGenericParameterTypeTests.cs" />
     <Compile Include="UnitTestGenericTypeIdentityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

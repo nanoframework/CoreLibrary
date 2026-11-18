@@ -396,6 +396,57 @@ namespace System
         }
 
         /// <summary>
+        /// Gets a value indicating whether the current <see cref="Type"/> represents a type parameter in the definition of a generic type or generic method.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="Type"/> object represents a type parameter of a generic type definition or generic method definition; otherwise, <see langword="false"/>.</value>
+        public extern bool IsGenericParameter
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets the position of the type parameter in the type parameter list of the generic type or method that declared the parameter, when the <see cref="Type"/> object represents a type parameter.
+        /// </summary>
+        /// <value>The position of a type parameter in the type parameter list of the generic type or method that defines the parameter. Position numbers begin at 0.</value>
+        /// <exception cref="InvalidOperationException">The current type does not represent a type parameter.</exception>
+        public extern int GenericParameterPosition
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets a <see cref="MethodBase"/> that represents the declaring method, if the current <see cref="Type"/> represents a type parameter of a generic method.
+        /// </summary>
+        /// <value>The generic method that defines the current generic type parameter, or <see langword="null"/> if the type parameter was defined by a generic type.</value>
+        /// <exception cref="InvalidOperationException">The current type is not a type parameter.</exception>
+        public extern Reflection.MethodBase DeclaringMethod
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the current <see cref="Type"/> object has type parameters that have not been replaced by specific types.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="Type"/> object is itself a generic type parameter or has type parameters for which specific types have not been supplied; otherwise, <see langword="false"/>.</value>
+        public extern bool ContainsGenericParameters
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets a value that indicates whether this object represents a constructed generic type.
+        /// </summary>
+        /// <value><see langword="true"/> if this object represents a constructed generic type; otherwise, <see langword="false"/>.</value>
+        public bool IsConstructedGenericType
+        {
+            get { return IsGenericType && !IsGenericTypeDefinition; }
+        }
+
+        /// <summary>
         /// When overridden in a derived class, returns the Type of the object encompassed or referred to by the current array, pointer or reference type.
         /// </summary>
         /// <returns>The Type of the object encompassed or referred to by the current array, pointer, or reference type, or null if the current Type is 

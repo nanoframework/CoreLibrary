@@ -209,10 +209,10 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void OpenBase_GenericArgumentsUnsupported()
+        public void OpenBase_GenericArguments()
         {
-            Assert.IsTrue(Throws(() => typeof(IdOpenDerived<>).BaseType.GetGenericArguments()));
-            Assert.IsTrue(Throws(() => typeof(IdOpenBase<>).GetGenericArguments()));
+            Assert.AreEqual(1, typeof(IdOpenDerived<>).BaseType.GetGenericArguments().Length);
+            Assert.AreEqual(1, typeof(IdOpenBase<>).GetGenericArguments().Length);
             Assert.AreEqual(0, typeof(IdPlainD).GetGenericArguments().Length);
             Assert.AreEqual(0, typeof(int[]).GetGenericArguments().Length);
             Assert.AreEqual(0, typeof(IdBoxF<int>[]).GetGenericArguments().Length);
@@ -220,13 +220,16 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void OpenMembers_Unsupported()
+        public void OpenMembers_UseParameters()
         {
-            // the Type of a member of a definition would be an open constructed type or a generic parameter
-            Assert.IsTrue(Throws(() => typeof(IdOpenMember<>).GetMethod("Make").ReturnType));
-            Assert.IsTrue(Throws(() => typeof(IdOpenMember<>).GetMethod("Make").GetParameters()));
-            Assert.IsTrue(Throws(() => typeof(IdOpenMember<>).GetField("Item").FieldType));
-            Assert.IsTrue(Throws(() => typeof(IdOpenMember<>).GetField("Boxed").FieldType));
+            Type t = typeof(IdOpenMember<>).GetGenericArguments()[0];
+            Type boxed = typeof(IdOpenMember<>).GetField("Boxed").FieldType;
+
+            Assert.IsTrue(typeof(IdOpenMember<>).GetField("Item").FieldType == t);
+            Assert.IsTrue(boxed.GetGenericTypeDefinition() == typeof(IdOpenBox<>));
+            Assert.IsTrue(boxed.GetGenericArguments()[0] == t);
+            Assert.IsTrue(typeof(IdOpenMember<>).GetMethod("Make").ReturnType == boxed);
+            Assert.IsTrue(typeof(IdOpenMember<>).GetMethod("Make").GetParameters()[0].ParameterType == boxed);
 
             // the same members of a closed type are exact
             Assert.IsTrue(typeof(IdOpenMember<int>).GetMethod("Make").ReturnType == typeof(IdOpenBox<int>));
@@ -250,9 +253,9 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void MethodParameters_TypeParameterArraysUnsupported()
+        public void MethodParameters_ParameterInGenericInstanceUnsupported()
         {
-            Assert.IsTrue(Throws(() => typeof(IdMethodParams).GetMethod("TakesArray").GetParameters()));
+            Assert.IsTrue(typeof(IdMethodParams).GetMethod("TakesArray").GetParameters()[0].ParameterType.IsArray);
             Assert.IsTrue(Throws(() => typeof(IdMethodParams).GetMethod("TakesList").GetParameters()));
             Assert.AreEqual(1, typeof(IdMethodParams).GetMethod("TakesPlain").GetParameters().Length);
         }
