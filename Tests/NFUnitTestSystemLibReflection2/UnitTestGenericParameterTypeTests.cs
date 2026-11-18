@@ -182,7 +182,7 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(ThrowsNotSupported(() => t.IsClass));
             Assert.IsTrue(ThrowsNotSupported(() => s.IsValueType));
             Assert.IsTrue(ThrowsNotSupported(() => b.BaseType));
-            Assert.IsTrue(ThrowsNotSupported(() => typeof(object).IsAssignableFrom(b)));
+            Assert.IsTrue(typeof(object).IsAssignableFrom(b));
             Assert.IsTrue(ThrowsNotSupported(() => b.IsAssignableFrom(typeof(GpPlain))));
         }
 
@@ -297,6 +297,20 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
+        public void Members_ArrayOfOpenConstructed()
+        {
+            Type t = typeof(GpBox<>).GetGenericArguments()[0];
+            Type items = typeof(GpBox<>).GetField("BoxedItems").FieldType;
+            Type element = items.GetElementType();
+
+            Assert.IsTrue(items.IsArray);
+            Assert.IsTrue(items.ContainsGenericParameters);
+            Assert.IsTrue(element.IsConstructedGenericType);
+            Assert.IsTrue(element.GetGenericArguments()[0] == t);
+            Assert.IsTrue(element == typeof(GpBox<>).GetField("Boxed").FieldType);
+        }
+
+        [TestMethod]
         public void Members_MethodParameter()
         {
             Type t = typeof(GpBox<>).GetGenericArguments()[0];
@@ -402,6 +416,7 @@ namespace NFUnitTestSystemLib
             Type items = typeof(GpBox<>).GetField("Items").FieldType;
 
             Assert.IsTrue(items.IsAssignableFrom(items));
+            Assert.IsTrue(typeof(object).IsAssignableFrom(items));
             Assert.IsTrue(ThrowsNotSupported(() => typeof(object[]).IsAssignableFrom(items)));
         }
 
@@ -490,6 +505,7 @@ namespace NFUnitTestSystemLib
             public T Item;
             public T[] Items;
             public GpOther<T> Boxed;
+            public GpOther<T>[] BoxedItems;
 
             public T Get()
             {
