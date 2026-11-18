@@ -253,10 +253,15 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void MethodParameters_ParameterInGenericInstanceUnsupported()
+        public void MethodParameters_ParameterInGenericInstance()
         {
             Assert.IsTrue(typeof(IdMethodParams).GetMethod("TakesArray").GetParameters()[0].ParameterType.IsArray);
-            Assert.IsTrue(Throws(() => typeof(IdMethodParams).GetMethod("TakesList").GetParameters()));
+
+            Type list = typeof(IdMethodParams).GetMethod("TakesList").GetParameters()[0].ParameterType;
+
+            Assert.IsTrue(list.IsGenericType);
+            Assert.IsTrue(list.ContainsGenericParameters);
+            Assert.AreEqual("TakesList", list.GetGenericArguments()[0].DeclaringMethod.Name);
             Assert.AreEqual(1, typeof(IdMethodParams).GetMethod("TakesPlain").GetParameters().Length);
         }
 
