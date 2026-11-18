@@ -42,7 +42,9 @@ namespace System
         {
             get
             {
-                return FullName + ", " + Assembly.FullName;
+                String fullName = FullName;
+
+                return fullName == null ? null : fullName + ", " + Assembly.FullName;
             }
         }
 

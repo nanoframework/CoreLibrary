@@ -527,23 +527,15 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void GetParameters_TypeParameterOnClosedType_IsResolved_MethodTypeParameter_IsNotSupported()
+        public void GetParameters_TypeParameterOnClosedType_IsResolved_MethodTypeParameter_IsGenericParameter()
         {
             Assert.IsTrue(typeof(G<int>).GetMethod("TakesT").GetParameters()[0].ParameterType == typeof(int));
             Assert.IsTrue(typeof(G<int>).GetMethod("TakesTArray").GetParameters()[0].ParameterType == typeof(int[]));
 
-            bool unsupported = false;
+            Type methodParameter = GenericTargetParameters("TakesMethodT")[0].ParameterType;
 
-            try
-            {
-                GenericTargetParameters("TakesMethodT");
-            }
-            catch (NotSupportedException)
-            {
-                unsupported = true;
-            }
-
-            Assert.IsTrue(unsupported);
+            Assert.IsTrue(methodParameter.IsGenericParameter);
+            Assert.AreEqual("TakesMethodT", methodParameter.DeclaringMethod.Name);
 
             ParameterInfo[] parameters = typeof(G<int>).GetMethod("TakesTAndString").GetParameters();
 
