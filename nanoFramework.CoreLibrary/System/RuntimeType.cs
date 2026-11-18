@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 #if NANOCLR_REFLECTION
@@ -66,6 +66,14 @@ namespace System
         /// </summary>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public override extern Type[] GetInterfaces();
+
+        /// <summary>
+        /// Returns a <see cref="string"/> representing the name of the current <see cref="Type"/>, with the generic parameters of an open generic type by name.
+        /// </summary>
+        /// <returns>A <see cref="string"/> representing the name of the current <see cref="Type"/>.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern override string ToString();
+
         ////////////////////////////////////////////////////////////////////////////////////
         //////
         ////// Attributes

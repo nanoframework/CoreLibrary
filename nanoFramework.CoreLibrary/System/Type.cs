@@ -432,6 +432,15 @@ namespace System
         public virtual extern bool IsInstanceOfType(Object o);
 
         /// <summary>
+        /// Determines whether an instance of the specified type can be assigned to a variable of the current type.
+        /// </summary>
+        /// <param name="c">The type to compare with the current type.</param>
+        /// <returns>true if c and the current Type represent the same type, or if the current Type is in the inheritance hierarchy of c, or if the current Type is an interface that c implements, or if c is an array that can be converted to the current Type. false if c is null or none of these conditions is true.</returns>
+        /// <exception cref="NotSupportedException">The result depends on generic variance or on the element compatibility of integral arrays, which are not supported.</exception>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public virtual extern bool IsAssignableFrom(Type c);
+
+        /// <summary>
         /// Returns a String representing the name of the current Type.
         /// </summary>
         /// <returns>A String representing the name of the current Type.</returns>
