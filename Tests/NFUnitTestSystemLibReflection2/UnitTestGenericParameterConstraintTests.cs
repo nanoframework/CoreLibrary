@@ -118,6 +118,25 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(baseOf.BaseType.GetGenericArguments()[0] == args[0]);
         }
 
+        [TestMethod]
+        public void Constraints_OfMethodParametersInGenericInstances()
+        {
+            Type self = typeof(GcMethods<>).GetMethod("M4").GetParameters()[0].ParameterType;
+            System.Reflection.ParameterInfo[] m5 = typeof(GcMethods<>).GetMethod("M5").GetParameters();
+            Type constraint = self.GetGenericParameterConstraints()[0];
+
+            Assert.IsTrue(constraint.IsGenericType);
+            Assert.IsFalse(constraint.IsGenericTypeDefinition);
+            Assert.IsTrue(constraint.ContainsGenericParameters);
+            Assert.IsTrue(constraint.GetGenericArguments()[0] == self);
+            Assert.IsTrue(constraint.GetGenericArguments()[0].DeclaringMethod != null);
+            Assert.IsTrue(constraint.ToString().IndexOf("[V]") > 0);
+            Assert.IsTrue(constraint.IsAssignableFrom(self));
+            Assert.AreEqual(1, self.GetInterfaces().Length);
+            Assert.IsTrue(self.GetInterfaces()[0] == constraint);
+            Assert.IsTrue(m5[0].ParameterType.BaseType.GetGenericArguments()[0] == m5[1].ParameterType);
+        }
+
         #endregion
 
         #region base type and interfaces
@@ -493,6 +512,10 @@ namespace NFUnitTestSystemLib
             public void M2<V>(V value) where V : GcB3<T> { }
 
             public void M3<V>(V value) where V : struct { }
+
+            public void M4<V>(V value) where V : IGcOf<V> { }
+
+            public void M5<V, W>(W value, V other) where W : GcB3<V> { }
         }
     }
 }
