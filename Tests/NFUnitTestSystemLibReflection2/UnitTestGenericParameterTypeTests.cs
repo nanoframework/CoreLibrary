@@ -328,7 +328,10 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(identity.GetParameters()[0].ParameterType == u);
             Assert.IsTrue(typeof(GpMethods).GetMethod("TakesArray").GetParameters()[0].ParameterType.IsArray);
             Assert.IsTrue(typeof(GpMethods).GetMethod("TakesArray").GetParameters()[0].ParameterType.GetElementType().IsGenericParameter);
-            Assert.IsTrue(ThrowsNotSupported(() => typeof(GpMethods).GetMethod("TakesOther").GetParameters()));
+            System.Reflection.MethodInfo takesOther = typeof(GpMethods).GetMethod("TakesOther");
+
+            Assert.IsNotNull(takesOther);
+            Assert.IsTrue(ThrowsNotSupported(() => takesOther.GetParameters()));
         }
 
         [TestMethod]
