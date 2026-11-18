@@ -169,6 +169,7 @@
     <Compile Include="System\Reflection\DefaultMemberAttribute.cs" />
     <Compile Include="System\Reflection\FieldInfo.cs" />
     <Compile Include="System\Reflection\FieldReflectionAttributes.cs" />
+    <Compile Include="System\Reflection\GenericParameterAttributes.cs" />
     <Compile Include="System\Reflection\IReflect.cs" />
     <Compile Include="System\Reflection\MemberInfo.cs" />
     <Compile Include="System\Reflection\MemberTypes.cs" />

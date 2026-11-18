@@ -440,6 +440,25 @@ namespace System
         }
 
         /// <summary>
+        /// Gets a combination of <see cref="Reflection.GenericParameterAttributes"/> flags that describe the covariance and special constraints of the current generic type parameter.
+        /// </summary>
+        /// <value>A bitwise combination of <see cref="Reflection.GenericParameterAttributes"/> values that describes the covariance and special constraints of the current generic type parameter.</value>
+        /// <exception cref="InvalidOperationException">The current <see cref="Type"/> object is not a generic type parameter. That is, the <see cref="IsGenericParameter"/> property returns <see langword="false"/>.</exception>
+        public extern Reflection.GenericParameterAttributes GenericParameterAttributes
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Returns an array of <see cref="Type"/> objects that represent the constraints on the current generic type parameter.
+        /// </summary>
+        /// <returns>An array of <see cref="Type"/> objects that represent the constraints on the current generic type parameter.</returns>
+        /// <exception cref="InvalidOperationException">The current <see cref="Type"/> object is not a generic type parameter. That is, the <see cref="IsGenericParameter"/> property returns <see langword="false"/>.</exception>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern Type[] GetGenericParameterConstraints();
+
+        /// <summary>
         /// Gets a value that indicates whether this object represents a constructed generic type.
         /// </summary>
         /// <value><see langword="true"/> if this object represents a constructed generic type; otherwise, <see langword="false"/>.</value>

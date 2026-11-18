@@ -155,7 +155,7 @@ namespace NFUnitTestSystemLib
 
         #endregion
 
-        #region constraints are not supported yet
+        #region constrained parameters
 
         [TestMethod]
         public void Constrained_NameAndPosition()
@@ -171,19 +171,23 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Constrained_ShapeUnsupported()
+        public void Constrained_Shape()
         {
             Type t = typeof(GpClassConstraint<>).GetGenericArguments()[0];
             Type s = typeof(GpStructConstraint<>).GetGenericArguments()[0];
             Type b = typeof(GpBaseConstraint<>).GetGenericArguments()[0];
 
-            Assert.IsTrue(ThrowsNotSupported(() => t.BaseType));
-            Assert.IsTrue(ThrowsNotSupported(() => t.GetInterfaces()));
-            Assert.IsTrue(ThrowsNotSupported(() => t.IsClass));
-            Assert.IsTrue(ThrowsNotSupported(() => s.IsValueType));
-            Assert.IsTrue(ThrowsNotSupported(() => b.BaseType));
+            Assert.IsTrue(t.BaseType == typeof(object));
+            Assert.AreEqual(0, t.GetInterfaces().Length);
+            Assert.IsTrue(t.IsClass);
+            Assert.IsFalse(t.IsValueType);
+            Assert.IsTrue(s.IsValueType);
+            Assert.IsFalse(s.IsClass);
+            Assert.IsTrue(s.BaseType == typeof(ValueType));
+            Assert.IsTrue(b.BaseType == typeof(GpPlain));
             Assert.IsTrue(typeof(object).IsAssignableFrom(b));
-            Assert.IsTrue(ThrowsNotSupported(() => b.IsAssignableFrom(typeof(GpPlain))));
+            Assert.IsTrue(typeof(GpPlain).IsAssignableFrom(b));
+            Assert.IsFalse(b.IsAssignableFrom(typeof(GpPlain)));
         }
 
         #endregion
