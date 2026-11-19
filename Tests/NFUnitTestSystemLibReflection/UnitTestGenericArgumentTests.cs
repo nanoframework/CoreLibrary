@@ -99,7 +99,8 @@ namespace NFUnitTestSystemLib
 
             Assert.IsNotNull((IEnumerable<int>)value);
             Assert.ThrowsException(typeof(InvalidCastException), () => { _ = (IEnumerable<string>)value; });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { _ = (IEnumerable<uint>)value; });
+            Assert.IsNotNull((IEnumerable<uint>)value);
+            Assert.ThrowsException(typeof(InvalidCastException), () => { _ = (IEnumerable<long>)value; });
         }
 
         [TestMethod]

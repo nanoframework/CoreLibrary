@@ -479,11 +479,11 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Assignable_VarianceUnsupported()
+        public void Assignable_Variance()
         {
-            Assert.IsTrue(Throws(() => typeof(IEnumerable<object>).IsAssignableFrom(typeof(IdEnumerable))));
-            Assert.IsTrue(Throws(() => typeof(IEnumerable<object>).IsAssignableFrom(typeof(IEnumerable<string>))));
-            Assert.IsTrue(Throws(() => typeof(Func<object>).IsAssignableFrom(typeof(Func<string>))));
+            Assert.IsTrue(typeof(IEnumerable<object>).IsAssignableFrom(typeof(IdEnumerable)));
+            Assert.IsTrue(typeof(IEnumerable<object>).IsAssignableFrom(typeof(IEnumerable<string>)));
+            Assert.IsTrue(typeof(Func<object>).IsAssignableFrom(typeof(Func<string>)));
 
             // the same arguments are exact, and so is an unrelated definition
             Assert.IsTrue(typeof(IEnumerable<string>).IsAssignableFrom(typeof(IdEnumerable)));
@@ -497,15 +497,15 @@ namespace NFUnitTestSystemLib
             // both interfaces are implemented, the exact one is found whatever the order of the table
             Assert.IsTrue(typeof(IEnumerable<string>).IsAssignableFrom(typeof(IdBothEnumerables)));
             Assert.IsTrue(typeof(IEnumerable<object>).IsAssignableFrom(typeof(IdBothEnumerables)));
-            Assert.IsTrue(Throws(() => typeof(IEnumerable<IdBoxK<int>>).IsAssignableFrom(typeof(IdBothEnumerables))));
+            Assert.IsFalse(typeof(IEnumerable<IdBoxK<int>>).IsAssignableFrom(typeof(IdBothEnumerables)));
         }
 
         [TestMethod]
-        public void Assignable_IntegralArraysUnsupported()
+        public void Assignable_IntegralArrays()
         {
-            Assert.IsTrue(Throws(() => typeof(int[]).IsAssignableFrom(typeof(uint[]))));
-            Assert.IsTrue(Throws(() => typeof(IdEnumB[]).IsAssignableFrom(typeof(int[]))));
-            Assert.IsTrue(Throws(() => typeof(int[][]).IsAssignableFrom(typeof(uint[][]))));
+            Assert.IsTrue(typeof(int[]).IsAssignableFrom(typeof(uint[])));
+            Assert.IsTrue(typeof(IdEnumB[]).IsAssignableFrom(typeof(int[])));
+            Assert.IsTrue(typeof(int[][]).IsAssignableFrom(typeof(uint[][])));
         }
 
         #endregion
