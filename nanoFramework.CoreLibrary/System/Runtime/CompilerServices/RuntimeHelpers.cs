@@ -1,8 +1,10 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 namespace System.Runtime.CompilerServices
 {
+#pragma warning disable S4200 // Native methods should be wrapped
+
     /// <summary>
     /// Provides a set of static methods and properties that provide support for compilers. This class cannot be inherited.
     /// </summary>
@@ -43,5 +45,20 @@ namespace System.Runtime.CompilerServices
             [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
+
+#if NANOCLR_REFLECTION
+
+        /// <summary>
+        /// Returns a value that indicates whether the specified type is a reference type or a value type that contains references or by-refs.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <returns><see langword="true"/> if the given type is a reference type or a value type that contains references or by-refs; otherwise, <see langword="false"/>.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern bool IsReferenceOrContainsReferences<T>() where T : allows ref struct;
+
+#endif
+
     }
+
+#pragma warning restore S4200 // Native methods should be wrapped
 }
