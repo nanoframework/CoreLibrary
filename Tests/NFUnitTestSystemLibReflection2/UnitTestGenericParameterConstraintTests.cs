@@ -384,13 +384,13 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void VariantInterface_NeedsVariance_IsNotSupported()
+        public void VariantInterface_UsesVariance()
         {
             Type t = Arg(typeof(GcVariant<>));
 
             Assert.IsTrue(typeof(IGcOut<string>).IsAssignableFrom(t));
-            Assert.IsTrue(ThrowsNotSupported(() => (object)typeof(IGcOut<int>).IsAssignableFrom(t)));
-            Assert.IsTrue(ThrowsNotSupported(() => (object)typeof(IGcOut<object>).IsAssignableFrom(t)));
+            Assert.IsFalse(typeof(IGcOut<int>).IsAssignableFrom(t));
+            Assert.IsTrue(typeof(IGcOut<object>).IsAssignableFrom(t));
         }
 
         [TestMethod]
