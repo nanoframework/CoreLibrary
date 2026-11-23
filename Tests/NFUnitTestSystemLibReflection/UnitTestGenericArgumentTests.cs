@@ -15,7 +15,7 @@ namespace NFUnitTestSystemLib
     {
         private static void AssertSetValueRejected(FieldInfo field, object holder, object value)
         {
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(holder, value); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(holder, value); });
         }
 
         // castclass
@@ -299,7 +299,7 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new GaK<int>() }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new GaK<string>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new GaK<string>() }); });
         }
 
         [TestMethod]
@@ -309,7 +309,7 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new GaL<GaInner<int>>() }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new GaL<GaInner<string>>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new GaL<GaInner<string>>() }); });
         }
 
         [TestMethod]
@@ -319,8 +319,8 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new GaM<int>(), "x" }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new GaM<int>(), 5 }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new GaM<string>(), "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new GaM<int>(), 5 }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new GaM<string>(), "x" }); });
         }
 
         [TestMethod]
@@ -330,7 +330,7 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new int[1] }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new string[1] }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new string[1] }); });
         }
 
         [TestMethod]
@@ -340,7 +340,7 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new GaImpl<int>() }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new GaImpl<string>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new GaImpl<string>() }); });
         }
 
         [TestMethod]
@@ -350,7 +350,7 @@ namespace NFUnitTestSystemLib
 
             Assert.IsNotNull(ci.Invoke(new object[] { new GaN<int>() }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { ci.Invoke(new object[] { new GaN<string>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { ci.Invoke(new object[] { new GaN<string>() }); });
         }
 
         [TestMethod]
@@ -360,7 +360,7 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(1, (int)mi.Invoke(new GaO<int>(), new object[] { new GaO<int>() }));
             Assert.AreEqual(1, (int)mi.Invoke(new GaO<int>(), new object[] { null }));
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new GaO<int>(), new object[] { new GaO<string>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(new GaO<int>(), new object[] { new GaO<string>() }); });
         }
 
         // FieldInfo.SetValue

@@ -62,7 +62,7 @@ namespace NFUnitTestSystemLib
         {
             object[] value = new P1dHolder<P1dBox<int>[]>().Make(1);
 
-            Assert.ThrowsException(typeof(Exception), () => { value[0] = new P1dBox<string>[1]; });
+            Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => { value[0] = new P1dBox<string>[1]; });
         }
 
         [TestMethod]

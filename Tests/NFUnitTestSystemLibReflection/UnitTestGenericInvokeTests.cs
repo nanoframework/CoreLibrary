@@ -19,8 +19,8 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(1, (int)mi.Invoke(target, new object[] { "x" }));
             Assert.AreEqual(1, (int)mi.Invoke(target, new object[] { null }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(target, new object[] { 5 }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(target, new object[] { new RefParameterTarget<string>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { 5 }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { new RefParameterTarget<string>() }); });
         }
 
         [TestMethod]
@@ -31,8 +31,8 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(7, (int)mi.Invoke(target, new object[] { 7 }));
 
-            Assert.ThrowsException(typeof(Exception), () => { mi.Invoke(target, new object[] { "x" }); });
-            Assert.ThrowsException(typeof(Exception), () => { mi.Invoke(target, new object[] { 7L }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { 7L }); });
         }
 
         [TestMethod]
@@ -44,7 +44,7 @@ namespace NFUnitTestSystemLib
             SamplePoint result = (SamplePoint)mi.Invoke(new StructParameterTarget<SamplePoint>(), new object[] { point });
 
             Assert.AreEqual(3, result.X);
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new StructParameterTarget<SamplePoint>(), new object[] { 3 }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(new StructParameterTarget<SamplePoint>(), new object[] { 3 }); });
         }
 
         [TestMethod]
@@ -56,8 +56,8 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(1, (int)mi.Invoke(target, new object[] { new int[1] }));
             Assert.AreEqual(1, (int)mi.Invoke(target, new object[] { null }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(target, new object[] { new string[1] }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(target, new object[] { 5 }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { new string[1] }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { 5 }); });
         }
 
         [TestMethod]
@@ -69,8 +69,8 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(1, (int)mi.Invoke(target, new object[] { new Box<int>() }));
             Assert.AreEqual(1, (int)mi.Invoke(target, new object[] { null }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(target, new object[] { new Box<string>() }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(target, new object[] { "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { new Box<string>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { "x" }); });
         }
 
         [TestMethod]
@@ -81,8 +81,8 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(1, (int)mi.Invoke(target, new object[] { new Box<Box<int>>() }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(target, new object[] { new Box<Box<string>>() }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(target, new object[] { new Box<int>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { new Box<Box<string>>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(target, new object[] { new Box<int>() }); });
         }
 
         [TestMethod]
@@ -91,7 +91,7 @@ namespace NFUnitTestSystemLib
             MethodInfo mi = typeof(StaticMethodTarget<int>).GetMethod("Echo");
 
             Assert.AreEqual(5, (int)mi.Invoke(null, new object[] { 5 }));
-            Assert.ThrowsException(typeof(Exception), () => { mi.Invoke(null, new object[] { "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { "x" }); });
         }
 
         [TestMethod]
@@ -103,7 +103,7 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual("x", created.Value);
             Assert.IsFalse((object)created is ConstructorTarget<int>);
-            Assert.ThrowsException(typeof(InvalidCastException), () => { ci.Invoke(new object[] { 5 }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { ci.Invoke(new object[] { 5 }); });
         }
 
         [TestMethod]
@@ -114,7 +114,7 @@ namespace NFUnitTestSystemLib
             ValueConstructorTarget<int> created = (ValueConstructorTarget<int>)ci.Invoke(new object[] { 9 });
 
             Assert.AreEqual(9, created.Value);
-            Assert.ThrowsException(typeof(Exception), () => { ci.Invoke(new object[] { "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { ci.Invoke(new object[] { "x" }); });
         }
 
         [TestMethod]
@@ -146,7 +146,7 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(echo.ReturnType == typeof(int));
             Assert.IsTrue(take.GetParameters()[0].ParameterType == typeof(int));
 
-            Assert.ThrowsException(typeof(Exception), () => { take.Invoke(target, new object[] { "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { take.Invoke(target, new object[] { "x" }); });
         }
 
         [TestMethod]
@@ -158,7 +158,7 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(1, (int)take.Invoke(target, new object[] { "x" }));
             Assert.AreEqual(1, (int)take.Invoke(target, new object[] { null }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { take.Invoke(target, new object[] { 5 }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { take.Invoke(target, new object[] { 5 }); });
         }
 
         [TestMethod]
@@ -172,7 +172,7 @@ namespace NFUnitTestSystemLib
             field.SetValue(target, 4);
             Assert.AreEqual(4, target.Value);
 
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(target, "x"); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(target, "x"); });
         }
 
         [TestMethod]
@@ -183,10 +183,10 @@ namespace NFUnitTestSystemLib
             MethodInfo box = typeof(ShapesDerived).GetMethod("TakeBox");
 
             Assert.AreEqual(1, (int)array.Invoke(target, new object[] { new int[1] }));
-            Assert.ThrowsException(typeof(InvalidCastException), () => { array.Invoke(target, new object[] { new string[1] }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { array.Invoke(target, new object[] { new string[1] }); });
 
             Assert.AreEqual(1, (int)box.Invoke(target, new object[] { new Box<int>() }));
-            Assert.ThrowsException(typeof(InvalidCastException), () => { box.Invoke(target, new object[] { new Box<string>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { box.Invoke(target, new object[] { new Box<string>() }); });
         }
 
         [TestMethod]
@@ -196,7 +196,7 @@ namespace NFUnitTestSystemLib
             OpenChild<string> target = new OpenChild<string>();
 
             Assert.AreEqual(1, (int)take.Invoke(target, new object[] { "x" }));
-            Assert.ThrowsException(typeof(InvalidCastException), () => { take.Invoke(target, new object[] { 5 }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { take.Invoke(target, new object[] { 5 }); });
         }
 
         [TestMethod]
@@ -206,7 +206,7 @@ namespace NFUnitTestSystemLib
             DeepChild<int> target = new DeepChild<int>();
 
             Assert.AreEqual(8, (int)echo.Invoke(target, new object[] { 8 }));
-            Assert.ThrowsException(typeof(Exception), () => { echo.Invoke(target, new object[] { "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { echo.Invoke(target, new object[] { "x" }); });
         }
 
         [TestMethod]
@@ -223,7 +223,7 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(dateTimeTarget.Value == moment);
             Assert.IsTrue(timeSpanTarget.Value == span);
 
-            Assert.ThrowsException(typeof(Exception), () => { typeof(DateTimeDerived).GetField("Value").SetValue(dateTimeTarget, 5); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { typeof(DateTimeDerived).GetField("Value").SetValue(dateTimeTarget, 5); });
         }
 
         [TestMethod]
@@ -238,7 +238,7 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(3, target.Value.X);
 
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(target, 5); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(target, 5); });
         }
 
         [TestMethod]

@@ -75,7 +75,7 @@ namespace NFUnitTestSystemLib
             setter.Invoke(instance, new object[] { 5 });
 
             Assert.AreEqual(5, instance.Value);
-            Assert.ThrowsException(typeof(Exception), () => setter.Invoke(instance, new object[] { "x" }));
+            Assert.ThrowsException(typeof(ArgumentException), () => setter.Invoke(instance, new object[] { "x" }));
         }
 
         [TestMethod]
@@ -104,7 +104,7 @@ namespace NFUnitTestSystemLib
 
             array[0] = new ElemStoreBox<int>();
 
-            Assert.ThrowsException(typeof(Exception), () => { array[0] = new ElemStoreBox<string>(); });
+            Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => { array[0] = new ElemStoreBox<string>(); });
         }
 
         [TestMethod]
@@ -117,7 +117,7 @@ namespace NFUnitTestSystemLib
             Array.Copy(source, same, 1);
 
             Assert.IsNotNull(same[0]);
-            Assert.ThrowsException(typeof(InvalidCastException), () => Array.Copy(source, other, 1));
+            Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => Array.Copy(source, other, 1));
         }
 
         [TestMethod]
@@ -127,7 +127,7 @@ namespace NFUnitTestSystemLib
 
             jagged[0] = new ElemJaggedStoreBox<string>[1];
 
-            Assert.ThrowsException(typeof(Exception), () => { jagged[0] = new ElemJaggedStoreBox<int>[1]; });
+            Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => { jagged[0] = new ElemJaggedStoreBox<int>[1]; });
         }
 
         [TestMethod]
@@ -168,7 +168,7 @@ namespace NFUnitTestSystemLib
 
             Assert.IsNotNull(same[1]);
             Assert.IsNotNull(objects[1]);
-            Assert.ThrowsException(typeof(InvalidCastException), () => Array.Copy(source, other, 2));
+            Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => Array.Copy(source, other, 2));
         }
 
         [TestMethod]
