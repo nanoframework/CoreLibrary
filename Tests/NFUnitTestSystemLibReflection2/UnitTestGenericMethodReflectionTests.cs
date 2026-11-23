@@ -236,6 +236,10 @@ namespace NFUnitTestSystemLib
             MethodInfo id = Method(typeof(GenericMethodSamples), "Id");
 
             Assert.AreEqual(5, (int)id.MakeGenericMethod(typeof(int)).Invoke(null, new object[] { 5 }));
+            Assert.AreEqual(3, (int)(byte)id.MakeGenericMethod(typeof(byte)).Invoke(null, new object[] { (byte)3 }));
+            Assert.AreEqual(-4, (int)(short)id.MakeGenericMethod(typeof(short)).Invoke(null, new object[] { (short)-4 }));
+            Assert.AreEqual('c', (char)id.MakeGenericMethod(typeof(char)).Invoke(null, new object[] { 'c' }));
+            Assert.IsTrue((bool)id.MakeGenericMethod(typeof(bool)).Invoke(null, new object[] { true }));
             Assert.AreEqual("abc", (string)id.MakeGenericMethod(typeof(string)).Invoke(null, new object[] { "abc" }));
             Assert.AreEqual(5, (int)id.MakeGenericMethod(typeof(object)).Invoke(null, new object[] { 5 }));
             Assert.AreEqual(2, ((int[])id.MakeGenericMethod(typeof(int[])).Invoke(null, new object[] { new int[] { 1, 2 } })).Length);

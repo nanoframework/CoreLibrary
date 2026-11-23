@@ -27,6 +27,34 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
+        public void MakeGenericType_InstantiationNotInTheMetadata()
+        {
+            Type made = typeof(Box<>).MakeGenericType(typeof(byte));
+            Type again = typeof(Box<>).MakeGenericType(typeof(byte));
+            Type[] arguments = made.GetGenericArguments();
+
+            Assert.IsTrue(made.IsGenericType);
+            Assert.IsTrue(made.IsConstructedGenericType);
+            Assert.IsFalse(made.IsGenericTypeDefinition);
+            Assert.IsFalse(made.ContainsGenericParameters);
+            Assert.AreEqual("Box`1", made.Name);
+            Assert.IsTrue(made.GetGenericTypeDefinition() == typeof(Box<>));
+            Assert.AreEqual(1, arguments.Length);
+            Assert.IsTrue(arguments[0] == typeof(byte));
+            Assert.IsTrue(made == again);
+            Assert.AreEqual(made.GetHashCode(), again.GetHashCode());
+            Assert.IsFalse(made == typeof(Box<>).MakeGenericType(typeof(sbyte)));
+            Assert.IsTrue(made.GetMethod("Get").ReturnType == typeof(byte));
+            Assert.IsTrue(made.GetField("Value").FieldType == typeof(byte));
+
+            object created = made.GetConstructor(new Type[0]).Invoke(null);
+
+            Assert.IsTrue(created.GetType() == made);
+            made.GetField("Value").SetValue(created, (byte)7);
+            Assert.AreEqual(7, (int)(byte)made.GetMethod("Get").Invoke(created, null));
+        }
+
+        [TestMethod]
         public void MakeGenericType_ArraysAndNestedInstances()
         {
             Assert.IsTrue(typeof(Box<>).MakeGenericType(typeof(int[])) == typeof(Box<int[]>));
