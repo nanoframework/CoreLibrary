@@ -27,6 +27,7 @@
   <ItemGroup>
     <Compile Include="UnitTestGenericBaseTypeTests.cs" />
     <Compile Include="UnitTestGenericDispatchTests.cs" />
+    <Compile Include="UnitTestGenericMethodReflectionTests.cs" />
     <Compile Include="UnitTestGenericParameterTypeTests.cs" />
     <Compile Include="UnitTestGenericParameterConstraintTests.cs" />
     <Compile Include="UnitTestGenericTypeIdentityTests.cs" />

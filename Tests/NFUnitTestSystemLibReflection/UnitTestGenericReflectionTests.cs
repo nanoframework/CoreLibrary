@@ -191,13 +191,13 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void StaticField_OfGenericDefinition_IsNotSupported()
+        public void StaticField_OfGenericDefinition_ThrowsInvalidOperation()
         {
             FieldInfo field = typeof(GrStaticDefinition<int>).GetField("Count");
             Type definition = typeof(GrStaticDefinition<int>).GetGenericTypeDefinition();
 
             Assert.IsNotNull(field);
-            Assert.ThrowsException(typeof(NotSupportedException), () => { _ = definition.GetField("Count").GetValue(null); });
+            Assert.ThrowsException(typeof(InvalidOperationException), () => { _ = definition.GetField("Count").GetValue(null); });
         }
 
         // constructors and invoke

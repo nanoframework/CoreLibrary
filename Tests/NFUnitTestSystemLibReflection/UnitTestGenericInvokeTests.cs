@@ -118,20 +118,20 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void MethodTypeParameter_StaysNotSupported()
+        public void MethodTypeParameter_Definition_ThrowsInvalidOperation()
         {
             MethodInfo mi = typeof(MethodTypeParameterTarget).GetMethod("Take");
 
-            Assert.ThrowsException(typeof(NotSupportedException), () => { mi.Invoke(null, new object[] { 5 }); });
-            Assert.ThrowsException(typeof(NotSupportedException), () => { mi.Invoke(null, new object[] { null }); });
+            Assert.ThrowsException(typeof(InvalidOperationException), () => { mi.Invoke(null, new object[] { 5 }); });
+            Assert.ThrowsException(typeof(InvalidOperationException), () => { mi.Invoke(null, new object[] { null }); });
         }
 
         [TestMethod]
-        public void OpenDefinition_StaysNotSupported()
+        public void OpenDefinition_ThrowsInvalidOperation()
         {
             MethodInfo mi = typeof(OpenDefinitionTarget<>).GetMethod("Take");
 
-            Assert.ThrowsException(typeof(NotSupportedException), () => { mi.Invoke(null, new object[] { 5 }); });
+            Assert.ThrowsException(typeof(InvalidOperationException), () => { mi.Invoke(null, new object[] { 5 }); });
         }
 
         [TestMethod]

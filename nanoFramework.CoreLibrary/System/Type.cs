@@ -66,6 +66,23 @@ namespace System
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern Type[] GetGenericArguments();
 
+        /// <summary>
+        /// Substitutes the elements of an array of types for the type parameters of the current generic type definition and returns a <see cref="Type"/> object representing the resulting constructed type.
+        /// </summary>
+        /// <param name="typeArguments">An array of types to be substituted for the type parameters of the current generic type.</param>
+        /// <returns>A <see cref="Type"/> representing the constructed type formed by substituting the elements of <paramref name="typeArguments"/> for the type parameters of the current generic type.</returns>
+        /// <exception cref="InvalidOperationException">The current type does not represent a generic type definition. That is, <see cref="IsGenericTypeDefinition"/> returns <see langword="false"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="typeArguments"/> is <see langword="null"/>, or any element of <paramref name="typeArguments"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">The number of elements in <paramref name="typeArguments"/> is not the same as the number of type parameters in the current generic type definition, or an element of <paramref name="typeArguments"/> does not satisfy the constraints of the corresponding type parameter.</exception>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public virtual extern Type MakeGenericType(params Type[] typeArguments);
+
+        /// <summary>
+        /// Gets an array of the generic type arguments for this type.
+        /// </summary>
+        /// <value>An array of the generic type arguments for this type.</value>
+        public virtual Type[] GenericTypeArguments => IsGenericType && !IsGenericTypeDefinition ? GetGenericArguments() : new Type[0];
+
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern Type GetTypeInternal(String typeName, string assemblyName, bool fVersion, int[] ver);
@@ -428,6 +445,18 @@ namespace System
             [MethodImpl(MethodImplOptions.InternalCall)]
             get;
         }
+
+        /// <summary>
+        /// Gets a value that indicates whether the current <see cref="Type"/> represents a type parameter in the definition of a generic type.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="Type"/> object represents a type parameter of a generic type definition; otherwise, <see langword="false"/>.</value>
+        public bool IsGenericTypeParameter => IsGenericParameter && DeclaringMethod == null;
+
+        /// <summary>
+        /// Gets a value that indicates whether the current <see cref="Type"/> represents a type parameter in the definition of a generic method.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="Type"/> object represents a type parameter of a generic method definition; otherwise, <see langword="false"/>.</value>
+        public bool IsGenericMethodParameter => IsGenericParameter && DeclaringMethod != null;
 
         /// <summary>
         /// Gets a value indicating whether the current <see cref="Type"/> object has type parameters that have not been replaced by specific types.
