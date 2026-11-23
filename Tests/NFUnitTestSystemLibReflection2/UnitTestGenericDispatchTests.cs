@@ -305,6 +305,32 @@ namespace NFUnitTestSystemLib
         }
     }
 
+    public class InterfaceHost<T>
+    {
+        public interface INestedFirst
+        {
+            string Bar();
+        }
+
+        public interface INestedSecond
+        {
+            string Bar();
+        }
+    }
+
+    public class NestedInterfaceImplementer : InterfaceHost<int>.INestedFirst, InterfaceHost<int>.INestedSecond
+    {
+        public string Bar()
+        {
+            return "first";
+        }
+
+        string InterfaceHost<int>.INestedSecond.Bar()
+        {
+            return "second";
+        }
+    }
+
     public interface IKind
     {
         string Kind();
@@ -382,6 +408,16 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual("generic", generic.Describe());
             Assert.AreEqual("other", other.Describe());
+        }
+
+        [TestMethod]
+        public void Dispatch_NestedInterfaceOfGenericType_UsesItsOwnExplicitImplementation()
+        {
+            InterfaceHost<int>.INestedFirst first = new NestedInterfaceImplementer();
+            InterfaceHost<int>.INestedSecond second = new NestedInterfaceImplementer();
+
+            Assert.AreEqual("first", first.Bar());
+            Assert.AreEqual("second", second.Bar());
         }
 
         [TestMethod]
