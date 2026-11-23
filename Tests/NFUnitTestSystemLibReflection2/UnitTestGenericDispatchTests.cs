@@ -282,6 +282,66 @@ namespace NFUnitTestSystemLib
         }
     }
 
+    public interface IOtherName
+    {
+        string Describe();
+    }
+
+    public interface IGenericDescribe<T>
+    {
+        string Describe();
+    }
+
+    public class ExplicitOtherAndPublicGeneric : IGenericDescribe<int>, IOtherName
+    {
+        public string Describe()
+        {
+            return "generic";
+        }
+
+        string IOtherName.Describe()
+        {
+            return "other";
+        }
+    }
+
+    public interface IKind
+    {
+        string Kind();
+    }
+
+    public class VirtualHost
+    {
+        public virtual string Kind()
+        {
+            return "base";
+        }
+    }
+
+    public class ExplicitKindHost : VirtualHost, IKind
+    {
+        string IKind.Kind()
+        {
+            return "explicit";
+        }
+    }
+
+    public interface IFirstFace
+    {
+    }
+
+    public interface ISecondFace
+    {
+    }
+
+    public class BothFaces : IFirstFace, ISecondFace
+    {
+    }
+
+    public class OneFace : IFirstFace
+    {
+    }
+
     public static class DispatchHelper
     {
         public static T CallEcho<T>(T target, int value) where T : IEcho<int>
@@ -314,6 +374,26 @@ namespace NFUnitTestSystemLib
     [TestClass]
     public class UnitTestGenericDispatchTests
     {
+        [TestMethod]
+        public void Dispatch_GenericInterface_IgnoresExplicitImplementationOfOtherInterface()
+        {
+            IGenericDescribe<int> generic = new ExplicitOtherAndPublicGeneric();
+            IOtherName other = new ExplicitOtherAndPublicGeneric();
+
+            Assert.AreEqual("generic", generic.Describe());
+            Assert.AreEqual("other", other.Describe());
+        }
+
+        [TestMethod]
+        public void Dispatch_ClassVirtual_IgnoresExplicitImplementationOfInterface()
+        {
+            VirtualHost host = new ExplicitKindHost();
+            IKind kind = (IKind)host;
+
+            Assert.AreEqual("base", host.Kind());
+            Assert.AreEqual("explicit", kind.Kind());
+        }
+
         [TestMethod]
         public void Dispatch_ExactComparable()
         {
@@ -588,6 +668,22 @@ namespace NFUnitTestSystemLib
             Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => Array.Copy(new int[1], new string[1], 1));
             Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => Array.Copy(new long[] { 1 }, new int[1], 1));
             Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => Array.Copy(new VarBase[1], new string[1], 1));
+        }
+
+        [TestMethod]
+        public void ArrayCopy_BetweenUnrelatedInterfaces_ChecksEachElement()
+        {
+            BothFaces both = new BothFaces();
+            IFirstFace[] source = new IFirstFace[] { both };
+            ISecondFace[] target = new ISecondFace[1];
+
+            Array.Copy(source, target, 1);
+
+            Assert.AreSame(both, target[0]);
+
+            source[0] = new OneFace();
+
+            Assert.ThrowsException(typeof(InvalidCastException), () => Array.Copy(source, target, 1));
         }
 
         [TestMethod]
