@@ -242,7 +242,7 @@ namespace NFUnitTestSystemLib
 
             Assert.IsNotNull(items[0]);
             Assert.ThrowsException(
-                typeof(Exception),
+                typeof(ArrayTypeMismatchException),
                 () =>
                 {
                     object[] objects = new IVarOut<VarDerived>[1];
@@ -288,8 +288,8 @@ namespace NFUnitTestSystemLib
             take.Invoke(target, new object[] { new VarCOut<VarBase>() });
 
             Assert.AreEqual(before + 2, VarTake.Count);
-            Assert.ThrowsException(typeof(InvalidCastException), () => take.Invoke(target, new object[] { new VarCOut<VarOther>() }));
-            Assert.ThrowsException(typeof(InvalidCastException), () => take.Invoke(target, new object[] { new VarCOut<int>() }));
+            Assert.ThrowsException(typeof(ArgumentException), () => take.Invoke(target, new object[] { new VarCOut<VarOther>() }));
+            Assert.ThrowsException(typeof(ArgumentException), () => take.Invoke(target, new object[] { new VarCOut<int>() }));
         }
 
         [TestMethod]
@@ -301,7 +301,7 @@ namespace NFUnitTestSystemLib
             field.SetValue(target, new VarCOut<VarDerived>());
 
             Assert.IsNotNull(target.Field);
-            Assert.ThrowsException(typeof(Exception), () => field.SetValue(target, new VarCOut<VarOther>()));
+            Assert.ThrowsException(typeof(ArgumentException), () => field.SetValue(target, new VarCOut<VarOther>()));
         }
 
         [TestMethod]

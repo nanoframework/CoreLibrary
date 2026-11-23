@@ -180,6 +180,8 @@
     <Compile Include="System\Reflection\RuntimeConstructorInfo.cs" />
     <Compile Include="System\Reflection\RuntimeFieldInfo.cs" />
     <Compile Include="System\Reflection\RuntimeMethodInfo.cs" />
+    <Compile Include="System\Reflection\TargetException.cs" />
+    <Compile Include="System\Reflection\TargetParameterCountException.cs" />
     <Compile Include="System\RuntimeArgumentHandle.cs" />
     <Compile Include="System\RuntimeFieldHandle.cs" />
     <Compile Include="System\RuntimeMethodHandle.cs" />

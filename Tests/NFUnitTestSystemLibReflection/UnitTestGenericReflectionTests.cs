@@ -131,7 +131,7 @@ namespace NFUnitTestSystemLib
             var holder = new GrSetWrong<int>();
             FieldInfo field = typeof(GrSetWrong<int>).GetField("Item");
 
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(holder, "text"); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(holder, "text"); });
         }
 
         [TestMethod]
@@ -140,7 +140,7 @@ namespace NFUnitTestSystemLib
             var holder = new GrSetOther<int>();
             FieldInfo field = typeof(GrSetOther<string>).GetField("Item");
 
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(holder, "text"); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(holder, "text"); });
         }
 
         [TestMethod]
@@ -249,7 +249,7 @@ namespace NFUnitTestSystemLib
             var holder = new GrInvokeWrong<string>();
             MethodInfo setter = typeof(GrInvokeWrong<string>).GetMethod("set_Value");
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { setter.Invoke(holder, new object[] { 1 }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { setter.Invoke(holder, new object[] { 1 }); });
         }
 
         [TestMethod]
@@ -266,7 +266,7 @@ namespace NFUnitTestSystemLib
             var holder = new GrInvokeOther<int>();
             MethodInfo setter = typeof(GrInvokeOther<string>).GetMethod("set_Value");
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { setter.Invoke(holder, new object[] { "text" }); });
+            Assert.ThrowsException(typeof(TargetException), () => { setter.Invoke(holder, new object[] { "text" }); });
         }
 
         // T bound to a generic type
@@ -308,7 +308,7 @@ namespace NFUnitTestSystemLib
             field.SetValue(holder, item);
 
             Assert.IsTrue(holder.Item == item);
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(holder, new GrNestItem<string>()); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(holder, new GrNestItem<string>()); });
         }
 
         [TestMethod]
@@ -321,7 +321,7 @@ namespace NFUnitTestSystemLib
             setter.Invoke(holder, new object[] { item });
 
             Assert.IsTrue(holder.Value == item);
-            Assert.ThrowsException(typeof(InvalidCastException), () => { setter.Invoke(holder, new object[] { new GrNestItem<string>() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { setter.Invoke(holder, new object[] { new GrNestItem<string>() }); });
         }
 
         [TestMethod]
@@ -398,8 +398,8 @@ namespace NFUnitTestSystemLib
             field.SetValue(holder, values);
 
             Assert.IsTrue(holder.Item == values);
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(holder, new string[1]); });
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(holder, "text"); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(holder, new string[1]); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(holder, "text"); });
         }
 
         [TestMethod]
@@ -412,8 +412,8 @@ namespace NFUnitTestSystemLib
             setter.Invoke(holder, new object[] { values });
 
             Assert.IsTrue(holder.Value == values);
-            Assert.ThrowsException(typeof(InvalidCastException), () => { setter.Invoke(holder, new object[] { new string[1] }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { setter.Invoke(holder, new object[] { "text" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { setter.Invoke(holder, new object[] { new string[1] }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { setter.Invoke(holder, new object[] { "text" }); });
         }
 
         [TestMethod]

@@ -21,7 +21,7 @@ namespace NFUnitTestSystemLib
         {
             MethodInfo mi = Target(method);
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { arg }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { arg }); });
         }
 
         private static void AssertInvokeAccepted(string method, object arg)
@@ -127,9 +127,9 @@ namespace NFUnitTestSystemLib
             MethodInfo instance = typeof(Foo).GetMethod("Instance");
             MethodInfo onInterface = typeof(IBase).GetMethod("OnBase");
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { instance.Invoke("not a Foo", new object[0]); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { instance.Invoke(new int[1], new object[0]); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { onInterface.Invoke(new Foo(), new object[0]); });
+            Assert.ThrowsException(typeof(TargetException), () => { instance.Invoke("not a Foo", new object[0]); });
+            Assert.ThrowsException(typeof(TargetException), () => { instance.Invoke(new int[1], new object[0]); });
+            Assert.ThrowsException(typeof(TargetException), () => { onInterface.Invoke(new Foo(), new object[0]); });
 
             Assert.AreEqual(1, (int)instance.Invoke(new Foo(), new object[0]));
             Assert.AreEqual(1, (int)instance.Invoke(new FooChild(), new object[0]));
@@ -142,8 +142,8 @@ namespace NFUnitTestSystemLib
             ConstructorInfo withFoo = typeof(CtorTarget).GetConstructor(new Type[] { typeof(Foo) });
             ConstructorInfo withArray = typeof(CtorTarget).GetConstructor(new Type[] { typeof(Foo[]) });
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { withFoo.Invoke(new object[] { "not a Foo" }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { withArray.Invoke(new object[] { new int[1] }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { withFoo.Invoke(new object[] { "not a Foo" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { withArray.Invoke(new object[] { new int[1] }); });
 
             Assert.IsNotNull(withFoo.Invoke(new object[] { new Foo() }));
             Assert.IsNotNull(withFoo.Invoke(new object[] { null }));
@@ -183,8 +183,7 @@ namespace NFUnitTestSystemLib
 
         private static void AssertSetValueRejected(FieldInfo field, object holder, object value)
         {
-            // The runtime has no specific exception for a wrong type, and ThrowsException requires an exact match.
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(holder, value); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(holder, value); });
         }
 
         [TestMethod]
@@ -316,8 +315,8 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new G<int>(), "x" }));
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { null, "x" }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new G<int>(), new Foo() }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new G<int>(), new int[1] }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new G<int>(), new Foo() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new G<int>(), new int[1] }); });
         }
 
         [TestMethod]
@@ -327,7 +326,7 @@ namespace NFUnitTestSystemLib
 
             Assert.IsNotNull(mi.Invoke(null, new object[] { "x" }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new Foo() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new Foo() }); });
         }
 
         [TestMethod]
@@ -337,7 +336,7 @@ namespace NFUnitTestSystemLib
 
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new G<G<int>>(), "x" }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new G<G<int>>(), new Foo() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new G<G<int>>(), new Foo() }); });
         }
 
         [TestMethod]
@@ -348,8 +347,8 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new G<int>() }));
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { null }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { "x" }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new Foo() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new Foo() }); });
         }
 
         [TestMethod]
@@ -360,7 +359,7 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new G<int>[1] }));
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { null }));
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new int[1] }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new int[1] }); });
         }
 
         [TestMethod]
@@ -393,7 +392,7 @@ namespace NFUnitTestSystemLib
             MethodInfo onMethod = typeof(GenericTargets).GetMethod("TakesMethodT");
 
             Assert.AreEqual(1, (int)onType.Invoke(new G<int>(), new object[] { 5 }));
-            Assert.ThrowsException(typeof(Exception), () => { onType.Invoke(new G<int>(), new object[] { "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { onType.Invoke(new G<int>(), new object[] { "x" }); });
             Assert.ThrowsException(typeof(NotSupportedException), () => { onMethod.Invoke(null, new object[] { 5 }); });
             Assert.ThrowsException(typeof(NotSupportedException), () => { onMethod.Invoke(null, new object[] { null }); });
         }
@@ -404,10 +403,10 @@ namespace NFUnitTestSystemLib
             MethodInfo mi = typeof(G<int>).GetMethod("TakesTArray");
 
             Assert.AreEqual(1, (int)mi.Invoke(new G<int>(), new object[] { new int[1] }));
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { new string[1] }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(new G<int>(), new object[] { new string[1] }); });
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { "x" }); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(new G<int>(), new object[] { new Foo() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(new G<int>(), new object[] { "x" }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(new G<int>(), new object[] { new Foo() }); });
         }
 
         [TestMethod]
@@ -415,8 +414,8 @@ namespace NFUnitTestSystemLib
         {
             MethodInfo instance = typeof(G<int>).GetMethod("Instance");
 
-            Assert.ThrowsException(typeof(InvalidCastException), () => { instance.Invoke("not a G", new object[0]); });
-            Assert.ThrowsException(typeof(InvalidCastException), () => { instance.Invoke(new Foo(), new object[0]); });
+            Assert.ThrowsException(typeof(TargetException), () => { instance.Invoke("not a G", new object[0]); });
+            Assert.ThrowsException(typeof(TargetException), () => { instance.Invoke(new Foo(), new object[0]); });
 
             Assert.AreEqual(1, (int)instance.Invoke(new G<int>(), new object[0]));
         }

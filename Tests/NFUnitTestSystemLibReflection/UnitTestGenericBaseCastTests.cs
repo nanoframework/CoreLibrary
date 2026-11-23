@@ -87,7 +87,7 @@ namespace NFUnitTestSystemLib
             MethodInfo mi = typeof(InvokeTarget).GetMethod("Take");
 
             Assert.AreEqual(1, (int)mi.Invoke(null, new object[] { new InvokeIntDerived() }));
-            Assert.ThrowsException(typeof(InvalidCastException), () => { mi.Invoke(null, new object[] { new InvokeStringDerived() }); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { mi.Invoke(null, new object[] { new InvokeStringDerived() }); });
         }
 
         [TestMethod]
@@ -101,7 +101,7 @@ namespace NFUnitTestSystemLib
 
             holder.Item = null;
 
-            Assert.ThrowsException(typeof(Exception), () => { field.SetValue(holder, new FieldStringDerived()); });
+            Assert.ThrowsException(typeof(ArgumentException), () => { field.SetValue(holder, new FieldStringDerived()); });
             Assert.IsNull(holder.Item);
         }
 

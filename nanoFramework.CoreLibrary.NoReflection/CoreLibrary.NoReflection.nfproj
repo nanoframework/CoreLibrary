@@ -71,6 +71,7 @@
     <Compile Include="..\nanoFramework.CoreLibrary\System\ArgumentNullException.cs" Link="System\ArgumentNullException.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\ArgumentOutOfRangeException.cs" Link="System\ArgumentOutOfRangeException.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Array.cs" Link="System\Array.cs" />
+    <Compile Include="..\nanoFramework.CoreLibrary\System\ArrayTypeMismatchException.cs" Link="System\ArrayTypeMismatchException.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\AssemblyInfo.cs" Link="System\AssemblyInfo.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\AsyncCallback.cs" Link="System\AsyncCallback.cs" />
     <Compile Include="..\nanoFramework.CoreLibrary\System\Attribute.cs" Link="System\Attribute.cs" />

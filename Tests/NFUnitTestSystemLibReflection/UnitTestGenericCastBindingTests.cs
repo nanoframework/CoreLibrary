@@ -104,7 +104,7 @@ namespace NFUnitTestSystemLib
 
             holder[0] = new ElemFooImpl<int>[1];
 
-            Assert.ThrowsException(typeof(Exception), () => { holder[0] = new ElemFooImpl<string>[1]; });
+            Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => { holder[0] = new ElemFooImpl<string>[1]; });
         }
 
         [TestMethod]
@@ -117,7 +117,7 @@ namespace NFUnitTestSystemLib
             Array.Copy(source, same, 1);
 
             Assert.IsNotNull(same[0]);
-            Assert.ThrowsException(typeof(InvalidCastException), () => Array.Copy(source, other, 1));
+            Assert.ThrowsException(typeof(ArrayTypeMismatchException), () => Array.Copy(source, other, 1));
         }
     }
 
