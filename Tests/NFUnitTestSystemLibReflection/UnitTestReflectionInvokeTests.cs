@@ -386,15 +386,15 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void Invoke_TypeParameterOnClosedType_IsResolved_MethodTypeParameter_IsNotSupported()
+        public void Invoke_TypeParameterOnClosedType_IsResolved_MethodDefinition_ThrowsInvalidOperation()
         {
             MethodInfo onType = typeof(G<int>).GetMethod("TakesT");
             MethodInfo onMethod = typeof(GenericTargets).GetMethod("TakesMethodT");
 
             Assert.AreEqual(1, (int)onType.Invoke(new G<int>(), new object[] { 5 }));
             Assert.ThrowsException(typeof(ArgumentException), () => { onType.Invoke(new G<int>(), new object[] { "x" }); });
-            Assert.ThrowsException(typeof(NotSupportedException), () => { onMethod.Invoke(null, new object[] { 5 }); });
-            Assert.ThrowsException(typeof(NotSupportedException), () => { onMethod.Invoke(null, new object[] { null }); });
+            Assert.ThrowsException(typeof(InvalidOperationException), () => { onMethod.Invoke(null, new object[] { 5 }); });
+            Assert.ThrowsException(typeof(InvalidOperationException), () => { onMethod.Invoke(null, new object[] { null }); });
         }
 
         [TestMethod]
