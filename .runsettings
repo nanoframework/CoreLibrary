@@ -12,5 +12,6 @@
        <Logging>Detailed</Logging>
        <IsRealHardware>False</IsRealHardware>
        <UsePreviewClr>True</UsePreviewClr>
+       <UsePreviewNanoClr>True</UsePreviewNanoClr>
    </nanoFrameworkAdapter>
 </RunSettings>
