@@ -7,7 +7,7 @@ using nanoFramework.TestFramework;
 namespace NFUnitTestSystemLib
 {
     // Expected values come from running the same code on .NET 10, except the cases named as deviations: .NET throws
-    // MissingMethodException, or wraps a constructor exception in a TargetInvocationException (neither type exists here).
+    // MissingMethodException, or wraps a constructor exception in a TargetInvocationException (neither type exists here). A struct with a declared parameterless constructor is also NotSupportedException: ConstructorInfo.Invoke does not return a usable boxed struct.
     [TestClass]
     public class UnitTestActivatorTests
     {
@@ -35,6 +35,16 @@ namespace NFUnitTestSystemLib
         public struct AcStruct
         {
             public int X;
+        }
+
+        public struct AcStructWithConstructor
+        {
+            public int X;
+
+            public AcStructWithConstructor()
+            {
+                X = 5;
+            }
         }
 
         public struct AcStructWithArgument
@@ -164,6 +174,8 @@ namespace NFUnitTestSystemLib
             Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<IAcMark>());
             Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<int[]>());
             Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<Action>());
+            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<AcStructWithConstructor>());
+            Assert.ThrowsException(typeof(NotSupportedException), () => new AcFactory<AcStructWithConstructor>().Make());
         }
 
         [TestMethod]
