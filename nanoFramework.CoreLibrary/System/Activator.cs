@@ -17,20 +17,15 @@ namespace System
         /// </summary>
         /// <typeparam name="T">The type to create.</typeparam>
         /// <returns>A reference to the newly created object, or the default value for a value type.</returns>
-        /// <exception cref="NotSupportedException">The type has no public parameterless constructor, it is abstract, or it is a value type that declares a parameterless constructor.</exception>
+        /// <exception cref="NotSupportedException">The type is abstract or has no public parameterless constructor.</exception>
         public static T CreateInstance<T>()
         {
             Type type = typeof(T);
 
             ConstructorInfo constructor = type.IsAbstract ? null : type.GetConstructor(new Type[0]);
 
-            if (type.IsValueType)
+            if (type.IsValueType && constructor == null)
             {
-                if (constructor != null)
-                {
-                    throw new NotSupportedException();
-                }
-
                 return default(T);
             }
 
