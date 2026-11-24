@@ -78,6 +78,43 @@ namespace System
         public virtual extern Type MakeGenericType(params Type[] typeArguments);
 
         /// <summary>
+        /// Returns a Type object representing a one-dimensional array of the current type, with a lower bound of zero.
+        /// </summary>
+        /// <returns>A Type object representing a one-dimensional array of the current type.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public virtual extern Type MakeArrayType();
+
+        /// <summary>
+        /// Gets a value that indicates whether the type is an array type that can represent only a single-dimensional array with a zero lower bound.
+        /// </summary>
+        public virtual bool IsSZArray => IsArray;
+
+        /// <summary>
+        /// Gets the number of dimensions in an array.
+        /// </summary>
+        /// <returns>An integer that contains the number of dimensions in the current type, always 1.</returns>
+        /// <exception cref="ArgumentException">The current type is not an array.</exception>
+        public virtual int GetArrayRank()
+        {
+            if (!IsArray)
+            {
+                throw new ArgumentException();
+            }
+
+            return 1;
+        }
+
+        /// <summary>
+        /// Determines whether the current type can be assigned to a variable of the specified targetType.
+        /// </summary>
+        /// <param name="targetType">The type to compare with the current type.</param>
+        /// <returns><see langword="true"/> if the current type can be assigned to targetType; otherwise <see langword="false"/>, also when targetType is <see langword="null"/>.</returns>
+        public bool IsAssignableTo(Type targetType)
+        {
+            return targetType != null && targetType.IsAssignableFrom(this);
+        }
+
+        /// <summary>
         /// Gets an array of the generic type arguments for this type.
         /// </summary>
         /// <value>An array of the generic type arguments for this type.</value>
