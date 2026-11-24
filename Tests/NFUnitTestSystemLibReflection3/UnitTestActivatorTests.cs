@@ -7,7 +7,7 @@ using nanoFramework.TestFramework;
 namespace NFUnitTestSystemLib
 {
     // Expected values come from running the same code on .NET 10, except the cases named as deviations: .NET throws
-    // MissingMethodException, or wraps a constructor exception in a TargetInvocationException (neither type exists here). A struct with a declared parameterless constructor is also NotSupportedException: ConstructorInfo.Invoke does not return a usable boxed struct.
+    // MissingMethodException, or wraps a constructor exception in a TargetInvocationException (neither type exists here).
     [TestClass]
     public class UnitTestActivatorTests
     {
@@ -149,6 +149,7 @@ namespace NFUnitTestSystemLib
             Assert.AreEqual(AcColor.Red, Activator.CreateInstance<AcColor>());
             Assert.AreEqual(0, Activator.CreateInstance<AcStruct>().X);
             Assert.AreEqual(0, Activator.CreateInstance<AcStructWithArgument>().X);
+            Assert.AreEqual(5, Activator.CreateInstance<AcStructWithConstructor>().X);
             Assert.IsNotNull(Activator.CreateInstance<AcBox<int>>());
             Assert.IsNotNull(Activator.CreateInstance<AcBox<AcBox<string>>>());
             Assert.IsTrue(Activator.CreateInstance<AcBox<int>>().GetType() == typeof(AcBox<int>));
@@ -174,8 +175,6 @@ namespace NFUnitTestSystemLib
             Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<IAcMark>());
             Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<int[]>());
             Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<Action>());
-            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<AcStructWithConstructor>());
-            Assert.ThrowsException(typeof(NotSupportedException), () => new AcFactory<AcStructWithConstructor>().Make());
         }
 
         [TestMethod]
@@ -190,6 +189,7 @@ namespace NFUnitTestSystemLib
             Assert.IsNotNull(new AcFactory<AcPlain>().Make());
             Assert.AreEqual(0, new AcFactory<int>().Make());
             Assert.AreEqual(0, new AcFactory<AcStruct>().Make().X);
+            Assert.AreEqual(5, new AcFactory<AcStructWithConstructor>().Make().X);
             Assert.IsNotNull(new AcFactory<AcBox<int>>().Make());
             Assert.IsTrue(new AcFactory<AcBox<int>>().Make() is AcBox<int>);
             Assert.AreEqual(9, new AcFactory<AcPlain>().Make().Value);
