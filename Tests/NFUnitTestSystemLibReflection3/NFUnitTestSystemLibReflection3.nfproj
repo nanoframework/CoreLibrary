@@ -29,6 +29,7 @@
     <Compile Include="UnitTestGenericParameterCastTests.cs" />
     <Compile Include="UnitTestActivatorTests.cs" />
     <Compile Include="UnitTestArrayTypeTests.cs" />
+    <Compile Include="UnitTestGenericArrayArgumentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
