@@ -149,6 +149,7 @@
     <Compile Include="System\NonSerializedAttribute.cs" />
     <Compile Include="System\NotImplementedException.cs" />
     <Compile Include="System\NotSupportedException.cs" />
+    <Compile Include="System\Activator.cs" />
     <Compile Include="System\NullReferenceException.cs" />
     <Compile Include="System\Number.cs" />
     <Compile Include="System\Object.cs" />

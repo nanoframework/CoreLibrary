@@ -135,6 +135,11 @@ namespace System.Reflection
         public virtual bool IsGenericMethodDefinition => GetGenericFlags().HasFlag(GenericMethodFlags.GenericMethodDefinition);
 
         /// <summary>
+        /// Gets a value indicating whether the method is a generic method that has been constructed from a generic method definition.
+        /// </summary>
+        public virtual bool IsConstructedGenericMethod => IsGenericMethod && !IsGenericMethodDefinition;
+
+        /// <summary>
         /// Gets a value indicating whether the generic method contains unassigned generic type parameters.
         /// </summary>
         /// <value>
