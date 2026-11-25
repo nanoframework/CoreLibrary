@@ -45,6 +45,17 @@ namespace Di4Types
 
     public class GdBox<T> { }
 
+    public class GdPlain : GdInt { }
+
+    public class GdPlain2 : GdPlain { }
+
+    public class GdOverPlain<T> : GdInt { }
+
+    public class GdCaller<T>
+    {
+        public string Call(IGd<int> target) { return target.G(); }
+    }
+
     public class GdNested3 : Gd0<GdBox<GdBox<GdBox<int>>>> { }
 
     public class GdNested4 : Gd0<GdBox<GdBox<GdBox<GdBox<int>>>>> { }
@@ -211,6 +222,26 @@ namespace NFUnitTestSystemLib
             Func<string> d = ((IGd<long>)new Gd2<long>()).G;
 
             Assert.AreEqual("Int64", d());
+        }
+
+        [TestMethod]
+        public void NonGenericDerivedFromNonGenericDerived()
+        {
+            Assert.AreEqual("Int32", ((IGd<int>)new GdPlain()).G());
+            Assert.AreEqual("Int32", ((IGd<int>)new GdPlain2()).G());
+        }
+
+        [TestMethod]
+        public void GenericDerivedFromNonGenericDerived()
+        {
+            Assert.AreEqual("Int32", ((IGd<int>)new GdOverPlain<string>()).G());
+        }
+
+        [TestMethod]
+        public void CallerArgumentsDoNotLeak()
+        {
+            Assert.AreEqual("Int32", new GdCaller<string>().Call(new Gd2<int>()));
+            Assert.AreEqual("Int32", new GdCaller<string>().Call(new GdInt2()));
         }
 
         [TestMethod]
