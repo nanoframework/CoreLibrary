@@ -91,6 +91,8 @@ jobs:
       sonarCloudProject: 'nanoframework_lib-CoreLibrary'
       runUnitTests: ${{ ne(variables['processPrLabels.SKIP_UNIT_TESTS'], 'true') }}
       unitTestRunsettings: $(UNIT_TEST_RUNSETTINGS)
+      unitTestAdaptersPath: '$(System.DefaultWorkingDirectory)\nanoFramework.TestFramework\source\TestAdapter\bin\$(buildConfiguration)\net48'
+      minimumExpectedTests: 200
       skipNuGetCache: false
       usePreviewBuild: true
 
