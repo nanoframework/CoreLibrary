@@ -216,18 +216,7 @@ namespace NFUnitTestSystemLib
         [TestMethod]
         public void NestedArgumentOverLimit_FailsClosed()
         {
-            string result = null;
-
-            try
-            {
-                result = ((IGd<GdBox<GdBox<GdBox<GdBox<int>>>>>)new GdNested4()).G();
-            }
-            catch (Exception)
-            {
-                return;
-            }
-
-            Assert.IsTrue(false, "Expected an exception, got " + result);
+            Assert.ThrowsException(typeof(Exception), () => ((IGd<GdBox<GdBox<GdBox<GdBox<int>>>>>)new GdNested4()).G());
         }
     }
 }
