@@ -35,6 +35,7 @@
     <Compile Include="UnitTestInvokeTargetTests.cs" />
     <Compile Include="UnitTestConstructorVisibilityTests.cs" />
     <Compile Include="UnitTestGenericLimitTests.cs" />
+    <Compile Include="UnitTestInterfaceCallsOnGenericBaseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
