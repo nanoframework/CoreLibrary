@@ -76,14 +76,24 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        $hasLocalNanoClr = $env:HAS_LOCAL_NANOCLR
-        if ($hasLocalNanoClr -eq 'true') {
-          Write-Host "##vso[task.setvariable variable=UNIT_TEST_RUNSETTINGS]$(System.DefaultWorkingDirectory)\local_clr.runsettings"
-        } else {
-          Write-Host "##vso[task.setvariable variable=UNIT_TEST_RUNSETTINGS]$(System.DefaultWorkingDirectory)\.runsettings"
+        $runsettings = Join-Path $env:SYSTEM_DEFAULTWORKINGDIRECTORY '.runsettings'
+        $nanoClrPath = $env:NANOCLR_PATH
+
+        if (-not [string]::IsNullOrWhiteSpace($nanoClrPath) -and -not $nanoClrPath.StartsWith('$(')) {
+          [xml]$xml = Get-Content -LiteralPath $runsettings -Raw
+          $adapter = $xml.RunSettings.nanoFrameworkAdapter
+          $node = $xml.CreateElement('PathToLocalCLRInstance')
+          $node.InnerText = $nanoClrPath
+          $adapter.AppendChild($node) | Out-Null
+
+          $runsettings = Join-Path $env:SYSTEM_DEFAULTWORKINGDIRECTORY 'nanoclr_preview.runsettings'
+          $xml.Save($runsettings)
+          Write-Host "Unit tests will run against nanoCLR: $nanoClrPath"
         }
+
+        Write-Host "##vso[task.setvariable variable=UNIT_TEST_RUNSETTINGS]$runsettings"
     env:
-      HAS_LOCAL_NANOCLR: $(NANOCLR_CHECK.HAS_LOCAL_NANOCLR)
+      NANOCLR_PATH: $(NF_MDP_NANOCLR_INSTANCE_PATH)
 
   # build steps only
   - template: azure-pipelines-templates/class-lib-build-only.yml@templates  
