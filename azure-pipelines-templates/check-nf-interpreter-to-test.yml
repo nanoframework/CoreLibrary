@@ -10,12 +10,15 @@ steps:
       targetType: "inline"
       script: |
 
+        $ErrorActionPreference = 'Stop'
+
         # prepare GitHub API headers using token auth
         $headers = @{
           Authorization = "token $env:GITHUB_TOKEN"
           'User-Agent'  = 'azure-pipelines'
           Accept        = 'application/vnd.github+json'
         }
+        Write-Host "##vso[task.setvariable variable=NFINTERPRETER_BUILDID]"
 
         # find PR
         "Getting PR #$env:System_PullRequest_PullRequestNumber details..." | Write-Host -ForegroundColor White -NoNewline
@@ -29,28 +32,78 @@ steps:
           'OK' | Write-Host -ForegroundColor Green
         }
 
-        # grab PR commit message
-        $prCommitMessage = $($pr.body)
-
-        # look for test prompt in PR commit message
-        # pattern is "[tested against nanoclr buildId NNN]"
-
-        if($prCommitMessage -match "\[tested against nanoclr buildId (\d+)\]")
+        # Example: [tested against nanoframework/nf-interpreter#123]
+        $references = [regex]::Matches([string]$pr.body, '\[tested against nanoframework/nf-interpreter#(\d+)\]', 'IgnoreCase')
+        if($references.Count -gt 1)
         {
-          $buildId = $matches[1]
-          "AZDO build ID found: $buildId" | Write-Host -ForegroundColor White
+          throw "Specify only one nf-interpreter PR reference."
+        }
 
-          echo "##vso[task.setvariable variable=NFINTERPRETER_BUILDID]$buildId"
+        if($references.Count -eq 1)
+        {
+          $testPR = $references[0].Groups[1].Value
+          $dependencyPR = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/nf-interpreter/pulls/$testPR" -Headers $headers -Method GET
+          $headSha = $dependencyPR.head.sha
+          if([string]::IsNullOrWhiteSpace($headSha))
+          {
+            throw "Could not resolve the head commit of nf-interpreter PR #$testPR."
+          }
+
+          "Finding a completed nf-interpreter build for PR #$testPR at $headSha" | Write-Host -ForegroundColor White
+          $buildApi = 'https://dev.azure.com/nanoframework/nf-interpreter/_apis/build'
+          $branch = [uri]::EscapeDataString("refs/pull/$testPR/merge")
+          $buildsUri = "$buildApi/builds?definitions=34&repositoryId=nanoframework%2Fnf-interpreter" +
+            "&repositoryType=GitHub&branchName=$branch&statusFilter=completed&resultFilter=succeeded,failed" +
+            '&queryOrder=queueTimeDescending&$top=100&api-version=7.1'
+          $continuationToken = $null
+          $selectedBuild = $null
+
+          do
+          {
+            $pageUri = $buildsUri
+            if($continuationToken)
+            {
+              $pageUri += "&continuationToken=$([uri]::EscapeDataString($continuationToken))"
+            }
+
+            $response = Invoke-WebRequest -Uri $pageUri -UseBasicParsing -Method GET
+            $builds = $response.Content | ConvertFrom-Json
+            $selectedBuild = $builds.value | Where-Object {
+              $_.status -eq 'completed' -and $_.result -in @('succeeded', 'failed') -and
+              $_.triggerInfo.'pr.number' -eq $testPR -and
+              $_.triggerInfo.'pr.sourceSha' -eq $headSha
+            } | Select-Object -First 1
+            $continuationToken = [string]($response.Headers['x-ms-continuationtoken'] | Select-Object -First 1)
+          } while(!$selectedBuild -and $continuationToken)
+
+          if(!$selectedBuild)
+          {
+            throw "No eligible completed nf-interpreter build found for PR #$testPR at $headSha. Run the dependency pipeline, then retry."
+          }
+
+          $buildId = $selectedBuild.id
+          $artifacts = Invoke-RestMethod -Uri "$buildApi/builds/$buildId/artifacts?api-version=7.1" -Method GET
+          if(!($artifacts.value | Where-Object { $_.name -eq 'nanoclr_dll' -and $_.resource.type -eq 'PipelineArtifact' }))
+          {
+            throw "nf-interpreter build $buildId has no nanoclr_dll pipeline artifact."
+          }
+
+          "Using nf-interpreter build ${buildId}: https://dev.azure.com/nanoframework/nf-interpreter/_build/results?buildId=$buildId" | Write-Host -ForegroundColor Green
+          Write-Host "##vso[task.setvariable variable=NFINTERPRETER_BUILDID]$buildId"
         }
         else
         {
-          "No build ID found" | Write-Host -ForegroundColor Red
+          "No nf-interpreter PR reference found. Using default nanoCLR." | Write-Host -ForegroundColor Red
         }
     env:
       GITHUB_TOKEN: $(GitHubToken)
 
   - task: DownloadPipelineArtifact@2
-    condition: ne(variables['NFINTERPRETER_BUILDID'], '')
+    condition: >-
+      and(
+        succeeded(),
+        ne(variables['NFINTERPRETER_BUILDID'], '')
+      )
     displayName: Download nanoCLR preview
     inputs:
       buildType: specific
@@ -58,15 +111,25 @@ steps:
       definition: '34'
       buildVersionToDownload: specific
       allowFailedBuilds: true
-      buildId: $(NFINTERPRETER_BUILDID)
+      pipelineId: $(NFINTERPRETER_BUILDID)
       artifactName: 'nanoclr_dll'
-      targetPath: '$(Agent.TempDirectory)/nanoclr'
+      targetPath: '$(Pipeline.Workspace)/nanoclr'
 
   - task: PowerShell@2
-    condition: ne(variables['NFINTERPRETER_BUILDID'], '')
-    displayName: Flag availability of local nanoCLR
-    name: NANOCLR_CHECK
+    condition: >-
+      and(
+        succeeded(),
+        ne(variables['NFINTERPRETER_BUILDID'], '')
+      )
+    displayName: Set nanoCLR preview path
     inputs:
       targetType: 'inline'
       script: |
-        Write-Host "##vso[task.setvariable variable=HAS_LOCAL_NANOCLR;isOutput=true]true"
+        $nanoClrPath = Join-Path '$(Pipeline.Workspace)' 'nanoclr\nanoFramework.nanoCLR.dll'
+        if (!(Test-Path -LiteralPath $nanoClrPath -PathType Leaf))
+        {
+          throw "nanoCLR DLL not found for build $(NFINTERPRETER_BUILDID): $nanoClrPath"
+        }
+
+        Write-Host "Using nanoCLR from build $(NFINTERPRETER_BUILDID): $nanoClrPath"
+        Write-Host "##vso[task.setvariable variable=NF_MDP_NANOCLR_INSTANCE_PATH]$nanoClrPath"
