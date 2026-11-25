@@ -165,16 +165,16 @@ namespace NFUnitTestSystemLib
         }
 
         [TestMethod]
-        public void CreateInstanceOfT_WithoutAPublicParameterlessConstructor_ThrowsNotSupportedException_Deviation()
+        public void CreateInstanceOfT_WithoutAPublicParameterlessConstructor_ThrowsMissingMethodException_Deviation()
         {
-            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<string>());
-            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<AcAbstract>());
-            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<AcOnlyArgument>());
-            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<AcPrivate>());
-            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<AcProtected>());
-            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<IAcMark>());
-            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<int[]>());
-            Assert.ThrowsException(typeof(NotSupportedException), () => Activator.CreateInstance<Action>());
+            Assert.ThrowsException(typeof(MissingMethodException), () => Activator.CreateInstance<string>());
+            Assert.ThrowsException(typeof(MissingMethodException), () => Activator.CreateInstance<AcAbstract>());
+            Assert.ThrowsException(typeof(MissingMethodException), () => Activator.CreateInstance<AcOnlyArgument>());
+            Assert.ThrowsException(typeof(MissingMethodException), () => Activator.CreateInstance<AcPrivate>());
+            Assert.ThrowsException(typeof(MissingMethodException), () => Activator.CreateInstance<AcProtected>());
+            Assert.ThrowsException(typeof(MissingMethodException), () => Activator.CreateInstance<IAcMark>());
+            Assert.ThrowsException(typeof(MissingMethodException), () => Activator.CreateInstance<int[]>());
+            Assert.ThrowsException(typeof(MissingMethodException), () => Activator.CreateInstance<Action>());
         }
 
         [TestMethod]
