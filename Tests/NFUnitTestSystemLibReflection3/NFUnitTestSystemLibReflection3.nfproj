@@ -33,6 +33,8 @@
     <Compile Include="UnitTestGenericArrayArgumentTests.cs" />
     <Compile Include="UnitTestDualInstantiationTests.cs" />
     <Compile Include="UnitTestInvokeTargetTests.cs" />
+    <Compile Include="UnitTestConstructorVisibilityTests.cs" />
+    <Compile Include="UnitTestGenericLimitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

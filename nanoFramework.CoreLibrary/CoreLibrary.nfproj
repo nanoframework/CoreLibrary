@@ -145,6 +145,9 @@
     <Compile Include="System\IO\IOException.cs" />
     <Compile Include="System\MarshalByRefObject.cs" />
     <Compile Include="System\Math.cs" />
+    <Compile Include="System\MemberAccessException.cs" />
+    <Compile Include="System\MissingMemberException.cs" />
+    <Compile Include="System\MissingMethodException.cs" />
     <Compile Include="System\MulticastDelegate.cs" />
     <Compile Include="System\NonSerializedAttribute.cs" />
     <Compile Include="System\NotImplementedException.cs" />

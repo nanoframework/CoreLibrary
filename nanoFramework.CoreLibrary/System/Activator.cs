@@ -17,7 +17,7 @@ namespace System
         /// </summary>
         /// <typeparam name="T">The type to create.</typeparam>
         /// <returns>A reference to the newly created object, or the default value for a value type.</returns>
-        /// <exception cref="NotSupportedException">The type is abstract or has no public parameterless constructor.</exception>
+        /// <exception cref="MissingMethodException">The type is abstract or has no public parameterless constructor.</exception>
         public static T CreateInstance<T>()
         {
             Type type = typeof(T);
@@ -31,7 +31,7 @@ namespace System
 
             if (constructor == null || !constructor.IsPublic)
             {
-                throw new NotSupportedException();
+                throw new MissingMethodException();
             }
 
             return (T)constructor.Invoke(null);
