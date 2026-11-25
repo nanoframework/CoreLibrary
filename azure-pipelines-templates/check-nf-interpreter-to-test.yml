@@ -114,7 +114,7 @@ steps:
       allowFailedBuilds: true
       pipelineId: $(NFINTERPRETER_BUILDID)
       artifactName: 'nanoclr_dll'
-      targetPath: '$(Pipeline.Workspace)/nanoclr'
+      targetPath: '$(Agent.TempDirectory)/nanoclr'
 
   - task: PowerShell@2
     condition: >-
@@ -126,7 +126,7 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        $nanoClrPath = Join-Path '$(Pipeline.Workspace)' 'nanoclr\nanoFramework.nanoCLR.dll'
+        $nanoClrPath = Join-Path '$(Agent.TempDirectory)' 'nanoclr\nanoFramework.nanoCLR.dll'
         if (!(Test-Path -LiteralPath $nanoClrPath -PathType Leaf))
         {
           throw "nanoCLR DLL not found for build $(NFINTERPRETER_BUILDID): $nanoClrPath"
