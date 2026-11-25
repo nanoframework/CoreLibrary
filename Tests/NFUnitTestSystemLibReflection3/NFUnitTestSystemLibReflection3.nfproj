@@ -32,6 +32,7 @@
     <Compile Include="UnitTestConstructorInvokeTests.cs" />
     <Compile Include="UnitTestGenericArrayArgumentTests.cs" />
     <Compile Include="UnitTestDualInstantiationTests.cs" />
+    <Compile Include="UnitTestInvokeTargetTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
