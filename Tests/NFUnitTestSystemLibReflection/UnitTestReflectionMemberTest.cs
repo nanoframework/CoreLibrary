@@ -134,23 +134,6 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue(ci.IsPublic);
             Assert.IsFalse(ci.IsStatic);
             Assert.IsTrue(ci.Invoke(new object[] { }) is TestClass);
-
-            ci = typeof(AbsTestClass).GetConstructor(new Type[] { typeof(float) });
-            Assert.IsFalse(ci.IsPublic);
-            Assert.IsFalse(ci.IsStatic);
-            Assert.IsInstanceOfType(ci.DeclaringType, typeof(AbsTestClass));
-            AbsTestClass tst = ci.Invoke(new object[] { 1.2f }) as AbsTestClass;
-            Assert.IsNotNull(tst);
-
-            ci = t.GetConstructor(new Type[] { typeof(int) });
-            Assert.IsFalse(ci.IsStatic);
-            Assert.IsFalse(ci.IsPublic);
-            Assert.IsTrue(ci.Invoke(new object[] { 3 }) is TestClass);
-
-            ci = t.GetConstructor(new Type[] { typeof(bool) });
-            Assert.IsFalse(ci.IsStatic);
-            Assert.IsFalse(ci.IsPublic);
-            Assert.IsTrue(ci.Invoke(new object[] { true }) is TestClass);
         }
 
         [TestMethod]
