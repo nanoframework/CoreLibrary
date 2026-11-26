@@ -22,12 +22,14 @@
     <TestProjectType>UnitTest</TestProjectType>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <LangVersion>13.0</LangVersion>
+    <SonarQubeExclude>true</SonarQubeExclude>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
     <Compile Include="UnitTestMakeGenericTypeTests.cs" />
     <Compile Include="UnitTestGenericParameterCastTests.cs" />
     <Compile Include="UnitTestActivatorTests.cs" />
+    <Compile Include="UnitTestReceiverRecoveryFailureTests.cs" />
     <Compile Include="UnitTestArrayTypeTests.cs" />
     <Compile Include="UnitTestConstructorInvokeTests.cs" />
     <Compile Include="UnitTestGenericArrayArgumentTests.cs" />
