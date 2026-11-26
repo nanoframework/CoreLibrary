@@ -5,16 +5,16 @@ using System;
 using Di4Types;
 using nanoFramework.TestFramework;
 
-namespace Di28Types
+namespace ReceiverRecoveryTypes
 {
-    public interface IRcBig
+    public interface ILoopingMethod
     {
-        string Big();
+        string Loop();
     }
 
-    public class RcBigBase<T> : IRcBig
+    public class LoopingBase<T> : ILoopingMethod
     {
-        public string Big()
+        public string Loop()
         {
             string r = "";
 
@@ -34,22 +34,22 @@ namespace Di28Types
         }
     }
 
-    public class RcBigNested3 : RcBigBase<GdBox<GdBox<GdBox<int>>>> { }
+    public class LoopingBaseThreeDeep : LoopingBase<GdBox<GdBox<GdBox<int>>>> { }
 
-    public class RcBigNested4 : RcBigBase<GdBox<GdBox<GdBox<GdBox<int>>>>> { }
+    public class LoopingBaseFourDeep : LoopingBase<GdBox<GdBox<GdBox<GdBox<int>>>>> { }
 
-    public class RcToStringBase<T>
+    public class ToStringBase<T>
     {
         public override string ToString() { return typeof(T).Name; }
     }
 
-    public class RcToStringNested3 : RcToStringBase<GdBox<GdBox<GdBox<int>>>> { }
+    public class ToStringBaseThreeDeep : ToStringBase<GdBox<GdBox<GdBox<int>>>> { }
 
-    public class RcToStringNested4 : RcToStringBase<GdBox<GdBox<GdBox<GdBox<int>>>>> { }
+    public class ToStringBaseFourDeep : ToStringBase<GdBox<GdBox<GdBox<GdBox<int>>>>> { }
 
-    public class RcCaller<T>
+    public class GenericCaller<T>
     {
-        public string CallBig(IRcBig target) { return target.Big(); }
+        public string CallLooping(ILoopingMethod target) { return target.Loop(); }
 
         public string CallToString(object target) { return target.ToString(); }
 
@@ -59,19 +59,17 @@ namespace Di28Types
             return d();
         }
 
-        public string CallOwn(IRcOwn target) { return target.Name(); }
+        public string CallOwn(IOwnName target) { return target.Name(); }
 
         public string CallPlain(IGdPlain target) { return target.G(); }
-
-        public string CallGeneric(IGd<GdBox<GdBox<GdBox<int>>>> target) { return target.G(); }
     }
 
-    public interface IRcOwn
+    public interface IOwnName
     {
         string Name();
     }
 
-    public class RcNested4Own : Gd0<GdBox<GdBox<GdBox<GdBox<int>>>>>, IRcOwn
+    public class FourDeepWithOwnMethod : Gd0<GdBox<GdBox<GdBox<GdBox<int>>>>>, IOwnName
     {
         public string Name() { return "own"; }
     }
@@ -82,7 +80,7 @@ namespace Di28Types
         [TestMethod]
         public void OverLimitBase_FromGenericCaller_DoesNotUseCallerArguments()
         {
-            Assert.ThrowsException(typeof(NotSupportedException), () => new RcCaller<string>().CallPlain(new GdNested4()));
+            Assert.ThrowsException(typeof(NotSupportedException), () => new GenericCaller<string>().CallPlain(new GdNested4()));
         }
 
         [TestMethod]
@@ -94,7 +92,7 @@ namespace Di28Types
         [TestMethod]
         public void AtLimitBase_FromGenericCaller_StillWorks()
         {
-            Assert.AreEqual("GdBox`1", new RcCaller<string>().CallPlain(new GdNested3()));
+            Assert.AreEqual("GdBox`1", new GenericCaller<string>().CallPlain(new GdNested3()));
         }
 
         [TestMethod]
@@ -110,28 +108,28 @@ namespace Di28Types
         [TestMethod]
         public void OverLimitBase_MethodWithoutGenericDeclaringType_StillWorks()
         {
-            Assert.AreEqual("own", new RcCaller<string>().CallOwn(new RcNested4Own()));
+            Assert.AreEqual("own", new GenericCaller<string>().CallOwn(new FourDeepWithOwnMethod()));
         }
 
         [TestMethod]
         public void OverLimitBase_MethodNotInlined_FromGenericCaller_Throws()
         {
-            Assert.AreEqual("GdBox`1GdBox`1", new RcCaller<string>().CallBig(new RcBigNested3()));
-            Assert.ThrowsException(typeof(NotSupportedException), () => new RcCaller<string>().CallBig(new RcBigNested4()));
+            Assert.AreEqual("GdBox`1GdBox`1", new GenericCaller<string>().CallLooping(new LoopingBaseThreeDeep()));
+            Assert.ThrowsException(typeof(NotSupportedException), () => new GenericCaller<string>().CallLooping(new LoopingBaseFourDeep()));
         }
 
         [TestMethod]
         public void OverLimitBase_VirtualToString_Throws()
         {
-            Assert.AreEqual("GdBox`1", new RcCaller<string>().CallToString(new RcToStringNested3()));
-            Assert.ThrowsException(typeof(NotSupportedException), () => new RcCaller<string>().CallToString(new RcToStringNested4()));
+            Assert.AreEqual("GdBox`1", new GenericCaller<string>().CallToString(new ToStringBaseThreeDeep()));
+            Assert.ThrowsException(typeof(NotSupportedException), () => new GenericCaller<string>().CallToString(new ToStringBaseFourDeep()));
         }
 
         [TestMethod]
         public void OverLimitBase_DelegateOverInterfaceMethod_Throws()
         {
-            Assert.AreEqual("GdBox`1", new RcCaller<string>().CallDelegate(new GdNested3()));
-            Assert.ThrowsException(typeof(NotSupportedException), () => new RcCaller<string>().CallDelegate(new GdNested4()));
+            Assert.AreEqual("GdBox`1", new GenericCaller<string>().CallDelegate(new GdNested3()));
+            Assert.ThrowsException(typeof(NotSupportedException), () => new GenericCaller<string>().CallDelegate(new GdNested4()));
         }
     }
 }
