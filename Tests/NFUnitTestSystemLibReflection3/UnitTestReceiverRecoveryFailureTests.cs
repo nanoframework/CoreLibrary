@@ -74,6 +74,40 @@ namespace ReceiverRecoveryTypes
         public string Name() { return "own"; }
     }
 
+    public class Deep1<T> : Gd0<T> { }
+    public class Deep2<T> : Deep1<T> { }
+    public class Deep3<T> : Deep2<T> { }
+    public class Deep4<T> : Deep3<T> { }
+    public class Deep5<T> : Deep4<T> { }
+    public class Deep6<T> : Deep5<T> { }
+    public class Deep7<T> : Deep6<T> { }
+    public class Deep8<T> : Deep7<T> { }
+    public class Deep9<T> : Deep8<T> { }
+    public class Deep10<T> : Deep9<T> { }
+    public class Deep11<T> : Deep10<T> { }
+    public class Deep12<T> : Deep11<T> { }
+    public class Deep13<T> : Deep12<T> { }
+    public class Deep14<T> : Deep13<T> { }
+    public class Deep15<T> : Deep14<T> { }
+    public class Deep16<T> : Deep15<T> { }
+    public class Deep17<T> : Deep16<T> { }
+    public class Deep18<T> : Deep17<T> { }
+    public class Deep19<T> : Deep18<T> { }
+    public class Deep20<T> : Deep19<T> { }
+    public class Deep21<T> : Deep20<T> { }
+    public class Deep22<T> : Deep21<T> { }
+    public class Deep23<T> : Deep22<T> { }
+    public class Deep24<T> : Deep23<T> { }
+    public class Deep25<T> : Deep24<T> { }
+    public class Deep26<T> : Deep25<T> { }
+    public class Deep27<T> : Deep26<T> { }
+    public class Deep28<T> : Deep27<T> { }
+    public class Deep29<T> : Deep28<T> { }
+    public class Deep30<T> : Deep29<T> { }
+    public class Deep31<T> : Deep30<T> { }
+    public class Deep32<T> : Deep31<T> { }
+    public class Deep33<T> : Deep32<T> { }
+
     [TestClass]
     public class UnitTestReceiverRecoveryFailureTests
     {
@@ -130,6 +164,18 @@ namespace ReceiverRecoveryTypes
         {
             Assert.AreEqual("GdBox`1", new GenericCaller<string>().CallDelegate(new GdNested3()));
             Assert.ThrowsException(typeof(NotSupportedException), () => new GenericCaller<string>().CallDelegate(new GdNested4()));
+        }
+
+        [TestMethod]
+        public void DeepHierarchy_MatchAtTheLastSearchStep_Works()
+        {
+            Assert.AreEqual("Int32", ((IGd<int>)new Deep32<int>()).G());
+        }
+
+        [TestMethod]
+        public void DeepHierarchy_BeyondTheSearchLimit_Throws()
+        {
+            Assert.ThrowsException(typeof(NotSupportedException), () => ((IGd<int>)new Deep33<int>()).G());
         }
     }
 }
