@@ -36,6 +36,7 @@
     <Compile Include="UnitTestDualInstantiationTests.cs" />
     <Compile Include="UnitTestInvokeTargetTests.cs" />
     <Compile Include="UnitTestConstructorVisibilityTests.cs" />
+    <Compile Include="UnitTestMethodListTests.cs" />
     <Compile Include="UnitTestGenericLimitTests.cs" />
     <Compile Include="UnitTestInterfaceCallsOnGenericBaseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
