@@ -59,6 +59,18 @@ namespace NFUnitTestSystemLibReflection3
     {
     }
 
+    public class ArityBase
+    {
+        public virtual string Gen() => "A";
+
+        public virtual string Gen<T>() => "A";
+    }
+
+    public class ArityDerived : ArityBase
+    {
+        public override string Gen<T>() => "D";
+    }
+
     [TestClass]
     public class UnitTestMethodListTests
     {
@@ -125,6 +137,16 @@ namespace NFUnitTestSystemLibReflection3
             Assert.AreEqual(1, Count(methods, "Gen", typeof(GenBase)));
             Assert.AreEqual(1, Count(methods, "Gen", typeof(GenMiddle)));
             Assert.AreEqual(0, Count(methods, "Gen", typeof(GenRoot)));
+        }
+
+        [TestMethod]
+        public void GenericAndNonGenericOverloadsOfOneClass()
+        {
+            MethodInfo[] methods = typeof(ArityDerived).GetMethods();
+
+            Assert.AreEqual(2, Count(methods, "Gen", null));
+            Assert.AreEqual(1, Count(methods, "Gen", typeof(ArityBase)));
+            Assert.AreEqual(1, Count(methods, "Gen", typeof(ArityDerived)));
         }
 
         [TestMethod]
