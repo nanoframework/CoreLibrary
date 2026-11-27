@@ -58,7 +58,7 @@ namespace NFUnitTestSystemLib
             Assert.IsTrue((bool)mi.Invoke(tst, new object[] { }));
             Assert.IsInstanceOfType(mi.DeclaringType, typeof(TestClass));
 
-            mi = typeof(TestClass).GetMethod("StaticPrivateAbsMethod", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+            mi = typeof(AbsTestClass).GetMethod("StaticPrivateAbsMethod", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
             Assert.IsFalse(mi.IsAbstract);
             Assert.IsFalse(mi.IsFinal);
             Assert.IsFalse(mi.IsPublic);

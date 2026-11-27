@@ -18,6 +18,10 @@ namespace NFUnitTestSystemLibReflection3
         public string Plain() => "A";
 
         private string Hidden() => "A";
+
+        public static string Stat() => "A";
+
+        private static string PrivStat() => "A";
     }
 
     public class ListMiddle : ListBase
@@ -34,6 +38,25 @@ namespace NFUnitTestSystemLibReflection3
         public override string Who() => "C";
 
         public override string Slot() => "C";
+    }
+
+    public class GenRoot
+    {
+        public virtual string Gen<T>() => "R";
+    }
+
+    public class GenBase : GenRoot
+    {
+        public virtual string Gen() => "B";
+    }
+
+    public class GenMiddle : GenBase
+    {
+        public override string Gen<T>() => "M";
+    }
+
+    public class GenLeaf : GenMiddle
+    {
     }
 
     [TestClass]
@@ -91,6 +114,26 @@ namespace NFUnitTestSystemLibReflection3
             Assert.AreEqual(0, Count(typeof(ListLeaf).GetMethods(), "Hidden", null));
             Assert.AreEqual(0, Count(typeof(ListLeaf).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), "Hidden", null));
             Assert.AreEqual(1, Count(typeof(ListBase).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), "Hidden", null));
+        }
+
+        [TestMethod]
+        public void GenericArityIsPartOfTheOverrideMatch()
+        {
+            MethodInfo[] methods = typeof(GenLeaf).GetMethods();
+
+            Assert.AreEqual(2, Count(methods, "Gen", null));
+            Assert.AreEqual(1, Count(methods, "Gen", typeof(GenBase)));
+            Assert.AreEqual(1, Count(methods, "Gen", typeof(GenMiddle)));
+            Assert.AreEqual(0, Count(methods, "Gen", typeof(GenRoot)));
+        }
+
+        [TestMethod]
+        public void StaticBaseMethodsNeedFlattenHierarchy()
+        {
+            Assert.IsNull(typeof(ListLeaf).GetMethod("Stat", BindingFlags.Static | BindingFlags.Public));
+            Assert.IsNotNull(typeof(ListLeaf).GetMethod("Stat", BindingFlags.Static | BindingFlags.Public | BindingFlags.FlattenHierarchy));
+            Assert.IsNull(typeof(ListLeaf).GetMethod("PrivStat", BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy));
+            Assert.IsNotNull(typeof(ListBase).GetMethod("PrivStat", BindingFlags.Static | BindingFlags.NonPublic));
         }
 
         [TestMethod]
