@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+   <!-- Configurations that affect the Test Framework -->
+   <RunConfiguration>
+       <MaxCpuCount>10</MaxCpuCount>
+       <ResultsDirectory>.\TestResults</ResultsDirectory><!-- Path relative to solution directory -->
+       <TestSessionTimeout>1200000</TestSessionTimeout><!-- Milliseconds -->
+       <TargetFrameworkVersion>net48</TargetFrameworkVersion>
+       <TargetPlatform>x64</TargetPlatform>
+   </RunConfiguration>
+   <nanoFrameworkAdapter>
+       <Logging>Detailed</Logging>
+       <IsRealHardware>False</IsRealHardware>
+       <UsePreviewNanoClr>True</UsePreviewNanoClr>
+	   <PathToLocalCLRInstance>D:\a\_temp\nanoclr\nanoFramework.nanoCLR.dll</PathToLocalCLRInstance>	   
+   </nanoFrameworkAdapter>
+</RunSettings>

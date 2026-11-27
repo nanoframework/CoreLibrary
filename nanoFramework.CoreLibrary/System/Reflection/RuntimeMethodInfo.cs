@@ -28,6 +28,15 @@ namespace System.Reflection
         }
 
         [MethodImpl(MethodImplOptions.InternalCall)]
+        public override extern Type[] GetGenericArguments();
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public override extern MethodInfo MakeGenericMethod(params Type[] typeArguments);
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public override extern MethodInfo GetGenericMethodDefinition();
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private extern object[] GetCustomAttributesNative(bool inherit);
     }
 }

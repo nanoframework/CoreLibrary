@@ -51,6 +51,75 @@ namespace System
             return GetTypeInternal(name, assemblyName, fVersion, ver);
         }
 
+        /// <summary>
+        /// Returns a <see cref="Type"/> object that represents a generic type definition from which the current generic type can be constructed.
+        /// </summary>
+        /// <returns>A <see cref="Type"/> object representing a generic type from which the current type can be constructed.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public virtual extern Type GetGenericTypeDefinition();
+
+        /// <summary>
+        /// Returns an array of <see cref="Type"/> objects that represent the type arguments of a closed generic type or the type parameters of a generic type definition.
+        /// </summary>
+        /// <returns>An array of <see cref="Type"/> objects that represent the type arguments of a generic type. Returns an empty array if the current type is not a generic type.</returns>
+        /// <remarks>For an open constructed type (such as the base type of a generic type definition) the arguments can be generic type parameters declared by another type, distinct from the parameters of the generic type definition itself.</remarks>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern Type[] GetGenericArguments();
+
+        /// <summary>
+        /// Substitutes the elements of an array of types for the type parameters of the current generic type definition and returns a <see cref="Type"/> object representing the resulting constructed type.
+        /// </summary>
+        /// <param name="typeArguments">An array of types to be substituted for the type parameters of the current generic type.</param>
+        /// <returns>A <see cref="Type"/> representing the constructed type formed by substituting the elements of <paramref name="typeArguments"/> for the type parameters of the current generic type.</returns>
+        /// <exception cref="InvalidOperationException">The current type does not represent a generic type definition. That is, <see cref="IsGenericTypeDefinition"/> returns <see langword="false"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="typeArguments"/> is <see langword="null"/>, or any element of <paramref name="typeArguments"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">The number of elements in <paramref name="typeArguments"/> is not the same as the number of type parameters in the current generic type definition, or an element of <paramref name="typeArguments"/> does not satisfy the constraints of the corresponding type parameter.</exception>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public virtual extern Type MakeGenericType(params Type[] typeArguments);
+
+        /// <summary>
+        /// Returns a Type object representing a one-dimensional array of the current type, with a lower bound of zero.
+        /// </summary>
+        /// <returns>A Type object representing a one-dimensional array of the current type.</returns>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public virtual extern Type MakeArrayType();
+
+        /// <summary>
+        /// Gets a value that indicates whether the type is an array type that can represent only a single-dimensional array with a zero lower bound.
+        /// </summary>
+        public virtual bool IsSZArray => IsArray;
+
+        /// <summary>
+        /// Gets the number of dimensions in an array.
+        /// </summary>
+        /// <returns>An integer that contains the number of dimensions in the current type, always 1.</returns>
+        /// <exception cref="ArgumentException">The current type is not an array.</exception>
+        public virtual int GetArrayRank()
+        {
+            if (!IsArray)
+            {
+                throw new ArgumentException();
+            }
+
+            return 1;
+        }
+
+        /// <summary>
+        /// Determines whether the current type can be assigned to a variable of the specified targetType.
+        /// </summary>
+        /// <param name="targetType">The type to compare with the current type.</param>
+        /// <returns><see langword="true"/> if the current type can be assigned to targetType; otherwise <see langword="false"/>, also when targetType is <see langword="null"/>.</returns>
+        public bool IsAssignableTo(Type targetType)
+        {
+            return targetType != null && targetType.IsAssignableFrom(this);
+        }
+
+        /// <summary>
+        /// Gets an array of the generic type arguments for this type.
+        /// </summary>
+        /// <value>An array of the generic type arguments for this type.</value>
+        public virtual Type[] GenericTypeArguments => IsGenericType && !IsGenericTypeDefinition ? GetGenericArguments() : new Type[0];
+
         [Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern Type GetTypeInternal(String typeName, string assemblyName, bool fVersion, int[] ver);
@@ -116,7 +185,7 @@ namespace System
         /// Gets the assembly-qualified name of the type, which includes the name of the assembly from which this Type object was loaded.
         /// </summary>
         /// <value>
-        /// The assembly-qualified name of the Type, which includes the name of the assembly from which the Type was loaded, or null if the current instance represents a generic type parameter.
+        /// The assembly-qualified name of the Type, which includes the name of the assembly from which the Type was loaded, or null if the type can't be represented by an assembly-qualified name. Types that can't be represented by an assembly-qualified name include types that contain unresolved generic parameters.
         /// </value>
         public abstract String AssemblyQualifiedName
         {
@@ -151,6 +220,7 @@ namespace System
         /// <returns>
         /// An array of <see cref="ConstructorInfo"/> objects representing all the public instance constructors defined for the current <see cref="Type"/>, but not including the type initializer (static constructor). If no public instance constructors are defined for the current <see cref="Type"/>, or if the current <see cref="Type"/> represents a type parameter in the definition of a generic type or generic method, an empty array of type <see cref="ConstructorInfo"/> is returned.
         /// </returns>
+        /// <exception cref="NotSupportedException">The current <see cref="Type"/> represents a type parameter in the definition of a generic type or generic method.</exception>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public extern ConstructorInfo[] GetConstructors();
 
@@ -358,6 +428,112 @@ namespace System
         }
 
         /// <summary>
+        /// Gets a value indicating whether the current type is a generic type.
+        /// </summary>
+        /// <value>
+        /// <see langword="true"/> if the current type is a generic type; otherwise, <see langword="false"/>.
+        /// </value>
+        public extern bool IsGenericType
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets a value that indicates whether the type is a generic type definition.
+        /// </summary>
+        /// <value>
+        /// <see langword="true"/> if the current type is a generic type definition; otherwise, <see langword="false"/>.
+        /// </value>
+        public extern bool IsGenericTypeDefinition
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the current <see cref="Type"/> represents a type parameter in the definition of a generic type or method.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="Type"/> object represents a type parameter of a generic type definition or generic method definition; otherwise, <see langword="false"/>.</value>
+        public extern bool IsGenericParameter
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets the position of the type parameter in the type parameter list of the generic type or method that declared the parameter, when the <see cref="Type"/> object represents a type parameter.
+        /// </summary>
+        /// <value>The position of a type parameter in the type parameter list of the generic type or method that defines the parameter. Position numbers begin at 0.</value>
+        /// <exception cref="InvalidOperationException">The current type does not represent a type parameter. That is, <see cref="IsGenericParameter"/> returns <see langword="false"/>.</exception>
+        public extern int GenericParameterPosition
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets a <see cref="MethodBase"/> that represents the declaring method, if the current <see cref="Type"/> represents a type parameter of a generic method.
+        /// </summary>
+        /// <value>If the current <see cref="Type"/> represents a type parameter of a generic method, a <see cref="MethodBase"/> that represents declaring method; otherwise, <see langword="null"/>.</value>
+        /// <exception cref="InvalidOperationException">The current type is not a type parameter. That is, <see cref="IsGenericParameter"/> returns <see langword="false"/>.</exception>
+        public extern Reflection.MethodBase DeclaringMethod
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets a value that indicates whether the current <see cref="Type"/> represents a type parameter in the definition of a generic type.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="Type"/> object represents a type parameter of a generic type definition; otherwise, <see langword="false"/>.</value>
+        public bool IsGenericTypeParameter => IsGenericParameter && DeclaringMethod == null;
+
+        /// <summary>
+        /// Gets a value that indicates whether the current <see cref="Type"/> represents a type parameter in the definition of a generic method.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="Type"/> object represents a type parameter of a generic method definition; otherwise, <see langword="false"/>.</value>
+        public bool IsGenericMethodParameter => IsGenericParameter && DeclaringMethod != null;
+
+        /// <summary>
+        /// Gets a value indicating whether the current <see cref="Type"/> object has type parameters that have not been replaced by specific types.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="Type"/> object is itself a generic type parameter or has type parameters for which specific types have not been supplied; otherwise, <see langword="false"/>.</value>
+        public extern bool ContainsGenericParameters
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Gets a combination of <see cref="Reflection.GenericParameterAttributes"/> flags that describe the covariance and special constraints of the current generic type parameter.
+        /// </summary>
+        /// <value>A bitwise combination of <see cref="Reflection.GenericParameterAttributes"/> values that describes the covariance and special constraints of the current generic type parameter.</value>
+        /// <exception cref="InvalidOperationException">The current <see cref="Type"/> object is not a generic type parameter. That is, the <see cref="IsGenericParameter"/> property returns <see langword="false"/>.</exception>
+        public extern Reflection.GenericParameterAttributes GenericParameterAttributes
+        {
+            [MethodImpl(MethodImplOptions.InternalCall)]
+            get;
+        }
+
+        /// <summary>
+        /// Returns an array of <see cref="Type"/> objects that represent the constraints on the current generic type parameter.
+        /// </summary>
+        /// <returns>An array of <see cref="Type"/> objects that represent the constraints on the current generic type parameter.</returns>
+        /// <exception cref="InvalidOperationException">The current <see cref="Type"/> object is not a generic type parameter. That is, the <see cref="IsGenericParameter"/> property returns <see langword="false"/>.</exception>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern Type[] GetGenericParameterConstraints();
+
+        /// <summary>
+        /// Gets a value that indicates whether this object represents a constructed generic type.
+        /// </summary>
+        /// <value><see langword="true"/> if this object represents a constructed generic type; otherwise, <see langword="false"/>.</value>
+        public bool IsConstructedGenericType
+        {
+            get { return IsGenericType && !IsGenericTypeDefinition; }
+        }
+
+        /// <summary>
         /// When overridden in a derived class, returns the Type of the object encompassed or referred to by the current array, pointer or reference type.
         /// </summary>
         /// <returns>The Type of the object encompassed or referred to by the current array, pointer, or reference type, or null if the current Type is 
@@ -392,6 +568,15 @@ namespace System
         /// </returns>
         [MethodImpl(MethodImplOptions.InternalCall)]
         public virtual extern bool IsInstanceOfType(Object o);
+
+        /// <summary>
+        /// Determines whether an instance of the specified type can be assigned to a variable of the current type.
+        /// </summary>
+        /// <param name="c">The type to compare with the current type.</param>
+        /// <returns>true if c and the current Type represent the same type, or if the current Type is in the inheritance hierarchy of c, or if the current Type is an interface that c implements, or if c is an array that can be converted to the current Type. false if c is null or none of these conditions is true.</returns>
+        /// <exception cref="NotSupportedException">The result depends on generic variance or on the element compatibility of integral arrays, which are not supported.</exception>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public virtual extern bool IsAssignableFrom(Type c);
 
         /// <summary>
         /// Returns a String representing the name of the current Type.

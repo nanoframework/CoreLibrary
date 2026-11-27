@@ -15,9 +15,6 @@ namespace System.Reflection
     [Serializable]
     public abstract class MethodBase : MemberInfo
     {
-        // required to store native
-        private int _token;
-
         /// <summary>
         /// Gets a value indicating whether this is a public method.
         /// </summary>
@@ -121,8 +118,59 @@ namespace System.Reflection
             get;
         }
 
+        /// <summary>
+        /// Gets a value indicating whether the method is generic.
+        /// </summary>
+        /// <value>
+        /// <see langword="true"/> if the current <see cref="MethodBase"/> represents a generic method; otherwise, <see langword="false"/>.
+        /// </value>
+        public virtual bool IsGenericMethod => GetGenericFlags().HasFlag(GenericMethodFlags.GenericMethod);
+
+        /// <summary>
+        /// Gets a value indicating whether the method is a generic method definition.
+        /// </summary>
+        /// <value>
+        /// <see langword="true"/> if the current <see cref="MethodBase"/> object represents the definition of a generic method; otherwise, <see langword="false"/>.
+        /// </value>
+        public virtual bool IsGenericMethodDefinition => GetGenericFlags().HasFlag(GenericMethodFlags.GenericMethodDefinition);
+
+        /// <summary>
+        /// Gets a value indicating whether the method is a generic method that has been constructed from a generic method definition.
+        /// </summary>
+        public virtual bool IsConstructedGenericMethod => IsGenericMethod && !IsGenericMethodDefinition;
+
+        /// <summary>
+        /// Gets a value indicating whether the generic method contains unassigned generic type parameters.
+        /// </summary>
+        /// <value>
+        /// <see langword="true"/> if the current <see cref="MethodBase"/> object represents a generic method that contains unassigned generic type parameters, or is declared by an open generic type; otherwise, <see langword="false"/>.
+        /// </value>
+        public virtual bool ContainsGenericParameters => GetGenericFlags().HasFlag(GenericMethodFlags.ContainsGenericParameters);
+
+        /// <summary>
+        /// Returns an array of <see cref="Type"/> objects that represent the type arguments of a generic method or the type parameters of a generic method definition.
+        /// </summary>
+        /// <returns>An array of <see cref="Type"/> objects that represent the type arguments of a generic method or the type parameters of a generic method definition. Returns an empty array if the current method is not a generic method.</returns>
+        /// <exception cref="NotSupportedException">The current object is a <see cref="ConstructorInfo"/>.</exception>
+        public virtual Type[] GetGenericArguments()
+        {
+            throw new NotSupportedException();
+        }
+
         [MethodImpl(MethodImplOptions.InternalCall)]
         internal extern ParameterInfo[] GetParametersNative();
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern GenericMethodFlags GetGenericFlags();
+
+        [Flags]
+        private enum GenericMethodFlags
+        {
+            None = 0,
+            GenericMethod = 1,
+            GenericMethodDefinition = 2,
+            ContainsGenericParameters = 4,
+        }
     }
 }
 

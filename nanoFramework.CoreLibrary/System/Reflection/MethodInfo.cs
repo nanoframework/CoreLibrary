@@ -36,6 +36,29 @@ namespace System.Reflection
         {
             get;
         }
+
+        /// <summary>
+        /// Substitutes the elements of an array of types for the type parameters of the current generic method definition, and returns a <see cref="MethodInfo"/> object representing the resulting constructed method.
+        /// </summary>
+        /// <param name="typeArguments">An array of types to be substituted for the type parameters of the current generic method definition.</param>
+        /// <returns>A <see cref="MethodInfo"/> object that represents the constructed method formed by substituting the elements of <paramref name="typeArguments"/> for the type parameters of the current generic method definition.</returns>
+        /// <exception cref="InvalidOperationException">The current <see cref="MethodInfo"/> does not represent a generic method definition.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="typeArguments"/> is <see langword="null"/>, or any element of <paramref name="typeArguments"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException">The number of elements in <paramref name="typeArguments"/> is not the same as the number of type parameters of the current generic method definition, or an element of <paramref name="typeArguments"/> does not satisfy the constraints of the corresponding type parameter.</exception>
+        public virtual MethodInfo MakeGenericMethod(params Type[] typeArguments)
+        {
+            throw new NotSupportedException();
+        }
+
+        /// <summary>
+        /// Returns a <see cref="MethodInfo"/> object that represents a generic method definition from which the current method can be constructed.
+        /// </summary>
+        /// <returns>A <see cref="MethodInfo"/> object representing a generic method definition from which the current method can be constructed.</returns>
+        /// <exception cref="InvalidOperationException">The current method is not a generic method. That is, <see cref="MethodBase.IsGenericMethod"/> returns <see langword="false"/>.</exception>
+        public virtual MethodInfo GetGenericMethodDefinition()
+        {
+            throw new NotSupportedException();
+        }
     }
 }
 
