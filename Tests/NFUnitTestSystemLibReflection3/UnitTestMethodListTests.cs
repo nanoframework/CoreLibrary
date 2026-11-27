@@ -89,6 +89,7 @@ namespace NFUnitTestSystemLibReflection3
 
             Assert.AreEqual(2, declared.Length);
             Assert.AreEqual(0, Count(typeof(ListLeaf).GetMethods(), "Hidden", null));
+            Assert.AreEqual(0, Count(typeof(ListLeaf).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), "Hidden", null));
             Assert.AreEqual(1, Count(typeof(ListBase).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), "Hidden", null));
         }
 
